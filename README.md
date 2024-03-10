@@ -1,0 +1,2 @@
+# SnapchatLib
+RUSocial LLC SnapchatLib
