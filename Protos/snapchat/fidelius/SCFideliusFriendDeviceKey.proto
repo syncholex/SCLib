@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusFriendDeviceKey {
+	bytes publicKey = 1;
+	uint64 version = 2;
+
+	enum SCFideliusFriendDeviceKey_DeviceType {
+		UNSET = 0;
+		MOBILE = 1;
+		WEB = 2;
+	}
+
+	SCFideliusFriendDeviceKey_DeviceType deviceType = 3;
+}

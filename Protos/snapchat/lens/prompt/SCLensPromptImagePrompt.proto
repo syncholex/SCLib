@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptLinkedResource.proto";
+
+message SCLensPromptImagePrompt {
+	snapchat.lens.prompt.SCLensPromptLinkedResource promptImage = 1;
+	snapchat.lens.prompt.SCLensPromptLinkedResource previewImage = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.map.gamedb;
+
+message SCMTGameMarkerEntry {
+	string id_p = 1;
+	float lat = 2;
+	float lng = 3;
+	float unlockableRadius = 4;
+	int32 typeId = 5;
+
+	enum SCMTGameMarkerEntry_Status {
+		UNSET = 0;
+		ACTIVE = 1;
+		REMOVED = 2;
+	}
+
+	SCMTGameMarkerEntry_Status status = 6;
+	string reasonForRemoval = 7;
+	string source = 8;
+	string category = 9;
+}

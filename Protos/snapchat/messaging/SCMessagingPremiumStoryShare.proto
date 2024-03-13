@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingStoryShareInfo.proto";
+import "snapchat/messaging/SCMessagingStoryShareMediaInfo.proto";
+
+message SCMessagingPremiumStoryShare {
+	snapchat.messaging.SCMessagingStoryShareInfo story = 1;
+	uint64 overrideTimestamp = 2;
+	snapchat.messaging.SCMessagingStoryShareMediaInfo storyMediaInfo = 3;
+}

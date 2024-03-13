@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/BaseSnapData.proto";
+
+message GetBaseSnapDataResponse {
+	repeated snapchat.map.BaseSnapData snapListArray = 1;
+}

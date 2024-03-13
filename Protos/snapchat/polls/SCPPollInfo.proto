@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "snapchat/polls/SCPTextPollOptions.proto";
+
+message SCPPollInfo {
+	string pollId = 1;
+	string title = 2;
+
+	oneof pollOptions {
+		snapchat.polls.SCPTextPollOptions textPollOptions = 3;
+	}
+
+	uint64 votingEndTime = 4;
+}

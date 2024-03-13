@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyUserInfo.proto";
+import "storyreply/IMPStoryReplyQuestionStickerMetadata.proto";
+import "storyreply/IMPStoryReplyGift.proto";
+
+message IMPStoryReplyGetStoryReplyResponseItem {
+	string conversationId = 1;
+	uint64 messageId = 2;
+	storyreply.IMPStoryReplyUserInfo senderInfo = 3;
+	string storyReplyText = 4;
+	bool storyReplyViewed = 5;
+	bool hasSentGift = 6;
+	string thumbnailURL = 7;
+
+	oneof snapType {
+		storyreply.IMPStoryReplyQuestionStickerMetadata qnaSnap = 10;
+	}
+
+	repeated storyreply.IMPStoryReplyGift unopenedGiftsArray = 100;
+}

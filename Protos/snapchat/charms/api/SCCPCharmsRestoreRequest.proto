@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.charms.api;
+
+import "snapchat/charms/core/SCCPCharmsOwner.proto";
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmsRestoreRequest {
+	snapchat.charms.core.SCCPCharmsOwner owner = 1;
+	repeated int32 charmIdsArray = 2 [packed=true];
+
+	enum SCCPCharmsRequestOrigin_Enum {
+		UNKNOWN = 0;
+		PROFILE = 1;
+		ONE_ON_ONE_CHAT = 2;
+		GROUP_CHAT = 3;
+		AFTER_RESTORE = 4;
+		AFTER_HIDE = 5;
+	}
+
+	SCCPCharmsRequestOrigin_Enum requestOrigin = 3;
+	snapchat.charms.common.SCCPUUID requestId = 4;
+	int64 requestTsMs = 5;
+}

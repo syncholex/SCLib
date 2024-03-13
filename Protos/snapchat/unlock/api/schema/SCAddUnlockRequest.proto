@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlock/api/schema/SCUnlockMetadata.proto";
+
+message SCAddUnlockRequest {
+	int64 unlockableId = 1;
+
+	enum SCUnlockType {
+		UNLOCK_TYPE_UNSET = 0;
+		EXPIRABLE = 1;
+		NOT_EXPIRABLE = 2;
+		SOCIAL = 3;
+		INVERSE = 4;
+	}
+
+	SCUnlockType unlockType = 2;
+	bool geofilterResponseRequired = 3;
+	string deepLinkAppId = 4;
+	string deepLinkProperties = 5;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 6;
+	snapchat.unlock.api.schema.SCUnlockMetadata unlockMetadata = 7;
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 8;
+}

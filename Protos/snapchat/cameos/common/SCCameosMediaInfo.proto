@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosMediaInfo {
+
+	oneof downloadSource {
+		bytes contentObject = 1;
+		string contentURL = 2;
+	}
+
+
+	enum SCCameosMediaInfo_MediaType {
+		MEDIA_TYPE_UNSET = 0;
+		ENCRYPTED_IMAGE = 1;
+		UNENCRYPTED_IMAGE = 2;
+	}
+
+	SCCameosMediaInfo_MediaType mediaType = 3;
+	bytes secretKey = 4;
+	bytes initialVector = 5;
+
+	enum SCCameosMediaInfo_EncodingType {
+		ENCODING_TYPE_UNSET = 0;
+		ENCODING_TYPE_BINARY = 1;
+		ENCODING_TYPE_BASE64 = 2;
+	}
+
+	SCCameosMediaInfo_EncodingType encodingType = 6;
+	bool skipClaim = 7;
+}

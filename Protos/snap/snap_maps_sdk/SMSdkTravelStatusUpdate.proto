@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkTravelStatus.proto";
+
+message SMSdkTravelStatusUpdate {
+	repeated snap.snap_maps_sdk.SMSdkTravelStatus friendTravelStatusArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/SCSSMClientScoringParams.proto";
+
+message MFCFeedRanking {
+	int32 predictedSessionDepth = 1;
+	ranking.serving.jaguar.SCSSMClientScoringParams clientScoringParams = 2;
+}

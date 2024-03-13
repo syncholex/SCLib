@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+message SCPBWeb3RegisterPhantomWalletInfo {
+	string walletAddress = 1;
+	string plainTextMessage = 2;
+	string signedMessage = 3;
+}

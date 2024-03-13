@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/creativetools/item_instance/SCCTPFilterMetadata_FilterInfo.proto";
+
+message SCCTPFilterMetadata {
+	snapchat.core.SCCOREUUID placeId = 1;
+	float yOffsetPercentage = 2;
+	snapchat.creativetools.item_instance.SCCTPFilterMetadata_FilterInfo filterInfo = 3;
+}

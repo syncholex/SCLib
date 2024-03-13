@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SubscribedUserScore.proto";
+import "ranking/pii/user/profile/SubscribedPublisherScore.proto";
+
+message Subscriptions {
+	bytes hiddenUsers = 2;
+	repeated int64 subscribedPublishersArray = 3 [packed=true];
+	repeated string subscribedStoriesArray = 5;
+	bytes hiddenStories = 6;
+	bytes unsubscribedUsers = 8;
+	repeated ranking.pii.user.profile.SubscribedUserScore subscribedUserScoresArray = 9;
+	bytes softHiddenUsers = 10;
+	repeated int64 hiddenLensesArray = 15 [packed=true];
+	bytes hiddenLensCreators = 17;
+	repeated ranking.pii.user.profile.SubscribedUserScore subscribedLensCreatorsArray = 18;
+	ranking.pii.user.profile.SubscribedPublisherScore subscribedPublisherScores = 19;
+	repeated int64 hiddenPublishersArray = 20 [packed=true];
+	repeated uint64 hiddenUsersFprintsArray = 21 [packed=true];
+	bytes spotlightHiddenUsersBf = 23;
+	repeated string spotlightHiddenUsersIdsArray = 24;
+	repeated uint64 spotlightHiddenStoriesFprintsArray = 26 [packed=true];
+	int32 spotlightHiddenUsersNum = 27;
+}

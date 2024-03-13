@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletQuota.proto";
+
+message SCPBGalleryServletBaseResponse {
+	int32 serviceStatusCode = 1;
+	string userString = 2;
+	int64 backoffTime = 3;
+	string debugInfo = 4;
+	com.snapchat.proto.gallery.servlet.SCPBGalleryServletQuota quota = 5;
+	int32 totalEntryCount = 6;
+}

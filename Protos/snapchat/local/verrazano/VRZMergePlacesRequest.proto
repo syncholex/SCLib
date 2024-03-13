@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZMergePlacesData.proto";
+
+message VRZMergePlacesRequest {
+	repeated snapchat.local.verrazano.VRZMergePlacesData mergePlacesDataArray = 1;
+}

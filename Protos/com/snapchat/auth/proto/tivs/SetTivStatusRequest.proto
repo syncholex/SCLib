@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SetTivStatusRequest {
+	snapchat.core.SCCOREUUID broadcastId = 1;
+	string nonce = 2;
+
+	enum TivStatus_Enum {
+		UNSET = 0;
+		APPROVED = 1;
+		DENIED = 2;
+		TIMED_OUT = 3;
+	}
+
+	TivStatus_Enum tivResponse = 3;
+}

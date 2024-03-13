@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInviteUserToRoleResponse {
+	bool autoApproved = 1;
+	bool roleAlreadyExists = 2;
+}

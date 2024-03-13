@@ -1,0 +1,138 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBMediaCountsMessage.proto";
+import "hermosa/HRMPBCrashReport.proto";
+import "hermosa/HRMPBSpecsEvent.proto";
+import "hermosa/HRMPBResetReason.proto";
+import "hermosa/HRMPBButtonHoldEvent.proto";
+import "hermosa/HRMPBSystemCounters.proto";
+import "hermosa/HRMPBErrorReport.proto";
+import "hermosa/HRMPBUserMediaCountsMessage.proto";
+import "hermosa/HRMPBSpectaclesPushMessage_InvalidatedRequest.proto";
+import "hermosa/HRMPBWifiThrottlingReport.proto";
+import "hermosa/HRMPBUbloxMessage.proto";
+import "hermosa/HRMPBTaskInfo.proto";
+import "hermosa/HRMPBBleDisconnectReason.proto";
+import "hermosa/HRMPBLocationData.proto";
+import "hermosa/HRMPBGpsStatistics.proto";
+import "hermosa/HRMPBPhoneNotification.proto";
+import "hermosa/HRMPBAncsNotificationRule.proto";
+import "hermosa/HRMPBNrfFdsEntry.proto";
+import "hermosa/HRMPBHermosaEventPb.proto";
+import "hermosa/HRMPBEmpty.proto";
+import "hermosa/HRMPBRTOSHeapInfo.proto";
+
+message HRMPBSpectaclesPushMessage {
+	string logMessage = 1;
+
+	oneof payload {
+		uint32 mediaCount = 2;
+		uint32 battStatus = 3;
+		bool booted = 5;
+		string ipAddress = 6;
+		hermosa.HRMPBMediaCountsMessage mediaCounts = 7;
+		hermosa.HRMPBCrashReport crashReport = 8;
+		hermosa.HRMPBSpecsEvent specsEvent = 9;
+		hermosa.HRMPBResetReason resetReason = 10;
+		uint32 remainingHeapBytes = 11;
+		HRMPBSpectaclesPushMessage_ConnectionEvent wifiConnectionEvent = 12;
+		HRMPBSpectaclesPushMessage_ConnectionEvent bluetoothConnectionEvent = 13;
+		bool receivedBackupPairingConfirmationTap = 14;
+		HRMPBSpectaclesPushMessage_UploadToCloudEvent uploadToCloudEvent = 20;
+		hermosa.HRMPBButtonHoldEvent buttonHoldEvent = 21;
+		hermosa.HRMPBSystemCounters systemCounters = 22;
+		hermosa.HRMPBErrorReport errorReport = 23;
+		HRMPBSpectaclesPushMessage_ChargerEvent chargerEvent = 24;
+		hermosa.HRMPBUserMediaCountsMessage userMediaCounts = 25;
+		hermosa.HRMPBSpectaclesPushMessage_InvalidatedRequest invalidatedRequest = 26;
+		HRMPBSpectaclesPushMessage_TransferThrottledEvent transferThrottledEvent = 27;
+		bool encryptionLayerFailure = 28;
+		hermosa.HRMPBWifiThrottlingReport wifiThrottlingReport = 29;
+		uint32 wifiFrequency = 30;
+		HRMPBSpectaclesPushMessage_DirectConnectionInfo directConnectionInfo = 31;
+		hermosa.HRMPBUbloxMessage ubxMessage = 32;
+		hermosa.HRMPBTaskInfo taskInfo = 33;
+		hermosa.HRMPBBleDisconnectReason bleDisconnectReason = 34;
+		hermosa.HRMPBLocationData locationData = 35;
+		hermosa.HRMPBGpsStatistics gpsStatistics = 36;
+		hermosa.HRMPBPhoneNotification phoneNotification = 37;
+		hermosa.HRMPBAncsNotificationRule ancsRule = 38;
+		hermosa.HRMPBNrfFdsEntry fdsEntry = 39;
+		hermosa.HRMPBHermosaEventPb hermosaEvent = 41;
+		hermosa.HRMPBEmpty proxyStart = 42;
+		hermosa.HRMPBEmpty proxyStop = 43;
+		hermosa.HRMPBRTOSHeapInfo rtosHeapInfo = 44;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_ConnectionEvent {
+		READY_FOR_CONNECTION = 1;
+		CONNECTED = 2;
+		DISCONNECTED = 3;
+		SHUTDOWN = 4;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_ConnectionEvent {
+		READY_FOR_CONNECTION = 1;
+		CONNECTED = 2;
+		DISCONNECTED = 3;
+		SHUTDOWN = 4;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_LogLevel {
+		DEBUG = 0;
+		INFO = 1;
+		WARNING = 2;
+		ERROR = 3;
+		VERBOSE = 4;
+	}
+
+	HRMPBSpectaclesPushMessage_LogLevel logLevel = 15;
+	uint32 msSinceBoot = 19;
+
+	enum HRMPBSpectaclesPushMessage_UploadToCloudEvent {
+		CLOUD_CONNECTING = 1;
+		CLOUD_CONNECTED = 2;
+		WRONG_PASSWORD = 3;
+		FAIL_WIFI_CONNECTION = 4;
+		FAIL_CLOUD_CONNECTION = 5;
+		CLOUD_UPLOADING = 6;
+		LOG_UPLOAD_BEGIN = 7;
+		LOG_UPLOAD_END = 8;
+		CLOUD_UPLOAD_BEGIN = 9;
+		CLOUD_UPLOAD_END = 10;
+		CLOUD_UPLOAD_INTERRUPTED = 11;
+		CLOUD_UPLOAD_ABORTED = 12;
+		CLOUD_UPLOAD_ABORT_RETRY = 13;
+		CLOUD_UPLOADED = 14;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_ChargerEvent {
+		CHARGER_CONNECTED = 1;
+		CHARGER_DISCONNECTED = 2;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_TransferThrottledEvent {
+		NO_THROTTLING = 1;
+		CAPTURE_OCCURRING = 2;
+	}
+
+
+	enum HRMPBSpectaclesPushMessage_DirectConnectionInfo {
+		SUCCESS = 0;
+		FAILED = 1;
+		FAILED_TIMED_OUT = 2;
+		FAILED_NO_CLIENT_MAC = 3;
+		FAILED_WEAK_RSSI = 4;
+		FAILED_CONNECTED_BUT_UNSUPPORTED = 5;
+		FAILED_SOCKET_SHUTDOWN = 6;
+		FAILED_CONNECTION_RESET_BY_PEER = 7;
+	}
+
+}

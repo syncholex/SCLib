@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBQuaternion.proto";
+import "hermosa/HRMPBTranslation.proto";
+
+message HRMPBSardoSpectaclesStatus {
+
+	enum HRMPBSardoSpectaclesStatus_CalibrationState {
+		UNKNOWN = 0;
+		NEEDS_CALIBRATION = 1;
+		CALIBRATING = 2;
+		CALIBRATED = 3;
+	}
+
+	HRMPBSardoSpectaclesStatus_CalibrationState calibrationState = 1;
+
+	enum HRMPBSardoSpectaclesStatus_SardoSpectaclesError {
+		ERROR_UNKNOWN = 0;
+		ERROR_CALIBRATION_FAILED_GENERIC = 1;
+	}
+
+	HRMPBSardoSpectaclesStatus_SardoSpectaclesError error = 2;
+	uint64 phoneRecognitionTimestampMs = 3;
+	hermosa.HRMPBQuaternion specsWorldFromMobileWorldRotation = 4;
+	hermosa.HRMPBTranslation specsWorldFromMobileWorldTranslation = 5;
+}

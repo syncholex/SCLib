@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message BadgeMetadata {
+	string badgeId = 1;
+
+	enum BadgeType_Enum {
+		UNKNOWN = 0;
+		NEW_STORIES_IN_SECTION = 1;
+		NEW_PUBLISHING = 2;
+		TRENDING = 3;
+		CONTINUE_WATCHING = 4;
+		NEW_EPISODE_BADGE = 5;
+		HN_NEWS = 6;
+	}
+
+	BadgeType_Enum badgeType = 2;
+
+	enum BadgeTapDestinationType_Enum {
+		UNKNOWN = 0;
+		SECTION = 1;
+		STORY = 2;
+	}
+
+	BadgeTapDestinationType_Enum destinationType = 3;
+	int32 feedType = 4;
+	repeated ranking.core.SCCORECompositeStoryId storyIdsArray = 5;
+
+	enum SchedulingType_Enum {
+		UNKNOWN = 0;
+		SHOWS_REGULAR = 1;
+		HN_REGAULR = 2;
+		HN_HIGH_PRIORITY = 3;
+	}
+
+	SchedulingType_Enum schedulingType = 6;
+}

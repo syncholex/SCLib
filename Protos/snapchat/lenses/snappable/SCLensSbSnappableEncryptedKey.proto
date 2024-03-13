@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbSnappableEncryptedKey {
+	bytes encryptedKey = 1;
+	string encryptionKeyId = 2;
+	bytes encryptionKeyIv = 3;
+}

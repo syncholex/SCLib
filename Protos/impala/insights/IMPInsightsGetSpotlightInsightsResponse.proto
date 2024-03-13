@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSpotlightLifetimeInsights.proto";
+
+message IMPInsightsGetSpotlightInsightsResponse {
+	string nextPageId = 1;
+	repeated impala.insights.IMPInsightsSpotlightLifetimeInsights spotlightInsightsArray = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnapInsights.proto";
+
+message IMPGetBusinessStorySnapViewersResponse {
+	impala.stories.IMPBusinessSnapInsights insights = 1;
+}

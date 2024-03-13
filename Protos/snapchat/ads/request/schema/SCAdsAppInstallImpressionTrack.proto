@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsSKOverlayMetrics.proto";
+
+message SCAdsAppInstallImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBBoolValue loadedOnEntry = 2;
+	google.protobuf.GPBBoolValue loadedOnExit = 3;
+	google.protobuf.GPBFloatValue visibleLoadTimeMs = 4;
+	google.protobuf.GPBBoolValue skoverlayEnabled = 5;
+	google.protobuf.GPBBoolValue customProductPageEnabled = 6;
+
+	enum SCAdsAppInstallStatus {
+		UNKNOWN_INSTALL_STATUS_UNSET = 0;
+		INSTALLED = 1;
+		NOT_INSTALLED = 2;
+	}
+
+	SCAdsAppInstallStatus appInstallStatus = 7;
+	google.protobuf.GPBBoolValue isDefaultAppStoreSet = 8;
+	google.protobuf.GPBBoolValue isAppStorePrioritized = 9;
+	google.protobuf.GPBStringValue packageIdHandlingAttachmentOpen = 10;
+	snapchat.ads.request.schema.SCAdsSKOverlayMetrics skOverlayMetrics = 11;
+}

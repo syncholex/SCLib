@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBChargerStateResponse {
+	bool isChargerConnected = 1;
+	bool isFullyCharged = 2;
+}

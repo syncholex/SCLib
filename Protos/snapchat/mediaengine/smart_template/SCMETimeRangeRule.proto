@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEMediaTimeRange.proto";
+import "google/protobuf/GPBEmpty.proto";
+
+message SCMETimeRangeRule {
+	repeated snapchat.mediaengine.smart_template.SCMEMediaTimeRange timeRangesArray = 1;
+
+	oneof repeatSelectionPattern {
+		google.protobuf.GPBEmpty onlyOnce = 2;
+		google.protobuf.GPBEmpty repeatInfinitely = 3;
+	}
+
+}

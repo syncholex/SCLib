@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/QueryCursor.proto";
+
+message SnapProStoryFilter {
+	int64 startTsMs = 1;
+	int64 endTsMs = 2;
+	uint32 limit = 3;
+	ranking.storymanagement.QueryCursor queryCursor = 4;
+	bool isDescending = 5;
+	bool liveOnly = 6;
+
+	enum ModerationFilter {
+		DEFAULT = 0;
+		PUBLIC_VIEWABLE_CONTENT = 1;
+		LIMITED_DISTRIBUTION = 2;
+	}
+
+	repeated ModerationFilter filterModerationArray = 7 [packed=true];
+}

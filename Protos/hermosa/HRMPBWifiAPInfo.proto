@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWifiAPInfo {
+
+	enum HRMPBWifiAPInfo_WifiAPState {
+		DISABLED = 0;
+		ACTIVE = 1;
+		WRONG_PASSWORD = 2;
+		FAIL_CONNECTION = 3;
+	}
+
+	HRMPBWifiAPInfo_WifiAPState state = 1;
+	string ssid = 2;
+	string password = 3;
+}

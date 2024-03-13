@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness_Identifiers.proto";
+import "impala/IMPBusiness_Branding.proto";
+import "impala/IMPBusiness_Behaviour.proto";
+import "impala/IMPBusiness_Visibility.proto";
+import "impala/IMPBusiness_Stats.proto";
+
+message IMPBusiness {
+	impala.IMPBusiness_Identifiers identifiers = 1;
+	impala.IMPBusiness_Branding branding = 2;
+	impala.IMPBusiness_Behaviour behaviour = 3;
+	impala.IMPBusiness_Visibility visibility = 4;
+	impala.IMPBusiness_Stats stats = 5;
+}

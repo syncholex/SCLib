@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREImpalaUserInfoLite {
+	string hostUserId = 1;
+	string businessId = 2;
+	bool isOfficialUser = 3;
+}

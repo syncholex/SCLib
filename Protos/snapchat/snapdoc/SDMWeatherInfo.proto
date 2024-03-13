@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "weather/SCWWeather.proto";
+
+message SDMWeatherInfo {
+	weather.SCWWeather currentWeather = 1;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTGeoBox.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+import "snapchat/context/SCStoryManifest.proto";
+import "snapchat/map/SCMTPointOfInterest_DiscoverInfo.proto";
+
+message SCMTSearchCards_PoiRow {
+	string id_p = 1;
+	snapchat.map.SCMTPoint latlng = 2;
+	double zoom = 3;
+	double timestamp = 4;
+	string titleFmt = 5;
+	string subtitleFmt = 6;
+	snapchat.map.SCMTGeoBox boundingBox = 7;
+	snapchat.map.SCMTThumbnail thumb = 20;
+	snapchat.context.SCStoryManifest manifest = 21;
+	snapchat.map.SCMTPointOfInterest_DiscoverInfo discoverInfo = 22;
+}

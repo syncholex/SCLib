@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+message AgeGroupDimensionData {
+	repeated string dimensionValuesArray = 1;
+}

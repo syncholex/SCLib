@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message SharingContext {
+	uint64 snapItemId = 1;
+	string storeId = 2;
+	string sourceType = 3;
+	string sourceId = 4;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message GetUserSpoofingInfoResponse {
+	float spoofConfidence = 1;
+
+	enum SpoofingReason {
+		UNSET = 0;
+		EMPTY_HISTORY = 1;
+		NEVER_VISITED = 2;
+		VISITED_AFTER_CUTOFF = 3;
+		MOVED_TOO_FAST = 4;
+		DURATION_TOO_SHORT = 5;
+		FIRST_VISIT_AT_ZERO_TIME = 6;
+		VISIT_TOO_RECENT = 7;
+	}
+
+	repeated SpoofingReason reasonsArray = 2 [packed=true];
+}

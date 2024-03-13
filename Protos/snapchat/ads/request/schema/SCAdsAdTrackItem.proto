@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsImpressionData.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsClientRankingModelOutput.proto";
+import "snapchat/ads/request/schema/SCAdsClientRankingFeatures.proto";
+import "snapchat/ads/request/schema/SCAdsRTBTrackData.proto";
+import "snapchat/ads/request/schema/SCAdsFailureToDeliverReason.proto";
+import "snapchat/ads/request/schema/SCAdsAdInsertionConfig.proto";
+import "snapchat/ads/request/schema/SCAdsClientAdFreshStatus.proto";
+import "snapchat/ads/request/schema/SCAdsDisplayedPreRollAdInfo.proto";
+import "snapchat/ads/request/schema/SCAdsClientCrawlAttempt.proto";
+
+message SCAdsAdTrackItem {
+	bytes encryptedAdTrackData = 1;
+	snapchat.ads.request.schema.SCAdsImpressionData impressionData = 2;
+	google.protobuf.GPBStringValue sessionId = 3;
+	google.protobuf.GPBInt32Value trackSeqNum = 4;
+	google.protobuf.GPBInt32Value attemptSeqNum = 5;
+	google.protobuf.GPBBoolValue clientRankingNoShow = 6;
+	snapchat.ads.request.schema.SCAdsClientRankingModelOutput clientRankingModelOutput = 7;
+	snapchat.ads.request.schema.SCAdsClientRankingFeatures clientRankingFeatures = 8;
+	bytes opportunityRequestId = 9;
+	snapchat.ads.request.schema.SCAdsRTBTrackData rtbTrackData = 10;
+	snapchat.ads.request.schema.SCAdsFailureToDeliverReason failureToDeliverReason = 11;
+	snapchat.ads.request.schema.SCAdsAdInsertionConfig adInsertionConfig = 12;
+	snapchat.ads.request.schema.SCAdsClientAdFreshStatus adFreshStatus = 13;
+	snapchat.ads.request.schema.SCAdsDisplayedPreRollAdInfo displayedPreRollAdInfo = 14;
+	bytes serveItemId = 15;
+	repeated snapchat.ads.request.schema.SCAdsClientCrawlAttempt clientAttemptedCrawlsArray = 16;
+	google.protobuf.GPBBoolValue isIntermediateTrack = 17;
+
+	enum SCAdsAdTrackTriggerType {
+		UNSET_AD_END = 0;
+		TOP_SNAP_PLAYBACK_STARTED = 1;
+		AD_ATTACHMENT_TRIGGERED = 2;
+		AGGREGATION = 3;
+	}
+
+	SCAdsAdTrackTriggerType adTrackTriggerType = 18;
+	google.protobuf.GPBInt32Value adViewSeqNum = 19;
+	google.protobuf.GPBBoolValue isSpectrumTrackEnabled = 20;
+}

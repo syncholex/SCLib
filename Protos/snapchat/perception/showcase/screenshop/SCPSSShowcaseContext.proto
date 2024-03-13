@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSShowcaseCOFConfig.proto";
+
+message SCPSSShowcaseContext {
+	repeated snapchat.perception.showcase.screenshop.SCPSSShowcaseCOFConfig experimentsArray = 1;
+}

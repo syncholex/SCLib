@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.store;
+
+import "com/snapchat/commerce/domain/store/StoreInfo.proto";
+import "com/snapchat/commerce/wire/error/CommerceApiServiceError.proto";
+
+message GetStoreInfoResponse {
+
+	oneof response {
+		com.snapchat.commerce.domain.store.StoreInfo storeInfo = 1;
+		com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+	}
+
+	string requestId = 3;
+}

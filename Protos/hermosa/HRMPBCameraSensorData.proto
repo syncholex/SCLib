@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBCameraSensorData {
+	uint32 agc = 1;
+	uint32 dgc = 2;
+	uint32 startEvIndex = 3;
+	uint32 endEvIndex = 4;
+	int32 startTemperature = 5;
+	int32 endTemperature = 6;
+	uint32 shutterTimeUs = 7;
+	uint32 alsValue = 8;
+	uint32 alsEvLutIndex = 9;
+	int32 startTemperatureVin1 = 10;
+	int32 endTemperatureVin1 = 11;
+}

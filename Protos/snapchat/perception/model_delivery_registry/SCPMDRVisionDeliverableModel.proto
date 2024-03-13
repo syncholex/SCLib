@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRVisionDeliverableModel_Identifier.proto";
+import "snapchat/perception/apple_vision/SCPVNModel.proto";
+
+message SCPMDRVisionDeliverableModel {
+	snapchat.perception.model_delivery_registry.SCPMDRVisionDeliverableModel_Identifier identifier = 1;
+	snapchat.perception.apple_vision.SCPVNModel model = 2;
+}

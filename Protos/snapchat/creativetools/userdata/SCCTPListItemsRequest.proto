@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/common/SCCTPPagination.proto";
+import "snapchat/creativetools/common/SCCTPCTRequestParams.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCCTPListItemsRequest {
+
+	enum SCCTPUserdataCategory {
+		USERDATA_CATEGORY_UNSET = 0;
+		USERDATA_CATEGORY_FAVORITES = 1;
+		USERDATA_CATEGORY_MUSIC_FAVORITES = 2;
+		USERDATA_CATEGORY_PREVIEW_RECENTS = 3;
+		USERDATA_CATEGORY_CHAT_RECENTS = 4;
+		USERDATA_CATEGORY_MUSIC_RECENTS = 5;
+	}
+
+	SCCTPUserdataCategory category = 1;
+	snapchat.creativetools.common.SCCTPPagination pagination = 3;
+
+	enum SCCTPCTItem_Type {
+		UNSET = 0;
+		SNAP_STICKER = 1;
+		BITMOJI_STICKER = 2;
+		CUSTOM_STICKER = 3;
+		EMOJI = 4;
+		GIPHY = 5;
+		MUSIC_STICKER = 19;
+		CAMEO = 20;
+		MEMORIES = 21;
+		STICKER_PACK = 22;
+		TARGETED_ITEM = 23;
+		INFO_STICKER = 25;
+		CAPTION_STYLE = 26;
+		MUSIC_TRACK = 27;
+		CHAT_CAMEO = 28;
+		SERVER_CAMEO = 29;
+		GFYCAT = 30;
+		CUSTOM_STICKER_PACK = 31;
+		CHAT_REACTION = 32;
+		FILTER = 33;
+		SHOPPING_STICKER = 34;
+		MUSIC_ARTIST = 35;
+		DRAWING = 36;
+		LOTTIE = 37;
+		AUTO_CAPTIONS = 38;
+		PROXY_ITEM = 39;
+		CAMERA_ROLL_STICKER = 40;
+		LENS = 41;
+		TEMPLATE = 42;
+		LENS_SNAPCHAT = 43;
+	}
+
+	repeated SCCTPCTItem_Type typesArray = 4 [packed=true];
+	bool includeBackfill = 5;
+	snapchat.creativetools.common.SCCTPCTRequestParams requestParams = 6;
+	google.protobuf.GPBTimestamp minTimestampFilter = 7;
+}

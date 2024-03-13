@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/local/verrazano/VRZPopularityDetails_DistributionDetails_WifiParam.proto";
+import "snapchat/local/verrazano/VRZPopularityDetails_DistributionDetails_TimeOfDayParam.proto";
+import "snapchat/local/verrazano/VRZPopularityDetails_DistributionDetails_DayOfWeekParam.proto";
+
+message VRZPopularityDetails_DistributionDetails {
+	float shapeSigma = 1;
+	float shapeWeight = 2;
+	snapchat.geo.SPCGPoint checkinCentroid = 3;
+	float shapeSigmaX = 4;
+	float shapeSigmaY = 5;
+	float shapeSigmaRho = 6;
+	float elevationAvgM = 7;
+	float elevationStdM = 8;
+	float fencePositiveRate = 9;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_DistributionDetails_WifiParam wifiParamsArray = 10;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_DistributionDetails_TimeOfDayParam timeOfDayParamsArray = 11;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_DistributionDetails_DayOfWeekParam dayOfWeekParamsArray = 12;
+}

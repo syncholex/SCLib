@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPImpressionRecord {
+	ranking.core.SCCORECompositeStoryId id_p = 1;
+	int64 firstImpressionMsec = 2;
+	int64 expTimestampMsec = 3;
+}

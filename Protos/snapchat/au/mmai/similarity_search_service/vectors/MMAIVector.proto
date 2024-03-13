@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.vectors;
+
+message MMAIVector {
+	repeated float valueArray = 1 [packed=true];
+	repeated int64 shapeArray = 2 [packed=true];
+}

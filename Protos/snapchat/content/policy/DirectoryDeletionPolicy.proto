@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+message DirectoryDeletionPolicy {
+	string rootDir = 1;
+	int32 maxDepth = 2;
+	int32 maxMatchCount = 3;
+	int32 stalenessDeletionThresholdSec = 4;
+	bool actuallyDelete = 5;
+}

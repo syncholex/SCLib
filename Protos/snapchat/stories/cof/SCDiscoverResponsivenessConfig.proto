@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCDiscoverResponsivenessConfig {
+	int32 nfsInteractionHistoryUploadLimit = 1;
+	int32 actionThresholdInSecond = 2;
+}

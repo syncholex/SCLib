@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/streaming/SCMTOneSnapInfo.proto";
+import "snapchat/streaming/SCMTPublicMediaInfo.proto";
+
+message SCR2SnapMediaInfo {
+
+	enum SCR2MediaInfo_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND = 3;
+		BLOB = 4;
+		LAGUNA = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+	}
+
+	SCR2MediaInfo_MediaType mediaType = 1;
+	string mediaURL = 2;
+	string mediaId = 3;
+	string mediaIv = 4;
+	string mediaKey = 5;
+	bool isZipped = 6;
+	double duration = 7;
+	bool isInfiniteDuration = 8;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 9;
+	snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 10;
+	snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 11;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CommerceInfo_CommerceStoreInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility.proto";
+
+message SCCTXContextClientInfo_CommerceInfo {
+	repeated snapchat.context2.api.SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo commerceItemInfoArray = 1;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_CommerceInfo_CommerceStoreInfo commerceStoreInfoArray = 2;
+	snapchat.context2.api.SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility screenshopSnapEligibility = 3;
+}

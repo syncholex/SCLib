@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXSpotlightSubscribeInfo_SubscribeInfo_UserInfo {
+	snapchat.core.SCCOREUUID uuid = 1;
+}

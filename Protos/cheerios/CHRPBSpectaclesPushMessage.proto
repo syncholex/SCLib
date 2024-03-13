@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBSpectaclesPushMessage_InvalidatedRequest.proto";
+import "cheerios/CHRPBMediaCountsMessage.proto";
+import "cheerios/CHRPBCrashReport.proto";
+import "cheerios/CHRPBCheeriosEventPb.proto";
+import "cheerios/CHRPBEmpty.proto";
+
+message CHRPBSpectaclesPushMessage {
+	string logMessage = 1;
+
+	enum CHRPBSpectaclesPushMessage_LogLevel {
+		DEBUG_UNSET = 0;
+		INFO = 1;
+		WARNING = 2;
+		ERROR = 3;
+		VERBOSE = 4;
+	}
+
+	CHRPBSpectaclesPushMessage_LogLevel logLevel = 2;
+	uint32 msSinceBoot = 3;
+
+	oneof payload {
+		cheerios.CHRPBSpectaclesPushMessage_InvalidatedRequest invalidatedRequest = 4;
+		cheerios.CHRPBMediaCountsMessage mediaCounts = 5;
+		cheerios.CHRPBCrashReport crashReport = 6;
+		cheerios.CHRPBCheeriosEventPb cheeriosEvent = 7;
+		cheerios.CHRPBEmpty requestLocationForCamera = 8;
+	}
+
+}

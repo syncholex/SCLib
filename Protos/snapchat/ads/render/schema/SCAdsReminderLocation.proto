@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "google/protobuf/GPBDoubleValue.proto";
+
+message SCAdsReminderLocation {
+	google.protobuf.GPBDoubleValue latitude = 1;
+	google.protobuf.GPBDoubleValue longitude = 2;
+	google.protobuf.GPBDoubleValue radius = 3;
+}

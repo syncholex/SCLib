@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/SCAppInsightsVideoFormat.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsAudioFormat.proto";
+
+message SCAppInsightsEncoderConfiguration {
+	snapchat.appinsights.metadata.SCAppInsightsVideoFormat videoFormat = 1;
+	snapchat.appinsights.metadata.SCAppInsightsAudioFormat audioFormat = 2;
+}

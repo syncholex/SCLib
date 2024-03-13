@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+message SCCTPUserDataCTPIDResult {
+	bytes id_p = 1;
+
+	enum SCCTPErrorCode {
+		NO_ERROR_UNSET = 0;
+		OTHER = 1;
+		ITEM_BLOCKED = 2;
+	}
+
+	SCCTPErrorCode errorCode = 2;
+}

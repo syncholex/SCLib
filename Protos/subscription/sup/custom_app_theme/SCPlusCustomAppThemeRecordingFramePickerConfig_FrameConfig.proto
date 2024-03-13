@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeCamera_RecordingFrame.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeCamera_BlinkingGhost.proto";
+
+message SCPlusCustomAppThemeRecordingFramePickerConfig_FrameConfig {
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeCamera_RecordingFrame border = 1;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeCamera_BlinkingGhost blinkingGhost = 2;
+}

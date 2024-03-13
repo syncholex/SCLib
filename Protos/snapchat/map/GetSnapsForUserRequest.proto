@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message GetSnapsForUserRequest {
+	string userId = 1;
+	int64 startFromEpochMs = 3;
+	int64 endAtEpochMs = 4;
+	bool includeTakenDownSnaps = 5;
+	bool includeDeletedSnaps = 6;
+}

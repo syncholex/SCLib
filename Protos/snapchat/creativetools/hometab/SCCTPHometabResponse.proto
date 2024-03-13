@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.hometab;
+
+import "snapchat/creativetools/sectioned_results/SCCTPSectionedResults.proto";
+
+message SCCTPHometabResponse {
+	snapchat.creativetools.sectioned_results.SCCTPSectionedResults results = 1;
+}

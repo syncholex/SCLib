@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLowPowerModeMessage {
+
+	enum HRMPBLowPowerModeLevel {
+		DISABLED = 0;
+		FULL_THROTTLING = 1;
+		PENDING = 2;
+	}
+
+	HRMPBLowPowerModeLevel level = 1;
+	bool persistent = 2;
+}

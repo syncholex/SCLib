@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacExternalUserProfilesFullUserProfile.proto";
+
+message SCCognacExternalUserProfilesBatchGetExternalUserProfileResponse {
+	repeated cognac.SCCognacExternalUserProfilesFullUserProfile userProfilesArray = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbGetLensSpacesMetadataRequest {
+	repeated string lensSpaceIdsArray = 1;
+}

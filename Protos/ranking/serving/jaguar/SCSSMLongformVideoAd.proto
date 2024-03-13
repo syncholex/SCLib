@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLongformVideoInterval.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCSSMLongformVideoAd {
+	ranking.serving.jaguar.SCSSMLongformVideoInterval videoInterval = 1;
+	bytes adPlacementMetadata = 2;
+	float score = 3;
+	google.protobuf.GPBFloatValue scoreValue = 4;
+}

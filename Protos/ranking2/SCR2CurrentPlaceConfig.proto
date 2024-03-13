@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+
+message SCR2CurrentPlaceConfig {
+	bool usePlacesApi = 1;
+	float singlePlaceThreshold = 2;
+	float multiPlaceThreshold = 3;
+	int32 multiPlaceMaxCount = 4;
+	float minConfidenceThreshold = 5;
+	ranking2.SCR2GeoLocation geoLocation = 6;
+}

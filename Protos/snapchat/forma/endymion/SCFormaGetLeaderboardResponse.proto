@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion;
+
+import "snapchat/forma/endymion/SCFormaFormaItemLens.proto";
+import "snapchat/forma/endymion/SCFormaPCSItemLens.proto";
+import "snapchat/forma/endymion/SCFormaTopUser.proto";
+
+message SCFormaGetLeaderboardResponse {
+
+	oneof lens {
+		snapchat.forma.endymion.SCFormaFormaItemLens formaItemLens = 1;
+		snapchat.forma.endymion.SCFormaPCSItemLens pcsItemLens = 2;
+	}
+
+	repeated snapchat.forma.endymion.SCFormaTopUser topUsersArray = 3;
+}

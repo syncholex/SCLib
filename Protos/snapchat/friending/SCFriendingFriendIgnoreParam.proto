@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFriendingFriendIgnoreParam {
+	snapchat.core.SCCOREUUID friendId = 1;
+}

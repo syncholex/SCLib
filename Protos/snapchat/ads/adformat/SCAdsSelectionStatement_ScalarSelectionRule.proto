@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/adformat/SCAdsFormatSelectionStatement.proto";
+
+message SCAdsSelectionStatement_ScalarSelectionRule {
+	repeated snapchat.ads.adformat.SCAdsFormatSelectionStatement formatSelectionRulesArray = 1;
+}

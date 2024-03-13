@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforcePropertyPath.proto";
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforcePropertyMutation {
+	com.snapchat.deltaforce.SCDeltaforcePropertyPath propPath = 1;
+
+	oneof mutation {
+		com.snapchat.deltaforce.SCDeltaforceValue replaceWith = 2;
+		bool deleteProperty = 3;
+	}
+
+}

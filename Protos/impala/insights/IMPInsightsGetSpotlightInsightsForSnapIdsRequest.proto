@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/common/IMPClientInfo.proto";
+
+message IMPInsightsGetSpotlightInsightsForSnapIdsRequest {
+	repeated string snapIdArray = 1;
+	string businessId = 2;
+	impala.common.IMPClientInfo clientInfo = 3;
+}

@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBFideliusKeys.proto";
+
+message HRMPBUserAssociationRequest {
+	string accessToken = 1;
+	string refreshToken = 2;
+	uint64 expirationTimeMs = 3;
+	string userId = 4;
+	string displayName = 5;
+	string bitmojiAvatarId = 6;
+	string bitmojiSelfieId = 7;
+	string snapadsId = 9;
+	string email = 10;
+	hermosa.HRMPBFideliusKeys fideliusKeys = 11;
+	string userName = 12;
+	uint64 birthDate = 13;
+}

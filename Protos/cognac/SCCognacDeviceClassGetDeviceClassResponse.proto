@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacDeviceClassGetDeviceClassResponse {
+	int32 deviceClass = 1;
+}

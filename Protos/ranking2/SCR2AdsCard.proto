@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/Advertisement.proto";
+
+message SCR2AdsCard {
+	string title = 1;
+	repeated string subTitlesArray = 2;
+	string thumbnailURL = 3;
+	repeated ranking2.Advertisement adsArray = 4;
+}

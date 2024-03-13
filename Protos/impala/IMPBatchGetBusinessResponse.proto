@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness.proto";
+
+message IMPBatchGetBusinessResponse {
+	repeated impala.IMPBusiness businessesArray = 1;
+}

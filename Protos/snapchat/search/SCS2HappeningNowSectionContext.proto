@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2HappeningNowSectionContext_Weather.proto";
+import "snapchat/search/SCS2Publisher.proto";
+
+message SCS2HappeningNowSectionContext {
+	snapchat.search.SCS2HappeningNowSectionContext_Weather weather = 1;
+	snapchat.search.SCS2Publisher publisher = 2;
+}

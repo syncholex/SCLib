@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsDiscoverChannelMetadata {
+	string inventoryFullyQualified = 1;
+	string channel = 2;
+	string channelId = 3;
+	string productType = 4;
+	string publisher = 5;
+	int64 publisherId = 6;
+	int64 editionId = 7;
+	string posterId = 8;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPLensEngagementStats.proto";
+
+message SCSUPLensEngagement {
+	ranking.pii.user.profile.SCSUPLensEngagementStats lensStats = 1;
+	ranking.pii.user.profile.SCSUPLensEngagementStats aggregatedLensStats = 2;
+}

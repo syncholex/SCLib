@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.profile.v1;
+
+message SCBitmojiBitmojiBackgroundURL {
+
+	enum SCBitmojiBitmojiBackgroundURL_BackgroundType {
+		BACKGROUND_URL_TYPE_UNSET = 0;
+		GENERATIVE = 1;
+	}
+
+	SCBitmojiBitmojiBackgroundURL_BackgroundType type = 1;
+	string backgroundURL = 2;
+}

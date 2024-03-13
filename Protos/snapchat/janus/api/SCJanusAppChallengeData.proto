@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusTransparentChallenge.proto";
+import "snapchat/janus/api/SCJanusCommunicationChannelInputChallenge.proto";
+import "snapchat/janus/api/SCJanusCommunicationChannelVerificationChallenge.proto";
+import "snapchat/janus/api/SCJanusWebViewChallenge.proto";
+import "snapchat/janus/api/SCJanusPasskeyAuthenticationChallenge.proto";
+
+message SCJanusAppChallengeData {
+	repeated snapchat.janus.api.SCJanusTransparentChallenge transparentChallengesArray = 1;
+
+	oneof visibleChallenge {
+		snapchat.janus.api.SCJanusCommunicationChannelInputChallenge communicationChannelInputChallenge = 6;
+		snapchat.janus.api.SCJanusCommunicationChannelVerificationChallenge communicationChannelVerificationChallenge = 7;
+		snapchat.janus.api.SCJanusWebViewChallenge webViewChallenge = 8;
+		snapchat.janus.api.SCJanusPasskeyAuthenticationChallenge passkeyAuthenticationChallenge = 9;
+	}
+
+}

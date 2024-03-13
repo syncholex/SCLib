@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusChannelVerificationData {
+	string channelVerificationFlowToken = 1;
+
+	enum SCJanusChannelVerificationType {
+		CHANNEL_VERIFICATION_TYPE_UNSET = 0;
+		CHANNEL_VERIFICATION_TYPE_EMAIL = 1;
+	}
+
+	SCJanusChannelVerificationType channelVerificationType = 2;
+}

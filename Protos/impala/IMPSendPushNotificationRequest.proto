@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPushNotificationData.proto";
+
+message IMPSendPushNotificationRequest {
+
+	enum IMPPushNotificationType {
+		IMPALA_PUSH_NOTIFICATION_TYPE_UNKNOWN = 0;
+		IMPALA_PUSH_NOTIFICATION_TYPE_PENDING_INVITE = 1;
+		IMPALA_PUSH_NOTIFICATION_TYPE_ADDED_AS_MEMBER = 2;
+		IMPALA_PUSH_NOTIFICATION_TYPE_INVITE_ACCEPTED = 3;
+		IMPALA_PUSH_NOTIFICATION_TYPE_STORY_CONTRIBUTION = 4;
+		IMPALA_PUSH_NOTIFICATION_TYPE_PROFILE_UPDATED = 5;
+		IMPALA_PUSH_NOTIFICATION_TYPE_ROLE_UPDATED = 6;
+		IMPALA_PUSH_NOTIFICATION_TYPE_STORY_MILESTONE = 7;
+		IMPALA_PUSH_NOTIFICATION_TYPE_STORY_DELETED = 8;
+		IMPALA_PUSH_NOTIFICATION_TYPE_ROLE_REMOVED = 9;
+	}
+
+	IMPPushNotificationType type = 1;
+	string recipientUserId = 2;
+	string senderUserId = 3;
+	impala.IMPPushNotificationData clientData = 4;
+	string businessTitle = 5;
+	string roleType = 6;
+	string milestoneMessageType = 7;
+	string inviterUserId = 8;
+}

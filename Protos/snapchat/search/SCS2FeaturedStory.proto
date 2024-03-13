@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2FeaturedStory_JaguarCompositeId.proto";
+
+message SCS2FeaturedStory {
+	string id_p = 1;
+	string title = 2;
+	string thumbnailURL = 3;
+	snapchat.search.SCS2FeaturedStory_JaguarCompositeId jaguarCompositeId = 4;
+	string locality = 5;
+	string label = 6;
+	int64 updatedAtMs = 7;
+}

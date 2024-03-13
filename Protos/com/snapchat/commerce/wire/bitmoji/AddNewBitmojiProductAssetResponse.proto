@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.bitmoji;
+
+import "com/snapchat/commerce/wire/bitmoji/AddNewBitmojiProductAssetResponse_AddNewBitmojiProductAssetResult.proto";
+import "com/snapchat/commerce/wire/error/CommerceApiServiceError.proto";
+
+message AddNewBitmojiProductAssetResponse {
+
+	oneof response {
+		com.snapchat.commerce.wire.bitmoji.AddNewBitmojiProductAssetResponse_AddNewBitmojiProductAssetResult result = 1;
+		com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+	}
+
+	string requestId = 3;
+}

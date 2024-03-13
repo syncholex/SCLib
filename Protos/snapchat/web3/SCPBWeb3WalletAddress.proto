@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3SolanaAddress.proto";
+
+message SCPBWeb3WalletAddress {
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsAdUATInfoCardConfig_AdUATInfoCardStyleConfig.proto";
+
+message SCAdsAdUATInfoCardConfig_AdProductToConfigMap {
+
+	enum SCAdsAdBaseConfig_AdProductType {
+		UNKNOWN_PRODUCT_TYPE_UNSET = 0;
+		USER_STORIES = 1;
+		CONTENT_INTERSTITIAL = 2;
+		PUBLISHER = 3;
+		SHOWS = 4;
+		PUBLIC_USER_STORY = 5;
+		COGNAC = 6;
+		SPOTLIGHT_FEED = 7;
+		MAP = 8;
+		PROMOTED_STORIES = 9;
+		SHARE_IN_CHAT = 10;
+	}
+
+	SCAdsAdBaseConfig_AdProductType adProduct = 1;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_AdUATInfoCardStyleConfig config = 2;
+
+	enum SCAdsAdBaseConfig_AdType {
+		UNKNOWN_AD_TYPE_UNSET = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		NO_FILL = 5;
+		STORY = 6;
+		DEEP_LINK_ATTACHMENT = 7;
+		AD_TO_LENS = 8;
+		COLLECTION = 9;
+		AD_TO_CALL = 10;
+		AD_TO_MESSAGE = 11;
+		AD_TO_PLACE = 12;
+		LEAD_GENERATION = 13;
+		SHOWCASE = 14;
+		PROMOTE_PUBLISHER_STORY = 15;
+		REMINDER = 16;
+		SURVEY = 17;
+	}
+
+	repeated SCAdsAdBaseConfig_AdType excludedAdTypesArray = 3 [packed=true];
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetRecentWatchedStatesForUserRequest {
+	string userId = 1;
+	int32 maxHistoryPerShow = 2;
+	int64 afterTimestampMs = 3;
+}

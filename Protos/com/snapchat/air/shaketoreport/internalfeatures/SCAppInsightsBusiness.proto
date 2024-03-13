@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsBusiness {
+
+	enum SCAppInsightsBusiness_Subfeature {
+		UNSET = 0;
+		PUBLIC_PROFILE = 1;
+		CREATOR_MARKETPLACE = 2;
+	}
+
+	SCAppInsightsBusiness_Subfeature subfeature = 1;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.webview;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/webview/SCWebViewResourceInfo.proto";
+import "snapchat/webview/SCAdsWebViewInHouseCache.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsWebViewMetadata {
+	string id_p = 1;
+	string baseURL = 2;
+	repeated google.protobuf.GPBStringValue gaScriptsUrlsArray = 3;
+	google.protobuf.GPBStringValue snapPixelScriptURL = 4;
+	google.protobuf.GPBStringValue resourcePrefetchHintsURL = 5;
+	repeated snapchat.webview.SCWebViewResourceInfo renderCriticalResourcesArray = 6;
+	snapchat.webview.SCAdsWebViewInHouseCache inhouseCache = 7;
+	google.protobuf.GPBBoolValue hasServerRedirect = 8;
+	google.protobuf.GPBStringValue serverRedirectResolvedURLMatchPrefix = 9;
+	google.protobuf.GPBInt64Value expectedServerRedirectCount = 10;
+	string webviewPrefetchHintsURL = 11;
+	google.protobuf.GPBBoolValue enablePreload = 12;
+}

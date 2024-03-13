@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceCondition.proto";
+
+message SCDeltaforceCompositeCondition {
+
+	enum SCDeltaforceCompositeCondition_Operator {
+		AND = 0;
+		OR = 1;
+	}
+
+	SCDeltaforceCompositeCondition_Operator operator_p = 2;
+	repeated com.snapchat.deltaforce.SCDeltaforceCondition conditionArray = 3;
+}

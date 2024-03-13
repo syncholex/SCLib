@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message GetMapStoryElementRequest {
+	string snapId = 1;
+}

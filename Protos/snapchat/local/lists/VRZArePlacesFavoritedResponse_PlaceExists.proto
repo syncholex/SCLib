@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+message VRZArePlacesFavoritedResponse_PlaceExists {
+	string placeId = 1;
+	bool presentOnList = 2;
+}

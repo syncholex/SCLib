@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPImpressionReceipt.proto";
+
+message SCSUPReadReceipt {
+	bytes readStories = 1;
+	bytes completeStories = 2;
+	int64 lastUpdatedTimestampInMsecs = 3;
+	repeated ranking.pii.user.profile.SCSUPImpressionReceipt impressionReceiptsArray = 4;
+}

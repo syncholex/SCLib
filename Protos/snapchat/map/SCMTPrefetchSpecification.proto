@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPrefetchSpecification {
+
+	enum SCMTPrefetchSpecification_Method {
+		UNKNOWN = 0;
+		HTTP_GET = 1;
+		HTTP_POST = 2;
+	}
+
+	SCMTPrefetchSpecification_Method method = 1;
+	string URL = 2;
+}

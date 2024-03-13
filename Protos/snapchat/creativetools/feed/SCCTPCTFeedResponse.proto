@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.feed;
+
+import "snapchat/creativetools/common/SCCTPCTFeedNode.proto";
+
+message SCCTPCTFeedResponse {
+	snapchat.creativetools.common.SCCTPCTFeedNode root = 1;
+}

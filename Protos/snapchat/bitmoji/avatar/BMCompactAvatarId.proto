@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.avatar;
+
+message BMCompactAvatarId {
+	uint64 id_p = 1;
+	uint32 version = 2;
+
+	enum BMAvatarStyle {
+		STYLE_UNSET = 0;
+		BITSTRIPS = 1;
+		BITMOJI_CLASSIC = 4;
+		BITMOJI_DELUXE = 5;
+	}
+
+	BMAvatarStyle style = 3;
+}

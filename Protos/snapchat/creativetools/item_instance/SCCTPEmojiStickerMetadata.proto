@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPEmojiStickerMetadata {
+
+	enum SCCTPEmojiStickerMetadata_SkinTone {
+		SKINTONE_UNSPECIFIED = 0;
+		DEFAULT = 1;
+		LIGHT = 2;
+		MEDIUM_LIGHT = 3;
+		MEDIUM = 4;
+		MEDIUM_DARK = 5;
+		DARK = 6;
+	}
+
+	SCCTPEmojiStickerMetadata_SkinTone skinTone = 1;
+}

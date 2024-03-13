@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsInteractiveGridFourTileOffsetColumnsConfig {
+	int32 columnVerticalOffset = 1;
+	int32 spaceBetweenTiles = 2;
+	int32 horizontalPadding = 3;
+	float tileImageAspectRatio = 4;
+	string tileWidth = 5;
+	int32 topMargin = 6;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREExplorationIndexCohortMetadata {
+	string cohort = 1;
+	int32 streamSize = 2;
+	float totalHourAge = 3;
+	int32 totalNumStoryViews = 4;
+	int32 numZeroViewStories = 5;
+	string country = 6;
+	string language = 7;
+}

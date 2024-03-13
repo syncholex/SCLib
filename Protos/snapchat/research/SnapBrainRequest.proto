@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainRequest_Face.proto";
+import "snapchat/research/SnapBrainRequest_SnapLang.proto";
+import "snapchat/research/SnapBrainRequest_Tag.proto";
+import "snapchat/research/SnapBrainRequest_LogoDetection.proto";
+import "snapchat/research/SnapBrainRequest_SnapText.proto";
+import "snapchat/research/SnapBrainRequest_Safety.proto";
+
+message SnapBrainRequest {
+
+	oneof media {
+		bytes mediaString = 1;
+		string mediaURL = 2;
+	}
+
+
+	enum SnapBrainRequest_MediaType {
+		UNKNOWN = 0;
+		IMAGE_JPG = 1;
+		VIDEO_MP4 = 2;
+		AUDIO_WAV = 3;
+	}
+
+	SnapBrainRequest_MediaType mediaType = 3;
+
+	enum Analyzer {
+		length = 0;
+		tag_v1 = 1;
+		quality_v1 = 2;
+		face_v1 = 3;
+		interestingness_v1 = 4;
+		audiofp_v1 = 5;
+		hydra_v1 = 6;
+		open_nsfw = 7;
+		mediainfo_v1 = 8;
+		spokenkeywords_v1 = 9;
+		logo_detection_v1 = 10;
+		snaplang_v1 = 11;
+		tag_v2 = 12;
+		euler_angles_v1 = 13;
+		spokenkeywords_v2 = 14;
+		object_detection_v1 = 15;
+		music_v1 = 16;
+		context_v1 = 17;
+		product_v1 = 18;
+		safety_v1 = 19;
+		snap_text_v1 = 20;
+		sound_v1 = 21;
+		tag_lite = 22;
+		face_frontalizer_v1 = 23;
+		discover_tags_v1 = 24;
+		sound_v2 = 25;
+	}
+
+	repeated Analyzer analyzersArray = 4 [packed=true];
+	string overlayText = 5;
+	string username = 6;
+	snapchat.research.SnapBrainRequest_Face faceOptions = 7;
+	snapchat.research.SnapBrainRequest_SnapLang snaplangOptions = 8;
+	snapchat.research.SnapBrainRequest_Tag tagOptions = 9;
+	snapchat.research.SnapBrainRequest_LogoDetection detectionOptions = 10;
+	string responsesTopic = 11;
+	float validateVideoDurationLimit = 12;
+	snapchat.research.SnapBrainRequest_SnapText snapTextOptions = 13;
+	snapchat.research.SnapBrainRequest_Safety safetyOptions = 14;
+	string responsePubsubTopic = 15;
+	string callbackURL = 16;
+
+	enum SnapBrainRequest_Orientation {
+		UP = 0;
+		DOWN = 1;
+		LEFT = 2;
+		RIGHT = 3;
+	}
+
+	SnapBrainRequest_Orientation orientation = 17;
+}

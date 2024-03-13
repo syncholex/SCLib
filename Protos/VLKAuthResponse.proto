@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+import "VLKAuthRequest.proto";
+
+message VLKAuthResponse {
+	VLKAuthRequest requestInfo = 1;
+	bytes responseData = 2;
+}

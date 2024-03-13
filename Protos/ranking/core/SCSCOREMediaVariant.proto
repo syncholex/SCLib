@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREMediaVariant {
+	int32 variantName = 1;
+	string URL = 2;
+}

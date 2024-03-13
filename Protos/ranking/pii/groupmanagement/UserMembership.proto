@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message UserMembership {
+	ranking.core.SCSCOREUUID userId = 1;
+
+	enum SCSCORECustomStoryMembership_Enum {
+		UNKNOWN = 0;
+		VIEWER = 1;
+		POSTER = 2;
+		OWNER = 3;
+		MODERATOR = 4;
+	}
+
+	SCSCORECustomStoryMembership_Enum membership = 2;
+	bool isBlocked = 3;
+	string username = 4;
+	string displayname = 5;
+	bool autoSaveToMemories = 6;
+	int64 joinedTsMs = 7;
+}

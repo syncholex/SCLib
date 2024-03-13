@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULLensResponse.proto";
+
+message SCULGtqUnlockablesByIdResponse {
+	snapchat.unlockables.response.schema.SCULLensResponse lensResponse = 1;
+	bytes gtqServeResponse = 2;
+}

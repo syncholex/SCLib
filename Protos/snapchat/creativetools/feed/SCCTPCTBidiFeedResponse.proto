@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.feed;
+
+import "snapchat/creativetools/feed/SCCTPCTBidiFeedResponse_FeedTreeResponse.proto";
+import "snapchat/creativetools/feed/SCCTPCTBidiFeedResponse_ComputeResponse.proto";
+
+message SCCTPCTBidiFeedResponse {
+
+	oneof response {
+		snapchat.creativetools.feed.SCCTPCTBidiFeedResponse_FeedTreeResponse feedTreeResponse = 1;
+		snapchat.creativetools.feed.SCCTPCTBidiFeedResponse_ComputeResponse computeResponse = 2;
+	}
+
+}

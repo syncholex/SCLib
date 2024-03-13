@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPImpressionStats.proto";
+
+message SCSUPFeedsImpressions {
+	ranking.pii.user.profile.SCSUPImpressionStats feedTypeImpressionStats = 1;
+	int64 lastTimestampMsec = 2;
+	string userId = 3;
+	ranking.pii.user.profile.SCSUPImpressionStats storyImpressionStats = 4;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3CameraShortcutAction_ShowLenses {
+	bytes gtqServeResponse = 1;
+}

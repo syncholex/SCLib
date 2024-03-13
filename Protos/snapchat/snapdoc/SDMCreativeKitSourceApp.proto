@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMCreativeKitSourceApp {
+	string oauthClientId = 1;
+	string displayName = 2;
+}

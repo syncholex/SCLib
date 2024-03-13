@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message StoryHideState {
+
+	enum StoryHideState_State {
+		STATE_UNKNOWN = 0;
+		STATE_HIDDEN = 1;
+		STATE_UNHIDDEN = 2;
+	}
+
+	StoryHideState_State state = 1;
+	int64 stateTimestampMsecs = 2;
+	int64 stateExpireTimestampMsecs = 3;
+
+	enum EvictionHint {
+		EVICTION_HINT_NONE = 0;
+		EVICTION_HINT_MUST_KEEP = 1;
+	}
+
+	EvictionHint evictionHint = 4;
+	string creatorId = 5;
+
+	enum StoryHideState_HideTarget {
+		HIDE_TARGET_UNKNOWN = 0;
+		HIDE_TARGET_STORY = 1;
+		HIDE_TARGET_CREATOR = 2;
+	}
+
+	StoryHideState_HideTarget hideTarget = 6;
+}

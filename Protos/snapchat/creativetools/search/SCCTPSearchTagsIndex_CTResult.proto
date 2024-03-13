@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPSearchTagsIndex_CTMetadata.proto";
+
+message SCCTPSearchTagsIndex_CTResult {
+	uint32 id_p = 1;
+	snapchat.creativetools.search.SCCTPSearchTagsIndex_CTMetadata metadata = 2;
+}

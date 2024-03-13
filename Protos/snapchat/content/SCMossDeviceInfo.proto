@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+message SCMossDeviceInfo {
+	string userAgent = 1;
+
+	enum SCMossPlatform {
+		UNKNOWN_PLATFORM = 0;
+		ANDROID = 1;
+		IOS = 2;
+		TESTING = 3;
+	}
+
+	SCMossPlatform platform = 2;
+	int32 deviceCluster = 3;
+}

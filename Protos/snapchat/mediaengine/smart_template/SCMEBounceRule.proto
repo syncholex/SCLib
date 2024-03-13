@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+message SCMEBounceRule {
+	bool easeInOut = 1;
+}

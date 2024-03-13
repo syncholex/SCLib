@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message DeletePaymentMethodResponse {
+
+	enum DeletePaymentMethodResponse_DeleteStatus {
+		UNSET = 0;
+		DELETED = 1;
+		CANNOT_DELETE = 2;
+		ERROR = 3;
+	}
+
+	DeletePaymentMethodResponse_DeleteStatus status = 1;
+}

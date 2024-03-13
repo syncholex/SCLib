@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/common/lead_generation/SCAdsProtoLeadGenerationFieldIdentifier.proto";
+
+message SCAdsProtoRenderLeadGeneration_FieldRequest {
+	snapchat.ads.common.lead_generation.SCAdsProtoLeadGenerationFieldIdentifier identifier = 1;
+	bool required = 2;
+	string label = 3;
+	repeated string subFieldLabelsArray = 4;
+}

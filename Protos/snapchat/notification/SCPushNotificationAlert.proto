@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationAlert {
+	string title = 1;
+	string body = 2;
+}

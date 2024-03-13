@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsComposerCtaConfig {
+	bool enableV1 = 1;
+
+	enum SCAdsComposerCtaConfig_AdCtaType {
+		UNSET = 0;
+		PILL = 1;
+		INFO_CARD = 2;
+		COLLECTION_CARD = 3;
+	}
+
+	repeated SCAdsComposerCtaConfig_AdCtaType supportedCtaTypesArray = 4 [packed=true];
+
+	enum SCAdsComposerCtaConfig_AdProductType {
+		USER_STORIES_UNSET = 0;
+		CONTENT_INTERSTITIAL = 1;
+		PUBLISHER = 2;
+		SHOWS = 3;
+		PUBLIC_USER_STORY = 4;
+		COGNAC = 5;
+		SPOTLIGHT = 6;
+		MAP = 7;
+		PROMOTED_STORIES = 8;
+	}
+
+	repeated SCAdsComposerCtaConfig_AdProductType supportedProductTypesArray = 5 [packed=true];
+	bool enableDpa = 6;
+	bool enableUab = 7;
+	bool enableUat = 8;
+}

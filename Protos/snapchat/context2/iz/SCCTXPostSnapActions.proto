@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXPostSnapAction.proto";
+
+message SCCTXPostSnapActions {
+	repeated snapchat.context2.iz.SCCTXPostSnapAction actionsArray = 1;
+}

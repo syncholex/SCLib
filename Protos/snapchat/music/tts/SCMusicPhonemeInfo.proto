@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.music.tts;
+
+message SCMusicPhonemeInfo {
+	string phoneme = 1;
+	int32 startTime = 2;
+	int32 endTime = 3;
+	bool isAbusive = 4;
+}

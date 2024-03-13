@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+message VLKNrfAuthRequest {
+
+	enum VLKNrfAuthRequestType {
+		GET_MFI_CERT = 1;
+		GET_SC_CERT = 2;
+		GET_MFI_RESP = 3;
+		GET_APP_AUTH_CHALL = 4;
+		RETURN_APP_AUTH_RESP = 5;
+	}
+
+	VLKNrfAuthRequestType requestType = 1;
+	bytes requestData = 2;
+}

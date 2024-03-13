@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPScoredScc {
+	uint32 longImpressions = 1;
+	float impressionTimeInSecs = 2;
+	uint32 watches = 3;
+	float watchTimeInSecs = 4;
+	float watchTimePerLongImpression = 5;
+	float watchTimePerLongImpressionPercentile = 6;
+	float normalizedWatchTime = 7;
+	float normalizedWatchTimePercentile = 8;
+}

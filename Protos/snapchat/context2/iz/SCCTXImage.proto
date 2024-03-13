@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXImageSource.proto";
+
+message SCCTXImage {
+	snapchat.context2.iz.SCCTXImageSource asset = 1;
+	snapchat.context2.iz.SCCTXImageSource placeholder = 2;
+	int32 placeholderTtlMs = 3;
+
+	enum SCCTXImageTransition {
+		ASSET_ONLY = 0;
+		PLACEHOLDER_ONLY = 1;
+		FLIP = 2;
+		SCALE = 3;
+		FADE = 4;
+	}
+
+	SCCTXImageTransition transition = 4;
+}

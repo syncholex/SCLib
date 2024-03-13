@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+message BackgroundPrefetchConfig {
+	bool enabled = 1;
+	int32 prefetchIntervalInMinutes = 2;
+	int32 executionTimeoutInMinutes = 3;
+	bool isChargingOnly = 4;
+	bool androidUseIndividualWakeup = 5;
+	int32 numOfRetries = 6;
+	repeated int32 prefetchFixedTimeInHoursArray = 7 [packed=true];
+	int32 prefetchTimeJitterInMinutes = 8;
+	bool completePrefetchInBackground = 9;
+	bool isWifiOnly = 10;
+	bool useDefaultAppBackgroundConstraint = 11;
+	bool interruptWhenForegrounded = 12;
+}

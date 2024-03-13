@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPCommonReportInfo.proto";
+
+message IMPInternalReportHighlightSnapRequest {
+	string highlightSnapId = 1;
+	impala.highlights.IMPCommonReportInfo commonInfo = 2;
+}

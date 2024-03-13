@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package validate;
+
+import "google/protobuf/GPBDuration.proto";
+
+message DurationRules {
+	bool required = 1;
+	google.protobuf.GPBDuration const_p = 2;
+	google.protobuf.GPBDuration lt = 3;
+	google.protobuf.GPBDuration lte = 4;
+	google.protobuf.GPBDuration gt = 5;
+	google.protobuf.GPBDuration gte = 6;
+	repeated google.protobuf.GPBDuration inArray = 7;
+	repeated google.protobuf.GPBDuration notInArray = 8;
+}

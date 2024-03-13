@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/EelClientConfig_EnabledMessageTypeConfig.proto";
+import "snapchat/messaging/cof/EelClientConfig_ReEncryptionConfig.proto";
+import "snapchat/messaging/cof/EelClientConfig_ServerConfig.proto";
+import "snapchat/messaging/cof/EelClientConfig_NewDeviceBootstrapConfig.proto";
+import "snapchat/messaging/cof/EelClientConfig_DecryptNoFallbackConfig.proto";
+import "snapchat/messaging/cof/EelClientConfig_EncryptNoFallbackConfig.proto";
+
+message EelClientConfig {
+	snapchat.messaging.cof.EelClientConfig_EnabledMessageTypeConfig oneToOneEnabledMessageTypes = 2;
+	snapchat.messaging.cof.EelClientConfig_ReEncryptionConfig reEncryptionConfig = 3;
+	bool disableDecryptCekFallback = 5;
+	bool forceReEncryption = 6;
+	bool isPrefetchUserKeysEnabled = 7;
+	uint32 snapMultirecipientLimit = 8;
+	snapchat.messaging.cof.EelClientConfig_ServerConfig serverConfig = 9;
+	bool getKeysForUserAsync = 10;
+	snapchat.messaging.cof.EelClientConfig_NewDeviceBootstrapConfig newDeviceBootstrapConfig = 11;
+	uint32 encryptMinRecipientPkVersion = 12;
+	uint32 deviceKeyRefreshMs = 13;
+	uint32 sharedKeyCacheSize = 14;
+	bool isErrorReporterEnabled = 15;
+	uint32 encryptMinRecipientPkVersionDryRun = 17;
+	snapchat.messaging.cof.EelClientConfig_DecryptNoFallbackConfig decryptNoFallbackConfig = 18;
+	snapchat.messaging.cof.EelClientConfig_EncryptNoFallbackConfig encryptNoFallbackConfig = 19;
+	bool isSyncKeysSkipNetworkCheckEnabled = 20;
+	bool removeFallbackKeyDuringSend = 21;
+
+	enum EelClientConfig_UnsyncedMessagesUI {
+		UNSET = 0;
+		PASSIVE = 1;
+		SEMI_BLOCKING = 2;
+	}
+
+	EelClientConfig_UnsyncedMessagesUI unsyncedMessagesUi = 22;
+	bool disableCurrentUserKeyCaching = 23;
+	uint32 refreshCurrentUserKeyDelayUs = 24;
+	bool enableSnapPlaceholderForSender = 25;
+	bool enableSnapPlaceholderForRecipient = 26;
+	bool enableDecryptInitCheck = 27;
+}

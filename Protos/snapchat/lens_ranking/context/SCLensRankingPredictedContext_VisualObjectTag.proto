@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.lens_ranking.context;
+
+message SCLensRankingPredictedContext_VisualObjectTag {
+
+	enum SCLensRankingPredictedContext_VisualObjectLabel {
+		VISUAL_OBJECT_LABEL_UNSET = 0;
+		PERSON = 1;
+		DOG = 2;
+		CAT = 3;
+		CAR = 4;
+		TREE = 5;
+		FOOD = 6;
+	}
+
+	SCLensRankingPredictedContext_VisualObjectLabel label = 1;
+	float score = 2;
+	string freeFormLabel = 3;
+}

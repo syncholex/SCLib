@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message DiscoverClientThumbnailPrefetchingConfig {
+	int32 dfSubscriptionSectionThumbnailPrefetchCountWifi = 1;
+	int32 dfSubscriptionSectionThumbnailPrefetchCountWwan = 2;
+	int32 dfForYouSectionThumbnailPrefetchCountWifi = 3;
+	int32 dfForYouSectionThumbnailPrefetchCountWwan = 4;
+}

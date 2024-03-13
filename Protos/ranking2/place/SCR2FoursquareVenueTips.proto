@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+message SCR2FoursquareVenueTips {
+	string venueId = 1;
+	string tipId = 2;
+	uint64 timestamp = 3;
+	uint32 recent = 4;
+	string tip = 5;
+	string detectedLanguage = 6;
+	string firstName = 7;
+	string lastName = 8;
+	string profilePhoto = 9;
+}

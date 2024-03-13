@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.carousel;
+
+message SCLensCarouselInteractionHistoryConfig {
+	bool enabled = 1;
+	int32 windowToSendMin = 2;
+	int32 eventsTtlMin = 3;
+	int32 eventsLimitCount = 4;
+}

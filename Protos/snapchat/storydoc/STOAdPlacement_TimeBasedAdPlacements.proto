@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOAdPlacement_AdPlacementStrategy.proto";
+
+message STOAdPlacement_TimeBasedAdPlacements {
+	repeated snapchat.storydoc.STOAdPlacement_AdPlacementStrategy adPlacementStrategyArray = 1;
+	string requestId = 2;
+}

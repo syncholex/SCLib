@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseStoreMetadata.proto";
+
+message GetStoresForUserResponse_StoreData {
+	repeated com.snapchat.showcase.wire.metadata.ShowcaseStoreMetadata storesArray = 1;
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbOneTapPersistent {
+
+	enum SCActivationPbOneTapPersistent_StorageMode {
+		UNSET = 0;
+		CONTROL = 1;
+		DRY_MODE = 2;
+		TREATMENT = 3;
+		CLEAN_UP = 4;
+		V2_LOG_ONLY = 5;
+		V2_DRY_MODE = 6;
+		V2_TREATMENT = 7;
+		V3_DRY_MODE = 8;
+		V3_TREATMENT = 9;
+	}
+
+	SCActivationPbOneTapPersistent_StorageMode storageMode = 1;
+	uint64 tokenTtlSeconds = 2;
+	uint64 tenuredThresholdSeconds = 3;
+	uint32 sharedDeviceThreshold = 4;
+	bool isTwoFaEligible = 5;
+	uint32 maxCourtesyOptIns = 6;
+
+	enum SCActivationPbOneTapPersistent_SharedDeviceMode {
+		DEFAULT_UNSET = 0;
+		AUTH_STATUS_PERSISTENCE_SERVICE = 1;
+		ONE_TAP_COUNT = 2;
+	}
+
+	SCActivationPbOneTapPersistent_SharedDeviceMode sharedDeviceMode = 7;
+	bool shouldAutoLogin = 8;
+}

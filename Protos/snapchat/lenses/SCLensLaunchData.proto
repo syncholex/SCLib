@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/snappable/SCLensSbSnappable.proto";
+import "snapchat/lenses/SCLensLures.proto";
+import "snapchat/lenses/SCLensUserData.proto";
+import "snapchat/lenses/SCLensPersistentStore.proto";
+import "snapchat/lenses/SCLensLaunchParams.proto";
+
+message SCLensLaunchData {
+	snapchat.lenses.snappable.SCLensSbSnappable snappable = 1;
+	snapchat.lenses.SCLensLures lures = 2;
+	string userId = 3;
+
+	enum SCLensLaunchData_EntryPoint {
+		LIVE_CAMERA = 0;
+		STORY_REPLY = 1;
+		CHAT_REPLY = 2;
+		RESTART = 3;
+		PREVIEW_CANCEL = 4;
+		MAP = 5;
+		BITMOJI_STICKERS = 6;
+		POST_CAPTURE_PREVIEW = 7;
+		POST_CAPTURE_TRANSCODING = 8;
+	}
+
+	SCLensLaunchData_EntryPoint entryPoint = 4;
+	snapchat.lenses.SCLensUserData userData = 5;
+	snapchat.lenses.SCLensPersistentStore persistentStore = 6;
+	snapchat.lenses.SCLensLaunchParams launchParams = 7;
+
+	enum SCLensLaunchData_ApiDescriptor {
+		NONE = 0;
+		EXPERIMENTAL = 1;
+	}
+
+	repeated SCLensLaunchData_ApiDescriptor apiDescriptorsArray = 8 [packed=true];
+
+	enum SCLensLaunchData_RenderConfig {
+		DEFAULT = 0;
+		REPLAY_STREAM = 1;
+	}
+
+	SCLensLaunchData_RenderConfig renderConfig = 9;
+
+	enum SCLensLaunchData_ActivationSource {
+		ACTIVATION_SOURCE_UNSET = 0;
+		ACTIVATION_SOURCE_DEFAULT = 1;
+		CREATIVE = 2;
+		SCAN = 3;
+		SCAN_HISTORY = 4;
+		CHAT_FEED_PSA = 5;
+		GROWTH_NOTIFICATION = 6;
+		MASS_SNAP = 7;
+		SMART_CTA = 8;
+		MASS_CHAT = 9;
+		BILLBOARD_FHP = 10;
+		LENS_ACTIVITY_CENTER = 11;
+		AR_BAR = 12;
+	}
+
+	SCLensLaunchData_ActivationSource activationSource = 10;
+}

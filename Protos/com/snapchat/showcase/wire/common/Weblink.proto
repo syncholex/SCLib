@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.common;
+
+message Weblink {
+	string URL = 1;
+
+	enum Weblink_BrowserType {
+		UNSET = 0;
+		SNAP_BROWSER = 1;
+		EXTERNAL_BROWSER = 2;
+	}
+
+	Weblink_BrowserType browserType = 2;
+}

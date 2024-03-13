@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMGroupStory {
+
+	enum SDMGroupStory_GroupStoryType {
+		TYPE_UNSET = 0;
+		PRIVATE = 1;
+		CUSTOM = 2;
+		GEOFENCE = 3;
+	}
+
+	SDMGroupStory_GroupStoryType groupStoryType = 1;
+	string groupStoryId = 2;
+}

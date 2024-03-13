@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoConnection.proto";
+
+message SCSnapKitProtoConnectResponse {
+	repeated snapkit.internal.user.SCSnapKitProtoConnection connectionsArray = 1;
+	string verificationId = 2;
+}

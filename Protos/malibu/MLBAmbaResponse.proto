@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBAuthResponse.proto";
+import "malibu/MLBMediaResponse.proto";
+import "malibu/MLBLogResponse.proto";
+import "malibu/MLBFirmwareUpdateUploadResponse.proto";
+import "malibu/MLBStereoCalibrationData.proto";
+
+message MLBAmbaResponse {
+	uint64 requestId = 1;
+
+	enum MLBAmbaResponse_StatusType {
+		SUCCESS = 0;
+		SYSTEM_ERROR = 1;
+		APPLICATION_ERROR = 2;
+	}
+
+	MLBAmbaResponse_StatusType status = 2;
+	bool requestComplete = 3;
+	malibu.MLBAuthResponse authResponse = 4;
+	malibu.MLBMediaResponse mediaResponse = 5;
+	malibu.MLBLogResponse logResponse = 6;
+	malibu.MLBFirmwareUpdateUploadResponse fwUpdateUploadResponse = 7;
+
+	enum MLBAmbaResponse_WifiSharingStatus {
+		NO_REQUEST = 0;
+		IN_PROGRESS = 1;
+		REQUEST_SUCCEEDED = 2;
+		NO_NETWORK = 3;
+		USER_DECLINED = 4;
+		REQUEST_FAILED = 5;
+	}
+
+	MLBAmbaResponse_WifiSharingStatus wifiSharingStatus = 8;
+	malibu.MLBStereoCalibrationData stereoCalibrationData = 9;
+}

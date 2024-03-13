@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message NativeStreamerConnectionIllegalStateMetadata {
+
+	enum NativeStreamerConnectionIllegalState {
+		NATIVE_STREAMER_CONNECTION_ILLEGAL_STATE_UNSET = 0;
+		PUBLISH_BEFORE_START = 1;
+		REMOTE_USER_STATE_MISSING_AFTER_SUCCESSFUL_CONNECTION = 2;
+		REMOTE_USER_STATE_MISSING_AFTER_REMOTE_USER_UPDATE = 3;
+	}
+
+	NativeStreamerConnectionIllegalState nativeStreamerConnectionIllegalState = 1;
+}

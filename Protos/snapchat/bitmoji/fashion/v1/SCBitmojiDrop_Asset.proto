@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiDrop_Asset {
+	string assetURL2X = 1;
+	string assetURL3X = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/lens/SCLensExplorerLensExplorerItem.proto";
+
+message SCLensExplorerGetLensExplorerResponse {
+	repeated snapchat.lens.SCLensExplorerLensExplorerItem lensesArray = 1;
+}

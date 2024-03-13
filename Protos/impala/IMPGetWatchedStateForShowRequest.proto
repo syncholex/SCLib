@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetWatchedStateForShowRequest {
+	string userId = 1;
+	string showId = 2;
+}

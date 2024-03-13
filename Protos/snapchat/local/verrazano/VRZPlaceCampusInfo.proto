@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceCampusInfo {
+	string parentPlaceId = 1;
+	repeated string childrenPlaceIdsArray = 2;
+}

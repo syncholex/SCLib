@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsSKOverlayMetrics_Frame.proto";
+import "snapchat/ads/request/schema/SCAdsSKOverlayMetrics_CtaTap.proto";
+
+message SCAdsSKOverlayMetrics {
+	google.protobuf.GPBInt64Value preloadTriggeredTsMs = 1;
+	google.protobuf.GPBInt64Value preloadedTsMs = 2;
+	google.protobuf.GPBInt64Value triggeredTsMs = 3;
+	google.protobuf.GPBInt64Value presentedTsMs = 4;
+	google.protobuf.GPBBoolValue wasBiometricShown = 5;
+	google.protobuf.GPBInt64Value skanStartImpressionTsMs = 6;
+	google.protobuf.GPBInt64Value skanEndImpressionTsMs = 7;
+	snapchat.ads.request.schema.SCAdsSKOverlayMetrics_Frame frame = 8;
+	snapchat.ads.request.schema.SCAdsSKOverlayMetrics_CtaTap tap = 9;
+	repeated google.protobuf.GPBInt64Value appInactivityTriggeredTsMsArray = 10;
+}

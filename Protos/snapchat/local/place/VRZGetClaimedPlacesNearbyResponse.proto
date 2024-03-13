@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZClaimedPlace.proto";
+
+message VRZGetClaimedPlacesNearbyResponse {
+	repeated snapchat.local.place.VRZClaimedPlace claimedPlacesArray = 1;
+}

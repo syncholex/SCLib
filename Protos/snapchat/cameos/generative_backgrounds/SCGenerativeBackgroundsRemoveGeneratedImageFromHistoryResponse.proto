@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCGenerativeBackgroundsRemoveGeneratedImageFromHistoryResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}

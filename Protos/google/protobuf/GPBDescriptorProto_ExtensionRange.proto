@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBExtensionRangeOptions.proto";
+
+message GPBDescriptorProto_ExtensionRange {
+	int32 start = 1;
+	int32 end = 2;
+	google.protobuf.GPBExtensionRangeOptions options = 3;
+}

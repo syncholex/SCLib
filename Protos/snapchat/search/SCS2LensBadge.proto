@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/lens/badges/LensBadgeContent.proto";
+import "snapchat/search/SCS2ActionHandler.proto";
+
+message SCS2LensBadge {
+	snapchat.lens.badges.LensBadgeContent badgeContent = 1;
+	snapchat.search.SCS2ActionHandler onTap = 2;
+}

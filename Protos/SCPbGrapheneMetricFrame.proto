@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "SCPbGrapheneMetric.proto";
+import "SCPbGrapheneAppVersion.proto";
+
+message SCPbGrapheneMetricFrame {
+	repeated SCPbGrapheneMetric timersArray = 1;
+	repeated SCPbGrapheneMetric countersArray = 2;
+	repeated SCPbGrapheneMetric levelsArray = 3;
+	uint32 protocolVersion = 4;
+	uint64 bufferStartTimestampMillis = 5;
+	uint64 bufferEndTimestampMillis = 6;
+	SCPbGrapheneAppVersion appVersion = 7;
+
+	enum SCPbGrapheneOsType {
+		UNKNOWN_OS_TYPE = 0;
+		OS_IOS = 1;
+		OS_ANDROID = 2;
+		OS_WEB = 3;
+		OS_SDK_IOS = 4;
+		OS_SDK_ANDROID = 5;
+	}
+
+	SCPbGrapheneOsType clientOsType = 8;
+	string userName = 9;
+	fixed32 samplingId = 10;
+	string userGuid = 11;
+	bytes abC4Token = 12;
+}

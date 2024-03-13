@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "impala/IMPBusinessUserSettings_NotificationSettings.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message IMPUpdateBusinessUserSettingsRequest {
+	string businessId = 1;
+	google.protobuf.GPBBoolValue showStoryAttribution = 2;
+	impala.IMPBusinessUserSettings_NotificationSettings notificationSettings = 3;
+	google.protobuf.GPBInt64Value newestReadNotificationTimestamp = 4;
+	google.protobuf.GPBInt32Value profileManagementViewCount = 5;
+	google.protobuf.GPBInt64Value lastUserInteractedMs = 6;
+}

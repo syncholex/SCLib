@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBRange.proto";
+
+message CHRPBGetFileResponse {
+	string fileIdentifier = 1;
+	cheerios.CHRPBRange requestedRange = 3;
+	cheerios.CHRPBRange actualRange = 4;
+	bytes data_p = 5;
+}

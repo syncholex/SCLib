@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message HorizontalSection {
+
+	enum HorizontalSection_ItemStyle_Enum {
+		UNKNOWN = 0;
+		MEDIUM = 1;
+		LARGE = 2;
+		HERO_TILE_TALL = 3;
+		HERO_TILE_SHORT = 4;
+	}
+
+	HorizontalSection_ItemStyle_Enum itemStyle = 1;
+}

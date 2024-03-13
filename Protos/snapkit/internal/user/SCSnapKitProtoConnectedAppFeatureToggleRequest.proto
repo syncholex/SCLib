@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoConnectedAppFeatureToggleRequest {
+	string applicationId = 1;
+
+	enum SCSnapKitProtoConnectedAppFeatureToggleRequest_Feature {
+		NONE = 0;
+		APP_STORIES = 1;
+		PROFILE_LINK = 2;
+	}
+
+	SCSnapKitProtoConnectedAppFeatureToggleRequest_Feature feature = 2;
+
+	enum SCSnapKitProtoTypes_Trilean {
+		NONE = 0;
+		FALSE = 1;
+		TRUE = 2;
+	}
+
+	SCSnapKitProtoTypes_Trilean featureOn = 3;
+}

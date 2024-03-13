@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Bitmoji.proto";
+import "snapchat/notification/Thumbnail.proto";
+
+message Icon {
+
+	oneof image {
+		snapchat.notification.Bitmoji bitmoji = 1;
+		snapchat.notification.Thumbnail thumbnail = 2;
+	}
+
+}

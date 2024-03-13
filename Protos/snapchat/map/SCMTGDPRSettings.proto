@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTGDPRSettings {
+	int32 age = 1;
+
+	enum SCMTGDPRSettings_GhostMode_Type {
+		UNKNOWN = 0;
+		YES = 1;
+		NO = 2;
+	}
+
+	SCMTGDPRSettings_GhostMode_Type ghostMode = 2;
+
+	enum SCMTGDPRSettings_OnboardedMap_Type {
+		UNKNOWN = 0;
+		YES = 1;
+		NO = 2;
+	}
+
+	SCMTGDPRSettings_OnboardedMap_Type onboardedMap = 3;
+	string registrationCountryCode = 4;
+	string currentCountryCode = 5;
+}

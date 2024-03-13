@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/lenses/lensgator/SCGFetchMixerResultsRequest_NamespacePagination.proto";
+
+message SCGFetchMixerResultsRequest_NamespaceRequest {
+	string namespaceId = 1;
+	snapchat.lenses.lensgator.SCGFetchMixerResultsRequest_NamespacePagination pagination = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensHandleFriendPolicyPopupResultRequest {
+	bool isFriendPolicyAccepted = 1;
+}

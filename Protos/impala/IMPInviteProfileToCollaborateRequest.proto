@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInviteProfileToCollaborateRequest {
+	string invitingUserId = 1;
+	string invitedProfileId = 2;
+	int64 expirationTsMs = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbReportedCommentSnapMetadata {
+	string snapId = 1;
+	ranking.core.SCSCOREUUID snapPosterId = 2;
+	ranking.core.SCSCOREUUID groupId = 3;
+	ranking.core.SCSCOREUUID orgId = 4;
+}

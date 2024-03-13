@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTGetMapStoriesResponse_Story.proto";
+
+message SCMTGetMapStoriesResponse {
+	repeated snapchat.map.SCMTGetMapStoriesResponse_Story storiesArray = 1;
+}

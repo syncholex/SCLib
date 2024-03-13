@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message SCSCKUserFeatures_FlattenedUserStoryInteractions {
+	repeated fixed64 storyKeyArray = 1 [packed=true];
+	repeated bool hiddenArray = 2 [packed=true];
+	repeated uint32 snapCompletionPercentArray = 3 [packed=true];
+	repeated uint32 storyLengthSecondsArray = 4 [packed=true];
+	repeated uint32 watchTimePercentArray = 5 [packed=true];
+	repeated uint32 numWatchesArray = 6 [packed=true];
+	repeated uint32 totalImpressionTimeArray = 7 [packed=true];
+	repeated uint32 storyExitArray = 8 [packed=true];
+	repeated uint32 storyEntranceArray = 9 [packed=true];
+	repeated bool subscribedArray = 10 [packed=true];
+	repeated uint32 storyEntranceIntentArray = 11 [packed=true];
+	repeated uint32 storyExitIntentArray = 12 [packed=true];
+	repeated uint32 numBoostsArray = 13 [packed=true];
+	repeated uint32 numSnapsInStoryArray = 14 [packed=true];
+	repeated uint32 totalWatchTimeMsecsArray = 15 [packed=true];
+}

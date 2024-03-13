@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusWebRegistrationHeaderBrowser {
+	string arkoseToken = 1;
+	string ssoClientId = 2;
+	string continueParam = 3;
+}

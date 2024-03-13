@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMusicOriginalSoundsUpdateSoundRequest {
+	uint64 trackId = 1;
+	snapchat.core.SCCOREUUID requestingUserId = 2;
+	string title = 3;
+	bool isCopyrightViolation = 4;
+	string isrc = 5;
+	repeated string isrcsArray = 6;
+	bool updateTitle = 1003;
+	bool updateIsCopyrightViolation = 1004;
+	bool updateIsrc = 1005;
+	bool updateIsrcs = 1006;
+}

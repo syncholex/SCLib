@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message ProvisionStudioMetadataRequest {
+	string registrationToken = 1;
+	string lensStudioSerialUuid = 2;
+	string lensStudioVersion = 3;
+	string minVersionAndroid = 4;
+	string minVersionIos = 5;
+}

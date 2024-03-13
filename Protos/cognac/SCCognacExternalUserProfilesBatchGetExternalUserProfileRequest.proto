@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacExternalUserProfilesUserInfo.proto";
+
+message SCCognacExternalUserProfilesBatchGetExternalUserProfileRequest {
+	string appId = 1;
+	repeated cognac.SCCognacExternalUserProfilesUserInfo userInfosArray = 2;
+}

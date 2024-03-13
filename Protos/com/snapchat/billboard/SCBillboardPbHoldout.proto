@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbHoldout_HoldoutConfig.proto";
+
+message SCBillboardPbHoldout {
+
+	enum SCBillboardPbHoldout_State {
+		UNSET = 0;
+		ELIGIBLE_FOR_NEW_FEATURES = 1;
+		HOLDOUT = 2;
+	}
+
+	SCBillboardPbHoldout_State holdoutState = 1;
+	com.snapchat.billboard.SCBillboardPbHoldout_HoldoutConfig holdoutConfig = 2;
+}

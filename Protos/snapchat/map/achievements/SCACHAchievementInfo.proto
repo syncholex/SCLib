@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map.achievements;
+
+message SCACHAchievementInfo {
+
+	enum SCACHAchievementType {
+		UNKNOWN_ACHIEVEMENT = 0;
+		WORLD_TRAVELER = 1;
+		THE_CONNOISSEUR = 2;
+		READY_FOR_TAKEOFF = 3;
+		FREQUENT_FLYER = 4;
+		MILE_HIGH_CLUB = 5;
+		NO_PAIN_NO_GAIN = 6;
+		THE_SOCIAL_BUTTERFLY = 7;
+		THE_BOOKWORM = 8;
+		SHOP_TILL_YOU_DROP = 9;
+		PEDAL_TO_THE_METAL = 10;
+		THE_EXPLORER = 11;
+	}
+
+	SCACHAchievementType type = 1;
+	int64 count = 2;
+	int64 streakCount = 3;
+	int64 earnedAtTimestampMs = 4;
+	int64 updatedAtTimestampMs = 5;
+}

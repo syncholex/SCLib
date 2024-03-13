@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsStorySnapImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsTileImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsTileInteractionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsStoryAdHintInteractionTrack.proto";
+
+message SCAdsStoryImpressionTrack {
+	google.protobuf.GPBFloatValue timeViewedSeconds = 1;
+	google.protobuf.GPBFloatValue mediaDurationSeconds = 2;
+	google.protobuf.GPBInt32Value snapCount = 3;
+	google.protobuf.GPBInt32Value viewedSnapIndex = 4;
+
+	enum SCAdsExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		AUTO_ADVANCE = 1;
+		TAP_LEFT = 2;
+		TAP_RIGHT = 3;
+		SWIPE_LEFT = 4;
+		SWIPE_RIGHT = 5;
+		SWIPE_DOWN = 6;
+		SWIPE_UP = 7;
+		BACKGROUND = 8;
+		BACK_PRESSED = 9;
+		LONG_PRESSED = 10;
+		OTHER = 11;
+		TAP_SEARCH = 12;
+		TAP_USER_PROFILE = 13;
+		TAP_BRAND_PROFILE = 14;
+		TAP_TRENDING = 15;
+		TAP_SHARE = 16;
+		TAP_HOME = 17;
+		TAP_NAV_BAR = 18;
+	}
+
+	SCAdsExitEvent exitEvent = 5;
+	google.protobuf.GPBInt32Value uniqueSwipeUps = 6;
+	google.protobuf.GPBInt32Value totalSwipeUps = 7;
+	google.protobuf.GPBBoolValue isAudioOn = 8;
+	repeated snapchat.ads.request.schema.SCAdsStorySnapImpressionTrack snapImpressionsArray = 9;
+	snapchat.ads.request.schema.SCAdsTileImpressionTrack tileImpression = 10;
+	bytes creativeId = 11;
+	snapchat.ads.request.schema.SCAdsTileInteractionTrack tileInteraction = 12;
+	google.protobuf.GPBInt32Value updatedTileIndexPosition = 13;
+	snapchat.ads.request.schema.SCAdsStoryAdHintInteractionTrack storyAdHintInteraction = 14;
+}

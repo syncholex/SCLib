@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBClientID {
+	string clientId = 1;
+	bool requestAuthzCode = 2;
+	repeated string scopeArray = 3;
+}

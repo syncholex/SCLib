@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+import "snapchat/search/sendtoranking/SCSTRSuggestionItem.proto";
+
+message SCSTRGetSuggestionsResponse {
+	repeated snapchat.search.sendtoranking.SCSTRSuggestionItem itemsArray = 1;
+	string debugHtml = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+message SCPbGenAIOneShotProperties {
+	int32 diffusionSteps = 1;
+	float controlnetWeight = 2;
+	float ipAdapterWeight = 3;
+	int32 seed = 4;
+	float guidanceScale = 5;
+}

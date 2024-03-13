@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message AdPreferences_UserInterest {
+	string id_p = 1;
+	string name = 2;
+	bool activeForUser = 3;
+}

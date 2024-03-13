@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2ServiceDebug_PlaceServiceItemDebug {
+	string name = 1;
+	string id_p = 2;
+	string category = 3;
+	string address = 4;
+	uint32 retrievalRank = 5;
+	float retrievalScore = 6;
+	float finalScore = 7;
+	string itemFeatures = 8;
+	uint32 totalCheckins = 9;
+	float distance = 10;
+	uint32 globalQueryRetrievalRank = 11;
+	float esScore = 12;
+	float globalQueryEsScore = 13;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2SearchResponse.proto";
+import "snapchat/search/SCS2CacheMetadata.proto";
+
+message SCS2CachedResponse {
+
+	oneof result {
+		snapchat.search.SCS2SearchResponse searchResponse = 1;
+		bytes userProfile = 2;
+	}
+
+	snapchat.search.SCS2CacheMetadata metadata = 3;
+}

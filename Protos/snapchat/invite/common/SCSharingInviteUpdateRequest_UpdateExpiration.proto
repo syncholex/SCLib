@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+message SCSharingInviteUpdateRequest_UpdateExpiration {
+
+	oneof policy {
+		bool neverExpire = 1;
+		int64 ttlSeconds = 2;
+	}
+
+}

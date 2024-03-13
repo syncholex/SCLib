@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+import "Bitmoji/Proto/SceneAvatarData.proto";
+import "Bitmoji/Proto/ScenePropData.proto";
+import "Bitmoji/Proto/SceneCameraData.proto";
+import "Bitmoji/Proto/SceneLightData.proto";
+import "Bitmoji/Proto/SceneExtraData.proto";
+import "Bitmoji/Proto/LayerData.proto";
+
+message SceneData {
+	repeated Bitmoji.Proto.SceneAvatarData avatarsArray = 1;
+	repeated Bitmoji.Proto.ScenePropData propsArray = 2;
+	repeated Bitmoji.Proto.SceneCameraData camerasArray = 3;
+	repeated Bitmoji.Proto.SceneLightData lightsArray = 4;
+	Bitmoji.Proto.SceneExtraData extras = 5;
+	repeated Bitmoji.Proto.LayerData layersArray = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+
+message VRZGetCategoriesRequest {
+	repeated string categoryIdsArray = 1;
+	string name = 2;
+	snapchat.local.verrazano.VRZConcordance concordance = 3;
+}

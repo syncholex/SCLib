@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "google/protobuf/GPBDuration.proto";
+import "snapchat/content/v2/SCBoltv2ContentReferenceResult.proto";
+
+message SCBoltv2UploadLocation {
+	string uploadURL = 1;
+	google.protobuf.GPBTimestamp uploadURLExpiryTime = 2;
+	google.protobuf.GPBDuration validDurationAfterSuccessfulUpload = 3;
+	snapchat.content.v2.SCBoltv2ContentReferenceResult contentReference = 4;
+
+	enum SCBoltv2UploadUrlType {
+		DIRECT = 0;
+		RESUMABLE = 1;
+		MULTIPART = 2;
+	}
+
+	SCBoltv2UploadUrlType uploadURLType = 5;
+	string URLHeaders = 6;
+	string multipartUploadURLTemplate = 7;
+	repeated string multipartUploadURLSignaturesArray = 8;
+	string multipartCompletionURL = 9;
+}

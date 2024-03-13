@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.ads.track;
+
+import "snapchat/ads/request/schema/SCAdsTrackRequest.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message AdTrackEventShadow {
+
+	oneof event {
+		snapchat.ads.request.schema.SCAdsTrackRequest trackRequest = 1;
+	}
+
+	google.protobuf.GPBStringValue userAgentOverride = 2;
+	google.protobuf.GPBStringValue clientIpOverride = 3;
+	google.protobuf.GPBBoolValue isAggregatedSwipeUp = 4;
+}

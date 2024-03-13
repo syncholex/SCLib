@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message S3AssetPath {
+	string bucket = 1;
+	string path = 2;
+}

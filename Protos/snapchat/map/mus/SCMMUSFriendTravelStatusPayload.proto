@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMMUSFriendTravelStatusPayload {
+	snapchat.core.SCCOREUUID friendId = 1;
+
+	enum SCMEStatusType {
+		STATUS_UNKNOWN = 0;
+		STATUS_TRAVEL = 1;
+		STATUS_FLIGHT = 2;
+		STATUS_DRIVE = 3;
+		STATUS_TRAIN = 4;
+		STATUS_NEW_USER = 5;
+		STATUS_APPEARED = 6;
+		STATUS_LEAD = 7;
+		STATUS_PLACE = 8;
+		STATUS_MOVED = 9;
+		STATUS_FLIGHT_PARTIAL = 10;
+		STATUS_DRIVE_LONG = 11;
+		STATUS_VENUE = 12;
+		STATUS_AIRPORT = 13;
+		STATUS_MOVED_SLOW = 14;
+		STATUS_CUSTOM = 15;
+	}
+
+	SCMEStatusType statusType = 2;
+	int64 statusTimestampMs = 3;
+	float destLat = 4;
+	float destLng = 5;
+	float srcLat = 6;
+	float srcLng = 7;
+	float recipientLat = 8;
+	float recipientLng = 9;
+	int64 srcTimestampMs = 10;
+}

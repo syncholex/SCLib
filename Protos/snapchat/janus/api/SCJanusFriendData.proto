@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusFriendLink.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCJanusFriendData {
+	repeated snapchat.janus.api.SCJanusFriendLink friendLinksArray = 1;
+	repeated snapchat.core.SCCOREUUID bestFriendsArray = 2;
+}

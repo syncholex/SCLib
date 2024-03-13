@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/VisualTag.proto";
+
+message StoryInfo_SnapAggregations {
+	repeated snapchat.spectrum.streaming.schema.snap_feed_ranking.VisualTag topVisualTagsArray = 1;
+	uint32 mediaCounts = 2;
+	uint32 avgDurationMs = 4;
+	uint32 avgCreationTimeMs = 5;
+	uint32 minCreationTimeMs = 6;
+	uint32 maxCreationTimeMs = 7;
+	uint32 snapWithFacesCount = 8;
+}

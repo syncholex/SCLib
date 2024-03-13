@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZModerationReportWriteData.proto";
+
+message VRZCreateModerationReportsRequest {
+	repeated snapchat.local.verrazano.VRZModerationReportWriteData moderationReportWriteDataArray = 1;
+}

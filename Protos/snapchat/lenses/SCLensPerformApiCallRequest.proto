@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensLinkedResource.proto";
+
+message SCLensPerformApiCallRequest {
+	string apiSpecSetId = 1;
+	string endpointRefId = 2;
+	string parameters = 3;
+	bytes body = 4;
+	string lensId = 5;
+	bool isStudioDev = 6;
+	int32 cacheTtlSec = 7;
+	repeated snapchat.lenses.SCLensLinkedResource linkedResourcesArray = 8;
+}

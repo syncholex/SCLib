@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCSCOREABTestStudyInfo.proto";
+
+message SCSUPABExperiments {
+	string sessionId = 1;
+	int64 retrievalTimestampMs = 2;
+	repeated ranking.core.SCSCOREABTestStudyInfo studyInfosArray = 3;
+}

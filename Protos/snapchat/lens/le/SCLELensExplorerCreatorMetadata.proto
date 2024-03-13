@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerCreatorMetadata {
+	string creatorId = 1;
+	string creatorName = 2;
+	string creatorUsername = 3;
+	bool isOfficialCreator = 4;
+	string snapProProfileId = 5;
+
+	enum SnapProProfileCategory {
+		UNSET = 0;
+		PEOPLE = 1;
+		BUSINESS = 2;
+	}
+
+	SnapProProfileCategory snapProProfileCategory = 6;
+	string bitmojiAvatarId = 7;
+	string profilePicURL = 8;
+}

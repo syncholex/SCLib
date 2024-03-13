@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingMediaMetadata_LegacyDirectDownloadUrl {
+	string URL = 1;
+	uint64 expirySeconds = 2;
+
+	enum SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType {
+		GCS = 0;
+		S3 = 1;
+		UNRECOGNIZED_VALUE = 2;
+	}
+
+	SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType type = 3;
+	string region = 4;
+}

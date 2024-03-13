@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMAdsUserData_DebugConfig.proto";
+
+message SCSSMAdsUserData {
+	bytes said = 1;
+	bool isAdsHoldout = 2;
+	bool isEmployee = 3;
+	ranking.serving.jaguar.SCSSMAdsUserData_DebugConfig debugConfig = 4;
+}

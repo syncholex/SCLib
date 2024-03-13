@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesGtqFeaturedLensesNamespaceResponse.proto";
+
+message SCPBUnlockablesScheduleLensesCache {
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesGtqFeaturedLensesNamespaceResponse responsesArray = 1;
+	int64 lastModifiedTime = 2;
+}

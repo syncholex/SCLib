@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsSpectacles {
+
+	enum SCAppInsightsSpectacles_Subfeature {
+		UNSET = 0;
+		ONBOARDING = 1;
+		PAIRING = 2;
+		SPECTACLES_HOME = 3;
+		TRANSFER = 4;
+		OTHER = 5;
+	}
+
+	SCAppInsightsSpectacles_Subfeature subfeature = 1;
+}

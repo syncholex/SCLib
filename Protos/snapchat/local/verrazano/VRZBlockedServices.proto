@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZBlockedServices_ComponentBlocklist.proto";
+
+message VRZBlockedServices {
+	bool map = 1;
+	bool checkin = 2;
+	bool search = 3;
+	bool placeDiscovery = 4;
+	bool mapDataQuality = 5;
+	bool basemapRecommendedUnderage = 6;
+	bool placeStoriesOnMap = 7;
+	bool placeCampusParent = 8;
+	bool placeCampusChild = 9;
+	snapchat.local.verrazano.VRZBlockedServices_ComponentBlocklist campus = 10;
+	snapchat.local.verrazano.VRZBlockedServices_ComponentBlocklist similarPlaces = 11;
+	bool underage = 12;
+	bool inferredVisitation = 13;
+	bool mapCallout = 14;
+}

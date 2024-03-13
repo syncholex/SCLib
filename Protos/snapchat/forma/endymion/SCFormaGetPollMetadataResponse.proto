@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion;
+
+import "snapchat/forma/endymion/SCFormaPublicTryon.proto";
+import "snapchat/forma/endymion/SCFormaFormaItemLens.proto";
+import "snapchat/forma/endymion/SCFormaPCSItemLens.proto";
+
+message SCFormaGetPollMetadataResponse {
+	bytes pollId = 1;
+	snapchat.forma.endymion.SCFormaPublicTryon sourceTryon = 2;
+	snapchat.forma.endymion.SCFormaPublicTryon challengerTryon = 3;
+	string leaderboardId = 4;
+
+	oneof lens {
+		snapchat.forma.endymion.SCFormaFormaItemLens formaItemLens = 5;
+		snapchat.forma.endymion.SCFormaPCSItemLens pcsItemLens = 6;
+	}
+
+	bool isChallengable = 7;
+}

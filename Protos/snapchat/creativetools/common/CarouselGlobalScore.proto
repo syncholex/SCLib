@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message CarouselGlobalScore {
+
+	enum CarouselSnapSource {
+		CAROUSEL_SNAP_SOURCE_UNSET = 0;
+		POST_CAPTURE_MAIN_CAMERA = 1;
+		POST_CAPTURE_REPLY_CAMERA = 2;
+	}
+
+	CarouselSnapSource carouselSnapSource = 1;
+	float globalScore = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/SCPNLOOKALIEMediaList.proto";
+
+message BatchExtractFeaturesRequest {
+
+	enum BatchExtractFeaturesRequest_FeatureType {
+		TYPE_UNSET = 0;
+		RAW_EMBEDDING = 1;
+		PCA_EMBEDDING = 2;
+	}
+
+	BatchExtractFeaturesRequest_FeatureType featureRequestType = 1;
+	snapchat.perception.lookalike.SCPNLOOKALIEMediaList mediaList = 2;
+	string properties = 200;
+}

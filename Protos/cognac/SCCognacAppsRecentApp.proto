@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsApp.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCCognacAppsRecentApp {
+	cognac.SCCognacAppsApp app = 1;
+	google.protobuf.GPBTimestamp timestamp = 2;
+}

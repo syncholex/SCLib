@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_UnlockMechanism {
+	bool snapcode = 1;
+	bool snapcodeWithinFence = 2;
+	bool manual = 3;
+	bool pinned = 4;
+	bool social = 5;
+}

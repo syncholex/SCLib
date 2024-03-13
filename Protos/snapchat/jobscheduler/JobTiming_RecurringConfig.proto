@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+message JobTiming_RecurringConfig {
+	uint32 repeatIntervalSec = 1;
+	uint32 flexIntervalSec = 2;
+
+	enum JobTiming_RecurringConfig_AppSessionThrottle {
+		NO_CONSTRAINT = 0;
+		ONCE_PER_WARM_SESSION = 1;
+	}
+
+	JobTiming_RecurringConfig_AppSessionThrottle throttleConstraint = 3;
+}

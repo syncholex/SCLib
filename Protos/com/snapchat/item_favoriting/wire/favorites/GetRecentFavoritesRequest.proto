@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+import "com/snapchat/item_favoriting/wire/favorites/ItemFavoritingDeviceContext.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message GetRecentFavoritesRequest {
+	com.snapchat.item_favoriting.wire.favorites.ItemFavoritingDeviceContext deviceContext = 1;
+	google.protobuf.GPBTimestamp startTimestamp = 2;
+	uint32 pageSize = 3;
+	bytes nextSequenceKey = 4;
+}

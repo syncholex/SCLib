@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacUpdateNotificationPayload {
+	string appInstanceId = 1;
+	string conversationId = 2;
+	string appId = 3;
+	string appIconURL = 4;
+}

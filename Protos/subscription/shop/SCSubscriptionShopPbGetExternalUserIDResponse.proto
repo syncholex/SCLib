@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetExternalUserIDResponse {
+	string externalUserId = 1;
+
+	enum SCSubscriptionEnumPbSubscriptionError {
+		SUBSCRIPTION_ERROR_NO_ERROR = 0;
+		SUBSCRIPTION_ERROR_LINKED_TO_DIFFERENT_USER = 1;
+		SUBSCRIPTION_ERROR_INVALID_TRANSACTION_ID = 2;
+	}
+
+	SCSubscriptionEnumPbSubscriptionError error = 2;
+}

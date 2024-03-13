@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceVersion {
+	string id_p = 1;
+	int64 version = 2;
+}

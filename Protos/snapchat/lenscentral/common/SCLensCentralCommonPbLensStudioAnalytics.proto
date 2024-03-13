@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbLensStudioAnalytics {
+	string appSessionId = 1;
+	string installationId = 2;
+	string documentId = 3;
+	string originalDocumentId = 4;
+	string appVersion = 5;
+	string appBuild = 6;
+	string osType = 7;
+	string osVersion = 8;
+	string gpuOpenglVersion = 9;
+	string gpuFamily = 10;
+	string gpuVendor = 11;
+}

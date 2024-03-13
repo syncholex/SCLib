@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileAndUserData.proto";
+import "impala/IMPInternalProfileData.proto";
+
+message IMPInternalListAllPublicProfilesResponse {
+	string nextPageId = 1;
+	repeated impala.IMPProfileAndUserData profilesArray = 2;
+	impala.IMPInternalProfileData internalProfileData = 3;
+}

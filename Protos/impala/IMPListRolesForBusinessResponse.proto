@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPRole.proto";
+
+message IMPListRolesForBusinessResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.IMPRole rolesArray = 3;
+	repeated impala.IMPRole orgRolesArray = 4;
+}

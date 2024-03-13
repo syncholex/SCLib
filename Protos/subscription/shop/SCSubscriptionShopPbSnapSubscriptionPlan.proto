@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod.proto";
+
+message SCSubscriptionShopPbSnapSubscriptionPlan {
+	string productId = 1;
+	int64 basePlanPriceMillis = 2;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod basePlanPeriod = 3;
+	string offerId = 4;
+	int64 offerPriceMillis = 5;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod offerPeriod = 6;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod offerLength = 7;
+	string currency = 8;
+}

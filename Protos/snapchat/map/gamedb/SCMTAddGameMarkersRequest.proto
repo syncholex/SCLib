@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.gamedb;
+
+import "snapchat/map/gamedb/SCMTGameMarkerEntry.proto";
+
+message SCMTAddGameMarkersRequest {
+	repeated snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}

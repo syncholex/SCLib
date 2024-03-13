@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+
+message SCCTPCTRequestOptions_Cameos {
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 1 [packed=true];
+	snapchat.cameos.common.SCCameosApiVersion apiVersion = 2;
+	int32 maxCustomCameos = 3;
+	int32 maxInfoCameos = 4;
+	bool onePersonFriendCameoContext = 5;
+}

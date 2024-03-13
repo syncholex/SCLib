@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package hermosa;
+
+message HRMPBPoseCoordinateSystem {
+
+	enum HRMPBPoseCoordinateSystem_PoseCsEnum {
+		UNSET = 0;
+		IMU = 1;
+		RIG = 2;
+	}
+
+	HRMPBPoseCoordinateSystem_PoseCsEnum poseCs = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensReplyFullCarouselConfig {
+
+	enum SCLensReplyFullCarouselConfig_FullCarouselMode {
+		UNSET = 0;
+		ALWAYS = 1;
+		EXPANDABLE = 2;
+	}
+
+	SCLensReplyFullCarouselConfig_FullCarouselMode psaFullCarouselMode = 1;
+
+	enum SCLensReplyFullCarouselConfig_FullCarouselMode {
+		UNSET = 0;
+		ALWAYS = 1;
+		EXPANDABLE = 2;
+	}
+
+	SCLensReplyFullCarouselConfig_FullCarouselMode smartLensCtaFullCarouselMode = 2;
+
+	enum SCLensReplyFullCarouselConfig_FullCarouselMode {
+		UNSET = 0;
+		ALWAYS = 1;
+		EXPANDABLE = 2;
+	}
+
+	SCLensReplyFullCarouselConfig_FullCarouselMode contextFullCarouselMode = 3;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPGenericImageStickerMetadata_ImageSize.proto";
+
+message SCCTPGenericImageStickerMetadata {
+
+	oneof stickerImageURL {
+		string external = 1;
+		string local = 2;
+		string bolt = 3;
+	}
+
+	string text = 4;
+	string iconURL = 5;
+	string linkURL = 6;
+	snapchat.creativetools.item_instance.info_sticker.SCCTPGenericImageStickerMetadata_ImageSize imageSize = 7;
+}

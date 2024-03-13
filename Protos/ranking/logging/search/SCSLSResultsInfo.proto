@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+import "ranking/logging/search/SCSLSResultSection.proto";
+
+message SCSLSResultsInfo {
+	repeated ranking.logging.search.SCSLSResultSection sectionsArray = 1;
+	string searchSessionId = 2;
+	int64 searchQueryId = 3;
+}

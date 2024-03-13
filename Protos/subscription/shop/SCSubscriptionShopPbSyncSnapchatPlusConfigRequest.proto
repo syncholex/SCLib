@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleReceiptMetadata.proto";
+
+message SCSubscriptionShopPbSyncSnapchatPlusConfigRequest {
+
+	enum SCSubscriptionShopPbSyncSnapchatPlusConfigRequest_Platform {
+		PLATFORM_UNSET = 0;
+		PLATFORM_APPLE = 1;
+		PLATFORM_GOOGLE = 2;
+	}
+
+	SCSubscriptionShopPbSyncSnapchatPlusConfigRequest_Platform platform = 1;
+	repeated string experimentsArray = 2;
+	string appStoreCountryCode = 3;
+	bool hasAppStoreAccountConsumedIntroductoryOffer = 4;
+}

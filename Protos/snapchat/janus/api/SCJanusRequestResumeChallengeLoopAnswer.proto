@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusRequestResumeChallengeLoopAnswer {
+
+	enum SCJanusRequestResumeChallengeLoopAnswer_Reason {
+		UNSET = 0;
+		RESUMING_REGISTRATION = 1;
+	}
+
+	SCJanusRequestResumeChallengeLoopAnswer_Reason reason = 1;
+}

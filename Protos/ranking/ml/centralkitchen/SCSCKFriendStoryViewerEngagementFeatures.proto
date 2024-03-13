@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/WindowedIntMetrics.proto";
+import "ranking/pii/user/profile/WindowedFloatMetrics.proto";
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryDerivedEngagementFeatures.proto";
+import "ranking/pii/user/profile/EngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKViewerSCCEngagementFeatures.proto";
+
+message SCSCKFriendStoryViewerEngagementFeatures {
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsSent = 1;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryView = 2;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewed = 3;
+	ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpent = 4;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerStoryView = 5;
+	ranking.ml.centralkitchen.SCSCKEmbedding viewerEmbeddings = 6;
+	repeated float viewerServingEmbeddingArray = 7 [packed=true];
+	ranking.pii.user.profile.WindowedFloatMetrics num1To1ChatsSent = 8;
+	ranking.pii.user.profile.WindowedFloatMetrics num1To1SnapsSent = 9;
+	ranking.pii.user.profile.WindowedFloatMetrics num1ToManyChatsSent = 10;
+	ranking.pii.user.profile.WindowedFloatMetrics num1ToManySnapsSent = 11;
+	ranking.pii.user.profile.WindowedIntMetrics numChatSaved = 12;
+	ranking.pii.user.profile.WindowedIntMetrics numChatScreenshots = 13;
+	ranking.pii.user.profile.WindowedIntMetrics numChatView = 14;
+	ranking.pii.user.profile.WindowedIntMetrics numChatsSent = 15;
+	ranking.pii.user.profile.WindowedIntMetrics numCustomStickersSent = 16;
+	ranking.pii.user.profile.WindowedIntMetrics numHoursWithStoryStoryView = 17;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapScreenshots = 18;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapView = 19;
+	ranking.pii.user.profile.WindowedIntMetrics numStickersSent = 20;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExits = 21;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapCompletions = 22;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplays = 23;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplies = 24;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapSkips = 25;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapsScreenshots = 26;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedRaw = 27;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryCompletions = 28;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImp = 29;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaInterstitialTap = 30;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTap = 31;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPos0 = 32;
+	ranking.pii.user.profile.WindowedFloatMetrics snapTimeSpent = 33;
+	ranking.pii.user.profile.WindowedFloatMetrics storyStoryLongImpTime = 34;
+	ranking.pii.user.profile.WindowedFloatMetrics totalChatAckTime = 35;
+	ranking.pii.user.profile.WindowedFloatMetrics totalSnapAckTime = 36;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures derivedViewerEngagementFeatures = 37;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapPosts = 38;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryReplies = 39;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPos0 = 40;
+	ranking.pii.user.profile.WindowedIntMetrics storySnapReplyCharCount = 41;
+	ranking.pii.user.profile.EngagementFeatures viewerEngagementFeatures = 42;
+	ranking.pii.user.profile.EngagementFeatures viewerLongWindowEngagementFeatures = 43;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures derivedViewerLongWindowEngagementFeatures = 44;
+	repeated float userProfileSccTagsFriendStoryArray = 45 [packed=true];
+	ranking.ml.centralkitchen.SCSCKViewerSCCEngagementFeatures viewerSccEngagementFeatures = 46;
+}

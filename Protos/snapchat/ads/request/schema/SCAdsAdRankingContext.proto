@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsViewSessionContext.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsAdRankingContext {
+	repeated snapchat.ads.request.schema.SCAdsViewSessionContext viewSessionArray = 1;
+
+	enum SCAdsOperaType {
+		HORIZONTAL_UNSET = 0;
+		VERTICAL = 1;
+		ARTIFICIAL_OPERA_TYPE = 2;
+	}
+
+	SCAdsOperaType operaType = 2;
+	google.protobuf.GPBInt64Value timeSinceForegroundMillis = 3;
+	repeated bytes adOrganicSignalsArray = 4;
+	google.protobuf.GPBInt64Value fourthTabTotalTimeSpentMillis = 5;
+	google.protobuf.GPBInt64Value fourthTabSessionTimeSpentMillis = 6;
+	google.protobuf.GPBInt64Value fourthTabFriendStoriesTotalViewTimeMillis = 7;
+	google.protobuf.GPBInt64Value fourthTabNonFriendStoriesTotalViewTimeMillis = 8;
+	google.protobuf.GPBInt64Value fourthTabFriendStoriesSessionViewTimeMillis = 9;
+	google.protobuf.GPBInt64Value fourthTabNonFriendStoriesSessionViewTimeMillis = 10;
+	repeated string snapIdsArray = 11;
+}

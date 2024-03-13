@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/messaging/SCMessagingConversationRetentionPolicy.proto";
+
+message SCMessagingChangeConversationRetentionPolicyStatusMessage {
+	snapchat.messaging.SCMessagingUUID initiatingUserId = 1;
+	snapchat.messaging.SCMessagingConversationRetentionPolicy newRetentionPolicy = 2;
+
+	enum SCMessagingChangeConversationRetentionPolicyStatusMessage_DisplayType {
+		DISPLAY_TYPE_UNSET = 0;
+		DISPLAY_TYPE_PERMANENT_USER_INITIATED = 1;
+		DISPLAY_TYPE_PERMANENT_SYSTEM = 2;
+		DISPLAY_TYPE_TOGGLEABLE = 3;
+	}
+
+	SCMessagingChangeConversationRetentionPolicyStatusMessage_DisplayType displayType = 3;
+	bool alsoRevertedSnapPostOpenViewingPolicyToEnvelope = 5;
+}

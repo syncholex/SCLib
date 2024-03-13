@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+import "snapchat/lenses/snappable/SCLensSbSessionData.proto";
+import "snapchat/lenses/snappable/SCLensSbEncryptionData.proto";
+
+message SCLensSbSnappable {
+	string id_p = 1;
+	string sessionId = 2;
+	string playerId = 3;
+	snapchat.lenses.snappable.SCLensSbSessionData sessionData = 4;
+	int64 createdTime = 5;
+	int64 expireTime = 6;
+	int32 version = 7;
+	snapchat.lenses.snappable.SCLensSbEncryptionData encryptionData = 8;
+	int32 sessionDepth = 9;
+}

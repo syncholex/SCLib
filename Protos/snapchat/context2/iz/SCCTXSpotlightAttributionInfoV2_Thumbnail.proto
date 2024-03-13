@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfoV2_Thumbnail_RemoteImage.proto";
+import "snapchat/context2/iz/SCCTXBitmoji.proto";
+
+message SCCTXSpotlightAttributionInfoV2_Thumbnail {
+
+	oneof thumbnail {
+		snapchat.context2.iz.SCCTXSpotlightAttributionInfoV2_Thumbnail_RemoteImage remoteImage = 1;
+		snapchat.context2.iz.SCCTXBitmoji bitmoji = 2;
+	}
+
+}

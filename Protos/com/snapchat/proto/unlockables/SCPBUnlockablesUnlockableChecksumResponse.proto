@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesUnlockableChecksumResponse {
+	int64 id_p = 1;
+	bytes checksum = 2;
+	int64 clientCacheTtlMinutes = 3;
+}

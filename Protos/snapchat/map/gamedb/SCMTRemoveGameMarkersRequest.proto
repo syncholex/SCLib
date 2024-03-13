@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map.gamedb;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message SCMTRemoveGameMarkersRequest {
+	repeated string idsArray = 1;
+	snapchat.geo.SPCGRect boundedBox = 2;
+	string source = 3;
+	string category = 4;
+}

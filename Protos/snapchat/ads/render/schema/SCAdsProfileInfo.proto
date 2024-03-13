@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsProfileInfo {
+	bytes profileId = 1;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo profileIconRenderInfo = 2;
+	bool isDefaultProfileLogo = 3;
+
+	enum IMPTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	IMPTier profileTier = 4;
+	string hostAccountUserId = 5;
+}

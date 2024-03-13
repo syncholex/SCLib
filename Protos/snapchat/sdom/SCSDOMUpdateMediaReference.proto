@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMMediaIndex.proto";
+
+message SCSDOMUpdateMediaReference {
+	int64 mediaId = 1;
+	snapchat.sdom.SCSDOMMediaIndex newMediaIndex = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCLPTargetingInfo {
+	snapchat.core.SCCOREUUID vzPlaceId = 1;
+}

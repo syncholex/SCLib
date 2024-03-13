@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1LocalTime.proto";
+import "actionmoji/action/SCMT1AssetIdWithProbability.proto";
+
+message SCMT1TypeDef {
+	int32 id_p = 1;
+	string name = 2;
+	string description_p = 3;
+
+	enum SCMT1TypeDef_Status {
+		DISABLED = 0;
+		ENABLED = 1;
+		EMPLOYEE_ONLY = 2;
+		DEV_ONLY = 3;
+	}
+
+	SCMT1TypeDef_Status status = 4;
+
+	enum SCMT1TypeDef_Permissions {
+		DEFAULT = 0;
+		READ_ONLY = 1;
+	}
+
+	SCMT1TypeDef_Permissions permissions = 5;
+	int64 validDuration = 6;
+	int64 lockDuration = 7;
+
+	enum SCMT1ClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMT1ClusteringPolicy clusteringPolicy = 8;
+	actionmoji.action.SCMT1LocalTime startTime = 9;
+	actionmoji.action.SCMT1LocalTime endTime = 10;
+	bool isEnabled = 11;
+	bool isDarkTest = 12;
+	int32 propPriority = 13;
+
+	enum SCMT1TypeDef_PropCondition {
+		MAJORITY = 0;
+		PRESENCE = 1;
+	}
+
+	SCMT1TypeDef_PropCondition propCondition = 14;
+	string effectId = 15;
+	int32 effectPriority = 16;
+	string effectURL = 17;
+	repeated string tagsArray = 18;
+	repeated string categoryIdsArray = 19;
+	bool effectClusterOnly = 20;
+	repeated int32 assetIdsArray = 99 [packed=true];
+	repeated actionmoji.action.SCMT1AssetIdWithProbability assetIdProbabilitiesArray = 100;
+}

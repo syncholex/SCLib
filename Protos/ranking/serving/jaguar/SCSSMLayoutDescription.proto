@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLayoutDescription_Position.proto";
+import "ranking/serving/jaguar/SCSSMLayoutDescription_SeedHistory.proto";
+
+message SCSSMLayoutDescription {
+	int32 firstServedTsSecs = 1;
+	ranking.serving.jaguar.SCSSMLayoutDescription_Position sectionPositions = 2;
+	ranking.serving.jaguar.SCSSMLayoutDescription_SeedHistory seedSectionHistory = 3;
+}

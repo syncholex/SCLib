@@ -1,0 +1,134 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBMediaCountsMessage.proto";
+import "malibu/MLBCrashReport.proto";
+import "malibu/MLBSpecsEvent.proto";
+import "malibu/MLBResetReason.proto";
+import "malibu/MLBSnapScanResponse.proto";
+import "malibu/MLBButtonHoldEvent.proto";
+import "malibu/MLBSystemCounters.proto";
+import "malibu/MLBErrorReport.proto";
+import "malibu/MLBUserMediaCountsMessage.proto";
+import "malibu/MLBSpectaclesPushMessage_InvalidatedRequest.proto";
+import "malibu/MLBWifiThrottlingReport.proto";
+import "malibu/MLBUbloxMessage.proto";
+import "malibu/MLBTaskInfo.proto";
+import "malibu/MLBBleDisconnectReason.proto";
+import "malibu/MLBLocationData.proto";
+import "malibu/MLBGpsStatistics.proto";
+import "malibu/MLBPhoneNotification.proto";
+import "malibu/MLBAncsNotificationRule.proto";
+
+message MLBSpectaclesPushMessage {
+	string logMessage = 1;
+	uint32 mediaCount = 2;
+	uint32 battStatus = 3;
+	bool booted = 5;
+	string ipAddress = 6;
+	malibu.MLBMediaCountsMessage mediaCounts = 7;
+	malibu.MLBCrashReport crashReport = 8;
+	malibu.MLBSpecsEvent specsEvent = 9;
+	malibu.MLBResetReason resetReason = 10;
+	uint32 remainingHeapBytes = 11;
+
+	enum MLBSpectaclesPushMessage_ConnectionEvent {
+		READY_FOR_CONNECTION = 1;
+		CONNECTED = 2;
+		DISCONNECTED = 3;
+		SHUTDOWN = 4;
+	}
+
+	MLBSpectaclesPushMessage_ConnectionEvent wifiConnectionEvent = 12;
+
+	enum MLBSpectaclesPushMessage_ConnectionEvent {
+		READY_FOR_CONNECTION = 1;
+		CONNECTED = 2;
+		DISCONNECTED = 3;
+		SHUTDOWN = 4;
+	}
+
+	MLBSpectaclesPushMessage_ConnectionEvent bluetoothConnectionEvent = 13;
+	bool receivedBackupPairingConfirmationTap = 14;
+
+	enum MLBSpectaclesPushMessage_LogLevel {
+		DEBUG = 0;
+		INFO = 1;
+		WARNING = 2;
+		ERROR = 3;
+	}
+
+	MLBSpectaclesPushMessage_LogLevel logLevel = 15;
+	bool linuxBooted = 16;
+
+	enum MLBSpectaclesPushMessage_SystemStatus {
+		LINUX_THROTTLED = 1;
+		LINUX_UP = 2;
+	}
+
+	MLBSpectaclesPushMessage_SystemStatus systemStatus = 17;
+	malibu.MLBSnapScanResponse snapScanResponse = 18;
+	uint32 msSinceBoot = 19;
+
+	enum MLBSpectaclesPushMessage_UploadToCloudEvent {
+		CLOUD_CONNECTING = 1;
+		CLOUD_CONNECTED = 2;
+		WRONG_PASSWORD = 3;
+		FAIL_WIFI_CONNECTION = 4;
+		FAIL_CLOUD_CONNECTION = 5;
+		CLOUD_UPLOADING = 6;
+		LOG_UPLOAD_BEGIN = 7;
+		LOG_UPLOAD_END = 8;
+		CLOUD_UPLOAD_BEGIN = 9;
+		CLOUD_UPLOAD_END = 10;
+		CLOUD_UPLOAD_INTERRUPTED = 11;
+		CLOUD_UPLOAD_ABORTED = 12;
+		CLOUD_UPLOAD_ABORT_RETRY = 13;
+		CLOUD_UPLOADED = 14;
+	}
+
+	MLBSpectaclesPushMessage_UploadToCloudEvent uploadToCloudEvent = 20;
+	malibu.MLBButtonHoldEvent buttonHoldEvent = 21;
+	malibu.MLBSystemCounters systemCounters = 22;
+	malibu.MLBErrorReport errorReport = 23;
+
+	enum MLBSpectaclesPushMessage_ChargerEvent {
+		CHARGER_CONNECTED = 1;
+		CHARGER_DISCONNECTED = 2;
+	}
+
+	MLBSpectaclesPushMessage_ChargerEvent chargerEvent = 24;
+	malibu.MLBUserMediaCountsMessage userMediaCounts = 25;
+	malibu.MLBSpectaclesPushMessage_InvalidatedRequest invalidatedRequest = 26;
+
+	enum MLBSpectaclesPushMessage_TransferThrottledEvent {
+		NO_THROTTLING = 1;
+		CAPTURE_OCCURRING = 2;
+	}
+
+	MLBSpectaclesPushMessage_TransferThrottledEvent transferThrottledEvent = 27;
+	bool encryptionLayerFailure = 28;
+	malibu.MLBWifiThrottlingReport wifiThrottlingReport = 29;
+	uint32 wifiFrequency = 30;
+
+	enum MLBSpectaclesPushMessage_DirectConnectionInfo {
+		SUCCESS = 0;
+		FAILED = 1;
+		FAILED_TIMED_OUT = 2;
+		FAILED_NO_CLIENT_MAC = 3;
+		FAILED_WEAK_RSSI = 4;
+		FAILED_CONNECTED_BUT_UNSUPPORTED = 5;
+		FAILED_SOCKET_SHUTDOWN = 6;
+		FAILED_CONNECTION_RESET_BY_PEER = 7;
+	}
+
+	MLBSpectaclesPushMessage_DirectConnectionInfo directConnectionInfo = 31;
+	malibu.MLBUbloxMessage ubxMessage = 32;
+	malibu.MLBTaskInfo taskInfo = 33;
+	malibu.MLBBleDisconnectReason bleDisconnectReason = 34;
+	malibu.MLBLocationData locationData = 35;
+	malibu.MLBGpsStatistics gpsStatistics = 36;
+	malibu.MLBPhoneNotification phoneNotification = 37;
+	malibu.MLBAncsNotificationRule ancsRule = 38;
+}

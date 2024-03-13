@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "com/snapchat/commerce/domain/order/OrderBillingItem.proto";
+import "com/snapchat/commerce/domain/account/ShippingAddress.proto";
+import "com/snapchat/commerce/domain/order/ShippingOption.proto";
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+import "snapchat/payments/PaymentMethod.proto";
+import "com/snapchat/commerce/domain/order/DiscountInfo.proto";
+import "com/snapchat/commerce/domain/account/ContactDetails.proto";
+import "com/snapchat/commerce/domain/store/StorePolicy.proto";
+
+message Order {
+	bytes accountId = 1;
+
+	enum Order_AccountType {
+		UNSET = 0;
+		USER = 1;
+	}
+
+	Order_AccountType accountType = 2;
+	bytes orderId = 3;
+	string externalOrderId = 4;
+	string externalOrderName = 5;
+	google.protobuf.GPBTimestamp createdAt = 6;
+	google.protobuf.GPBTimestamp updatedAt = 7;
+	repeated com.snapchat.commerce.domain.order.OrderBillingItem billingItemsArray = 8;
+	google.protobuf.GPBTimestamp chargeTime = 9;
+
+	enum BillingPurchaseState {
+		UNSET = 0;
+		PENDING = 1;
+		COMPLETE = 2;
+		FAILED = 3;
+	}
+
+	BillingPurchaseState billingPurchaseState = 10;
+	com.snapchat.commerce.domain.account.ShippingAddress shippingAddress = 11;
+	com.snapchat.commerce.domain.order.ShippingOption shippingOption = 12;
+	com.snapchat.commerce.domain.CurrencyAmount subtotalPrice = 13;
+	com.snapchat.commerce.domain.CurrencyAmount totalTax = 14;
+	com.snapchat.commerce.domain.CurrencyAmount totalPrice = 15;
+	repeated snapchat.payments.PaymentMethod paymentMethodsArray = 16;
+
+	enum CommercePartner {
+		UNSET = 0;
+		SHOPIFY = 1;
+		MINIPROGRAM = 2;
+	}
+
+	CommercePartner commercePartner = 17;
+	bytes storeId = 18;
+	string storeName = 19;
+	string storeIconURL = 20;
+	bool isThirdPartyStore = 21;
+	string storeEmail = 22;
+	string discountCode = 23;
+	com.snapchat.commerce.domain.order.DiscountInfo discountInfo = 24;
+	com.snapchat.commerce.domain.account.ContactDetails contactDetails = 25;
+
+	enum Order_OrderSource {
+		ORDER_SOURCE_UNSET = 0;
+		SHOPIFY = 1;
+	}
+
+
+	oneof orderSource {
+		Order_OrderSource predefinedSource = 26;
+		string dynamicSource = 27;
+	}
+
+	com.snapchat.commerce.domain.store.StorePolicy storePolicy = 28;
+	string supportURL = 29;
+}

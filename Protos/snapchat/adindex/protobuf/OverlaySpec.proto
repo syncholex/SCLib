@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.adindex.protobuf;
+
+import "snapchat/adindex/protobuf/TextOverlayProperties.proto";
+
+message OverlaySpec {
+
+	enum OverlayType {
+		UNKNOWN_OVERLAY_TYPE = 0;
+		IMAGE = 1;
+		FRAME = 2;
+		TEXT = 3;
+	}
+
+	OverlayType type = 1;
+	string mediaURL = 2;
+	string text = 3;
+
+	enum OverlayPosition {
+		UNKNOWN_OVERLAY_POSITION = 0;
+		BOTTOM_MIDDLE = 1;
+		BOTTOM_LEFT = 2;
+		BOTTOM_RIGHT = 3;
+		CENTER = 4;
+		TOP_MIDDLE = 5;
+		TOP_LEFT = 6;
+		TOP_RIGHT = 7;
+	}
+
+	OverlayPosition position = 4;
+	int64 opacity = 5;
+	snapchat.adindex.protobuf.TextOverlayProperties textOverlayProperties = 6;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingSnapReplyMetadata {
+
+	enum SCMessagingStoryMediaState {
+		UNSET = 0;
+		PRESENT = 1;
+		DELETEDBYPOSTER = 2;
+	}
+
+	SCMessagingStoryMediaState storyMediaState = 1;
+}

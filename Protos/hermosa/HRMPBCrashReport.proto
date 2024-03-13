@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBAppCrashReport.proto";
+import "hermosa/HRMPBSoftDeviceCrashReport.proto";
+import "hermosa/HRMPBHardFaultReport.proto";
+import "hermosa/HRMPBWatchdogCrashReport.proto";
+import "hermosa/HRMPBAmbaError.proto";
+import "hermosa/HRMPBSystemCounters.proto";
+import "hermosa/HRMPBAndroidTombstone.proto";
+import "hermosa/HRMPBKernelPanicLog.proto";
+import "hermosa/HRMPBAnrLog.proto";
+
+message HRMPBCrashReport {
+	string logPayload = 1;
+	hermosa.HRMPBAppCrashReport appCrashReport = 2;
+	hermosa.HRMPBSoftDeviceCrashReport softDeviceCrashReport = 3;
+	hermosa.HRMPBHardFaultReport hardFaultReport = 4;
+	hermosa.HRMPBWatchdogCrashReport watchdogCrashReport = 5;
+	hermosa.HRMPBAmbaError ambaError = 6;
+	hermosa.HRMPBSystemCounters systemCounters = 7;
+	hermosa.HRMPBAndroidTombstone androidTombstone = 8;
+	hermosa.HRMPBKernelPanicLog kernelPanicLog = 9;
+	hermosa.HRMPBAnrLog anrLog = 10;
+}

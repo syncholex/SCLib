@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace_HierarchyStep.proto";
+
+message VRZPlace_Hierarchy {
+	repeated snapchat.local.verrazano.VRZPlace_HierarchyStep stepsArray = 1;
+}

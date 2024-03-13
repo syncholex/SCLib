@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package storyreply;
+
+message IMPStoryReplyIngestIndexingEventRequest {
+	bytes event = 1;
+}

@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPWatchEvent.proto";
+import "ranking/ml/centralkitchen/SCSCKNegativeImpressionEvent.proto";
+import "ranking/pii/user/profile/SCSUPFavoriteEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnfavoriteEvent.proto";
+import "ranking/pii/user/profile/SCSUPSendEvent.proto";
+import "ranking/pii/user/profile/SCSUPHideEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnhideEvent.proto";
+import "ranking/pii/user/profile/SCSUPBoostEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnboostEvent.proto";
+import "ranking/pii/user/profile/SCSUPReportEvent.proto";
+import "ranking/pii/user/profile/SCSUPOpenProfileEvent.proto";
+import "ranking/pii/user/profile/SCSUPOpenRepliesEvent.proto";
+import "ranking/pii/user/profile/SCSUPDismissRepliesEvent.proto";
+import "ranking/pii/user/profile/SCSUPCreateReplyEvent.proto";
+import "ranking/pii/user/profile/SCSUPSendReplyEvent.proto";
+import "ranking/pii/user/profile/SCSUPShareEvent.proto";
+import "ranking/pii/user/profile/SCSUPScreenshotEvent.proto";
+import "ranking/ml/centralkitchen/SCSCKEncodedContentEmbeddings.proto";
+
+message SCSCKRecentEventFeatures {
+	repeated ranking.pii.user.profile.SCSUPWatchEvent watchEventsArray = 1;
+	repeated ranking.ml.centralkitchen.SCSCKNegativeImpressionEvent negativeImpressionEventsArray = 2;
+	repeated ranking.pii.user.profile.SCSUPFavoriteEvent favoriteEventsArray = 3;
+	repeated ranking.pii.user.profile.SCSUPUnfavoriteEvent unfavoriteEventsArray = 4;
+	repeated ranking.pii.user.profile.SCSUPSendEvent sendEventsArray = 5;
+	repeated ranking.pii.user.profile.SCSUPHideEvent hideEventsArray = 6;
+	repeated ranking.pii.user.profile.SCSUPUnhideEvent unhideEventsArray = 7;
+	repeated ranking.pii.user.profile.SCSUPBoostEvent boostEventsArray = 8;
+	repeated ranking.pii.user.profile.SCSUPUnboostEvent unboostEventsArray = 9;
+	repeated ranking.pii.user.profile.SCSUPReportEvent reportEventsArray = 10;
+	repeated ranking.pii.user.profile.SCSUPOpenProfileEvent openProfileEventsArray = 11;
+	repeated ranking.pii.user.profile.SCSUPOpenRepliesEvent openRepliesEventsArray = 12;
+	repeated ranking.pii.user.profile.SCSUPDismissRepliesEvent dismissRepliesEventsArray = 13;
+	repeated ranking.pii.user.profile.SCSUPCreateReplyEvent createReplyEventsArray = 14;
+	repeated ranking.pii.user.profile.SCSUPSendReplyEvent sendReplyEventsArray = 15;
+	repeated ranking.pii.user.profile.SCSUPShareEvent shareEventsArray = 16;
+	repeated ranking.pii.user.profile.SCSUPScreenshotEvent screenshotEventsArray = 17;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings watchEventsEmbeddings = 1001;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings negativeImpressionEventsEmbeddings = 1002;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings favoriteEventsEmbeddings = 1003;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings unfavoriteEventsEmbeddings = 1004;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings sendEventsEmbeddings = 1005;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings hideEventsEmbeddings = 1006;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings unhideEventsEmbeddings = 1007;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings boostEventsEmbeddings = 1008;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings unboostEventsEmbeddings = 1009;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings reportEventsEmbeddings = 1010;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings openProfileEventsEmbeddings = 1011;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings openRepliesEventsEmbeddings = 1012;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings dismissRepliesEventsEmbeddings = 1013;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings createReplyEventsEmbeddings = 1014;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings sendReplyEventsEmbeddings = 1015;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings shareEventsEmbeddings = 1016;
+	ranking.ml.centralkitchen.SCSCKEncodedContentEmbeddings screenshotEventsEmbeddings = 1017;
+}

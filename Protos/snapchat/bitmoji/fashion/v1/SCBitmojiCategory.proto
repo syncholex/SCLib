@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiClosetCategoryItem.proto";
+
+message SCBitmojiCategory {
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiClosetCategoryItem itemsArray = 1;
+
+	enum SCBitmojiClosetCategoryType {
+		UNSET = 0;
+		OUTFIT = 1;
+		TOP = 2;
+		BOTTOM = 3;
+		OUTERWEAR = 4;
+		ONE_PIECE = 5;
+		FOOTWEAR = 6;
+		SOCK = 7;
+		HAT = 8;
+		GLASSES = 9;
+		LIPSTICK = 10;
+		EYESHADOW = 11;
+		BLUSH = 12;
+	}
+
+	SCBitmojiClosetCategoryType closetCategory = 2;
+	int32 categorySizeLimit = 3;
+	bytes nextPageToken = 4;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCUpdateBirthdatePbUpdateBirthdateResponse {
+
+	enum SCUpdateBirthdatePbUpdateBirthdateResponse_Status {
+		UNSET = 0;
+		UPDATE_SUCCESS = 1;
+		ERROR_TOO_MANY_UPDATES = 2;
+		ERROR_UNDER_MINIMUM_AGE = 3;
+		ERROR_MINOR_CHANGING_BIRTH_YEAR = 4;
+		ERROR_NEEDS_LAST_CHANGE_CONFIRMATION = 5;
+		ERROR_ONBOARDED_TO_PAYOUTS = 6;
+		ERROR_GENERIC = 10;
+	}
+
+	SCUpdateBirthdatePbUpdateBirthdateResponse_Status status = 1;
+	string localizedErrTitle = 2;
+	string localizedErrMessage = 3;
+}

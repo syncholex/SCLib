@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCULSyncInfo {
+	google.protobuf.GPBTimestamp lastLowSensitivityResponseTime = 1;
+
+	enum SCULSyncInfo_PurposeType {
+		UNLOCKABLE_HIGH_SENSITIVITY = 0;
+		UNLOCKABLE_LOW_SENSITIVITY = 1;
+	}
+
+	repeated SCULSyncInfo_PurposeType purposeTypesArray = 2 [packed=true];
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/ConfigResult.proto";
+
+message SCCofGetConfigValuesByTokenResponse {
+	repeated snapchat.cdp.cof.ConfigResult configResultsArray = 1;
+}

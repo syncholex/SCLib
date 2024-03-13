@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMPublisherTile.proto";
+import "ranking/serving/jaguar/SCSSMSnapFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMLongformVideoChapter.proto";
+import "ranking/serving/jaguar/SCSSMLongformVideoAd.proto";
+import "snapchat/snapdoc/SDMWebPage.proto";
+import "snapchat/snapdoc/SDMCommerce.proto";
+import "snapchat/snapdoc/SDMCallToAction.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/context/SCContextContextHint.proto";
+import "ranking/serving/jaguar/SCSSMAutoPlayTile.proto";
+import "ranking/serving/jaguar/BoostMetadata.proto";
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+import "snapchat/snapdoc/SDMCameraAttachment.proto";
+import "snapchat/snapdoc/SDMLongformVideo.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/snapdoc/SDMSnapAlias.proto";
+
+message SCSSMPublisherSnap {
+	string snapRelativeURL = 1;
+	string hash_p = 2;
+	int64 snapId = 3;
+	string snapType = 4;
+	ranking.serving.jaguar.SCSSMPublisherTile tile = 5;
+	int32 adType = 6;
+	bytes adPlacementMetadata = 7;
+	ranking.serving.jaguar.SCSSMSnapFragmentMetadata fragmentMetadata = 8;
+
+	enum SCSCOREPublisherSnapMediaType_Enum {
+		UNSET = 0;
+		VIDEO = 1;
+		IMAGE = 2;
+	}
+
+	SCSCOREPublisherSnapMediaType_Enum mediaType = 9;
+
+	oneof snap {
+		ranking.serving.jaguar.SCSSMLongformVideoChapter chapter = 10;
+		ranking.serving.jaguar.SCSSMLongformVideoAd ad = 11;
+	}
+
+	string originalSnapId = 12;
+	bool isUserGeneratedContent = 13;
+	snapchat.snapdoc.SDMWebPage webpageAttachment = 14;
+	snapchat.snapdoc.SDMCommerce commerce = 15;
+	snapchat.snapdoc.SDMCallToAction callToAction = 16;
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 17;
+	bytes firstFrameContentObject = 18;
+	bool isPetraBrandSafe = 19;
+	snapchat.context.SCContextContextHint contextHint = 20;
+	ranking.serving.jaguar.SCSSMAutoPlayTile autoPlayTile = 21;
+	ranking.serving.jaguar.BoostMetadata boostMetadata = 22;
+	ranking.serving.jaguar.SCSSMEngagementStats engagementStats = 23;
+	snapchat.snapdoc.SDMCameraAttachment cameraAttachment = 24;
+	snapchat.snapdoc.SDMLongformVideo longformAttachment = 25;
+	bytes overlayImageContentObject = 26;
+	snapchat.core.SCCOREUUID hostUserId = 27;
+	snapchat.snapdoc.SDMSnapAlias snapAlias = 28;
+}

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCPushNotificationPushNotificationResult {
+	snapchat.notification.SCPushNotificationUUID pushNotificationId = 1;
+
+	enum SCPushNotificationPushNotificationResult_StatusCode {
+		UNKNOWN = 0;
+		OK = 1;
+		INVALID_PAYLOAD = 2;
+		DEVICE_TOKEN_UNAVAILABLE = 3;
+		UNREGISTERED = 4;
+		USER_NOTIFICATION_DISABLED = 5;
+		SERVICE_RATE_LIMITED = 6;
+		RECIPIENT_RATE_LIMITED = 7;
+		PROVIDER_TRANSIENT_ERROR = 8;
+		INTERNAL_FAILURE = 9;
+		INVALID_REQUEST = 10;
+		PRIVACY_SETTING_REJECTED = 11;
+		BAD_DEVICE_TOKEN = 12;
+		REJECTED_BY_PROVIDER = 13;
+	}
+
+	SCPushNotificationPushNotificationResult_StatusCode status = 2;
+
+	enum SCPushNotificationNotificationProvider {
+		UNSET = 0;
+		APNS_SIMPLE = 1;
+		APNS_SILENT = 2;
+		APNS_CONTENT_AVAILABLE = 3;
+		VOIP = 4;
+		SNS_VOIP = 5;
+		SNS_APNS = 6;
+		GCM = 7;
+		FCM = 8;
+		MOCK = 9;
+		SNS_FCM = 10;
+		HMS = 11;
+		WEB_PUSH = 12;
+	}
+
+	SCPushNotificationNotificationProvider notificationProvider = 3;
+	bool isRetryable = 4;
+}

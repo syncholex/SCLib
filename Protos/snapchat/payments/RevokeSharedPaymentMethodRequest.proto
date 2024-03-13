@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message RevokeSharedPaymentMethodRequest {
+	string userId = 1;
+	string miniProgramId = 2;
+	string partnerPaymentMethodNonce = 3;
+}

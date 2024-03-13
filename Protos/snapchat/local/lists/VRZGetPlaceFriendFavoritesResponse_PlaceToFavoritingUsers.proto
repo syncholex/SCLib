@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/local/lists/VRZFavoritingUser.proto";
+
+message VRZGetPlaceFriendFavoritesResponse_PlaceToFavoritingUsers {
+	string placeId = 1;
+	repeated snapchat.local.lists.VRZFavoritingUser favoritingUsersArray = 2;
+}

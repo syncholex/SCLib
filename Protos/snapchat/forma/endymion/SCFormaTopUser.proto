@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion;
+
+import "snapchat/forma/endymion/SCFormaPublicTryon.proto";
+
+message SCFormaTopUser {
+	bytes userId = 1;
+	int64 vote = 2;
+	bytes topPollId = 3;
+	snapchat.forma.endymion.SCFormaPublicTryon topModel = 4;
+}

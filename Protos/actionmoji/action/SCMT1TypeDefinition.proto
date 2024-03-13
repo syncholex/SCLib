@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1NonClusterableStickerDefinition.proto";
+import "actionmoji/action/SCMT1ClusterableStickerDefinition.proto";
+
+message SCMT1TypeDefinition {
+	int32 id_p = 1;
+	repeated actionmoji.action.SCMT1NonClusterableStickerDefinition nonClusterableStickerArray = 2;
+	repeated actionmoji.action.SCMT1ClusterableStickerDefinition clusterableStickerArray = 3;
+	string name = 4;
+	string description_p = 5;
+	int64 duration = 6;
+	int64 lockDuration = 7;
+	float spaceConstrainRadius = 8;
+
+	enum SCMT1ClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMT1ClusteringPolicy clusteringPolicy = 9;
+}

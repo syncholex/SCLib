@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_LogoDetection_Detection.proto";
+import "snapchat/research/SnapBrainResponse_Results_LogoDetection_LogoBoundingBox.proto";
+
+message SnapBrainResponse_Results_LogoDetection {
+	repeated snapchat.research.SnapBrainResponse_Results_LogoDetection_Detection detectionsArray = 1;
+	repeated snapchat.research.SnapBrainResponse_Results_LogoDetection_LogoBoundingBox detectionsDlArray = 2;
+	string modelVersion = 3;
+	double bucketMultiplier = 4;
+}

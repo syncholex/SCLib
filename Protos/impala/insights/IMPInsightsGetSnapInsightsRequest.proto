@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsGetSnapInsightsRequest {
+	string businessId = 1;
+	string snapId = 2;
+}

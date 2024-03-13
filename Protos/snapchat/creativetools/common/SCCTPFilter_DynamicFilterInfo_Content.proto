@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_LayoutParameters.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo.proto";
+
+message SCCTPFilter_DynamicFilterInfo_Content {
+
+	enum SCCTPFilter_DynamicFilterInfo_Content_Type {
+		UNSET = 0;
+		TEXT = 1;
+		IMAGE = 2;
+		SMART_FILTER = 3;
+		COMPANION_CREATIVE = 4;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Content_Type type = 1;
+	string source = 2;
+	uint32 refreshIntervalSec = 3;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_LayoutParameters layoutParameters = 4;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters displayParameters = 5;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo companionCreativeInfo = 6;
+}

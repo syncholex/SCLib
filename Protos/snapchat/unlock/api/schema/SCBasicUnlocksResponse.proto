@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlock/api/schema/SCBasicUnlock.proto";
+
+message SCBasicUnlocksResponse {
+	repeated snapchat.unlock.api.schema.SCBasicUnlock unlocksArray = 1;
+	bool hasMore = 2;
+}

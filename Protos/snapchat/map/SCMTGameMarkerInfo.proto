@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTGameMarkerInfo {
+	int32 pointValue = 1;
+	float unlockableRadiusMeters = 2;
+
+	enum SCMTEggColor {
+		YELLOW = 0;
+		BLUE = 1;
+		PINK = 2;
+		GREEN = 3;
+		PURPLE = 4;
+		SPECIAL = 5;
+	}
+
+	SCMTEggColor eggColor = 3;
+}

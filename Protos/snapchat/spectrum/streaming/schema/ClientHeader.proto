@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+import "snapchat/spectrum/streaming/schema/instalogger/InstaloggerClientHeader.proto";
+import "snapchat/spectrum/streaming/schema/client/DefaultClientHeader.proto";
+import "snapchat/data/SCAPbDataFrameStart.proto";
+import "snapchat/spectrum/streaming/schema/client/DefaultMeshLoggerHeader.proto";
+
+message ClientHeader {
+
+	oneof header {
+		snapchat.spectrum.streaming.schema.instalogger.InstaloggerClientHeader instaloggerClientHeader = 1;
+		snapchat.spectrum.streaming.schema.client.DefaultClientHeader defaultClientHeader = 2;
+		snapchat.data.SCAPbDataFrameStart blizzardClientHeader = 3;
+		snapchat.spectrum.streaming.schema.client.DefaultMeshLoggerHeader defaultMeshLoggerHeader = 4;
+	}
+
+}

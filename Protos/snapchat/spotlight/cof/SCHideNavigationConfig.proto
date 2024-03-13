@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCHideNavigationConfig {
+	bool hideHeader = 1;
+	bool hideFooter = 2;
+	bool mutedFooter = 3;
+	int64 hideNavigationTimerSeconds = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBTestResult {
+	bool testPassed = 1;
+	uint32 version = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHOpenProfileAction {
+	string profileId = 1;
+	bool isPublicProfile = 2;
+}

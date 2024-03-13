@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.ar.common.display_card;
+
+import "com/snapchat/ar/common/display_card/SingleTabularTextRenderingGroups.proto";
+import "com/snapchat/ar/common/display_card/MiniSelectorTabularTextRenderingGroups.proto";
+
+message DisplayCard {
+
+	enum DisplayCardType {
+		DISPLAY_CARD_UNSET = 0;
+		SINGLE_TABULAR_TEXT_RENDERING_GROUPS = 1;
+		MINI_SELECTOR_TABULAR_TEXT_RENDERING_GROUP = 2;
+	}
+
+	DisplayCardType preferredType = 1;
+	com.snapchat.ar.common.display_card.SingleTabularTextRenderingGroups singleTabularTextRenderingGroups = 2;
+	com.snapchat.ar.common.display_card.MiniSelectorTabularTextRenderingGroups miniSelectorTabularTextRenderingGroups = 3;
+}

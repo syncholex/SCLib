@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/SCBitmojiUUID.proto";
+
+message SCBitmojiCreateCostumeOverrideResponse {
+	snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+
+	enum SCBitmojiCreateCostumeOverrideResponse_Status {
+		UNSET = 0;
+		OK = 1;
+		DEPRECATED = 2;
+		UNSHAREABLE = 3;
+	}
+
+	SCBitmojiCreateCostumeOverrideResponse_Status status = 2;
+	string shareURL = 3;
+}

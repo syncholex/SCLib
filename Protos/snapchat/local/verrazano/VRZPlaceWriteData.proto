@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "snapchat/local/verrazano/VRZPlace_Hierarchy.proto";
+import "snapchat/local/verrazano/VRZPlaceGeometryWriteData.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData_PlaceGeometryUpdateData.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabelsListValue.proto";
+import "snapchat/local/verrazano/VRZContactInfo.proto";
+import "snapchat/local/verrazano/VRZOpeningHours.proto";
+import "snapchat/local/verrazano/VRZAddress.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBDoubleValue.proto";
+import "snapchat/local/verrazano/VRZConcordanceListValue.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData_TagListValue.proto";
+import "snapchat/local/verrazano/VRZPlaceSources.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/local/verrazano/VRZHierarchyLabelStepListValue.proto";
+import "snapchat/local/verrazano/VRZPlace_HierarchyLabelStep.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData_LanguageDetailsWriteData.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/local/verrazano/VRZPlaceAttributeDataValue.proto";
+
+message VRZPlaceWriteData {
+	google.protobuf.GPBStringValue placetypeId = 1;
+	snapchat.protobuf.SPCPStringListValue alternatePlacetypeIds = 2;
+	snapchat.local.verrazano.VRZPlace_Hierarchy hierarchyOverride = 3;
+	google.protobuf.GPBStringValue brandId = 4;
+	google.protobuf.GPBStringValue snapproAccountId = 5;
+	google.protobuf.GPBStringValue categoryId = 6;
+	snapchat.protobuf.SPCPStringListValue alternateCategoryIds = 7;
+	snapchat.protobuf.SPCPStringListValue coterminousWith = 8;
+	repeated snapchat.local.verrazano.VRZPlaceGeometryWriteData newGeometriesArray = 20;
+	repeated snapchat.local.verrazano.VRZPlaceWriteData_PlaceGeometryUpdateData updatedGeometriesArray = 21;
+	repeated string deprecatedGeometriesArray = 22;
+	google.protobuf.GPBStringValue name = 40;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateNames = 41;
+	google.protobuf.GPBStringValue abbreviation = 42;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateAbbreviations = 43;
+	snapchat.local.verrazano.VRZContactInfo contactInfo = 44;
+	snapchat.local.verrazano.VRZOpeningHours openingHours = 45;
+	snapchat.local.verrazano.VRZAddress address = 46;
+	google.protobuf.GPBStringValue countryCode = 47;
+	google.protobuf.GPBBoolValue isEnabled = 60;
+	google.protobuf.GPBDoubleValue confidenceScore = 61;
+	snapchat.local.verrazano.VRZConcordanceListValue concordances = 62;
+	snapchat.local.verrazano.VRZConcordanceListValue alternateConcordances = 63;
+	snapchat.local.verrazano.VRZPlaceWriteData_TagListValue tags = 64;
+	snapchat.local.verrazano.VRZPlaceSources sources = 65;
+	snapchat.protobuf.SPCPStringListValue supersedes = 71;
+	google.protobuf.GPBDoubleValue popularityScore = 72;
+	google.protobuf.GPBInt64Value ceasedAtMs = 80;
+	google.protobuf.GPBBoolValue isCeased = 81;
+	snapchat.local.verrazano.VRZHierarchyLabelStepListValue hierarchyLabelMasks = 89;
+	google.protobuf.GPBBoolValue isIncludedInHierarchyLabel = 90;
+	repeated snapchat.local.verrazano.VRZPlace_HierarchyLabelStep hierarchyLabelMaskArray = 91;
+	google.protobuf.GPBInt64Value population = 92;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateLabels = 93;
+	snapchat.local.verrazano.VRZPlaceWriteData_LanguageDetailsWriteData languageDetails = 94;
+	google.protobuf.GPBStringValue tilezenKindOverride = 95;
+	google.protobuf.GPBFloatValue minZoomOverride = 96;
+	snapchat.local.verrazano.VRZPlaceAttributeDataValue placeAttributeData = 97;
+	google.protobuf.GPBStringValue asProfileId = 99;
+	bytes logoBoltContentObject = 100;
+
+	enum VRZPlaceGeometry_Purpose {
+		PURPOSE_UNKNOWN = 0;
+		DEFAULT_GEOMETRY = 1;
+		PIP_POINT = 2;
+		LABEL_POINT = 3;
+		DISPLAY_BOUNDING_BOX = 4;
+		NAV_POINT = 5;
+		FENCE = 6;
+		SERVING_FENCE = 7;
+		DISPLAY_POLYGON = 8;
+		LANDMARKER_SERVING_FENCE = 9;
+	}
+
+	repeated VRZPlaceGeometry_Purpose deprecatedGeometryPurposesArray = 101 [packed=true];
+}

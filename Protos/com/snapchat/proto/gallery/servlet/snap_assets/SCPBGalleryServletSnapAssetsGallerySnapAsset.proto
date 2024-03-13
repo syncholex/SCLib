@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet.snap_assets;
+
+import "com/snapchat/proto/gallery/servlet/snap_assets/SCPBGalleryServletSnapAssetsGallerySnapAssetMetadata.proto";
+
+message SCPBGalleryServletSnapAssetsGallerySnapAsset {
+	string id_p = 1;
+	int32 assetDescriptor = 2;
+	string downloadURL = 3;
+	com.snapchat.proto.gallery.servlet.snap_assets.SCPBGalleryServletSnapAssetsGallerySnapAssetMetadata assetMetadata = 4;
+}

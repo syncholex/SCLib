@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCTFeedNode_CTFeedSource_Compute {
+	string path = 1;
+	repeated bytes backendPrivateDataArray = 2;
+	string cofKeyForTtl = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBDynamicContentSetting {
+	int64 autoRefreshDelayInMilli = 1;
+	float autoRefreshMessageXPortrait = 2;
+	float autoRefreshMessageXLandscape = 3;
+	float autoRefreshMessageYPortrait = 4;
+	float autoRefreshMessageYLandscape = 5;
+	string dynamicFilterRefreshHint = 6;
+	string dynamicFilterUpdatingMessage = 7;
+}

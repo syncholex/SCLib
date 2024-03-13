@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthApprovalResponse {
+	string redirectUri = 1;
+	string code = 2;
+	string state = 3;
+}

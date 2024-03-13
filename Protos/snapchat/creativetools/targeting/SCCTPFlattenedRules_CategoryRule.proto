@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPFlattenedRules_CategoryRule_UIntRule.proto";
+import "snapchat/creativetools/targeting/SCCTPFlattenedRules_CategoryRule_StringRule.proto";
+
+message SCCTPFlattenedRules_CategoryRule {
+
+	oneof rule {
+		snapchat.creativetools.targeting.SCCTPFlattenedRules_CategoryRule_UIntRule uintRule = 1;
+		snapchat.creativetools.targeting.SCCTPFlattenedRules_CategoryRule_StringRule stringRule = 2;
+	}
+
+
+	enum SCCTPTargetingExpression_LeafNode_Category {
+		UNKNOWN_CATEGORY = 0;
+		GEOFENCE_ID = 1;
+		COUNTRY = 2;
+		FENCE_TAG = 3;
+		USER_ID = 4;
+		AGE = 5;
+		USER_GROUP_ID = 6;
+		LOI_CATEGORY = 7;
+		SLC_CATEGORY = 8;
+		DLXS_CATEGORY = 9;
+		AB_TEST_EXPERIMENT_VARIABLE = 10;
+		CITY = 11;
+		STATE = 12;
+		DMA = 13;
+		ZIP_CODE = 14;
+		UNLOCKABLE_ID = 15;
+		LOCALE = 16;
+		WEATHER_CONDITION = 17;
+		FRIEND_GRAPH_BOOST_USER = 18;
+		DAYS_UNTIL_BIRTHDAY = 19;
+		DAYS_SINCE_ACCOUNT_CREATION = 20;
+		SNAP_SCORE = 21;
+		FRIENDS_OF = 22;
+	}
+
+	SCCTPTargetingExpression_LeafNode_Category category = 3;
+}

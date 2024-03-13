@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCULInfoCard_Attachment_DeepLink {
+	string uri = 1;
+	string appTitle = 2;
+	google.protobuf.GPBInt64Value iosAppId = 3;
+	string androidPackageId = 4;
+
+	enum SCULInfoCard_Attachment_DeepLink_FallbackType {
+		UNKNOWN_FALLBACK_TYPE = 0;
+		APP_INSTALL = 1;
+		WEB_SITE = 2;
+	}
+
+	SCULInfoCard_Attachment_DeepLink_FallbackType fallbackType = 5;
+	string webViewFallbackURL = 6;
+	string appIconURL = 7;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsLensImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsTileViewImpressionTrack.proto";
+
+message SCAdsLensTileImpressionTrack {
+	google.protobuf.GPBStringValue lensSessionId = 1;
+	snapchat.ads.request.schema.SCAdsLensImpressionTrack lensImpression = 2;
+	snapchat.ads.request.schema.SCAdsTileViewImpressionTrack tileImpression = 3;
+}

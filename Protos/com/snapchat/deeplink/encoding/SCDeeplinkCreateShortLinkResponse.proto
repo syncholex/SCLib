@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.encoding;
+
+message SCDeeplinkCreateShortLinkResponse {
+	string shortLink = 1;
+
+	oneof qrCode {
+		string qrCodeURL = 2;
+		bytes qrCodeImage = 3;
+	}
+
+}

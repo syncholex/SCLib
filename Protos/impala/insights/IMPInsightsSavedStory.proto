@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSavedStory {
+	string businessId = 1;
+	string storyId = 2;
+	bytes storyCard = 3;
+}

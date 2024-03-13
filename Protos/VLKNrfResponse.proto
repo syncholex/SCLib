@@ -1,0 +1,127 @@
+syntax = "proto2";
+
+import "VLKNrfDebugReport.proto";
+import "VLKNrfDiffUpdateResponse.proto";
+import "VLKHardwareVersion.proto";
+import "VLKNrfTemperatureReport.proto";
+import "VLKAmbaFsStatus.proto";
+import "VLKNrfAuthResponse.proto";
+import "VLKNrfBackgroundUpdateResponse.proto";
+import "VLKNrfBatteryInfo.proto";
+import "VLKNrfEventLogData.proto";
+import "VLKNrfFirmwareVersionInfo.proto";
+
+message VLKNrfResponse {
+	int32 mediaCount = 3;
+	int32 batteryLevel = 4;
+	string errorMessage = 10;
+
+	enum VLKNrfResponse_StatusType {
+		UNINITIALIZED = 0;
+		SUCCESS = 1;
+		SYSTEM_ERROR = 2;
+		REQUEST_ERROR = 3;
+		NOTIFICATION = 4;
+	}
+
+	VLKNrfResponse_StatusType status = 11;
+
+	enum VLKDeviceColor {
+		NONE = 1;
+		BLACK = 2;
+		CLEAR = 3;
+		CORAL = 4;
+		TEAL = 5;
+	}
+
+	VLKDeviceColor deviceColor = 12;
+	VLKNrfDebugReport debugReport = 13;
+	bool mediaUpdated = 14;
+	string firmwareVersion = 16;
+	string serialNumber = 17;
+
+	enum VLKNrfResponse_NrfBluetoothClassicEventType {
+		UNKNOWN = 1;
+		CONNECTED = 2;
+		PAIRING = 3;
+		DISCONNECTED = 4;
+		DETECT_OVERLOAD = 5;
+		WIFI_SHARING_READY = 6;
+	}
+
+	VLKNrfResponse_NrfBluetoothClassicEventType bluetoothClassicEvent = 18;
+
+	enum VLKNrfResponse_NrfWifiState {
+		WIFI_AP_ON = 1;
+		WIFI_P2P_ON = 2;
+		WIFI_OFF = 3;
+		WIFI_PAUSED = 4;
+		WIFI_STA_ON = 5;
+	}
+
+	VLKNrfResponse_NrfWifiState wifiState = 19;
+	VLKNrfDiffUpdateResponse nrfDiffUpdateResponse = 20;
+	bool ambaCrashed = 21;
+	int32 storagePercent = 22;
+
+	enum VLKNrfResponse_NrfHighTempState {
+		HIGH_TEMP_CRITICAL = 1;
+		TEMP_BACK_NORMAL = 2;
+	}
+
+	VLKNrfResponse_NrfHighTempState highTempState = 23;
+	VLKHardwareVersion hardwareVersion = 25;
+	VLKNrfTemperatureReport temperatureReport = 26;
+	bool contentCleared = 27;
+	bool sawBackupPairingConfirmationTap = 28;
+	bool videoRecordingHasStarted = 30;
+	bool wifiRateLimitingActive = 31;
+	VLKAmbaFsStatus ambaFsStatus = 32;
+	bytes logMessage = 33;
+	bytes gapAddress = 34;
+
+	enum VLKNrfResponse_NrfWifiRequestResult {
+		WIFI_REQUEST_SUCCESS = 1;
+		WIFI_REQUEST_ERROR_P2P_ALREADY_STARTED = 2;
+		WIFI_REQUEST_ERROR_AP_ALREADY_STARTED = 3;
+		WIFI_REQUEST_ERROR_SET_STATE_FAILED = 4;
+		WIFI_REQUEST_ERROR_STA_ALREADY_STARTED = 5;
+	}
+
+	VLKNrfResponse_NrfWifiRequestResult wifiRequestResult = 35;
+	string wifiName = 36;
+	VLKNrfAuthResponse nrfAuthResponse = 37;
+	VLKNrfBackgroundUpdateResponse nrfBackgroundUpdateResponse = 38;
+	VLKNrfBatteryInfo batteryInfo = 39;
+	VLKNrfEventLogData nrfEventLogData = 40;
+	string ipAddress = 41;
+
+	enum VLKNrfResponse_NrfChargerState {
+		CHARGER_OFF = 1;
+		CHARGER_ON = 2;
+	}
+
+	VLKNrfResponse_NrfChargerState nrfChargerState = 42;
+	VLKNrfFirmwareVersionInfo firmwareVersionInfo = 43;
+
+	enum VLKNrfResponse_MediaType {
+		UNKNOWN_MEDIA_TYPE = 0;
+		VIDEO = 1;
+		PICTURE = 2;
+	}
+
+	VLKNrfResponse_MediaType latestMediaType = 44;
+	int32 videoCount = 45;
+	int32 photoCount = 46;
+	bytes macAddress = 47;
+
+	enum VLKNrfResponse_NrfErrorType {
+		NRF_ERROR_LOW_TEMPERATURE = 0;
+		NRF_ERROR_HIGH_TEMPERATURE = 1;
+		NRF_ERROR_LOW_BATTERY = 2;
+		NRF_ERROR_NO_STORAGE = 3;
+		NRF_ERROR_FIRMWARE_CRASH = 4;
+	}
+
+	VLKNrfResponse_NrfErrorType nrfError = 48;
+}

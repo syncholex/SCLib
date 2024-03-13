@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsAdFlagData.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsTileViewImpressionTrack {
+	google.protobuf.GPBStringValue lensId = 1;
+	bytes encryptedAdTrackData = 2;
+	bytes encryptedSponsoredUnlockableTargetingInfoData = 3;
+	bytes rankingId = 4;
+	bytes rankingData = 5;
+	bytes encGeoData = 6;
+	bytes lensCreativeId = 7;
+	snapchat.ads.request.schema.SCAdsAdFlagData adFlagData = 8;
+	google.protobuf.GPBInt64Value tileTimeMillis = 9;
+	google.protobuf.GPBBoolValue tileTapped = 10;
+	google.protobuf.GPBBoolValue launchedSelfie = 11;
+	google.protobuf.GPBInt64Value tileIndexPos = 12;
+	google.protobuf.GPBInt64Value tileMaxViewedPercentage = 13;
+}

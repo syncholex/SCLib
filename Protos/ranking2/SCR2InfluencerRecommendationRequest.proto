@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2InfluencerRecommendationRequest {
+	int32 age = 1;
+	int32 gender = 2;
+	string locale = 3;
+	int32 size = 4;
+	bool debug = 5;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message LensCreatorStats {
+	int64 addedFollowerCount = 1;
+	uint64 createdLensCount = 2;
+	uint64 lensFavoriteCount = 3;
+	uint64 lensUnfavoriteCount = 4;
+}

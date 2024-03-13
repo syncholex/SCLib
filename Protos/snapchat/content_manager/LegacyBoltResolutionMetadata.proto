@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message LegacyBoltResolutionMetadata {
+	string contentId = 1;
+	int32 variantSelected = 2;
+	string localId = 3;
+}

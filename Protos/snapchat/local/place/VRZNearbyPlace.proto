@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/local/verrazano/VRZPlace_Tag.proto";
+import "snapchat/local/verrazano/VRZConcordance.proto";
+import "snapchat/geo/SPCGGeometry.proto";
+
+message VRZNearbyPlace {
+	string placeId = 1;
+	string name = 2;
+	int32 rank = 3;
+	string subtitle = 4;
+	bool isReportable = 5;
+
+	enum VRZPlaceTypeEnum {
+		UNSET = 0;
+		VENUE = 1;
+		BBG = 2;
+	}
+
+	VRZPlaceTypeEnum placeTypeEnum = 8;
+	string categoryId = 9;
+	string categoryName = 10;
+	snapchat.geo.SPCGPoint location = 11;
+	string address = 12;
+	repeated snapchat.local.verrazano.VRZPlace_Tag tagsArray = 13;
+	repeated snapchat.local.verrazano.VRZConcordance concordancesArray = 14;
+	snapchat.geo.SPCGGeometry servingFence = 15;
+	double confidenceScore = 16;
+	bool clientAutoselect = 17;
+}

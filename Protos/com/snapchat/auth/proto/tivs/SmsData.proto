@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message SmsData {
+	string phoneNumber = 1;
+	string tivURL = 2;
+}

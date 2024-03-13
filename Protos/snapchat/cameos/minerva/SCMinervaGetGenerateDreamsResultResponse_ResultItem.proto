@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaGetGenerateDreamsResultResponse_ResultItem {
+	string dreamId = 1;
+	string contentURL = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbRegistrationHostnames {
+	string suggestUsernameServiceHostname = 1;
+	string registerWithUsernamePasswordHostname = 2;
+	string setEmailMeshHostname = 3;
+	string phoneVerifyHostname = 4;
+}

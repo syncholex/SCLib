@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsScoredValue {
+	string value = 1;
+	double score = 2;
+}

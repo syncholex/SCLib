@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSMotionData {
+
+	enum SCVSMotionType {
+		MT_UNKNOWN = 0;
+		MT_STATIONARY = 1;
+		MT_WALKING = 2;
+		MT_RUNNING = 3;
+		MT_BIKING = 4;
+		MT_DRIVING = 5;
+	}
+
+	SCVSMotionType motionType = 1;
+	int64 motionStartTimestamp = 2;
+	int32 motionTypeConfidence = 3;
+	float heading = 4;
+	float speed = 5;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSnapFragmentMetadata {
+	int64 sequence = 1;
+
+	enum SCSSMSnapFragmentMetadata_Type_Enum {
+		UNKNOWN = 0;
+		INSERT = 1;
+		REMOVE = 2;
+	}
+
+	SCSSMSnapFragmentMetadata_Type_Enum type = 2;
+}

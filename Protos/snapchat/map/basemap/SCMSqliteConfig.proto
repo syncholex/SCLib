@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map.basemap;
+
+message SCMSqliteConfig {
+	bool useClientSql = 1;
+	uint32 journalMode = 2;
+	bool enableConcurrency = 3;
+	uint32 readerPoolSize = 4;
+	uint32 writerPoolSize = 5;
+	bool infrequentLatUpdate = 6;
+	bool infrequentEvictionTesting = 7;
+	bool outOfTransactionCompression = 8;
+	bool upsertPutOperation = 9;
+	bool migrateByWiping = 10;
+	bool initInBackground = 11;
+	uint32 initBlockTimeoutMs = 12;
+}

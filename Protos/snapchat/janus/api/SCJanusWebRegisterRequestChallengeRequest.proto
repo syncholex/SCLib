@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusWebRegistrationHeader.proto";
+import "snapchat/janus/api/SCJanusWebRegistrationHeaderBrowser.proto";
+
+message SCJanusWebRegisterRequestChallengeRequest {
+	snapchat.janus.api.SCJanusWebRegistrationHeader webRegistrationHeader = 1;
+	snapchat.janus.api.SCJanusWebRegistrationHeaderBrowser webRegistrationHeaderBrowser = 2;
+}

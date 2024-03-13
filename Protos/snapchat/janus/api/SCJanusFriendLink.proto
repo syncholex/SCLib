@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCJanusFriendLink {
+	string mutableUsername = 1;
+	snapchat.core.SCCOREUUID userId = 2;
+
+	enum SCJanusFriendLink_ConnectionType {
+		UNKNOWN_UNSET = 0;
+		FRIEND = 1;
+		PENDING = 2;
+		FOLLOWING = 3;
+		BLOCKED = 4;
+		DELETED = 5;
+	}
+
+	SCJanusFriendLink_ConnectionType connectionType = 3;
+	string displayName = 4;
+	uint64 addedTs = 5;
+	uint64 reverseAddedTs = 6;
+	bool muted = 7;
+	string legacyUsername = 8;
+}

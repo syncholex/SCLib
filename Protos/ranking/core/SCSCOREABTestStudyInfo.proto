@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCORECofConfig.proto";
+
+message SCSCOREABTestStudyInfo {
+	string studyId = 1;
+	string variableValues = 2;
+	string experimentId = 3;
+	ranking.core.SCSCORECofConfig cofConfig = 4;
+}

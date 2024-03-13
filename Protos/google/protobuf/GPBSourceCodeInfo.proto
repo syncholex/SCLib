@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBSourceCodeInfo_Location.proto";
+
+message GPBSourceCodeInfo {
+	repeated google.protobuf.GPBSourceCodeInfo_Location locationArray = 1;
+}

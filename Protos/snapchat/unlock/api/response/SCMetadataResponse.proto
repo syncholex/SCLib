@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.response;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse.proto";
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+
+message SCMetadataResponse {
+
+	enum SCUnlockStatus {
+		UNLOCK_STATUS_UNSET = 0;
+		OK = 1;
+		ERROR = 2;
+		NOT_EXPIRABLE_LIMIT_EXCEEDED = 3;
+		NOT_FOUND = 4;
+		UNLOCK_MECHANISM_NOT_ALLOWED = 5;
+		SPONSORED_NOT_EXPIRABLE_LENS_FORBIDDEN = 6;
+		ARCHIVED_OR_NOT_VISIBLE_UNLOCKABLE = 7;
+		FORBIDDEN_BY_AGE_POLICY = 8;
+		NOT_COMPATIBLE_WITH_CLIENT_OS_OR_DEVICE = 9;
+		FORBIDDEN_USER_COUNTRY = 10;
+		NOT_COMPATIBLE_LOCALE = 11;
+		NOT_BRAND_FRIENDLY_USER_FOR_SPONSORED_UNLOCKABLE = 12;
+		INVALID_SCREEN_ASPECT_RATIO = 13;
+		INVALID_UNLOCKABLE_SCHEDULE_WINDOW = 14;
+		CLIENT_UPGRADE_REQUIRED = 15;
+		STICKER_PACK_CONTENT_NOT_FOUND = 16;
+		INVALID_DEEP_LINK_CONFIGURATION = 17;
+		DEEP_LINK_CHECK_FAILURE = 18;
+		INVALID_REQUEST = 19;
+		NOT_APPLICABLE = 20;
+		EXPIRABLE_LIMIT_EXCEEDED = 21;
+		INVERSE_LIMIT_EXCEEDED = 22;
+	}
+
+	SCUnlockStatus unlockStatus = 1;
+
+	oneof metadata {
+		lens_platform.client_server.legacy.SCLGGeofilterResponse geofilter = 2;
+		lens_platform.client_server.lens.SCLPLensSnapchat lens = 3;
+	}
+
+}

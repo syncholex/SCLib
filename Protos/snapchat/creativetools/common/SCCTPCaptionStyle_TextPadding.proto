@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCCTPCaptionStyle_TextPadding {
+	google.protobuf.GPBFloatValue top = 1;
+	google.protobuf.GPBFloatValue left = 2;
+	google.protobuf.GPBFloatValue right = 3;
+	google.protobuf.GPBFloatValue bottom = 4;
+}

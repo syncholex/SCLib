@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "com/snapchat/lenscentral/v2/SCLensesPbPublishLensToBusinessProfileRequest_LensGcsLink.proto";
+
+message SCLensesPbPublishLensToBusinessProfileRequest {
+	string name = 1;
+	string userId = 2;
+	string businessProfileId = 3;
+	string description_p = 5;
+	com.snapchat.lenscentral.v2.SCLensesPbPublishLensToBusinessProfileRequest_LensGcsLink lensGcsLink = 6;
+	string previewURL = 7;
+	repeated string bbgInternalTagsArray = 11;
+	string lensId = 12;
+	repeated string bbgPublicSearchTagsArray = 13;
+}

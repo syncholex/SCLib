@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyMessageKey.proto";
+
+message IMPStoryReplyStoryReplyInfo {
+	storyreply.IMPStoryReplyMessageKey key = 1;
+	string snapSourceId = 2;
+	string text = 3;
+	bool expired = 4;
+	bool deleted = 5;
+	bool disclaimerNotSeen = 6;
+	bool isQuoteNotification = 7;
+}

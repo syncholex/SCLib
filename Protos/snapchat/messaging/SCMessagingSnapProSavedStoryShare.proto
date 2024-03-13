@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingStoryShareInfo.proto";
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingSnapProSavedStoryShare {
+	snapchat.messaging.SCMessagingStoryShareInfo story = 1;
+	snapchat.messaging.SCMessagingUUID profileId = 2;
+}

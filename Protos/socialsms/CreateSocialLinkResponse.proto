@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package socialsms;
+
+import "socialsms/ErrorResponse.proto";
+
+message CreateSocialLinkResponse {
+	socialsms.ErrorResponse errorResponse = 1;
+	string URL = 2;
+	string text = 3;
+
+	enum LinkStatus {
+		LINK_STATUS_UNSET = 0;
+		PENDING = 1;
+		ACTIVE = 2;
+	}
+
+	LinkStatus linkStatus = 6;
+}

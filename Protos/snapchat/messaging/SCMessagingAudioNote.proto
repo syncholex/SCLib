@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMediaMetadata.proto";
+
+message SCMessagingAudioNote {
+	snapchat.messaging.SCMessagingMediaMetadata note = 1;
+	string userLocale = 3;
+}

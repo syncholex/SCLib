@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+
+message SCR2ShazamRequest {
+	ranking2.SCR2GeoLocation location = 1;
+	repeated string artistNamesArray = 2;
+	string songTitle = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package activity_center.feed;
+
+message SCActivityCenterPbActionmoji {
+	string avatarId = 1;
+	string templateId = 2;
+
+	enum SCActivityCenterPbActionmoji_ActionmojiType {
+		UNSET = 0;
+		STANDING = 1;
+		VEHICLE = 2;
+	}
+
+	SCActivityCenterPbActionmoji_ActionmojiType actionmojiType = 3;
+}

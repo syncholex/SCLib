@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.common;
+
+import "snapchat/common/Value.proto";
+
+message KeyValue {
+	string key = 1;
+	snapchat.common.Value value = 2;
+}

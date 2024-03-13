@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGetItemRequest.proto";
+
+message SCBitmojiBatchGetItemsRequest {
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiGetItemRequest requestsArray = 1;
+}

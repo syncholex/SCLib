@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHLensesResultV1 {
+	repeated string lensIdsArray = 1;
+	string iconURL = 2;
+	string title = 3;
+	string subtitle = 4;
+	string overlayIconURL = 5;
+}

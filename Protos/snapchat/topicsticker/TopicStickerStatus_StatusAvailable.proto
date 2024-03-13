@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.topicsticker;
+
+message TopicStickerStatus_StatusAvailable {
+	uint64 unpublishAt = 1;
+}

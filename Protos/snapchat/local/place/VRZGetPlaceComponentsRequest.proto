@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZGetPlaceComponentsRequest {
+	string placeId = 1;
+	int32 topN = 2;
+	string mapStyleName = 3;
+
+	enum VRZPlaceComponentType {
+		COMPONENT_TYPE_UNKNOWN = 0;
+		COMPONENT_TYPE_CAMPUS_CHILDREN = 1;
+		COMPONENT_TYPE_ALL = 2;
+		COMPONENT_TYPE_PLACE_LOCALITY = 3;
+		COMPONENT_TYPE_SIMILAR_PLACES = 4;
+	}
+
+	repeated VRZPlaceComponentType placeComponentTypesArray = 4 [packed=true];
+
+	enum VRZPlaceComponentViewSource {
+		COMPONENT_SOURCE_UNKNOWN = 0;
+		COMPONENT_SOURCE_PLACE_PROFILE = 1;
+	}
+
+	VRZPlaceComponentViewSource placeComponentViewSource = 5;
+}

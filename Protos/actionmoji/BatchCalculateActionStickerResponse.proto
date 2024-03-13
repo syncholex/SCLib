@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/CalculateActionStickerResponse.proto";
+
+message BatchCalculateActionStickerResponse {
+	repeated actionmoji.CalculateActionStickerResponse responsesArray = 1;
+}

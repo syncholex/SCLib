@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+message SCS2StickerResultTypeOption_GfycatOption {
+
+	enum SCS2StickerResultTypeOption_GfycatOption_ContentType {
+		CONTENT_TYPE_UNKNOWN = 0;
+		CONTENT_TYPE_REACTION = 1;
+		CONTENT_TYPE_STICKER = 2;
+	}
+
+	repeated SCS2StickerResultTypeOption_GfycatOption_ContentType contentTypeArray = 1 [packed=true];
+}

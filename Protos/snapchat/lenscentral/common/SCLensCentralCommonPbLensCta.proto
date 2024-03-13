@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensCta_Website.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensCta_Deeplink.proto";
+
+message SCLensCentralCommonPbLensCta {
+
+	enum SCLensCentralCommonPbLensCta_CtaType {
+		CTA_TYPE_UNSET = 0;
+		CTA_TYPE_WEBSITE = 1;
+		CTA_TYPE_DEEPLINK = 2;
+	}
+
+	SCLensCentralCommonPbLensCta_CtaType type = 1;
+
+	enum SCLensCentralCommonPbLensCta_CtaText {
+		CTA_TEXT_UNSET = 0;
+		CTA_TEXT_APPLY_NOW = 1;
+		CTA_TEXT_BOOK_NOW = 2;
+		CTA_TEXT_BUY_TICKETS = 3;
+		CTA_TEXT_DONATE = 4;
+		CTA_TEXT_DOWNLOAD = 5;
+		CTA_TEXT_GET_NOW = 6;
+		CTA_TEXT_INSTALL_NOW = 7;
+		CTA_TEXT_LISTEN = 8;
+		CTA_TEXT_MORE = 9;
+		CTA_TEXT_OPEN_APP = 10;
+		CTA_TEXT_ORDER_NOW = 11;
+		CTA_TEXT_PLAY = 12;
+		CTA_TEXT_PLAY_GAME = 13;
+		CTA_TEXT_PRE_REGISTER = 14;
+		CTA_TEXT_READ = 15;
+		CTA_TEXT_SHOW = 16;
+		CTA_TEXT_SHOWTIMES = 17;
+		CTA_TEXT_SIGN_UP = 18;
+		CTA_TEXT_TRY = 19;
+		CTA_TEXT_VIEW = 20;
+		CTA_TEXT_VIEW_PROFILE = 21;
+		CTA_TEXT_VIEW_MENU = 22;
+		CTA_TEXT_VOTE = 23;
+		CTA_TEXT_WATCH = 24;
+	}
+
+	SCLensCentralCommonPbLensCta_CtaText text = 2;
+	string link = 3;
+
+	oneof target {
+		snapchat.lenscentral.common.SCLensCentralCommonPbLensCta_Website website = 4;
+		snapchat.lenscentral.common.SCLensCentralCommonPbLensCta_Deeplink deeplink = 5;
+	}
+
+}

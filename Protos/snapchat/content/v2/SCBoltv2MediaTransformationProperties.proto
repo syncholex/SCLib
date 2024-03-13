@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+message SCBoltv2MediaTransformationProperties {
+	uint32 sourceX = 1;
+	uint32 sourceY = 2;
+	uint32 sourceWidth = 3;
+	uint32 sourceHeight = 4;
+	uint32 outputWidth = 5;
+	uint32 outputHeight = 6;
+}

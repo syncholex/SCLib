@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/lens/prompt/SCLensPromptPromptBody.proto";
+
+message SCLensPromptPrompt {
+	snapchat.core.SCCOREUUID promptId = 1;
+	uint64 creationTimestamp = 2;
+	snapchat.core.SCCOREUUID userId = 3;
+	snapchat.lens.prompt.SCLensPromptPromptBody promptBody = 4;
+	int64 lensId = 5;
+
+	enum SCLensPromptInteractionFlow {
+		FLOW_UNSET = 0;
+		FLOW_QUESTION_ONLY = 1;
+	}
+
+	SCLensPromptInteractionFlow interactionFlow = 6;
+}

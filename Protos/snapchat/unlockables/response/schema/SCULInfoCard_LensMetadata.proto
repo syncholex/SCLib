@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULInfoCard_Attachment.proto";
+import "snapchat/unlockables/response/schema/SCULInfoCard_LensStats.proto";
+import "snapchat/unlockables/response/schema/SCULInfoCard_LensBadges.proto";
+
+message SCULInfoCard_LensMetadata {
+	string publicName = 1;
+	string iconURL = 2;
+	string deepLink = 3;
+
+	enum SCULInfoCard_LensMetadata_AvailableLensAction {
+		UNKNOWN_LENS_ACTION = 0;
+		ADD_TO_FAVORITES = 1;
+		REMOVE_LENS = 2;
+		SHOW_TOPIC_PAGE = 3;
+		SHOW_GENERATIVE_AI_DISCLAIMER = 4;
+	}
+
+	repeated SCULInfoCard_LensMetadata_AvailableLensAction availableLensActionsArray = 4 [packed=true];
+	bool isFavorite = 5;
+	int64 lensCollectionId = 6;
+	snapchat.unlockables.response.schema.SCULInfoCard_Attachment attachment = 7;
+	string collectibleDeepLink = 8;
+	string collectibleOwnerDisplayName = 9;
+	int64 collectibleNumberOfOwners = 10;
+	string lensDisclaimerURL = 11;
+	snapchat.unlockables.response.schema.SCULInfoCard_LensStats lensStats = 12;
+	snapchat.unlockables.response.schema.SCULInfoCard_LensBadges lensBadges = 13;
+}

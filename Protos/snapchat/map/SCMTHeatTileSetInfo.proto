@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTHeatmapGradient.proto";
+
+message SCMTHeatTileSetInfo {
+	double heatFromTime = 1;
+	double heatToTime = 2;
+	double lastSnapTime = 3;
+	int32 totalHeatmapPoints = 4;
+	snapchat.map.SCMTHeatmapGradient heatmapGradient = 5;
+	float heatNormalizationPeak = 6;
+	float fuzzNormalizationPeak = 7;
+	float heatPointBaseRadius = 8;
+}

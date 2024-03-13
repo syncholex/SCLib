@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package cognac.client.message;
+
+import "cognac/client/message/SCCognacTalkSessionTextMessage.proto";
+import "cognac/client/message/SCCognacStatusStreamMessage.proto";
+
+message SCCognacTalkSessionMessage {
+	string id_p = 1;
+	string userId = 2;
+
+	oneof message {
+		cognac.client.message.SCCognacTalkSessionTextMessage textMessage = 3;
+		cognac.client.message.SCCognacStatusStreamMessage statusStreamMessage = 4;
+	}
+
+}

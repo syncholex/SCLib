@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBSlamCorePose.proto";
+
+message HRMPBSlamCoreImagePose {
+	hermosa.HRMPBSlamCorePose slamPose = 1;
+	int64 rawImageTimestampNs = 2;
+}

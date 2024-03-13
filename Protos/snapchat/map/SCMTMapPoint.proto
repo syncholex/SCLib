@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "actionmoji/action/SCMT1Sticker.proto";
+
+message SCMTMapPoint {
+	float lat = 1;
+	float lng = 2;
+	string name = 3;
+	string locality = 4;
+	actionmoji.action.SCMT1Sticker typeSticker = 5;
+}

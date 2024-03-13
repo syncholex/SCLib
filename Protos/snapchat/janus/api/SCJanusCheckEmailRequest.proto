@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAppRegisterContext.proto";
+
+message SCJanusCheckEmailRequest {
+	snapchat.janus.api.SCJanusAppRegisterContext registrationContext = 1;
+	string email = 5;
+}

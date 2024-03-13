@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+message SCPTextPollItem {
+	uint32 optionId = 1;
+	string label = 2;
+}

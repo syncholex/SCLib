@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPromotedStoryTileCtaConfig_BackgroundExitBehavior {
+
+	enum SCAdsPromotedStoryTileCtaConfig_BackgroundExitBehavior_Behavior {
+		DEFAULT_UNSET = 0;
+		TIMED = 1;
+		IMMEDIATELY = 2;
+		NEVER = 3;
+	}
+
+	SCAdsPromotedStoryTileCtaConfig_BackgroundExitBehavior_Behavior behavior = 1;
+	double exitAfterSec = 2;
+}

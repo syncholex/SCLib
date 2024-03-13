@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASUploadTrackRequest {
+	bytes mediaString = 1;
+	string trackId = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCVOperaOnboardingV4 {
+
+	enum SCVOperaOnboardingV4_VOperaOnboardingType {
+		UNSET = 0;
+		SINGLE_DIALOG = 1;
+		SEQUENTIAL_DIALOGS = 2;
+	}
+
+	SCVOperaOnboardingV4_VOperaOnboardingType voperaOnboardingStyle = 1;
+}

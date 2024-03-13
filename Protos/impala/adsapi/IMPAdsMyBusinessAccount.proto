@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsRoleInfo.proto";
+
+message IMPAdsMyBusinessAccount {
+	string id_p = 1;
+	string organizationId = 2;
+	repeated string secureActionsArray = 3;
+	repeated impala.adsapi.IMPAdsRoleInfo roleObjectsArray = 4;
+}

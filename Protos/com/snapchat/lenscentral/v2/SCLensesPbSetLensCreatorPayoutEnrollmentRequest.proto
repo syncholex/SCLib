@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbSetLensCreatorPayoutEnrollmentRequest {
+	string lensId = 1;
+	bool lensCreatorPayoutEnrolled = 2;
+}

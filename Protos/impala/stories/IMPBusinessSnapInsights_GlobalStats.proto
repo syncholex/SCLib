@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPBusinessSnapInsights_GlobalStats {
+	int64 viewCount = 1;
+	int64 screenshotCount = 2;
+}

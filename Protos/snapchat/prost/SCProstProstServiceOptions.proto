@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.prost;
+
+import "snapchat/prost/SCProstEndpoint.proto";
+
+message SCProstProstServiceOptions {
+	repeated snapchat.prost.SCProstEndpoint endpointsArray = 1;
+	string audience = 2;
+	string metricsGroup = 3;
+}

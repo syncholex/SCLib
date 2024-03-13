@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message CofConfigCache {
+	int64 cofCacheTsMs = 1;
+	google.protobuf.GPBInt32Value badgeSource = 2;
+	google.protobuf.GPBInt32Value iosTtlMinute = 3;
+	google.protobuf.GPBInt32Value androidTtlMinute = 4;
+	google.protobuf.GPBInt32Value cooldownMinute = 5;
+	google.protobuf.GPBInt32Value ttlVarianceMinute = 6;
+	google.protobuf.GPBInt32Value longCooldownIgnoreBadges = 7;
+	google.protobuf.GPBInt32Value longCooldownAdditionalDurationDays = 8;
+}

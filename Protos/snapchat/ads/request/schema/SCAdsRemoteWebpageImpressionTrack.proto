@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsWebViewContext.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsRemoteWebpageImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBBoolValue loadedOnEntry = 2;
+	google.protobuf.GPBBoolValue loadedOnExit = 3;
+	google.protobuf.GPBFloatValue visibleLoadTime = 4;
+	google.protobuf.GPBBoolValue pixelCookieSet = 5;
+	google.protobuf.GPBInt32Value initalPageStatusCode = 6;
+	google.protobuf.GPBFloatValue webpageHalfOpenViewedSeconds = 7;
+	google.protobuf.GPBBoolValue webpageFatalError = 8;
+	google.protobuf.GPBBoolValue apkDownloaded = 9;
+	snapchat.ads.request.schema.SCAdsWebViewContext webviewContext = 10;
+
+	enum SCAdsWebViewExitMethod {
+		WEBVIEW_EXIT_METHOD_UNSET = 0;
+		EXIT_BUTTON = 1;
+		APP_BACKGROUND = 2;
+		SWIPE_DOWN = 3;
+		PAGE_BACK = 4;
+	}
+
+	SCAdsWebViewExitMethod webviewExitMethod = 11;
+	google.protobuf.GPBStringValue packageIdHandlingAttachmentOpen = 12;
+	google.protobuf.GPBBoolValue scbV2Used = 13;
+}

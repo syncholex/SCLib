@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message VRZGetSuggestedPlaceRequest {
+	snapchat.geo.SPCGPoint location = 1;
+	double gpsAccuracyM = 2;
+}

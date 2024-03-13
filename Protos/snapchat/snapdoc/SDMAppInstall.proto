@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMAppInstall_AppInfo.proto";
+
+message SDMAppInstall {
+	string appTitle = 1;
+	snapchat.snapdoc.SDMAppInstall_AppInfo iosInfo = 2;
+	snapchat.snapdoc.SDMAppInstall_AppInfo androidInfo = 3;
+	string id_p = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsSnapcodeInfo {
+	string scancodeId = 1;
+	string scancodeVersion = 2;
+}

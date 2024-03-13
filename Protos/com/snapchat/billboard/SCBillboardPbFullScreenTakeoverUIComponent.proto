@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbFullScreenTakeoverImage.proto";
+import "com/snapchat/billboard/SCBillboardPbFullSceenTakeoverText.proto";
+
+message SCBillboardPbFullScreenTakeoverUIComponent {
+
+	oneof component {
+		com.snapchat.billboard.SCBillboardPbFullScreenTakeoverImage image = 1;
+		com.snapchat.billboard.SCBillboardPbFullSceenTakeoverText text = 2;
+	}
+
+}

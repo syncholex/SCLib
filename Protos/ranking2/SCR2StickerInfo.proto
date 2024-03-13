@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2StickerInfo {
+	string id_p = 1;
+
+	enum SCR2StickerInfo_StickerType {
+		SNAPCHAT = 0;
+		BITMOJI = 1;
+		GEOSTICKER = 2;
+		EMOJI = 3;
+		CUSTOM_STICKER = 4;
+	}
+
+	SCR2StickerInfo_StickerType type = 2;
+	float width = 3;
+	float height = 4;
+	float centerX = 5;
+	float centerY = 6;
+}

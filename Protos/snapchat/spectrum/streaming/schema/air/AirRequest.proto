@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.air;
+
+import "snapchat/spectrum/streaming/schema/air/ReportOption.proto";
+import "snapchat/spectrum/streaming/schema/air/AppExitInfo.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsCameraInfo.proto";
+import "snapchat/appinsights/errorcode/ErrorCode.proto";
+import "snapchat/appinsights/metadata/Metadata.proto";
+import "snapchat/appinsights/metadata/Breadcrumbs.proto";
+import "com/snapchat/air/shaketoreport/internalfeatures/SCAppInsightsFeature.proto";
+
+message AirRequest {
+	string id_p = 1;
+
+	enum ReportType {
+		REPORT_UNSET = 0;
+		PROBLEM = 1;
+		SUGGESTION = 2;
+		CRASH = 3;
+		CONCERN = 4;
+		SPECTACLES_FIRMWARE_CRASH = 5;
+		NON_FATAL = 6;
+	}
+
+	ReportType reportType = 2;
+	string description_p = 3;
+	string feature = 4;
+	string subFeature = 5;
+
+	enum NetworkConnectionType {
+		NETWORK_UNSET = 0;
+		WIFI = 1;
+		CELLULAR = 2;
+		OFFLINE = 3;
+	}
+
+	NetworkConnectionType connectionType = 6;
+	int64 bandwidth = 7;
+
+	enum ShakeSensitivityType {
+		SHAKE_UNSET = 0;
+		LIGHT = 1;
+		MEDIUM = 2;
+		HARD = 3;
+		HARDER = 4;
+	}
+
+	ShakeSensitivityType shakeSensitivity = 8;
+	double deviceScore = 9;
+	string otherInfo = 10;
+	snapchat.spectrum.streaming.schema.air.ReportOption reportOption = 11;
+	repeated string notificationEmailsArray = 12;
+	int64 appUsedMemory = 13;
+	int64 freeMemory = 14;
+	string blobData = 15;
+
+	enum ReportSource {
+		REPORTSOURCE_UNSET = 0;
+		SHAKE_REPORT = 1;
+		CRASH_REPORT = 2;
+		IN_SETTING_REPORT = 3;
+		IN_GAME = 4;
+		KARMA_CRASH_REPORT = 5;
+		RATING_IN_APP = 6;
+		SPECTACLES_IN_APP_REPORT = 7;
+		IN_MAP = 8;
+		IN_CANVAS = 9;
+		IN_SNAP_PRO = 10;
+		IN_STORY_STUDIO = 11;
+		LAYOUT_REPORT = 12;
+		CHEERIOS_IN_APP_REPORT = 13;
+		MY_AI_REPORT = 14;
+		NON_FATAL_REPORT = 15;
+	}
+
+	ReportSource reportSource = 16;
+	string appLastChangeCommitHash = 17;
+	string isp = 20;
+	string sessionId = 21;
+	bool lockscreen = 22;
+	string deviceId = 23;
+
+	enum Reproducibility {
+		REPRODUCIBILITY_UNSET = 0;
+		REPRODUCIBILITY_LOW = 1;
+		REPRODUCIBILITY_MEDIUM = 2;
+		REPRODUCIBILITY_HIGH = 3;
+	}
+
+	Reproducibility reproducibility = 24;
+	string appBuild = 25;
+	string appVersion = 26;
+	string osVersion = 27;
+	string userGuid = 28;
+	bytes blobDataCompressed = 29;
+	snapchat.spectrum.streaming.schema.air.AppExitInfo appExitInfo = 30;
+	bytes traceId = 31;
+	snapchat.appinsights.metadata.SCAppInsightsCameraInfo cameraInfo = 32;
+	snapchat.appinsights.errorcode.ErrorCode errorCode = 33;
+	string priorId = 34;
+	string cofEtag = 35;
+	snapchat.appinsights.metadata.Metadata metadata = 36;
+	bool appExitInfoOnly = 37;
+	snapchat.appinsights.metadata.Breadcrumbs breadcrumbs = 38;
+	bool isFromOldVersion = 39;
+	com.snapchat.air.shaketoreport.internalfeatures.SCAppInsightsFeature protoFeature = 40;
+}

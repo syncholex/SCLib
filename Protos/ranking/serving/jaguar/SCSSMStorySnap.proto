@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMSnapMediaInfo.proto";
+import "ranking/serving/jaguar/SCSSMSnapPivotInfo.proto";
+import "ranking/serving/jaguar/SCSSMSnapCreatorInfo.proto";
+import "ranking/core/SCSCOREMultiSnapExtension.proto";
+import "ranking/core/SCSCORESnapSource.proto";
+import "ranking/serving/jaguar/SCSSMSnapFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+import "snapchat/snap_connect/SCConnectSnapConnectAttributes.proto";
+import "ranking/serving/jaguar/BoostMetadata.proto";
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/core/SCSCOREGeoLocation.proto";
+import "ranking/core/SCSCORESnapDescription.proto";
+import "snapchat/snapdoc/SDMCameoMetadata.proto";
+import "snapchat/snapdoc/SDMSponsor.proto";
+import "snapchat/snapdoc/SDMAdsTracking.proto";
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+import "impala/common/IMPContentModerationStatus.proto";
+import "ranking/serving/jaguar/SCSSMAdminPermission.proto";
+
+message SCSSMStorySnap {
+	string rawSnapId = 1;
+	ranking.serving.jaguar.SCSSMSnapMediaInfo mediaInfo = 2;
+	int64 creationTimestampMs = 3;
+	int64 expirationTimestampMs = 4;
+	string title = 5;
+	repeated string subTitlesArray = 6;
+	ranking.serving.jaguar.SCSSMSnapPivotInfo pivotInfo = 7;
+	ranking.serving.jaguar.SCSSMSnapCreatorInfo creatorInfo = 8;
+	string attachmentURL = 9;
+	bytes audioStitchData = 10;
+	ranking.core.SCSCOREMultiSnapExtension multiSnapExtension = 11;
+	string sharedStorySubmissionId = 12;
+	ranking.core.SCSCORESnapSource snapSource = 13;
+	string displayGeoInfo = 14;
+	string encryptedGeoData = 15;
+	bytes serializedUnlockablesSnapInfo = 16;
+	string lensId = 17;
+	bool hasSnappablesMetadata = 18;
+	ranking.serving.jaguar.SCSSMSnapFragmentMetadata fragmentMetadata = 19;
+	string snapClientId = 20;
+	string originalSnapId = 21;
+	ranking.serving.jaguar.SCSSMStoryThumbnail snapThumbnail = 22;
+	string externalId = 23;
+	int32 brandFriendliness = 24;
+	bool isPublic = 25;
+	bytes lensMetadata = 26;
+	int64 sourceCreationTimestamp = 27;
+	string caption = 28;
+	snapchat.snap_connect.SCConnectSnapConnectAttributes snapConnectAttributes = 29;
+	string storyFilterId = 30;
+	string filterId = 31;
+	bool isPetraBrandSafe = 32;
+	ranking.serving.jaguar.BoostMetadata boostMetadata = 33;
+	ranking.serving.jaguar.SCSSMEngagementStats engagementStats = 34;
+
+	enum SCMossAnimatedSnapType {
+		UNKNOWN_ANIMATED_SNAP_TYPE = 0;
+		IMAGE_WITH_ANIMATED = 1;
+		IMAGE_WITHOUT_ANIMATED = 2;
+		VIDEO_WITH_ANIMATED = 3;
+		VIDEO_WITHOUT_ANIMATED = 4;
+	}
+
+	SCMossAnimatedSnapType animatedSnapType = 35;
+	bool isRotationLocked = 36;
+
+	enum OurStoryDestination_Enum {
+		UNKNOWN = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	repeated OurStoryDestination_Enum ourStoryDestinationsArray = 37 [packed=true];
+	repeated ranking.core.SCSCOREUUID blockedUserIdsArray = 38;
+
+	enum SCSSMStorySnap_SpotlightSnapStatus_Enum {
+		UNKNOWN = 0;
+		SUBMITTED = 1;
+		LIVE = 2;
+		REJECTED = 3;
+	}
+
+	SCSSMStorySnap_SpotlightSnapStatus_Enum spotlightSnapStatus = 40;
+	bytes eventSignature = 41;
+	bool isStitchedMedia = 42;
+	ranking.core.SCSCOREGeoLocation geoLocation = 43;
+	ranking.core.SCSCORESnapDescription snapDescription = 44;
+
+	enum SCSCOREConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSCOREConnectionInfo_ConnectionType connectionType = 45;
+	snapchat.snapdoc.SDMCameoMetadata cameo = 46;
+	snapchat.snapdoc.SDMSponsor sponsor = 47;
+	snapchat.snapdoc.SDMAdsTracking adsTracking = 48;
+	snapchat.cameos.stories.SCCameosCameoTile cameoTile = 49;
+	string lensRankingId = 50;
+
+	enum SCSSMStorySnap_SpotlightRejectionReason {
+		REASON_UNSET = 0;
+		VIDEO_NO_SOUND = 1;
+		VIDEO_SHORT_LENGTH = 2;
+		CONTAIN_LOGO = 3;
+	}
+
+	SCSSMStorySnap_SpotlightRejectionReason spotlightRejectionReason = 51;
+	impala.common.IMPContentModerationStatus spotlightModerationStatus = 52;
+	ranking.serving.jaguar.SCSSMAdminPermission adminPermission = 53;
+
+	enum SCSSMStorySnap_AttributionStatus {
+		ATTRIBUTED = 0;
+		NON_ATTRIBUTED = 1;
+		NO_PUBLIC_PROFILE = 2;
+		OLD_FLOW_ATTRIBUTED = 3;
+	}
+
+	SCSSMStorySnap_AttributionStatus attributionStatus = 54;
+	bool scanOnPublicContentEnabled = 55;
+	impala.common.IMPContentModerationStatus contentModerationStatus = 56;
+}

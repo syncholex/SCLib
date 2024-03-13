@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPWatchedState.proto";
+
+message IMPGetWatchedStateResponse {
+	repeated impala.IMPWatchedState watchedStatesArray = 2;
+}

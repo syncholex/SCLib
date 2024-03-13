@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTextColor.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTextShadow.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTextPadding.proto";
+
+message SCPBUnlockablesFontStyle {
+	string fontName = 1;
+	string fontURL = 2;
+	com.snapchat.proto.unlockables.SCPBUnlockablesTextColor fontColor = 3;
+	string backgroundImageURL = 4;
+	double letterSpacing = 5;
+	double lineHeight = 6;
+	string textTransform = 7;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesTextShadow textShadowArray = 8;
+	string textDecoration = 9;
+	string textAlign = 10;
+	double fontSize = 11;
+	com.snapchat.proto.unlockables.SCPBUnlockablesTextPadding padding = 12;
+	string backgroundRepeat = 13;
+	com.snapchat.proto.unlockables.SCPBUnlockablesTextColor borderColor = 14;
+	double fontBorderWidth = 15;
+	double minFontSize = 16;
+	double maxFontSize = 17;
+}

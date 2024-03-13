@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/invite/common/SCSharingInvite.proto";
+
+message SCSharingInviteUpdateResponse {
+	snapchat.invite.common.SCSharingInvite invite = 1;
+}

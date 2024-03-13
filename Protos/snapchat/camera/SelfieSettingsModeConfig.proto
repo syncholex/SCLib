@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message SelfieSettingsModeConfig {
+	bool enableSelfieSettings = 1;
+	int64 selfieSettingsLensId = 2;
+	bool enableLensStacking = 3;
+	bool enableOnboardingPrompt = 4;
+	bool enableNewBadge = 5;
+	bool disableOnRearCamera = 6;
+	bool doNotPersistOnColdStart = 7;
+	bool enableColdStartRestorationOnMainCameraOnly = 8;
+	bool disableOnDefaultSettings = 9;
+	bool enableLensUpdateOptimizationCheck = 10;
+	int64 persistentCacheExpriationSeconds = 11;
+
+	enum SelfieSettingsModeConfig_EntryPointExperienceType {
+		DEFAULT_UNSET = 0;
+		BUTTON_WITH_EDIT_SCREEN = 1;
+		BUTTON_WITH_AUTO = 2;
+	}
+
+	SelfieSettingsModeConfig_EntryPointExperienceType entryPointExperience = 12;
+}

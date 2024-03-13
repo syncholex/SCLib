@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPLensEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPSpotlightRealtimeWindowedEngagementStats.proto";
+
+message SCSCKContentEngagementScores {
+	float showEngagementScore = 1;
+	float showFanScore = 2;
+	ranking.pii.user.profile.SCSUPEngagementStats officialPublicStats = 3;
+	ranking.pii.user.profile.SCSUPEngagementStats nonOfficialPublicStats = 4;
+	ranking.pii.user.profile.SCSUPEngagementStats publisherStats = 5;
+	float publicUserSubscriptionCtr = 6;
+	float maxPublicUserCtr = 7;
+	float minPublicUserCtr = 8;
+	float publicUserRecommendedCtr = 9;
+	int64 totalLongWatches = 10;
+	ranking.pii.user.profile.SCSUPEngagementStats ourStoryStats = 11;
+	ranking.pii.user.profile.SCSUPEngagementStats showStats = 12;
+	ranking.pii.user.profile.SCSUPEngagementStats originalShowStats = 13;
+	ranking.pii.user.profile.SCSUPLensEngagementStats lensStats = 14;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSpotlightPublisherStats = 15;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSpotlightPublicUserStats = 16;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSingleSnapStoryStats = 17;
+	ranking.pii.user.profile.SCSUPEngagementStats savedStoryStats = 18;
+	ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedSingleSnapStoryStatsRealtime = 19;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsAdInsertionConfig {
+	google.protobuf.GPBInt32Value minSnapFromStart = 1;
+	google.protobuf.GPBFloatValue minTimeFromStartSeconds = 2;
+	google.protobuf.GPBInt32Value minStoriesFromStart = 3;
+	google.protobuf.GPBInt32Value minStoriesBeforeEnd = 4;
+	google.protobuf.GPBInt32Value minStoriesBetweenAds = 5;
+	google.protobuf.GPBInt32Value minSnapsBetweenAds = 6;
+	google.protobuf.GPBFloatValue minTimeBetweenAdsSeconds = 7;
+	google.protobuf.GPBInt32Value minSnapsBeforeEnd = 8;
+	google.protobuf.GPBFloatValue minTimeBeforeEndSeconds = 9;
+	google.protobuf.GPBFloatValue minTimeInsertionThresholdSeconds = 10;
+	google.protobuf.GPBInt32Value globalMinSnapsBetweenAds = 11;
+	google.protobuf.GPBFloatValue globalMinTimeBetweenAdsSeconds = 12;
+	google.protobuf.GPBInt32Value maxSnapsNum = 13;
+	google.protobuf.GPBBoolValue conjunctionFromStart = 14;
+	google.protobuf.GPBBoolValue conjunctionBetweenAds = 15;
+	google.protobuf.GPBBoolValue conjunctionBeforeEnd = 16;
+	repeated google.protobuf.GPBStringValue customizationUnitModifiersArray = 17;
+}

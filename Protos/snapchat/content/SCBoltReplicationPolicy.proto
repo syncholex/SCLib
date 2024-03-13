@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCBoltCountriesPolicy.proto";
+import "snapchat/content/SCBoltBoltDefaultPolicy.proto";
+import "snapchat/content/SCBoltNoReplicationPolicy.proto";
+import "snapchat/content/SCBoltAllProvidersReplicationPolicy.proto";
+import "snapchat/content/SCBoltStringRegionsPolicy.proto";
+
+message SCBoltReplicationPolicy {
+
+	oneof policyOptions {
+		snapchat.content.SCBoltCountriesPolicy countriesPolicy = 1;
+		snapchat.content.SCBoltBoltDefaultPolicy boltDefaultPolicy = 2;
+		snapchat.content.SCBoltNoReplicationPolicy noReplicationPolicy = 3;
+		snapchat.content.SCBoltAllProvidersReplicationPolicy allProvidersReplicationPolicy = 4;
+		snapchat.content.SCBoltStringRegionsPolicy stringRegionsPolicy = 99;
+	}
+
+}

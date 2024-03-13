@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCContextV1Html_InlineHtml.proto";
+
+message SCContextV1Html {
+
+	oneof content {
+		string URL = 1;
+		snapchat.context.SCContextV1Html_InlineHtml localHtml = 2;
+	}
+
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/UserRecentlyActive.proto";
+
+message UserRecentlyActiveResponseWithSource {
+
+	enum QuerySource {
+		UNSET = 0;
+		SendTo = 1;
+		Profile = 2;
+		FriendFeed = 3;
+		FriendingQuickAdd = 4;
+		FriendingAddedMe = 5;
+		UniversalSearch = 6;
+		FriendingPostType = 7;
+	}
+
+	QuerySource querySource = 1;
+	repeated snapchat.friending.UserRecentlyActive statusesArray = 2;
+}

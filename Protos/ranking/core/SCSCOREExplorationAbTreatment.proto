@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREExplorationAbTreatment {
+	string name = 1;
+	int64 expId = 2;
+	int64 bucketIdRangeStart = 3;
+	int64 bucketIdRangeEnd = 4;
+	string params = 5;
+}

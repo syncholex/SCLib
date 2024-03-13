@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/common/SCCameosFriendBloopsData.proto";
+
+message SCCameosGetFriendBloopsDataResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.common.SCCameosFriendBloopsData bloopsDataArray = 2;
+}

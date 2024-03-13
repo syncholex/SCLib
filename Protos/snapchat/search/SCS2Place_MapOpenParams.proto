@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message SCS2Place_MapOpenParams {
+	snapchat.geo.SPCGRect boundingBox = 1;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerLensTile.proto";
+import "snapchat/lens/le/SCLELensExplorerCreatorTile.proto";
+import "snapchat/lens/le/SCLELensExplorerCollectionTile.proto";
+import "snapchat/lens/le/SCLELensExplorerLensTopicTile.proto";
+import "snapchat/lens/le/SCLELensExplorerHeroTile.proto";
+import "snapchat/lens/le/SCLELensExplorerLensStoryTile.proto";
+
+message SCLEContainerItem {
+
+	oneof item {
+		snapchat.lens.le.SCLELensExplorerLensTile lensTile = 1;
+		snapchat.lens.le.SCLELensExplorerCreatorTile creatorTile = 2;
+		snapchat.lens.le.SCLELensExplorerCollectionTile collectionTile = 3;
+		snapchat.lens.le.SCLELensExplorerLensTopicTile topicTile = 4;
+		snapchat.lens.le.SCLELensExplorerHeroTile heroTile = 5;
+		snapchat.lens.le.SCLELensExplorerLensStoryTile lensStoryTile = 6;
+	}
+
+}

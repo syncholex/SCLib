@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPLanguageLabels {
+	string captionTextLanguage = 1;
+	string hashtagTextLanguage = 2;
+	string descriptionTextLanguage = 3;
+	string displayNameTextLanguage = 4;
+	string ocrV2ArTextLanguage = 5;
+	string whisperAudioDetectedLanguage = 6;
+}

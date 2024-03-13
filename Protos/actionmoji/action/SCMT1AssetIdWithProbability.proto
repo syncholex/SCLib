@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1AssetIdWithProbability {
+	int32 assetId = 1;
+	double probability = 2;
+}

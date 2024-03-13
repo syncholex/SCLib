@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+message SCMGTYMapMarkerCardInfo {
+	string locale = 1;
+	string title = 2;
+	string description_p = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message SyncCustomStoryGroupsRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	bytes syncToken = 2;
+}

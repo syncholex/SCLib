@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.geo;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SPCGRect {
+	snapchat.geo.SPCGPoint p1 = 1;
+	snapchat.geo.SPCGPoint p2 = 2;
+}

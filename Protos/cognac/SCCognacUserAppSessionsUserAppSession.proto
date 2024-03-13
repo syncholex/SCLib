@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacUserAppSessionsUserAppSession {
+	string id_p = 1;
+	string appInstanceId = 2;
+	string externalUserId = 3;
+	string obfuscatedAvatarId = 4;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiFootwear {
+	int32 footwear = 1;
+	int32 footwearTone1 = 2;
+	int32 footwearTone2 = 3;
+	int32 footwearTone3 = 4;
+	int32 footwearTone4 = 5;
+	int32 footwearTone5 = 6;
+	int32 footwearTone6 = 7;
+	int32 footwearTone7 = 8;
+	int32 footwearTone8 = 9;
+	int32 footwearTone9 = 10;
+	int32 footwearTone10 = 11;
+}

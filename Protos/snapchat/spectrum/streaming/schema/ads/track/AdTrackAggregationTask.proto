@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.ads.track;
+
+import "snapchat/ads/request/schema/SCAdsAdEventAggregationData.proto";
+
+message AdTrackAggregationTask {
+
+	oneof event {
+		snapchat.ads.request.schema.SCAdsAdEventAggregationData aggregationData = 1;
+	}
+
+	int64 scheduledExecutionTsMs = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SDMSubtitles {
+	bytes subtitleBundleContentObject = 1;
+
+	enum SDMSubtitles_DisplayMode {
+		DISPLAY_MODE_UNSET = 0;
+		FORCE_SHOW_SUBTITLES = 1;
+	}
+
+	SDMSubtitles_DisplayMode displayMode = 2;
+	snapchat.snapdoc.SDMMediaId mediaId = 3;
+}

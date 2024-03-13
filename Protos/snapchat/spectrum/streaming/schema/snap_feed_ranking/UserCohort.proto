@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+message UserCohort {
+	uint32 viewerAge = 1;
+
+	enum SCCOREUserGender {
+		GENDER_UNKNOWN_UNSET = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+		GENDER_OTHER = 3;
+	}
+
+	SCCOREUserGender viewerGender = 2;
+}

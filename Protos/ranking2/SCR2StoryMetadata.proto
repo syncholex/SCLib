@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2StoryThumbnail.proto";
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2PlaceLikelihood.proto";
+import "ranking2/SCR2PlaceDisplayMetadata.proto";
+import "ranking2/SCR2Topic.proto";
+import "ranking2/SCR2DynamicStoryType.proto";
+import "ranking2/SCR2CompositeStoryId.proto";
+
+message SCR2StoryMetadata {
+	string storyId = 1;
+	string thumbnailSnapId = 2;
+	string title = 3;
+	repeated string subTitlesArray = 4;
+	string emoji = 5;
+	string snippet = 6;
+	float storyScore = 7;
+	ranking2.SCR2StoryThumbnail storyThumbnail = 8;
+	ranking2.SCR2GeoLocation location = 9;
+	int32 totalNumSnaps = 10;
+	double totalDuration = 11;
+	ranking2.SCR2PlaceLikelihood place = 12;
+
+	enum SCR2StoryMetadata_StoryType {
+		UNKNOWN_STORY_TYPE = 0;
+		DYNAMIC_STORY = 1;
+		PARTNERED_STORY = 2;
+	}
+
+	SCR2StoryMetadata_StoryType storyType = 14;
+	string logoURL = 15;
+	bytes adPlacementMetadata = 16;
+	int64 displayTimestampSecs = 17;
+	ranking2.SCR2PlaceDisplayMetadata placeDisplayMetadata = 18;
+	repeated ranking2.SCR2Topic topicLabelsArray = 19;
+	ranking2.SCR2DynamicStoryType dynamicStoryType = 20;
+	ranking2.SCR2CompositeStoryId compositeStoryId = 21;
+	bool isCampusStory = 22;
+	string description_p = 23;
+	bool isSubscribable = 24;
+}

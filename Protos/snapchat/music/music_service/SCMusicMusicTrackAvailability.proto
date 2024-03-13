@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicMusicTrackAvailability {
+	bool isAvailable = 1;
+	string reasonCode = 2;
+	string debug = 3;
+}

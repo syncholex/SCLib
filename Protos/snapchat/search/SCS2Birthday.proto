@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2Birthday {
+	string title = 1;
+	string subtitle = 2;
+	string thumbnailURL = 3;
+}

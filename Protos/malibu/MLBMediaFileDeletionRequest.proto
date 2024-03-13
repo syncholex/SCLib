@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBMediaFileDeletionRequest {
+	string uuid = 1;
+	bool includeHq = 2;
+}

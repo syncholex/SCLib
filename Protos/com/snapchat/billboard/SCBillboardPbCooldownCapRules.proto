@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbCooldownCapRule.proto";
+
+message SCBillboardPbCooldownCapRules {
+	repeated com.snapchat.billboard.SCBillboardPbCooldownCapRule cooldownCapRulesArray = 1;
+}

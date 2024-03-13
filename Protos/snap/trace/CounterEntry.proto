@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message CounterEntry {
+	int64 id_p = 1;
+	int64 count = 2;
+	int64 timestampMs = 3;
+	int64 timestampUs = 4;
+}

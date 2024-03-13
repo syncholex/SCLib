@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.basemap;
+
+message SCMMapReadyConfig {
+	string mapReadyTileCoverageSourceId = 1;
+	uint32 mapReadyTileCoverageCountFactor = 2;
+	bool reportMapReadyRevamp = 3;
+	bool enableMapReadyRevamp = 99;
+}

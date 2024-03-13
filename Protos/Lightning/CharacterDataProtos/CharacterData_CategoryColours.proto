@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+import "Lightning/CharacterDataProtos/CharacterData_CategoryColour.proto";
+import "Lightning/CharacterDataProtos/CharacterData_ClothingColors.proto";
+import "Lightning/CharacterDataProtos/CharacterData_FootwearColors.proto";
+
+message CharacterData_CategoryColours {
+	repeated Lightning.CharacterDataProtos.CharacterData_CategoryColour categoryColoursArray = 1;
+
+	oneof categoryColors3D {
+		Lightning.CharacterDataProtos.CharacterData_ClothingColors clothingColors = 2;
+		Lightning.CharacterDataProtos.CharacterData_FootwearColors footwearColors = 3;
+	}
+
+}

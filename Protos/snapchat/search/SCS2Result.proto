@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2User.proto";
+import "snapchat/search/SCS2SnapProEntity.proto";
+import "snapchat/search/SCS2Group.proto";
+import "snapchat/search/SCS2Friend.proto";
+import "snapchat/search/SCS2Publisher.proto";
+import "snapchat/search/SCS2Lens.proto";
+import "snapchat/search/SCS2SuggestedFriend.proto";
+import "snapchat/search/SCS2PopularUser.proto";
+import "snapchat/search/SCS2PublisherEdition.proto";
+import "snapchat/search/SCS2Store.proto";
+import "snapchat/search/SCS2FeaturedStory.proto";
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2Game.proto";
+import "snapchat/search/SCS2Place.proto";
+import "snapchat/search/SCS2Topic.proto";
+import "snapchat/search/SCS2HeroCard.proto";
+import "snapchat/search/SCS2HappeningNow.proto";
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+import "snapchat/search/SCS2FamilyCenter.proto";
+import "snapchat/search/SCS2SnapchatPlus.proto";
+import "snapchat/search/SCS2QuerySuggestion.proto";
+import "activity_center/feed/SCActivityCenterPbItem.proto";
+import "snapchat/search/SCS2Birthday.proto";
+import "snapchat/search/SCS2LensBadge.proto";
+
+message SCS2Result {
+
+	enum SCS2Result_ResultType {
+		RESULT_TYPE_UNKNOWN = 0;
+		RESULT_TYPE_USER = 1;
+		RESULT_TYPE_SNAP_PRO = 2;
+		RESULT_TYPE_GROUP = 3;
+		RESULT_TYPE_FRIEND = 4;
+		RESULT_TYPE_PUBLISHER = 5;
+		RESULT_TYPE_LENS = 6;
+		RESULT_TYPE_SUGGESTED_FRIEND = 7;
+		RESULT_TYPE_POPULAR_USER = 8;
+		RESULT_TYPE_PUBLISHER_EDITION = 9;
+		RESULT_TYPE_STORE = 10;
+		RESULT_TYPE_FEATURED_STORY = 11;
+		RESULT_TYPE_GAME = 12;
+		RESULT_TYPE_PLACE = 13;
+		RESULT_TYPE_TOPIC = 14;
+		RESULT_TYPE_HERO_CARD = 15;
+		RESULT_TYPE_HAPPENING_NOW = 16;
+		RESULT_TYPE_MUSIC_TRACK = 17;
+		RESULT_TYPE_MUSIC_ARTIST = 18;
+		RESULT_TYPE_FAMILY_CENTER = 19;
+		RESULT_TYPE_SNAPCHAT_PLUS = 20;
+		RESULT_TYPE_QUERY_SUGGESTION = 21;
+		RESULT_TYPE_ACTIVITY_CENTER_FEED = 22;
+		RESULT_TYPE_BIRTHDAY = 23;
+		RESULT_TYPE_FEED_CARD = 24;
+		RESULT_TYPE_LENS_BADGES = 25;
+	}
+
+	SCS2Result_ResultType resultType = 1;
+
+	oneof result {
+		snapchat.search.SCS2User user = 2;
+		snapchat.search.SCS2SnapProEntity snapProEntity = 3;
+		snapchat.search.SCS2Group group = 4;
+		snapchat.search.SCS2Friend friend_p = 5;
+		snapchat.search.SCS2Publisher publisher = 6;
+		snapchat.search.SCS2Lens lens = 7;
+		snapchat.search.SCS2SuggestedFriend suggestedFriend = 8;
+		snapchat.search.SCS2PopularUser popularUser = 9;
+		snapchat.search.SCS2PublisherEdition publisherEdition = 10;
+		snapchat.search.SCS2Store store = 11;
+		snapchat.search.SCS2FeaturedStory featuredStory = 12;
+		snapchat.search.SCS2Game game = 14;
+		snapchat.search.SCS2Place place = 15;
+		snapchat.search.SCS2Topic topic = 16;
+		snapchat.search.SCS2HeroCard heroCard = 17;
+		snapchat.search.SCS2HappeningNow happeningNow = 18;
+		snapchat.creativetools.common.SCCTPMusicTrack musicTrack = 19;
+		snapchat.creativetools.common.SCCTPMusicArtist musicArtist = 20;
+		snapchat.search.SCS2FamilyCenter familyCenter = 21;
+		snapchat.search.SCS2SnapchatPlus snapchatPlus = 22;
+		snapchat.search.SCS2QuerySuggestion querySuggestion = 23;
+		activity_center.feed.SCActivityCenterPbItem activityCenterFeed = 24;
+		snapchat.search.SCS2Birthday birthday = 25;
+		snapchat.search.SCS2LensBadge lensBadge = 26;
+	}
+
+	snapchat.search.SCS2CompositeId compId = 13;
+}

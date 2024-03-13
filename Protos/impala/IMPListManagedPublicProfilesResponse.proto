@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileAndUserData.proto";
+import "impala/IMPUserSettings.proto";
+
+message IMPListManagedPublicProfilesResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.IMPProfileAndUserData profilesArray = 3;
+	impala.IMPUserSettings userSettings = 4;
+	bool isPopular = 5;
+	bool profileCreationEligible = 6;
+	bool publicProfileCreationEligible = 7;
+}

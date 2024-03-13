@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRFastDNNDeliverableModel.proto";
+import "snapchat/perception/model_delivery_registry/SCPMDRImageClassificationMetadata.proto";
+import "snapchat/perception/model_delivery_registry/SCPMDRVisionDeliverableModel.proto";
+import "snapchat/perception/model_delivery_registry/SCPMDRSnapScanDeliverableModel.proto";
+import "snapchat/perception/model_delivery_registry/SCPMDRPercGraphDeliverableModel.proto";
+
+message SCPMDRDeliverableModel {
+
+	enum SCPMDRModelAPI {
+		MODELAPI_UNKNOWN = 0;
+		MODELAPI_IMAGE_CLASSIFICATION = 1;
+		MODELAPI_BARCODE_DETECTION = 2;
+		MODELAPI_SNAPCODE_DETECTION = 3;
+		MODELAPI_IMAGE_EMBEDDING = 4;
+		MODELAPI_PERC_GRAPH = 5;
+	}
+
+
+	oneof model {
+		snapchat.perception.model_delivery_registry.SCPMDRFastDNNDeliverableModel fastdnnModel = 1;
+		snapchat.perception.model_delivery_registry.SCPMDRVisionDeliverableModel visionModel = 4;
+		snapchat.perception.model_delivery_registry.SCPMDRSnapScanDeliverableModel snapscanModel = 6;
+		snapchat.perception.model_delivery_registry.SCPMDRPercGraphDeliverableModel percgraphModel = 7;
+	}
+
+	SCPMDRModelAPI modelApi = 2;
+
+	oneof apiMetadata {
+		snapchat.perception.model_delivery_registry.SCPMDRImageClassificationMetadata imageClassificationMetadata = 3;
+	}
+
+	int32 hash_p = 5;
+}

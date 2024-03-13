@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/heatmap/SCMTMapSnapLite.proto";
+
+message SCMTInternalGetSnapsResponse {
+	repeated snapchat.map.heatmap.SCMTMapSnapLite snapsArray = 1;
+}

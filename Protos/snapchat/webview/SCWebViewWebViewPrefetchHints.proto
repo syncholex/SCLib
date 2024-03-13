@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.webview;
+
+import "snapchat/webview/SCWebViewWebViewPrefetchHints_ResourceLinkInfo.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/webview/SCWebViewResourceInfo.proto";
+import "snapchat/webview/SCAdsWebViewInHouseCache.proto";
+
+message SCWebViewWebViewPrefetchHints {
+	repeated snapchat.webview.SCWebViewWebViewPrefetchHints_ResourceLinkInfo resourcesArray = 1;
+	string baseURL = 2;
+	google.protobuf.GPBStringValue gtmURL = 3;
+	repeated google.protobuf.GPBStringValue tagManagerLinksArray = 4;
+	google.protobuf.GPBStringValue pixelScriptURL = 5;
+	repeated snapchat.webview.SCWebViewResourceInfo resourcesInfoArray = 6;
+	snapchat.webview.SCAdsWebViewInHouseCache inhouseCache = 7;
+	repeated string topConnectedOriginUrlsArray = 8;
+}

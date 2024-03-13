@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocationUpdate.proto";
+
+message SCMTKalmanData {
+	float lat = 1;
+	float lng = 2;
+	float speed = 3;
+	float heading = 4;
+	float horizontalAccuracy = 5;
+	int32 numberOfPoints = 6;
+	float speedAccuracy = 7;
+	repeated snapchat.map.SCMTLocationUpdate locationUpdatesArray = 8;
+	int32 algorithmVersion = 9;
+}

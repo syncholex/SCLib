@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingScreenCaptureStatusMessage {
+	snapchat.messaging.SCMessagingUUID capturingUser = 1;
+
+	enum SCMessagingScreenCaptureStatusMessage_CaptureType {
+		SCREEN_SHOT = 0;
+		SCREEN_RECORD = 1;
+	}
+
+	SCMessagingScreenCaptureStatusMessage_CaptureType captureType = 2;
+
+	enum SCMessagingScreenCaptureStatusMessage_CaptureSource {
+		CONVERSATION = 0;
+		FRIENDSHIP_PROFILE = 1;
+		GROUP_PROFILE = 2;
+		CALL = 3;
+	}
+
+	SCMessagingScreenCaptureStatusMessage_CaptureSource captureSource = 3;
+
+	enum SCMessagingScreenCaptureStatusMessage_CapturingUserInfo {
+		UNSET = 0;
+		CURRENT_GROUP_MEMBER = 1;
+		KICKED_GROUP_MEMBER = 2;
+	}
+
+	SCMessagingScreenCaptureStatusMessage_CapturingUserInfo capturingUserInfo = 4;
+}

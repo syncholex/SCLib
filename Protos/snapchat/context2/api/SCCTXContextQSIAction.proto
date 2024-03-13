@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextQSIAction {
+
+	enum SCCTXContextQSIAction_ContextQSIActionType {
+		ShowStickerCarousel = 0;
+		HideStickerCarousel = 1;
+	}
+
+	SCCTXContextQSIAction_ContextQSIActionType contextQsiActionType = 1;
+}

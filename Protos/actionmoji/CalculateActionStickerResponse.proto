@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/action/SCMT1Type.proto";
+import "actionmoji/action/SCMT1Sticker.proto";
+
+message CalculateActionStickerResponse {
+	repeated actionmoji.action.SCMT1Type actionTypeArray = 2;
+	actionmoji.action.SCMT1Sticker typeSticker = 3;
+	string gitVersion = 4;
+}

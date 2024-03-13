@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "snapchat/activation/api/SCSuggestUsernamePbBirthdateInfo.proto";
+
+message SCSuggestUsernamePbNameAndBirthdate {
+	string firstName = 1;
+	string lastName = 2;
+	snapchat.activation.api.SCSuggestUsernamePbBirthdateInfo birthdateInfo = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPSearchTags_TagsList.proto";
+
+message SCCTPSearchTags {
+	uint64 ctId = 1;
+	snapchat.creativetools.search.SCCTPSearchTags_TagsList localeTags = 2;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "com/snapchat/auth/proto/tivs/LocationData.proto";
+import "com/snapchat/auth/proto/tivs/DeviceData.proto";
+import "com/snapchat/auth/proto/tivs/TransactionDescription.proto";
+import "com/snapchat/auth/proto/tivs/PlatformRequestData.proto";
+
+message TivRequest {
+	string transactionId = 1;
+	string userId = 2;
+	string sessionId = 3;
+	uint64 unixTimeOfRequest = 4;
+	uint64 unixTimeOfExpiration = 5;
+	com.snapchat.auth.proto.tivs.LocationData locationData = 6;
+	com.snapchat.auth.proto.tivs.DeviceData deviceData = 7;
+
+	enum Transaction {
+		UNSET = 0;
+		ACCESS_WEB_CHAT = 1;
+		ACCOUNTS_LOGIN = 2;
+		WEB_CHAT_LOGIN = 3;
+	}
+
+	Transaction transaction = 8;
+	uint64 unixCurrentServerTime = 9;
+	string broadcastId = 10;
+	com.snapchat.auth.proto.tivs.TransactionDescription transactionDescription = 11;
+	com.snapchat.auth.proto.tivs.PlatformRequestData platformRequestData = 12;
+	string channelId = 13;
+}

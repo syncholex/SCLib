@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/map/garfield/tray/SCMGTYLensData.proto";
+
+message SCMGTYGetMarkerDataResponse {
+}

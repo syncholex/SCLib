@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPBitmojiStickerMetadata {
+	string avatarId = 1;
+	string friendAvatarId = 2;
+	string customText = 3;
+}

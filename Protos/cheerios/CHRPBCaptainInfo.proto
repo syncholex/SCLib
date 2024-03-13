@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBCaptainStateTakingOff.proto";
+import "cheerios/CHRPBCaptainStateLanding.proto";
+import "cheerios/CHRPBCaptainStateIdle.proto";
+import "cheerios/CHRPBCaptainStateFlyingManual.proto";
+import "cheerios/CHRPBCaptainStateFlyingTraj.proto";
+import "cheerios/CHRPBCaptainStatePreTakeOff.proto";
+
+message CHRPBCaptainInfo {
+
+	oneof response {
+		cheerios.CHRPBCaptainStateTakingOff takingOff = 1;
+		cheerios.CHRPBCaptainStateLanding landing = 2;
+		cheerios.CHRPBCaptainStateIdle idle = 3;
+		cheerios.CHRPBCaptainStateFlyingManual flyingManual = 4;
+		cheerios.CHRPBCaptainStateFlyingTraj flyingTraj = 5;
+		cheerios.CHRPBCaptainStatePreTakeOff preTakeoff = 6;
+	}
+
+}

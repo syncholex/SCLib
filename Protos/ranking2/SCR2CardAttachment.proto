@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2TextSearchAction.proto";
+import "ranking2/SCR2TakeSnapAction.proto";
+import "ranking2/SCR2GoToMapAction.proto";
+import "ranking2/SCR2ShowPlaceAction.proto";
+import "ranking2/SCR2ShowMoreBusinessHourAction.proto";
+
+message SCR2CardAttachment {
+
+	enum SCR2CardAttachment_AttachmentType {
+		UNKNOWN_TYPE = 0;
+		SHOW_MORE_BUTTON = 1;
+		SNAP_BUTTON = 2;
+		TEXT_ICON = 3;
+		FIRE_ICON = 4;
+		PIN_ICON = 5;
+		MAP_ENTRANCE = 6;
+		PLACE_ICON = 7;
+		MAP_HERO_CARD = 8;
+		MORE_BUSINESS_HOUR = 9;
+	}
+
+	SCR2CardAttachment_AttachmentType type = 1;
+	string displayText = 2;
+
+	oneof action {
+		ranking2.SCR2TextSearchAction textSearch = 3;
+		ranking2.SCR2TakeSnapAction takeSnap = 4;
+		ranking2.SCR2GoToMapAction goToMap = 5;
+		ranking2.SCR2ShowPlaceAction showPlace = 6;
+		ranking2.SCR2ShowMoreBusinessHourAction showMoreBusinessHour = 7;
+	}
+
+}

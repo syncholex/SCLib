@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTSetShareLocationPreferencesResponse {
+
+	enum SCMTErrorCode {
+		OK = 0;
+		UNKNOWN_ERROR = 1;
+		CONCURRENCY_ERROR = 2;
+		VERSION_MISMATCH = 3;
+		GHOST_MODE_UPDATE = 4;
+	}
+
+	SCMTErrorCode errorCode = 1;
+}

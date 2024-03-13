@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2ObjectBoundingBox.proto";
+
+message SCR2SnapLabel {
+	string label = 2;
+	double score = 3;
+	double saliencyScoreByPos = 4;
+	double saliencyScoreByArea = 5;
+	repeated double saliencyMaskArray = 6 [packed=true];
+	double saliencyArea = 7;
+	int32 startOffsetMs = 8;
+	int32 endOffsetMs = 9;
+	ranking2.SCR2ObjectBoundingBox boundingBox = 10;
+	double calibrationScore = 11;
+}

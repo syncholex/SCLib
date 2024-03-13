@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetShowDisplayInfoRequest {
+	string showId = 1;
+	string pageId = 2;
+	string userId = 3;
+	int32 episodeLimit = 4;
+}

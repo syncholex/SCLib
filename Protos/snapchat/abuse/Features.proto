@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+message Features {
+	int64 warnUserCount = 1;
+	int64 deleteSnapCount = 2;
+	int64 suppressUserCount = 3;
+	int64 deleteStoryCount = 4;
+	int64 deleteSearchStoryCount = 5;
+	int64 preserveAccountCount = 6;
+	int64 deleteSnapByAgentCount = 7;
+	bool isFakeRegSnaptrap = 20;
+	bool isFakeRegFare = 21;
+	bool isFakeRegSctrap = 22;
+	int64 snaptrapFriendSpamCount = 23;
+	int64 lockCount = 24;
+	int64 phoneReputationCount = 25;
+	int64 emailReputationCount = 26;
+	int64 sctrapFriendCount = 27;
+	int64 suprCount = 28;
+	int64 debotFriendCount = 29;
+	int64 octopusRegCount = 30;
+	int64 octopusFriendCount = 31;
+	int64 octopusLoginCount = 32;
+	int64 badCdhashCount = 33;
+	int64 publicStorySpamURLCount = 34;
+	int64 deviceCheckCount = 35;
+	int64 mentionRingCount = 36;
+	int64 snaptrapLoginCount = 37;
+	int64 registrationTimestamp = 40;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "snapchat/map/actionmoji/SCMACustomPet.proto";
+
+message SCMASetActionmojiPreferencesRequest {
+	string assetId = 1;
+
+	enum SCMAAssetType {
+		ASSET_TYPE_UNSET = 0;
+		ASSET_TYPE_CAR = 1;
+		ASSET_TYPE_PET = 2;
+	}
+
+	SCMAAssetType assetType = 2;
+	snapchat.map.actionmoji.SCMACustomPet upsertAndSetCustomPet = 3;
+
+	enum SCMAAssetSubtype {
+		ASSET_SUBTYPE_UNSET = 0;
+		ASSET_SUBTYPE_PROVIDED_PET = 1;
+		ASSET_SUBTYPE_USER_GENERATED_PET = 2;
+	}
+
+	SCMAAssetSubtype assetSubtype = 4;
+}

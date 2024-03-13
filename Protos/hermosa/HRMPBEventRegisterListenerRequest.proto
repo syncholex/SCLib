@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBEventRegisterListenerRequest {
+	repeated uint32 eventTypesArray = 1 [packed=true];
+}

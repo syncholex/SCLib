@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message NativeSessionMetricsCollectorWrapperIllegalNextCallStateMetadata {
+
+	enum CallState {
+		CALL_STATE_UNSET = 0;
+		NONE = 1;
+		OUTGOING = 2;
+		INCOMING = 3;
+		ANSWERED = 4;
+		IN_CALL = 5;
+	}
+
+	CallState callState = 1;
+
+	enum CallState {
+		CALL_STATE_UNSET = 0;
+		NONE = 1;
+		OUTGOING = 2;
+		INCOMING = 3;
+		ANSWERED = 4;
+		IN_CALL = 5;
+	}
+
+	CallState nextCallState = 2;
+}

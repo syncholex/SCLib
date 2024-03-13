@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "google/protobuf/GPBEmpty.proto";
+
+message SDMPlaybackSpeedMultiplier {
+	float speedMultiplier = 1;
+
+	oneof speedMultiplierChangeType {
+		google.protobuf.GPBEmpty constant = 2;
+		google.protobuf.GPBEmpty bezierCurve = 3;
+	}
+
+}

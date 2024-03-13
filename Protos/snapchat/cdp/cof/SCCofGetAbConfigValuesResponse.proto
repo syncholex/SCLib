@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/ConfigResult.proto";
+import "snapchat/cdp/cof/DebugTrace.proto";
+
+message SCCofGetAbConfigValuesResponse {
+	repeated snapchat.cdp.cof.ConfigResult configResultsArray = 1;
+	snapchat.cdp.cof.DebugTrace debugTrace = 2;
+}

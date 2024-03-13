@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+import "ranking2/friend_story/SCR2RelatedPublicAccounts_Account.proto";
+
+message SCR2RelatedPublicAccounts {
+	repeated ranking2.friend_story.SCR2RelatedPublicAccounts_Account accountsArray = 1;
+	int64 numUsersLike = 2;
+}

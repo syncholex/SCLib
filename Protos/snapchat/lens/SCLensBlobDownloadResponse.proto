@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensBlobDownloadResponse {
+	string mediaId = 1;
+	bytes data_p = 2;
+	bool isClientEncrypted = 3;
+}

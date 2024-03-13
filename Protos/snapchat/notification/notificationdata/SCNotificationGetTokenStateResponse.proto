@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+message SCNotificationGetTokenStateResponse {
+
+	enum SCNotificationGetTokenStateResponse_TokenState {
+		UNKNOWN = 0;
+		REGISTERED = 1;
+		NO_TOKEN = 2;
+		SOFT_DELETED = 3;
+		NO_USER = 4;
+	}
+
+	SCNotificationGetTokenStateResponse_TokenState deviceTokenState = 1;
+
+	enum SCNotificationTokenDeletionReason {
+		UNKNOWN = 0;
+		USER_LOGIN = 1;
+		USER_LOGOUT = 2;
+		USER_UNINSTALL = 3;
+		PURGE_EVENT = 4;
+		TOKEN_INVALID = 5;
+		SESSION_EXPIRED = 6;
+	}
+
+	SCNotificationTokenDeletionReason tokenDeletionReason = 2;
+
+	enum SCNotificationDeviceType {
+		NONE = 0;
+		IOS = 1;
+		ANDROID = 2;
+		TEST_IOS = 3;
+		TEST_ANDROID = 4;
+		ANDROID_HMS = 5;
+		IOS_BITMOJI = 6;
+		ANDROID_BITMOJI = 7;
+		DESKTOP_WEB = 8;
+		IOS_FEATURE_APP = 9;
+	}
+
+	SCNotificationDeviceType deviceType = 3;
+
+	enum SCNotificationReleaseType {
+		UNKNOWN_RELEASE = 0;
+		PRODUCTION = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		BETA = 4;
+		DEBUG = 5;
+		PROTOTYPING = 6;
+	}
+
+	SCNotificationReleaseType releaseType = 4;
+
+	enum SCNotificationStatusCode {
+		UNKNOWN_STATUS = 0;
+		OK = 1;
+		INVALID_REQUEST = 2;
+		PERSISTENCE_ERROR = 3;
+		NOT_AUTHORIZED = 4;
+		NONE_EXISTING_USER = 5;
+		INTERNAL_FAILURE = 9;
+	}
+
+	SCNotificationStatusCode statusCode = 5;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message SCSCKEmbeddingSet {
+	string embedderInfo = 1;
+	ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+}

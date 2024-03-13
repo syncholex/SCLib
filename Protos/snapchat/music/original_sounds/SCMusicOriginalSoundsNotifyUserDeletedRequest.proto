@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMusicOriginalSoundsNotifyUserDeletedRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+
+	enum SCMusicOriginalSoundsNotifyUserDeletedRequest_EventType {
+		UNSET = 0;
+		DEACTIVATED = 1;
+		REACTIVATED = 2;
+		PURGED = 3;
+	}
+
+	SCMusicOriginalSoundsNotifyUserDeletedRequest_EventType eventType = 2;
+}

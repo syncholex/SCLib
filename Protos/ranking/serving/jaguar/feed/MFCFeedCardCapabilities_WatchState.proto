@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCFeedCardCapabilities_WatchState {
+	string lastWatchedSnapId = 1;
+	int32 lastSnapProgressMsecs = 2;
+	bool playbackFinished = 3;
+}

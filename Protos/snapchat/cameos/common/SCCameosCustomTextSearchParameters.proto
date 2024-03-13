@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosCustomTextSearchParameters {
+	bool isUniversal = 1;
+	repeated string sceneDescriptionsArray = 2;
+}

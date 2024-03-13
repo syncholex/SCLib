@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_DiversificationState_CreatorDiversificationState {
+	int32 creatorToCntMap = 1;
+	repeated uint64 creatorRollingWindowArray = 3 [packed=true];
+}

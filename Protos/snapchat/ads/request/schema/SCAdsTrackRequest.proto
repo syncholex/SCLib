@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsApplication.proto";
+import "snapchat/ads/request/schema/SCAdsPreferences.proto";
+import "snapchat/ads/request/schema/SCAdsDevice.proto";
+import "snapchat/ads/request/schema/SCAdsNetwork.proto";
+import "snapchat/ads/request/schema/SCAdsInventoryTrackRequest.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsAdKitFeatureFlags.proto";
+
+message SCAdsTrackRequest {
+	bytes encryptedUserTrackData = 1;
+	snapchat.ads.request.schema.SCAdsApplication application = 2;
+	snapchat.ads.request.schema.SCAdsPreferences preferences = 3;
+	snapchat.ads.request.schema.SCAdsDevice device = 4;
+	snapchat.ads.request.schema.SCAdsNetwork network = 5;
+	repeated snapchat.ads.request.schema.SCAdsInventoryTrackRequest inventoryTrackRequestsArray = 6;
+	google.protobuf.GPBBoolValue isDebug = 7;
+	google.protobuf.GPBInt64Value creationTimestampMs = 8;
+	google.protobuf.GPBInt32Value numberOfAttempts = 9;
+	google.protobuf.GPBStringValue serializedV1Track = 10;
+	snapchat.ads.request.schema.SCAdsAdKitFeatureFlags adkitFeatureFlags = 11;
+	bytes encryptedUserData = 12;
+	bytes clientRequestId = 13;
+
+	enum SCAdsTrackFiringMechanism {
+		UNSET_TRACK_FIRING_MECHANISM = 0;
+		GREEDY_TRACK = 1;
+		DURABLE_JOB_TRACK = 2;
+	}
+
+	SCAdsTrackFiringMechanism trackFiringMechanism = 14;
+}

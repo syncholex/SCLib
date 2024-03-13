@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBSubnetReachabilityNsdDiscovery.proto";
+import "hermosa/HRMPBSubnetReachabilityUdpEcho.proto";
+import "hermosa/HRMPBSubnetReachabilityTcpEcho.proto";
+
+message HRMPBSubnetReachabilityDetection {
+
+	oneof method {
+		hermosa.HRMPBSubnetReachabilityNsdDiscovery nsd = 1;
+		hermosa.HRMPBSubnetReachabilityUdpEcho udp = 2;
+		hermosa.HRMPBSubnetReachabilityTcpEcho tcp = 3;
+	}
+
+}

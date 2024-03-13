@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/discover/ShareOptionValue.proto";
+import "snapchat/protobuf/SPCPInt64ListValue.proto";
+import "snapchat/discover/ContentAgeGateLevelValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "snapchat/storydoc/STOContentAccessLists.proto";
+import "snapchat/discover/PublishingApprovalsValue.proto";
+import "snapchat/discover/EditorialApprovalValue.proto";
+
+message PartialPublisherMetadata_VisibilityMetadata {
+	google.protobuf.GPBStringValue primaryLanguage = 1;
+	google.protobuf.GPBStringValue homeCountry = 2;
+	snapchat.discover.ShareOptionValue defaultShareOption = 3;
+	snapchat.protobuf.SPCPInt64ListValue geofenceIds = 5;
+	snapchat.discover.ContentAgeGateLevelValue ageGate = 6;
+	google.protobuf.GPBBoolValue publishingEnabled = 7;
+	google.protobuf.GPBInt64Value launchDateTimestamp = 8;
+	snapchat.protobuf.SPCPStringListValue enabledCountry = 9;
+	snapchat.protobuf.SPCPStringListValue disabledCountry = 10;
+	snapchat.protobuf.SPCPStringListValue enabledDistributionCountry = 11;
+	snapchat.protobuf.SPCPStringListValue disabledDistributionCountry = 12;
+	snapchat.protobuf.SPCPStringListValue enabledLanguage = 13;
+	snapchat.protobuf.SPCPStringListValue disabledLanguage = 14;
+	google.protobuf.GPBBoolValue isEmployeeOnly = 16;
+	google.protobuf.GPBBoolValue isSearchable = 17;
+	snapchat.protobuf.SPCPStringListValue localContent = 18;
+	snapchat.storydoc.STOContentAccessLists contentAccessLists = 20;
+	snapchat.discover.PublishingApprovalsValue publishingApprovals = 21;
+	snapchat.discover.EditorialApprovalValue editorialApproval = 22;
+	google.protobuf.GPBStringValue editorialRationale = 23;
+	google.protobuf.GPBInt64Value editorialApprovedTimestamp = 24;
+}

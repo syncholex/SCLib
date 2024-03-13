@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.lens;
+
+import "snapchat/cameos/lens/SCCameosBloopsLensMeta.proto";
+
+message SCCameosBloopsBeautificationConfig {
+	snapchat.cameos.lens.SCCameosBloopsLensMeta lensMetadata = 1;
+	string lensForScenarios = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsUnlockableDeepLink {
+	google.protobuf.GPBInt64Value openTimestampMs = 1;
+	google.protobuf.GPBBoolValue redirectToStore = 2;
+	google.protobuf.GPBBoolValue redirectToWebview = 3;
+}

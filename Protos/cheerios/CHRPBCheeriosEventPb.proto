@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBChargerStateResponse.proto";
+import "cheerios/CHRPBOTAUpdateEventData.proto";
+import "cheerios/CHRPBDialPosition.proto";
+import "cheerios/CHRPBCaptainInfo.proto";
+import "cheerios/CHRPBFlightStatusError.proto";
+import "cheerios/CHRPBRemainingFlightInfo.proto";
+import "cheerios/CHRPBUSBConnectionStatus.proto";
+import "cheerios/CHRPBBatteryStatusResponse.proto";
+import "cheerios/CHRPBCalibrationStatus.proto";
+import "cheerios/CHRPBLostModeEvent.proto";
+
+message CHRPBCheeriosEventPb {
+
+	oneof event {
+		cheerios.CHRPBChargerStateResponse chargerEvent = 1;
+		cheerios.CHRPBOTAUpdateEventData otaUpdateEvent = 2;
+		cheerios.CHRPBDialPosition dialPositionChangeEvent = 3;
+		cheerios.CHRPBCaptainInfo flightStatusChangeEvent = 4;
+		cheerios.CHRPBFlightStatusError flightStatusErrorEvent = 5;
+		cheerios.CHRPBRemainingFlightInfo remainingFlightInfoChangedEvent = 6;
+		cheerios.CHRPBUSBConnectionStatus usbConnectionEvent = 7;
+		cheerios.CHRPBBatteryStatusResponse batteryStatusEvent = 8;
+		cheerios.CHRPBCalibrationStatus calibrationStatusEvent = 9;
+		cheerios.CHRPBLostModeEvent lostModeEvent = 10;
+	}
+
+}

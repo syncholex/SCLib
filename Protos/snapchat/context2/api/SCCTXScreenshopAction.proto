@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXScreenshopAction {
+	string snapId = 1;
+	string heroImageBoltContentURL = 2;
+	string key = 3;
+	string iv = 4;
+}

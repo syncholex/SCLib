@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.snapchat.ui_frameworks;
+
+message CapriConfig {
+	bool footerEnabled = 1;
+	bool camera9By16Enabled = 2;
+	bool cameraFallbackBlurBottomViewEnabled = 3;
+	bool memories175Enabled = 4;
+	bool footerFilledNavIconEnabled = 5;
+	bool footerCaretWithSelectedIconEnabled = 6;
+	bool footerRedBadgeColorEnabled = 7;
+	bool footerNavBarPillBackgroundEnabled = 8;
+	bool footerDarkFooterAlwaysOnCameraEnabled = 9;
+	bool myStory175Enabled = 10;
+	bool reduceDiscoverSubheadingPaddingEnabled = 11;
+	bool reduceFriendsFeedCellHeight = 12;
+	bool useMinFooterHeightAlways = 13;
+	bool reduceDiscoverTileHeight = 14;
+	bool skipUpdatingSafeAreaInsetsDiscover = 16;
+	bool skipUpdatingSafeAreaInsetsFriendsFeed = 17;
+	bool stickyLabelsInDiscoverEnabled = 18;
+	bool useDarkFooterAlways = 19;
+	bool useStandardTopSafeAreaInsetValues = 20;
+	bool useStandardBottomSafeAreaInsetValues = 21;
+	bool useNewDeviceTypeToDetermineIsAllScreenSupported = 22;
+	int32 discoverFeedForYouTileHeightReductionFactor = 23;
+	int32 discoverFeedSubscriptionTileHeightReductionFactor = 24;
+	bool largeLensTapArea = 25;
+	bool mainCamCaptureButtonLower = 26;
+	bool replyCamButtonLower = 27;
+	bool replyCamDismissLower = 28;
+	bool useHigherContentOffsetInPreviewFooter = 29;
+	bool useTallerPreviewButtons = 30;
+	bool useLigherPreviewButtonColor = 31;
+	bool useBackgroundPillInArBar = 32;
+	bool useNgsBadgeColors = 33;
+	bool useDarkFooterOnSpotlight = 34;
+}

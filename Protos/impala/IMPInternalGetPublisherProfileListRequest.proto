@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalGetPublisherProfileListRequest {
+	string pageId = 1;
+	bool includeDisabled = 2;
+	bool includeProfilesWithSoftDeletedHostUser = 3;
+}

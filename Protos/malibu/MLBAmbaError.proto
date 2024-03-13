@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBAmbaError_AmbaAssertError.proto";
+import "malibu/MLBAmbaError_AmbaCpuException.proto";
+import "malibu/MLBLinuxCrash.proto";
+
+message MLBAmbaError {
+	malibu.MLBAmbaError_AmbaAssertError ambaAssert = 1;
+	malibu.MLBAmbaError_AmbaCpuException ambaException = 2;
+	malibu.MLBLinuxCrash linuxCrash = 3;
+}

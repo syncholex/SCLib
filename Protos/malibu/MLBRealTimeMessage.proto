@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBRealTimeMessage {
+	uint64 timeUtc = 1;
+	int32 timeZone = 2;
+}

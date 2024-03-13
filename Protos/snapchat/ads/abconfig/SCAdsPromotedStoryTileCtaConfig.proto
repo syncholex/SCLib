@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsAdBaseConfig.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_CoverZoomAnimation.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_CtaSlideInAnimation.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_CtaPadding.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_PreloadConfig.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_BackgroundExitBehavior.proto";
+import "snapchat/ads/abconfig/SCAdsPromotedStoryTileCtaConfig_CtaRemoteWebPageConfig.proto";
+
+message SCAdsPromotedStoryTileCtaConfig {
+	snapchat.ads.abconfig.SCAdsAdBaseConfig baseConfig = 1;
+	double animationDelay = 2;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_CoverZoomAnimation coverZoomAnimation = 3;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_CtaSlideInAnimation ctaSlideInAnimation = 4;
+	bool noCta = 5;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_CtaPadding ctaPadding = 6;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_PreloadConfig preloadConfig = 7;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_BackgroundExitBehavior backgroundExitBehavior = 8;
+	snapchat.ads.abconfig.SCAdsPromotedStoryTileCtaConfig_CtaRemoteWebPageConfig ctaRemoteWebPageConfig = 9;
+	bool enableCtaOnReplay = 10;
+	bool enable0TapTarget = 11;
+	bool enableCtaOverride = 12;
+}

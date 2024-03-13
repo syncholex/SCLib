@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "PBUFFriend.proto";
+import "PBUFEmojiInfo.proto";
+
+message PBUFFriendsResponse {
+	repeated PBUFFriend friendsArray = 1;
+	int64 friendsSyncToken = 2;
+
+	enum PBUFFriendsResponse_FriendsSyncType {
+		FULL = 0;
+		PARTIAL = 1;
+		TOKEN_ONLY = 2;
+	}
+
+	PBUFFriendsResponse_FriendsSyncType friendsSyncType = 3;
+	repeated PBUFFriend addedFriendsArray = 4;
+	repeated string bestsArray = 5;
+	PBUFEmojiInfo extraFriendmojiMutableDict = 6;
+	PBUFEmojiInfo extraFriendmojiReadOnlyDict = 7;
+}

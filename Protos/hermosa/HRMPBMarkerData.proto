@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBMarkerData {
+	int32 markerId = 1;
+	float markerHeightCm = 2;
+	float markerWidthCm = 3;
+}

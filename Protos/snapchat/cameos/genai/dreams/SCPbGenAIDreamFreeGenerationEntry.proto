@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+message SCPbGenAIDreamFreeGenerationEntry {
+
+	enum SCPbGenAIDreamGenerationType {
+		GENERATION_TYPE_UNSET = 0;
+		FREE = 1;
+		SCPLUS = 2;
+	}
+
+	SCPbGenAIDreamGenerationType type = 1;
+	int32 numberOfFreeGenerations = 2;
+}

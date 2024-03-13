@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsProtoRenderLeadGeneration_LegalConsentCheckbox {
+	string label = 1;
+	bool required = 2;
+}

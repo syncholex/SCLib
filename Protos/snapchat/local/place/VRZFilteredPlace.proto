@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZFilteredPlace {
+	string placeId = 1;
+	double distanceM = 2;
+}

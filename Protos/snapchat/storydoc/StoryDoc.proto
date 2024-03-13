@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/StoryEnvelope.proto";
+import "snapchat/storydoc/StoryDoc_ID.proto";
+
+message StoryDoc {
+	repeated snapchat.storydoc.StoryEnvelope envelopeArray = 2;
+	snapchat.storydoc.StoryDoc_ID id_p = 3;
+}

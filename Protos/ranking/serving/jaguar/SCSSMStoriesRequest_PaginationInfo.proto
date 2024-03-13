@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoriesRequest_PaginationInfo_FeedPaginationInfo.proto";
+
+message SCSSMStoriesRequest_PaginationInfo {
+	ranking.serving.jaguar.SCSSMStoriesRequest_PaginationInfo_FeedPaginationInfo paginationInfoForFeeds = 1;
+}

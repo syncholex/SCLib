@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMMediaIndex_RemoteMedia.proto";
+import "snapchat/sdom/SCSDOMMediaIndex_RawLocalMedia.proto";
+
+message SCSDOMMediaIndex {
+
+	oneof index {
+		int64 mediaId = 1;
+		string localCacheKey = 2;
+		snapchat.sdom.SCSDOMMediaIndex_RemoteMedia remoteMedia = 3;
+		snapchat.sdom.SCSDOMMediaIndex_RawLocalMedia rawLocalMedia = 4;
+	}
+
+}

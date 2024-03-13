@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingReplySuggestion.proto";
+import "snapchat/messaging/SCMessagingLegacyMessageId.proto";
+import "snapchat/messaging/SCMessagingSearchSuggestion.proto";
+
+message SCMessagingActionSuggestion {
+
+	oneof suggestion {
+		snapchat.messaging.SCMessagingReplySuggestion replySuggestion = 1;
+		snapchat.messaging.SCMessagingSearchSuggestion searchSuggestion = 3;
+	}
+
+	snapchat.messaging.SCMessagingLegacyMessageId analyticsMessageId = 2;
+}

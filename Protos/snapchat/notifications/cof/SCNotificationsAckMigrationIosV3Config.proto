@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.notifications.cof;
+
+message SCNotificationsAckMigrationIosV3Config {
+	string ackTreatmentExt = 1;
+	string customPathForExt = 2;
+	string ackTreatmentMainApp = 3;
+	int64 timeoutInSecMainApp = 4;
+	bool useNewConcurrencyLogicInExt = 5;
+	bool serveAbToIosThirteenAndAboveOnly = 6;
+
+	enum SCNotificationsAckMigrationIosV3Config_RetainedSelfFixApplication {
+		RETAINED_SELF_FIX_APPLICATION_UNSET = 0;
+		RETAINED_SELF_FIX_APPLICATION_NONE = 1;
+		RETAINED_SELF_FIX_APPLICATION_FOREGROUND_ONLY = 2;
+		RETAINED_SELF_FIX_APPLICATION_BACKGROUND_ONLY = 3;
+		RETAINED_SELF_FIX_APPLICATION_ALL = 4;
+	}
+
+	SCNotificationsAckMigrationIosV3Config_RetainedSelfFixApplication applyIosTwelveRetainedSelfFix = 7;
+	bool useDeprecatedScrequest = 8;
+}

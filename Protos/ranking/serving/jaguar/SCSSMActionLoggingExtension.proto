@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLoggingContext.proto";
+
+message SCSSMActionLoggingExtension {
+	ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 1;
+	bool explorationStory = 2;
+	bool isFromBoostUpnextRetrieval = 3;
+	bool isFromBoostSameAccount = 4;
+}

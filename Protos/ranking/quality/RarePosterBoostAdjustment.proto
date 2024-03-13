@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message RarePosterBoostAdjustment {
+	int32 originalPosition = 1;
+	int32 boostPosition = 2;
+	int32 numPostDays28D = 3;
+}

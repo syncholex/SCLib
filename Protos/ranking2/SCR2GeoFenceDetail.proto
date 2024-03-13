@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoFence.proto";
+
+message SCR2GeoFenceDetail {
+	string id_p = 1;
+	string name = 2;
+	repeated string tagsArray = 3;
+	ranking2.SCR2GeoFence geofence = 4;
+	uint64 createdTimeTsSecs = 5;
+	string dataSource = 6;
+}

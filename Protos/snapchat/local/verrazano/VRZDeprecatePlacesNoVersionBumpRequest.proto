@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceDeprecateData.proto";
+
+message VRZDeprecatePlacesNoVersionBumpRequest {
+	repeated snapchat.local.verrazano.VRZPlaceDeprecateData deprecateDataArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_EulerAngles_Detection_ProjectionTranslate.proto";
+
+message SnapBrainResponse_Results_EulerAngles_Detection {
+	snapchat.research.SnapBrainResponse_Results_EulerAngles_Detection_ProjectionTranslate projectionTranslate = 1;
+	repeated float anglesArray = 2 [packed=true];
+}

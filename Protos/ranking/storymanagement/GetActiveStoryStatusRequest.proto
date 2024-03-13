@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/storymanagement/StoryQuery.proto";
+
+message GetActiveStoryStatusRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	repeated ranking.core.SCSCOREUUID userIdsArray = 2;
+	repeated ranking.storymanagement.StoryQuery queriesArray = 4;
+}

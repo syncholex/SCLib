@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.drawing;
+
+import "snapchat/creativetools/drawing/SCCTPBrush.proto";
+
+message SCCTPDrawings {
+	repeated snapchat.creativetools.drawing.SCCTPBrush brushesArray = 1;
+}

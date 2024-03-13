@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package weather;
+
+import "weather/SCWWeather.proto";
+import "weather/SCWDailyForecast.proto";
+import "address/SCMapsAddress.proto";
+import "weather/SCWTimeZone.proto";
+
+message SCWCurrentConditionAndForecastResponse {
+	weather.SCWWeather currentCondition = 1;
+	repeated weather.SCWDailyForecast dailyForecastArray = 2;
+	repeated weather.SCWWeather hourlyForecastArray = 3;
+	address.SCMapsAddress address = 4;
+	weather.SCWTimeZone timeZone = 5;
+}

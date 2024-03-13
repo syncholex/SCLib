@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSLocationAnnotation {
+
+	oneof annotation {
+		google.protobuf.GPBEmpty home = 1;
+		google.protobuf.GPBEmpty work = 2;
+		snapchat.core.SCCOREUUID placeId = 3;
+	}
+
+}

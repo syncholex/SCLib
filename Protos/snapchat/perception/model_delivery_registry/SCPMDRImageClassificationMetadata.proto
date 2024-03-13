@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRImageClassificationMetadata_ScorePropagation.proto";
+
+message SCPMDRImageClassificationMetadata {
+	string labels = 1;
+	float thresholds = 2;
+	int32 topN = 3;
+	repeated snapchat.perception.model_delivery_registry.SCPMDRImageClassificationMetadata_ScorePropagation scorePropagationsArray = 4;
+}

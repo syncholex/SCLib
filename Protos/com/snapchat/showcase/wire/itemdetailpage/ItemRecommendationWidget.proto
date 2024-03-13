@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemRecommendationWidgetQueryContext.proto";
+
+message ItemRecommendationWidget {
+	com.snapchat.showcase.wire.itemdetailpage.ItemRecommendationWidgetQueryContext queryContext = 1;
+}

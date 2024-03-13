@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBCameraCalibration {
+	float rectiValid = 1;
+	float cxPixsDiff = 2;
+	float cyPixsDiff = 3;
+	float zErrRot = 4;
+	float zErrVar = 5;
+	float minDistortionXPixsDiff = 6;
+	float minDistortionYPixsDiff = 7;
+}

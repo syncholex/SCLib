@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingShareSavedStoryDisplayInfo.proto";
+
+message SCMessagingShareDisplayInfo {
+}

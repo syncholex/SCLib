@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptPrompt.proto";
+
+message SCLensPromptGetPromptsResponse {
+	repeated snapchat.lens.prompt.SCLensPromptPrompt promptsArray = 1;
+	string cursor = 2;
+}

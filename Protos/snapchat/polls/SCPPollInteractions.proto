@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/polls/SCPVoters.proto";
+
+message SCPPollInteractions {
+	repeated uint32 selfVoteOptionIdsArray = 1 [packed=true];
+	google.protobuf.GPBInt64Value selfVoteServerTimestampMs = 2;
+	uint64 voteCounts = 3;
+	double voteCountRatios = 4;
+	snapchat.polls.SCPVoters voters = 5;
+}

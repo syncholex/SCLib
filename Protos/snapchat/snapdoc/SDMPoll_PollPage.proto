@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMPoll_PollPage_PollItem.proto";
+import "snapchat/snapdoc/SDMPageProperties.proto";
+
+message SDMPoll_PollPage {
+	string id_p = 1;
+	repeated snapchat.snapdoc.SDMPoll_PollPage_PollItem itemsArray = 2;
+	string editorProperties = 3;
+	bool hideLabels = 4;
+	snapchat.snapdoc.SDMPageProperties pageProperties = 5;
+}

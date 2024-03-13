@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/discover/Tags.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "snapchat/protobuf/SPCPInt64ListValue.proto";
+import "snapchat/discover/LogoDisplayValue.proto";
+import "snapchat/discover/MediaLibraryMediaIds.proto";
+
+message PartialPublisherMetadata_BrandingMetadata {
+	google.protobuf.GPBStringValue articleCss = 1;
+	google.protobuf.GPBStringValue primaryColor = 3;
+	google.protobuf.GPBStringValue secondaryColor = 4;
+	google.protobuf.GPBStringValue URLSafeFormalName = 5;
+	google.protobuf.GPBStringValue mutablePublisherName = 6;
+	snapchat.discover.Tags tags = 7;
+	snapchat.protobuf.SPCPStringListValue nicknames = 8;
+	snapchat.protobuf.SPCPInt64ListValue deeplinks = 10;
+	snapchat.discover.LogoDisplayValue profileLogoDisplay = 11;
+	google.protobuf.GPBStringValue squareHeroImageBitmojiTemplateId = 12;
+	google.protobuf.GPBStringValue horizontalIcon = 13;
+	google.protobuf.GPBStringValue squareHeroImageURL = 14;
+	google.protobuf.GPBStringValue publisherIconURL = 19;
+	google.protobuf.GPBStringValue publisherIconId = 20;
+	snapchat.discover.MediaLibraryMediaIds mediaIds = 21;
+	google.protobuf.GPBStringValue formalName = 22;
+	google.protobuf.GPBStringValue description_p = 23;
+	google.protobuf.GPBStringValue websiteURL = 24;
+}

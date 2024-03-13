@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package serengeti;
+
+message SGTIStylizationAndroid {
+	string backgroundColor = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCContextAffordance.proto";
+import "snapchat/context/SCContextContentMetadata.proto";
+import "snapchat/context/SCContextV1ContextField.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo.proto";
+
+message SCContextContextHint {
+
+	enum SCContextContextHint_Hint {
+		AUTO = 0;
+		ON = 1;
+		OFF = 2;
+	}
+
+	SCContextContextHint_Hint hint = 1;
+	int64 timestamp = 2;
+	snapchat.context.SCContextAffordance affordance = 3;
+	snapchat.context.SCContextContentMetadata contentMetadata = 4;
+	repeated snapchat.context.SCContextV1ContextField moreContextArray = 10;
+	snapchat.context2.api.SCCTXContextClientInfo contextClientInfo = 11;
+
+	oneof clientInfo {
+		snapchat.context2.api.SCCTXContextClientInfo unencryptedClientInfo = 12;
+		bytes encryptedClientInfo = 13;
+	}
+
+}

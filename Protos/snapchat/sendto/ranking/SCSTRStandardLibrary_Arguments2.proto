@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRStandardLibrary_Arguments2 {
+	snapchat.sendto.ranking.SCSTRAST argument1 = 1;
+	snapchat.sendto.ranking.SCSTRAST argument2 = 2;
+}

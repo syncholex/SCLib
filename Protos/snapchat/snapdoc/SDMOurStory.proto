@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMOurStory {
+	string ourStoryId = 1;
+	string submissionId = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBGitResponse {
+	string commitSha = 1;
+	string branch = 2;
+	string tag = 3;
+	string buildConfig = 4;
+	string bootloaderGitSha = 5;
+	uint32 bootloaderCrc32 = 6;
+}

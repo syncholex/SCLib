@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message PreviewLabelsConfig {
+	bool enablePreviewToolsLabels = 1;
+	int32 previewLabelsShowDurationMs = 2;
+	bool shouldShowPreviewToolsAlways = 3;
+	int32 previewToolsLabelsShowLimit = 4;
+
+	enum PreviewLabelsConfig_PreviewLabelsShowFrequency {
+		FREQUENCY_UNSET = 0;
+		PER_APP_SESSION = 1;
+		PER_DAY = 2;
+		ALWAYS = 3;
+	}
+
+	PreviewLabelsConfig_PreviewLabelsShowFrequency previewLabelsShowFrequency = 5;
+}

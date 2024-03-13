@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.network;
+
+import "snapchat/network/CdnClientConfig_RoutingRule.proto";
+import "snapchat/network/CdnClientConfig_CdnInfo.proto";
+
+message CdnClientConfig_RoutingDefinition {
+	repeated string URLMatchPatternsArray = 1;
+	repeated snapchat.network.CdnClientConfig_RoutingRule routingRulesArray = 2;
+	repeated snapchat.network.CdnClientConfig_CdnInfo routeInfosArray = 3;
+}

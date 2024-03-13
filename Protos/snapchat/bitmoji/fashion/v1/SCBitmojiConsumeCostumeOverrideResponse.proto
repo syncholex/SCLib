@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiConsumeCostumeOverrideResponse {
+
+	enum SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus {
+		UNSET = 0;
+		SUCCESS = 1;
+		INVENTORY_UNAVAILABLE = 2;
+	}
+
+	SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus status = 1;
+}

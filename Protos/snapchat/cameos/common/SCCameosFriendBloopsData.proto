@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosEncryptedData.proto";
+
+message SCCameosFriendBloopsData {
+	string userId = 1;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCCameosGender gender = 2;
+
+	enum SCCameosFriendBloopsPolicy {
+		ONLY_ME_POLICY = 0;
+		FRIENDS_POLICY = 1;
+		EVERYONE_POLICY = 2;
+	}
+
+	SCCameosFriendBloopsPolicy policy = 3;
+	snapchat.cameos.common.SCCameosEncryptedData processedImage = 4;
+	snapchat.cameos.common.SCCameosEncryptedData rawImage = 5;
+	string formatVersion = 6;
+	string sdkVersion = 7;
+	string hairStyle = 8;
+	int64 lastDataUpdateTime = 9;
+
+	enum SCCameosCameosAdsPolicy {
+		ADS_POLICY_UNSET = 0;
+		ADS_POLICY_NOBODY = 1;
+		ADS_POLICY_ONLY_ME = 2;
+		ADS_POLICY_FRIENDS = 3;
+	}
+
+	SCCameosCameosAdsPolicy adsPolicy = 10;
+}

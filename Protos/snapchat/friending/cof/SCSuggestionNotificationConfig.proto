@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCSuggestionNotificationConfig {
+	int32 cap = 1;
+	int32 impressedCountThreshold = 2;
+	int32 expirationDays = 3;
+	int32 order = 4;
+}

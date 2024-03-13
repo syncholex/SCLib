@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBErrorResponse {
+
+	enum CHRPBErrorResponse_ErrorCode {
+		UNSET = 0;
+		INVALID_REQUEST = 1;
+		NO_HANDLER = 2;
+		HW_ERROR = 3;
+		IO_ERROR = 4;
+		INTERNAL_ERROR = 5;
+		QCOM_IS_DOWN = 6;
+		REQUEST_CANCELED = 7;
+		CONTENT_UNAVAILABLE = 8;
+	}
+
+	CHRPBErrorResponse_ErrorCode errorCode = 1;
+	string description_p = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBFlightModeConfig.proto";
+
+message CHRPBCaptureTypeParams {
+	cheerios.CHRPBFlightModeConfig flightMode = 1;
+
+	enum CHRPBCaptureTypeParams_CaptureType {
+		UNSET = 0;
+		PICTURE = 1;
+		VIDEO = 2;
+		PICTURE_AND_VIDEO = 3;
+	}
+
+	CHRPBCaptureTypeParams_CaptureType captureType = 2;
+}

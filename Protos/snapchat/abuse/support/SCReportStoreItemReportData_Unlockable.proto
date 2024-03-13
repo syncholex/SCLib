@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportStoreItemReportData_Unlockable {
+	uint64 unlockableId = 1;
+
+	enum SCReportStoreItemReportData_Unlockable_UnlockableType {
+		UNSET = 0;
+		LENS = 1;
+		STICKER = 2;
+	}
+
+	SCReportStoreItemReportData_Unlockable_UnlockableType unlockableType = 2;
+}

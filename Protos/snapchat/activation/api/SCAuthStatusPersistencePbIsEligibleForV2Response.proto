@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCAuthStatusPersistencePbIsEligibleForV2Response {
+	bool isEligible = 1;
+}

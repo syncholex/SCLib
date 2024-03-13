@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/common/SCMusicAlbumArt.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_ArtistListSection_Entry {
+	string title = 1;
+	snapchat.music.common.SCMusicAlbumArt artistArt = 2;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference pageReference = 3;
+	uint64 artistId = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message STOLocalizationId {
+	snapchat.core.SCCOREUUID id_p = 1;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message PostReplyResponse {
+	string requestId = 1;
+	ranking.core.SCSCOREUUID replyId = 2;
+
+	enum ApprovalState_Enum {
+		UNKNOWN = 0;
+		DELETED = 1;
+		PENDING = 2;
+		APPROVED = 3;
+		PINNED = 4;
+		MODERATED = 5;
+		REJECTED = 6;
+	}
+
+	ApprovalState_Enum approvalState = 3;
+}

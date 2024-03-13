@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLIGenericEvent.proto";
+import "ranking/logging/instant/SCSLIStoryFeedItemLongImpression.proto";
+import "ranking/logging/instant/SCSLIStoryFeedItemAction.proto";
+import "ranking/logging/instant/SCSLIStoryFeedItemViewSession.proto";
+import "ranking/logging/search/SCSLSQueryInfo.proto";
+import "ranking/logging/search/SCSLSImpressionInfo.proto";
+import "ranking/logging/search/SCSLSActionInfo.proto";
+import "ranking/core/SCSCOREABFeatureLoggingEntry.proto";
+import "ranking/logging/instant/SCSLILensContentAction.proto";
+
+message SCSLIEvent {
+	int64 timestampMsecs = 1;
+
+	oneof event {
+		ranking.logging.instant.SCSLIGenericEvent generic = 2;
+		ranking.logging.instant.SCSLIStoryFeedItemLongImpression storyFeedItemLongImpression = 3;
+		ranking.logging.instant.SCSLIStoryFeedItemAction storyFeedItemAction = 4;
+		ranking.logging.instant.SCSLIStoryFeedItemViewSession storyFeedItemViewSession = 5;
+		ranking.logging.search.SCSLSQueryInfo searchQueryInfo = 6;
+		ranking.logging.search.SCSLSImpressionInfo searchImpressionInfo = 7;
+		ranking.logging.search.SCSLSActionInfo searchActionInfo = 8;
+		ranking.core.SCSCOREABFeatureLoggingEntry abFeatureLog = 10;
+		ranking.logging.instant.SCSLILensContentAction lensContentAction = 11;
+	}
+
+}

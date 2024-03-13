@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCTConfig {
+
+	enum SCCTPCTConfig_Target {
+		CHAT = 0;
+		PREVIEW = 1;
+	}
+
+	repeated SCCTPCTConfig_Target targetsArray = 1 [packed=true];
+	repeated string languagesArray = 2;
+}

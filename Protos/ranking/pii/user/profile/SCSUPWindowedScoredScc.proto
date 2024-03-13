@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPScoredScc.proto";
+
+message SCSUPWindowedScoredScc {
+	ranking.pii.user.profile.SCSUPScoredScc dailySccEngagementSignals = 1;
+	ranking.pii.user.profile.SCSUPScoredScc scoredSccSinceFourWeeks = 2;
+}

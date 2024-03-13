@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMArticle.proto";
+import "snapchat/snapdoc/SDMPoll.proto";
+
+message SDMDynamicAttachmentRenderingInfo {
+	snapchat.snapdoc.SDMArticle article = 1;
+	snapchat.snapdoc.SDMPoll poll = 2;
+}

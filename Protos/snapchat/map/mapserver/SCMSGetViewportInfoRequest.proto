@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.mapserver;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message SCMSGetViewportInfoRequest {
+	snapchat.geo.SPCGRect bbox = 1;
+	double zoom = 2;
+}

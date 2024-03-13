@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCreatePhoneChallengeErrorData {
+
+	enum SCJanusCreatePhoneChallengeErrorData_ErrorCode {
+		UNSET = 0;
+		MISSING_PARAM = 1;
+		INVALID_USER_ID = 2;
+		NO_USER_PHONE_NUMBER = 3;
+		USER_RATE_LIMITED = 4;
+		MESSAGE_FAILED_TO_SEND = 5;
+		INVALID_NUMBER = 6;
+		PHONE_NUMBER_BLOCKLISTED = 7;
+		PHONE_NUMBER_INVALID_FOR_REGION = 8;
+		VERIFY_SESSION_UNAVAILABLE = 9;
+		VERIFY_SESSION_MESSAGE_CAP_EXCEEDED = 10;
+	}
+
+	SCJanusCreatePhoneChallengeErrorData_ErrorCode errorCode = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensUserLocationInfoRequest {
+	string userId = 1;
+}

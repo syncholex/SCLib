@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+import "snapchat/perception/asr/SCPCNAudioConfig.proto";
+import "snapchat/perception/asr/SCPCNConfigRequest.proto";
+
+message SCPCNTranscribeStreamRequest {
+
+	oneof streamingRequest {
+		snapchat.perception.asr.SCPCNAudioConfig config = 1;
+		bytes audioSample = 2;
+		snapchat.perception.asr.SCPCNConfigRequest configRequest = 3;
+	}
+
+}

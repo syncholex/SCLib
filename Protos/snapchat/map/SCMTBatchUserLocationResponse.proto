@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTFriendLocation.proto";
+import "actionmoji/action/SCMT1Action.proto";
+
+message SCMTBatchUserLocationResponse {
+
+	enum SCMTErrorCode {
+		OK = 0;
+		UNKNOWN_ERROR = 1;
+		CONCURRENCY_ERROR = 2;
+		VERSION_MISMATCH = 3;
+		GHOST_MODE_UPDATE = 4;
+	}
+
+	SCMTErrorCode errorCode = 1;
+	int64 assignedSequenceNumber = 4;
+	snapchat.map.SCMTFriendLocation currentLocation = 5;
+	actionmoji.action.SCMT1Action action = 6;
+	double nextRequestAfterSecs = 10;
+}

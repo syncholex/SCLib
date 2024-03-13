@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "iap/shop/SCIapShopPbInAppReceipt.proto";
+
+message SCPbGenAIDreamGenerateRequest {
+	string generationId = 1;
+	iap.shop.SCIapShopPbInAppReceipt receipt = 2;
+}

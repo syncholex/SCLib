@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.basemap;
+
+message SCMParticleEffectsConfig {
+	bool enableNativeParticleEffects = 1;
+	bool enableNativeParticleFetching = 2;
+	uint32 particleEffectsDefaultFps = 3;
+}

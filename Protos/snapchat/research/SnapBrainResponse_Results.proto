@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_Tag.proto";
+import "snapchat/research/SnapBrainResponse_Results_Interestingness.proto";
+import "snapchat/research/SnapBrainResponse_Results_AudioFingerprint.proto";
+import "snapchat/research/SnapBrainResponse_Results_Hydra.proto";
+import "snapchat/research/SnapBrainResponse_Results_OpenNSFW.proto";
+import "snapchat/research/SnapBrainResponse_Results_MediaInfo.proto";
+import "snapchat/research/SnapBrainResponse_Results_Face.proto";
+import "snapchat/research/SnapBrainResponse_Results_LogoDetection.proto";
+import "snapchat/research/SnapBrainResponse_Results_SpokenKeywords.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang.proto";
+import "snapchat/research/SnapBrainResponse_Results_EulerAngles.proto";
+import "snapchat/research/SnapBrainResponse_Results_ObjectDetection.proto";
+import "snapchat/research/SnapBrainResponse_Results_Music.proto";
+import "snapchat/research/SnapBrainResponse_Results_Context.proto";
+import "snapchat/research/SnapBrainResponse_Results_Product.proto";
+import "snapchat/research/SnapBrainResponse_Results_Safety.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapText.proto";
+import "snapchat/research/SnapBrainResponse_Results_Sound.proto";
+import "snapchat/research/SnapBrainResponse_Results_FaceFrontalizer.proto";
+import "snapchat/research/SnapBrainResponse_Results_DiscoverTags.proto";
+
+message SnapBrainResponse_Results {
+	uint32 length = 1;
+	snapchat.research.SnapBrainResponse_Results_Tag tagV1 = 2;
+	double qualityV1 = 3;
+	snapchat.research.SnapBrainResponse_Results_Interestingness interestingnessV1 = 4;
+	snapchat.research.SnapBrainResponse_Results_AudioFingerprint audiofpV1 = 5;
+	snapchat.research.SnapBrainResponse_Results_Hydra hydraV1 = 6;
+	snapchat.research.SnapBrainResponse_Results_OpenNSFW openNsfw = 7;
+	snapchat.research.SnapBrainResponse_Results_MediaInfo mediainfoV1 = 8;
+	snapchat.research.SnapBrainResponse_Results_Face faceV1 = 9;
+	snapchat.research.SnapBrainResponse_Results_LogoDetection logoDetectionV1 = 10;
+	snapchat.research.SnapBrainResponse_Results_SpokenKeywords spokenkeywordsV1 = 11;
+	snapchat.research.SnapBrainResponse_Results_SnapLang snaplangV1 = 12;
+	snapchat.research.SnapBrainResponse_Results_Tag tagV2 = 13;
+	snapchat.research.SnapBrainResponse_Results_EulerAngles eulerAnglesV1 = 14;
+	snapchat.research.SnapBrainResponse_Results_SpokenKeywords spokenkeywordsV2 = 15;
+	snapchat.research.SnapBrainResponse_Results_ObjectDetection objectDetectionV1 = 16;
+	snapchat.research.SnapBrainResponse_Results_Music musicV1 = 17;
+	snapchat.research.SnapBrainResponse_Results_Context contextV1 = 18;
+	snapchat.research.SnapBrainResponse_Results_Product productV1 = 19;
+	snapchat.research.SnapBrainResponse_Results_Safety safetyV1 = 20;
+	snapchat.research.SnapBrainResponse_Results_SnapText snapTextV1 = 21;
+	snapchat.research.SnapBrainResponse_Results_Sound soundV1 = 22;
+	snapchat.research.SnapBrainResponse_Results_Tag tagLite = 23;
+	snapchat.research.SnapBrainResponse_Results_LogoDetection logoDetectionV2 = 24;
+	snapchat.research.SnapBrainResponse_Results_FaceFrontalizer faceFrontalizerV1 = 25;
+	snapchat.research.SnapBrainResponse_Results_DiscoverTags discoverTagsV1 = 26;
+	snapchat.research.SnapBrainResponse_Results_Sound soundV2 = 27;
+}

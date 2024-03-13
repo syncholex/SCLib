@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsUser {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+	bool isOfficial = 6;
+	string mutableUsername = 7;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCORESnapClientMetadata {
+	int64 clientEditTimeBeforeSend = 1;
+	bool savedToMemoriesBeforeSend = 2;
+	bool isLoadedFromCameraRoll = 3;
+	uint32 retakeTrials = 4;
+	repeated uint32 zoomLevelSamplesArray = 5 [packed=true];
+
+	enum SCSCOREConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSCOREConnectionInfo_ConnectionType connectionType = 6;
+}

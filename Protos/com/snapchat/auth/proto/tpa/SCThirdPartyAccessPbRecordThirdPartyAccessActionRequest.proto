@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tpa;
+
+message SCThirdPartyAccessPbRecordThirdPartyAccessActionRequest {
+	string userId = 1;
+
+	enum SCThirdPartyAccessPbPartner_Enum {
+		UNSET = 0;
+		AMAZON = 1;
+	}
+
+	SCThirdPartyAccessPbPartner_Enum partner = 2;
+
+	enum SCThirdPartyAccessPbAction_Enum {
+		UNSET = 0;
+		LINK = 1;
+		UNLINK = 2;
+	}
+
+	SCThirdPartyAccessPbAction_Enum action = 3;
+}

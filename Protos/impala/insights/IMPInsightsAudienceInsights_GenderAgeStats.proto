@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsAudienceInsights_GenderAgeStats {
+
+	enum IMPInsightsUserGender {
+		GENDER_UNKNOWN = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+	}
+
+	IMPInsightsUserGender gender = 1;
+
+	enum IMPInsightsAudienceBucketedAge {
+		AGE_UNKNOWN = 0;
+		AGE_LESS_THAN_13 = 1;
+		AGE_13_TO_17 = 2;
+		AGE_18_TO_20 = 3;
+		AGE_21_TO_24 = 4;
+		AGE_25_TO_34 = 5;
+		AGE_35_TO_54 = 6;
+		AGE_MORE_THAN_54 = 7;
+	}
+
+	IMPInsightsAudienceBucketedAge age = 2;
+	double ratio = 3;
+}

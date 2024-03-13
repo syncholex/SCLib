@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileUserSettings_PublicStorySettings.proto";
+import "impala/IMPProfileUserSettings_SubscriberSetings.proto";
+import "impala/IMPTermsAndConditions.proto";
+import "impala/IMPMonetizationSettings.proto";
+import "impala/IMPAudienceGateSettings.proto";
+import "impala/IMPCreatorDiscoveryForBrandsSettings.proto";
+import "impala/IMPActivityFeedSettings.proto";
+
+message IMPProfileUserSettings {
+	int32 profileManagementViewCount = 1;
+	impala.IMPProfileUserSettings_PublicStorySettings publicStorySettings = 2;
+	impala.IMPProfileUserSettings_SubscriberSetings subscriberSettings = 3;
+	impala.IMPTermsAndConditions giftingTerms = 4;
+	impala.IMPMonetizationSettings monetizationSettings = 5;
+	impala.IMPAudienceGateSettings audienceGateSettings = 6;
+	int64 lastUserInteractedMs = 7;
+
+	enum IMPAgeGateLevel {
+		UNRESTRICTED = 0;
+		EXPLICIT = 1;
+	}
+
+	IMPAgeGateLevel publisherAgeGateLevel = 8;
+	impala.IMPCreatorDiscoveryForBrandsSettings creatorDiscoveryForBrandsSettings = 9;
+	impala.IMPActivityFeedSettings activityFeedSettings = 10;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.charms.api;
+
+import "snapchat/charms/core/SCCPCharms.proto";
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmsSyncResponse {
+	snapchat.charms.core.SCCPCharms charms = 1;
+	repeated int32 unviewedCharmIdsArray = 2 [packed=true];
+	repeated int32 removedCharmIdsArray = 3 [packed=true];
+	bool isFullSync = 4;
+	bytes nextSyncToken = 5;
+	snapchat.charms.common.SCCPUUID requestId = 6;
+	int64 requestTsMs = 7;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportStoreItemReportData_Unlockable.proto";
+
+message SCReportStoreItemReportData {
+	int64 snapItemId = 1;
+	string storeId = 2;
+	string categoryId = 3;
+	string catalogId = 4;
+	snapchat.abuse.support.SCReportStoreItemReportData_Unlockable unlockable = 5;
+}

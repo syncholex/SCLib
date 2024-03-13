@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message GetBaseSnapDataRequest {
+	repeated string snapIdsArray = 1;
+	bool skipStms = 2;
+	bool skipMapSnap = 3;
+}

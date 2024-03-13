@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_OpenNSFW {
+	double score = 1;
+}

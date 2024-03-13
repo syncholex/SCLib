@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBVideoData.proto";
+import "hermosa/HRMPBImageData.proto";
+import "hermosa/HRMPBNordicData.proto";
+import "hermosa/HRMPBAmbaData.proto";
+import "hermosa/HRMPBCameraSensorData.proto";
+import "hermosa/HRMPBGpsData.proto";
+import "hermosa/HRMPBTimeData.proto";
+import "hermosa/HRMPBFwVersion.proto";
+import "hermosa/HRMPBCoulombCtrlData.proto";
+import "hermosa/HRMPBMultisnap.proto";
+import "hermosa/HRMPBSystemState.proto";
+import "hermosa/HRMPBPerformanceData.proto";
+import "hermosa/HRMPBAlsReading.proto";
+import "hermosa/HRMPBLocationData.proto";
+import "hermosa/HRMPBPowerAnalytics.proto";
+import "hermosa/HRMPBGenericAssetsMetadata.proto";
+
+message HRMPBMediaFileMetadata {
+	hermosa.HRMPBVideoData videoData = 1;
+	hermosa.HRMPBImageData imageData = 2;
+	hermosa.HRMPBNordicData nordicData = 3;
+	hermosa.HRMPBAmbaData ambaData = 4;
+	hermosa.HRMPBCameraSensorData cameraSensorData = 5;
+	hermosa.HRMPBGpsData gpsData = 6;
+	bytes randomBytes = 7;
+	hermosa.HRMPBTimeData time = 8;
+	hermosa.HRMPBFwVersion fwVersion = 9;
+	bool hasUploaded = 10;
+	hermosa.HRMPBCoulombCtrlData coulombCtrlData = 11;
+	hermosa.HRMPBMultisnap multisnap = 12;
+	hermosa.HRMPBSystemState systemState = 13;
+	hermosa.HRMPBPerformanceData performanceData = 14;
+
+	enum HRMPBButtonSide {
+		LEFT = 0;
+		RIGHT = 1;
+	}
+
+	HRMPBButtonSide buttonSide = 15;
+	hermosa.HRMPBAlsReading alsReading = 16;
+	hermosa.HRMPBLocationData locationData = 17;
+	string factorySerialNumber = 18;
+	hermosa.HRMPBPowerAnalytics powerAnalytics = 19;
+	repeated hermosa.HRMPBGenericAssetsMetadata genericAssetMetadataArray = 20;
+}

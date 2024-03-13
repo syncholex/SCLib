@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateBytes {
+	bytes val = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCFetchSuggestionsConfig {
+
+	enum SCFetchSuggestionsConfig_FetchType {
+		UNSET = 0;
+		ON_DEMAND = 1;
+		HYBRID = 2;
+		PREFETCH = 3;
+	}
+
+	SCFetchSuggestionsConfig_FetchType fetchType = 1;
+	int64 onDemandTtlDurationMs = 2;
+	int64 prefetchTtlDurationMs = 3;
+	int64 onDemandTimeoutMs = 4;
+}

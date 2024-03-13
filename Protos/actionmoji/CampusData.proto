@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message CampusData {
+	string id_p = 1;
+	string name = 2;
+	float confidence = 3;
+}

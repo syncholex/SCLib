@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensTileThumbnail.proto";
+
+message SCLELensPreviewTile {
+	string iconURL = 1;
+	snapchat.lens.le.SCLELensTileThumbnail thumbnail = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBSlamCoreImagePose.proto";
+import "hermosa/HRMPBCalibration.proto";
+
+message HRMPBImagePoses {
+	repeated hermosa.HRMPBSlamCoreImagePose posesArray = 1;
+	hermosa.HRMPBCalibration calibration = 2;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+import "com/snapchat/proto/air/SCPBAirReportOption.proto";
+import "com/snapchat/proto/air/SCPBAirPreferenceInfo.proto";
+
+message SCPBAirAirRequest {
+	string id_p = 1;
+	string reportType = 2;
+	string description_p = 3;
+	string feature = 4;
+	string subFeature = 5;
+	string connectionType = 6;
+	int64 bandwidth = 7;
+	string shakeSensitivity = 8;
+	double deviceScore = 9;
+	string otherInfo = 10;
+	com.snapchat.proto.air.SCPBAirReportOption reportOption = 11;
+	repeated string notificationEmailsArray = 12;
+	int64 appUsedMemory = 13;
+	int64 freeMemory = 14;
+	string blobData = 15;
+	string reportSource = 16;
+	string appLastChangeCommitHash = 17;
+	string userId = 18;
+	string deviceId = 19;
+	string isp = 20;
+	com.snapchat.proto.air.SCPBAirPreferenceInfo preferenceInfo = 21;
+	bool guestMode = 22;
+	bool lockscreen = 23;
+	string sessionId = 24;
+	double shakeReproducibility = 25;
+}

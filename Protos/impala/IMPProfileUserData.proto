@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileUserData {
+	bool isSubscribed = 1;
+
+	enum IMPAudienceGateStatus {
+		UNRESTRICTED = 0;
+		AGE_GATED = 1;
+	}
+
+	IMPAudienceGateStatus audienceGateStatus = 2;
+	string audienceGateReason = 3;
+}

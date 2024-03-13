@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBDroppedFramesData.proto";
+
+message MLBVideoData {
+	int32 durationMs = 1;
+
+	enum MLBVideoCodec {
+		UNKNOWN = 0;
+		AVC = 1;
+		HEVC = 2;
+	}
+
+	MLBVideoCodec codec = 2;
+	int32 requestedVideoCount = 3;
+	bool lastRecordAborted = 4;
+	malibu.MLBDroppedFramesData droppedFramesData = 5;
+}

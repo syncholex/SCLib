@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocationFuzzingInfo.proto";
+
+message SCMTPipelineHeatmapSnap {
+	string id_p = 1;
+	string userId = 2;
+	double lat = 3;
+	double lng = 4;
+	bool shouldFuzz = 5;
+	snapchat.map.SCMTLocationFuzzingInfo locationFuzzInfo = 6;
+	double timestamp = 7;
+}

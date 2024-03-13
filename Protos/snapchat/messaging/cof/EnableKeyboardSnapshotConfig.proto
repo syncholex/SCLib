@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EnableKeyboardSnapshotConfig {
+	bool isKeyboardSnapshottingEnabled = 1;
+	bool isKikaKeyboardSnapshottingEnabled = 2;
+}

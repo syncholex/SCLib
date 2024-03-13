@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetFamilyPlanResponse {
+	string ownerId = 1;
+	repeated string participantIdsArray = 2;
+	int32 maxParticipants = 3;
+}

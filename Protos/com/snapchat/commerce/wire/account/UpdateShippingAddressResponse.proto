@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.account;
+
+import "com/snapchat/commerce/wire/error/CommerceApiServiceError.proto";
+
+message UpdateShippingAddressResponse {
+
+	oneof response {
+		com.snapchat.commerce.wire.error.CommerceApiServiceError error = 1;
+	}
+
+	string requestId = 2;
+}

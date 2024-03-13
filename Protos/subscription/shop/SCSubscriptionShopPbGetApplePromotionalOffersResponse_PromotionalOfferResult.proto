@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPromotionalOfferIdentifier.proto";
+import "subscription/shop/SCSubscriptionShopPbApplePromotionalOffer.proto";
+
+message SCSubscriptionShopPbGetApplePromotionalOffersResponse_PromotionalOfferResult {
+	subscription.shop.SCSubscriptionShopPbPromotionalOfferIdentifier promotionalOfferIdentifier = 1;
+	subscription.shop.SCSubscriptionShopPbApplePromotionalOffer promotionalOffer = 2;
+}

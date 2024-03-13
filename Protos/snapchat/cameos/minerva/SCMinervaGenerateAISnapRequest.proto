@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMinervaGenerateAISnapRequest {
+	repeated snapchat.core.SCCOREUUID friendIdsArray = 1;
+	string prompt = 2;
+
+	enum SCMinervaAISnapGenerationOrigin {
+		AI_SNAP_GENERATION_ORIGIN_UNSET = 0;
+		GENERAL = 1;
+		AI_CAMERA_PRE_CAPTURE = 2;
+		SNAP_FEED = 3;
+	}
+
+	SCMinervaAISnapGenerationOrigin origin = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+message MMAIMetadataKeys {
+	repeated string metadataKeyArray = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPUIntRange {
+	uint32 minValue = 1;
+	uint32 maxValue = 2;
+}

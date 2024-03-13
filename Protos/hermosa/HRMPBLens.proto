@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLens {
+	string id_p = 1;
+	string name = 2;
+	string iconUri = 3;
+}

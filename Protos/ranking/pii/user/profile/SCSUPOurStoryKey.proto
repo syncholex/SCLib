@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPOurStoryKey {
+	string storyId = 1;
+	bool isCampusStory = 2;
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 3;
+}

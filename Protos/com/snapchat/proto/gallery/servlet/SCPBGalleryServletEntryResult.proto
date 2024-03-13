@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+message SCPBGalleryServletEntryResult {
+	string entryId = 1;
+	int64 seqNum = 2;
+	int32 statusCode = 3;
+	string debugInfo = 4;
+	repeated string snapMediaReferencesArray = 5;
+}

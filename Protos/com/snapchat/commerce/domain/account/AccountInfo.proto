@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.account;
+
+import "com/snapchat/commerce/domain/account/ContactDetails.proto";
+import "com/snapchat/commerce/domain/account/ShippingAddress.proto";
+
+message AccountInfo {
+	com.snapchat.commerce.domain.account.ContactDetails contactDetails = 1;
+	repeated com.snapchat.commerce.domain.account.ShippingAddress shippingAddressListArray = 2;
+}

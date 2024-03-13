@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsClientRankingFeatures {
+	google.protobuf.GPBStringValue appVersion = 1;
+
+	enum SCAdsClientRankingFeatures_DeviceOs {
+		UNKNOWN_DEVICE_OS = 0;
+		IOS = 1;
+		ANDROID = 2;
+	}
+
+	SCAdsClientRankingFeatures_DeviceOs deviceOs = 2;
+	google.protobuf.GPBInt32Value totalUniqueSnapsViewed = 3;
+	google.protobuf.GPBInt32Value numOfTapBacks = 4;
+	google.protobuf.GPBBoolValue playList = 5;
+
+	enum SCAdsClientRankingFeatures_PlaybackAudio {
+		UNKNOWN_PLAYBACK_AUDIO = 0;
+		ON = 1;
+		OFF = 2;
+		HEADPHONE = 3;
+		MUTE_OVERRIDDEN = 4;
+	}
+
+	SCAdsClientRankingFeatures_PlaybackAudio playbackAudio = 6;
+	google.protobuf.GPBBoolValue postRoll = 7;
+	google.protobuf.GPBInt32Value snapIndexPosition = 8;
+	repeated google.protobuf.GPBFloatValue timeViewedArrayArray = 9;
+	google.protobuf.GPBInt32Value totalUniqueSnaps = 10;
+	google.protobuf.GPBBoolValue isLastSnapVideo = 11;
+	google.protobuf.GPBInt32Value totalUniqueAdsViewed = 12;
+}

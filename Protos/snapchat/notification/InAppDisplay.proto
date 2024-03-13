@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Icon.proto";
+
+message InAppDisplay {
+	string title = 1;
+	string body = 2;
+	snapchat.notification.Icon leftImage = 3;
+}

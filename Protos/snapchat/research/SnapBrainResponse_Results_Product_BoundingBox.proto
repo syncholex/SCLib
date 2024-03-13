@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_NormalizedBoundingBox.proto";
+import "snapchat/research/SnapBrainResponse_Results_Product_BoundingBox_RetrievalRecord.proto";
+
+message SnapBrainResponse_Results_Product_BoundingBox {
+	string labelName = 1;
+	snapchat.research.SnapBrainResponse_Results_NormalizedBoundingBox bbox = 2;
+	float score = 3;
+	string compressedFeature = 4;
+	repeated float featureVectorArray = 5 [packed=true];
+	repeated snapchat.research.SnapBrainResponse_Results_Product_BoundingBox_RetrievalRecord indexArray = 6;
+	uint32 frameId = 7;
+}

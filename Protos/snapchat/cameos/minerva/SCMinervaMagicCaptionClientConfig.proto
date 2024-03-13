@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaMagicCaptionClientConfig {
+	string endPoint = 1;
+	int32 requestTimeoutSeconds = 2;
+	int32 batchSize = 3;
+	int32 freeGenerations = 4;
+
+	enum SCMinervaChatGptModelVersion {
+		UNSET = 0;
+		V_3_5 = 1;
+		V_4_1 = 2;
+	}
+
+	SCMinervaChatGptModelVersion chatGptVersion = 5;
+	bool withPreGeneration = 6;
+}

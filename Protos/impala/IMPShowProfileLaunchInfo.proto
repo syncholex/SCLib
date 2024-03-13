@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPShowProfileLaunchInfo {
+	string showId = 1;
+	string name = 2;
+	string description_p = 3;
+	string backgroundImageURL = 4;
+	string horizontalLogoURL = 5;
+
+	enum IMPShowType {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	IMPShowType showType = 6;
+	string businessId = 7;
+	string overlayButtonText = 8;
+	bool subscribed = 9;
+	bool optInNotifications = 10;
+	string publisherName = 11;
+	bool autosubscribe = 12;
+
+	enum IMPLogoDisplay {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	IMPLogoDisplay profileLogoDisplay = 13;
+	int64 publisherId = 14;
+	bool showOptInNotificationDropdown = 15;
+	string autosubscribeItemId = 16;
+	string autosubscribeItemIdSpecific = 17;
+	string publisherLogoURL = 18;
+	string websiteURL = 19;
+	bool enableUnskippableAd = 20;
+	bool requiresSubscriptionQuery = 21;
+	bool isBreakingNewsEnabled = 22;
+	string hostAccountUserId = 23;
+}

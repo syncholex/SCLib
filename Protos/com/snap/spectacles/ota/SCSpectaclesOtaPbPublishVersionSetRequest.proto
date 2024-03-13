@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbVersionSet.proto";
+
+message SCSpectaclesOtaPbPublishVersionSetRequest {
+	com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet versionSet = 1;
+
+	enum SCSpectaclesOtaPbPublishType {
+		OTA_AND_TARGET_UNSET = 0;
+		TARGET_ONLY = 1;
+		OTA_ONLY = 2;
+	}
+
+	SCSpectaclesOtaPbPublishType publishType = 2;
+}

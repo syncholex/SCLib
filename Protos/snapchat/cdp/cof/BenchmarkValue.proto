@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message BenchmarkValue {
+
+	oneof value {
+		int32 intValue = 1;
+		int64 longValue = 2;
+		bool boolValue = 3;
+		float floatValue = 4;
+	}
+
+}

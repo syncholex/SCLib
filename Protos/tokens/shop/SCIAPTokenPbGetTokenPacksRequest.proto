@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbGetTokenPacksRequest {
+
+	enum SCIAPTokenPbShopShopContext {
+		SHOP_CONTEXT_UNSPECIFIED = 0;
+		TOKEN_SHOP = 1;
+		GIFT_SHOP = 2;
+		BITMOJI = 3;
+	}
+
+	SCIAPTokenPbShopShopContext shopContext = 1;
+}

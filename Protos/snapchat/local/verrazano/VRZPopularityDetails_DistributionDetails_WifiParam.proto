@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPopularityDetails_DistributionDetails_WifiParam {
+	string localizedWifiSsid = 1;
+	float checkinProbability = 2;
+}

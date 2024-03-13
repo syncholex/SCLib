@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMESmartEditConditionalRules.proto";
+
+message SCMEConditionalRuleGroup {
+	repeated snapchat.mediaengine.smart_template.SCMESmartEditConditionalRules conditionalRulesArray = 1;
+}

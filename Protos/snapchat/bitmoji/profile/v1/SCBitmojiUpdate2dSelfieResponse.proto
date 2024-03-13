@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.profile.v1;
+
+message SCBitmojiUpdate2dSelfieResponse {
+}

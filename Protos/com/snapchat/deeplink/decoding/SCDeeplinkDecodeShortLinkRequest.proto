@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.decoding;
+
+message SCDeeplinkDecodeShortLinkRequest {
+	string shortLink = 1;
+
+	enum SCDeeplinkFeature {
+		FEATURE_UNSET = 0;
+		GROUP_INVITE = 1;
+		SHARE_SHEET = 2;
+		DISPATCHING = 3;
+		SMS_SUBSCRIPTION = 4;
+		SOCIAL_SMS = 5;
+		ACCOUNT_SANITIZATION = 6;
+		MARKETING_CAMPAIGN = 7;
+		GROWTH_SMS_CAMPAIGN = 8;
+		LENS_INFO_CARD = 9;
+		FRIEND_INVITE = 10;
+		SMS_INVITE = 11;
+		NATIVE_SMS_INVITE = 12;
+		LENS_TOP_ACTION = 13;
+		AP_REALTIME_ATTRIBUTION = 14;
+		AP_LEGACY_UA_PIPELINE = 15;
+	}
+
+	SCDeeplinkFeature feature = 2;
+
+	enum SCDeeplinkTeam {
+		TEAM_UNSET = 0;
+		SHARING = 1;
+		PLATFORM = 2;
+		TELEPHONY = 3;
+		AUTH = 4;
+		MARKETING = 5;
+		GROWTH_NOTIFICATION = 6;
+		ACQUISITION_PLATFORM = 7;
+	}
+
+	SCDeeplinkTeam team = 3;
+}

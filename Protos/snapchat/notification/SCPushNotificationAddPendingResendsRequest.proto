@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationPendingResend.proto";
+
+message SCPushNotificationAddPendingResendsRequest {
+	repeated snapchat.notification.SCPushNotificationPendingResend pendingResendsArray = 1;
+}

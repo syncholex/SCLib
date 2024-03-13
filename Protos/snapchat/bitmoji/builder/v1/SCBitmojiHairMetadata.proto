@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+message SCBitmojiHairMetadata {
+
+	enum SCBitmojiHairTreatmentType {
+		HAIR_TREATMENT_TYPE_UNSET = 0;
+		OMBRE = 1;
+		HIGHLIGHTS = 2;
+	}
+
+	SCBitmojiHairTreatmentType hairTreatmentType = 1;
+
+	enum SCBitmojiColorType {
+		COLOR_TYPE_UNSET = 0;
+		COLORLESS = 1;
+	}
+
+	SCBitmojiColorType hairColorType = 2;
+}

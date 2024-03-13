@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "snapchat/ads/request/schema/SCAdsSKAdNetworkAttribution.proto";
+
+message MFCPromotedAd {
+	string trackURL = 1;
+	string jsonTrackURL = 2;
+	string protoTrackURL = 3;
+	bytes pixelId = 4;
+	bytes requestId = 5;
+	bytes serveItemId = 6;
+	bytes encryptedAdTrackData = 7;
+	bytes encryptedUserTrackData = 8;
+	snapchat.ads.request.schema.SCAdsSKAdNetworkAttribution skadNetworkAttribution = 9;
+	int64 serveTimestampMillis = 10;
+}

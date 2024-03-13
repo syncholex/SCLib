@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/EngagementFeatures.proto";
+
+message SCSCKFriendStoryReverseEngagementFeatures {
+	string posterId = 1;
+	string viewerId = 2;
+	ranking.pii.user.profile.EngagementFeatures engagementFeatures = 3;
+}

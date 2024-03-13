@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosCustomTextParameters.proto";
+import "snapchat/cameos/common/SCCameosChatCameoResource.proto";
+import "snapchat/cameos/common/SCCameosQuickIconResource.proto";
+
+message SCCameosChatCameoResourceCollection {
+	snapchat.cameos.common.SCCameosCustomTextParameters customTextParameters = 1;
+	snapchat.cameos.common.SCCameosChatCameoResource items = 2;
+	snapchat.cameos.common.SCCameosQuickIconResource quickIconResource = 3;
+}

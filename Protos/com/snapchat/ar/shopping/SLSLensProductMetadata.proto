@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+import "com/snapchat/ar/shopping/SLSDomainModel.proto";
+
+message SLSLensProductMetadata {
+	uint64 unlockableId = 1;
+	repeated com.snapchat.ar.shopping.SLSDomainModel productSelectorDomainsArray = 2;
+
+	enum ShoppingLensType {
+		SHOPPING_LENS_TYPE_UNSET = 0;
+		STATIC = 1;
+		DYNAMIC = 2;
+	}
+
+	ShoppingLensType shoppingLensType = 3;
+
+	enum ActionType {
+		ACTION_TYPE_UNSET = 0;
+		CLIENT_TWO_D = 1;
+	}
+
+	ActionType actionType = 4;
+	string storeId = 5;
+
+	enum LensClientBehavior {
+		LENS_CLIENT_BEHAVIOR_UNSET = 0;
+		DEFAULT = 1;
+		TWO_D_TRY_ON = 2;
+		PRODUCT_VISUALIZATION = 3;
+	}
+
+	LensClientBehavior lensClientBehavior = 6;
+
+	enum LensClientFallbackExperience {
+		LENS_CLIENT_FALLBACK_EXPERIENCE_UNSET = 0;
+		LOW_END_DEVICE_FALLBACK = 1;
+	}
+
+	LensClientFallbackExperience lensClientFallbackExperience = 7;
+}

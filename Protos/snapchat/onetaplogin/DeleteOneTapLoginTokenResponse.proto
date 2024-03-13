@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.onetaplogin;
+
+message DeleteOneTapLoginTokenResponse {
+
+	enum DeleteOneTapLoginTokenResponse_Status {
+		SUCCESS = 0;
+		FAILURE = 1;
+	}
+
+	DeleteOneTapLoginTokenResponse_Status status = 1;
+}

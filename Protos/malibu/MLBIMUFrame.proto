@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBIMUFrame {
+	sint32 gyroX = 1;
+	sint32 gyroY = 2;
+	sint32 gyroZ = 3;
+	sint32 accelX = 4;
+	sint32 accelY = 5;
+	sint32 accelZ = 6;
+}

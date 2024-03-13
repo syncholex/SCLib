@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message CharacterData_CategoryColour {
+	string label = 1;
+	string magicColour = 2;
+	string value = 3;
+}

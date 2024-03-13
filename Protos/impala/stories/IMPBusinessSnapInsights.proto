@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnapInsights_GlobalStats.proto";
+import "impala/stories/IMPBusinessSnapInsights_SectionStats.proto";
+
+message IMPBusinessSnapInsights {
+	string businessId = 1;
+	string snapId = 2;
+	impala.stories.IMPBusinessSnapInsights_GlobalStats globalStats = 3;
+	repeated impala.stories.IMPBusinessSnapInsights_SectionStats sectionStatsArray = 4;
+}

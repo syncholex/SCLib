@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBGetSettingsForCategoryRequest {
+
+	enum HRMPBSettingCategory {
+		EXPERIMENTS = 1;
+		CAMERA = 2;
+		INTERNAL = 3;
+	}
+
+	HRMPBSettingCategory category = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_Context_ContextDetection.proto";
+import "snapchat/research/SnapBrainResponse_Results_Context_ContextFeature.proto";
+
+message SnapBrainResponse_Results_Context {
+	repeated snapchat.research.SnapBrainResponse_Results_Context_ContextDetection detectionsArray = 1;
+	repeated snapchat.research.SnapBrainResponse_Results_Context_ContextFeature featuresArray = 2;
+}

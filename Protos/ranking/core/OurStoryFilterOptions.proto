@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message OurStoryFilterOptions {
+
+	enum OurStoryDestination_Enum {
+		UNKNOWN = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	OurStoryDestination_Enum filterDestination = 1;
+
+	enum SCSCORESnapSource_Source {
+		SOURCE_UNKNOWN = 0;
+		SOURCE_CAMERA_ROLL = 1;
+		SOURCE_MEMORIES = 2;
+		SOURCE_WEB = 3;
+		SOURCE_USER_GENERATOR = 4;
+		SOURCE_OUR_STORY = 5;
+		SOURCE_SNAPPRO_STORY = 6;
+		SOURCE_STORY_STUDIO = 7;
+		SOURCE_BUSINESS_API = 8;
+		SOURCE_ADS_MEDIA_THRU_BUSINESS_API = 9;
+	}
+
+	repeated SCSCORESnapSource_Source filterSourcesArray = 2 [packed=true];
+	bool returnFirstSnapOnly = 3;
+	bool excludeCameoSnaps = 4;
+}

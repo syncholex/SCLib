@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensCarouselSingleLensActiveStateConfig {
+	bool lensCarouselFeatureProxyEnable = 1;
+	bool carouselActivationFlowWithoutCameraLensStateEnable = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkLatLng.proto";
+
+message SMSdkLineString {
+	repeated snap.snap_maps_sdk.SMSdkLatLng latLngArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacLeaderboardsSubmitScoreRequest.proto";
+
+message SCCognacLeaderboardsBatchSubmitScoreRequest {
+	repeated cognac.SCCognacLeaderboardsSubmitScoreRequest submitScoreRequestsArray = 1;
+}

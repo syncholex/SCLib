@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.recommendations;
+
+import "snapchat/creativetools/recommendations/SCCTPRecommendationsCTContext.proto";
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+
+message SCCTPRecommendationsCTRecommendation {
+	snapchat.creativetools.recommendations.SCCTPRecommendationsCTContext context = 1;
+	repeated snapchat.creativetools.common.SCCTPMusicTrack tracksArray = 2;
+}

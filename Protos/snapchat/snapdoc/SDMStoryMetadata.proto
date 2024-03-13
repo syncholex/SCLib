@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMStoryMetadata {
+	string serverSnapId = 1;
+	int64 expirationTsMs = 2;
+}

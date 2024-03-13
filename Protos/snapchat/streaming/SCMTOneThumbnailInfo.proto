@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+message SCMTOneThumbnailInfo {
+
+	enum SCMTThumbnailType {
+		UNKNOWN_THUMBNAIL_TYPE = 0;
+		IMAGE_THUMBNAIL_TYPE = 1;
+		VIDEO_THUMBNAIL_TYPE = 2;
+	}
+
+	SCMTThumbnailType thumbnailType = 1;
+	string thumbnailURL = 2;
+	string encryptionKey = 3;
+	string encryptionIv = 4;
+	string encryptedThumbnailURL = 5;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesAudio {
+	string URL = 1;
+	bool isLooping = 2;
+}

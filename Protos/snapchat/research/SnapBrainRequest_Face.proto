@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainRequest_Face {
+
+	enum SnapBrainRequest_Face_Function {
+		DETECTION = 0;
+		LANDMARK = 1;
+		FEATURE = 2;
+		ATTRIBUTES = 3;
+	}
+
+	repeated SnapBrainRequest_Face_Function functionsArray = 1 [packed=true];
+	uint32 maxResults = 2;
+}

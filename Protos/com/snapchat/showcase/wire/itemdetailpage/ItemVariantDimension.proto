@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+message ItemVariantDimension {
+
+	enum ItemVariantDimensionType {
+		TYPE_UNSET = 0;
+		AGE_GROUP = 1;
+		COLOR = 2;
+		GENDER = 3;
+		MATERIAL = 4;
+		PATTERN = 5;
+		SIZE = 6;
+		CUSTOM = 7;
+	}
+
+	ItemVariantDimensionType type = 1;
+	string name = 2;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/tags/ContentTag.proto";
+
+message IMPProfileAttribution {
+	bool isLensCreator = 1;
+	int64 creationTimestamp = 2;
+	bool isBreakingNewsEnabled = 3;
+	int64 lastUpdateSequence = 4;
+
+	enum IMPReviewStatus {
+		UNSET = 0;
+		PENDING = 1;
+		APPROVED = 2;
+		RESTRICTED_DISTRIBUTION = 3;
+		REJECTED = 4;
+	}
+
+	IMPReviewStatus reviewStatus = 5;
+	int64 lastUpdateTimestamp = 6;
+	bool isPlaceholderProfile = 7;
+	repeated snapchat.tags.ContentTag tagsArray = 8;
+}

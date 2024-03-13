@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTGeoBox.proto";
+
+message SCMTGetOnboardingViewStateRequest {
+	snapchat.map.SCMTPoint location = 1;
+	double zoom = 2;
+	snapchat.map.SCMTGeoBox viewport = 3;
+	repeated snapchat.map.SCMTGeoBox reservedBoundingBoxArray = 4;
+}

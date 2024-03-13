@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMRenderEffectNode_Input {
+
+	oneof inputSource {
+		uint32 trackIndex = 8;
+		uint32 renderEffectOutputIndex = 9;
+		uint32 playbackLayerIndex = 10;
+		uint32 trackSegmentIndex = 11;
+	}
+
+}

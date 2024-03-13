@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.bitmoji;
+
+message AddNewBitmojiProductAssetResponse_AddNewBitmojiProductAssetResult {
+	string productImageURL = 1;
+	string highResBitmojiAssetURL = 2;
+}

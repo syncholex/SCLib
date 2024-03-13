@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/context/AssetInfo.proto";
+import "com/snapchat/item_catalog/domain/item_set/ItemSetId.proto";
+
+message ShopkitContext {
+	string lensItemSetId = 1;
+	string domainItemSetId = 2;
+	uint64 snapItemId = 3;
+	com.snapchat.showcase.wire.context.AssetInfo assetInfo = 4;
+	com.snapchat.item_catalog.domain.item_set.ItemSetId lensItemSetIdEntity = 5;
+	com.snapchat.item_catalog.domain.item_set.ItemSetId domainItemSetIdEntity = 6;
+
+	enum ShopkitContext_SdkBuildType {
+		UNSET = 0;
+		PUBLIC = 1;
+		INTERNAL = 2;
+	}
+
+	ShopkitContext_SdkBuildType sdkBuildType = 7;
+
+	enum ShopkitContext_ApplicationType {
+		APPLICATION_TYPE_UNSET = 0;
+		SDK = 1;
+		AR_MIRROR = 2;
+	}
+
+	ShopkitContext_ApplicationType applicationType = 8;
+}

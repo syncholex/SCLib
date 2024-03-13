@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "impala/IMPTermsAndConditions.proto";
+import "impala/IMPUpdateMonetizationSettings.proto";
+import "impala/IMPUpdateAudienceGateSettings.proto";
+import "impala/IMPUpdateCreatorDiscoveryForBrandsSettings.proto";
+import "impala/IMPUpdateActivityFeedSettings.proto";
+
+message IMPUpdateBusinessProfileSettingsRequest {
+	string profileId = 1;
+	google.protobuf.GPBBoolValue showStoryReplies = 2;
+	google.protobuf.GPBBoolValue showSubscriberCount = 3;
+	google.protobuf.GPBBoolValue showGifting = 4;
+	repeated impala.IMPTermsAndConditions termsArray = 5;
+	impala.IMPUpdateMonetizationSettings monetizationSettings = 6;
+	impala.IMPUpdateAudienceGateSettings audienceGateSettings = 7;
+	impala.IMPUpdateCreatorDiscoveryForBrandsSettings creatorDiscoveryForBrandsSettings = 8;
+	impala.IMPUpdateActivityFeedSettings updateActivityFeedSettings = 9;
+}

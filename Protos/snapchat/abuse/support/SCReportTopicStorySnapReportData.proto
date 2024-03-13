@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportTopicStorySnapReportData {
+	string snapId = 1;
+	string topicId = 2;
+}

@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRInput.proto";
+import "snapchat/sendto/ranking/SCSTRCodeBlock.proto";
+import "snapchat/sendto/ranking/SCSTRLiteral.proto";
+import "snapchat/sendto/ranking/SCSTRBinaryExpression.proto";
+import "snapchat/sendto/ranking/SCSTRComparableExpression.proto";
+import "snapchat/sendto/ranking/SCSTRConditionalExpression.proto";
+import "snapchat/sendto/ranking/SCSTRSubscriptExpression.proto";
+import "snapchat/sendto/ranking/SCSTRArithmeticOperation.proto";
+import "snapchat/sendto/ranking/SCSTRFunctionDefinition.proto";
+import "snapchat/sendto/ranking/SCSTRFunctionCall.proto";
+import "snapchat/sendto/ranking/SCSTRStandardLibrary.proto";
+import "snapchat/sendto/ranking/SCSTRReturnStatement.proto";
+import "snapchat/sendto/ranking/SCSTRStateUpdate.proto";
+import "snapchat/sendto/ranking/SCSTRForEachStatement.proto";
+import "snapchat/sendto/ranking/SCSTRJumpStatement.proto";
+
+message SCSTRAST {
+
+	oneof node {
+		snapchat.sendto.ranking.SCSTRInput input = 1;
+		snapchat.sendto.ranking.SCSTRCodeBlock block = 2;
+		snapchat.sendto.ranking.SCSTRLiteral literal = 3;
+		snapchat.sendto.ranking.SCSTRBinaryExpression binaryExpression = 4;
+		snapchat.sendto.ranking.SCSTRComparableExpression comparableExpression = 5;
+		snapchat.sendto.ranking.SCSTRConditionalExpression conditionalExpression = 6;
+		snapchat.sendto.ranking.SCSTRSubscriptExpression subscriptExpression = 7;
+		snapchat.sendto.ranking.SCSTRArithmeticOperation arithmeticOperation = 8;
+		snapchat.sendto.ranking.SCSTRFunctionDefinition functionDefinition = 9;
+		snapchat.sendto.ranking.SCSTRFunctionCall functionCall = 10;
+		snapchat.sendto.ranking.SCSTRStandardLibrary standardLibrary = 11;
+		snapchat.sendto.ranking.SCSTRReturnStatement returnStatement = 12;
+		snapchat.sendto.ranking.SCSTRStateUpdate stateUpdate = 13;
+		snapchat.sendto.ranking.SCSTRForEachStatement forEachStatement = 14;
+		snapchat.sendto.ranking.SCSTRJumpStatement jumpStatement = 15;
+	}
+
+}

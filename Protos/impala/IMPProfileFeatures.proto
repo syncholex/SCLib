@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileFeatures {
+	bool canEditTitle = 1;
+	bool canEditHighlights = 2;
+	bool canEditWebsite = 3;
+	bool canEditEmail = 4;
+	bool canAccessStoryReplies = 5;
+	bool canQuoteStoryReplies = 6;
+	bool canAccessGifting = 7;
+	bool canAccessPublicStory = 8;
+	bool canAccessInAppManagement = 9;
+	bool canReportProfile = 10;
+	bool canShowUsername = 11;
+	bool canAccessActivityFeed = 12;
+	bool canUploadHeroImage = 13;
+	bool isEmployeeOnly = 14;
+	bool isDisabledForSearch = 15;
+	bool isDisabledForDistribution = 16;
+	bool isNotSubscribable = 17;
+	bool isAdsPreRollDisabled = 18;
+	bool isNews = 19;
+	bool isCuratedPublisher = 20;
+	bool canAccessAdsTab = 21;
+	bool isCommentsDisabled = 22;
+}

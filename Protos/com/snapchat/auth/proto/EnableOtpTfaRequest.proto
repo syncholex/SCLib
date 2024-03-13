@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+message EnableOtpTfaRequest {
+	string otpSecret = 1;
+	string otpCode = 2;
+	string deviceId = 3;
+	string persistentAttestationDeviceId = 4;
+}

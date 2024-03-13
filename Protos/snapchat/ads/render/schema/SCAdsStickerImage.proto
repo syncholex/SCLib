@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsStickerImage {
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo stickerImageRenderInfo = 1;
+}

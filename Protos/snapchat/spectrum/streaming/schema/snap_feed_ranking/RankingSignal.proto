@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/UserCohort.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/StoryInfo.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/SnapSendMetadata.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/StoryViewMetadata.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/SnapViewMetadata.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/OffPlatformShareMetadata.proto";
+
+message RankingSignal {
+	snapchat.spectrum.streaming.schema.snap_feed_ranking.UserCohort userCohort = 13;
+	snapchat.spectrum.streaming.schema.snap_feed_ranking.StoryInfo storyInfo = 14;
+
+	oneof userEvent {
+		snapchat.spectrum.streaming.schema.snap_feed_ranking.SnapSendMetadata snapSendMetadata = 15;
+		snapchat.spectrum.streaming.schema.snap_feed_ranking.StoryViewMetadata storyViewMetadata = 16;
+		snapchat.spectrum.streaming.schema.snap_feed_ranking.SnapViewMetadata snapViewMetadata = 17;
+		snapchat.spectrum.streaming.schema.snap_feed_ranking.OffPlatformShareMetadata offPlatformShareMetadata = 18;
+	}
+
+}

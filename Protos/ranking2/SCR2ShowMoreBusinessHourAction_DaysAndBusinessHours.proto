@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2ShowMoreBusinessHourAction_DaysAndBusinessHours {
+	string days = 1;
+	repeated string businessHoursArray = 2;
+}

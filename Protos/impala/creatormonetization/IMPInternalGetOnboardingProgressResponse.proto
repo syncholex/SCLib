@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPGetOnboardingProgressResponse.proto";
+
+message IMPInternalGetOnboardingProgressResponse {
+	impala.creatormonetization.IMPGetOnboardingProgressResponse response = 1;
+}

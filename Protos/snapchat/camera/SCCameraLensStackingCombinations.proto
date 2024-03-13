@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+import "snapchat/camera/SCCameraLensStacking.proto";
+
+message SCCameraLensStackingCombinations {
+	repeated snapchat.camera.SCCameraLensStacking combinationsArray = 1;
+}

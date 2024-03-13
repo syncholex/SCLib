@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfoV2_Thumbnail.proto";
+import "snapchat/context2/api/SCCTXAction.proto";
+
+message SCCTXSpotlightAttributionInfoV2 {
+	string title = 1;
+	snapchat.context2.iz.SCCTXSpotlightAttributionInfoV2_Thumbnail thumbnail = 2;
+
+	enum SCCTXSpotlightAttributionInfoV2_BadgeType {
+		UNSET = 0;
+		OFFICIAL = 1;
+		BRAND = 2;
+	}
+
+	SCCTXSpotlightAttributionInfoV2_BadgeType badgeType = 3;
+	snapchat.context2.api.SCCTXAction action = 4;
+}

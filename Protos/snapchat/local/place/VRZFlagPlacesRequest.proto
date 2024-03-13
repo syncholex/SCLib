@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceModeration.proto";
+
+message VRZFlagPlacesRequest {
+	string userId = 1;
+	repeated snapchat.local.verrazano.VRZPlaceModeration placesModerationArray = 2;
+}

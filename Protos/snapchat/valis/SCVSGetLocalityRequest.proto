@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSGetLocalityRequest {
+	fixed64 s2CellId = 1;
+	string language = 2;
+	string countryCode = 3;
+}

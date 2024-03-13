@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAdTrackDurableJobConfig {
+	bool enableAdTrackDurableJob = 1;
+	int64 initialDelaySeconds = 2;
+	int64 maxAgeMillis = 3;
+	int32 maxNetworkRetries = 4;
+	int32 maxPersistedRequests = 5;
+	int64 retryDelaySeconds = 6;
+	int32 networkRequestTimeoutSeconds = 7;
+	string retriableStatusCode = 8;
+	bool enableIndividualWakeUps = 9;
+	bool skipLateTrackRetry = 10;
+}

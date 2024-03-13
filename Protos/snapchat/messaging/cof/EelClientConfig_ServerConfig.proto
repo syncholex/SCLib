@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EelClientConfig_ServerConfig {
+	bool sendEncryptedMessagesToClient = 1;
+	bool sendEncryptedEelSnapsToClient = 2;
+	bool sendAppOpenNotificationOnInit = 3;
+	bool removeFallbackKey = 4;
+}

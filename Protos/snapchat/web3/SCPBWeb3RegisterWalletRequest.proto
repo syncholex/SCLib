@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3RegisterPhantomWalletInfo.proto";
+import "snapchat/web3/SCPBWeb3RegisterFTXWalletRequestInfo.proto";
+
+message SCPBWeb3RegisterWalletRequest {
+
+	oneof walletInfo {
+		snapchat.web3.SCPBWeb3RegisterPhantomWalletInfo registerPhantomWalletInfo = 1;
+		snapchat.web3.SCPBWeb3RegisterFTXWalletRequestInfo registerFtxWalletRequestInfo = 2;
+	}
+
+}

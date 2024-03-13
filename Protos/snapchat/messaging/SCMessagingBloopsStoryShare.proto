@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingStoryShareInfo.proto";
+import "snapchat/messaging/SCMessagingStoryShareMediaInfo.proto";
+
+message SCMessagingBloopsStoryShare {
+	snapchat.messaging.SCMessagingStoryShareInfo story = 1;
+	snapchat.messaging.SCMessagingStoryShareMediaInfo preview = 2;
+
+	enum SCMessagingBloopsStoryShare_BloopsSelfiePosition {
+		POSITION_UNSET = 0;
+		FIRST = 1;
+		SECOND = 2;
+	}
+
+	SCMessagingBloopsStoryShare_BloopsSelfiePosition recipientBloopsSelfiePosition = 3;
+}

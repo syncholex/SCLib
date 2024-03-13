@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.prism.pipeline.rtus;
+
+import "com/snap/prism/pipeline/rtus/SCBlizzardLiteLensPositionTime.proto";
+
+message SCBlizzardLiteLensIconImpression {
+	string filterLensId = 4;
+	repeated com.snap.prism.pipeline.rtus.SCBlizzardLiteLensPositionTime timeOnScreenByPosArray = 14;
+}

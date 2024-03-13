@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingNearbyFriend.proto";
+
+message SCFriendingGetNearbyFriendsResponse {
+	repeated snapchat.friending.SCFriendingNearbyFriend friendsArray = 1;
+}

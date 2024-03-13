@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPMapTileStoryKey {
+	string storyId = 1;
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 2;
+}

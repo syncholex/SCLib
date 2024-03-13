@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message CameraLaunchConfig {
+	bool shouldSuspendIdleMonitorDuringMainCameraLaunch = 1;
+	bool shouldSuspendIdleMonitorDuringOtherCameraLaunch = 2;
+	bool shouldWarmupPreviewAfterCameraLaunch = 3;
+	bool preventUserInteractionDuringCameraLaunch = 4;
+	bool shouldMeasureToSnappableEarlier = 5;
+}

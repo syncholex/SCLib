@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "google/protobuf/GPBStruct.proto";
+
+message SCReportReviewMetadata {
+	string sourceType = 1;
+	google.protobuf.GPBStruct reviewPayload = 2;
+}

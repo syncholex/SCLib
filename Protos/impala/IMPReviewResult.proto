@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPReviewResult {
+	string reviewStatusCode = 1;
+
+	enum IMPReviewStatus {
+		UNSET = 0;
+		PENDING = 1;
+		APPROVED = 2;
+		RESTRICTED_DISTRIBUTION = 3;
+		REJECTED = 4;
+	}
+
+	IMPReviewStatus reviewStatus = 2;
+	string reason = 3;
+}

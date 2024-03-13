@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSoundData {
+	string filename = 1;
+
+	enum HRMPBSoundData_SoundType {
+		VOLUME = 0;
+		PAIRING = 1;
+	}
+
+	HRMPBSoundData_SoundType soundType = 2;
+}

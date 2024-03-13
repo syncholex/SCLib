@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/MemoriesMetadata.proto";
+
+message MemoriesNullableMetadata {
+
+	enum GPBNullValue {
+		NULL_VALUE = 0;
+	}
+
+
+	oneof kind {
+		GPBNullValue null = 1;
+		snapchat.memories.MemoriesMetadata metadata = 2;
+	}
+
+}

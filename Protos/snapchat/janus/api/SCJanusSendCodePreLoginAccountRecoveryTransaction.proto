@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusSendCodePreLoginAccountRecoveryTransaction {
+
+	enum SCAbuseDecisionClientType {
+		CLIENT_TYPE_UNSET = 0;
+		CLIENT_TYPE_APP = 1;
+		CLIENT_TYPE_WEB = 2;
+	}
+
+	SCAbuseDecisionClientType clientType = 1;
+	bytes clientAttestationPayload = 2;
+	string iosDeviceCheckToken = 3;
+	string androidSafetynetAttestation = 4;
+	repeated bytes vendorAttestationPayloadsArray = 10;
+}

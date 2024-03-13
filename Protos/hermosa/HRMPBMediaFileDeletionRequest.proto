@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBMediaFileDeletionRequest {
+	string uuid = 1;
+	bool includeHq = 2;
+}

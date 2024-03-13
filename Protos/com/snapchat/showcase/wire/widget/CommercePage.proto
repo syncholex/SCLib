@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommercePageWidget.proto";
+import "com/snapchat/showcase/wire/widget/CommercePageMetricsMetadata.proto";
+
+message CommercePage {
+
+	enum CommercePageTitle {
+		PAGE_TITLE_UNSET = 0;
+		SHOPPING_HUB_PAGE_TITLE = 1;
+		RECENTLY_VIEWED_PAGE_TITLE = 2;
+		SHOPPING_PREFERENCES_PAGE_TITLE = 3;
+	}
+
+	CommercePageTitle pageTitle = 1;
+	string fallbackPageTitle = 2;
+	repeated com.snapchat.showcase.wire.widget.CommercePageWidget widgetsArray = 3;
+	com.snapchat.showcase.wire.widget.CommercePageMetricsMetadata metadata = 4;
+}

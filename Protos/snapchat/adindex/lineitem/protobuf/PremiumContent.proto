@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.adindex.lineitem.protobuf;
+
+message PremiumContent {
+	string premiumContentBundleId = 1;
+	int64 priceFloorMicroDollars = 2;
+}

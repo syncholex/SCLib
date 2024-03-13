@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensBlobDeleteRequest {
+	string mediaId = 1;
+}

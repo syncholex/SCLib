@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTMapStyleData {
+	string styleJson = 1;
+
+	enum SCMTMapColorScheme {
+		LIGHT = 0;
+		DARK = 1;
+	}
+
+	SCMTMapColorScheme colorScheme = 2;
+	string name = 3;
+	string id_p = 4;
+
+	enum SCMTSource {
+		UNKNOWN_DATA_SOURCE = 0;
+		MAPBOX = 1;
+		SNAPZEN = 2;
+	}
+
+	SCMTSource source = 5;
+}

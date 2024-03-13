@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+message CMSIntInt {
+	int32 first = 1;
+	int32 second = 2;
+}

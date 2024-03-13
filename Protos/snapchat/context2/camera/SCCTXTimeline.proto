@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.context2.camera;
+
+message SCCTXTimeline {
+}

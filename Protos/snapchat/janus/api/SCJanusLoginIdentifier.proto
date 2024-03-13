@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusGoogleIdentifier.proto";
+import "snapchat/janus/api/SCJanusPasskeyIdentifier.proto";
+
+message SCJanusLoginIdentifier {
+
+	oneof loginIdentifier {
+		string username = 1;
+		string email = 2;
+		string phoneNumber = 3;
+		snapchat.janus.api.SCJanusGoogleIdentifier googleIdentifier = 4;
+		string tivNonce = 5;
+		snapchat.janus.api.SCJanusPasskeyIdentifier passkeyIdentifier = 6;
+	}
+
+}

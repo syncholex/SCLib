@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/iz/SCCTXImage.proto";
+import "snapchat/context2/iz/SCCTXCssStyle.proto";
+import "snapchat/context2/iz/SCCTXSendChatString.proto";
+import "snapchat/context2/iz/SCCTXReplyToRecipientString.proto";
+import "snapchat/context2/iz/SCCTXReplyToGroupString.proto";
+
+message SCCTXCTAElement {
+	snapchat.context2.api.SCCTXAction action = 1;
+
+	oneof thumbnail {
+		snapchat.context2.iz.SCCTXImage icon = 2;
+		bool waveform = 8;
+	}
+
+
+	oneof title {
+		string text = 3;
+		snapchat.context2.iz.SCCTXSendChatString sendChat = 5;
+		snapchat.context2.iz.SCCTXReplyToRecipientString replyToRecipient = 6;
+		snapchat.context2.iz.SCCTXReplyToGroupString replyToGroup = 7;
+	}
+
+	snapchat.context2.iz.SCCTXCssStyle style = 4;
+	snapchat.context2.api.SCCTXAction accessoryAction = 9;
+}

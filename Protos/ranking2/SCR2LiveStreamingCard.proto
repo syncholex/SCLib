@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/streaming/SCMTOneSnapInfo.proto";
+
+message SCR2LiveStreamingCard {
+	string title = 1;
+	string subtitle = 2;
+	string thumbnailURL = 3;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 4;
+	snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 5;
+}

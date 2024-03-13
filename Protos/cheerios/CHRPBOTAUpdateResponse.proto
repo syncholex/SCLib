@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBOTAUpdateRequest.proto";
+
+message CHRPBOTAUpdateResponse {
+	cheerios.CHRPBOTAUpdateRequest origRequestType = 1;
+
+	enum CHRPBOTAUpdateEventType {
+		UPDATE_EVENT_STARTED = 1;
+		UPDATE_EVENT_FINISHED = 2;
+		UPDATE_EVENT_PROGRESS = 3;
+		UPDATE_EVENT_REBOOT = 4;
+	}
+
+
+	oneof response {
+		CHRPBOTAUpdateEventType status = 2;
+		string currentVersion = 3;
+		string checksum = 4;
+	}
+
+}

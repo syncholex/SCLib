@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLens.proto";
+
+message SCLensesPbSingleLensResponse {
+	string lensId = 1;
+
+	enum SCLensesPbSingleLensResponse_Status {
+		STATUS_UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		DELETED = 3;
+	}
+
+	SCLensesPbSingleLensResponse_Status status = 2;
+	string errorMessage = 3;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLens lens = 4;
+}

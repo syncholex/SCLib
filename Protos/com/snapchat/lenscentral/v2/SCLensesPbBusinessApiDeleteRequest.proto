@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbBusinessApiDeleteRequest {
+	string userId = 1;
+	string lensId = 2;
+}

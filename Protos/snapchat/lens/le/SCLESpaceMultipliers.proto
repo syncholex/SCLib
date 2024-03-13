@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLESpaceMultipliers {
+	float start = 1;
+	float end = 2;
+	float top = 3;
+	float bottom = 4;
+}

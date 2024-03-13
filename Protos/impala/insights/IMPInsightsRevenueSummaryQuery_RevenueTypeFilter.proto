@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsRevenueSummaryQuery_RevenueTypeFilter {
+
+	enum IMPInsightsRevenueSummaryQuery_RevenueTypeFilter_RevenueType {
+		REVENUE_TYPE_UNSET = 0;
+		PARTNER_SOLD = 1;
+		SNAP_SOLD = 2;
+	}
+
+	IMPInsightsRevenueSummaryQuery_RevenueTypeFilter_RevenueType revenueType = 1;
+}

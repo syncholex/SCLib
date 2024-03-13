@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMLongformVideoInterval {
+	int32 trackNumber = 1;
+	int32 timeScale = 2;
+	int64 startTime = 3;
+}

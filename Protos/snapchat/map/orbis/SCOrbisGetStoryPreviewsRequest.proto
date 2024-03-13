@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/map/orbis/SCOrbisKeyValue.proto";
+
+message SCOrbisGetStoryPreviewsRequest {
+	repeated string verrazanoIdArray = 1;
+
+	enum SCOrbisStoryRequestSource {
+		DEFAULT = 0;
+		PROFILE = 1;
+		TRAY = 2;
+		BASEMAP = 3;
+		SEARCH = 4;
+		LOCALITY = 5;
+	}
+
+	SCOrbisStoryRequestSource source = 2;
+	repeated snapchat.map.orbis.SCOrbisKeyValue abParamsArray = 3;
+	bool debugMode = 4;
+}

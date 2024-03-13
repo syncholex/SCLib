@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+message SCPBAirAirResponse {
+	int32 statusCode = 1;
+	string uploadURL = 2;
+	int64 backoffTime = 3;
+	string debugInfo = 4;
+}

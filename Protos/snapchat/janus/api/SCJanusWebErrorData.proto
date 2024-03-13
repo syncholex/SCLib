@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusWebErrorData {
+
+	enum SCJanusFormField {
+		FORM_FIELD_UNSET = 0;
+		FORM_FIELD_DISPLAY_NAME = 1;
+		FORM_FIELD_PASSWORD = 2;
+		FORM_FIELD_EMAIL = 3;
+		FORM_FIELD_USERNAME = 4;
+		FORM_FIELD_BIRTHDATE = 5;
+	}
+
+	SCJanusFormField errorField = 1;
+}

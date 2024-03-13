@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREExplorationTierParams.proto";
+
+message SCSCOREExplorationCohortParams {
+	string country = 1;
+	string language = 2;
+	int32 minQuota = 3;
+	int32 maxQuota = 4;
+	ranking.core.SCSCOREExplorationTierParams tierParamsMap = 5;
+	double fractionalMinQuota = 6;
+	double fractionalMaxQuota = 7;
+	repeated string countriesArray = 8;
+}

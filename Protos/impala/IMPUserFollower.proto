@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUserFollower {
+	string userId = 1;
+
+	enum IMPUserFollower_FollowerStatus {
+		FOLLOWER = 0;
+		FRIEND = 1;
+	}
+
+	IMPUserFollower_FollowerStatus status = 2;
+	string datastoreId = 3;
+	int64 creationTimestamp = 4;
+}

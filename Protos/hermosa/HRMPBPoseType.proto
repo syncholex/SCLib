@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package hermosa;
+
+message HRMPBPoseType {
+
+	enum HRMPBPoseType_PoseTypeEnum {
+		UNSET = 0;
+		PREDICTED = 1;
+		PAST = 2;
+	}
+
+	HRMPBPoseType_PoseTypeEnum poseType = 1;
+}

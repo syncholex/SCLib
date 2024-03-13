@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsSnapcodeInfo.proto";
+
+message SCAdsAdToLens {
+	repeated snapchat.ads.render.schema.SCAdsSnapcodeInfo lensSnapcodeArray = 1;
+}

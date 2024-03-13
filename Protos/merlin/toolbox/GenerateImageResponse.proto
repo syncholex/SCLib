@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxMediaInfo.proto";
+
+message GenerateImageResponse {
+	merlin.toolbox.SCMerlinToolboxMediaInfo imageInfo = 1;
+	bool isRateLimited = 2;
+	bytes originalImageBytes = 3;
+}

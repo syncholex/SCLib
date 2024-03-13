@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosLens.proto";
+
+message SCCameosListOfLenses {
+	repeated snapchat.cameos.common.SCCameosLens lensesArray = 1;
+}

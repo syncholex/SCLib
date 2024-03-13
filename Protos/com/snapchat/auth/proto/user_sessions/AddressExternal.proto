@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.user_sessions;
+
+message AddressExternal {
+	string adminArea1 = 1;
+	string locality = 2;
+	string country = 3;
+}

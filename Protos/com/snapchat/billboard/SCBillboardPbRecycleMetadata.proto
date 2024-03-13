@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbRecycleBasedProperty.proto";
+import "com/snapchat/billboard/SCBillboardPbSupProperty.proto";
+
+message SCBillboardPbRecycleMetadata {
+	com.snapchat.billboard.SCBillboardPbRecycleBasedProperty recycleBasedProperty = 1;
+	repeated int32 recycleIntervalsArray = 2 [packed=true];
+	int32 cycleSupPropertyId = 3;
+	repeated com.snapchat.billboard.SCBillboardPbSupProperty supPropertiesToResetArray = 4;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeCamera.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeNavigationBar.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeChatIcons.proto";
+
+message SCPlusCustomAppThemeCustomAppTheme {
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeCamera camera = 1;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeNavigationBar navigationBar = 2;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeChatIcons chatIcons = 3;
+}

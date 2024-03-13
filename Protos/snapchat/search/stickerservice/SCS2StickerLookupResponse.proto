@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/stickerservice/SCS2StickerResult.proto";
+
+message SCS2StickerLookupResponse {
+	repeated snapchat.search.stickerservice.SCS2StickerResult resultsArray = 1;
+}

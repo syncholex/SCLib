@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package iap.shop;
+
+message SCIapShopPbVerifyReceiptResponse {
+	string purchaseOrderId = 1;
+
+	enum SCIapShopPbVerifyReceiptResponse_Error {
+		ERROR_UNSET = 0;
+		ERROR_RECEIPT_INVALID = 1;
+		ERROR_RECEIPT_MISMATCH = 2;
+	}
+
+	SCIapShopPbVerifyReceiptResponse_Error errorMessage = 2;
+	string appAccountToken = 3;
+}

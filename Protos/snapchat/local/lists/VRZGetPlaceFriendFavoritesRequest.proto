@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+message VRZGetPlaceFriendFavoritesRequest {
+	repeated string placeIdsArray = 1;
+}

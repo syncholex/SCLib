@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBUninterpretedOption.proto";
+
+message GPBFieldOptions {
+
+	enum GPBFieldOptions_CType {
+		STRING = 0;
+		CORD = 1;
+		STRING_PIECE = 2;
+	}
+
+	GPBFieldOptions_CType ctype = 1;
+	bool packed = 2;
+	bool deprecated = 3;
+	bool lazy = 5;
+
+	enum GPBFieldOptions_JSType {
+		JS_NORMAL = 0;
+		JS_STRING = 1;
+		JS_NUMBER = 2;
+	}
+
+	GPBFieldOptions_JSType jstype = 6;
+	bool weak_p = 10;
+	repeated google.protobuf.GPBUninterpretedOption uninterpretedOptionArray = 999;
+}

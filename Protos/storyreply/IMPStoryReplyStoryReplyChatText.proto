@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyMessageKey.proto";
+
+message IMPStoryReplyStoryReplyChatText {
+	storyreply.IMPStoryReplyMessageKey key = 1;
+	string text = 2;
+	bool expired = 3;
+	bool deleted = 4;
+}

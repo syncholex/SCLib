@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+import "com/snapchat/proto/air/SCPBAirCrashBreadcrumbData.proto";
+import "com/snapchat/proto/air/SCPBAirCrashMetaData.proto";
+import "com/snapchat/proto/air/SCPBAirPreferenceInfo.proto";
+import "com/snapchat/proto/air/SCPBAirAppBuildInfo.proto";
+
+message SCPBAirCrashReportOtherInfo {
+	string secondaryNativeCrashLog = 1;
+	repeated com.snapchat.proto.air.SCPBAirCrashBreadcrumbData breadcrumbsArray = 2;
+	repeated com.snapchat.proto.air.SCPBAirCrashMetaData metadataArray = 3;
+	string crashAppVersion = 4;
+	com.snapchat.proto.air.SCPBAirPreferenceInfo preferenceInfo = 5;
+	double crashFormatVersion = 6;
+	bool anrDeadlock = 7;
+	string cpuAbi = 8;
+	string appState = 9;
+	com.snapchat.proto.air.SCPBAirAppBuildInfo appBuildInfo = 10;
+	string lastPageView = 11;
+	string crashLogs = 12;
+	bool isSystemCrash = 13;
+	string nonFatalSenderId = 14;
+	bool isCommonProblemNonFatal = 15;
+}

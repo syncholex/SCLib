@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBRenewServiceAccessPointResponse {
+
+	enum HRMPBRenewServiceAccessPointResponse_RenewServiceAccessPointStatus {
+		RENEW_AP_STATUS_UNSET = 0;
+		RENEW_AP_STATUS_OK = 1;
+		RENEW_AP_STATUS_NOT_FOUND = 2;
+	}
+
+	HRMPBRenewServiceAccessPointResponse_RenewServiceAccessPointStatus status = 1;
+}

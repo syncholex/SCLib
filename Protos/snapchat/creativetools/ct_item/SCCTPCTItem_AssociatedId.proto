@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ct_item;
+
+message SCCTPCTItem_AssociatedId {
+
+	enum SCCTPCTItem_AssociatedId_Corpus {
+		CORPUS_UNSET = 0;
+		URL = 1;
+	}
+
+	SCCTPCTItem_AssociatedId_Corpus corpus = 1;
+	string id_p = 2;
+}

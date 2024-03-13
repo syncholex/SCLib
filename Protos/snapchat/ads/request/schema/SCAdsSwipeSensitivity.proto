@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsSwipeSensitivity {
+	google.protobuf.GPBFloatValue startSwipeTapPositionXRelative = 1;
+	google.protobuf.GPBFloatValue startSwipeTapPositionX = 2;
+	google.protobuf.GPBFloatValue startSwipeTapPositionYRelative = 3;
+	google.protobuf.GPBFloatValue startSwipeTapPositionY = 4;
+	google.protobuf.GPBFloatValue endSwipeTapPositionXRelative = 5;
+	google.protobuf.GPBFloatValue endSwipeTapPositionX = 6;
+	google.protobuf.GPBFloatValue endSwipeTapPositionYRelative = 7;
+	google.protobuf.GPBFloatValue endSwipeTapPositionY = 8;
+	google.protobuf.GPBFloatValue swipeTapDuration = 9;
+	google.protobuf.GPBFloatValue secondPointSwipePositionXRelative = 10;
+	google.protobuf.GPBFloatValue secondPointSwipePositionX = 11;
+	google.protobuf.GPBFloatValue secondPointSwipePositionYRelative = 12;
+	google.protobuf.GPBFloatValue secondPointSwipePositionY = 13;
+
+	enum SCAdsSwipeSensitivity_TapAttachmentSource {
+		UNSET = 0;
+		NONE = 1;
+		CARD = 2;
+		TRAY = 3;
+		END_CARD = 4;
+		BUTTON = 5;
+	}
+
+	SCAdsSwipeSensitivity_TapAttachmentSource tapAttachmentSource = 14;
+}

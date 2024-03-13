@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWifiConnectedClientCountChangeEvent {
+	int32 connectedClientCount = 1;
+}

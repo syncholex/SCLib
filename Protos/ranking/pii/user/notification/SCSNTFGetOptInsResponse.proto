@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFOptInEntity.proto";
+
+message SCSNTFGetOptInsResponse {
+	repeated ranking.pii.user.notification.SCSNTFOptInEntity userStoryOptInsArray = 1;
+	repeated ranking.pii.user.notification.SCSNTFOptInEntity publisherStoryOptInsArray = 2;
+	repeated ranking.pii.user.notification.SCSNTFOptInEntity ourStoryOptInsArray = 3;
+	repeated ranking.pii.user.notification.SCSNTFOptInEntity liveStreamOptInsArray = 4;
+}

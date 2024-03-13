@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map.heatmap;
+
+message SCMTMapSnapLite {
+	string id_p = 1;
+	double timestamp = 3;
+	double lat = 4;
+	double lng = 5;
+	bool shouldFuzz = 6;
+	double fuzzDistance = 7;
+	string multiSnapBundleId = 18;
+	int32 multiSnapSequenceId = 19;
+}

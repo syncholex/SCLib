@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+import "snapchat/context/SCStoryManifest.proto";
+import "snapchat/context/SCLocalizedStringSet.proto";
+import "address/SCMapsAddress.proto";
+import "snapchat/map/SCMTPointOfInterest.proto";
+import "snapchat/map/SCMTPointOfInterest_DiscoverInfo.proto";
+import "snapchat/map/SCMTDirectRenderInfo.proto";
+import "snapchat/map/SCMTGameMarkerInfo.proto";
+
+message SCMTPointOfInterest {
+
+	enum SCMTPointOfInterest_Type {
+		ACTIVITY_SPIKE = 0;
+		FILLER = 1;
+		ATTRACTIONS = 2;
+		STORY = 3;
+		STICKER_WALL = 4;
+		DISCOVER_EDITION = 5;
+		MAP_MARKER = 6;
+		GAME_MARKER = 7;
+	}
+
+	SCMTPointOfInterest_Type type = 1;
+	string id_p = 2;
+	snapchat.map.SCMTPoint point = 3;
+	double score = 5;
+	double renderWidthRatio = 8;
+	repeated snapchat.map.SCMTThumbnail thumbnailsArray = 10;
+	snapchat.context.SCStoryManifest previewManifest = 11;
+	snapchat.context.SCStoryManifest fullManifest = 12;
+	snapchat.context.SCLocalizedStringSet llabel = 14;
+	address.SCMapsAddress localizedAddresses = 15;
+	float minDisplayZoom = 16;
+	bool isFeatured = 17;
+	string originalLeadId = 18;
+	float thumbnailMinDisplayZoom = 19;
+	string emojiLabel = 20;
+	repeated string localesArray = 21;
+	repeated snapchat.map.SCMTPointOfInterest localizedVersionsArray = 22;
+
+	enum SCMTPointOfInterest_ActionType {
+		TAP_TO_PLAY = 0;
+		UNLOCKABLE = 1;
+		OPEN_EDITION = 2;
+		SHOW_CARDS = 3;
+		NO_ACTION = 4;
+	}
+
+	SCMTPointOfInterest_ActionType actionType = 23;
+	string unlockableId = 24;
+	int32 audioStitchCount = 25;
+	snapchat.map.SCMTPointOfInterest_DiscoverInfo discoverInfo = 26;
+	float maxDisplayZoom = 27;
+	snapchat.map.SCMTDirectRenderInfo directRenderInfo = 28;
+	snapchat.map.SCMTGameMarkerInfo gameMarkerInfo = 29;
+	string verrazanoId = 30;
+
+	enum SCMTMarkerDataType {
+		UNSET = 0;
+		LENS = 1;
+	}
+
+	SCMTMarkerDataType markerDataType = 31;
+	float minTapRadius = 32;
+	float minReachableRadius = 33;
+}

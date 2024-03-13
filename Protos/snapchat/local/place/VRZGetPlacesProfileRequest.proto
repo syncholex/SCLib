@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZGetPlacesProfileRequest {
+	repeated string placeIdsArray = 1;
+	string locale = 2;
+
+	enum VRZPlaceProfileViewSource {
+		UNKNOWN = 0;
+		MAP = 1;
+		SEARCH = 2;
+		CONTEXT = 3;
+		ADS_MANAGER = 4;
+		CHAT = 5;
+	}
+
+	VRZPlaceProfileViewSource viewSource = 3;
+
+	enum VRZPlaceProfileModuleType {
+		INFO = 0;
+		LOCATION = 1;
+		POPULARITY_HOURS = 2;
+		REVIEWS = 3;
+		CTA = 4;
+		STATS = 5;
+	}
+
+	repeated VRZPlaceProfileModuleType moduleTypesArray = 4 [packed=true];
+	bool requestFavorite = 5;
+	string mapStyleName = 6;
+}

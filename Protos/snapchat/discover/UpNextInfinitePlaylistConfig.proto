@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message UpNextInfinitePlaylistConfig {
+	bool isEnabled = 1;
+	int32 pageSize = 2;
+	int32 nextPageTriggerThreshold = 3;
+	int32 shouldStartAfterFriendStoriesViewLocation = 4;
+	int32 pageSizeInitial = 5;
+	bool enableCustomMediaPrefetch = 6;
+	bool enableUpnextOnBoosting = 7;
+	int32 pageSizeWwan = 8;
+	int32 nextPageTriggerThresholdWwan = 9;
+	int32 pageSizeInitialWwan = 10;
+	bool enableUpnextOnSubscriptionSection = 11;
+	bool migrateToStoriesEndpoint = 12;
+	bool placeHolderConfigBool = 13;
+	int32 placeHolderConfigInt = 14;
+	int32 fsAaDefaultPlaylistIndexTriggerThreshold = 15;
+}

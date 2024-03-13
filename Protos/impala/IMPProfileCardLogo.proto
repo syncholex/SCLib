@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileCardLogo {
+	string profileLogoURL = 1;
+	string bitmojiAvatarId = 2;
+	string bitmojiAvatarSelfieId = 3;
+}

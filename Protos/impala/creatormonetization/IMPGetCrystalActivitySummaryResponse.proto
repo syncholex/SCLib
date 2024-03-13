@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPGetCrystalActivitySummaryResponse {
+
+	enum IMPPayoutState {
+		ONBOARDING_NEEDED_UNSET = 0;
+		IN_PROCESS = 1;
+		SUCCESS_NO_PAYMENT_METHOD = 2;
+		PAY_IN_PROGRESS = 3;
+		REJECTED = 4;
+		REJECTED_NO_PAYMENT_METHOD = 5;
+		SUCCESS = 6;
+		BANNED = 7;
+		ON_HOLD = 8;
+	}
+
+	IMPPayoutState payoutState = 1;
+	int64 currentCrystals = 2;
+	int64 currentEarnings = 3;
+	string onboardingEmail = 4;
+	string accessCode = 5;
+	bool canCashout = 6;
+	bool securityCheckPasses = 7;
+
+	enum IMPOnboardingStateReason {
+		NO_REASON_PROVIDED_UNSET = 0;
+		UNDER_AGE = 1;
+		INVALID_COUNTRY = 2;
+		NO_EARNINGS = 3;
+	}
+
+	IMPOnboardingStateReason reasonCode = 8;
+	int64 cashoutThreshold = 9;
+	int64 pendingCrystals = 10;
+}

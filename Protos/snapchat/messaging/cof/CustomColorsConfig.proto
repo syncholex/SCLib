@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/CustomColor.proto";
+
+message CustomColorsConfig {
+	repeated snapchat.messaging.cof.CustomColor colorsArray = 1;
+}

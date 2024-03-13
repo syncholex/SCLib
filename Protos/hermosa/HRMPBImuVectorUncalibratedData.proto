@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBImuVectorUncalibratedData {
+	sint32 x = 1;
+	sint32 y = 2;
+	sint32 z = 3;
+	sint32 xBias = 4;
+	sint32 yBias = 5;
+	sint32 zBias = 6;
+	uint32 status = 7;
+}

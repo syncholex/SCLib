@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusODLVData {
+	string odlvToken = 1;
+	bool emailEnabled = 2;
+	bool smsEnabled = 3;
+	string obfuscatedPhone = 4;
+	string obfuscatedEmail = 5;
+}

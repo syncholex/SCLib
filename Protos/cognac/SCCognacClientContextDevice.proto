@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacClientContextGpuInfo.proto";
+
+message SCCognacClientContextDevice {
+
+	enum SCCognacClientContextPlatform {
+		UNKNOWN_PLATFORM = 0;
+		IOS = 1;
+		ANDROID = 2;
+	}
+
+	SCCognacClientContextPlatform platform = 1;
+	string model = 2;
+	cognac.SCCognacClientContextGpuInfo gpuInfo = 3;
+	bool noGyroscope = 4;
+}

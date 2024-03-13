@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbUsesCameraRoll {
+	bool usesCameraRoll = 1;
+}

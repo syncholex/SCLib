@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetInfo.proto";
+import "snapchat/map/SCMTTile.proto";
+
+message SCMTGetLatestMapTilesResponse {
+	repeated snapchat.map.SCMTTileSetInfo tileSetInfosArray = 1;
+	repeated snapchat.map.SCMTTile tilesArray = 2;
+	int32 lifetimeSec = 3;
+}

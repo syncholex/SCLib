@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.product;
+
+import "com/snapchat/commerce/domain/ImageMap.proto";
+
+message ProductInfo_ImageDetails {
+	bytes externalImageId = 1;
+	string imageURL = 2;
+	uint32 height = 3;
+	uint32 width = 4;
+	com.snapchat.commerce.domain.ImageMap imageMap = 5;
+}

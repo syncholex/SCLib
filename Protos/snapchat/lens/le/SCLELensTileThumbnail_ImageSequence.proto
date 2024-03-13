@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensTileThumbnail_ImageSequence {
+	string URLPattern = 1;
+	int32 numImages = 2;
+	int32 frameIntervalMs = 3;
+}

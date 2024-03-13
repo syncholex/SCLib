@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+import "snapchat/notification/notificationdata/SCNotificationDeviceToken.proto";
+import "snapchat/notification/notificationdata/SCNotificationPushNotificationEncryptionData.proto";
+
+message SCNotificationRegisterDeviceRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+	snapchat.notification.notificationdata.SCNotificationDeviceToken deviceToken = 2;
+
+	enum SCNotificationDeviceType {
+		NONE = 0;
+		IOS = 1;
+		ANDROID = 2;
+		TEST_IOS = 3;
+		TEST_ANDROID = 4;
+		ANDROID_HMS = 5;
+		IOS_BITMOJI = 6;
+		ANDROID_BITMOJI = 7;
+		DESKTOP_WEB = 8;
+		IOS_FEATURE_APP = 9;
+	}
+
+	SCNotificationDeviceType deviceType = 3;
+
+	enum SCNotificationReleaseType {
+		UNKNOWN_RELEASE = 0;
+		PRODUCTION = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		BETA = 4;
+		DEBUG = 5;
+		PROTOTYPING = 6;
+	}
+
+	SCNotificationReleaseType releaseType = 4;
+	snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData encryptionData = 5;
+
+	enum SCPushNotificationAppId {
+		SNAPCHAT = 0;
+		BITMOJI = 1;
+		WEB = 2;
+		SNAPCHAT_FEATURE_APP = 3;
+	}
+
+	SCPushNotificationAppId appId = 6;
+	string bundleId = 7;
+}

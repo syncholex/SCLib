@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPInfoSticker {
+
+	enum SCCTPInfoSticker_Type {
+		UNSET = 0;
+		ALTITUDE = 1;
+		BATTERY = 2;
+		DATE_TIME = 3;
+		EVENT = 4;
+		GIF = 5;
+		GROUP_INVITE = 6;
+		VENUE = 7;
+		MENTION = 8;
+		SNAPCODE = 9;
+		SNAP_REQUEST = 10;
+		SPEED = 11;
+		STORY = 12;
+		TOPIC = 13;
+		WEATHER = 14;
+		POLL = 15;
+		COMMERCE = 16;
+		CAMERA_ROLL = 17;
+		QUESTION = 18;
+		SOUNDS = 19;
+		DISCOVER_DEEPLINK = 20;
+		ATTACHMENT = 21;
+		GENERIC_IMAGE = 22;
+	}
+
+	SCCTPInfoSticker_Type type = 1;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileVisibility {
+	bool isTestProfile = 1;
+
+	enum IMPProfileStatus {
+		PROFILE_STATUS_UNSET = 0;
+		PROFILE_STATUS_NORMAL = 1;
+		PROFILE_STATUS_DEACTIVATED = 2;
+		PROFILE_STATUS_FROZEN = 3;
+	}
+
+	IMPProfileStatus status = 2;
+
+	enum IMPDeactivateReason {
+		NONE = 0;
+		TOO_YOUNG_FOR_PUBLIC_PROFILE = 1;
+		PUBLISHER_ARCHIVED = 2;
+		DELETED_HOST_USER = 3;
+	}
+
+	IMPDeactivateReason deactivateReason = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbCommunityReengagementConfig {
+	bool billboardPrecheckEnabled = 1;
+	int32 memberSize = 2;
+
+	enum SCPrivateProfilePbCommunityReengagementConfig_OrgType {
+		UNSET = 0;
+		COLLEGE = 1;
+		HIGH_SCHOOL = 2;
+	}
+
+	SCPrivateProfilePbCommunityReengagementConfig_OrgType orgType = 3;
+}

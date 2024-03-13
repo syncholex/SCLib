@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCAddFriendsRegRefreshConfig {
+	bool hideTitle = 1;
+	bool newActiveMessageEnabled = 2;
+	bool largeUsername = 3;
+	bool lowercaseSubtext = 4;
+	bool removePlus = 5;
+	bool fullWidthCells = 6;
+	bool showBlackButton = 7;
+	int32 skipDelayMs = 8;
+	bool hideSkipAfterScrolling = 9;
+	bool showSkipAfterScrolling = 10;
+	bool testContactBookSyncedUsers = 11;
+	bool testPhoneVerifiedUsers = 12;
+	bool hideRecentlyActiveBanner = 13;
+	bool stripExtraSpaceInCell = 14;
+	bool showDividerLineBetweenCells = 15;
+	float numOfCellsToggleSkipButton = 16;
+}

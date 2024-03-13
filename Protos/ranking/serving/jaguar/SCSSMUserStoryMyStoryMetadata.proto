@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSSMUserStoryMyStoryMetadata {
+
+	enum SCSCOREMyStoryVariant_Enum {
+		UNSET = 0;
+		AFTER_DARK = 1;
+	}
+
+	SCSCOREMyStoryVariant_Enum myStoryVariant = 1;
+	string displayName = 2;
+	repeated ranking.core.SCSCOREUUID friendsWhoAddedArray = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+import "snapchat/jobscheduler/JobTiming_RecurringConfig.proto";
+
+message JobTiming {
+
+	oneof jobTiming {
+		bool runImmediately = 1;
+		snapchat.jobscheduler.JobTiming_RecurringConfig recurringConfig = 2;
+		uint32 runAfterDelaySec = 3;
+	}
+
+}

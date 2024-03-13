@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbGooglePricingInfo_GooglePlan.proto";
+
+message SCSubscriptionShopPbGooglePricingInfo {
+	repeated subscription.shop.SCSubscriptionShopPbGooglePricingInfo_GooglePlan plansArray = 1;
+}

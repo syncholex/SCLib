@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/context2/SCGIGroupInviteEventInfo_JoinedPerson.proto";
+
+message SCGIGroupInviteEventInfo {
+	string eventTitle = 1;
+	string eventDescription = 2;
+	string locationDisplayString = 3;
+	string locationVenueId = 4;
+	snapchat.geo.SPCGPoint locationLatLng = 5;
+	string locationAddressInfo = 6;
+	int64 startEpoch = 7;
+	int64 endEpoch = 8;
+	repeated snapchat.context2.SCGIGroupInviteEventInfo_JoinedPerson joinedPeopleArray = 9;
+}

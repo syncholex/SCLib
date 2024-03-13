@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message S2CellTiming {
+	string s2CellId = 1;
+	int64 enterTimestamp = 2;
+	int64 latestTimestamp = 3;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+import "ranking2/friend_story/SCR2RelatedPublicAccounts.proto";
+import "ranking2/friend_story/SCR2FriendStoryHighlightScoreFeatures.proto";
+import "ranking2/friend_story/SCR2OfficialAccountMetadata.proto";
+
+message SCR2FriendStoryHighlightScore_Friend {
+
+	oneof user {
+		string username = 1;
+		bytes encryptedUsername = 2;
+	}
+
+	float score = 3;
+	ranking2.friend_story.SCR2RelatedPublicAccounts relatedPublicAccounts = 4;
+	ranking2.friend_story.SCR2FriendStoryHighlightScoreFeatures features = 5;
+	ranking2.friend_story.SCR2OfficialAccountMetadata officialAccountMetadata = 6;
+	string userId = 7;
+}

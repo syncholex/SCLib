@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+message ForgetOneTfaVerifiedDeviceRequest {
+	string deviceId = 1;
+	string persistentAttestationDeviceId = 2;
+}

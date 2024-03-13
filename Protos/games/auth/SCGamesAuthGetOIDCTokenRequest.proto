@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package games.auth;
+
+message SCGamesAuthGetOIDCTokenRequest {
+	string externalUserId = 1;
+	string oauth2ClientId = 2;
+	string sessionId = 3;
+	string appId = 4;
+	string displayName = 5;
+}

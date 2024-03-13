@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAutoAdvanceControlConfig {
+	bool enable = 1;
+	uint32 numberOfLoops = 2;
+	double videoLengthThresholdMs = 3;
+	double imageAdsAutoAdvanceDurationMs = 4;
+}

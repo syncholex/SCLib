@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/SCBitmojiUUID.proto";
+
+message SCBitmojiGetCostumeOverrideInfoRequest {
+	snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+}

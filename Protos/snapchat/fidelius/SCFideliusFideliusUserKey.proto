@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusFideliusDeviceKey.proto";
+
+message SCFideliusFideliusUserKey {
+	repeated snapchat.fidelius.SCFideliusFideliusDeviceKey deviceKeysArray = 1;
+}

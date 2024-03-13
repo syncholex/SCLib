@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforceProperty {
+	string propName = 1;
+	com.snapchat.deltaforce.SCDeltaforceValue value = 2;
+}

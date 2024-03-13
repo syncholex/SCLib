@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message AnimatedBitmojiData {
+	uint32 finishTimeMs = 1;
+	bool isKeyframe = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+import "snapchat/content_manager/LensBlobTransformParams.proto";
+import "snapchat/content_manager/LensContentTransformParams.proto";
+
+message PostDownloadTransformParams {
+
+	oneof transformParams {
+		snapchat.content_manager.LensBlobTransformParams lensBlobTransformParams = 1;
+		snapchat.content_manager.LensContentTransformParams lensContentTransformParams = 2;
+	}
+
+}

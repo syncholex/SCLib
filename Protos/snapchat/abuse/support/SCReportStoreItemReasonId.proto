@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportStoreItemReasonId {
+
+	enum SCReportStoreItemReasonId_ReasonId {
+		REASON_UNSET = 0;
+	}
+
+	SCReportStoreItemReasonId_ReasonId reasonId = 1;
+}

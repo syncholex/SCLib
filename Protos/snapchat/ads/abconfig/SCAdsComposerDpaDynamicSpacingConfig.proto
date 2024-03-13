@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsComposerDpaDynamicSpacingConfig {
+	bool fillWidthEnabled = 1;
+	bool fillHeightEnabled = 2;
+	bool headerEnabled = 3;
+	bool fitEnabled = 4;
+	bool tiltEnabled = 5;
+	bool carouselEnabled = 6;
+	bool slideshowEnabled = 7;
+}

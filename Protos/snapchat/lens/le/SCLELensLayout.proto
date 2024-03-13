@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensLayout {
+	bool showIcon = 1;
+
+	enum SCLELensLayout_TextAlign {
+		CENTER_UNSET = 0;
+		LEFT = 1;
+	}
+
+	SCLELensLayout_TextAlign textAlignment = 2;
+	double previewAspectRatio = 3;
+
+	enum SCLELensLayout_IconAlign {
+		ICON_CENTER_UNSET = 0;
+		ICON_LEFT = 1;
+	}
+
+	SCLELensLayout_IconAlign iconAlignment = 4;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbAppVersion {
+	string binaryName = 1;
+	string packageName = 2;
+	string branchName = 3;
+	string packageVersion = 4;
+
+	enum SCSpectaclesOtaPbBuildFlavor {
+		RELEASE_UNSET = 0;
+		DEBUG = 1;
+		ALPHA = 2;
+	}
+
+	SCSpectaclesOtaPbBuildFlavor buildFlavor = 5;
+
+	enum SCSpectaclesOtaPbBinaryType {
+		APK_UNSET = 0;
+		LIB = 1;
+	}
+
+	SCSpectaclesOtaPbBinaryType binaryType = 6;
+	string downloadURL = 7;
+	string commitSha = 8;
+	string createdDateTime = 9;
+	string lastUpdatedDateTime = 10;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMediaMetadata.proto";
+
+message SCMessagingLegacyShazamShare {
+	string attachedURL = 1;
+	snapchat.messaging.SCMessagingMediaMetadata media = 2;
+}

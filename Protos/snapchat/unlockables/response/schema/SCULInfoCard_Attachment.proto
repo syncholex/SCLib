@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULInfoCard_Attachment_WebView.proto";
+import "snapchat/unlockables/response/schema/SCULInfoCard_Attachment_DeepLink.proto";
+
+message SCULInfoCard_Attachment {
+
+	oneof attachment {
+		snapchat.unlockables.response.schema.SCULInfoCard_Attachment_WebView webView = 1;
+		snapchat.unlockables.response.schema.SCULInfoCard_Attachment_DeepLink deepLink = 2;
+	}
+
+	string ctaText = 3;
+}

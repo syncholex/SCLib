@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "google/type/GTPDate.proto";
+
+message SCJanusSecurityQuestionChallengeAnswer {
+
+	enum SCJanusSecurityQuestionType {
+		SECURITY_QUESTION_TYPE_UNSET = 0;
+		PHONE_NUMBER = 1;
+		EMAIL_ADDRESS = 2;
+		BIRTHDATE = 3;
+		USERNAME = 4;
+	}
+
+	SCJanusSecurityQuestionType securityQuestionType = 1;
+
+	oneof securityQuestionAnswer {
+		string text = 2;
+		google.type.GTPDate date = 3;
+	}
+
+}

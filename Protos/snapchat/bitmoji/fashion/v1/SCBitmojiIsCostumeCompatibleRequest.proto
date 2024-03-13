@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/SCBitmojiUUID.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+
+message SCBitmojiIsCostumeCompatibleRequest {
+	snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+	snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 2;
+}

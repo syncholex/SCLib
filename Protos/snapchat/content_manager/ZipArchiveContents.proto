@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message ZipArchiveContents {
+	repeated string entryNamesArray = 1;
+}

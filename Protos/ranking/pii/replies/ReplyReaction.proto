@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message ReplyReaction {
+	int64 reactTypeId = 1;
+	ranking.core.SCSCOREUUID replyId = 2;
+	string snapId = 3;
+
+	enum ReplyReactionOption_Enum {
+		UNKNOWN = 0;
+		REACT = 1;
+		UNREACT = 2;
+	}
+
+	ReplyReactionOption_Enum option = 4;
+	int64 count = 5;
+}

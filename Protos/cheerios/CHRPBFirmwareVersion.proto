@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBFirmwareVersion {
+	string gitCommit = 1;
+	string gitTag = 2;
+	string gitBranch = 3;
+}

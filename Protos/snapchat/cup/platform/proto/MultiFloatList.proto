@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/MultiFloat.proto";
+
+message MultiFloatList {
+	repeated snapchat.cup.platform.proto.MultiFloat valueArray = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusVendorIntegrityChallengeAnswer {
+
+	enum SCJanusIntegrityChallengeType {
+		INTEGRITY_CHALLENGE_TYPE_UNSET = 0;
+		CHALLENGE_TYPE_SAFETY_NET = 1;
+		CHALLENGE_TYPE_PLAY_INTEGRITY_STANDARD = 2;
+		CHALLENGE_TYPE_PLAY_INTEGRITY_CLASSIC = 3;
+		CHALLENGE_TYPE_ANDROID_KEY_ATTESTATION = 4;
+		CHALLENGE_TYPE_SYSINTEGRITY = 5;
+	}
+
+	SCJanusIntegrityChallengeType type = 1;
+	bytes vendorAttestationPayload = 6;
+}

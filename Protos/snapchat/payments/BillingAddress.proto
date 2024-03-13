@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message BillingAddress {
+	string firstName = 1;
+	string lastName = 2;
+	string addressLine1 = 3;
+	string addressLine2 = 4;
+	string city = 5;
+	string state = 6;
+	string postalCode = 7;
+	string countryCode = 8;
+}

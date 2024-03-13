@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextContentMetadata {
+	repeated string taggedUserIdsArray = 21;
+	repeated string taggedNamesArray = 22;
+}

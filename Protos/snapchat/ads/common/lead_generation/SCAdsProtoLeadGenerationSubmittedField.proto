@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.common.lead_generation;
+
+import "snapchat/ads/common/lead_generation/SCAdsProtoLeadGenerationFieldIdentifier.proto";
+
+message SCAdsProtoLeadGenerationSubmittedField {
+	snapchat.ads.common.lead_generation.SCAdsProtoLeadGenerationFieldIdentifier identifier = 1;
+	string value = 2;
+	string subValues = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBOTACancelScheduledUpdateResponse {
+	bool success = 1;
+}

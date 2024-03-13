@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZBlockedServices_ComponentBlocklist {
+	bool parentBlocked = 1;
+	bool childBlocked = 2;
+}

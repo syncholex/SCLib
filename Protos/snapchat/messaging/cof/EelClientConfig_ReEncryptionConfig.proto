@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EelClientConfig_ReEncryptionConfig {
+	bool isInitEnabled = 1;
+	bool isAckEnabled = 2;
+	uint32 maxInFlightAcks = 3;
+	uint32 maxInFlightInits = 4;
+	uint32 initBootstrapDelayMs = 5;
+	uint32 ackBootstrapDelayMs = 6;
+	uint32 initMaxChunkMessagesToRead = 7;
+	uint32 ackMaxChunkMessagesToRead = 8;
+	bool isBatchEnabled = 9;
+	bool isBatchRequesterEnabled = 10;
+	bool isBatchManagerEnabled = 11;
+	uint32 maxNumberOfLatestMessagesToRead = 12;
+	uint32 maxNumberOfLatestConversationsToRead = 13;
+	bool isDecryptOnInitEnabled = 14;
+	bool ackClearPurgedPkids = 15;
+	bool isAsyncCurrKeyEnabled = 16;
+	bool isInitDedicatedQueueEnabled = 17;
+	bool isAckDedicatedQueueEnabled = 18;
+	bool useLowestPriority = 19;
+	bool isAckSkipNetworkCheckEnabled = 20;
+	bool isInitSkipNetworkCheckEnabled = 21;
+	bool isInitDisabled = 22;
+	bool isAckDisabled = 23;
+}

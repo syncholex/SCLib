@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/janus/api/SCJanusPasskeyAuthenticationPayload.proto";
+
+message SCJanusPasskeyIdentifier {
+	snapchat.core.SCCOREUUID userId = 1;
+	snapchat.janus.api.SCJanusPasskeyAuthenticationPayload passkeyAuthenticationPayload = 2;
+}

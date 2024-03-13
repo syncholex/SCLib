@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/BoltMediaServingInfo.proto";
+
+message SharedStoryProfileMetadata {
+	string description_p = 1;
+	ranking.pii.groupmanagement.BoltMediaServingInfo boltMediaServingInfo = 2;
+}

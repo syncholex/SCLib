@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacLeaderboardsScoreVisibility.proto";
+
+message SCCognacLeaderboardsGetScoreVisibilitiesResponse {
+	string appId = 1;
+	repeated cognac.SCCognacLeaderboardsScoreVisibility scoreVisibilitiesArray = 2;
+}

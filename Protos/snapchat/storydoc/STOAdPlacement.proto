@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOAdPlacement_FixedAdSlot.proto";
+import "snapchat/storydoc/STOAdPlacement_FixedAdSlots.proto";
+import "snapchat/storydoc/STOAdPlacement_AdPlacementMetadata.proto";
+import "snapchat/storydoc/STOAdPlacement_TimeBasedAdPlacements.proto";
+
+message STOAdPlacement {
+	repeated int32 fixedAdIndexesArray = 1 [packed=true];
+	repeated snapchat.storydoc.STOAdPlacement_FixedAdSlot adsArray = 2;
+
+	enum STOAdPlacement_AdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	STOAdPlacement_AdSetting adSetting = 3;
+
+	oneof adPlacement {
+		snapchat.storydoc.STOAdPlacement_FixedAdSlots fixedAdSlots = 4;
+		snapchat.storydoc.STOAdPlacement_AdPlacementMetadata adPlacementMetadata = 5;
+	}
+
+	snapchat.storydoc.STOAdPlacement_TimeBasedAdPlacements timeBasedAdPlacements = 6;
+}

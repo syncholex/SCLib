@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBEnumValueOptions.proto";
+
+message GPBEnumValueDescriptorProto {
+	string name = 1;
+	int32 number = 2;
+	google.protobuf.GPBEnumValueOptions options = 3;
+}

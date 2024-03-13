@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbSubscribePageConfig_PromoPaywall {
+	string planRefId = 1;
+	uint64 startTimestampMillis = 2;
+	uint64 endTimestampMillis = 3;
+	string titleKey = 4;
+	string subtitleKey = 5;
+	string buttonTextKey = 6;
+	bool showWithoutDiscount = 7;
+
+	enum SCSubscriptionShopPbSubscribePageConfig_PromoPaywall_ButtonText {
+		BUTTON_TEXT_UNSET = 0;
+		BUTTON_TEXT_TRY = 1;
+		BUTTON_TEXT_RENEW = 2;
+		BUTTON_TEXT_SUBSCRIBE = 3;
+		BUTTON_TEXT_RESUBSCRIBE = 4;
+		BUTTON_TEXT_GET_STARTED = 5;
+		BUTTON_TEXT_REACTIVATE = 6;
+	}
+
+	SCSubscriptionShopPbSubscribePageConfig_PromoPaywall_ButtonText buttonText = 8;
+}

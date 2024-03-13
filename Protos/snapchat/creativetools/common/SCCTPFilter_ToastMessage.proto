@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ToastMessage {
+	string message = 1;
+
+	enum SCCTPFilter_ToastMessage_Position {
+		POSITION_UNSET = 0;
+		TOP = 1;
+		MIDDLE = 2;
+		BOTTOM = 3;
+	}
+
+	SCCTPFilter_ToastMessage_Position position = 2;
+	int32 fadeInTimeMs = 3;
+	int32 onScreenTimeMs = 4;
+	int32 fadeOutTimeMs = 5;
+}

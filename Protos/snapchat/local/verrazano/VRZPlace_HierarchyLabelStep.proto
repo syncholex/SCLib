@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message VRZPlace_HierarchyLabelStep {
+	google.protobuf.GPBBoolValue shouldIncludeLabel = 1;
+	string placetypeId = 2;
+}

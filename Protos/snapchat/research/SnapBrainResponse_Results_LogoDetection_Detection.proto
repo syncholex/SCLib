@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_LogoDetection_Detection {
+	int32 objectId = 1;
+	repeated int32 cornersArray = 2 [packed=true];
+	int32 idx = 3;
+	string objectName = 4;
+}

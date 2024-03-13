@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message LensStaticRemoteAssetsMetadata {
+	string assetId = 1;
+	bytes checksum = 2;
+
+	enum LensStaticRemoteAssetsMetadata_StaticRemoteAssetType {
+		UNSET = 0;
+		ASSET = 1;
+		DEVICE_DEPENDENT_ASSET = 2;
+		BITMOJI = 3;
+		BITMOJI_3D = 4;
+		BITMOJI_LIST = 5;
+		AVATAR_ASSET = 6;
+	}
+
+	LensStaticRemoteAssetsMetadata_StaticRemoteAssetType assetType = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.lenses.taxonomy;
+
+import "com/snapchat/lenses/taxonomy/LensCategory.proto";
+
+message LensCategoryList {
+	repeated com.snapchat.lenses.taxonomy.LensCategory parentLensCategoriesArray = 1;
+	repeated com.snapchat.lenses.taxonomy.LensCategory subLensCategoriesArray = 2;
+}

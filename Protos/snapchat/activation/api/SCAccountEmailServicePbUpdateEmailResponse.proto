@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "snapchat/activation/api/SCAccountEmailServicePbSuccessData.proto";
+import "snapchat/janus/api/SCJanusChallengeData.proto";
+import "snapchat/activation/api/SCAccountEmailServicePbErrorData.proto";
+
+message SCAccountEmailServicePbUpdateEmailResponse {
+
+	enum SCAccountEmailServicePbUpdateEmailResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		ALREADY_VERIFIED = 2;
+		CHALLENGE_REQUIRED = 3;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_EMAIL_INVALID = 11;
+		ERR_EMAIL_BLOCKED = 12;
+		ERR_EMAIL_TAKEN = 13;
+		ERR_EMAIL_DELIVERY_FAILED = 14;
+		ERR_THROTTLED = 15;
+		ERR_INCONSISTENT_STATE = 16;
+	}
+
+	SCAccountEmailServicePbUpdateEmailResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.activation.api.SCAccountEmailServicePbSuccessData successData = 2;
+		snapchat.janus.api.SCJanusChallengeData challengeData = 3;
+		snapchat.activation.api.SCAccountEmailServicePbErrorData errorData = 10;
+	}
+
+}

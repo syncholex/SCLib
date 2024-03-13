@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod.proto";
+
+message SCSubscriptionShopPbGiftPlan {
+	string productId = 1;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod subscriptionPeriod = 2;
+}

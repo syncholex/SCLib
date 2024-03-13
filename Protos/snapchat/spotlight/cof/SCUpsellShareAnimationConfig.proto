@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCUpsellShareAnimationConfig {
+	bool enabled = 1;
+	bool pulsatingAnimationEnabled = 2;
+	bool showShareTextBelowAnimation = 3;
+	int32 animationDurationMs = 4;
+
+	enum SCUpsellShareAnimationConfig_ShareButtonColor {
+		SHARE_BUTTON_COLOR_UNSET = 0;
+		SHARE_BUTTON_COLOR_BLUE = 1;
+		SHARE_BUTTON_COLOR_RED = 2;
+		SHARE_BUTTON_COLOR_YELLOW = 3;
+	}
+
+	SCUpsellShareAnimationConfig_ShareButtonColor shareButtonColor = 5;
+}

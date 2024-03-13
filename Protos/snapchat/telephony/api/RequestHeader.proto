@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+import "snapchat/core/SCCOREIPAddress.proto";
+import "snapchat/core/SCCOREGeoHeader.proto";
+
+message RequestHeader {
+	string userAgent = 1;
+	snapchat.core.SCCOREIPAddress ipAddress = 2;
+	snapchat.core.SCCOREGeoHeader geoHeader = 3;
+	string configDeviceId = 4;
+	string blizzardClientId = 5;
+	string locale = 6;
+	string persistentAttestationDeviceId = 7;
+	string authSessionId = 8;
+}

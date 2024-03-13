@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.activation.challenge;
+
+import "snapchat/activation/challenge/SCUserChallengePbBirthdate.proto";
+
+message SCUserChallengePbUserChallengeAnswer {
+
+	enum SCUserChallengePbUserChallengeType {
+		UNSET = 0;
+		USERNAME = 1;
+		DISPLAY_NAME = 2;
+		BIRTHDAY = 3;
+		VERIFIED_EMAIL = 4;
+	}
+
+	SCUserChallengePbUserChallengeType type = 1;
+
+	oneof response {
+		string text = 2;
+		snapchat.activation.challenge.SCUserChallengePbBirthdate birthdate = 3;
+	}
+
+}

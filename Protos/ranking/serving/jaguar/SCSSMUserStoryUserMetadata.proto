@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUserStoryUserMetadata {
+	string userId = 1;
+	string userName = 2;
+	string userDisplayName = 3;
+	string emoji = 4;
+	string emojiSafe = 5;
+	string bitmojiAvatarId = 6;
+	string bitmojiAvatarSelfieId = 7;
+
+	enum IMPTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	IMPTier snapproTier = 8;
+	bool isFriendSuggestion = 9;
+}

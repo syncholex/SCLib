@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message ScanOcrTextLineResult {
+	string text = 1;
+	float detectionScore = 2;
+	float recognitionScore = 3;
+}

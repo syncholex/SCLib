@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCTelephonyRequestHeader.proto";
+
+message SCJanusAccountRecoveryVerifyCodeRequest {
+	bytes accountRecoveryToken = 1;
+	string otpCode = 2;
+	string phoneNumberCountryCode = 3;
+	string phoneNumber = 4;
+	snapchat.janus.api.SCTelephonyRequestHeader requestHeader = 5;
+}

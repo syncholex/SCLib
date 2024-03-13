@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message GradientColorStop {
+	uint32 color = 1;
+	float offset = 2;
+}

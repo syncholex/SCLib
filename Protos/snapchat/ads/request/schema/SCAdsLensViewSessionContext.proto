@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsLensViewSessionContext {
+	google.protobuf.GPBInt64Value startTimestampMillis = 1;
+	google.protobuf.GPBInt64Value totalLensViewTimeMillis = 2;
+	google.protobuf.GPBInt64Value totalLensAdViewTimeMillis = 3;
+	google.protobuf.GPBInt32Value totalLensViewCount = 4;
+	google.protobuf.GPBInt32Value totalLensAdViewCount = 5;
+	google.protobuf.GPBInt32Value totalLensAdSwipeUpCount = 6;
+	google.protobuf.GPBInt32Value totalLensSwipeUpCount = 7;
+	google.protobuf.GPBInt64Value totalLensAdLongformViewTimeMillis = 8;
+	google.protobuf.GPBInt32Value totalLensSnapTakenCount = 9;
+	google.protobuf.GPBInt32Value totalAdLensSnapTakenCount = 10;
+	google.protobuf.GPBInt32Value totalLensShareCount = 11;
+	google.protobuf.GPBInt32Value totalAdLensShareCount = 12;
+	google.protobuf.GPBInt32Value totalLensSnapSendCount = 13;
+	google.protobuf.GPBInt32Value totalAdLensSnapSendCount = 14;
+}

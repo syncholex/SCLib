@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMFeatureTag.proto";
+
+message SDMCreativeEditTag {
+
+	enum SDMCreativeEditTag_CreativeToolFeature {
+		UNSET = 0;
+		MUSIC = 1;
+		VOICEOVER = 2;
+	}
+
+	repeated SDMCreativeEditTag_CreativeToolFeature creativeToolFeaturesArray = 1 [packed=true];
+	uint32 uniqueId = 2;
+	repeated snapchat.snapdoc.SDMFeatureTag featureTagsArray = 3;
+}

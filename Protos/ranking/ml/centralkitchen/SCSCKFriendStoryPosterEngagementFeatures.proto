@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/indexing/jaguar/SCSIDXFriendStoryPosterEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryDerivedPosterEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryPosterContentFeatures.proto";
+
+message SCSCKFriendStoryPosterEngagementFeatures {
+	ranking.core.SCSCOREUUID posterId = 1;
+	ranking.indexing.jaguar.SCSIDXFriendStoryPosterEngagementFeatures friendStoryPosterEngagementFeatures = 2;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedPosterEngagementFeatures friendStoryDerivedPosterEngagementFeatures = 3;
+	int32 numStoryPostDays28D = 4;
+	bool isTargetedRarePosterBoost = 5;
+	ranking.ml.centralkitchen.SCSCKFriendStoryPosterContentFeatures friendStoryPosterContentFeatures = 6;
+	int32 rarePosterBoostSlot = 7;
+}

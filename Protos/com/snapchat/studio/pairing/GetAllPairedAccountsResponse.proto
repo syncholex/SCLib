@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+import "com/snapchat/studio/pairing/PairedAccount.proto";
+
+message GetAllPairedAccountsResponse {
+	repeated string accountIdArray = 1;
+	repeated com.snapchat.studio.pairing.PairedAccount pairedAccountsArray = 2;
+}

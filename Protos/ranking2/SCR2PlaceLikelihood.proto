@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2PlaceInfo.proto";
+
+message SCR2PlaceLikelihood {
+	ranking2.SCR2PlaceInfo placeInfo = 1;
+	float likelihood = 2;
+
+	enum SCR2PlaceLikelihood_PlaceOpenStatus {
+		UNKNOWN = 0;
+		OPEN = 1;
+		CLOSED = 2;
+	}
+
+	SCR2PlaceLikelihood_PlaceOpenStatus isOpenNow = 3;
+}

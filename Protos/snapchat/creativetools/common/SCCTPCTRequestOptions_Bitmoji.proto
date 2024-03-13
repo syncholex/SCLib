@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCTRequestOptions_Bitmoji {
+	string timezoneId = 2;
+}

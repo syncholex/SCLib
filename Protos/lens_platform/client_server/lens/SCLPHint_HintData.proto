@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+message SCLPHint_HintData {
+	string id_p = 1;
+	string translation = 2;
+}

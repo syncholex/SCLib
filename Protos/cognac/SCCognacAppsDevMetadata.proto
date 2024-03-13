@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsDevMetadata_PlayCanvasMetadata.proto";
+
+message SCCognacAppsDevMetadata {
+	cognac.SCCognacAppsDevMetadata_PlayCanvasMetadata playcanvasMetadata = 1;
+}

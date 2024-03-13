@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBFlightModeConfig.proto";
+
+message CHRPBDistanceParams {
+	cheerios.CHRPBFlightModeConfig flightMode = 1;
+	uint32 distance = 2;
+	float meters = 3;
+}

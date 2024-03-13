@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SccScores.proto";
+import "ranking/ml/centralkitchen/Youtube8MScores.proto";
+import "ranking/ml/centralkitchen/LensScores.proto";
+import "ranking/ml/centralkitchen/TopicScores.proto";
+import "ranking/ml/centralkitchen/MusicScores.proto";
+
+message ContentSignals {
+	repeated ranking.ml.centralkitchen.SccScores storyAggregatedScoredSccArray = 1;
+
+	enum ContentSignals_TagGranularity {
+		SNAP_LEVEL = 0;
+		STORY_LEVEL = 1;
+		CREATOR_LEVEL = 2;
+	}
+
+	ContentSignals_TagGranularity sccTagGranularity = 2;
+	repeated ranking.ml.centralkitchen.SccScores cupSccScoresArray = 3;
+	repeated ranking.ml.centralkitchen.Youtube8MScores youtube8MScoresArray = 4;
+	repeated ranking.ml.centralkitchen.LensScores lensScoresArray = 5;
+	repeated ranking.ml.centralkitchen.TopicScores topicScoresArray = 6;
+	repeated ranking.ml.centralkitchen.MusicScores musicScoresArray = 7;
+
+	enum ContentSignals_TagOrigin {
+		HUMAN_MODERATED = 0;
+		CUP_GENERATED = 1;
+	}
+
+	ContentSignals_TagOrigin sccTagOrigin = 8;
+	repeated ranking.ml.centralkitchen.SccScores cupSccPlusV1ScoresArray = 9;
+}

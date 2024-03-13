@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+
+message SCMTHeatmapFuzzPoint {
+	snapchat.map.SCMTPoint point = 1;
+	double initialZoomLevel = 2;
+	double weight = 4;
+}

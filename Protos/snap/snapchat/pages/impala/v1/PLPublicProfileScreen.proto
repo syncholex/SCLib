@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.impala.v1;
+
+message PLPublicProfileScreen {
+	string profileId = 1;
+	bool isNavigationStyleVertical = 3;
+	string snapId = 4;
+	string storyId = 5;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbOsVersion.proto";
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbAppVersion.proto";
+
+message SCSpectaclesOtaPbVersionSet {
+	string productGeneration = 1;
+	string versionSetName = 2;
+	com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion osVersion = 3;
+	repeated com.snap.spectacles.ota.SCSpectaclesOtaPbAppVersion appVersionArray = 4;
+	string createdDateTime = 5;
+	string lastUpdatedDateTime = 6;
+	string versionSetType = 7;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCORECustomizedTTL {
+
+	enum SCSCORECustomizedTTL_TTL {
+		UNSET = 0;
+		ONE_HOUR = 1;
+		SIX_HOURS = 6;
+		TWELVE_HOURS = 12;
+		ONE_DAY = 101;
+		TWO_DAYS = 102;
+		THREE_DAYS = 103;
+		ONE_WEEK = 201;
+	}
+
+	SCSCORECustomizedTTL_TTL ttl = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZGetBatchCategoryParentIdsResponse_ParentIds.proto";
+
+message VRZGetBatchCategoryParentIdsResponse {
+	snapchat.local.place.VRZGetBatchCategoryParentIdsResponse_ParentIds categoryParentIds = 1;
+}

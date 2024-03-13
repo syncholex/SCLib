@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message BoltSignals {
+	uint32 boltUseCase = 1;
+	uint32 boltCdnExperimentationId = 2;
+	bool boltIsContentPopular = 3;
+
+	enum SCCofConfigTargetingAppState {
+		UNKNOWN_APP_STATE = 0;
+		FOREGROUND = 1;
+		BACKGROUND = 2;
+	}
+
+	SCCofConfigTargetingAppState boltClientAppState = 4;
+}

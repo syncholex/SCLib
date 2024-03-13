@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+import "impala/IMPSearchBusinessProfileResult.proto";
+
+message IMPSearchBusinessProfilesResponse {
+	repeated impala.IMPBusinessProfileAndUserData businessProfilesArray = 1;
+	repeated impala.IMPSearchBusinessProfileResult resultsArray = 2;
+}

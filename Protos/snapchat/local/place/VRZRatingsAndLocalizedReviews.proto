@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews.proto";
+import "snapchat/local/place/VRZLocalizedReviews.proto";
+
+message VRZRatingsAndLocalizedReviews {
+	snapchat.local.verrazano.VRZPlaceRatingsAndReviews ratingsAndReviews = 1;
+	snapchat.local.place.VRZLocalizedReviews reviewsByLocale = 2;
+}

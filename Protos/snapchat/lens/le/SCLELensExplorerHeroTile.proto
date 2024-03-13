@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerHeroTile_LayoutElement.proto";
+
+message SCLELensExplorerHeroTile {
+	int64 id_p = 1;
+	string contentURL = 2;
+	string layoutId = 3;
+	repeated snapchat.lens.le.SCLELensExplorerHeroTile_LayoutElement elementsArray = 4;
+}

@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBluetoothParams {
+
+	enum MLBBluetoothParams_BluetoothSetting {
+		DISABLED = 0;
+		IAP = 1;
+		RFCOMM = 2;
+	}
+
+	MLBBluetoothParams_BluetoothSetting type = 1;
+	bytes deviceUuid = 2;
+	string displayName = 3;
+	bool strongBleRssi = 4;
+
+	enum MLBBluetoothParams_BluetoothPairingMode {
+		USE_NORDIC_PAIRING = 0;
+		DIRECT_CONNECTION_ONLY = 1;
+		ENABLE_BT_PAIRING = 2;
+	}
+
+	MLBBluetoothParams_BluetoothPairingMode pairingMode = 5;
+}

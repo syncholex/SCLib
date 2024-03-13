@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/ConfigResult_InternalFields_SequenceIdCandidate.proto";
+
+message ConfigResult_InternalFields {
+	int32 configBitmapIndex = 1;
+	int32 configResultBitmapIndex = 2;
+	bool hasServerPropertiesOnly = 3;
+	int32 globalPriority = 4;
+	repeated snapchat.cdp.cof.ConfigResult_InternalFields_SequenceIdCandidate sequenceIdsArray = 5;
+	int32 studySegmentOrdinal = 6;
+	uint64 experimentGuid = 7;
+	bool isAbStudyStatusCompleted = 8;
+}

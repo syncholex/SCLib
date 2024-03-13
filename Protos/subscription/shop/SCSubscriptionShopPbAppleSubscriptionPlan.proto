@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbApplePromotionalOffer.proto";
+
+message SCSubscriptionShopPbAppleSubscriptionPlan {
+	string productId = 1;
+	bool requiresEmail = 2;
+	subscription.shop.SCSubscriptionShopPbApplePromotionalOffer promotionalOffer = 3;
+}

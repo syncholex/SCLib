@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBCrashReport.proto";
+
+message HRMPBNrfCrashInfoResponse {
+	hermosa.HRMPBCrashReport crashReport = 1;
+}

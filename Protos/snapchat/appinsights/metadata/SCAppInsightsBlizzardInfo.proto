@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message SCAppInsightsBlizzardInfo {
+	string jiraProject = 1;
+	string eventName = 2;
+}

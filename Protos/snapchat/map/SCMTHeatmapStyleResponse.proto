@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTHeatmapConfig.proto";
+
+message SCMTHeatmapStyleResponse {
+	snapchat.map.SCMTHeatmapConfig heatmapConfig = 1;
+	string styleEtag = 2;
+	bool styleNotModified = 3;
+}

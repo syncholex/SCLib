@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBRange {
+	uint32 start = 1;
+	uint32 len = 2;
+}

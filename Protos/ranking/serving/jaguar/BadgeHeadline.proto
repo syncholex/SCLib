@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message BadgeHeadline {
+	string prefixText = 1;
+	string highlightText = 2;
+
+	enum BadgeHeadline_HighlightTextColor_Enum {
+		DEFAULT = 0;
+		YELLOW = 1;
+		RED = 2;
+	}
+
+	BadgeHeadline_HighlightTextColor_Enum highlightTextColor = 3;
+	string suffixText = 4;
+
+	enum BadgeHeadline_BackgroundType_Enum {
+		DEFAULT = 0;
+		PILL = 1;
+	}
+
+	BadgeHeadline_BackgroundType_Enum backgroundType = 5;
+}

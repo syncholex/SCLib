@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusAcknowledgeRecryptPackage.proto";
+
+message SCFideliusAcknowledgeRecryptRequest {
+	uint64 fideliusVersion = 1;
+	bytes publicKey = 2;
+	repeated snapchat.fidelius.SCFideliusAcknowledgeRecryptPackage ackRecryptPackagesArray = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3ScanCardVisualKnowledgeModel {
+	string title = 1;
+	string subtitle = 2;
+	repeated string imageUrlsArray = 3;
+	string bodyText = 4;
+	string knowledgeSource = 5;
+	string knowledgeSourceURL = 6;
+}

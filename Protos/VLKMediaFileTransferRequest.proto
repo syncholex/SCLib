@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+import "VLKRange.proto";
+
+message VLKMediaFileTransferRequest {
+	string name = 1;
+	VLKRange range = 2;
+	bool dataPacket = 3;
+}

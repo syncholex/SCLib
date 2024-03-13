@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message VLKNrfBackgroundUpdateRequest {
+
+	enum VLKNrfBackgroundUpdateRequestType {
+		SET = 1;
+		GET = 2;
+		CANCEL = 3;
+	}
+
+	VLKNrfBackgroundUpdateRequestType requestType = 1;
+	string targetHash = 2;
+	string targetVersionTag = 3;
+	uint32 timeUntilWindowMillis = 4;
+	uint32 windowLengthMillis = 5;
+}

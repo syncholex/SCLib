@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+
+message VRZPlaceAttributeInfo {
+	string id_p = 1;
+	string name = 2;
+	string iconURL = 3;
+	repeated snapchat.local.verrazano.VRZConcordance concordancesArray = 4;
+	bool isApplicable = 5;
+	string emojiUnicode = 6;
+	string displayName = 7;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTTileId {
+	int32 x = 3;
+	int32 y = 4;
+	int32 zoom = 5;
+}

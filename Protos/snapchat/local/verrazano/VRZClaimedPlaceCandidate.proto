@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message VRZClaimedPlaceCandidate {
+	string placeId = 1;
+	snapchat.geo.SPCGPoint location = 2;
+}

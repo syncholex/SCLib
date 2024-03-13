@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceGeometryWriteData_PurposeValue {
+
+	enum VRZPlaceGeometry_Purpose {
+		PURPOSE_UNKNOWN = 0;
+		DEFAULT_GEOMETRY = 1;
+		PIP_POINT = 2;
+		LABEL_POINT = 3;
+		DISPLAY_BOUNDING_BOX = 4;
+		NAV_POINT = 5;
+		FENCE = 6;
+		SERVING_FENCE = 7;
+		DISPLAY_POLYGON = 8;
+		LANDMARKER_SERVING_FENCE = 9;
+	}
+
+	VRZPlaceGeometry_Purpose value = 1;
+}

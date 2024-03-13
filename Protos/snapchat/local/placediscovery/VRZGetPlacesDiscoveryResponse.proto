@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZPlaceDiscovery.proto";
+import "snapchat/local/placediscovery/VRZPlacePivot.proto";
+import "snapchat/local/verrazano/VRZPaginationData.proto";
+
+message VRZGetPlacesDiscoveryResponse {
+	repeated snapchat.local.placediscovery.VRZPlaceDiscovery placesDiscoveryArray = 1;
+	repeated snapchat.local.placediscovery.VRZPlacePivot placePivotsArray = 2;
+	string name = 3;
+
+	enum VRZPlaceResultType {
+		RESULT_UNSET = 0;
+		RESULT_PLACE_CATEGORY = 1;
+		RESULT_SEARCH = 2;
+	}
+
+	VRZPlaceResultType type = 4;
+	string iconURL = 5;
+	bool searchThisArea = 6;
+	snapchat.local.verrazano.VRZPaginationData nextPage = 7;
+	string rankingDebugHtml = 8;
+}

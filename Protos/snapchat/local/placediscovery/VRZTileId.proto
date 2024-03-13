@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+message VRZTileId {
+	int32 x = 1;
+	int32 y = 2;
+	int32 zoom = 3;
+}

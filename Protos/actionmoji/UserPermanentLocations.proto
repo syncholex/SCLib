@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/PermanentLocations.proto";
+
+message UserPermanentLocations {
+	string user = 1;
+	actionmoji.PermanentLocations permanentLocations = 2;
+}

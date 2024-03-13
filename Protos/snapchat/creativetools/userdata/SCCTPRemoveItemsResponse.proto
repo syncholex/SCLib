@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPUserDataCTPIDResult.proto";
+
+message SCCTPRemoveItemsResponse {
+	repeated snapchat.creativetools.userdata.SCCTPUserDataCTPIDResult resultsArray = 1;
+}

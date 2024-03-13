@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Topic_LensTap.proto";
+import "snapchat/search/SCS2Topic_SoundTap.proto";
+import "snapchat/search/SCS2ActionHandler.proto";
+
+message SCS2Topic {
+	string text = 1;
+	int64 numSnaps = 2;
+
+	enum SCS2Topic_Type {
+		UNSET_TYPE = 0;
+		HASHTAG = 1;
+		LENS = 2;
+		SOUND = 3;
+		APP = 4;
+		TREND = 5;
+		CHALLENGE = 6;
+	}
+
+	SCS2Topic_Type type = 3;
+	string thumbnail = 4;
+	string creator = 5;
+
+	oneof moreData {
+		snapchat.search.SCS2Topic_LensTap lensTap = 6;
+		snapchat.search.SCS2Topic_SoundTap soundTap = 7;
+	}
+
+	string iconURL = 8;
+	snapchat.search.SCS2ActionHandler onTap = 9;
+}

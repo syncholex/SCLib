@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbEncryptionData {
+	bytes key = 1;
+	bytes ivStore = 2;
+	bool isKeyServerEncrypted = 3;
+	bool isKeyE2EEncrypted = 4;
+
+	enum SCLensSbEncryptionData_EncryptionScheme {
+		NOT_APPLICABLE = 0;
+		SPOOKEY = 1;
+		REGISTRY = 2;
+		FIDELIUS = 3;
+	}
+
+	SCLensSbEncryptionData_EncryptionScheme encryptionScheme = 5;
+}

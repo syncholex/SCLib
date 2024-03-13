@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZPlaceAnnotation.proto";
+
+message VRZPlaceAnnotations {
+	string placeId = 1;
+	repeated snapchat.local.placediscovery.VRZPlaceAnnotation annotationsArray = 2;
+}

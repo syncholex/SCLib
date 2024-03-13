@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/lens/prompt/SCLensPromptResponseBody.proto";
+
+message SCLensPromptSaveResponseRequest {
+	snapchat.core.SCCOREUUID responseId = 1;
+	snapchat.core.SCCOREUUID promptId = 2;
+	snapchat.lens.prompt.SCLensPromptResponseBody responseBody = 3;
+}

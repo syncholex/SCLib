@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.common;
+
+message SCSnapKitProtoClientSideExperiment {
+	string studyId = 1;
+	string experimentSettings = 2;
+	int32 experimentId = 3;
+}

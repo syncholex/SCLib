@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.perception.apple_vision;
+
+message SCPVNDetectBarcodesRequestMetadata {
+
+	enum SCPVNDetectBarcodesRequestMetadata_Symbology {
+		SYMBOLOGY_UNSET = 0;
+		SYMBOLOGY_AZTEC = 1;
+		SYMBOLOGY_CODE39 = 2;
+		SYMBOLOGY_CODE39_CHECKSUM = 3;
+		SYMBOLOGY_CODE39_FULL_ASCII = 4;
+		SYMBOLOGY_CODE39_FULL_ASCII_CHECKSUM = 5;
+		SYMBOLOGY_CODE93 = 6;
+		SYMBOLOGY_CODE93I = 7;
+		SYMBOLOGY_CODE128 = 8;
+		SYMBOLOGY_DATA_MATRIX = 9;
+		SYMBOLOGY_EAN8 = 10;
+		SYMBOLOGY_EAN13 = 11;
+		SYMBOLOGY_I2OF5 = 12;
+		SYMBOLOGY_I2OF5_CHECKSUM = 13;
+		SYMBOLOGY_ITF14 = 14;
+		SYMBOLOGY_PDF417 = 15;
+		SYMBOLOGY_QR = 16;
+		SYMBOLOGY_UPCE = 17;
+	}
+
+	repeated SCPVNDetectBarcodesRequestMetadata_Symbology symbologiesArray = 1 [packed=true];
+}

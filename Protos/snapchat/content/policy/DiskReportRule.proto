@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+import "snapchat/content/policy/DiskReportDirectoryRule.proto";
+import "snapchat/content/policy/DiskReportFileRule.proto";
+import "snapchat/content/policy/DiskReportAttribution.proto";
+
+message DiskReportRule {
+	repeated snapchat.content.policy.DiskReportDirectoryRule diskReportDirRulesArray = 1;
+	repeated snapchat.content.policy.DiskReportFileRule diskReportFileRulesArray = 2;
+	repeated snapchat.content.policy.DiskReportAttribution attributionsArray = 3;
+}

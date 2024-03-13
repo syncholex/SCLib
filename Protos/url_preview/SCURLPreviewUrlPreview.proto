@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package url_preview;
+
+import "url_preview/SCURLPreviewMedia.proto";
+import "url_preview/SCURLPreviewInAppDeepLink.proto";
+import "url_preview/SCURLPreviewStickerShareMetadata.proto";
+
+message SCURLPreviewUrlPreview {
+	string title = 1;
+	string subtitle = 2;
+	string URL = 3;
+	url_preview.SCURLPreviewMedia favicon = 4;
+	url_preview.SCURLPreviewMedia thumbnail = 5;
+	int32 type = 6;
+	repeated url_preview.SCURLPreviewInAppDeepLink deeplinksArray = 7;
+	url_preview.SCURLPreviewStickerShareMetadata stickerShareMetadata = 8;
+	uint64 invalidAfterMillis = 9;
+	string html = 10;
+	uint64 htmlHeight = 11;
+	uint64 htmlWidth = 12;
+	string htmlThumbnail = 13;
+	string authorName = 14;
+}

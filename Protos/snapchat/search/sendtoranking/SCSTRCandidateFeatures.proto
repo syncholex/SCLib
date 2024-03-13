@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+import "snapchat/search/sendtoranking/SCSTRCompositeID.proto";
+import "snapchat/search/sendtoranking/SCSTRFeatureValue.proto";
+
+message SCSTRCandidateFeatures {
+	snapchat.search.sendtoranking.SCSTRCompositeID id_p = 1;
+	snapchat.search.sendtoranking.SCSTRFeatureValue features = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerCreatorMetadata.proto";
+import "snapchat/lens/le/SCLELensPreviewTile.proto";
+import "snapchat/lens/le/SCLELensExplorerCreatorSnapThumbnail.proto";
+import "snapchat/lens/le/SCLELensExplorerCreatorSnap.proto";
+
+message SCLELensExplorerCreatorTile {
+	snapchat.lens.le.SCLELensExplorerCreatorMetadata creatorData = 1;
+	repeated snapchat.lens.le.SCLELensPreviewTile lensPreviewsArray = 2;
+	snapchat.lens.le.SCLELensExplorerCreatorSnapThumbnail defaultSnapThumbnail = 3;
+	repeated snapchat.lens.le.SCLELensExplorerCreatorSnap creatorSnapsArray = 4;
+}

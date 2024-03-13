@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlock;
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+import "com/snapchat/proto/unlock/SCPBUnlockOrderedUnlocks.proto";
+
+message SCPBUnlockGetUnlocksResponse {
+	com.snapchat.proto.SCPBGeofilterResponse geofilters = 1;
+	com.snapchat.proto.unlock.SCPBUnlockOrderedUnlocks groupedUnlocks = 2;
+}

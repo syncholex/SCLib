@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.rtus.config;
+
+import "com/snap/rtus/config/RTUSBlizzardEventConfig.proto";
+
+message RTUSClientSignalConfig {
+	com.snap.rtus.config.RTUSBlizzardEventConfig perEventConfig = 1;
+	int32 cacheMaxNumEvents = 2;
+}

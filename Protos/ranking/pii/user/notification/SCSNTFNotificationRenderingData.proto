@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFPublisherStory.proto";
+import "ranking/pii/user/notification/SCSNTFPublicUserStory.proto";
+
+message SCSNTFNotificationRenderingData {
+
+	oneof story {
+		ranking.pii.user.notification.SCSNTFPublisherStory publisherStory = 3;
+		ranking.pii.user.notification.SCSNTFPublicUserStory publicUserStory = 4;
+	}
+
+}

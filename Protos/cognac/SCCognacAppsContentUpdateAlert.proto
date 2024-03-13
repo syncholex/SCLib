@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsMajorUpdateVersion.proto";
+
+message SCCognacAppsContentUpdateAlert {
+	bool newApp = 1;
+	bool majorUpdate = 2;
+	string majorUpdateDescription = 3;
+	cognac.SCCognacAppsMajorUpdateVersion majorUpdateVersion = 4;
+}

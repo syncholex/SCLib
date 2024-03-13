@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+message FeatureConfig {
+	bool isDatetimeConfigurable = 1;
+}

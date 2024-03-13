@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+message SCCTXSnapProIdentity_Logo {
+	string logoURL = 1;
+	bool isDefault = 2;
+}

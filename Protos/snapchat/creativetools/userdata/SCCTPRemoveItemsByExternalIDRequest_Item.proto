@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItemExternalID.proto";
+import "snapchat/creativetools/ct_item/SCCTPExternalKey.proto";
+
+message SCCTPRemoveItemsByExternalIDRequest_Item {
+	snapchat.creativetools.ct_item.SCCTPCTItemExternalID externalId = 1;
+
+	enum SCCTPUserdataCategory {
+		USERDATA_CATEGORY_UNSET = 0;
+		USERDATA_CATEGORY_FAVORITES = 1;
+		USERDATA_CATEGORY_MUSIC_FAVORITES = 2;
+		USERDATA_CATEGORY_PREVIEW_RECENTS = 3;
+		USERDATA_CATEGORY_CHAT_RECENTS = 4;
+		USERDATA_CATEGORY_MUSIC_RECENTS = 5;
+	}
+
+	SCCTPUserdataCategory category = 2;
+	snapchat.creativetools.ct_item.SCCTPExternalKey externalKey = 3;
+}

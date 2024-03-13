@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace.proto";
+import "snapchat/local/verrazano/VRZPlaceLocks.proto";
+
+message VRZPlaceItem {
+	snapchat.local.verrazano.VRZPlace place = 1;
+	string client = 2;
+	string user = 3;
+	string description_p = 4;
+	snapchat.local.verrazano.VRZPlaceLocks locks = 5;
+}

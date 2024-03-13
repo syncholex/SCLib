@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSConfigOrRule.proto";
+
+message CMSBulkUpdateItem {
+
+	enum CMSBulkUpdateItem_Action {
+		UNKNOWN = 0;
+		ADD = 1;
+		UPDATE = 2;
+		DELETE = 3;
+	}
+
+	CMSBulkUpdateItem_Action action = 1;
+	com.snapchat.circumstances.entity.CMSConfigOrRule item = 2;
+}

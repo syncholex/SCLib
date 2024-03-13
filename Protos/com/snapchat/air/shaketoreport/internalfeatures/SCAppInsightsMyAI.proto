@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsMyAI {
+
+	enum SCAppInsightsMyAI_Subfeature {
+		UNSET = 0;
+		ADS = 1;
+		CHATS = 2;
+		SNAPS = 3;
+		OTHER = 4;
+	}
+
+	SCAppInsightsMyAI_Subfeature subfeature = 1;
+}

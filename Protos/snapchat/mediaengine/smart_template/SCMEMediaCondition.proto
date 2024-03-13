@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEMediaDurationCondition.proto";
+
+message SCMEMediaCondition {
+
+	enum SCCMediaType {
+		Unassigned = 0;
+		Overlay = 1;
+		Image = 2;
+		Video = 3;
+		AssetBundle = 4;
+		Audio = 5;
+		AnimatedImage = 6;
+		Font = 7;
+		WebViewContent = 8;
+		VideoNoAudio = 9;
+		Subtitles = 10;
+		DataBlob = 11;
+	}
+
+
+	oneof mediaCondition {
+		SCCMediaType mediaType = 1;
+		snapchat.mediaengine.smart_template.SCMEMediaDurationCondition durationRange = 2;
+	}
+
+}

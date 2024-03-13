@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/common/Value.proto";
+
+message VRZKeyValuePair {
+	string key = 1;
+	snapchat.common.Value value = 2;
+}

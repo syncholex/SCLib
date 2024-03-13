@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoCreativeToolsRestrictions {
+	bool hideMusicTool = 1;
+	bool hideDrawingTool = 2;
+	bool disallowAddingCaptionText = 3;
+	bool hideStickersTool = 4;
+	bool hideScissorsTool = 5;
+	bool hideAttachmentTool = 6;
+}

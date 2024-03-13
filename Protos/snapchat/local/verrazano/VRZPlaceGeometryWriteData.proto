@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/local/verrazano/VRZPlaceGeometryWriteData_PurposeValue.proto";
+import "snapchat/geo/SPCGGeometry.proto";
+import "snapchat/local/verrazano/VRZAttributeSource.proto";
+
+message VRZPlaceGeometryWriteData {
+	google.protobuf.GPBStringValue name = 1;
+	snapchat.local.verrazano.VRZPlaceGeometryWriteData_PurposeValue purpose = 2;
+	snapchat.geo.SPCGGeometry geometry = 3;
+	snapchat.local.verrazano.VRZAttributeSource source = 4;
+}

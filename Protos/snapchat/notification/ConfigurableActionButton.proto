@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Routing.proto";
+
+message ConfigurableActionButton {
+	string text = 1;
+	snapchat.notification.Routing routing = 2;
+}

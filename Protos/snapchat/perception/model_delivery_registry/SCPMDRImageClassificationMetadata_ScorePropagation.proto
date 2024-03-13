@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRImageClassificationMetadata_ScorePropagation {
+	int32 srcClassId = 1;
+	repeated int32 dstClassIdsArray = 2 [packed=true];
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSUPSuggestiveContentEngagement {
+
+	enum PsuggestiveScoreVersion {
+		PSUGGESTIVE_SCORE_VERSION_UNSET = 0;
+		PSUGGESTIVE_V1 = 1;
+	}
+
+	PsuggestiveScoreVersion version = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats bucketWindowedEngagements = 2;
+}

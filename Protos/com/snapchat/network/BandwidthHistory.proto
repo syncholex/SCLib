@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.network;
+
+import "com/snapchat/network/BandwidthHistory_CachedBandwidthEstimation.proto";
+
+message BandwidthHistory {
+	repeated com.snapchat.network.BandwidthHistory_CachedBandwidthEstimation bandwidthHistoryArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsLensLifetimeInsights.proto";
+
+message IMPInsightsGetLensInsightsResponse {
+	int32 nextStartIndex = 1;
+	repeated impala.insights.IMPInsightsLensLifetimeInsights lensInsightsArray = 2;
+}

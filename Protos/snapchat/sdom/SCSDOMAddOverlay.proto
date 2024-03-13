@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEditContainer.proto";
+import "snapchat/sdom/SCSDOMMediaIndex.proto";
+
+message SCSDOMAddOverlay {
+	snapchat.sdom.SCSDOMEditContainer editContainer = 1;
+	snapchat.sdom.SCSDOMMediaIndex mediaIndex = 2;
+}

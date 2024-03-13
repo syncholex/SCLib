@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCMossVideoMetadata.proto";
+import "snapchat/content/SCMossImageMetadata.proto";
+
+message SCMossMediaVariantMetadata {
+
+	oneof metadata {
+		snapchat.content.SCMossVideoMetadata videoMetadata = 1;
+		snapchat.content.SCMossImageMetadata imageMetadata = 2;
+	}
+
+}

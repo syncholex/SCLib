@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+import "snapchat/cameos/client/SCCameosNetworkCacheSettings.proto";
+
+message SCCameosNetworkResponseCacheConfig {
+	snapchat.cameos.client.SCCameosNetworkCacheSettings defaultSettings = 1;
+	snapchat.cameos.client.SCCameosNetworkCacheSettings statusCodesSettings = 2;
+}

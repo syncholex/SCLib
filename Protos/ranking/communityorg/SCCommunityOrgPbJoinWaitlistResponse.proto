@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+message SCCommunityOrgPbJoinWaitlistResponse {
+
+	enum SCCommunityOrgPbJoinWaitlistResponse_Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED = 2;
+	}
+
+	SCCommunityOrgPbJoinWaitlistResponse_Status status = 1;
+}

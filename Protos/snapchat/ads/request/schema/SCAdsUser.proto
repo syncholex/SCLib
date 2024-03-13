@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsUserData.proto";
+
+message SCAdsUser {
+
+	oneof data {
+		snapchat.ads.request.schema.SCAdsUserData userData = 1;
+		bytes encryptedUserData = 2;
+	}
+
+	bool isTestGroupQa = 3;
+	bytes fsnEncryptedUserData = 4;
+	bytes said = 5;
+
+	enum SCAdsBudgetSegmentID {
+		UNKNOWN_BSID = 0;
+		BSID_1 = 1;
+		BSID_2 = 2;
+		BSID_3 = 3;
+		BSID_4 = 4;
+		BSID_5 = 5;
+		BSID_6 = 6;
+		BSID_7 = 7;
+		BSID_8 = 8;
+		BSID_9 = 9;
+		BSID_10 = 10;
+		BSID_ALL = 11;
+	}
+
+	SCAdsBudgetSegmentID budgetSegmentId = 6;
+}

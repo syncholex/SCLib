@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/CodedDescription.proto";
+
+message Info {
+	repeated snapchat.map.valhalla.CodedDescription errorsArray = 2;
+}

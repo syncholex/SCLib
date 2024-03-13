@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Visibility_Off.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Visibility_Public.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Visibility_AllowList.proto";
+
+message SCCTPCTTargetedItem_Visibility {
+
+	oneof visibility {
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Visibility_Off off = 2;
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Visibility_Public public_p = 3;
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Visibility_AllowList allowlist = 4;
+	}
+
+}

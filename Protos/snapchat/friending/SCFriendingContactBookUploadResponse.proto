@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingContactSnapchatter.proto";
+import "snapchat/friending/SCFriendingContactsNotProcessed.proto";
+import "snapchat/friending/SCFriendingContactNonSnapchatter.proto";
+
+message SCFriendingContactBookUploadResponse {
+	repeated snapchat.friending.SCFriendingContactSnapchatter snapchattersArray = 1;
+	snapchat.friending.SCFriendingContactsNotProcessed contactsNotProcessed = 2;
+	repeated snapchat.friending.SCFriendingContactNonSnapchatter nonSnapchattersArray = 3;
+	string contactRankingSessionId = 4;
+}

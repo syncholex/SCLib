@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.uco;
+
+message SCUnifiedCameraObjectCarouselConfig {
+	repeated string splitScreenEnabledCarouselGroupsArray = 1;
+	repeated string loadingIndicatorEnabledCarouselGroupsArray = 2;
+	repeated string darkOverlayEnabledCarouselGroupsArray = 3;
+}

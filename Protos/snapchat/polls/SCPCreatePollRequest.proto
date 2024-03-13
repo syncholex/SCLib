@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "snapchat/polls/SCPPollInfo.proto";
+
+message SCPCreatePollRequest {
+	snapchat.polls.SCPPollInfo pollInfo = 1;
+}

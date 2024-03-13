@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsClientRankingStudy {
+	string modelId = 1;
+	float avgTimeViewedWeight = 2;
+	float stdWeight = 3;
+	float constant = 4;
+	float threshold = 5;
+	int32 numSnaps = 6;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTLocationRequestFeedbackResponse {
+}

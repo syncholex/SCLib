@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBUninterpretedOption.proto";
+
+message GPBOneofOptions {
+	repeated google.protobuf.GPBUninterpretedOption uninterpretedOptionArray = 999;
+}

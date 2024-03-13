@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommerceTab.proto";
+
+message CommerceTabWidget {
+	repeated com.snapchat.showcase.wire.widget.CommerceTab tabsArray = 1;
+}

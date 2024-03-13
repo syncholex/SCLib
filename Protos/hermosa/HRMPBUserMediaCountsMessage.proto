@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBMediaCountsMessage.proto";
+
+message HRMPBUserMediaCountsMessage {
+	string user = 1;
+	hermosa.HRMPBMediaCountsMessage mediaCounts = 2;
+}

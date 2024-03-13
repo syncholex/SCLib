@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/content_understanding/WebResult.proto";
+
+message SCPCNV3ScanFeedbackRequest_WebFeedback {
+	snapchat.perception.content_understanding.WebResult webResult = 1;
+
+	enum SCPCNV3ScanFeedbackRequest_WebFeedback_Reason {
+		WEB_FEEDBACK_REASON_UNSET = 0;
+		WEB_FEEDBACK_REASON_IRRELEVANT = 1;
+		WEB_FEEDBACK_REASON_INAPPROPRIATE = 2;
+	}
+
+	SCPCNV3ScanFeedbackRequest_WebFeedback_Reason reason = 2;
+}

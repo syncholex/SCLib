@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlock/api/schema/SCUnlockGroup.proto";
+
+message SCUnlockGroupRequest {
+	snapchat.unlock.api.schema.SCUnlockGroup unlockGroup = 1;
+	int32 limit = 2;
+
+	enum SCSortingType {
+		SORTING_TYPE_UNSET = 0;
+		ASCENDING = 1;
+		DESCENDING = 2;
+	}
+
+	SCSortingType sortingType = 3;
+	bool excludeLensMetadata = 4;
+	bool includeUnlockMeta = 5;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message ContextCardContext_Item {
+	int64 snapItemId = 1;
+	string storeId = 2;
+}

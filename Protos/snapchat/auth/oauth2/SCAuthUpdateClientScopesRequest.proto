@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthUpdateClientScopesRequest {
+	string userId = 1;
+	string clientId = 2;
+	repeated string scopesArray = 3;
+}

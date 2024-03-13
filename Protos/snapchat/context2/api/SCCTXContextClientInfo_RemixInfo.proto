@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_RemixInfo_UserStorySource.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_RemixInfo_SpotlightSource.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_RemixInfo_MemoriesSource.proto";
+
+message SCCTXContextClientInfo_RemixInfo {
+	string sourceSnapId = 1;
+	snapchat.core.SCCOREUUID sourceUserId = 2;
+	bool userDisabledMentionRemixing = 3;
+
+	oneof source {
+		snapchat.context2.api.SCCTXContextClientInfo_RemixInfo_UserStorySource userStorySource = 4;
+		snapchat.context2.api.SCCTXContextClientInfo_RemixInfo_SpotlightSource spotlightSource = 5;
+		snapchat.context2.api.SCCTXContextClientInfo_RemixInfo_MemoriesSource memoriesSource = 6;
+	}
+
+}

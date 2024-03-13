@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerHeroTile_LayoutElement_ImageElement {
+
+	enum SCLEPredefinedIcon {
+		UNSET = 0;
+		CHEVRON_END = 1;
+	}
+
+
+	oneof image {
+		SCLEPredefinedIcon predefinedIcon = 1;
+		string imageUri = 2;
+	}
+
+}

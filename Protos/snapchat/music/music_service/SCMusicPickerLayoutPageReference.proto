@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPage.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageEmptyStateInfo.proto";
+
+message SCMusicPickerLayoutPageReference {
+
+	oneof reference {
+		string pageId = 1;
+		snapchat.music.music_service.SCMusicPickerLayoutPage page = 2;
+	}
+
+	string title = 3;
+	snapchat.music.music_service.SCMusicPickerLayoutPageEmptyStateInfo emptyStateInfo = 4;
+}

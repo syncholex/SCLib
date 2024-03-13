@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBTelemetryLoggerConfigEvent_LoggerConfigData {
+	uint32 domain = 1;
+	uint32 config = 2;
+}

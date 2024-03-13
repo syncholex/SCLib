@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPGetBusinessOptions.proto";
+
+message IMPBatchGetBusinessRequest {
+	repeated string businessProfileIdsArray = 1;
+	repeated string publisherIdsArray = 2;
+	impala.IMPGetBusinessOptions getBusinessOptions = 3;
+}

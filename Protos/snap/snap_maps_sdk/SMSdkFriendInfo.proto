@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkFriendInfo_Birthday.proto";
+
+message SMSdkFriendInfo {
+	int32 streakCount = 1;
+	bool isBestFriend = 2;
+	snap.snap_maps_sdk.SMSdkFriendInfo_Birthday birthday = 3;
+	bool isFriendStoryMuted = 4;
+
+	enum SMSdkFriendInfo_BestFriendType {
+		UNSET = 0;
+		SUPER_BFF = 1;
+		BFF = 2;
+		BESTIES = 3;
+		BFS = 4;
+		MUTUAL_BESTIES = 5;
+		MUTUAL_BFS = 6;
+	}
+
+	SMSdkFriendInfo_BestFriendType bestFriendType = 5;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCDiscoverFavoriteAction {
+	bool enableForPublisherStory = 1;
+	bool enableForPublicUserStory = 2;
+	bool enableForSavedStory = 3;
+	bool enableForSharedStory = 4;
+	bool enableForPromotedStory = 5;
+}

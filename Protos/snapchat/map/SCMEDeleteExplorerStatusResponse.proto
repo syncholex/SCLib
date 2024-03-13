@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEMyExplorerStatus.proto";
+
+message SCMEDeleteExplorerStatusResponse {
+	repeated snapchat.map.SCMEMyExplorerStatus statusesArray = 1;
+}

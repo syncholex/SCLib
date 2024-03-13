@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpMetadata.proto";
+import "snapchat/local/verrazano/VRZBrandWriteData.proto";
+
+message VRZCreateBrandsRequest {
+	snapchat.local.verrazano.VRZOpMetadata opMetadata = 1;
+	repeated snapchat.local.verrazano.VRZBrandWriteData writeDataArray = 10;
+}

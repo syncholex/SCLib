@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeLinearGradient_ColorStop.proto";
+
+message SCPlusCustomAppThemeLinearGradient {
+	repeated subscription.sup.custom_app_theme.SCPlusCustomAppThemeLinearGradient_ColorStop stopsArray = 1;
+	double angleDegrees = 2;
+}

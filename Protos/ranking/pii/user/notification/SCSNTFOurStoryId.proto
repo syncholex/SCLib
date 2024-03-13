@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSNTFOurStoryId {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+}

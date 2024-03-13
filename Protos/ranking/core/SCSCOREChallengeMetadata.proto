@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSCOREChallengeMetadata {
+	ranking.core.SCSCOREUUID id_p = 1;
+}

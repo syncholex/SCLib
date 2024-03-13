@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCaptionStyle_Color.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCCTPCaptionStyle_Shadow {
+	snapchat.creativetools.common.SCCTPCaptionStyle_Color color = 1;
+	google.protobuf.GPBFloatValue x = 2;
+	google.protobuf.GPBFloatValue y = 3;
+	google.protobuf.GPBFloatValue radius = 4;
+}

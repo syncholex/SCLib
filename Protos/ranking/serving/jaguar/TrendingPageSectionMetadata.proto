@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/indexing/LensTopicMetaData.proto";
+import "ranking/indexing/SoundsTopicMetaData.proto";
+import "ranking/indexing/HashTagTopicMetaData.proto";
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message TrendingPageSectionMetadata {
+	string topicId = 1;
+
+	enum SCCTTopicStory_Type {
+		UNSET = 0;
+		HASHTAG = 1;
+		LENS = 2;
+		MUSIC = 3;
+		ORIGINAL_SOUND = 4;
+		THIRD_PARTY_APP = 5;
+		CHALLENGE = 6;
+		CHEERIOS = 7;
+		REMIXES = 8;
+		UNUSED_9 = 9;
+	}
+
+	SCCTTopicStory_Type topicStoryType = 2;
+	string topicName = 3;
+
+	oneof topicMetadata {
+		ranking.indexing.LensTopicMetaData lensTopicMetadata = 5;
+		ranking.indexing.SoundsTopicMetaData soundsTopicMetadata = 6;
+		ranking.indexing.HashTagTopicMetaData hashtagTopicMetadata = 7;
+	}
+
+	repeated ranking.core.SCCORECompositeStoryId pinnedStoryIdsArray = 8;
+}

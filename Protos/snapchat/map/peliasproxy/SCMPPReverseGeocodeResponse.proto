@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.peliasproxy;
+
+import "snapchat/map/peliasproxy/SCMPPReverseGeocodeFeature.proto";
+
+message SCMPPReverseGeocodeResponse {
+	repeated snapchat.map.peliasproxy.SCMPPReverseGeocodeFeature featuresArray = 1;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCNotificationGetNotificationSettingRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+
+	enum SCNotificationPushNotificationDataProperty {
+		ENABLED_SETTING = 0;
+		SOUND_SETTING = 1;
+		RING_SOUND_SETTING = 2;
+		PRIVACY_SETTING = 3;
+		DEVICE_TOKEN = 4;
+		DEVICE_VOIP_TOKEN = 5;
+		BITMOJI_SETTING = 6;
+		WEB_PUSH_SETTING = 7;
+		LOCATION_TOKEN = 8;
+	}
+
+	SCNotificationPushNotificationDataProperty settingChoice = 2;
+}

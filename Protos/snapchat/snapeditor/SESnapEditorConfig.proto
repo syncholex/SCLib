@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapeditor;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/snapeditor/SESnapDocKey.proto";
+
+message SESnapEditorConfig {
+	string snapSessionId = 1;
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 2;
+	bool isRecovered = 3;
+	string mediaIdToAssetId = 4;
+	snapchat.snapeditor.SESnapDocKey snapDocKey = 5;
+}

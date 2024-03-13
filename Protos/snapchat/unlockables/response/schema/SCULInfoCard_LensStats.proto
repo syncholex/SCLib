@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+message SCULInfoCard_LensStats {
+	int64 viewCount = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCFeedSessionResponse {
+	bytes sessionToken = 1;
+	bool eof = 2;
+}

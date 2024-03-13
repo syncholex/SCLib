@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories.cof;
+
+import "snapchat/memories/cof/MemoriesCameraRollCollageLens.proto";
+
+message MemoriesCameraRollCollageLensPool {
+	repeated snapchat.memories.cof.MemoriesCameraRollCollageLens lensPoolArray = 1;
+}

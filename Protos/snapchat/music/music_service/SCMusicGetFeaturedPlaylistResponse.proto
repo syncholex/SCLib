@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPlaylist.proto";
+
+message SCMusicGetFeaturedPlaylistResponse {
+	snapchat.music.music_service.SCMusicPlaylist playlist = 1;
+}

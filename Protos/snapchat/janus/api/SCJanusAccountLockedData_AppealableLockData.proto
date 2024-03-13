@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "com/snapchat/proto/snaptoken/SCPBSnaptokenSnapSessionResponse.proto";
+
+message SCJanusAccountLockedData_AppealableLockData {
+	string accountLockReason = 1;
+	string accountLockSource = 2;
+	int64 accountLockTimestampMillis = 3;
+	com.snapchat.proto.snaptoken.SCPBSnaptokenSnapSessionResponse snapSessionResponse = 4;
+	string verifiedEmail = 5;
+	string username = 6;
+
+	enum SCJanusAccountLockedData_AppealableLockData_LockSource {
+		UNKNOWN_UNSET = 0;
+		AUTOMATED = 1;
+		HUMAN = 2;
+	}
+
+	SCJanusAccountLockedData_AppealableLockData_LockSource lockSource = 7;
+	bool isDmdAccessBlocked = 8;
+	string localizedLockReason = 9;
+}

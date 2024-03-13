@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/SCPNAnalyzerResponse.proto";
+
+message SCPCNV3ScanStreamResponse_IntrospectionData {
+	snapchat.perception.SCPNAnalyzerResponse analyzerOutput = 1;
+}

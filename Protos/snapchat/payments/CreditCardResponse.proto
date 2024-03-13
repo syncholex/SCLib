@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+import "snapchat/payments/CreditCard.proto";
+
+message CreditCardResponse {
+	snapchat.payments.CreditCard creditCard = 1;
+}

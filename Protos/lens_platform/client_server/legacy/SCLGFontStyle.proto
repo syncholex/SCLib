@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGTextColor.proto";
+import "lens_platform/client_server/legacy/SCLGTextShadow.proto";
+import "lens_platform/client_server/legacy/SCLGFontStyle_TextPadding.proto";
+
+message SCLGFontStyle {
+	string fontName = 1;
+	string fontURL = 2;
+	lens_platform.client_server.legacy.SCLGTextColor fontColor = 3;
+	string backgroundImageURL = 4;
+	double letterSpacing = 5;
+	double lineHeight = 6;
+	string textTransform = 7;
+	repeated lens_platform.client_server.legacy.SCLGTextShadow textShadowArray = 8;
+	string textDecoration = 9;
+	string textAlign = 10;
+	double fontSize = 11;
+	lens_platform.client_server.legacy.SCLGFontStyle_TextPadding padding = 12;
+	string backgroundRepeat = 13;
+	lens_platform.client_server.legacy.SCLGTextColor borderColor = 14;
+	double fontBorderWidth = 15;
+	double minFontSize = 16;
+	double maxFontSize = 17;
+}

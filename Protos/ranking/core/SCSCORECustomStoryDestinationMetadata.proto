@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/core/SCSCORECustomizedTTL.proto";
+
+message SCSCORECustomStoryDestinationMetadata {
+	ranking.core.SCSCOREUUID groupId = 1;
+	ranking.core.SCSCORECustomizedTTL customizedTtl = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cdp.networkmanager;
+
+message PrewarmConfig_HostConfig_Concurrent {
+	int32 concurrentCount = 1;
+}

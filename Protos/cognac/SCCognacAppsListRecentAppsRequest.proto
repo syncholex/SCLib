@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsAppScope.proto";
+
+message SCCognacAppsListRecentAppsRequest {
+	int32 maxApps = 1;
+	cognac.SCCognacAppsAppScope scope = 2;
+}

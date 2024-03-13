@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFriendingFriendActionFailure {
+	snapchat.core.SCCOREUUID friendId = 1;
+
+	enum SCFriendingFriendActionFailure_FailureReason {
+		ERROR = 0;
+		ERROR_TRY_AGAIN = 1;
+		ERROR_FRIEND_NOT_FOUND = 2;
+		ERROR_NOT_FRIEND = 3;
+		ERROR_WITHOUT_MESSAGE = 4;
+		ERROR_SERVER = 5;
+		ERROR_INVALID_PARAM = 6;
+		ERROR_NO_PERMISSION = 7;
+		ADD_RATE_LIMITED_MINUTE_OR_HOUR = 13;
+		ADD_RATE_LIMITED_DAY = 14;
+		ADD_RATE_LIMITED_WEEK_OR_MONTH = 15;
+		ADD_DEACTIVATED_ACCOUNT = 10;
+		ADD_REACH_LIMIT = 11;
+		ADD_EXISTING_FRIEND = 12;
+		REMOVE_SELF = 20;
+		BLOCK_SELF = 31;
+		DISPLAY_EMPTY = 60;
+	}
+
+	SCFriendingFriendActionFailure_FailureReason reason = 2;
+}

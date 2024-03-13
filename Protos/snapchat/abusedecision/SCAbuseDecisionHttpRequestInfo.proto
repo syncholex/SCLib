@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.abusedecision;
+
+import "snapchat/core/SCCOREIPAddress.proto";
+import "snapchat/core/SCCOREGeoHeader.proto";
+
+message SCAbuseDecisionHttpRequestInfo {
+	snapchat.core.SCCOREIPAddress ip = 1;
+	snapchat.core.SCCOREGeoHeader geoHeader = 2;
+	uint64 timestampMs = 3;
+	string requestURL = 4;
+	string userAgent = 5;
+	string clientIdStr = 7;
+	string cofDeviceId = 8;
+}

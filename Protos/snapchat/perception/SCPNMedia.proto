@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+message SCPNMedia {
+	bytes mediaString = 1;
+
+	enum SCPNMedia_MediaType {
+		UNKNOWN = 0;
+		IMAGE = 1;
+		IMAGE_JPG = 1;
+		VIDEO = 2;
+		VIDEO_MP4 = 2;
+		BINARY_NPY = 3;
+		AUDIO = 4;
+		AUDIO_WAV = 4;
+		URL = 5;
+		TEXT = 6;
+	}
+
+	SCPNMedia_MediaType mediaType = 2;
+	string text = 3;
+}

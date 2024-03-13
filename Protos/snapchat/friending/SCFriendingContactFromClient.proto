@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingContactMethod.proto";
+
+message SCFriendingContactFromClient {
+	string contactId = 1;
+	string displayName = 2;
+	string countryCode = 3;
+	repeated snapchat.friending.SCFriendingContactMethod contactMethodsArray = 4;
+	bool isStarred = 20;
+	bool hasPhoto = 21;
+	bool hasSavedDate = 22;
+	uint64 lastUpdateTs = 23;
+	bool hasSocialLink = 24;
+}

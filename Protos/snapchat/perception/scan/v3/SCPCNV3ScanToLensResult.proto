@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3ScanToLensResult {
+	repeated string lensIdsArray = 1;
+	bytes scanFromLensResponseJson = 2;
+}

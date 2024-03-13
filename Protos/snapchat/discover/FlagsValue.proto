@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message FlagsValue {
+
+	enum Flag {
+		NONE = 0;
+		ADDED_PUBLISHER_DETAILS = 1;
+		PROFILE_ONBOARDING = 2;
+		ORGANISATION_ONBOARDING = 3;
+		NOTIFICATION_PROFILE_COMPLETED = 4;
+		NOTIFICATION_EDITORIAL_APPROVAL = 5;
+		NOTIFICATION_PROFILE_ENABLED = 6;
+		NOTIFICATION_REVIEW_REQUESTED = 7;
+		NOTIFICATION_EDITORIAL_REJECTED = 8;
+		AUTO_ENABLED_PUBLISHING = 9;
+	}
+
+	repeated Flag valueArray = 1 [packed=true];
+}

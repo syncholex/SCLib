@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZPlacePopularityHours {
+	repeated int32 hoursArray = 1 [packed=true];
+	int32 displayStartHour = 2;
+	int32 displayEndHour = 3;
+}

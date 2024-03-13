@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerCreateResponse.proto";
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerDeleteResponse.proto";
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerStatus.proto";
+
+message SCCTPCustomStickerBatchOpsResponse {
+	repeated snapchat.creativetools.customsticker.SCCTPCustomStickerCreateResponse createResponsesArray = 1;
+	repeated snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteResponse deleteResponsesArray = 2;
+	snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 3;
+}

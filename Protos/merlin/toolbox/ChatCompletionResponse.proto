@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/TokenConsumption.proto";
+
+message ChatCompletionResponse {
+	bool success = 1;
+	string text = 2;
+	string failureReason = 3;
+	string model = 4;
+	merlin.toolbox.TokenConsumption tokenConsumption = 5;
+}

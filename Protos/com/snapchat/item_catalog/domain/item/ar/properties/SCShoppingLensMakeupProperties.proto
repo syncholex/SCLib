@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.item.ar.properties;
+
+message SCShoppingLensMakeupProperties {
+	string ifmURL = 1;
+	string checksum = 2;
+}

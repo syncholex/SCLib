@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+message VRZAnnotationMetadata_PWFMetadata {
+	int32 numFriends = 1;
+	repeated int64 checkinTimestampsMsArray = 2 [packed=true];
+}

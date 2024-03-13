@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesGtqUnlockablesResponse.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesGtqVenuesResponse.proto";
+
+message SCPBUnlockablesGtqServeResponse {
+	com.snapchat.proto.unlockables.SCPBUnlockablesGtqUnlockablesResponse unlockables = 1;
+	com.snapchat.proto.unlockables.SCPBUnlockablesGtqVenuesResponse venues = 2;
+}

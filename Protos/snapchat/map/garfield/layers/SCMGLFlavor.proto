@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.layers;
+
+message SCMGLFlavor {
+	string name = 1;
+	uint64 version = 2;
+}

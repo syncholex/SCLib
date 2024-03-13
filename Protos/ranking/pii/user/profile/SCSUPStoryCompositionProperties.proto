@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPStoryCompositionProperties {
+	uint32 totalNumSnaps = 1;
+	uint32 numImageSnaps = 2;
+	uint32 numVideoSnaps = 3;
+	uint32 numInfiniteImageSnaps = 4;
+	uint32 numLoopingVideoSnaps = 5;
+	uint32 numAttachments = 6;
+	uint32 durationMsecs = 7;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCMessagingExternalMedia {
+	repeated snapchat.snapdoc.SDMSnapDoc snapdocArray = 3;
+}

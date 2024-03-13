@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo_ScreenInfo.proto";
+
+message SCULRequestInfo {
+	string countryCodeTwoLetter = 1;
+	snapchat.unlockables.request.schema.SCULRequestInfo_ScreenInfo screenInfo = 2;
+	string timeZoneId = 3;
+	string acceptLanguage = 4;
+
+	enum SCULCameraType {
+		CAMERA_TYPE_MAIN_UNSET = 0;
+		CAMERA_TYPE_REPLY = 1;
+		CAMERA_TYPE_CHAT_FEED_PSA = 2;
+		CAMERA_TYPE_SMART_CTA = 3;
+		CAMERA_GROWTH_NOTIFICATION = 4;
+		CAMERA_MASS_SNAP = 5;
+		CAMERA_MASS_CHAT = 6;
+		CAMERA_BILLBOARD_FHP = 7;
+		CAMERA_LENS_ACTIVITY_CENTER = 8;
+	}
+
+	SCULCameraType cameraType = 5;
+	string requestId = 6;
+}

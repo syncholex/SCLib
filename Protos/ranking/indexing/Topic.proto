@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/TopicId.proto";
+import "ranking/indexing/TimeRangeBuckets.proto";
+import "ranking/indexing/EngagementStats.proto";
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/indexing/TrendingScoreComponents.proto";
+import "ranking/indexing/TopicDebug.proto";
+import "ranking/indexing/BlockedStoryIdWithRejectionReason.proto";
+
+message Topic {
+	ranking.indexing.TopicId topicId = 1;
+	string cohortId = 2;
+	ranking.indexing.TimeRangeBuckets engagementCounts = 3;
+	float trendingScore = 4;
+	uint64 timeSinceTrendingSecs = 5;
+	ranking.indexing.EngagementStats totalCounts = 6;
+	float averageMultiplicity = 7;
+	repeated ranking.core.SCCORECompositeStoryId storyIdsArray = 8;
+	int64 numTotalStories = 9;
+	uint64 generatedTime = 10;
+	ranking.indexing.TrendingScoreComponents prodScoringComponents = 11;
+	ranking.indexing.TopicDebug debug = 12;
+	ranking.indexing.TrendingScoreComponents engagementScoringComponents = 13;
+	string dedupeId = 14;
+	bool prioritizedInBib = 16;
+	repeated ranking.indexing.BlockedStoryIdWithRejectionReason blockedStoryIdWithRejectionReasonListArray = 17;
+	ranking.indexing.TrendingScoreComponents lensUnlocksTopicsPageComponents = 18;
+	ranking.indexing.TrendingScoreComponents lensUnlocksSearchComponents = 19;
+	ranking.indexing.TrendingScoreComponents lensUnlocksLeSearchComponents = 20;
+	ranking.indexing.TrendingScoreComponents lensSwipesComponents = 21;
+	ranking.indexing.TrendingScoreComponents lensSavesComponents = 22;
+	ranking.indexing.TrendingScoreComponents lensSendsComponents = 23;
+	ranking.indexing.TrendingScoreComponents lensPostsComponents = 24;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message Imagecode {
+
+	enum ImagecodeType {
+		TYPE_UNSET = 0;
+		MOVIE_POSTER = 1;
+		MOVIE_TRAILER_FRAME = 2;
+		BRAND_LOGO = 3;
+		USER_GENERATED = 4;
+	}
+
+	ImagecodeType type = 1;
+	string id_p = 2;
+}

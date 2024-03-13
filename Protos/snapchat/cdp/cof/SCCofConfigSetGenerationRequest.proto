@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/SCCofConfigTargetingRequest.proto";
+import "snapchat/cdp/cof/ConfigResult.proto";
+
+message SCCofConfigSetGenerationRequest {
+	snapchat.cdp.cof.SCCofConfigTargetingRequest targetingParameters = 1;
+	repeated snapchat.cdp.cof.ConfigResult overridesArray = 2;
+}

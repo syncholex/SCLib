@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbSetLensPreviewRequest_Metadata {
+	string lensId = 1;
+	string previewMediaType = 2;
+}

@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof.events;
+
+message COFRecoveryEvent {
+
+	enum COFSelfRecoveryEventStatus {
+		SELF_RECOVERY_UNSET = 0;
+		SELF_RECOVERY_SUCCESS = 1;
+		SELF_RECOVERY_FAILURE = 2;
+		SELF_RECOVERY_HEURISTIC_FAILURE_TRIGGERED = 3;
+		SELF_RECOVERY_HEURISTIC_FAILURE_APPROACHING = 4;
+		SELF_RECOVERY_PAYLOAD_REQUESTED = 5;
+		SELF_RECOVERY_HEURISTIC_RESET = 6;
+	}
+
+
+	enum COFPushRecoveryEventStatus {
+		PUSH_RECOVERY_UNSET = 0;
+		PUSH_RECOVERY_SUCCESS = 1;
+		PUSH_RECOVERY_FAILURE = 2;
+		PUSH_RECOVERY_TRIGGERED = 3;
+		PUSH_RECOVERY_PAYLOAD_RECEIVED = 4;
+		PUSH_RECOVERY_PAYLOAD_WRITTEN = 5;
+	}
+
+
+	oneof eventStatus {
+		COFSelfRecoveryEventStatus selfRecoveryStatus = 1;
+		COFPushRecoveryEventStatus pushRecoveryStatus = 2;
+	}
+
+	string cofEtag = 3;
+	int64 bandwidthBps = 4;
+	int64 lastCofSyncTimeMs = 5;
+	int64 lockHoldTimeMs = 6;
+	int64 networkResponseTimeMs = 7;
+	int32 payloadSizeBytes = 8;
+
+	enum COFRecoveryFailureReason {
+		REASON_UNSET = 0;
+		NETWORK_FAILURE = 1;
+		IO_FAILURE = 2;
+		MISSING_PAYLOAD = 3;
+		INVALID_PAYLOAD = 4;
+	}
+
+	COFRecoveryFailureReason failureReason = 9;
+	int32 failureCode = 10;
+	int32 consecutiveFailureCount = 11;
+
+	enum COFRecoveryHeuristicType {
+		TYPE_UNSET = 0;
+		APP_OPENS_WITHOUT_SYNC = 1;
+		APP_OPENS_WITHOUT_SYNC_NETWORK_CONSIDERED = 2;
+	}
+
+	COFRecoveryHeuristicType heuristicType = 12;
+	int32 configuredFailureCountThreshold = 13;
+	int32 configuredTimeThresholdMins = 14;
+
+	enum Reason {
+		REASON_UNSET = 0;
+		REASON_EXIT_SELF = 1;
+		REASON_SIGNALED = 2;
+		REASON_LOW_MEMORY = 3;
+		REASON_CRASH = 4;
+		REASON_CRASH_NATIVE = 5;
+		REASON_ANR = 6;
+		REASON_INITIALIZATION_FAILURE = 7;
+		REASON_PERMISSION_CHANGE = 8;
+		REASON_EXCESSIVE_RESOURCE_USAGE = 9;
+		REASON_USER_REQUESTED = 10;
+		REASON_USER_STOPPED = 11;
+		REASON_DEPENDENCY_DIED = 12;
+		REASON_OTHER = 13;
+		REASON_FREEZER = 14;
+	}
+
+	Reason appExitReason = 15;
+	string appExitDescription = 16;
+
+	enum COFRecoveryHeuristicResetReason {
+		RESET_REASON_UNSET = 0;
+		NO_NETWORK = 1;
+		SUCCESSFUL_COF_SYNC = 2;
+		RECOVERY_PAYLOAD_OPEN_CONNECTION_FAILURE = 3;
+		RECOVERY_PAYLOAD_DOWNLOAD_FAILURE = 4;
+		RECOVERY_PAYLOAD_PARSE_FAILURE = 5;
+		RECOVERY_PAYLOAD_WRITE_FAILURE = 6;
+		RECOVERY_PAYLOAD_WRITE_SUCCESS = 7;
+	}
+
+	COFRecoveryHeuristicResetReason heuristicResetReason = 17;
+}

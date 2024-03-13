@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSLocationUpdate.proto";
+
+message SCVSBatchValisLocationUpdate {
+	repeated snapchat.valis.SCVSLocationUpdate locationUpdateArray = 1;
+}

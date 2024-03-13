@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCChangeUsernamePbChangeUsernameResponse {
+
+	enum SCChangeUsernamePbChangeUsernameResponse_Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNKONWN = 2;
+		ERROR_REAUTHENTICATION_REQUIRED = 3;
+		ERROR_USERNAME_UNAVAILABLE = 4;
+		ERROR_USERNAME_INVALID = 5;
+		ERROR_CHANGED_RECENTLY = 6;
+		ERROR_THROTTLED = 7;
+	}
+
+	SCChangeUsernamePbChangeUsernameResponse_Status statusCode = 1;
+	string humanReadableErrorMessage = 2;
+}

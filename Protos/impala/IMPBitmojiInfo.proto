@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPBitmojiInfo {
+	string avatarId = 1;
+	string selfieId = 2;
+	string sceneId = 3;
+	string backgroundId = 4;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbRole {
+	string id_p = 1;
+	string containerId = 2;
+
+	enum SCLensCentralCommonPbContainerKind {
+		CONTAINER_KIND_UNSET = 0;
+		CONTAINER_KIND_LENS_FOLDER = 1;
+		CONTAINER_KIND_ORGANIZATION = 2;
+	}
+
+	SCLensCentralCommonPbContainerKind containerKind = 3;
+
+	enum SCLensCentralCommonPbRoleType {
+		ROLE_TYPE_UNSET = 0;
+		ROLE_TYPE_LENS_FOLDER_ADMIN = 1;
+		ROLE_TYPE_LENS_FOLDER_MANAGER = 2;
+		ROLE_TYPE_LENS_FOLDER_CREATOR = 3;
+		ROLE_TYPE_ADMIN = 4;
+		ROLE_TYPE_MEMBER = 5;
+	}
+
+	SCLensCentralCommonPbRoleType roleType = 4;
+}

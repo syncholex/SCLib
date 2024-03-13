@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+message SCBitmojiFlatlandSceneDefaults {
+	int32 version = 1;
+	repeated int32 sceneIdsArray = 2 [packed=true];
+}

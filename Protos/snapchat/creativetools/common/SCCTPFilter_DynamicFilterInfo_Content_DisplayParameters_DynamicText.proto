@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText {
+	string text = 1;
+
+	enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization {
+		CAPITALIZATION_UNSET = 0;
+		UPPER = 1;
+		LOWER = 2;
+		MIXED = 3;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization capitalization = 2;
+}

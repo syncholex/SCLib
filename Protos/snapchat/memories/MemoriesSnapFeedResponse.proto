@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message MemoriesSnapFeedResponse {
+	repeated bytes galleryCollectionsArray = 1;
+	bytes pagingToken = 2;
+	bool hasMore = 3;
+
+	enum SCCOREUserGender {
+		GENDER_UNKNOWN_UNSET = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+		GENDER_OTHER = 3;
+	}
+
+	SCCOREUserGender userGender = 4;
+}

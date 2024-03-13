@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCORECaptionMetadata {
+	float fontSize = 1;
+	float centerX = 2;
+	float centerY = 3;
+	float rotation = 4;
+	bool tracking = 5;
+
+	enum SCSCORECaptionMetadata_CaptionType {
+		DEFAULT = 0;
+		BIGTEXT_LEFT = 1;
+		BIGTEXT_CENTER = 2;
+		BIGTEXT_RIGHT = 3;
+	}
+
+	SCSCORECaptionMetadata_CaptionType type = 7;
+}

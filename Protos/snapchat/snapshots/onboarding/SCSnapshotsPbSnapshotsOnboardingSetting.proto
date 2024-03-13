@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapshots.onboarding;
+
+message SCSnapshotsPbSnapshotsOnboardingSetting {
+	bool openDialogImpressed = 1;
+	int32 inlinePromptImpressionCount = 2;
+	int64 inlinePromptLastImpressedAtEpoch = 3;
+	int32 tooltipImpressionCount = 4;
+	int64 tooltipLastImpressedAtEpoch = 5;
+	bool userHasUploadedSnapshot = 6;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceClaim.proto";
+
+message VRZPlaceClaimRequest {
+	repeated snapchat.local.verrazano.VRZPlaceClaim placeClaimsArray = 1;
+}

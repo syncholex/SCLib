@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.onetaplogin;
+
+message OneTapLoginLogoutRequest {
+	string deviceId = 2;
+	string deviceName = 3;
+}

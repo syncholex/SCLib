@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlace_HierarchyStep {
+	string placeId = 1;
+	string placetypeId = 2;
+}

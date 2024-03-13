@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicMusicPickerLayoutRequestContext.proto";
+
+message SCMusicGetPickerLayoutRequest {
+	bool includeCustomSounds = 1;
+
+	enum SCMusicGetPickerLayoutRequest_MusicPickerLayoutRequestSource {
+		UNSET = 0;
+		CAMERA_SOURCE = 1;
+		PREVIEW_SOURCE = 2;
+		MODULAR_CAMERA_SOURCE = 3;
+	}
+
+	SCMusicGetPickerLayoutRequest_MusicPickerLayoutRequestSource requestSource = 2;
+	snapchat.music.music_service.SCMusicMusicPickerLayoutRequestContext requestContext = 3;
+}

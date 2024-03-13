@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPActivity.proto";
+
+message IMPGetActivityResponse {
+	repeated impala.creatormonetization.IMPActivity activitiesArray = 1;
+	string nextPayoutEndDate = 2;
+	string nextCashoutEndDate = 3;
+}

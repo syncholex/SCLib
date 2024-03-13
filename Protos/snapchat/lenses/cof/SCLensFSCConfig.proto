@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensFSCConfig {
+	bool enabled = 1;
+	sint32 detectionDelayMs = 2;
+	sint32 allowedOffset = 3;
+	bool mainCameraPassiveFixEnabled = 4;
+	bool mainCameraActiveFixEnabled = 5;
+	bool replyCameraPassiveFixEnabled = 6;
+	bool replyCameraActiveFixEnabled = 7;
+	bool mainCameraPassiveFixScrollEnabled = 8;
+	bool mainCameraActiveFixScrollEnabled = 9;
+	bool replyCameraPassiveFixScrollEnabled = 10;
+	bool replyCameraActiveFixScrollEnabled = 11;
+}

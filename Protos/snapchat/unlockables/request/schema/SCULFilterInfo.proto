@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message SCULFilterInfo {
+	int64 unlockableId = 1;
+	bool isUco = 2;
+}

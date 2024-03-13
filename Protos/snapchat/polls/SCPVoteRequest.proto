@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+message SCPVoteRequest {
+	string pollId = 1;
+	repeated uint32 optionIdsArray = 2 [packed=true];
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsArResponsePayload {
+	repeated int64 precachedFirstLensIdArray = 1 [packed=true];
+	int64 responseExpirationTsMs = 10;
+}

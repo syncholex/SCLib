@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBContextNotifAnim {
+	uint32 solidDuration = 1;
+	uint32 blinkCount = 2;
+	uint32 blinkDurationOnInMs = 3;
+	uint32 blinkDurationOffInMs = 4;
+	uint32 color = 5;
+
+	enum MLBContextNotifAnim_LedSide {
+		NONE_ENABLED = 0;
+		LEFT_ENABLED = 1;
+		RIGHT_ENABLED = 2;
+		BOTH_ENABLED = 3;
+	}
+
+	MLBContextNotifAnim_LedSide ledSideEnabled = 6;
+}

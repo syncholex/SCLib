@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+message SCCameosReenactmentCentralizedSchedulerConfig {
+	int32 group = 1;
+	bool includeAllViewLocations = 2;
+	repeated uint32 viewLocationsArray = 3 [packed=true];
+	repeated uint32 excludedViewLocationsArray = 4 [packed=true];
+}

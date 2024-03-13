@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking2.performance;
+
+import "ranking2/performance/SCR2Event.proto";
+import "ranking2/performance/SCR2TimedScope.proto";
+
+message SCR2TimedScope {
+	string name = 1;
+	int64 startTimeUsec = 2;
+	int64 endTimeUsec = 3;
+	int32 cpuTimeUsec = 4;
+	repeated ranking2.performance.SCR2Event eventsArray = 5;
+	repeated ranking2.performance.SCR2TimedScope innerScopesArray = 6;
+}

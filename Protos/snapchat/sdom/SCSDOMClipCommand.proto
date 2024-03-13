@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMAddClip.proto";
+import "snapchat/sdom/SCSDOMDeleteClip.proto";
+import "snapchat/sdom/SCSDOMReorderClip.proto";
+import "snapchat/sdom/SCSDOMTrimClip.proto";
+import "snapchat/sdom/SCSDOMImportSnapDocClip.proto";
+import "snapchat/sdom/SCSDOMAddAudio.proto";
+
+message SCSDOMClipCommand {
+
+	oneof command {
+		snapchat.sdom.SCSDOMAddClip addClip = 1;
+		snapchat.sdom.SCSDOMDeleteClip deleteClip = 2;
+		snapchat.sdom.SCSDOMReorderClip reorderClip = 3;
+		snapchat.sdom.SCSDOMTrimClip trimClip = 4;
+		snapchat.sdom.SCSDOMImportSnapDocClip importSnapdocClip = 5;
+		snapchat.sdom.SCSDOMAddAudio addAudio = 6;
+	}
+
+}

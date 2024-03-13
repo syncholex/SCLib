@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package lens_platform.client_server.common;
+
+import "lens_platform/client_server/common/SCLPLongFormVideoAttachment.proto";
+import "lens_platform/client_server/common/SCLPWebViewAttachment.proto";
+import "lens_platform/client_server/common/SCLPAppInstallAttachment.proto";
+import "lens_platform/client_server/common/SCLPRichStoryDeepLinkAttachment.proto";
+
+message SCLPAttachment {
+
+	enum SCLPAttachmentCtaText {
+		CTA_UNSET = 0;
+		APP_STORE = 1;
+		APPLY = 2;
+		APPLY_NOW = 3;
+		BOOK_NOW = 4;
+		BUY_TICKETS = 5;
+		CHAT = 6;
+		DOWNLOAD = 7;
+		EDIT_SEND = 8;
+		EXPLORE = 9;
+		FIND_OUT = 10;
+		GET_NOW = 11;
+		INSTALL_NOW = 12;
+		LEARN_MORE = 13;
+		LISTEN = 14;
+		MORE = 15;
+		NOTIFY_ME = 16;
+		OPEN_LINK = 17;
+		ORDER = 18;
+		ORDER_NOW = 19;
+		PLAY = 20;
+		PLAY_GAME = 21;
+		PLAY_STORE = 22;
+		READ = 23;
+		RESPOND = 24;
+		SHOP = 25;
+		SHOP_NOW = 26;
+		SHOW = 27;
+		SHOWTIMES = 28;
+		SIGN_UP = 29;
+		SUBSCRIBE = 30;
+		SWIPE_UP = 31;
+		TAKE_POLL = 32;
+		TAKE_QUIZ = 33;
+		TRY = 34;
+		TRY_NOW = 35;
+		USE_APP = 36;
+		VIEW = 37;
+		VIEW_MORE = 38;
+		VOTE = 39;
+		VOTE_NOW = 40;
+		WATCH = 41;
+		WATCH_EPISODE = 42;
+		WATCH_MORE = 43;
+		WATCH_TRAILER = 44;
+		LENS_CTA_DEEP_LINK_OPEN_APP = 45;
+		VIEW_CHALLENGE = 46;
+		ADD_FRIENDS = 47;
+		DONATE = 48;
+		DIRECTIONS = 49;
+		VIEW_MENU = 50;
+		PRE_REGISTER = 51;
+		VIEW_PROFILE = 52;
+		CLAIM_SAMPLE = 53;
+		FREE_TRIAL = 54;
+		GET_COUPON = 55;
+		REQUEST_APPOINTMENT = 56;
+		REQUEST_QUOTE = 57;
+		TEST_DRIVE = 58;
+		EXPLORE_MORE = 59;
+	}
+
+	SCLPAttachmentCtaText ctaText = 2;
+	string localizedCtaText = 3;
+
+	oneof attachment {
+		lens_platform.client_server.common.SCLPLongFormVideoAttachment longFormVideo = 4;
+		lens_platform.client_server.common.SCLPWebViewAttachment webView = 5;
+		lens_platform.client_server.common.SCLPAppInstallAttachment appInstall = 6;
+		lens_platform.client_server.common.SCLPRichStoryDeepLinkAttachment deepLink = 7;
+	}
+
+}

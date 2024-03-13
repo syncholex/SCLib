@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalQueryAvailableResourcesRequest {
+	string snapUserId = 1;
+
+	enum IMPResourceType {
+		STORE = 0;
+		PROFILE = 1;
+	}
+
+	IMPResourceType resourceType = 2;
+}

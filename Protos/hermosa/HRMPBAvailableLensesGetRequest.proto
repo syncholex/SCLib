@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBAvailableLensesGetRequest {
+	bool excludePublishedLensesNames = 1;
+	bool excludePublishedLensesIconUris = 2;
+}

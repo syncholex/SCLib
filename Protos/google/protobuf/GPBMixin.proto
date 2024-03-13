@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+message GPBMixin {
+	string name = 1;
+	string root = 2;
+}

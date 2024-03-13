@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationTokenData.proto";
+
+message SCNotificationSessionData {
+	string sessionId = 1;
+
+	enum SCNotificationDeviceType {
+		NONE = 0;
+		IOS = 1;
+		ANDROID = 2;
+		TEST_IOS = 3;
+		TEST_ANDROID = 4;
+		ANDROID_HMS = 5;
+		IOS_BITMOJI = 6;
+		ANDROID_BITMOJI = 7;
+		DESKTOP_WEB = 8;
+		IOS_FEATURE_APP = 9;
+	}
+
+	SCNotificationDeviceType type = 2;
+	snapchat.notification.notificationdata.SCNotificationTokenData tokenData = 3;
+}

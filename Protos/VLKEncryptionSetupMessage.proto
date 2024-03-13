@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+message VLKEncryptionSetupMessage {
+
+	enum VLKEncryptionSetupMessage_EncryptionSetupMessageType {
+		PAIRING_PUBLIC_KEY = 1;
+		PAIRING_UUID_AND_NONCE = 2;
+		PAIRING_VERIFICATION = 3;
+		PAIRING_REQUEST_USER_ASSO = 4;
+		PAIRING_USER_ASSO_DONE = 5;
+		PAIRING_GET_STATE = 6;
+		PAIRING_STATE = 7;
+		NONCE = 8;
+		SALT = 9;
+	}
+
+	VLKEncryptionSetupMessage_EncryptionSetupMessageType messageType = 1;
+	bytes messageData = 2;
+}

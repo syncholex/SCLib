@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+import "VLKNrfTimeRequest.proto";
+import "VLKNrfBluetoothRequest.proto";
+import "VLKNrfWifiRequest.proto";
+import "VLKNrfActionRequest.proto";
+import "VLKNrfGpsUpdateRequest.proto";
+import "VLKNrfUserAssociationRequest.proto";
+import "VLKNrfStatusRequest.proto";
+import "VLKNrfDeviceRenameRequest.proto";
+import "VLKNrfDiffUpdateRequest.proto";
+import "VLKNrfShellCmdRequest.proto";
+import "VLKNrfAuthRequest.proto";
+import "VLKNrfBackgroundUpdateRequest.proto";
+import "VLKNrfOTARequest.proto";
+
+message VLKNrfRequest {
+	VLKNrfTimeRequest nrfTimeRequest = 3;
+	VLKNrfBluetoothRequest nrfBluetoothRequest = 4;
+	VLKNrfWifiRequest nrfWifiRequest = 5;
+	VLKNrfActionRequest nrfActionRequest = 7;
+	VLKNrfGpsUpdateRequest nrfGpsUpdateRequest = 8;
+	VLKNrfUserAssociationRequest nrfUserAssociationRequest = 9;
+	repeated VLKNrfStatusRequest nrfStatusRequestArray = 10;
+	VLKNrfDeviceRenameRequest nrfDeviceRenameRequest = 11;
+	VLKNrfDiffUpdateRequest nrfDiffUpdateRequest = 12;
+	VLKNrfShellCmdRequest nrfShellCmdRequest = 13;
+	bool readyForBackupPairingConfirmationTap = 14;
+	VLKNrfAuthRequest nrfAuthRequest = 15;
+	VLKNrfBackgroundUpdateRequest nrfBackgroundUpdateRequest = 16;
+	VLKNrfOTARequest nrfOtarequest = 17;
+}

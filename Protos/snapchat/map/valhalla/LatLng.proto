@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+message LatLng {
+
+	oneof hasLat {
+		double lat = 1;
+	}
+
+}

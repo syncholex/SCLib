@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+message MMAIResultOrderClause {
+
+	enum MMAIResultOrderClause_SortingOrder {
+		ORDER_UNSET = 0;
+		ASC = 1;
+		DESC = 2;
+	}
+
+	MMAIResultOrderClause_SortingOrder order = 1;
+
+	oneof sortingField {
+		string metadataField = 2;
+		bool useScore = 3;
+		bool useIdentifier = 4;
+		bool useMatchedIndex = 5;
+	}
+
+	bool postInnerSortReorder = 100;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoOAuthClient.proto";
+
+message SCSnapKitProtoConnectClientDetailsResponse {
+	string appId = 1;
+	snapkit.internal.user.SCSnapKitProtoOAuthClient oauthClient = 2;
+	string appStoryDisplayName = 3;
+	string appStoryIconURL = 4;
+	int32 appStoryTtlDays = 5;
+	string appName = 6;
+	string appIconURL = 7;
+	string androidAppPackageName = 8;
+	string redirectUri = 9;
+}

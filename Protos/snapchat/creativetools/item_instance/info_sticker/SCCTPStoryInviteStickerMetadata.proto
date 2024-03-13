@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPStoryInviteStickerMetadata {
+
+	enum SCCTPStoryInviteStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		CUSTOM = 1;
+		PRIVATE = 2;
+	}
+
+	SCCTPStoryInviteStickerMetadata_Type type = 1;
+	string inviteId = 2;
+	string storyName = 3;
+	string storyId = 4;
+}

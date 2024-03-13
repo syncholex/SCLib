@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingSearchSuggestion {
+	string URL = 1;
+	string term = 2;
+	string suggestedSearchId = 3;
+}

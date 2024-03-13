@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.proto.identity.notifications;
+
+message SCFeedHeaderPromptV2ProtoSetting {
+	string title = 1;
+	string subTitle = 2;
+	string icon = 3;
+
+	enum SCFeedHeaderPromptV2ProtoFeedHeaderPromptType {
+		Unknown = 0;
+		SuicidePrevention = 1;
+		NotificationPerm = 2;
+		PhoneVerification = 3;
+		EmailVerification = 4;
+		BirthdayParty = 5;
+		ContactSync = 6;
+		RegisterVote = 7;
+		ElectionMakePlanToVote = 8;
+		PhoneReverification = 9;
+	}
+
+	SCFeedHeaderPromptV2ProtoFeedHeaderPromptType type = 4;
+	int32 maxCap = 5;
+	int32 displayDurationInDays = 6;
+	int32 order = 7;
+	int32 coolDownInDays = 8;
+}

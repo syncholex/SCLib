@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/BoltMediaServingInfo.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/BitmojiFashion.proto";
+
+message CommunityProfileMetadata {
+	string description_p = 1;
+	ranking.pii.groupmanagement.BoltMediaServingInfo boltMediaServingInfo = 2;
+	ranking.core.SCSCOREUUID orgId = 3;
+	string shortDisplayName = 4;
+	ranking.pii.groupmanagement.BoltMediaServingInfo boltMediaServingInfoProfile = 5;
+	ranking.pii.groupmanagement.BitmojiFashion bitmojiFashion = 6;
+}

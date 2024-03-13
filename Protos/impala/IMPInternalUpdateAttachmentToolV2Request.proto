@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalUpdateAttachmentToolV2Request {
+	repeated string snapUserIdsArray = 1;
+}

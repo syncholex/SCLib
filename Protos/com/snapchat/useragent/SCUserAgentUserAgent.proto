@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package com.snapchat.useragent;
+
+import "com/snapchat/useragent/SCUserAgentAppVersion.proto";
+import "com/snapchat/useragent/SCUserAgentDeviceInfo.proto";
+
+message SCUserAgentUserAgent {
+
+	enum SCUserAgentApp {
+		APP_UNSET = 0;
+		SNAPCHAT = 1;
+	}
+
+	SCUserAgentApp app = 1;
+	com.snapchat.useragent.SCUserAgentAppVersion appVersion = 2;
+
+	enum SCUserAgentAppFlavor {
+		FLAVOR_UNSET = 0;
+		PROD = 1;
+		ALPHA = 2;
+		BETA = 3;
+		GOLD = 4;
+		DEBUG = 5;
+		PERF = 6;
+	}
+
+	SCUserAgentAppFlavor appFlavor = 3;
+
+	enum SCUserAgentAppVariant {
+		APP_VARIANT_UNSET = 0;
+		MUSHROOM = 1;
+		OG = 2;
+		SNAPSHOT = 3;
+		HMS = 4;
+	}
+
+	SCUserAgentAppVariant appVariant = 4;
+
+	enum SCUserAgentAppPlatform {
+		APP_PLATFORM_UNSET = 0;
+		MOBILE_APP = 1;
+		DWEB = 2;
+	}
+
+	SCUserAgentAppPlatform appPlatform = 5;
+	com.snapchat.useragent.SCUserAgentDeviceInfo deviceInfo = 6;
+}

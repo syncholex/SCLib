@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingDiscoverShare {
+	string articleId = 1;
+	string editionId = 2;
+}

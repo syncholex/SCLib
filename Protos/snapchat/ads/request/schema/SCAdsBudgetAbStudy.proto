@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsBudgetAbStudy {
+	string experimentId = 1;
+	int64 studyVersion = 2;
+
+	enum SCAdsBudgetSegmentID {
+		UNKNOWN_BSID = 0;
+		BSID_1 = 1;
+		BSID_2 = 2;
+		BSID_3 = 3;
+		BSID_4 = 4;
+		BSID_5 = 5;
+		BSID_6 = 6;
+		BSID_7 = 7;
+		BSID_8 = 8;
+		BSID_9 = 9;
+		BSID_10 = 10;
+		BSID_ALL = 11;
+	}
+
+	SCAdsBudgetSegmentID budgetSegmentId = 3;
+}

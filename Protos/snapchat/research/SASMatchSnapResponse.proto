@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASTrackMatch.proto";
+
+message SASMatchSnapResponse {
+	snapchat.research.SASTrackMatch trackMatch = 1;
+}

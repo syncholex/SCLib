@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCustomSticker.proto";
+
+message SCCTPCustomStickerPackEntry {
+	bytes stickerId = 1;
+	int64 orderWeight = 2;
+	snapchat.creativetools.common.SCCTPCustomSticker customSticker = 3;
+}

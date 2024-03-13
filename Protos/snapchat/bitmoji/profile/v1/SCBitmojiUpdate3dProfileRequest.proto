@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.profile.v1;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+
+message SCBitmojiUpdate3dProfileRequest {
+
+	oneof sceneIdType {
+		uint32 sceneId = 1;
+		string sceneIdStr = 3;
+	}
+
+
+	oneof backgroundIdType {
+		uint32 backgroundId = 2;
+		string backgroundIdStr = 4;
+		snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL backgroundURL = 5;
+	}
+
+}

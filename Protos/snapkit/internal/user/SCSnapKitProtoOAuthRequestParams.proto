@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoOAuthRequestParams {
+	string clientId = 1;
+	string state = 2;
+	string codeVerifier = 3;
+}

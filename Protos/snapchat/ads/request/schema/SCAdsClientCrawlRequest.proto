@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsClientCrawlRequest {
+	string crawlURL = 1;
+	string creativeId = 2;
+}

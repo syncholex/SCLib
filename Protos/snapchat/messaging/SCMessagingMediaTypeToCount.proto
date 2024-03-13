@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingMediaTypeToCount {
+
+	enum SCMessagingMediaTypeToCount_MediaType {
+		UNKNOWN = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+	}
+
+	SCMessagingMediaTypeToCount_MediaType mediaType = 1;
+	uint64 count = 2;
+}

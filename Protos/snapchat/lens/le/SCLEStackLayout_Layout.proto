@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLEStackLayout_GroupLayout.proto";
+import "snapchat/lens/le/SCLEStackLayout_ImageLayout.proto";
+import "snapchat/lens/le/SCLEStackLayout_TextLayout.proto";
+
+message SCLEStackLayout_Layout {
+	int32 elementId = 1;
+	int32 weight = 2;
+	float aspectRatio = 3;
+
+	oneof layout {
+		snapchat.lens.le.SCLEStackLayout_GroupLayout groupLayout = 4;
+		snapchat.lens.le.SCLEStackLayout_ImageLayout imageLayout = 5;
+		snapchat.lens.le.SCLEStackLayout_TextLayout textLayout = 6;
+	}
+
+}

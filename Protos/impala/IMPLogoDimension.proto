@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPLogoDimension {
+	int32 heightPx = 1;
+	int32 widthPx = 2;
+}

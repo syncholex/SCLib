@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingContentEnvelope_DisplayInfo {
+	bool hasAudio = 1;
+}

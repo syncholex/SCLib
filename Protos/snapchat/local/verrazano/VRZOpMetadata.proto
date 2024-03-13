@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZOpMetadata {
+	string changesetId = 1;
+	string description_p = 2;
+}

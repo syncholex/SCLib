@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+message VLKNrfOTARequest {
+	string firmwareURL = 1;
+	string md5 = 2;
+	string ssid = 3;
+	string password = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBKeyExchangeMessage {
+	bytes nonce = 1;
+	bytes publicKey = 2;
+}

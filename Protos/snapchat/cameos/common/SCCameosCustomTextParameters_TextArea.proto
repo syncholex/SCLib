@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosCustomTextParameters_TextArea {
+	int32 maximumHeight = 1;
+	int32 maximumLineLength = 2;
+	int32 maximumLines = 3;
+	int32 maximumWidth = 4;
+	int32 splitVersion = 5;
+}

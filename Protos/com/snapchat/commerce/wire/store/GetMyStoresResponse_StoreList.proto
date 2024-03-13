@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.store;
+
+import "com/snapchat/commerce/domain/store/StoreInfo.proto";
+
+message GetMyStoresResponse_StoreList {
+	repeated com.snapchat.commerce.domain.store.StoreInfo storeInfoArray = 1;
+}

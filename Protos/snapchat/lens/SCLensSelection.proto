@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/lens/SCLensSelection_Query.proto";
+
+message SCLensSelection {
+	repeated snapchat.lens.SCLensSelection_Query queriesArray = 1;
+}

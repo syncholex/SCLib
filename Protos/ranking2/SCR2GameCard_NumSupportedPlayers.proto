@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2GameCard_NumSupportedPlayers {
+	int32 min = 1;
+	int32 max = 2;
+}

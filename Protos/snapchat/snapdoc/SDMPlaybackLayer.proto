@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMMediaMetadata.proto";
+import "snapchat/snapdoc/SDMCaption.proto";
+import "snapchat/snapdoc/SDMWebPage.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/snapdoc/SDMLayerProperties.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+import "snapchat/snapdoc/SDMEditCapabilities.proto";
+
+message SDMPlaybackLayer {
+
+	oneof layer {
+		snapchat.snapdoc.SDMMediaMetadata media = 1;
+		snapchat.snapdoc.SDMCaption caption = 2;
+		snapchat.snapdoc.SDMWebPage webPage = 3;
+		snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItem = 4;
+	}
+
+	snapchat.snapdoc.SDMLayerProperties properties = 5;
+	uint32 playbackLayerIndex = 6;
+	snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 7;
+	snapchat.snapdoc.SDMEditCapabilities editCapabilities = 8;
+}

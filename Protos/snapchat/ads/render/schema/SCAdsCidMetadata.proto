@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsCidMetadata {
+	string cidURLParams = 1;
+	int32 cidParamAutoCorrectServerRedirectDistance = 2;
+
+	enum SCAdsCidMetadata_ExbMode {
+		UNSET = 0;
+		DEFAULT = 1;
+		IN_APP_HTML_RESOLVE = 2;
+		SUB_NAV_ONLY = 3;
+	}
+
+	SCAdsCidMetadata_ExbMode exbMode = 3;
+	string exbInAppHtmlResolveFinalURLMatchPrefix = 4;
+}

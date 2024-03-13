@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSnapInsights {
+	string chapterId = 1;
+	int64 uniqueViewers = 2;
+	int64 uniqueViewersSubscriber = 3;
+	int64 uniqueViewersNonSubscriber = 4;
+	int64 uniqueViewersPaid = 5;
+	int64 uniqueViewersOrganic = 6;
+	double snapDropOffRate = 7;
+	double snapDropOffRatePaid = 8;
+	double snapDropOffRateOrganic = 9;
+	double timeSpentMs = 10;
+	double timeSpentMsPaid = 11;
+	double timeSpentMsOrganic = 12;
+	double snapCompletionRate = 13;
+	double snapCompletionRatePaid = 14;
+	double snapCompletionRateOrganic = 15;
+	double attachmentTimeSpentMs = 16;
+	double attachmentTimeSpentMsPaid = 17;
+	double attachmentTimeSpentMsOrganic = 18;
+	double attachmentConversion = 19;
+	double attachmentConversionPaid = 20;
+	double attachmentConversionOrganic = 21;
+	int64 screenshots = 22;
+	int64 screenshotsPaid = 23;
+	int64 screenshotsOrganic = 24;
+	int64 shares = 25;
+	int64 sharesPaid = 26;
+	int64 sharesOrganic = 27;
+}

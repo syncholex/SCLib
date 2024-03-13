@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message UserRecentlyActiveRequestWithSource {
+
+	enum QuerySource {
+		UNSET = 0;
+		SendTo = 1;
+		Profile = 2;
+		FriendFeed = 3;
+		FriendingQuickAdd = 4;
+		FriendingAddedMe = 5;
+		UniversalSearch = 6;
+		FriendingPostType = 7;
+	}
+
+	QuerySource querySource = 1;
+	repeated string userIdsArray = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbCommunity.proto";
+
+message SCCommunityOrgPbLookupCommunitiesResponse {
+	repeated ranking.communityorg.SCCommunityOrgPbCommunity communitiesArray = 1;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.music.common;
+
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message SCMusicLyricsSticker {
+	uint64 trackId = 2;
+
+	enum SCCTPMusicStickerMetadata_StickerType {
+		UNSET = 0;
+		WAVEFORM = 1;
+		BOLD_SCROLLING = 2;
+		MONOSPACE = 3;
+	}
+
+	SCCTPMusicStickerMetadata_StickerType stickerType = 3;
+	string lottieString = 4;
+	snapchat.creativetools.common.SCCTPEncryptedMedia media = 5;
+}

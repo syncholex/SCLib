@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUITreatments_TextAboveUsernameAndLeftOfViewCountTreatments {
+
+	enum SCSSMUITreatments_TextAboveUsernameAndLeftOfViewCountTreatments_Preset {
+		UNKNOWN = 0;
+		TRENDING_WITH_FRIENDS = 1;
+		FRIENDS_FAVORITE = 2;
+		POPULAR_STORY = 3;
+		TRENDING_STORY = 4;
+		FRIENDS_STORY = 5;
+	}
+
+	SCSSMUITreatments_TextAboveUsernameAndLeftOfViewCountTreatments_Preset preset = 1;
+	bytes customText = 2;
+
+	enum SCSSMUITreatments_Color {
+		UNKNOWN = 0;
+		YELLOW = 1;
+		WHITE = 2;
+		GRAY = 3;
+		BLACK = 4;
+	}
+
+	SCSSMUITreatments_Color customTextColor = 3;
+}

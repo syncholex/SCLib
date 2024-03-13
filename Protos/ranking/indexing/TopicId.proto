@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message TopicId {
+
+	enum SCCTTopicStory_Type {
+		UNSET = 0;
+		HASHTAG = 1;
+		LENS = 2;
+		MUSIC = 3;
+		ORIGINAL_SOUND = 4;
+		THIRD_PARTY_APP = 5;
+		CHALLENGE = 6;
+		CHEERIOS = 7;
+		REMIXES = 8;
+		UNUSED_9 = 9;
+	}
+
+	SCCTTopicStory_Type type = 1;
+	string id_p = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message TopLocationSummary {
+	int64 startOfPeriod = 1;
+	repeated int64 s2CellIdArray = 2 [packed=true];
+}

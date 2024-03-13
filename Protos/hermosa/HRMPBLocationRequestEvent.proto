@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLocationRequestEvent {
+
+	enum HRMPBLocationRequestEvent_LocationRequestPermissionMode {
+		DO_NOT_ASK_USER_FOR_PERMISSION_IF_NOT_GRANTED_YET_UNSET = 0;
+		ASK_USER_FOR_LOCATION_PERMISSION_IF_NEEDED = 1;
+	}
+
+	HRMPBLocationRequestEvent_LocationRequestPermissionMode permissionMode = 1;
+	uint32 desiredLocationPrecisionM = 2;
+	uint32 maxAcquisitionTimeMs = 3;
+}

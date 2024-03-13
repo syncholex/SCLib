@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+
+message SCS2StickerResultTypeOption_CameoOption {
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 1 [packed=true];
+	snapchat.cameos.common.SCCameosApiVersion apiVersion = 2;
+	int32 maxCustomCameos = 3;
+	int32 minSearchResults = 4;
+}

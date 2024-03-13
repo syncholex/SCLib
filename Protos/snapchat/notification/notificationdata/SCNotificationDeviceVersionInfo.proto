@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationVersion.proto";
+
+message SCNotificationDeviceVersionInfo {
+	snapchat.notification.notificationdata.SCNotificationVersion appVersion = 1;
+	snapchat.notification.notificationdata.SCNotificationVersion osVersion = 2;
+}

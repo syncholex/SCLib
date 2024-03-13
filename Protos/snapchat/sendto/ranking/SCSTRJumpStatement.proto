@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "google/protobuf/GPBEmpty.proto";
+
+message SCSTRJumpStatement {
+
+	oneof kind {
+		google.protobuf.GPBEmpty continue_p = 1;
+		google.protobuf.GPBEmpty break_p = 2;
+	}
+
+}

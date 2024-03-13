@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+message SCLPSponsoredInfo {
+	bool sponsored = 1;
+	string slugText = 2;
+
+	enum SCULSponsoredUnlockableType {
+		UNKNOWN_SPONSORED_UNLOCKABLE_TYPE = 0;
+		AUDIENCE_FILTERS = 1;
+		ON_DEMAND_UNLOCKABLE = 2;
+		AUDIENCE_LENSES = 3;
+		NATIONAL_LENSES = 4;
+		MANAGED_FILTERS = 5;
+		SPONSORED_COMPANION_LENSES = 6;
+		REACH_AND_FREQUENCY_LENSES = 7;
+		AD_TO_LENS = 8;
+		PLACES_FILTERS = 9;
+		FIRST_LENSES = 10;
+	}
+
+	SCULSponsoredUnlockableType sponsoredType = 3;
+}

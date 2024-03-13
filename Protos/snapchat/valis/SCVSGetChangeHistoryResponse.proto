@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSShareLocationPreferences.proto";
+import "snapchat/valis/SCVSLocationPreferencesMetadata.proto";
+
+message SCVSGetChangeHistoryResponse {
+	repeated snapchat.valis.SCVSShareLocationPreferences preferencesArray = 1;
+	repeated snapchat.valis.SCVSLocationPreferencesMetadata metadataArray = 2;
+}

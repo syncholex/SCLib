@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbGoogleSubscriptionPlan.proto";
+import "subscription/shop/SCSubscriptionShopPbGoogleSubscriptionPlanV2.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCSubscriptionShopPbGetGoogleSubscriptionPlansResponse {
+	string productId = 1;
+	repeated subscription.shop.SCSubscriptionShopPbGoogleSubscriptionPlan plansArray = 2;
+	string referralToken = 3;
+	repeated subscription.shop.SCSubscriptionShopPbGoogleSubscriptionPlanV2 subscriptionPlansArray = 4;
+	google.protobuf.GPBInt64Value preferredSubscriptionPlansIndex = 5;
+	string specialOfferBillboardKey = 6;
+}

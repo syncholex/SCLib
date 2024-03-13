@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSeasonMetadataPage.proto";
+
+message IMPGetSeasonMetadataResponse {
+	impala.IMPSeasonMetadataPage seasonsPage = 1;
+}

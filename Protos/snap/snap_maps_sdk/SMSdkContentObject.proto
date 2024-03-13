@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkContentObject {
+
+	oneof data {
+		bytes contentObject = 1;
+		string uri = 2;
+	}
+
+	string key = 3;
+	string iv = 4;
+}

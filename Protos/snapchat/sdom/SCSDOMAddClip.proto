@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMMediaIndex.proto";
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+import "snapchat/sdom/SCSDOMImageAttributes.proto";
+import "snapchat/sdom/SCSDOMVideoAttributes.proto";
+import "snapchat/snapdoc/SDMEditCapabilities.proto";
+import "snapchat/snapdoc/SDMMediaMetadata_MediaDimensions.proto";
+import "snapchat/sdom/SCSDOMTimeRange.proto";
+import "snapchat/snapdoc/SDMLayerProperties.proto";
+
+message SCSDOMAddClip {
+	snapchat.sdom.SCSDOMMediaIndex mediaIndex = 1;
+	snapchat.sdom.SCSDOMClipIndex clipIndex = 2;
+	bool replaceExistingClip = 3;
+	uint32 mediaDurationMs = 4;
+
+	oneof mediaType {
+		snapchat.sdom.SCSDOMImageAttributes imageAttributes = 5;
+		snapchat.sdom.SCSDOMVideoAttributes videoAttributes = 6;
+	}
+
+	bool keepEditLayers = 7;
+	snapchat.snapdoc.SDMEditCapabilities editCapabilities = 8;
+	snapchat.snapdoc.SDMMediaMetadata_MediaDimensions mediaDimensions = 9;
+
+	enum SDMMediaMetadata_DisplayOrientation {
+		UNSET = 0;
+		UP = 1;
+		DOWN = 2;
+		LEFT = 3;
+		RIGHT = 4;
+		UP_MIRRORED = 5;
+		DOWN_MIRRORED = 6;
+		LEFT_MIRRORED = 7;
+		RIGHT_MIRRORED = 8;
+	}
+
+	SDMMediaMetadata_DisplayOrientation displayOrientation = 10;
+	snapchat.sdom.SCSDOMTimeRange timeRange = 11;
+	snapchat.snapdoc.SDMLayerProperties layerProperties = 12;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "actionmoji/action/SCMT1Sticker.proto";
+
+message SCMLCWidgetContext {
+	float lat = 1;
+	float lng = 2;
+	int64 timestamp = 3;
+	actionmoji.action.SCMT1Sticker sticker = 4;
+	bool isLiveLocation = 5;
+}

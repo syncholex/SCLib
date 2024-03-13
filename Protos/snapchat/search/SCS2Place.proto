@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Place_MapOpenParams.proto";
+import "snapchat/map/orbis/SCOrbisStoryPreview.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Photo.proto";
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/local/verrazano/VRZPlaceStats.proto";
+import "snapchat/local/placediscovery/VRZPlacePivot.proto";
+
+message SCS2Place {
+	string id_p = 1;
+	string displayName = 2;
+	string locality = 3;
+	snapchat.search.SCS2Place_MapOpenParams mapOpenParams = 4;
+	snapchat.map.orbis.SCOrbisStoryPreview storyPreview = 5;
+	string categoryIconURL = 9;
+	bool isFavorited = 10;
+	string categoryName = 11;
+	snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Photo profilePhoto = 12;
+	snapchat.geo.SPCGPoint centroid = 13;
+	snapchat.local.verrazano.VRZPlaceStats placeStats = 14;
+	repeated snapchat.local.placediscovery.VRZPlacePivot placePivotsArray = 15;
+}

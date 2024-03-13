@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/context/CommerceTabInternal.proto";
+
+message CommerceContextInternal {
+}

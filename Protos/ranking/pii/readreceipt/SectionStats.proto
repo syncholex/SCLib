@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/ViewStats.proto";
+import "ranking/pii/readreceipt/SnapReport.proto";
+
+message SectionStats {
+
+	enum SnapStatsSectionType_Enum {
+		UNKNOWN = 0;
+		FRIEND_ONLY = 1;
+		FOLLOWER_ONLY = 2;
+		OTHERS_ONLY = 3;
+		FOLLOWER_OTHERS = 4;
+		FRIEND_FOLLOWER_OTHERS = 5;
+		NONE = 6;
+	}
+
+	SnapStatsSectionType_Enum sectionType = 1;
+	ranking.pii.readreceipt.ViewStats sectionStats = 2;
+	repeated ranking.pii.readreceipt.SnapReport recentViewersArray = 3;
+}

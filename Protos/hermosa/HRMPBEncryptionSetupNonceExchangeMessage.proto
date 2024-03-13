@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBEncryptionSetupNonceExchangeMessage {
+	bytes nonce = 1;
+}

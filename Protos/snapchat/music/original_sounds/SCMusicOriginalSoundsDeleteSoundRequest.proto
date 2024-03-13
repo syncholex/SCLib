@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+message SCMusicOriginalSoundsDeleteSoundRequest {
+	uint64 trackId = 1;
+
+	enum SCMusicOriginalSoundsDeleteSoundRequest_Reason {
+		UNSET = 0;
+		SNAP_DELETED = 1;
+		IP_TAKEDOWN = 2;
+		TRUST_AND_SAFETY = 3;
+		USER_DELETED = 4;
+	}
+
+	SCMusicOriginalSoundsDeleteSoundRequest_Reason reason = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/local/lists/VRZPlaceListMetadata.proto";
+import "snapchat/local/lists/VRZPlaceListItem.proto";
+
+message VRZPlaceList {
+	snapchat.local.lists.VRZPlaceListMetadata metadata = 1;
+	repeated snapchat.local.lists.VRZPlaceListItem placesArray = 2;
+}

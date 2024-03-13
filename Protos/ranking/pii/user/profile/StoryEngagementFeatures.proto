@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/EngagementFeatures.proto";
+
+message StoryEngagementFeatures {
+	string storyId = 1;
+	ranking.pii.user.profile.EngagementFeatures engagementFeatures = 2;
+}

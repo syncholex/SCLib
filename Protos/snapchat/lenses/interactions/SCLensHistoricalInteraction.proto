@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lenses.interactions;
+
+import "snapchat/lenses/interactions/SCLensLensExplorerInteraction.proto";
+import "snapchat/lenses/interactions/SCLensLensCarouselInteraction.proto";
+
+message SCLensHistoricalInteraction {
+	int64 timestampMs = 1;
+	sint32 position = 2;
+	bytes itemId = 3;
+	int32 interactionLengthMs = 4;
+
+	oneof interaction {
+		snapchat.lenses.interactions.SCLensLensExplorerInteraction lensExplorerInteraction = 5;
+		snapchat.lenses.interactions.SCLensLensCarouselInteraction carouselInteraction = 6;
+	}
+
+}

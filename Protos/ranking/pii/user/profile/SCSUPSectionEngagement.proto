@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "feed/quality/snavboost/SCSQNSectionStats.proto";
+import "ranking/pii/user/profile/SCSUPSectionEngagement_EngagementScores.proto";
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSUPSectionEngagement {
+	feed.quality.snavboost.SCSQNSectionStats sectionStats = 1;
+	ranking.pii.user.profile.SCSUPSectionEngagement_EngagementScores engagementScores = 2;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats sectionWindowedEngagementStats = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosCameoBoltContentObject {
+	bytes contentObject = 1;
+}

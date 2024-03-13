@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGAttachment_LongFormVideoAttachment.proto";
+import "lens_platform/client_server/legacy/SCLGAttachment_WebViewAttachment.proto";
+import "lens_platform/client_server/legacy/SCLGAttachment_AppInstallAttachment.proto";
+import "lens_platform/client_server/legacy/SCLGAttachment_RichStoryDeepLinkAttachment.proto";
+
+message SCLGAttachment {
+	string attachmentType = 1;
+	lens_platform.client_server.legacy.SCLGAttachment_LongFormVideoAttachment longFormVideo = 2;
+	lens_platform.client_server.legacy.SCLGAttachment_WebViewAttachment webView = 3;
+	string ctaText = 4;
+	lens_platform.client_server.legacy.SCLGAttachment_AppInstallAttachment appInstall = 5;
+	lens_platform.client_server.legacy.SCLGAttachment_RichStoryDeepLinkAttachment deepLink = 6;
+	string localizedCtaText = 7;
+}

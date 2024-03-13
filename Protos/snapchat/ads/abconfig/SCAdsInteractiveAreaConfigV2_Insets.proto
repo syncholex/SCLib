@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveAreaConfigV2_Inset.proto";
+
+message SCAdsInteractiveAreaConfigV2_Insets {
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_Inset topInset = 1;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_Inset rightInset = 2;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_Inset bottomInset = 3;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_Inset leftInset = 4;
+}

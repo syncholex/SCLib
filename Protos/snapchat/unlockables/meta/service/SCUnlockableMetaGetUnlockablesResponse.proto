@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+message SCUnlockableMetaGetUnlockablesResponse {
+	repeated bytes unlockablesArray = 1;
+}

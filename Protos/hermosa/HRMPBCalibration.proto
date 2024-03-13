@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBSlamCameraCalibration.proto";
+import "hermosa/HRMPBSE3D.proto";
+
+message HRMPBCalibration {
+	repeated hermosa.HRMPBSlamCameraCalibration camerasArray = 1;
+	hermosa.HRMPBSE3D eyeCenterFromImuTransform = 2;
+	hermosa.HRMPBSE3D rectifiedCameraCenterFromImuTransform = 3;
+	hermosa.HRMPBSE3D eyeCenterFromRigTransform = 4;
+	hermosa.HRMPBSE3D rectifiedCameraCenterFromRigTransform = 5;
+}

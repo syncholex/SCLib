@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+message VLKGpsData {
+	int32 latitude = 1;
+	int32 longitude = 2;
+	uint64 updateTimeUtc = 3;
+	uint32 horizontalAccuracy = 4;
+}

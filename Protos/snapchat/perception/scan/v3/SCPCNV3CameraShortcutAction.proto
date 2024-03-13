@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcutAction_ShowLenses.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcutAction_AddMusic.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcutAction_SetCameraOrientation.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcutAction_SetCameraMode.proto";
+
+message SCPCNV3CameraShortcutAction {
+
+	oneof action {
+		snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction_ShowLenses showLenses = 1;
+		snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction_AddMusic addMusic = 2;
+		snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction_SetCameraOrientation setCameraOrientation = 3;
+		snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction_SetCameraMode setCameraMode = 4;
+	}
+
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportMyReportEventMetadata {
+	string reportEventSubject = 1;
+	string reportEventMessage = 2;
+	string reportEventTimestampMillis = 3;
+	string reportEventThumbnail = 4;
+}

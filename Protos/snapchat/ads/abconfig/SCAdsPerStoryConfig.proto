@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPerStoryConfig {
+	bool isControl = 1;
+	string cofKeyPrefix = 2;
+	string strategy = 3;
+}

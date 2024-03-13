@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod.proto";
+
+message SCSubscriptionShopPbAppleProductInfo {
+	string productId = 1;
+	string storefrontCountryCode = 2;
+	int64 priceAmountMicros = 3;
+	string priceCurrencyCode = 4;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod period = 5;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod freeTrialPeriod = 6;
+}

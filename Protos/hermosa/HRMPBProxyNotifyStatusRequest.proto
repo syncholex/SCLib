@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBProxyNotifyStatusRequest {
+
+	enum HRMPBProxyNotifyStatusRequest_States {
+		ACTIVE = 0;
+		TIMEOUT = 1;
+		AUTO_WIFI_FAILED = 2;
+		MANUAL_WIFI_FAILED = 3;
+	}
+
+	HRMPBProxyNotifyStatusRequest_States statusCode = 1;
+}

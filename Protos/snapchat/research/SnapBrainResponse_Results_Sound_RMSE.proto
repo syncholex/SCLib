@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Sound_RMSE {
+	float harmonic = 1;
+	float percussive = 2;
+	float total = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbSnapSubscriptionPlan.proto";
+import "subscription/shop/SCSubscriptionShopPbFinancialInstruction.proto";
+
+message SCSubscriptionShopPbWebSubscribeRequest {
+	subscription.shop.SCSubscriptionShopPbSnapSubscriptionPlan plan = 1;
+	subscription.shop.SCSubscriptionShopPbFinancialInstruction financialInstruction = 2;
+}

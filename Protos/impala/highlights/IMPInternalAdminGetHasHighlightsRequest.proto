@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPInternalAdminGetHasHighlightsRequest {
+	repeated string profileIdsArray = 1;
+
+	enum IMPHighlightSourceFilter {
+		SOURCE_FILTER_ALL = 0;
+		SOURCE_FILTER_PROFILE_MANAGEMENT = 1;
+		SOURCE_FILTER_SEND_TO = 2;
+	}
+
+	IMPHighlightSourceFilter sourceFilter = 2;
+}

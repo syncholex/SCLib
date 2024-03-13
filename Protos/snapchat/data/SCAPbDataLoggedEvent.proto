@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+import "snapchat/data/SCAPbDataFrameStart.proto";
+import "snapchat/data/SCAPbDataEvent.proto";
+import "snapchat/data/SCAPbDataFrameEnd.proto";
+
+message SCAPbDataLoggedEvent {
+	snapchat.data.SCAPbDataFrameStart startFrame = 1;
+	repeated snapchat.data.SCAPbDataEvent eventsArray = 2;
+	snapchat.data.SCAPbDataFrameEnd endFrame = 3;
+}

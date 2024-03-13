@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBGeneratedCodeInfo_Annotation.proto";
+
+message GPBGeneratedCodeInfo {
+	repeated google.protobuf.GPBGeneratedCodeInfo_Annotation annotationArray = 1;
+}

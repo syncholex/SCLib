@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPowerManagerRequest {
+
+	enum HRMPBPowerManagerRequest_PowerManagerAction {
+		UNSET = 0;
+		REBOOT = 1;
+		SHUTDOWN = 2;
+	}
+
+	HRMPBPowerManagerRequest_PowerManagerAction action = 1;
+	bool force = 2;
+}

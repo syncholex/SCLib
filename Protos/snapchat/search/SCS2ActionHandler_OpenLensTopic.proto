@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2ActionHandler_OpenLensTopic {
+	string lensId = 1;
+	string lensName = 2;
+	string lensIconURL = 3;
+}

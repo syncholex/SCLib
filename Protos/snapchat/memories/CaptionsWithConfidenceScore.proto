@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message CaptionsWithConfidenceScore {
+	string captionText = 1;
+	float confidenceScore = 2;
+}

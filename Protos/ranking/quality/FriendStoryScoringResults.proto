@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/quality/FriendStoryModelHeadScore.proto";
+import "ranking/quality/FriendStoryAdjustments.proto";
+import "ranking/quality/RarePosterBoostAdjustment.proto";
+
+message FriendStoryScoringResults {
+	ranking.core.SCCORECompositeStoryId storyId = 1;
+	repeated ranking.quality.FriendStoryModelHeadScore friendStoryModelHeadScoresArray = 2;
+	ranking.quality.FriendStoryAdjustments friendStoryAdjustments = 3;
+	float finalScore = 4;
+	ranking.quality.RarePosterBoostAdjustment rarePosterAdjustment = 5;
+	string modelName = 6;
+	string modelVersion = 7;
+}

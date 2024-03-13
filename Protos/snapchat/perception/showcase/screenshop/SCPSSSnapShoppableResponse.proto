@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSShoppabilityIndicator.proto";
+
+message SCPSSSnapShoppableResponse {
+	snapchat.perception.showcase.screenshop.SCPSSShoppabilityIndicator shoppabilityIndicator = 1;
+
+	enum SCPSSSnapMediaType {
+		MEDIA_TYPE_UNSET = 0;
+		MEDIA_TYPE_IMAGE = 1;
+		MEDIA_TYPE_VIDEO = 2;
+	}
+
+	SCPSSSnapMediaType snapMediaType = 2;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPAcceptLanguagesEntry.proto";
+import "snapchat/creativetools/common/SCCTPCTRequestOptions.proto";
+import "snapchat/creativetools/common/SCCTPUserInfo.proto";
+import "snapchat/creativetools/common/SCCTPCTRequestOptions_Cameos.proto";
+import "snapchat/creativetools/common/SCCTPFilterRequest.proto";
+
+message SCCTPCTRequestParams {
+	repeated snapchat.creativetools.common.SCCTPAcceptLanguagesEntry acceptLanguagesArray = 1;
+	repeated snapchat.creativetools.common.SCCTPCTRequestOptions optionsArray = 4;
+	snapchat.creativetools.common.SCCTPUserInfo userInfo = 5;
+	snapchat.creativetools.common.SCCTPCTRequestOptions_Cameos cameosOptions = 8;
+
+	enum SCCTPSyncSensitivity {
+		SYNC_SENSITIVITY_UNSET = 0;
+		HIGH = 1;
+		LOW = 2;
+	}
+
+	repeated SCCTPSyncSensitivity syncSensitivitiesArray = 9 [packed=true];
+	int64 lastLowSensitivityTimestampMs = 10;
+	snapchat.creativetools.common.SCCTPFilterRequest filterRequest = 11;
+	int64 numItems = 12;
+}

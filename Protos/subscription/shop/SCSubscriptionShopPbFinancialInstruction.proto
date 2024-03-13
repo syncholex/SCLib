@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPaymentMethodInfo.proto";
+
+message SCSubscriptionShopPbFinancialInstruction {
+	repeated subscription.shop.SCSubscriptionShopPbPaymentMethodInfo paymentMethodInfoArray = 1;
+	bool useDefaultPaymentMethod = 2;
+}

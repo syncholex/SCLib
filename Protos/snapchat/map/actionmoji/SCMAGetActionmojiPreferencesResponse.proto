@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "snapchat/map/actionmoji/SCMAAsset.proto";
+
+message SCMAGetActionmojiPreferencesResponse {
+	repeated snapchat.map.actionmoji.SCMAAsset assetsArray = 1;
+}

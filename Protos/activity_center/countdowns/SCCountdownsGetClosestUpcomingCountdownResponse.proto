@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "activity_center/countdowns/Countdown.proto";
+
+message SCCountdownsGetClosestUpcomingCountdownResponse {
+	activity_center.countdowns.Countdown countdown = 1;
+	repeated activity_center.countdowns.Countdown countdownsArray = 2;
+}

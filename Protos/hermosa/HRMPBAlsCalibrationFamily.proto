@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBAlsCalibrationFamily {
+	string build = 1;
+	uint32 row = 2;
+	uint32 column = 3;
+	repeated float calibrationMatrixArray = 4;
+	repeated float correctionFactorsArray = 5;
+	float nirVisTransRatio = 6;
+	float aucNir = 7;
+	float aucClear = 8;
+	float nirScalar = 9;
+}

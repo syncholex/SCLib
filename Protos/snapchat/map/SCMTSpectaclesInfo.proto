@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTSpectaclesInfo {
+	int64 lastContentTakenTimestamp = 1;
+
+	enum SCMTSpectaclesColor {
+		BLACK = 0;
+		CORAL = 1;
+		TEAL = 2;
+		ONYX = 3;
+		RUBY = 4;
+		SAPPHIRE = 5;
+		VERONICA = 6;
+		NICO = 7;
+	}
+
+	SCMTSpectaclesColor lastContentDeviceColor = 2;
+	bool isDeviceConnected = 3;
+}

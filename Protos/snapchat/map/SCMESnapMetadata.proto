@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMESnapMetadata {
+	string snapId = 1;
+	string thumbnailURL = 2;
+	string mediaKey = 3;
+	string mediaIv = 4;
+}

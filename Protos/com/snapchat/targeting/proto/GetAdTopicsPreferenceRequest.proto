@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message GetAdTopicsPreferenceRequest {
+	bytes said = 1;
+}

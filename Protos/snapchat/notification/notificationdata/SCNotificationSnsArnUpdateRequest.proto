@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCNotificationSnsArnUpdateRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+
+	oneof snsArn {
+		string arn = 2;
+		string voipArn = 3;
+	}
+
+}

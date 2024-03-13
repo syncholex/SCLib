@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Tag {
+	uint32 modelVersion = 1;
+	repeated string tagsArray = 2;
+	repeated double confsArray = 3 [packed=true];
+	repeated double featureVectorArray = 4 [packed=true];
+	int32 featureVectorIndex = 5;
+	repeated int32 featureVectorSearchArray = 6 [packed=true];
+	repeated double featureVectorShortArray = 7 [packed=true];
+	int32 featureVectorShortIndex = 8;
+	repeated int32 featureVectorShortSearchArray = 9 [packed=true];
+	bool isAdultContent = 10;
+	double adultContentProb = 11;
+	string vectorType = 12;
+	double slcCategories = 13;
+	uint32 slcMapperVersion = 14;
+	double tagWithConf = 15;
+}

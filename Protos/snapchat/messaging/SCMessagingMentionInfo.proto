@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingMentionInfo {
+	repeated snapchat.messaging.SCMessagingUUID mentionedUserIdsArray = 1;
+}

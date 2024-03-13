@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bfs.api;
+
+import "snapchat/bfs/core/UUID.proto";
+
+message UnpinBestFriendRequest {
+	snapchat.bfs.core.UUID friendUserId = 1;
+}

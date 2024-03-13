@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppInstancesAppInstanceScope {
+
+	oneof scope {
+		string userId = 1;
+		string conversationId = 2;
+		string sharedId = 3;
+	}
+
+}

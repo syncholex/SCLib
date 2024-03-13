@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkPlaceProfile.proto";
+
+message SMSdkGetPlacesProfileResponse {
+	repeated snap.snap_maps_sdk.SMSdkPlaceProfile placeProfilesArray = 1;
+}

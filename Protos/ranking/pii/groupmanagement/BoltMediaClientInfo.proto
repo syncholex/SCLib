@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+message BoltMediaClientInfo {
+	string mediaKey = 1;
+	string mediaIv = 2;
+	string rawImageURL = 3;
+}

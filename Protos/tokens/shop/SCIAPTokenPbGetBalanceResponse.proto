@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+import "tokens/shop/SCIAPTokenPbShopBalance.proto";
+
+message SCIAPTokenPbGetBalanceResponse {
+	tokens.shop.SCIAPTokenPbShopBalance balance = 1;
+}

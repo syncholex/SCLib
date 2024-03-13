@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message GetBadgesRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+
+	enum BadgePlacement_Enum {
+		UNKNOWN = 0;
+		SPOTLIGHT_FEED = 1;
+		DISCOVER_FEED = 2;
+	}
+
+	repeated BadgePlacement_Enum placementsArray = 2 [packed=true];
+}

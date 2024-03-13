@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUserDisplayInfo.proto";
+
+message IMPOfficialUserCollaborator {
+	impala.IMPUserDisplayInfo displayInfo = 1;
+	int32 permissionBitmask = 2;
+}

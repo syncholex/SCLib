@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/DirectionsLeg_Summary.proto";
+
+message DirectionsLeg {
+	snapchat.map.valhalla.DirectionsLeg_Summary summary = 5;
+	string shape = 7;
+}

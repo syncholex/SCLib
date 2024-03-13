@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPFlattenedRules_CategoryRule_StringRule {
+	bool isAllowList = 1;
+	bool values = 2;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamPrompt.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAITwoPersonDreamPrompt.proto";
+
+message SCPbGenAIDream {
+	string id_p = 1;
+	string name = 2;
+	snapchat.snapdoc.SDMSnapDoc media = 3;
+
+	enum SCPbGenAIDreamRarity {
+		DREAM_RARITY_UNSET = 0;
+		DREAM_RARITY_COMMON = 1;
+		DREAM_RARITY_RARE = 2;
+		DREAM_RARITY_LEGENDARY = 3;
+	}
+
+	SCPbGenAIDreamRarity rarity = 4;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamPrompt promptsArray = 5;
+	bool runSecondStage = 6;
+	snapchat.cameos.genai.dreams.SCPbGenAITwoPersonDreamPrompt twoPersonPrompt = 7;
+}

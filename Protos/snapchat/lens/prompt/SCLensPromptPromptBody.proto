@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptPromptBody_PromptContent.proto";
+
+message SCLensPromptPromptBody {
+	snapchat.lens.prompt.SCLensPromptPromptBody_PromptContent promptContent = 1;
+	bytes encryptedLensSpecificData = 2;
+}

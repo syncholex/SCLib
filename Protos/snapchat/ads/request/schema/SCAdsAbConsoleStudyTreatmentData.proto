@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsAbConsoleStudyTreatmentData {
+	int32 segmentId = 1;
+	int32 experimentId = 2;
+	string cofStudyName = 3;
+	int32 rankingSlotId = 4;
+	google.protobuf.GPBInt32Value rankingSlotIdV2 = 5;
+}

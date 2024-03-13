@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_TargetedEntity.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Visibility.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_TargetingRules.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_UnlockMechanism.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_FilterInfo.proto";
+
+message SCCTPCTTargetedItem {
+	string legacyGeofilterId = 2;
+	snapchat.creativetools.targeting.SCCTPCTTargetedItem_TargetedEntity targetedEntity = 3;
+	string name = 4;
+	int64 createdTime = 5;
+	snapchat.creativetools.targeting.SCCTPCTTargetedItem_Visibility visibility = 6;
+	snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule schedule = 7;
+	snapchat.creativetools.targeting.SCCTPCTTargetedItem_TargetingRules targetingRules = 8;
+	uint64 priority = 9;
+	repeated string tagsArray = 10;
+	snapchat.creativetools.targeting.SCCTPCTTargetedItem_UnlockMechanism unlockMechanism = 11;
+	bool useLocalTimezone = 12;
+	bool isSponsored = 14;
+
+	enum SCCTPAdProduct {
+		AD_PRODUCT_UNSET = 0;
+		CHAIN = 1;
+		SHARED_SPACE = 2;
+		NATIONAL = 3;
+		ON_DEMAND_GEOFILTER = 4;
+		AUDIENCE_LENS = 5;
+		AUDIENCE_FILTER = 6;
+		STATE_FILTER = 7;
+		FEATURED_EVENT = 8;
+		SNAPCODE = 9;
+		ON_DEMAND_LENS = 10;
+		REACH_AND_FREQUENCY_LENS = 11;
+		AD_TO_LENS = 12;
+		SPONSORED_STICKER_PACK = 13;
+		PLACES_FILTER = 14;
+		HOME_FILTER = 15;
+	}
+
+	SCCTPAdProduct adProduct = 15;
+
+	enum SCCTPSyncSensitivity {
+		SYNC_SENSITIVITY_UNSET = 0;
+		HIGH = 1;
+		LOW = 2;
+	}
+
+
+	oneof typeInfo {
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_FilterInfo filterInfo = 16;
+	}
+
+	SCCTPSyncSensitivity syncSensitivity = 17;
+	bool isArchived = 18;
+	bool disableAutoTargeting = 19;
+	uint64 checksum = 20;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsOnDeviceRequest.proto";
+
+message SCAdsClientToTargetingFields {
+	repeated uint64 installedAppBitArrayArray = 1 [packed=true];
+	snapchat.ads.request.schema.SCAdsOnDeviceRequest onDeviceRequest = 2;
+}

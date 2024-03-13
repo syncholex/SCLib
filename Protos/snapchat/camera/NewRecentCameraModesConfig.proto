@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message NewRecentCameraModesConfig {
+	bool enableNewRecentCameraModes = 1;
+
+	enum NewRecentCameraModesConfig_UpsellSlotContent {
+		ALL_MODES_UNSET = 0;
+		RECENT_MODES = 1;
+		NEW_MODES = 2;
+		ALL_MODES = 3;
+	}
+
+	NewRecentCameraModesConfig_UpsellSlotContent upsellSlotContent = 2;
+}

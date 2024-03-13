@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCMessagingBitmojiOutfitShare {
+	snapchat.messaging.SCMessagingUUID costumeOverrideId = 1;
+	snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 2;
+	snapchat.snapdoc.SDMSnapDoc snapdoc = 3;
+}

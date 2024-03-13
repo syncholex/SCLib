@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snap_connect;
+
+message SCConnectSnapConnectAttributes {
+	string sourceAppDisplayName = 1;
+	string sourceAppOauthClientId = 2;
+}

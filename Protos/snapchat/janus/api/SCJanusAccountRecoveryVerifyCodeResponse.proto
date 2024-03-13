@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAccountRecoveryVerifyCodeResponse_SuccessData.proto";
+import "snapchat/janus/api/SCJanusClientIntegrityChallengeData.proto";
+import "snapchat/janus/api/SCJanusAccountRecoveryErrorData.proto";
+
+message SCJanusAccountRecoveryVerifyCodeResponse {
+
+	enum SCJanusAccountRecoveryVerifyCodeResponse_StatusCode {
+		UNSET = 0;
+		ACCOUNT_RECOVERY_CODE_VERIFIED = 1;
+		CLIENT_INTEGRITY_CHALLENGE_REQUESTED = 2;
+		ERR_MISSING_PARAM = 3;
+		ERR_EXPIRED_OTP_CODE = 4;
+		ERR_LOCKED_OTP_CODE = 5;
+		ERR_INCORRECT_OTP_CODE = 6;
+		ERR_NO_CODE_SAVED = 7;
+		ERR_NO_USER_FOUND = 8;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_THROTTLED = 11;
+		ERR_BLOCKED = 12;
+		ERR_APP_VERSION_UPGRADE = 13;
+	}
+
+	SCJanusAccountRecoveryVerifyCodeResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusAccountRecoveryVerifyCodeResponse_SuccessData successData = 2;
+		snapchat.janus.api.SCJanusClientIntegrityChallengeData clientIntegrityChallengeData = 3;
+		snapchat.janus.api.SCJanusAccountRecoveryErrorData errorData = 4;
+	}
+
+}

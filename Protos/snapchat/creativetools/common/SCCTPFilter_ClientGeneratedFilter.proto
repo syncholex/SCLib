@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_ClientGeneratedFilter_ColorFilter.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ClientGeneratedFilter_MotionFilter.proto";
+
+message SCCTPFilter_ClientGeneratedFilter {
+
+	oneof content {
+		snapchat.creativetools.common.SCCTPFilter_ClientGeneratedFilter_ColorFilter colorFilter = 1;
+		snapchat.creativetools.common.SCCTPFilter_ClientGeneratedFilter_MotionFilter motionFilter = 2;
+	}
+
+}

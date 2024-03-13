@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPActionableStoryKey.proto";
+
+message SCSUPHideStoryRequest {
+	string userId = 1;
+	ranking.pii.user.profile.SCSUPActionableStoryKey storyKey = 2;
+	int64 clientTsMsecs = 3;
+
+	enum SCSUPHideStoryRequest_HideState {
+		HIDE_STATE_UNKNOWN = 0;
+		HIDE_STATE_HIDDEN = 1;
+		HIDE_STATE_UNHIDDEN = 2;
+	}
+
+	SCSUPHideStoryRequest_HideState toState = 4;
+
+	enum SCSUPUserStoryActionSource {
+		STORY_ACTION_SOURCE_UNKNOWN = 0;
+		STORY_ACTION_SOURCE_FEED = 1;
+		STORY_ACTION_SOURCE_SEARCH = 2;
+		STORY_ACTION_SOURCE_OLD_DISCOVER = 3;
+		STORY_ACTION_SOURCE_LIVE_STREAM_OPT_IN = 4;
+		STORY_ACTION_SOURCE_LENS_EXPLORER = 5;
+		STORY_ACTION_SOURCE_ON_BOARDING = 6;
+		STORY_ACTION_SOURCE_REGISTRATION = 7;
+		STORY_ACTION_SOURCE_MIGRATION = 8;
+	}
+
+	SCSUPUserStoryActionSource source = 5;
+
+	enum SCSUPHideStoryRequest_HideTarget {
+		HIDE_TARGET_UNKNOWN = 0;
+		HIDE_TARGET_STORY = 1;
+		HIDE_TARGET_CREATOR = 2;
+	}
+
+	SCSUPHideStoryRequest_HideTarget hideTarget = 6;
+}

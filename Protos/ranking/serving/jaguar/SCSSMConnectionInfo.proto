@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMConnectionInfo {
+	string carrier = 1;
+	string carrierMccMnc = 2;
+
+	enum SCSSMConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSSMConnectionInfo_ConnectionType connectionType = 3;
+	string clientIp = 4;
+	uint64 bandwidthBps = 5;
+}

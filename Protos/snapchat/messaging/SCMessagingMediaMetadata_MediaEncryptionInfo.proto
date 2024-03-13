@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingMediaMetadata_MediaEncryptionInfo {
+	bytes key = 1;
+	bytes iv = 2;
+}

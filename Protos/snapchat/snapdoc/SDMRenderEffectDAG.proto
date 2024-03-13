@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMRenderEffectNode.proto";
+import "snapchat/snapdoc/SDMTimeInstant.proto";
+
+message SDMRenderEffectDAG {
+	repeated snapchat.snapdoc.SDMRenderEffectNode renderEffectNodesArray = 1;
+	snapchat.snapdoc.SDMTimeInstant startTimeMs = 2;
+	snapchat.snapdoc.SDMTimeInstant durationMs = 3;
+}

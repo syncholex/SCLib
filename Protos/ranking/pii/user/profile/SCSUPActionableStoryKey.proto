@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPPublicUserStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPPublisherStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPOurStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPMapTileStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPLiveStreamingStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPLensObjectStoryKey.proto";
+import "ranking/pii/user/profile/SCSUPCategoryKey.proto";
+import "ranking/pii/user/profile/SCSUPRegisteredInterestKey.proto";
+import "ranking/pii/user/profile/SCSUPSingleSnapStoryKey.proto";
+
+message SCSUPActionableStoryKey {
+
+	oneof key {
+		ranking.pii.user.profile.SCSUPPublicUserStoryKey publicUserStoryKey = 1;
+		ranking.pii.user.profile.SCSUPPublisherStoryKey publisherStoryKey = 2;
+		ranking.pii.user.profile.SCSUPOurStoryKey ourStoryKey = 3;
+		ranking.pii.user.profile.SCSUPMapTileStoryKey mapTileStoryKey = 4;
+		ranking.pii.user.profile.SCSUPLiveStreamingStoryKey liveStreamingStoryKey = 5;
+		ranking.pii.user.profile.SCSUPLensObjectStoryKey lensObjectStoryKey = 6;
+		ranking.pii.user.profile.SCSUPCategoryKey categoryKey = 7;
+		ranking.pii.user.profile.SCSUPRegisteredInterestKey registeredInterestKey = 8;
+		ranking.pii.user.profile.SCSUPSingleSnapStoryKey singleSnapStoryKey = 10;
+	}
+
+}

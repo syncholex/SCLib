@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsInfluencerInsights.proto";
+
+message IMPInsightsGetLensCreatorInsightsResponse {
+	impala.insights.IMPInsightsInfluencerInsights lensCreatorInsights = 1;
+}

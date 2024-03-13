@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.onetaplogin;
+
+message DeleteOneTapLoginTokenRequest {
+	string deviceId = 2;
+}

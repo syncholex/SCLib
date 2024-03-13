@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsRevenueSummaryForProfile.proto";
+
+message IMPInsightsGetRevenueSummaryForProfileResponse {
+	impala.insights.IMPInsightsRevenueSummaryForProfile revenueSummary = 1;
+}

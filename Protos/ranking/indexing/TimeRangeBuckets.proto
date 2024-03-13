@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/TimeRangeBucket.proto";
+
+message TimeRangeBuckets {
+	repeated ranking.indexing.TimeRangeBucket bucketsArray = 1;
+	int32 bucketTimespanSecs = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatures.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatureLists.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIESequenceExample.proto";
+
+message SCPNLOOKALIEMediaFeatures {
+
+	oneof mediaFeature {
+		snapchat.perception.lookalike.features.SCPNLOOKALIEFeatures features = 1;
+		snapchat.perception.lookalike.features.SCPNLOOKALIEFeatureLists featureLists = 2;
+		snapchat.perception.lookalike.features.SCPNLOOKALIESequenceExample sequenceExample = 3;
+	}
+
+}

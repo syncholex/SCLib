@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.compute;
+
+message SCCTPFlags {
+	bool useClientOrdering = 1;
+}

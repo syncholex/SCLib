@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/map/slippy/SCMapsSlippyLiveLocationUpsellConfig.proto";
+
+message SCMapsSlippyActionConfig {
+
+	enum SCMapsSlippyLocationShareUpsellStyle {
+		STYLE_UNKNOWN = 0;
+		STYLE_ONE_BUTTON_GENERIC_HEADER = 1;
+		STYLE_ONE_BUTTON_SHARE_BACK_HEADER = 2;
+		STYLE_TWO_BUTTONS_GENERIC_HEADER = 3;
+		STYLE_TWO_BUTTONS_SHARE_BACK_HEADER = 4;
+	}
+
+
+	oneof config {
+		SCMapsSlippyLocationShareUpsellStyle locationShareUpsellStyle = 1;
+		snapchat.map.slippy.SCMapsSlippyLiveLocationUpsellConfig liveLocationUpsellConfig = 2;
+	}
+
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/pii/readreceipt/SnapReadReceipt.proto";
+import "ranking/pii/readreceipt/PremiumReadReceipt.proto";
+
+message BatchUploadReadReceiptsRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	repeated ranking.pii.readreceipt.SnapReadReceipt snapReadReceiptsArray = 2;
+	repeated ranking.pii.readreceipt.PremiumReadReceipt premiumReadReceiptsArray = 3;
+}

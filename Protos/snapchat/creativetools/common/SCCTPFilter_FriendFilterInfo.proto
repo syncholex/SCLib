@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_FriendFilterInfo {
+
+	enum SCCTPFilter_FriendFilterInfo_FriendContext {
+		FRIEND_CONTEXT_UNSET = 0;
+		BIRTHDAY = 1;
+		NEW_FRIEND = 2;
+		BECOME_BFF = 3;
+		BECOME_SBFF = 4;
+		BFF = 5;
+		SBFF = 6;
+		ANY_FRIEND = 7;
+		SMIRK = 8;
+		BESTIES = 9;
+		MUTUAL_BESTIES = 10;
+		BF = 11;
+		MUTUAL_BF = 12;
+		SNAP_STREAK = 13;
+		STREAK_HOURGLASS = 14;
+	}
+
+	repeated SCCTPFilter_FriendFilterInfo_FriendContext friendContextsArray = 1 [packed=true];
+
+	enum SCCTPFilter_FriendFilterInfo_TriggerContext {
+		TRIGGER_CONTEXT_UNSET = 0;
+		OPEN_CAMERA = 1;
+		ONE_TO_ONE_CHAT = 2;
+		GROUP_CHAT = 3;
+	}
+
+	repeated SCCTPFilter_FriendFilterInfo_TriggerContext triggerContextsArray = 2 [packed=true];
+	bool usesFriendmoji = 3;
+}

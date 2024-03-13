@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZSimilarPlacesInfo.proto";
+
+message VRZGetSimilarPlacesResponse {
+	repeated snapchat.local.verrazano.VRZSimilarPlacesInfo similarPlacesInfoArray = 1;
+}

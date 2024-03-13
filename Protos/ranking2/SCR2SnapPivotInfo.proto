@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2SnapLabels.proto";
+import "ranking2/SCR2GeoFilterInfo.proto";
+import "ranking2/SCR2StickerInfo.proto";
+import "snapchat/context/SCContextContextHint.proto";
+
+message SCR2SnapPivotInfo {
+	ranking2.SCR2GeoLocation location = 1;
+	string venueId = 2;
+	repeated string attachedStoryIdArray = 3;
+	string snapCaption = 4;
+	ranking2.SCR2SnapLabels snapLabels = 5;
+	ranking2.SCR2GeoFilterInfo geofilterInfo = 6;
+	repeated string visuallyAttachedStoryIdArray = 7;
+	repeated string entitiesArray = 8;
+	string originStoryId = 9;
+	string originStoryCaption = 10;
+	string snapTsInSecs = 11;
+	string snapId = 12;
+	string attachmentURL = 13;
+	repeated ranking2.SCR2StickerInfo stickersArray = 14;
+	string inferredPlaceId = 15;
+	repeated string nearbyVenueIdsArray = 16;
+	snapchat.context.SCContextContextHint contextHint = 17;
+}

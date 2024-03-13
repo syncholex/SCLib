@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbApplePromotionalOffer.proto";
+
+message SCSubscriptionShopPbRedeemGiftResponse_ApplePromotionalOfferRedeemAction {
+	string productId = 1;
+	subscription.shop.SCSubscriptionShopPbApplePromotionalOffer promotionalOffer = 2;
+}

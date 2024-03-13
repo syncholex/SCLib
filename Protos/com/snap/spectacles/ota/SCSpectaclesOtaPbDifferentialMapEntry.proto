@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbOsVersion.proto";
+
+message SCSpectaclesOtaPbDifferentialMapEntry {
+	com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion destOsVersion = 1;
+	repeated com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion srcOsVersionArray = 2;
+}

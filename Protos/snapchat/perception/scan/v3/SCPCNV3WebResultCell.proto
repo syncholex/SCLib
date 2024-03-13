@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/content_understanding/WebResult.proto";
+
+message SCPCNV3WebResultCell {
+	snapchat.perception.content_understanding.WebResult webResult = 1;
+}

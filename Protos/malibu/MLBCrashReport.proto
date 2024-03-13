@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBAppCrashReport.proto";
+import "malibu/MLBSoftDeviceCrashReport.proto";
+import "malibu/MLBHardFaultReport.proto";
+import "malibu/MLBWatchdogCrashReport.proto";
+import "malibu/MLBAmbaError.proto";
+import "malibu/MLBSystemCounters.proto";
+
+message MLBCrashReport {
+	string logPayload = 1;
+	malibu.MLBAppCrashReport appCrashReport = 2;
+	malibu.MLBSoftDeviceCrashReport softDeviceCrashReport = 3;
+	malibu.MLBHardFaultReport hardFaultReport = 4;
+	malibu.MLBWatchdogCrashReport watchdogCrashReport = 5;
+	malibu.MLBAmbaError ambaError = 6;
+	malibu.MLBSystemCounters systemCounters = 7;
+}

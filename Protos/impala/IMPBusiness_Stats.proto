@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBInt64Value.proto";
+
+message IMPBusiness_Stats {
+	google.protobuf.GPBInt64Value subscriberCount = 1;
+}

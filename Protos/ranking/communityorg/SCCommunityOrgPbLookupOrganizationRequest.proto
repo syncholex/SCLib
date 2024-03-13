@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbLookupOrganizationByOrgID.proto";
+import "ranking/communityorg/SCCommunityOrgPbLookupOrganizationByEmailDomain.proto";
+
+message SCCommunityOrgPbLookupOrganizationRequest {
+
+	oneof lookupParam {
+		ranking.communityorg.SCCommunityOrgPbLookupOrganizationByOrgID orgId = 1;
+		ranking.communityorg.SCCommunityOrgPbLookupOrganizationByEmailDomain emailDomain = 2;
+	}
+
+}

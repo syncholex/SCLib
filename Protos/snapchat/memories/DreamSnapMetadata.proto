@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message DreamSnapMetadata {
+	string dreamPackId = 1;
+	string dreamId = 2;
+	repeated string identityIdsArray = 3;
+	repeated string userIdsArray = 4;
+}

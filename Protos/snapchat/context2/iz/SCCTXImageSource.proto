@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXEncryptedMedia.proto";
+import "snapchat/context2/iz/SCCTXCssStyle.proto";
+
+message SCCTXImageSource {
+
+	oneof src {
+		string local = 1;
+		string remote = 2;
+		snapchat.context2.iz.SCCTXEncryptedMedia encryptedMedia = 3;
+	}
+
+	snapchat.context2.iz.SCCTXCssStyle style = 4;
+
+	enum SCCTXImageTint {
+		AUTOMATIC = 0;
+		ALWAYS = 1;
+		NEVER = 2;
+	}
+
+	SCCTXImageTint tint = 5;
+}

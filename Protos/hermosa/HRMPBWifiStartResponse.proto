@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWifiStartResponse {
+	bool isSuccessful = 1;
+
+	enum HRMPBWifiStartResponse_StartWifiFailureReason {
+		WIFI_ALREADY_STARTED = 0;
+		WIFI_ENABLING = 1;
+		WIFI_DISABLING = 2;
+		WIFI_FAILED_TO_START = 3;
+		UNKNOWN = 4;
+	}
+
+	HRMPBWifiStartResponse_StartWifiFailureReason failureReason = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCTelephonyVerifyPhoneChallengeSuccessData {
+	string phoneNumber = 1;
+	bytes challengeMetadata = 2;
+	snapchat.core.SCCOREUUID userId = 3;
+}

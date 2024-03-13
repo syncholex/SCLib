@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBTemperatureResponse.proto";
+import "malibu/MLBCrashReport.proto";
+
+message MLBErrorReport {
+
+	enum MLBErrorReport_ErrorType {
+		AmbaLowTemperature = 0;
+		AmbaHighTemperature = 1;
+		WifiLowTemperature = 2;
+		WifiHighTemperature = 3;
+		WifiStartFailure = 4;
+		LowBattery = 5;
+		NoStorage = 6;
+		ImageSensorLowTemperature = 7;
+		ImageSensorHighTemperature = 8;
+		AmbaCrash = 9;
+	}
+
+	MLBErrorReport_ErrorType errorType = 1;
+	malibu.MLBTemperatureResponse temperatures = 2;
+	uint32 soc = 3;
+	uint32 voltage = 4;
+	uint32 storage = 5;
+	malibu.MLBCrashReport crashReport = 6;
+}

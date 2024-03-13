@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPInternalProfileHydrationOption.proto";
+
+message IMPInternalListAllPublicProfilesRequest {
+	string pageId = 1;
+	bool includePublishers = 2;
+	bool includeUnlinkedProfiles = 3;
+	impala.IMPInternalProfileHydrationOption internalHydrationOption = 4;
+
+	enum IMPBusinessProfile_ProfileTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	repeated IMPBusinessProfile_ProfileTier tiersArray = 5 [packed=true];
+	int64 segment = 100;
+	int64 totalSegments = 101;
+}

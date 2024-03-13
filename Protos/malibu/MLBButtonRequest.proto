@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBButtonRequest {
+	uint32 durationMs = 1;
+
+	enum MLBButtonSide {
+		LEFT = 0;
+		RIGHT = 1;
+	}
+
+	MLBButtonSide side = 2;
+}

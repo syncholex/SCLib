@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPCreateAccountRequest.proto";
+
+message IMPCreatePublisherAccountRequest {
+	impala.IMPCreateAccountRequest createAccountRequest = 1;
+	bytes publisherMetadata = 2;
+	string publisherIconURL = 3;
+	int64 publisherId = 4;
+	string squareFilledIconMediaId = 5;
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+import "snapchat/jobscheduler/JobTiming.proto";
+import "snapchat/jobscheduler/Retry.proto";
+import "snapchat/jobscheduler/JobConstraint.proto";
+
+message JobConfig {
+	string jobTypeIdentifier = 1;
+	string jobSubtypeIdentifier = 2;
+	snapchat.jobscheduler.JobTiming jobTiming = 3;
+
+	enum JobPersistence {
+		PERSISTENT = 0;
+		NON_PERSISTENT = 1;
+	}
+
+	JobPersistence jobPersistence = 4;
+
+	enum JobScope {
+		USER_SCOPE = 0;
+		SYSTEM_SCOPE = 1;
+	}
+
+	JobScope jobScope = 5;
+
+	enum ExistingJobPolicy {
+		REPLACE = 0;
+		KEEP = 1;
+		APPEND = 2;
+		UPDATE = 3;
+	}
+
+	ExistingJobPolicy existingJobPolicy = 6;
+	snapchat.jobscheduler.Retry retry = 7;
+	snapchat.jobscheduler.JobConstraint jobConstraint = 8;
+	uint32 jobTtl = 9;
+	uint32 jobTimeout = 10;
+}

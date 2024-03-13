@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxMediaInfo.proto";
+import "merlin/toolbox/LatexInfo.proto";
+
+message SolveMathProblemResponse {
+	merlin.toolbox.SCMerlinToolboxMediaInfo mediaInfo = 1;
+	string deepLink = 2;
+	merlin.toolbox.LatexInfo latexInfo = 3;
+}

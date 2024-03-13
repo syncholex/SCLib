@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensCarouselCreativeOnboardingConfig {
+	bool displayBadge = 1;
+	string tooltipMessage = 2;
+}

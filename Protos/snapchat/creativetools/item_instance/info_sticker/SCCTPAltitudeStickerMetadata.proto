@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPAltitudeStickerMetadata {
+
+	enum SCCTPAltitudeStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		TEXT = 1;
+		GAUGE = 2;
+	}
+
+	SCCTPAltitudeStickerMetadata_Type type = 1;
+
+	enum SCCTPAltitudeStickerMetadata_MeasurementUnit {
+		MEASUREMENT_UNIT_UNSPECIFIED = 0;
+		METERS = 1;
+		FEET = 2;
+	}
+
+	SCCTPAltitudeStickerMetadata_MeasurementUnit measurementUnit = 2;
+	sint32 altitude = 3;
+}

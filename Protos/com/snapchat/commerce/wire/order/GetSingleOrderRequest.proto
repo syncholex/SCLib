@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message GetSingleOrderRequest {
+	bytes orderId = 1;
+	snapchat.core.SCCOREUUID userId = 2;
+}

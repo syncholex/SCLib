@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2SnapStoreCard {
+	string name = 1;
+	string description_p = 2;
+	string thumbnailURL = 3;
+	string deepLinkURL = 4;
+}

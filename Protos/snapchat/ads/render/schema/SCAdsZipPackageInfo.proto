@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCSnapAdsRenditionV3.proto";
+
+message SCAdsZipPackageInfo {
+	string renditionBaseURL = 1;
+	repeated snapchat.ads.render.schema.SCSnapAdsRenditionV3 renditionsArray = 2;
+}

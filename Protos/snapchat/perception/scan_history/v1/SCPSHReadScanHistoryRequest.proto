@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/gtq/SCPGTQRequest.proto";
+import "snapchat/perception/common/SCPCNCOFConfig.proto";
+
+message SCPSHReadScanHistoryRequest {
+	string categoryId = 1;
+	bytes pageCursor = 2;
+	snapchat.perception.gtq.SCPGTQRequest gtqRequest = 3;
+	string id_p = 4;
+	repeated snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 5;
+}

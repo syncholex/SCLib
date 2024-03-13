@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationGeneralNotificationConfig.proto";
+import "snapchat/notification/SCPushNotificationAndroidNotificationConfig.proto";
+import "snapchat/notification/SCPushNotificationIosNotificationConfig.proto";
+
+message SCPushNotificationPushNotificationConfig {
+	snapchat.notification.SCPushNotificationGeneralNotificationConfig generalNotificationConfig = 1;
+	snapchat.notification.SCPushNotificationAndroidNotificationConfig androidNotificationConfig = 2;
+	snapchat.notification.SCPushNotificationIosNotificationConfig iosNotificationConfig = 3;
+}

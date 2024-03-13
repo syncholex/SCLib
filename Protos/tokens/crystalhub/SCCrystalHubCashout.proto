@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+message SCCrystalHubCashout {
+	int64 value = 1;
+	int64 crystals = 2;
+
+	enum SCCrystalHubCashout_State {
+		STATE_UNSET = 0;
+		STATE_PENDING = 1;
+		STATE_PAID = 2;
+	}
+
+	SCCrystalHubCashout_State state = 3;
+	string cashoutDate = 4;
+
+	enum SCCrystalHubCashout_Type {
+		TYPE_UNSET = 0;
+		TYPE_USER_INITIATED_CASHOUT = 1;
+		TYPE_EXPIRATION = 2;
+		TYPE_FORCED_CASHOUT = 3;
+	}
+
+	SCCrystalHubCashout_Type type = 5;
+}

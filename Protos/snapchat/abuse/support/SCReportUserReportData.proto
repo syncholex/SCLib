@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportChatMessageReportData.proto";
+
+message SCReportUserReportData {
+	string reportedUserId = 1;
+	bool isUserContentsReport = 2;
+	bool isFamilyCenterReport = 3;
+	repeated snapchat.abuse.support.SCReportChatMessageReportData chatMessageReportDataArray = 4;
+}

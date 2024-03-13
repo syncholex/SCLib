@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/adformat/SCAdsSelectionStatement.proto";
+import "snapchat/ads/adformat/SCAdsConfigValue.proto";
+
+message SCAdsSelectionRule {
+	snapchat.ads.adformat.SCAdsSelectionStatement selectionStatement = 1;
+	snapchat.ads.adformat.SCAdsConfigValue configValue = 2;
+}

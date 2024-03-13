@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSCOREAppStoryDestinationMetadata {
+	ranking.core.SCSCOREUUID appId = 1;
+	uint64 ttlSecs = 2;
+}

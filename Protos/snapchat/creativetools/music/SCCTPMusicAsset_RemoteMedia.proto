@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.music;
+
+message SCCTPMusicAsset_RemoteMedia {
+	string URL = 1;
+	bytes encryptionKey = 2;
+	bytes encryptionIv = 3;
+}

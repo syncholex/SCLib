@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbHoldout_HoldoutConfig {
+
+	oneof config {
+		string holdoutExcluded = 1;
+		string holdoutIncluded = 2;
+	}
+
+}

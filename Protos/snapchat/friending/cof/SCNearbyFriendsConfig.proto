@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCNearbyFriendsConfig {
+	bool enabled = 1;
+	bool enabledWhileUserNotOnPage = 2;
+	int32 toggleDurationInSec = 3;
+	int32 pollingIntervalOnPageInSec = 4;
+	int32 pollingIntervalNotOnPageInSec = 5;
+	int32 locationFetchIntervalInSec = 6;
+	int32 requiredLocationAccuracyInMeters = 7;
+	bool includeFriends = 8;
+}

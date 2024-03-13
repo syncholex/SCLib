@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message MultiPanelS3AssetPath {
+	string bucket = 1;
+	repeated string pathArray = 2;
+}

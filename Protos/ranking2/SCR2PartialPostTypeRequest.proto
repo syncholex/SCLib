@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+
+message SCR2PartialPostTypeRequest {
+	string queryText = 1;
+	ranking2.SCR2GeoLocation location = 2;
+}

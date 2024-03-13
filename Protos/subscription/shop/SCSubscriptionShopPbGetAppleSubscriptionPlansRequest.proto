@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetAppleSubscriptionPlansRequest {
+	repeated string experimentsArray = 1;
+	string appStoreCountryCode = 2;
+	string referralToken = 3;
+	bool includePromotionalOffers = 4;
+}

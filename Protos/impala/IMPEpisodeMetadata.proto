@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPEpisodeMetadata {
+	string episodeId = 1;
+	string title = 2;
+	string synopsis = 3;
+	int32 episodeNumber = 4;
+	string seasonId = 5;
+	string showId = 6;
+	string deeplink = 7;
+}

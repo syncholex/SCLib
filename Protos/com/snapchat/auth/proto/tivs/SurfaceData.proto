@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message SurfaceData {
+
+	enum Surface_Enum {
+		UNSET = 0;
+		WEB = 1;
+		APP = 2;
+	}
+
+	Surface_Enum surface = 1;
+	string userAgent = 2;
+	string device = 3;
+	string os = 4;
+	string browser = 5;
+}

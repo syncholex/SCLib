@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1GroupMessageIdentifier {
+	string messageId = 1;
+	string groupId = 2;
+	string senderUsername = 3;
+	string senderUserId = 4;
+}

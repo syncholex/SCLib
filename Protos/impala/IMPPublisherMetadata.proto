@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPublisherMetadata {
+	string publisherFormalDisplayName = 1;
+	string description_p = 2;
+	string deepLink = 3;
+	string logoURL = 4;
+	string storyViewingLogoURL = 5;
+	string websiteURL = 6;
+	string backgroundImageURL = 7;
+	string horizontalLogoURL = 8;
+	bool horizontalLogoHidden = 9;
+	string bitmojiBackgroundImageTemplateId = 10;
+	string primaryColor = 11;
+
+	enum IMPPublisherLogoPlacement {
+		LOGO_BOTTOM = 0;
+		LOGO_OFF = 1;
+	}
+
+	IMPPublisherLogoPlacement logoPlacement = 12;
+	bool isBreakingNewsEnabled = 13;
+}

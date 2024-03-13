@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCTComputeBackendData_RequestedFeed_ClientFeatures.proto";
+import "snapchat/creativetools/common/SCCTPCTRequestParams.proto";
+
+message SCCTPCTComputeBackendData_RequestedFeed {
+	uint64 requestId = 1;
+
+	enum SCCTPCTComputeBackendData_RequestedFeed_RequestContext {
+		UNSET = 0;
+		PREVIEW = 1;
+		CHAT = 2;
+		STICKER_KIT = 4;
+		OTHER = 5;
+		CAROUSEL = 6;
+	}
+
+	SCCTPCTComputeBackendData_RequestedFeed_RequestContext requestContext = 2;
+	snapchat.creativetools.common.SCCTPCTComputeBackendData_RequestedFeed_ClientFeatures clientFeatures = 3;
+	snapchat.creativetools.common.SCCTPCTRequestParams common = 4;
+
+	enum SCCTPCTContext {
+		CONTEXT_UNSET = 0;
+		CHAT = 1;
+		MERCH = 2;
+		PREVIEW = 3;
+		STICKER_KIT = 4;
+		OTHER = 5;
+		TEMPLATE_EXPLORER = 6;
+		CAROUSEL = 7;
+	}
+
+	SCCTPCTContext ctContext = 5;
+}

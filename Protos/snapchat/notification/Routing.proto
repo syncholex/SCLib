@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Deeplink.proto";
+import "snapchat/notification/Route.proto";
+
+message Routing {
+
+	oneof routing {
+		snapchat.notification.Deeplink deeplink = 1;
+		snapchat.notification.Route route = 2;
+	}
+
+}

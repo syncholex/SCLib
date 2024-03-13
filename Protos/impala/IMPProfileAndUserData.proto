@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileData.proto";
+import "impala/IMPProfileUserData.proto";
+import "impala/IMPProfileAdminUserData.proto";
+import "impala/IMPProfileFeatures.proto";
+
+message IMPProfileAndUserData {
+	impala.IMPProfileData profile = 1;
+	impala.IMPProfileUserData userData = 2;
+	impala.IMPProfileAdminUserData adminUserData = 3;
+	impala.IMPProfileFeatures profileFeatures = 4;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGetItemRequest_GarmentQuery.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGetItemRequest_OutfitQuery.proto";
+
+message SCBitmojiGetItemRequest {
+
+	oneof kind {
+		snapchat.bitmoji.fashion.v1.SCBitmojiGetItemRequest_GarmentQuery garmentQuery = 1;
+		snapchat.bitmoji.fashion.v1.SCBitmojiGetItemRequest_OutfitQuery outfitQuery = 2;
+	}
+
+
+	enum SCBitmojiGender {
+		GENDER_UNSET = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCBitmojiGender gender = 3;
+}

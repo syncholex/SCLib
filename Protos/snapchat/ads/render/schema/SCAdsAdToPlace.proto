@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsAdToPlace {
+	string placeId = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+message VRZCheckinDMD {
+	int64 eventTimestamp = 1;
+	string placeId = 2;
+	string placeName = 3;
+	string locality = 4;
+	string region = 5;
+	string shareType = 6;
+	string placetypeId = 7;
+	bool isRemoteCheckin = 8;
+}

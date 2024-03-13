@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGArSegmentationFilter_ContextFilterSkyItem.proto";
+import "lens_platform/client_server/legacy/SCLGArSegmentationFilter_PurikuraPatternItem.proto";
+
+message SCLGArSegmentationFilter {
+	lens_platform.client_server.legacy.SCLGArSegmentationFilter_ContextFilterSkyItem sky = 1;
+	lens_platform.client_server.legacy.SCLGArSegmentationFilter_PurikuraPatternItem portrait = 2;
+	bool shouldStillDisplayWithoutSegmentationMatch = 3;
+}

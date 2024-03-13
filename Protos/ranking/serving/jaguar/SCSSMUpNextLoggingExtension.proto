@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSSMUpNextLoggingExtension {
+	ranking.core.SCCORECompositeStoryId recommForStoryId = 1;
+}

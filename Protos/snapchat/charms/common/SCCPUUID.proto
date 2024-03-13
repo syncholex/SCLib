@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.charms.common;
+
+message SCCPUUID {
+	fixed64 highBits = 1;
+	fixed64 lowBits = 2;
+}

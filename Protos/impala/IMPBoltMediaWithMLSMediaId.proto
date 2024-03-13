@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness_BoltMedia.proto";
+
+message IMPBoltMediaWithMLSMediaId {
+	impala.IMPBusiness_BoltMedia boltMedia = 1;
+	string mlsMediaId = 2;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationNotificationTTL.proto";
+import "snapchat/notification/SCPushNotificationLegacyTypeName.proto";
+
+message SCPushNotificationGeneralNotificationConfig {
+	snapchat.notification.SCPushNotificationNotificationTTL ttlInSec = 1;
+
+	enum SCPushNotificationPushPriority {
+		UNSET_PRIORITY = 0;
+		NORMAL = 1;
+		HIGH = 2;
+	}
+
+	SCPushNotificationPushPriority pushPriority = 2;
+
+	enum SCPushNotificationSound {
+		UNSET_SOUND = 0;
+		DEFAULT_SOUND = 1;
+		RING_FULL = 2;
+		RING_BFF = 3;
+		NO_SOUND = 4;
+	}
+
+	SCPushNotificationSound sound = 3;
+	snapchat.notification.SCPushNotificationLegacyTypeName legacyTypeName = 4;
+
+	enum SCPushNotificationPushUrgency {
+		DEFAULT = 0;
+		NOW_OR_NEVER = 1;
+	}
+
+	SCPushNotificationPushUrgency urgency = 5;
+}

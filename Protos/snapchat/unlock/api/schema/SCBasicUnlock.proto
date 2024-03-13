@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlock/api/schema/SCUnlockGroup.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCBasicUnlock {
+	int64 unlockableId = 1;
+	snapchat.unlock.api.schema.SCUnlockGroup unlockGroup = 2;
+	google.protobuf.GPBTimestamp unlockDate = 3;
+	google.protobuf.GPBTimestamp expirationDate = 4;
+	string deepLinkProperties = 5;
+}

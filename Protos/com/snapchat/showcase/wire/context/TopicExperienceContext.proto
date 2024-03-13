@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/CommerceTopic.proto";
+import "com/snapchat/showcase/wire/context/TopicInteractedItem.proto";
+
+message TopicExperienceContext {
+	com.snapchat.showcase.wire.CommerceTopic topic = 1;
+	com.snapchat.showcase.wire.context.TopicInteractedItem topicInteractedItem = 2;
+	string sourceType = 3;
+	string sourceId = 4;
+}

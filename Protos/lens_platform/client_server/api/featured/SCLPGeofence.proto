@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.featured;
+
+import "snapchat/unlockables/request/schema/SCULGeoCoordinate.proto";
+
+message SCLPGeofence {
+	int64 id_p = 1;
+	repeated snapchat.unlockables.request.schema.SCULGeoCoordinate geoPolygonArray = 2;
+}

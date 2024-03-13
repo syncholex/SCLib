@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message BoostItem {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	string itemId = 2;
+	int64 progressMs = 3;
+	int64 clientTsMsec = 4;
+
+	enum BoostType_Enum {
+		UNKNOWN = 0;
+		BOOST_ONLY = 1;
+		RECOMMEND = 2;
+	}
+
+	BoostType_Enum boostType = 5;
+	bool isUgc = 6;
+}

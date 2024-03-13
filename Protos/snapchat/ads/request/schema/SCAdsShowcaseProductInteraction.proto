@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsShowcaseProductInteraction {
+	google.protobuf.GPBInt32Value index = 1;
+	google.protobuf.GPBStringValue productId = 2;
+}

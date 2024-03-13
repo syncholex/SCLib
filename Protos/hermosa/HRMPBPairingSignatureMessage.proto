@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPairingSignatureMessage {
+	bytes sigPairing = 1;
+	repeated string pairingSccertChainArray = 2;
+}

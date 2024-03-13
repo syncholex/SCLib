@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBTemperatureResponse.proto";
+
+message MLBWifiThrottlingReport {
+	uint32 throttling = 1;
+	bool dutyCycleControl = 2;
+	malibu.MLBTemperatureResponse temperatures = 3;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package games.updates;
+
+message SCCognacConversationContext {
+
+	oneof scope {
+		string oneOnOneConversationId = 1;
+		string groupConversationId = 2;
+	}
+
+}

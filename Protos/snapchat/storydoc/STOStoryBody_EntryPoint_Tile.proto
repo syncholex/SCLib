@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile_TileImage.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile_TileVideo.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile_Logo.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile_TileBitmojiImage.proto";
+import "snapchat/snapmod/Audience.proto";
+import "snapchat/snapmod/BrandSafety.proto";
+import "snapchat/snapmod/ModerationFeatures.proto";
+import "snapchat/storydoc/STOLocalizationId.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile_TileCameo.proto";
+import "snapchat/cup/platform/proto/TaskResult.proto";
+
+message STOStoryBody_EntryPoint_Tile {
+
+	oneof localizedTitle {
+		string title = 1;
+		snapchat.storydoc.STOLocalizationId titleLocalizationId = 12;
+	}
+
+
+	oneof tileMedia {
+		snapchat.storydoc.STOStoryBody_EntryPoint_Tile_TileImage tileImage = 2;
+		snapchat.storydoc.STOStoryBody_EntryPoint_Tile_TileVideo tileVideo = 3;
+		snapchat.storydoc.STOStoryBody_EntryPoint_Tile_TileBitmojiImage tileBitmojiImage = 7;
+		snapchat.storydoc.STOStoryBody_EntryPoint_Tile_TileCameo tileCameo = 13;
+	}
+
+	snapchat.storydoc.STOStoryBody_EntryPoint_Tile_Logo logo = 4;
+	string id_p = 5;
+	string gradientColor = 6;
+	snapchat.snapmod.Audience audience = 8;
+	snapchat.snapmod.BrandSafety brandSafety = 9;
+	string subtitle = 10;
+	snapchat.snapmod.ModerationFeatures moderationFeatures = 11;
+	repeated snapchat.cup.platform.proto.TaskResult cupV2AnnotationResultArray = 14;
+}

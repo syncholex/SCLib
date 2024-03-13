@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/unlockables/request/schema/SCULUnlockablesSnapInfo.proto";
+
+message SDMUnlockables {
+	snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo unlockablesSnapInfo = 1;
+	bytes encryptedGeoData = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapText_OCRRecord {
+	string text = 1;
+	float x1 = 2;
+	float y1 = 3;
+	float x2 = 4;
+	float y2 = 5;
+	float x3 = 6;
+	float y3 = 7;
+	float x4 = 8;
+	float y4 = 9;
+	string version = 10;
+}

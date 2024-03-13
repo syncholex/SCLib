@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+import "snapchat/cameos/common/SCCameosFriendBloopsData.proto";
+
+message SCCameosUpdateFriendBloopsDataRequest {
+	snapchat.cameos.common.SCCameosFriendBloopsData bloopsData = 1;
+}

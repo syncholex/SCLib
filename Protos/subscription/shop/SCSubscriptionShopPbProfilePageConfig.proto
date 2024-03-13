@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPlusCampaign.proto";
+
+message SCSubscriptionShopPbProfilePageConfig {
+	repeated subscription.shop.SCSubscriptionShopPbPlusCampaign myProfileCampaignsArray = 1;
+	subscription.shop.SCSubscriptionShopPbPlusCampaign targetedFriendProfileCampaigns = 2;
+	repeated subscription.shop.SCSubscriptionShopPbPlusCampaign globalFriendProfileCampaignsArray = 3;
+}

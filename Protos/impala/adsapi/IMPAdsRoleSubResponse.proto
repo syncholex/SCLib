@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsRole.proto";
+
+message IMPAdsRoleSubResponse {
+	impala.adsapi.IMPAdsRole role = 1;
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsAdKitApplication.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsApplication {
+	string appName = 1;
+	int64 appVersionNumeric = 2;
+	string appVariant = 3;
+
+	enum SCAdsAppVariant {
+		UNKNOWN_APP_VARIANT = 0;
+		MUSHROOM = 1;
+		OG = 2;
+	}
+
+	SCAdsAppVariant appVariantEnum = 4;
+
+	enum SCAdsAppType {
+		APP_TYPE_UNKNOWN = 0;
+		APP_TYPE_PROD = 1;
+		APP_TYPE_BETA = 2;
+		APP_TYPE_ALPHA = 3;
+		APP_TYPE_MASTER = 4;
+		APP_TYPE_DEBUG = 5;
+	}
+
+	SCAdsAppType appType = 5;
+	snapchat.ads.request.schema.SCAdsAdKitApplication adKitApplication = 7;
+	google.protobuf.GPBInt64Value appUptimeMs = 8;
+	string sourceAppId = 9;
+	bool isNativeClient = 10;
+	google.protobuf.GPBStringValue appSessionId = 11;
+}

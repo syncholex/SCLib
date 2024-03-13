@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBIMUDataSet.proto";
+
+message MLBIMUDataSetCollection {
+	repeated malibu.MLBIMUDataSet imuDataSetsArray = 1;
+}

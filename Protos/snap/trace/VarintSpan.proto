@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message VarintSpan {
+	int64 id_p = 1;
+	int64 tid = 2;
+	int64 startMs = 3;
+	int64 durMs = 4;
+	int64 cpuTimeMs = 5;
+	int64 startUs = 6;
+	int64 durUs = 7;
+	int64 cpuTimeUs = 8;
+	uint32 spanId = 9;
+	uint32 predecessorId = 10;
+}

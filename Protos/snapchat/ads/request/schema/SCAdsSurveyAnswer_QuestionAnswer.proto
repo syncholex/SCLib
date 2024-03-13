@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsSurveyAnswer_QuestionAnswer {
+	repeated int32 selectedChoicesArray = 1 [packed=true];
+	google.protobuf.GPBInt64Value selectedTsMs = 2;
+	string openEndedAnswer = 3;
+	google.protobuf.GPBInt64Value questionPresentedTsMs = 4;
+}

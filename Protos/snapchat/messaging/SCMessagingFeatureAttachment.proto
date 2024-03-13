@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingFSNEndpoint.proto";
+import "snapchat/messaging/SCMessagingSnapStoryId.proto";
+import "snapchat/messaging/SCMessagingStoryMentionInfo.proto";
+import "snapchat/messaging/SCMessagingStoryPostInfo.proto";
+import "snapchat/messaging/SCMessagingMentionInfo.proto";
+import "snapchat/messaging/SCMessagingReplyMessageInfo.proto";
+import "snapchat/messaging/SCMessagingGiftInfo.proto";
+import "snapchat/messaging/SCMessagingAutoSave.proto";
+import "snapchat/messaging/SCMessagingSnapViewability.proto";
+import "snapchat/messaging/SCMessagingBundleMessageInfo.proto";
+import "snapchat/messaging/SCMessagingCountdownInfo.proto";
+
+message SCMessagingFeatureAttachment {
+
+	oneof attachment {
+		snapchat.messaging.SCMessagingFSNEndpoint fsnendpoint = 1;
+		snapchat.messaging.SCMessagingSnapStoryId snapStoryContent = 2;
+		snapchat.messaging.SCMessagingStoryMentionInfo shareInfo = 3;
+		snapchat.messaging.SCMessagingStoryPostInfo storyPostInfo = 4;
+		snapchat.messaging.SCMessagingMentionInfo mentionInfo = 5;
+		snapchat.messaging.SCMessagingReplyMessageInfo replyMessageInfo = 6;
+		snapchat.messaging.SCMessagingGiftInfo giftInfo = 7;
+		snapchat.messaging.SCMessagingAutoSave autoSave = 8;
+		snapchat.messaging.SCMessagingSnapViewability snapViewability = 9;
+		snapchat.messaging.SCMessagingBundleMessageInfo bundleInfo = 10;
+		snapchat.messaging.SCMessagingCountdownInfo countdownInfo = 11;
+	}
+
+}

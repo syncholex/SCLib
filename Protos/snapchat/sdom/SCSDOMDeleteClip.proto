@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+
+message SCSDOMDeleteClip {
+	snapchat.sdom.SCSDOMClipIndex clip = 1;
+	bool keepEditLayers = 2;
+}

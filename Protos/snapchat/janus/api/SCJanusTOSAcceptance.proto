@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusTOSAcceptance {
+	bool tos9 = 1;
+	bool tos9And10 = 2;
+	bool tos10 = 3;
+	bool tos9And11 = 4;
+	bool tos11 = 5;
+	bool tos12 = 6;
+	bool tos13 = 7;
+	bool tos14 = 8;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPFilterMetadata_VenueInfo {
+	snapchat.core.SCCOREUUID placeId = 1;
+	float yOffsetPercentage = 2;
+	string name = 3;
+	string subtitle = 4;
+	string locality = 5;
+}

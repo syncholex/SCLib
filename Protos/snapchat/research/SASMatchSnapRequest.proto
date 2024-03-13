@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioFingerprintMessage.proto";
+
+message SASMatchSnapRequest {
+	snapchat.research.SASAudioFingerprintMessage audioFingerprintMessage = 1;
+}

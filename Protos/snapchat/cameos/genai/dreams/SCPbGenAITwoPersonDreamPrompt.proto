@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamPrompt.proto";
+
+message SCPbGenAITwoPersonDreamPrompt {
+	snapchat.cameos.genai.dreams.SCPbGenAIDreamPrompt firstPersonPrompt = 1;
+	snapchat.cameos.genai.dreams.SCPbGenAIDreamPrompt secondPersonPrompt = 2;
+	snapchat.cameos.genai.dreams.SCPbGenAIDreamPrompt backgroundPrompt = 3;
+	int32 foregroundPerson = 4;
+}

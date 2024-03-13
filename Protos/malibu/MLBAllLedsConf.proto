@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAllLedsConf {
+	uint32 current = 2;
+	uint32 pwm = 3;
+}

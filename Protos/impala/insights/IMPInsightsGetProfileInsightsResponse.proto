@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsDailyProfileMetrics.proto";
+import "impala/insights/IMPInsightsSubscribeSourceStats.proto";
+import "impala/insights/IMPInsightsProfileSummaryMetrics.proto";
+
+message IMPInsightsGetProfileInsightsResponse {
+	repeated impala.insights.IMPInsightsDailyProfileMetrics dailyProfileMetricsArray = 1;
+	repeated impala.insights.IMPInsightsSubscribeSourceStats lastWeekSubscribeSourceDistributionArray = 2;
+	repeated impala.insights.IMPInsightsSubscribeSourceStats lastMonthSubscribeSourceDistributionArray = 3;
+	impala.insights.IMPInsightsProfileSummaryMetrics profileSummaryMetrics = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_Tooltip {
+	string message = 1;
+	int32 coolDownPeriodMinutes = 2;
+}

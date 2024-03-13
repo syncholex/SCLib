@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusRegisterWithUsernamePasswordRequest.proto";
+
+message SCJanusRegisterWithPhoneEmailRequest {
+
+	oneof baseRequest {
+		snapchat.janus.api.SCJanusRegisterWithUsernamePasswordRequest usernamePasswordRequest = 1;
+	}
+
+	string email = 6;
+	bytes phoneVerifyToken = 7;
+}

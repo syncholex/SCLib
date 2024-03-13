@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHSessionsV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHNoSessionsV1.proto";
+
+message SCPSHReadScanHistoryResponse {
+	bytes pageCursor = 1;
+
+	oneof sessions {
+		snapchat.perception.scan_history.v1.SCPSHSessionsV1 sessionsV1 = 2;
+		snapchat.perception.scan_history.v1.SCPSHNoSessionsV1 noSessionsV1 = 3;
+	}
+
+}

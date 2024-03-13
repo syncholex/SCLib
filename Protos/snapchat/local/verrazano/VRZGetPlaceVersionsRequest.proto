@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceVersion.proto";
+import "snapchat/local/verrazano/VRZResponseMessageFlags.proto";
+
+message VRZGetPlaceVersionsRequest {
+	repeated snapchat.local.verrazano.VRZPlaceVersion placeVersionsArray = 1;
+	snapchat.local.verrazano.VRZResponseMessageFlags responseFlags = 2;
+}

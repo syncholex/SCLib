@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/builder/v1/SCBitmojiHomePageOption.proto";
+
+message SCBitmojiBatchGetItemsResponse {
+	repeated snapchat.bitmoji.builder.v1.SCBitmojiHomePageOption itemsArray = 1;
+}

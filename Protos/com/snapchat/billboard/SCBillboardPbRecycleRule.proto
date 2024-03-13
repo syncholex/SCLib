@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbRecycleRule {
+	repeated int32 recycleIntervalsArray = 1 [packed=true];
+
+	enum SCBillboardPbRecycleRule_RecycleBasedProperty {
+		RECYCLE_BASED_PROPERTY_UNSET = 0;
+		FIRST_IMPRESSION_TIME = 1;
+		FIRST_CLICK_TIME = 2;
+		FIRST_DISMISS_TIME = 3;
+		FIRST_INTERACTION_TIME = 4;
+		FIRST_ACTION_TIME = 5;
+		LAST_IMPRESSION_TIME = 6;
+		LAST_CLICK_TIME = 7;
+		LAST_DISMISS_TIME = 8;
+		LAST_INTERACTION_TIME = 9;
+		LAST_ACTION_TIME = 10;
+	}
+
+	SCBillboardPbRecycleRule_RecycleBasedProperty recycleBasedProperty = 2;
+
+	enum SCBillboardPbRecycleRule_RecycleBasedStorage {
+		RECYCLE_BASED_STORAGE_UNSET = 0;
+		BASED_STORAGE_SERVER = 1;
+		BASED_STORAGE_CLIENT = 2;
+	}
+
+	SCBillboardPbRecycleRule_RecycleBasedStorage recycleBasedStorage = 3;
+
+	enum SCBillboardPbRecycleRule_RecycleTargetStorage {
+		RECYCLE_TARGET_STORAGE_UNSET = 0;
+		TARGET_STORAGE_SERVER = 1;
+		TARGET_STORAGE_CLIENT = 2;
+		TARGET_STORAGE_SERVER_AND_CLIENT = 3;
+	}
+
+	SCBillboardPbRecycleRule_RecycleTargetStorage recycleTargetStorage = 4;
+	bool bypassCooldownCapRuleToRecycle = 5;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateInternalProfileCategory {
+
+	enum IMPBusinessProfile_InternalProfileCategory {
+		UNKNOWN = 0;
+		PERSON = 1;
+		BUSINESS = 2;
+		STANDARD = 3;
+		PUBLISHER = 4;
+	}
+
+	IMPBusinessProfile_InternalProfileCategory val = 1;
+}

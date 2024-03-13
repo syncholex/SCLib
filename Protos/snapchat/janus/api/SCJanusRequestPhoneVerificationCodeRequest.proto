@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAppRegisterContext.proto";
+
+message SCJanusRequestPhoneVerificationCodeRequest {
+	snapchat.janus.api.SCJanusAppRegisterContext registrationContext = 1;
+	string phoneNumber = 2;
+	string phoneNumberCountryCode = 3;
+	bytes phoneVerifyToken = 4;
+	string predictedPhoneNumberCountryCode = 5;
+	bytes clientAttestationPayload = 11;
+}

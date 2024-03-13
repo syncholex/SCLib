@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.recommendations;
+
+import "snapchat/creativetools/recommendations/SCCTPRecommendationsCTRecommendation.proto";
+
+message SCCTPRecommendationsGetCTRecommendationsResponse {
+	string requestId = 1;
+	repeated snapchat.creativetools.recommendations.SCCTPRecommendationsCTRecommendation recommendationsArray = 2;
+	string modelId = 3;
+}

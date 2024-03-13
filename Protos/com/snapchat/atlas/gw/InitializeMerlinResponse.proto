@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message InitializeMerlinResponse {
+
+	enum InitializeMerlinResponse_OperationStatus {
+		OPERATION_STATUS_UNSET = 0;
+		OPERATION_STATUS_SUCCESS = 1;
+		OPERATION_STATUS_ALREADY_INITIALIZED = 2;
+		OPERATION_STATUS_NOT_ELIGIBLE = 3;
+	}
+
+	InitializeMerlinResponse_OperationStatus status = 1;
+}

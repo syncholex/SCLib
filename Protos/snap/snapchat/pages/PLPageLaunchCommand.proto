@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package snap.snapchat.pages;
+
+import "snap/snapchat/pages/camera/v1/PLCameraScreen.proto";
+import "snap/snapchat/pages/content/discover_feed/v1/PLDiscoverFeedScreen.proto";
+import "snap/snapchat/pages/content/spotlight/v1/PLSpotlightScreen.proto";
+import "snap/snapchat/pages/friends_feed/v1/PLFriendsFeedScreen.proto";
+import "snap/snapchat/pages/impala/v1/PLPublicProfileScreen.proto";
+import "snap/snapchat/pages/platform/v1/PLNotification.proto";
+import "snap/snapchat/pages/platform/v1/PLDeepLink.proto";
+import "snap/snapchat/pages/impala/v1/PLFriendProfileScreen.proto";
+import "snap/snapchat/pages/impala/v1/PLPublisherProfileScreen.proto";
+import "snap/snapchat/pages/impala/v1/PLProfileActionSheet.proto";
+import "snap/snapchat/pages/maps/v1/PLLocationSharingSettingsScreen.proto";
+import "snap/snapchat/pages/memories/v1/PLMemoriesHomeScreen.proto";
+import "snap/snapchat/pages/memories/v1/PLMemoriesSnapsScreen.proto";
+import "snap/snapchat/pages/memories/v1/PLMemoriesScreenshotScreen.proto";
+import "snap/snapchat/pages/memories/v1/PLMemoriesFeaturedScreen.proto";
+import "snap/snapchat/pages/memories/v1/PLMemoriesDreamsScreen.proto";
+import "snap/snapchat/pages/messaging/v1/PLFamilyCenterScreen.proto";
+import "snap/snapchat/pages/modular_camera/v1/PLModularCameraScreen.proto";
+import "snap/snapchat/pages/sharing/v1/PLAddFriendScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesHomeScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesManagementScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesContentScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesOTAScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesPreviewScreen.proto";
+import "snap/snapchat/pages/spectacles/v1/PLSpectaclesSettingsScreen.proto";
+import "snap/snapchat/pages/identity/v1/PLBirthdaySettingsScreen.proto";
+
+message PLPageLaunchCommand {
+
+	oneof screen {
+		snap.snapchat.pages.camera.v1.PLCameraScreen camera = 1;
+		snap.snapchat.pages.content.discover_feed.v1.PLDiscoverFeedScreen discoverFeed = 2;
+		snap.snapchat.pages.content.spotlight.v1.PLSpotlightScreen spotlight = 3;
+		snap.snapchat.pages.friends_feed.v1.PLFriendsFeedScreen friendsFeed = 4;
+		snap.snapchat.pages.impala.v1.PLPublicProfileScreen publicProfile = 5;
+		snap.snapchat.pages.impala.v1.PLFriendProfileScreen friendProfile = 9;
+		snap.snapchat.pages.impala.v1.PLPublisherProfileScreen publisherProfile = 10;
+		snap.snapchat.pages.impala.v1.PLProfileActionSheet profileActionSheet = 11;
+		snap.snapchat.pages.maps.v1.PLLocationSharingSettingsScreen locationSharing = 12;
+		snap.snapchat.pages.memories.v1.PLMemoriesHomeScreen memoriesHome = 13;
+		snap.snapchat.pages.memories.v1.PLMemoriesSnapsScreen memoriesSnaps = 14;
+		snap.snapchat.pages.memories.v1.PLMemoriesScreenshotScreen memoriesScreenshot = 15;
+		snap.snapchat.pages.memories.v1.PLMemoriesFeaturedScreen memoriesFeatured = 16;
+		snap.snapchat.pages.memories.v1.PLMemoriesDreamsScreen memoriesDreams = 17;
+		snap.snapchat.pages.messaging.v1.PLFamilyCenterScreen familyCenter = 18;
+		snap.snapchat.pages.modular_camera.v1.PLModularCameraScreen modularCamera = 19;
+		snap.snapchat.pages.sharing.v1.PLAddFriendScreen addFriend = 20;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesHomeScreen spectaclesHome = 21;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesManagementScreen spectaclesManagement = 22;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesContentScreen spectaclesContent = 23;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesOTAScreen spectaclesOta = 24;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesPreviewScreen spectaclesPreview = 25;
+		snap.snapchat.pages.spectacles.v1.PLSpectaclesSettingsScreen spectaclesSettings = 26;
+		snap.snapchat.pages.identity.v1.PLBirthdaySettingsScreen birthdaySettings = 27;
+	}
+
+
+	oneof source {
+		snap.snapchat.pages.platform.v1.PLNotification notification = 6;
+		snap.snapchat.pages.platform.v1.PLDeepLink deepLink = 7;
+		PLSourceType feature = 8;
+	}
+
+
+	enum PLSourceType {
+		SOURCE_TYPE_UNSET = 0;
+		FEED_HEADER_PROMPT = 1;
+		TEAM_SNAPCHAT = 2;
+		MAP = 3;
+		CHAT = 4;
+		GROUP_CHAT = 5;
+		PROFILE = 6;
+		SETTINGS = 7;
+		SETTINGS_HEADER_PROMPT = 8;
+		MAPS_HEADER_PROMPT = 9;
+		MAPS_LOCATION_UPGRADE_TRAY = 10;
+		SEARCH = 11;
+		EXTERNAL = 12;
+		SPOTLIGHT = 13;
+	}
+
+}

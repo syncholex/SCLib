@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package socialsms;
+
+import "socialsms/Expiration.proto";
+import "socialsms/MainMediaEncryptionKey.proto";
+
+message ActivateLinkRequest {
+	string linkId = 1;
+	socialsms.Expiration expiration = 2;
+	repeated socialsms.MainMediaEncryptionKey mainMediaEncryptionKeysArray = 3;
+}

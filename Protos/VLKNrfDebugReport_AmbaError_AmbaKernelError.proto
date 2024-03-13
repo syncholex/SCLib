@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message VLKNrfDebugReport_AmbaError_AmbaKernelError {
+	uint32 pc = 1;
+	uint32 lr = 2;
+	uint32 sp = 3;
+}

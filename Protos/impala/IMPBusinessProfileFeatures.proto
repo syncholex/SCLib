@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPBusinessProfileFeatures {
+	bool canEditTitle = 1;
+	bool canEditHighlights = 2;
+	bool canEditWebsite = 3;
+	bool canEditEmail = 4;
+	bool canAccessStoryReplies = 5;
+	bool canQuoteStoryReplies = 6;
+	bool canAccessGifting = 7;
+	bool canAccessActivityFeed = 8;
+	bool canUploadHeroImage = 9;
+	bool canAccessAdsTab = 10;
+	bool isCommentsDisabled = 11;
+}

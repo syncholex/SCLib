@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3Point.proto";
+import "snapchat/perception/scan/experiments/cof/SCPCNCOFScanImageResolution.proto";
+import "snapchat/perception/realtime_scan/SCPCNRTSAnnotations.proto";
+
+message SCPCNV3Image {
+	bytes imageBytes = 1;
+
+	enum SCPCNV3Image_CameraOrientation {
+		UNSET = 0;
+		FRONT = 1;
+		BACK = 2;
+	}
+
+	SCPCNV3Image_CameraOrientation cameraOrientation = 2;
+	snapchat.perception.scan.v3.SCPCNV3Point relativeTouchPoint = 3;
+	snapchat.perception.scan.experiments.cof.SCPCNCOFScanImageResolution imageResolution = 4;
+	snapchat.perception.realtime_scan.SCPCNRTSAnnotations annotations = 5;
+}

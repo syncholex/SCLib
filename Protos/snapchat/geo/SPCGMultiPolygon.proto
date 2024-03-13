@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.geo;
+
+import "snapchat/geo/SPCGPolygon.proto";
+
+message SPCGMultiPolygon {
+	repeated snapchat.geo.SPCGPolygon polygonsArray = 1;
+}

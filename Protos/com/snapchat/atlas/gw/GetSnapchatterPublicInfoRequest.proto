@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message GetSnapchatterPublicInfoRequest {
+	repeated bytes userIdsArray = 1;
+
+	enum GetSnapchatterPublicInfoRequest_Source {
+		UNSET = 0;
+		CHAT = 1;
+		DISCOVER_FEED = 2;
+		STORIES = 3;
+		STORY_MEMBERS = 4;
+		GAMES = 5;
+		PROFILE = 6;
+		BACKGROUND_REFRESH = 7;
+		GROUPS = 8;
+		FRIENDS_FEED = 9;
+		TALK = 10;
+		COMMUNITIES = 11;
+		PREVIEW = 12;
+		PLUS = 13;
+		LENS = 14;
+	}
+
+	GetSnapchatterPublicInfoRequest_Source source = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSUPBadgeEngagement {
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats publisherEngagement = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats triggerFeedTypeEngagement = 2;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedEngagement = 3;
+}

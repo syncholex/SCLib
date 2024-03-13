@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPPlaceStickerMetadata {
+	snapchat.core.SCCOREUUID placeId = 1;
+
+	enum SCCTPPlaceStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		LIGHT = 1;
+		DARK = 2;
+		RAINBOW = 3;
+	}
+
+	SCCTPPlaceStickerMetadata_Type type = 2;
+	string name = 3;
+}

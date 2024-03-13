@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+message SCPBGalleryServletGalleryUserSetting {
+	bool storyAutoSaving = 1;
+	bool autoSaveToCameraRoll = 2;
+	bool backupOnCellular = 3;
+	bool privateGalleryEnabled = 4;
+	bool topSecretPrivateGalleryEnabled = 5;
+	bool saveToPrivateGalleryByDefault = 6;
+	string snapSaveOption = 7;
+	int32 entriesToPrefetchGrid = 8;
+	int32 entriesToPrefetchBrowse = 9;
+	int64 minMediaCacheSize = 10;
+	double mediaCachePercentage = 11;
+	bool swipedIntoMemoriesPage = 12;
+	bool forceSyncRequired = 13;
+}

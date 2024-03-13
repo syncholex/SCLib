@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message IMPManagedProfileCallouts {
+	int32 manageRolesNuxHintViewCount = 1;
+	google.protobuf.GPBInt32Value subscribersTodayCount = 2;
+	google.protobuf.GPBInt32Value viewsTodayCount = 3;
+	google.protobuf.GPBInt32Value snapsPostedWeekCount = 4;
+}

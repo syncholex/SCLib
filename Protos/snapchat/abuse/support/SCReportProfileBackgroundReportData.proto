@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+
+message SCReportProfileBackgroundReportData {
+	string reportedUserId = 1;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 2;
+}

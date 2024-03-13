@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message FeatureProvidedSignals_StoryMetadata {
+	bool isPublicStory = 1;
+	bool isOfficialStory = 2;
+
+	enum FeatureProvidedSignals_StoryType {
+		UNKNOWN_STORY_TYPE = 0;
+		PUBLIC_USER_STORY = 1;
+		OUR_STORY = 2;
+		PUBLISHER_STORY = 3;
+		FRIEND_STORY = 4;
+	}
+
+	FeatureProvidedSignals_StoryType storyType = 3;
+}

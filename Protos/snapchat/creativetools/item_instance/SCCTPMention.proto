@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPMention_Entity.proto";
+import "snapchat/creativetools/item_instance/SCCTPRange.proto";
+
+message SCCTPMention {
+	snapchat.creativetools.item_instance.SCCTPMention_Entity entity = 1;
+	snapchat.creativetools.item_instance.SCCTPRange range = 2;
+}

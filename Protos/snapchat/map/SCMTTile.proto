@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileId.proto";
+import "snapchat/map/SCMTTileSetId.proto";
+import "snapchat/map/SCMTHeatmapTile.proto";
+import "snapchat/map/SCMTPoiTile.proto";
+import "snapchat/map/SCMTGameTile.proto";
+import "snapchat/map/SCMTMarkerTile.proto";
+
+message SCMTTile {
+	snapchat.map.SCMTTileId id_p = 1;
+	snapchat.map.SCMTTileSetId tileSetId = 3;
+	snapchat.map.SCMTHeatmapTile heatmapTile = 20;
+	snapchat.map.SCMTPoiTile poiTile = 21;
+	snapchat.map.SCMTGameTile gameTile = 22;
+	snapchat.map.SCMTMarkerTile markerTile = 23;
+}

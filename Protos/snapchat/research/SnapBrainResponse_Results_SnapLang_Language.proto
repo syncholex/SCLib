@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapLang_Language {
+	string name = 1;
+	double confidence = 2;
+	string isoCode = 3;
+}

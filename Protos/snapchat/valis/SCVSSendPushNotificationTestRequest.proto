@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSSendPushNotificationTestRequest {
+	int64 durationMs = 1;
+	int64 frequencyMs = 2;
+	int64 initialDelayMs = 3;
+}

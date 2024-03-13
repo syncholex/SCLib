@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/friend_story/SCR2FriendStoryHighlightScore.proto";
+
+message SCR2FriendStoryHighlightScoreResponse {
+	ranking2.friend_story.SCR2FriendStoryHighlightScore score = 1;
+	string relatedAccountsStoriesMetadata = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message Discover {
+	string publisherDisplayName = 1;
+	string publisherBusinessProfileId = 2;
+	string publisherIconURL = 3;
+	string editionTitle = 4;
+	string editionThumbnailURL = 5;
+	string deeplinkURL = 6;
+}

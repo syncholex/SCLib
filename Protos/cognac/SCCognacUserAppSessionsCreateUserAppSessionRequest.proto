@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsMajorUpdateVersion.proto";
+
+message SCCognacUserAppSessionsCreateUserAppSessionRequest {
+	string appInstanceId = 1;
+	string buildId = 2;
+	cognac.SCCognacAppsMajorUpdateVersion majorUpdateVersion = 3;
+	bool suppressNotification = 4;
+}

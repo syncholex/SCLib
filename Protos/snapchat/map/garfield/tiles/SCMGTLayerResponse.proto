@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles;
+
+import "snapchat/map/garfield/tiles/SCMGTFeaturesResponse.proto";
+
+message SCMGTLayerResponse {
+
+	oneof response {
+		bool cached = 1;
+		snapchat.map.garfield.tiles.SCMGTFeaturesResponse features = 2;
+	}
+
+	uint64 id_p = 3;
+	uint64 tilesetVersion = 4;
+	uint32 extent = 5;
+}

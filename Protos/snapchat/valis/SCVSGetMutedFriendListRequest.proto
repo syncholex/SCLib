@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSGetMutedFriendListRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+}

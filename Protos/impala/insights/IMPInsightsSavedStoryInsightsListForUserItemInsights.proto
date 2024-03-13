@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSavedStoryInsightsListForUserItemInsights {
+	int64 uniqueViewers = 1;
+	double timeSpent = 2;
+	int64 subscribes = 3;
+}

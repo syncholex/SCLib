@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsSubsBrandSafety.proto";
+
+message SCAdsMixerInfo {
+	uint32 storyOffset = 1;
+	string version = 2;
+	uint32 minAdsPos = 3;
+	int32 feedType = 4;
+	snapchat.ads.request.schema.SCAdsSubsBrandSafety subsBrandSafety = 5;
+}

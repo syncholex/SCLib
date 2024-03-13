@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSeasonMetadata {
+	string seasonId = 1;
+	string displayName = 2;
+	string showId = 3;
+	int32 seasonNumber = 4;
+	int32 episodeCount = 5;
+}

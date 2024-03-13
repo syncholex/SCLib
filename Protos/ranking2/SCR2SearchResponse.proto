@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2SearchSection.proto";
+import "ranking2/SCR2SearchConfigResponse.proto";
+import "ranking2/SCR2PageFooter.proto";
+import "ranking2/SCR2ErrorBar.proto";
+import "ranking2/performance/SCR2RequestTrace.proto";
+
+message SCR2SearchResponse {
+	string requestId = 1;
+	string searchSessionId = 2;
+	string searchSessionQueryId = 3;
+	string queryText = 4;
+	repeated ranking2.SCR2SearchSection sectionsArray = 5;
+	string debugMap = 6;
+	repeated ranking2.SCR2SearchConfigResponse searchConfigResponsesArray = 7;
+	repeated ranking2.SCR2PageFooter pageFooterArray = 8;
+	ranking2.SCR2ErrorBar errorBar = 9;
+	ranking2.performance.SCR2RequestTrace trace = 100;
+}

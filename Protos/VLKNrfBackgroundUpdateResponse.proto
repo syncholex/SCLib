@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+message VLKNrfBackgroundUpdateResponse {
+
+	enum VLKNrfBackgroundUpdateErrorCode {
+		MISSING_REQUEST_TYPE = 1;
+		MISSING_REQUEST_FIELD = 2;
+		UNRECOGNIZED_REQUEST_TYPE = 3;
+	}
+
+	VLKNrfBackgroundUpdateErrorCode errorCode = 1;
+	bool isBackgroundStateValid = 2;
+	string targetHash = 3;
+	string targetVersionTag = 4;
+	uint32 timeUntilWindowMillis = 5;
+	uint32 windowLengthMillis = 6;
+
+	enum VLKNrfBackgroundUpdateFailureReason {
+		NO_FAILURE = 0;
+		BEFORE_WINDOW = 1;
+		AFTER_WINDOW = 2;
+		TAG_MATCHES = 3;
+		ACTIVITY = 4;
+		GET_HASH_TIMED_OUT = 5;
+		MISMATCHED_DIGEST = 6;
+	}
+
+	VLKNrfBackgroundUpdateFailureReason lastFailureReason = 7;
+	uint64 elapsedTimeMillis = 8;
+}

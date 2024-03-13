@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Hydra {
+	repeated double histogramArray = 1 [packed=true];
+	bool isLowContrast = 2;
+	bool isFirstFrameLowContrast = 3;
+}

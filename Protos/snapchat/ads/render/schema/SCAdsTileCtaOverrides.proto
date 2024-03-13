@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsTileCtaOverrides {
+	string iosAppId = 1;
+	string androidPackageId = 2;
+	string webviewURL = 3;
+
+	enum SCAdsTileCTAAttachmentType {
+		ATTACHMENT_TYPE_UNSET = 0;
+		APP_INSTALL_ATTACHMENT = 1;
+		WEBVIEW_ATTACHMENT = 2;
+	}
+
+	SCAdsTileCTAAttachmentType attachmentType = 4;
+	string tileCallToAction = 5;
+}

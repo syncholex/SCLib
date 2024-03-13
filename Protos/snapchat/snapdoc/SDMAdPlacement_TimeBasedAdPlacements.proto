@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMAdPlacement_AdPlacementStrategy.proto";
+
+message SDMAdPlacement_TimeBasedAdPlacements {
+	repeated snapchat.snapdoc.SDMAdPlacement_AdPlacementStrategy adPlacementStrategyArray = 1;
+}

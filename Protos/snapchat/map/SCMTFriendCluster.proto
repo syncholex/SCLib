@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTImage.proto";
+import "snapchat/map/SCMTFriendLocation.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+
+message SCMTFriendCluster {
+	snapchat.map.SCMTImage prop = 1;
+	snapchat.map.SCMTImage floor = 2;
+	float centerLat = 3;
+	float centerLng = 4;
+	repeated snapchat.map.SCMTFriendLocation friendLocationArray = 5;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 6;
+	string clusterId = 7;
+}

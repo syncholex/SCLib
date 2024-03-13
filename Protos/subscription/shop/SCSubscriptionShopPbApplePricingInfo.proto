@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbApplePricingInfo_ApplePlan.proto";
+
+message SCSubscriptionShopPbApplePricingInfo {
+	repeated subscription.shop.SCSubscriptionShopPbApplePricingInfo_ApplePlan plansArray = 1;
+}

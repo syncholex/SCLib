@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+message BoostStats {
+	bool isUgc = 1;
+	string storyId = 2;
+	string snapId = 3;
+	int64 boostCounts = 4;
+	int64 subCount = 5;
+	int64 pendingReplyCount = 6;
+	int64 liveReplyCount = 7;
+	bool clearUnseenPendingCount = 8;
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 9;
+	int64 remixCount = 10;
+}

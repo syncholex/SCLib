@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPWeatherStickerMetadata_DailyForecast {
+	float minTemperatureInCelsius = 3;
+	float maxTemperatureInCelsius = 4;
+	string weatherCondition = 5;
+	string displayTime = 6;
+}

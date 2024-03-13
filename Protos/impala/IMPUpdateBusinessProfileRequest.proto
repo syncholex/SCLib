@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateString.proto";
+import "impala/IMPUpdateBytes.proto";
+import "impala/IMPAddress.proto";
+import "impala/IMPUpdateCateory.proto";
+import "impala/IMPUpdateSubCateory.proto";
+import "impala/IMPUpdateInt.proto";
+import "impala/IMPUpdateBool.proto";
+
+message IMPUpdateBusinessProfileRequest {
+	string id_p = 1;
+	impala.IMPUpdateString title = 2;
+	impala.IMPUpdateString description_p = 3;
+	impala.IMPUpdateString phoneNumber = 4;
+	impala.IMPUpdateString address = 5;
+	impala.IMPUpdateString emailAddress = 6;
+	impala.IMPUpdateBytes logo = 7;
+	impala.IMPUpdateString websiteURL = 8;
+	impala.IMPAddress addressInfo = 9;
+	impala.IMPUpdateString category = 10;
+	impala.IMPUpdateString subcategory = 11;
+	impala.IMPUpdateBytes heroImage = 12;
+	impala.IMPUpdateCateory categoryEnum = 13;
+	impala.IMPUpdateSubCateory subcategoryEnum = 14;
+	impala.IMPUpdateInt heroImageVerticalPosition = 15;
+	impala.IMPUpdateBytes originalHeroImage = 16;
+	impala.IMPUpdateString placeCollectionId = 17;
+	string profileHostUserId = 18;
+	bool isUpsert = 19;
+	impala.IMPUpdateString privateEmail = 100;
+	impala.IMPUpdateString privatePhoneNumber = 101;
+	impala.IMPUpdateBool isTestProfile = 200;
+}

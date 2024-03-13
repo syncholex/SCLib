@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightSubscribeInfo_SubscribeInfo_UserInfo.proto";
+import "snapchat/context2/iz/SCCTXSpotlightSubscribeInfo_SubscribeInfo_PublisherInfo.proto";
+
+message SCCTXSpotlightSubscribeInfo_SubscribeInfo {
+
+	oneof info {
+		snapchat.context2.iz.SCCTXSpotlightSubscribeInfo_SubscribeInfo_UserInfo userInfo = 1;
+		snapchat.context2.iz.SCCTXSpotlightSubscribeInfo_SubscribeInfo_PublisherInfo publisherInfo = 2;
+	}
+
+}

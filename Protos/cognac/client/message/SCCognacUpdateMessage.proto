@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cognac.client.message;
+
+import "cognac/client/message/SCCognacLaunchMessage.proto";
+import "cognac/client/message/SCCognacTerminateMessage.proto";
+import "cognac/client/message/SCCognacCloseMessage.proto";
+
+message SCCognacUpdateMessage {
+	string id_p = 1;
+	string appId = 2;
+	string appName = 3;
+
+	oneof message {
+		cognac.client.message.SCCognacLaunchMessage launchMessage = 4;
+		cognac.client.message.SCCognacTerminateMessage terminateMessage = 5;
+		cognac.client.message.SCCognacCloseMessage closeMessage = 6;
+	}
+
+	string appInstanceId = 7;
+	string appIconURL = 8;
+}

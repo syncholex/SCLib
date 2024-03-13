@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LocationSharingSettings.proto";
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LiveLocationSharingSettings.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SMSdkLocationSharingPreferences {
+	snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LocationSharingSettings locationSharingSettings = 1;
+	snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LiveLocationSharingSettings liveLocationSharingSettings = 2;
+	google.protobuf.GPBBoolValue isUpgradedToLiveOnly = 3;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+message SCMGTYTicketmasterEvent {
+	string id_p = 1;
+	string venueId = 2;
+	string imageBoltURL = 3;
+	string name = 4;
+	uint64 startTimeSeconds = 5;
+
+	enum SCMGLTMCategory {
+		UNSET = 0;
+		MISCELLANEOUS = 1;
+		SPORTS = 2;
+		MUSIC = 3;
+		ARTS_AND_THEATRE = 4;
+		UNDEFINED = 5;
+		FILM = 6;
+	}
+
+	SCMGLTMCategory category = 6;
+	string venueName = 7;
+	bool isPopular = 8;
+	string URL = 9;
+}

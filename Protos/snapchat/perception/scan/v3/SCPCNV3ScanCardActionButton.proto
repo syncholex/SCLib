@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3LearnMoreAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3OpenAppAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3OpenShowcaseAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ShareResultAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3OpenSnapchatDeeplinkAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3OpenProfileAction.proto";
+
+message SCPCNV3ScanCardActionButton {
+
+	oneof type {
+		snapchat.perception.scan.v3.SCPCNV3LearnMoreAction learnMoreAction = 1;
+		snapchat.perception.scan.v3.SCPCNV3OpenAppAction openAppAction = 2;
+		snapchat.perception.scan.v3.SCPCNV3OpenShowcaseAction openShowcaseAction = 3;
+		snapchat.perception.scan.v3.SCPCNV3ShareResultAction shareResultAction = 4;
+		snapchat.perception.scan.v3.SCPCNV3OpenSnapchatDeeplinkAction openSnapchatDeeplinkAction = 5;
+		snapchat.perception.scan.v3.SCPCNV3OpenProfileAction openProfileAction = 6;
+	}
+
+}

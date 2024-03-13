@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerCategoryTile_Category.proto";
+
+message SCLELensExplorerCategoryTile {
+	snapchat.lens.le.SCLELensExplorerCategoryTile_Category categoryItem = 1;
+	string tileImageURL = 2;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMEngagementStats {
+	int64 boostCount = 1;
+	int64 shareCount = 2;
+	int64 viewCount = 3;
+	int64 subCount = 4;
+	int64 spotlightPendingReplyCount = 5;
+	int64 spotlightLiveReplyCount = 6;
+	int64 spotlightNewPendingReplyCount = 7;
+	int64 rewatchCount = 8;
+	int64 remixCount = 9;
+	int64 viewerCount = 10;
+	int64 screenshotCount = 11;
+	int64 privateReplyCount = 12;
+	int64 subViewerCount = 13;
+	int64 nonSubViewerCount = 14;
+	int64 swipeUpCount = 15;
+	int64 swipeDownCount = 16;
+	int64 swipeAwayCount = 17;
+	int64 tapForwardCount = 18;
+	int64 tapBackwardCount = 19;
+	int64 totalViewTimeMs = 20;
+	int64 avgViewTimeMs = 21;
+	int64 pendingCommentCount = 22;
+	int64 liveCommentCount = 23;
+	int64 newPendingCommentCount = 24;
+	int64 recommendCount = 25;
+}

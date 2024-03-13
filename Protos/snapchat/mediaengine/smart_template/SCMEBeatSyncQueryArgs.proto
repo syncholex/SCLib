@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMESelectedMusicMetadata.proto";
+
+message SCMEBeatSyncQueryArgs {
+
+	oneof arg {
+		int64 trackId = 1;
+		snapchat.mediaengine.smart_template.SCMESelectedMusicMetadata musicSyncMetadata = 2;
+	}
+
+}

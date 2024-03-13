@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_DiscoverTags_DiscoverTag.proto";
+
+message SnapBrainResponse_Results_DiscoverTags {
+	repeated snapchat.research.SnapBrainResponse_Results_DiscoverTags_DiscoverTag tagsArray = 1;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsDatePoint.proto";
+
+message IMPInsightsSavedStoryInsightsForUser {
+	int64 uniqueViewers = 1;
+	int64 uniqueViewersPreviousPeriod = 2;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersForTimestampArray = 3;
+	double timeSpentMs = 4;
+	double timeSpentMsPreviousPeriod = 5;
+	repeated impala.insights.IMPInsightsDatePoint timeSpentMsForTimestampArray = 6;
+	int64 timeViewedMs = 7;
+	int64 timeViewedMsPreviousPeriod = 8;
+	repeated impala.insights.IMPInsightsDatePoint timeViewedMsForTimestampArray = 9;
+	int64 screenshots = 10;
+	int64 screenshotsPreviousPeriod = 11;
+	repeated impala.insights.IMPInsightsDatePoint screenshotsForTimestampArray = 12;
+	int64 shares = 13;
+	int64 sharesPreviousPeriod = 14;
+	repeated impala.insights.IMPInsightsDatePoint sharesForTimestampArray = 15;
+	int64 storyViews = 16;
+	int64 storyViewsPreviousPeriod = 17;
+	repeated impala.insights.IMPInsightsDatePoint storyViewsForTimestampArray = 18;
+	double attachmentConversion = 19;
+	double attachmentConversionPreviousPeriod = 20;
+	repeated impala.insights.IMPInsightsDatePoint attachmentConversionForTimestampArray = 21;
+}

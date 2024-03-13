@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMPermittedUserActions {
+
+	enum SDMPermittedUserActions_ShareOption {
+		NO_SHARE = 0;
+		SHARE_AVAILABLE = 1;
+	}
+
+	SDMPermittedUserActions_ShareOption shareOption = 1;
+
+	enum SDMPermittedUserActions_ReportOption {
+		REPORT_OPTION_UNKNOWN = 0;
+		REPORT_OPTION_DISABLED = 1;
+		REPORT_OPTION_ENABLED = 2;
+	}
+
+	SDMPermittedUserActions_ReportOption reportOption = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingStreakStatusMessage {
+
+	enum SCMessagingStreakStatusMessage_StreakStatus {
+		STREAK_STATUS_UNSET = 0;
+		STREAK_STATUS_START = 1;
+		STREAK_STATUS_END = 2;
+	}
+
+	SCMessagingStreakStatusMessage_StreakStatus streakStatus = 1;
+	uint32 streakCount = 2;
+}

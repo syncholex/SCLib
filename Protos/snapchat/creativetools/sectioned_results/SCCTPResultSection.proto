@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.creativetools.sectioned_results;
+
+import "snapchat/creativetools/sectioned_results/SCCTPResultEntry.proto";
+
+message SCCTPResultSection {
+
+	enum SCCTPResultSection_SectionType {
+		UNSET = 0;
+		PINNED = 1;
+		RECOMMENDED = 2;
+		INTERACTIVE = 3;
+	}
+
+	SCCTPResultSection_SectionType sectionType = 1;
+	repeated snapchat.creativetools.sectioned_results.SCCTPResultEntry resultsArray = 3;
+
+	enum SCCTPResultSection_LayoutDirection {
+		FLOW_DIRECTION_UNSET = 0;
+		HORIZONTAL = 1;
+		VERTICAL = 2;
+	}
+
+	SCCTPResultSection_LayoutDirection layoutDirection = 4;
+	int32 displayCount = 5;
+}

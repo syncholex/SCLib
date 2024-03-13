@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPopularRecentlyDetails_PopularPlace.proto";
+
+message VRZPopularRecentlyDetails {
+	repeated snapchat.local.verrazano.VRZPopularRecentlyDetails_PopularPlace popularPlacesArray = 1;
+}

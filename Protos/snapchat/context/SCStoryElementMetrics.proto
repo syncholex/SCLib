@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "serengeti/SGTILink.proto";
+
+message SCStoryElementMetrics {
+	int64 lastUpdateTimestampMs = 1;
+	int32 viewCount = 2;
+	int32 screenshotCount = 3;
+	google.protobuf.GPBInt32Value reach = 4;
+	google.protobuf.GPBInt32Value screenshots = 5;
+	google.protobuf.GPBInt32Value storyReplies = 6;
+	google.protobuf.GPBInt32Value uniqueViewersSubscribers = 7;
+	google.protobuf.GPBInt32Value uniqueViewersNonSubscribers = 8;
+	google.protobuf.GPBInt32Value snapViews = 9;
+	google.protobuf.GPBInt32Value swipeUps = 10;
+	google.protobuf.GPBInt32Value tapForward = 11;
+	google.protobuf.GPBInt32Value tapBackward = 12;
+	google.protobuf.GPBInt32Value swipeAways = 13;
+	google.protobuf.GPBInt32Value boosts = 14;
+	google.protobuf.GPBInt32Value shares = 15;
+	google.protobuf.GPBInt32Value subscribes = 16;
+	int32 views = 17;
+	string additionalDetailsURL = 100;
+	serengeti.SGTILink additionalDetailsLink = 101;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message SCFriendingFriendInviteOrAddByPhoneParam {
+	repeated string countryCodeArray = 1;
+	string rawPhoneNumber = 2;
+	string displayName = 3;
+}

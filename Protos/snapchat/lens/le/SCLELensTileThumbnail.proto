@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensTileThumbnail_ImageSequence.proto";
+
+message SCLELensTileThumbnail {
+	snapchat.lens.le.SCLELensTileThumbnail_ImageSequence imageSequence = 1;
+	string thumbnailMediaURL = 2;
+	string previewKey = 3;
+	string previewIv = 4;
+}

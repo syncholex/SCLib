@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatures.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatureLists.proto";
+
+message SCPNLOOKALIESequenceExample {
+	snapchat.perception.lookalike.features.SCPNLOOKALIEFeatures context = 1;
+	snapchat.perception.lookalike.features.SCPNLOOKALIEFeatureLists featureLists = 2;
+}

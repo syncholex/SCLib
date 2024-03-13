@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+message SCPbGenAIIdentityDeleteRequest {
+	string identityId = 1;
+}

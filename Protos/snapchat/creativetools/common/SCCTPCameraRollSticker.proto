@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPCameraRollSticker {
+	string encKey = 1;
+	string encIv = 2;
+	int64 creationTimeSeconds = 3;
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+	snapchat.core.SCCOREUUID creatorId = 5;
+	uint32 width = 6;
+	uint32 height = 7;
+}

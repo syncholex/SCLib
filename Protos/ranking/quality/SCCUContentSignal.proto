@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+import "ranking/quality/SCCUTypedEmbedding.proto";
+import "ranking/quality/SCCUClassification.proto";
+import "ranking/quality/SCCUKnnLookup.proto";
+
+message SCCUContentSignal {
+
+	oneof signal {
+		ranking.quality.SCCUTypedEmbedding typedEmbedding = 1;
+		ranking.quality.SCCUClassification classification = 2;
+		ranking.quality.SCCUKnnLookup knnLookup = 3;
+	}
+
+}

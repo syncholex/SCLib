@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1Image_InlineImage {
+	bytes imageData = 1;
+
+	enum SCContextV1Image_InlineImage_ImageType {
+		JPEG = 0;
+		PNG = 1;
+	}
+
+	SCContextV1Image_InlineImage_ImageType imageType = 2;
+}

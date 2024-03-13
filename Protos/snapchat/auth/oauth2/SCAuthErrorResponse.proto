@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthErrorResponse {
+	string error = 1;
+	string errorDescription = 2;
+	string state = 3;
+}

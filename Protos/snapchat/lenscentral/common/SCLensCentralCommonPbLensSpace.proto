@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCLensCentralCommonPbLensSpace {
+	string id_p = 1;
+	string name = 2;
+	google.protobuf.GPBTimestamp createdAt = 3;
+	google.protobuf.GPBTimestamp updatedAt = 4;
+}

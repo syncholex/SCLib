@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.snapcodes.payloads;
+
+message SCSnapcodePayloadDiscover {
+	string header = 1;
+	string byline = 2;
+	string iconURL = 3;
+	string deepLinkURL = 4;
+}

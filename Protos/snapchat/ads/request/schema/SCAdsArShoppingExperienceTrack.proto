@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBUInt64Value.proto";
+
+message SCAdsArShoppingExperienceTrack {
+	google.protobuf.GPBBoolValue tryOnButtonClicked = 1;
+	google.protobuf.GPBInt64Value arExperienceTimeViewedMillis = 2;
+	google.protobuf.GPBUInt64Value unlockableId = 3;
+}

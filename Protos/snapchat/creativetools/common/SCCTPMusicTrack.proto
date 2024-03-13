@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPContentRestrictions.proto";
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message SCCTPMusicTrack {
+	uint64 trackId = 1;
+	string title = 2;
+	string albumName = 3;
+	string artistName = 4;
+	uint64 durationSec = 7;
+	snapchat.creativetools.common.SCCTPContentRestrictions contentRestrictions = 8;
+	string externalServiceURL = 9;
+	snapchat.creativetools.common.SCCTPEncryptedMedia encryptedAlbumArt = 10;
+	snapchat.creativetools.common.SCCTPEncryptedMedia encryptedAudioTrack = 11;
+	bool isExplicit = 12;
+	uint32 startOffsetMs = 13;
+
+	enum SCCTPMusicTrackType {
+		TRACK_TYPE_UNSET = 0;
+		LICENSED = 1;
+		CUSTOM_SOUND = 2;
+		SPOTLIGHT_ORIGINAL_SOUND = 3;
+	}
+
+	SCCTPMusicTrackType trackType = 14;
+	string releaseDate = 16;
+}

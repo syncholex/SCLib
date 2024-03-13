@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsMember.proto";
+
+message IMPAdsCreateMemberRequest {
+	repeated impala.adsapi.IMPAdsMember membersArray = 1;
+}

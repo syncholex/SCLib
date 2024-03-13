@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSharingInviteDeleteRequest {
+	snapchat.core.SCCOREUUID initiatingUserId = 1;
+
+	oneof inviteId {
+		snapchat.core.SCCOREUUID longId = 2;
+		string shortId = 3;
+	}
+
+}

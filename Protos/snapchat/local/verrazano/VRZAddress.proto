@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZAddress {
+	string address1 = 1;
+	string address2 = 2;
+	string locality = 3;
+	string region = 4;
+	string postalCode = 5;
+	string country = 6;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3SolanaAddress.proto";
+import "snapchat/web3/SCPBWeb3SolanaAddresses.proto";
+
+message SCPBWeb3TokenIdentifier {
+
+	oneof identifier {
+		snapchat.web3.SCPBWeb3SolanaAddress mintAddress = 1;
+		snapchat.web3.SCPBWeb3SolanaAddresses mintAddresses = 2;
+	}
+
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Interestingness {
+	double score = 1;
+	bool hasAudio = 2;
+	repeated double audioCnnFeatureArray = 3 [packed=true];
+	repeated double videoCnnFeatureArray = 4 [packed=true];
+}

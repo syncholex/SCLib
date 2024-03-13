@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRBinaryExpression {
+
+	enum SCSTRBinaryOperator {
+		BINARY_OPERATOR_UNSET = 0;
+		AND = 1;
+		OR = 2;
+		COALESCE = 3;
+	}
+
+	SCSTRBinaryOperator operator_p = 1;
+	snapchat.sendto.ranking.SCSTRAST left = 2;
+	snapchat.sendto.ranking.SCSTRAST right = 3;
+}

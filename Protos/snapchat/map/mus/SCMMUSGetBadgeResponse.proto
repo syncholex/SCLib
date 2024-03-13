@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+import "snapchat/map/mus/SCMMUSBadge.proto";
+
+message SCMMUSGetBadgeResponse {
+	bool isBadgeAvailable = 1;
+	snapchat.map.mus.SCMMUSBadge badge = 2;
+}

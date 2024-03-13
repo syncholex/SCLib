@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbShopCountry {
+	string code = 1;
+}

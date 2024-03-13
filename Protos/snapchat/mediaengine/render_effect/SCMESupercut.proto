@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.render_effect;
+
+message SCMESupercut {
+
+	enum SCMESupercut_Type {
+		UNSET = 0;
+		TIMELAPSE = 1;
+		PING_PONG = 2;
+		BULLET_TIME = 3;
+		JUMP_CUT = 4;
+	}
+
+	SCMESupercut_Type type = 1;
+}

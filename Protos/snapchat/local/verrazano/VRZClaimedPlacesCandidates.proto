@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZClaimedPlaceCandidate.proto";
+
+message VRZClaimedPlacesCandidates {
+	repeated snapchat.local.verrazano.VRZClaimedPlaceCandidate candidatePlacesArray = 1;
+}

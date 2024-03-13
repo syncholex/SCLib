@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/SnapchatProvidedChatWallpaper.proto";
+
+message SnapchatProvidedChatWallpaperList {
+	repeated snapchat.messaging.cof.SnapchatProvidedChatWallpaper chatWallpapersArray = 1;
+}

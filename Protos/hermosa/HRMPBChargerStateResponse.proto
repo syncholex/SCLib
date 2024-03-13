@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBChargerStateResponse {
+	bool isChargerConnected = 1;
+	bool isFullyCharged = 2;
+	int32 batteryTemperatureLeft = 3;
+	int32 chargingLimit = 4;
+	int32 chargingCurrent = 5;
+	int32 batteryTemperatureRight = 6;
+	int32 pdo = 7;
+	int32 dpdmStatus = 8;
+	int32 ccStatus = 9;
+	uint32 inputCurrentL = 10;
+	uint32 inputCurrentR = 11;
+	uint32 inputRegulationVoltageL = 12;
+	uint32 inputRegulationVoltageR = 13;
+	uint32 chargerFaultL = 14;
+	uint32 chargerFaultR = 15;
+	uint32 vbusStatusL = 16;
+	uint32 vbusStatusR = 17;
+	uint32 chargingLimitL = 18;
+	uint32 chargingLimitR = 19;
+	bool powerGoodStatus = 20;
+
+	enum HRMPBChargerStateResponse_Bc12Status {
+		NO_INPUT = 0;
+		HOST_SDP = 1;
+		USB_CDP = 2;
+		USB_DCP = 3;
+		UNKNOWN_ADAPTER = 5;
+		NON_STANDARD_ADAPTER = 6;
+		OTG = 7;
+	}
+
+	HRMPBChargerStateResponse_Bc12Status usbBc12Status = 21;
+	uint32 subregulatorFault = 22;
+	uint32 subregulatorInputCurrentLimit = 23;
+	uint32 rdoVoltage = 24;
+	uint32 rdoCurrent = 25;
+	uint32 subregulatorChargeVoltage = 26;
+	uint32 vbusVoltage = 27;
+	uint32 ccStatusRegister = 28;
+	bool isChargingCase = 29;
+	bool isChargerMocked = 30;
+}

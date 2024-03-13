@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Safety_SafetyDetection {
+	string category = 1;
+	float score = 2;
+	string source = 3;
+	uint32 frameId = 4;
+}

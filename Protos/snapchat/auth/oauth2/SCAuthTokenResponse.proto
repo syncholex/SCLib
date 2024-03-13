@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthTokenResponse {
+	string accessToken = 1;
+	string tokenType = 2;
+	uint32 expiresIn = 3;
+	string refreshToken = 4;
+	string scope = 5;
+}

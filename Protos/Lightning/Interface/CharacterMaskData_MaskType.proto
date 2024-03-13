@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package Lightning.Interface;
+
+message CharacterMaskData_MaskType {
+}

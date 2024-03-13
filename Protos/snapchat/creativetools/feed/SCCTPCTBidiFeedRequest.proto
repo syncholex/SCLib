@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.feed;
+
+import "snapchat/creativetools/common/SCCTPCTRequestParams.proto";
+import "snapchat/creativetools/feed/SCCTPCTBidiFeedRequest_FeedTreeRequest.proto";
+import "snapchat/creativetools/feed/SCCTPCTBidiFeedRequest_ComputeRequest.proto";
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+
+message SCCTPCTBidiFeedRequest {
+	snapchat.creativetools.common.SCCTPCTRequestParams params = 1;
+	repeated snapchat.creativetools.feed.SCCTPCTBidiFeedRequest_FeedTreeRequest feedTreeRequestsArray = 2;
+	repeated snapchat.creativetools.feed.SCCTPCTBidiFeedRequest_ComputeRequest computeRequestsArray = 3;
+	snapchat.ads.request.schema.SCAdsAdRequest adRequest = 4;
+}

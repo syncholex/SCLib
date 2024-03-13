@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDNotificationChannelGroup {
+	string channelGroupId = 1;
+	bool blocked = 2;
+}

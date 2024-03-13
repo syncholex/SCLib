@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessStorySnap.proto";
+
+message IMPInternalGetActiveBusinessStorySnapsResponse {
+	repeated impala.stories.IMPBusinessStorySnap snapsArray = 1;
+}

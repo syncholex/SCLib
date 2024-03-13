@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1GameElement.proto";
+
+message SCMT1StickerDynamicElement {
+	int32 originX = 1;
+	int32 originY = 2;
+
+	oneof dynamicContent {
+		actionmoji.action.SCMT1GameElement gameContent = 3;
+	}
+
+	int32 bottomRightX = 4;
+	int32 bottomRightY = 5;
+	bool drawOnNonClusteredSticker = 6;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.useragent;
+
+import "com/snapchat/useragent/SCUserAgentUserAgent.proto";
+import "com/snapchat/useragent/SCUserAgentServiceAgent.proto";
+
+message SCUserAgentAgent {
+
+	oneof agent {
+		com.snapchat.useragent.SCUserAgentUserAgent userAgent = 1;
+		com.snapchat.useragent.SCUserAgentServiceAgent serviceAgent = 2;
+	}
+
+}

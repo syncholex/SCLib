@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBLens.proto";
+
+message HRMPBAvailableLensesGetResponse {
+	repeated hermosa.HRMPBLens availableLensesArray = 1;
+	string nextPageToken = 2;
+}

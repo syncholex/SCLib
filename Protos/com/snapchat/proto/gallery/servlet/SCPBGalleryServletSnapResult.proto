@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+import "com/snapchat/proto/gallery/servlet/snap_assets/SCPBGalleryServletSnapAssetsAddSnapAssetResponse.proto";
+
+message SCPBGalleryServletSnapResult {
+	string snapId = 1;
+	int32 statusCode = 2;
+	string debugInfo = 3;
+	bool mediaUploaded = 4;
+	string mediaURL = 5;
+	string overlayURL = 6;
+	string thumbnailURL = 7;
+	string mediaUploadHeaders = 8;
+	string overlayUploadHeaders = 9;
+	string thumbnailUploadHeaders = 10;
+	string mediaRedirectUri = 11;
+	string overlayImageRedirectUri = 12;
+	string thumbnailRedirectUri = 13;
+	repeated com.snapchat.proto.gallery.servlet.snap_assets.SCPBGalleryServletSnapAssetsAddSnapAssetResponse snapAssetsArray = 14;
+	repeated string assetsArray = 15;
+	string thumbnailDirectDownloadURL = 16;
+	string overlayDirectDownloadURL = 17;
+	string mediaDirectDownloadURL = 18;
+}

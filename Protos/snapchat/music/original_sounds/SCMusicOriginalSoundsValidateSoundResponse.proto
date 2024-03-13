@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_MusicTrackInfo.proto";
+
+message SCMusicOriginalSoundsValidateSoundResponse {
+
+	enum SCMusicOriginalSoundsValidateSoundResponse_ValidationStatus {
+		UNSET = 0;
+		VALID = 1;
+		NOT_FOUND = 2;
+		COPYRIGHT_VIOLATION = 3;
+	}
+
+	SCMusicOriginalSoundsValidateSoundResponse_ValidationStatus status = 1;
+	snapchat.context2.api.SCCTXContextClientInfo_MusicTrackInfo contextMusicTrack = 2;
+}

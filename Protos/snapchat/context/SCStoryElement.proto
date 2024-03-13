@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCStoryElement_SnapInfo.proto";
+import "snapchat/context/SCStoryElement_WebMediaInfo.proto";
+import "snapchat/context/SCStoryElement_HtmlInfo.proto";
+import "snapchat/snapdoc/SDMCameoMetadata.proto";
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+import "snapchat/context/SCAttributionInfo.proto";
+import "snapchat/context/SCStoryElement_ThumbnailInfo.proto";
+import "snapchat/context/SCUserAction.proto";
+import "snapchat/context/SCAdInfo.proto";
+import "snapchat/context/SCStoryElementMetrics.proto";
+import "snapchat/context/SCStoryElementDebug.proto";
+
+message SCStoryElement {
+	string id_p = 1;
+	int32 version = 2;
+
+	enum SCContentType {
+		CONTENT_TYPE_SNAP = 0;
+		CONTENT_TYPE_VIDEO = 1;
+		CONTENT_TYPE_IMAGE = 2;
+		CONTENT_TYPE_WEB_URL = 3;
+		CONTENT_TYPE_HTML = 4;
+		CONTENT_TYPE_EXPLORER = 5;
+		CONTENT_TYPE_SEARCH = 6;
+		CONTENT_TYPE_THREE_VI = 7;
+	}
+
+	SCContentType contentType = 3;
+	int64 sunriseTimestamp = 4;
+	int64 sunsetTimestamp = 5;
+
+	oneof contentInfo {
+		snapchat.context.SCStoryElement_SnapInfo snapInfo = 6;
+		snapchat.context.SCStoryElement_WebMediaInfo webMediaInfo = 7;
+		snapchat.context.SCStoryElement_HtmlInfo htmlInfo = 8;
+	}
+
+	double duration = 10;
+	int64 timestamp = 11;
+	string sssId = 12;
+	int64 captureTimestamp = 13;
+	string bundleId = 31;
+	snapchat.snapdoc.SDMCameoMetadata cameo = 32;
+	snapchat.cameos.stories.SCCameosCameoTile cameoTile = 33;
+	bool isImportantRanking = 34;
+	string lensRankingId = 35;
+	bool isScanOnPublicContentEnabled = 36;
+	bool loop = 40;
+	snapchat.context.SCAttributionInfo attributionInfo = 41;
+	string previewURL = 42;
+	bool isDeletable = 43;
+	bool isSaveable = 44;
+	bool isReportable = 45;
+	bool needsModeration = 46;
+
+	enum SCDeleteAction {
+		NONE = 0;
+		DELETE = 1;
+		ARCHIVE = 2;
+	}
+
+	SCDeleteAction deleteAction = 47;
+	bool blockSharing = 48;
+	snapchat.context.SCStoryElement_ThumbnailInfo thumbnailInfo = 49;
+	bool isBoosted = 50;
+
+	enum SCStoryElement_CreatorPrivacyStatus {
+		UNKNOWN = 0;
+		PRIVATE = 1;
+		PUBLIC = 2;
+	}
+
+	SCStoryElement_CreatorPrivacyStatus attributionStatus = 51;
+	int32 minimumDurationMs = 100;
+	snapchat.context.SCUserAction tapAction = 101;
+	snapchat.context.SCUserAction swipeUpAction = 102;
+	snapchat.context.SCUserAction swipeLeftAction = 103;
+	snapchat.context.SCUserAction pressAndHoldAction = 104;
+	snapchat.context.SCUserAction swipeRightAction = 105;
+	snapchat.context.SCUserAction swipeDownAction = 106;
+	bool shouldPrefetch = 200;
+	int32 prefetchTtlMs = 201;
+	snapchat.context.SCAdInfo adInfo = 300;
+	snapchat.context.SCStoryElementMetrics metrics = 400;
+	snapchat.context.SCStoryElementDebug debugInfo = 500;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package serengeti;
+
+import "serengeti/SGTIStylizationIOS.proto";
+import "serengeti/SGTIStylizationAndroid.proto";
+import "serengeti/SGTIParameters.proto";
+
+message SGTILink {
+	string URL = 1;
+	serengeti.SGTIStylizationIOS stylizationIos = 2;
+	serengeti.SGTIStylizationAndroid stylizationAndroid = 3;
+	serengeti.SGTIParameters parameters = 4;
+	string serviceId = 5;
+}

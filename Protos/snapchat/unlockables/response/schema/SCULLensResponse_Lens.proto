@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+message SCULLensResponse_Lens {
+	string lensId = 1;
+	string iconURL = 2;
+	string lensName = 3;
+	string contentURL = 4;
+	string contentSignature = 5;
+}

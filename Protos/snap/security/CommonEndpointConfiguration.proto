@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snap.security;
+
+message CommonEndpointConfiguration {
+	repeated string prefixPathsArray = 1;
+	repeated string exactPathsArray = 2;
+
+	enum ArgosMode {
+		UNKNOWN_MODE_UNSET = 0;
+		DISABLED = 1;
+		LEGACY = 2;
+		NON_BLOCKING_FALLBACK = 3;
+		BLOCKING_LEGACY_FALLBACK = 4;
+		BLOCKING_NO_FALLBACK = 5;
+		BLOCKING_NO_FALLBACK_WITH_COLD_TOKEN = 6;
+	}
+
+	ArgosMode mode = 3;
+	bool sendStrictEnforcementHeader = 4;
+}

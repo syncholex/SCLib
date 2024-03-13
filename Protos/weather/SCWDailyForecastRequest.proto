@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package weather;
+
+message SCWDailyForecastRequest {
+	double lat = 1;
+	double lng = 2;
+
+	enum SCWReferer {
+		UNKNOWN = 0;
+		MAPS = 1;
+		STICKERS = 2;
+		LENSES = 3;
+		LOCATION_INGEST = 4;
+		LOC_DATA = 5;
+		HN_BITMOJI_WEATHER_STORY = 6;
+		ZENLY = 7;
+		SPECTACLES_HUB = 8;
+	}
+
+	SCWReferer referer = 3;
+	uint32 days = 4;
+}

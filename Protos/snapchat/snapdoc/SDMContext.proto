@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/context/SCContextContextHint.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo.proto";
+
+message SDMContext {
+	string venueId = 1;
+	snapchat.context.SCContextContextHint contextHint = 2;
+	snapchat.context2.api.SCCTXContextClientInfo contextClientInfo = 3;
+}

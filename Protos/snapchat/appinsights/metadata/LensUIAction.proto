@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/LensUIActionContext.proto";
+
+message LensUIAction {
+	string name = 1;
+	snapchat.appinsights.metadata.LensUIActionContext context = 2;
+}

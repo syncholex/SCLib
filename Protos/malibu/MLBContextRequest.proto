@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBContextNotifAnim.proto";
+
+message MLBContextRequest {
+	bool animate = 1;
+	malibu.MLBContextNotifAnim notificationAnim = 2;
+}

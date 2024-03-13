@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/map/slippy/SCMapsSlippyActionConfig.proto";
+
+message SCMapsSlippyGetShouldPerformActionResponse {
+	bool shouldPerformAction = 1;
+	snapchat.map.slippy.SCMapsSlippyActionConfig actionConfig = 2;
+}

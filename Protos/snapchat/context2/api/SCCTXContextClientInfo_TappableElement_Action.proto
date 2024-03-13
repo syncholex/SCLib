@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_TappableElement_Action {
+	string key = 1;
+
+	enum SCCTXCardDataType {
+		CardDataTypeUnknown = 0;
+		CardDataTypeAttachment = 1;
+		CardDataTypePlace = 2;
+		CardDataTypeEditorial = 3;
+		CardDataTypeReviews = 4;
+		CardDataTypeMention = 5;
+		CardDataTypeCommerceProduct = 6;
+		CardDataTypeCommerceStore = 7;
+		CardDataTypeFilter = 8;
+		CardDataTypeLens = 9;
+		CardDataTypeLensChallenge = 10;
+		CardDataTypeSnappable = 11;
+		CardDataTypeMapMarker = 12;
+		CardDataTypeAppInstall = 13;
+		CardDataTypeGroupInvite = 14;
+		CardDataTypeCognac = 15;
+		CardDataTypeSnapReplyRequest = 16;
+		CardDataTypeGenericSnapReplyPlaceholder = 17;
+		CardDataTypeRelatedStory = 18;
+		CardDataTypeStoryInvite = 19;
+		CardDataTypePublisher = 20;
+		CardDataTypeOurStoryCreator = 21;
+		CardDataTypeTopic = 22;
+		CardDataTypeQuickAddCreator = 23;
+		CardDataTypeMiniProgram = 24;
+		CardDataTypeCameoOnboarding = 25;
+		CardDataTypeMusic = 26;
+		CardDataTypeCreativeToolsSticker = 27;
+		CardDataTypeAstrologyProfile = 28;
+		CardDataTypeRemixUserAttribution = 29;
+		CardDataTypeSnapKitAppAttribution = 30;
+		CardDataTypeCreateAvatar = 31;
+		CardDataTypeBitmojiUnlockSticker = 32;
+		CardDataTypeCommerceItem = 33;
+		CardDataTypeCommerceStoreV2 = 34;
+		CardDataTypePoll = 35;
+		CardDataTypeTimeline = 36;
+		CardDataTypeCheerios = 37;
+		CardDataTypeIdentityWebViewAttachment = 38;
+		CardDataTypeSnapKitInvite = 39;
+		CardDataTypeQuestionSticker = 40;
+		CardDataTypeScreenshop = 41;
+		CardDataTypeDirectorMode = 42;
+		CardDataTypeDualCamera = 43;
+		CardDataTypeGreenScreen = 44;
+		CardDataTypeSpeedMode = 45;
+		CardDataTypeShoppingSticker = 46;
+		CardDataTypeMultiMerchantTopic = 47;
+		CardDataTypeShoppingStickerCommerceItem = 48;
+		CardDataTypeCTItem = 49;
+		CardDataTypeDiscoverDeeplinkSticker = 50;
+		CardDataTypeBitmojiOutfit = 51;
+		CardDataTypeViewRemixes = 52;
+		CardDataTypeScan = 53;
+		CardDataTypeLensCollection = 54;
+		CardDataTypeTemplate = 55;
+		CardDataTypeDreams = 56;
+		CardDataTypeSoundSync = 57;
+		CardDataTypeMagicCaption = 58;
+		CardDataTypeAIMode = 59;
+		CardDataTypePostCaptureAI = 60;
+	}
+
+	SCCTXCardDataType cardDataType = 2;
+}

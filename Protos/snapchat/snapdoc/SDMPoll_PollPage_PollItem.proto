@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMPoll_PollPage_PollItem {
+	string id_p = 1;
+	string description_p = 2;
+	uint32 outcomeIndex = 3;
+
+	oneof media {
+		bytes contentObject = 4;
+		string URL = 5;
+	}
+
+	string rspMediaId = 99;
+}

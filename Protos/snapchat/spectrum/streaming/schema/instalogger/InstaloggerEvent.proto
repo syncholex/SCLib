@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+import "snapchat/spectrum/streaming/schema/instalogger/StoryFeedItemLongImpression.proto";
+import "snapchat/spectrum/streaming/schema/instalogger/StoryFeedItemAction.proto";
+import "snapchat/spectrum/streaming/schema/instalogger/StoryFeedItemViewSession.proto";
+import "snapchat/spectrum/streaming/schema/instalogger/LensContentAction.proto";
+
+message InstaloggerEvent {
+
+	oneof event {
+		snapchat.spectrum.streaming.schema.instalogger.StoryFeedItemLongImpression impression = 1;
+		snapchat.spectrum.streaming.schema.instalogger.StoryFeedItemAction storyFeedItemAction = 2;
+		snapchat.spectrum.streaming.schema.instalogger.StoryFeedItemViewSession storyFeedItemViewSession = 3;
+		snapchat.spectrum.streaming.schema.instalogger.LensContentAction lensContentAction = 4;
+	}
+
+	int64 timestampMsecs = 11;
+	string timezone = 12;
+}

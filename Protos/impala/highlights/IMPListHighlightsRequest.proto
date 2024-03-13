@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPListHighlightsRequest {
+	string profileId = 1;
+	string pageId = 2;
+	int32 limit = 3;
+
+	enum IMPHighlightSourceFilter {
+		SOURCE_FILTER_ALL = 0;
+		SOURCE_FILTER_PROFILE_MANAGEMENT = 1;
+		SOURCE_FILTER_SEND_TO = 2;
+	}
+
+	IMPHighlightSourceFilter sourceFilter = 4;
+}

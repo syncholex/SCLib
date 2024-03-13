@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+message SCPBAirReportOption {
+	bool createJira = 1;
+	bool uploadLog = 2;
+	bool fromTestAutomation = 3;
+	bool isAutoShake = 4;
+	repeated string jiraLabelsArray = 5;
+}

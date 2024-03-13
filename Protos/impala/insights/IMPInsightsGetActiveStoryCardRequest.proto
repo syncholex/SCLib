@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsGetActiveStoryCardRequest {
+	string businessId = 1;
+}

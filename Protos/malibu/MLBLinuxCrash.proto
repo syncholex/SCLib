@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBLinuxCrash {
+
+	enum MLBLinuxCrash_CrashType {
+		UNKNOWN = 0;
+		SEG_FAULT = 1;
+		BROKEN_PIPE = 2;
+		ASSERT = 3;
+		UNHANDLED_EXCEPTION = 4;
+	}
+
+	MLBLinuxCrash_CrashType type = 1;
+	string identifier = 2;
+	string backtrace = 3;
+}

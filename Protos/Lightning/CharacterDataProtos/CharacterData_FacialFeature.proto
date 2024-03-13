@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+import "Lightning/CharacterDataProtos/CharacterData_FacialFeatureSlot.proto";
+
+message CharacterData_FacialFeature {
+	Lightning.CharacterDataProtos.CharacterData_FacialFeatureSlot facialFeatureSlots = 1;
+}

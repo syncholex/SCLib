@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package com.snapchat.cos.proto;
+
+message CommunicationChannel {
+}

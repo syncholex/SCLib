@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAdUAHConfig_DeepLinkAdConfig {
+
+	enum SCAdsAdUAHConfig_DeepLinkType {
+		DEEP_LINK_APP_INSTALL_UNSET = 0;
+		DEEP_LINK_WEB_VIEW = 1;
+	}
+
+	repeated SCAdsAdUAHConfig_DeepLinkType supportedFallbackTypesArray = 1 [packed=true];
+
+	enum SCAdsAdUAHConfig_WebViewType {
+		INTERNAL_BROWSER_UNSET = 0;
+		EXTERNAL_BROWSER = 1;
+	}
+
+	repeated SCAdsAdUAHConfig_WebViewType supportedWebViewFallbackTypesArray = 2 [packed=true];
+}

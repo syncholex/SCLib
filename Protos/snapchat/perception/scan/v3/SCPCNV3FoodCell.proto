@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardKnowledgeModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardRecipeModel.proto";
+
+message SCPCNV3FoodCell {
+	string name = 1;
+	string imageURL = 2;
+	snapchat.perception.scan.v3.SCPCNV3ScanCardKnowledgeModel scanCardKnowledgeModel = 3;
+	snapchat.perception.scan.v3.SCPCNV3ScanCardRecipeModel scanCardRecipeModel = 4;
+	string id_p = 5;
+}

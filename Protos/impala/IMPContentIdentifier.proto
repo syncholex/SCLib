@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPContentIdentifier {
+
+	enum IMPContentType {
+		MOMENTS = 0;
+		SHOWS = 1;
+		DISCOVER = 2;
+	}
+
+	IMPContentType contentType = 1;
+	string contentId = 2;
+}

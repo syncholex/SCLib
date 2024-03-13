@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.account;
+
+message AddNewShippingAddressResponse_AddNewShippingAddressResult {
+	bytes addressId = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_ClientOrderingInfo_CarouselGroupInfo.proto";
+import "snapchat/creativetools/common/CarouselGlobalScoreList.proto";
+
+message SCCTPFilter_ClientOrderingInfo {
+	snapchat.creativetools.common.SCCTPFilter_ClientOrderingInfo_CarouselGroupInfo carouselGroupInfo = 1;
+	bool guaranteeDelivery = 2;
+	int32 priority = 3;
+	snapchat.creativetools.common.CarouselGlobalScoreList carouselGlobalScoreList = 4;
+}

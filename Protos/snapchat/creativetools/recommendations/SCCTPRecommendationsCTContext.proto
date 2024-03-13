@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.recommendations;
+
+import "snapchat/creativetools/recommendations/SCCTPRecommendationsCTContext_LensContext.proto";
+import "snapchat/creativetools/recommendations/SCCTPRecommendationsCTContext_FilterContext.proto";
+
+message SCCTPRecommendationsCTContext {
+	snapchat.creativetools.recommendations.SCCTPRecommendationsCTContext_LensContext lensContext = 1;
+	snapchat.creativetools.recommendations.SCCTPRecommendationsCTContext_FilterContext filterContext = 2;
+}

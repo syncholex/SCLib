@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message CreateMediaLinkResponse {
+	bool isSuccessful = 1;
+	string mediaLinkURL = 2;
+	repeated snapchat.snapdoc.SDMSnapDoc snapsArray = 3;
+}

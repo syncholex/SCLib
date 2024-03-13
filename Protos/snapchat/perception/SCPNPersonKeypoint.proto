@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNCoordinate.proto";
+
+message SCPNPersonKeypoint {
+
+	enum SCPNPersonKeypoint_Type {
+		UNKNOWN_KEYPOINT = 0;
+		RIGHT_ANKLE = 1;
+		RIGHT_KNEE = 2;
+		RIGHT_HIP = 3;
+		LEFT_HIP = 4;
+		LEFT_KNEE = 5;
+		LEFT_ANKLE = 6;
+		PELVIS = 7;
+		THORAX = 8;
+		UPPER_NECK = 9;
+		HEAD_TOP = 10;
+		RIGHT_WRIST = 11;
+		RIGHT_ELBOW = 12;
+		RIGHT_SHOULDER = 13;
+		LEFT_SHOULDER = 14;
+		LEFT_ELBOW = 15;
+		LEFT_WRIST = 16;
+	}
+
+	SCPNPersonKeypoint_Type type = 1;
+	snapchat.perception.SCPNCoordinate coordinate = 2;
+}

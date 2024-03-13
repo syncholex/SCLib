@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/SCCofConfigResultWithSequenceId.proto";
+
+message SCCofGetConfigResultsBySequenceIdsResponse {
+	repeated snapchat.cdp.cof.SCCofConfigResultWithSequenceId configResultWithSequenceIdsArray = 1;
+}

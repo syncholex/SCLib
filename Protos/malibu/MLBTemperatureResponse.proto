@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBTemperatureResponse {
+	float nordicTemp = 1;
+	int32 ambaTemp = 2;
+	int32 wifiTemp = 3;
+	int32 imageSensorTemp = 4;
+	int32 coulombCtrlTemp = 5;
+
+	enum MLBTemperatureResponse_TemperatureStatus {
+		TemperatureNormal = 0;
+		TemperatureLow = 1;
+		TemperatureHigh = 2;
+	}
+
+	MLBTemperatureResponse_TemperatureStatus status = 6;
+}

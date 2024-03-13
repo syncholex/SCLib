@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingExternalMediaDefaultDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingExternalMediaGiftDisplayInfo.proto";
+
+message SCMessagingExternalMediaDisplayInfo {
+
+	oneof media {
+		snapchat.messaging.SCMessagingExternalMediaDefaultDisplayInfo default_p = 1;
+		snapchat.messaging.SCMessagingExternalMediaGiftDisplayInfo gift = 2;
+	}
+
+}

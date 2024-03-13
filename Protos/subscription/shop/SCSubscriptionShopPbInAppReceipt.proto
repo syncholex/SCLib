@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbInAppReceipt {
+
+	enum SCSubscriptionEnumPbProvider {
+		PROVIDER_UNSET = 0;
+		PROVIDER_GOOGLE = 1;
+		PROVIDER_APPLE = 2;
+		PROVIDER_SNAP = 3;
+		PROVIDER_BANGO = 4;
+		PROVIDER_TEST = 5;
+		PROVIDER_SNAP_FAM = 6;
+	}
+
+	SCSubscriptionEnumPbProvider provider = 1;
+	string productId = 2;
+	string transactionId = 3;
+	string receipt = 4;
+}

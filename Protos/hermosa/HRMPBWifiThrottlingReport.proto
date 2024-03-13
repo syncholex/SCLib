@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBTemperatureResponse.proto";
+
+message HRMPBWifiThrottlingReport {
+	uint32 throttling = 1;
+	bool dutyCycleControl = 2;
+	hermosa.HRMPBTemperatureResponse temperatures = 3;
+}

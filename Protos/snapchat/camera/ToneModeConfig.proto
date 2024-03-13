@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message ToneModeConfig {
+	bool enableToneMode = 1;
+	int64 toneModeLensId = 2;
+	bool enableLensStacking = 3;
+	bool disableToneModeLensTemporarilyWhenShoppingLensEnabled = 4;
+	bool disableToneModeLensTemporarilyWhenAnyLensEnabled = 5;
+	bool dismissToneModeAfterCameraSession = 6;
+	bool enableToneModeWidget = 7;
+	bool showToneModeOnReplyCamera = 8;
+	int32 widgetDesignVersion = 9;
+}

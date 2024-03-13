@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBVideoData.proto";
+import "malibu/MLBImageData.proto";
+import "malibu/MLBNordicData.proto";
+import "malibu/MLBAmbaData.proto";
+import "malibu/MLBCameraSensorData.proto";
+import "malibu/MLBGpsData.proto";
+import "malibu/MLBTimeData.proto";
+import "malibu/MLBFwVersion.proto";
+import "malibu/MLBCoulombCtrlData.proto";
+import "malibu/MLBMultisnap.proto";
+import "malibu/MLBSystemState.proto";
+import "malibu/MLBPerformanceData.proto";
+import "malibu/MLBAlsReading.proto";
+import "malibu/MLBLocationData.proto";
+import "malibu/MLBPowerAnalytics.proto";
+import "malibu/MLBHummingbird.proto";
+
+message MLBMediaFileMetadata {
+	malibu.MLBVideoData videoData = 1;
+	malibu.MLBImageData imageData = 2;
+	malibu.MLBNordicData nordicData = 3;
+	malibu.MLBAmbaData ambaData = 4;
+	malibu.MLBCameraSensorData cameraSensorData = 5;
+	malibu.MLBGpsData gpsData = 6;
+	bytes randomBytes = 7;
+	malibu.MLBTimeData time = 8;
+	malibu.MLBFwVersion fwVersion = 9;
+	bool hasUploaded = 10;
+	malibu.MLBCoulombCtrlData coulombCtrlData = 11;
+	malibu.MLBMultisnap multisnap = 12;
+	malibu.MLBSystemState systemState = 13;
+	malibu.MLBPerformanceData performanceData = 14;
+
+	enum MLBButtonSide {
+		LEFT = 0;
+		RIGHT = 1;
+	}
+
+	MLBButtonSide buttonSide = 15;
+	malibu.MLBAlsReading alsReading = 16;
+	malibu.MLBLocationData locationData = 17;
+	string factorySerialNumber = 18;
+	malibu.MLBPowerAnalytics powerAnalytics = 19;
+	malibu.MLBHummingbird hummingbird = 20;
+}

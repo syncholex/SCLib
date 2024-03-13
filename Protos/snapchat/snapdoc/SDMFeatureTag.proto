@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMFeatureTag {
+	uint32 tagId = 1;
+
+	enum SDMFeatureTag_CreativeToolFeature {
+		UNSET = 0;
+		MUSIC = 1;
+		VOICEOVER = 2;
+		MEDIA_TEMPLATE = 3;
+		AUDIO_LEVELS = 4;
+		TTS = 5;
+		UCO = 6;
+		COLLAGE = 7;
+	}
+
+	SDMFeatureTag_CreativeToolFeature creativeToolFeature = 2;
+}

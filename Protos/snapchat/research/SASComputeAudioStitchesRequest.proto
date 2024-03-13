@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASComputeAudioStitchesRequest {
+	repeated string snapIdsArray = 1;
+	int32 matchThreshold = 2;
+	int64 maxTimestampDiff = 3;
+}

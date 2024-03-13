@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingStatusCallingStatusDisplayInfo {
+
+	enum SCMessagingCallingStatusMessage_CallStatus {
+		STARTED = 0;
+		ENDED = 1;
+		LEFT = 2;
+		JOINED = 3;
+		MISSED = 4;
+	}
+
+	SCMessagingCallingStatusMessage_CallStatus callStatus = 1;
+
+	enum SCMessagingCallingStatusMessage_CallType {
+		AUDIO = 0;
+		VIDEO = 1;
+	}
+
+	SCMessagingCallingStatusMessage_CallType callType = 2;
+}

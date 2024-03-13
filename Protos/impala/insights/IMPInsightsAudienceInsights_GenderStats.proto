@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsAudienceInsights_GenderStats {
+
+	enum IMPInsightsUserGender {
+		GENDER_UNKNOWN = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+	}
+
+	IMPInsightsUserGender gender = 1;
+	double ratio = 2;
+}

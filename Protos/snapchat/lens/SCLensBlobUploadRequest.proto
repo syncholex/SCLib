@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/lens/SCLensBlobMedia.proto";
+
+message SCLensBlobUploadRequest {
+	snapchat.lens.SCLensBlobMedia media = 1;
+
+	enum SCLensBlobPersistenceType {
+		LENS_BLOB_EPHEMERAL = 0;
+		LENS_BLOB_GALLERY = 1;
+	}
+
+	SCLensBlobPersistenceType persistenceType = 6;
+}

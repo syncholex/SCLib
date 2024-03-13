@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+message SCPCNSettingsSettingsRequest {
+	string requestId = 1;
+}

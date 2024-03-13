@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/STOEpisode.proto";
+import "snapchat/storydoc/STOShowExtra.proto";
+
+message IMPGetShowComponentsResponse {
+	repeated snapchat.storydoc.STOEpisode episodesArray = 1;
+	repeated snapchat.storydoc.STOShowExtra extrasArray = 2;
+}

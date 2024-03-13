@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportCameosReasonId {
+
+	enum SCReportCameosReasonId_ReasonId {
+		REASON_UNSET = 0;
+		WHY_MYSELF_IN_CAMEO = 1;
+		GENDER_MISMATCH = 2;
+		UNKNOWN_FRIEND = 3;
+		DONT_LIKE_WANT_TO_SEE = 4;
+		INAPPROPRIATE = 5;
+		TECHNICAL_ISSUE = 6;
+		OTHER = 7;
+	}
+
+	SCReportCameosReasonId_ReasonId reasonId = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZPlacePivotsInfo.proto";
+
+message VRZGetPlacePivotsResponse {
+	repeated snapchat.local.placediscovery.VRZPlacePivotsInfo pivotsInfoArray = 1;
+}

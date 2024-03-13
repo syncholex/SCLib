@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceValueMap.proto";
+import "com/snapchat/deltaforce/SCDeltaforceValueList.proto";
+import "com/snapchat/deltaforce/SCDeltaforceItemKey.proto";
+
+message SCDeltaforceValue {
+
+	oneof types {
+		string string = 1;
+		sint64 long_p = 2;
+		bytes bytes = 3;
+		bool bool_p = 4;
+		double double_p = 5;
+		com.snapchat.deltaforce.SCDeltaforceValueMap map = 6;
+		com.snapchat.deltaforce.SCDeltaforceValueList list = 7;
+		com.snapchat.deltaforce.SCDeltaforceItemKey key = 9;
+		bool nullVal = 10;
+		uint64 epochTimeMillis = 11;
+	}
+
+}

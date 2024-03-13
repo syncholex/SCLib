@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSSnapJoinerVideoData.proto";
+import "snapchat/perception/showcase/screenshop/SCPSSSnapJoinerImageData.proto";
+
+message SCPSSSnapShoppableRequest {
+	string imageURL = 1;
+	string snapId = 2;
+
+	oneof mediaURL {
+		string image = 3;
+		snapchat.perception.showcase.screenshop.SCPSSSnapJoinerVideoData videoData = 5;
+		snapchat.perception.showcase.screenshop.SCPSSSnapJoinerImageData imageData = 6;
+	}
+
+
+	enum SCPSSSnapStoryType {
+		STORY_TYPE_UNSET = 0;
+		STORY_TYPE_SNAPPRO = 1;
+		STORY_TYPE_MYPUBLIC = 2;
+		STORY_TYPE_SPOTLIGHT = 3;
+		STORY_TYPE_OUR = 4;
+	}
+
+	SCPSSSnapStoryType snapStoryType = 7;
+}

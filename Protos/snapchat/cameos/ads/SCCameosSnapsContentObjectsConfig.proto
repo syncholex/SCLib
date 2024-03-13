@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.ads;
+
+import "snapchat/cameos/common/SCCameosCameoBoltContentObject.proto";
+
+message SCCameosSnapsContentObjectsConfig {
+	snapchat.cameos.common.SCCameosCameoBoltContentObject snapsContentObjects = 1;
+}

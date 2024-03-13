@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusFideliusClientInit.proto";
+import "snapchat/janus/api/SCJanusCofTags.proto";
+import "snapchat/janus/api/SCJanusLoginHeader.proto";
+
+message SCJanusLoginWith1TLv3Request {
+	string oneTapLoginToken = 1;
+	snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 3;
+	snapchat.janus.api.SCJanusCofTags cofTags = 4;
+	snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}

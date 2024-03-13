@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsMajorUpdateVersion.proto";
+import "cognac/SCCognacAppsLocalizedMajorUpdateDescription.proto";
+
+message SCCognacAppsMajorUpdate {
+	cognac.SCCognacAppsMajorUpdateVersion version = 1;
+	string description_p = 2;
+	repeated cognac.SCCognacAppsLocalizedMajorUpdateDescription localizedDescriptionsArray = 3;
+}

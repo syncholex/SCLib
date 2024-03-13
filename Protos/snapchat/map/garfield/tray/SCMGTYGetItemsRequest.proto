@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message SCMGTYGetItemsRequest {
+	snapchat.geo.SPCGRect bbox = 1;
+	double zoom = 2;
+	uint64 layerId = 3;
+	uint64 version = 4;
+	string flavor = 5;
+	uint32 paginationStartIndex = 6;
+	uint32 paginationNumItems = 7;
+}

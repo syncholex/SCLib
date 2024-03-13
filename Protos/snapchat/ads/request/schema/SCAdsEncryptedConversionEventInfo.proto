@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsEncryptedConversionEventInfo {
+	bytes decryptedAnonymizedId = 1;
+	bytes encryptedKeySaid = 2;
+	bytes encryptedConversionEvents = 3;
+}

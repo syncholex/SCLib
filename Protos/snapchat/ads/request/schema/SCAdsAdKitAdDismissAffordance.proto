@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsAdKitAdDismissAffordance {
+	bool shouldEnableDismissDelay = 1;
+	google.protobuf.GPBInt32Value dismissDelaySeconds = 2;
+	google.protobuf.GPBInt32Value endcardDismissDelaySeconds = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileHydrationOption.proto";
+
+message IMPGetPublicProfilesRequest {
+	repeated string idsArray = 1;
+	impala.IMPProfileHydrationOption hydrationOption = 2;
+	bool includeGatedProfiles = 3;
+}

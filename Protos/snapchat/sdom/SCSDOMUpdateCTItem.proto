@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+
+message SCSDOMUpdateCTItem {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+	snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemInstance = 2;
+}

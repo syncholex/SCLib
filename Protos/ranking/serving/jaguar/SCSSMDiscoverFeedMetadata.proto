@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/FeedTypeMetadata.proto";
+
+message SCSSMDiscoverFeedMetadata {
+	repeated ranking.serving.jaguar.FeedTypeMetadata feedTypeMetadataArray = 1;
+}

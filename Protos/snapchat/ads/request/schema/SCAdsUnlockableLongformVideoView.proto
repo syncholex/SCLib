@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsUnlockableLongformVideoView {
+	google.protobuf.GPBFloatValue viewTimeSec = 1;
+	google.protobuf.GPBFloatValue mediaDurationSec = 2;
+	google.protobuf.GPBInt64Value renderedTimestampMs = 3;
+	google.protobuf.GPBInt64Value openTimestampMs = 4;
+}

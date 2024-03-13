@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbVersionSet.proto";
+
+message SCSpectaclesOtaPbGetOsTargetFilesPackagesRequest {
+	com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet destVersionSet = 1;
+	com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet srcVersionSet = 2;
+}

@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSpecsEvent {
+	uint32 msSinceBoot = 1;
+
+	enum MLBSpecsEvent_EventType {
+		BUTTON_UP = 1;
+		BUTTON_DOWN = 2;
+		AMBA_BOOTED = 3;
+		RTOS_READY = 4;
+		REC_START = 5;
+		REC_STOP = 6;
+		WIFI_START_SUCCESS = 7;
+		WIFI_START_FAILURE = 8;
+		SENSOR_POWERED = 9;
+		AMBA_SHUTDOWN = 10;
+		PUSH_EVENT = 11;
+		SENSOR_UNPOWERED = 12;
+		STILL_CAPTURE_START = 13;
+		STILL_CAPTURE_END = 14;
+		THM_WRITTEN = 15;
+		FIRST_VID_FRAME = 16;
+		FIRST_IMU_FRAME = 17;
+		LAST_VID_FRAME = 18;
+		LAST_IMU_FRAME = 19;
+	}
+
+	MLBSpecsEvent_EventType eventType = 2;
+	uint32 ambaTimeMs = 3;
+}

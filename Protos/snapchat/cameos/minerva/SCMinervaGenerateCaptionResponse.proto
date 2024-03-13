@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/minerva/SCMinervaMagicCaption.proto";
+
+message SCMinervaGenerateCaptionResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.minerva.SCMinervaMagicCaption captionsArray = 2;
+	string generationRequestId = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+message SCMusicOriginalSoundsGetSoundsRequest {
+	repeated uint64 trackIdsArray = 1 [packed=true];
+	string userId = 2;
+}

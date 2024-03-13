@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbShopBalance {
+	int64 total = 1;
+}

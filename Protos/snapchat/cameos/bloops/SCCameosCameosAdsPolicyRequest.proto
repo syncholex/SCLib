@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+message SCCameosCameosAdsPolicyRequest {
+
+	enum SCCameosCameosAdsPolicy {
+		ADS_POLICY_UNSET = 0;
+		ADS_POLICY_NOBODY = 1;
+		ADS_POLICY_ONLY_ME = 2;
+		ADS_POLICY_FRIENDS = 3;
+	}
+
+	SCCameosCameosAdsPolicy cameosAdsPolicy = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiCategory.proto";
+
+message SCBitmojiClaimDropItemResponse {
+
+	enum SCBitmojiClaimDropItemResponse_ClaimStatus {
+		UNSET = 0;
+		CLAIMED = 1;
+		PREVIOUSLY_CLAIMED = 2;
+		EXPIRED = 3;
+	}
+
+	SCBitmojiClaimDropItemResponse_ClaimStatus status = 1;
+	snapchat.bitmoji.fashion.v1.SCBitmojiCategory closetCategory = 2;
+}

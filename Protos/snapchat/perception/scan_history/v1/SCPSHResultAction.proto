@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHOpenActionSheet.proto";
+import "snapchat/perception/scan_history/v1/SCPSHOpenLink.proto";
+import "snapchat/perception/scan_history/v1/SCPSHOpenApp.proto";
+import "snapchat/perception/scan_history/v1/SCPSHDeleteSession.proto";
+import "snapchat/perception/scan_history/v1/SCPSHOpenHtml.proto";
+import "snapchat/perception/scan_history/v1/SCPSHOpenSnapcode.proto";
+import "snapchat/perception/scan_history/v1/SCPSHOpenProfileAction.proto";
+
+message SCPSHResultAction {
+
+	oneof action {
+		snapchat.perception.scan_history.v1.SCPSHOpenActionSheet openActionSheet = 1;
+		snapchat.perception.scan_history.v1.SCPSHOpenLink openLink = 2;
+		snapchat.perception.scan_history.v1.SCPSHOpenApp openApp = 3;
+		snapchat.perception.scan_history.v1.SCPSHDeleteSession deleteSession = 4;
+		snapchat.perception.scan_history.v1.SCPSHOpenHtml openHtml = 5;
+		snapchat.perception.scan_history.v1.SCPSHOpenSnapcode openSnapcode = 6;
+		snapchat.perception.scan_history.v1.SCPSHOpenProfileAction openProfileAction = 7;
+	}
+
+}

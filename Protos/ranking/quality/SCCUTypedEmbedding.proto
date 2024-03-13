@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message SCCUTypedEmbedding {
+
+	enum SCCUTypedEmbedding_EmbeddingType {
+		UNKNOWN = 0;
+		CLIP_IMAGE_EMBEDDING = 1;
+		CLIP_VIDEO_EMBEDDING = 2;
+		COCA_IMAGE_EMBEDDING = 3;
+		AUDIO_EMBEDDING_V1 = 4;
+	}
+
+	SCCUTypedEmbedding_EmbeddingType type = 1;
+	ranking.ml.centralkitchen.SCSCKEmbedding values = 2;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaLocation.proto";
+
+message SCAdsMediaRenderInfo {
+
+	enum SCAdsMediaType {
+		UNKNOWN_MEDIA_TYPE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		VIDEO_SOUND_LAGUNA = 3;
+		VIDEO_NO_SOUND_LAGUNA = 4;
+		LAGUNAHD_SOUND = 5;
+		LAGUNAHD_NO_SOUND = 6;
+		MALIBU_SOUND = 7;
+		MALIBU_NO_SOUND = 8;
+		NEWPORT_SOUND = 9;
+		NEWPORT_NO_SOUND = 10;
+		GIF = 11;
+		DISCOVER = 12;
+		AUDIO_STITCH = 13;
+		PSYCHOMANTIS = 14;
+		SCREAMINGMANTIS = 15;
+		GHOSTMANTIS = 16;
+		IMAGE = 17;
+		NATIVE_IMAGE = 18;
+		HTML = 19;
+	}
+
+	SCAdsMediaType mediaType = 1;
+	repeated snapchat.ads.render.schema.SCAdsMediaLocation mediaLocationsArray = 2;
+}

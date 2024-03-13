@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "com/snapchat/auth/proto/tivs/PushData.proto";
+import "com/snapchat/auth/proto/tivs/EmailData.proto";
+import "com/snapchat/auth/proto/tivs/SmsData.proto";
+
+message CreateTivResponse {
+	snapchat.core.SCCOREUUID broadcastId = 1;
+	com.snapchat.auth.proto.tivs.PushData pushData = 2;
+	com.snapchat.auth.proto.tivs.EmailData emailData = 3;
+	com.snapchat.auth.proto.tivs.SmsData smsData = 4;
+
+	enum CreateTivError_Enum {
+		UNSET = 0;
+		NO_ERROR = 1;
+		DISALLOWED_CONFLICTING_TIV_FOUND = 2;
+		USER_NOT_FOUND = 3;
+	}
+
+	CreateTivError_Enum error = 5;
+}

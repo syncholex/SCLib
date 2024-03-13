@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAccountRecoveryRequestCodeResponse_SuccessData.proto";
+import "snapchat/janus/api/SCJanusClientIntegrityChallengeData.proto";
+import "snapchat/janus/api/SCJanusAccountRecoveryErrorData.proto";
+
+message SCJanusAccountRecoveryRequestCodeResponse {
+
+	enum SCJanusAccountRecoveryRequestCodeResponse_StatusCode {
+		UNSET = 0;
+		ACCOUNT_RECOVERY_CODE_SUCCESS = 1;
+		CLIENT_INTEGRITY_CHALLENGE_REQUESTED = 2;
+		CLIENT_ATTESTATION_FAILED = 3;
+		ERR_PLATFORM_COUNTRY_CONFIG_BLOCKLIST = 4;
+		ERR_INVALID_PHONE_NUMBER = 5;
+		ERR_PHONE_NUMBER_INVALID_FOR_REGION = 6;
+		ERR_SMS_CODE_SEND_ERROR = 7;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_THROTTLED = 11;
+		ERR_BLOCKED = 12;
+		ERR_APP_VERSION_UPGRADE = 13;
+	}
+
+	SCJanusAccountRecoveryRequestCodeResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusAccountRecoveryRequestCodeResponse_SuccessData successData = 2;
+		snapchat.janus.api.SCJanusClientIntegrityChallengeData clientIntegrityChallengeData = 3;
+		snapchat.janus.api.SCJanusAccountRecoveryErrorData errorData = 4;
+	}
+
+}

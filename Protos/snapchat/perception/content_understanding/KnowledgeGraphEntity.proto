@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message KnowledgeGraphEntity {
+	string name = 1;
+
+	enum KnowledgeGraphEntity_KnowledgeGraphEntityType {
+		UNSET = 0;
+		MOVIE = 1;
+		PERSON = 2;
+		PAINTING = 3;
+	}
+
+	KnowledgeGraphEntity_KnowledgeGraphEntityType type = 2;
+	repeated string imageUrlsArray = 3;
+	string shortDescription = 4;
+	string longDescription = 5;
+	string descriptionSourceName = 6;
+	string descriptionSourceURL = 7;
+}

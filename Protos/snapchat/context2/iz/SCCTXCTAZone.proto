@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCTAElement.proto";
+
+message SCCTXCTAZone {
+
+	enum SCCTXCTAZone_Presentation {
+		STACKED = 0;
+		ADJACENT = 1;
+	}
+
+	SCCTXCTAZone_Presentation presentation = 1;
+	bool flexible = 2;
+	repeated snapchat.context2.iz.SCCTXCTAElement elementsArray = 3;
+}

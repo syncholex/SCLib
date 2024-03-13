@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.preview;
+
+import "snapchat/creativetools/preview/SCCTPLensToolConfig.proto";
+
+message SCCTPToggleToolConfig {
+	repeated snapchat.creativetools.preview.SCCTPLensToolConfig toolsArray = 1;
+}

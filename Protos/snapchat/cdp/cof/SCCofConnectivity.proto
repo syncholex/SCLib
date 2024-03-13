@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCCofConnectivity {
+
+	enum SCCofConnectivity_NetworkType {
+		UNKNOWN_NETWORK_TYPE = 0;
+		CELLULAR = 1;
+		WIFI = 2;
+	}
+
+	SCCofConnectivity_NetworkType networkType = 1;
+	google.protobuf.GPBBoolValue isMetered = 2;
+	google.protobuf.GPBBoolValue isRoaming = 3;
+	string carrier = 4;
+}

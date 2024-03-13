@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.deep_link_resolution.dynamic_resolution;
+
+message SCDynamicResolutionActivityFeedResult {
+	string profileId = 1;
+	string activityFeedNotificationId = 2;
+	string activityFeedNotificationType = 3;
+}

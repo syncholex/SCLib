@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMSnapDoc_ID {
+
+	enum SDMSnapDoc_ID_Namespace {
+		UNSET = 0;
+		RSP_DISCOVER = 1;
+		RSP_ADS = 2;
+		OUR_STORIES = 3;
+		POPULAR_STORIES = 4;
+		OFFICIAL_STORIES = 5;
+		STORY_CREATION_SERVICE = 6;
+		STORY_CREATION_SERVICE_COMPAT = 7;
+	}
+
+	SDMSnapDoc_ID_Namespace namespace_p = 1;
+	string id_p = 2;
+}

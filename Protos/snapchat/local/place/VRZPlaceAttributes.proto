@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceAttributeInfo.proto";
+
+message VRZPlaceAttributes {
+	string placeId = 1;
+	repeated snapchat.local.verrazano.VRZPlaceAttributeInfo placeAttributesInfoArray = 2;
+}

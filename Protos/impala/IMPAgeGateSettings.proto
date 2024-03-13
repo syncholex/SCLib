@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPAgeGateSettings {
+	int32 globalAgeMin = 1;
+	int32 countryAgeMinMap = 2;
+}

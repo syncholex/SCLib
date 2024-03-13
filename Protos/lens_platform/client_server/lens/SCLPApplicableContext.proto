@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+message SCLPApplicableContext {
+
+	enum SCLPApplicableContext_CameraContext {
+		CAMERA_CONTEXT_UNSET = 0;
+		FRONT_FACING = 1;
+		REAR_FACING = 2;
+	}
+
+	repeated SCLPApplicableContext_CameraContext cameraContextArray = 1 [packed=true];
+
+	enum SCLPLensApplicableContext {
+		APPLICABLE_CONTEXT_UNSET = 0;
+		LIVE_CAMERA = 1;
+		PREVIEW = 2;
+		MEMORIES = 3;
+		VIDEO_CHAT = 4;
+		REPLY_CAMERA = 5;
+		PREVIEW_NO_FACE = 6;
+		AD_TO_LENS = 7;
+		SPECTACLES = 8;
+		STORY_REPLY = 9;
+		REPLY_TO_SNAP = 10;
+		NEWPORT = 11;
+		SNAP_3D = 12;
+		CREATIVE = 13;
+		SPECTACLES_MAGIC_MOMENT = 14;
+		SPECTACLES_RT = 15;
+		CHEERIOS = 16;
+		CHEERIOS_HOVER = 17;
+		CHEERIOS_ORBIT = 18;
+		CHEERIOS_FOLLOW = 19;
+		CHEERIOS_REVEAL = 20;
+		WEB = 21;
+	}
+
+	repeated SCLPLensApplicableContext lensApplicableContextsArray = 2 [packed=true];
+}

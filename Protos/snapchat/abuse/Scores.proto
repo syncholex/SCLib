@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+message Scores {
+	double global = 1;
+	double trustAndSafety = 2;
+	double bot = 3;
+	double agentPrediction = 4;
+	double mapReportPrediction = 5;
+	double mapRisk = 6;
+	double maliciousAccountRisk = 7;
+}

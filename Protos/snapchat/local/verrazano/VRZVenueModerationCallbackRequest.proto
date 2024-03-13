@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceModeration.proto";
+
+message VRZVenueModerationCallbackRequest {
+	string reportId = 1;
+	snapchat.local.verrazano.VRZPlaceModeration placeModeration = 2;
+	string action = 3;
+	string originalPayload = 4;
+	bool actions = 5;
+	string id_p = 6;
+	string rejectionReasonText = 7;
+}

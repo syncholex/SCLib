@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message StoryDoc_ID {
+
+	enum StoryDoc_ID_Namespace {
+		UNSET = 0;
+		DISCOVER_SERVICE = 1;
+		STORY_CREATION_SERVICE = 2;
+		STORY_CREATION_SERVICE_COMPAT = 3;
+		HIGHLIGHTS_SERVICE = 4;
+	}
+
+	StoryDoc_ID_Namespace namespace_p = 1;
+	string id_p = 2;
+}

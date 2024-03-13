@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULInfoCard.proto";
+
+message SCULInfoCardResponse {
+	repeated snapchat.unlockables.response.schema.SCULInfoCard infoCardsArray = 1;
+}

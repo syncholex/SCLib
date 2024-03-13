@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "google/protobuf/GPBUInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snap/snap_maps_sdk/SMSdkSticker.proto";
+import "snap/snap_maps_sdk/SMSdkLatLng.proto";
+import "snap/snap_maps_sdk/SMSdkDevicePermissions.proto";
+import "snap/snap_maps_sdk/SMSdkFriendsUpdate.proto";
+import "snap/snap_maps_sdk/SMSdkFriendFeedUpdate.proto";
+import "snap/snap_maps_sdk/SMSdkTravelStatusUpdate.proto";
+import "snap/snap_maps_sdk/SMSdkMutedFriendLocationsUpdate.proto";
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences.proto";
+import "snap/snap_maps_sdk/SMSdkLabelledEmoji.proto";
+import "snap/snap_maps_sdk/SMSdkWidgetInfo.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snap/snap_maps_sdk/SMSdkSensorInfo.proto";
+import "snap/snap_maps_sdk/SMSdkStickerOverrides.proto";
+import "snap/snap_maps_sdk/SMSdkUsersDetails.proto";
+
+message SMSdkUpdateUserInfoRequest {
+	google.protobuf.GPBUInt32Value mapSessionId = 1;
+	google.protobuf.GPBStringValue currentUserId = 2;
+	google.protobuf.GPBStringValue currentUserAvatarId = 3;
+	snap.snap_maps_sdk.SMSdkSticker currentUserPose = 4;
+	snap.snap_maps_sdk.SMSdkLatLng userLocation = 5;
+	snap.snap_maps_sdk.SMSdkDevicePermissions devicePermissions = 7;
+	snap.snap_maps_sdk.SMSdkFriendsUpdate friends = 8;
+	snap.snap_maps_sdk.SMSdkFriendFeedUpdate friendFeed = 9;
+	snap.snap_maps_sdk.SMSdkTravelStatusUpdate travelStatus = 10;
+	snap.snap_maps_sdk.SMSdkMutedFriendLocationsUpdate mutedFriendLocations = 11;
+	snap.snap_maps_sdk.SMSdkLocationSharingPreferences locationSharingPreferences = 12;
+	repeated snap.snap_maps_sdk.SMSdkLabelledEmoji emojiPreferencesArray = 13;
+	snap.snap_maps_sdk.SMSdkWidgetInfo widgetInfo = 14;
+	google.protobuf.GPBBoolValue allowHomeWorkCallout = 15;
+	snap.snap_maps_sdk.SMSdkSensorInfo sensorInfo = 16;
+	snap.snap_maps_sdk.SMSdkStickerOverrides stickerOverrides = 17;
+	snap.snap_maps_sdk.SMSdkUsersDetails usersDetails = 18;
+}

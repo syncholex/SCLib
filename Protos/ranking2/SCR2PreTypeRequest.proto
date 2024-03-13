@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2PlaceLikelihood.proto";
+
+message SCR2PreTypeRequest {
+	ranking2.SCR2GeoLocation location = 1;
+	repeated ranking2.SCR2PlaceLikelihood candidatePlacesArray = 2;
+	repeated ranking2.SCR2GeoLocation recentLocationsArray = 3;
+}

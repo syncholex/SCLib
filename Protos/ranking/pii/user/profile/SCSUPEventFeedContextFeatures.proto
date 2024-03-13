@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPEventFeedContextFeatures {
+	int32 storyPosition = 1;
+	uint32 feedType = 2;
+	int32 sectionPosition = 3;
+	uint32 pageType = 4;
+}

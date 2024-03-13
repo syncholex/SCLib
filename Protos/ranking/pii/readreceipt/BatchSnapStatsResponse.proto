@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/SingleSnapStatsResponse.proto";
+import "ranking/pii/readreceipt/BatchSnapStatsResponseByType.proto";
+
+message BatchSnapStatsResponse {
+	string requestId = 1;
+	repeated ranking.pii.readreceipt.SingleSnapStatsResponse responsesArray = 2;
+	repeated ranking.pii.readreceipt.BatchSnapStatsResponseByType responsesByTypeArray = 3;
+}

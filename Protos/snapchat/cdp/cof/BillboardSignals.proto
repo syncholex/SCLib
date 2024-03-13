@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message BillboardSignals {
+	bool emailVerified = 1;
+	bool phoneVerified = 2;
+	bool notificationPermGranted = 3;
+	bool contactPermGranted = 4;
+	int32 mutualFriendsCount = 5;
+	int32 groupsCount = 6;
+	bool hasNonTeamSnapchatConversations = 7;
+	bool emailSet = 8;
+	bool bitmojiSet = 9;
+	bool hasAddFriendsRequest = 10;
+	bool appLaunchFromPush = 11;
+
+	enum AppLaunchType {
+		UNSET = 0;
+		COLD_START = 1;
+		WARM_START = 2;
+		LOGIN = 3;
+		REGISTRATION = 4;
+	}
+
+	AppLaunchType appLaunchType = 12;
+	int32 campaignLocalImpressionCount = 13;
+	int64 campaignLocalLastImpressionTimeSecsToNow = 14;
+	int32 campaignLocalContinuousDismissCount = 15;
+	int32 fstNumInAppWarnings = 16;
+	bool fstShouldChangePassword = 17;
+	bool audioRecordPermGranted = 18;
+	int32 mutualFriendsWithBirthdayCount = 19;
+	int32 campaignLocalDismissCount = 20;
+	int32 memoriesCount = 21;
+	int64 campaignLocalFirstImpressionTimeSecsToNow = 22;
+	int32 campaignLocalClickCount = 23;
+	int32 campaignLocalInteractionCount = 24;
+	int64 campaignLocalLastInteractionTimeSecsToNow = 25;
+	bool lockScreenWidgetAppOpenFromPush = 26;
+	int32 communityCount = 27;
+	int64 campaignLocalFirstClickTimeSecsToNow = 28;
+	int64 campaignLocalLastClickTimeSecsToNow = 29;
+	int64 campaignLocalFirstDismissTimeSecsToNow = 30;
+	int64 campaignLocalLastDismissTimeSecsToNow = 31;
+	int64 campaignLocalFirstInteractionTimeSecsToNow = 32;
+	int32 serverImpressionCount = 33;
+	int32 serverClickCount = 34;
+	int32 serverDismissCount = 35;
+	int32 serverInteractionCount = 36;
+	int64 serverFirstImpressionTimeSecsToNow = 37;
+	int64 serverLastImpressionTimeSecsToNow = 38;
+	int64 serverFirstClickTimeSecsToNow = 39;
+	int64 serverLastClickTimeSecsToNow = 40;
+	int64 serverFirstDismissTimeSecsToNow = 41;
+	int64 serverLastDismissTimeSecsToNow = 42;
+	int64 serverFirstInteractionTimeSecsToNow = 43;
+	int64 serverLastInteractionTimeSecsToNow = 44;
+	int32 serverContinuousDismissCount = 45;
+	bool contactPermOsGranted = 46;
+	bool contactPermUserGranted = 47;
+}

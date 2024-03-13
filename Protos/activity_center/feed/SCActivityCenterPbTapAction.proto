@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package activity_center.feed;
+
+import "activity_center/feed/SCActivityCenterPbNoAction.proto";
+import "activity_center/feed/SCActivityCenterPbOpenFriendProfile.proto";
+import "activity_center/feed/SCActivityCenterPbOpenChat.proto";
+import "activity_center/feed/SCActivityCenterPbOpenMap.proto";
+import "activity_center/feed/SCActivityCenterPbOpenBirthdayLens.proto";
+import "activity_center/feed/SCActivityCenterPbOpenDeeplink.proto";
+
+message SCActivityCenterPbTapAction {
+
+	oneof action {
+		activity_center.feed.SCActivityCenterPbNoAction emptyAction = 1;
+		activity_center.feed.SCActivityCenterPbOpenFriendProfile profileAction = 2;
+		activity_center.feed.SCActivityCenterPbOpenChat chatAction = 3;
+		activity_center.feed.SCActivityCenterPbOpenMap mapsAction = 4;
+		activity_center.feed.SCActivityCenterPbOpenBirthdayLens birthdayLensAction = 5;
+		activity_center.feed.SCActivityCenterPbOpenDeeplink openDeeplink = 6;
+	}
+
+}

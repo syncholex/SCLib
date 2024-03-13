@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptFilter.proto";
+
+message SCLensPromptDeleteResponsesRequest {
+	snapchat.lens.prompt.SCLensPromptFilter deletionFilter = 1;
+}

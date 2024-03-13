@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensAccountID.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensCta.proto";
+import "snapchat/lenscentral/common/DigitalGood.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensDiscoverability.proto";
+
+message SCLensesPbCreateOrUpdateLensRequest_Metadata {
+	string submissionId = 1;
+	string lensId = 2;
+	string lensName = 3;
+	repeated string tagsArray = 4;
+	repeated string scanTriggersArray = 5;
+
+	enum SCLensCentralCommonPbVisibility {
+		VISIBILITY_UNSET = 0;
+		VISIBILITY_PUBLIC = 1;
+		VISIBILITY_HIDDEN = 2;
+		VISIBILITY_OFFLINE = 3;
+		VISIBILITY_DONT_PUBLISH_TO_SNAPCHAT = 4;
+	}
+
+	SCLensCentralCommonPbVisibility visibility = 6;
+	string organizationId = 7;
+	string adAccountId = 8;
+	string previewMediaType = 9;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensAccountID lensAccountId = 10;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensCta lensCta = 11;
+	string primaryCategoryId = 12;
+	string secondaryCategoryId = 13;
+	repeated snapchat.lenscentral.common.DigitalGood digitalGoodsArray = 14;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensDiscoverability discoverability = 15;
+	bool lensCreatorPayoutEnrolled = 16;
+}

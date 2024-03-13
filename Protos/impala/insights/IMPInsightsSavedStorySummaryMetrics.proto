@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSavedStorySummaryMetrics {
+	int64 savedStoryViewsSinceLastWeek = 1;
+	int64 savedStoryViewsSinceLastMonth = 2;
+	int64 savedStoryViewsSincePreviousWeek = 3;
+	int64 savedStoryViewsSincePreviousMonth = 4;
+	int64 savedStorySnapViewsSinceLastWeek = 11;
+	int64 savedStorySnapViewsSinceLastMonth = 12;
+	int64 savedStorySnapViewsSincePreviousWeek = 13;
+	int64 savedStorySnapViewsSincePreviousMonth = 14;
+	int64 savedStoryUniqueViewersSinceLastWeek = 21;
+	int64 savedStoryUniqueViewersSinceLastMonth = 22;
+	int64 savedStoryUniqueViewersSincePreviousWeek = 23;
+	int64 savedStoryUniqueViewersSincePreviousMonth = 24;
+	int64 savedStoryAverageViewTimeMsSinceLastWeek = 31;
+	int64 savedStoryAverageViewTimeMsSinceLastMonth = 32;
+	int64 savedStoryAverageViewTimeMsSincePreviousWeek = 33;
+	int64 savedStoryAverageViewTimeMsSincePreviousMonth = 34;
+	int64 savedStoryTotalViewTimeMsSinceLastWeek = 41;
+	int64 savedStoryTotalViewTimeMsSinceLastMonth = 42;
+	int64 savedStoryTotalViewTimeMsSincePreviousWeek = 43;
+	int64 savedStoryTotalViewTimeMsSincePreviousMonth = 44;
+	int64 savedStorySnapViewsSubscribersSinceLastWeek = 45;
+	int64 savedStorySnapViewsSubscribersSinceLastMonth = 46;
+	int64 savedStorySnapViewsSubscribersSincePreviousWeek = 47;
+	int64 savedStorySnapViewsSubscribersSincePreviousMonth = 48;
+	int64 savedStorySnapViewsNonSubscribersSinceLastWeek = 49;
+	int64 savedStorySnapViewsNonSubscribersSinceLastMonth = 50;
+	int64 savedStorySnapViewsNonSubscribersSincePreviousWeek = 51;
+	int64 savedStorySnapViewsNonSubscribersSincePreviousMonth = 52;
+	int64 savedStorySnapFavoritesSinceLastWeek = 53;
+	int64 savedStorySnapFavoritesSinceLastMonth = 54;
+	int64 savedStorySnapFavoritesSincePreviousWeek = 55;
+	int64 savedStorySnapFavoritesSincePreviousMonth = 56;
+}

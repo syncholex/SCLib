@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/NotificationDisplayModel.proto";
+import "snapchat/notification/ConversationMetadata.proto";
+
+message ClientPayload {
+	snapchat.notification.NotificationDisplayModel displayModel = 1;
+	snapchat.notification.ConversationMetadata conversationMetadata = 2;
+}

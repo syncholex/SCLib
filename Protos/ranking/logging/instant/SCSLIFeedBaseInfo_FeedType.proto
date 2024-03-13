@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+message SCSLIFeedBaseInfo_FeedType {
+}

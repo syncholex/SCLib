@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "snapchat/local/verrazano/VRZConcordanceListValue.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabelsListValue.proto";
+
+message VRZPlaceTypeWriteData {
+	google.protobuf.GPBStringValue name = 1;
+	snapchat.protobuf.SPCPStringListValue parentIds = 2;
+	snapchat.local.verrazano.VRZConcordanceListValue concordances = 3;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateNames = 4;
+}

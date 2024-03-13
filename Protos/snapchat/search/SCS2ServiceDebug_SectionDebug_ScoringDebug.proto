@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2ServiceDebug_SectionDebug_ScoringDebug {
+	string bentoModelId = 1;
+	string bentoModelHeads = 2;
+	int32 numToScore = 3;
+	int32 latencyMsecs = 4;
+	string debug = 5;
+}

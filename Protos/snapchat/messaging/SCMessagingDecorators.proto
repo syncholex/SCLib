@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingBotFeedback.proto";
+import "snapchat/messaging/SCMessagingActionSuggestions.proto";
+import "snapchat/messaging/SCMessagingBotLoopBackMetadata.proto";
+
+message SCMessagingDecorators {
+	snapchat.messaging.SCMessagingBotFeedback botFeedback = 1;
+	snapchat.messaging.SCMessagingActionSuggestions actionSuggestions = 2;
+	snapchat.messaging.SCMessagingBotLoopBackMetadata botLoopbackMetadata = 3;
+}

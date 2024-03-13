@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+message SCMerlinToolboxEncryptionInfo {
+	bytes secretKey = 1;
+	bytes initialVector = 2;
+}

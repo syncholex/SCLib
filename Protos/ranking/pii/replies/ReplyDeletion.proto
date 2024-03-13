@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message ReplyDeletion {
+	string snapId = 1;
+	ranking.core.SCSCOREUUID replyId = 2;
+	string storyId = 3;
+}

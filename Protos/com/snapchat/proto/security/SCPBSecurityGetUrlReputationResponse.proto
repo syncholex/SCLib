@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.proto.security;
+
+message SCPBSecurityGetUrlReputationResponse {
+
+	enum SCPBSecurityUrlType {
+		MALFORMED_URL_UNSET = 0;
+		OK = 1;
+		MALWARE = 2;
+		PHISHING = 3;
+		UNWANTED = 4;
+		SC_BLACKLIST = 5;
+		SPAM = 6;
+		URL_SHORTENER = 7;
+		SAFE_DOMAIN = 8;
+	}
+
+	SCPBSecurityUrlType URLType = 1;
+	int64 expirationTimestamp = 2;
+}

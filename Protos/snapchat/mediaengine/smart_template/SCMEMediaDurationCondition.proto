@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEDurationValue.proto";
+
+message SCMEMediaDurationCondition {
+	snapchat.mediaengine.smart_template.SCMEDurationValue lowerBound = 1;
+	snapchat.mediaengine.smart_template.SCMEDurationValue upperBound = 2;
+}

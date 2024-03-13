@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package validate;
+
+message BoolRules {
+	bool const_p = 1;
+}

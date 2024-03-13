@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message SnapKitSignals {
+	string oauthClientId = 1;
+}

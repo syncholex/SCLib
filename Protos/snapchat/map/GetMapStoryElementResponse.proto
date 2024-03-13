@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/context/SCContextContextHint.proto";
+import "snapchat/research/SASAudioStitch.proto";
+
+message GetMapStoryElementResponse {
+	string snapId = 1;
+	int64 timestamp = 2;
+	int64 timeLeft = 3;
+	string captionText = 4;
+	snapchat.context.SCContextContextHint contextHint = 5;
+	string venueId = 6;
+	string lensId = 7;
+	bool isZipped = 8;
+	string mediaURL = 9;
+	string mediaId = 10;
+	string mediaIv = 11;
+	string mediaKey = 12;
+
+	enum SCSnapMediaType {
+		SNAP_MEDIA_TYPE_IMAGE = 0;
+		SNAP_MEDIA_TYPE_VIDEO = 1;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND = 2;
+		SNAP_MEDIA_TYPE_FRIEND = 3;
+		SNAP_MEDIA_TYPE_BLOB = 4;
+		SNAP_MEDIA_TYPE_LAGUNA = 5;
+		SNAP_MEDIA_TYPE_LAGUNA_NO_SOUND = 6;
+		SNAP_MEDIA_TYPE_AUDIO_STITCH = 9;
+		SNAP_MEDIA_TYPE_PSYCHOMANTIS = 10;
+		SNAP_MEDIA_TYPE_SCREAMINGMANTIS = 11;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_MALIBU = 12;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_MALIBU = 13;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_LAGUNA_HD = 14;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_LAGUNA_HD = 15;
+		SNAP_MEDIA_TYPE_GHOSTMANTIS = 16;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_NEWPORT = 17;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_NEWPORT = 18;
+		SNAP_MEDIA_TYPE_AUDIO = 19;
+		SNAP_MEDIA_TYPE_BLOOP = 20;
+		SNAP_MEDIA_TYPE_SPECTACLES_IMAGE = 21;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO = 22;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO_NO_SOUND = 23;
+		SNAP_MEDIA_TYPE_CHEERIOS_IMAGE = 24;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_SOUND = 25;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSnapMediaType mediaType = 13;
+	string attachmentURL = 14;
+	snapchat.research.SASAudioStitch audioStitch = 15;
+	double lat = 16;
+	double lng = 17;
+	double zoom = 18;
+	string displayText = 19;
+
+	enum GetMapStoryElementResponse_Status {
+		UNSET = 0;
+		VIEWABLE = 1;
+		EXPIRED = 2;
+		DELETED = 3;
+	}
+
+	GetMapStoryElementResponse_Status status = 20;
+	bool isInfiniteDuration = 21;
+	string thumbnailIv = 22;
+	string thumbnailURL = 23;
+	int64 captureTimestamp = 24;
+	double timeLength = 25;
+	string clientId = 26;
+	string unlockablesSnapInfo = 27;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSetAutoBrightnessRequest {
+	bool setAutoBrightnessEnabled = 1;
+}

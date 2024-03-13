@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingTranscriptionInfo.proto";
+
+message SCMessagingTranscriptions {
+	repeated snapchat.messaging.SCMessagingTranscriptionInfo transcriptionsArray = 1;
+}

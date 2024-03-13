@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.grid;
+
+message SDMTransforms {
+	repeated sint32 scalesArray = 1 [packed=true];
+	repeated sint32 xCentersArray = 2 [packed=true];
+	repeated sint32 yCentersArray = 3 [packed=true];
+	repeated sint32 rotationsArray = 4 [packed=true];
+	repeated uint32 timestampsArray = 5 [packed=true];
+}

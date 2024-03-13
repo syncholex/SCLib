@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPMonetizationSetting.proto";
+
+message IMPMonetizationSettings {
+	impala.IMPMonetizationSetting publicStoriesMonetizationSettings = 1;
+}

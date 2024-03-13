@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsFriendsFeed {
+
+	enum SCAppInsightsFriendsFeed_Subfeature {
+		UNSET = 0;
+		STREAK_RESTORE = 1;
+		CHAT_REACTIONS = 2;
+		SNAP_PLAYBACK = 3;
+		SHORTCUTS = 4;
+		TWENTYFOUR_HOUR_SNAPS = 5;
+	}
+
+	SCAppInsightsFriendsFeed_Subfeature subfeature = 1;
+}

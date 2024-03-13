@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message CameraSignals {
+
+	enum CameraDirection {
+		UNKNOWN_CAMERA_DIRECTION = 0;
+		FRONT = 1;
+		BACK = 2;
+	}
+
+	CameraDirection cameraDirection = 1;
+
+	enum CameraContext {
+		UNKNOWN_CAMERA_CONTEXT = 0;
+		MAIN = 1;
+		REPLY = 2;
+		PROFILE = 3;
+	}
+
+	CameraContext cameraContext = 2;
+
+	enum CameraApi {
+		UNKNOWN_CAMERA_API = 0;
+		CAMERA_1 = 1;
+		CAMERA_2 = 2;
+		ARCORE = 3;
+	}
+
+	CameraApi cameraApi = 3;
+
+	enum FlashState {
+		UNKNOWN_FLASH_STATE = 0;
+		FLASH_ON = 1;
+		FLASH_OFF = 2;
+	}
+
+	FlashState flashState = 4;
+
+	enum Camera2Level {
+		UNKNOWN_CAMERA2_LEVEL = 0;
+		LEGACY = 1;
+		LIMITED = 2;
+		FULL = 3;
+		LEVEL_3 = 4;
+	}
+
+	Camera2Level camera2Level = 5;
+
+	enum NightModeState {
+		UNKNOWN_NIGHT_MODE_STATE = 0;
+		NIGHT_MODE_ON = 1;
+		NIGHT_MODE_OFF = 2;
+	}
+
+	NightModeState nightModeState = 6;
+	bool isFirstCapture = 7;
+
+	enum PictureMode {
+		UNKNOWN_PICTURE_MODE = 0;
+		JPEG_PICTURE_MODE = 1;
+		GPU_PICTURE_MODE = 2;
+	}
+
+	PictureMode pictureMode = 8;
+
+	enum CaptureMode {
+		UNKNOWN_CAPTURE_MODE = 0;
+		DEFAULT_CAPTURE_MODE = 1;
+		TIMELINE_CAPTURE_MODE = 2;
+	}
+
+	CaptureMode captureMode = 9;
+	bool hasLens = 10;
+	bool isLowLight = 11;
+}

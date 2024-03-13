@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/iz/SCCTXImage.proto";
+import "snapchat/context2/iz/SCCTXLocalizedString.proto";
+import "snapchat/context2/iz/SCCTXCompositeId.proto";
+
+message SCCTXPostSnapAction {
+	snapchat.context2.api.SCCTXAction action = 1;
+	snapchat.context2.iz.SCCTXImage icon = 2;
+	string text = 3;
+	snapchat.context2.iz.SCCTXLocalizedString localizedText = 4;
+
+	enum SCCTXPostSnapAction_ActionType {
+		VISIBLE = 0;
+		HIDDEN = 1;
+		PRIMARY = 2;
+	}
+
+	SCCTXPostSnapAction_ActionType actionType = 6;
+	snapchat.context2.iz.SCCTXCompositeId compositeId = 7;
+}

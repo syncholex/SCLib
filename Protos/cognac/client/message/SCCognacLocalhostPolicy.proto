@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package cognac.client.message;
+
+message SCCognacLocalhostPolicy {
+	repeated string allowedAppIdsArray = 1;
+	repeated string disallowedAppIdsArray = 2;
+}

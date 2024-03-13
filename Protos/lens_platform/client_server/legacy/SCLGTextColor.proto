@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGTextColor {
+	repeated string colorArray = 1;
+	repeated double colorStopArray = 2 [packed=true];
+	string colorTransform = 3;
+	double colorGradientAngleDegree = 4;
+	repeated double colorTransformParamsArray = 5 [packed=true];
+}

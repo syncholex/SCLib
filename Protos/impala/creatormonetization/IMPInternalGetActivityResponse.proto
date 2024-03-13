@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPGetActivityResponse.proto";
+
+message IMPInternalGetActivityResponse {
+	impala.creatormonetization.IMPGetActivityResponse response = 1;
+}

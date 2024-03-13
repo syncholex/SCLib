@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbCommunityGroupChatMetadata {
+	ranking.core.SCSCOREUUID conversationId = 1;
+	string name = 2;
+	int32 totalMembersCount = 3;
+	repeated ranking.core.SCSCOREUUID bitmojiUserIdsArray = 4;
+	ranking.core.SCSCOREUUID creatorUserId = 5;
+	uint64 createdTimestampMs = 6;
+}

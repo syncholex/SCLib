@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbDifferentialMapEntry.proto";
+
+message SCSpectaclesOtaPbListDifferentialBuildResponse {
+	repeated com.snap.spectacles.ota.SCSpectaclesOtaPbDifferentialMapEntry diffMapEntryArray = 1;
+}

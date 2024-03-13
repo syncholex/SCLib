@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+message BatchSnapStatsByStoryType {
+
+	enum StoryType_Enum {
+		UNKNOWN = 0;
+		USER = 1;
+		GROUP = 2;
+		SNAPPRO = 3;
+		APP = 4;
+		OUR = 5;
+		TEAM_SNAPCHAT = 6;
+		PUBLISHER_FRIEND = 7;
+		SAVED = 8;
+		CUSTOM = 9;
+	}
+
+	StoryType_Enum storyType = 1;
+	repeated string snapIdsArray = 2;
+
+	enum SnapStatsSectionType_Enum {
+		UNKNOWN = 0;
+		FRIEND_ONLY = 1;
+		FOLLOWER_ONLY = 2;
+		OTHERS_ONLY = 3;
+		FOLLOWER_OTHERS = 4;
+		FRIEND_FOLLOWER_OTHERS = 5;
+		NONE = 6;
+	}
+
+	repeated SnapStatsSectionType_Enum sectionTypesArray = 3 [packed=true];
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsStoreContext {
+	bytes storeId = 1;
+	bytes categoryId = 2;
+}

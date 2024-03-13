@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+import "snapchat/identity/SCIDNotificationChannelGroup.proto";
+import "snapchat/identity/SCIDNotificationChannel.proto";
+
+message SCIDAndroidNotificationPermissionsRequest {
+	repeated snapchat.identity.SCIDNotificationChannelGroup notificationChannelGroupsArray = 1;
+	repeated snapchat.identity.SCIDNotificationChannel notificationChannelsArray = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SCMessagingMediaMetadataInfo {
+
+	enum SCMessagingMediaMetadataInfo_InfoType {
+		SOURCE = 0;
+		OPTIMIZED = 1;
+		OVERLAY = 2;
+	}
+
+	SCMessagingMediaMetadataInfo_InfoType type = 1;
+	snapchat.snapdoc.SDMMediaId mediaId = 2;
+	uint32 mediaReferenceListIndex = 3;
+}

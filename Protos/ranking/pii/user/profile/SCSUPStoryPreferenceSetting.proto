@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPStoryPreferenceSetting {
+	ranking.core.SCCORECompositeStoryId itemId = 1;
+	bool isSubscribed = 2;
+	bool isHidden = 3;
+	bool isNotificationOptedIn = 4;
+	bool isNotificationOptInEligible = 5;
+}

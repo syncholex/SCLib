@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCSpotlight916SharePreviewConfig {
+	bool enabled = 1;
+
+	enum SCSpotlight916SharePreviewConfig_SharePreview {
+		UNSET = 0;
+		STATIC_NO_PLAY_ICON = 1;
+		STATIC_WITH_PLAY_ICON = 2;
+		AUTOPLAY = 3;
+	}
+
+	SCSpotlight916SharePreviewConfig_SharePreview sharePreviewConfig = 2;
+}

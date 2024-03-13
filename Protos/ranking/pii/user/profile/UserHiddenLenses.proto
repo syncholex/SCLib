@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/LensHideState.proto";
+
+message UserHiddenLenses {
+	string userId = 1;
+	ranking.pii.user.profile.LensHideState hiddenLenses = 2;
+}

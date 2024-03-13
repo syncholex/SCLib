@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message SCAppInsightsCameraInfo {
+
+	enum SCAppInsightsCameraServiceState {
+		CAMERA_SERVICE_STATE_UNSET = 0;
+		NOT_INIT = 1;
+		CLOSED = 2;
+		OPENING = 3;
+		OPENED = 4;
+		STARTING = 5;
+		STARTED = 6;
+		STOPPING = 7;
+		CLOSING = 8;
+	}
+
+	SCAppInsightsCameraServiceState cameraServiceState = 1;
+
+	enum SCAppInsightsCameraApi {
+		CAMERA_API_UNSET = 0;
+		CAMERA1 = 1;
+		CAMERA2 = 2;
+		CCF_CAMERA2 = 3;
+		AR_CORE = 4;
+		REMOTE_SERVICE_MOCK = 5;
+		EXTERNAL_MEDIA_STREAMER = 6;
+	}
+
+	SCAppInsightsCameraApi openAttemptCameraApi = 2;
+
+	enum SCAppInsightsCameraDirection {
+		CAMERA_DIRECTION_UNSET = 0;
+		FRONT_FACING = 1;
+		BACK_FACING = 2;
+	}
+
+	SCAppInsightsCameraDirection openAttemptCameraDirection = 3;
+
+	enum SCAppInsightsCameraUsageType {
+		CAMERA_USAGE_TYPE_UNSET = 0;
+		MAIN = 1;
+		AUXILIARY = 2;
+		MAIN_16_TO_9_ASPECT_RATIO = 3;
+		VIDEONOTE = 4;
+		VIDEOCHAT = 5;
+		HERMOSA_VIDEO_RECORDING_DISABLED_CV_STREAM = 6;
+	}
+
+	SCAppInsightsCameraUsageType openAttemptCameraUsageType = 4;
+	sint32 openAttemptCameraId = 5;
+	string cameraSessionId = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+import "tokens/crystalhub/SCCrystalHubActivity.proto";
+
+message SCCrystalHubGetActivityResponse {
+	repeated tokens.crystalhub.SCCrystalHubActivity activitiesArray = 1;
+	string nextPayoutEndDate = 2;
+	string nextCashoutEndDate = 3;
+}

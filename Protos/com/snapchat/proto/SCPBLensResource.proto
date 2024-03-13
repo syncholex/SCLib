@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBLensResource {
+	string resourceType = 1;
+	string quality = 2;
+	string archiveLink = 3;
+	string checksum = 4;
+	string signature = 5;
+	int64 lastUpdated = 6;
+	int32 algorithmVersion = 7;
+}

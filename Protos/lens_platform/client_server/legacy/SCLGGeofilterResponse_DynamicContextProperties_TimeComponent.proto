@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_DynamicContextProperties_TimeComponent {
+	string timeUnit = 1;
+	string singularName = 2;
+	string pluralName = 3;
+}

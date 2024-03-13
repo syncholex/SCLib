@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRModel {
+	string id_p = 1;
+}

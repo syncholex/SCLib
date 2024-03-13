@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+import "snapchat/music/original_sounds/SCMusicOriginalSoundsUnencryptedMedia.proto";
+import "snapchat/music/original_sounds/SCMusicOriginalSoundsUnencryptedRawMedia.proto";
+
+message SCMusicOriginalSoundsCreateSoundRequest {
+	string snapId = 1;
+	snapchat.core.SCCOREUUID userId = 2;
+	snapchat.creativetools.common.SCCTPEncryptedMedia extractedAudio = 3;
+	int64 durationMs = 4;
+	bool isBackfill = 5;
+	bool asyncContentId = 6;
+	string asyncContentIdMetadata = 7;
+	bool isCanary = 8;
+
+	oneof content {
+		snapchat.creativetools.common.SCCTPEncryptedMedia audio = 9;
+		snapchat.music.original_sounds.SCMusicOriginalSoundsUnencryptedMedia unencryptedAudio = 10;
+		snapchat.music.original_sounds.SCMusicOriginalSoundsUnencryptedRawMedia unencryptedRawAudio = 11;
+	}
+
+	string snapjoinerCallbackTopicId = 12;
+	string countryCode = 13;
+	bool showAttribution = 14;
+
+	enum SCMusicOriginalSoundsAttributionStatus {
+		STATUS_UNSET = 0;
+		SHOW = 1;
+		HIDE = 2;
+	}
+
+	SCMusicOriginalSoundsAttributionStatus attributionStatus = 15;
+}

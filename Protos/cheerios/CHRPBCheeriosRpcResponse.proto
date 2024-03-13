@@ -1,0 +1,136 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBEmpty.proto";
+import "cheerios/CHRPBGitResponse.proto";
+import "cheerios/CHRPBBleName.proto";
+import "cheerios/CHRPBMediaCountsResponse.proto";
+import "cheerios/CHRPBMediaResponse.proto";
+import "cheerios/CHRPBBatteryStatusResponse.proto";
+import "cheerios/CHRPBChargerStateResponse.proto";
+import "cheerios/CHRPBLogsResponse.proto";
+import "cheerios/CHRPBBoardIdResponse.proto";
+import "cheerios/CHRPBTemperatureResponse.proto";
+import "cheerios/CHRPBKeyExchangeMessage.proto";
+import "cheerios/CHRPBPairingSignatureMessage.proto";
+import "cheerios/CHRPBEncryptionNonceExchange.proto";
+import "cheerios/CHRPBOTAUpdateResponse.proto";
+import "cheerios/CHRPBFirmwareUpdateUploadResponse.proto";
+import "cheerios/CHRPBDialPosition.proto";
+import "cheerios/CHRPBCaptainInfo.proto";
+import "cheerios/CHRPBStorageCapacity.proto";
+import "cheerios/CHRPBOTAScheduledUpdate.proto";
+import "cheerios/CHRPBDisableFlightResponse.proto";
+import "cheerios/CHRPBValidatePairingResponse.proto";
+import "cheerios/CHRPBDurationParams.proto";
+import "cheerios/CHRPBVideoResolutionParams.proto";
+import "cheerios/CHRPBDistanceParams.proto";
+import "cheerios/CHRPBCaptureTypeParams.proto";
+import "cheerios/CHRPBTrackingParams.proto";
+import "cheerios/CHRPBRemainingFlightInfo.proto";
+import "cheerios/CHRPBVideoFormatParams.proto";
+import "cheerios/CHRPBFlightStatusError.proto";
+import "cheerios/CHRPBFlightModeConfig.proto";
+import "cheerios/CHRPBUSBConnectionStatus.proto";
+import "cheerios/CHRPBPhotoResolutionParams.proto";
+import "cheerios/CHRPBOTACancelScheduledUpdateResponse.proto";
+import "cheerios/CHRPBErrorResponse.proto";
+import "cheerios/CHRPBLogResponse.proto";
+import "cheerios/CHRPBKeepDeviceActiveResult.proto";
+import "cheerios/CHRPBStartCalibrationResponse.proto";
+import "cheerios/CHRPBStopCalibrationResponse.proto";
+import "cheerios/CHRPBActivateLostModeResponse.proto";
+import "cheerios/CHRPBDeactivateLostModeResponse.proto";
+import "cheerios/CHRPBGetLostModeStateResponse.proto";
+import "cheerios/CHRPBFlightSettings.proto";
+import "cheerios/CHRPBGetFileResponse.proto";
+
+message CHRPBCheeriosRpcResponse {
+
+	enum CHRPBCheeriosRpcResponse_Error {
+		INVALID_REQUEST = 1;
+		NO_HANDLER = 2;
+		HW_ERROR = 3;
+		IO_ERROR = 4;
+		INTERNAL_ERROR = 5;
+		QCOM_IS_DOWN = 6;
+		REQUEST_CANCELED = 7;
+	}
+
+
+	oneof response {
+		CHRPBCheeriosRpcResponse_Error error = 1;
+		string echoResponse = 2;
+		string testResponse = 3;
+		cheerios.CHRPBEmpty setSerialNumberResponse = 4;
+		string getSerialNumberResponse = 5;
+		cheerios.CHRPBGitResponse gitResponse = 6;
+		cheerios.CHRPBBleName getNameResponse = 8;
+		cheerios.CHRPBEmpty setNameResponse = 9;
+		cheerios.CHRPBMediaCountsResponse mediaCountsGetResponse = 10;
+		cheerios.CHRPBMediaResponse mediaResponse = 11;
+		cheerios.CHRPBEmpty wifiStartResponse = 12;
+		cheerios.CHRPBEmpty wifiStopResponse = 13;
+		cheerios.CHRPBBatteryStatusResponse batteryStatusResponse = 14;
+		cheerios.CHRPBChargerStateResponse chargerStateResponse = 15;
+		cheerios.CHRPBLogsResponse logsZipResponse = 16;
+		cheerios.CHRPBBoardIdResponse boardIdResponse = 17;
+		cheerios.CHRPBEmpty locationResponse = 18;
+		cheerios.CHRPBTemperatureResponse getTemperatureResponse = 19;
+		cheerios.CHRPBKeyExchangeMessage setPairingPublicKeyResponse = 20;
+		cheerios.CHRPBPairingSignatureMessage setPeerVerificationResponse = 21;
+		cheerios.CHRPBEncryptionNonceExchange setChannelEncryptionNonceResponse = 22;
+		bool getEnableUsbImportResponse = 23;
+		cheerios.CHRPBEmpty setEnableUsbImportResponse = 24;
+		cheerios.CHRPBEmpty clearContentResponse = 25;
+		cheerios.CHRPBEmpty haltResponse = 26;
+		cheerios.CHRPBEmpty unpairDeviceResponse = 27;
+		cheerios.CHRPBEmpty setTimeUtcResponse = 28;
+		cheerios.CHRPBEmpty pairingWaitForUserResponse = 29;
+		cheerios.CHRPBOTAUpdateResponse otaUpdateResponse = 30;
+		cheerios.CHRPBFirmwareUpdateUploadResponse firmwareUpdateUploadResponse = 31;
+		cheerios.CHRPBDialPosition getDialPositionResponse = 32;
+		cheerios.CHRPBCaptainInfo getFlightStatusResponse = 33;
+		bool abortFlightResponse = 34;
+		cheerios.CHRPBStorageCapacity getStorageCapacityResponse = 35;
+		bool setScheduledUpdateResponse = 36;
+		cheerios.CHRPBOTAScheduledUpdate getScheduledUpdateResponse = 37;
+		cheerios.CHRPBDisableFlightResponse disableFlightResponse = 38;
+		cheerios.CHRPBValidatePairingResponse validatePairingResponse = 39;
+		cheerios.CHRPBEmpty setCaptureDurationResponse = 40;
+		cheerios.CHRPBDurationParams getCaptureDurationResponse = 41;
+		cheerios.CHRPBEmpty setVideoResolutionResponse = 42;
+		cheerios.CHRPBVideoResolutionParams getVideoResolutionResponse = 43;
+		cheerios.CHRPBEmpty setFlightDistanceResponse = 44;
+		cheerios.CHRPBDistanceParams getFlightDistanceResponse = 45;
+		cheerios.CHRPBEmpty setCaptureTypeResponse = 46;
+		cheerios.CHRPBCaptureTypeParams getCaptureTypeResponse = 47;
+		cheerios.CHRPBEmpty setTrackingResponse = 48;
+		cheerios.CHRPBTrackingParams getTrackingResponse = 49;
+		cheerios.CHRPBRemainingFlightInfo getRemainingFlightsInfoResponse = 50;
+		cheerios.CHRPBEmpty setVideoFormatResponse = 51;
+		cheerios.CHRPBVideoFormatParams getVideoFormatResponse = 52;
+		cheerios.CHRPBFlightStatusError getFlightStatusErrorResponse = 53;
+		cheerios.CHRPBEmpty setCustomFlightModeResponse = 54;
+		cheerios.CHRPBFlightModeConfig getCustomFlightModeResponse = 55;
+		cheerios.CHRPBUSBConnectionStatus getUsbConnectionResponse = 56;
+		bool getEnableAdbResponse = 57;
+		cheerios.CHRPBEmpty setEnableAdbResponse = 58;
+		cheerios.CHRPBEmpty setPhotoResolutionResponse = 59;
+		cheerios.CHRPBPhotoResolutionParams getPhotoResolutionResponse = 60;
+		cheerios.CHRPBOTACancelScheduledUpdateResponse cancelScheduledUpdateResponse = 61;
+		cheerios.CHRPBErrorResponse errorResponse = 62;
+		cheerios.CHRPBLogResponse logResponse = 63;
+		cheerios.CHRPBKeepDeviceActiveResult keepDeviceActiveResponse = 64;
+		cheerios.CHRPBStartCalibrationResponse startImuCalibrationResponse = 65;
+		cheerios.CHRPBStopCalibrationResponse stopImuCalibrationResponse = 66;
+		cheerios.CHRPBActivateLostModeResponse activateLostModeResponse = 67;
+		cheerios.CHRPBDeactivateLostModeResponse deactivateLostModeResponse = 68;
+		cheerios.CHRPBGetLostModeStateResponse getLostModeStateResponse = 69;
+		cheerios.CHRPBFlightSettings getAllFlightModesSettingsResponse = 70;
+		cheerios.CHRPBGetFileResponse getGenericAssetFileResponse = 71;
+	}
+
+	uint32 id_p = 7;
+}

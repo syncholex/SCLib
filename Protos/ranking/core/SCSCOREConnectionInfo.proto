@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREConnectionInfo {
+	string carrier = 1;
+	string carrierMccMnc = 2;
+
+	enum SCSCOREConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSCOREConnectionInfo_ConnectionType connectionType = 3;
+	string clientIp = 4;
+}

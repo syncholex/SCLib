@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaImageRetouchParameters {
+	int64 upscalingRate = 1;
+}

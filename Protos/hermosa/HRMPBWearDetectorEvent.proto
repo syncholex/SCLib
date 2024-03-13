@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWearDetectorEvent {
+
+	enum HRMPBWearDetectorEvent_WearEvent {
+		INVALID_WEAR_EVENT = 0;
+		PUT_AWAY = 1;
+		TAKEN_OFF = 2;
+		PUT_ON = 3;
+	}
+
+	HRMPBWearDetectorEvent_WearEvent wearEvent = 1;
+}

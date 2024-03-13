@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_SnapReplyRequestInfo.proto";
+
+message SCCTXStoryReplyAction {
+	snapchat.context2.api.SCCTXContextClientInfo_SnapReplyRequestInfo request = 1;
+}

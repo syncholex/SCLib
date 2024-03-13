@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1ActionTypeID {
+	int64 id_p = 1;
+	string name = 2;
+}

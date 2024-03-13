@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/geo/SPCGRect.proto";
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/local/placediscovery/VRZPlacePivot.proto";
+import "snapchat/local/verrazano/VRZPaginationData.proto";
+import "snapchat/local/placediscovery/VRZKeyValuePair.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message VRZGetPlacesDiscoveryRequest {
+	int32 zoomLevel = 1;
+	snapchat.geo.SPCGRect bounds = 2;
+
+	enum VRZPlaceFilterType {
+		UNSET = 0;
+		SEARCH = 1;
+		FAVORITES = 2;
+		FRIENDS_VISIT = 3;
+		RECOMMENDED_PLACES = 4;
+		MY_VISIT = 5;
+	}
+
+	repeated VRZPlaceFilterType placeFiltersArray = 3 [packed=true];
+	bool respectUserInViewport = 4;
+	snapchat.geo.SPCGPoint userLocation = 5;
+	string searchQuery = 6;
+	repeated snapchat.local.placediscovery.VRZPlacePivot placePivotsArray = 7;
+	bool searchThisArea = 8;
+	snapchat.local.verrazano.VRZPaginationData pagination = 9;
+	string sessionId = 10;
+	string sessionQueryId = 11;
+	bool rankingDebugHtml = 12;
+	string rankingFlavorId = 13;
+	double zoomLevelDouble = 14;
+	repeated snapchat.local.placediscovery.VRZKeyValuePair debugAbConfigOverridesArray = 15;
+	repeated snapchat.local.placediscovery.VRZKeyValuePair tweaksArray = 16;
+	google.protobuf.GPBBoolValue darkModeEnabled = 17;
+	string mapStyleName = 18;
+}

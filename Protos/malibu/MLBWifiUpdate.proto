@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBWifiUpdate {
+
+	enum MLBWifiUpdate_WifiUpdateType {
+		WifiStarted = 0;
+		WifiStopped = 1;
+		WifiStartFailure = 2;
+		WifiStopFailure = 3;
+	}
+
+	MLBWifiUpdate_WifiUpdateType updateType = 1;
+	string ipAddress = 2;
+	uint32 frequency = 3;
+}

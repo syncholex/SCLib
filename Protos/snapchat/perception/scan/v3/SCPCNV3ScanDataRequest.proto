@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3Image.proto";
+import "snapchat/perception/scan/v3/SCPCNV3Barcode.proto";
+import "snapchat/perception/common/SCPCNAudio.proto";
+import "snapchat/perception/scan/v3/SCPCNV3Text.proto";
+
+message SCPCNV3ScanDataRequest {
+
+	oneof data {
+		snapchat.perception.scan.v3.SCPCNV3Image image = 1;
+		snapchat.perception.scan.v3.SCPCNV3Barcode barcode = 2;
+		snapchat.perception.common.SCPCNAudio audio = 3;
+		snapchat.perception.scan.v3.SCPCNV3Text text = 4;
+	}
+
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.adindex.protobuf;
+
+import "snapchat/adindex/protobuf/OverlaySpec.proto";
+
+message DynamicTemplate {
+
+	enum SCAdsProtoDpaLayoutType {
+		UNKNOWN_LAYOUT_TYPE = 0;
+		FILL_WIDTH = 1;
+		FILL_HEIGHT = 2;
+		FIT = 3;
+		HEADER = 4;
+		TILT = 5;
+		AUTOMATIC = 6;
+		CAROUSEL = 7;
+		SLIDESHOW = 8;
+	}
+
+	SCAdsProtoDpaLayoutType layout = 1;
+	repeated string textFieldsArray = 2;
+	string backgroundColor = 3;
+	repeated string preferredImageTagsArray = 4;
+	repeated snapchat.adindex.protobuf.OverlaySpec overlaySpecsArray = 5;
+	repeated string multiImageTagsArray = 6;
+}

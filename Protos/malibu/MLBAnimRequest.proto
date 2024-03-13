@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAnimRequest {
+
+	enum MLBAnimRequest_AnimType {
+		NONE = 0;
+		BOOT = 1;
+		CHARGING = 2;
+		VIDEO = 3;
+		FACTORY = 4;
+		BATTERY_CHECK = 5;
+		LOW_BATTERY = 6;
+		NO_STORAGE = 7;
+		HIGH_LOW_TEMP = 8;
+		FIRMWARE_CRASH = 9;
+		FACTORY_RESET_NEEDED = 10;
+		PHOTO = 11;
+		BACKUP_PAIRING_LOOKING = 12;
+		PRE_REC = 14;
+		PRE_PHOTO = 15;
+		SPARKLE = 16;
+		CONTEXT = 17;
+		SELF_TEST = 18;
+		BUTTON_TEST = 19;
+		BOOTLOADER_STATIC_LED = 200;
+		BOOTLOADER_STATIC_TRIAD = 201;
+		BOOTLOADER_ROTATING_TRIAD = 202;
+	}
+
+	MLBAnimRequest_AnimType animType = 1;
+}

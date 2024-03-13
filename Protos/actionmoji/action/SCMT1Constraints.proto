@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1Constraints_SpaceConstraint.proto";
+import "actionmoji/action/SCMT1Constraints_TimeConstraint.proto";
+
+message SCMT1Constraints {
+	actionmoji.action.SCMT1Constraints_SpaceConstraint spaceConstraint = 1;
+	actionmoji.action.SCMT1Constraints_TimeConstraint timeConstraint = 2;
+}

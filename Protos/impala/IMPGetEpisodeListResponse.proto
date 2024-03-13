@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/StoryDoc.proto";
+
+message IMPGetEpisodeListResponse {
+	repeated snapchat.storydoc.StoryDoc episodesArray = 1;
+	string nextPageId = 2;
+}

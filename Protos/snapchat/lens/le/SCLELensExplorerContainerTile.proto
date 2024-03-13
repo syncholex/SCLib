@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLEContainerItem.proto";
+import "snapchat/lens/le/SCLELensExplorerItemRenderStrategy.proto";
+
+message SCLELensExplorerContainerTile {
+	string id_p = 1;
+	string name = 2;
+	repeated snapchat.lens.le.SCLEContainerItem itemsArray = 3;
+	snapchat.lens.le.SCLELensExplorerItemRenderStrategy renderStrategy = 4;
+	string description_p = 5;
+	string feedId = 6;
+	bytes streamToken = 7;
+	bool hasMore = 8;
+	string deeplinkURL = 9;
+}

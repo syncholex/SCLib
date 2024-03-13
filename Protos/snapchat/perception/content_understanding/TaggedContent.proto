@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+import "snapchat/perception/content_understanding/Lens.proto";
+import "snapchat/perception/content_understanding/SnapProProfile.proto";
+import "snapchat/perception/content_understanding/WebResult.proto";
+import "snapchat/perception/content_understanding/Discover.proto";
+import "snapchat/perception/content_understanding/Imagecode.proto";
+import "snapchat/perception/content_understanding/URL.proto";
+import "snapchat/perception/content_understanding/KnowledgeGraphEntity.proto";
+
+message TaggedContent {
+
+	oneof content {
+		snapchat.perception.content_understanding.Lens lens = 1;
+		snapchat.perception.content_understanding.SnapProProfile snapProProfile = 2;
+		snapchat.perception.content_understanding.WebResult webResult = 3;
+		snapchat.perception.content_understanding.Discover discover = 4;
+		snapchat.perception.content_understanding.Imagecode imagecode = 5;
+		snapchat.perception.content_understanding.URL URL = 6;
+		snapchat.perception.content_understanding.KnowledgeGraphEntity knowledgeGraphEntity = 7;
+	}
+
+	string tagLabel = 100;
+	double score = 101;
+}

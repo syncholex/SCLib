@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SectionLayout_Padding.proto";
+import "ranking/serving/jaguar/VerticalSection.proto";
+import "ranking/serving/jaguar/HorizontalSection.proto";
+
+message SectionLayout {
+	ranking.serving.jaguar.SectionLayout_Padding padding = 1;
+	bool shouldShowHeader = 2;
+	bool largeTiles = 3;
+
+	oneof layoutType {
+		ranking.serving.jaguar.VerticalSection verticalSection = 4;
+		ranking.serving.jaguar.HorizontalSection horizontalSection = 5;
+	}
+
+	bool shouldSupportHide = 6;
+}

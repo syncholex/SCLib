@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEConditionalRuleGroup.proto";
+import "snapchat/mediaengine/smart_template/SCMEBeatSyncRule.proto";
+
+message SCMETemplateRule {
+	int32 executionOrderPriority = 1;
+
+	oneof rule {
+		snapchat.mediaengine.smart_template.SCMEConditionalRuleGroup conditionalRuleGroup = 2;
+		snapchat.mediaengine.smart_template.SCMEBeatSyncRule beatSyncRule = 3;
+	}
+
+}

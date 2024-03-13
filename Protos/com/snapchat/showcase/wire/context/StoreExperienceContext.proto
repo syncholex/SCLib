@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message StoreExperienceContext {
+	string storeId = 1;
+	string categoryId = 2;
+	string sourceType = 3;
+	string sourceId = 4;
+}

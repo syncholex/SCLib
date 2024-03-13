@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/messaging/SCMessagingText.proto";
+import "snapchat/messaging/SCMessagingExternalMedia.proto";
+import "snapchat/messaging/SCMessagingSticker.proto";
+import "snapchat/messaging/SCMessagingShare.proto";
+import "snapchat/messaging/SCMessagingNote.proto";
+import "snapchat/messaging/SCMessagingSnapProSnapReplyInfo.proto";
+import "snapchat/messaging/SCMessagingSnapStoryId.proto";
+import "snapchat/messaging/SCMessagingGiftInfo.proto";
+
+message SCMessagingSnapReply {
+
+	oneof originalContent {
+		snapchat.snapdoc.SDMSnapDoc originalSnapdoc = 3;
+	}
+
+
+	oneof replyContent {
+		snapchat.messaging.SCMessagingText replyText = 11;
+		snapchat.messaging.SCMessagingExternalMedia replyExternalMedia = 12;
+		snapchat.messaging.SCMessagingSticker replySticker = 13;
+		snapchat.messaging.SCMessagingShare replyShare = 14;
+		snapchat.messaging.SCMessagingNote replyNote = 15;
+		snapchat.snapdoc.SDMSnapDoc replySnapdoc = 17;
+	}
+
+	snapchat.messaging.SCMessagingSnapProSnapReplyInfo snapProSnapReplyInfo = 18;
+	snapchat.messaging.SCMessagingSnapStoryId snapStoryId = 19;
+	snapchat.messaging.SCMessagingGiftInfo giftInfo = 20;
+}

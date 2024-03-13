@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPopularityDetails_WifiConfidence.proto";
+import "snapchat/local/verrazano/VRZPopularityDetails_PlaceViewsBySource.proto";
+import "snapchat/local/verrazano/VRZPopularityDetails_DistributionDetails.proto";
+
+message VRZPopularityDetails {
+	int64 numCheckins = 1;
+	float numCheckinsPerDay = 2;
+	float absolutePopularity = 3;
+	float relativePopularity = 4;
+	repeated int32 checkinsForWeekByHourArray = 5 [packed=true];
+	repeated snapchat.local.verrazano.VRZPopularityDetails_WifiConfidence wifiConfidencesArray = 6;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_PlaceViewsBySource placeViewsBySourceArray = 7;
+	int64 numCheckins7 = 8;
+	int64 numCheckins30 = 9;
+	int64 numCheckins180 = 10;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource7Array = 11;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource30Array = 12;
+	repeated snapchat.local.verrazano.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource180Array = 13;
+	float globalAttractiveness = 14;
+	int64 numFavorites = 15;
+	snapchat.local.verrazano.VRZPopularityDetails_DistributionDetails distributionDetails = 16;
+	repeated int32 inferredVisitsForWeekByHourArray = 17 [packed=true];
+}

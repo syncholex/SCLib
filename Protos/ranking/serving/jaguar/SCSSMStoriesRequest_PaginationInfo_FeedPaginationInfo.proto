@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoriesRequest_PaginationInfo_FeedPaginationInfo {
+	int32 firstPageSize = 1;
+}

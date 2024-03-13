@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/SCAdsEncryptedAppSlcBlock.proto";
+
+message SCAdsEncryptedAppToSlcMapping {
+	int64 version = 1;
+	repeated com.snapchat.targeting.proto.SCAdsEncryptedAppSlcBlock encryptedAppSlcBlocksArray = 2;
+}

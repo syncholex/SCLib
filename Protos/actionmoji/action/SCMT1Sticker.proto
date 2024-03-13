@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1StickerID.proto";
+import "actionmoji/action/SCMT1ActionTiming.proto";
+import "actionmoji/action/SCMT1Constrain.proto";
+import "actionmoji/action/SCMT1StickerDynamicElement.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "actionmoji/action/SCMT1ActionTypeID.proto";
+
+message SCMT1Sticker {
+	actionmoji.action.SCMT1StickerID stickerId = 1;
+	actionmoji.action.SCMT1ActionTiming timing = 2;
+	actionmoji.action.SCMT1Constrain constrain = 3;
+
+	enum SCMT1ClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMT1ClusteringPolicy clusteringPolicy = 4;
+	int64 actionId = 5;
+	string clusterId = 6;
+	repeated actionmoji.action.SCMT1StickerDynamicElement dynamicElementsArray = 7;
+	double transparency = 8;
+	snapchat.core.SCCOREUUID vzVenueId = 9;
+	repeated actionmoji.action.SCMT1ActionTypeID typeIdArray = 15;
+}

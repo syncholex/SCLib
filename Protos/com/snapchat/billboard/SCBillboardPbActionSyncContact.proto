@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbActionSyncContact {
+
+	enum SCBillboardPbActionSyncContact_ActionType {
+		UNSET = 0;
+		GRANT_USER_LEVEL_AND_FIND_FRIENDS = 1;
+	}
+
+	SCBillboardPbActionSyncContact_ActionType actionType = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSCORESavedStoryDestinationMetadata {
+	ranking.core.SCSCOREUUID profileId = 1;
+	ranking.core.SCSCOREUUID savedStoryId = 2;
+}

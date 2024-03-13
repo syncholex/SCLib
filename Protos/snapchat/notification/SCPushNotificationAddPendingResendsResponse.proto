@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationAddPendingResendsResponse {
+
+	enum SCPushNotificationAddPendingResendsResponse_StatusCode {
+		UNKNOWN = 0;
+		OK = 1;
+		THROTTLED = 2;
+		INTERNAL_FAILURE = 3;
+		SERVICE_UNAVAILABLE = 4;
+	}
+
+	SCPushNotificationAddPendingResendsResponse_StatusCode statusCode = 1;
+	bool isRetryable = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportGetMyReportsMetadataRequest {
+	string userId = 1;
+	int64 resultLimit = 2;
+	string cursor = 3;
+}

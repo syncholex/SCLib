@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTimeComponent.proto";
+
+message SCPBUnlockablesDynamicContextProperties {
+	string deeplinkProperties = 1;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesTimeComponent relativeTimeComponentsArray = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message LogTivNotificationDisplayedRequest {
+	string transactionId = 1;
+	string broadcastId = 2;
+	int64 clientPerceivedElapsedTimeMs = 3;
+
+	enum Channel {
+		CHANNEL_UNSET = 0;
+		NUB = 1;
+		PUSH_NOTIFICATION = 2;
+	}
+
+	Channel channel = 4;
+}

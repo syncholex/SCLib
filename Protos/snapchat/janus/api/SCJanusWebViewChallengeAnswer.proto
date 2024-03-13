@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusWebViewChallengeAnswer {
+	bytes answerPayload = 1;
+
+	enum SCJanusWebViewChallengeAnswer_WebViewChallengeError {
+		WEBVIEW_CHALLENGE_ERROR_UNKNOWN_UNSET = 0;
+		WEBVIEW_CHALLENGE_ERROR_LOAD_TIMEOUT = 1;
+		WEBVIEW_CHALLENGE_ERROR_INTERNAL_ERROR = 2;
+	}
+
+	SCJanusWebViewChallengeAnswer_WebViewChallengeError error = 2;
+}

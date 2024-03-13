@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsAdServeItem.proto";
+import "snapchat/ads/request/schema/SCAdsArResponsePayload.proto";
+
+message SCAdsInventoryResponse {
+	int32 errorCode = 1;
+	bytes requestId = 2;
+	string trackURL = 3;
+	string trackAndGetURL = 4;
+	repeated snapchat.ads.request.schema.SCAdsAdServeItem itemsArray = 5;
+	string waterfall = 6;
+	string jsonTrackURL = 7;
+	string protoTrackURL = 8;
+	string batchTrackURL = 9;
+	snapchat.ads.request.schema.SCAdsArResponsePayload arResponsePayload = 10;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "snapchat/polls/SCPPollInteractions.proto";
+
+message SCPGetPollResponse {
+	snapchat.polls.SCPPollInteractions interactions = 2;
+	string error = 3;
+	bool isCreator = 4;
+}

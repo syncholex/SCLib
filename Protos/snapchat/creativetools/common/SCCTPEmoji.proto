@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPEmoji {
+	string unicode = 1;
+	string hex = 2;
+	string escapedString = 3;
+}

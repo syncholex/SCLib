@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_FilterInfo {
+	float aspectRatio = 1;
+	bool isCentered = 2;
+	bool isBitmoji = 3;
+}

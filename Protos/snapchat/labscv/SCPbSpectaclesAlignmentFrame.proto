@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.labscv;
+
+message SCPbSpectaclesAlignmentFrame {
+	double timestamp = 1;
+	repeated float alignmentCompArray = 2 [packed=true];
+	repeated float leftAlignmentCompArray = 3 [packed=true];
+	repeated float rightAlignmentCompArray = 4 [packed=true];
+}

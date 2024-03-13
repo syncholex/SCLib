@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileUserSettings_PublicStorySettings {
+	bool showStoryAttribution = 1;
+	bool suppressStoryContributionPushNotifications = 2;
+	int64 newestReadNotificationTimestamp = 3;
+	bool showStoryReplies = 4;
+}

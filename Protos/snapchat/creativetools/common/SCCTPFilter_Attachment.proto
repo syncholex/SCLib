@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_Attachment_LongFormVideo.proto";
+import "snapchat/ads/render/schema/SCAdsWebViewAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsAppInstall.proto";
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+
+message SCCTPFilter_Attachment {
+	string ctaText = 1;
+
+	oneof content {
+		snapchat.creativetools.common.SCCTPFilter_Attachment_LongFormVideo longFormVideo = 2;
+		snapchat.ads.render.schema.SCAdsWebViewAttachment webView = 3;
+		snapchat.ads.render.schema.SCAdsAppInstall appInstall = 4;
+		snapchat.ads.render.schema.SCAdsDeeplink deepLink = 5;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMECheckinOptionContext {
+	bool locationStickers = 1;
+	bool venueFilters = 2;
+	bool mapStatus = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZSuggestedPlace.proto";
+
+message VRZGetSuggestedPlaceResponse {
+	snapchat.local.place.VRZSuggestedPlace suggestedPlace = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBInternetConnectivityCheckResponse {
+
+	enum HRMPBInternetConnectivityCheckResponse_InternetConnectivityCheckStatus {
+		UNSET = 0;
+		YES = 1;
+		CAPTIVE_PORTAL = 2;
+	}
+
+	HRMPBInternetConnectivityCheckResponse_InternetConnectivityCheckStatus status = 1;
+}

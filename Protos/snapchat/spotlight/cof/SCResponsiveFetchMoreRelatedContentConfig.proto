@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCResponsiveFetchMoreRelatedContentConfig {
+
+	enum SCResponsiveFetchMoreRelatedContentConfig_TriggerAction {
+		TRIGGER_ACTION_UNSET = 0;
+		TRIGGER_ACTION_BOOST = 1;
+		TRIGGER_ACTION_LONG_WATCH = 2;
+		TRIGGER_ACTION_SUBSCRIBE = 3;
+		TRIGGER_ACTION_LOOP_COUNT = 4;
+		TRIGGER_ACTION_REPORT = 5;
+		TRIGGER_ACTION_OPEN_PROFILE = 6;
+		TRIGGER_ACTION_SHARE = 7;
+		TRIGGER_ACTION_DONT_LIKE_CONTENT_OR_CREATOR = 8;
+	}
+
+	repeated SCResponsiveFetchMoreRelatedContentConfig_TriggerAction supportedTriggersArray = 1 [packed=true];
+	int64 longWatchDuration = 2;
+	int64 minimumTriggersToFetch = 3;
+	int64 minimimLoopCount = 4;
+}

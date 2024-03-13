@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+message SCR2FriendStoryHighlightScoreFeatures {
+	int32 totalSnapsViewed7D = 1;
+	int32 totalSnapsViewed15D = 2;
+	int32 totalSnapsViewed30D = 3;
+	int32 allStoriesViewed7D = 4;
+	int32 allStoriesViewed15D = 5;
+	int32 allStoriesViewed30D = 6;
+	int32 replays7D = 7;
+	int32 replays15D = 8;
+	int32 replays30D = 9;
+	float ctr30D = 10;
+	float avgTimeViewedPct30D = 11;
+	float avgSnapViewedPct30D = 12;
+	float weightedScrollToView30D = 13;
+}

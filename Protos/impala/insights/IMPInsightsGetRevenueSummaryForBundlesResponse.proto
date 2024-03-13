@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsRevenueSummaryForBundle.proto";
+
+message IMPInsightsGetRevenueSummaryForBundlesResponse {
+	string cursor = 1;
+	repeated impala.insights.IMPInsightsRevenueSummaryForBundle revenueSummaryArray = 2;
+}

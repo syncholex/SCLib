@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBEnumValue.proto";
+import "google/protobuf/GPBOption.proto";
+import "google/protobuf/GPBSourceContext.proto";
+
+message GPBEnum {
+	string name = 1;
+	repeated google.protobuf.GPBEnumValue enumvalueArray = 2;
+	repeated google.protobuf.GPBOption optionsArray = 3;
+	google.protobuf.GPBSourceContext sourceContext = 4;
+
+	enum GPBSyntax {
+		SYNTAX_PROTO2 = 0;
+		SYNTAX_PROTO3 = 1;
+		SYNTAX_EDITIONS = 2;
+	}
+
+	GPBSyntax syntax = 5;
+	string edition = 6;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbGetUserProfileResponse {
+	string userDisplayName = 1;
+	string avatarURL = 2;
+	string pageURL = 3;
+	string userId = 4;
+	string ghostId = 5;
+	string defaultOrganizationId = 6;
+	bool useNewLayout = 7;
+}

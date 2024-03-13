@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snap.security;
+
+import "snap/security/CommonEndpointConfiguration.proto";
+
+message ArgosConfig {
+	repeated snap.security.CommonEndpointConfiguration commonConfigsArray = 1;
+	bool useColdToken = 2;
+	bool useSignedToken = 3;
+	uint64 argosExperimentId = 4;
+	bool useV12Payload = 5;
+}

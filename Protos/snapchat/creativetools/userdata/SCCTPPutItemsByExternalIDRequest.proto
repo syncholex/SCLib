@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPPutItemsByExternalIDRequest_Item.proto";
+
+message SCCTPPutItemsByExternalIDRequest {
+	repeated snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDRequest_Item itemsArray = 1;
+	bool includeCtitems = 2;
+}

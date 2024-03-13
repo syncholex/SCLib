@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package iap.shop;
+
+message SCIapShopPbInAppReceipt {
+
+	enum SCIapShopPbProvider {
+		PROVIDER_UNSET = 0;
+		PROVIDER_GOOGLE = 1;
+		PROVIDER_APPLE = 2;
+	}
+
+	SCIapShopPbProvider provider = 1;
+	string productId = 2;
+	string transactionId = 3;
+	string countryCode = 4;
+	string currencyCode = 5;
+	int64 priceAmountMicros = 6;
+	string receipt = 7;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package weather;
+
+message SCWAirQuality {
+	int64 epochMs = 1;
+	float overallIndex = 2;
+	float overallPlumeLabsIndex = 3;
+
+	enum SCWAirQuality_Pollutant {
+		POLLUTANT_UNKNOWN = 0;
+		PM_2_5 = 1;
+		PM_10 = 2;
+		NO_2 = 3;
+		SO_2 = 4;
+		O_3 = 5;
+		CO = 6;
+	}
+
+	SCWAirQuality_Pollutant dominantPollutant = 4;
+
+	enum SCWAirQuality_Category {
+		CATEGORY_UNKNOWN = 0;
+		EXCELLENT = 1;
+		FAIR = 2;
+		POOR = 3;
+		UNHEALTHY = 4;
+		VERY_UNHEALTHY = 5;
+		DANGEROUS = 6;
+	}
+
+	SCWAirQuality_Category category = 5;
+	uint32 categoryColor = 6;
+}

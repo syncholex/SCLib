@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGTextColor.proto";
+import "lens_platform/client_server/legacy/SCLGTextShadow.proto";
+
+message SCLGBackgroundStyle {
+	lens_platform.client_server.legacy.SCLGTextColor color = 1;
+	lens_platform.client_server.legacy.SCLGTextShadow boxShadow = 2;
+	double borderRadius = 3;
+	bool isStretchable = 4;
+}

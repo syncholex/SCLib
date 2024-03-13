@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/SnapReadReceipt.proto";
+
+message SnapReadReceiptBatch {
+	repeated ranking.pii.readreceipt.SnapReadReceipt snapReadReceiptsArray = 1;
+}

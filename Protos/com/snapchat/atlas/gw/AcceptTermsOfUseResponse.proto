@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message AcceptTermsOfUseResponse {
+
+	enum AcceptTermsOfUseResponse_OperationStatus {
+		OPERATION_STATUS_UNSET = 0;
+		OPERATION_STATUS_SUCCESS = 1;
+		OPERATION_STATUS_FAILED = 2;
+	}
+
+	AcceptTermsOfUseResponse_OperationStatus status = 1;
+}

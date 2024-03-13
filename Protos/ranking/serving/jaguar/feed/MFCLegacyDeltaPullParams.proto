@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCLegacyDeltaPullParams {
+	int64 sequenceMin = 1;
+	int64 sequenceMax = 2;
+	int64 sequenceBegin = 3;
+	int64 sequenceEnd = 4;
+}

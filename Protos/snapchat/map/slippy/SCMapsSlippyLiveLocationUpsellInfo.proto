@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/map/slippy/SCMapsSlippyLiveSharingStatus.proto";
+
+message SCMapsSlippyLiveLocationUpsellInfo {
+	repeated snapchat.map.slippy.SCMapsSlippyLiveSharingStatus liveFriendsOnMapArray = 1;
+	repeated snapchat.map.slippy.SCMapsSlippyLiveSharingStatus sharingLiveWithFriendsArray = 2;
+	bool isLiveLocationPaused = 3;
+}

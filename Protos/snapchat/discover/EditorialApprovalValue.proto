@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message EditorialApprovalValue {
+
+	enum EditorialApproval {
+		TO_BE_REVIEWED = 0;
+		REJECTED = 1;
+		APPROVED = 2;
+		REQUESTED = 3;
+	}
+
+	EditorialApproval value = 1;
+}

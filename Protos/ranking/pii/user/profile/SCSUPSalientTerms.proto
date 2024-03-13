@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPSalientTermScore.proto";
+
+message SCSUPSalientTerms {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPSalientTermScore salientTermsArray = 2;
+	repeated ranking.pii.user.profile.SCSUPSalientTermScore negativeSalientTermsArray = 3;
+	int64 lastUpdatedTimestampInMsecs = 4;
+}

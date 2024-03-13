@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingGameScoreShare {
+	snapchat.messaging.SCMessagingUUID appId = 1;
+	snapchat.messaging.SCMessagingUUID leaderboardId = 2;
+	int64 numericScore = 3;
+}

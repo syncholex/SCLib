@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message CofStepInfo {
+
+	enum CofStep {
+		VALIDATE_REQUEST = 0;
+		REQUEST_ATLAS = 1;
+		BUILD_TARGETING_INFO = 2;
+		QUERY_INDEX = 3;
+		REQUEST_AB = 4;
+	}
+
+	CofStep cofStep = 1;
+	string info = 2;
+}

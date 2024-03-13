@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo {
+	string correspondentId = 1;
+
+	enum SCSUPFriendFeedInteractionType_Enum {
+		UNKNOWN = 0;
+		CHAT_SENT = 1;
+		CHAT_VIEWED = 2;
+		GROUP_CHAT_SENT = 3;
+		GROUP_CHAT_VIEWED = 4;
+		SNAP_SENT = 5;
+		SNAP_VIEWED = 6;
+		GROUP_SNAP_SENT = 7;
+		GROUP_SNAP_VIEWED = 8;
+		STORY_STORY_VIEWED = 9;
+		STORY_SNAP_VIEWED = 10;
+		GROUP_STORY_STORY_VIEWED = 11;
+		GROUP_STORY_SNAP_VIEWED = 12;
+	}
+
+	SCSUPFriendFeedInteractionType_Enum interactionType = 2;
+
+	enum SCSCOREMediaInfo_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND = 3;
+		BLOB = 4;
+		LAGUNA = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSCOREMediaInfo_MediaType mediaType = 3;
+	int64 interactionTimestampSecs = 4;
+}

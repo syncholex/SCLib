@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMMediaMetadata_MediaEncryptionInfo {
+	bytes key = 1;
+	bytes iv = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREGeoPoint {
+	double latitude = 1;
+	double longitude = 2;
+}

@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package url_reputation;
+
+message SCURLReputationReportSenderResponse {
+}

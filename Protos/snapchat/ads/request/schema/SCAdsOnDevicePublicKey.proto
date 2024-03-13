@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsOnDevicePublicKey {
+	bytes publicKey = 1;
+	int64 keyGenerationTsMs = 2;
+
+	enum SCAdsOnDevicePublicKey_PublicKeyType {
+		PUBLIC_KEY_TYPE_UNSET = 0;
+		RSA_2048 = 1;
+	}
+
+	SCAdsOnDevicePublicKey_PublicKeyType publicKeyType = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+message GPBSourceCodeInfo_Location {
+	repeated int32 pathArray = 1 [packed=true];
+	repeated int32 spanArray = 2 [packed=true];
+	string leadingComments = 3;
+	string trailingComments = 4;
+	repeated string leadingDetachedCommentsArray = 6;
+}

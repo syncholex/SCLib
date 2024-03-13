@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "actionmoji/action/SCMT1StickerID.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+import "snapchat/map/SCMEExplorerFriendStatus_StatusData_LiveCancellationInfo.proto";
+
+message SCMEExplorerFriendStatus_StatusData {
+	string statusId = 1;
+	int64 statusTimestampMs = 2;
+	string userId = 3;
+	repeated snapchat.geo.SPCGPoint locationsArray = 4;
+	string stickerId = 5;
+
+	enum SCMEExplorerFriendStatus_StatusData_DisplayStyle {
+		DISPLAY_NONE = 0;
+		DISPLAY_DOTTED_LINE = 1;
+		DISPLAY_SWOOSH_LINE = 2;
+		DISPLAY_DASHED_ARC = 3;
+	}
+
+	SCMEExplorerFriendStatus_StatusData_DisplayStyle displayStyle = 6;
+
+	enum SCMEExplorerFriendStatus_StatusData_AnimationStyle {
+		ANIMATION_NONE = 0;
+		ANIMATION_SIMPLE = 1;
+		ANIMATION_STEP = 2;
+		ANIMATION_FLIGHT = 3;
+	}
+
+	SCMEExplorerFriendStatus_StatusData_AnimationStyle animationStyle = 7;
+	string localityName = 8;
+	actionmoji.action.SCMT1StickerID sticker = 9;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 10;
+	string speechText = 11;
+	string placeId = 12;
+	bool isLive = 13;
+	snapchat.map.SCMEExplorerFriendStatus_StatusData_LiveCancellationInfo liveCancellationInfo = 14;
+	bool hideInExplore = 15;
+}

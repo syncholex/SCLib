@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables.ondemand;
+
+message SCPBUnlockablesOndemandCheckBadWordsRequest {
+	repeated string wordsArray = 1;
+}

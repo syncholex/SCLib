@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+package validate;
+
+message StringRules {
+	string const_p = 1;
+	uint64 minLen = 2;
+	uint64 maxLen = 3;
+	uint64 minBytes = 4;
+	uint64 maxBytes = 5;
+	string pattern = 6;
+	string prefix = 7;
+	string suffix = 8;
+	string contains = 9;
+	repeated string inArray = 10;
+	repeated string notInArray = 11;
+
+	oneof wellKnown {
+		bool email = 12;
+		bool hostname = 13;
+		bool ip = 14;
+		bool ipv4 = 15;
+		bool ipv6 = 16;
+		bool uri = 17;
+		bool uriRef = 18;
+		bool address = 21;
+		bool uuid = 22;
+		KnownRegex wellKnownRegex = 24;
+	}
+
+	uint64 len = 19;
+	uint64 lenBytes = 20;
+	string notContains = 23;
+
+	enum KnownRegex {
+		UNKNOWN = 0;
+		HTTP_HEADER_NAME = 1;
+		HTTP_HEADER_VALUE = 2;
+	}
+
+	bool strict = 25;
+	bool ignoreEmpty = 26;
+}

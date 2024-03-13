@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message FanoutUserCustomStoryGroupMetadata {
+	ranking.core.SCSCOREUUID groupId = 1;
+	repeated ranking.core.SCSCOREUUID userIdsArray = 2;
+}

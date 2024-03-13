@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREResponseStatus {
+
+	enum SCSCOREStatusCode_Enum {
+		UNKNOWN = 0;
+		OK = 1;
+		NO_CONTENT = 8;
+		INVALID_ARGUMENT = 2;
+		UNAUTHENTICATED = 3;
+		PERMISSION_DENIED = 4;
+		NOT_FOUND = 5;
+		INTERNAL_ERROR = 6;
+		TIMEOUT = 7;
+		RESOURCE_EXHAUSTED = 9;
+	}
+
+	SCSCOREStatusCode_Enum code = 1;
+	string reason = 2;
+}

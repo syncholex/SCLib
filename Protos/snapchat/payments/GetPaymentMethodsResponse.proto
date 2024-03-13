@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+import "snapchat/payments/PaymentMethod.proto";
+
+message GetPaymentMethodsResponse {
+	repeated snapchat.payments.PaymentMethod paymentMethodsArray = 1;
+}

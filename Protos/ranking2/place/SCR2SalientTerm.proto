@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+import "ranking2/place/SCR2SalientTerm_TermCountPair.proto";
+
+message SCR2SalientTerm {
+	string term = 1;
+	double idf = 2;
+	uint32 tf = 3;
+	double ind = 5;
+	repeated ranking2.place.SCR2SalientTerm_TermCountPair derivedFromArray = 6;
+	double cpt = 7;
+	uint32 rawUserTf = 8;
+}

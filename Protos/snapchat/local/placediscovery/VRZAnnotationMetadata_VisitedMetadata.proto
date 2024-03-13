@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+message VRZAnnotationMetadata_VisitedMetadata {
+	int64 timestampMs = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "snapchat/ads/render/schema/SCAdsCollectionItemAttachment.proto";
+
+message SCAdsCollectionItem {
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo itemIcon = 1;
+	snapchat.ads.render.schema.SCAdsCollectionItemAttachment itemAttachment = 2;
+	string title = 3;
+	int64 dpaProductId = 4;
+}

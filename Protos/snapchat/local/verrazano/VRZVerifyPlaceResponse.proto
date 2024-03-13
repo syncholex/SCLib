@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace.proto";
+
+message VRZVerifyPlaceResponse {
+	snapchat.local.verrazano.VRZPlace place = 1;
+}

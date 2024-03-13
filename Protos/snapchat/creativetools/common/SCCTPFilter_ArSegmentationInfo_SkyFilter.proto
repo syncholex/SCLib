@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ArSegmentationInfo_SkyFilter {
+
+	enum SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType {
+		SKY_TYPE_UNSET = 0;
+		DAYTIME = 1;
+		SUNSET = 2;
+		NIGHTTIME = 3;
+	}
+
+	SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType skyType = 1;
+
+	enum SCCTPFilter_ArSegmentationInfo_SkyFilter_Style {
+		STYLE_UNSET = 0;
+		REGULAR = 1;
+		CARTOON = 2;
+		AUGMENTED = 3;
+	}
+
+	SCCTPFilter_ArSegmentationInfo_SkyFilter_Style style = 2;
+	string replacementSkyURL = 3;
+	string blimpURL = 4;
+}

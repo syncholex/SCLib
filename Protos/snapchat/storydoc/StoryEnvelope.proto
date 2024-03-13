@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message StoryEnvelope {
+
+	enum STOStoryComponentType {
+		STORY_BODY = 0;
+		VENDING = 1;
+		VISIBILITY = 2;
+		PERMITTED_USER_ACTIONS = 3;
+		GROUP_STORY_INFO = 4;
+		OUR_STORY_INFO = 5;
+		PROVENANCE = 6;
+		AD_PLACEMENT = 7;
+		CONTENT_TAGGING = 8;
+		SEGMENTS = 9;
+		EPISODE = 10;
+		CURATION = 11;
+		DEEPLINKS = 12;
+		PRO_STORY_INFO = 13;
+		MODERATION = 14;
+		VIDEO_TRACKS_INFO = 15;
+		SHOW_EXTRA = 16;
+		FEED_INGESTION_METADATA = 17;
+		BIB_CURATION = 18;
+		HAPPENING_NOW = 19;
+		LOCALIZATION = 20;
+		CONTENT_UNDERSTANDING = 21;
+		DISCOVER_CHANNEL_METADATA = 22;
+	}
+
+
+	oneof componentType {
+		STOStoryComponentType componentTypeId = 1;
+		string componentTypeName = 2;
+	}
+
+	bytes componentBytes = 3;
+	bool encrypted = 4;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMAttachments_Attachment.proto";
+import "snapchat/snapdoc/SDMDynamicAttachmentRenderingInfo.proto";
+
+message SDMAttachments {
+	repeated snapchat.snapdoc.SDMAttachments_Attachment attachmentsArray = 4;
+	string customCallToAction = 5;
+	snapchat.snapdoc.SDMDynamicAttachmentRenderingInfo dynamicAttachmentRenderingInfo = 6;
+}

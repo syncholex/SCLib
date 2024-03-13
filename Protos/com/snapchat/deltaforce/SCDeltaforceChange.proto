@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceItemPayload.proto";
+import "com/snapchat/deltaforce/SCDeltaforceTombstone.proto";
+
+message SCDeltaforceChange {
+
+	oneof changeType {
+		com.snapchat.deltaforce.SCDeltaforceItemPayload write = 1;
+		com.snapchat.deltaforce.SCDeltaforceTombstone deletedRow = 2;
+	}
+
+}

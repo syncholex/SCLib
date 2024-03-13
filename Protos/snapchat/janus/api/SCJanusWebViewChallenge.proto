@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusWebViewChallenge {
+
+	oneof content {
+		string URL = 1;
+		string html = 2;
+	}
+
+	uint32 timeoutSeconds = 3;
+	string pageTitle = 4;
+	string provider = 5;
+}

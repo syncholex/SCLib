@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tokens.order;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCIAPTokenPbOrderOrderRecord {
+	string id_p = 1;
+	string sku = 2;
+	uint32 tokens = 3;
+	google.protobuf.GPBTimestamp orderTime = 4;
+	string receipt = 5;
+}

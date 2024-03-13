@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFNotificationEntityId.proto";
+
+message SCSNTFOptInRequest {
+	ranking.pii.user.notification.SCSNTFNotificationEntityId entityId = 2;
+
+	enum SCSNTFOptInState_Enum {
+		UNKNOWN = 0;
+		OPT_IN = 1;
+		OPT_OUT = 2;
+	}
+
+	SCSNTFOptInState_Enum toState = 3;
+	int64 requestServerTimestampMsecs = 4;
+	string userId = 5;
+}

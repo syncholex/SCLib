@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSFriendlinkUpdateRequest {
+	snapchat.core.SCCOREUUID fromUserId = 1;
+	snapchat.core.SCCOREUUID toUserId = 2;
+
+	enum SCMEFriend_Relationship {
+		FRIEND = 0;
+		PENDING = 1;
+		BLOCKED = 2;
+		DELETED = 3;
+		FOLLOWING = 4;
+	}
+
+
+	oneof updateType {
+		SCMEFriend_Relationship relationship = 3;
+		bool isDeletedFriend = 4;
+	}
+
+}

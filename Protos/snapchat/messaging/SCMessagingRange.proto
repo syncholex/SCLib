@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingRange {
+	uint32 location = 1;
+	uint32 length = 2;
+}

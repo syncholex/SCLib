@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+import "VLKAuthResponse.proto";
+import "VLKMediaResponse.proto";
+import "VLKLogResponse.proto";
+
+message VLKAmbaResponse {
+
+	enum VLKAmbaResponse_StatusType {
+		SUCCESS = 1;
+		SYSTEM_ERROR = 2;
+		APPLICATION_ERROR = 3;
+	}
+
+	VLKAmbaResponse_StatusType status = 1;
+	string message = 2;
+	VLKAuthResponse authResponse = 5;
+	VLKMediaResponse mediaResponse = 6;
+	VLKLogResponse logResponse = 7;
+}

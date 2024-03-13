@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+message SCSLSUserResultDetails {
+	string userSuggestReason = 1;
+	string userProfileImageType = 2;
+}

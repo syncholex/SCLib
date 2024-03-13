@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPInternalGetStoryElementsByIdsRequest {
+	string profileId = 1;
+	repeated string snapIdsArray = 2;
+}

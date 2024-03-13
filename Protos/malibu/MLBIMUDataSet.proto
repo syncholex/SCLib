@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBIMUMetaData.proto";
+import "malibu/MLBIMUDataFrame.proto";
+import "malibu/MLBVideoMetaFrame.proto";
+import "malibu/MLBCodecMetaFrame.proto";
+
+message MLBIMUDataSet {
+	malibu.MLBIMUMetaData imuMetaData = 1;
+	repeated malibu.MLBIMUDataFrame imuDataFramesArray = 2;
+	repeated malibu.MLBVideoMetaFrame videoFramesArray = 3;
+	repeated malibu.MLBCodecMetaFrame codecFramesArray = 4;
+}

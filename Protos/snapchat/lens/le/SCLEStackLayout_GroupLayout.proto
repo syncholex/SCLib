@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLESpaceMultipliers.proto";
+
+message SCLEStackLayout_GroupLayout {
+
+	enum SCLEOrientation {
+		HORIZONTAL_UNSET = 0;
+		VERTICAL = 1;
+	}
+
+	SCLEOrientation orientation = 1;
+
+	enum SCLEStackLayout_GroupLayout_Alignment {
+		CENTER_UNSET = 0;
+		START = 1;
+		END = 2;
+		FILL = 3;
+	}
+
+	SCLEStackLayout_GroupLayout_Alignment alignment = 2;
+	snapchat.lens.le.SCLESpaceMultipliers paddingMultipliers = 3;
+	float spacingMultiplier = 4;
+	repeated int32 layoutElementsArray = 5 [packed=true];
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+import "snapchat/perception/scan/settings/SCPCNSettingsPromptHistory.proto";
+
+message SCPCNSettingsCategoryPermissionSetting {
+	string categoryId = 1;
+
+	enum SCPCNSettingsCategoryPermissionSetting_PermissionType {
+		PERMISSION_TYPE_UNSET = 0;
+		PERMISSION_TYPE_ENABLED = 1;
+		PERMISSION_TYPE_DISABLED = 2;
+	}
+
+	SCPCNSettingsCategoryPermissionSetting_PermissionType generalScanPermission = 4;
+	snapchat.perception.scan.settings.SCPCNSettingsPromptHistory generalScanPermissionPromptsFromMscd = 6;
+	snapchat.perception.scan.settings.SCPCNSettingsPromptHistory generalScanPermissionPromptsFromTray = 7;
+}

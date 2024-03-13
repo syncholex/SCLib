@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package games.auth;
+
+message SCGamesAuthGetOIDCTokenResponse {
+	string token = 1;
+	int64 expirationTimestampMsecs = 2;
+}

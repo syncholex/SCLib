@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.decoding;
+
+import "com/snapchat/deeplink/SCDeeplinkShortLinkPayload.proto";
+
+message SCDeeplinkDecodeShortLinkResponse {
+	com.snapchat.deeplink.SCDeeplinkShortLinkPayload shortLinkPayload = 1;
+}

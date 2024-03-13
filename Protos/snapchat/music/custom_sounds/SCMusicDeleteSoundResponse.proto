@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.custom_sounds;
+
+import "snapchat/music/common/SCMusicError.proto";
+
+message SCMusicDeleteSoundResponse {
+	snapchat.music.common.SCMusicError error = 1;
+}

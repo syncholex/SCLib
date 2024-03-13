@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2TrendingTopicList.proto";
+
+message SCR2MyStoryTrendingTopicsResponse {
+	ranking2.SCR2TrendingTopicList trendingTopicList = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbUserMetadata {
+	int32 totalFriendsCount = 1;
+	repeated ranking.core.SCSCOREUUID sampleFriendsUserIdsArray = 2;
+	bool isMember = 3;
+}

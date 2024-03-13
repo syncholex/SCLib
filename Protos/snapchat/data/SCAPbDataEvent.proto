@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+message SCAPbDataEvent {
+	int64 eventName = 1;
+	int32 offsetTsStart = 2;
+	int32 payloadIdentifier = 4;
+	bytes payloadBytes = 5;
+	int32 sequenceNumber = 6;
+
+	enum SCAPbDataConnectivityType {
+		UNKNOWN_CONNECTIVITY_TYPE = 0;
+		WIFI = 1;
+		MOBILE = 2;
+		UNREACHABLE = 3;
+		BLUETOOTH = 4;
+		CONNECTIVITY_TYPE_ETHERNET = 5;
+	}
+
+	SCAPbDataConnectivityType deviceConnectivity = 8;
+	int64 connectionDownloadBandwidthBps = 9;
+	bytes payloadProto = 11;
+	bytes payloadJson = 12;
+	double eventSamplingRate = 13;
+	double userSamplingRate = 14;
+	int64 pageViewId = 15;
+	bool isInCall = 16;
+
+	enum SCAPbDataPageTabType {
+		UNKNOWN_PAGE_TAB_TYPE = 0;
+		MAPS = 1;
+		CHAT = 2;
+		CAMERA = 3;
+		DISCOVER = 4;
+		SPOTLIGHT = 5;
+	}
+
+	SCAPbDataPageTabType pageTabType = 17;
+
+	enum SCAPbDataBlizzardEventSource {
+		BLIZZARD_EVENT_SOURCE_PLATFORM = 0;
+		BLIZZARD_EVENT_SOURCE_NATIVE = 1;
+		BLIZZARD_EVENT_SOURCE_COMPOSER = 2;
+		BLIZZARD_EVENT_SOURCE_IOS_EXTENSION = 3;
+		BLIZZARD_EVENT_SOURCE_COMPOSER_MAP = 4;
+	}
+
+	SCAPbDataBlizzardEventSource blizzardEventSource = 18;
+}

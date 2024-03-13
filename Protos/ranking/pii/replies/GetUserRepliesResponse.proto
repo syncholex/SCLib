@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/Reply.proto";
+
+message GetUserRepliesResponse {
+	string requestId = 1;
+	repeated ranking.pii.replies.Reply repliesListArray = 2;
+	bytes paginationCursor = 3;
+}

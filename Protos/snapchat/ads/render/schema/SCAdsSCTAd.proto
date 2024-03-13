@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsSCTAttachment.proto";
+
+message SCAdsSCTAd {
+	int64 unlockableId = 1;
+	int64 mediaUnlockableId = 2;
+	string brandName = 3;
+	bytes creatorUserId = 4;
+	bool isRegulatedContent = 5;
+	snapchat.ads.render.schema.SCAdsSCTAttachment attachment = 6;
+	string URLMacroParameters = 7;
+}

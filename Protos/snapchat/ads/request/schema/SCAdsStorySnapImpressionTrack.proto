@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsThreeVImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsAppInstallImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsLongformVideoImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsRemoteWebpageImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsLocalWebpageImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsDeepLinkImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsSubscribeImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsAdToLensImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsAdToCallImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsAdToMessageImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsShowcaseImpressionTrack.proto";
+
+message SCAdsStorySnapImpressionTrack {
+	google.protobuf.GPBInt32Value snapIndex = 1;
+	google.protobuf.GPBInt32Value swipeUpCount = 2;
+
+	enum SCAdsExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		AUTO_ADVANCE = 1;
+		TAP_LEFT = 2;
+		TAP_RIGHT = 3;
+		SWIPE_LEFT = 4;
+		SWIPE_RIGHT = 5;
+		SWIPE_DOWN = 6;
+		SWIPE_UP = 7;
+		BACKGROUND = 8;
+		BACK_PRESSED = 9;
+		LONG_PRESSED = 10;
+		OTHER = 11;
+		TAP_SEARCH = 12;
+		TAP_USER_PROFILE = 13;
+		TAP_BRAND_PROFILE = 14;
+		TAP_TRENDING = 15;
+		TAP_SHARE = 16;
+		TAP_HOME = 17;
+		TAP_NAV_BAR = 18;
+	}
+
+	SCAdsExitEvent skipEvent = 3;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	SCAdsAdType adType = 4;
+
+	oneof typedTrackData {
+		snapchat.ads.request.schema.SCAdsThreeVImpressionTrack threeV = 5;
+		snapchat.ads.request.schema.SCAdsAppInstallImpressionTrack appInstall = 6;
+		snapchat.ads.request.schema.SCAdsLongformVideoImpressionTrack longformVideo = 7;
+		snapchat.ads.request.schema.SCAdsRemoteWebpageImpressionTrack remoteWebpage = 8;
+		snapchat.ads.request.schema.SCAdsLocalWebpageImpressionTrack localWebpage = 9;
+		snapchat.ads.request.schema.SCAdsDeepLinkImpressionTrack deepLink = 10;
+		snapchat.ads.request.schema.SCAdsSubscribeImpressionTrack subscribe = 11;
+		snapchat.ads.request.schema.SCAdsAdToLensImpressionTrack adToLens = 12;
+		snapchat.ads.request.schema.SCAdsAdToCallImpressionTrack adToCall = 13;
+		snapchat.ads.request.schema.SCAdsAdToMessageImpressionTrack adToMessage = 14;
+		snapchat.ads.request.schema.SCAdsShowcaseImpressionTrack showcase = 15;
+	}
+
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/memories/MemoriesFeaturedStory_ContentReference.proto";
+
+message MemoriesFeaturedStory {
+	snapchat.core.SCCOREUUID featuredStoryId = 1;
+	string title = 2;
+	string subtitle = 3;
+	uint64 activationTimeMs = 4;
+	uint64 expirationTimeMs = 5;
+	uint32 featuredStoryType = 6;
+	snapchat.memories.MemoriesFeaturedStory_ContentReference content = 7;
+	uint32 priority = 8;
+}

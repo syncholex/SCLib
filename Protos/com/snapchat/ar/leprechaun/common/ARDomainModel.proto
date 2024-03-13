@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package com.snapchat.ar.leprechaun.common;
+
+import "com/snapchat/ar/leprechaun/common/ARStateProduct.proto";
+import "google/protobuf/GPBStruct.proto";
+import "com/snapchat/ar/common/display_card/DisplayCard.proto";
+
+message ARDomainModel {
+	string domainKey = 1;
+	string domainLabel = 2;
+	repeated com.snapchat.ar.leprechaun.common.ARStateProduct stateProductsArray = 3;
+	uint64 coverProductId = 4;
+	string domainId = 5;
+	google.protobuf.GPBStruct itemFilter = 6;
+
+	enum ARArPlacementType {
+		AR_PLACEMENT_TYPE_UNSET = 0;
+		EYE_TRACKING = 1;
+		LIP_TRACKING = 2;
+		FACE_TRACKING = 3;
+		HEAD_TRACKING = 4;
+		HAND_TRACKING = 5;
+		ARM_TRACKING = 6;
+		FULL_BODY_TRACKING = 7;
+		FOOT_TRACKING = 8;
+		EAR_TRACKING = 9;
+		WRIST_TRACKING = 10;
+	}
+
+	repeated ARArPlacementType arPlacementTypeArray = 7 [packed=true];
+	repeated com.snapchat.ar.common.display_card.DisplayCard displayCardsArray = 8;
+
+	enum AssetType {
+		ASSET_TYPE_UNSET = 0;
+		MAKEUP = 1;
+		GLASSES = 2;
+		SHOES = 3;
+		SURFACE = 4;
+		TWO_D = 5;
+		WRIST = 6;
+		SURFACE_VERTICAL = 7;
+		SURFACE_CEILING = 8;
+		UNSET_LOCAL_ASSET = 9;
+	}
+
+	AssetType assetType = 9;
+}

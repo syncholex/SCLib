@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message AdsStoreExperienceContext {
+	string storeId = 1;
+	string categoryId = 2;
+	string adId = 3;
+	bytes organicAdToken = 4;
+}

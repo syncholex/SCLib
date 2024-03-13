@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXLensCollectionAction {
+	string collectionId = 1;
+	string deeplink = 2;
+}

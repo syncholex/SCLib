@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSetUserDeviceSecurityRequest {
+	string passcode = 1;
+	string lagunaId = 2;
+	bool requirePasscode = 3;
+
+	enum HRMPBLockOutEvent {
+		EVERY_DEVICE_REMOVAL = 0;
+		EVERY_RESYART = 1;
+		TIMEOUT = 2;
+	}
+
+	HRMPBLockOutEvent lockoutEvent = 4;
+	int32 lockoutTime = 5;
+	bool phoneProximity = 6;
+}

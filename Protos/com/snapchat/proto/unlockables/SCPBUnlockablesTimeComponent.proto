@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesTimeComponent {
+	string timeUnit = 1;
+	string singularName = 2;
+	string pluralName = 3;
+}

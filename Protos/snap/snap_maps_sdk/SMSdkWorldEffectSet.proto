@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkWorldEffectSet_EffectVariant.proto";
+
+message SMSdkWorldEffectSet {
+	repeated snap.snap_maps_sdk.SMSdkWorldEffectSet_EffectVariant variantsArray = 1;
+}

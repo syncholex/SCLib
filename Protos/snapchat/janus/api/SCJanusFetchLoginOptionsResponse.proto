@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusPasskeyAuthenticationOptions.proto";
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusFetchLoginOptionsResponse {
+
+	enum SCJanusFetchLoginOptionsResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERR_THROTTLED = 11;
+	}
+
+	SCJanusFetchLoginOptionsResponse_StatusCode statusCode = 1;
+	bytes authenticationSessionPayload = 2;
+	snapchat.janus.api.SCJanusPasskeyAuthenticationOptions passkeyAuthenticationOptions = 3;
+	snapchat.janus.api.SCJanusErrorData errorData = 11;
+}

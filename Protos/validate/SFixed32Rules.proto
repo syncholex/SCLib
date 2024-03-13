@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message SFixed32Rules {
+	sfixed32 const_p = 1;
+	sfixed32 lt = 2;
+	sfixed32 lte = 3;
+	sfixed32 gt = 4;
+	sfixed32 gte = 5;
+	repeated sfixed32 inArray = 6;
+	repeated sfixed32 notInArray = 7;
+	bool ignoreEmpty = 8;
+}

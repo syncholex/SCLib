@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+import "snapchat/camera/RingLightConfig_LensConfig.proto";
+
+message RingLightConfig {
+	bool enableRingLight = 1;
+	repeated sint32 presetColorsArray = 2 [packed=true];
+	bool showRingFlashWidgetTooltip = 3;
+	int32 widgetDesignVersion = 4;
+	snapchat.camera.RingLightConfig_LensConfig lensConfig = 5;
+	bool enableCameraCaptureButtonDecoration = 6;
+}

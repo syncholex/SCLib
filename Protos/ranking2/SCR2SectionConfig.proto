@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2CurrentPlaceConfig.proto";
+
+message SCR2SectionConfig {
+}

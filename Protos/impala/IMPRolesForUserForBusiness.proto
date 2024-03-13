@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPRole.proto";
+
+message IMPRolesForUserForBusiness {
+	string profileId = 1;
+	repeated impala.IMPRole rolesArray = 2;
+	repeated impala.IMPRole orgRolesArray = 3;
+}

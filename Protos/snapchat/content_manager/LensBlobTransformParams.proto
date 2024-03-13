@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message LensBlobTransformParams {
+	string encryptionKey = 1;
+	string encryptionIv = 2;
+
+	enum LensBlobTransformParams_EncryptionAlgorithm {
+		UNSET = 0;
+		GCM = 1;
+		CBC = 2;
+	}
+
+	LensBlobTransformParams_EncryptionAlgorithm encryptionAlgorithm = 3;
+}

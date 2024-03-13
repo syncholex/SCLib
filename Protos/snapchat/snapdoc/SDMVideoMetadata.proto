@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMVideoMetadata {
+
+	enum SDMVideoCodecFormat {
+		VIDEO_UNSET = 0;
+		H264 = 1;
+		HEVC = 2;
+		AV1 = 3;
+		VP9 = 4;
+	}
+
+	SDMVideoCodecFormat codecFormat = 1;
+
+	enum SDMVideoFileFormat {
+		VIDEO_FILE_FORMAT_UNSET = 0;
+		MP4 = 1;
+		FMP4 = 2;
+	}
+
+	SDMVideoFileFormat containerFormat = 2;
+}

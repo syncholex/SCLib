@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/ShoppingHubWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemRecommendationWidget.proto";
+import "com/snapchat/showcase/wire/widget/FitProfilePreferencesWidget.proto";
+import "com/snapchat/showcase/wire/widget/TryOnPreferencesWidget.proto";
+import "com/snapchat/showcase/wire/widget/RecentlyViewedPreferencesWidget.proto";
+import "com/snapchat/showcase/wire/widget/CommerceItemWidget.proto";
+import "com/snapchat/showcase/wire/widget/CommerceTabWidget.proto";
+import "com/snapchat/showcase/wire/widget/LookBuilderCategoryWidget.proto";
+
+message CommercePageWidget {
+
+	enum CommercePageWidgetTitle {
+		PAGE_WIDGET_TITLE_UNSET = 0;
+		RECENTLY_VIEWED_WIDGET_TITLE = 1;
+		FIT_PROFILE_PREFERENCES_WIDGET_TITLE = 2;
+		TRY_ON_PREFERENCES_WIDGET_TITLE = 3;
+		RECENTLY_VIEWED_PREFERENCES_WIDGET_TITLE = 4;
+		SHOPPING_PREFERENCES_WIDGET_TITLE = 5;
+	}
+
+	CommercePageWidgetTitle widgetTitle = 1;
+	string fallbackWidgetTitle = 2;
+
+	oneof widget {
+		com.snapchat.showcase.wire.widget.ShoppingHubWidget shoppingHubWidget = 3;
+		com.snapchat.showcase.wire.itemdetailpage.ItemRecommendationWidget recentlyViewedWidget = 4;
+		com.snapchat.showcase.wire.widget.FitProfilePreferencesWidget fitProfilePreferencesWidget = 5;
+		com.snapchat.showcase.wire.widget.TryOnPreferencesWidget tryOnPreferencesWidget = 6;
+		com.snapchat.showcase.wire.widget.RecentlyViewedPreferencesWidget recentlyViewedPreferencesWidget = 7;
+		com.snapchat.showcase.wire.widget.CommerceItemWidget commerceItemWidget = 8;
+		com.snapchat.showcase.wire.widget.CommerceTabWidget commerceTabWidget = 9;
+		com.snapchat.showcase.wire.widget.LookBuilderCategoryWidget lookBuilderCategoryWidget = 10;
+	}
+
+}

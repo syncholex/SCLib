@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbCooldownCapRule.proto";
+
+message SCBillboardPbCampaignCooldownCapConfig {
+	string category = 1;
+	string overriddenCampaignCooldownCapRule = 2;
+	repeated com.snapchat.billboard.SCBillboardPbCooldownCapRule overriddenChannelGlobalCooldownCapRulesArray = 3;
+	repeated com.snapchat.billboard.SCBillboardPbCooldownCapRule overriddenCampaignCooldownCapRulesArray = 4;
+}

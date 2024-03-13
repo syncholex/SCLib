@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+import "snapchat/perception/asr/SCPCNAudioConfig.proto";
+
+message SCPCNConfigRequest {
+	snapchat.perception.asr.SCPCNAudioConfig audioConfig = 1;
+	bool includeTokenLattice = 2;
+	bool excludePartialTranscriptions = 3;
+
+	enum SCPCNConfigRequest_UseCase {
+		USE_CASE_UNSET = 0;
+		USE_CASE_VOICE_SCAN = 1;
+		USE_CASE_AUTO_CAPTIONS = 2;
+		USE_CASE_SCAN = 3;
+	}
+
+	SCPCNConfigRequest_UseCase useCase = 4;
+	bool processBeyondFirstUtterance = 5;
+	repeated string preferredLanguagesArray = 6;
+}

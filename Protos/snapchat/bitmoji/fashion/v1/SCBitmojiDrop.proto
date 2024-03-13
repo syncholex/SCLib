@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiMerchandisedGarment.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiDrop_Asset.proto";
+
+message SCBitmojiDrop {
+	int32 dropId = 1;
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiMerchandisedGarment merchandisedGarmentsArray = 2;
+	snapchat.bitmoji.fashion.v1.SCBitmojiDrop_Asset bannerImage = 3;
+	snapchat.bitmoji.fashion.v1.SCBitmojiDrop_Asset brandLogo = 4;
+	string backgroundColor = 5;
+	int32 startTime = 6;
+	int32 endTime = 7;
+
+	oneof creator {
+		string creatorName = 8;
+	}
+
+	bool isSponsored = 9;
+	int32 bannerEndTime = 10;
+	string dropImage = 11;
+}

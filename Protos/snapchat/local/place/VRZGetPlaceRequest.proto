@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZGetPlaceRequest {
+	string placeId = 1;
+	bool useLite = 2;
+}

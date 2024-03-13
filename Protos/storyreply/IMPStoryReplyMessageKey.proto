@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package storyreply;
+
+message IMPStoryReplyMessageKey {
+	string senderUserId = 1;
+	string receiverUserId = 2;
+	int64 senderSequenceNum = 3;
+}

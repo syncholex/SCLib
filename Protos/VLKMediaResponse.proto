@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+import "VLKMediaMetadata.proto";
+import "VLKMediaRequest.proto";
+
+message VLKMediaResponse {
+	repeated VLKMediaMetadata availableMediaArray = 1;
+	bytes mediaData = 2;
+	VLKMediaRequest mediaRequestMetadata = 3;
+	bool dataPacket = 4;
+}

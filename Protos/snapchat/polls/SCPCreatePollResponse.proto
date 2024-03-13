@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+message SCPCreatePollResponse {
+	string pollId = 1;
+	string error = 2;
+	uint64 votingEndTime = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse_SponsoredSlugStyle_StrPoint.proto";
+
+message SCLGGeofilterResponse_SponsoredSlugStyle {
+	string font = 1;
+	string textSize = 2;
+	string color = 3;
+	string dropshadowColor = 4;
+	lens_platform.client_server.legacy.SCLGGeofilterResponse_SponsoredSlugStyle_StrPoint dropshadowOffset = 5;
+}

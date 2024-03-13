@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest.proto";
+
+message ServeGeoLensesRequest {
+	snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest request = 1;
+}

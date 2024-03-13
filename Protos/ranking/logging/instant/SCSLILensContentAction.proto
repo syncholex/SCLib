@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLIStoryFeedBaseInfo.proto";
+
+message SCSLILensContentAction {
+	ranking.logging.instant.SCSLIStoryFeedBaseInfo baseInfo = 1;
+
+	enum SCSLILensContentAction_ActionType {
+		ACTION_TYPE_UNKNOWN = 0;
+		ACTION_TYPE_SNAP_SAVE = 1;
+		ACTION_TYPE_SNAP_SEND = 2;
+		ACTION_TYPE_SNAP_POST = 3;
+	}
+
+	SCSLILensContentAction_ActionType action = 2;
+	int32 numRecipients = 3;
+	bytes attachedInfo = 4;
+}

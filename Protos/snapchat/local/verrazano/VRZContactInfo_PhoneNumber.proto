@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZContactInfo_PhoneNumber {
+	string phoneNumber = 1;
+
+	enum VRZContactInfo_PhoneNumber_Type {
+		PHONE_TYPE_UNKNOWN = 0;
+		MAIN = 1;
+		LANDLINE = 2;
+		MOBILE = 3;
+		FAX = 4;
+	}
+
+	VRZContactInfo_PhoneNumber_Type type = 2;
+}

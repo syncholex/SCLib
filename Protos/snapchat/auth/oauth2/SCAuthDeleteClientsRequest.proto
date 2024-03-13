@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthDeleteClientsRequest {
+	repeated string clientIdsArray = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKFriendStoryStoryContentFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStorySnapContentFeatures.proto";
+
+message SCSCKFriendStoryContentFeatures {
+	ranking.ml.centralkitchen.SCSCKFriendStoryStoryContentFeatures friendStoryStoryContentFeatures = 1;
+	ranking.ml.centralkitchen.SCSCKFriendStorySnapContentFeatures friendStoryThumbnailContentFeatures = 2;
+}

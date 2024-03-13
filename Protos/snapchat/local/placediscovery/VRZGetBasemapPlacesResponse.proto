@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZBasemapPlace.proto";
+
+message VRZGetBasemapPlacesResponse {
+	repeated snapchat.local.placediscovery.VRZBasemapPlace basemapPlacesArray = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommercePageMetricsMetadata.proto";
+import "com/snapchat/showcase/wire/request/GetCommercePageRequest.proto";
+import "com/snapchat/showcase/wire/request/GetItemRecommendationsRequest.proto";
+
+message PageNavigation {
+	com.snapchat.showcase.wire.widget.CommercePageMetricsMetadata pageMetadata = 1;
+
+	oneof request {
+		com.snapchat.showcase.wire.request.GetCommercePageRequest getCommercePageRequest = 2;
+		com.snapchat.showcase.wire.request.GetItemRecommendationsRequest getItemRecommendationRequest = 3;
+	}
+
+}

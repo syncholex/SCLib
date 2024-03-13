@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+message SCSAACPbSpamURLBlockingCofConfig {
+	bool enabled = 1;
+	uint64 friendshipPeriodSecs = 2;
+	repeated string spamDomainsArray = 3;
+}

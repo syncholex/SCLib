@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SnapchatStats {
+	int64 views = 1;
+	int64 scans = 2;
+	int64 shares = 3;
+	int64 plays = 4;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceGeometryWriteData.proto";
+
+message VRZPlaceWriteData_PlaceGeometryUpdateData {
+	string placeGeometryId = 1;
+	snapchat.local.verrazano.VRZPlaceGeometryWriteData writeData = 2;
+}

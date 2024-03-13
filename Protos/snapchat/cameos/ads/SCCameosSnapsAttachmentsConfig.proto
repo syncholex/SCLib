@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.ads;
+
+import "snapchat/snapdoc/SDMAttachments.proto";
+
+message SCCameosSnapsAttachmentsConfig {
+	snapchat.snapdoc.SDMAttachments snapsAttachments = 1;
+}

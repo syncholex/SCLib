@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCMixerLocationConfig {
+	uint64 freshLocationThrottlingIntervalMs = 1;
+	uint64 freshLocationTimeoutMs = 2;
+	uint64 maxLocationAgeMs = 3;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDailyLensMetrics {
+	int64 timestampMsecs = 1;
+	int64 lensReach = 2;
+	int64 lensViews = 3;
+	int64 lensScans = 4;
+	int64 lensShares = 5;
+	int64 lensCameraPlayTimeSec = 6;
+	float lensCameraTotalViewTimeSec = 7;
+	int64 lensCameraPlayTimeMin = 8;
+	int64 lensCameraTotalViewTimeMin = 9;
+	int64 lensPlays = 10;
+}

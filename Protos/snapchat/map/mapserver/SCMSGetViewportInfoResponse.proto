@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map.mapserver;
+
+import "snapchat/map/mapserver/SCMSWeather.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+import "weather/SCWTimeZone.proto";
+import "snapchat/map/mapserver/SCMSLocality.proto";
+
+message SCMSGetViewportInfoResponse {
+	snapchat.map.mapserver.SCMSWeather weather = 1;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 2;
+	weather.SCWTimeZone timeZone = 3;
+	snapchat.map.mapserver.SCMSLocality locality = 4;
+	int64 throttleMs = 5;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZGetBatchCategoryParentIdsResponse_ParentIds {
+	repeated string parentIdsArray = 1;
+	repeated string hierarchyParentIdsArray = 2;
+}

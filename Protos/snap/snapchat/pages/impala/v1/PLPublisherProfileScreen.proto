@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.impala.v1;
+
+message PLPublisherProfileScreen {
+	string profileId = 1;
+	string showId = 2;
+	bool isNavigationStyleVertical = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCStoryElement_ThumbnailInfo {
+	string thumbnailURL = 1;
+	string thumbnailIv = 2;
+	string mediaKey = 3;
+	string mediaId = 4;
+	bytes thumbnailContentObject = 5;
+	string thumbnailCoKey = 6;
+	string thumbnailCoIv = 7;
+	string encryptedThumbnailURL = 8;
+}

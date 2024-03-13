@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesRatingStickerProperties {
+	string unselectedStateAsset = 1;
+	string selectedStateAsset = 2;
+	int32 initialRating = 3;
+	int32 maxRating = 4;
+}

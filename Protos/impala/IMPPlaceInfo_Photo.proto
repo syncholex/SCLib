@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPlaceInfo_Photo {
+
+	enum IMPPlaceInfo_Photo_ImageType {
+		IMAGE_TYPE_UNSET = 0;
+		ICON = 1;
+		PHOTO = 2;
+	}
+
+	IMPPlaceInfo_Photo_ImageType imageType = 1;
+	string imageURL = 2;
+}

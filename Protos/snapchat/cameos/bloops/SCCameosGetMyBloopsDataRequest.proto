@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+message SCCameosGetMyBloopsDataRequest {
+	string sdkVersion = 1;
+
+	enum SCCameosMyBloopsDataUseCase {
+		MY_BLOOPS_DATA_UNSET = 0;
+		DEFAULT = 1;
+		FRIEND_ONLY = 2;
+	}
+
+	SCCameosMyBloopsDataUseCase useCase = 2;
+}

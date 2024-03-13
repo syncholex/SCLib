@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+message VLKNrfStatusRequest {
+
+	enum VLKNrfStatusRequest_StatusType {
+		BATTERY = 1;
+		MEDIA_COUNT = 2;
+		BUG_REPORT = 4;
+		DEVICE_COLOR = 5;
+		FIRMWARE_VERSION = 6;
+		SERIAL_NUMBER = 7;
+		WIFI_STATE = 8;
+		STORAGE_PERCENT = 9;
+		HARDWARE_VERSION = 10;
+		TEMPERATURE = 11;
+		AMBA_FS_STATUS = 12;
+		GAP_ADDRESS = 13;
+		EVENT_LOG = 14;
+	}
+
+	VLKNrfStatusRequest_StatusType status = 1;
+}

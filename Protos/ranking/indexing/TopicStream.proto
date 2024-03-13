@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/TrendingTopic.proto";
+
+message TopicStream {
+	string streamId = 1;
+	repeated ranking.indexing.TrendingTopic topicsArray = 2;
+}

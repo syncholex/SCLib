@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsPdpContext {
+	int64 productId = 1;
+	bytes organicAdToken = 2;
+}

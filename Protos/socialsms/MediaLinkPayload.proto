@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package socialsms;
+
+import "socialsms/MediaLinkMedia.proto";
+
+message MediaLinkPayload {
+	string format = 1;
+	string downloadURL = 2;
+	string thumbnailDownloadURL = 3;
+	string lensId = 4;
+	int64 ttlSeconds = 5;
+
+	enum MediaLinkPayload_MediaStatus {
+		MEDIA_STATUS_UNSET = 0;
+		PROCESSING = 1;
+		READY = 2;
+		EXPIRED = 3;
+		ERROR = 4;
+	}
+
+	MediaLinkPayload_MediaStatus mainMediaStatus = 6;
+	bool claimInActivate = 7;
+	repeated socialsms.MediaLinkMedia mediaArray = 8;
+}

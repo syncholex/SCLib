@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message UpdateAllRepliesStateRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	string snapId = 2;
+
+	enum ApprovalState_Enum {
+		UNKNOWN = 0;
+		DELETED = 1;
+		PENDING = 2;
+		APPROVED = 3;
+		PINNED = 4;
+		MODERATED = 5;
+		REJECTED = 6;
+	}
+
+	ApprovalState_Enum approvalState = 3;
+	int64 pendingFeedRequestTimestampMs = 4;
+
+	enum AutoApprovalMode_Enum {
+		UNKNOWN = 0;
+		AUTO_APPROVE_ALL = 1;
+		AUTO_APPROVE_FRIENDS = 2;
+		AUTO_APPROVE_NONE = 3;
+	}
+
+	AutoApprovalMode_Enum autoApprovalMode = 5;
+	string storyId = 6;
+}

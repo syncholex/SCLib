@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_from_lens;
+
+message SCSFLScanFromLensWrappedResponse {
+	string id_p = 1;
+	bytes jsonResponse = 2;
+}

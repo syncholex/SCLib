@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/ReplyAttribution_Range.proto";
+import "ranking/pii/replies/Mention.proto";
+
+message ReplyAttribution {
+	ranking.pii.replies.ReplyAttribution_Range range = 1;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.featured;
+
+import "snapchat/unlockables/request/schema/SCULGeoCircle.proto";
+import "lens_platform/client_server/api/featured/SCLPGeofence.proto";
+
+message SCLPFetchLocationsResponse {
+	snapchat.unlockables.request.schema.SCULGeoCircle searchCircle = 1;
+	repeated lens_platform.client_server.api.featured.SCLPGeofence nearbyFetchLocationsArray = 2;
+	int64 cacheTtlMillis = 3;
+}

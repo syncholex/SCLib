@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGStickerPack_StickerPackContextualMetadata {
+	string placement = 1;
+	int32 priority = 2;
+	int32 displayCount = 3;
+}

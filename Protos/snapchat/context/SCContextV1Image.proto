@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCContextV1Image_InlineImage.proto";
+import "snapchat/context/SCContextV1Image_ImageReference.proto";
+import "snapchat/context/SCContextV1Image_EncryptedImage.proto";
+
+message SCContextV1Image {
+
+	oneof content {
+		string imageURL = 1;
+		snapchat.context.SCContextV1Image_InlineImage inlineImage = 2;
+		snapchat.context.SCContextV1Image_ImageReference imageReference = 3;
+		snapchat.context.SCContextV1Image_EncryptedImage encryptedImage = 4;
+	}
+
+	float scaleFactor = 5;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+message JobBlockList {
+	repeated string jobTypeIdentifierArray = 1;
+}

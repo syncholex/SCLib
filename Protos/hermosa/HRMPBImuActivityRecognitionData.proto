@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBImuActivityRecognitionData {
+
+	enum HRMPBImuActivityRecognitionData_Activity {
+		UNSET = 0;
+		STILL_START = 1;
+		WALKING_START = 2;
+		RUNNING_START = 3;
+		CYCLING_START = 4;
+		DRIVING_START = 5;
+		TILTING_START = 6;
+		STILL_STOP = 7;
+		WALKING_STOP = 8;
+		RUNNING_STOP = 9;
+		CYCLING_STOP = 10;
+		DRIVING_STOP = 11;
+		TILTING_STOP = 12;
+	}
+
+	repeated HRMPBImuActivityRecognitionData_Activity activityArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkFeature_Property_Value_KeyValuePair.proto";
+
+message SMSdkFeature_Property_Value_ValueObject {
+	repeated snap.snap_maps_sdk.SMSdkFeature_Property_Value_KeyValuePair valuePairsArray = 1;
+}

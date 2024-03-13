@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXContextClientInfo_SnapReplyRequestInfo {
+	string requestText = 1;
+	snapchat.core.SCCOREUUID requestId = 2;
+	snapchat.core.SCCOREUUID storyId = 3;
+}

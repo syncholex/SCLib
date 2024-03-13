@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingTextMediaAttribute {
+
+	enum SCMessagingTextMediaAttribute_TextMediaAttributeType {
+		ADDRESS = 0;
+		PHONE = 1;
+		EMAIL = 2;
+		MENTION = 3;
+	}
+
+	SCMessagingTextMediaAttribute_TextMediaAttributeType textMediaAttributeType = 2;
+}

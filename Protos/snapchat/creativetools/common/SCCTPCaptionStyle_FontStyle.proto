@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCaptionStyle_Color.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/creativetools/common/SCCTPCaptionStyle_Shadow.proto";
+import "snapchat/creativetools/common/SCCTPCaptionStyle_TextPadding.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPCaptionStyle_FontStyle {
+	string fontName = 1;
+	string fontURL = 2;
+	snapchat.creativetools.common.SCCTPCaptionStyle_Color fontColor = 3;
+	snapchat.creativetools.common.SCCTPCaptionStyle_Color borderColor = 4;
+	google.protobuf.GPBFloatValue letterSpacing = 5;
+	google.protobuf.GPBFloatValue lineHeight = 6;
+	google.protobuf.GPBFloatValue fontSize = 7;
+	google.protobuf.GPBFloatValue fontBorderWidth = 8;
+
+	enum SCCTPCaptionStyle_TextTransform {
+		UNKNOWN_TEXT_TRANSFORM = 0;
+		CAPITAL = 1;
+		UPPER = 2;
+		LOWER = 3;
+	}
+
+	SCCTPCaptionStyle_TextTransform textTransform = 9;
+	repeated snapchat.creativetools.common.SCCTPCaptionStyle_Shadow textShadowArray = 10;
+
+	enum SCCTPCaptionStyle_TextDecoration {
+		UNKNOWN_TEXT_DECORATION = 0;
+		OVERLINE = 1;
+		LINE_THROUGH = 2;
+		UNDERLINE = 3;
+		UNDERLINE_OVERLINE = 4;
+	}
+
+	SCCTPCaptionStyle_TextDecoration textDecoration = 11;
+
+	enum SCCTPCaptionStyle_TextAlign {
+		UNKNOWN_TEXT_ALIGNMENT = 0;
+		LEFT = 1;
+		CENTER = 2;
+		RIGHT = 3;
+	}
+
+	SCCTPCaptionStyle_TextAlign textAlign = 12;
+	snapchat.creativetools.common.SCCTPCaptionStyle_TextPadding padding = 13;
+	google.protobuf.GPBFloatValue minFontSize = 14;
+	google.protobuf.GPBFloatValue maxFontSize = 15;
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 16;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZSortByCriteria {
+
+	enum VRZSortByCriteria_SortByAttribute {
+		ATTRIBUTE_UNKNOWN = 0;
+		CONFIDENCE_SCORE = 1;
+		CREATED_AT = 2;
+		MODERATED_AT = 3;
+		PRIORITY_SCORE = 4;
+	}
+
+	VRZSortByCriteria_SortByAttribute sortByAttribute = 1;
+
+	enum VRZSortByCriteria_SortOrder {
+		ORDER_UNKNOWN = 0;
+		ASC = 1;
+		DESC = 2;
+	}
+
+	VRZSortByCriteria_SortOrder order = 2;
+}

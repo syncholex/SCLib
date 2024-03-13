@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGUnlockablesSchedule_UnlockablesScheduleInterval.proto";
+
+message SCLGUnlockablesSchedule {
+	string schedulingType = 1;
+	string startDateTime = 2;
+	string endDateTime = 3;
+	string timezone = 4;
+	bool useLocalTimezone = 5;
+	string repetitionFrequency = 6;
+	string repetitionEndDateTime = 7;
+	string weeklyFrequency = 8;
+	repeated lens_platform.client_server.legacy.SCLGUnlockablesSchedule_UnlockablesScheduleInterval repeatIntervalsArray = 9;
+}

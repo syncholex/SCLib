@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message Tag {
+
+	enum Tag_Type {
+		TYPE_UNSET = 0;
+		VISUAL = 1;
+		META = 2;
+	}
+
+	Tag_Type tagType = 1;
+	string tag = 2;
+	double confidence = 3;
+}

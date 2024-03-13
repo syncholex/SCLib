@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/Identity.proto";
+
+message GenerativeAIRequest {
+	bytes image = 1;
+	string prompt = 2;
+	string negativePrompt = 3;
+	int32 samplingSteps = 4;
+	int32 seed = 5;
+	string poseId = 6;
+	repeated bytes imagesArray = 7;
+	float customIpAdapterWeight = 8;
+	float customControlnetWeight = 9;
+	float customGuidanceScale = 10;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 11 [packed=true];
+	repeated snapchat.cameos.minerva.Identity identitiesArray = 12;
+	bool runInputSafetyChecks = 13;
+	bool runOutputSafetyChecks = 14;
+}

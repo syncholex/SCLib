@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens_ranking.context;
+
+import "snapchat/lens_ranking/context/SCLensRankingPredictedContext_VisualObjectTag.proto";
+
+message SCLensRankingPredictedContext {
+	repeated snapchat.lens_ranking.context.SCLensRankingPredictedContext_VisualObjectTag visualTagsArray = 1;
+}

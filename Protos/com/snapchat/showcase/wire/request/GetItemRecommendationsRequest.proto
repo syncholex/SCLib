@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/ShowcaseContext.proto";
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemRecommendationWidgetQueryContext.proto";
+
+message GetItemRecommendationsRequest {
+	com.snapchat.showcase.wire.context.ShowcaseContext showcaseContext = 1;
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 2;
+	com.snapchat.showcase.wire.itemdetailpage.ItemRecommendationWidgetQueryContext recommendationQueryContext = 3;
+	int32 limit = 4;
+	bytes paginationCursor = 5;
+}

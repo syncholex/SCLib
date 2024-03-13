@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsFixedAdsPublisherIDAllowlistConfig {
+	repeated int64 publisherIdsArray = 1 [packed=true];
+}

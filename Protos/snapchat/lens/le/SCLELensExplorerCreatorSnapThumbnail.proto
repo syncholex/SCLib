@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerCreatorSnapThumbnail {
+	string thumbnailURL = 1;
+	string thumbnailIv = 2;
+	string largeThumbnailURL = 3;
+	bytes thumbnailContentObject = 4;
+	string thumbnailCoKey = 5;
+	string thumbnailCoIv = 6;
+	string mediaKey = 7;
+	string mediaId = 8;
+	string snapId = 9;
+}

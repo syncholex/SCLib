@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmGraphic_Solomoji {
+	string templateId = 1;
+	snapchat.charms.common.SCCPUUID userId = 2;
+}

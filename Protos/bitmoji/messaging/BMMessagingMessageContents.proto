@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package bitmoji.messaging;
+
+import "bitmoji/messaging/BMMessagingBitmojiText.proto";
+import "bitmoji/messaging/BMMessagingExternalMedia.proto";
+import "bitmoji/messaging/BMMessagingStatusMessage.proto";
+
+message BMMessagingMessageContents {
+
+	oneof content {
+		bitmoji.messaging.BMMessagingBitmojiText bitmojiText = 1;
+		bitmoji.messaging.BMMessagingExternalMedia externalMedia = 2;
+		bitmoji.messaging.BMMessagingStatusMessage statusMessage = 3;
+	}
+
+}

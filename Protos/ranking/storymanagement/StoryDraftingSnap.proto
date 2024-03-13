@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "ranking/core/SCSCOREStoryMetadata.proto";
+import "ranking/core/SCSCOREStoryPostDestinationMetadata.proto";
+import "ranking/storymanagement/ScheduleMetadata.proto";
+
+message StoryDraftingSnap {
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 1;
+	ranking.core.SCSCOREStoryMetadata storyMetadata = 2;
+	ranking.core.SCSCOREStoryPostDestinationMetadata storyPostDestinationMetadata = 3;
+	ranking.storymanagement.ScheduleMetadata scheduleMetadata = 4;
+	bool isDeleted = 5;
+	string snapId = 6;
+}

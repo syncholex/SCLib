@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/genai/identity/SCPbGenAIIdentity.proto";
+
+message SCPbGenAIIdentityGetAllResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.genai.identity.SCPbGenAIIdentity identitiesArray = 2;
+}

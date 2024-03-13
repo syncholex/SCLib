@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerCategory.proto";
+import "snapchat/lens/le/SCLELensExplorerSubCategory.proto";
+
+message SCLEFeedItem {
+
+	oneof feed {
+		snapchat.lens.le.SCLELensExplorerCategory category = 1;
+		snapchat.lens.le.SCLELensExplorerSubCategory subcategory = 2;
+	}
+
+}

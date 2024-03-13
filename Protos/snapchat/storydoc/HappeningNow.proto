@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/HappeningNowWeather.proto";
+import "snapchat/storydoc/HappeningNowHoroscope.proto";
+
+message HappeningNow {
+
+	oneof appIntegration {
+		snapchat.storydoc.HappeningNowWeather weather = 1;
+		snapchat.storydoc.HappeningNowHoroscope horoscope = 2;
+	}
+
+	bool breakingNews = 3;
+	int64 breakingNewsExpiresAtMs = 4;
+}

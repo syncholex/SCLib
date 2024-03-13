@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMTrackIndex.proto";
+import "snapchat/sdom/SCSDOMPlaybackLayersIndex.proto";
+
+message SCSDOMEffectIndex {
+
+	oneof effectIndex {
+		snapchat.sdom.SCSDOMTrackIndex trackIndex = 1;
+		snapchat.sdom.SCSDOMPlaybackLayersIndex playbackLayersIndex = 2;
+		uint32 renderEffectOutputIndex = 3;
+	}
+
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTMotionData {
+
+	enum SCMTMotionType {
+		UNKNOWN = 0;
+		STATIONARY = 1;
+		WALKING = 2;
+		RUNNING = 3;
+		BIKING = 4;
+		DRIVING = 5;
+	}
+
+	SCMTMotionType motion = 1;
+	int64 motionStartTimestamp = 2;
+	int32 motionTypeConfidence = 3;
+	float heading = 4;
+	float speed = 5;
+}

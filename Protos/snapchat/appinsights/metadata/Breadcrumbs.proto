@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/Breadcrumb.proto";
+
+message Breadcrumbs {
+	repeated int64 timestampDeltasArray = 1 [packed=true];
+	repeated snapchat.appinsights.metadata.Breadcrumb breadcrumbsArray = 2;
+}

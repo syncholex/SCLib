@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkImage.proto";
+import "snap/snap_maps_sdk/SMSdkContentObject.proto";
+
+message SMSdkStorySummaryInfo {
+	string storyId = 1;
+
+	oneof thumbnailMedia {
+		snap.snap_maps_sdk.SMSdkImage thumbnailImage = 2;
+		snap.snap_maps_sdk.SMSdkContentObject thumbnailContentObject = 3;
+	}
+
+	int64 numActiveStories = 4;
+	bool hasUnviewedStories = 5;
+	int64 mostRecentStoryTimestamp = 6;
+	int64 mostRecentUnviewedStoryTimestamp = 7;
+	int64 mostRecentViewedTimestamp = 8;
+	string thumbnailURL = 99;
+}

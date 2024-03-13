@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensSegmentationPatchData {
+	bytes segmentationMask = 1;
+	bytes blendMask = 2;
+}

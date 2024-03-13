@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+message SCMossImageMetadata {
+	uint64 sizeBytes = 1;
+	uint32 width = 2;
+	uint32 height = 3;
+
+	enum SCMossImageMetadata_ImageFormat {
+		UNKNOWN = 0;
+		JPEG = 1;
+		WEBP = 2;
+		PNG = 3;
+		GIF = 4;
+	}
+
+	SCMossImageMetadata_ImageFormat imageFormat = 4;
+}

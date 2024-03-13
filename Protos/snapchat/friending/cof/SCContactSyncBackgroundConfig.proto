@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCContactSyncBackgroundConfig {
+	bool enabled = 1;
+	int32 cooldown = 2;
+}

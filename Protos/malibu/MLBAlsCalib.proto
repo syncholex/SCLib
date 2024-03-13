@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAlsCalib {
+	float val300 = 1;
+	float val3500 = 2;
+	float val10000 = 3;
+}

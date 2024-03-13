@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateString.proto";
+
+message IMPUpdateOfficialPersonalFriendmojiRequest {
+	string userId = 1;
+	impala.IMPUpdateString emoji = 2;
+
+	enum IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType {
+		PERSON = 0;
+		BRAND = 1;
+	}
+
+	IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType badgeDisplayType = 3;
+	impala.IMPUpdateString publicTierEmoji = 4;
+}

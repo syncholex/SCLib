@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1Asset.proto";
+
+message SCMT1AssetWithProbability {
+	actionmoji.action.SCMT1Asset asset = 1;
+	double probability = 2;
+}

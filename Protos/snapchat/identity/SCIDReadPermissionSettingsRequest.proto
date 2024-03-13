@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDReadPermissionSettingsRequest {
+	string userId = 1;
+}

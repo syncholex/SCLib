@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+message SCDHSearchOptions_SortField {
+	string fieldName = 1;
+	bool ascending = 2;
+}

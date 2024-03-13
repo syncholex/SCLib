@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZAttributeLock {
+	int64 createdAt = 2;
+	int64 updatedAt = 3;
+}

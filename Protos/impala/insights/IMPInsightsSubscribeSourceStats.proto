@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSubscribeSourceStats {
+
+	enum IMPInsightsSubscribeSourceStats_SubscribeSource {
+		SUBSCRIBE_SOURCE_UNKNOWN = 0;
+		SUBSCRIBE_SOURCE_DISCOVER = 1;
+		SUBSCRIBE_SOURCE_PUBLIC_PROFILE = 2;
+		SUBSCRIBE_SOURCE_SPOTLIGHT = 4;
+		SUBSCRIBE_SOURCE_LENSES = 5;
+		SUBSCRIBE_SOURCE_SEARCH = 6;
+		SUBSCRIBE_SOURCE_MAP = 7;
+	}
+
+	IMPInsightsSubscribeSourceStats_SubscribeSource source = 1;
+	double ratio = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+import "snapchat/stories/cof/SCTime.proto";
+
+message SCTimeWindow {
+	snapchat.stories.cof.SCTime startTime = 1;
+	snapchat.stories.cof.SCTime endTime = 2;
+}

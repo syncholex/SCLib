@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMLoggingContext {
+	string language = 1;
+
+	enum SCSCOREUserGender {
+		GENDER_UNKNOWN = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+	}
+
+	SCSCOREUserGender gender = 2;
+
+	enum SCSCOREUserBucketedAge {
+		AGE_UNKNOWN = 0;
+		AGE_LESS_THAN_13 = 1;
+		AGE_13_TO_17 = 2;
+		AGE_18_TO_24 = 3;
+		AGE_25_TO_34 = 4;
+		AGE_35_TO_54 = 5;
+		AGE_MORE_THAN_54 = 6;
+	}
+
+	SCSCOREUserBucketedAge ageBucket = 3;
+	string rankingTreatmentId = 4;
+	string countryCode = 5;
+	string explorationTreatmentId = 6;
+
+	enum SCSSMLoggingContext_ExplorationSource_Enum {
+		UNKNOWN = 0;
+		SPOTLIGHT = 1;
+		PARTNER_CONTENT = 2;
+	}
+
+	SCSSMLoggingContext_ExplorationSource_Enum explorationSource = 7;
+
+	enum SCSCOREExplorationStage_Enum {
+		UNKNOWN_STAGE = 0;
+		IN_EXPLORATION = 6;
+		RESERVED_TIER6 = 7;
+		THROTTLED = 8;
+		END_EXPLORE = 10;
+		EXPLOIT = 11;
+		STOPPED = 12;
+		EXPIRED = 21;
+		TIER0 = 5;
+		TIER1 = 1;
+		TIER2 = 2;
+		TIER3 = 3;
+		TIER4 = 4;
+		NEW_STORY = 9;
+		STOPPED_FROM_TIER0 = 17;
+		GRADUATE_FROM_TIER0 = 18;
+		STOPPED_FROM_TIER1 = 13;
+		STOPPED_FROM_TIER2 = 14;
+		STOPPED_FROM_TIER3 = 15;
+		STOPPED_FROM_TIER4 = 16;
+		STOPPED_IN_POOL_TOO_LONG_MAGELLAN = 19;
+		STOPPED_IN_POOL_TOO_LONG_DAGAMA = 20;
+		MAX_STAGE = 100;
+	}
+
+	SCSCOREExplorationStage_Enum magellanExplorationStage = 8;
+	string region = 9;
+}

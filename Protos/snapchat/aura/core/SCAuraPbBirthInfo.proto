@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.aura.core;
+
+message SCAuraPbBirthInfo {
+	uint32 year = 1;
+	uint32 month = 2;
+	uint32 day = 3;
+	uint32 hour = 4;
+	uint32 minute = 5;
+	double lat = 6;
+	double lng = 7;
+}

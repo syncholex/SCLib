@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosBloopsMetaConfigKey {
+	string sdk = 1;
+	string locale = 2;
+
+	enum SCCameosPlatform {
+		IOS = 0;
+		ANDROID = 1;
+	}
+
+	SCCameosPlatform platform = 3;
+
+	enum SCCameosBloopsMetaConfigKeyType {
+		CONFIG_TYPE_UNSET = 0;
+		SELF = 1;
+		FRIEND = 2;
+	}
+
+	SCCameosBloopsMetaConfigKeyType type = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEDeleteExplorerStatusRequest {
+	string userId = 1;
+	string statusId = 2;
+	string language = 3;
+	string countryCode = 4;
+	bool isEmployee = 5;
+}

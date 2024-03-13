@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.platform.media.playback.cof;
+
+message SCPBPlaybackIosStreamingResourceLoaderConfig {
+	bool enablePartialResponseFromFirstChunk = 1;
+
+	enum SCPBPlaybackIosStreamingResourceLoaderConfig_FetchStrategy {
+		UNSET = 0;
+		CAPPED_TO_FIRST_CHUNK_SIZE = 1;
+		CAPPED_TO_FIRST_CHUNK_SIZE_MULTIPLE = 2;
+		CAPPED_TO_FIRST_CHUNK_SIZE_WITH_EXPONENTIAL_MULTIPLIER = 3;
+	}
+
+	SCPBPlaybackIosStreamingResourceLoaderConfig_FetchStrategy fetchStrategy = 2;
+	float fetchChunkSizeMultiplier = 3;
+	float fetchChunkSizeSuccessiveMultiplier = 4;
+	float fetchChunkSizeMaxMultiplier = 5;
+	int64 fetchMaxChunkSize = 6;
+	bool pauseFetchWhenPlayerIsPaused = 7;
+	bool startFetchAfterPlaybackBegins = 8;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCAppealPbCheckExistingOpenAppealRequest {
+	string requesterUserId = 1;
+	string referenceId = 2;
+
+	enum SCAppealPbAppealData_AppealType {
+		DEFAULT_UNSET = 0;
+		ACCOUNT_UNLOCK = 1;
+	}
+
+	SCAppealPbAppealData_AppealType type = 3;
+}

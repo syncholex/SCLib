@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/cameos/stories/SCCameosCameoSnap.proto";
+
+message SDMCameoSnapResource {
+	snapchat.cameos.stories.SCCameosCameoSnap cameoSnapResource = 1;
+}

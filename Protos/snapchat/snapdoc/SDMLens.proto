@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/lenses/snappable/SCLensSbSnappableMessage.proto";
+
+message SDMLens {
+	int64 id_p = 1;
+	snapchat.lenses.snappable.SCLensSbSnappableMessage snappable = 2;
+	string rankingId = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLensData.proto";
+
+message SCMTGetMarkerDataResponse {
+}

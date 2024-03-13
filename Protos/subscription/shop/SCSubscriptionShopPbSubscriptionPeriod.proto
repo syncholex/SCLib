@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbSubscriptionPeriod {
+	int32 numberOfUnits = 1;
+
+	enum SCSubscriptionShopPbSubscriptionPeriod_Unit {
+		SUBSCRIPTION_PERIOD_UNIT_UNSET = 0;
+		SUBSCRIPTION_PERIOD_UNIT_DAY = 1;
+		SUBSCRIPTION_PERIOD_UNIT_WEEK = 2;
+		SUBSCRIPTION_PERIOD_UNIT_MONTH = 3;
+		SUBSCRIPTION_PERIOD_UNIT_YEAR = 4;
+	}
+
+	SCSubscriptionShopPbSubscriptionPeriod_Unit unit = 2;
+}

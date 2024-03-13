@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSardoMobileStatusRequest {
+
+	enum HRMPBSardoMobileStatusRequest_MobileState {
+		UNKNOWN = 0;
+		OFF = 1;
+		ON = 2;
+	}
+
+	HRMPBSardoMobileStatusRequest_MobileState mobileState = 1;
+}

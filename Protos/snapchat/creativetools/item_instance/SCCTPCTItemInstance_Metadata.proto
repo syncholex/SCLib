@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPBitmojiStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPCaptionStyleMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPInfoStickerMetadata.proto";
+import "snapchat/snapdoc/SDMMediaMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPFilterMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPDrawingMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPAutoCaptionsMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPCameoStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPAttachmentStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPEmojiStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPCameraRollStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPLensToolMetadata.proto";
+
+message SCCTPCTItemInstance_Metadata {
+
+	oneof metadataType {
+		snapchat.creativetools.item_instance.SCCTPBitmojiStickerMetadata bitmojiStickerMetadata = 1;
+		snapchat.creativetools.item_instance.SCCTPCaptionStyleMetadata captionStyleMetadata = 2;
+		snapchat.creativetools.item_instance.SCCTPInfoStickerMetadata infoStickerMetadata = 3;
+		snapchat.snapdoc.SDMMediaMetadata legacyEditsBlob = 5;
+		bytes legacyEditsJson = 6;
+		snapchat.creativetools.item_instance.SCCTPFilterMetadata filterMetadata = 7;
+		snapchat.creativetools.item_instance.SCCTPDrawingMetadata drawingMetadata = 8;
+		snapchat.creativetools.item_instance.SCCTPAutoCaptionsMetadata autoCaptionsMetadata = 9;
+		snapchat.creativetools.item_instance.SCCTPCameoStickerMetadata cameoStickerMetadata = 10;
+		snapchat.creativetools.item_instance.SCCTPAttachmentStickerMetadata attachmentStickerMetadata = 11;
+		snapchat.creativetools.item_instance.SCCTPEmojiStickerMetadata emojiStickerMetadata = 12;
+		snapchat.creativetools.item_instance.SCCTPCameraRollStickerMetadata cameraRollStickerMetadata = 13;
+		snapchat.creativetools.item_instance.SCCTPLensToolMetadata lensToolMetadata = 14;
+	}
+
+}

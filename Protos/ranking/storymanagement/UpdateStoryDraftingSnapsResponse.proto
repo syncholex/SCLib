@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/StoryDraftingSnap.proto";
+
+message UpdateStoryDraftingSnapsResponse {
+	repeated ranking.storymanagement.StoryDraftingSnap snapsArray = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/Directions.proto";
+import "snapchat/map/valhalla/Info.proto";
+
+message GetRouteResponse {
+	snapchat.map.valhalla.Directions directions = 3;
+	snapchat.map.valhalla.Info info = 20;
+}

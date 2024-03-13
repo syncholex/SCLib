@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsDifferentialPrivacyParameters {
+	float tNoise = 1;
+	float tDp = 2;
+	int64 maxN = 3;
+}

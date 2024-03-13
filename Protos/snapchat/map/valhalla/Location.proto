@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/LatLng.proto";
+
+message Location {
+	snapchat.map.valhalla.LatLng ll = 1;
+}

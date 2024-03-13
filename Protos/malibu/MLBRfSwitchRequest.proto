@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBRfSwitchRequest {
+
+	enum MLBRfSwitchRequest_RfSwitchPosition {
+		WIFI = 0;
+		BLE = 1;
+		BTC = 2;
+	}
+
+	MLBRfSwitchRequest_RfSwitchPosition position = 1;
+}

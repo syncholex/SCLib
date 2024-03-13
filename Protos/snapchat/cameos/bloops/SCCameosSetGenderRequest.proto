@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+message SCCameosSetGenderRequest {
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCCameosGender gender = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2UserInfo.proto";
+import "snapchat/search/SCS2CognacClientInfo.proto";
+import "snapchat/search/SCS2RequestOptions.proto";
+
+message SCS2BatchResultLookupRequest {
+	repeated snapchat.search.SCS2CompositeId compIdsArray = 1;
+	snapchat.search.SCS2UserInfo userInfo = 2;
+	snapchat.search.SCS2CognacClientInfo cognacClientInfo = 3;
+	snapchat.search.SCS2RequestOptions requestOptions = 4;
+}

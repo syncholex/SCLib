@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbOrganization {
+	ranking.core.SCSCOREUUID orgId = 1;
+
+	enum SCCommunityOrgPbReleaseStatus {
+		UNSET = 0;
+		UNRELEASED = 1;
+		EMPLOYEES_ONLY = 2;
+		RELEASED = 3;
+	}
+
+	SCCommunityOrgPbReleaseStatus releaseStatus = 2;
+	repeated string allowedEmailDomainsArray = 3;
+
+	enum SCCommunityOrgPbOrganizationType {
+		TYPE_UNSET = 0;
+		UNIVERSITY = 1;
+		HIGH_SCHOOL = 2;
+	}
+
+	SCCommunityOrgPbOrganizationType organizationType = 4;
+	bytes organizationLogoContentObject = 5;
+	string fullName = 6;
+	string shortName = 7;
+	repeated string allowedAlumniEmailDomainsArray = 8;
+}

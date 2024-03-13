@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2BitmojiThumbnail.proto";
+
+message SCS2PublisherEdition_Thumbnail {
+
+	oneof thumbnail {
+		string URL = 1;
+		snapchat.search.SCS2BitmojiThumbnail bitmojiThumbnail = 2;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule_TimeInterval.proto";
+
+message SCCTPCTTargetedItem_Schedule_Intervals {
+	repeated snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule_TimeInterval intervalsArray = 1;
+}

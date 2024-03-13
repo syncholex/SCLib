@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+import "snapchat/perception/content_understanding/TaggedContent.proto";
+
+message TaggedContents {
+	repeated snapchat.perception.content_understanding.TaggedContent contentsArray = 1;
+}

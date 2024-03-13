@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMPlayback.proto";
+
+message SDMEditInfo {
+	snapchat.snapdoc.SDMPlayback playback = 1;
+}

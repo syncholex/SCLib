@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbPublishLensToAdAccountRequest_LensGcsLink {
+	string bucket = 1;
+	string fileName = 2;
+}

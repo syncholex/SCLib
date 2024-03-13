@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message LensCreator {
+	string creatorUuid = 1;
+	fixed64 lensId = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsPublisher {
+	string id_p = 1;
+	string name = 2;
+
+	enum SCCognacAppsPublisherType {
+		UNKNOWN_TYPE = 0;
+		FIRST_PARTY = 1;
+		SECOND_PARTY = 2;
+		THIRD_PARTY = 3;
+	}
+
+	SCCognacAppsPublisherType publisherType = 3;
+}

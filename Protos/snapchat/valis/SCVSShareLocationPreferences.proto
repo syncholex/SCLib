@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/valis/SCVSShareLocationPreferences_LiveSession.proto";
+
+message SCVSShareLocationPreferences {
+	bool ghostMode = 1;
+	int64 ghostModeExpiration = 2;
+
+	enum SCVSLocationSharingAudience {
+		LSA_NONE = 0;
+		LSA_FRIENDS = 1;
+		LSA_CUSTOM = 2;
+		LSA_BLACKLIST = 3;
+	}
+
+	SCVSLocationSharingAudience audience = 3;
+	repeated snapchat.core.SCCOREUUID whitelistFriendIdArray = 4;
+	repeated snapchat.core.SCCOREUUID blacklistFriendIdArray = 5;
+	bool backgroundSharingEnabled = 6;
+	bool shareUsageData = 7;
+	int64 version = 8;
+	bool isOnboarded = 9;
+	snapchat.core.SCCOREUUID userId = 10;
+	repeated snapchat.valis.SCVSShareLocationPreferences_LiveSession liveSessionsArray = 11;
+	bool pauseAllLiveSessions = 12;
+	int64 pauseAllLiveSessionsExpiration = 13;
+	bool isUpgradedToLiveOnly = 14;
+}

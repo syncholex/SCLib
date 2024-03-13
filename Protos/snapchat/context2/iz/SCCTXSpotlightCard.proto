@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightCard_Thumbnail.proto";
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/iz/SCCTXImage.proto";
+
+message SCCTXSpotlightCard {
+	string id_p = 1;
+	string title = 2;
+	string subtitle = 3;
+	snapchat.context2.iz.SCCTXSpotlightCard_Thumbnail thumbnail = 4;
+	snapchat.context2.api.SCCTXAction action = 5;
+	snapchat.context2.iz.SCCTXImage subtitleImage = 6;
+}

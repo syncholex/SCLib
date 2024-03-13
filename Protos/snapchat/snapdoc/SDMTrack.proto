@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMTrackSegment.proto";
+
+message SDMTrack {
+	repeated snapchat.snapdoc.SDMTrackSegment trackSegmentsArray = 1;
+
+	enum SDMTrack_TrackType {
+		UNSET = 0;
+		AUDIO_VIDEO = 1;
+		AUDIO = 2;
+		VIDEO = 3;
+	}
+
+	SDMTrack_TrackType trackType = 2;
+	uint32 trackIndex = 3;
+	bool isGlobalTrack = 4;
+}

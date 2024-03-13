@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbSnapSubscriptionPlan.proto";
+
+message SCSubscriptionShopPbGetSnapSubscriptionPlansResponse {
+	repeated subscription.shop.SCSubscriptionShopPbSnapSubscriptionPlan plansArray = 1;
+
+	enum SCSubscriptionShopPbGetSnapSubscriptionPlansResponse_Error {
+		ERROR_NO_ERROR = 0;
+		ERROR_UNSUPPORTED_LOCATION = 1;
+	}
+
+	SCSubscriptionShopPbGetSnapSubscriptionPlansResponse_Error error = 2;
+}

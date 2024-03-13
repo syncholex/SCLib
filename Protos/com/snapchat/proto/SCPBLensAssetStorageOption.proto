@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBLensAssetStorageOption {
+	string optionType = 1;
+	string fileURL = 2;
+	string checksum = 3;
+}

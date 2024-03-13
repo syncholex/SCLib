@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsSharing {
+
+	enum SCAppInsightsSharing_Subfeature {
+		UNSET = 0;
+		SEND_TO = 1;
+		OFF_PLATFORM_SHARING = 2;
+	}
+
+	SCAppInsightsSharing_Subfeature subfeature = 1;
+}

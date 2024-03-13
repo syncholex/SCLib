@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMExplanationPage {
+	string description_p = 1;
+	string imageAssetId = 2;
+
+	oneof media {
+		bytes contentObject = 3;
+		string URL = 4;
+	}
+
+}

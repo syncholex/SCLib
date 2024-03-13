@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+message SCPlusCustomAppThemeSIGColor {
+	string name = 1;
+}

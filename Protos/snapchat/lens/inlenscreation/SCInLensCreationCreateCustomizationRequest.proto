@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.lens.inlenscreation;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/lens/inlenscreation/SCInLensCreationCustomizationBody.proto";
+
+message SCInLensCreationCreateCustomizationRequest {
+	snapchat.core.SCCOREUUID customizationId = 1;
+	snapchat.lens.inlenscreation.SCInLensCreationCustomizationBody customizationBody = 2;
+	int64 baseLensId = 3;
+	uint64 ttlSeconds = 4;
+}

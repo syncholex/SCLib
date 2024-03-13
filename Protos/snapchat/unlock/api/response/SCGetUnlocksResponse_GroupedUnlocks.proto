@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.response;
+
+import "snapchat/unlock/api/schema/SCUnlockGroup.proto";
+import "lens_platform/client_server/api/SCLPChecksumEntry.proto";
+import "snapchat/unlock/api/response/SCUnlockMetaResponse.proto";
+
+message SCGetUnlocksResponse_GroupedUnlocks {
+	snapchat.unlock.api.schema.SCUnlockGroup group = 1;
+	repeated lens_platform.client_server.api.SCLPChecksumEntry unlocksArray = 2;
+	repeated snapchat.unlock.api.response.SCUnlockMetaResponse unlocksMetaArray = 3;
+}

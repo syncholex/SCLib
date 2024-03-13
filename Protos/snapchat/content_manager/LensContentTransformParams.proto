@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+import "snapchat/content_manager/LensContentSignatureValidationParams.proto";
+import "snapchat/content_manager/LensContentChecksumValidationParams.proto";
+import "google/protobuf/GPBUInt64Value.proto";
+
+message LensContentTransformParams {
+
+	oneof validationParams {
+		snapchat.content_manager.LensContentSignatureValidationParams signatureValidatonParams = 1;
+		snapchat.content_manager.LensContentChecksumValidationParams checksumValidationParams = 2;
+	}
+
+	google.protobuf.GPBUInt64Value lensId = 3;
+}

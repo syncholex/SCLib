@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingThumbnailInfo.proto";
+
+message SCMessagingContentEnvelope_Thumbnails {
+	repeated snapchat.messaging.SCMessagingThumbnailInfo thumbnailsArray = 1;
+}

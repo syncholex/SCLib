@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbLensCta_Deeplink {
+	string appName = 1;
+	string uri = 2;
+	int64 iosAppId = 3;
+	string androidAppURL = 4;
+}

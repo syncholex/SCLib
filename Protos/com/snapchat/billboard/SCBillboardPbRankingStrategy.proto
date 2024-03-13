@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbRankingInput.proto";
+import "com/snapchat/billboard/SCBillboardPbCampaignSupEntry.proto";
+
+message SCBillboardPbRankingStrategy {
+	repeated com.snapchat.billboard.SCBillboardPbRankingInput rankingInputsArray = 1;
+	repeated com.snapchat.billboard.SCBillboardPbCampaignSupEntry campaignSupMappingsArray = 2;
+}

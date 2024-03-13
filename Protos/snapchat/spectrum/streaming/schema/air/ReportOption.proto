@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.air;
+
+message ReportOption {
+	bool createJira = 1;
+	bool uploadLog = 2;
+	bool fromTestAutomation = 3;
+	bool isAutoShake = 4;
+	repeated string jiraLabelsArray = 5;
+	bool hasScreenCaptured = 6;
+	string lastCrashId = 7;
+}

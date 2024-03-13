@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+import "snapchat/search/sendtoranking/SCSTRCompositeID.proto";
+import "snapchat/search/sendtoranking/SCSTRStreak.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCSTRGetSuggestionsRequest {
+	repeated snapchat.search.sendtoranking.SCSTRCompositeID selectedUidsArray = 1;
+	repeated snapchat.search.sendtoranking.SCSTRStreak expiringStreaksArray = 2;
+	string senderTimezone = 3;
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem ctItemsArray = 4;
+	repeated string mentionUidsArray = 5;
+
+	enum SCSTRSCAMediaType {
+		UNSET = 0;
+		VIDEO = 1;
+		IMAGE = 2;
+		TEXT = 3;
+		APP_INSTALL = 4;
+		GIF = 5;
+		URL = 6;
+		LOCATION = 7;
+		PHONE_NUMBER = 8;
+		AUDIO = 9;
+		WEB = 10;
+		STORY = 11;
+		SUBSCRIPTION = 12;
+		DEEP_LINK_ATTACHMENT = 13;
+		AUDIO_STITCH = 14;
+		MAP_DOODLE = 15;
+		CAMERA = 16;
+		SNAPPABLE = 17;
+		BLOOP = 18;
+		DEPTH = 19;
+		PLACE_PROFILE = 20;
+		LEAD_GENERATION = 21;
+		LENS_COLLECTION = 22;
+		LENS_EXPLORER = 23;
+		NONE = 24;
+		REACTION = 25;
+		DWEB_URL = 26;
+		MAP_PIN = 27;
+		VIDEO_NO_SOUND = 28;
+	}
+
+	SCSTRSCAMediaType mediaType = 6;
+}

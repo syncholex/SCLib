@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/grid/SDMTimeframe.proto";
+import "snapchat/sdom/SCSDOMEntityId.proto";
+
+message SCSDOMTimeRange {
+
+	oneof range {
+		google.protobuf.GPBEmpty wholePlayback = 1;
+		snapchat.grid.SDMTimeframe absTimeFrame = 2;
+		snapchat.sdom.SCSDOMEntityId entityId = 3;
+		snapchat.sdom.SCSDOMEntityId afterEntityId = 4;
+	}
+
+}

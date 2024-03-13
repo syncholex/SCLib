@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingParticipantChangeStatusMessage_Entry.proto";
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingParticipantChangeStatusMessage {
+	repeated snapchat.messaging.SCMessagingParticipantChangeStatusMessage_Entry statusChangesArray = 1;
+	snapchat.messaging.SCMessagingUUID initiatingUserDeprecated = 2;
+	snapchat.messaging.SCMessagingUUID initiatingUser = 3;
+}

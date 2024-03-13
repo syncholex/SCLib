@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMCardDebugInfo_LiteOverlayDebug.proto";
+
+message SCSSMCardDebugInfo {
+	string onDemandDebugKey = 1;
+
+	enum SCSSMCardDebugInfo_VisualElement {
+		UNKNOWN = 0;
+		RED_BUG = 1;
+		GREEN_BUG = 2;
+	}
+
+	SCSSMCardDebugInfo_VisualElement visualElement = 2;
+	string debugHtml = 3;
+	uint64 numImpressions = 5;
+	uint64 numLongImpressions = 6;
+	uint64 numRawWatches = 7;
+	bytes debugPb = 8;
+	ranking.serving.jaguar.SCSSMCardDebugInfo_LiteOverlayDebug liteOverlayDebug = 9;
+	bool isRetrievedFromBoosts = 10;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUserSettings.proto";
+
+message IMPUpdateUserSettingsRequest {
+	impala.IMPUserSettings settings = 1;
+}

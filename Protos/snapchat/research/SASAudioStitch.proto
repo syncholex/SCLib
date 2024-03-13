@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioStitchPoint.proto";
+
+message SASAudioStitch {
+	string id_p = 1;
+	double length = 2;
+	repeated snapchat.research.SASAudioStitchPoint audioStitchPointsArray = 3;
+	int32 totalPointsCount = 4;
+	int32 snapsPerRow = 5;
+	int32 snapsPerColumn = 6;
+
+	enum SASAudioStitch_Source {
+		UNKNOWN = 0;
+		SPOCK = 1;
+		AUTO_GENERATED = 2;
+	}
+
+	SASAudioStitch_Source source = 7;
+}

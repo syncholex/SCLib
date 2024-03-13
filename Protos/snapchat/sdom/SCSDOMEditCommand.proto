@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMAddEdit.proto";
+import "snapchat/sdom/SCSDOMMoveEditToTop.proto";
+import "snapchat/sdom/SCSDOMAddOverlay.proto";
+import "snapchat/sdom/SCSDOMUpdateCTItem.proto";
+
+message SCSDOMEditCommand {
+
+	oneof command {
+		snapchat.sdom.SCSDOMAddEdit addEdit = 1;
+		snapchat.sdom.SCSDOMMoveEditToTop moveEditToTop = 3;
+		snapchat.sdom.SCSDOMAddOverlay addOverlay = 4;
+		snapchat.sdom.SCSDOMUpdateCTItem updateCtItem = 5;
+	}
+
+}

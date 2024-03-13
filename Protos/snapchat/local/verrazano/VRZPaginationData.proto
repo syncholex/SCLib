@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPaginationData {
+	int32 page = 1;
+	int32 perPage = 2;
+}

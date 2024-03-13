@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance_Metadata.proto";
+
+message SCCTPCTItemInstance {
+	bytes ctpId = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem item = 2;
+	snapchat.creativetools.item_instance.SCCTPCTItemInstance_Metadata metadata = 3;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+message SCUnlockGroup {
+
+	enum SCUnlockType {
+		UNLOCK_TYPE_UNSET = 0;
+		EXPIRABLE = 1;
+		NOT_EXPIRABLE = 2;
+		SOCIAL = 3;
+		INVERSE = 4;
+	}
+
+	SCUnlockType unlockType = 1;
+
+	enum SCUnlockableType {
+		UNLOCKABLE_TYPE_UNSET = 0;
+		LENS = 1;
+		STICKER = 2;
+		FILTER = 3;
+	}
+
+	SCUnlockableType unlockableType = 2;
+}

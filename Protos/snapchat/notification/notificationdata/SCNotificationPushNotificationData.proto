@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+import "snapchat/notification/notificationdata/SCNotificationPushNotificationEncryptionData.proto";
+import "snapchat/notification/notificationdata/SCNotificationTokenDeletionInfo.proto";
+import "snapchat/notification/notificationdata/SCNotificationTokens.proto";
+import "snapchat/notification/notificationdata/SCNotificationSessionData.proto";
+import "snapchat/notification/notificationdata/SCNotificationDeviceVersionInfo.proto";
+
+message SCNotificationPushNotificationData {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+	string deviceToken = 2;
+	string deviceVoipToken = 3;
+
+	enum SCNotificationDeviceType {
+		NONE = 0;
+		IOS = 1;
+		ANDROID = 2;
+		TEST_IOS = 3;
+		TEST_ANDROID = 4;
+		ANDROID_HMS = 5;
+		IOS_BITMOJI = 6;
+		ANDROID_BITMOJI = 7;
+		DESKTOP_WEB = 8;
+		IOS_FEATURE_APP = 9;
+	}
+
+	SCNotificationDeviceType deviceType = 4;
+
+	enum SCNotificationReleaseType {
+		UNKNOWN_RELEASE = 0;
+		PRODUCTION = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		BETA = 4;
+		DEBUG = 5;
+		PROTOTYPING = 6;
+	}
+
+	SCNotificationReleaseType releaseType = 5;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+	SCNotificationNotificationSetting sound = 6;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+	SCNotificationNotificationSetting ringingSound = 7;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+	SCNotificationNotificationSetting enabled = 8;
+
+	enum SCNotificationNotificationPrivacySetting {
+		UNKNOWN_PRIVACY = 0;
+		EVERYONE = 1;
+		FRIENDS = 2;
+	}
+
+	SCNotificationNotificationPrivacySetting privacy = 9;
+	string snsArn = 10;
+	string snsVoipArn = 11;
+	snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData pushNotificationEncryptionData = 12;
+
+	enum SCPushNotificationAppId {
+		SNAPCHAT = 0;
+		BITMOJI = 1;
+		WEB = 2;
+		SNAPCHAT_FEATURE_APP = 3;
+	}
+
+	SCPushNotificationAppId appId = 13;
+	snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 14;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+	SCNotificationNotificationSetting bitmoji = 15;
+	snapchat.notification.notificationdata.SCNotificationTokens tokens = 16;
+	repeated snapchat.notification.notificationdata.SCNotificationSessionData webSessionsArray = 17;
+	snapchat.notification.notificationdata.SCNotificationDeviceVersionInfo deviceVersionInfo = 18;
+	bool hasWebSessions = 19;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+	SCNotificationNotificationSetting webPushEnabled = 20;
+	string locationToken = 21;
+	string authSessionId = 22;
+	repeated snapchat.notification.notificationdata.SCNotificationSessionData mobileSessionsArray = 23;
+	int64 lastUpdatedTime = 24;
+}

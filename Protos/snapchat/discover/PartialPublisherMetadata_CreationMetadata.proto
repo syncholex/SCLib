@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/discover/FlagsValue.proto";
+import "snapchat/protobuf/SPCPInt32ListValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/discover/HourMin.proto";
+
+message PartialPublisherMetadata_CreationMetadata {
+	google.protobuf.GPBBoolValue advancedAdsEnabled = 1;
+	google.protobuf.GPBInt32Value advancedAdsMinSlots = 2;
+	google.protobuf.GPBInt32Value advancedAdsMaxSlots = 3;
+	google.protobuf.GPBInt32Value advancedAdsMinSpacing = 4;
+	google.protobuf.GPBInt32Value advancedAdsLatestFirstSlot = 5;
+	google.protobuf.GPBInt32Value defaultNumSnaps = 6;
+	snapchat.discover.FlagsValue publisherFlags = 7;
+	snapchat.protobuf.SPCPInt32ListValue defaultAdSlots = 8;
+	google.protobuf.GPBStringValue managerEmail = 10;
+	google.protobuf.GPBBoolValue permitAutoPublishFromFeed = 12;
+	google.protobuf.GPBInt32Value timeUntilAutoPublishFeedStory = 13;
+	google.protobuf.GPBStringValue managerName = 14;
+	snapchat.discover.HourMin dynamicEditionAutoCreateStoryTimeUtc = 15;
+	snapchat.protobuf.SPCPInt32ListValue defaultAdSlotsMillis = 16;
+}

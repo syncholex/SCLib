@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRBoltRegisteredModelReference {
+	bytes contentObject = 1;
+	string contentURL = 2;
+}

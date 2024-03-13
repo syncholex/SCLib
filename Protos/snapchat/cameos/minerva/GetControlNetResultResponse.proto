@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message GetControlNetResultResponse {
+	string outputType = 2;
+	string imageURL = 3;
+}

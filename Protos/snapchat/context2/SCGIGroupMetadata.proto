@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCGIGroupMetadata {
+	string groupDescription = 1;
+	string locationDisplayString = 2;
+	string locationVenueId = 3;
+	snapchat.geo.SPCGPoint locationLatLng = 4;
+	string locationAddressInfo = 5;
+	int64 startEpoch = 6;
+	int64 endEpoch = 7;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.sharing.v1;
+
+message PLAddFriendScreen {
+	string sender = 1;
+	bool isTriggeredByLens = 2;
+}

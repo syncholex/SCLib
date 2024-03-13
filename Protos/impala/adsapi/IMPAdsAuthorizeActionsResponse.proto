@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsAuthorizeActionsResponse {
+	string requestStatus = 1;
+	repeated string authorizedInternalActionsArray = 2;
+}

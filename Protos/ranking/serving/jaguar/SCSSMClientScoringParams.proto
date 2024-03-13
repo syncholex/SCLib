@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMClientScoringParams {
+	string astVersionMap = 1;
+	float meanStoryScore = 2;
+	float storyScoreVariance = 3;
+	int32 groupStoryStartPos = 4;
+	float groupStoryDensity = 5;
+	float ageDecayWeight = 6;
+	string discoverFeedAstVersionKey = 7;
+	int32 highScoreGroupStoryStartPos = 8;
+	float highScoreGroupStoryScoreThreshold = 9;
+	int32 lowScoreGroupStoryStartPos = 10;
+	float lowScoreGroupStoryScoreThreshold = 11;
+	bool showGroupStories = 12;
+	bool disableLocalReorder = 13;
+}

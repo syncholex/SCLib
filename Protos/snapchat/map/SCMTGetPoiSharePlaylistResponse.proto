@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/context/SCStoryManifest.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+import "snapchat/context/SCLocalizedStringSet.proto";
+import "snapchat/map/SCMTGeoPoint.proto";
+
+message SCMTGetPoiSharePlaylistResponse {
+
+	enum SCMTGetPoiSharePlaylistResponse_PoiShareStatus {
+		UNKNOWN = 0;
+		ON_MAP = 1;
+		PLAYABLE_OFF_MAP = 2;
+		UNAVAILABLE = 3;
+	}
+
+	SCMTGetPoiSharePlaylistResponse_PoiShareStatus status = 1;
+	snapchat.context.SCStoryManifest manifest = 2;
+	snapchat.map.SCMTThumbnail thumbnail = 3;
+	snapchat.context.SCLocalizedStringSet locality = 4;
+	snapchat.map.SCMTGeoPoint coordinate = 5;
+	double zoom = 6;
+}

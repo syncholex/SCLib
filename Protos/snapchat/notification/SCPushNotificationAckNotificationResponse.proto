@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationAckNotificationResponse {
+
+	enum SCPushNotificationAckNotificationResponse_StatusCode {
+		UNKNOWN = 0;
+		OK = 1;
+		INVALID_REQUEST = 2;
+		INTERNAL_FAILURE = 3;
+	}
+
+	SCPushNotificationAckNotificationResponse_StatusCode statusCode = 1;
+}

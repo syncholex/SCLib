@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosResolution.proto";
+
+message SCMinervaImageExtendParameters {
+	int64 leftSideDelta = 1;
+	int64 rightSideDelta = 2;
+	int64 topSideDelta = 3;
+	int64 bottomSideDelta = 4;
+	snapchat.cameos.common.SCCameosResolution originalImageResolution = 5;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/SCAppInsightsEncoderConfiguration.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsVideoFormat.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsAudioFormat.proto";
+
+message SCAppInsightsMediaInfo {
+	int32 mediaSource = 1;
+	snapchat.appinsights.metadata.SCAppInsightsEncoderConfiguration encoderConfiguration = 2;
+	repeated snapchat.appinsights.metadata.SCAppInsightsVideoFormat videoFormatArray = 3;
+	repeated snapchat.appinsights.metadata.SCAppInsightsAudioFormat audioFormatArray = 4;
+}

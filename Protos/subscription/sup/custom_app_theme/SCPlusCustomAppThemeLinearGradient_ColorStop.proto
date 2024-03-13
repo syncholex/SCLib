@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeColor.proto";
+
+message SCPlusCustomAppThemeLinearGradient_ColorStop {
+	double offset = 1;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeColor color = 2;
+}

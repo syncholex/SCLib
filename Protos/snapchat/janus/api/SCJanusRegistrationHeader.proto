@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusCofTags.proto";
+import "snapchat/cdp/cof/PartialToken.proto";
+import "snapchat/janus/api/SCJanusFideliusClientInit.proto";
+import "snapchat/janus/api/SCJanusDeviceToken.proto";
+
+message SCJanusRegistrationHeader {
+	string blizzardClientId = 1;
+	string registrationFlowSessionId = 2;
+	string networkRequestId = 3;
+	string authenticationSessionId = 4;
+	string iosDeviceCheckToken = 5;
+	string androidSafetynetAttestation = 6;
+	snapchat.janus.api.SCJanusCofTags cofTags = 7;
+	string cofDeviceId = 8;
+	snapchat.cdp.cof.PartialToken cofConfigData = 9;
+	snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 10;
+	snapchat.janus.api.SCJanusDeviceToken deviceToken = 11;
+	bytes clientAttestationPayload = 12;
+	string clientChallengePayload = 13;
+	bytes vendorAttestationPayload = 14;
+	uint32 attemptNumber = 15;
+	repeated bytes vendorAttestationPayloadsArray = 16;
+
+	enum NonceFormat {
+		NONCE_FORMAT_UNKNOWN_UNSET = 0;
+		NONCE_FORMAT_USERNAME = 1;
+		NONCE_FORMAT_USERNAME_PASSWORD = 2;
+	}
+
+	NonceFormat nonceFormat = 17;
+}

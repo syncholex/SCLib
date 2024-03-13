@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bfs.client;
+
+import "snapchat/bfs/client/ReverseBestFriend.proto";
+
+message ReverseBestFriends {
+	repeated snapchat.bfs.client.ReverseBestFriend reverseBestFriendsArray = 2;
+}

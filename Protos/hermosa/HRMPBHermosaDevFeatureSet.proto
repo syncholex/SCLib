@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBHermosaDevFeatureSet {
+	bool enableAdb = 1;
+	bool enableUart = 2;
+	bool bootloaderUnlock = 3;
+}

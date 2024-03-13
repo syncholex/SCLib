@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsSKOverlayPreloadConfig {
+	bool enabled = 1;
+	float preloadWindowLevel = 2;
+	float displayWindowLevel = 3;
+	int32 maxNumPreloadedOverlays = 4;
+}

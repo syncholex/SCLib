@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+
+message SCSDOMLayerContainer {
+
+	oneof index {
+		google.protobuf.GPBEmpty global = 1;
+		snapchat.sdom.SCSDOMClipIndex clipIndex = 2;
+	}
+
+}

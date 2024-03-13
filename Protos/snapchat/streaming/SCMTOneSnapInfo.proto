@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+import "snapchat/streaming/SCMTOneMediaInfo.proto";
+
+message SCMTOneSnapInfo {
+	repeated snapchat.streaming.SCMTOneMediaInfo mediaInfosArray = 1;
+}

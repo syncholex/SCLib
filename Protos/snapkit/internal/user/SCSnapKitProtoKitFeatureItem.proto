@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoKitFeatureItem {
+	string metadataKey = 1;
+	bool toggleable = 2;
+	string featureIcon = 3;
+}

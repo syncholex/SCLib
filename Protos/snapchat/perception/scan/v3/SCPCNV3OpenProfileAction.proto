@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3OpenProfileAction {
+	string profileId = 1;
+	string title = 2;
+	bool isPublicProfile = 3;
+}

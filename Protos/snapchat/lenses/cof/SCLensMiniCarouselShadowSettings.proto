@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensMiniCarouselShadowSettings {
+
+	enum SCLensMiniCarouselShadowSettings_ShadowImplementationType {
+		UNSET = 0;
+		NONE = 1;
+		STATIC_SHADOW = 2;
+		CALAYER_SHADOW = 3;
+	}
+
+	SCLensMiniCarouselShadowSettings_ShadowImplementationType shadowImplementation = 1;
+	bool rasterizationEnabled = 2;
+}

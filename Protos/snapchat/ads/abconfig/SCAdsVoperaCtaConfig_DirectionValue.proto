@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsVoperaCtaConfig_DirectionValue {
+	double top = 1;
+	double bottom = 2;
+	double left = 3;
+	double right = 4;
+}

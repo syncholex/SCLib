@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+message ForegroundPrefetchConfig {
+	bool isWwanEnabled = 1;
+	bool isOffPageEnabled = 2;
+	uint32 continueInBackgroundSeconds = 3;
+	uint32 numOfRetries = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPFlattenedRules_CategoryRule.proto";
+
+message SCCTPFlattenedRules_AndOperation {
+	repeated snapchat.creativetools.targeting.SCCTPFlattenedRules_CategoryRule rulesArray = 1;
+}

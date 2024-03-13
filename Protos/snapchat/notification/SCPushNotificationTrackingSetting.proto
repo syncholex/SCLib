@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationTrackingSetting {
+	bool trackingDisplay = 1;
+	bool trackingDelivery = 2;
+	string trackingData = 10;
+	string displayToken = 11;
+	string deliveryToken = 12;
+}

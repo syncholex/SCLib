@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+message SCCommunityOrgPbDefaultCohortLookupParams {
+	string placeId = 1;
+
+	enum SCCommunityOrgPbOrganizationType {
+		TYPE_UNSET = 0;
+		UNIVERSITY = 1;
+		HIGH_SCHOOL = 2;
+	}
+
+	SCCommunityOrgPbOrganizationType organizationType = 2;
+}

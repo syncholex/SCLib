@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceKeysById_NodeData.proto";
+import "com/snapchat/deltaforce/SCDeltaforceKeysByKind.proto";
+
+message SCDeltaforceKeysById {
+
+	oneof idType {
+		string stringId = 1;
+		uint64 longId = 2;
+	}
+
+	com.snapchat.deltaforce.SCDeltaforceKeysById_NodeData data_p = 3;
+	repeated com.snapchat.deltaforce.SCDeltaforceKeysByKind childKeysArray = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsLens.proto";
+import "impala/insights/IMPInsightsMetrics.proto";
+
+message IMPInsightsLensLifetimeInsights {
+	impala.insights.IMPInsightsLens lens = 1;
+	repeated impala.insights.IMPInsightsMetrics lensLifetimeMetricsArray = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbCreateLensSpaceRequest {
+	string organizationId = 1;
+	string lensSpaceName = 2;
+}

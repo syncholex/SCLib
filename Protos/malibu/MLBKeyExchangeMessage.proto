@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBKeyExchangeMessage {
+	bytes nonce = 1;
+	bytes publicKey = 2;
+}

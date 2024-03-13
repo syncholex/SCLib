@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMPublisherStoryAdPlacementMetadata_AdSlot {
+	int32 adSlotIndex = 1;
+	int64 prevSnapId = 2;
+	int64 nextSnapId = 3;
+}

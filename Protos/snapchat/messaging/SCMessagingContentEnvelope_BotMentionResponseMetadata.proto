@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingContentEnvelope_BotMentionResponseMetadata {
+	snapchat.messaging.SCMessagingUUID requesterId = 1;
+	uint64 requestMessageId = 2;
+}

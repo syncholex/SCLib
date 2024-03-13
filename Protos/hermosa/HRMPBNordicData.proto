@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBNordicData {
+	int32 bootSession = 1;
+	string deviceId = 3;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+message SCGamesLeaderboardsClientSubmitScoreResponse {
+	int64 score = 1;
+}

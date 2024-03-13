@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.air;
+
+import "snapchat/spectrum/streaming/schema/air/AirRequest.proto";
+import "com/snapchat/report/SCAppInsightsReport.proto";
+
+message AirEvent {
+
+	oneof event {
+		snapchat.spectrum.streaming.schema.air.AirRequest airRequest = 1;
+		com.snapchat.report.SCAppInsightsReport report = 2;
+	}
+
+}

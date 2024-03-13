@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.common;
+
+import "google/protobuf/GPBAny.proto";
+import "snapchat/common/MapRecords.proto";
+import "snapchat/common/StringArray.proto";
+
+message Value {
+
+	oneof kind {
+		int32 intValue = 1;
+		int64 longValue = 2;
+		float floatValue = 3;
+		bool boolValue = 4;
+		string stringValue = 5;
+		google.protobuf.GPBAny anyValue = 6;
+		snapchat.common.MapRecords mapValue = 7;
+		fixed64 intPairValue = 8;
+		double doubleValue = 9;
+		snapchat.common.StringArray stringArrayValue = 10;
+	}
+
+}

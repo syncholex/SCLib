@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsSnapCreationInfo.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/ads/request/schema/SCAdsFilterImpressionTrack.proto";
+import "snapchat/ads/request/schema/device/SCAdsDeviceInfo.proto";
+
+message SCAdsFilterCarouselImpressionTrack {
+	snapchat.ads.request.schema.SCAdsSnapCreationInfo snapCreationInfo = 1;
+	bytes snapSessionId = 2;
+	google.protobuf.GPBInt64Value carouselSize = 3;
+	repeated snapchat.ads.request.schema.SCAdsFilterImpressionTrack filterImpressionsArray = 4;
+	snapchat.ads.request.schema.device.SCAdsDeviceInfo deviceInfo = 5;
+	string snapSessionIdString = 6;
+}

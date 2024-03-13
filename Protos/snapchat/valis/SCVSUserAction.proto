@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSUserAction {
+
+	enum SCVSUserAction_Type {
+		UNKNOWN = 0;
+		APP_OPEN = 1;
+		APP_CLOSE = 2;
+		MAP_OPEN = 3;
+		MAP_CLOSE = 4;
+	}
+
+	SCVSUserAction_Type type = 1;
+}

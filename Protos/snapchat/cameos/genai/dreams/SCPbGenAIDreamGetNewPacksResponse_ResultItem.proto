@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCPbGenAIDreamGetNewPacksResponse_ResultItem {
+	string packId = 1;
+	google.protobuf.GPBTimestamp startTime = 2;
+	string packName = 3;
+	repeated string availableCountriesArray = 4;
+
+	enum SCPbGenAIDreamPackType {
+		DREAM_PACK_TYPE_UNSET = 0;
+		DREAM_PACK_TYPE_ONE_PERSON = 1;
+		DREAM_PACK_TYPE_TWO_PERSON = 2;
+	}
+
+	SCPbGenAIDreamPackType type = 5;
+}

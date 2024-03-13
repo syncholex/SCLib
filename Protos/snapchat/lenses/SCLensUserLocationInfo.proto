@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensLatLng.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCLensUserLocationInfo {
+	snapchat.lenses.SCLensLatLng latlng = 1;
+	string locality = 2;
+	string venueName = 3;
+	google.protobuf.GPBTimestamp timestamp = 4;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMOwner_ID.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMSnapAlias {
+	snapchat.snapdoc.SDMOwner_ID originalOwner = 1;
+	string originalStoryId = 2;
+	string originalSnapId = 3;
+	snapchat.core.SCCOREUUID originalHostId = 7;
+}

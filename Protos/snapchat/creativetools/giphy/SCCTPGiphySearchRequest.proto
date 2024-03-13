@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.giphy;
+
+message SCCTPGiphySearchRequest {
+	string query = 1;
+}

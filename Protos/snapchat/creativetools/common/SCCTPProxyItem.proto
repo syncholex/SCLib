@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPProxySource.proto";
+
+message SCCTPProxyItem {
+	snapchat.creativetools.common.SCCTPProxySource source = 1;
+}

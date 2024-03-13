@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/GeneratedSnap.proto";
+
+message GenerateSnapFromMapClusterResponse {
+	repeated merlin.toolbox.GeneratedSnap snapsArray = 1;
+}

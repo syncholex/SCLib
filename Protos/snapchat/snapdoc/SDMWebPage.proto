@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMWebPage {
+	string URL = 1;
+	bool blockExternalSharing = 2;
+
+	enum SDMWebPage_PreloadMode {
+		DEFAULT_PRELOAD_MODE = 0;
+		PRELOAD_ANYTIME = 1;
+		PRELOAD_ON_SNAP_LOAD = 2;
+		NEVER_PRELOAD = 3;
+	}
+
+	SDMWebPage_PreloadMode preloadMode = 3;
+
+	enum SDMWebPage_ViewMode {
+		DEFAULT_VIEW_MODE = 0;
+		IMMERSIVE = 1;
+	}
+
+	SDMWebPage_ViewMode viewMode = 4;
+
+	enum SDMWebPage_BridgeCapability {
+		DEFAULT_BRIDGE_CAPABILITY = 0;
+		PAGE_VISIBILITY = 1;
+		INLINE_VIDEOS = 2;
+		AUTOFILL = 3;
+		SUBSCRIPTION = 4;
+	}
+
+	repeated SDMWebPage_BridgeCapability bridgeCapabilitiesArray = 5 [packed=true];
+	repeated string allowedWebviewMacrosArray = 6;
+	bool allowWebStorage = 7;
+
+	enum SDMWebPage_SharingMethod {
+		DEFAULT_SHARING_METHOD = 0;
+		SHARE_DEEP_LINK = 1;
+		SHARE_DEEP_LINK_TOP_SNAP = 2;
+	}
+
+	SDMWebPage_SharingMethod sharingMethod = 8;
+
+	enum SDMWebPage_SharingAudience {
+		DEFAULT_SHARING_AUDIENCE = 0;
+		SHARE_TO_SNAPCHAT_ONLY = 1;
+	}
+
+	SDMWebPage_SharingAudience sharingAudience = 9;
+	bool controlVolume = 10;
+
+	enum SDMWebPage_SubscriptionMethod {
+		UNSET_SUBSCRIPTION_METHOD = 0;
+		SUBSCRIPTION_FOOTER = 1;
+	}
+
+	SDMWebPage_SubscriptionMethod subscriptionMethod = 11;
+	string id_p = 12;
+
+	enum SDMDynamicUrlType {
+		NONE = 0;
+		BITMOJI = 1;
+	}
+
+	SDMDynamicUrlType dynamicURLType = 13;
+	string backgroundColor = 14;
+
+	enum SDMWebPage_FillMode {
+		FULL_SCREEN = 0;
+		SNAP = 1;
+	}
+
+	SDMWebPage_FillMode fillMode = 15;
+
+	enum SDMWebPage_UrlType {
+		STANDARD = 0;
+		AFFILIATE = 1;
+	}
+
+	SDMWebPage_UrlType URLType = 16;
+
+	enum SDMWebPage_WebviewTarget {
+		UNSET_WEBVIEW_TARGET = 0;
+		WEBVIEW_V2 = 1;
+	}
+
+	SDMWebPage_WebviewTarget webviewTarget = 17;
+}

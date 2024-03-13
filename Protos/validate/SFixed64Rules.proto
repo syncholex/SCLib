@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message SFixed64Rules {
+	sfixed64 const_p = 1;
+	sfixed64 lt = 2;
+	sfixed64 lte = 3;
+	sfixed64 gt = 4;
+	sfixed64 gte = 5;
+	repeated sfixed64 inArray = 6;
+	repeated sfixed64 notInArray = 7;
+	bool ignoreEmpty = 8;
+}

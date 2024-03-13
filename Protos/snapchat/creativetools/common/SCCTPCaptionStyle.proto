@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCaptionStyle_FontStyle.proto";
+import "snapchat/creativetools/common/SCCTPCaptionStyle_BackgroundStyle.proto";
+
+message SCCTPCaptionStyle {
+	string styleName = 1;
+	string displayName = 2;
+	snapchat.creativetools.common.SCCTPCaptionStyle_FontStyle fontStyle = 3;
+	snapchat.creativetools.common.SCCTPCaptionStyle_BackgroundStyle backgroundStyle = 4;
+	bool colorChangeable = 5;
+	string baseColor = 6;
+	bool isWifiOnly = 7;
+
+	enum SCCTPCaptionStyle_StyleType {
+		UNKNOWN_STYLE_TYPE = 0;
+		ORIGINAL = 1;
+		BACKGROUND_WORD = 2;
+		BACKGROUND_LINE = 3;
+		BACKGROUND_ENTIRE = 4;
+		BACKGROUND_CUSTOM = 5;
+		NO_BACKGROUND = 6;
+	}
+
+	SCCTPCaptionStyle_StyleType styleType = 8;
+}

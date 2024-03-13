@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesAppInstallAttachment {
+	string appName = 1;
+	string iosAppId = 2;
+	string androidAppURL = 3;
+	string appIconURL = 4;
+}

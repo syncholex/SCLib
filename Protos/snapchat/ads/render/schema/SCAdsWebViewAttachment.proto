@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsWebView.proto";
+import "snapchat/ads/render/schema/SCAdsPdpContext.proto";
+import "snapchat/webview/SCAdsWebViewMetadata.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/render/schema/SCAdsCidMetadata.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/render/schema/SCAdsEngagementStreamMetadata.proto";
+
+message SCAdsWebViewAttachment {
+	snapchat.ads.render.schema.SCAdsWebView webview = 1;
+	bool blockWebviewPreloading = 2;
+	bool allowAutoFill = 3;
+	bool allowApkDownload = 5;
+
+	enum SCAdsWebBrowserType {
+		UNSET = 0;
+		SNAP = 1;
+		IN_APP_NATIVE = 2;
+		EXTERNAL = 3;
+	}
+
+
+	oneof organicContext {
+		snapchat.ads.render.schema.SCAdsPdpContext pdpContext = 6;
+	}
+
+	SCAdsWebBrowserType webBrowserType = 7;
+	snapchat.webview.SCAdsWebViewMetadata webviewMetadata = 8;
+	bool allowClickId = 9;
+	bool enableLightningModeHtmlPrefetch = 10;
+	google.protobuf.GPBBoolValue enableWebviewAdBackgroundContinueLoad = 11;
+	bool allowDeeplink = 12;
+	snapchat.ads.render.schema.SCAdsCidMetadata cidMetadata = 13;
+	string displayableURL = 14;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo profileIconRenderInfo = 15;
+	int32 webviewLifecycleExtensionMinDwellTimeThresholdMillis = 16;
+	google.protobuf.GPBInt32Value webviewLifecycleExtensionTtlMillis = 17;
+	snapchat.ads.render.schema.SCAdsEngagementStreamMetadata engagementStreamMetadata = 18;
+	string reengagedURL = 19;
+	bool enableAsmV2 = 20;
+	bool enableScbV2 = 21;
+}

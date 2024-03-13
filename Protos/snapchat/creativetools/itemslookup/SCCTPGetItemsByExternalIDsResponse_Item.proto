@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.itemslookup;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItemExternalID.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "snapchat/creativetools/ct_item/SCCTPExternalKey.proto";
+
+message SCCTPGetItemsByExternalIDsResponse_Item {
+	snapchat.creativetools.ct_item.SCCTPCTItemExternalID externalId = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem item = 2;
+	snapchat.creativetools.ct_item.SCCTPExternalKey externalKey = 3;
+}

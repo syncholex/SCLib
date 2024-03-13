@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ranking;
+
+import "snapchat/creativetools/ranking/SCCTPGlobalRankingScoreConfig.proto";
+
+message SCCTPGlobalRankingScoreConfigList {
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreConfig globalRankingScoreConfigListArray = 1;
+}

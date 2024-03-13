@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.fastdnn;
+
+import "snapchat/perception/fastdnn/SCPFDModel_TensorShape.proto";
+
+message SCPFDModel_TensorDefinition {
+	snapchat.perception.fastdnn.SCPFDModel_TensorShape shape = 2;
+}

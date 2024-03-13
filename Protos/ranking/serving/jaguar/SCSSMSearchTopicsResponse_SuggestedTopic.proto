@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSearchTopicsResponse_SuggestedTopic {
+	string title = 2;
+
+	enum SCSSMSearchTopicsResponse_SuggestReason_Enum {
+		UNKNOWN = 0;
+		TRENDING = 1;
+		RECENTLY_VIEWED = 2;
+	}
+
+	SCSSMSearchTopicsResponse_SuggestReason_Enum suggestReason = 3;
+}

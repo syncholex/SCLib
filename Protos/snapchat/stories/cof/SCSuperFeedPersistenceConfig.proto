@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+import "snapchat/stories/cof/SCSuperFeedPersistenceConfig_MediaConfig.proto";
+
+message SCSuperFeedPersistenceConfig {
+	bool enablePrefetch = 1;
+	bool enableRefetch = 2;
+	bool enableBackgroundJob = 3;
+	bool keepBackgroundJobOnAppExit = 4;
+	uint32 contentCacheTtl = 5;
+	uint32 numStoriesToPrefetchMetadata = 6;
+	uint32 numStoriesToPaginate = 7;
+	bool enableActivePlaybackSession = 8;
+	uint32 paginationThreshold = 9;
+	int32 superFeedSessionTtl = 10;
+	snapchat.stories.cof.SCSuperFeedPersistenceConfig_MediaConfig mediaConfig = 11;
+}

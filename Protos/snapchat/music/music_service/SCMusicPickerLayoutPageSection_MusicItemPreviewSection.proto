@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPreviewItem.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_MusicItemPreviewSection {
+	repeated snapchat.music.music_service.SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPreviewItem itemsArray = 1;
+
+	enum SCMusicPickerLayoutPageSection_MusicItemPreviewSection_ScrollDirection {
+		UNSET = 0;
+		HORIZONTAL = 1;
+		VERTICAL = 2;
+	}
+
+	SCMusicPickerLayoutPageSection_MusicItemPreviewSection_ScrollDirection scrollDirection = 2;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference viewAllPage = 3;
+
+	enum SCMusicPickerLayoutPageSection_MusicItemPreviewSection_LayoutType {
+		LAYOUT_TYPE_UNSET = 0;
+		LIST = 1;
+		GRID = 2;
+		THUMBNAIL = 3;
+	}
+
+	SCMusicPickerLayoutPageSection_MusicItemPreviewSection_LayoutType layoutType = 4;
+	uint64 rowSize = 5;
+}

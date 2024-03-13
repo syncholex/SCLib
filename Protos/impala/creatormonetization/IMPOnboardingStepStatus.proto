@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPOnboardingStepStatus {
+
+	enum IMPOnboardingStep {
+		DEFAULT_STEP_UNSET = 0;
+		ADD_PERSONAL_INFO = 1;
+		WELCOME_GIFTING = 2;
+		WELCOME_SPOTLIGHT_INCENTIVES = 3;
+		TURN_ON_ADS_STORIES = 4;
+		WELCOME_SPOTLIGHT_CHALLENGES = 5;
+		SETUP_PAYOUT = 6;
+		CASH_OUT = 7;
+		WELCOME_LENS_CREATOR_FUND = 8;
+		WELCOME_LENS_ILDG = 9;
+	}
+
+	IMPOnboardingStep onboardingStep = 1;
+	bool isComplete = 2;
+	bool isTermAccepted = 3;
+	bool isPending = 4;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/UserMembership.proto";
+import "ranking/pii/groupmanagement/FeatureConfig.proto";
+import "ranking/pii/groupmanagement/CustomStoryProfileMetadata.proto";
+import "ranking/pii/groupmanagement/PrivateStoryProfileMetadata.proto";
+import "ranking/pii/groupmanagement/SharedStoryProfileMetadata.proto";
+import "ranking/pii/groupmanagement/CommunityProfileMetadata.proto";
+import "ranking/pii/groupmanagement/PendingUserMembership.proto";
+
+message GroupMetadata {
+	ranking.core.SCSCOREUUID groupId = 1;
+
+	enum SCSCORECustomStoryType_Enum {
+		UNKNOWN = 0;
+		PRIVATE = 1;
+		CUSTOM = 2;
+		GEO = 3;
+		GROUP_CHAT = 4;
+		SNAP_REQUEST = 5;
+		SHARED = 6;
+		COMMUNITY = 7;
+	}
+
+	SCSCORECustomStoryType_Enum customStoryType = 2;
+	string displayName = 3;
+	bool autoSaveToMemories = 4;
+	ranking.core.SCSCOREUUID ownerId = 5;
+	repeated ranking.pii.groupmanagement.UserMembership membersArray = 6;
+	bool isDeleted = 7;
+	uint64 groupVersion = 8;
+	int64 createdTsMs = 9;
+	int64 updateTsMs = 10;
+	bool isUserDataSet = 11;
+	ranking.pii.groupmanagement.FeatureConfig featureConfig = 12;
+
+	oneof profileMetadata {
+		ranking.pii.groupmanagement.CustomStoryProfileMetadata customStoryMetadata = 13;
+		ranking.pii.groupmanagement.PrivateStoryProfileMetadata privateStoryMetadata = 14;
+		ranking.pii.groupmanagement.SharedStoryProfileMetadata sharedStoryMetadata = 15;
+		ranking.pii.groupmanagement.CommunityProfileMetadata communityMetadata = 17;
+	}
+
+	repeated ranking.core.SCSCOREUUID bannedMembersArray = 16;
+	repeated ranking.pii.groupmanagement.PendingUserMembership pendingUserMembershipsArray = 18;
+}

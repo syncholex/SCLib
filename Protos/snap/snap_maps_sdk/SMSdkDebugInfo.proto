@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkDebugInfo {
+	string summary = 1;
+	string details = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPBitmojiSticker {
+	string comicId = 1;
+
+	enum SCCTPBitmojiSticker_Type {
+		SOLOMOJI = 0;
+		FRIENDMOJI = 1;
+	}
+
+	SCCTPBitmojiSticker_Type type = 2;
+	bool isAnimated = 3;
+	string altText = 4;
+	bool isCustomoji = 5;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.aura.api;
+
+import "snapchat/aura/common/SCAuraPbUUID.proto";
+import "snapchat/aura/core/SCAuraPbBirthInfo.proto";
+
+message SCAuraPbAuraSyncMyAstrologyRequest {
+	snapchat.aura.common.SCAuraPbUUID requestId = 1;
+	bytes syncToken = 2;
+	string acceptLanguage = 3;
+	snapchat.aura.core.SCAuraPbBirthInfo birthInfo = 4;
+	float displayPixelDensity = 5;
+	string myDisplayName = 6;
+}

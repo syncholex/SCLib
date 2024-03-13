@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_Hashtag {
+	string title = 1;
+
+	enum SCCTXContextClientInfo_Hashtag_Source {
+		UNSET = 0;
+		CAPTION = 1;
+		STICKER = 4;
+		SEND_TO = 2;
+		TOPIC_PAGE = 3;
+		CREATIVE_KIT_SEND_TO = 5;
+		WEB_UPLOADER = 6;
+	}
+
+	SCCTXContextClientInfo_Hashtag_Source source = 2;
+	bool isServerSuggested = 3;
+}

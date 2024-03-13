@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBMultisnap {
+	int32 index = 1;
+	string firstVideoUuid = 2;
+}

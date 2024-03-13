@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+message GPBGeneratedCodeInfo_Annotation {
+	repeated int32 pathArray = 1 [packed=true];
+	string sourceFile = 2;
+	int32 begin = 3;
+	int32 end = 4;
+}

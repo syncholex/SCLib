@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ct_item;
+
+message SCCTPCTItemExternalID {
+
+	oneof idOneof {
+		string bitmojiComicId = 1;
+		string stickerName = 2;
+		string customStickerId = 3;
+		string emojiUnicode = 4;
+		string giphyId = 5;
+		int64 cameoId = 6;
+		string stickerPackName = 7;
+		string cameoExternalId = 8;
+		string emojiHex = 9;
+		string infoStickerId = 10;
+		string targetedItemId = 11;
+		int64 captionStyleId = 12;
+		uint64 musicTrackId = 13;
+		string emojiEscapedId = 14;
+		string chatCameoExternalId = 15;
+		int64 chatCameoId = 16;
+		string gfycatId = 17;
+		int64 serverCameoId = 18;
+		string chatReactionId = 19;
+		uint64 filterId = 20;
+		string proxyId = 21;
+		string cameraRollStickerId = 22;
+		string templateId = 23;
+		int64 lensSnapchatId = 24;
+	}
+
+}

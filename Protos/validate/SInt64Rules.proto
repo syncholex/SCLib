@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message SInt64Rules {
+	sint64 const_p = 1;
+	sint64 lt = 2;
+	sint64 lte = 3;
+	sint64 gt = 4;
+	sint64 gte = 5;
+	repeated sint64 inArray = 6;
+	repeated sint64 notInArray = 7;
+	bool ignoreEmpty = 8;
+}

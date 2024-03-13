@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXSnapKitActionInfo {
+	string snapKitApplicationId = 1;
+	string oauthClientId = 2;
+	string attachmentURL = 3;
+	string appName = 4;
+	string iconURL = 5;
+}

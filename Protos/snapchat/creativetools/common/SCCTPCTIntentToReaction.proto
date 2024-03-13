@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCTIntentToReaction_IntentReaction.proto";
+
+message SCCTPCTIntentToReaction {
+	repeated snapchat.creativetools.common.SCCTPCTIntentToReaction_IntentReaction reactionsArray = 1;
+}

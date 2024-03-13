@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+import "com/snapchat/proto/air/SCPBAirPreferenceObject.proto";
+
+message SCPBAirPreferenceInfo {
+	repeated com.snapchat.proto.air.SCPBAirPreferenceObject experimentArray = 1;
+	repeated com.snapchat.proto.air.SCPBAirPreferenceObject settingArray = 2;
+	repeated com.snapchat.proto.air.SCPBAirPreferenceObject tweakArray = 3;
+	repeated com.snapchat.proto.air.SCPBAirPreferenceObject serverSettingArray = 4;
+	repeated com.snapchat.proto.air.SCPBAirPreferenceObject featureSettingArray = 5;
+}

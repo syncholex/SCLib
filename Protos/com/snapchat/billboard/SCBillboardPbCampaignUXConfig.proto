@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbProfileActivityCardUXConfig.proto";
+import "com/snapchat/billboard/SCBillboardPbFeedHeaderPromptUXConfig.proto";
+import "com/snapchat/billboard/SCBillboardPbFullScreenTakeoverUXConfig.proto";
+
+message SCBillboardPbCampaignUXConfig {
+
+	oneof config {
+		com.snapchat.billboard.SCBillboardPbProfileActivityCardUXConfig pacConfig = 1;
+		com.snapchat.billboard.SCBillboardPbFeedHeaderPromptUXConfig fhpConfig = 2;
+		com.snapchat.billboard.SCBillboardPbFullScreenTakeoverUXConfig fstConfig = 3;
+	}
+
+}

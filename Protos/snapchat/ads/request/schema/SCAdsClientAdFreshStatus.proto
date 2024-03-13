@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsClientAdFreshStatus {
+
+	enum SCAdsClientAdFreshStatus_FreshStatus {
+		FRESH = 0;
+		STALE = 1;
+	}
+
+	SCAdsClientAdFreshStatus_FreshStatus freshStatus = 1;
+}

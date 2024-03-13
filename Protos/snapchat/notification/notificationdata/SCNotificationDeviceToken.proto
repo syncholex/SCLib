@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationTokenDeletionInfo.proto";
+
+message SCNotificationDeviceToken {
+	string token = 1;
+
+	enum SCNotificationDeviceToken_DeviceTokenType {
+		UNKNOWN = 0;
+		APNS = 1;
+		FCM = 2;
+		HMS = 3;
+		VOIP = 4;
+		WEB = 5;
+		LOCATION = 6;
+	}
+
+	SCNotificationDeviceToken_DeviceTokenType tokenType = 2;
+	int64 updateTimestamp = 3;
+	snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 4;
+}

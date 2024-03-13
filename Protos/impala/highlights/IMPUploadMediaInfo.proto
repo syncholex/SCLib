@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPUploadMediaInfo {
+
+	enum IMPUploadMediaType {
+		UNKNOWN = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+	}
+
+	IMPUploadMediaType mediaType = 1;
+	int32 durationMs = 2;
+}

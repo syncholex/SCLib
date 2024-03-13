@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCGetFeedsRequest_FeedRequest.proto";
+import "ranking/serving/jaguar/feed/MFCClientRequestInfo.proto";
+import "ranking/serving/jaguar/feed/MFCDevice.proto";
+import "ranking/serving/jaguar/feed/MFCExperiments.proto";
+import "ranking/serving/jaguar/feed/MFCPrefetch.proto";
+import "ranking/serving/jaguar/feed/MFCSnapClientInternal.proto";
+import "ranking/serving/jaguar/feed/MFCRecentUserInteractions.proto";
+
+message MFCGetFeedsRequest {
+	repeated ranking.serving.jaguar.feed.MFCGetFeedsRequest_FeedRequest feedRequestsArray = 1;
+	ranking.serving.jaguar.feed.MFCClientRequestInfo clientRequestInfo = 2;
+	ranking.serving.jaguar.feed.MFCDevice device = 3;
+	ranking.serving.jaguar.feed.MFCExperiments experiments = 4;
+	ranking.serving.jaguar.feed.MFCPrefetch prefetch = 5;
+	ranking.serving.jaguar.feed.MFCSnapClientInternal snapClientInternal = 6;
+	ranking.serving.jaguar.feed.MFCRecentUserInteractions recentUserInteractions = 7;
+}

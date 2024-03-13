@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/lists/common/SCListsRecipientListItem.proto";
+
+message SCListsRecipientList {
+	snapchat.core.SCCOREUUID listId = 1;
+	repeated snapchat.lists.common.SCListsRecipientListItem listItemsArray = 2;
+	string name = 3;
+	int64 creationTime = 4;
+	int32 rank = 5;
+	string descriptiveTitle = 6;
+	snapchat.core.SCCOREUUID groupStoryId = 7;
+}

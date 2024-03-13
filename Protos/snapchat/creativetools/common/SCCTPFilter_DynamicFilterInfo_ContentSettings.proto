@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_ContentSettings {
+	bool refreshable = 1;
+	float refreshMessageXPortrait = 2;
+	float refreshMessageYPortrait = 3;
+	float refreshMessageXLandscape = 4;
+	float refreshMessageYLandscape = 5;
+	string refreshHint = 6;
+	string updatingMessage = 7;
+}

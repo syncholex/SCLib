@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASMediaInfo {
+	string bucket = 1;
+	string mediaPath = 2;
+	string thumbnailPath = 3;
+	int64 mediaSize = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPDeleteRoleByRoleTypeRequest.proto";
+
+message IMPBatchDeleteRolesByRoleTypeRequest {
+	repeated impala.IMPDeleteRoleByRoleTypeRequest rolesArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkValue.proto";
+
+message SMSdkValue_List {
+	repeated snap.snap_maps_sdk.SMSdkValue valuesArray = 1;
+}

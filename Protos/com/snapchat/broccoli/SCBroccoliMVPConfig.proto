@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.broccoli;
+
+message SCBroccoliMVPConfig {
+	bool broccoliEnabled = 1;
+	bool storiesOnTop = 2;
+	bool showSubscriptions = 3;
+	bool hideFooterOnFocus = 4;
+	bool consumeFirstSwipe = 5;
+	bool swipeDownExitsFocus = 6;
+	bool disableSpotlightTray = 7;
+	bool enableSpotlightTray = 8;
+	bool disableSpotlightAds = 9;
+	bool enableSpotlightAds = 10;
+	bool mixedCarouselEnabled = 11;
+	int32 friendsBlendingWeight = 12;
+	int32 subsBlendingWeight = 13;
+	int32 foryouBlendingWeight = 14;
+	bool mixedFeedEnabled = 15;
+	int32 mixedCarouselExptNum = 16;
+	int32 mixedFeedExptNum = 17;
+	bool storiesOnChatTab = 18;
+	bool chatStoriesHideOnSwipe = 19;
+	bool mixedCarouselAllCircleEnabled = 20;
+}

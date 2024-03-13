@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+message SCS2LensSearchByUserQuery {
+
+	oneof identifier {
+		string userId = 1;
+		string businessProfileId = 2;
+	}
+
+
+	enum SCS2LensOrdering {
+		NOT_SPECIFIED = 0;
+		POPULARITY = 1;
+		RECENCY = 2;
+	}
+
+	SCS2LensOrdering order = 3;
+}

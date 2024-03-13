@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+import "snapchat/lenses/snappable/SCLensSbSnappable.proto";
+import "snapchat/lenses/snappable/SCLensSbSnappableMedia.proto";
+import "snapchat/lenses/snappable/SCLensSbSnap3DData.proto";
+import "snapchat/lenses/snappable/SCLensSbUsesCameraRoll.proto";
+
+message SCLensSbSnappableMessage {
+	snapchat.lenses.snappable.SCLensSbSnappable snappable = 1;
+	repeated snapchat.lenses.snappable.SCLensSbSnappableMedia mediaArray = 2;
+	string effectId = 3;
+	repeated string userIdsArray = 4;
+	float focusPointX = 5;
+	float focusPointY = 6;
+	float focusPointWidth = 7;
+
+	enum SCLensSbSnappableMessage_ReplyType {
+		NOT_APPLICABLE = 0;
+		CONTEXT = 1;
+		INTERSTITIAL = 2;
+	}
+
+	SCLensSbSnappableMessage_ReplyType replyType = 8;
+	snapchat.lenses.snappable.SCLensSbSnap3DData snap3DData = 9;
+	snapchat.lenses.snappable.SCLensSbUsesCameraRoll usesCameraRollData = 10;
+	string assetBatchId = 500;
+}

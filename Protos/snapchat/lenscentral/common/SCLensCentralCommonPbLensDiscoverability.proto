@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbLensDiscoverability {
+	repeated string tagsArray = 1;
+	string description_p = 2;
+	repeated string locationsArray = 3;
+	repeated string daysTimesHolidaysArray = 4;
+}

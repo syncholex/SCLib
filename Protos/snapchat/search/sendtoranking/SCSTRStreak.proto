@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+message SCSTRStreak {
+	string uid = 1;
+	uint64 expirationTimestamp = 2;
+	int32 streakLength = 3;
+}

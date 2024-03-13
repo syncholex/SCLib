@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet.snap_assets;
+
+message SCPBGalleryServletSnapAssetsAddSnapAssetResponse {
+	string id_p = 1;
+	string uploadURL = 2;
+	string uploadHeaders = 3;
+}

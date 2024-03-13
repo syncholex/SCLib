@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXDiscoverSubscriptionAction {
+
+	oneof subscribeId {
+		int64 publisherId = 1;
+		snapchat.core.SCCOREUUID userId = 2;
+	}
+
+}

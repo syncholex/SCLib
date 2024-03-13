@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/GroupMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+
+message UpdateCustomStoryGroupLegacyResponse {
+	ranking.pii.groupmanagement.GroupMetadata groupMetadata = 1;
+	repeated ranking.core.SCSCOREUUID addedMembersArray = 2;
+	repeated ranking.core.SCSCOREUUID removedMembersArray = 3;
+}

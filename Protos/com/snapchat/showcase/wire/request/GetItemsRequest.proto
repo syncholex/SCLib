@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/StoreContext.proto";
+
+message GetItemsRequest {
+	bytes productSetId = 1;
+	int32 limit = 2;
+	string paginationCursor = 3;
+	bytes adId = 4;
+	com.snapchat.showcase.wire.StoreContext context = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.remix;
+
+message SCRMXRemixLensConfig {
+	string URL = 1;
+	string checksum = 2;
+	string lensId = 3;
+}

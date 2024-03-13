@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsAdsBusinessAccount.proto";
+
+message IMPAdsAdsBusinessAccountSubResponse {
+	impala.adsapi.IMPAdsAdsBusinessAccount businessaccount = 1;
+}

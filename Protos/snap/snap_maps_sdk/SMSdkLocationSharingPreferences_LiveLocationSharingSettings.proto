@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkLocationSharingPreferences_LiveLocationSharingSettings {
+	repeated string sharingLiveLocationWithFriendsArray = 1;
+	bool isLiveLocationSharingPaused = 2;
+}

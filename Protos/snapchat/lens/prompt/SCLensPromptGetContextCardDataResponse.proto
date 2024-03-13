@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+message SCLensPromptGetContextCardDataResponse {
+	string iconURL = 1;
+	string description_p = 2;
+}

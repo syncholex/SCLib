@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/WindowedFloatMetrics.proto";
+
+message SCSCKFriendStoryDerivedEngagementFeatures {
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStorySkips = 1;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStorySnapSkips = 2;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpent = 3;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerStoryView = 4;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStorySnapViews = 5;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryCompletions = 6;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryRepliesPerStoryView = 7;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryRepliesPerStoryCompletions = 8;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryViewsPerInterstitialView = 9;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStorySkipsPerInterstitialView = 10;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryViewPerLongImp = 11;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryCompletionsPerLongImp = 12;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryTapViewPerLongImp = 13;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioTotalChatAckTimePerChatView = 14;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioTotalSnapAckTimePerSnapView = 15;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerSnapView = 16;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryRepliesPerStoryView = 17;
+	ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryRepliesPerStoryCompletions = 18;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSMotionData.proto";
+
+message SCVSLocationUpdate {
+	float lat = 1;
+	float lng = 2;
+	float altitude = 3;
+	float horizontalAccuracy = 4;
+	float verticalAccuracy = 5;
+	snapchat.valis.SCVSMotionData motionData = 6;
+	int64 timestamp = 7;
+	bool gpsReset = 8;
+	int64 preferenceVersion = 9;
+	int64 friendListVersion = 10;
+	bool isBackgrounded = 11;
+	bool isBirthday = 12;
+	int64 serverTimestamp = 13;
+}

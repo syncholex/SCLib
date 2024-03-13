@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SnapContextSnapIdentity {
+	string clientId = 1;
+	string storySnapId = 2;
+	string storyId = 3;
+	string chatMessageId = 4;
+
+	enum SnapViewingContext {
+		VIEWING_CONTEXT_UNKNOWN = 0;
+		DIRECT = 1;
+		FRIEND_STORY = 2;
+		DISCOVER_OUR_STORY = 3;
+		MAP_OUR_STORY = 4;
+		MISC_OUR_STORY = 5;
+		GROUP_STORY = 6;
+		GROUP_DIRECT = 7;
+		BUSINESS = 8;
+		LENS_EXPLORER = 9;
+		MAP_MARKER_CAROUSEL = 10;
+		MAP_EXPLORE_CAROUSEL = 11;
+		MAP_PEOPLE_CAROUSEL = 12;
+		IMPALA_BUSINESS_PROFILE = 13;
+		MAP_PLACE_PROFILE = 14;
+		MEMORIES = 15;
+		SPOTLIGHT_FEED = 16;
+		STORY_MANAGEMENT = 17;
+	}
+
+	SnapViewingContext snapViewingContext = 6;
+}

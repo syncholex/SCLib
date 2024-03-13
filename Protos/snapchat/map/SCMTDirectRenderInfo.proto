@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+
+message SCMTDirectRenderInfo {
+	snapchat.map.SCMTPoint anchorPoint = 1;
+	double heightToWidthRatio = 2;
+
+	enum SCMTDirectRenderInfo_CollisionBehavior {
+		PARTIAL_OR_FULL = 0;
+		FULL_ONLY = 1;
+		NONE = 2;
+	}
+
+	SCMTDirectRenderInfo_CollisionBehavior friendCollisionBehavior = 3;
+}

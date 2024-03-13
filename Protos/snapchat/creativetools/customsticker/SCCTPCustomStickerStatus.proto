@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+message SCCTPCustomStickerStatus {
+	bytes id_p = 1;
+	bool isSuccess = 2;
+	string errorMessage = 3;
+}

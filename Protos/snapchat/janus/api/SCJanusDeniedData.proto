@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusDeniedData {
+	string humanReadableMessage = 1;
+
+	enum SCJanusDeniedData_ErrorCode {
+		UNSET = 0;
+		RATE_LIMITED = 1;
+	}
+
+	SCJanusDeniedData_ErrorCode errorCode = 2;
+}

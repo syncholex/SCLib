@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMOwner_ID.proto";
+import "snapchat/snapdoc/SDMSnapKitAttributes.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/snapdoc/SDMSnapAlias.proto";
+
+message SDMProvenance {
+
+	enum SDMProvenance_SnapSourceSystem {
+		UNSET = 0;
+		RICH_SNAP_PLATFORM_ADS = 1;
+		RICH_SNAP_PLATFORM_DISCOVER = 2;
+		STORY_CREATION_SERVICE = 3;
+		SPOTLIGHT_WEB_UPLOADER = 4;
+		SNAPCHAT_APP_CREATIVE_TOOLS = 5;
+		USER_GENERATOR = 6;
+		SNAPCHAT_WEB_APP = 7;
+		STORY_STUDIO_UGC = 8;
+		BUSINESS_API = 9;
+		ADS_MEDIA_THRU_BUSINESS_API = 10;
+	}
+
+	SDMProvenance_SnapSourceSystem sourceSystem = 1;
+	string sourceId = 2;
+	string sourceVersion = 3;
+
+	enum SDMProvenance_AppSource {
+		APP_SOURCE_UNSET = 0;
+		APP_SOURCE_CAMERA_ROLL = 1;
+		APP_SOURCE_MEMORIES = 2;
+		APP_SOURCE_CHAT = 3;
+		APP_SOURCE_PROFILE_SAVED_CHAT_MEDIA = 4;
+		APP_SOURCE_CAMERA = 5;
+		APP_SOURCE_SNAP_KIT = 6;
+	}
+
+	SDMProvenance_AppSource appSource = 4;
+	snapchat.snapdoc.SDMOwner_ID ownerId = 5;
+	snapchat.snapdoc.SDMSnapKitAttributes snapKitSource = 6;
+	snapchat.core.SCCOREUUID hostId = 7;
+	snapchat.snapdoc.SDMSnapAlias snapAlias = 8;
+}

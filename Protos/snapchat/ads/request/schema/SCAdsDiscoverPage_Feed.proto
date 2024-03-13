@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsStoryItem.proto";
+
+message SCAdsDiscoverPage_Feed {
+	uint32 storyOffset = 1;
+	int32 feedType = 2;
+	repeated snapchat.ads.request.schema.SCAdsStoryItem storiesArray = 3;
+
+	enum SCAdsDiscoverPage_FeedStyle_Enum {
+		UNKNOWN = 0;
+		HORIZONTAL = 1;
+		VERTICAL = 2;
+	}
+
+	SCAdsDiscoverPage_FeedStyle_Enum feedStyle = 4;
+	bool adsDisabled = 5;
+	uint32 minAdsPos = 6;
+	repeated string sccTagsArray = 7;
+}

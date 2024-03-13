@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message MixerStoriesDuplicateId {
+	string playlistGroupId = 1;
+	string requestId = 2;
+}

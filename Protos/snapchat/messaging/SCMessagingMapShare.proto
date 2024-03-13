@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingMapShare {
+	string storyId = 1;
+	string mediaType = 2;
+	string poiId = 3;
+}

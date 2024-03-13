@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioStitch.proto";
+
+message SASAudioStitchMediaRequest {
+	snapchat.research.SASAudioStitch audioStitch = 1;
+	string entityKind = 2;
+	string signedUrls = 3;
+}

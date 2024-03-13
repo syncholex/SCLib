@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPFriendStoryFeatures {
+	int32 totalSnapsViewed1D = 1;
+	int32 totalSnapsViewed7D = 2;
+	int32 totalSnapsViewed14D = 3;
+	int32 totalSnapsViewed28D = 4;
+	int32 allStoriesViewed1D = 5;
+	int32 allStoriesViewed7D = 6;
+	int32 allStoriesViewed14D = 7;
+	int32 allStoriesViewed28D = 8;
+	int32 replays1D = 9;
+	int32 replays7D = 10;
+	int32 replays14D = 11;
+	int32 replays28D = 12;
+	float avgTimeViewedPct1D = 13;
+	float avgTimeViewedPct7D = 14;
+	float avgTimeViewedPct14D = 15;
+	float avgTimeViewedPct28D = 16;
+	float avgSnapViewedPct1D = 17;
+	float avgSnapViewedPct7D = 18;
+	float avgSnapViewedPct14D = 19;
+	float avgSnapViewedPct28D = 20;
+	float weightedScrollToView1D = 21;
+	float weightedScrollToView7D = 22;
+	float weightedScrollToView14D = 23;
+	float weightedScrollToView28D = 24;
+	float ctr1D = 25;
+	float ctr7D = 26;
+	float ctr14D = 27;
+	float ctr28D = 28;
+	int32 storySkips1D = 29;
+	int32 storySkips7D = 30;
+	int32 storySkips14D = 31;
+	int32 storySkips28D = 32;
+	int32 storyViews1D = 33;
+	int32 storyViews7D = 34;
+	int32 storyViews14D = 35;
+	int32 storyViews28D = 36;
+	int32 autoAdvanceSkips1D = 37;
+	int32 autoAdvanceSkips7D = 38;
+	int32 autoAdvanceSkips14D = 39;
+	int32 autoAdvanceSkips28D = 40;
+	float avgSnapSkippedPct1D = 41;
+	float avgSnapSkippedPct7D = 42;
+	float avgSnapSkippedPct14D = 43;
+	float avgSnapSkippedPct28D = 44;
+	int32 storyReplays1D = 45;
+	int32 storyReplays7D = 46;
+	int32 storyReplays14D = 47;
+	int32 storyReplays28D = 48;
+}

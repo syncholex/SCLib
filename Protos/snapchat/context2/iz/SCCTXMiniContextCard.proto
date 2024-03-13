@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/iz/SCCTXMiniImageSource.proto";
+
+message SCCTXMiniContextCard {
+	snapchat.context2.api.SCCTXAction action = 1;
+	snapchat.context2.iz.SCCTXMiniImageSource asset = 2;
+	string text = 3;
+	string subText = 4;
+	snapchat.context2.iz.SCCTXMiniImageSource subAsset = 5;
+}

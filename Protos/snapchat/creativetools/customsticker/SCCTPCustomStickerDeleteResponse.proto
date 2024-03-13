@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerStatus.proto";
+
+message SCCTPCustomStickerDeleteResponse {
+	snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDailyStoryView {
+	int64 totalViews = 1;
+	float avgViewTimeSecs = 2;
+	float avgCompletionRatio = 3;
+	int64 timestampMsecs = 4;
+	int64 reach = 5;
+	float pctReachAreSubscribers = 6;
+	int64 storyViews = 7;
+	int64 storyReplies = 8;
+	int64 publicStoryReach = 9;
+	float publicStoryAvgViewTimeSecs = 10;
+	int64 publicStoryStoryViews = 11;
+	float pctViewsAreSubscribers = 12;
+	int64 snapViews = 13;
+	float totalSnapViewTimeSecs = 14;
+}

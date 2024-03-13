@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCScheduleV3OptimizationConfig {
+	bool batchEnabled = 1;
+	repeated string batchNamespacesArray = 2;
+	bool backgroundPrefetchEnabled = 3;
+}

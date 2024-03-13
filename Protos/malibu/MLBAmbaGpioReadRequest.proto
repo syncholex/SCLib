@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAmbaGpioReadRequest {
+
+	enum MLBSharedGpio {
+		H2S_GPIO1 = 0;
+		H2S_GPIO2 = 1;
+	}
+
+	MLBSharedGpio gpio = 1;
+}

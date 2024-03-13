@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message RevokeSharedPaymentMethodResponse {
+
+	enum RevokeSharedPaymentMethodResponse_RevokeStatus {
+		UNSET = 0;
+		REVOKED = 1;
+		UNREVOCABLE = 2;
+		ERROR = 3;
+	}
+
+	RevokeSharedPaymentMethodResponse_RevokeStatus status = 1;
+}

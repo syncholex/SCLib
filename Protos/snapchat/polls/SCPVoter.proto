@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCPVoter {
+	snapchat.core.SCCOREUUID uuid = 1;
+	string displayName = 2;
+	string mutableUsername = 3;
+	string avatarId = 4;
+	string selfieId = 5;
+}

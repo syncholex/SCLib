@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCNotificationGetTokenStateRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbFriendProfileProminentFriendActionsConfig {
+	bool enabled = 1;
+
+	enum SCPrivateProfilePbFriendProfileProminentFriendActionsConfig_Button {
+		UNSET = 0;
+		SNAP = 1;
+		CHAT = 2;
+		AUDIO_CALL = 3;
+		VIDEO_CALL = 4;
+	}
+
+	repeated SCPrivateProfilePbFriendProfileProminentFriendActionsConfig_Button buttonsArray = 2 [packed=true];
+	bool showButtonText = 3;
+}

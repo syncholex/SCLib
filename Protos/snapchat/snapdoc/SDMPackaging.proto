@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMPackaging_PackagedImage.proto";
+import "snapchat/snapdoc/SDMPackaging_PackagedVideo.proto";
+import "snapchat/snapdoc/SDMPackaging_Overlay.proto";
+
+message SDMPackaging {
+
+	enum SDMPackaging_PackageFormat {
+		UNKNOWN = 0;
+		RICH_SNAP_ZIP = 1;
+	}
+
+	SDMPackaging_PackageFormat packageFormat = 1;
+	string packageURL = 2;
+	snapchat.snapdoc.SDMPackaging_PackagedImage packagedImage = 3;
+	snapchat.snapdoc.SDMPackaging_PackagedVideo packagedVideo = 4;
+	snapchat.snapdoc.SDMPackaging_Overlay overlay = 5;
+	string latestPackageId = 6;
+	repeated string latestPackageVariantsArray = 7;
+	string latestHash = 8;
+}

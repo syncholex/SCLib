@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message LensesInfo {
+	string activeLensId = 1;
+}

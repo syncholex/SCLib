@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRArithmeticOperation {
+
+	enum SCSTRArithmeticOperator {
+		ARITHMETIC_OPERATOR_UNSET = 0;
+		ADD = 1;
+		SUBTRACT = 2;
+		MULTIPLY = 3;
+		DIVIDE = 4;
+	}
+
+	SCSTRArithmeticOperator operation = 1;
+	snapchat.sendto.ranking.SCSTRAST base = 2;
+	snapchat.sendto.ranking.SCSTRAST operand = 3;
+}

@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWifiStatus {
+	bool isWifiEnabled = 1;
+	bool isConnectedToWifi = 2;
+	string ssid = 3;
+
+	enum HRMPBWifiLevel {
+		WEAK = 0;
+		MEDIUM = 1;
+		STRONG = 2;
+	}
+
+	HRMPBWifiLevel wifiLevel = 4;
+	string ipAddress = 5;
+	string dnsAddress = 6;
+}

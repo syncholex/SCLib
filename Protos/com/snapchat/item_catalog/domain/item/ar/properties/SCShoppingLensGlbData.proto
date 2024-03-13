@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.item.ar.properties;
+
+message SCShoppingLensGlbData {
+	string URL = 1;
+	string checksum = 2;
+	bool trueSize = 3;
+}

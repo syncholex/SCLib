@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsGetAppRequest {
+	string appId = 1;
+
+	enum SCCognacAppsGetAppRequest_Source {
+		UNKNOWN = 0;
+		SNAPCODE = 1;
+		DEEPLINK = 2;
+	}
+
+	SCCognacAppsGetAppRequest_Source source = 2;
+}

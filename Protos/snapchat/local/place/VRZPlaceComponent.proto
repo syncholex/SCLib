@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZPlaceComponentPlaceInfo.proto";
+
+message VRZPlaceComponent {
+
+	enum VRZPlaceComponentType {
+		COMPONENT_TYPE_UNKNOWN = 0;
+		COMPONENT_TYPE_CAMPUS_CHILDREN = 1;
+		COMPONENT_TYPE_ALL = 2;
+		COMPONENT_TYPE_PLACE_LOCALITY = 3;
+		COMPONENT_TYPE_SIMILAR_PLACES = 4;
+	}
+
+	VRZPlaceComponentType placeComponentType = 1;
+	repeated snapchat.local.place.VRZPlaceComponentPlaceInfo placesInfoArray = 2;
+	string componentTitle = 3;
+}

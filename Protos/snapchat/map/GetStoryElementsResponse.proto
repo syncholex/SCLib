@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/context/SCStoryElement.proto";
+import "snapchat/map/BundleInfo.proto";
+
+message GetStoryElementsResponse {
+	repeated snapchat.context.SCStoryElement elementsArray = 1;
+	repeated snapchat.map.BundleInfo bundleInfoListArray = 2;
+}

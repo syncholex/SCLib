@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.cof;
+
+message SCPlusUpsellPbImpressionConfig {
+	repeated uint32 featureArray = 1 [packed=true];
+	repeated uint32 minImpressionGapArray = 2 [packed=true];
+	repeated uint64 minIntervalMillisArray = 3 [packed=true];
+	uint32 maxTopImpressions = 4;
+	bool isEnabled = 5;
+	uint32 maxInteractions = 6;
+	uint64 minTimePeriodMillis = 7;
+	uint32 impressionsPerPeriod = 8;
+	uint32 impressionsPerFeature = 9;
+	bool randomizeFeature = 10;
+}

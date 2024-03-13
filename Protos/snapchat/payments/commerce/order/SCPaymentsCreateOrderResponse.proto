@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+import "snapchat/payments/commerce/order/SCPaymentsOrder.proto";
+import "snapchat/payments/commerce/common/SCPaymentsCommerceServiceError.proto";
+
+message SCPaymentsCreateOrderResponse {
+	string requestId = 1;
+
+	oneof response {
+		snapchat.payments.commerce.order.SCPaymentsOrder order = 2;
+		snapchat.payments.commerce.common.SCPaymentsCommerceServiceError error = 3;
+	}
+
+}

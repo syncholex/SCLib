@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.cof.proto;
+
+message CCEnrollmentTakeoverCofConfig {
+	bool enabled = 1;
+	int32 displayFrequencySec = 2;
+	int32 maxSkipsAllowed = 3;
+}

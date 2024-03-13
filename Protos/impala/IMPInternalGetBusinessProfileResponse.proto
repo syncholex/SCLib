@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfile.proto";
+import "impala/IMPInternalBusinessProfileMetadata.proto";
+import "impala/IMPInternalBusinessProfile.proto";
+
+message IMPInternalGetBusinessProfileResponse {
+	impala.IMPBusinessProfile profile = 1;
+	impala.IMPInternalBusinessProfileMetadata internalMetadata = 2;
+	impala.IMPInternalBusinessProfile internalProfile = 3;
+}

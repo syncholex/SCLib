@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsRecommendations {
+
+	enum SCAppInsightsRecommendations_Subfeature {
+		UNSET = 0;
+		VISUAL_STICKER_RECOMMENDATION = 1;
+	}
+
+	SCAppInsightsRecommendations_Subfeature subfeature = 1;
+}

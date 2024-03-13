@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBImageData_Burst.proto";
+
+message CHRPBImageData {
+	cheerios.CHRPBImageData_Burst burst = 1;
+}

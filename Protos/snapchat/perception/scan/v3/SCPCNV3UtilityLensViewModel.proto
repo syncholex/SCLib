@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3UtilityLensUnsupportedAffordanceViewModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3UtilityLensViewFinderAffordanceViewModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3UtilityLensWaveAffordanceViewModel.proto";
+
+message SCPCNV3UtilityLensViewModel {
+
+	oneof affordanceViewModel {
+		snapchat.perception.scan.v3.SCPCNV3UtilityLensUnsupportedAffordanceViewModel utilityLensUnsupportedAffordanceViewModel = 1;
+		snapchat.perception.scan.v3.SCPCNV3UtilityLensViewFinderAffordanceViewModel utilityLensViewFinderAffordanceViewModel = 2;
+		snapchat.perception.scan.v3.SCPCNV3UtilityLensWaveAffordanceViewModel utilityLensWaveAffordanceViewModel = 3;
+	}
+
+}

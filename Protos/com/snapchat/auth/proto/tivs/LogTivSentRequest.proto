@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message LogTivSentRequest {
+	snapchat.core.SCCOREUUID broadcastId = 1;
+
+	enum CommunicationChannel_Enum {
+		UNSET = 0;
+		EMAIL = 1;
+		IN_BAND = 2;
+		PUSH = 3;
+		SMS = 4;
+		TOTP = 5;
+		TOTP_OR_SMS = 6;
+		WHATSAPP = 7;
+	}
+
+	CommunicationChannel_Enum communicationChannel = 2;
+
+	enum TivSentFailure_Enum {
+		UNSET = 0;
+		GENERIC_FAILURE = 1;
+	}
+
+	TivSentFailure_Enum failureReason = 3;
+}

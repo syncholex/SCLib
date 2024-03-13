@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+message SCPGetPollRequest {
+	string pollId = 1;
+	bool includeVoterList = 2;
+	string userId = 3;
+}

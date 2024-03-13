@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainRequest_Tag {
+	bool simpleTags = 1;
+}

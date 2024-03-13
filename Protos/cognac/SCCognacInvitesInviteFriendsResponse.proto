@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacInvitesInviteError.proto";
+
+message SCCognacInvitesInviteFriendsResponse {
+	cognac.SCCognacInvitesInviteError senderError = 1;
+	cognac.SCCognacInvitesInviteError recipientErrors = 2;
+}

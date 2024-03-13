@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message DiscoverRegionsValue {
+
+	enum DiscoverRegion {
+		ALL = 0;
+		DEV_TEST = 1;
+		INTERNATIONAL = 2;
+		US = 3;
+		UK = 4;
+		AU = 5;
+		CA = 6;
+		SUB = 7;
+		QA = 8;
+	}
+
+	repeated DiscoverRegion valueArray = 1 [packed=true];
+}

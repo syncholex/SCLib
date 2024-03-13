@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/MultiFloat.proto";
+
+message Embedding {
+	int32 labelEnum = 1;
+	snapchat.cup.platform.proto.MultiFloat value = 2;
+}

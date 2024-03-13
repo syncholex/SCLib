@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBValidatePairingResponse {
+	bool result = 1;
+	uint32 mediaCounts = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCFriendRequestBadgeConfig {
+	int32 maxFriendCount = 1;
+	int32 recentFriendRequestCount = 2;
+	int32 recentDays = 3;
+}

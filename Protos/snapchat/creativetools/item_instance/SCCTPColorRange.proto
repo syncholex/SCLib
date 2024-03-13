@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPRange.proto";
+
+message SCCTPColorRange {
+	string color = 1;
+	snapchat.creativetools.item_instance.SCCTPRange range = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBOTAScheduledUpdate {
+	string targetHash = 1;
+	string targetVersionTag = 2;
+	uint32 utcTimeUpdateWindowStart = 3;
+	uint32 utcTimeUpdateWindowStop = 4;
+	bool isFullUpdate = 5;
+}

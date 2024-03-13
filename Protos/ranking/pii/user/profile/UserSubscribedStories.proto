@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/StorySubscribeState.proto";
+
+message UserSubscribedStories {
+	string userId = 1;
+	ranking.pii.user.profile.StorySubscribeState subscribedStories = 2;
+}

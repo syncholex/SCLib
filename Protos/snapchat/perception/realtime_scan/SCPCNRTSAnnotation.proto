@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.realtime_scan;
+
+message SCPCNRTSAnnotation {
+	string label = 1;
+	float score = 2;
+}

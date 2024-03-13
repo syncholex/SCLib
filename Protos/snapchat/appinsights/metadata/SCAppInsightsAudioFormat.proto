@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message SCAppInsightsAudioFormat {
+	string mimeType = 1;
+	sint32 channelCount = 2;
+	sint32 sampleRate = 3;
+	sint32 profile = 4;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkStorySummaryInfo.proto";
+
+message SMSdkFriendFeedItem {
+	string userId = 1;
+
+	enum SMSdkFriendFeedItem_MessageStatus {
+		MESSAGE_STATUS_UNSET = 0;
+		MESSAGE_STATUS_UNVIEWED_CHAT = 1;
+		MESSAGE_STATUS_UNVIEWED_SNAP_NO_SOUND = 2;
+		MESSAGE_STATUS_UNVIEWED_SNAP_WITH_SOUND = 3;
+	}
+
+	SMSdkFriendFeedItem_MessageStatus messageStatus = 2;
+	snap.snap_maps_sdk.SMSdkStorySummaryInfo storySummaryInfo = 3;
+}

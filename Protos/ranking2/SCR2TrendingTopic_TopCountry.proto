@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2TrendingTopic_TopCountry {
+	string country = 1;
+	float popularity = 2;
+}

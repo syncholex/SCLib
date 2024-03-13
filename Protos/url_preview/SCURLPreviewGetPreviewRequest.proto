@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package url_preview;
+
+message SCURLPreviewGetPreviewRequest {
+	string URL = 1;
+	bool withInAppDeepLinks = 2;
+	bool parseStickerShareMetadata = 3;
+	bool withHtml = 4;
+	bytes senderUserId = 5;
+}

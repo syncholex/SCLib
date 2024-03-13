@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message SnapchatProvidedChatWallpaper {
+	bytes wallpaperContentObject = 1;
+	bytes blurredWallpaperContentObject = 2;
+	bool isSnapchatPlusExclusive = 3;
+	bool isNew = 4;
+	uint32 wallpaperId = 5;
+	bytes wallpaperThumbnailContentObject = 6;
+}

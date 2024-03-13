@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingSnapDisplayInfo {
+	bool hasAudio = 1;
+	bool notViewable = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.measurement.surveys.inclusionpanel;
+
+import "com/snapchat/measurement/surveys/inclusionpanel/SurveyResponse.proto";
+
+message UpdateSurveyDataRequest {
+	com.snapchat.measurement.surveys.inclusionpanel.SurveyResponse data_p = 1;
+
+	oneof optInStatusChange {
+		bool requestedOptIn = 2;
+		bool requestedOptOut = 3;
+	}
+
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPRemoveContentShareRecordRequest {
+	string grantingPublisherProfileId = 1;
+	string receivingPublisherProfileId = 2;
+}

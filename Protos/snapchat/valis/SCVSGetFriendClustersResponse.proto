@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSFriendCluster.proto";
+
+message SCVSGetFriendClustersResponse {
+	repeated snapchat.valis.SCVSFriendCluster friendClustersArray = 1;
+	bool success = 2;
+	int64 requestAgainAfterMs = 3;
+}

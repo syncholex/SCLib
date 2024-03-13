@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTGetMarkerDataRequest {
+	string poiId = 1;
+
+	enum SCMTMarkerDataType {
+		UNSET = 0;
+		LENS = 1;
+	}
+
+	SCMTMarkerDataType markerDataType = 2;
+}

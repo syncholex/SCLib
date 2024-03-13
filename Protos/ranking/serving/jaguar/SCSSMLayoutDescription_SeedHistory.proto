@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLayoutDescription_SeedHistory_SeedDecision.proto";
+
+message SCSSMLayoutDescription_SeedHistory {
+	repeated ranking.serving.jaguar.SCSSMLayoutDescription_SeedHistory_SeedDecision seedDecisionsArray = 2;
+}

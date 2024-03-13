@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstanceScope.proto";
+
+message SCCognacAppInstancesBatchGetChatDockRequest {
+	repeated cognac.SCCognacAppInstancesAppInstanceScope appInstanceScopesArray = 1;
+	int64 chatDockDurationSeconds = 2;
+}

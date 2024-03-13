@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "snapchat/context/SCStoryManifest.proto";
+import "impala/stories/common/IMPBusinessStory.proto";
+
+message IMPInternalGetBusinessStoriesResponse {
+	string nextPageId = 1;
+	int64 numStoriesLeft = 2;
+	repeated snapchat.context.SCStoryManifest manifestsArray = 3;
+	repeated impala.stories.common.IMPBusinessStory storiesArray = 4;
+}

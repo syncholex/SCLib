@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "com/snapchat/commerce/domain/order/ItemInfo.proto";
+import "com/snapchat/commerce/domain/bitmoji/BitmojiAssetInfo.proto";
+import "com/snapchat/commerce/domain/PrintingMetadata.proto";
+
+message CheckoutLineItem {
+	com.snapchat.commerce.domain.order.ItemInfo itemInfo = 1;
+	com.snapchat.commerce.domain.bitmoji.BitmojiAssetInfo bitmojiAssetInfo = 2;
+	bytes bitmojiProductAssetId = 3;
+	com.snapchat.commerce.domain.PrintingMetadata printingMetadata = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.items;
+
+import "snapchat/creativetools/items/SCCTPCameoCTItemsOptions.proto";
+
+message SCCTPCameoCTItemsRequest {
+	snapchat.creativetools.items.SCCTPCameoCTItemsOptions cameoOptions = 1;
+}

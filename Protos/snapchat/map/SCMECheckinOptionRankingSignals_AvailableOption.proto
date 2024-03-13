@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMECheckinOptionRankingSignals_AvailableOption {
+	string optionId = 1;
+
+	enum SCMECheckinOptionType {
+		UNKNOWN_OPTION_TYPE = 0;
+		LOCATION_OPTION_TYPE = 1;
+		MOOD_OPTION_TYPE = 2;
+		CONTEXTUAL_OPTION_TYPE = 3;
+		CUSTOM_OPTION_TYPE = 4;
+		ACTIONMOJI_OPTION_TYPE = 5;
+	}
+
+	SCMECheckinOptionType optionType = 2;
+}

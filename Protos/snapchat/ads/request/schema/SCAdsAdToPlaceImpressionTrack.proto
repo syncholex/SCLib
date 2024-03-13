@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsAdToPlaceImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBStringValue placeProfileId = 2;
+}

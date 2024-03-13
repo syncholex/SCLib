@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3CategorySubscriptionRequestV1 {
+	repeated string categoryIdsArray = 1;
+
+	enum SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest {
+		UNSET = 0;
+		SNAPCODE = 1;
+	}
+
+	repeated SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest additionalRequestsArray = 2 [packed=true];
+}

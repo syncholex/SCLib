@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GameCard_NumSupportedPlayers.proto";
+
+message SCR2GameCard {
+	string id_p = 1;
+	string displayName = 2;
+	string loadingPageImageURL = 3;
+	string iconImageURL = 4;
+	string logoURL = 5;
+	string contentURL = 6;
+	string description_p = 7;
+	ranking2.SCR2GameCard_NumSupportedPlayers numSupportedPlayers = 8;
+}

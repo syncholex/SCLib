@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSeasonMetadataPage.proto";
+import "snapchat/storydoc/StoryDoc.proto";
+import "impala/IMPWatchedState.proto";
+import "impala/IMPShowMetadata.proto";
+
+message IMPGetShowDisplayInfoResponse {
+	impala.IMPSeasonMetadataPage seasonsPage = 1;
+	int64 initiallyDisplayedSeasonIndex = 2;
+	snapchat.storydoc.StoryDoc upNext = 3;
+	impala.IMPWatchedState upNextWatchedState = 4;
+	string title = 5;
+	string publisherName = 6;
+	int64 publisherId = 7;
+	impala.IMPShowMetadata showMetadata = 8;
+}

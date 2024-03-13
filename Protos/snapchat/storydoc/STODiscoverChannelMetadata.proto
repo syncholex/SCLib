@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STODiscoverChannelFilter.proto";
+
+message STODiscoverChannelMetadata {
+	repeated snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 1;
+}

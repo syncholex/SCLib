@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+import "snapchat/identity/SCIDAndroidNotificationPermissionsRequest.proto";
+import "snapchat/identity/SCIDIosNotificationPermissionsRequest.proto";
+
+message SCIDPermissionSettingsRequest {
+	bool contactAccessAppEnabled = 1;
+	bool notificationAppEnabled = 2;
+	bool locationAppEnabled = 3;
+	bool cameraRollAppEnabled = 4;
+	bool bluetoothAppEnabled = 5;
+	bool microphoneAppEnabled = 6;
+	bool cameraAppEnabled = 7;
+	bool locationDeviceEnabled = 8;
+	bool bluetoothDeviceEnabled = 9;
+	bool interactiveNotificationAppEnabled = 10;
+	bool userLocationAppEnabled = 11;
+	bool userContactAppEnabled = 12;
+	snapchat.identity.SCIDAndroidNotificationPermissionsRequest androidNotificationPermissionsRequest = 13;
+	int32 reportSource = 14;
+	snapchat.identity.SCIDIosNotificationPermissionsRequest iosNotificationPermissionsRequest = 15;
+}

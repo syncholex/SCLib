@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkImage.proto";
+import "snap/snap_maps_sdk/SMSdkClusterMember.proto";
+import "snap/snap_maps_sdk/SMSdkWorldEffectSet.proto";
+
+message SMSdkFriendCluster {
+	string id_p = 1;
+	snap.snap_maps_sdk.SMSdkImage prop = 2;
+	snap.snap_maps_sdk.SMSdkImage floor = 3;
+	float centerLat = 4;
+	float centerLng = 5;
+	repeated snap.snap_maps_sdk.SMSdkClusterMember clusterMemberArray = 7;
+	snap.snap_maps_sdk.SMSdkWorldEffectSet worldEffect = 8;
+	bool tombstone = 9;
+}

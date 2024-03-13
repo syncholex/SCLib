@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+message SCDeltaforceTombstone {
+	uint64 lastModifiedVersion = 1;
+	uint64 lastModifiedTime = 2;
+}

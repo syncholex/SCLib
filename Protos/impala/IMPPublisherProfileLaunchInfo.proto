@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPublisherMetadata.proto";
+
+message IMPPublisherProfileLaunchInfo {
+	string publisherId = 1;
+	string publisherNameId = 2;
+	impala.IMPPublisherMetadata metadata = 3;
+	bool isSubscribed = 4;
+	string businessProfileId = 5;
+	bool isSubscribedNotifications = 6;
+	bool requiresSubscriptionQuery = 7;
+	string hostAccountUserId = 8;
+}

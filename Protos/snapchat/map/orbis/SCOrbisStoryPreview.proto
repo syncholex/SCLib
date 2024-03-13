@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/streaming/SCMTThumbnailInfo.proto";
+
+message SCOrbisStoryPreview {
+	string verrazanoId = 1;
+	snapchat.streaming.SCMTThumbnailInfo streamingThumbnailInfo = 2;
+	int32 numSnaps = 3;
+	string firstSnapId = 4;
+}

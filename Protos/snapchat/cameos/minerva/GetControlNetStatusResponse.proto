@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message GetControlNetStatusResponse {
+	string status = 1;
+	float progress = 2;
+}

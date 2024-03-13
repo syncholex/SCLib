@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+message GetOrderHistoryResponse_OrderHistoryInternalPaginationCursor {
+	uint32 offset = 1;
+}

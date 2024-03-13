@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusWebBootstrapData {
+	string userId = 1;
+	string authenticationSessionId = 2;
+
+	enum ATORiskLevel {
+		ATO_RISK_LEVEL_UNSET = 0;
+		ATO_RISK_LEVEL_LOW = 1;
+		ATO_RISK_LEVEL_HIGH = 3;
+		ATO_RISK_LEVEL_CRITICAL = 4;
+	}
+
+	ATORiskLevel atoRiskLevel = 3;
+}

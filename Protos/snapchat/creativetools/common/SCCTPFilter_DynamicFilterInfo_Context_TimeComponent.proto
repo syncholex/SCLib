@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_Context_TimeComponent {
+
+	enum SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit {
+		UNSET = 0;
+		YEAR = 1;
+		MONTH = 2;
+		DAY = 3;
+		HOUR = 4;
+		MINUTE = 5;
+		SECOND = 6;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit timeUnit = 1;
+	string singularName = 2;
+	string pluralName = 3;
+}

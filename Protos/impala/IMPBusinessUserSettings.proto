@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessUserSettings_NotificationSettings.proto";
+
+message IMPBusinessUserSettings {
+	bool showStoryAttribution = 1;
+	impala.IMPBusinessUserSettings_NotificationSettings notificationSettings = 2;
+	int64 newestReadNotificationTimestamp = 3;
+	int32 profileManagementViewCount = 4;
+	int64 lastUserInteractedMs = 5;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message PublisherSubscribeDetail {
+
+	enum PublisherSubscribeDetail_State {
+		STATE_UNKNOWN = 0;
+		STATE_SUBSCRIBED = 1;
+		STATE_UNSUBSCRIBED = 2;
+		STATE_HIDDEN = 3;
+		STATE_UNHIDDEN = 4;
+	}
+
+	PublisherSubscribeDetail_State state = 1;
+	int64 stateTimestampMsecs = 2;
+	int64 stateExpireTimestampMsecs = 3;
+	int64 editionId = 4;
+}

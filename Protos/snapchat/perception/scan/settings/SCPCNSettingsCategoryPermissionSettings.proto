@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+import "snapchat/perception/scan/settings/SCPCNSettingsCategoryPermissionSetting.proto";
+
+message SCPCNSettingsCategoryPermissionSettings {
+	repeated snapchat.perception.scan.settings.SCPCNSettingsCategoryPermissionSetting settingsArray = 1;
+}

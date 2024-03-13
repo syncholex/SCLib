@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbRankingInput {
+
+	enum SCBillboardPbRankingProperty {
+		PROPERTY_UNSET = 0;
+		PRIORITY_LIST_PLACEMENT = 1;
+		IMPRESSION_COUNT = 2;
+		CLICK_COUNT = 3;
+		DISMISS_COUNT = 4;
+	}
+
+	SCBillboardPbRankingProperty rankingProperty = 1;
+	int32 weight = 2;
+}

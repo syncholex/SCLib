@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPSpotlightRealtimeWindowedEngagementStats.proto";
+
+message SCSCKUserFeatures_SccRealtimeWindowedEngagementStats {
+	int32 scc = 1;
+	ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedEngagementStats = 2;
+}

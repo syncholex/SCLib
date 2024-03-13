@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+import "snapchat/core/SCCORELocation.proto";
+import "snapchat/core/SCCOREISP.proto";
+
+message SCCOREGeoHeader {
+	snapchat.core.SCCORELocation location = 1;
+	snapchat.core.SCCOREISP isp = 2;
+}

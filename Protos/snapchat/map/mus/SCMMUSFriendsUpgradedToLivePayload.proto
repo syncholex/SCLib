@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMMUSFriendsUpgradedToLivePayload {
+	repeated snapchat.core.SCCOREUUID friendIdsArray = 1;
+	int64 timestampMs = 2;
+}

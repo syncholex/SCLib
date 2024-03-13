@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPBusinessSnapInsights_SectionStats_Viewer {
+	string userId = 1;
+
+	oneof name {
+		string username = 2;
+		string displayName = 3;
+	}
+
+	int64 viewTimestamp = 4;
+	string bitmojiAvatarId = 5;
+	string bitmojiSelfieId = 6;
+	bool isVerified = 7;
+}

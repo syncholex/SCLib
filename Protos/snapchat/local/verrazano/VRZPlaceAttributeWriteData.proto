@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/local/verrazano/VRZConcordanceListValue.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabelsListValue.proto";
+import "snapchat/local/verrazano/VRZBlockedServices.proto";
+
+message VRZPlaceAttributeWriteData {
+	google.protobuf.GPBStringValue name = 1;
+	google.protobuf.GPBStringValue iconURL = 2;
+	snapchat.local.verrazano.VRZConcordanceListValue concordances = 3;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateNames = 4;
+	snapchat.local.verrazano.VRZBlockedServices isBlocked = 5;
+	google.protobuf.GPBStringValue emojiUnicode = 6;
+}

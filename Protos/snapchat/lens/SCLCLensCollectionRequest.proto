@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+
+message SCLCLensCollectionRequest {
+	int64 lensCollectionId = 1;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+	repeated int64 lensIdsArray = 3 [packed=true];
+
+	enum SCLCLensCollectionRequest_ViewType {
+		CAROUSEL_UNSET = 0;
+		LENS_EXPLORER = 1;
+	}
+
+	SCLCLensCollectionRequest_ViewType viewType = 4;
+}

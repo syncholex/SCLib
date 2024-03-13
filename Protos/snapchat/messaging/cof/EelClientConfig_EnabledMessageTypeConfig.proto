@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EelClientConfig_EnabledMessageTypeConfig {
+	bool isTextEnabled = 1;
+	bool isExternalMediaEnabled = 2;
+	bool isSnapEnabled = 4;
+	bool isEncryptForAllSenderDevices = 6;
+	bool isSnapMultirecipientEnabled = 7;
+	bool isShareEnabled = 8;
+	bool isNoteEnabled = 9;
+	bool isStickerEnabled = 10;
+	bool isStatusEnabled = 11;
+	bool isLocationEnabled = 12;
+	bool isStatusSaveToCameraRollEnabled = 13;
+	bool isStatusConversationCaptureScreenshotEnabled = 14;
+	bool isStatusCallMissedVideoEnabled = 15;
+	bool isStatusCallMissedAudioEnabled = 16;
+	bool isStatusInviteLinkChangeEnabled = 17;
+	bool isCanvasAppEnabled = 18;
+	bool isLiveLocationShareEnabled = 19;
+	bool isCreativeToolItemEnabled = 20;
+}

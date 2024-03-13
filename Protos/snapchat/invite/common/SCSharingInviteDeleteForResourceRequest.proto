@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSharingInviteDeleteForResourceRequest {
+	snapchat.core.SCCOREUUID resourceId = 1;
+
+	enum SCSharingInviteType {
+		INVITE_TYPE_UNSET = 0;
+		INVITE_TYPE_GROUP_CHAT_STICKER = 1;
+		INVITE_TYPE_GROUP_LINK = 2;
+		INVITE_TYPE_CUSTOM_STORY_STICKER = 3;
+		INVITE_TYPE_MEMORY_LINK = 4;
+		INVITE_TYPE_FRIEND_PROMPT = 5;
+	}
+
+	SCSharingInviteType inviteType = 2;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZTileId.proto";
+import "snapchat/geo/SPCGRect.proto";
+
+message VRZGetBasemapPlacesRequest {
+
+	enum VRZBasemapRecommendationType {
+		PLACE_UNSET = 0;
+		PLACE_FAVORITES = 1;
+		PLACE_MY_VISIT = 2;
+		PLACE_POPULAR_WITH_FRIENDS = 3;
+		PLACE_ADS_PROMOTED = 4;
+		PLACE_POPULAR_LAST_NIGHT = 5;
+		FRIEND_FAVORITES = 6;
+	}
+
+	repeated VRZBasemapRecommendationType recommendationTypesArray = 1 [packed=true];
+	snapchat.local.placediscovery.VRZTileId tileId = 2;
+	bool unlimitedAllTypes = 3;
+	snapchat.geo.SPCGRect boundingBox = 4;
+}

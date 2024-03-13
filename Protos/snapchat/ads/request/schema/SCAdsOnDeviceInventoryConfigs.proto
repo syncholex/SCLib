@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsOnDeviceInventoryConfig.proto";
+
+message SCAdsOnDeviceInventoryConfigs {
+	repeated snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfig onDeviceInventoryConfigsArray = 1;
+}

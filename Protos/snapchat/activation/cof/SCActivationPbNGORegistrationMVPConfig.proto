@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbNGORegistrationMVPConfig {
+
+	enum SCActivationPbNGORegistrationMVPConfig_Mode {
+		DEFAULT_UNSET = 0;
+		CONTROL = 1;
+		ENABLE_NGO = 2;
+		ENABLE_NGO_WITH_EMAIL_LOGIN_CODE = 3;
+	}
+
+	SCActivationPbNGORegistrationMVPConfig_Mode ngoMvpMode = 1;
+
+	enum SCActivationPbNGORegistrationMVPConfig_VerificationMethod {
+		UNSET = 0;
+		PHONE_FIRST_EMAIL_BYPASSED = 1;
+		PHONE_FIRST_EMAIL_SKIPPABLE = 2;
+		EMAIL_FIRST_PHONE_BYPASSED = 3;
+		EMAIL_FIRST_PHONE_SKIPPABLE = 4;
+		EMAIL_ONLY = 5;
+		PHONE_ONLY = 6;
+		PHONE_SKIPPABLE_ONLY = 7;
+		EMAIL_AND_PHONE_BYPASSED = 8;
+		EMAIL_SKIPPABLE_ONLY = 9;
+	}
+
+	SCActivationPbNGORegistrationMVPConfig_VerificationMethod preferredVerificationMethod = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.models;
+
+message Algorithm {
+	int32 coseAlgorithmIdentifier = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsColorExtractionConfig_AdvertiserColorConfig_CardConfig {
+	string foregroundColor = 1;
+	string backgroundColor = 2;
+	double animationDelay = 3;
+	double animationDuration = 4;
+}

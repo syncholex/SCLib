@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/common/IMPClientInfo.proto";
+
+message IMPInsightsGetSpotlightInsightsRequest {
+	string businessId = 1;
+	string pageId = 2;
+	int32 limit = 3;
+	impala.common.IMPClientInfo clientInfo = 4;
+
+	enum IMPInsightsSpotlightOrder {
+		SPOTLIGHT_ORDER_UNKNOWN = 0;
+		VIEWS = 1;
+	}
+
+	IMPInsightsSpotlightOrder orderBy = 5;
+}

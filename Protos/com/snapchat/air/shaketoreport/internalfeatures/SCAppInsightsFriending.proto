@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsFriending {
+
+	enum SCAppInsightsFriending_Subfeature {
+		UNSET = 0;
+		SNAPSHOTS = 1;
+	}
+
+	SCAppInsightsFriending_Subfeature subfeature = 1;
+}

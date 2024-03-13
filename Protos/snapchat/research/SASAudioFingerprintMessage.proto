@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_AudioFingerprint.proto";
+
+message SASAudioFingerprintMessage {
+	string submissionId = 1;
+	string geoHash = 2;
+	int64 userTimestamp = 3;
+	int64 messageTimestamp = 4;
+	double longitude = 5;
+	double latitude = 6;
+	snapchat.research.SnapBrainResponse_Results_AudioFingerprint audioFingerprint = 7;
+	string signedURL = 8;
+	string captionText = 9;
+	int32 mediaType = 10;
+	int64 captureTimestamp = 11;
+	string userId = 12;
+	repeated string sharedStoryIdsArray = 13;
+	int32 orientation = 14;
+	bool isFrontFacing = 15;
+	double timeLength = 16;
+}

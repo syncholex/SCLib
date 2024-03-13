@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingHighWatermark {
+
+	enum SCMessagingHighWatermark_HighWatermarkType {
+		READ = 0;
+		RELEASE = 1;
+		SNAP_RELEASE = 2;
+		REACTION = 3;
+	}
+
+	SCMessagingHighWatermark_HighWatermarkType highWatermarkType = 1;
+
+	oneof watermarkToken {
+		uint64 messageId = 2;
+		uint64 conversationVersion = 3;
+	}
+
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message LensContentArchiveMetadata {
+	uint64 lensId = 1;
+	bytes checksum = 2;
+}

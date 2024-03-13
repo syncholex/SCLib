@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSLiveLocationPushPayload {
+	int64 sendTimestamp = 1;
+
+	enum SCVSLiveLocationPushType {
+		UNKNOWN_PUSH = 0;
+		SHARER_PERIODIC = 1;
+		PERMISSION_PROBE = 2;
+		VIEWER_IN_APP = 10;
+		VIEWER_IN_MAP = 11;
+		VIEWER_MAP_OPEN = 12;
+		SHARER_IN_VIEWPORT = 13;
+		SHARER_IN_FOCUS = 14;
+	}
+
+	SCVSLiveLocationPushType type = 3;
+	bool useStreaming = 4;
+}

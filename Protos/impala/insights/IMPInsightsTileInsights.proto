@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsTileInsights {
+	double indexedCtr = 1;
+	double tileViewRatio = 2;
+	double tileAvgTimeViewed = 3;
+	double tileAvgSnapViewed = 4;
+}

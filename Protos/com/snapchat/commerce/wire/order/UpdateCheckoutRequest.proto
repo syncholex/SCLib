@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "com/snapchat/commerce/domain/order/Checkout.proto";
+
+message UpdateCheckoutRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	com.snapchat.commerce.domain.order.Checkout checkout = 2;
+}

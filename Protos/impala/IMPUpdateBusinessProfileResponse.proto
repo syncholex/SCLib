@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfile.proto";
+
+message IMPUpdateBusinessProfileResponse {
+	impala.IMPBusinessProfile profile = 1;
+}

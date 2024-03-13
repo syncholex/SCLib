@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfile.proto";
+
+message IMPSetBusinessProfileRequest {
+	impala.IMPBusinessProfile profile = 1;
+	bytes logo = 2;
+}

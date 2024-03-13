@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMUITreatments_SendButtonTreatments.proto";
+import "ranking/serving/jaguar/SCSSMUITreatments_BadgeAboveUsernameAndBelowViewCountTreatments.proto";
+import "ranking/serving/jaguar/SCSSMUITreatments_TextAboveUsernameAndLeftOfViewCountTreatments.proto";
+
+message SCSSMUITreatments {
+	ranking.serving.jaguar.SCSSMUITreatments_SendButtonTreatments sendButtonTreatments = 1;
+	ranking.serving.jaguar.SCSSMUITreatments_BadgeAboveUsernameAndBelowViewCountTreatments badgeAboveUsernameAndBelowViewCountTreatments = 2;
+	ranking.serving.jaguar.SCSSMUITreatments_TextAboveUsernameAndLeftOfViewCountTreatments textAboveUsernameAndLeftOfViewCountTreatments = 3;
+}

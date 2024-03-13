@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusVerificationStatus.proto";
+import "snapchat/janus/api/SCJanusTOSAcceptance.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCJanusUserState {
+	snapchat.janus.api.SCJanusVerificationStatus verificationStatus = 1;
+	snapchat.janus.api.SCJanusTOSAcceptance tosAcceptance = 2;
+	google.protobuf.GPBTimestamp previousActiveTimestamp = 3;
+}

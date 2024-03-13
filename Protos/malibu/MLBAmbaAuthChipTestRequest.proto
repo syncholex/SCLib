@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAmbaAuthChipTestRequest {
+
+	enum MLBAmbaAuthChipTestRequest_Type {
+		SELF_TEST = 0;
+		DUMP_MFICERT = 1;
+		WRITE_SCCERT = 2;
+		CHECK_SCCERT = 3;
+	}
+
+	MLBAmbaAuthChipTestRequest_Type requestType = 1;
+}

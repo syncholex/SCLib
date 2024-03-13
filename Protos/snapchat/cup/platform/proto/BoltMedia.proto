@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message BoltMedia {
+
+	oneof media {
+		string downloadURL = 1;
+		bytes contentObject = 2;
+	}
+
+}

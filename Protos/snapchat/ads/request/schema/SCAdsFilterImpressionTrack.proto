@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsUnlockableAttachmentImpression.proto";
+import "snapchat/ads/request/schema/SCAdsAdFlagData.proto";
+
+message SCAdsFilterImpressionTrack {
+	google.protobuf.GPBStringValue geofilterId = 1;
+	google.protobuf.GPBInt64Value totalSwipedViewMillis = 2;
+	bytes encGeoData = 3;
+	google.protobuf.GPBInt64Value swipedOverCount = 4;
+	google.protobuf.GPBBoolValue withSnapSend = 5;
+	google.protobuf.GPBBoolValue withStoryPost = 6;
+	google.protobuf.GPBBoolValue withMemoriesSave = 7;
+	google.protobuf.GPBInt64Value filterIndexPos = 8;
+
+	enum SCAdsFilterImpressionTrack_GeofilterType {
+		UNKNOWN_FILTER_TYPE = 0;
+		GEO_FILTER = 1;
+		BITMOJI_FILTER = 2;
+		FRAME_FILTER = 3;
+	}
+
+	SCAdsFilterImpressionTrack_GeofilterType geofilterType = 9;
+	bytes encryptedAdTrackData = 10;
+	google.protobuf.GPBInt64Value filterGeofilterIndexPos = 11;
+	google.protobuf.GPBInt64Value firstSeenTimestamp = 12;
+	bytes encryptedSponsoredUnlockableTargetingInfoData = 13;
+	bytes rankingId = 14;
+	bytes rankingData = 15;
+	google.protobuf.GPBInt64Value snapSendRecipientCount = 16;
+	google.protobuf.GPBInt64Value snapSendCount = 17;
+	google.protobuf.GPBInt64Value storyPostCount = 18;
+	google.protobuf.GPBInt64Value memoriesSaveCount = 19;
+	google.protobuf.GPBInt64Value captureTimeMillis = 20;
+	google.protobuf.GPBInt64Value postCaptureTimeMillis = 21;
+	google.protobuf.GPBInt64Value maxSwipeTimeMillis = 22;
+	google.protobuf.GPBInt64Value maxContinuousTimeMillis = 23;
+	google.protobuf.GPBInt64Value totalTimeMillis = 24;
+	google.protobuf.GPBInt64Value reactionTimestamp = 25;
+	google.protobuf.GPBInt64Value shareTimestamp = 26;
+	google.protobuf.GPBInt64Value swipeUpTimestamp = 27;
+	google.protobuf.GPBInt64Value saveTimestamp = 28;
+	google.protobuf.GPBInt64Value screenshotTimestamp = 29;
+	snapchat.ads.request.schema.SCAdsUnlockableAttachmentImpression attachmentImpression = 30;
+	google.protobuf.GPBBoolValue withAttachmentOpen = 31;
+
+	enum SCAdsAttachmentType {
+		UNKNOWN_ATTACHMENT_TYPE = 0;
+		NO_ATTACHMENT = 1;
+		LONGFORM_VIDEO = 2;
+		REMOTE_WEBVIEW = 3;
+		APP_INSTALL = 4;
+		DEEP_LINK = 5;
+	}
+
+	SCAdsAttachmentType attachmentType = 32;
+	snapchat.ads.request.schema.SCAdsAdFlagData adFlagData = 33;
+}

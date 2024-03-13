@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMAdsUserData_DebugConfig {
+	bool isTestUser = 1;
+	bool isAutomationUser = 2;
+	bool skipInventoryCapping = 3;
+}

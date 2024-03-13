@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.snapmod;
+
+import "snapchat/snapmod/Audience.proto";
+import "snapchat/snapmod/BrandSafety.proto";
+import "snapchat/snapmod/ContentQuality.proto";
+import "snapchat/snapmod/ContentQualitySubTags.proto";
+
+message ModerationFeatures {
+	snapchat.snapmod.Audience audience = 1;
+	snapchat.snapmod.BrandSafety brandSafety = 2;
+	snapchat.snapmod.ContentQuality contentQuality = 3;
+	snapchat.snapmod.ContentQualitySubTags contentQualitySubTags = 4;
+	repeated string contextualModTagsArray = 5;
+}

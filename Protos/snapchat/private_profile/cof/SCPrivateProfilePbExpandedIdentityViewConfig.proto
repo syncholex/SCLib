@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbExpandedIdentityViewConfig {
+	bool enabled = 1;
+	int32 maxImpressionCount = 2;
+
+	enum SCPrivateProfilePbExpandedIdentityViewConfig_ExpandedIdentityViewTreatment {
+		UNSET = 0;
+		FIRST_PROMPT = 1;
+		CONTACT_SYNCED = 2;
+		CONTACT_SYNCED_PHONE_VERIFIED = 3;
+	}
+
+	SCPrivateProfilePbExpandedIdentityViewConfig_ExpandedIdentityViewTreatment treatment = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPInternalProfileHydrationOption.proto";
+import "impala/IMPInternalGetPublicProfileOption.proto";
+
+message IMPInternalGetPublicProfileRequest {
+
+	oneof id {
+		string userId = 1;
+		string profileId = 2;
+	}
+
+	impala.IMPInternalProfileHydrationOption internalHydrationOption = 3;
+	impala.IMPInternalGetPublicProfileOption internalGetPublicProfileOption = 4;
+}

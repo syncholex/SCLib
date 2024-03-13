@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBPairingSignatureMessage {
+	bytes sigPairing = 1;
+	repeated string pairingScCertChainArray = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPListRolesForBusinessResponse.proto";
+
+message IMPInternalListRolesForBusinessResponse {
+	impala.IMPListRolesForBusinessResponse response = 1;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaProcessTextToImageRequest {
+	string prompt = 1;
+	string aspectRatio = 2;
+	int32 imagesOutputCount = 3;
+	string userId = 4;
+
+	enum SCGenerativeBackgroundsGenerationOrigin {
+		UNSET = 0;
+		MY_PROFILE = 1;
+		CHAT_WALLPAPERS = 2;
+		LENS_DESIGN_PROTOTYPE = 3;
+		LENS_RFE_TEXT_TO_IMAGE = 4;
+		AI_CAMERA_MODE = 5;
+		EXTERNAL_PROTOTYPE_HIGH_RES = 6;
+		GARMENT_GENERATOR = 7;
+	}
+
+	SCGenerativeBackgroundsGenerationOrigin originOverride = 5;
+	string rfeModelId = 6;
+}

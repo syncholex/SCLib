@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBAndroidTombstone {
+	string processName = 1;
+	string threadName = 2;
+	string backtrace = 3;
+	string log = 4;
+}

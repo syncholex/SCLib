@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPGetSubscriberCountResponse.proto";
+
+message IMPGetSubscriberCountBatchResponse {
+	repeated impala.IMPGetSubscriberCountResponse responsesArray = 1;
+}

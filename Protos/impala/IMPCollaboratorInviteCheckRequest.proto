@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPCollaboratorInviteCheckRequest {
+	string inviterUserId = 1;
+	string inviteeUserId = 2;
+}

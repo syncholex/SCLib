@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLoadedLensFirstV2Config {
+	bool isConfigActive = 1;
+	bool noConnectionTrigger = 2;
+	int32 wwanAndConnectionTypeOperation = 3;
+	bool wwanConnectionTrigger = 4;
+
+	enum SCLoadedLensFirstV2Config_ConnectionBandwidth {
+		UNSET = 0;
+		CONNECTIONCLASS_UNDER400KBITPS = 1;
+		CONNECTIONCLASS_400KBITPS_800KBITPS = 2;
+		CONNECTIONCLASS_800KBITPS_1600KBITPS = 3;
+		CONNECTIONCLASS_1600KBITPS_4MBITPS = 4;
+		CONNECTIONCLASS_4MBITPS_8MBITPS = 5;
+		CONNECTIONCLASS_8MBITPS_16MBITPS = 6;
+		CONNECTIONCLASS_ABOVE16MBITPS = 7;
+	}
+
+	SCLoadedLensFirstV2Config_ConnectionBandwidth typeOfConnectionTrigger = 5;
+	bool sortLensesOnlyOnStart = 6;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusChallengeOrchestrationRequestHeader.proto";
+import "snapchat/janus/api/SCJanusCheckEnforcementRequestHeader.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/janus/api/SCJanusChangeEmailTransaction.proto";
+import "snapchat/janus/api/SCJanusResendConfirmationEmailTransaction.proto";
+import "snapchat/janus/api/SCJanusSendCodePreLoginAccountRecoveryTransaction.proto";
+import "snapchat/janus/api/SCJanusSignUpVerifyPhoneTransaction.proto";
+import "snapchat/janus/api/SCJanusSignUpSetEmailTransaction.proto";
+
+message SCJanusCheckEnforcementRequest {
+	snapchat.janus.api.SCJanusChallengeOrchestrationRequestHeader challengeOrchestrationRequestHeader = 1;
+	snapchat.janus.api.SCJanusCheckEnforcementRequestHeader checkEnforcementRequestHeader = 2;
+	snapchat.core.SCCOREUUID userId = 3;
+
+	oneof transaction {
+		snapchat.janus.api.SCJanusChangeEmailTransaction changeEmailTransaction = 8;
+		snapchat.janus.api.SCJanusResendConfirmationEmailTransaction resendConfirmationEmailTransaction = 9;
+		snapchat.janus.api.SCJanusSendCodePreLoginAccountRecoveryTransaction sendRecoveryCodeTransaction = 10;
+		snapchat.janus.api.SCJanusSignUpVerifyPhoneTransaction signUpVerifyPhoneTransaction = 11;
+		snapchat.janus.api.SCJanusSignUpSetEmailTransaction signUpSetEmailTransaction = 12;
+	}
+
+}

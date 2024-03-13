@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateSubscriberDisplayNamesRequest {
+	string businessId = 1;
+	string hostAccountId = 2;
+	int64 shard = 3;
+	string displayName = 4;
+	bool allBusinesses = 5;
+	bool allShards = 6;
+}

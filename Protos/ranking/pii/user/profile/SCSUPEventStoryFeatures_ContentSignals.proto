@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPLanguageLabels.proto";
+
+message SCSUPEventStoryFeatures_ContentSignals {
+	string sccPlusV3Tags = 1;
+	string unifiedSnap2InterestV1 = 2;
+	ranking.pii.user.profile.SCSUPLanguageLabels languageLabels = 3;
+	string snap2InterestV2Tags = 4;
+	float psuggestiveV1 = 5;
+	string psuggestiveAcumen = 6;
+	string unifiedSnap2InterestV2 = 7;
+}

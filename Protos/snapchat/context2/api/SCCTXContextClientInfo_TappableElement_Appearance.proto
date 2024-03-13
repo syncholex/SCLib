@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement_Point.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement_Size.proto";
+
+message SCCTXContextClientInfo_TappableElement_Appearance {
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElement_Point center = 1;
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElement_Size size = 2;
+	double rotation = 3;
+	double cornerRadius = 4;
+}

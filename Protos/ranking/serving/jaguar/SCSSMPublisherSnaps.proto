@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMPublisherSnap.proto";
+
+message SCSSMPublisherSnaps {
+	string baseURL = 1;
+	repeated ranking.serving.jaguar.SCSSMPublisherSnap snapsArray = 2;
+}

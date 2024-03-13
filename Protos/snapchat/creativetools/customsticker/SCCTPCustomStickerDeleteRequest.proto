@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+message SCCTPCustomStickerDeleteRequest {
+	bytes id_p = 1;
+	bool shouldDeletePack = 2;
+}

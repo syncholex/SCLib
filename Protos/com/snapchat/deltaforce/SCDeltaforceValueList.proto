@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforceValueList {
+	repeated com.snapchat.deltaforce.SCDeltaforceValue valuesArray = 1;
+}

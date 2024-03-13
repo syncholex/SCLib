@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsInfluencerBasicProfile {
+	string displayName = 1;
+	bool isOfficial = 2;
+}

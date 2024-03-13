@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.memories.cof;
+
+message MemoriesCameraRollCollageLens {
+	string lensId = 1;
+	uint64 numberOfItems = 2;
+}

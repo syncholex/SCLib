@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+import "snapchat/perception/scan/settings/SCPCNSettingsCategoriesRequiringPermissions.proto";
+
+message SCPCNSettingsSettingsResponse_Section {
+	string title = 1;
+	string subtitle = 2;
+}

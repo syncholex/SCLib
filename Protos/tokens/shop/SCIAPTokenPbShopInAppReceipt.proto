@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbShopInAppReceipt {
+
+	enum SCIAPTokenPbShopInAppReceipt_Provider {
+		PROVIDER_UNSPECIFIED = 0;
+		PROVIDER_GOOGLE = 1;
+		PROVIDER_APPLE = 2;
+	}
+
+	SCIAPTokenPbShopInAppReceipt_Provider provider = 1;
+	string sku = 2;
+	string transactionId = 3;
+	string receipt = 4;
+}

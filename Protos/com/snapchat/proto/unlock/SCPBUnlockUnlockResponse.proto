@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlock;
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+
+message SCPBUnlockUnlockResponse {
+	string unlockStatus = 1;
+	com.snapchat.proto.SCPBGeofilterResponse metadata = 2;
+}

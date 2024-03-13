@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles.infatuation;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/local/verrazano/VRZOpeningHours.proto";
+import "snapchat/map/garfield/tiles/infatuation/SCMGTINFReviewProperties.proto";
+import "snapchat/map/garfield/image/SCMGIImageReference.proto";
+
+message SCMGTINFInfatuationProperties {
+	string name = 1;
+	snapchat.core.SCCOREUUID verrazanoId = 2;
+	string website = 3;
+	uint32 price = 4;
+	snapchat.local.verrazano.VRZOpeningHours openingHours = 5;
+	snapchat.map.garfield.tiles.infatuation.SCMGTINFReviewProperties review = 6;
+	snapchat.map.garfield.image.SCMGIImageReference mapPinImage = 7;
+}

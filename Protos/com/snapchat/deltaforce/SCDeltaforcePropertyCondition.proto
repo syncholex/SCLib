@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceProperty.proto";
+
+message SCDeltaforcePropertyCondition {
+
+	oneof propConditionType {
+		com.snapchat.deltaforce.SCDeltaforceProperty eq = 1;
+		com.snapchat.deltaforce.SCDeltaforceProperty notEq = 2;
+		com.snapchat.deltaforce.SCDeltaforceProperty lessThan = 3;
+		com.snapchat.deltaforce.SCDeltaforceProperty lessThanOrEq = 4;
+		com.snapchat.deltaforce.SCDeltaforceProperty greaterThan = 5;
+		com.snapchat.deltaforce.SCDeltaforceProperty greaterThanOrEq = 6;
+		com.snapchat.deltaforce.SCDeltaforceProperty notSet = 7;
+	}
+
+}

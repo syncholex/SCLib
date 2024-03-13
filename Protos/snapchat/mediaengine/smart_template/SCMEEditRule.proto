@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEPlaybackRateRule.proto";
+import "snapchat/mediaengine/smart_template/SCMEBounceRule.proto";
+
+message SCMEEditRule {
+
+	oneof rule {
+		snapchat.mediaengine.smart_template.SCMEPlaybackRateRule playbackRateRule = 1;
+		snapchat.mediaengine.smart_template.SCMEBounceRule bounceRule = 2;
+	}
+
+}

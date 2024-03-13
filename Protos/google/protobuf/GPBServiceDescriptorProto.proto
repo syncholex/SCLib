@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBMethodDescriptorProto.proto";
+import "google/protobuf/GPBServiceOptions.proto";
+
+message GPBServiceDescriptorProto {
+	string name = 1;
+	repeated google.protobuf.GPBMethodDescriptorProto methodArray = 2;
+	google.protobuf.GPBServiceOptions options = 3;
+}

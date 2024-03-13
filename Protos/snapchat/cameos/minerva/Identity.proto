@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message Identity {
+	repeated bytes avatarsArray = 1;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCCameosGender gender = 2;
+	string prompt = 3;
+}

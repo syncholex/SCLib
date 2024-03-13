@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXAdCollectionItemAction_Point.proto";
+
+message SCCTXAdCollectionItemAction {
+	int64 itemIndex = 1;
+	snapchat.context2.api.SCCTXAdCollectionItemAction_Point tapLocation = 2;
+}

@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceRatingsAndReviews_Priceyness {
+
+	enum VRZProvider {
+		PROVIDER_UNKNOWN = 0;
+		SNAP_MODERATION = 1;
+		SNAP_PRO = 2;
+		SNAP_VOLTORB = 3;
+		FOURSQUARE = 4;
+		TRIPADVISOR = 5;
+		FACTUAL = 6;
+		YEXT = 7;
+		WOF = 8;
+		OSM = 9;
+		MAPONICS = 10;
+		MICHELIN = 11;
+		GOOP = 12;
+		OPENTABLE = 13;
+		RESY = 14;
+		BOOKATABLE = 15;
+		SNAP_LOI = 16;
+		SNAP_LOCAYA = 17;
+		SNAP_FTI = 18;
+		TILEZEN = 19;
+		NIELSEN = 20;
+		GEONAMES = 21;
+		SNAP_GEOMETRY_BOT = 22;
+		SNAP_PIP_BOT = 23;
+		SNAP_LANDMARKERS_TEAM = 24;
+		SNAP_BBG = 25;
+		SNAP_PB = 26;
+		DIGITALENVOY = 27;
+		HERE_GEOCODER = 28;
+		POSTMATES = 29;
+		GRUBHUB = 30;
+		DOORDASH = 31;
+		UBER = 32;
+		SNAP_UGC = 33;
+		TICKETMASTER = 34;
+		CHOWNOW = 35;
+		DACGROUP = 36;
+		ZOMATO = 37;
+		MAPMYINDIA = 38;
+		SNAP_PCS = 39;
+		SNAP_AUTO_MOD = 40;
+		SNAP_LOCATION_AUDIENCE = 41;
+		INFATUATION = 42;
+		SNAP_BPS = 43;
+		DELIVEROO = 44;
+		ALL_THE_PLACES = 45;
+		JUST_EAT = 46;
+		POTTERS = 47;
+		POTTERS_POI_XYZ = 48;
+		SNAP_COMMUNITIES = 49;
+		PARTOO = 50;
+		YELP = 51;
+		OVERTURE = 52;
+	}
+
+	VRZProvider provider = 1;
+	float value = 2;
+	float maximum = 3;
+	string currencySymbol = 4;
+	string providerDisplayName = 5;
+}

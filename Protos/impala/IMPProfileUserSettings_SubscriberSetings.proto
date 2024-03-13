@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileUserSettings_SubscriberSetings {
+	bool showSubscriberCount = 1;
+}

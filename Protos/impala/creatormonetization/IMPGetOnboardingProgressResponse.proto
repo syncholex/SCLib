@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPOnboardingSection.proto";
+
+message IMPGetOnboardingProgressResponse {
+	int64 totalSteps = 1;
+	int64 numOfFinishedSteps = 2;
+	int64 totalProgramsAvailable = 3;
+	int64 numOfIncompletePrograms = 4;
+	repeated impala.creatormonetization.IMPOnboardingSection onboardingSectionArray = 5;
+	bool isAccountReset = 6;
+}

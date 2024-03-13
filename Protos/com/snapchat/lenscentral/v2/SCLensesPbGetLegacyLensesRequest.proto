@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/FilterBy.proto";
+
+message SCLensesPbGetLegacyLensesRequest {
+	string userId = 1;
+	int32 limit = 2;
+	int32 offset = 3;
+
+	enum SortBy {
+		SORT_BY_UNSET = 0;
+		SORT_BY_DATE = 1;
+		SORT_BY_NAME = 2;
+		SORT_BY_STATUS = 3;
+	}
+
+	SortBy sortBy = 4;
+
+	enum SortDirection {
+		SORT_DIRECTION_UNSET = 0;
+		SORT_DIRECTION_DESC = 1;
+		SORT_DIRECTION_ASC = 2;
+	}
+
+	SortDirection sortDirection = 5;
+	snapchat.lenscentral.common.FilterBy filterBy = 6;
+}

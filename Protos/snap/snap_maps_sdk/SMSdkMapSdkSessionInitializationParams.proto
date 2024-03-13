@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkMapSdkSessionInitializationParams_MapInstanceInfo.proto";
+
+message SMSdkMapSdkSessionInitializationParams {
+	snap.snap_maps_sdk.SMSdkMapSdkSessionInitializationParams_MapInstanceInfo mapInstanceInfo = 1;
+}

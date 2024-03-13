@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1Constraints_SpaceConstraint {
+	float userLat = 1;
+	float userLng = 2;
+	float radius = 3;
+}

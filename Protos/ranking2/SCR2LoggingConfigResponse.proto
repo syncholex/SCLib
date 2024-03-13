@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2LoggingConfig.proto";
+
+message SCR2LoggingConfigResponse {
+	repeated ranking2.SCR2LoggingConfig loggingConfigsArray = 1;
+}

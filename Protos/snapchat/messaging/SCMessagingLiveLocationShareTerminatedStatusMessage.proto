@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingLiveLocationShareTerminatedStatusMessage {
+	snapchat.messaging.SCMessagingUUID initiatingUserId = 1;
+
+	enum SCMessagingLiveLocationTerminateReason {
+		REASON_UNSET = 0;
+		SESSION_EXPIRED = 1;
+		SESSION_TERMINATED = 2;
+	}
+
+	SCMessagingLiveLocationTerminateReason terminateReason = 2;
+}

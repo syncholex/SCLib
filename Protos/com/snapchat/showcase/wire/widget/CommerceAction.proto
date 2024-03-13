@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/PageNavigation.proto";
+
+message CommerceAction {
+
+	oneof action {
+		string deeplink = 1;
+		com.snapchat.showcase.wire.widget.PageNavigation pageNavigation = 2;
+	}
+
+}

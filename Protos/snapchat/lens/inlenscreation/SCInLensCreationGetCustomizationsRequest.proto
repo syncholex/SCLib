@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.inlenscreation;
+
+import "snapchat/lens/inlenscreation/SCInLensCreationFilter.proto";
+
+message SCInLensCreationGetCustomizationsRequest {
+	snapchat.lens.inlenscreation.SCInLensCreationFilter queryFilter = 1;
+}

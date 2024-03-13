@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/SCSharingDrawerConfig_RecentAttachmentsConfig.proto";
+
+message SCSharingDrawerConfig {
+	bool isSharingDrawerEnabled = 1;
+
+	enum SCSharingDrawerConfig_SharingDrawerSection {
+		UNSET = 0;
+		MAPS = 1;
+		RECENTS_ATTACHMENTS = 2;
+		FOR_YOU = 3;
+	}
+
+	repeated SCSharingDrawerConfig_SharingDrawerSection orderedEnabledSectionsArray = 2 [packed=true];
+	snapchat.messaging.cof.SCSharingDrawerConfig_RecentAttachmentsConfig recentAttachmentsConfig = 3;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofence.proto";
+import "lens_platform/client_server/legacy/SCLGStickerPack_StickerPackContextualMetadata.proto";
+
+message SCLGStickerPack {
+	string packId = 1;
+	string categoryId = 2;
+	string iconURL = 3;
+	int32 iconVersion = 4;
+	string URL = 5;
+	int32 version = 6;
+	bool active = 7;
+	string type = 8;
+	repeated string capabilitiesArray = 9;
+	repeated string targetArray = 10;
+	string superCategory = 11;
+	lens_platform.client_server.legacy.SCLGGeofence geofence = 12;
+	string unlockablePreviewImgURL = 13;
+	string title = 14;
+	int64 unlockExpirationTimeInSec = 15;
+	lens_platform.client_server.legacy.SCLGStickerPack_StickerPackContextualMetadata contextualPackMetadata = 16;
+	string unlockableId = 17;
+	bool isExpandable = 18;
+	string metadataURL = 19;
+	int64 expirationTtlInSec = 20;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveGridNoPillConfig.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveGridStaticTextPillConfig.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveGridMetadataPillConfig.proto";
+
+message SCAdsInteractiveGridFloatingPillConfig {
+
+	oneof config {
+		snapchat.ads.abconfig.SCAdsInteractiveGridNoPillConfig noPillConfig = 1;
+		snapchat.ads.abconfig.SCAdsInteractiveGridStaticTextPillConfig staticTextPillConfig = 2;
+		snapchat.ads.abconfig.SCAdsInteractiveGridMetadataPillConfig metadataPillConfig = 3;
+	}
+
+}

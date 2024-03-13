@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1ActionTiming {
+	int64 effective = 1;
+	int64 expiration = 2;
+	int64 lock = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2ActionHandler.proto";
+
+message SCS2QuerySuggestion {
+	string queryText = 1;
+	snapchat.search.SCS2ActionHandler onTap = 2;
+}

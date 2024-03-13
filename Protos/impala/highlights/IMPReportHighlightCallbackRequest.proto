@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPReportHighlightCallbackRequest {
+	string id_p = 1;
+	bool actions = 2;
+	string source = 3;
+	string referenceId = 4;
+	string originalPayload = 5;
+}

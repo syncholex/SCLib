@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCommunicationChannelChallengeAnswer {
+
+	oneof communicationChannel {
+		string email = 1;
+	}
+
+	string communicationChannelAnswer = 2;
+}

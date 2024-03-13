@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioFingerprintMessage.proto";
+import "snapchat/research/SASSnapDeletionMessage.proto";
+
+message SASAudioStitchIngest {
+	string sharedStorySubmissionId = 1;
+
+	oneof messages {
+		snapchat.research.SASAudioFingerprintMessage audioFingerprintMessage = 100;
+		snapchat.research.SASSnapDeletionMessage snapDeletionMessage = 101;
+	}
+
+}

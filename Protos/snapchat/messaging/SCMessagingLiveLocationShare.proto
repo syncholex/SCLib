@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingLiveLocationShare {
+	snapchat.messaging.SCMessagingUUID sessionId = 1;
+	double latitude = 2;
+	double longitude = 3;
+	uint64 expireTimeMs = 4;
+	uint64 initialDurationMs = 5;
+	bool isLiveSessionIndefinite = 6;
+}

@@ -1,0 +1,55 @@
+syntax = "proto2";
+
+package validate;
+
+import "validate/FloatRules.proto";
+import "validate/DoubleRules.proto";
+import "validate/Int32Rules.proto";
+import "validate/Int64Rules.proto";
+import "validate/UInt32Rules.proto";
+import "validate/UInt64Rules.proto";
+import "validate/SInt32Rules.proto";
+import "validate/SInt64Rules.proto";
+import "validate/Fixed32Rules.proto";
+import "validate/Fixed64Rules.proto";
+import "validate/SFixed32Rules.proto";
+import "validate/SFixed64Rules.proto";
+import "validate/BoolRules.proto";
+import "validate/StringRules.proto";
+import "validate/BytesRules.proto";
+import "validate/EnumRules.proto";
+import "validate/MessageRules.proto";
+import "validate/RepeatedRules.proto";
+import "validate/MapRules.proto";
+import "validate/AnyRules.proto";
+import "validate/DurationRules.proto";
+import "validate/TimestampRules.proto";
+
+message FieldRules {
+
+	oneof type {
+		validate.FloatRules float_p = 1;
+		validate.DoubleRules double_p = 2;
+		validate.Int32Rules int32 = 3;
+		validate.Int64Rules int64 = 4;
+		validate.UInt32Rules uint32 = 5;
+		validate.UInt64Rules uint64 = 6;
+		validate.SInt32Rules sint32 = 7;
+		validate.SInt64Rules sint64 = 8;
+		validate.Fixed32Rules fixed32 = 9;
+		validate.Fixed64Rules fixed64 = 10;
+		validate.SFixed32Rules sfixed32 = 11;
+		validate.SFixed64Rules sfixed64 = 12;
+		validate.BoolRules bool_p = 13;
+		validate.StringRules string = 14;
+		validate.BytesRules bytes = 15;
+		validate.EnumRules enum_p = 16;
+		validate.RepeatedRules repeated = 18;
+		validate.MapRules map = 19;
+		validate.AnyRules any = 20;
+		validate.DurationRules duration = 21;
+		validate.TimestampRules timestamp = 22;
+	}
+
+	validate.MessageRules message = 17;
+}

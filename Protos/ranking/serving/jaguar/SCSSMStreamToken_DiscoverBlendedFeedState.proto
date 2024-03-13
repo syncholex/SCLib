@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_DiscoverBlendedFeedState {
+	double maxScoreSubs = 1;
+	double maxScoreForYou = 2;
+}

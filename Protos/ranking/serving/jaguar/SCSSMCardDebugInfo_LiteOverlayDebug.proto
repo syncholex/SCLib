@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMCardDebugInfo_LiteOverlayDebug_DebugRow.proto";
+
+message SCSSMCardDebugInfo_LiteOverlayDebug {
+	repeated ranking.serving.jaguar.SCSSMCardDebugInfo_LiteOverlayDebug_DebugRow debugRowArray = 1;
+}

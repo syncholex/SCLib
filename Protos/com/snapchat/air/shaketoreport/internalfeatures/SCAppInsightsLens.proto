@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsLens {
+
+	enum SCAppInsightsLens_Subfeature {
+		UNSET = 0;
+		LENS = 1;
+		APP = 2;
+		PERFORMANCE = 3;
+		SNAPPABLES = 4;
+		THREE_D_BITMOJI = 5;
+		THREE_D_BITMOJI_FACETRACKER = 6;
+		THREE_D_SNAPS = 7;
+		LENS_EXPLORER = 8;
+		NGL = 9;
+		LENS_CORE = 10;
+		LENS_CAROUSEL = 11;
+		LENS_RANKING = 12;
+		DEVELOPER_SUCCESS = 13;
+	}
+
+	SCAppInsightsLens_Subfeature subfeature = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness.proto";
+
+message IMPInternalGetPublisherBusinessListResponse {
+	repeated impala.IMPBusiness businessesArray = 1;
+	string nextPageId = 2;
+}

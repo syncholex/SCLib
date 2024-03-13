@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULGeoCoordinate.proto";
+
+message SCULGeoCircle {
+	snapchat.unlockables.request.schema.SCULGeoCoordinate center = 1;
+	double radius = 2;
+}

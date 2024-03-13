@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBCoulombCtrlData {
+	int32 coulombCtrlTemperature = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/context2/SnapContextExperimentInfo.proto";
+
+message SnapContextUserInfo {
+	int32 age = 1;
+	snapchat.geo.SPCGPoint geoLocation = 2;
+	float horizontalAccuracyMeters = 3;
+	string countryCode = 4;
+	snapchat.context2.SnapContextExperimentInfo experiments = 5;
+	int32 friendCount = 6;
+	string bitmojiAvatarId = 7;
+	repeated int32 cofSequenceIdsArray = 8 [packed=true];
+}

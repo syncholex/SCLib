@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.drawing;
+
+message SCCTPStyleBrush {
+	uint32 color = 1;
+}

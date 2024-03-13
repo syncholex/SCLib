@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+import "ranking/logging/search/SCSLSResultImpression.proto";
+
+message SCSLSImpressionInfo {
+	string searchSessionId = 1;
+	int64 searchQueryId = 2;
+	repeated ranking.logging.search.SCSLSResultImpression resultImpressionsArray = 3;
+}

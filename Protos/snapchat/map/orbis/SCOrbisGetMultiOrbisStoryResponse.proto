@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/map/orbis/SCOrbisStory.proto";
+
+message SCOrbisGetMultiOrbisStoryResponse {
+	repeated snapchat.map.orbis.SCOrbisStory orbisStoriesArray = 1;
+}

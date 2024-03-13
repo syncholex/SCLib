@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse_DebugInfo_ScheduledLensesDebugInfo.proto";
+
+message SCLGGeofilterResponse_DebugInfo {
+	lens_platform.client_server.legacy.SCLGGeofilterResponse_DebugInfo_ScheduledLensesDebugInfo scheduledLensesInfo = 1;
+}

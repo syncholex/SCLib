@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Sound_Pitch {
+	float freq = 1;
+	float intensity = 2;
+	string note = 3;
+}

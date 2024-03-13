@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/QueryCursor.proto";
+
+message SavedStoryFilter {
+	uint32 limit = 1;
+	ranking.storymanagement.QueryCursor queryCursor = 2;
+
+	enum ProcessingStatus {
+		UNKNOWN = 0;
+		COMPLETED = 1;
+		FAILED = 2;
+		PROCESSING = 3;
+	}
+
+	repeated ProcessingStatus statusFilterArray = 3 [packed=true];
+}

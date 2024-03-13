@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTGetMapTilesRequest_TileCollection.proto";
+
+message SCMTGetMapTilesRequest {
+	repeated snapchat.map.SCMTGetMapTilesRequest_TileCollection tileCollectionsArray = 4;
+}

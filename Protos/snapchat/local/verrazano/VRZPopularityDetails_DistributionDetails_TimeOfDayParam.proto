@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPopularityDetails_DistributionDetails_TimeOfDayParam {
+
+	enum VRZPopularityDetails_DistributionDetails_TimeOfDayParam_TimeOfDayMeasurement {
+		UNSET = 0;
+		MORNING = 1;
+		AFTERNOON = 2;
+		EVENING = 3;
+	}
+
+	VRZPopularityDetails_DistributionDetails_TimeOfDayParam_TimeOfDayMeasurement timeOfDay = 1;
+	float anomaly = 2;
+}

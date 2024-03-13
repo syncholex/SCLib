@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "snapchat/core/SCCOREIPAddress.proto";
+import "snapchat/core/SCCOREGeoHeader.proto";
+
+message SCAccountEmailServicePbConfirmEmailRequest {
+	string token = 1;
+
+	enum SCAccountEmailServicePbConfirmEmailRequest_Action {
+		UNSET = 0;
+		APPROVE = 1;
+		DENY = 2;
+	}
+
+	SCAccountEmailServicePbConfirmEmailRequest_Action action = 2;
+
+	enum SCAccountEmailServicePbSource {
+		UNSET = 0;
+		WELCOME = 1;
+	}
+
+	SCAccountEmailServicePbSource source = 3;
+	string userAgent = 5;
+	snapchat.core.SCCOREIPAddress ipAddress = 6;
+	snapchat.core.SCCOREGeoHeader geoHeader = 7;
+	string webClientId = 8;
+}

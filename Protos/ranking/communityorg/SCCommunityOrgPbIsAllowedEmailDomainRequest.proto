@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message SCCommunityOrgPbIsAllowedEmailDomainRequest {
+	ranking.core.SCSCOREUUID groupId = 1;
+	ranking.core.SCSCOREUUID orgId = 2;
+	string submittedEmailDomain = 3;
+	bool isEmployee = 4;
+	ranking.core.SCSCORERequestMetadata requestMetadata = 5;
+}

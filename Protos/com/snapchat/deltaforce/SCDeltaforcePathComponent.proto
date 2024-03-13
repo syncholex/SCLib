@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+message SCDeltaforcePathComponent {
+	string kind = 1;
+
+	oneof keyTypes {
+		string name = 2;
+		uint64 id_p = 3;
+	}
+
+}

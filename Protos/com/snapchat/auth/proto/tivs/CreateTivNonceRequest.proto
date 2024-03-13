@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message CreateTivNonceRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	snapchat.core.SCCOREUUID broadcastId = 2;
+
+	enum CommunicationChannel_Enum {
+		UNSET = 0;
+		EMAIL = 1;
+		IN_BAND = 2;
+		PUSH = 3;
+		SMS = 4;
+		TOTP = 5;
+		TOTP_OR_SMS = 6;
+		WHATSAPP = 7;
+	}
+
+	CommunicationChannel_Enum communicationChannel = 3;
+}

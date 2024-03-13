@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message VideoTrack {
+	string videoId = 1;
+
+	oneof content {
+		string hlsManifestURL = 3;
+		bytes contentObject = 4;
+	}
+
+	int32 timeScale = 5;
+	int64 duration = 6;
+	bytes videoContentObject = 7;
+
+	enum SDMDynamicUrlType {
+		NONE = 0;
+		BITMOJI = 1;
+	}
+
+	SDMDynamicUrlType dynamicURLType = 8;
+	bytes thumbnailContentObject = 9;
+}

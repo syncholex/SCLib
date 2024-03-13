@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod.proto";
+
+message SCSubscriptionShopPbGift {
+	string id_p = 1;
+	string senderUserId = 2;
+	string senderName = 3;
+	int64 giftedAtTimestampMillis = 4;
+	int64 redeemedAtTimestampMillis = 5;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod subscriptionPeriod = 6;
+}

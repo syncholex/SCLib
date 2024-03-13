@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsBitmoji {
+
+	enum SCAppInsightsBitmoji_Subfeature {
+		UNSET = 0;
+		AVATAR = 1;
+		AVATAR_BUILDER = 2;
+		THREE_D_BITMOJI = 3;
+		THREE_D_BITMOJI_FACETRACKER = 4;
+		AI_AVATAR = 5;
+		LIVE_MIRROR = 6;
+		PROFILE = 7;
+		COMMERCE = 8;
+		BITMOJI_STORIES = 9;
+		SEARCH = 10;
+		STICKERS = 11;
+		UGC = 12;
+	}
+
+	SCAppInsightsBitmoji_Subfeature subfeature = 1;
+}

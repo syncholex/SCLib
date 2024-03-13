@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2ActionHandler_OpenSoundTopic {
+	uint64 musicTrackId = 1;
+}

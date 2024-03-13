@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZReportFilterAttributes.proto";
+import "snapchat/local/verrazano/VRZSortByCriteria.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message VRZGetModerationReportsRequest {
+	snapchat.local.verrazano.VRZReportFilterAttributes reportFilterAttributes = 1;
+	snapchat.local.verrazano.VRZSortByCriteria sortBy = 2;
+	google.protobuf.GPBInt64Value limit = 3;
+}

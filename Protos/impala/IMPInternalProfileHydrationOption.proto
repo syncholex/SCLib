@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileHydrationOption.proto";
+
+message IMPInternalProfileHydrationOption {
+	impala.IMPProfileHydrationOption hydrationOption = 1;
+	bool skipDisplayInfo = 2;
+}

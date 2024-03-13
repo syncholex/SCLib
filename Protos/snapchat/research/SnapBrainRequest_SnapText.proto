@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainRequest_SnapText {
+
+	enum SnapBrainRequest_SnapText_Analyzer {
+		V1 = 0;
+		V2 = 1;
+	}
+
+	repeated SnapBrainRequest_SnapText_Analyzer analyzersArray = 1 [packed=true];
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/payments/PaymentMethod.proto";
+
+message PayCheckoutRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	bytes checkoutId = 2;
+	repeated snapchat.payments.PaymentMethod paymentMethodsArray = 3;
+	string requestId = 4;
+	string deviceId = 5;
+}

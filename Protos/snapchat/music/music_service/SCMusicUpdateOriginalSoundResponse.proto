@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicUpdateOriginalSoundResponse {
+
+	enum SCMusicOriginalSoundsErrorStatus {
+		UNSET = 0;
+		COPYRIGHT_VIOLATION = 1;
+		INVALID_TITLE = 2;
+	}
+
+	SCMusicOriginalSoundsErrorStatus errorStatus = 2;
+}

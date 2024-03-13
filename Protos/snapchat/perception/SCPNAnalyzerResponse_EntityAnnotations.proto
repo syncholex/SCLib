@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNEntityAnnotation.proto";
+
+message SCPNAnalyzerResponse_EntityAnnotations {
+	repeated snapchat.perception.SCPNEntityAnnotation annotationsArray = 1;
+}

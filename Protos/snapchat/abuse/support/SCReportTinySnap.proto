@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportSnapMediaData.proto";
+
+message SCReportTinySnap {
+	snapchat.abuse.support.SCReportSnapMediaData content = 1;
+	string textContent = 2;
+}

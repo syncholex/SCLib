@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPDeleteRoleByRoleTypeRequest {
+	string profileId = 1;
+	string userId = 2;
+	string roleType = 3;
+}

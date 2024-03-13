@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/EngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryDerivedEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryMetadataFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryClientEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryPosterEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryNotificationFeatures.proto";
+import "ranking/pii/user/profile/FriendMetadataFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendLinkFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryPosterFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryReverseEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryClientInteractionFeatures.proto";
+
+message SCSCKFriendStoryFeatures {
+	ranking.pii.user.profile.EngagementFeatures friendStoryEngagementFeatures = 1;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedEngagementFeatures = 2;
+	ranking.ml.centralkitchen.SCSCKFriendStoryMetadataFeatures friendStoryMetadataFeatures = 3;
+	ranking.ml.centralkitchen.SCSCKFriendStoryClientEngagementFeatures friendStoryClientEngagementFeatures = 4;
+	ranking.ml.centralkitchen.SCSCKFriendStoryPosterEngagementFeatures friendStoryPosterEngagementFeatures = 5;
+	ranking.ml.centralkitchen.SCSCKFriendStoryNotificationFeatures friendStoryNotificationFeatures = 6;
+	ranking.pii.user.profile.FriendMetadataFeatures friendMetadataFeatures = 7;
+	ranking.ml.centralkitchen.SCSCKFriendLinkFeatures friendLinkFeatures = 8;
+	ranking.ml.centralkitchen.SCSCKFriendStoryPosterFeatures friendStoryPosterFeatures = 9;
+	ranking.pii.user.profile.EngagementFeatures friendStoryLongWindowEngagementFeatures = 10;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedLongWindowEngagementFeatures = 11;
+	ranking.ml.centralkitchen.SCSCKFriendStoryReverseEngagementFeatures friendStoryReverseEngagementFeatures = 12;
+	ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedReverseEngagementFeatures = 13;
+	ranking.ml.centralkitchen.SCSCKFriendStoryClientInteractionFeatures friendStoryClientInteractionFeatures = 14;
+}

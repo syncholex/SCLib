@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPWeatherStickerMetadata_HourlyForecast.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPWeatherStickerMetadata_DailyForecast.proto";
+
+message SCCTPWeatherStickerMetadata {
+
+	enum SCCTPWeatherStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		CURRENT_WEATHER = 1;
+		DAILY_FORECAST = 2;
+		HOURLY_FORECAST = 3;
+	}
+
+	SCCTPWeatherStickerMetadata_Type type = 1;
+	float celsius = 3;
+
+	enum SCCTPWeatherStickerMetadata_MeasurementSystem {
+		MEASUREMENT_SYSTEM_UNSPECIFIED = 0;
+		METRIC = 1;
+		IMPERIAL = 2;
+	}
+
+	SCCTPWeatherStickerMetadata_MeasurementSystem measurementSystem = 4;
+	string locationName = 5;
+	repeated snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata_HourlyForecast hourlyForecastArray = 6;
+	repeated snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata_DailyForecast dailyForecastArray = 7;
+}

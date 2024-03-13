@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message UserTeamSnapchatHistoryRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+}

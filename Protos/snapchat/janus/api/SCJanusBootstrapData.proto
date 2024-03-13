@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusUserSession.proto";
+import "snapchat/janus/api/SCJanusFideliusIdentity.proto";
+import "snapchat/janus/api/SCJanusUserState.proto";
+import "snapchat/janus/api/SCJanusSecurityData.proto";
+import "snapchat/janus/api/SCJanusFriendData.proto";
+import "snapchat/janus/api/SCJanusCofSyncMechanism.proto";
+
+message SCJanusBootstrapData {
+	snapchat.janus.api.SCJanusUserSession userSession = 1;
+	bytes coreUserData = 2;
+	bytes sup = 3;
+	bytes cof = 4;
+	snapchat.janus.api.SCJanusFideliusIdentity fideliusIdentity = 5;
+	snapchat.janus.api.SCJanusUserState userState = 6;
+	snapchat.janus.api.SCJanusSecurityData securityData = 7;
+	snapchat.janus.api.SCJanusFriendData friendData = 8;
+	snapchat.janus.api.SCJanusCofSyncMechanism cofSyncMechanism = 9;
+}

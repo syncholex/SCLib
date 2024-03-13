@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+import "snapchat/content/policy/DiskScanRule.proto";
+
+message DiskScanPolicy {
+	int32 minTimeBetweenScanSec = 1;
+	repeated snapchat.content.policy.DiskScanRule diskScanRulesArray = 2;
+}

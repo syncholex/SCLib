@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map.pins;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMPPin {
+	snapchat.core.SCCOREUUID pinId = 1;
+	snapchat.core.SCCOREUUID ownerId = 2;
+	float lat = 3;
+	float lng = 4;
+	string title = 5;
+}

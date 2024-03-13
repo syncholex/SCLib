@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2StoryMetadata.proto";
+import "ranking2/SCR2StorySnap.proto";
+
+message SCR2StoryCard {
+	ranking2.SCR2StoryMetadata metadata = 1;
+	repeated ranking2.SCR2StorySnap snapsArray = 2;
+	string debugMap = 3;
+
+	enum SCR2StoryCard_StoryCardUIType {
+		UNKNOWN_UI_TYPE = 0;
+		VISUAL_VERTICAL = 1;
+		VISUAL_HERO = 2;
+		NORMAL_HERO = 3;
+		NORMAL_HORIZONTAL_TITLE_AND_SUBTITLE = 4;
+	}
+
+	SCR2StoryCard_StoryCardUIType uiType = 4;
+}

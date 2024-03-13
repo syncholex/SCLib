@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1Constrain {
+	bool isSpaceConstrained = 1;
+	float lat = 2;
+	float lng = 3;
+	float radius = 4;
+	bool employeeOnly = 5;
+	bool devOnly = 6;
+}

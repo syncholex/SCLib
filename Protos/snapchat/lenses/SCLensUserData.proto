@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensBitmojiUserInfo.proto";
+import "snapchat/lenses/SCLensFriendUserInfo.proto";
+
+message SCLensUserData {
+	string userId = 1;
+	string username = 2;
+	string birthdate = 3;
+	string displayName = 4;
+	string countrycode = 5;
+	uint64 score = 7;
+	snapchat.lenses.SCLensBitmojiUserInfo bitmojiInfo = 8;
+	snapchat.lenses.SCLensFriendUserInfo friendInfo = 9;
+
+	enum SCLensUserData_Zodiac {
+		Invalid = 0;
+		Aquarius = 1;
+		Aries = 2;
+		Cancer = 3;
+		Capricorn = 4;
+		Gemini = 5;
+		Leo = 6;
+		Libra = 7;
+		Pisces = 8;
+		Sagittarius = 9;
+		Scorpio = 10;
+		Taurus = 11;
+		Virgo = 12;
+	}
+
+	SCLensUserData_Zodiac zodiac = 10;
+}

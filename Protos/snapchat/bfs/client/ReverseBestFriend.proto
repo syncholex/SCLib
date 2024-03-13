@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.bfs.client;
+
+import "snapchat/bfs/core/UUID.proto";
+
+message ReverseBestFriend {
+	snapchat.bfs.core.UUID friendUserId = 1;
+	uint32 myRank = 2;
+}

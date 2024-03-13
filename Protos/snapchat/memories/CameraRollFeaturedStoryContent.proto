@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/CameraRollItem.proto";
+
+message CameraRollFeaturedStoryContent {
+	repeated snapchat.memories.CameraRollItem cameraRollItemsArray = 1;
+}

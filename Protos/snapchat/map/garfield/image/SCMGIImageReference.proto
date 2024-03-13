@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.image;
+
+message SCMGIImageReference {
+
+	oneof reference {
+		string fullURL = 1;
+		string boltFullURL = 2;
+	}
+
+}

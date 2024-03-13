@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusFideliusTentativeWebKey.proto";
+
+message SCFideliusInitializeWebKeyRequest {
+	repeated bytes onDeviceKeyPairIdsArray = 1;
+	snapchat.fidelius.SCFideliusFideliusTentativeWebKey tentativeWebKey = 2;
+}

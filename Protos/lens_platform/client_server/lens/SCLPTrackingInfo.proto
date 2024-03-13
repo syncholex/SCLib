@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "snapchat/unlockables/request/schema/SCULUnlockablesSnapInfo.proto";
+
+message SCLPTrackingInfo {
+	string encGeoData = 1;
+	snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo snapInfo = 2;
+	string adServeRequestId = 3;
+	string rawAdData = 4;
+	bool skipTrack = 5;
+	string encryptedSponsoredUnlockableTargetingInfoData = 6;
+	string adTrackURL = 7;
+	string rankingId = 8;
+	string rankingData = 9;
+	bool ranked = 10;
+	string encryptedUserTrackData = 11;
+	bytes adId = 12;
+	int64 adServeTimestampMillis = 13;
+	bytes adServeItemId = 14;
+
+	enum SCLPCarouselLensSource {
+		CAROUSEL_LENS_SOURCE_UNSET = 0;
+		SCHEDULE = 1;
+		RANKING = 2;
+		PILOT = 3;
+		SCAN_UNLOCKS = 4;
+		SOCIAL_UNLOCKS = 5;
+		SPONSORED = 6;
+		GEO_TARGETING = 7;
+		COF_TARGETING = 8;
+		GLOBAL_TARGETING = 9;
+		COUNTRY_TARGETING = 10;
+		USER_TARGETING = 11;
+		TARGETING_ENGINE = 12;
+		FAVORITES = 13;
+		BUNDLED = 14;
+	}
+
+	SCLPCarouselLensSource carouselLensSource = 15;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsDifferentialPrivacyParameters.proto";
+
+message SCAdsOnDeviceInfo {
+	bytes onDeviceMatchKey = 1;
+	int32 eventType = 2;
+	snapchat.ads.request.schema.SCAdsDifferentialPrivacyParameters dpParams = 3;
+	bool enableSidgExclusion = 4;
+	bool enableCanOpenURLExclusion = 5;
+}

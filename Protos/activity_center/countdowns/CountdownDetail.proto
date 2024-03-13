@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "activity_center/countdowns/ParticipantInfo.proto";
+
+message CountdownDetail {
+	repeated string participantsArray = 2;
+	repeated activity_center.countdowns.ParticipantInfo participantInfoArray = 3;
+}

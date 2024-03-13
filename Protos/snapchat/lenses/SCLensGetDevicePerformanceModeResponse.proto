@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensGetDevicePerformanceModeResponse {
+
+	enum SCLensGetDevicePerformanceModeResponse_CameosPerformanceMode {
+		UNSET = 0;
+		LOW = 1;
+		HIGH = 2;
+	}
+
+	SCLensGetDevicePerformanceModeResponse_CameosPerformanceMode cameosPerformanceMode = 1;
+}

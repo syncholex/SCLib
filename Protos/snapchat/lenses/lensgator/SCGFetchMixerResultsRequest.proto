@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/lenses/lensgator/SCGFetchMixerResultsRequest_NamespaceRequest.proto";
+import "snapchat/lenses/lensgator/SCGFetchMixerResultsRequest_CachedItem.proto";
+import "snapchat/lenses/lensgator/SCGMixerRequestParams.proto";
+import "snapchat/lenses/lensgator/SCGMixerUserInfo.proto";
+import "snapchat/lenses/lensgator/SCGFetchMixerResultsRequest_NetworkProfile.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/lens_ranking/context/SCLensRankingPredictedContext.proto";
+import "snapchat/lenses/interactions/SCLensHistoricalInteraction.proto";
+import "com/snap/rtus/proto/RTUSSignal.proto";
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest.proto";
+
+message SCGFetchMixerResultsRequest {
+	repeated snapchat.lenses.lensgator.SCGFetchMixerResultsRequest_NamespaceRequest namespacesArray = 1;
+	repeated snapchat.lenses.lensgator.SCGFetchMixerResultsRequest_CachedItem cachedItemsArray = 2;
+	snapchat.lenses.lensgator.SCGMixerRequestParams requestParams = 3;
+	snapchat.lenses.lensgator.SCGMixerUserInfo userInfo = 4;
+	repeated bytes cachedItemContentIdsArray = 5;
+	snapchat.lenses.lensgator.SCGFetchMixerResultsRequest_NetworkProfile networkProfile = 6;
+	snapchat.core.SCCOREUUID requestId = 7;
+	snapchat.lens_ranking.context.SCLensRankingPredictedContext predictedContext = 8;
+	repeated snapchat.lenses.interactions.SCLensHistoricalInteraction historicalInteractionsArray = 9;
+	com.snap.rtus.proto.RTUSSignal realTimeUserInteractions = 10;
+	snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest debugMixerRequest = 998;
+	bytes debugPayload = 999;
+}

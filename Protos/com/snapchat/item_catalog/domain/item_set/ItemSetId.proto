@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.item_set;
+
+message ItemSetId {
+	string externalId = 1;
+
+	enum ItemSetType {
+		ITEM_SET_TYPE_UNSET = 0;
+		CATALOG = 1;
+		DPA = 2;
+		STORE = 3;
+		STORE_CATEGORY = 4;
+		ORGANIC_LENS = 5;
+		SPONSORED_LENS = 6;
+		ORGANIC_LENS_DOMAIN = 7;
+		SPONSORED_LENS_DOMAIN = 8;
+		FEATURE = 9;
+		AUTOGEN_ORGANIC_LENS = 10;
+		AUTOGEN_ORGANIC_LENS_DOMAIN = 11;
+		GENERIC_ORGANIC_LENS = 12;
+		GENERIC_ORGANIC_LENS_DOMAIN = 13;
+		MERCHANT_PROPERTY = 14;
+		GENERIC_MERCHANT_PROPERTY_LENS = 15;
+		GENERIC_MERCHANT_PROPERTY_LENS_DOMAIN = 16;
+	}
+
+	ItemSetType type = 2;
+}

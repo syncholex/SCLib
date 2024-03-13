@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsTopsnapVolumes.proto";
+import "snapchat/ads/request/schema/SCAdsDpaMetadata.proto";
+import "snapchat/ads/request/schema/SCAdsSwipeSensitivity.proto";
+import "snapchat/ads/request/schema/SCAdsExitEventSwipeInfo.proto";
+import "snapchat/ads/request/schema/SCAdsStickerMetadata.proto";
+import "snapchat/ads/request/schema/SCAdsAdInteraction.proto";
+import "snapchat/ads/request/schema/SCAdsArShoppingExperienceTrack.proto";
+
+message SCAdsCommonSnapAdImpressionTrack {
+	google.protobuf.GPBFloatValue topsnapTimeViewedSeconds = 1;
+	google.protobuf.GPBFloatValue topsnapMediaDurationSeconds = 2;
+	google.protobuf.GPBFloatValue longformTimeViewedSeconds = 3;
+	google.protobuf.GPBBoolValue swiped = 4;
+	google.protobuf.GPBInt64Value deltaBetweenReceiveAndRenderMillis = 5;
+	google.protobuf.GPBInt32Value swipeCount = 6;
+	bytes creativeId = 7;
+	google.protobuf.GPBFloatValue topsnapTimeViewedBeforeInteractionSeconds = 8;
+	snapchat.ads.request.schema.SCAdsTopsnapVolumes topsnapVolumes = 9;
+	google.protobuf.GPBFloatValue topsnapMaxContinuousTimeViewedSeconds = 10;
+	google.protobuf.GPBFloatValue topsnapAudibleTimeViewedSeconds = 11;
+
+	enum SCAdsTopsnapMediaType {
+		UNKNOWN_TOPSNAP_MEDIA_TYPE = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		WEBVIEW = 3;
+	}
+
+	SCAdsTopsnapMediaType topsnapMediaType = 12;
+	google.protobuf.GPBBoolValue wasPrefetched = 13;
+	google.protobuf.GPBFloatValue unskippableDurationSeconds = 14;
+	google.protobuf.GPBFloatValue unskippableViewTimeSeconds = 15;
+
+	enum SCAdsSkippableType {
+		SKIPPABLE_TYPE_UNKNOWN = 0;
+		SKIPPABLE_TYPE_NONE = 1;
+		SKIPPABLE_TYPE_PARTIAL = 2;
+		SKIPPABLE_TYPE_FULL = 3;
+	}
+
+	SCAdsSkippableType adSkippableType = 16;
+	google.protobuf.GPBBoolValue fatalMediaLoadError = 17;
+	google.protobuf.GPBBoolValue wasBoosted = 18;
+	google.protobuf.GPBInt32Value autoEndCardInteractionCount = 19;
+	snapchat.ads.request.schema.SCAdsDpaMetadata dpa = 20;
+	google.protobuf.GPBInt32Value autoEndCardViewedCount = 21;
+	google.protobuf.GPBInt64Value adResponseParseCompleteTsMs = 22;
+	google.protobuf.GPBInt64Value adInsertionCompleteTsMs = 23;
+	google.protobuf.GPBInt64Value topsnapFullyPresentTsMs = 24;
+	google.protobuf.GPBInt64Value ctaInteractableTsMs = 25;
+	google.protobuf.GPBInt64Value attachmentPageLoadedTsMs = 26;
+	google.protobuf.GPBInt64Value attachmentTriggeredTsMs = 27;
+	google.protobuf.GPBInt64Value attachmentFullyPresentedTsMs = 28;
+	google.protobuf.GPBInt64Value attachmentDismissTriggerTsMs = 29;
+	google.protobuf.GPBInt64Value topsnapDimissTriggerTsMs = 30;
+	google.protobuf.GPBInt64Value ctaWillDisplayTsMs = 31;
+	google.protobuf.GPBInt64Value ctaDidDisplayTsMs = 32;
+	google.protobuf.GPBInt64Value topsnapPlaybackBeginTsMs = 33;
+
+	enum SCAdsAdAttachmentType {
+		AD_ATTACHMENT_TYPE_UNSET = 0;
+		NO_AD_ATTACHMENT = 1;
+		AD_ATTACHMENT_TYPE_LONGFORM_VIDEO = 2;
+		AD_ATTACHMENT_TYPE_REMOTE_WEBVIEW = 3;
+		AD_ATTACHMENT_TYPE_APP_INSTALL = 4;
+		AD_ATTACHMENT_TYPE_DEEP_LINK = 5;
+		AD_ATTACHMENT_TYPE_AD_TO_CALL = 6;
+		AD_ATTACHMENT_TYPE_AD_TO_LENS = 7;
+		AD_ATTACHMENT_TYPE_AD_TO_MESSAGE = 8;
+		AD_ATTACHMENT_TYPE_DEFAULT_BROWSER = 9;
+		AD_ATTACHMENT_TYPE_AD_TO_PLACE = 10;
+		AD_ATTACHMENT_TYPE_LEAD_GENERATION = 11;
+		AD_ATTACHMENT_TYPE_SHOWCASE = 12;
+		AD_ATTACHMENT_TYPE_SURVEY = 13;
+	}
+
+	SCAdsAdAttachmentType preferredAttachmentType = 34;
+
+	enum SCAdsAdAttachmentType {
+		AD_ATTACHMENT_TYPE_UNSET = 0;
+		NO_AD_ATTACHMENT = 1;
+		AD_ATTACHMENT_TYPE_LONGFORM_VIDEO = 2;
+		AD_ATTACHMENT_TYPE_REMOTE_WEBVIEW = 3;
+		AD_ATTACHMENT_TYPE_APP_INSTALL = 4;
+		AD_ATTACHMENT_TYPE_DEEP_LINK = 5;
+		AD_ATTACHMENT_TYPE_AD_TO_CALL = 6;
+		AD_ATTACHMENT_TYPE_AD_TO_LENS = 7;
+		AD_ATTACHMENT_TYPE_AD_TO_MESSAGE = 8;
+		AD_ATTACHMENT_TYPE_DEFAULT_BROWSER = 9;
+		AD_ATTACHMENT_TYPE_AD_TO_PLACE = 10;
+		AD_ATTACHMENT_TYPE_LEAD_GENERATION = 11;
+		AD_ATTACHMENT_TYPE_SHOWCASE = 12;
+		AD_ATTACHMENT_TYPE_SURVEY = 13;
+	}
+
+	SCAdsAdAttachmentType actualAttachmentType = 35;
+	google.protobuf.GPBBoolValue isExternalAttachment = 36;
+	snapchat.ads.request.schema.SCAdsSwipeSensitivity swipeSensitivity = 37;
+	snapchat.ads.request.schema.SCAdsExitEventSwipeInfo exitEventSwipeInfo = 38;
+	repeated snapchat.ads.request.schema.SCAdsStickerMetadata stickerMetadataArray = 39;
+
+	enum SCAdsAdCtaCardType {
+		AD_CTA_TYPE_UNSET = 0;
+		AD_CTA_TYPE_NONE = 1;
+		AD_CTA_TYPE_INFO_CARD = 2;
+		AD_CTA_TYPE_COLLECTION = 3;
+		AD_CTA_TYPE_SK_OVERLAY = 4;
+	}
+
+	SCAdsAdCtaCardType adCtaCardType = 40;
+	snapchat.ads.request.schema.SCAdsAdInteraction adInteraction = 41;
+	google.protobuf.GPBInt32Value attemptSwipeCount = 42;
+	snapchat.ads.request.schema.SCAdsArShoppingExperienceTrack arShoppingExperienceTrack = 43;
+	google.protobuf.GPBFloatValue topsnapTimeViewedSecondsV2 = 44;
+	google.protobuf.GPBFloatValue returnToAppSeconds = 45;
+	google.protobuf.GPBInt32Value attemptSwipeCountAll = 46;
+}

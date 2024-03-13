@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+import "snapchat/data/SCAPbDataFrameStart.proto";
+import "snapchat/data/SCAPbDataEvent.proto";
+
+message SCAPbDataSequentialItem {
+
+	oneof item {
+		snapchat.data.SCAPbDataFrameStart frameStart = 1;
+		snapchat.data.SCAPbDataEvent event = 2;
+	}
+
+}

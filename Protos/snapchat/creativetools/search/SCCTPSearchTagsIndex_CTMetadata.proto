@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+message SCCTPSearchTagsIndex_CTMetadata {
+	bool isExact = 1;
+}

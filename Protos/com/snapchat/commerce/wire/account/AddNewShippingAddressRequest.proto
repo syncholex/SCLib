@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.account;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "com/snapchat/commerce/domain/account/ShippingAddress.proto";
+
+message AddNewShippingAddressRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	com.snapchat.commerce.domain.account.ShippingAddress shippingAddress = 2;
+}

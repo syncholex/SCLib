@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+message ResponseFormat {
+
+	enum ResponseFormat_Type {
+		TYPE_UNSET = 0;
+		TEXT = 1;
+		JSON_OBJECT = 2;
+	}
+
+	ResponseFormat_Type type = 1;
+}

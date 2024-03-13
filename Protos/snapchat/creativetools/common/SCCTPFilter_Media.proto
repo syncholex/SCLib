@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/common/media/SCMEDIAImageSize.proto";
+
+message SCCTPFilter_Media {
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 1;
+	snapchat.common.media.SCMEDIAImageSize size = 2;
+	string URLParams = 3;
+	bool isAnimated = 4;
+}

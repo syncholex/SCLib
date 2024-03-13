@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SilentDisplay.proto";
+import "snapchat/notification/VisibleDisplay.proto";
+import "snapchat/notification/InAppDisplay.proto";
+
+message Display {
+
+	oneof systemDisplay {
+		snapchat.notification.SilentDisplay silentDisplay = 1;
+		snapchat.notification.VisibleDisplay visibleDisplay = 2;
+	}
+
+	snapchat.notification.InAppDisplay inAppDisplay = 3;
+}

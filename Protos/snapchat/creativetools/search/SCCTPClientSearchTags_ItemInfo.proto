@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem_Entity.proto";
+
+message SCCTPClientSearchTags_ItemInfo {
+	repeated string tagsArray = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem_Entity entity = 2;
+}

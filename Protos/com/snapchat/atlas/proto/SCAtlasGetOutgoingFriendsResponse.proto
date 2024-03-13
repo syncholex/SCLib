@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.proto;
+
+import "com/snapchat/atlas/proto/SCAtlasOutgoingFriend.proto";
+import "com/snapchat/atlas/proto/SCAtlasExtraFriendmoji.proto";
+
+message SCAtlasGetOutgoingFriendsResponse {
+	repeated com.snapchat.atlas.proto.SCAtlasOutgoingFriend outgoingFriendsArray = 1;
+	repeated com.snapchat.atlas.proto.SCAtlasExtraFriendmoji extraMutableFriendmojisArray = 2;
+	repeated com.snapchat.atlas.proto.SCAtlasExtraFriendmoji extraReadOnlyFriendmojisArray = 3;
+}

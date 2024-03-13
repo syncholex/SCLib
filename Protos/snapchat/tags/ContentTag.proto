@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.tags;
+
+message ContentTag {
+
+	enum ContentTag_ContentTagType {
+		UNKNOWN = 0;
+		SNAPCHAT_CONTENT_CATEGORY = 1;
+		MANUAL = 2;
+		WIKI = 3;
+		SPOTLIGHT_EXTENDED_SCC = 4;
+		REJECTION_REASONS = 5;
+	}
+
+	ContentTag_ContentTagType type = 1;
+	string value = 2;
+
+	enum ContentTag_ContentTagProducer {
+		UNSET = 0;
+		EXTERNAL_PARTNER = 1;
+		INTERNAL_CURATOR = 2;
+		AUTOMATIC = 4;
+	}
+
+	ContentTag_ContentTagProducer producedBy = 3;
+}

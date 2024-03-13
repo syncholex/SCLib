@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema.device;
+
+import "snapchat/ads/request/schema/device/SCAdsScreenDimension.proto";
+
+message SCAdsDeviceInfo {
+	snapchat.ads.request.schema.device.SCAdsScreenDimension screenDimension = 1;
+}

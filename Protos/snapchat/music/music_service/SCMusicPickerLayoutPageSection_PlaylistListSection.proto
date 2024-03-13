@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_PlaylistListSection_Entry.proto";
+
+message SCMusicPickerLayoutPageSection_PlaylistListSection {
+	repeated snapchat.music.music_service.SCMusicPickerLayoutPageSection_PlaylistListSection_Entry entriesArray = 1;
+}

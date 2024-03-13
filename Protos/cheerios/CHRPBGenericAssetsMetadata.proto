@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBAsset.proto";
+
+message CHRPBGenericAssetsMetadata {
+	string fileIdentifier = 1;
+	cheerios.CHRPBAsset asset = 2;
+	uint32 size = 3;
+}

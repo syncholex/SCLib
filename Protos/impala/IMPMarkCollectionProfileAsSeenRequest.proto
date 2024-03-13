@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPMarkCollectionProfileAsSeenRequest {
+	string userId = 1;
+	string owningCollectionId = 2;
+	int64 clientTimestampMs = 3;
+}

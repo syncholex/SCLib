@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/communityorg/SCCommunityOrgPbBitmojiFashion.proto";
+
+message SCCommunityOrgPbGetCommunityPublicMetadataResponse {
+	repeated ranking.core.SCSCOREUUID friendMembersArray = 1;
+	uint32 membersCount = 2;
+	int64 latestPostTimestampsMs = 3;
+	ranking.communityorg.SCCommunityOrgPbBitmojiFashion bitmojiFashion = 4;
+}

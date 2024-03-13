@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+import "com/snapchat/auth/proto/TfaVerifiedDevice.proto";
+
+message EnableSmsTfaResponse {
+	string error = 1;
+	com.snapchat.auth.proto.TfaVerifiedDevice tfaVerifiedDevice = 2;
+	string recoveryCode = 3;
+	string metricSafeErrorMessage = 4;
+}

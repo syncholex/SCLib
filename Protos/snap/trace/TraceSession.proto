@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package snap.trace;
+
+import "snap/trace/SessionData.proto";
+import "snap/trace/VarintSpan.proto";
+import "snap/trace/IdEntry.proto";
+import "snap/trace/CounterEntry.proto";
+import "snap/trace/AuxEntry.proto";
+import "snap/trace/NetworkSpan.proto";
+import "snap/trace/PerfLoggerEvent.proto";
+
+message TraceSession {
+	bytes magic = 1;
+	snap.trace.SessionData header = 2;
+	repeated snap.trace.VarintSpan spansArray = 3;
+	repeated snap.trace.VarintSpan asyncSpansArray = 4;
+	repeated snap.trace.IdEntry threadnameSymbolsArray = 5;
+	repeated snap.trace.IdEntry spannameSymbolsArray = 6;
+	repeated snap.trace.CounterEntry countersArray = 7;
+	repeated snap.trace.AuxEntry auxSpansArray = 8;
+	repeated snap.trace.NetworkSpan networkSpansArray = 9;
+	repeated snap.trace.PerfLoggerEvent perfLoggerEventsArray = 10;
+	int64 endTrace = 4500;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories.backup;
+
+message BackupOperationDetailedState_UploadTagsOpData {
+	string snapId = 1;
+	int32 tagVersion = 2;
+	string serializedTagsData = 3;
+}

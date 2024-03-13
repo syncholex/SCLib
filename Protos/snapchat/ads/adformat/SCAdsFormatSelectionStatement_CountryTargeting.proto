@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+message SCAdsFormatSelectionStatement_CountryTargeting {
+
+	enum SCAdsCountryCode {
+		UNKNOWN_COUNTRY_CODE = 0;
+		US = 1;
+		UM = 2;
+		PR = 3;
+		MX = 4;
+		CA = 5;
+		DO = 6;
+		CR = 7;
+		AR = 8;
+		BR = 9;
+		CO = 10;
+		CL = 11;
+		PE = 12;
+		EC = 13;
+		UY = 14;
+		AU = 15;
+		NZ = 16;
+		SG = 17;
+		HK = 18;
+		IN = 19;
+		PH = 20;
+		TH = 21;
+		MY = 22;
+		ID = 23;
+		JP = 24;
+		PK = 25;
+		FR = 26;
+		DE = 27;
+		BE = 28;
+		GB = 29;
+		UK = 30;
+		DK = 31;
+		IE = 32;
+		IT = 33;
+		NL = 34;
+		NO = 35;
+		PL = 36;
+		ES = 37;
+		SE = 38;
+		TR = 39;
+		CH = 40;
+		SA = 41;
+		AE = 42;
+		FI = 43;
+		AT = 44;
+		LU = 45;
+		PT = 46;
+		KW = 47;
+		EG = 48;
+		IL = 49;
+		QA = 50;
+		LB = 51;
+		JO = 52;
+		BH = 53;
+		OM = 54;
+		ZA = 55;
+		BG = 56;
+		HR = 57;
+		CZ = 58;
+		GR = 59;
+		HU = 60;
+		RO = 61;
+		SI = 62;
+		KZ = 63;
+		IQ = 64;
+		PS = 65;
+		RU = 66;
+		TN = 67;
+		DZ = 68;
+		NG = 69;
+		MA = 70;
+		LT = 71;
+		KE = 72;
+		SK = 73;
+		MC = 74;
+		RS = 75;
+	}
+
+	repeated SCAdsCountryCode countryCodeArray = 1 [packed=true];
+}

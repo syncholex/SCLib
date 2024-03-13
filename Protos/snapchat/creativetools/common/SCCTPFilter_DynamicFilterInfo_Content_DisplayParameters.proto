@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextShadow.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown.proto";
+
+message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters {
+	string font = 1;
+	int32 fontSize = 2;
+	int32 maxResizableFontSize = 3;
+	string textColor = 4;
+	float textAlpha = 5;
+
+	enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment {
+		TEXT_ALIGNMENT_UNSET = 0;
+		LEFT = 1;
+		CENTER = 2;
+		RIGHT = 3;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment textAlignment = 6;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextShadow textShadow = 7;
+
+	oneof text {
+		string staticText = 8;
+		snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText dynamicText = 9;
+	}
+
+	string fallbackText = 10;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown dynamicCountdown = 11;
+
+	enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod {
+		FALLBACK_METHOD_UNSET = 0;
+		FALLBACK_TEXT = 1;
+		TRUNCATION = 2;
+		CAROUSEL_REMOVAL = 3;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod fallbackMethod = 12;
+}

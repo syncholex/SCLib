@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingTextAdItem.proto";
+import "snapchat/messaging/SCMessagingAdSharePostbackInfo.proto";
+
+message SCMessagingTextAdShare {
+	repeated snapchat.messaging.SCMessagingTextAdItem itemsArray = 1;
+	string displayQuery = 2;
+	string partner = 3;
+	string partnerRequestId = 4;
+
+	enum SCMessagingBrowserType {
+		BROWSER_TYPE_UNSET = 0;
+		BROWSER_TYPE_INTERNAL = 1;
+		BROWSER_TYPE_EXTERNAL = 2;
+	}
+
+	SCMessagingBrowserType browserType = 5;
+	snapchat.messaging.SCMessagingAdSharePostbackInfo postbackInfo = 6;
+}

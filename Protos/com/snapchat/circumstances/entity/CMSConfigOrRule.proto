@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSConfig.proto";
+import "com/snapchat/circumstances/entity/CMSConfigRule.proto";
+
+message CMSConfigOrRule {
+
+	oneof item {
+		com.snapchat.circumstances.entity.CMSConfig config = 1;
+		com.snapchat.circumstances.entity.CMSConfigRule configRule = 2;
+	}
+
+}

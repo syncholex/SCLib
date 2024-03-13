@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsWebViewLoadInfo.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/ads/request/schema/SCAdsWebViewAutofillInfo.proto";
+
+message SCAdsWebViewContext {
+	bool pageViewGaHit = 1;
+	bool gaHitCounts = 2;
+	int64 domDownloadLatencyMillis = 3;
+	int64 domLoadLatencyMillis = 4;
+	bool hasSubsequentNavigation = 5;
+	bool prefetched = 6;
+	repeated google.protobuf.GPBStringValue gaHitTypesArray = 7;
+	google.protobuf.GPBInt32Value loadProgress = 8;
+	int64 firstContentfulPaintLatency = 9;
+	snapchat.ads.request.schema.SCAdsWebViewLoadInfo webViewLoadInfo = 10;
+	google.protobuf.GPBBoolValue gaIncluded = 11;
+	google.protobuf.GPBInt64Value firstGaTriggerLatency = 12;
+	int32 resourcesPrefetchCount = 13;
+
+	enum SCAdsWebViewPrefetchMode {
+		UNSET = 0;
+		PREDICTIVE = 1;
+		OPT_IN = 2;
+		GA_SCRIPT_ONLY = 3;
+	}
+
+	SCAdsWebViewPrefetchMode prefetchMode = 14;
+	bool openInBrowser = 15;
+	bool landingPageGaPageViewHit = 16;
+	google.protobuf.GPBInt64Value firstPixelTriggerLatency = 17;
+
+	enum SCAdsWebBrowserType {
+		UNSET = 0;
+		SNAP = 1;
+		IN_APP_NATIVE = 2;
+		EXTERNAL = 3;
+	}
+
+	SCAdsWebBrowserType webBrowserType = 18;
+	bool hasJsBasedPerformanceTiming = 19;
+	snapchat.ads.request.schema.SCAdsWebViewAutofillInfo webViewAutofillInfo = 20;
+	google.protobuf.GPBInt64Value firstGaHitTsMs = 21;
+	google.protobuf.GPBInt64Value firstAdobePingTsMs = 22;
+	google.protobuf.GPBInt64Value adobePingCount = 23;
+	google.protobuf.GPBInt64Value htmlPrefetchStartTsMs = 24;
+	google.protobuf.GPBInt64Value htmlPrefetchEndTsMs = 25;
+	bool loadPrefetchedHtml = 26;
+	string rawPerformanceMetrics = 27;
+	bool perfMetricsLoadError = 28;
+	string perfMetricLoadErrorReason = 29;
+	google.protobuf.GPBBoolValue lightningModeEnableServerSetting = 30;
+	google.protobuf.GPBStringValue lightningModeURL = 31;
+	google.protobuf.GPBBoolValue scCidDropDetected = 32;
+
+	enum SCAdsWebViewContext_ExbInAppHtmlResolveStatus {
+		UNSET = 0;
+		SUCCESS = 1;
+		HTML_RESOLVING = 2;
+		HTML_RESOLVE_ERROR = 3;
+		REDIRECT_HINTS_MISMATCH = 4;
+	}
+
+	SCAdsWebViewContext_ExbInAppHtmlResolveStatus exbInAppHtmlResolveStatus = 33;
+	bool exbOpenedOnSubNav = 34;
+	bool deeplinkAttempted = 35;
+	bool detectSnapPixelEvent = 36;
+	bool snapPixelHasCid = 37;
+}

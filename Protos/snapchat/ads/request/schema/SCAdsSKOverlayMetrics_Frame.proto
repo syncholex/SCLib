@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsSKOverlayMetrics_Frame {
+	float originXRelative = 1;
+	float originYRelative = 2;
+	float widthRelative = 3;
+	float heightRelative = 4;
+}

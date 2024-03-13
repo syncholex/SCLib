@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCRecentlyActiveConfig {
+	int32 activeDayThreshold = 1;
+	int32 ttlMinutes = 2;
+	string activeText = 3;
+	bool twoSidedDisable = 4;
+	bool oneSidedDisable = 5;
+	bool forceActivenessWhenActiveStory = 6;
+	bool isTwoSided = 7;
+	bool defaultDisabled = 8;
+}

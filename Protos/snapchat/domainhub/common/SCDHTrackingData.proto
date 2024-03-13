@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/domainhub/common/SCDHAuthority.proto";
+
+message SCDHTrackingData {
+	google.protobuf.GPBTimestamp createdTimestamp = 1;
+	google.protobuf.GPBTimestamp updatedTimestamp = 2;
+	snapchat.domainhub.common.SCDHAuthority createdBy = 4;
+	snapchat.domainhub.common.SCDHAuthority updatedBy = 5;
+}

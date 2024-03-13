@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPHighlight.proto";
+
+message IMPUpdateHighlightResponse {
+	impala.highlights.IMPHighlight highlight = 1;
+}

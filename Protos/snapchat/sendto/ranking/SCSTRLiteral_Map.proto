@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRLiteral.proto";
+
+message SCSTRLiteral_Map {
+	snapchat.sendto.ranking.SCSTRLiteral values = 1;
+}

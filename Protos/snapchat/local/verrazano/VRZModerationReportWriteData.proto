@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceModeration.proto";
+import "snapchat/local/verrazano/VRZModerationReportWriteData_FeedbackTypeValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+
+message VRZModerationReportWriteData {
+
+	enum VRZModerationReportStatus {
+		REPORT_STATUS_UNKNOWN = 0;
+		ACK = 1;
+		WAITING = 2;
+		ACCEPTED = 3;
+		AUTO_ACCEPTED = 4;
+		REJECTED = 5;
+		PENDING = 6;
+		AUTO_REJECTED_SPAM = 7;
+		AUTO_REJECTED_SPAM_NON_VENUE = 8;
+		AUTO_REJECTED_DUPLICATE = 9;
+		AUTO_REJECTED_INVALID = 10;
+		AUTO_REJECTED_INVALID_CLOSED = 11;
+		AUTO_REJECTED_INVALID_INAPPROPRIATE = 12;
+		AUTO_REJECTED_DEDUPE = 13;
+		AUTO_REJECTED_DEDUPE_REPORT = 14;
+		AUTO_REJECTED_SERIALIZATION = 15;
+		AUTO_REJECTED_PROCESSING = 16;
+		AUTO_REJECTED_MAPMYINDIA = 17;
+		AUTO_REJECTED_LOW_QUALITY = 18;
+		AUTO_REJECTED_COALESCED = 19;
+	}
+
+	VRZModerationReportStatus reportStatus = 1;
+	snapchat.local.verrazano.VRZPlaceModeration placeModeration = 2;
+	snapchat.local.verrazano.VRZModerationReportWriteData_FeedbackTypeValue feedbackType = 3;
+	google.protobuf.GPBStringValue placeId = 4;
+	google.protobuf.GPBStringValue allFieldPredictions = 5;
+	google.protobuf.GPBStringValue ticketFieldPredictions = 6;
+	google.protobuf.GPBFloatValue confidenceScore = 7;
+	google.protobuf.GPBStringValue ohsnapTicketModerator = 8;
+	google.protobuf.GPBInt64Value ohsnapTicketCreatedAt = 9;
+	google.protobuf.GPBStringValue ohsnapTicketId = 10;
+	google.protobuf.GPBStringValue ohsnapPayload = 11;
+	google.protobuf.GPBInt64Value moderatedAt = 12;
+	snapchat.local.verrazano.VRZModerationReportWriteData_FeedbackTypeValue modifiedFeedbackType = 13;
+	google.protobuf.GPBBoolValue isPowerModeV2 = 14;
+	snapchat.local.verrazano.VRZPlaceWriteData modifiedWriteData = 15;
+	snapchat.protobuf.SPCPStringListValue duplicateTicketIds = 16;
+	google.protobuf.GPBBoolValue autoAcceptEligibility = 17;
+	google.protobuf.GPBStringValue aggregatedToReportId = 18;
+	google.protobuf.GPBFloatValue priorityScore = 19;
+
+	enum VRZRejectionReason {
+		REJECTION_REASON_UNKNOWN = 0;
+		REJECTION_REASON_NO_RESOURCE_AVAILABLE = 1;
+		REJECTION_REASON_WRONG_SUGGESTIONS = 2;
+		REJECTION_REASON_NO_PHYSICAL_LOCATION = 3;
+		REJECTION_REASON_NO_MAP_PIN = 4;
+		REJECTION_REASON_VENUE_TOO_FAR = 5;
+		REJECTION_REASON_BUSINESS_NOT_CLOSED_INAPPROPRIATE = 6;
+		REJECTION_REASON_BUSINESS_CLOSED_INAPPROPRIATE = 7;
+		REJECTION_REASON_OTHER = 8;
+	}
+
+	VRZRejectionReason rejectionReason = 20;
+	google.protobuf.GPBBoolValue autoAcceptReady = 21;
+}

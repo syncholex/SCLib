@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+message GenerativeContentPickerImagesResizeConfig {
+	bool resizingEnabled = 1;
+	int32 maxImageWidth = 2;
+	int32 maxImageHeight = 3;
+	int32 imageQuality = 4;
+}

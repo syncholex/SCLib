@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message SCCofDecoderEncoderAvailablity {
+	bool isSnapVp9DecoderAvailable = 1;
+	bool isSnapAv1DecoderAvailable = 2;
+}

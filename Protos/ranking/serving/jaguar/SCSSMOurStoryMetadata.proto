@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+import "ranking/serving/jaguar/SCSSMOurStoryMetadata_LensMetaData.proto";
+
+message SCSSMOurStoryMetadata {
+	ranking.serving.jaguar.SCSSMStoryThumbnail storyThumbnail = 1;
+	string title = 2;
+	string category = 3;
+	int64 displayTimestampSecs = 4;
+	string emoji = 5;
+	string displayGeoInfo = 6;
+	string logoURL = 7;
+	int32 totalNumSnaps = 8;
+	double totalDurationSecs = 9;
+	bool isSensitive = 10;
+	bytes adPlacementMetadata = 11;
+	bool isCampusStory = 12;
+	string description_p = 13;
+	string miniProfileTitle = 14;
+	bool isPartnered = 15;
+	string miniProfileIconURL = 16;
+	bool isNews = 17;
+	bool isShareable = 18;
+	ranking.serving.jaguar.SCSSMOurStoryMetadata_LensMetaData lensMetadata = 19;
+}

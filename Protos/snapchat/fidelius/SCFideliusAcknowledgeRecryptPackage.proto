@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusMessageIdentifier.proto";
+import "snapchat/fidelius/SCFideliusRecipientDeviceInfo.proto";
+
+message SCFideliusAcknowledgeRecryptPackage {
+
+	enum SCFideliusAcknowledgeRecryptPackage_RetrySource {
+		RETRY_SOURCE_UNSET = 0;
+		FSN_PULL = 1;
+		FSN_PUSH = 2;
+		PULL = 3;
+		PUSH = 4;
+	}
+
+	SCFideliusAcknowledgeRecryptPackage_RetrySource retrySource = 1;
+
+	enum SCFideliusAcknowledgeRecryptPackage_RetryType {
+		RETRY_TYPE_UNSET = 0;
+		RECIPIENT_KEY_DEFAULT = 1;
+		SHARED_SECRET_DEFAULT = 2;
+		RECIPIENT_KEY_MISSING_MEDIA_KEY = 3;
+		SHARED_SECRET_MISSING_MEDIA_KEY = 4;
+	}
+
+	SCFideliusAcknowledgeRecryptPackage_RetryType retryType = 2;
+	snapchat.fidelius.SCFideliusMessageIdentifier messageId = 3;
+	repeated snapchat.fidelius.SCFideliusRecipientDeviceInfo deviceInfosArray = 4;
+}

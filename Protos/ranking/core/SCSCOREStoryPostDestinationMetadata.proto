@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREMyStoryDestinationMetadata.proto";
+import "ranking/core/SCSCORECustomStoryDestinationMetadata.proto";
+import "ranking/core/SCSCOREOurStoryDestinationMetadata.proto";
+import "ranking/core/SCSCORESnapProStoryDestinationMetadata.proto";
+import "ranking/core/SCSCOREAppStoryDestinationMetadata.proto";
+import "ranking/core/SCSCORESavedStoryDestinationMetadata.proto";
+
+message SCSCOREStoryPostDestinationMetadata {
+
+	oneof destinationMetadata {
+		ranking.core.SCSCOREMyStoryDestinationMetadata myStory = 1;
+		ranking.core.SCSCORECustomStoryDestinationMetadata customStory = 2;
+		ranking.core.SCSCOREOurStoryDestinationMetadata ourStory = 3;
+		ranking.core.SCSCORESnapProStoryDestinationMetadata snapProStory = 4;
+		ranking.core.SCSCOREAppStoryDestinationMetadata appStory = 5;
+		ranking.core.SCSCORESavedStoryDestinationMetadata savedStory = 6;
+	}
+
+	bytes messagingDestinationId = 7;
+}

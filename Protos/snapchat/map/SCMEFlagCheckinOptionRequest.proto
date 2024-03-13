@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/local/verrazano/VRZPlaceModeration.proto";
+
+message SCMEFlagCheckinOptionRequest {
+	string id_p = 1;
+
+	enum SCMECheckinOptionType {
+		UNKNOWN_OPTION_TYPE = 0;
+		LOCATION_OPTION_TYPE = 1;
+		MOOD_OPTION_TYPE = 2;
+		CONTEXTUAL_OPTION_TYPE = 3;
+		CUSTOM_OPTION_TYPE = 4;
+		ACTIONMOJI_OPTION_TYPE = 5;
+	}
+
+	SCMECheckinOptionType type = 2;
+	string creatorUserId = 3;
+
+	enum SCMEFlagCheckinOptionRequest_FeedbackType {
+		EDIT_NAME = 0;
+		IS_CLOSED = 1;
+		IS_INAPPROPRIATE = 2;
+		FTI_FENCE = 3;
+		SUGGEST_NEARBY = 4;
+	}
+
+	SCMEFlagCheckinOptionRequest_FeedbackType feedbackType = 4;
+	double lat = 5;
+	double lng = 6;
+	double accuracy = 7;
+	int32 rank = 8;
+	string feedbackValue = 9;
+	snapchat.local.verrazano.VRZPlaceModeration placeModeration = 10;
+}

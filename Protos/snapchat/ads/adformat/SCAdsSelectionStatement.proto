@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/adformat/SCAdsSelectionStatement_ScalarSelectionRule.proto";
+import "snapchat/ads/adformat/SCAdsSelectionStatement_SelectionStatements.proto";
+import "snapchat/ads/adformat/SCAdsSelectionStatement.proto";
+
+message SCAdsSelectionStatement {
+
+	oneof selectionClause {
+		snapchat.ads.adformat.SCAdsSelectionStatement_ScalarSelectionRule scalar = 1;
+		snapchat.ads.adformat.SCAdsSelectionStatement_SelectionStatements all = 2;
+		snapchat.ads.adformat.SCAdsSelectionStatement_SelectionStatements any = 3;
+		snapchat.ads.adformat.SCAdsSelectionStatement not_p = 4;
+	}
+
+}

@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKNrfDebugReport_AmbaError_AmbaAssertFailure {
+	string functionName = 1;
+	uint32 lineNumber = 2;
+}

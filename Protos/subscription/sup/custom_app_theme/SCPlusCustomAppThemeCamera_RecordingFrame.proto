@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeColor.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeLinearGradient.proto";
+
+message SCPlusCustomAppThemeCamera_RecordingFrame {
+
+	oneof background {
+		subscription.sup.custom_app_theme.SCPlusCustomAppThemeColor color = 1;
+		subscription.sup.custom_app_theme.SCPlusCustomAppThemeLinearGradient linearGradient = 2;
+	}
+
+}

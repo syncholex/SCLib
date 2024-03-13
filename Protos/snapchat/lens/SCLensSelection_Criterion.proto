@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensSelection_Criterion {
+
+	oneof matches {
+		string sourceName = 1;
+		bool sponsored = 2;
+		bool snappable = 3;
+		bool thirdParty = 4;
+		string applicableContext = 5;
+		string namespaceName = 7;
+		bool isShoppingLens = 8;
+		bool isPrecache = 9;
+	}
+
+	bool inverted = 6;
+}

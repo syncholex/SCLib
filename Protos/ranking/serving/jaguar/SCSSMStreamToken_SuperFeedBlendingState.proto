@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStreamToken_DiversificationState_CreatorDiversificationState.proto";
+
+message SCSSMStreamToken_SuperFeedBlendingState {
+	bool shouldNextResponseExcludeFriendsFeed = 1;
+	int32 lastFeedTypeServed = 2;
+	int32 storyCountOfLastFeedTypeServed = 3;
+	ranking.serving.jaguar.SCSSMStreamToken_DiversificationState_CreatorDiversificationState creatorDiversificationState = 4;
+}

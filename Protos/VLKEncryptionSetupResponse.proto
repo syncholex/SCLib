@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+import "VLKEncryptionSetupMessage.proto";
+
+message VLKEncryptionSetupResponse {
+	VLKEncryptionSetupMessage message = 1;
+
+	enum VLKEncryptionSetupResponse_StatusType {
+		SUCCESS = 1;
+		SYSTEM_ERROR = 2;
+		REQUEST_ERROR = 3;
+		NOTIFICATION = 4;
+	}
+
+	VLKEncryptionSetupResponse_StatusType status = 2;
+	string errorMessage = 3;
+
+	enum VLKPairingState {
+		PAIRING_STATE_DEFAULT = 0;
+		PAIRING_STATE_WAITING_FOR_PEER_PUB_KEY = 1;
+		PAIRING_STATE_WAITING_FOR_SHARED_SECRET = 2;
+		PAIRING_STATE_WAITING_FOR_VERIF_MSG = 3;
+		PAIRING_STATE_WAITING_FOR_AUTHENTICATION = 4;
+		PAIRING_STATE_WAITING_FOR_USER_ASSOCIATION = 5;
+		PAIRING_STATE_PAIRED = 6;
+	}
+
+	VLKPairingState pairingState = 4;
+}

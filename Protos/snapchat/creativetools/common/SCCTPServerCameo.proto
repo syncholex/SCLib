@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+import "snapchat/cameos/common/SCCameosCustomTextParameters.proto";
+import "snapchat/cameos/common/SCCameosListOfLenses.proto";
+
+message SCCTPServerCameo {
+	int64 cameoId = 1;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 2 [packed=true];
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 3;
+	snapchat.cameos.common.SCCameosApiVersion minimumApiVersion = 4;
+	int64 cloneGroupId = 5;
+	snapchat.cameos.common.SCCameosCustomTextParameters customTextParametersCollection = 6;
+
+	enum SCCameosCameoStickerType {
+		TYPE_UNSET = 0;
+		REGULAR = 1;
+		INFO = 2;
+		CUSTOM = 3;
+	}
+
+	SCCameosCameoStickerType stickerType = 7;
+	snapchat.cameos.common.SCCameosListOfLenses targetLenses = 8;
+}

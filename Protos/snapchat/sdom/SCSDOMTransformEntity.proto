@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+import "snapchat/grid/SDMTransforms.proto";
+
+message SCSDOMTransformEntity {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+	snapchat.grid.SDMTransforms transforms = 3;
+}

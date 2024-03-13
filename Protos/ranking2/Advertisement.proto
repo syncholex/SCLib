@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/AdRendition.proto";
+
+message Advertisement {
+	string adsId = 1;
+	string brandName = 2;
+	string headline = 3;
+	string targetCountryCode = 4;
+	string campaignId = 5;
+	string campaignName = 6;
+	string attachmentURL = 7;
+	repeated ranking2.AdRendition renditionsArray = 8;
+	int64 startTimestampSecs = 9;
+	int64 endTimestampSecs = 10;
+}

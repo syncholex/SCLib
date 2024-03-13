@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCTA_Zones.proto";
+import "snapchat/context2/iz/SCCTXCTA_Gradient.proto";
+import "snapchat/context2/iz/SCCTXCTA_Arrow.proto";
+import "snapchat/context2/iz/SCCTXUserIdentity.proto";
+
+message SCCTXCTA {
+	snapchat.context2.iz.SCCTXCTA_Zones zones = 1;
+	snapchat.context2.iz.SCCTXCTA_Gradient gradient = 2;
+	snapchat.context2.iz.SCCTXCTA_Arrow arrow = 3;
+	snapchat.context2.iz.SCCTXUserIdentity user = 4;
+}

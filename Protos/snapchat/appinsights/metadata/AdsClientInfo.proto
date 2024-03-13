@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message AdsClientInfo {
+	string adsId = 1;
+	string adServeItemId = 2;
+}

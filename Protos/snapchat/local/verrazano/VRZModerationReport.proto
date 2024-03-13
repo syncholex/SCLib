@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceModeration.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData.proto";
+
+message VRZModerationReport {
+	string id_p = 1;
+	snapchat.local.verrazano.VRZPlaceModeration placeModeration = 2;
+	string placeId = 3;
+
+	enum VRZPlaceModeration_FeedbackType {
+		EDIT_NAME = 0;
+		IS_CLOSED = 1;
+		IS_INAPPROPRIATE = 2;
+		FTI_FENCE = 3;
+		SUGGEST_NEARBY = 4;
+		BUSINESS_ONBOARDING = 5;
+		SUGGEST_EDIT = 6;
+		EDIT_ADDRESS = 7;
+		EDIT_CATEGORY = 8;
+		EDIT_GEOMETRY = 9;
+		ADD_PLACE = 10;
+		BUSINESS_ONBOARDING_ADD_PLACE = 11;
+		REPORT_DUPLICATE = 12;
+	}
+
+	VRZPlaceModeration_FeedbackType feedbackType = 4;
+
+	enum VRZModerationReportStatus {
+		REPORT_STATUS_UNKNOWN = 0;
+		ACK = 1;
+		WAITING = 2;
+		ACCEPTED = 3;
+		AUTO_ACCEPTED = 4;
+		REJECTED = 5;
+		PENDING = 6;
+		AUTO_REJECTED_SPAM = 7;
+		AUTO_REJECTED_SPAM_NON_VENUE = 8;
+		AUTO_REJECTED_DUPLICATE = 9;
+		AUTO_REJECTED_INVALID = 10;
+		AUTO_REJECTED_INVALID_CLOSED = 11;
+		AUTO_REJECTED_INVALID_INAPPROPRIATE = 12;
+		AUTO_REJECTED_DEDUPE = 13;
+		AUTO_REJECTED_DEDUPE_REPORT = 14;
+		AUTO_REJECTED_SERIALIZATION = 15;
+		AUTO_REJECTED_PROCESSING = 16;
+		AUTO_REJECTED_MAPMYINDIA = 17;
+		AUTO_REJECTED_LOW_QUALITY = 18;
+		AUTO_REJECTED_COALESCED = 19;
+	}
+
+	VRZModerationReportStatus status = 5;
+	int64 createdAt = 6;
+	int64 ohsnapTicketCreatedAt = 7;
+	string ohsnapTicketId = 8;
+	string ohsnapPayload = 9;
+	string ohsnapTicketModerator = 10;
+	int64 moderatedAt = 11;
+	string chainId = 12;
+
+	enum VRZPlaceModeration_ModerationSource {
+		UNKNOWN = 0;
+		FILTER = 1;
+		STICKER = 2;
+		PLACE_PROFILE = 3;
+		ADS_MANAGER = 4;
+		MAP = 5;
+		SETTINGS = 6;
+		ZENLY_UGC = 7;
+		SNAP_BPS = 8;
+		VZ_EXPLORER = 9;
+		INTERNAL_SCRIPTS = 10;
+		INFERRED_EDITS_CLOSED_VENUES = 11;
+		BASEMAP_BUILDING = 12;
+		INFERRED_EDITS_OPEN_HOURS = 13;
+		WEB_CRAWLER_OPEN_AI = 14;
+	}
+
+	VRZPlaceModeration_ModerationSource moderationSource = 13;
+	string ghostUserId = 14;
+	float userScore = 15;
+	string aggregatedTo = 16;
+	float confidenceScore = 17;
+	repeated string duplicateTicketIdsArray = 18;
+	bool autoAcceptEligibility = 19;
+	snapchat.local.verrazano.VRZPlaceWriteData modifiedWriteData = 20;
+	float priorityScore = 21;
+
+	enum VRZRejectionReason {
+		REJECTION_REASON_UNKNOWN = 0;
+		REJECTION_REASON_NO_RESOURCE_AVAILABLE = 1;
+		REJECTION_REASON_WRONG_SUGGESTIONS = 2;
+		REJECTION_REASON_NO_PHYSICAL_LOCATION = 3;
+		REJECTION_REASON_NO_MAP_PIN = 4;
+		REJECTION_REASON_VENUE_TOO_FAR = 5;
+		REJECTION_REASON_BUSINESS_NOT_CLOSED_INAPPROPRIATE = 6;
+		REJECTION_REASON_BUSINESS_CLOSED_INAPPROPRIATE = 7;
+		REJECTION_REASON_OTHER = 8;
+	}
+
+	VRZRejectionReason rejectionReason = 22;
+	bool autoAcceptReady = 23;
+}

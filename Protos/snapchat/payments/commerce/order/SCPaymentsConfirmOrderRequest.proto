@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+message SCPaymentsConfirmOrderRequest {
+	string userId = 1;
+	string orderId = 2;
+	string paymentMethodId = 3;
+	string requestId = 4;
+}

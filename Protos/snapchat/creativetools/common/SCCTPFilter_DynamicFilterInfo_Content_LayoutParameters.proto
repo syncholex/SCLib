@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_Content_LayoutParameters {
+	float xOffset = 1;
+	float yOffset = 2;
+	float width = 3;
+	float height = 4;
+	float rotation = 5;
+	int32 zIndex = 6;
+}

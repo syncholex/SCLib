@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/api/SCCTXAction.proto";
+
+message SCCTXSpotlightPrimaryAction {
+	string title = 1;
+	snapchat.context2.api.SCCTXAction action = 2;
+}

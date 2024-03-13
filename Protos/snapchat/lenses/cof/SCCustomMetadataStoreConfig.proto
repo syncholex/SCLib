@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCCustomMetadataStoreConfig {
+	string namespaceId = 1;
+	int64 cacheTtlSec = 2;
+	int64 memoryCacheLimit = 3;
+	bool includesOtherNamespaces = 4;
+}

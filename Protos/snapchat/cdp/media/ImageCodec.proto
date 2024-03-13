@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+message ImageCodec {
+
+	enum CompressFormat {
+		UNKNOWN_COMPRESS_FORMAT = 0;
+		JPEG = 1;
+		PNG = 2;
+		WEBP = 3;
+	}
+
+	CompressFormat compressFormat = 1;
+
+	enum ImageCodecLibrary {
+		UNKNOWN_IMAGE_CODEC_LIBRARY = 0;
+		ANDROID_NATIVE = 1;
+		LIBJPEG = 2;
+	}
+
+	ImageCodecLibrary imageCodecLibrary = 2;
+}

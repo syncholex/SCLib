@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.useragent;
+
+message SCUserAgentServiceAgent {
+	string id_p = 1;
+	string version = 2;
+}

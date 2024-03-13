@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Sound_Note {
+	int32 cents = 1;
+	string pitchClass = 2;
+	float freq = 3;
+	int32 midi = 4;
+	float midiCents = 5;
+	string noteFull = 6;
+	string noteFullCents = 7;
+	int32 octave = 8;
+}

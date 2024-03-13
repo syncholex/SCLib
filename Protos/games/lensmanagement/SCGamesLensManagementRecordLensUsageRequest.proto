@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package games.lensmanagement;
+
+message SCGamesLensManagementRecordLensUsageRequest {
+	string lensId = 1;
+	string appId = 2;
+
+	enum SCGamesLensManagementPlatform {
+		UNSET = 0;
+		CAMKIT = 1;
+	}
+
+	SCGamesLensManagementPlatform platform = 3;
+}

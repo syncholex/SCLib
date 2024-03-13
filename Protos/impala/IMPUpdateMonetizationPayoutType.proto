@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateMonetizationPayoutType {
+
+	enum IMPMonetizationPayoutType {
+		MONETIZATION_PAYOUT_TYPE_UNKNOWN = 0;
+		MONETIZATION_PAYOUT_TYPE_REVENUE_SHARE = 1;
+		MONETIZATION_PAYOUT_TYPE_FIXED = 2;
+	}
+
+	IMPMonetizationPayoutType val = 1;
+}

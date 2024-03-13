@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSavedStory.proto";
+import "impala/insights/IMPInsightsMetrics.proto";
+
+message IMPInsightsSavedStoryLifetimeInsights {
+	impala.insights.IMPInsightsSavedStory savedStory = 1;
+	repeated impala.insights.IMPInsightsMetrics savedStoryLifetimeInsightsArray = 2;
+}

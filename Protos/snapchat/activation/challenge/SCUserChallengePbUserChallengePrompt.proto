@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.activation.challenge;
+
+message SCUserChallengePbUserChallengePrompt {
+
+	enum SCUserChallengePbUserChallengeType {
+		UNSET = 0;
+		USERNAME = 1;
+		DISPLAY_NAME = 2;
+		BIRTHDAY = 3;
+		VERIFIED_EMAIL = 4;
+	}
+
+	SCUserChallengePbUserChallengeType type = 1;
+	string hint = 2;
+}

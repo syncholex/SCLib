@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+
+message SCSDOMReorderClip {
+	snapchat.sdom.SCSDOMClipIndex sourceClip = 1;
+	snapchat.sdom.SCSDOMClipIndex insertBeforeClip = 2;
+}

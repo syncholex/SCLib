@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+import "snapchat/camera/SCCameraSwitcherConfig_GradientConfig.proto";
+
+message SCCameraSwitcherConfig {
+	bool enabled = 1;
+
+	enum SCCameraSwitcherConfig_DMSwitcherName {
+		DM_SWITCHER_NAME_UNSET = 0;
+		DM_SWITCHER_NAME_CREATE = 1;
+		DM_SWITCHER_NAME_DIRECTOR_MODE = 2;
+		DM_SWITCHER_NAME_SPOTLIGHT = 3;
+		DM_SWITCHER_NAME_VIDEO = 4;
+	}
+
+	SCCameraSwitcherConfig_DMSwitcherName dmSwitcherName = 2;
+	bool showNavigationOnMiniCarousel = 3;
+	bool showLensCloseButtonInCameraSwitcher = 4;
+
+	enum SCCameraSwitcherConfig_CameraSwitcherVersion {
+		CAMERA_SWITCHER_VERSION_UNSET = 0;
+		CAMERA_SWITCHER_VERSION_1 = 1;
+		CAMERA_SWITCHER_VERSION_2 = 2;
+	}
+
+	SCCameraSwitcherConfig_CameraSwitcherVersion switcherVersion = 5;
+	bool showTemplateSwitcher = 6;
+	double navigationResetTimeout = 7;
+
+	enum SCCameraSwitcherConfig_CameraSwitcherDMLabel {
+		CAMERA_SWITCHER_DM_LABEL_UNSET = 0;
+		CAMERA_SWITCHER_DM_LABEL_ALWAYS = 1;
+		CAMERA_SWITCHER_DM_LABEL_ONCE_PER_SESSION = 2;
+		CAMERA_SWITCHER_DM_LABEL_DONT_SHOW = 3;
+	}
+
+	SCCameraSwitcherConfig_CameraSwitcherDMLabel cameraSwitcherDmLabel = 8;
+	bool showDmCameraBackButton = 9;
+	bool adjustMainCameraViewFinderForZoomMode = 10;
+	snapchat.camera.SCCameraSwitcherConfig_GradientConfig arBarBackgroundGradientConfig = 11;
+	bool arBarIconShadowsEnabled = 12;
+	bool arBarTextShadowsEnabled = 13;
+	bool dimNavigationIcons = 14;
+	bool useNewLensAndMemoriesIcons = 15;
+	bool tapAndSwipeAreaOptimizationEnabled = 16;
+	double swipeAreaWidthRatio = 17;
+	double swipeAreaTopSpace = 18;
+	bool navigateToFeedAfterDmCapture = 19;
+	bool importFlowEnabled = 20;
+	int32 totalDmRecordingTime = 21;
+}

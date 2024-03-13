@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message MarketplaceComponents_RecentEventScoreComponents {
+	float score = 1;
+	float cupSccSimilarity = 2;
+	float contentSimilarity = 3;
+	float creatorSimilarity = 4;
+	float clusterIdSimilarity = 5;
+}

@@ -1,0 +1,174 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsUnlockableAttachmentImpression.proto";
+import "snapchat/ads/request/schema/SCAdsLensPerformanceMetrics.proto";
+import "snapchat/ads/request/schema/SCAdsAdFlagData.proto";
+import "snapchat/ads/request/schema/SCAdsLensProductImpressionCollectionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsLensStackImpressionTrack.proto";
+import "snapchat/ads/request/schema/device/SCAdsDeviceInfo.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+
+message SCAdsLensImpressionTrack {
+	google.protobuf.GPBStringValue lensId = 1;
+	google.protobuf.GPBInt64Value totalSwipedViewMillis = 2;
+	google.protobuf.GPBStringValue lensOptionId = 3;
+	google.protobuf.GPBInt64Value swipedOverCount = 4;
+	google.protobuf.GPBBoolValue withSnapSend = 5;
+	google.protobuf.GPBBoolValue withStoryPost = 6;
+	google.protobuf.GPBBoolValue withMemoriesSave = 7;
+	google.protobuf.GPBBoolValue withSelfieCamera = 8;
+	google.protobuf.GPBBoolValue withWorldCamera = 9;
+	google.protobuf.GPBBoolValue isAudioOn = 10;
+	google.protobuf.GPBInt64Value lensIndexPos = 11;
+	bytes encryptedAdTrackData = 12;
+	bytes encryptedSponsoredUnlockableTargetingInfoData = 13;
+	bytes rankingId = 14;
+	bytes rankingData = 15;
+	snapchat.ads.request.schema.SCAdsUnlockableAttachmentImpression attachmentImpression = 16;
+	bytes encGeoData = 17;
+	google.protobuf.GPBBoolValue withAttachmentOpen = 18;
+
+	enum SCAdsAttachmentType {
+		UNKNOWN_ATTACHMENT_TYPE = 0;
+		NO_ATTACHMENT = 1;
+		LONGFORM_VIDEO = 2;
+		REMOTE_WEBVIEW = 3;
+		APP_INSTALL = 4;
+		DEEP_LINK = 5;
+	}
+
+	SCAdsAttachmentType attachmentType = 19;
+	google.protobuf.GPBInt64Value snapSendRecipientCount = 20;
+	google.protobuf.GPBInt64Value snapSendCount = 21;
+	google.protobuf.GPBInt64Value storyPostCount = 22;
+	google.protobuf.GPBInt64Value memoriesSaveCount = 23;
+	google.protobuf.GPBInt64Value captureTimeMillis = 24;
+	google.protobuf.GPBInt64Value postCaptureTimeMillis = 25;
+	google.protobuf.GPBInt64Value maxSwipeTimeMillis = 26;
+	google.protobuf.GPBInt64Value maxContinuousTimeMillis = 27;
+	google.protobuf.GPBInt64Value totalTimeMillis = 28;
+	google.protobuf.GPBInt64Value reactionTimestamp = 29;
+	google.protobuf.GPBInt64Value shareTimestamp = 30;
+	google.protobuf.GPBInt64Value swipeUpTimestamp = 31;
+	google.protobuf.GPBInt64Value saveTimestamp = 32;
+	google.protobuf.GPBInt64Value screenshotTimestamp = 33;
+
+	enum SCAdsLensImpressionTrack_UnlockType {
+		UNKNOWN_UNLOCK_TYPE = 0;
+		NO_UNLOCK = 1;
+		SOCIAL_UNLOCK = 2;
+	}
+
+	SCAdsLensImpressionTrack_UnlockType unlockType = 34;
+	bytes lensCreativeId = 35;
+	google.protobuf.GPBInt64Value firstFaceRenderTimestamp = 36;
+	google.protobuf.GPBInt64Value firstTriggerTimestamp = 37;
+	snapchat.ads.request.schema.SCAdsLensPerformanceMetrics lensPerformanceMetrics = 38;
+	snapchat.ads.request.schema.SCAdsAdFlagData adFlagData = 39;
+	snapchat.ads.request.schema.SCAdsLensProductImpressionCollectionTrack lensProductImpressionCollectionTrack = 40;
+
+	enum SCAdsLensImpressionTrack_LensSource {
+		UNKNOWN = 0;
+		LIVE_CAMERA = 1;
+		POST_CAPTURE = 2;
+	}
+
+	SCAdsLensImpressionTrack_LensSource lensSource = 41;
+	repeated snapchat.ads.request.schema.SCAdsLensStackImpressionTrack stackedImpressionsArray = 42;
+	google.protobuf.GPBBoolValue isCachedBeforeSession = 43;
+	google.protobuf.GPBBoolValue isCachedAfterSession = 44;
+	bytes noFillServeItemId = 45;
+	google.protobuf.GPBInt64Value snapTakenCount = 46;
+	google.protobuf.GPBInt64Value infoClickedCount = 47;
+	google.protobuf.GPBBoolValue withMediaPlayPrecapture = 48;
+	google.protobuf.GPBBoolValue withMediaPlayPostcapture = 49;
+	google.protobuf.GPBBoolValue isRendered = 50;
+	bytes mixerRequestId = 51;
+	google.protobuf.GPBStringValue lensNamespace = 52;
+
+	enum SCULSponsoredUnlockableType {
+		UNKNOWN_SPONSORED_UNLOCKABLE_TYPE = 0;
+		AUDIENCE_FILTERS = 1;
+		ON_DEMAND_UNLOCKABLE = 2;
+		AUDIENCE_LENSES = 3;
+		NATIONAL_LENSES = 4;
+		MANAGED_FILTERS = 5;
+		SPONSORED_COMPANION_LENSES = 6;
+		REACH_AND_FREQUENCY_LENSES = 7;
+		AD_TO_LENS = 8;
+		PLACES_FILTERS = 9;
+		FIRST_LENSES = 10;
+	}
+
+	SCULSponsoredUnlockableType sponsoredType = 53;
+	google.protobuf.GPBStringValue lensSessionId = 54;
+	snapchat.ads.request.schema.device.SCAdsDeviceInfo deviceInfo = 55;
+
+	enum SCULCameraType {
+		CAMERA_TYPE_MAIN_UNSET = 0;
+		CAMERA_TYPE_REPLY = 1;
+		CAMERA_TYPE_CHAT_FEED_PSA = 2;
+		CAMERA_TYPE_SMART_CTA = 3;
+		CAMERA_GROWTH_NOTIFICATION = 4;
+		CAMERA_MASS_SNAP = 5;
+		CAMERA_MASS_CHAT = 6;
+		CAMERA_BILLBOARD_FHP = 7;
+		CAMERA_LENS_ACTIVITY_CENTER = 8;
+	}
+
+	SCULCameraType cameraType = 56;
+	google.protobuf.GPBBoolValue isTrackLoggedIndependently = 57;
+
+	enum SCAdsLensImpressionTrack_TrackType {
+		UNKNOWN_TRACK_TYPE = 0;
+		CAROUSEL_SESSION = 1;
+		INDEPENDENT_LENS_IMPRESSION = 2;
+	}
+
+	SCAdsLensImpressionTrack_TrackType trackType = 58;
+
+	enum SCAdsLensImpressionTrack_ClientTrackLoggingStrategy {
+		UNKNOWN_CLIENT_TRACK_LOGGING_STRATEGY = 0;
+		WITH_CAROUSEL_SESSION = 1;
+		INDEPENDENT_ON_SESSION_END = 2;
+		INDEPENDENT_ON_LENS_EXIT = 3;
+	}
+
+	SCAdsLensImpressionTrack_ClientTrackLoggingStrategy clientTrackLoggingStrategy = 59;
+
+	enum SCAdsLensCarouselImpressionTrack_CarouselExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		SWIPE_LEFT = 1;
+		SWIPE_RIGHT = 2;
+		SWIPE_UP = 3;
+		SWIPE_DOWN = 4;
+		EXIT_CAROUSEL = 5;
+		CAPTURE_SNAP = 6;
+		BACKGROUND_APP = 7;
+		OPEN_SEARCH = 8;
+		OPEN_PROFILE = 9;
+		ADD_FRIENDS = 10;
+		CLICK_CTA = 11;
+		OPEN_SUB_CAROUSEL = 12;
+		CLOSE_SUB_CAROUSEL = 13;
+	}
+
+	SCAdsLensCarouselImpressionTrack_CarouselExitEvent carouselExitEvent = 60;
+
+	enum SCAdsLensImpressionTrack_IndependentLensImpressionTrigger {
+		UNKNOWN_TYPE = 0;
+		LENS_EXIT = 1;
+		SNAP_CAPTURE_SESSION_ENDED = 2;
+		ATTACHMENT_CLOSE = 3;
+	}
+
+	SCAdsLensImpressionTrack_IndependentLensImpressionTrigger independentLensImpressionTrigger = 61;
+	google.protobuf.GPBFloatValue maxScreenPortionRendered = 62;
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 63;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snap.prism.pipeline.rtus;
+
+message SCBlizzardLiteLensPositionTime {
+	int64 relativePosition = 2;
+	double timeOnScreen = 4;
+}

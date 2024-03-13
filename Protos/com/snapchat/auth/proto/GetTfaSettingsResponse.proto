@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+message GetTfaSettingsResponse {
+	bool smsEnabled = 1;
+	bool otpEnabled = 2;
+}

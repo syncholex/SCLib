@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMLayerContainer.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+import "snapchat/snapdoc/SDMLayerProperties.proto";
+import "snapchat/snapdoc/SDMEditCapabilities.proto";
+import "snapchat/sdom/SCSDOMMediaIndex.proto";
+import "google/protobuf/GPBUInt32Value.proto";
+
+message SCSDOMAddEdit {
+	snapchat.sdom.SCSDOMLayerContainer layerContainer = 1;
+
+	oneof editItem {
+		snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemInstance = 2;
+		snapchat.sdom.SCSDOMMediaIndex legacyEditsBlob = 6;
+	}
+
+	snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 3;
+	snapchat.snapdoc.SDMLayerProperties layerProperties = 4;
+	snapchat.snapdoc.SDMEditCapabilities editCapabilities = 5;
+	google.protobuf.GPBUInt32Value replaceEditLayerId = 7;
+}

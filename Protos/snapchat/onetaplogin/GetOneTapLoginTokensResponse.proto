@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.onetaplogin;
+
+import "snapchat/onetaplogin/OneTapLoginTokenDescriptor.proto";
+
+message GetOneTapLoginTokensResponse {
+	repeated snapchat.onetaplogin.OneTapLoginTokenDescriptor tokensArray = 1;
+}

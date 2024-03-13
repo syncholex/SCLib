@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapshots.core;
+
+import "snapchat/snapshots/core/SCSnapshotsPbSnap.proto";
+
+message SCSnapshotsPbSnaps {
+	repeated snapchat.snapshots.core.SCSnapshotsPbSnap snapsArray = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message LensHideState {
+
+	enum LensHideState_State {
+		STATE_UNKNOWN = 0;
+		STATE_HIDDEN = 1;
+		STATE_UNHIDDEN = 2;
+	}
+
+	LensHideState_State state = 1;
+	int64 stateTimestampMsecs = 2;
+	int64 stateExpireTimestampMsecs = 3;
+	string creatorUuid = 4;
+}

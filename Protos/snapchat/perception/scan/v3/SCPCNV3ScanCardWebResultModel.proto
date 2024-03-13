@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3WebResultCell.proto";
+
+message SCPCNV3ScanCardWebResultModel {
+	string header = 1;
+	repeated snapchat.perception.scan.v3.SCPCNV3WebResultCell cellsArray = 2;
+}

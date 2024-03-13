@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPShoppingSticker {
+	uint64 snapItemId = 1;
+	snapchat.core.SCCOREUUID storeId = 2;
+	string stickerTitle = 3;
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+}

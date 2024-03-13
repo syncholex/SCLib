@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHDeleteScanResultsRequestV1 {
+	repeated bytes resultIdsArray = 1;
+}

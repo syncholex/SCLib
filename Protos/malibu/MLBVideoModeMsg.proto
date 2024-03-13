@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBVideoModeMsg {
+
+	enum MLBVideoModeEnum {
+		DEFAULT_MODE = 0;
+		LANDSCAPE_MODE = 1;
+		PORTRAIT_MODE = 2;
+		SQUARE_MODE = 3;
+		EXPLORATION_MODE_1 = 4;
+		EXPLORATION_MODE_2 = 5;
+		EXPLORATION_MODE_3 = 6;
+		EXPLORATION_MODE_4 = 7;
+		EXPLORATION_MODE_5 = 8;
+	}
+
+	MLBVideoModeEnum videoMode = 1;
+}

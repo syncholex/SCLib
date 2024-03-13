@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbWebRedeemGiftCardRequest {
+	string cardNumber = 1;
+	string pinCode = 2;
+	string zipCode = 3;
+}

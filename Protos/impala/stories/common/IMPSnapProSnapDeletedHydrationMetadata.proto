@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.stories.common;
+
+message IMPSnapProSnapDeletedHydrationMetadata {
+	string deleterUserId = 1;
+}

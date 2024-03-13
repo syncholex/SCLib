@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusPasskeyCredentialDescriptor.proto";
+
+message SCJanusPasskeyAuthenticationOptions {
+	string relyingPartyId = 1;
+	bytes nonce = 2;
+	string userVerificationRequirement = 3;
+	repeated snapchat.janus.api.SCJanusPasskeyCredentialDescriptor allowedCredentialsArray = 4;
+	int64 expirationTsMillis = 5;
+}

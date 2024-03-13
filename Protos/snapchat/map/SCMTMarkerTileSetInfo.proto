@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterestSizeEquation.proto";
+
+message SCMTMarkerTileSetInfo {
+	snapchat.map.SCMTPointOfInterestSizeEquation poiSizeEquation = 1;
+}

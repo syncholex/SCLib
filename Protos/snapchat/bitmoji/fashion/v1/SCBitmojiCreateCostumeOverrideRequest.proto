@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiAvatarOptions.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiBitmojiCostumeData.proto";
+
+message SCBitmojiCreateCostumeOverrideRequest {
+
+	oneof kind {
+		snapchat.bitmoji.fashion.v1.SCBitmojiAvatarOptions avatarOptions = 1;
+		snapchat.bitmoji.fashion.v1.SCBitmojiBitmojiCostumeData costumeData = 2;
+	}
+
+
+	enum SCBitmojiAvatarCostumeType {
+		COSTUME_TYPE_UNSET = 0;
+		OUTFIT = 1;
+		GARMENT = 2;
+	}
+
+	SCBitmojiAvatarCostumeType costumeType = 3;
+	string title = 4;
+
+	oneof creator {
+		string creatorName = 5;
+	}
+
+	uint64 inventory = 6;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_BitmojiFilterInfo {
+	string comicId = 1;
+}

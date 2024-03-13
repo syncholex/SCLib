@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterest.proto";
+
+message SCMTMockMapMarkers {
+	repeated snapchat.map.SCMTPointOfInterest mapMarkersArray = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message Transform2D {
+	float offsetX = 1;
+	float offsetY = 2;
+	float rotation = 3;
+	float scaleX = 4;
+	float scaleY = 5;
+}

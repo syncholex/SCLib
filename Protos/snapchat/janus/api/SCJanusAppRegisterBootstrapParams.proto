@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusCofTags.proto";
+import "snapchat/cdp/cof/PartialToken.proto";
+import "snapchat/janus/api/SCJanusFideliusClientInit.proto";
+
+message SCJanusAppRegisterBootstrapParams {
+	snapchat.janus.api.SCJanusCofTags cofTags = 1;
+	snapchat.cdp.cof.PartialToken cofConfigData = 2;
+	snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 3;
+}

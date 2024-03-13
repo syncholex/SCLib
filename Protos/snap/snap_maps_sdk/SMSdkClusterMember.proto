@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkActionType.proto";
+import "snap/snap_maps_sdk/SMSdkSticker.proto";
+import "snap/snap_maps_sdk/SMSdkLocationAnnotation.proto";
+
+message SMSdkClusterMember {
+	string userId = 1;
+	int64 timestamp = 2;
+	repeated snap.snap_maps_sdk.SMSdkActionType actionTypeArray = 3;
+	snap.snap_maps_sdk.SMSdkSticker sticker = 4;
+	float horizontalAccuracyMeters = 5;
+	bool isLiveLocation = 7;
+	int64 liveSessionExpirationMs = 8;
+	bool isLiveSessionIndefinite = 10;
+	repeated snap.snap_maps_sdk.SMSdkLocationAnnotation locationAnnotationsArray = 11;
+}

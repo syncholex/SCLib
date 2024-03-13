@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULLensResponse_Lens.proto";
+
+message SCULLensResponse {
+	repeated snapchat.unlockables.response.schema.SCULLensResponse_Lens lensesArray = 1;
+}

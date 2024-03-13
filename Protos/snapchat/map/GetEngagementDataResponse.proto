@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/EngagementData.proto";
+
+message GetEngagementDataResponse {
+	repeated snapchat.map.EngagementData engagementDataListArray = 1;
+}

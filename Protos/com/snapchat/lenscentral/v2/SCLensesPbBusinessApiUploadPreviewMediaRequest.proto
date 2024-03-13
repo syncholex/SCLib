@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbBusinessApiUploadPreviewMediaRequest {
+	string userId = 1;
+	string lensId = 2;
+	string mediaFileURL = 3;
+}

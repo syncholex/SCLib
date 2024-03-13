@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCPbGenAIDreamRequiresWaitListResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	bool insideWaitList = 2;
+	int32 queuePosition = 3;
+	int32 startPosition = 4;
+}

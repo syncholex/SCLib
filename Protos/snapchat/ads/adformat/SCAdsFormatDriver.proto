@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/adformat/SCAdsConfigValue.proto";
+import "snapchat/ads/adformat/SCAdsCofConfig.proto";
+
+message SCAdsFormatDriver {
+	snapchat.ads.adformat.SCAdsConfigValue defaultValue = 1;
+	repeated snapchat.ads.adformat.SCAdsCofConfig cofTreatmentsArray = 2;
+
+	enum SCAdsExposureFireCondition {
+		EXPOSURE_CONDITION_UNSET = 0;
+		CUSTOM_CLIENT_FIRED = 1;
+	}
+
+	SCAdsExposureFireCondition exposureFireCondition = 3;
+}

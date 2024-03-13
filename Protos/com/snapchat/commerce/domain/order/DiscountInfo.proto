@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+
+message DiscountInfo {
+	bool applicable = 1;
+	com.snapchat.commerce.domain.CurrencyAmount amount = 2;
+
+	enum DiscountInfo_DiscountType {
+		UNSET = 0;
+		PERCENTAGE = 1;
+		FIXED_AMOUNT = 2;
+		FREE_SHIPPING = 3;
+	}
+
+	DiscountInfo_DiscountType discountType = 3;
+	string discountValue = 4;
+	bool automatic = 5;
+}

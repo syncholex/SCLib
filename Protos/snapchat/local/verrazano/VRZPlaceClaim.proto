@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceWriteData.proto";
+
+message VRZPlaceClaim {
+	string vzPlaceId = 1;
+	bool toModerate = 2;
+	snapchat.local.verrazano.VRZPlaceWriteData bpsPlaceWriteData = 3;
+	bool toUpdate = 4;
+	int64 requestTs = 5;
+}

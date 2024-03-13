@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCAccountEmailServicePbUpdateEmailRequest {
+	string requestedEmail = 1;
+
+	enum SCAccountEmailServicePbUpdateEmailRequest_Action {
+		UNSET = 0;
+		CHANGE_EMAIL = 1;
+		RESEND_CONFIRMATION_EMAIL = 2;
+	}
+
+	SCAccountEmailServicePbUpdateEmailRequest_Action action = 2;
+	string blizzardClientId = 3;
+	string persistentAttestationDeviceId = 4;
+	string clientNetworkRequestId = 5;
+}

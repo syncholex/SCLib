@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2UserInfo.proto";
+
+message SCS2StickerReplyRequest {
+	snapchat.search.SCS2CompositeId compId = 1;
+	snapchat.search.SCS2UserInfo userInfo = 2;
+}

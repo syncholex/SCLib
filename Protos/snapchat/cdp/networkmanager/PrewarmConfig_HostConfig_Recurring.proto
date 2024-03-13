@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cdp.networkmanager;
+
+message PrewarmConfig_HostConfig_Recurring {
+	int32 recurringIntervalSec = 1;
+}

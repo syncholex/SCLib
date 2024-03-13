@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPAttachmentStickerMetadata {
+	string attachmentURL = 1;
+	string shortenedURL = 2;
+	string title = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCLocalizedStringSet_String.proto";
+
+message SCLocalizedStringSet {
+	string fallback = 1;
+	repeated snapchat.context.SCLocalizedStringSet_String stringsArray = 2;
+}

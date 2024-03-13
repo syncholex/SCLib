@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message CameraQualityScoreLoggerConfig {
+	bool enableCameraQualityScoreLogger = 1;
+	float sampleRate = 2;
+	bool persistQualityScoreModel = 3;
+	bool persistFaceDetector = 4;
+}

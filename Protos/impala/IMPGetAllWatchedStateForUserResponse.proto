@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPWatchedState.proto";
+
+message IMPGetAllWatchedStateForUserResponse {
+	repeated impala.IMPWatchedState watchedStatesArray = 1;
+	string nextPageId = 2;
+}

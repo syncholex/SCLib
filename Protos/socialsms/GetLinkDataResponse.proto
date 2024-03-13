@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package socialsms;
+
+import "socialsms/ErrorResponse.proto";
+import "socialsms/MediaLinkPayload.proto";
+import "snapchat/invite/common/SCSharingUser.proto";
+
+message GetLinkDataResponse {
+	socialsms.ErrorResponse errorResponse = 1;
+	string linkId = 2;
+
+	enum SocialSmsFeature {
+		FEATURE_UNSET = 0;
+		REGISTRATION_CONTACTS = 1;
+		MEMORIES_LINK_SHARE = 2;
+		FRIEND_REQUEST_NOTIFICATION = 3;
+		PUBLIC_LINK = 4;
+		PUBLIC_LINK_SPOTLIGHT_SNAP = 5;
+		PUBLIC_LINK_DISCOVER_PROFILE = 6;
+		PUBLIC_LINK_LENS = 7;
+		PUBLIC_LINK_USER_PROFILE = 8;
+		PUBLIC_LINK_DISCOVER_EPISODE = 9;
+		PUBLIC_LINK_MAP_STORY = 10;
+		PUBLIC_LINK_PUBLIC_PROFILE = 11;
+		PUBLIC_LINK_PUBLIC_PROFILE_SNAP = 12;
+		SNAP_ANYONE_INVITE = 13;
+		SNAP_ANYONE_FRIEND_REQUEST = 14;
+		SOCIAL_LINK_ANY = 15;
+		FRIEND_INVITE_REGISTRATION = 16;
+		FRIEND_INVITE_ALL_CONTACTS = 17;
+		FRIEND_INVITE_FRIEND_FEED = 18;
+		FRIEND_INVITE_ADD_FRIENDS = 19;
+		FRIEND_INVITE_UNIVERSAL_SEARCH = 20;
+		FRIEND_INVITE_INVITE_FRIENDS_PAGE = 21;
+		CLIENT_MEMORIES_LINK_SHARE = 22;
+		FRIEND_INVITE_SEND_TO = 23;
+		CLIENT_MAIN_CAMERA_LINK_SHARE = 24;
+		FRIEND_INVITE_UNIVERSAL_SEARCH_PRETYPE = 25;
+	}
+
+	SocialSmsFeature feature = 3;
+	string creatorUserId = 4;
+	socialsms.MediaLinkPayload mediaLinkPayload = 5;
+	snapchat.invite.common.SCSharingUser creatorUser = 6;
+
+	enum LinkStatus {
+		LINK_STATUS_UNSET = 0;
+		PENDING = 1;
+		ACTIVE = 2;
+	}
+
+	LinkStatus linkStatus = 7;
+}

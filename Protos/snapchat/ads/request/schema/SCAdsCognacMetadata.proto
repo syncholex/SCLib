@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsCognacMetadata {
+	google.protobuf.GPBStringValue orgId = 1;
+	google.protobuf.GPBStringValue gameId = 2;
+	google.protobuf.GPBStringValue buildId = 3;
+	google.protobuf.GPBStringValue slotId = 4;
+	google.protobuf.GPBStringValue developerFacingRequestId = 5;
+}

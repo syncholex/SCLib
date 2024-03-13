@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message CustomStoryFilter {
+	int64 startTsMs = 1;
+	int64 endTsMs = 2;
+	uint32 limit = 3;
+	ranking.core.SCSCOREUUID userId = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+import "snapchat/bitmoji/api/AvatarData.proto";
+
+message CreateAvatarDataRequest {
+	int64 touVersion = 1;
+	snapchat.bitmoji.api.AvatarData avatarData = 2;
+	string avatarBuilderSessionId = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapmod;
+
+message ContentQualitySubTags {
+	bool suggestiveIsVisual = 1;
+	bool suggestiveIsSubjectMatter = 2;
+	bool sensitiveIsHumanBodyImagery = 3;
+	bool sensitiveIsViolence = 4;
+	bool sensitiveIsHorror = 5;
+	bool sensitiveIsDrugsAlcoholAndTobacco = 6;
+	bool sensitiveIsWeapons = 7;
+	bool sensitiveIsBugsAndAnimals = 8;
+}

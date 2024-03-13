@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusFideliusTentativeWebKey {
+	bytes publicKey = 1;
+	bytes keyPairId = 2;
+	bytes rwk = 3;
+	uint64 version = 4;
+}

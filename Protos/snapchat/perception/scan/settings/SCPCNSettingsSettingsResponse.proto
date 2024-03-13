@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+import "snapchat/perception/scan/settings/SCPCNSettingsSettingsResponse_Section.proto";
+
+message SCPCNSettingsSettingsResponse {
+	repeated snapchat.perception.scan.settings.SCPCNSettingsSettingsResponse_Section sectionsArray = 1;
+}

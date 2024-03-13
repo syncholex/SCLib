@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/discover/PartialPublisherMetadata_BehaviouralMetadata.proto";
+import "snapchat/discover/PartialPublisherMetadata_CreationMetadata.proto";
+import "snapchat/discover/PartialPublisherMetadata_BrandingMetadata.proto";
+import "snapchat/discover/PartialPublisherMetadata_VisibilityMetadata.proto";
+
+message PartialPublisherMetadata {
+	google.protobuf.GPBStringValue businessProfileId = 1;
+	google.protobuf.GPBInt64Value publisherId = 2;
+	snapchat.discover.PartialPublisherMetadata_BehaviouralMetadata behaviouralMetadata = 4;
+	snapchat.discover.PartialPublisherMetadata_CreationMetadata creationMetadata = 5;
+	snapchat.discover.PartialPublisherMetadata_BrandingMetadata brandingMetadata = 6;
+	snapchat.discover.PartialPublisherMetadata_VisibilityMetadata visibilityMetadata = 7;
+}

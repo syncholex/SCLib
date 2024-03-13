@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsGetLensInsightsRequest {
+	string businessId = 1;
+	int32 startIndex = 2;
+	int32 limit = 3;
+
+	enum IMPInsightsLensOrder {
+		LENS_ORDER_UNKNOWN = 0;
+		POPULAR = 1;
+		RECENT = 2;
+	}
+
+	IMPInsightsLensOrder orderBy = 4;
+}

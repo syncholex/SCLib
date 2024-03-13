@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package subscription.sup.upsell_state;
+
+import "subscription/sup/upsell_state/SCUpsellStatePbBumpState.proto";
+
+message SCUpsellStatePbUpsellState {
+	uint32 pageLoads = 1;
+	uint32 impressionCount = 2;
+	uint32 interactionCount = 3;
+
+	enum SCUpsellStatePbUpsellType {
+		UNSET = 0;
+		CUSTOM_APP_ICON = 1;
+		POST_VIEW_EMOJI = 2;
+		PIN_BEST_FRIEND = 3;
+		PLUS_BADGE = 4;
+		STORY_REWATCH = 5;
+		GHOST_TRAILS = 6;
+		CLOSEST_FRIEND_SCORE = 7;
+		PRIORITY_STORY_REPLIES = 8;
+		EXCLUSIVE_PROFILE_BACKGROUNDS = 9;
+		CHAT_WALLPAPERS = 10;
+		GENERATIVE_PROFILE_BACKGROUNDS = 11;
+		MERLIN = 12;
+		STORY_TIMER = 13;
+		STORY_BOOST = 14;
+		APP_THEME = 15;
+		NOTIFICATION_SOUNDS = 16;
+		MERLIN_BIO = 17;
+		MAP_APPEARANCE = 18;
+		DARK_MODE = 19;
+		EXTENDED_BEST_FRIENDS = 20;
+		MAP_APPEARANCE_PETS = 21;
+		MAP_APPEARANCE_CARS = 22;
+		REPLAY_AGAIN = 23;
+		CHAT_EFFECTS = 24;
+		MERLIN_UPGRADE = 25;
+		DEFAULT_TAB = 26;
+		CUSTOM_CHAT_COLORS = 27;
+		FREE_STREAK_RESTORE = 28;
+		AI_CROP_TOOL = 29;
+		AI_MAGIC_CAPTIONS = 30;
+		FREE_DREAMS = 31;
+		DREAMS_EARLY_ACCESS = 32;
+		DREAMS_SKIP_WAITLIST = 33;
+		PEEK_A_PEEK = 34;
+		STREAK_REMINDERS = 35;
+		AI_CAMERA_MODE = 36;
+		SNAPSCORE_MULTIPLIER = 37;
+		EXCLUSIVE_LENSES = 38;
+		STORY_TIMESTAMPS = 39;
+	}
+
+	SCUpsellStatePbUpsellType lastImpressionFeature = 4;
+	uint64 lastImpressionMillis = 5;
+	uint32 lastImpressionPageLoad = 6;
+	uint64 lastInteractionMillis = 7;
+	repeated uint64 completedBumpsArray = 8 [packed=true];
+	subscription.sup.upsell_state.SCUpsellStatePbBumpState currentBump = 9;
+	uint64 currentPeriodFirstImpressionMillis = 10;
+	uint32 currentPeriodImpressions = 11;
+	uint32 currentFeatureImpressions = 12;
+
+	enum SCUpsellStatePbUpsellType {
+		UNSET = 0;
+		CUSTOM_APP_ICON = 1;
+		POST_VIEW_EMOJI = 2;
+		PIN_BEST_FRIEND = 3;
+		PLUS_BADGE = 4;
+		STORY_REWATCH = 5;
+		GHOST_TRAILS = 6;
+		CLOSEST_FRIEND_SCORE = 7;
+		PRIORITY_STORY_REPLIES = 8;
+		EXCLUSIVE_PROFILE_BACKGROUNDS = 9;
+		CHAT_WALLPAPERS = 10;
+		GENERATIVE_PROFILE_BACKGROUNDS = 11;
+		MERLIN = 12;
+		STORY_TIMER = 13;
+		STORY_BOOST = 14;
+		APP_THEME = 15;
+		NOTIFICATION_SOUNDS = 16;
+		MERLIN_BIO = 17;
+		MAP_APPEARANCE = 18;
+		DARK_MODE = 19;
+		EXTENDED_BEST_FRIENDS = 20;
+		MAP_APPEARANCE_PETS = 21;
+		MAP_APPEARANCE_CARS = 22;
+		REPLAY_AGAIN = 23;
+		CHAT_EFFECTS = 24;
+		MERLIN_UPGRADE = 25;
+		DEFAULT_TAB = 26;
+		CUSTOM_CHAT_COLORS = 27;
+		FREE_STREAK_RESTORE = 28;
+		AI_CROP_TOOL = 29;
+		AI_MAGIC_CAPTIONS = 30;
+		FREE_DREAMS = 31;
+		DREAMS_EARLY_ACCESS = 32;
+		DREAMS_SKIP_WAITLIST = 33;
+		PEEK_A_PEEK = 34;
+		STREAK_REMINDERS = 35;
+		AI_CAMERA_MODE = 36;
+		SNAPSCORE_MULTIPLIER = 37;
+		EXCLUSIVE_LENSES = 38;
+		STORY_TIMESTAMPS = 39;
+	}
+
+	repeated SCUpsellStatePbUpsellType impressedFeaturesArray = 13 [packed=true];
+	uint32 currentPeriodInteractions = 14;
+	uint64 currentPeriodFirstInteractionMillis = 15;
+}

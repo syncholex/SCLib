@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstance.proto";
+
+message SCCognacAppInstancesGetAppInstanceResponse {
+	cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+}

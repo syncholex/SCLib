@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.cognac.sticker;
+
+message SCCognacCanvasStickerAsset {
+	bytes imageData = 1;
+	bool isAnimated = 2;
+	bytes cognacAppId = 3;
+	bytes cognacAppShareInfo = 4;
+	bytes cognacAppName = 5;
+
+	enum SCCognacCanvasStickerAsset_CognacAppType {
+		SC_COGNAC_APP_TYPE_MULTIPLAYER_GAME_UNSET = 0;
+		SC_COGNAC_APP_TYPE_LEADERBOARD_GAME = 1;
+		SC_COGNAC_APP_TYPE_MINI = 2;
+	}
+
+	SCCognacCanvasStickerAsset_CognacAppType cognacAppType = 6;
+	bytes cognacIconImageURL = 7;
+}

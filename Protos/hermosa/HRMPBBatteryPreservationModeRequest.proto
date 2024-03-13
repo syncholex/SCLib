@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBatteryPreservationModeRequest {
+
+	enum HRMPBBatteryPreservationModeRequest_Mode {
+		UNKNOWN = 0;
+		DISABLED = 1;
+		ALWAYS_ON = 2;
+		AUTO = 3;
+	}
+
+	HRMPBBatteryPreservationModeRequest_Mode mode = 1;
+}

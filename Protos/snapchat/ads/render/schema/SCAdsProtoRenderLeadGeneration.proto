@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsProtoRenderLeadGeneration_FieldRequest.proto";
+import "snapchat/ads/render/schema/SCAdsProtoRenderLeadGeneration_CustomLegalDisclaimer.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsProtoRenderLeadGeneration {
+	string advertiserFormDescription = 1;
+	repeated snapchat.ads.render.schema.SCAdsProtoRenderLeadGeneration_FieldRequest requestedFieldsArray = 2;
+	string privacyPolicyURL = 3;
+	snapchat.ads.render.schema.SCAdsProtoRenderLeadGeneration_CustomLegalDisclaimer customLegalDisclaimer = 4;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo bannerRenderInfo = 5;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo iconRenderInfo = 6;
+}

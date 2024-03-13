@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesGtqFeaturedLensesNamespaceResponse.proto";
+
+message SCPBUnlockablesGtqFeaturedLensesResponse {
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesGtqFeaturedLensesNamespaceResponse responsesArray = 1;
+}

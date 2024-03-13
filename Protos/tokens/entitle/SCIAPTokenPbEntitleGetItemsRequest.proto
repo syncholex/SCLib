@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package tokens.entitle;
+
+message SCIAPTokenPbEntitleGetItemsRequest {
+	string appId = 1;
+}

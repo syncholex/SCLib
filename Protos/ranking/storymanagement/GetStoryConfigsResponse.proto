@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/StoryPrivacySettings.proto";
+import "ranking/storymanagement/AutoSaveToMemoriesSettings.proto";
+
+message GetStoryConfigsResponse {
+	ranking.storymanagement.StoryPrivacySettings storyPrivacySettings = 2;
+	ranking.storymanagement.AutoSaveToMemoriesSettings autoSaveToMemoriesSettings = 3;
+}

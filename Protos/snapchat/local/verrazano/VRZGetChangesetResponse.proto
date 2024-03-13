@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZChangeset.proto";
+
+message VRZGetChangesetResponse {
+	snapchat.local.verrazano.VRZChangeset changeset = 1;
+}

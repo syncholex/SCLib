@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPAppVersion {
+	int64 major = 1;
+	int64 minor = 2;
+	int64 patch = 3;
+}

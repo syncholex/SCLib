@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message GetSnapElementRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	string snapId = 2;
+}

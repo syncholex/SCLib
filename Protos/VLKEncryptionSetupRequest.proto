@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+import "VLKEncryptionSetupMessage.proto";
+
+message VLKEncryptionSetupRequest {
+	VLKEncryptionSetupMessage message = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensTokenDetails {
+	string accessToken = 1;
+	string tokenType = 2;
+	int64 expiresInSeconds = 3;
+	string refreshToken = 4;
+	string scope = 5;
+}

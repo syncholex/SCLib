@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusVerificationStatus_PhoneVerifyOptions {
+
+	enum SCJanusVerificationStatus_PhoneVerifyOption {
+		OPTION_UNSET = 0;
+		SMS = 1;
+		VOICE = 2;
+		FLASH = 3;
+		DATA_VERIFICATION = 4;
+		WHATSAPP = 5;
+	}
+
+	repeated SCJanusVerificationStatus_PhoneVerifyOption optionsArray = 1 [packed=true];
+}

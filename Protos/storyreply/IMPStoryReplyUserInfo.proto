@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package storyreply;
+
+message IMPStoryReplyUserInfo {
+	string userId = 1;
+	string displayName = 2;
+	string bitmojiAvatarId = 3;
+	string bitmojiSelfieId = 4;
+	bool isOfficial = 5;
+	bool isPlusBadgeEnabled = 6;
+}

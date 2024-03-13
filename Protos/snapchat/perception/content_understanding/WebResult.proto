@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message WebResult {
+	string pageURL = 1;
+	string previewImageURL = 2;
+	string title = 3;
+	string siteName = 4;
+	string domainName = 5;
+	string siteIconURL = 6;
+}

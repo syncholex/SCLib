@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterestSizeEquation.proto";
+import "snapchat/map/SCMTHeatmapGradient.proto";
+
+message SCMTRenderConfig {
+	snapchat.map.SCMTPointOfInterestSizeEquation poiSizeEquation = 1;
+	snapchat.map.SCMTHeatmapGradient heatmapGradient = 2;
+	float heatNormalizationPeak = 3;
+	float fuzzNormalizationPeak = 4;
+	float heatPointBaseRadius = 5;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+message SCGFetchMixerResultsRequest_CachedItem {
+	bytes id_p = 1;
+	bytes checksum = 2;
+
+	enum SCGFetchMixerResultsRequest_CachedItem_CachedItemType {
+		CHECKSUM_LENS_UNSET = 0;
+		CHECKSUM_FILTER = 1;
+	}
+
+	SCGFetchMixerResultsRequest_CachedItem_CachedItemType type = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateProfileTier {
+
+	enum IMPBusinessProfile_ProfileTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	IMPBusinessProfile_ProfileTier val = 1;
+}

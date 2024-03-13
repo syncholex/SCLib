@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbSnap3DData {
+	bool allowZippedMedia = 1;
+}

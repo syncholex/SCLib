@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBEncryptionNonceExchange {
+	bytes nonce = 1;
+
+	enum CHRPBEncryptionNonceExchange_CommChannelType {
+		COMM_CHANNEL_BLE_QCA = 2;
+		COMM_CHANNEL_WIFI_QCA = 3;
+		COMM_CHANNEL_BTC_QCA = 4;
+		COMM_CHANNEL_HOST_TO_DEVICE = 16;
+	}
+
+	CHRPBEncryptionNonceExchange_CommChannelType channelId = 2;
+}

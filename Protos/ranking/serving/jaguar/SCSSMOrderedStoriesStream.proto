@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryCard.proto";
+
+message SCSSMOrderedStoriesStream {
+	bytes streamToken = 1;
+	int32 startOffset = 2;
+	repeated ranking.serving.jaguar.SCSSMStoryCard cardsArray = 3;
+}

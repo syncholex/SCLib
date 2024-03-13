@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/local/lists/VRZFriendListItem.proto";
+
+message VRZGetFriendsWithFavoritesResponse {
+	repeated snapchat.local.lists.VRZFriendListItem friendListItemsArray = 1;
+}

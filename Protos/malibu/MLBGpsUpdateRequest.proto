@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBGpsUpdateRequest {
+	int32 latitude = 1;
+	int32 longitude = 2;
+	uint32 horizontalAccuracy = 3;
+}

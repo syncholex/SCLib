@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGArSegmentationFilter_ContextFilterSkyItem {
+	string uuid = 1;
+	string URL = 2;
+	string skyType = 3;
+	string styleType = 4;
+	float colorBrightness = 5;
+	string replacementSkyURL = 6;
+	string blimpURL = 7;
+}

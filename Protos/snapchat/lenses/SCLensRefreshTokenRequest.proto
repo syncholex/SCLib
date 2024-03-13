@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensRefreshTokenRequest {
+	string apiSpecId = 1;
+	string refreshToken = 2;
+}

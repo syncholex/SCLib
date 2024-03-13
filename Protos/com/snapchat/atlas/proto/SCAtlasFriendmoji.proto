@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.proto;
+
+message SCAtlasFriendmoji {
+	string categoryName = 1;
+	int64 expirationTime = 2;
+}

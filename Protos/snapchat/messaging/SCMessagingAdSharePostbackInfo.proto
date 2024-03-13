@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingAdSharePostbackInfo {
+	string visibilityFeedbackURL = 1;
+	string pageLoadPingURL = 2;
+	string pingURLBase = 3;
+}

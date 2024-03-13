@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinOptionRankingSignals.proto";
+
+message SCMEAddCheckinRequest {
+	double lat = 1;
+	double lng = 2;
+	double radiusMeters = 3;
+	string checkinLocationId = 4;
+	string checkinStickerId = 5;
+	string customText = 6;
+
+	enum SCMECheckinOptionType {
+		UNKNOWN_OPTION_TYPE = 0;
+		LOCATION_OPTION_TYPE = 1;
+		MOOD_OPTION_TYPE = 2;
+		CONTEXTUAL_OPTION_TYPE = 3;
+		CUSTOM_OPTION_TYPE = 4;
+		ACTIONMOJI_OPTION_TYPE = 5;
+	}
+
+	SCMECheckinOptionType optionType = 7;
+	string locationCreatorUserId = 8;
+	bool ghostMode = 9;
+	double altitudeMeters = 10;
+	snapchat.map.SCMECheckinOptionRankingSignals rankingSignals = 11;
+
+	enum SCMEAddCheckinSourceType {
+		UNKNOWN_SOURCE_TYPE = 0;
+		VENUE_FILTER = 1;
+		LOCATION_STICKER = 2;
+		MAP_STATUS = 3;
+		STORY_POST = 4;
+	}
+
+	SCMEAddCheckinSourceType sourceType = 12;
+}

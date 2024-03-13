@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abusedecision;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCAbuseDecisionRequestIds {
+	snapchat.core.SCCOREUUID janusRequestId = 1;
+	string loginFlowSessionId = 2;
+	string registrationFlowSessionId = 3;
+	string clientNetworkRequestId = 4;
+}

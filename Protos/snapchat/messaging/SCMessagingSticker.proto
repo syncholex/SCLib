@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingIncludedSticker.proto";
+import "snapchat/messaging/SCMessagingCustomSticker.proto";
+
+message SCMessagingSticker {
+
+	oneof sticker {
+		snapchat.messaging.SCMessagingIncludedSticker included = 1;
+		snapchat.messaging.SCMessagingCustomSticker custom = 2;
+		string emoji = 3;
+	}
+
+}

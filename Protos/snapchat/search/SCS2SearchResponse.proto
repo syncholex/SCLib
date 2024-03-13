@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Section.proto";
+import "snapchat/search/SCS2ServiceDebug.proto";
+
+message SCS2SearchResponse {
+	repeated snapchat.search.SCS2Section sectionsArray = 1;
+	string debugHtml = 2;
+	snapchat.search.SCS2ServiceDebug serviceDebug = 3;
+	bytes sectionToSectionPageToken = 4;
+}

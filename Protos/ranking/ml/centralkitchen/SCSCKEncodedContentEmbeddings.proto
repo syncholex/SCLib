@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKEncodedEmbedding.proto";
+
+message SCSCKEncodedContentEmbeddings {
+	repeated ranking.ml.centralkitchen.SCSCKEncodedEmbedding encodedClipEmbeddingArray = 1;
+	repeated ranking.ml.centralkitchen.SCSCKEncodedEmbedding encodedSccEmbeddingArray = 2;
+}

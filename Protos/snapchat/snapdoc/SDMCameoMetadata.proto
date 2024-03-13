@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/cameos/common/SCCameosListOfLenses.proto";
+import "snapchat/cameos/common/SCCameosCameoBoltContentObject.proto";
+import "snapchat/creativetools/common/SCCTPLens.proto";
+
+message SDMCameoMetadata {
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 1 [packed=true];
+	snapchat.cameos.common.SCCameosListOfLenses targetLenses = 2;
+	snapchat.cameos.common.SCCameosCameoBoltContentObject asset = 3;
+	snapchat.creativetools.common.SCCTPLens lens = 4;
+}

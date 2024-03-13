@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileIdentifiers.proto";
+import "impala/IMPProfileDisplayInfo.proto";
+import "impala/IMPProfileStats.proto";
+import "impala/IMPProfileVisibility.proto";
+import "impala/IMPProfileAttribution.proto";
+import "impala/IMPProfileContents.proto";
+
+message IMPProfileData {
+	impala.IMPProfileIdentifiers identifiers = 1;
+	impala.IMPProfileDisplayInfo displayInfo = 2;
+	impala.IMPProfileStats stats = 3;
+	impala.IMPProfileVisibility visibility = 4;
+	impala.IMPProfileAttribution attribution = 5;
+	impala.IMPProfileContents contents = 100;
+}

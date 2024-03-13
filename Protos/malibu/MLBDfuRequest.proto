@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBDfuRequest {
+
+	enum MLBDfuRequest_DfuType {
+		UPDATE = 0;
+		RECOVER = 1;
+		RECOVER_NO_ERASE = 2;
+	}
+
+	MLBDfuRequest_DfuType dfuType = 1;
+}

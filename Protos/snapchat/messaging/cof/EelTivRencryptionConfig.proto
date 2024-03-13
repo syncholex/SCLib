@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EelTivRencryptionConfig {
+	bool enableReencryptionRequest = 1;
+	uint32 waitForReencryptionDialogTimeoutMs = 2;
+}

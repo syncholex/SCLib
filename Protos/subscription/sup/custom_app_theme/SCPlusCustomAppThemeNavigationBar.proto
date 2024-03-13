@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeSIGColor.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeNotificationBadge.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeNavigationBar_LinearGradientWrapper.proto";
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeNavigationBar_RemoteImageWrapper.proto";
+
+message SCPlusCustomAppThemeNavigationBar {
+
+	oneof background {
+		subscription.sup.custom_app_theme.SCPlusCustomAppThemeSIGColor backgroundColor = 1;
+		subscription.sup.custom_app_theme.SCPlusCustomAppThemeNavigationBar_LinearGradientWrapper linearGradient = 4;
+		subscription.sup.custom_app_theme.SCPlusCustomAppThemeNavigationBar_RemoteImageWrapper remoteImage = 5;
+	}
+
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeSIGColor selectedTabColor = 2;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeNotificationBadge notificationBadge = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2BitmojiUserInfo.proto";
+
+message SCS2Group_Participant {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	snapchat.search.SCS2BitmojiUserInfo bitmojiUserInfo = 4;
+	string mutableUsername = 5;
+}

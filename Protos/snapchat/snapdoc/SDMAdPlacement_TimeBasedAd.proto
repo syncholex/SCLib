@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMAdPlacement_TimeBasedAd {
+	float adPlacementTimeSec = 1;
+}

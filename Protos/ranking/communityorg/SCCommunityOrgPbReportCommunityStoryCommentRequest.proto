@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbCommunityStoryCommentReport.proto";
+
+message SCCommunityOrgPbReportCommunityStoryCommentRequest {
+	ranking.communityorg.SCCommunityOrgPbCommunityStoryCommentReport report = 1;
+}

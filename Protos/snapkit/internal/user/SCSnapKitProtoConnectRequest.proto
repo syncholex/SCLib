@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoConnectRequest {
+	string oAuthClientId = 1;
+	repeated string featuresArray = 2;
+	string requestIdHash = 3;
+	string termsVersion = 4;
+}

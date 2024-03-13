@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoAppStoryMetadata.proto";
+import "snapkit/internal/user/SCSnapKitProtoScope.proto";
+import "google/protobuf/GPBTimestamp.proto";
+import "snapkit/internal/user/SCSnapKitProtoKitFeatureItem.proto";
+
+message SCSnapKitProtoConnection {
+	string applicationId = 1;
+	snapkit.internal.user.SCSnapKitProtoAppStoryMetadata appStoryMetadata = 2;
+	string applicationName = 3;
+	string applicationIconURL = 4;
+	repeated snapkit.internal.user.SCSnapKitProtoScope scopesApprovedArray = 5;
+	google.protobuf.GPBTimestamp connectionTimestamp = 6;
+
+	enum SCSnapKitProtoAppContext_Enum {
+		UNKNOWN = 0;
+		SNAP_KIT = 1;
+		SNAP_MINI = 2;
+		SNAP_GAME = 3;
+		LENS = 5;
+	}
+
+	SCSnapKitProtoAppContext_Enum appContext = 7;
+	snapkit.internal.user.SCSnapKitProtoKitFeatureItem featureMap = 8;
+	string namespaceId = 9;
+	bool isConnected = 10;
+	bool hasPrivateStorageData = 11;
+	bool isFirstPartyApp = 12;
+}

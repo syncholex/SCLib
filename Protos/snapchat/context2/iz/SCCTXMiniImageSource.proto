@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+message SCCTXMiniImageSource {
+
+	oneof src {
+		string local = 1;
+		string remote = 2;
+	}
+
+
+	enum SCCTXImageTint {
+		AUTOMATIC = 0;
+		ALWAYS = 1;
+		NEVER = 2;
+	}
+
+	SCCTXImageTint tint = 3;
+}

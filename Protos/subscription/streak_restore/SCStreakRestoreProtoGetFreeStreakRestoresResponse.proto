@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package subscription.streak_restore;
+
+message SCStreakRestoreProtoGetFreeStreakRestoresResponse {
+	uint32 numFreeRestoresLeft = 1;
+	uint32 numFreePlusRestoresLeft = 2;
+}

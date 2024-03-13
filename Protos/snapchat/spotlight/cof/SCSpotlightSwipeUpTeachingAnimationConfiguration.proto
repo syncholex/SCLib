@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCSpotlightSwipeUpTeachingAnimationConfiguration {
+	bool isEnabled = 1;
+	int32 maxLifetimeShowCount = 2;
+	int32 maxShowCountBeforeCooldown = 3;
+	int32 cooldownDays = 4;
+
+	enum SCSpotlightSwipeUpTeachingAnimationConfiguration_OffsetType {
+		UNSET = 0;
+		START = 1;
+		END = 2;
+	}
+
+	SCSpotlightSwipeUpTeachingAnimationConfiguration_OffsetType offsetType = 5;
+	int32 offsetSeconds = 6;
+	int32 bounceCount = 7;
+}

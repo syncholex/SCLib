@@ -1,0 +1,36 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBUninterpretedOption.proto";
+
+message GPBFileOptions {
+	string javaPackage = 1;
+	string javaOuterClassname = 8;
+
+	enum GPBFileOptions_OptimizeMode {
+		SPEED = 1;
+		CODE_SIZE = 2;
+		LITE_RUNTIME = 3;
+	}
+
+	GPBFileOptions_OptimizeMode optimizeFor = 9;
+	bool javaMultipleFiles = 10;
+	string goPackage = 11;
+	bool ccGenericServices = 16;
+	bool javaGenericServices = 17;
+	bool pyGenericServices = 18;
+	bool javaGenerateEqualsAndHash = 20;
+	bool deprecated = 23;
+	bool javaStringCheckUtf8 = 27;
+	bool ccEnableArenas = 31;
+	string objcClassPrefix = 36;
+	string csharpNamespace = 37;
+	string swiftPrefix = 39;
+	string phpClassPrefix = 40;
+	string phpNamespace = 41;
+	bool phpGenericServices = 42;
+	string phpMetadataNamespace = 44;
+	string rubyPackage = 45;
+	repeated google.protobuf.GPBUninterpretedOption uninterpretedOptionArray = 999;
+}

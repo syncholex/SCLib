@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.ar.leprechaun.common;
+
+message ARProductReference {
+	uint64 productId = 1;
+
+	enum ARProductReference_ImportSource {
+		IMPORT_SOURCE_UNSET = 0;
+		PCS = 1;
+		LENS_WEB_BUILDER = 2;
+		LENS_STUDIO = 3;
+	}
+
+	ARProductReference_ImportSource importSource = 2;
+}

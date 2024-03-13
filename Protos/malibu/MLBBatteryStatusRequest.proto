@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBatteryStatusRequest {
+
+	enum MLBBatteryStatusRequest_Type {
+		NEW = 0;
+		CACHED = 1;
+	}
+
+	MLBBatteryStatusRequest_Type requestType = 1;
+
+	enum MLBBatteryStatusRequest_DataType {
+		USER_FACING = 0;
+		RAW_DATA = 1;
+	}
+
+	MLBBatteryStatusRequest_DataType dataType = 2;
+
+	enum MLBBatteryStatusRequest_BatteryTemples {
+		BATTERY_DEFAULT = 0;
+		BATTERY_LEFT = 1;
+		BATTERY_RIGHT = 2;
+	}
+
+	MLBBatteryStatusRequest_BatteryTemples side = 3;
+}

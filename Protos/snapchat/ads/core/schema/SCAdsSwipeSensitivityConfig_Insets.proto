@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.core.schema;
+
+message SCAdsSwipeSensitivityConfig_Insets {
+	double topInset = 1;
+	double rightInset = 2;
+	double bottomInset = 3;
+	double leftInset = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message SCULStickerInfo {
+	int64 unlockableId = 1;
+	int64 stickerId = 2;
+}

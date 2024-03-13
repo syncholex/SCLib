@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+import "ranking/serving/jaguar/SCSSMStoryCard.proto";
+import "ranking/serving/jaguar/SCSSMImpalaStoryMetadata.proto";
+
+message SCSSMPublicUserStoryMetadata {
+	string userId = 1;
+	ranking.serving.jaguar.SCSSMStoryThumbnail storyThumbnail = 2;
+	string displayName = 3;
+	string username = 4;
+	string emoji = 5;
+	bool isPopular = 6;
+	bool isOfficial = 7;
+	string bitmojiAvatarId = 8;
+	int32 totalNumSnaps = 9;
+	double totalDurationSecs = 10;
+	bool isFollowed = 11;
+	int64 displayTimestampSecs = 12;
+	string emojiSafe = 13;
+	string bitmojiAvatarSelfieId = 14;
+	repeated ranking.serving.jaguar.SCSSMStoryThumbnail candidateThumbnailsArray = 15;
+	repeated ranking.serving.jaguar.SCSSMStoryCard postSubscribeSuggestionsArray = 16;
+	ranking.serving.jaguar.SCSSMImpalaStoryMetadata impalaStoryMetadata = 17;
+	int32 brandFriendliness = 18;
+	repeated string followerLanguagesArray = 20;
+	repeated string followerCountriesArray = 21;
+}

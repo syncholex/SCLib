@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.profile.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGarment.proto";
+
+message SCBitmojiAvatarMetadata {
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiGarment ugcGarmentArray = 1;
+}

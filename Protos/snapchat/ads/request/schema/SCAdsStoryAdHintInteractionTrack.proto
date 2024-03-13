@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsStoryAdHintInteractionTrack {
+	google.protobuf.GPBInt32Value expandButtonSnapIndex = 1;
+	google.protobuf.GPBBoolValue expandButtonTapped = 2;
+}

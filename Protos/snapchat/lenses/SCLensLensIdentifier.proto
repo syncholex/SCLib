@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensLensHydrationContext.proto";
+
+message SCLensLensIdentifier {
+	string lensId = 1;
+	snapchat.lenses.SCLensLensHydrationContext hydrationContext = 2;
+}

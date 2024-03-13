@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensGetOAuth2InfoRequest {
+	string apiSpecId = 1;
+}

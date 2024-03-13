@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2InfluencerRecommendationResponse_InfluencerInfo {
+	string userName = 1;
+	string userId = 2;
+	int64 followerCount = 3;
+	double storyQuality = 4;
+	string debugStr = 5;
+}

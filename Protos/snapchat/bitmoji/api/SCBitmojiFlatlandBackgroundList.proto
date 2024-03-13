@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+import "snapchat/bitmoji/api/SCBitmojiBackgroundDetail.proto";
+
+message SCBitmojiFlatlandBackgroundList {
+	int32 version = 1;
+	repeated int32 backgroundIdsArray = 2 [packed=true];
+	repeated int32 newBackgroundIdsArray = 3 [packed=true];
+	snapchat.bitmoji.api.SCBitmojiBackgroundDetail backgroundDetails = 4;
+}

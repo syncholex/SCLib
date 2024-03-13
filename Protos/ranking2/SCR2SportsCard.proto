@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2SportsGame.proto";
+import "ranking2/SCR2StoryCard.proto";
+
+message SCR2SportsCard {
+	ranking2.SCR2SportsGame sportsGame = 1;
+	ranking2.SCR2StoryCard storyCard = 2;
+}

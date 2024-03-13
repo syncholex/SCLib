@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "com/snapchat/lenscentral/v2/SCLensesPbPublishGenericShoppingLensRequest_LensGcsLink.proto";
+
+message SCLensesPbPublishGenericShoppingLensRequest {
+	string name = 1;
+	string attributionUserId = 2;
+	com.snapchat.lenscentral.v2.SCLensesPbPublishGenericShoppingLensRequest_LensGcsLink lensGcsLink = 3;
+	repeated string bbgInternalTagsArray = 4;
+}

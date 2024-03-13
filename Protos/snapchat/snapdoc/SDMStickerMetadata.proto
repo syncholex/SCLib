@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMStickerMetadata {
+	string stickerId = 1;
+	float width = 2;
+	float height = 3;
+	float centerX = 4;
+	float centerY = 5;
+
+	enum SDMStickerMetadata_StickerType {
+		STICKER_TYPE_UNKNOWN = 0;
+		STICKER_TYPE_SNAPCHAT = 1;
+		STICKER_TYPE_BITMOJI = 2;
+		STICKER_TYPE_GEOSTICKER = 3;
+		STICKER_TYPE_EMOJI = 4;
+		STICKER_TYPE_CUSTOM_STICKER = 5;
+		STICKER_TYPE_BITMOJI_LENS = 6;
+		STICKER_TYPE_UNLOCKABLE_STICKER = 7;
+		STICKER_TYPE_GIPHY = 8;
+		STICKER_TYPE_SNAP_CONNECT = 10;
+		STICKER_TYPE_GAME_SNIPPET = 11;
+		STICKER_TYPE_TOPIC = 12;
+		STICKER_TYPE_CAMEO = 13;
+		STICKER_TYPE_GFYCAT = 14;
+		STICKER_TYPE_SHOPPING = 15;
+	}
+
+	SDMStickerMetadata_StickerType type = 6;
+}

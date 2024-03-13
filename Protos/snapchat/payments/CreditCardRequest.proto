@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message CreditCardRequest {
+	string userId = 1;
+
+	enum CreditCardRequest_Provider {
+		UNSET = 0;
+		BRAINTREE = 1;
+	}
+
+	CreditCardRequest_Provider provider = 2;
+	string paymentMethodNonce = 3;
+	string deviceId = 4;
+	string paymentMethodId = 5;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike;
+
+message SCPNLOOKALIEMediaReference {
+
+	oneof id {
+		string mediaId = 1;
+		string sharedStorySubmissionId = 2;
+		string lensId = 3;
+	}
+
+
+	enum SCPNLOOKALIEMediaType {
+		TYPE_UNSET = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		AUDIO = 3;
+		TEXT = 4;
+		BARCODE = 5;
+	}
+
+	SCPNLOOKALIEMediaType mediaType = 100;
+	string mediaURL = 101;
+	float secondsElapsed = 102;
+}

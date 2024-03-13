@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+import "com/snapchat/item_favoriting/wire/favorites/FavoriteItem.proto";
+
+message GetRecentFavoritesResponse {
+	repeated com.snapchat.item_favoriting.wire.favorites.FavoriteItem favoritedItemsArray = 1;
+	bytes nextSequenceKey = 2;
+}

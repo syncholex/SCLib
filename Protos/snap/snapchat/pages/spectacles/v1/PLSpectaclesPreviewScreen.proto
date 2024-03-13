@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.spectacles.v1;
+
+message PLSpectaclesPreviewScreen {
+	string snapId = 1;
+}

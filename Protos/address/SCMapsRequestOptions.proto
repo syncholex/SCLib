@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package address;
+
+message SCMapsRequestOptions {
+	uint32 snapZoom = 2;
+	uint32 requestedFields = 3;
+	bool includeUuids = 4;
+}

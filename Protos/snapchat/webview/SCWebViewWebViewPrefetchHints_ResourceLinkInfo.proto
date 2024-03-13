@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.webview;
+
+message SCWebViewWebViewPrefetchHints_ResourceLinkInfo {
+	string resourceURL = 1;
+}

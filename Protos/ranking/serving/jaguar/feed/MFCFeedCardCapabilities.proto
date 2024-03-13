@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Share.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Subscribe.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Notification.proto";
+import "ranking/serving/jaguar/feed/MFCBoost.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Reply.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_CoverTap.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_WatchState.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_ContentAds.proto";
+import "ranking/serving/jaguar/feed/MFCStats.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_AutoPlay.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Pin.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Description.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardCapabilities_Comment.proto";
+
+message MFCFeedCardCapabilities {
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Share share = 1;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Subscribe subscribe = 2;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Notification notification = 3;
+	ranking.serving.jaguar.feed.MFCBoost boost = 4;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Reply reply = 5;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_CoverTap coverTap = 6;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_WatchState watchState = 7;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_ContentAds contentAds = 8;
+	ranking.serving.jaguar.feed.MFCStats stats = 9;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_AutoPlay autoPlay = 10;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Pin pin = 11;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Description description_p = 12;
+	ranking.serving.jaguar.feed.MFCFeedCardCapabilities_Comment comment = 13;
+}

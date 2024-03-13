@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/core/SCCOREIPAddress.proto";
+import "snapchat/core/SCCOREGeoHeader.proto";
+
+message SCJanusCheckEnforcementRequestHeader {
+	string authnSessionId = 1;
+	string userAgent = 2;
+	snapchat.core.SCCOREIPAddress ipAddress = 3;
+	snapchat.core.SCCOREGeoHeader geoHeader = 4;
+	uint64 timestampMs = 5;
+	string requestURL = 6;
+	string requestId = 7;
+	string clientNetworkRequestId = 8;
+}

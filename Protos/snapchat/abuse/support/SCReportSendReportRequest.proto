@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportReport.proto";
+import "snapchat/abuse/support/SCReportForwardedRequestInfo.proto";
+
+message SCReportSendReportRequest {
+	snapchat.abuse.support.SCReportReport report = 1;
+	snapchat.abuse.support.SCReportForwardedRequestInfo forwardedRequestInfo = 2;
+}

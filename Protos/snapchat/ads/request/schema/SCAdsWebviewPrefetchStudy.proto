@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsWebviewPrefetchStudy {
+	string experimentId = 1;
+	int64 studyVersion = 2;
+	float percentileThreshold = 3;
+	bool predictivePrefetchEnabled = 4;
+	string modelId = 5;
+}

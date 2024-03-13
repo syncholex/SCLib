@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightWebResponse.proto";
+
+message SCCTXBatchSpotlightWebResponse {
+	repeated snapchat.context2.iz.SCCTXSpotlightWebResponse responsesArray = 1;
+}

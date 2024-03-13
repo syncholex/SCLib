@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain;
+
+message SnapCodeInfo {
+	string unlockURL = 1;
+	string imageURL = 2;
+	string id_p = 3;
+	string data_p = 4;
+}

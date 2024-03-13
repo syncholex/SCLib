@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/common/IMPTimeRange.proto";
+
+message IMPInternalGetBusinessStoryManifestForStoryIdRequest {
+	string businessId = 1;
+	string storyId = 2;
+	string posterUserId = 3;
+	impala.stories.common.IMPTimeRange timeRange = 4;
+}

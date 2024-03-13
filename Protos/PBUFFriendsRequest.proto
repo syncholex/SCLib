@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message PBUFFriendsRequest {
+	int64 friendsSyncToken = 1;
+}

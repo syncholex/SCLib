@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBFieldDescriptorProto.proto";
+import "google/protobuf/GPBDescriptorProto.proto";
+import "google/protobuf/GPBEnumDescriptorProto.proto";
+import "google/protobuf/GPBDescriptorProto_ExtensionRange.proto";
+import "google/protobuf/GPBMessageOptions.proto";
+import "google/protobuf/GPBOneofDescriptorProto.proto";
+import "google/protobuf/GPBDescriptorProto_ReservedRange.proto";
+
+message GPBDescriptorProto {
+	string name = 1;
+	repeated google.protobuf.GPBFieldDescriptorProto fieldArray = 2;
+	repeated google.protobuf.GPBDescriptorProto nestedTypeArray = 3;
+	repeated google.protobuf.GPBEnumDescriptorProto enumTypeArray = 4;
+	repeated google.protobuf.GPBDescriptorProto_ExtensionRange extensionRangeArray = 5;
+	repeated google.protobuf.GPBFieldDescriptorProto extensionArray = 6;
+	google.protobuf.GPBMessageOptions options = 7;
+	repeated google.protobuf.GPBOneofDescriptorProto oneofDeclArray = 8;
+	repeated google.protobuf.GPBDescriptorProto_ReservedRange reservedRangeArray = 9;
+	repeated string reservedNameArray = 10;
+}

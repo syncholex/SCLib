@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/locationcontext/SCMLCLocationContextCaption.proto";
+import "snapchat/map/locationcontext/SCMLCWidgetContext.proto";
+
+message SCMLCFriendLocationContext {
+	snapchat.core.SCCOREUUID friendId = 1;
+	repeated snapchat.map.locationcontext.SCMLCLocationContextCaption locationContextCaptionsArray = 2;
+	snapchat.map.locationcontext.SCMLCLocationContextCaption chatStatusCaption = 3;
+	snapchat.map.locationcontext.SCMLCWidgetContext widgetContext = 4;
+}

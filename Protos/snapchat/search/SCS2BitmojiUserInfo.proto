@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+import "snapchat/bitmoji/profile/v1/SCBitmojiAvatarMetadata.proto";
+
+message SCS2BitmojiUserInfo {
+	string avatarId = 1;
+	string selfieId = 2;
+	string sceneId = 3;
+	string backgroundId = 4;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 5;
+	snapchat.bitmoji.profile.v1.SCBitmojiAvatarMetadata avatarMetadata = 6;
+}

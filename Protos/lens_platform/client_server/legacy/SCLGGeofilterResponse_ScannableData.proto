@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_ScannableData {
+	string data_p = 1;
+}

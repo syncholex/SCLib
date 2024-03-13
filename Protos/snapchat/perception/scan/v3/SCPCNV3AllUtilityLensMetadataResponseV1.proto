@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3UtilityLensMetadata.proto";
+
+message SCPCNV3AllUtilityLensMetadataResponseV1 {
+	repeated snapchat.perception.scan.v3.SCPCNV3UtilityLensMetadata metadataArray = 1;
+}

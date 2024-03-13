@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardActionButton.proto";
+
+message SCPCNV3ScanCardKnowledgeModel {
+	string header = 1;
+	string headerIconURL = 2;
+	string title = 3;
+	string imageURL = 4;
+	string knowledgeSource = 5;
+	string bodyText = 6;
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanCardActionButton actionButtonsArray = 7;
+}

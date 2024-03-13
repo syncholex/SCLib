@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateWatchedStateResponse {
+	int64 nextUpdateIntervalMs = 1;
+}

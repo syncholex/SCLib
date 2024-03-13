@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBEnumValueDescriptorProto.proto";
+import "google/protobuf/GPBEnumOptions.proto";
+import "google/protobuf/GPBEnumDescriptorProto_EnumReservedRange.proto";
+
+message GPBEnumDescriptorProto {
+	string name = 1;
+	repeated google.protobuf.GPBEnumValueDescriptorProto valueArray = 2;
+	google.protobuf.GPBEnumOptions options = 3;
+	repeated google.protobuf.GPBEnumDescriptorProto_EnumReservedRange reservedRangeArray = 4;
+	repeated string reservedNameArray = 5;
+}

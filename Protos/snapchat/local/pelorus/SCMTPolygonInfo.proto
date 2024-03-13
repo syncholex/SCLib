@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.pelorus;
+
+message SCMTPolygonInfo {
+	double inPolygonProbability = 1;
+	double borderDistance = 2;
+	double borderBearing = 3;
+	double borderDirection = 4;
+}

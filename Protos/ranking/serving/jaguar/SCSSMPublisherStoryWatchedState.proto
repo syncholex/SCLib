@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMPublisherStoryWatchedState {
+	string lastWatchedSnapId = 1;
+	int32 snapProgressMsecs = 2;
+	int64 clientTimestampMsecs = 3;
+	string lastWatchedVideoId = 4;
+	int32 videoProgressMsecs = 5;
+	string subItemId = 6;
+	int32 subItemProgressMsecs = 7;
+	int32 approximateProgress = 8;
+}

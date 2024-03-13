@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/content/Asset.proto";
+import "snapchat/common/MapRecords.proto";
+
+message MemoriesAsset {
+	snapchat.content.Asset asset = 1;
+	uint64 size = 2;
+	string URL = 3;
+	string md5 = 4;
+	snapchat.common.MapRecords uploadHeaders = 5;
+	string encryptionKey = 6;
+	string encryptionIv = 7;
+	string downloadURL = 8;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_SpokenKeywords_Result_Keyword.proto";
+
+message SnapBrainResponse_Results_SpokenKeywords_Result {
+	double segmentStart = 1;
+	string transcript = 2;
+	bool flag = 3;
+	bool final = 4;
+	repeated snapchat.research.SnapBrainResponse_Results_SpokenKeywords_Result_Keyword keywordsArray = 5;
+}

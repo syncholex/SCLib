@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+message IMPLensPack {
+	string lensPackId = 1;
+
+	enum LensPackCategory {
+		LENS_PACK_CATEGORY_UNSET = 0;
+		LENS_PACK_CATEGORY_BEAUTY = 1;
+		LENS_PACK_CATEGORY_FUN = 2;
+		LENS_PACK_CATEGORY_PROFESSIONAL = 3;
+		LENS_PACK_CATEGORY_FRAMES = 4;
+		LENS_PACK_CATEGORY_WORLD = 5;
+		LENS_PACK_CATEGORY_SEASONAL = 6;
+		LENS_PACK_CATEGORY_TOOLS_AND_UTILITIES = 7;
+		LENS_PACK_CATEGORY_FASHION = 8;
+		LENS_PACK_CATEGORY_SPORTS = 9;
+		LENS_PACK_CATEGORY_GAMES = 10;
+	}
+
+	repeated LensPackCategory categoriesArray = 2 [packed=true];
+}

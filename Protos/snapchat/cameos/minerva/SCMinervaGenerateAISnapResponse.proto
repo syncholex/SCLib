@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCMinervaGenerateAISnapResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.snapdoc.SDMSnapDoc mediaArray = 2;
+}

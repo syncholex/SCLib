@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportMediaShareReportData {
+	string linkId = 1;
+	string linkURL = 2;
+}

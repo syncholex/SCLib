@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/LinearGradient.proto";
+
+message CustomColor {
+	uint32 colorId = 1;
+
+	oneof colorOption {
+		uint32 color = 2;
+		snapchat.messaging.cof.LinearGradient linearGradient = 3;
+	}
+
+}

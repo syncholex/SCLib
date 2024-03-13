@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+message SCCountdownsGetCountdownDetailRequest {
+	string countdownId = 2;
+}

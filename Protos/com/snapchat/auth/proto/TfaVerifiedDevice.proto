@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+message TfaVerifiedDevice {
+	string deviceId = 1;
+	string deviceName = 2;
+	int64 lastLoginMilliseconds = 3;
+}

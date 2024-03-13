@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsAdInteraction {
+	google.protobuf.GPBBoolValue adShareOpen = 1;
+	google.protobuf.GPBBoolValue adShareSend = 2;
+	google.protobuf.GPBBoolValue isSubscribed = 3;
+	repeated google.protobuf.GPBInt64Value subscribeButtonTappedTsMsArray = 4;
+	google.protobuf.GPBBoolValue adContextMenuOpen = 5;
+	google.protobuf.GPBBoolValue initialIsSubscribed = 6;
+}

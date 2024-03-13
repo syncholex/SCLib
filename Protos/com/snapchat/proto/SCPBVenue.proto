@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBVenue {
+	string venueId = 1;
+	string name = 2;
+	string locality = 3;
+	string filterId = 4;
+	string subtitle = 5;
+	bool splitByServer = 6;
+	string matchingGeofilterId = 7;
+	bool isExtra = 8;
+	string venueName = 9;
+	repeated string categoriesArray = 10;
+	string iconURL = 11;
+	string superCategory = 12;
+}

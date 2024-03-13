@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message VLKNrfUserAssociationRequest {
+	string userIdentifier = 1;
+}

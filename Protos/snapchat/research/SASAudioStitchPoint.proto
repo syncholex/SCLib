@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASAudioStitchPoint {
+	string submissionId = 1;
+	double startTime = 2;
+	double endTime = 3;
+	int32 positionIndex = 4;
+}

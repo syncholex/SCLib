@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAmbaGpioSetRequest {
+
+	enum MLBSharedGpio {
+		H2S_GPIO1 = 0;
+		H2S_GPIO2 = 1;
+	}
+
+	MLBSharedGpio gpio = 1;
+
+	enum MLBGpioSetting {
+		LOW = 0;
+		HIGH = 1;
+		PULL_UP = 2;
+		PULL_DOWN = 3;
+		PULL_NO_PULL = 4;
+	}
+
+	MLBGpioSetting setting = 2;
+}

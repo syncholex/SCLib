@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.assets;
+
+import "snapchat/cameos/assets/SCCameosBloopsStickerAsset.proto";
+
+message SCCameosBloopsStickerAssetPack {
+	repeated snapchat.cameos.assets.SCCameosBloopsStickerAsset stickersArray = 1;
+}

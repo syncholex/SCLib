@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message GetOrderHistoryRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	uint32 limit = 2;
+	uint32 offset = 3;
+
+	enum SortOrder {
+		SORT_ORDER_UNSET = 0;
+		CREATED_AT_ASC = 1;
+		CREATED_AT_DESC = 2;
+		UPDATED_AT_ASC = 3;
+		UPDATED_AT_DESC = 4;
+	}
+
+	SortOrder sortOrder = 4;
+}

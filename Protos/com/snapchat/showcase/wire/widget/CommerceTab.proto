@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommerceAction.proto";
+
+message CommerceTab {
+	string title = 1;
+	com.snapchat.showcase.wire.widget.CommerceAction action = 2;
+}

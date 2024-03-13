@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.metadata;
+
+import "com/snapchat/showcase/wire/common/Link.proto";
+import "com/snapchat/showcase/wire/common/ShowcaseItemPrice.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "com/snapchat/showcase/wire/metadata/ARMetadata.proto";
+import "com/snapchat/showcase/wire/metadata/ShowcaseProductMetadata_ShoppingAttachment.proto";
+
+message ShowcaseProductMetadata {
+	string externalId = 1;
+	string title = 2;
+	com.snapchat.showcase.wire.common.Link link = 3;
+	repeated com.snapchat.showcase.wire.common.Link fallbackLinksArray = 4;
+
+	enum ProductAvailability {
+		UNKNOWN_AVAILABILITY = 0;
+		IN_STOCK = 1;
+		OUT_OF_STOCK = 2;
+		PREORDER = 3;
+		DISCONTINUED = 4;
+		AVAILABLE_FOR_ORDER = 5;
+	}
+
+	ProductAvailability availability = 5;
+	com.snapchat.showcase.wire.common.ShowcaseItemPrice price = 6;
+	com.snapchat.showcase.wire.common.ShowcaseItemPrice salePrice = 7;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo mainMedia = 8;
+	com.snapchat.showcase.wire.metadata.ARMetadata arMetadata = 9;
+	repeated string colorsArray = 10;
+	string brand = 11;
+	string description_p = 12;
+	repeated snapchat.ads.render.schema.SCAdsMediaRenderInfo additionalMediaArray = 13;
+	com.snapchat.showcase.wire.metadata.ShowcaseProductMetadata_ShoppingAttachment shoppingAttachment = 14;
+}

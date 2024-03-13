@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationBinaryPayload {
+	bytes data_p = 1;
+}

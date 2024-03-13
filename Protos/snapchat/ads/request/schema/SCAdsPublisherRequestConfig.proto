@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsPublisherRequestConfig {
+	int32 multiauctionSize = 1;
+	int32 mediaBufferSize = 2;
+	int32 requestBufferSize = 3;
+}

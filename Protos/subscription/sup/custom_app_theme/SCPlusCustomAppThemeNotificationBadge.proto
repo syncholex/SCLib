@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+message SCPlusCustomAppThemeNotificationBadge {
+
+	enum SCPlusCustomAppThemeNotificationBadge_NotificationBadgeType {
+		UNSET = 0;
+		FLAME = 1;
+		PAW = 2;
+		CAT = 3;
+		CROWN = 4;
+		COFFEE = 5;
+		FLOWER = 6;
+		GHOST = 7;
+		HEART = 8;
+		KISS = 9;
+		MUSIC = 10;
+		STAR = 11;
+		BONE = 12;
+	}
+
+}

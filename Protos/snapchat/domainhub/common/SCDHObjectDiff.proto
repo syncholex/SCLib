@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHFieldDiff.proto";
+
+message SCDHObjectDiff {
+	repeated snapchat.domainhub.common.SCDHFieldDiff diffArray = 1;
+}

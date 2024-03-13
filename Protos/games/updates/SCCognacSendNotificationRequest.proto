@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package games.updates;
+
+import "games/updates/SCCognacConversationContext.proto";
+
+message SCCognacSendNotificationRequest {
+	string appId = 1;
+	games.updates.SCCognacConversationContext conversationContext = 2;
+	string appInstanceId = 3;
+	string updateId = 4;
+	string inputs = 5;
+	repeated string activeUserIdsArray = 6;
+	string appIconURL = 7;
+	string sessionId = 8;
+}

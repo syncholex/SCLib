@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+message SCCTPRemoveAllItemsRequest {
+
+	enum SCCTPUserdataCategory {
+		USERDATA_CATEGORY_UNSET = 0;
+		USERDATA_CATEGORY_FAVORITES = 1;
+		USERDATA_CATEGORY_MUSIC_FAVORITES = 2;
+		USERDATA_CATEGORY_PREVIEW_RECENTS = 3;
+		USERDATA_CATEGORY_CHAT_RECENTS = 4;
+		USERDATA_CATEGORY_MUSIC_RECENTS = 5;
+	}
+
+	SCCTPUserdataCategory category = 1;
+}

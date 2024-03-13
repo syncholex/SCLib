@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveAreaConfigV2_SwipeSensitivityConfig.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveAreaConfigV2_AdTypeToConfigMap.proto";
+
+message SCAdsInteractiveAreaConfigV2 {
+	bool enabled = 1;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_SwipeSensitivityConfig defaultConfig = 2;
+	repeated snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_AdTypeToConfigMap adTypeToConfigArray = 3;
+
+	enum SCAdsAdBaseConfig_AdProductType {
+		UNKNOWN_PRODUCT_TYPE_UNSET = 0;
+		USER_STORIES = 1;
+		CONTENT_INTERSTITIAL = 2;
+		PUBLISHER = 3;
+		SHOWS = 4;
+		PUBLIC_USER_STORY = 5;
+		COGNAC = 6;
+		SPOTLIGHT_FEED = 7;
+		MAP = 8;
+		PROMOTED_STORIES = 9;
+		SHARE_IN_CHAT = 10;
+	}
+
+	repeated SCAdsAdBaseConfig_AdProductType excludedAdProductTypesArray = 4 [packed=true];
+
+	enum SCAdsAdBaseConfig_CTAStyle {
+		UNKNOWN_CTA_STYLE_UNSET = 0;
+		V1 = 1;
+		V_OPERA_TRAY = 2;
+		SPOTLIGHT = 3;
+		UAB = 4;
+		UAT = 5;
+		SPOTLIGHT_UAT = 6;
+	}
+
+	repeated SCAdsAdBaseConfig_CTAStyle excludedCtaStylesArray = 5 [packed=true];
+}

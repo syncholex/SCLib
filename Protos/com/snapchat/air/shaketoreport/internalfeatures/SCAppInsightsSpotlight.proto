@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsSpotlight {
+
+	enum SCAppInsightsSpotlight_Subfeature {
+		UNSET = 0;
+		CONTENT_QUALITY = 1;
+		RANKING = 2;
+		UI_ISSUE = 3;
+		CONTENT_MODERATION = 4;
+		MIXED_FEED = 5;
+		CONTENT_UNDERSTANDING = 6;
+		PERSONALIZATION = 7;
+		UX = 8;
+		MEDIA_QUALITY = 9;
+		POSTING_SUBMISSION = 10;
+		PLAYBACK = 11;
+	}
+
+	SCAppInsightsSpotlight_Subfeature subfeature = 1;
+}

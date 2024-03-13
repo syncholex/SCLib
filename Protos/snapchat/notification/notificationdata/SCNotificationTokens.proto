@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationDeviceToken.proto";
+
+message SCNotificationTokens {
+	repeated snapchat.notification.notificationdata.SCNotificationDeviceToken tokensArray = 1;
+}

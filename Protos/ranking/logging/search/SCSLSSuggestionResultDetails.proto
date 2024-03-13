@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+message SCSLSSuggestionResultDetails {
+
+	enum SCSLSSuggestionResultDetails_SuggestionType_Enum {
+		UNKNOWN_SUGGESTION = 0;
+		NON_SPELLING_SUGGESTION = 1;
+		SPELLING_CORRECTION = 2;
+		SPELLING_ESCAPE_HATCH = 3;
+	}
+
+	SCSLSSuggestionResultDetails_SuggestionType_Enum suggestionType = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGooglePricingInfo_GooglePlan {
+	string refId = 1;
+	string productId = 2;
+	repeated string basePlanOrOfferTagsArray = 3;
+	string basePlanId = 4;
+	repeated string offerIdsArray = 5;
+}

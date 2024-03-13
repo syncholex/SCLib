@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "address/SCMapsAddressIds.proto";
+import "snapchat/context/SCLocalizedStringSet.proto";
+
+message MapSnapData {
+	bool isTakenDown = 2;
+	bool isDeleted = 3;
+	address.SCMapsAddressIds addressIds = 4;
+	snapchat.context.SCLocalizedStringSet localitySubtitle = 5;
+}

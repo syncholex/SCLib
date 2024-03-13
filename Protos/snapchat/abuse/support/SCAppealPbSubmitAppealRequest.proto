@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCAppealPbAccountLockAppeal.proto";
+
+message SCAppealPbSubmitAppealRequest {
+	string requesterUserId = 1;
+	string comment = 2;
+	int64 serverReceivedAtMs = 3;
+
+	enum SCAppealPbAppealData_AppealType {
+		DEFAULT_UNSET = 0;
+		ACCOUNT_UNLOCK = 1;
+	}
+
+
+	oneof appealData {
+		snapchat.abuse.support.SCAppealPbAccountLockAppeal accountLockAppeal = 4;
+	}
+
+	SCAppealPbAppealData_AppealType appealType = 5;
+	string appealId = 6;
+	bool isTestAppeal = 7;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTTileSetId {
+	string flavor = 1;
+	int64 epoch = 2;
+
+	enum SCMTTileSetType {
+		LEGACY = 0;
+		HEAT = 1;
+		POI = 2;
+		GAME = 3;
+		MARKER = 4;
+	}
+
+	SCMTTileSetType type = 3;
+}

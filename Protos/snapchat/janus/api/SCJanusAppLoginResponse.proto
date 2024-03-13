@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusBootstrapData.proto";
+import "snapchat/janus/api/SCJanusAppChallengeData.proto";
+import "snapchat/janus/api/SCJanusAccountDeactivationData.proto";
+import "snapchat/janus/api/SCJanusAccountLockedData.proto";
+import "snapchat/janus/api/SCJanusLoginOptionsData.proto";
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusAppLoginResponse {
+
+	enum SCJanusAppLoginResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		CHALLENGED = 2;
+		ACCOUNT_DEACTIVATED = 3;
+		ACCOUNT_LOCKED = 4;
+		REDIRECT_TO_REGISTRATION = 5;
+		LOGIN_OPTIONS_NEEDS_UPDATE = 6;
+		ERR_GENERIC_FAILURE = 9;
+		ERR_THROTTLED = 10;
+		ERR_BLOCKED = 11;
+		ERR_APP_VERSION_UPGRADE = 12;
+		ERR_ACCOUNT_NOT_FOUND = 13;
+	}
+
+	SCJanusAppLoginResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusBootstrapData bootstrapData = 2;
+		snapchat.janus.api.SCJanusAppChallengeData challengeData = 3;
+		snapchat.janus.api.SCJanusAccountDeactivationData accountDeactivationData = 4;
+		snapchat.janus.api.SCJanusAccountLockedData accountLockedData = 5;
+		snapchat.janus.api.SCJanusLoginOptionsData loginOptionsData = 6;
+		snapchat.janus.api.SCJanusErrorData errorData = 8;
+	}
+
+}

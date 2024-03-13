@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportGenerativeContentReasonId {
+
+	enum SCReportGenerativeContentReasonId_ReasonId {
+		UNSET = 0;
+		DONT_LIKE = 1;
+		INAPPROPRIATE = 2;
+		INFRINGES_INTELLECTUAL_PROPERTY = 3;
+	}
+
+	SCReportGenerativeContentReasonId_ReasonId reasonId = 1;
+}

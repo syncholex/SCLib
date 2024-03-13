@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_Schedule_Always {
+}

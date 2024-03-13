@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.common;
+
+message SCLPWebViewAttachment {
+	string webViewURL = 1;
+	bool shouldAutoFill = 2;
+}

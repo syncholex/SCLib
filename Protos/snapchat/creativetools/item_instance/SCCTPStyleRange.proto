@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPRange.proto";
+
+message SCCTPStyleRange {
+	bool isBold = 1;
+	bool isUnderlined = 2;
+	bool isItalicized = 3;
+	snapchat.creativetools.item_instance.SCCTPRange range = 4;
+}

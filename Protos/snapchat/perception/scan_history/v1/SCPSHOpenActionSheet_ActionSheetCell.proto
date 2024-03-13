@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHImageDateTimeLocation.proto";
+import "snapchat/perception/scan_history/v1/SCPSHResultAction.proto";
+
+message SCPSHOpenActionSheet_ActionSheetCell {
+
+	oneof cell {
+		snapchat.perception.scan_history.v1.SCPSHImageDateTimeLocation showDateTimeLocation = 1;
+		snapchat.perception.scan_history.v1.SCPSHResultAction resultAction = 2;
+	}
+
+}

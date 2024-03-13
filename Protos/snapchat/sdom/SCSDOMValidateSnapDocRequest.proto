@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/sdom/SCSDOMValidateSnapDocRequest_MediaContextTypeWrapper.proto";
+
+message SCSDOMValidateSnapDocRequest {
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 1;
+	snapchat.sdom.SCSDOMValidateSnapDocRequest_MediaContextTypeWrapper mediaContextTypeWrapper = 2;
+	bool shouldCheckCapabilities = 3;
+}

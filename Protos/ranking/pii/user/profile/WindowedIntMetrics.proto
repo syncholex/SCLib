@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message WindowedIntMetrics {
+	int32 value3D = 1;
+	int32 value7D = 2;
+	int32 value14D = 3;
+	int32 value28D = 4;
+	int32 value24H = 5;
+	int32 value18H = 6;
+	int32 value12H = 7;
+	int32 value6H = 8;
+	int32 value3H = 9;
+	int32 value1H = 10;
+	int32 value56D = 11;
+	int32 value84D = 12;
+	int32 value168D = 13;
+	int32 value224D = 14;
+	int32 value280D = 15;
+	int32 value336D = 16;
+}

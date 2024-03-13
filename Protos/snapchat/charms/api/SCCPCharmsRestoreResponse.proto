@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.charms.api;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmsRestoreResponse {
+	repeated int32 restoredCharmIdsArray = 1 [packed=true];
+	snapchat.charms.common.SCCPUUID requestId = 2;
+	int64 requestTsMs = 3;
+}

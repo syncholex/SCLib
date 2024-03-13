@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPClientSearchTagsInverted_CTResult.proto";
+
+message SCCTPClientSearchTagsInverted_CTIdList {
+	repeated snapchat.creativetools.search.SCCTPClientSearchTagsInverted_CTResult resultsArray = 1;
+}

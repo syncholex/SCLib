@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingShazamShare {
+	string attachedURL = 1;
+	string artistArtURL = 2;
+	string title = 3;
+	string artist = 4;
+}

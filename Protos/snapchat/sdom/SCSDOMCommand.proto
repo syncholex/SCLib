@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMAssetCommand.proto";
+import "snapchat/sdom/SCSDOMEditCommand.proto";
+import "snapchat/sdom/SCSDOMClipCommand.proto";
+import "snapchat/sdom/SCSDOMRenderEffectCommand.proto";
+import "snapchat/sdom/SCSDOMEntityCommonCommand.proto";
+
+message SCSDOMCommand {
+	uint32 version = 1;
+
+	oneof command {
+		snapchat.sdom.SCSDOMAssetCommand assetCommand = 2;
+		snapchat.sdom.SCSDOMEditCommand editCommand = 3;
+		snapchat.sdom.SCSDOMClipCommand clipCommand = 4;
+		snapchat.sdom.SCSDOMRenderEffectCommand renderEffectCommand = 6;
+		snapchat.sdom.SCSDOMEntityCommonCommand entityCommand = 7;
+	}
+
+	string name = 5;
+}

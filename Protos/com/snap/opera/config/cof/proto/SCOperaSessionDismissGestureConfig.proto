@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+message SCOperaSessionDismissGestureConfig {
+	float minVelocity = 1;
+	float minDistance = 2;
+	bool useIntentLogicV2 = 3;
+}

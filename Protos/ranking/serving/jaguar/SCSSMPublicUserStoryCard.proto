@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMPublicUserStoryMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+import "ranking/serving/jaguar/SCSSMStoryFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryPrefetchMetadata.proto";
+
+message SCSSMPublicUserStoryCard {
+	ranking.serving.jaguar.SCSSMPublicUserStoryMetadata metadata = 1;
+	repeated ranking.serving.jaguar.SCSSMStorySnap snapsArray = 2;
+	ranking.serving.jaguar.SCSSMStoryFragmentMetadata fragmentMetadata = 3;
+	ranking.serving.jaguar.SCSSMStoryPrefetchMetadata prefetchMetadata = 4;
+}

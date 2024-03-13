@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCLensPromptFilter {
+
+	oneof filterCondition {
+		snapchat.core.SCCOREUUID promptId = 1;
+		int64 lensId = 2;
+		snapchat.core.SCCOREUUID responseId = 3;
+	}
+
+}

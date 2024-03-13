@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsSKOverlayMetrics_CtaTap {
+	float posXRelative = 1;
+	float posYRelative = 2;
+	int64 tsMs = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetSnapSubscriptionPlansRequest {
+	string userId = 1;
+	string countryCode = 2;
+}

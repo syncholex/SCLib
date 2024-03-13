@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lenses.interactions;
+
+message SCLensLensCarouselInteraction {
+
+	enum SCLensLensCarouselInteraction_InteractionType {
+		INTERACTION_TYPE_UNSET = 0;
+		LENS_SWIPE = 1;
+		LENS_SEND = 2;
+		LENS_POST = 3;
+		LENS_SAVE = 4;
+		LENS_ICON_IMPRESSION = 5;
+	}
+
+	SCLensLensCarouselInteraction_InteractionType interactionType = 1;
+}

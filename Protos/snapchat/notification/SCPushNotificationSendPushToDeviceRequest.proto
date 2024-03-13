@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationWebPushToDeviceRequest.proto";
+import "snapchat/notification/SCPushNotificationAPNSPushToDeviceRequest.proto";
+import "snapchat/notification/SCPushNotificationFCMPushToDeviceRequest.proto";
+import "snapchat/notification/SCPushNotificationHMSPushToDeviceRequest.proto";
+
+message SCPushNotificationSendPushToDeviceRequest {
+
+	oneof pushToDeviceRequest {
+		snapchat.notification.SCPushNotificationWebPushToDeviceRequest webpushRequest = 1;
+		snapchat.notification.SCPushNotificationAPNSPushToDeviceRequest apnsRequest = 2;
+		snapchat.notification.SCPushNotificationFCMPushToDeviceRequest fcmRequest = 3;
+		snapchat.notification.SCPushNotificationHMSPushToDeviceRequest hmsRequest = 4;
+	}
+
+}

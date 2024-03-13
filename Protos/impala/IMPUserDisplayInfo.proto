@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUserDisplayInfo {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+	string mutableUsername = 6;
+	string bitmojiSceneId = 7;
+	string bitmojiBackgroundId = 8;
+}

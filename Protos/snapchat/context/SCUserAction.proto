@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCUserAction {
+	string elementId = 1;
+	string displayText = 2;
+
+	enum SCActionType {
+		ACTION_TYPE_ELEMENT = 0;
+		ACTION_TYPE_DISMISS = 1;
+		ACTION_TYPE_BACK = 2;
+	}
+
+	SCActionType actionType = 3;
+	bool shouldPrefetchOnPrev = 10;
+	bool allowAd = 20;
+}

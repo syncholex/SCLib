@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNAnalyzerResponse.proto";
+import "snapchat/perception/SCPNSnapJoinStoryMetadata.proto";
+
+message SCPNStoryAnalyzerResponse {
+	snapchat.perception.SCPNAnalyzerResponse analyzerResponses = 1;
+	snapchat.perception.SCPNSnapJoinStoryMetadata snapJoinStoryMetadata = 2;
+}

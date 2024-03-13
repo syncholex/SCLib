@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ct_item_client;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPGetResponse {
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem itemsArray = 1;
+}

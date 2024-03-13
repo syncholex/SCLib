@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/ConfigResult.proto";
+import "snapchat/cdp/cof/BenchmarkRequest.proto";
+import "snapchat/cdp/cof/SCCofConfigTargetingResponseDebugData.proto";
+
+message SCCofConfigTargetingResponse {
+	repeated snapchat.cdp.cof.ConfigResult configResultsArray = 1;
+	string configResultsEtag = 2;
+	snapchat.cdp.cof.BenchmarkRequest benchmarkRequest = 3;
+	bool fullResults = 4;
+	int32 abResultChecksum = 5;
+	string iso3166Alpha2CountryCodeFromRequestIp = 6;
+	snapchat.cdp.cof.SCCofConfigTargetingResponseDebugData debugData = 7;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPDeleteHighlightSnapRequest {
+	string profileId = 1;
+	string highlightId = 2;
+	string snapId = 3;
+}

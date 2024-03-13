@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/unlockables/request/schema/SCULSyncInfo.proto";
+
+message GtqServeFeaturedLensesRequest_SponsoredLensRequestInfo {
+	snapchat.ads.request.schema.SCAdsAdRequest adRequest = 1;
+	snapchat.unlockables.request.schema.SCULSyncInfo syncInfo = 2;
+	uint32 snapScore = 3;
+	bool enableSponsoredLens = 10;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map.friends;
+
+import "snapchat/map/friends/SCMEFriend.proto";
+import "snapchat/map/friends/SCMEFriendKey.proto";
+
+message SCMEPubsubMessage {
+	repeated snapchat.map.friends.SCMEFriend friendsArray = 2;
+	repeated string deletedUsersArray = 3;
+	repeated snapchat.map.friends.SCMEFriendKey deletedFriendsArray = 4;
+	int64 publishTimestamp = 5;
+}

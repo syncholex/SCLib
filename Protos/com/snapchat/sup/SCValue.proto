@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.sup;
+
+message SCValue {
+
+	oneof value {
+		bool boolean = 1;
+		string string = 2;
+		int32 integer = 3;
+		int64 long_p = 4;
+		double double_p = 5;
+	}
+
+}

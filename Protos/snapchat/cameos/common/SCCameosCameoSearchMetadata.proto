@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosCustomTextSearchParameters.proto";
+
+message SCCameosCameoSearchMetadata {
+	int64 cameoId = 1;
+	repeated string termsArray = 2;
+
+	enum SCCameosCameoStickerType {
+		TYPE_UNSET = 0;
+		REGULAR = 1;
+		INFO = 2;
+		CUSTOM = 3;
+	}
+
+	SCCameosCameoStickerType stickerType = 3;
+	float searchRating = 4;
+	float userRating = 5;
+	snapchat.cameos.common.SCCameosCustomTextSearchParameters customTextSearchParameters = 6;
+}

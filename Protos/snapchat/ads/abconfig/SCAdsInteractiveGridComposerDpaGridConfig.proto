@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveGridCollectionElement.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveGridFloatingPillConfig.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveGridFourTilesConfig.proto";
+
+message SCAdsInteractiveGridComposerDpaGridConfig {
+	bool enabled = 1;
+	bool includeCollectionDefaultAttachment = 2;
+	int32 minCollectionElements = 3;
+	repeated snapchat.ads.abconfig.SCAdsInteractiveGridCollectionElement itemOrderArray = 4;
+	bool showPrice = 5;
+	snapchat.ads.abconfig.SCAdsInteractiveGridFloatingPillConfig floatingPillConfig = 6;
+	snapchat.ads.abconfig.SCAdsInteractiveGridFourTilesConfig fourTilesConfig = 7;
+	bool showTileMetadata = 8;
+	int64 skipTapsOnGridTimeMs = 9;
+	int32 skipZoneWidthPercentageRight = 10;
+	int32 skipZoneWidthPercentageLeft = 11;
+	bool useActiveItemAttachment = 12;
+}

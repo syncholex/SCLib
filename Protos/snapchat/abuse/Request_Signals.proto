@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+message Request_Signals {
+	string queueId = 1;
+	double taskPriority = 2;
+	int64 userFollowerCount = 3;
+	string taskId = 4;
+	string abuseType = 5;
+}

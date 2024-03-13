@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+import "snapchat/perception/asr/SCPCNTranscribePartialResponse.proto";
+import "snapchat/perception/asr/SCPCNTranscribeFinalResponse.proto";
+
+message SCPCNTranscribeStreamResponse {
+	string transcription = 1;
+
+	oneof streamingResponse {
+		snapchat.perception.asr.SCPCNTranscribePartialResponse partialResponse = 2;
+		snapchat.perception.asr.SCPCNTranscribeFinalResponse finalResponse = 3;
+	}
+
+}

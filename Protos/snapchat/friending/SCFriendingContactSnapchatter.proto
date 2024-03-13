@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+
+message SCFriendingContactSnapchatter {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	string contactId = 4;
+	string contactMethodId = 5;
+	string bitmojiAvatarId = 10;
+	string bitmojiSelfieId = 11;
+	string bitmojiSceneId = 12;
+	string bitmojiBackgroundId = 13;
+	bool isNewContact = 14;
+	bytes snapshotMetadata = 21;
+	float score = 22;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 23;
+}

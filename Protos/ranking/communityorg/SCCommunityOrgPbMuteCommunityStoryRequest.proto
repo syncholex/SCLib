@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbMuteCommunityStoryRequest {
+	ranking.core.SCSCOREUUID userId = 1;
+	ranking.core.SCSCOREUUID groupId = 2;
+	ranking.core.SCSCOREUUID orgId = 3;
+}

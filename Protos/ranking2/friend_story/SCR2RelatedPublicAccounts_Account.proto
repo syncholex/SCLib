@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+message SCR2RelatedPublicAccounts_Account {
+
+	oneof id {
+		string username = 1;
+		bytes encryptedUsername = 2;
+	}
+
+	float score = 3;
+
+	enum SCR2RelatedPublicAccounts_RelatedAccountSource {
+		RELATED_ACCOUNT_SOURCE_CURATED = 0;
+		RELATED_ACCOUNT_SOURCE_COOCCUR = 1;
+		RELATED_ACCOUNT_SOURCE_CURATED_AND_COOCCUR = 2;
+	}
+
+	SCR2RelatedPublicAccounts_RelatedAccountSource source = 4;
+	int64 numUsersLike = 5;
+	int64 numUsersLikeBoth = 6;
+	string userId = 7;
+}

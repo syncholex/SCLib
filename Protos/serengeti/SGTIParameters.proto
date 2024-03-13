@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package serengeti;
+
+import "serengeti/SGTIParameters_Entry.proto";
+
+message SGTIParameters {
+	repeated serengeti.SGTIParameters_Entry entriesArray = 1;
+}

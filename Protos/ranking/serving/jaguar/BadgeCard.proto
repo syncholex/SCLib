@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/BadgeMetadata.proto";
+import "ranking/serving/jaguar/BadgeHeadline.proto";
+
+message BadgeCard {
+	ranking.serving.jaguar.BadgeMetadata badgeMetadata = 1;
+	ranking.serving.jaguar.BadgeHeadline headline = 2;
+	string thumbnailURL = 3;
+	string bodyText = 4;
+	int32 numberOfUpdates = 5;
+	string primaryColor = 6;
+	string ringColor = 7;
+}

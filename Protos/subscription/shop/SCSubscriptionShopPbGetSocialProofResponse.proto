@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetSocialProofResponse {
+	int64 numFriendsWithPlus = 1;
+}

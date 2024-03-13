@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoFence.proto";
+
+message SCR2GeoFilterInfo {
+	string id_p = 1;
+	string name = 2;
+	repeated string tagsArray = 3;
+	ranking2.SCR2GeoFence geofence = 4;
+	string origin = 5;
+	bool isSponsored = 6;
+	string imageLink = 10;
+}

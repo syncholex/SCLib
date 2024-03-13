@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPListRolesForBusinessRequest.proto";
+
+message IMPInternalListRolesForBusinessRequest {
+	string userId = 1;
+	impala.IMPListRolesForBusinessRequest request = 2;
+}

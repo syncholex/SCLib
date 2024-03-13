@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PremiumContentStats.proto";
+
+message GetPremiumContentStatsResponse {
+	string requestId = 1;
+	repeated ranking.pii.readreceipt.PremiumContentStats contentStatsListArray = 2;
+}

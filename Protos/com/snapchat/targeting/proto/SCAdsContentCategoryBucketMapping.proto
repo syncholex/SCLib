@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/SCAdsNonEncryptedContentCategoryBlock.proto";
+import "com/snapchat/targeting/proto/SCAdsNonEncryptedCategoryEventBucketDefinition.proto";
+
+message SCAdsContentCategoryBucketMapping {
+	int64 version = 1;
+	repeated com.snapchat.targeting.proto.SCAdsNonEncryptedContentCategoryBlock nonEncryptedContentCategoryBlocksArray = 2;
+	repeated com.snapchat.targeting.proto.SCAdsNonEncryptedCategoryEventBucketDefinition nonEncryptedCategoryEventBucketDefinitionArray = 3;
+	repeated int32 eligibleEventsArray = 4 [packed=true];
+}

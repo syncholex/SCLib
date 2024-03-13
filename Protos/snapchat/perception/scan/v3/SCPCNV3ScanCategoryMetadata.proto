@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3ScanCategoryMetadata {
+	string categoryId = 1;
+
+	enum SCPCNV3ScanDataType {
+		DATA_TYPE_UNSET = 0;
+		DATA_TYPE_IMAGE = 1;
+		DATA_TYPE_BARCODE = 2;
+		DATA_TYPE_AUDIO = 3;
+		DATA_TYPE_NONE = 4;
+		DATA_TYPE_TEXT = 5;
+	}
+
+	SCPCNV3ScanDataType requestedDataType = 2;
+
+	enum SCPCNV3CameraOrientation {
+		ORIENTATION_UNSET = 0;
+		ORIENTATION_FRONT = 1;
+		ORIENTATION_REAR = 2;
+	}
+
+	repeated SCPCNV3CameraOrientation supportedCameraOrientationsArray = 3 [packed=true];
+	string scanningText = 4;
+	string scanningSubtext = 5;
+	string preScanText = 6;
+	string preScanSubtext = 7;
+	string preScanIconURL = 8;
+
+	enum SCPCNV3ScanDataType {
+		DATA_TYPE_UNSET = 0;
+		DATA_TYPE_IMAGE = 1;
+		DATA_TYPE_BARCODE = 2;
+		DATA_TYPE_AUDIO = 3;
+		DATA_TYPE_NONE = 4;
+		DATA_TYPE_TEXT = 5;
+	}
+
+	repeated SCPCNV3ScanDataType requestedDataTypesArray = 10 [packed=true];
+}

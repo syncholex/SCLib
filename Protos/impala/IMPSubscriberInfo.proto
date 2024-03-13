@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSubscriberInfo {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+}

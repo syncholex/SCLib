@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPDeleteBusinessSnapsBySnapIdRequest {
+	repeated string snapIdsArray = 1;
+}

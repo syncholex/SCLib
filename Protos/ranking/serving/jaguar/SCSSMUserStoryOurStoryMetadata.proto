@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUserStoryOurStoryMetadata {
+	string displayName = 1;
+}

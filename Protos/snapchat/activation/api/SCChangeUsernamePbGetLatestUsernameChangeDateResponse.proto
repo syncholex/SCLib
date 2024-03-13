@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCChangeUsernamePbGetLatestUsernameChangeDateResponse {
+	google.protobuf.GPBTimestamp latestChangeDate = 1;
+	google.protobuf.GPBTimestamp earliestAllowedChangeDate = 2;
+}

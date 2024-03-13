@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioStitch.proto";
+import "snapchat/research/SASMediaInfo.proto";
+
+message SASAudioStitchMediaResponse {
+	snapchat.research.SASAudioStitch audioStitch = 1;
+	string entityKind = 2;
+	bool success = 3;
+	snapchat.research.SASMediaInfo mediaInfo = 4;
+}

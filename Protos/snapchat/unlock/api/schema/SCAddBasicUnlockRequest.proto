@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlock/api/schema/SCBasicUnlock.proto";
+
+message SCAddBasicUnlockRequest {
+	snapchat.unlock.api.schema.SCBasicUnlock unlock = 1;
+	string userId = 2;
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 3;
+}

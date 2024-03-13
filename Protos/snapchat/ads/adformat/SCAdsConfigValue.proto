@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/core/schema/SCAdsSwipeSensitivityConfig.proto";
+
+message SCAdsConfigValue {
+}

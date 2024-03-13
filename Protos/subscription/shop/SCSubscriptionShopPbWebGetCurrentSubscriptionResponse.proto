@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbSubscription.proto";
+
+message SCSubscriptionShopPbWebGetCurrentSubscriptionResponse {
+	repeated subscription.shop.SCSubscriptionShopPbSubscription subscriptionArray = 1;
+}

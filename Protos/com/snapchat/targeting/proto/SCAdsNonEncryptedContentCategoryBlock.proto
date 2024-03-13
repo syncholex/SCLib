@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message SCAdsNonEncryptedContentCategoryBlock {
+	repeated string contentIdArray = 1;
+	string categoryBlock = 2;
+}

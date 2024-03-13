@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+import "snapchat/bitmoji/builder/v1/SCBitmojiColorSwatch.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiSingleOption.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiCompositeOption.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiHairMetadata.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiMouthMetadata.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiFashionMetadata.proto";
+import "snapchat/bitmoji/builder/common/SCBitmojiBadge.proto";
+
+message SCBitmojiAvatarBuilderOption {
+	int32 defaultColorSwatchIndex = 1;
+	repeated snapchat.bitmoji.builder.v1.SCBitmojiColorSwatch colorSwatchesArray = 2;
+
+	oneof kind {
+		snapchat.bitmoji.builder.v1.SCBitmojiSingleOption singleOption = 3;
+		snapchat.bitmoji.builder.v1.SCBitmojiCompositeOption compositeOption = 4;
+	}
+
+
+	oneof metadata {
+		snapchat.bitmoji.builder.v1.SCBitmojiHairMetadata hair = 5;
+		snapchat.bitmoji.builder.v1.SCBitmojiMouthMetadata mouth = 6;
+		snapchat.bitmoji.builder.v1.SCBitmojiFashionMetadata fashion = 7;
+	}
+
+	snapchat.bitmoji.builder.common.SCBitmojiBadge badge = 8;
+	string name = 9;
+	string prename = 10;
+	string subname = 11;
+	string tokenId = 12;
+	uint32 tokenPrice = 13;
+}

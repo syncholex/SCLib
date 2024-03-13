@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.topicsticker;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message TopicStickerId {
+	snapchat.core.SCCOREUUID uuid = 1;
+}

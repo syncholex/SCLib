@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbCheckPurchaseTokenResponse {
+
+	enum SCSubscriptionShopPbCheckPurchaseTokenResponse_Status {
+		STATUS_NOT_FOUND = 0;
+		STATUS_LINKED_TO_THIS_USER = 1;
+		STATUS_LINKED_TO_DIFFERENT_USER = 2;
+	}
+
+	SCSubscriptionShopPbCheckPurchaseTokenResponse_Status status = 1;
+}

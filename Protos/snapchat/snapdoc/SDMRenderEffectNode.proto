@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/snapdoc/SDMRenderEffectNode_Input.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+import "snapchat/mediaengine/render_effect/SCMERenderEffect.proto";
+
+message SDMRenderEffectNode {
+
+	oneof effect {
+		snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItem = 1;
+		snapchat.mediaengine.render_effect.SCMERenderEffect renderEffect = 5;
+	}
+
+	repeated snapchat.snapdoc.SDMRenderEffectNode_Input inputsArray = 2;
+	repeated uint32 outputIndicesArray = 3 [packed=true];
+	snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 4;
+	uint32 renderEffectNodeIndex = 6;
+}

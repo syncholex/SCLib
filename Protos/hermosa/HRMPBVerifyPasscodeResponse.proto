@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBVerifyPasscodeResponse {
+
+	enum HRMPBVerifyPasscodeResponse_VerifyPasscodeResponseCode {
+		SUCCESS = 0;
+		ERR_WRONG_PASSCODE = 1;
+		ERR_USER_LOCKEDOUT = 2;
+		ERR_UNKNOWN = 3;
+	}
+
+	HRMPBVerifyPasscodeResponse_VerifyPasscodeResponseCode code = 1;
+	int32 attemptsLeft = 2;
+	bool userLockedOut = 3;
+	int32 timeUntilUnlock = 4;
+}

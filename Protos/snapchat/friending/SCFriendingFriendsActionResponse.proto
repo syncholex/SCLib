@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "com/snapchat/atlas/proto/SCAtlasOutgoingFriend.proto";
+import "snapchat/friending/SCFriendingFriendActionFailure.proto";
+
+message SCFriendingFriendsActionResponse {
+	repeated com.snapchat.atlas.proto.SCAtlasOutgoingFriend successesArray = 1;
+	repeated snapchat.friending.SCFriendingFriendActionFailure failuresArray = 2;
+	string message = 3;
+}

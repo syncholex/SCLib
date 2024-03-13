@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "snapchat/lenscentral/common/DigitalGoodLocalization.proto";
+
+message DigitalGood {
+	string sku = 1;
+
+	enum DigitalGoodType {
+		DIGITAL_GOOD_TYPE_UNSET = 0;
+		DIGITAL_GOOD_TYPE_CONSUMABLE = 1;
+		DIGITAL_GOOD_TYPE_DURABLE = 2;
+	}
+
+	DigitalGoodType type = 2;
+	uint32 priceTier = 3;
+	string title = 4;
+	string description_p = 5;
+	repeated snapchat.lenscentral.common.DigitalGoodLocalization localizationsArray = 6;
+
+	enum DigitalGoodStatus {
+		DIGITAL_GOOD_STATUS_UNSET = 0;
+		DIGITAL_GOOD_STATUS_ACTIVE = 1;
+		DIGITAL_GOOD_STATUS_INACTIVE = 2;
+	}
+
+	DigitalGoodStatus status = 7;
+	uint32 consumableQuantity = 8;
+}

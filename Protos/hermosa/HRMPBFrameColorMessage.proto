@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBFrameColorMessage {
+
+	enum HRMPBFrameColor {
+		ONYX = 0;
+		RUBY = 1;
+		SAPPHIRE = 2;
+		NEPTUNE_FEMALE_BLACK = 3;
+		NEPTUNE_MALE_BLACK = 4;
+		CARBON = 5;
+		MINERAL = 6;
+	}
+
+	HRMPBFrameColor frameColor = 1;
+	uint32 frameColorEnumVal = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoPoint.proto";
+
+message SCSCOREGeoPolygon {
+	string id_p = 1;
+	repeated ranking.core.SCSCOREGeoPoint coordinatesArray = 2;
+}

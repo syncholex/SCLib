@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.deep_link_resolution.dynamic_resolution;
+
+message SCDynamicResolutionCreatorMilestoneResult {
+	string profileId = 1;
+	string milestoneType = 2;
+	string snapId = 3;
+	string storyId = 4;
+	string activityFeedNotificationId = 5;
+}

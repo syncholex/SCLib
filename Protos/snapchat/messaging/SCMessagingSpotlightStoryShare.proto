@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCMessagingSpotlightStoryShare {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+
+	enum SCMessagingSpotlightStoryShare_Source {
+		UNSET = 0;
+		SPOTLIGHT_FEED = 1;
+		TOPIC_PAGE = 2;
+		STORY_MANAGEMENT_SPOTLIGHT = 3;
+		STORY_MANAGEMENT_SNAP_MAP = 4;
+	}
+
+	SCMessagingSpotlightStoryShare_Source source = 2;
+}

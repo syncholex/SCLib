@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTGeoPoint.proto";
+
+message SCMTGeoBox {
+	snapchat.map.SCMTGeoPoint geoBottomLeft = 1;
+	snapchat.map.SCMTGeoPoint geoTopRight = 2;
+}

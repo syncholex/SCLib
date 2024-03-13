@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+message SCCameosFullscreenFallbackImages {
+	string fallbackImages = 1;
+}

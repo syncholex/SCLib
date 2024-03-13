@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.pelorus;
+
+message SCMTLineInfo {
+	double distance = 1;
+	double bearing = 2;
+	double direction = 3;
+	double likelyDistance = 4;
+}

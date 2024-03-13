@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGoogleSubscriptionPlan {
+	string basePlanOrOfferTag = 1;
+	bool requiresEmail = 2;
+}

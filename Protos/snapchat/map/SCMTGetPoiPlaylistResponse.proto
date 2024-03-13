@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/context/SCStoryManifest.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+
+message SCMTGetPoiPlaylistResponse {
+	snapchat.context.SCStoryManifest manifest = 1;
+	snapchat.map.SCMTThumbnail thumbnail = 2;
+}

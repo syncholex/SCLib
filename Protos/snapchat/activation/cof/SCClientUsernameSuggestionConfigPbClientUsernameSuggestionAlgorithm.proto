@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbNoClientUsernameSuggestion.proto";
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbPrefixWithRandomChars.proto";
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbInitialsWithRandomChars.proto";
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbInitialsWithBirthMonthWithRandomChars.proto";
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbInitialsWithBirthMonthWithRandomCharsWithEmoji.proto";
+
+message SCClientUsernameSuggestionConfigPbClientUsernameSuggestionAlgorithm {
+
+	oneof algorithm {
+		snapchat.activation.cof.SCClientUsernameSuggestionConfigPbNoClientUsernameSuggestion noClientUsernameSuggestion = 1;
+		snapchat.activation.cof.SCClientUsernameSuggestionConfigPbPrefixWithRandomChars prefixWithRandomChars = 2;
+		snapchat.activation.cof.SCClientUsernameSuggestionConfigPbInitialsWithRandomChars initialsWithRandomChars = 3;
+		snapchat.activation.cof.SCClientUsernameSuggestionConfigPbInitialsWithBirthMonthWithRandomChars initialsWithBirthMonthWithRandomChars = 4;
+		snapchat.activation.cof.SCClientUsernameSuggestionConfigPbInitialsWithBirthMonthWithRandomCharsWithEmoji initialsWithBirthMonthWithRandomCharsWithEmoji = 5;
+	}
+
+}

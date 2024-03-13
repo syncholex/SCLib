@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLEStackLayout_GroupLayout.proto";
+import "snapchat/lens/le/SCLEStackLayout_Layout.proto";
+
+message SCLEStackLayout {
+	string layoutId = 1;
+	bool useCardBackground = 2;
+	bool fullWidth = 3;
+	snapchat.lens.le.SCLEStackLayout_GroupLayout root = 4;
+	repeated snapchat.lens.le.SCLEStackLayout_Layout layoutsArray = 5;
+}

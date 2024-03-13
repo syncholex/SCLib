@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPromotedStoryTileCtaConfig_CtaPadding {
+	double top = 1;
+	double left = 2;
+	double bottom = 3;
+	double right = 4;
+}

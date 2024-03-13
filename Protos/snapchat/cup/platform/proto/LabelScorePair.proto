@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message LabelScorePair {
+	int32 label = 1;
+	float score = 2;
+	string labelName = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbGetUserCustomStoryGroupMuteStatusRequest {
+	ranking.core.SCSCOREUUID userId = 1;
+}

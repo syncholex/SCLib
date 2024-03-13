@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "actionmoji/action/SCMT1Action.proto";
+import "actionmoji/action/SCMT1Type.proto";
+import "actionmoji/action/SCMT1Sticker.proto";
+import "snapchat/map/SCMTFriendLocationVenue.proto";
+import "snapchat/map/SCMTFriendStatus.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/SCMTLocationAnnotation.proto";
+
+message SCMTFriendLocation {
+	string userId = 1;
+	float lat = 2;
+	float lng = 3;
+
+	enum SCMTLocationSharingMode {
+		GHOST = 0;
+		CITY = 1;
+		PRECISE = 2;
+	}
+
+	SCMTLocationSharingMode sharingMode = 4;
+	int64 timestamp = 5;
+	int64 s2CellId = 6;
+	string actionStickerId = 7;
+	string locality = 8;
+	bool tombstone = 9;
+	string nonClusterableStickerId = 12;
+	string clusterableFacingLeftStickerId = 13;
+	string clusterableFacingRightStickerId = 14;
+	bool nonClusterableStickerIdSupportsShadow = 15;
+	actionmoji.action.SCMT1Action action = 17;
+	repeated actionmoji.action.SCMT1Type actionTypeArray = 18;
+	actionmoji.action.SCMT1Sticker typeSticker = 19;
+	float horizontalAccuracyMeters = 20;
+	snapchat.map.SCMTFriendLocationVenue venue = 21;
+	snapchat.map.SCMTFriendStatus friendStatus = 22;
+	string subsubtitle = 23;
+	repeated string localityPiecesArray = 24;
+	bool isLiveLocation = 25;
+	int64 liveSessionExpirationMs = 26;
+	snapchat.core.SCCOREUUID liveSessionId = 27;
+	bool isLiveSessionIndefinite = 28;
+	repeated snapchat.map.SCMTLocationAnnotation locationAnnotationsArray = 29;
+}

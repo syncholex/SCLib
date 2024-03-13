@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsMember {
+	string id_p = 1;
+	string organizationId = 2;
+	string snapchatUserId = 3;
+	string displayName = 4;
+	string snapchatUsername = 5;
+	string email = 6;
+}

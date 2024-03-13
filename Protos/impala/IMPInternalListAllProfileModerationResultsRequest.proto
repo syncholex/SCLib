@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalListAllProfileModerationResultsRequest {
+	string pageId = 1;
+}

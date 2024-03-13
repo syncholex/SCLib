@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Group_Participant.proto";
+import "snapchat/search/SCS2StorySummaryInfo.proto";
+
+message SCS2Group {
+	string id_p = 1;
+	string name = 2;
+	repeated snapchat.search.SCS2Group_Participant participantsArray = 3;
+	snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 4;
+}

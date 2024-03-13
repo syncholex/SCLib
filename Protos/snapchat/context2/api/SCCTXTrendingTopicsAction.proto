@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXTrendingTopicsAction {
+
+	enum SCCTXTrendingTopicsAction_BadgeType {
+		BadgeTypeHashtag = 0;
+		BadgeTypeLens = 1;
+		BadgeTypeMusic = 2;
+		BadgeTypeChallenge = 3;
+	}
+
+	SCCTXTrendingTopicsAction_BadgeType badgeType = 1;
+}

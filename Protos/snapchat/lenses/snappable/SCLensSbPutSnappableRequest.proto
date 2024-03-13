@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+import "snapchat/lenses/snappable/SCLensSbSnappable.proto";
+import "snapchat/lenses/snappable/SCLensSbSnappableMedia.proto";
+
+message SCLensSbPutSnappableRequest {
+	snapchat.lenses.snappable.SCLensSbSnappable snappable = 1;
+	repeated snapchat.lenses.snappable.SCLensSbSnappableMedia mediaArray = 2;
+}

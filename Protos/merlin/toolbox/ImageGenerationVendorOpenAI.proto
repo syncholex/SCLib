@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+message ImageGenerationVendorOpenAI {
+	string model = 1;
+	string prompt = 2;
+	uint32 height = 3;
+	uint32 width = 4;
+	string caption = 5;
+	string aspectRatio = 6;
+}

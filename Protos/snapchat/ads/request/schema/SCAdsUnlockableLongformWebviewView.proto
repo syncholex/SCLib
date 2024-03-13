@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsWebViewContext.proto";
+
+message SCAdsUnlockableLongformWebviewView {
+	google.protobuf.GPBFloatValue viewTimeSec = 1;
+	google.protobuf.GPBInt64Value renderedTimestampMs = 2;
+	google.protobuf.GPBBoolValue loadedOnEntry = 3;
+	google.protobuf.GPBBoolValue loadedOnExit = 4;
+	google.protobuf.GPBInt64Value openTimestampMs = 5;
+	google.protobuf.GPBBoolValue pixelCookieSet = 6;
+	snapchat.ads.request.schema.SCAdsWebViewContext webviewContext = 7;
+}

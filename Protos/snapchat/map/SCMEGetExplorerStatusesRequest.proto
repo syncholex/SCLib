@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEGetExplorerStatusesRequest {
+	string userId = 1;
+	string calloutId = 2;
+	double friendIdsAndScores = 3;
+	string language = 4;
+	string countryCode = 5;
+	bool isNewMapUser = 6;
+	repeated string treatmentsArray = 7;
+	bool isEmployee = 8;
+}

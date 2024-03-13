@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_Snap2InterestTags {
+	repeated int32 tagsArray = 1 [packed=true];
+}

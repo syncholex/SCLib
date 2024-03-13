@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTFriendLocation.proto";
+
+message SCMTFriendLocationsResponse {
+	repeated snapchat.map.SCMTFriendLocation friendLocationArray = 1;
+	int64 s2CellId = 2;
+	string continuationId = 3;
+}

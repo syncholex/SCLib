@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBSpectaclesPushMessage_InvalidatedRequest {
+	uint32 requestId = 1;
+	uint64 methodUuid = 2;
+}

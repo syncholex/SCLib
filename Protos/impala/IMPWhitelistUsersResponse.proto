@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPWhitelistUsersResponse {
+	int64 whitelistedUserCountBefore = 1;
+	int64 whitelistedUserCountAfter = 2;
+}

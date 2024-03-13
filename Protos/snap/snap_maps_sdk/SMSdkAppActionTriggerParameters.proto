@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkAppActionTriggerParameters_Parameter.proto";
+
+message SMSdkAppActionTriggerParameters {
+	repeated snap.snap_maps_sdk.SMSdkAppActionTriggerParameters_Parameter parametersArray = 1;
+}

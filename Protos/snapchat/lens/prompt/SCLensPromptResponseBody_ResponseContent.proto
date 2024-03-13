@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptTextResponse.proto";
+import "snapchat/lens/prompt/SCLensPromptImageResponse.proto";
+
+message SCLensPromptResponseBody_ResponseContent {
+
+	oneof responseBody {
+		snapchat.lens.prompt.SCLensPromptTextResponse textResponse = 1;
+		snapchat.lens.prompt.SCLensPromptImageResponse imageResponse = 2;
+	}
+
+}

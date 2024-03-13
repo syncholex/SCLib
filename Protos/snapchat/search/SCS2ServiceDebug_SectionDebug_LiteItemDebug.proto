@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2ServiceDebug_SectionDebug_Explanation.proto";
+
+message SCS2ServiceDebug_SectionDebug_LiteItemDebug {
+	snapchat.search.SCS2CompositeId compositeId = 1;
+
+	enum SCS2Corpus {
+		CORPUS_UNSET = 0;
+		CORPUS_STORE = 1;
+		CORPUS_PROFILES = 2;
+		CORPUS_LENSES = 3;
+		CORPUS_POPULAR_USERS = 4;
+		CORPUS_PUBLISHERS = 5;
+		CORPUS_SHOWS = 6;
+		CORPUS_EDITIONS = 7;
+		CORPUS_USERS = 8;
+		CORPUS_FEATURED_STORIES = 9;
+		CORPUS_GROUPS = 10;
+		CORPUS_GAMES = 11;
+		CORPUS_PLACES = 12;
+		CORPUS_CREATIVE_TOOLS = 13;
+		CORPUS_TOPICS = 14;
+		CORPUS_METALINKS = 15;
+		CORPUS_HAPPENING_NOW = 16;
+		CORPUS_MUSIC = 17;
+		CORPUS_BITMOJI = 18;
+		CORPUS_CAMEOS = 19;
+		CORPUS_EMOJI = 20;
+		CORPUS_SNAP_STICKERS = 21;
+		CORPUS_MEMORIES = 22;
+		CORPUS_GFYCAT = 23;
+		CORPUS_MUSIC_TRACKS = 24;
+		CORPUS_MUSIC_ARTISTS = 25;
+		CORPUS_SHOPPABLE_STICKERS = 26;
+		CORPUS_CONTACTS = 27;
+		CORPUS_QUERY_SUGGESTIONS = 28;
+		CORPUS_ACTIVITY_CENTER = 29;
+		CORPUS_FEED_CARD = 30;
+		CORPUS_BITMOJI_AVATAR_BUILDER = 31;
+		UNUSED_32 = 32;
+		UNUSED_33 = 33;
+		UNUSED_34 = 34;
+		UNUSED_35 = 35;
+		UNUSED_36 = 36;
+		UNUSED_37 = 37;
+		UNUSED_38 = 38;
+		UNUSED_39 = 39;
+		UNUSED_40 = 40;
+	}
+
+	SCS2Corpus corpus = 2;
+	string itemType = 3;
+	string displayName = 4;
+	uint32 retrievalRank = 5;
+	float retrievalScore = 6;
+	float finalScore = 7;
+	uint32 finalRank = 8;
+	string itemFeatures = 9;
+	snapchat.search.SCS2ServiceDebug_SectionDebug_Explanation explanation = 10;
+	string itemDebug = 11;
+	float l1Score = 12;
+	float l2Score = 13;
+	float l3Score = 14;
+}

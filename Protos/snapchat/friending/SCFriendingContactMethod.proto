@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message SCFriendingContactMethod {
+	string contactMethodId = 1;
+
+	oneof payload {
+		string phoneNumber = 10;
+		string emailAddress = 11;
+	}
+
+}

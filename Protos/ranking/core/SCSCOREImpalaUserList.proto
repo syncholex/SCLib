@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREImpalaUserInfoLite.proto";
+
+message SCSCOREImpalaUserList {
+	repeated ranking.core.SCSCOREImpalaUserInfoLite usersArray = 1;
+}

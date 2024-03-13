@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+message SCMLCGradient {
+	int32 startRgba = 1;
+	int32 stopRgba = 2;
+	double angle = 3;
+}

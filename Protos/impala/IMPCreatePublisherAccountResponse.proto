@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPCreateAccountResponse.proto";
+
+message IMPCreatePublisherAccountResponse {
+	impala.IMPCreateAccountResponse createAccountResponse = 1;
+}

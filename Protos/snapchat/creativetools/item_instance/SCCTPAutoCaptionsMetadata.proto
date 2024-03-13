@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPAutoCaptionsMetadata {
+	repeated string phrasesArray = 1;
+	repeated uint32 timestampsArray = 2 [packed=true];
+	repeated uint32 durationsArray = 3 [packed=true];
+}

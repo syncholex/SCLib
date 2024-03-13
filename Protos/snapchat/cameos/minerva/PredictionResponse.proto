@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/PredictionStatus.proto";
+import "snapchat/cameos/minerva/PredictionScore.proto";
+
+message PredictionResponse {
+	bytes prediction = 1;
+	snapchat.cameos.minerva.PredictionStatus status = 2;
+	repeated snapchat.cameos.minerva.PredictionScore predictionScoresArray = 3;
+}

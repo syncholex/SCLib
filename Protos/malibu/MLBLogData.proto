@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBRange.proto";
+
+message MLBLogData {
+	string name = 1;
+	malibu.MLBRange requestedRange = 2;
+	malibu.MLBRange actualRange = 3;
+	bytes data_p = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPEpisodeMetadataPage.proto";
+
+message IMPGetEpisodeMetadataForSeasonResponse {
+	impala.IMPEpisodeMetadataPage episodesPage = 1;
+}

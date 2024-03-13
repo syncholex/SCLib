@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZCheckinOptionRankingSignals.proto";
+import "snapchat/local/verrazano/VRZBlockedServices.proto";
+
+message VRZGetNearbyPlacesRequest {
+	double lat = 1;
+	double lng = 2;
+	double gpsAccuracyM = 3;
+
+	enum VRZNearbyPlacesSource {
+		NEARBY_UNKNOWN = 0;
+		NEARBY_STICKER = 1;
+		NEARBY_FILTER = 2;
+		NEARBY_LENS = 3;
+		NEARBY_PIN_DROP = 4;
+		NEARBY_CAPTIONS = 5;
+		NEARBY_SPOTLIGHT_PLACE_TAG = 6;
+		NEARBY_SEND_TO_MAP = 7;
+		NEARBY_GEOLENS_CAROUSEL = 8;
+		NEARBY_GEOFILTERS_CAROUSEL = 9;
+	}
+
+	VRZNearbyPlacesSource nearbyPlaceSource = 4;
+
+	enum VRZNearbyPlacesRankingFlavor {
+		BEST_GUESS = 0;
+		DISTANCE = 1;
+	}
+
+	VRZNearbyPlacesRankingFlavor nearbyPlaceRankingFlavor = 5;
+	snapchat.local.place.VRZCheckinOptionRankingSignals checkinOptionRankingSignals = 6;
+	int32 placesLimit = 7;
+	snapchat.local.verrazano.VRZBlockedServices blocklistService = 8;
+	string rankingAb = 9;
+	double confidenceScoreThreshold = 10;
+}

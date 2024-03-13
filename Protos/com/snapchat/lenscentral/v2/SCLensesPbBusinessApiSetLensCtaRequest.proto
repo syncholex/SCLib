@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensCta.proto";
+
+message SCLensesPbBusinessApiSetLensCtaRequest {
+	string lensId = 1;
+	string byUser = 2;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensCta lensCta = 3;
+}

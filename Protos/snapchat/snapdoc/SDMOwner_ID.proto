@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMOwner_ID {
+
+	enum SDMOwner_ID_OwnerNamespace {
+		UNSET = 0;
+		DISCOVER_PUBLISHER = 1;
+		BUSINESS_ACCOUNT = 2;
+		BUSINESS_PROFILE = 3;
+	}
+
+	SDMOwner_ID_OwnerNamespace namespace_p = 1;
+	string id_p = 2;
+}

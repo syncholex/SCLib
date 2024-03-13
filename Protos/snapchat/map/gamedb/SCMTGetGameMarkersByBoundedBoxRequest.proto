@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.gamedb;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message SCMTGetGameMarkersByBoundedBoxRequest {
+	snapchat.geo.SPCGRect boundedBox = 1;
+}

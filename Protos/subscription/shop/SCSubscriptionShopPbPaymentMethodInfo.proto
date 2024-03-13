@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbPaymentMethodInfo {
+	string vaultedId = 1;
+
+	enum SCSubscriptionShopPbPaymentMethodInfo_Type {
+		UNSET = 0;
+		CREDIT_CARD = 1;
+		PAYPAL = 2;
+	}
+
+	SCSubscriptionShopPbPaymentMethodInfo_Type type = 2;
+}

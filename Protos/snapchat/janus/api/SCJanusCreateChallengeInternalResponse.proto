@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusChallengeData.proto";
+import "snapchat/janus/api/SCJanusCreatePhoneChallengeErrorData.proto";
+
+message SCJanusCreateChallengeInternalResponse {
+
+	enum SCJanusCreateChallengeInternalResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERR_THROTTLED = 7;
+		ERR_CREATE_PHONE_CHALLENGE = 8;
+	}
+
+	SCJanusCreateChallengeInternalResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusChallengeData challengeData = 2;
+		snapchat.janus.api.SCJanusCreatePhoneChallengeErrorData createPhoneChallengeErrorData = 3;
+	}
+
+}

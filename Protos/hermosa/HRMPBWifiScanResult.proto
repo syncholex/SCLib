@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBWifiScanResult {
+	string ssid = 1;
+	bool isCurrentlyConnected = 2;
+
+	enum HRMPBWifiLevel {
+		WEAK = 0;
+		MEDIUM = 1;
+		STRONG = 2;
+	}
+
+	HRMPBWifiLevel wifiLevel = 3;
+	bool isProtected = 4;
+	bool isSaved = 5;
+}

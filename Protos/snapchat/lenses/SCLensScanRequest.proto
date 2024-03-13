@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensScanImage.proto";
+import "snapchat/lenses/SCLensRealTimeScanEvent.proto";
+
+message SCLensScanRequest {
+	snapchat.lenses.SCLensScanImage image = 1;
+	string lensId = 2;
+	snapchat.lenses.SCLensRealTimeScanEvent realTimeScanEvent = 3;
+}

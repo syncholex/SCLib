@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+message VLKIMUDataFrame {
+	int32 gyroX = 1;
+	int32 gyroY = 2;
+	int32 gyroZ = 3;
+	int32 accelX = 4;
+	int32 accelY = 5;
+	int32 accelZ = 6;
+}

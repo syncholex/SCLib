@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.inlenscreation;
+
+import "snapchat/lens/inlenscreation/SCInLensCreationCustomization.proto";
+
+message SCInLensCreationGetCustomizationsResponse {
+	repeated snapchat.lens.inlenscreation.SCInLensCreationCustomization customizationsArray = 1;
+}

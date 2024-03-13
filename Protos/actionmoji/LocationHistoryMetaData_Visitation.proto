@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/PreciseLocation.proto";
+
+message LocationHistoryMetaData_Visitation {
+	string locality = 1;
+	repeated actionmoji.PreciseLocation locationsArray = 2;
+}

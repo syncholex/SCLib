@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHDomainObject.proto";
+import "snapchat/domainhub/common/SCDHObjectDiff.proto";
+
+message SCDHAuditRecord {
+	snapchat.domainhub.common.SCDHDomainObject snapshot = 1;
+	snapchat.domainhub.common.SCDHObjectDiff diff = 2;
+}

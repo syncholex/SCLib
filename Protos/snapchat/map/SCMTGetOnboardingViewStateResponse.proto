@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterest.proto";
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTGetOnboardingViewStateResponse {
+	repeated snapchat.map.SCMTPointOfInterest poisArray = 1;
+	double zoom = 3;
+	snapchat.map.SCMTPoint center = 4;
+	snapchat.map.SCMTTileSetId tileSetId = 5;
+}

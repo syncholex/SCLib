@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPMusicStickerMetadata {
+
+	enum SCCTPMusicStickerMetadata_StickerType {
+		UNSET = 0;
+		WAVEFORM = 1;
+		BOLD_SCROLLING = 2;
+		MONOSPACE = 3;
+	}
+
+	SCCTPMusicStickerMetadata_StickerType stickerType = 1;
+	uint64 trackId = 2;
+	string title = 3;
+	string artistName = 4;
+	uint64 trackOffsetMs = 5;
+	string lottieURL = 6;
+}

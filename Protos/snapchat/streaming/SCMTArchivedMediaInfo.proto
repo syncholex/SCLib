@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/streaming/SCMTArchivedImageMediaInfo.proto";
+
+message SCMTArchivedMediaInfo {
+
+	oneof info {
+		snapchat.streaming.SCMTStreamingMediaInfo streamingInfo = 1;
+		snapchat.streaming.SCMTArchivedImageMediaInfo imageInfo = 2;
+	}
+
+}

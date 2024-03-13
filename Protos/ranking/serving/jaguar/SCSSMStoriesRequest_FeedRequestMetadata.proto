@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoriesRequest_FeedRequestMetadata_FeedOptions.proto";
+
+message SCSSMStoriesRequest_FeedRequestMetadata {
+	ranking.serving.jaguar.SCSSMStoriesRequest_FeedRequestMetadata_FeedOptions feedOptions = 1;
+}

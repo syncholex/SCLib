@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+message SCCommunityOrgPbIsInCommunityResponse {
+	repeated bool isInCommunityArray = 1 [packed=true];
+}

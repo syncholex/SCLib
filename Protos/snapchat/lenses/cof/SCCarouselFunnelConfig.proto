@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCCarouselFunnelConfig {
+	bool enabled = 1;
+	uint32 lensCarouselAbandonmentTimeoutMs = 2;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/SCS2UserInfo.proto";
+import "snapchat/search/SCS2StudyInfo.proto";
+import "snapchat/search/SCS2Tweak.proto";
+import "snapchat/search/stickerservice/SCS2StickerResultTypeOption.proto";
+
+message SCS2StickerSearchRequest {
+	string superSessionId = 1;
+	string searchSessionId = 2;
+	int64 sessionQueryId = 3;
+	string query = 4;
+
+	enum SCS2StickerOrigin {
+		ORIGIN_UNKNOWN = 0;
+		ORIGIN_SNAP_STICKER_PREVIEW = 1;
+		ORIGIN_CHAT_STICKER_DRAWER = 2;
+		ORIGIN_PREVIEW_HOMETAB = 3;
+		ORIGIN_CHAT_HOMETAB = 4;
+		ORIGIN_STICKER_KIT = 5;
+		ORIGIN_MY_AI = 6;
+	}
+
+	SCS2StickerOrigin origin = 5;
+	snapchat.search.SCS2UserInfo userInfo = 6;
+	repeated snapchat.search.SCS2StudyInfo studyInfoArray = 7;
+	repeated snapchat.search.SCS2Tweak tweaksArray = 8;
+
+	enum SCS2StickerSection_SectionType {
+		SECTION_TYPE_UNKNOWN = 0;
+		SECTION_TYPE_SNAPCHAT_STICKERS = 1;
+		SECTION_TYPE_EMOJIS = 2;
+		SECTION_TYPE_BITMOJI_STICKERS = 3;
+		SECTION_TYPE_CAMEOS = 4;
+		SECTION_TYPE_GIPHY = 5;
+		SECTION_TYPE_TOP_RESULTS = 6;
+		SECTION_FOR_YOU = 7;
+		SECTION_TYPE_GFYCAT = 8;
+		SECTION_TYPE_COMBINED = 9;
+		SECTION_TYPE_SHOPPABLE_STICKERS = 10;
+	}
+
+	repeated SCS2StickerSection_SectionType sectionsToReturnArray = 9 [packed=true];
+	repeated snapchat.search.stickerservice.SCS2StickerResultTypeOption resultTypeOptionsArray = 10;
+	bool includeMetadata = 11;
+}

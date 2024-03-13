@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PublisherRecentWatchHistoryList.proto";
+import "ranking/pii/readreceipt/StoryRecentWatchHistoryList.proto";
+
+message RecentWatchHistoryList {
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	PremiumContentType_Enum contentType = 1;
+
+	oneof recentWatchHistoryList {
+		ranking.pii.readreceipt.PublisherRecentWatchHistoryList publisherHistory = 2;
+		ranking.pii.readreceipt.StoryRecentWatchHistoryList storyHistory = 3;
+	}
+
+}

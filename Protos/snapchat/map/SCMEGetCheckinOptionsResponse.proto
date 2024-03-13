@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinLocationOption.proto";
+import "snapchat/map/SCMECheckinLocationsConstraint.proto";
+import "snapchat/map/SCMECheckinMoodOption.proto";
+import "snapchat/map/SCMECheckinContextualOption.proto";
+import "snapchat/map/SCMECheckinCustomOption.proto";
+import "snapchat/map/SCMECheckinActionmojiOption.proto";
+import "snapchat/map/SCMECheckinOptionContext.proto";
+
+message SCMEGetCheckinOptionsResponse {
+	repeated snapchat.map.SCMECheckinLocationOption checkinLocationsArray = 1;
+	snapchat.map.SCMECheckinLocationsConstraint constraint = 2;
+	repeated snapchat.map.SCMECheckinLocationOption extraCheckinLocationsArray = 3;
+	repeated snapchat.map.SCMECheckinMoodOption checkinMoodsArray = 4;
+	repeated snapchat.map.SCMECheckinContextualOption checkinContextualArray = 5;
+	snapchat.map.SCMECheckinCustomOption checkinCustom = 6;
+	repeated snapchat.map.SCMECheckinCustomOption checkinCustomsArray = 7;
+	string suggestedCheckinOptionId = 8;
+	repeated snapchat.map.SCMECheckinActionmojiOption checkinActionmojisArray = 9;
+	repeated snapchat.map.SCMECheckinLocationOption nonVenueLocationsArray = 10;
+	snapchat.map.SCMECheckinOptionContext allowedCheckinLocationsContext = 11;
+	snapchat.map.SCMECheckinOptionContext allowedExtraCheckinLocationsContext = 12;
+	snapchat.map.SCMECheckinOptionContext allowedNonVenueLocationsContext = 13;
+}

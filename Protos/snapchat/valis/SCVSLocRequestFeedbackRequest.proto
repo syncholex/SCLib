@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSLocRequestFeedbackRequest {
+	snapchat.core.SCCOREUUID requesterId = 1;
+
+	enum SCVSLocationRequestFeedback {
+		UNSET = 0;
+		IGNORED = 1;
+		ACCEPTED = 2;
+	}
+
+	SCVSLocationRequestFeedback feedback = 2;
+}

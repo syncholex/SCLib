@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthCreateClientResponse {
+	string clientId = 1;
+	string clientSecret = 2;
+}

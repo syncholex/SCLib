@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRDeliverableModelHandle {
+	string modelId = 1;
+
+	oneof handle {
+		bytes contentObject = 2;
+	}
+
+	string userData = 3;
+}

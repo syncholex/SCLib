@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1Size2i {
+	uint32 height = 1;
+	uint32 width = 2;
+}

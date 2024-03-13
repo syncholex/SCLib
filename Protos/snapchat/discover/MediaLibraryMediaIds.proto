@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "snapchat/discover/MediaInfo.proto";
+
+message MediaLibraryMediaIds {
+	repeated snapchat.discover.MediaInfo tileLogosArray = 1;
+	snapchat.discover.MediaInfo horizontalIcon = 2;
+	snapchat.discover.MediaInfo squareHeroImage = 3;
+}

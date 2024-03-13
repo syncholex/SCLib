@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+
+message TaxItem {
+	com.snapchat.commerce.domain.CurrencyAmount price = 1;
+	string rate = 2;
+	string title = 3;
+}

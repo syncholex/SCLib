@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZPlaceInfo.proto";
+import "snapchat/local/place/VRZPlaceLocation.proto";
+import "snapchat/local/place/VRZPlacePopularityHours.proto";
+import "snapchat/local/place/VRZPlaceTippetsReviews.proto";
+import "snapchat/local/place/VRZPlaceCTAs.proto";
+import "snapchat/local/verrazano/VRZPlaceStats.proto";
+
+message VRZPlaceProfile {
+	snapchat.local.place.VRZPlaceInfo placeInfo = 1;
+	snapchat.local.place.VRZPlaceLocation placeLocation = 2;
+	snapchat.local.place.VRZPlacePopularityHours popularityHours = 3;
+	snapchat.local.place.VRZPlaceTippetsReviews tippetsReviews = 4;
+	string placeId = 5;
+	bool showPlaceStories = 6;
+
+	enum VRZPlaceTypeEnum {
+		UNSET = 0;
+		VENUE = 1;
+		BBG = 2;
+	}
+
+	VRZPlaceTypeEnum placeTypeEnum = 7;
+	snapchat.local.place.VRZPlaceCTAs placeCtas = 8;
+	snapchat.local.verrazano.VRZPlaceStats placeStats = 9;
+}

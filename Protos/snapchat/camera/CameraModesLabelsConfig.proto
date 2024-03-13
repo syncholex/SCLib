@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message CameraModesLabelsConfig {
+	bool enableCameraModePreviewToolsLabels = 1;
+
+	enum CameraModesLabelsConfig_MainCameraLabels {
+		MAIN_CAMERA_LABELS_UNSET = 0;
+		MAIN_CAMERA_COLD_START = 1;
+		MAIN_CAMERA_VISIBLE = 2;
+		MAIN_CAMERA_COLD_START_AND_CAPTURE = 3;
+	}
+
+	CameraModesLabelsConfig_MainCameraLabels mainCameraLabels = 2;
+
+	enum CameraModesLabelsConfig_PreviewToolsLabels {
+		PREVIEW_TOOLS_LABELS_UNSET = 0;
+		PREVIEW_TOOLS_LABELS_VISIBLE = 1;
+	}
+
+	CameraModesLabelsConfig_PreviewToolsLabels previewToolsLabels = 3;
+
+	enum CameraModesLabelsConfig_ModularCameraLabels {
+		MODULAR_CAMERA_LABELS_UNSET = 0;
+		MODULAR_CAMERA_LABELS_VISIBLE = 1;
+		MODULAR_CAMERA_LABELS_OPENED = 2;
+	}
+
+	CameraModesLabelsConfig_ModularCameraLabels modularCameraLabels = 4;
+	int32 previewLabelsShowDurationMs = 5;
+}

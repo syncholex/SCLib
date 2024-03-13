@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbLensCta_Website {
+	string URL = 1;
+}

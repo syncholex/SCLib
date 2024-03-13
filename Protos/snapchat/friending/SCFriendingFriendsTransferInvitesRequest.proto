@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFriendingFriendsTransferInvitesRequest {
+	snapchat.core.SCCOREUUID fromTemporaryUserId = 1;
+	snapchat.core.SCCOREUUID toUserId = 2;
+}

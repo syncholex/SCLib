@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2ServiceDebug_SectionDebug_Explanation.proto";
+
+message SCS2ServiceDebug_SectionDebug_Explanation {
+	float value = 1;
+	string description_p = 2;
+	repeated snapchat.search.SCS2ServiceDebug_SectionDebug_Explanation detailsArray = 3;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package serengeti;
+
+import "serengeti/SGTIStylizationIOS.proto";
+import "serengeti/SGTIStylizationAndroid.proto";
+import "serengeti/SGTIUrlInfo.proto";
+
+message SGTIService {
+	string id_p = 1;
+	string endpoint = 2;
+	repeated string allowedRequestDomainsArray = 3;
+	serengeti.SGTIStylizationIOS stylizationIos = 4;
+	serengeti.SGTIStylizationAndroid stylizationAndroid = 5;
+	repeated string allowedFsnPathRegexesArray = 6;
+	repeated serengeti.SGTIUrlInfo allowedUrlsArray = 7;
+	int64 cacheTtl = 8;
+	int64 forceReloadIfCachedBeforeTimeMs = 9;
+	string preloadGroupId = 10;
+}

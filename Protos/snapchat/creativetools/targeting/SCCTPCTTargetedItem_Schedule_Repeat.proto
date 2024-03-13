@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_Schedule_Repeat {
+	int64 startDateTime = 1;
+	int64 endDateTime = 2;
+	int64 scheduleEndDateTime = 3;
+
+	enum SCCTPCTTargetedItem_Schedule_Repeat_RepeatFrequency {
+		UNSET = 0;
+		DAILY = 1;
+		WEEKLY = 2;
+		MONTHLY = 3;
+		YEARLY = 4;
+	}
+
+	SCCTPCTTargetedItem_Schedule_Repeat_RepeatFrequency frequency = 4;
+	repeated uint32 daysToRepeatArray = 5 [packed=true];
+	string timeZone = 6;
+}

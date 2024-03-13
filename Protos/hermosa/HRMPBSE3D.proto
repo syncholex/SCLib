@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBQuaternionD.proto";
+import "hermosa/HRMPBVec3D.proto";
+
+message HRMPBSE3D {
+	hermosa.HRMPBQuaternionD rotation = 1;
+	hermosa.HRMPBVec3D translation = 2;
+}

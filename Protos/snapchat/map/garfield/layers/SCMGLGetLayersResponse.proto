@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.layers;
+
+import "snapchat/map/garfield/layers/SCMGLLayerDetails.proto";
+
+message SCMGLGetLayersResponse {
+	repeated snapchat.map.garfield.layers.SCMGLLayerDetails layersArray = 1;
+	uint32 refreshInSecs = 2;
+}

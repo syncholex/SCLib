@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2OpeningHours_DayHours.proto";
+
+message SCR2OpeningHours {
+	repeated ranking2.SCR2OpeningHours_DayHours dayHoursArray = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOContentAccessList {
+	bool isWhitelist = 1;
+	repeated string listArray = 2;
+}

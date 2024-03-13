@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOStoryBody_EntryPoint_Tile_Logo {
+	string logoURL = 1;
+
+	enum STOStoryBody_EntryPoint_Tile_Logo_LogoPosition {
+		LOGO_POSITION_TOP = 0;
+		LOGO_POSITION_MIDDLE = 1;
+		LOGO_POSITION_BOTTOM = 2;
+		LOGO_POSITION_OFF = 3;
+	}
+
+	STOStoryBody_EntryPoint_Tile_Logo_LogoPosition position = 2;
+	bytes logoContentObject = 3;
+}

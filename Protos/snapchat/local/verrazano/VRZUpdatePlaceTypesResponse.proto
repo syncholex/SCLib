@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceType.proto";
+
+message VRZUpdatePlaceTypesResponse {
+	repeated snapchat.local.verrazano.VRZPlaceType placeTypesArray = 1;
+}

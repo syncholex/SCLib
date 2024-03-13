@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPStickerPack_StickerEntity.proto";
+
+message SCCTPStickerPack {
+	string name = 1;
+	int64 version = 2;
+	int64 priority = 3;
+	bool isTestPack = 4;
+	repeated uint64 ctIdsArray = 5 [packed=true];
+	repeated snapchat.creativetools.common.SCCTPStickerPack_StickerEntity stickersArray = 6;
+	bool isSearchable = 7;
+	bool isActive = 8;
+
+	enum SCCTPStickerPack_Type {
+		UNSET = 0;
+		SNAP_STICKER = 1;
+		BITMOJI_STICKER = 2;
+		CAMEO_STICKER = 3;
+		GEO_STICKER = 4;
+		GFYCAT_STICKER = 5;
+		SHOPPING_STICKER = 6;
+		UNLOCKABLE_STICKER = 7;
+	}
+
+	SCCTPStickerPack_Type type = 9;
+	repeated bytes ctpIdsArray = 10;
+	uint64 displayCount = 11;
+	string localizedName = 12;
+	int64 color = 13;
+}

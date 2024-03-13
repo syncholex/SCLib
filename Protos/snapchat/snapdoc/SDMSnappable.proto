@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/lenses/snappable/SCLensSbSnappableMessage.proto";
+
+message SDMSnappable {
+	snapchat.lenses.snappable.SCLensSbSnappableMessage snappable = 1;
+}

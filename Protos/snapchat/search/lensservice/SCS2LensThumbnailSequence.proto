@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+message SCS2LensThumbnailSequence {
+	string URLPattern = 1;
+	int32 numThumbnails = 2;
+	int32 animationIntervalMs = 3;
+}

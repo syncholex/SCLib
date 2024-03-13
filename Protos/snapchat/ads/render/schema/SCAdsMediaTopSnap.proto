@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsMediaTopSnap {
+	int64 topSnapMediaDurationMs = 1;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo topSnapRenderInfo = 2;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo topSnapThumbnailInfo = 3;
+}

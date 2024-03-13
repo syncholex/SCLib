@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+import "impala/IMPUserSettings.proto";
+
+message IMPListManagedBusinessProfilesResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.IMPBusinessProfileAndUserData profilesArray = 3;
+	impala.IMPUserSettings userSettings = 4;
+	bool isPopular = 5;
+	bool profileCreationEligible = 6;
+	bool alwaysShowSpotlightSendToProfile = 7;
+	bool publicProfileCreationEligible = 8;
+}

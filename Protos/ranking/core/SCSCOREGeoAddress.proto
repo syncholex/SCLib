@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREGeoAddress {
+	string country = 1;
+	string state = 2;
+	string city = 3;
+	string neighborhood = 6;
+	string countryCode = 10;
+}

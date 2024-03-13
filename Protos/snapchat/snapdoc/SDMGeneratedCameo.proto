@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMGeneratedCameo {
+
+	enum SDMGeneratedCameo_Source {
+		UNKNOWN = 0;
+		CHAT = 1;
+		DISCOVER = 2;
+	}
+
+	SDMGeneratedCameo_Source source = 1;
+
+	oneof id {
+		int64 chatCameoId = 2;
+		int64 stickerCameoId = 3;
+	}
+
+
+	enum SDMGeneratedCameo_ContentType {
+		LENS = 0;
+		CHAT_STICKER = 1;
+		PREVIEW_STICKER = 2;
+		CAMEOS_STORIES = 3;
+	}
+
+	SDMGeneratedCameo_ContentType contentType = 4;
+	int32 personCount = 5;
+	bool isOneFriendCameo = 6;
+}

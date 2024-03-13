@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message PositionScaleTransform {
+	double xPosition = 1;
+	double yPosition = 2;
+	double xScale = 3;
+	double yScale = 4;
+}

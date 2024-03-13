@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/snapdoc/SDMSubscription_CustomSubscribe.proto";
+
+message SDMSubscription {
+
+	oneof subscription {
+		google.protobuf.GPBEmpty selfSubscribe = 1;
+		snapchat.snapdoc.SDMSubscription_CustomSubscribe customSubscribe = 2;
+	}
+
+	string id_p = 3;
+}

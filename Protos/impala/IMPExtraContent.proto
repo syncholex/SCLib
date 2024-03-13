@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPTrailerContent.proto";
+
+message IMPExtraContent {
+}

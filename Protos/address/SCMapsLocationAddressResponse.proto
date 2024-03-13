@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package address;
+
+import "address/SCMapsAddress.proto";
+import "address/SCMapsAddressResult.proto";
+
+message SCMapsLocationAddressResponse {
+	repeated address.SCMapsAddress addressesArray = 1;
+	repeated address.SCMapsAddressResult resultsArray = 2;
+}

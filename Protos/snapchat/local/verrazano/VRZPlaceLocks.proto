@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeLock.proto";
+import "snapchat/local/verrazano/VRZContactInfoLock.proto";
+import "snapchat/local/verrazano/VRZOpeningHoursLock.proto";
+import "snapchat/local/verrazano/VRZAddressLock.proto";
+
+message VRZPlaceLocks {
+	snapchat.local.verrazano.VRZAttributeLock placetypeId = 1;
+	snapchat.local.verrazano.VRZAttributeLock alternatePlacetypeIds = 2;
+	snapchat.local.verrazano.VRZAttributeLock hierarchy = 3;
+	snapchat.local.verrazano.VRZAttributeLock brandId = 4;
+	snapchat.local.verrazano.VRZAttributeLock categoryId = 5;
+	snapchat.local.verrazano.VRZAttributeLock alternateCategoryIds = 6;
+	snapchat.local.verrazano.VRZAttributeLock coterminousWith = 7;
+	snapchat.local.verrazano.VRZAttributeLock name = 8;
+	snapchat.local.verrazano.VRZAttributeLock alternateNames = 9;
+	snapchat.local.verrazano.VRZAttributeLock abbreviation = 10;
+	snapchat.local.verrazano.VRZAttributeLock alternateAbbreviations = 11;
+	snapchat.local.verrazano.VRZContactInfoLock contactInfo = 12;
+	snapchat.local.verrazano.VRZOpeningHoursLock openingHours = 13;
+	snapchat.local.verrazano.VRZAttributeLock address = 14;
+	snapchat.local.verrazano.VRZAddressLock addressDetails = 15;
+	snapchat.local.verrazano.VRZAttributeLock ceasedAt = 16;
+	snapchat.local.verrazano.VRZAttributeLock isEnabled = 17;
+	snapchat.local.verrazano.VRZAttributeLock isIncludedInHierarchyLabel = 18;
+	snapchat.local.verrazano.VRZAttributeLock hierarchyLabelMask = 19;
+	snapchat.local.verrazano.VRZAttributeLock placeAttributeData = 20;
+	snapchat.local.verrazano.VRZAttributeLock asProfileId = 21;
+}

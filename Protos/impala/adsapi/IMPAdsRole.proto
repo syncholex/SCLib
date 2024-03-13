@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsRole {
+	string id_p = 1;
+	string memberId = 2;
+	string businessAccountId = 3;
+	string organizationId = 4;
+	string type = 5;
+	string createdAt = 6;
+}

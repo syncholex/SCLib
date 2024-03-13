@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+message SCMGTYGetMarkerDataRequest {
+	string poiId = 1;
+
+	enum SCMGTYMarkerDataType {
+		UNSET = 0;
+		LENS = 1;
+	}
+
+	SCMGTYMarkerDataType markerDataType = 2;
+}

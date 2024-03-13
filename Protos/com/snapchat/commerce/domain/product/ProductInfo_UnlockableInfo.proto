@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.product;
+
+message ProductInfo_UnlockableInfo {
+	bytes unlockableId = 1;
+	bytes scannableId = 2;
+	string unlockableScanURL = 3;
+}

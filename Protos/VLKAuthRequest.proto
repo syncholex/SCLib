@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message VLKAuthRequest {
+
+	enum VLKAuthRequest_AuthOperation {
+		GetMFICert = 1;
+		GetSCCert = 2;
+		GetMFIResponse = 3;
+		GetAppAuthChallenge = 4;
+		ReturnAppAuthResponse = 5;
+	}
+
+	VLKAuthRequest_AuthOperation authOperation = 1;
+	bytes mfichallenge = 2;
+	bytes appAuthResponse = 3;
+}

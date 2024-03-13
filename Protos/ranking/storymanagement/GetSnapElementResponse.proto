@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+import "ranking/storymanagement/PublisherData.proto";
+import "ranking/core/SCSCOREUUID.proto";
+
+message GetSnapElementResponse {
+	ranking.serving.jaguar.SCSSMStorySnap snap = 1;
+
+	enum GetSnapElementResponse_Status {
+		UNKNOWN = 0;
+		VALID = 1;
+		UNVIEWABLE = 2;
+		POTENTIALLY_VIEWABLE = 3;
+	}
+
+	GetSnapElementResponse_Status status = 2;
+	ranking.storymanagement.PublisherData publisherData = 3;
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 4;
+	ranking.core.SCSCOREUUID storyId = 5;
+
+	enum SCSCORECustomStoryType_Enum {
+		UNKNOWN = 0;
+		PRIVATE = 1;
+		CUSTOM = 2;
+		GEO = 3;
+		GROUP_CHAT = 4;
+		SNAP_REQUEST = 5;
+		SHARED = 6;
+		COMMUNITY = 7;
+	}
+
+}

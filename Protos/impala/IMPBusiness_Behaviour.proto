@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/profile/IMPContentIdentifierV2.proto";
+import "snapchat/storydoc/STODiscoverChannelFilter.proto";
+
+message IMPBusiness_Behaviour {
+	bool isPublisher = 1;
+	bool isShow = 2;
+	bool isOfficialAccount = 3;
+	bool isNews = 4;
+
+	enum IMPFeature {
+		UNKNOWN = 0;
+		EVERGREEN = 1;
+		TIMELY = 8;
+		SUBSCRIBER_ONLY = 2;
+		EXCLUSIVE_SHOW = 3;
+		ORIGINAL_SHOW = 9;
+		FIXED_PAYMENTS = 4;
+		TEAM_SNAPCHAT = 7;
+		FRIENDS_CAROUSEL = 10;
+		INTERNAL_CURATOR = 5;
+		PARTNER_CURATOR = 6;
+		ONBOARDING_WIZARD = 11;
+		MADE_FOR_US = 12;
+		DISCOVER_CHANNEL = 13;
+		DISCOVER_CHANNEL_ELIGIBLE = 14;
+		USE_BUNDLE = 15;
+	}
+
+	repeated IMPFeature featuresArray = 5 [packed=true];
+	bool isSubscribable = 6;
+
+	enum IMPAdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	IMPAdSetting adSetting = 7;
+	repeated impala.profile.IMPContentIdentifierV2 contentsArray = 8;
+	bool isCuratedPublisher = 9;
+	bool adsEnabled = 10;
+	bool isDeleted = 11;
+	bool isHappeningNowPublisher = 12;
+
+	enum IMPAudioClassification {
+		UNSET = 0;
+		NORMAL_DIALOGUE = 1;
+		DIALOGUE_SUBTITLE_BURN = 2;
+		DIALOGUE_IMPACT_BURN = 3;
+		DIALOGUE_HEAVY = 4;
+		NO_DIALOGUE = 5;
+	}
+
+	IMPAudioClassification audioClassification = 13;
+	bool isAdsPreRollEnabled = 14;
+
+	enum IMPModerationLevel {
+		MODERATION_LEVEL_UNSET = 0;
+		MODERATION_LEVEL_STANDARD = 1;
+		MODERATION_LEVEL_NEWS = 2;
+	}
+
+	IMPModerationLevel moderationLevel = 15;
+	bool isDynamicAdsEnabled = 16;
+	repeated snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 17;
+
+	enum TierLevel {
+		TIER_UNKNOWN = 0;
+		TIER_PREMIUM = 1;
+		TIER_SHOW = 2;
+		TIER_CURATION = 3;
+		TIER_HAPPENING_NOW = 4;
+		TIER_DYNAMIC_EDITIONS = 5;
+	}
+
+	TierLevel tierLevel = 18;
+}

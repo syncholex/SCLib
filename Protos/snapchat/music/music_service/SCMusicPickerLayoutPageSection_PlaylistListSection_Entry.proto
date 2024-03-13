@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/common/SCMusicAlbumArt.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_PlaylistListSection_Entry {
+	string title = 1;
+	string subtitle = 2;
+	repeated snapchat.music.common.SCMusicAlbumArt albumArtsArray = 3;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference pageReference = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoConnection.proto";
+
+message SCSnapKitProtoUpdateResponse {
+	snapkit.internal.user.SCSnapKitProtoConnection connection = 1;
+}

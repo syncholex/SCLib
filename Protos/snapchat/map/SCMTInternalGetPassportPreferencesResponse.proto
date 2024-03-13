@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPassportPreferences.proto";
+
+message SCMTInternalGetPassportPreferencesResponse {
+	snapchat.map.SCMTPassportPreferences passportPreferences = 1;
+}

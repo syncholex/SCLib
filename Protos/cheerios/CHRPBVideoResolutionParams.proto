@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBFlightModeConfig.proto";
+
+message CHRPBVideoResolutionParams {
+	cheerios.CHRPBFlightModeConfig flightMode = 1;
+
+	enum CHRPBVideoResolutionParams_Resolution {
+		UNSET = 0;
+		MEDIUM_RESOLUTION = 1;
+		HIGH_RESOLUTION = 2;
+	}
+
+	CHRPBVideoResolutionParams_Resolution res = 2;
+}

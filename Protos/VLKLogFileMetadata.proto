@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKLogFileMetadata {
+	string name = 1;
+	int32 size = 2;
+}

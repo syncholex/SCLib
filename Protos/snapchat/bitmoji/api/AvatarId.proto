@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+message AvatarId {
+	string avatarId = 1;
+}

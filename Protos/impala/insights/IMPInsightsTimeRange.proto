@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsTimeRange {
+	int64 startTimestamp = 1;
+	int64 endTimestamp = 2;
+}

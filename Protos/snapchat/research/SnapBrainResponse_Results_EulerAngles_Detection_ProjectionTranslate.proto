@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_EulerAngles_Detection_ProjectionTranslate {
+	float x = 1;
+	float y = 2;
+}

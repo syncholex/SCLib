@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPInternalDumpBusinessSnapsRequest {
+
+	oneof identifier {
+		string hostUserId = 1;
+		string businessId = 2;
+	}
+
+	int64 startTimestampMs = 3;
+	int64 endTimestampMs = 4;
+	string pageId = 5;
+}

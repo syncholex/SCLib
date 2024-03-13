@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsDevMetadata_PlayCanvasMetadata {
+	string loginURL = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFOptInRequest.proto";
+
+message SCSNTFRestoreOptInRequests {
+	string userId = 1;
+	repeated ranking.pii.user.notification.SCSNTFOptInRequest requestsArray = 2;
+}

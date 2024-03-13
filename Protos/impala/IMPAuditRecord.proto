@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPInternalBusinessProfile.proto";
+
+message IMPAuditRecord {
+	impala.IMPInternalBusinessProfile profile = 1;
+	int64 createdAt = 2;
+	string modifiedByUserId = 3;
+
+	enum IMPOperation {
+		UNKNOWN_OPERATION = 0;
+		CREATE = 1;
+		UPDATE = 2;
+		DELETE = 3;
+	}
+
+	IMPOperation operation = 4;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/map/slippy/SCMapsSlippyLocationShareUserInfo.proto";
+import "snapchat/map/slippy/SCMapsSlippyLiveLocationUpsellInfo.proto";
+
+message SCMapsSlippyUserInfo {
+
+	oneof info {
+		snapchat.map.slippy.SCMapsSlippyLocationShareUserInfo locationShareUserInfo = 1;
+		snapchat.map.slippy.SCMapsSlippyLiveLocationUpsellInfo liveLocationUpsellInfo = 2;
+	}
+
+}

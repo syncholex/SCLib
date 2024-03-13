@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message Mention {
+	ranking.core.SCSCOREUUID userId = 1;
+	string displayName = 2;
+	ranking.core.SCSCOREUUID publicProfileId = 3;
+
+	oneof profile {
+		ranking.core.SCSCOREUUID businessProfileId = 4;
+		ranking.core.SCSCOREUUID friendProfileId = 5;
+	}
+
+}

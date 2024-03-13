@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.common;
+
+message SCBitmojiAvatarBuilderCategory {
+	int32 id_p = 1;
+	string name = 2;
+	string contentId = 3;
+}

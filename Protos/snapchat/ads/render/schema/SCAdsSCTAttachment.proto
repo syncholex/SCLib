@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsAppInstall.proto";
+import "snapchat/ads/render/schema/SCAdsLongformVideo.proto";
+import "snapchat/ads/render/schema/SCAdsWebViewAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+
+message SCAdsSCTAttachment {
+
+	oneof sctAttachmentType {
+		snapchat.ads.render.schema.SCAdsAppInstall appInstall = 1;
+		snapchat.ads.render.schema.SCAdsLongformVideo longformVideo = 2;
+		snapchat.ads.render.schema.SCAdsWebViewAttachment webviewAttachment = 3;
+		snapchat.ads.render.schema.SCAdsDeeplink deepLink = 4;
+	}
+
+	string callToAction = 5;
+
+	enum SCAdsSCTAttachmentType {
+		ATTACHMENT_UNSET = 0;
+		APP_INSTALL = 1;
+		LONG_FORM_VIDEO = 2;
+		WEB_VIEW = 3;
+		DEEP_LINK = 4;
+	}
+
+	SCAdsSCTAttachmentType attachmentType = 6;
+}

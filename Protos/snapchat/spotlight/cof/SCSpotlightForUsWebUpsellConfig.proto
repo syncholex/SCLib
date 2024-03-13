@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCSpotlightForUsWebUpsellConfig {
+	repeated string enabledHostsArray = 1;
+}

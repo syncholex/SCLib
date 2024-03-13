@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSDecryptionKey.proto";
+
+message SCPSSSnapJoinerVideoData {
+	repeated string frameUrlsArray = 1;
+	string videoURL = 2;
+	snapchat.perception.showcase.screenshop.SCPSSDecryptionKey decryptionKey = 3;
+}

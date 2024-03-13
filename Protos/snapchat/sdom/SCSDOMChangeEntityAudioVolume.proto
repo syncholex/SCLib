@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+
+message SCSDOMChangeEntityAudioVolume {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+	float audioVolume = 2;
+}

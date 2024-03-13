@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBMediaFileTransferRequest.proto";
+import "malibu/MLBMediaFileDeletionRequest.proto";
+import "malibu/MLBMediaFileMarkTransferredRequest.proto";
+
+message MLBMediaRequest {
+
+	enum MLBMediaRequest_MediaRequestType {
+		LIST_AVAILABLE_MEDIA = 0;
+		GET_MEDIA_FILE = 1;
+		DELETE_MEDIA_FILE = 2;
+		START_AS_NEED_DELETION = 3;
+		MARK_TRANSFERRED = 4;
+	}
+
+	MLBMediaRequest_MediaRequestType type = 1;
+	malibu.MLBMediaFileTransferRequest mediaFileTransferRequest = 2;
+	malibu.MLBMediaFileDeletionRequest mediaFileDeletionRequest = 3;
+	malibu.MLBMediaFileMarkTransferredRequest mediaFileMarkTransferredRequest = 4;
+}

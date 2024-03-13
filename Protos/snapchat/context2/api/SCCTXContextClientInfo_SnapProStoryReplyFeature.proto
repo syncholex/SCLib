@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_SnapProStoryReplyFeature {
+	bool storyReplyEnabled = 1;
+	bool giftingEnabled = 2;
+}

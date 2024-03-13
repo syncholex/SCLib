@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPUserDataCTItemResult.proto";
+
+message SCCTPPutItemsResponse {
+	repeated snapchat.creativetools.userdata.SCCTPUserDataCTItemResult resultsArray = 1;
+}

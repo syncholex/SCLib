@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsMap {
+
+	enum SCAppInsightsMap_Subfeature {
+		UNSET = 0;
+		LOCATION_ACCURACY = 1;
+		LOCATION_SHARING = 2;
+		FRIENDS = 3;
+		PLACES = 4;
+		MY_BITMOJI = 5;
+		PUBLIC_SNAPS = 6;
+		MAP_LAYERS = 7;
+		MAP_LABELS = 8;
+		PERFORMANCE = 9;
+	}
+
+	SCAppInsightsMap_Subfeature subfeature = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Bitmoji.proto";
+import "snapchat/notification/Routing.proto";
+
+message CommunicationDisplay {
+	string title = 1;
+	string body = 2;
+	snapchat.notification.Bitmoji bitmoji = 3;
+	snapchat.notification.Routing personShortcutRouting = 4;
+	string subtitle = 5;
+}

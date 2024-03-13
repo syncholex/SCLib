@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbPublishLensToAdAccountResponse {
+	string id_p = 1;
+	string mediaId = 2;
+	int64 unlockableId = 3;
+}

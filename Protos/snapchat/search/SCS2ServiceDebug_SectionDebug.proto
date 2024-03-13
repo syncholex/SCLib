@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2ServiceDebug_SectionDebug_LiteItemDebug.proto";
+import "snapchat/search/SCS2ServiceDebug_SectionDebug_ScoringDebug.proto";
+
+message SCS2ServiceDebug_SectionDebug {
+	string sectionName = 1;
+	repeated snapchat.search.SCS2ServiceDebug_SectionDebug_LiteItemDebug liteItemDebugArray = 2;
+	repeated string retrievalQueryArray = 3;
+	snapchat.search.SCS2ServiceDebug_SectionDebug_ScoringDebug scoringDebug = 4;
+	string sectionLevelInfo = 5;
+}

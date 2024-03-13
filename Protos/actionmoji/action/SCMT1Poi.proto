@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+
+message SCMT1Poi {
+	snapchat.map.common.SCMCLocalizedStringSet name = 1;
+	double lat = 2;
+	double lng = 3;
+	string type = 4;
+}

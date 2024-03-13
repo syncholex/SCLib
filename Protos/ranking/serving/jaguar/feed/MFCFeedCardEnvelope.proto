@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/feed/MFCDeltaPull.proto";
+
+message MFCFeedCardEnvelope {
+	ranking.core.SCCORECompositeStoryId feedCardId = 1;
+	repeated bytes snapsArray = 2;
+	ranking.serving.jaguar.feed.MFCDeltaPull deltaPullResponse = 3;
+	bytes feedCard = 4;
+}

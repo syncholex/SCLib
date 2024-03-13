@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationGetUndisplayedNotificationsResponse {
+
+	enum SCPushNotificationGetUndisplayedNotificationsResponse_StatusCode {
+		UNKNOWN = 0;
+		OK = 1;
+		USER_ID_NOT_FOUND = 2;
+		NOTIFICATION_NOT_FOUND = 3;
+		INTERNAL_ERROR = 4;
+	}
+
+	SCPushNotificationGetUndisplayedNotificationsResponse_StatusCode status = 1;
+	bytes payloads = 2;
+}

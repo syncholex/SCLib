@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCORESnapClientMetadata.proto";
+
+message SCSCORERankingMetadata {
+	bool postedToUserStory = 1;
+	ranking.core.SCSCORESnapClientMetadata clientMetadata = 2;
+}

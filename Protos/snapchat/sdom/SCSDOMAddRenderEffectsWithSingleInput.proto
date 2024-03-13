@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/mediaengine/render_effect/SCMERenderEffect.proto";
+import "snapchat/sdom/SCSDOMEffectIndex.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+
+message SCSDOMAddRenderEffectsWithSingleInput {
+	repeated snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemsArray = 1;
+	repeated snapchat.mediaengine.render_effect.SCMERenderEffect renderEffectsArray = 2;
+	snapchat.sdom.SCSDOMEffectIndex effectIndexes = 3;
+
+	enum SDMRenderEffectScene_SceneType {
+		UNSET = 0;
+		AUDIO = 1;
+		VIDEO = 2;
+	}
+
+	SDMRenderEffectScene_SceneType sceneType = 4;
+	snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 5;
+}

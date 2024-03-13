@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.mapserver;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMSLocality {
+	string localizedLocality = 1;
+	snapchat.core.SCCOREUUID id_p = 2;
+}

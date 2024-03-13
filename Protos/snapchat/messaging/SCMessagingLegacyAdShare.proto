@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMediaMetadata.proto";
+
+message SCMessagingLegacyAdShare {
+	snapchat.messaging.SCMessagingMediaMetadata media = 1;
+}

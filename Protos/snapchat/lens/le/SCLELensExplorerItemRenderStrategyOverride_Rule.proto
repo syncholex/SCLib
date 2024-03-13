@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerItemRenderStrategyOverride_Rule {
+
+	enum SCLELensExplorerRequest_Context {
+		UNSET = 0;
+		WEB = 1;
+		POST_CAPTURE = 2;
+		HERMOSA_HOME = 3;
+		DEFAULT_HERMOSA = 4;
+		DIRECTOR_MODE = 5;
+		AR_BAR = 6;
+		INFO_CARD = 7;
+		NOTIFICATION = 8;
+		AR_BAR_REPLY = 9;
+		AVALON = 10;
+	}
+
+	SCLELensExplorerRequest_Context context = 1;
+	int32 spanCount = 2;
+	int32 pageSize = 3;
+	string tileMode = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstance.proto";
+
+message SCCognacAppInstancesUpdateAppInstancePrivacyResponse {
+	cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+}

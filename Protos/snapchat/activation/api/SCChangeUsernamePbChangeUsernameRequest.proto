@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCChangeUsernamePbChangeUsernameRequest {
+	string newUsername = 1;
+	string persistentAttestationDeviceId = 2;
+}

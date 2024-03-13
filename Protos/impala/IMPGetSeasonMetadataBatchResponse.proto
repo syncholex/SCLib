@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSeasonMetadata.proto";
+
+message IMPGetSeasonMetadataBatchResponse {
+	repeated impala.IMPSeasonMetadata seasonsArray = 1;
+}

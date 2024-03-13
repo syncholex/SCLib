@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMRenderEffectDAG.proto";
+
+message SDMRenderEffectScene {
+	repeated snapchat.snapdoc.SDMRenderEffectDAG renderEffectDagsArray = 1;
+
+	enum SDMRenderEffectScene_SceneType {
+		UNSET = 0;
+		AUDIO = 1;
+		VIDEO = 2;
+	}
+
+	SDMRenderEffectScene_SceneType sceneType = 2;
+}

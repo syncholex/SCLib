@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingContentEnvelope_RemoteMediaInfo {
+
+	oneof mediaInfo {
+		bytes contentObject = 1;
+		string legacyMediaId = 2;
+		string contentURL = 5;
+	}
+
+
+	enum SCMessagingContentEnvelope_RemoteMediaInfo_MediaType {
+		UNKNOWN = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		GIF = 3;
+	}
+
+	SCMessagingContentEnvelope_RemoteMediaInfo_MediaType mediaType = 3;
+	bool hasAudio = 4;
+}

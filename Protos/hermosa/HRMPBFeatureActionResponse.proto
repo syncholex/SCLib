@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBFeatureActionResponse {
+	string featureId = 1;
+	bool success = 2;
+}

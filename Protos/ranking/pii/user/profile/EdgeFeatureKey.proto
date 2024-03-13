@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message EdgeFeatureKey {
+	string viewerId = 1;
+	string posterId = 2;
+}

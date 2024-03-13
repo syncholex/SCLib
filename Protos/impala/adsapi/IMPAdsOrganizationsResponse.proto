@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsOrganizationSubResponse.proto";
+
+message IMPAdsOrganizationsResponse {
+	repeated impala.adsapi.IMPAdsOrganizationSubResponse organizationsArray = 1;
+}

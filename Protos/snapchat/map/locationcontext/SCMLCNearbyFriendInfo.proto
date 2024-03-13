@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMLCNearbyFriendInfo {
+	snapchat.core.SCCOREUUID nearbyFriendId = 1;
+}

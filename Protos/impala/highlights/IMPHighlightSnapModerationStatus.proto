@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/common/IMPContentModerationStatus.proto";
+
+message IMPHighlightSnapModerationStatus {
+	string highlightSnapId = 1;
+	impala.common.IMPContentModerationStatus contentModerationStatus = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.ads;
+
+import "snapchat/cameos/ads/SCCameosAdInfoCardMetadata.proto";
+
+message SCCameosAdInfoCardConfig {
+	snapchat.cameos.ads.SCCameosAdInfoCardMetadata adInfoMetadatas = 1;
+}

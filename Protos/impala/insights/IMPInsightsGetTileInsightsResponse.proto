@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsTileLifetimeInsights.proto";
+
+message IMPInsightsGetTileInsightsResponse {
+	repeated impala.insights.IMPInsightsTileLifetimeInsights tileLifetimeInsightsArray = 1;
+}

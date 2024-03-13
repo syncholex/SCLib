@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SnapContextComposerContent {
+	bytes composerViewModelJson = 1;
+	string composerDocId = 2;
+	string composerBundleName = 3;
+	int32 composerBundleMinVersion = 4;
+}

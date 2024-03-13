@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+message SCCameosGetFriendBloopsDataRequest {
+	repeated string userIdsArray = 1;
+	bool firstMatchReturnOnly = 2;
+
+	enum SCCameosFriendBloopsOrigin {
+		FRIEND_BLOOPS_ORIGIN_UNSET = 0;
+		CHAT = 1;
+		PREVIEW_REPLY = 2;
+		PREVIEW = 3;
+		DISCOVER = 4;
+		LENS_CAROUSEL = 5;
+		FRIEND_STORIES = 6;
+	}
+
+	SCCameosFriendBloopsOrigin friendBloopsOrigin = 3;
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+message SCNotificationGetNotificationSettingResponse {
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+
+	enum SCNotificationNotificationPrivacySetting {
+		UNKNOWN_PRIVACY = 0;
+		EVERYONE = 1;
+		FRIENDS = 2;
+	}
+
+
+	oneof notificationSettingResponse {
+		SCNotificationNotificationSetting notificationSetting = 1;
+		SCNotificationNotificationPrivacySetting privacySetting = 2;
+	}
+
+
+	enum SCNotificationStatusCode {
+		UNKNOWN_STATUS = 0;
+		OK = 1;
+		INVALID_REQUEST = 2;
+		PERSISTENCE_ERROR = 3;
+		NOT_AUTHORIZED = 4;
+		NONE_EXISTING_USER = 5;
+		INTERNAL_FAILURE = 9;
+	}
+
+	SCNotificationStatusCode statusCode = 3;
+}

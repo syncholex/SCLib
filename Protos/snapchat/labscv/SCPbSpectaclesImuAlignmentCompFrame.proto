@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.labscv;
+
+message SCPbSpectaclesImuAlignmentCompFrame {
+	repeated double imuAlignmentCompArray = 1 [packed=true];
+	bool isNewConvention = 2;
+}

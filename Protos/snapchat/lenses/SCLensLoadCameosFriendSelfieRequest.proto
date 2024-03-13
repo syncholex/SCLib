@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensLoadCameosFriendSelfieRequest {
+	uint32 friendIndex = 1;
+}

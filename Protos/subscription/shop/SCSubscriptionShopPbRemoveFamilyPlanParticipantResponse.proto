@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbRemoveFamilyPlanParticipantResponse {
+
+	enum SCSubscriptionShopPbRemoveFamilyPlanParticipantResponse_Error {
+		ERROR_UNSET = 0;
+		ERROR_FAMILY_PLAN_NOT_FOUND = 1;
+		ERROR_PARTICIPANT_NOT_FOUND = 2;
+	}
+
+	SCSubscriptionShopPbRemoveFamilyPlanParticipantResponse_Error error = 1;
+}

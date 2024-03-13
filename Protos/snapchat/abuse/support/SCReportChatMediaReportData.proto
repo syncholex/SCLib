@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportSnapMediaData.proto";
+
+message SCReportChatMediaReportData {
+	string snapId = 1;
+	bytes mediaContent = 2;
+	bytes mediaOverlay = 3;
+	string attachmentURL = 4;
+	int64 mediaSentTimestamp = 5;
+	string conversationId = 6;
+	int64 messageId = 7;
+	string reportedUserId = 8;
+	snapchat.abuse.support.SCReportSnapMediaData content = 9;
+	string lensCustomizationPrompt = 11;
+	string lensCustomizationId = 12;
+}

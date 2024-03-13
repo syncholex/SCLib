@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package socialsms;
+
+message ErrorResponse {
+
+	enum ErrorType {
+		ERROR_TYPE_UNSET = 0;
+		RATELIMIT_USER = 1;
+		BAD_REQUEST_USERID = 2;
+		BAD_REQUEST_PHONE_NUMBERS = 3;
+		BAD_REQUEST_UNVERIFIED_PHONE_NUMBER = 4;
+		BAD_REQUEST_INVALID_FEATURE = 5;
+		BAD_REQUEST_CONTENT_URL_NOT_FOUND = 6;
+		BAD_REQUEST_MESSAGE_TOO_LONG = 7;
+	}
+
+	ErrorType errorType = 1;
+	string errorMessage = 2;
+}

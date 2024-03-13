@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElementsInfo_SourceClient.proto";
+
+message SCCTXContextClientInfo_TappableElementsInfo {
+	repeated snapchat.context2.api.SCCTXContextClientInfo_TappableElement elementsArray = 1;
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElementsInfo_SourceClient sourceClient = 2;
+}

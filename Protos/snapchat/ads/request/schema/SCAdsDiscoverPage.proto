@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsSubsBrandSafety.proto";
+import "snapchat/ads/request/schema/SCAdsDiscoverPage_Feed.proto";
+
+message SCAdsDiscoverPage {
+	string mixerVersion = 1;
+	snapchat.ads.request.schema.SCAdsSubsBrandSafety subsBrandSafety = 2;
+	repeated snapchat.ads.request.schema.SCAdsDiscoverPage_Feed feedsArray = 3;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles.ticketmaster;
+
+import "snapchat/map/garfield/image/SCMGIImageReference.proto";
+
+message SCMGTTMEventProperties {
+	string id_p = 1;
+	string name = 2;
+	snapchat.map.garfield.image.SCMGIImageReference image = 3;
+	uint64 startTimeSeconds = 4;
+
+	enum SCMGLTMCategory {
+		UNSET = 0;
+		MISCELLANEOUS = 1;
+		SPORTS = 2;
+		MUSIC = 3;
+		ARTS_AND_THEATRE = 4;
+		UNDEFINED = 5;
+		FILM = 6;
+	}
+
+	SCMGLTMCategory category = 5;
+	bool isPopular = 6;
+	string URL = 7;
+}

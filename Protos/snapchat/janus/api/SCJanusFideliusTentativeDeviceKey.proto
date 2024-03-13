@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusFideliusTentativeDeviceKey {
+	bytes publicKey = 1;
+	bytes hashedPublicKey = 2;
+	bytes iwek = 3;
+	uint64 version = 4;
+}

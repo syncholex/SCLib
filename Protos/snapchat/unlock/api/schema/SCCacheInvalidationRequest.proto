@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+message SCCacheInvalidationRequest {
+	string userId = 1;
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 2;
+}

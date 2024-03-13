@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBMediaTypeAndSize {
+
+	enum MLBMediaType {
+		METADATA = 0;
+		THUMBNAIL = 1;
+		HIGHLIGHT_THUMBNAIL = 2;
+		SD_VIDEO = 3;
+		HD_VIDEO = 4;
+		PICTURE = 5;
+		IMU_DATA = 6;
+		METADATA_NO_UTC = 7;
+	}
+
+	MLBMediaType type = 1;
+	uint32 size = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsClientMajorAbTest.proto";
+
+message SCAdsFeatureContext {
+	google.protobuf.GPBStringValue requestVoperaVariant = 1;
+	repeated snapchat.ads.request.schema.SCAdsClientMajorAbTest clientMajorAbTestsArray = 2;
+}

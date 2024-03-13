@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message VLKNrfShellCmdRequest {
+	bytes shellCommand = 1;
+}

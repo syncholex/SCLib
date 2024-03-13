@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/ClusterResult.proto";
+
+message MultiClusterResult {
+	repeated snapchat.cup.platform.proto.ClusterResult clusterResultArray = 1;
+}

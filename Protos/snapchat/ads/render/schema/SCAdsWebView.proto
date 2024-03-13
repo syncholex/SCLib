@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsCookieInfo.proto";
+
+message SCAdsWebView {
+	string URL = 1;
+	repeated snapchat.ads.render.schema.SCAdsCookieInfo cookieInfoArray = 2;
+}

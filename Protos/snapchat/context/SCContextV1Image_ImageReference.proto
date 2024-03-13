@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1Image_ImageReference {
+	string resourceId = 1;
+}

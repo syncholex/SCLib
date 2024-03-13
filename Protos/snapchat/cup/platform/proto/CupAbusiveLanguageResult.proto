@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/CupAbusiveLanguageResult_Result.proto";
+
+message CupAbusiveLanguageResult {
+	repeated snapchat.cup.platform.proto.CupAbusiveLanguageResult_Result resultsArray = 1;
+}

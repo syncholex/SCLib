@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBMediaCountsMessage.proto";
+
+message HRMPBMediaCountsResponse {
+	hermosa.HRMPBMediaCountsMessage mediaCounts = 1;
+}

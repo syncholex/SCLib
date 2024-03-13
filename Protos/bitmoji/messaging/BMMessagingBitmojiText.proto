@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package bitmoji.messaging;
+
+import "bitmoji/messaging/BMMessagingText.proto";
+import "bitmoji/messaging/BMMessagingBitmojiSticker.proto";
+
+message BMMessagingBitmojiText {
+	bitmoji.messaging.BMMessagingText text = 1;
+	bitmoji.messaging.BMMessagingBitmojiSticker sticker = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3OpenAppAction.proto";
+import "snapchat/perception/scan/v3/SCPCNV3WebResultCell.proto";
+
+message SCPCNV3ScanCardSupergreatProductReviewsModel {
+	string header = 1;
+	snapchat.perception.scan.v3.SCPCNV3OpenAppAction openAppAction = 2;
+	repeated snapchat.perception.scan.v3.SCPCNV3WebResultCell cellsArray = 3;
+}

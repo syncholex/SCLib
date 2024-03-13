@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBStruct.proto";
+import "google/protobuf/GPBListValue.proto";
+
+message GPBValue {
+
+	enum GPBNullValue {
+		NULL_VALUE = 0;
+	}
+
+
+	oneof kind {
+		GPBNullValue nullValue = 1;
+		double numberValue = 2;
+		string stringValue = 3;
+		bool boolValue = 4;
+		google.protobuf.GPBStruct structValue = 5;
+		google.protobuf.GPBListValue listValue = 6;
+	}
+
+}

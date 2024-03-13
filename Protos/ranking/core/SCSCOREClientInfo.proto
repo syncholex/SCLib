@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/core/SCSCOREAppInfo.proto";
+import "ranking/core/SCSCOREConnectionInfo.proto";
+import "ranking/core/SCSCOREDeviceInfo.proto";
+import "ranking/core/SCSCOREGeoLocation.proto";
+import "ranking/core/SCSCOREGeoAddress.proto";
+
+message SCSCOREClientInfo {
+	ranking.core.SCSCOREUUID userId = 1;
+	ranking.core.SCSCOREAppInfo appInfo = 2;
+	ranking.core.SCSCOREConnectionInfo connectionInfo = 3;
+	ranking.core.SCSCOREDeviceInfo deviceInfo = 4;
+	ranking.core.SCSCOREGeoLocation location = 5;
+	string countryCode = 6;
+	bool isEmployee = 7;
+	ranking.core.SCSCOREGeoAddress geoAddress = 8;
+}

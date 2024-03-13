@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPCopySnapResponse {
+	string snapId = 1;
+	string mediaId = 2;
+	string mediaURL = 3;
+}

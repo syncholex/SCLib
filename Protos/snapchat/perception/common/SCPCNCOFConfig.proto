@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.common;
+
+import "snapchat/common/Value.proto";
+
+message SCPCNCOFConfig {
+	string name = 1;
+	snapchat.common.Value value = 2;
+}

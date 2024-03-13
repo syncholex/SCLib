@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCOrbisSssId {
+	snapchat.core.SCCOREUUID id_p = 1;
+	string storyId = 2;
+}

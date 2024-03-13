@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSetSideEnabledMessage {
+
+	enum MLBSetSideEnabledEnum {
+		NONE_ENABLED = 0;
+		LEFT_ENABLED = 1;
+		RIGHT_ENABLED = 2;
+		BOTH_ENABLED = 3;
+	}
+
+	MLBSetSideEnabledEnum sideEnabled = 1;
+}

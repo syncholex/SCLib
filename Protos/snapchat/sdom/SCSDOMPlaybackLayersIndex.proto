@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMLayerFilter.proto";
+
+message SCSDOMPlaybackLayersIndex {
+
+	oneof layersIndex {
+		uint32 layerIndex = 1;
+		snapchat.sdom.SCSDOMLayerFilter layerFilter = 2;
+	}
+
+}

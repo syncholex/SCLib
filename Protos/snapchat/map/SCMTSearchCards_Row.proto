@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTSearchCards_PoiRow.proto";
+
+message SCMTSearchCards_Row {
+	snapchat.map.SCMTSearchCards_PoiRow poiRow = 1;
+}

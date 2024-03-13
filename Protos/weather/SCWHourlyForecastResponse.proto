@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package weather;
+
+import "weather/SCWWeather.proto";
+import "address/SCMapsAddress.proto";
+import "weather/SCWTimeZone.proto";
+
+message SCWHourlyForecastResponse {
+	repeated weather.SCWWeather hourlyForecastArray = 1;
+	address.SCMapsAddress address = 2;
+	weather.SCWTimeZone timeZone = 3;
+}

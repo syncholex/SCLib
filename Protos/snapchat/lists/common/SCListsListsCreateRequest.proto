@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/lists/common/SCListsRecipientList.proto";
+
+message SCListsListsCreateRequest {
+	repeated snapchat.lists.common.SCListsRecipientList listsArray = 1;
+	bool isPrepopulation = 2;
+}

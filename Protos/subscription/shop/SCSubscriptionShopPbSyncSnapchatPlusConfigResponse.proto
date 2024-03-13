@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPricingDetails.proto";
+import "subscription/shop/SCSubscriptionShopPbSubscribePageConfig.proto";
+import "subscription/shop/SCSubscriptionShopPbPlusFeedHeaderPromptConfig.proto";
+import "subscription/shop/SCSubscriptionShopPbProfilePageConfig.proto";
+
+message SCSubscriptionShopPbSyncSnapchatPlusConfigResponse {
+	subscription.shop.SCSubscriptionShopPbPricingDetails pricingDetails = 1;
+	subscription.shop.SCSubscriptionShopPbSubscribePageConfig subscribePageConfig = 2;
+	subscription.shop.SCSubscriptionShopPbPlusFeedHeaderPromptConfig fhpConfig = 3;
+	subscription.shop.SCSubscriptionShopPbProfilePageConfig profileConfig = 4;
+	uint64 nextSyncTimestampMillis = 5;
+}

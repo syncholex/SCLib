@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZPopularWithFriendsAnnotation.proto";
+
+message VRZPlaceAnnotation {
+
+	enum VRZPlaceAnnotation_AnnotationType {
+		ANNOTATION_TYPE_UNSET = 0;
+		POPULAR_WITH_FRIENDS = 1;
+		VISITED = 2;
+		FAVORITES = 3;
+		PROMOTED = 4;
+		POPULAR_LAST_NIGHT = 5;
+	}
+
+	VRZPlaceAnnotation_AnnotationType annotationType = 1;
+
+	oneof annotation {
+		snapchat.local.placediscovery.VRZPopularWithFriendsAnnotation popularWithFriends = 2;
+	}
+
+	string annotationIconURL = 3;
+	string annotationName = 4;
+	string localizedDisplayName = 5;
+}

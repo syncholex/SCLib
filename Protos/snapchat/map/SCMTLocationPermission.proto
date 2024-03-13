@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTLocationPermission {
+
+	enum SCMTLocationPermission_Type {
+		UNSET = 0;
+		NEVER = 1;
+		ONCE = 2;
+		WHILE_USING = 3;
+		ALWAYS = 4;
+	}
+
+	SCMTLocationPermission_Type type = 1;
+	bool precise = 2;
+}

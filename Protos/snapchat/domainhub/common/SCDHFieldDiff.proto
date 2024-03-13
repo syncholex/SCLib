@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+message SCDHFieldDiff {
+	string prefixedFieldName = 1;
+	string previousFieldValue = 2;
+	string currentFieldValue = 3;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2Publisher {
+	int64 id_p = 1;
+	string displayName = 3;
+	string description_p = 4;
+	string iconURL = 5;
+	string deeplinkURL = 6;
+	string businessProfileId = 7;
+	string primaryColor = 8;
+	bool isShow = 9;
+	string showId = 10;
+
+	enum IMPAdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	IMPAdSetting adSetting = 11;
+	int64 latestEditionId = 12;
+	int64 approxSubscriptionCount = 13;
+}

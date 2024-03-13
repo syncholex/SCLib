@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package validate;
+
+import "validate/FieldRules.proto";
+
+message RepeatedRules {
+	uint64 minItems = 1;
+	uint64 maxItems = 2;
+	bool unique = 3;
+	validate.FieldRules items = 4;
+	bool ignoreEmpty = 5;
+}

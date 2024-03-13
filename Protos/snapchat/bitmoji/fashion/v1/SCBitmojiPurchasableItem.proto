@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiFashionItem.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiFashionMetadata.proto";
+
+message SCBitmojiPurchasableItem {
+	snapchat.bitmoji.fashion.v1.SCBitmojiFashionItem fashionItem = 1;
+	snapchat.bitmoji.builder.v1.SCBitmojiFashionMetadata metadata = 2;
+	string brandLogoURL = 3;
+	string subname = 6;
+	string tokenId = 7;
+	uint32 tokenPrice = 8;
+	string name = 9;
+	string prename = 10;
+}

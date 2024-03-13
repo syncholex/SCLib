@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationDryRun.proto";
+
+message SCPushNotificationAndroidNotificationConfig {
+	snapchat.notification.SCPushNotificationDryRun dryRun = 1;
+
+	enum SCPushNotificationNotificationProvider {
+		UNSET = 0;
+		APNS_SIMPLE = 1;
+		APNS_SILENT = 2;
+		APNS_CONTENT_AVAILABLE = 3;
+		VOIP = 4;
+		SNS_VOIP = 5;
+		SNS_APNS = 6;
+		GCM = 7;
+		FCM = 8;
+		MOCK = 9;
+		SNS_FCM = 10;
+		HMS = 11;
+		WEB_PUSH = 12;
+	}
+
+	SCPushNotificationNotificationProvider notificationProvider = 2;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+import "tokens/crystalhub/SCCrystalHubCashout.proto";
+import "tokens/crystalhub/SCCrystalHubPayoutActivity.proto";
+
+message SCCrystalHubActivity {
+	tokens.crystalhub.SCCrystalHubCashout cashout = 1;
+	tokens.crystalhub.SCCrystalHubPayoutActivity payout = 2;
+
+	enum SCCrystalHubActivity_Type {
+		TYPE_UNSET = 0;
+		TYPE_PAYOUT = 1;
+		TYPE_CASHOUT = 2;
+		TYPE_PAYOUT_LEGACY = 3;
+	}
+
+	SCCrystalHubActivity_Type activityType = 3;
+}

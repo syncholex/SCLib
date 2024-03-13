@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapeditor;
+
+import "snapchat/snapeditor/SESnapEditorConfig.proto";
+
+message SESnapSessionContext {
+	uint64 timestamp = 1;
+	snapchat.snapeditor.SESnapEditorConfig snapEditorConfig = 2;
+}

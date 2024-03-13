@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+message BloopsFriendbloopsCacheConfig {
+	int32 ttlInSeconds = 1;
+	int32 retrieveCount = 2;
+	int32 retryProgression = 3;
+	bool isEnabled = 4;
+}

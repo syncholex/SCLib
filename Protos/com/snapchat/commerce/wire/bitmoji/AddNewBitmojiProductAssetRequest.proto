@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.bitmoji;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message AddNewBitmojiProductAssetRequest {
+	bytes productId = 1;
+	bytes variantId = 2;
+	string comicId = 3;
+	repeated string avatarIdsArray = 4;
+	repeated snapchat.core.SCCOREUUID userIdsArray = 5;
+	bytes bitmojiProductAssetId = 6;
+	string contentURL = 7;
+}

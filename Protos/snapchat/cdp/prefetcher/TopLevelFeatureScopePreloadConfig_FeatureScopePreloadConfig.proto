@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+message TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig {
+
+	enum TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig_FeatureScope {
+		FEATURE_SCOPE_UNSET = 0;
+		CAMERA = 1;
+		DISCOVER_FEED = 2;
+		FRIEND_FEED = 3;
+		MAP = 4;
+		SPOTLIGHT = 5;
+	}
+
+	TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig_FeatureScope featureScope = 1;
+
+	enum TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig_PurgeAndPreloadBehavior {
+		BEHAVIOR_UNSET = 0;
+		NEVER = 1;
+		OPTIMISTIC = 2;
+		ON_DEMAND = 3;
+		OPTIMISTIC_WITH_PRELOAD = 4;
+		ON_DEMAND_WITH_PRELOAD = 5;
+	}
+
+	TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig_PurgeAndPreloadBehavior purgeAndPreloadBehavior = 2;
+	uint32 preloadDelayInMilliseconds = 3;
+}

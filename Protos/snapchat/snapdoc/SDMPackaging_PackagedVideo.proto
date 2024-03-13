@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMPackaging_PackagedVideo {
+	string filename = 1;
+
+	enum SDMPackaging_PackagedVideo_VideoMode {
+		VIDEO_MODE_UNSET = 0;
+		VIDEO_MODE_LOOPING = 1;
+		VIDEO_MODE_ONCE = 2;
+	}
+
+	SDMPackaging_PackagedVideo_VideoMode videoMode = 2;
+	string videoFirstFrameFilename = 3;
+	bool videoRotationEnabled = 4;
+
+	enum SDMPackaging_Docking {
+		DOCKING_CENTER = 0;
+		DOCKING_TOP = 1;
+		DOCKING_BOTTOM = 2;
+	}
+
+	SDMPackaging_Docking docking = 5;
+}

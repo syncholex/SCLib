@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message MemoriesMashup {
+	snapchat.snapdoc.SDMSnapDoc mashup = 1;
+	repeated string snapIdsArray = 2;
+	string templateId = 3;
+
+	enum MemoriesMashup_Placement {
+		UNSET = 0;
+		FIRST = 1;
+		LAST = 2;
+	}
+
+	MemoriesMashup_Placement placement = 4;
+
+	enum MemoriesMashup_MashupType {
+		TYPE_UNSET = 0;
+		MASHUP = 1;
+		COLLAGE = 2;
+	}
+
+	MemoriesMashup_MashupType mashupType = 5;
+	string collageLensId = 6;
+
+	enum MemoriesMashup_MashupSelectionStrategy {
+		STRATEGY_UNSET = 0;
+		RANDOM = 1;
+		LONGEST = 2;
+	}
+
+	MemoriesMashup_MashupSelectionStrategy mashupSelectionStrategy = 7;
+}

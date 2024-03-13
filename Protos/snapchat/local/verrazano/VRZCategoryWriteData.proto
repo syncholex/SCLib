@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "snapchat/local/verrazano/VRZConcordanceListValue.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabelsListValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/local/verrazano/VRZBlockedServices.proto";
+
+message VRZCategoryWriteData {
+	google.protobuf.GPBStringValue name = 1;
+	snapchat.protobuf.SPCPStringListValue parentIds = 2;
+	snapchat.local.verrazano.VRZConcordanceListValue concordances = 3;
+	snapchat.local.verrazano.VRZLocalizedLabelsListValue alternateNames = 4;
+	google.protobuf.GPBInt32Value averageRadiusM = 5;
+	snapchat.local.verrazano.VRZBlockedServices isBlocked = 6;
+}

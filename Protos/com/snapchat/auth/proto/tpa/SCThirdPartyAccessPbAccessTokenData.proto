@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tpa;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCThirdPartyAccessPbAccessTokenData {
+	string accessToken = 1;
+	google.protobuf.GPBTimestamp tokenExpiry = 2;
+
+	enum SCThirdPartyAccessPbPartner_Enum {
+		UNSET = 0;
+		AMAZON = 1;
+	}
+
+	SCThirdPartyAccessPbPartner_Enum partner = 3;
+	string partnerUserId = 4;
+}

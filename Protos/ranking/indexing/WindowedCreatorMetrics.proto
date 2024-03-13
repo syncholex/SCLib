@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/LensCreatorStats.proto";
+
+message WindowedCreatorMetrics {
+	ranking.indexing.LensCreatorStats creatorStats1D = 1;
+	ranking.indexing.LensCreatorStats creatorStats7D = 2;
+	ranking.indexing.LensCreatorStats creatorStats14D = 3;
+}

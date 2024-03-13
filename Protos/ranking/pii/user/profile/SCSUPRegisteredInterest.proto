@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPRegisteredInterest {
+
+	enum SCSUPRegisteredInterestType_Enum {
+		UNKNOWN = 0;
+		ENTERTAINMENT = 1;
+		TV_AND_MOVIE = 2;
+		GAMING = 3;
+		BEAUTY_AND_STYLE = 4;
+		BEAUTY = 5;
+		FASHION_AND_STYLE = 6;
+		MUSIC = 7;
+		MUSIC_POP = 8;
+		MUSIC_HIPHOP = 9;
+		CELEBRITY = 10;
+		NEWS = 11;
+		NEWS_GENERAL = 12;
+		BUSINESS = 13;
+		SCIENCE_AND_TECHNOLOGY = 14;
+		SPORTS = 15;
+		FUN = 16;
+		FUN_GENERAL = 17;
+		ANIMALS = 18;
+		FOOD_AND_TRAVEL = 19;
+		FOOD = 20;
+		TRAVEL = 21;
+		LIFESTYLE = 22;
+		DATING = 23;
+		FITNESS = 24;
+		DIY = 25;
+		PARENTING = 26;
+		AUTO = 27;
+		COMEDY = 28;
+	}
+
+	SCSUPRegisteredInterestType_Enum registeredInterestsType = 1;
+	string displayName = 2;
+}

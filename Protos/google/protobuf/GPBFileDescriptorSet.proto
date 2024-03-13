@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBFileDescriptorProto.proto";
+
+message GPBFileDescriptorSet {
+	repeated google.protobuf.GPBFileDescriptorProto fileArray = 1;
+}

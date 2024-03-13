@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBBatteryStatusResponse {
+	int32 soc = 1;
+	int32 voltage = 2;
+	int32 temp = 3;
+	int32 current = 4;
+}

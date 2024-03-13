@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPInternalIsPayoutOnboardingEligibleRequest {
+	string userId = 1;
+}

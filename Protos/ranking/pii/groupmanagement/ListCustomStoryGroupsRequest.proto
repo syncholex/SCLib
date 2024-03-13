@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message ListCustomStoryGroupsRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	bool includeBlocked = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGarment.proto";
+
+message SCBitmojiUGCGarment {
+	snapchat.bitmoji.fashion.v1.SCBitmojiGarment baseGarment = 2;
+	string patternURL = 3;
+	double tilingX = 4;
+	double tilingY = 5;
+	double offsetX = 6;
+	double offsetY = 7;
+}

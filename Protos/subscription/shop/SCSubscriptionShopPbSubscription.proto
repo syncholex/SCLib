@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod.proto";
+
+message SCSubscriptionShopPbSubscription {
+	string productId = 1;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo_SubscriptionPeriod basePlanPeriod = 2;
+
+	enum SCSubscriptionEnumPbProvider {
+		PROVIDER_UNSET = 0;
+		PROVIDER_GOOGLE = 1;
+		PROVIDER_APPLE = 2;
+		PROVIDER_SNAP = 3;
+		PROVIDER_BANGO = 4;
+		PROVIDER_TEST = 5;
+		PROVIDER_SNAP_FAM = 6;
+	}
+
+	SCSubscriptionEnumPbProvider provider = 3;
+
+	enum SCSubscriptionEnumPbSubscriptionTier {
+		SUBSCRIPTION_TIER_NO_ACCESS = 0;
+		SUBSCRIPTION_TIER_SNAPCHAT_PLUS = 1;
+		SUBSCRIPTION_TIER_SNAPCHAT_PLUS_AD_FREE = 2;
+	}
+
+	SCSubscriptionEnumPbSubscriptionTier tier = 4;
+
+	enum SCSubscriptionEnumPbSubscriptionStatus {
+		UNSET = 0;
+		ACTIVE = 1;
+		BILLING_RETRY = 2;
+		BILLING_GRACE_PERIOD = 3;
+		CANCELED = 4;
+		PENDING = 5;
+		PAUSED = 6;
+		ON_HOLD = 7;
+		EXPIRED = 8;
+		REVOKED = 9;
+	}
+
+	SCSubscriptionEnumPbSubscriptionStatus status = 5;
+	int64 originallyPurchasedAtMillis = 6;
+	int64 expiresAtMillis = 7;
+
+	enum SCSubscriptionShopPbSubscriptionType {
+		SUBSCRIPTION_TYPE_UNSET = 0;
+		SUBSCRIPTION_TYPE_SC_GIFTING = 1;
+		SUBSCRIPTION_TYPE_GIFT_CARD = 2;
+	}
+
+	SCSubscriptionShopPbSubscriptionType subscriptionType = 8;
+}

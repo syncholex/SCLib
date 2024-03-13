@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusChallengeOrchestrationErrorData {
+	string humanReadableErrorMessage = 1;
+
+	enum SCJanusChallengeOrchestrationErrorData_ErrorCode {
+		UNSET = 0;
+		FAILED_CHALLENGE_INCORRECT_PASSWORD = 1;
+		FAILED_CHALLENGE_INVALID_CODE = 2;
+		FAILED_CHALLENGE_INVALID_CODE_LENGTH = 3;
+		FAILED_CHALLENGE_EMAIL_TAKEN = 4;
+		FAILED_CHALLENGE_INVALID_EMAIL = 5;
+	}
+
+	SCJanusChallengeOrchestrationErrorData_ErrorCode errorCode = 2;
+}

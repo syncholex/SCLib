@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.product;
+
+message GetProductInfoRequest {
+	bytes productId = 1;
+	uint32 productImageSizeList = 2;
+}

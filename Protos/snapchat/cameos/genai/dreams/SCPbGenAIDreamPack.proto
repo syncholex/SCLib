@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDream.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCPbGenAIDreamPack {
+	string id_p = 1;
+	string name = 2;
+	snapchat.snapdoc.SDMSnapDoc media = 3;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDream dreamsArray = 4;
+	bool isFree = 5;
+	bool isGenerable = 6;
+	bool isFullyGenerated = 7;
+	string appleProductId = 8;
+	string googleProductId = 9;
+	snapchat.snapdoc.SDMSnapDoc packWrapMedia = 10;
+	string packWrapColor = 11;
+	bool isSponsoredPack = 12;
+
+	enum SCPbGenAIDreamPackType {
+		DREAM_PACK_TYPE_UNSET = 0;
+		DREAM_PACK_TYPE_ONE_PERSON = 1;
+		DREAM_PACK_TYPE_TWO_PERSON = 2;
+	}
+
+	SCPbGenAIDreamPackType type = 13;
+	google.protobuf.GPBTimestamp startTime = 14;
+	repeated string availableCountriesArray = 18;
+	string modelId = 19;
+}

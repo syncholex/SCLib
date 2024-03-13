@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+message SCGenerativeBackgroundsHistoryItem {
+	string generatedImageURL = 1;
+	int64 lastUsedTimestamp = 2;
+}

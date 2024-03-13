@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+import "snapchat/abuse/Scores.proto";
+import "snapchat/abuse/Features.proto";
+
+message Response {
+	string userId = 1;
+	snapchat.abuse.Scores riskScores = 2;
+	snapchat.abuse.Features features = 3;
+}

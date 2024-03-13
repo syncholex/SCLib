@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsPreview {
+
+	enum SCAppInsightsPreview_Subfeature {
+		UNSET = 0;
+		CAPTIONS = 1;
+		FILTERS = 2;
+		MUSIC = 3;
+		STICKERS = 4;
+		VOICEOVER = 5;
+		OTHER_TOOLS = 6;
+	}
+
+	SCAppInsightsPreview_Subfeature subfeature = 1;
+}

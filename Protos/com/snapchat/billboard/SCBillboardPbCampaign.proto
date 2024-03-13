@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbFeedHeaderPromptUXConfig.proto";
+import "com/snapchat/billboard/SCBillboardPbSupProperties.proto";
+import "com/snapchat/billboard/SCBillboardPbCampaignUXConfig.proto";
+import "com/snapchat/billboard/SCBillboardPbCampaignCooldownCapConfig.proto";
+
+message SCBillboardPbCampaign {
+	string campaignId = 1;
+	bool enabled = 2;
+	com.snapchat.billboard.SCBillboardPbFeedHeaderPromptUXConfig fhpConfig = 4;
+	com.snapchat.billboard.SCBillboardPbSupProperties supProperties = 5;
+	string targetingEvaluationCof = 6;
+	com.snapchat.billboard.SCBillboardPbCampaignUXConfig config = 7;
+	int32 supStorageId = 8;
+	int32 campaignVersion = 9;
+	com.snapchat.billboard.SCBillboardPbCampaignCooldownCapConfig campaignCooldownCapConfig = 10;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+message UpdateCustomStoryGroupResponse {
+	uint64 groupVersion = 1;
+}

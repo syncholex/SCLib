@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message AbStepInfo {
+
+	enum AbStep {
+		USER_WHITELISTED = 0;
+		USER_GROUP_WHITELISTED = 1;
+		FILTER_CONDITIONS = 2;
+		SLICE_RANGE = 3;
+		TRAFFIC_ALLOCATED = 4;
+	}
+
+	AbStep abStep = 1;
+	string info = 2;
+}

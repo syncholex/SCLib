@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/PostReplyRequest.proto";
+import "ranking/pii/replies/UpdateReplyStateRequest.proto";
+import "ranking/pii/replies/UpdateAllRepliesStateRequest.proto";
+import "ranking/pii/replies/ReplyReactRequest.proto";
+import "ranking/pii/replies/DeleteUserRepliesRequest.proto";
+import "ranking/pii/replies/UpdateReplyModerationMetadataRequest.proto";
+import "ranking/pii/replies/UpdateThreadedRepliesCountRequest.proto";
+
+message IndexingMutation {
+
+	oneof request {
+		ranking.pii.replies.PostReplyRequest postReplyRequest = 1;
+		ranking.pii.replies.UpdateReplyStateRequest updateReplyStateRequest = 2;
+		ranking.pii.replies.UpdateAllRepliesStateRequest updateAllRepliesStateRequest = 3;
+		ranking.pii.replies.ReplyReactRequest replyReactRequest = 4;
+		ranking.pii.replies.DeleteUserRepliesRequest deleteUserRepliesRequest = 5;
+		ranking.pii.replies.UpdateReplyModerationMetadataRequest updateReplyModerationMetadataRequest = 6;
+		ranking.pii.replies.UpdateThreadedRepliesCountRequest updateThreadedRepliesCountRequest = 7;
+	}
+
+}

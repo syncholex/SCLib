@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbInAppReceipt.proto";
+
+message SCSubscriptionShopPbPurchaseGiftRequest {
+	string receiverUserId = 1;
+	subscription.shop.SCSubscriptionShopPbInAppReceipt receipt = 2;
+	string storefrontCountryCode = 3;
+	string priceCurrencyCode = 4;
+	int64 priceAmountMicros = 5;
+}

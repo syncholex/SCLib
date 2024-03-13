@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbSubmissionError {
+	string heading = 1;
+	string message = 2;
+}

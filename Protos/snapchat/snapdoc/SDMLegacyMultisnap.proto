@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMLegacyMultisnap {
+	uint32 previewIndex = 1;
+	uint32 previewCount = 2;
+	uint32 outputIndex = 3;
+	uint32 outputCount = 4;
+	bool isTrimmed = 5;
+	snapchat.core.SCCOREUUID bundleId = 6;
+}

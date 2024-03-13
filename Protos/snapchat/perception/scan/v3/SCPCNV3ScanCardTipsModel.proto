@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardTipsModel_Tip.proto";
+
+message SCPCNV3ScanCardTipsModel {
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanCardTipsModel_Tip tipsArray = 1;
+	bool autoscrollEnabled = 2;
+}

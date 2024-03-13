@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+message SCSTRFeatureValue {
+
+	oneof value {
+		bool boolValue = 1;
+		float floatValue = 2;
+		string stringValue = 3;
+	}
+
+}

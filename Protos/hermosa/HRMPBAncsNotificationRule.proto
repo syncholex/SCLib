@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBContextNotifAnim.proto";
+
+message HRMPBAncsNotificationRule {
+	uint32 id_p = 1;
+
+	enum HRMPBAncsCategory {
+		OTHER = 0;
+		INCOMING_CALL = 1;
+		MISSED_CALL = 2;
+		VOICE_MAIL = 3;
+		SOCIAL = 4;
+		SCHEDULE = 5;
+		EMAIL = 6;
+		NEWS = 7;
+		HEALTH_AND_FITNESS = 8;
+		BUSINESS_AND_FINANCE = 9;
+		LOCATION = 10;
+		ENTERTAINMENT = 11;
+	}
+
+	HRMPBAncsCategory notifCategory = 2;
+	string appIdentifierPattern = 3;
+	string titlePattern = 4;
+	string subtitlePattern = 5;
+	string messageContentsPattern = 6;
+	hermosa.HRMPBContextNotifAnim notificationAnim = 7;
+}

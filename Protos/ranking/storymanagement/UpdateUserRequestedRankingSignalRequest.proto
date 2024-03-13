@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/UpdateUserRequestedRankingSignal.proto";
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message UpdateUserRequestedRankingSignalRequest {
+	repeated ranking.storymanagement.UpdateUserRequestedRankingSignal updateSignalArray = 1;
+	ranking.core.SCSCORERequestMetadata requestMetadata = 2;
+}

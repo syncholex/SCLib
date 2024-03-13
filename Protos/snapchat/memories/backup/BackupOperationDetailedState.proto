@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.memories.backup;
+
+import "snapchat/memories/backup/BackupOperationDetailedState_DeleteSnaps.proto";
+import "google/protobuf/GPBEmpty.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/memories/backup/BackupOperationDetailedState_HighlightSnaps.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/memories/backup/BackupOperationDetailedState_UploadTagsOpData.proto";
+
+message BackupOperationDetailedState {
+	repeated string addSnapIdsArray = 1;
+
+	oneof delete {
+		snapchat.memories.backup.BackupOperationDetailedState_DeleteSnaps deleteSnaps = 2;
+		google.protobuf.GPBEmpty deleteEntry = 3;
+	}
+
+	int64 snapsOrder = 4;
+	google.protobuf.GPBStringValue entryTitle = 6;
+	google.protobuf.GPBBoolValue entryIsPrivate = 7;
+	snapchat.memories.backup.BackupOperationDetailedState_HighlightSnaps highlightSnaps = 8;
+	google.protobuf.GPBStringValue externalId = 9;
+	google.protobuf.GPBInt32Value entrySource = 10;
+	google.protobuf.GPBInt64Value lastAutoSaveTime = 11;
+	snapchat.memories.backup.BackupOperationDetailedState_UploadTagsOpData uploadTagsOpData = 12;
+	string editedToOriginalSnapIdMap = 13;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message EditionHideDetail {
+	int64 publisherId = 1;
+
+	enum EditionHideDetail_State {
+		STATE_UNKNOWN = 0;
+		STATE_HIDDEN = 1;
+		STATE_UNHIDDEN = 2;
+	}
+
+	EditionHideDetail_State state = 3;
+	int64 stateTimestampMsecs = 4;
+	int64 stateExpireTimestampMsecs = 5;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message IMPWatchedState {
+	string itemId = 1;
+	string showId = 2;
+	bool fullyWatched = 3;
+	google.protobuf.GPBStringValue subItemId = 4;
+	google.protobuf.GPBInt32Value subItemProgressMs = 5;
+	google.protobuf.GPBInt32Value approximateProgress = 6;
+	int64 clientTimestampMs = 7;
+}

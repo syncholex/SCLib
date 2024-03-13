@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.playlist;
+
+message SCMGPGetPlaylistResponse {
+	bytes playlist = 1;
+}

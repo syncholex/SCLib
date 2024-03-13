@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+import "snapchat/cameos/client/SCCameosFramesPredictorSettings.proto";
+
+message SCCameosFramesPredictorConfig {
+	snapchat.cameos.client.SCCameosFramesPredictorSettings defaultSettings = 1;
+	snapchat.cameos.client.SCCameosFramesPredictorSettings lowPowerModeSettings = 2;
+}

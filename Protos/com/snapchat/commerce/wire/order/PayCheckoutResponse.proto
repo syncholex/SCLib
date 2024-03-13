@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "com/snapchat/commerce/domain/order/Order.proto";
+import "com/snapchat/commerce/wire/error/CommerceApiServiceError.proto";
+
+message PayCheckoutResponse {
+
+	oneof response {
+		com.snapchat.commerce.domain.order.Order order = 1;
+		com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+	}
+
+	string requestId = 3;
+}

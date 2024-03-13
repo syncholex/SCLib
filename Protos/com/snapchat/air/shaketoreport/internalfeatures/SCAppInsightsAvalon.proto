@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsAvalon {
+
+	enum SCAppInsightsAvalon_Subfeature {
+		UNSET = 0;
+		CAMEMBERT = 1;
+	}
+
+	SCAppInsightsAvalon_Subfeature subfeature = 1;
+}

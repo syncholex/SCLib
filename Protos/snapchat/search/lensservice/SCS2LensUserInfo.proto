@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+message SCS2LensUserInfo {
+	string countryCode = 1;
+	string forwardedUserAgent = 2;
+}

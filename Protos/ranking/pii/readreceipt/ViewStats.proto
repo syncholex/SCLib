@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+message ViewStats {
+	int64 viewCount = 1;
+	int64 screenshotCount = 2;
+	int64 boostCount = 3;
+	int64 shareCount = 4;
+	int64 subCount = 5;
+	int64 pendingReplyCount = 6;
+	int64 liveReplyCount = 7;
+	int64 newPendingReplyCount = 8;
+	int64 rewatchCount = 9;
+	int64 remixCount = 10;
+	int64 pendingCommentCount = 11;
+	int64 liveCommentCount = 12;
+	int64 newPendingCommentCount = 13;
+}

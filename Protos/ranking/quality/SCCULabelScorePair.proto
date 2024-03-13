@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message SCCULabelScorePair {
+	float score = 1;
+
+	oneof label {
+		int32 sccPlusTagV2 = 2;
+		int32 psuggestiveTagV2 = 3;
+		int32 engagementBaitTagV2 = 4;
+		int32 contentClusterV1 = 5;
+		int32 engagementBaitTagV3 = 6;
+		int32 psuggestiveTagV1 = 7;
+		int32 sccPlusTagV1 = 8;
+		int32 psuggestiveTagV3 = 9;
+		int32 sccPlusTagV3 = 10;
+		int32 sccCameosTag = 11;
+		int32 engagementBaitV3ScanOcrTag = 12;
+		int32 psuggestiveTagAcumen = 13;
+		int32 premiumTileClipTagV0 = 14;
+		int32 snap2InterestV1 = 15;
+		int32 tileSnap2InterestV1 = 16;
+		string languageCode = 17;
+		int32 aggregatedSnap2InterestSnapAndTile = 18;
+		int32 aggregatedSnap2InterestSnapOnly = 19;
+		int32 snap2InterestV1P60 = 20;
+		int32 snap2InterestV1P70 = 21;
+		int32 snap2InterestV1P80 = 22;
+		int32 snap2InterestV1P90 = 23;
+		int32 inferredSccTagV1 = 24;
+		int32 snap2InterestV2 = 25;
+		int32 engagementBaitV3ScanOcrKeyframes = 26;
+		string mediaQuality = 27;
+		int32 categoryPillTopicSnap2Interest = 28;
+		int32 categoryPillTopicUnifiedSnap2Interest = 29;
+		int32 categoryPillTopicScc = 30;
+		int32 snap2InterestV2P60 = 31;
+		int32 snap2InterestV2P70 = 32;
+		int32 snap2InterestV2P80 = 33;
+		int32 snap2InterestV2P90 = 34;
+	}
+
+}

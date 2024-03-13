@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusLoginCodeData {
+	uint32 numDigits = 1;
+	bytes sessionToken = 2;
+	string promptText = 3;
+
+	enum SCJanusLoginCodeType {
+		LOGIN_CODE_TYPE_UNSET = 0;
+		LOGIN_CODE_TYPE_SMS = 1;
+		LOGIN_CODE_TYPE_EMAIL = 2;
+	}
+
+	SCJanusLoginCodeType deliveryMechanism = 4;
+	snapchat.janus.api.SCJanusErrorData originalAttemptErrorData = 5;
+
+	enum SCJanusLoginCodeOptInType {
+		LOGIN_CODE_OPT_IN_TYPE_UNSET = 0;
+		LOGIN_CODE_PROMPT_TEXT_ERROR = 1;
+		LOGIN_CODE_OPT_IN_DIALOG = 2;
+		LOGIN_CODE_OPT_IN_DIALOG_MASKED = 3;
+	}
+
+	SCJanusLoginCodeOptInType optInType = 6;
+
+	enum SCJanusLoginCodeSupportedDeliveryMechanisms {
+		LOGIN_CODE_SUPPORTED_DELIVERY_MECHANISMS_UNSET = 0;
+		LOGIN_CODE_SUPPORTED_DELIVERY_MECHANISMS_SMS_EMAIL = 1;
+		LOGIN_CODE_SUPPORTED_DELIVERY_MECHANISMS_SMS = 2;
+		LOGIN_CODE_SUPPORTED_DELIVERY_MECHANISMS_EMAIL = 3;
+	}
+
+	SCJanusLoginCodeSupportedDeliveryMechanisms supportedDeliveryMechanisms = 7;
+	string maskedPhoneNumber = 8;
+	string maskedEmail = 9;
+}

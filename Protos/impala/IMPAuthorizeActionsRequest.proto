@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPAuthorizeActionsRequest {
+	string userId = 1;
+	string businessId = 2;
+	repeated string actionsArray = 3;
+	string hostUserId = 4;
+	string employeeEmail = 5;
+}

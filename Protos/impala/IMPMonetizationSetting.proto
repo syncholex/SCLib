@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPTermsAndConditions.proto";
+
+message IMPMonetizationSetting {
+
+	enum IMPConfiguredStatus {
+		CONFIGURED_STATUS_UNKNOW = 0;
+		CONFIGURED_STATUS_ACTIVE = 1;
+		CONFIGURED_STATUS_DISABLED = 2;
+	}
+
+	IMPConfiguredStatus configuredStatus = 1;
+	impala.IMPTermsAndConditions monetizationTerms = 2;
+
+	enum IMPMonetizationPayoutType {
+		MONETIZATION_PAYOUT_TYPE_UNKNOWN = 0;
+		MONETIZATION_PAYOUT_TYPE_REVENUE_SHARE = 1;
+		MONETIZATION_PAYOUT_TYPE_FIXED = 2;
+	}
+
+	IMPMonetizationPayoutType payoutType = 3;
+
+	enum IMPAccessAdsStatus {
+		ACCESS_ADS_STATUS_UNKNOWN = 0;
+		ACCESS_ADS_STATUS_ENABLED = 1;
+		ACCESS_ADS_STATUS_DISABLED = 2;
+	}
+
+	IMPAccessAdsStatus accessAdsStats = 4;
+
+	enum IMPProfileMonetizedStatus {
+		PROFILE_MONETIZED_STATUS_UNKNOWN = 0;
+		PROFILE_MONETIZED_STATUS_APPROVED = 1;
+		PROFILE_MONETIZED_STATUS_REJECTED = 2;
+	}
+
+	IMPProfileMonetizedStatus profileMonetizedStatus = 5;
+
+	enum IMPPayoutStatus {
+		PAYOUT_STATUS_UNSET = 0;
+		PAYOUT_STATUS_UNVERIFIED = 1;
+		PAYOUT_STATUS_PENDING = 2;
+		PAYOUT_STATUS_VERIFIED = 3;
+		PAYOUT_STATUS_REJECTED = 4;
+		PAYOUT_STATUS_BANNED = 5;
+	}
+
+	IMPPayoutStatus payoutStatus = 6;
+
+	enum IMPReviewStatus {
+		UNSET = 0;
+		PENDING = 1;
+		APPROVED = 2;
+		RESTRICTED_DISTRIBUTION = 3;
+		REJECTED = 4;
+	}
+
+	IMPReviewStatus reviewStatus = 7;
+	int64 accessAdsStatsLastUpdatedTimestamp = 8;
+	int64 configuredStatusLastUpdatedTimestamp = 9;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.itemslookup;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPGetItemsByCTPIDsResponse_ItemResponse {
+	snapchat.creativetools.ct_item.SCCTPCTItem item = 2;
+}

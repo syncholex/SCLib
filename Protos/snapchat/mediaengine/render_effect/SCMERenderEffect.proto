@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.render_effect;
+
+import "snapchat/mediaengine/render_effect/SCMEAudioTrackVolume.proto";
+import "snapchat/mediaengine/render_effect/SCMEAutoCrop.proto";
+import "snapchat/mediaengine/render_effect/SCMESupercut.proto";
+import "snapchat/mediaengine/render_effect/SCMEMagicMoment.proto";
+
+message SCMERenderEffect {
+
+	oneof effectType {
+		snapchat.mediaengine.render_effect.SCMEAudioTrackVolume audioTrackVolume = 1;
+		snapchat.mediaengine.render_effect.SCMEAutoCrop pixyAutoCrop = 2;
+		snapchat.mediaengine.render_effect.SCMESupercut supercut = 3;
+		snapchat.mediaengine.render_effect.SCMEMagicMoment magicMoment = 4;
+	}
+
+}

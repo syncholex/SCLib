@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPDateTimeStickerMetadata {
+
+	enum SCCTPDateTimeStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		NUMERIC = 1;
+		ALPHANUMERIC = 2;
+		TIME = 3;
+	}
+
+	SCCTPDateTimeStickerMetadata_Type type = 1;
+	int64 time = 2;
+}

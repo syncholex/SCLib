@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+message SCDeltaforcePropertyPath_PathComponent {
+
+	oneof componentType {
+		string mapIndex = 1;
+		uint64 listIndex = 2;
+	}
+
+}

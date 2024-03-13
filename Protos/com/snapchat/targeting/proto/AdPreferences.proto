@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/AdPreferences_UserInterest.proto";
+import "com/snapchat/targeting/proto/AdPreferences_AdOptOuts.proto";
+
+message AdPreferences {
+	repeated com.snapchat.targeting.proto.AdPreferences_UserInterest interestsArray = 1;
+	com.snapchat.targeting.proto.AdPreferences_AdOptOuts adOptOuts = 2;
+}

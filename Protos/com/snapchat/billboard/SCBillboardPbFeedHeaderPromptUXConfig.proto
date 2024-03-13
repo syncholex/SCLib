@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbAction.proto";
+
+message SCBillboardPbFeedHeaderPromptUXConfig {
+	string primaryTextKey = 1;
+	string secondaryTextKey = 2;
+	string accessibilityLabelKey = 3;
+	string emoji = 4;
+	com.snapchat.billboard.SCBillboardPbAction onTapAction = 5;
+	string iconURL = 6;
+	bool noDismiss = 7;
+
+	enum SCBillboardPbFeedHeaderPromptUXConfig_PostClickAction {
+		UNSET = 0;
+		REMOVE_AND_RELOAD_AFTER_CLICK = 1;
+		DO_NOT_REMOVE_PROMPT = 2;
+		REMOVE_AND_RELOAD_AFTER_CONVERSION = 3;
+	}
+
+	SCBillboardPbFeedHeaderPromptUXConfig_PostClickAction postClickAction = 8;
+	string extraButtonTextKey = 9;
+	com.snapchat.billboard.SCBillboardPbAction extraButtonOnTapAction = 10;
+}

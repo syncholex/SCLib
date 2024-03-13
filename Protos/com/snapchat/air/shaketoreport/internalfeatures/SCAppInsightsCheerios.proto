@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsCheerios {
+
+	enum SCAppInsightsCheerios_Subfeature {
+		UNSET = 0;
+		PAIRING = 1;
+		TRANSFER = 2;
+		CONTENT_PAGE = 3;
+		CONTENT_VIEW = 4;
+		CONTENT_EDIT = 5;
+		DEVICE_MANAGEMENT = 6;
+	}
+
+	SCAppInsightsCheerios_Subfeature subfeature = 1;
+}

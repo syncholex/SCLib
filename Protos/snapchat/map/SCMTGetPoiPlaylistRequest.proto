@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCMTGetPoiPlaylistRequest {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+	string id_p = 2;
+	bool wantThumbnail = 7;
+	google.protobuf.GPBBoolValue allowLatestTilesetFallback = 8;
+}

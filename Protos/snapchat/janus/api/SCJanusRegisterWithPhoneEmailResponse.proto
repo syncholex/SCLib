@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusRegisterWithUsernamePasswordResponse.proto";
+
+message SCJanusRegisterWithPhoneEmailResponse {
+}

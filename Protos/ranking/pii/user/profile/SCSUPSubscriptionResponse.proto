@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPSubscriptionResponse {
+	repeated string subscribedUsersArray = 1;
+	repeated string hiddenUsersArray = 2;
+	repeated int64 subscribedPublishersArray = 3 [packed=true];
+	repeated string subscribedStoriesArray = 5;
+	repeated string hiddenStoriesArray = 6;
+	repeated int64 hiddenLensesArray = 10 [packed=true];
+	repeated string hiddenLensCreatorsArray = 12;
+	repeated string subscribedLensCreatorsArray = 13;
+	repeated int64 hiddenPublishersArray = 14 [packed=true];
+}

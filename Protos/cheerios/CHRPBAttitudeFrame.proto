@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBAttitudeFrame_Translation.proto";
+import "cheerios/CHRPBAttitudeFrame_Quaternion.proto";
+
+message CHRPBAttitudeFrame {
+	int64 timestampMsec = 1;
+	cheerios.CHRPBAttitudeFrame_Translation translation = 2;
+	cheerios.CHRPBAttitudeFrame_Quaternion quaternion = 3;
+}

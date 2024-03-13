@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingContactIdInfo.proto";
+
+message SCFriendingContactsNotProcessed {
+	int64 retryAfter = 1;
+	repeated snapchat.friending.SCFriendingContactIdInfo contactIdInfosArray = 2;
+}

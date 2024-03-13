@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensLatLng.proto";
+
+message SCLensCurrentWeatherRequest {
+	snapchat.lenses.SCLensLatLng latlng = 1;
+}

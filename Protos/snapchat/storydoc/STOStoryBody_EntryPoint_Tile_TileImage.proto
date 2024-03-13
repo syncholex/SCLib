@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOStoryBody_EntryPoint_Tile_TileImage {
+	string URL = 1;
+	bytes contentObject = 2;
+
+	enum STOTileFlavor {
+		UNKNOWN_UNSET = 0;
+		DISCOVER_FEED_RECTANGULAR = 1;
+		HN_SQUARE = 2;
+	}
+
+	STOTileFlavor tileFlavor = 3;
+	string mediaId = 4;
+}

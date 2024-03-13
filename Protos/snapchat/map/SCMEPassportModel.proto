@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinModel.proto";
+import "snapchat/map/SCMEExplorerStatusModel.proto";
+import "snapchat/map/SCMETripModel.proto";
+import "snapchat/map/SCMEAchievementModel.proto";
+
+message SCMEPassportModel {
+	string id_p = 1;
+	int64 timestampMs = 2;
+	snapchat.map.SCMECheckinModel checkinModel = 3;
+	snapchat.map.SCMEExplorerStatusModel statusModel = 4;
+	snapchat.map.SCMETripModel tripModel = 5;
+	snapchat.map.SCMEAchievementModel achievementModel = 6;
+	string entryId = 7;
+}

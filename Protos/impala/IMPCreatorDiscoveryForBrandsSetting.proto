@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPCreatorDiscoveryForBrandsSetting {
+
+	enum IMPConfiguredStatus {
+		CONFIGURED_STATUS_UNKNOW = 0;
+		CONFIGURED_STATUS_ACTIVE = 1;
+		CONFIGURED_STATUS_DISABLED = 2;
+	}
+
+	IMPConfiguredStatus configuredStatus = 1;
+	string lastModifiedByUserId = 2;
+	int64 lastUpdateTimestampMs = 3;
+}

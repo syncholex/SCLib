@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+import "snapchat/grid/SDMTimeframe.proto";
+
+message SCSDOMTrimClip {
+	snapchat.sdom.SCSDOMClipIndex clip = 1;
+	snapchat.grid.SDMTimeframe trim = 2;
+}

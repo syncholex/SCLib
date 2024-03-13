@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package canvasoauth2;
+
+message SCCanvasCheckoutTokenRequest {
+	repeated string appIdArray = 1;
+}

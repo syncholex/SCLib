@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOEpisode {
+	string episodeId = 1;
+	int32 episodeNumber = 4;
+	string seasonId = 5;
+	int32 seasonNumber = 6;
+	string showId = 7;
+
+	enum IMPShowType {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	IMPShowType showType = 8;
+}

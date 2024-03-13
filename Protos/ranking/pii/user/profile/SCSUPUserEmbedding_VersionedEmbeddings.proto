@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message SCSUPUserEmbedding_VersionedEmbeddings {
+
+	enum SCSUPUserEmbeddingVersion_Enum {
+		UNSET = 0;
+		V1 = 1;
+	}
+
+	SCSUPUserEmbeddingVersion_Enum version = 1;
+	ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+}

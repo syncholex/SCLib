@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion;
+
+import "snapchat/forma/endymion/messages/SCFormaEncryptedMedia.proto";
+import "snapchat/forma/endymion/SCFormaFormaItemLens.proto";
+import "snapchat/forma/endymion/SCFormaPCSItemLens.proto";
+
+message SCFormaCreatePollRequest {
+	bytes srcPollId = 1;
+	bytes tgtPollId = 2;
+	snapchat.forma.endymion.messages.SCFormaEncryptedMedia tgtTryonMedia = 3;
+
+	oneof lens {
+		snapchat.forma.endymion.SCFormaFormaItemLens formaItemLens = 4;
+		snapchat.forma.endymion.SCFormaPCSItemLens pcsItemLens = 5;
+	}
+
+	bool isChallengable = 6;
+}

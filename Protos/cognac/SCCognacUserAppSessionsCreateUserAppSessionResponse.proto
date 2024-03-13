@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacUserAppSessionsUserAppSession.proto";
+
+message SCCognacUserAppSessionsCreateUserAppSessionResponse {
+	cognac.SCCognacUserAppSessionsUserAppSession userAppSession = 1;
+}

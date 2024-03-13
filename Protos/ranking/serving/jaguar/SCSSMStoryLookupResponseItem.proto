@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/SCSSMStoryCard.proto";
+import "ranking/core/SCSCOREResponseStatus.proto";
+
+message SCSSMStoryLookupResponseItem {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	ranking.serving.jaguar.SCSSMStoryCard storyCard = 2;
+
+	enum SCSSMStoryLookupResponseItem_Status_Enum {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		INTERNAL_SERVER_ERROR = 2;
+		NOT_FOUND = 3;
+	}
+
+	SCSSMStoryLookupResponseItem_Status_Enum status = 3;
+	ranking.core.SCSCOREResponseStatus responseStatus = 4;
+	bool retriable = 5;
+}

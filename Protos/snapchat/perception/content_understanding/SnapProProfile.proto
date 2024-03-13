@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message SnapProProfile {
+	string userId = 1;
+	string profileImageURL = 2;
+	string username = 3;
+	string displayName = 4;
+	string bio = 5;
+
+	enum IMPProfileBadgeType {
+		PROFILE_BADGE_TYPE_UNSET = 0;
+		PROFILE_BADGE_TYPE_CHECKMARK = 1;
+		PROFILE_BADGE_TYPE_STAR = 2;
+		PROFILE_BADGE_TYPE_SNAPCHAT_PLUS = 3;
+	}
+
+	IMPProfileBadgeType badgeType = 6;
+}

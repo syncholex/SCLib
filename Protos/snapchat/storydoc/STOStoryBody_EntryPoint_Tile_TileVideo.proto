@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOStoryBody_EntryPoint_Tile_TileVideo {
+	string URL = 1;
+	string thumbnailURL = 2;
+	bytes contentObject = 3;
+	bytes thumbnailContentObject = 4;
+}

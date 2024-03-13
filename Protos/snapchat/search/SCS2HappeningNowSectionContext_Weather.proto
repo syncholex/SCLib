@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2HappeningNowSectionContext_Weather {
+	bytes json = 1;
+	float temperatureF = 2;
+	string iconURL = 3;
+	int64 editionId = 4;
+}

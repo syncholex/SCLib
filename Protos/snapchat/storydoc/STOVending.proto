@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOVending {
+	string vendingVersion = 2;
+	int64 firstPublishedAtMs = 4;
+	int64 lastPublishedAtMs = 5;
+	int64 lastNewsVersionUpdateMs = 6;
+	int64 newsVersion = 7;
+	bool isLatestStoryForOwner = 8;
+	bool isBackfill = 9;
+}

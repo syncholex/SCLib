@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCAccountEmailServicePbSuccessData {
+	string humanReadableMessage = 1;
+}

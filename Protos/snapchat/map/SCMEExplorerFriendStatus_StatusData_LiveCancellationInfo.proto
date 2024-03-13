@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCMEExplorerFriendStatus_StatusData_LiveCancellationInfo {
+	snapchat.geo.SPCGPoint centerLocation = 1;
+	double radiusMeters = 2;
+	int64 lifetimeMs = 3;
+}

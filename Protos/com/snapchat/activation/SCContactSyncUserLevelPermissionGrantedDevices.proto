@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.activation;
+
+import "com/snapchat/activation/SCContactSyncDevicePermissionTypePair.proto";
+
+message SCContactSyncUserLevelPermissionGrantedDevices {
+	repeated com.snapchat.activation.SCContactSyncDevicePermissionTypePair permissionsArray = 1;
+}

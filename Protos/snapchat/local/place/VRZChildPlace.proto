@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message VRZChildPlace {
+	string placeId = 1;
+	string placeName = 2;
+	snapchat.geo.SPCGPoint geometry = 3;
+}

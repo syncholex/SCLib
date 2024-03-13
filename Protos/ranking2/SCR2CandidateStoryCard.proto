@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoBoundingBox.proto";
+
+message SCR2CandidateStoryCard {
+	string storyTitle = 1;
+	string storyId = 2;
+
+	enum SCR2CandidateStoryCard_CandidateStoryType {
+		UNKNOWN = 0;
+		EVENT = 1;
+		PLACE = 2;
+		TOPIC = 3;
+	}
+
+	SCR2CandidateStoryCard_CandidateStoryType candidateStoryType = 3;
+	ranking2.SCR2GeoBoundingBox boundingBox = 4;
+	repeated string topicsArray = 5;
+}

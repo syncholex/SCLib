@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCFeedDebugInfo {
+	string debugHtml = 1;
+	bytes debugPb = 2;
+}

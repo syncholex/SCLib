@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBAny.proto";
+
+message GPBOption {
+	string name = 1;
+	google.protobuf.GPBAny value = 2;
+}

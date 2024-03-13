@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBDoubleValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsLocation {
+	google.protobuf.GPBDoubleValue latitude = 1;
+	google.protobuf.GPBDoubleValue longitude = 2;
+	google.protobuf.GPBInt32Value accuracyInMeters = 3;
+	google.protobuf.GPBInt64Value locationCapturedTimestampMillis = 4;
+}

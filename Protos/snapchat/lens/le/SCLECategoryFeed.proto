@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLEFeedItem.proto";
+import "snapchat/lens/le/SCLECategoryItem.proto";
+import "snapchat/lens/le/SCLELensExplorerItemRenderStrategy.proto";
+
+message SCLECategoryFeed {
+	snapchat.lens.le.SCLEFeedItem feedItem = 1;
+	repeated snapchat.lens.le.SCLECategoryItem itemsArray = 2;
+
+	enum SCLELensExplorerItemRenderStrategy_RenderStrategy {
+		UNSET = 0;
+		HORIZONTAL_ICONS = 1;
+		HORIZONTAL_TILES = 2;
+		TWO_COLUMNS = 3;
+	}
+
+	SCLELensExplorerItemRenderStrategy_RenderStrategy renderStrategy = 3;
+	bytes streamToken = 4;
+	bool hasMore = 5;
+	snapchat.lens.le.SCLELensExplorerItemRenderStrategy categoryRenderStrategy = 6;
+
+	enum SCLECategoryFeed_ActivationAction {
+		SHOW_FEED_UNSET = 0;
+		OPEN_CAROUSEL = 1;
+	}
+
+	SCLECategoryFeed_ActivationAction activationAction = 7;
+}

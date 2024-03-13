@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileModerationResult.proto";
+
+message IMPInternalUpdateProfileModerationResultRequest {
+	impala.IMPProfileModerationResult moderationResult = 1;
+	int64 expectedUpdateTimestampMs = 2;
+}

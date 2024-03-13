@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileData.proto";
+
+message IMPProfileUpdate {
+	string profileId = 1;
+
+	enum IMPProfileUpdate_ProfileEventType {
+		UNSET = 0;
+		CREATE = 1;
+		UPDATE = 2;
+		DEACTIVATE = 3;
+		DELETE = 4;
+	}
+
+	IMPProfileUpdate_ProfileEventType eventType = 2;
+	impala.IMPProfileData oldProfile = 3;
+	impala.IMPProfileData newProfile = 4;
+}

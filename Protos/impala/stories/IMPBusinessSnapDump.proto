@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnap.proto";
+
+message IMPBusinessSnapDump {
+	impala.stories.IMPBusinessSnap businessSnap = 1;
+	int64 ingestTimestampMs = 2;
+}

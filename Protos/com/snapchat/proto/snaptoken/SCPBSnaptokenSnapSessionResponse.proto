@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.proto.snaptoken;
+
+import "com/snapchat/proto/snaptoken/SCPBSnaptokenSnapAccessToken.proto";
+import "com/snapchat/proto/snaptoken/SCPBSnaptokenSnapAccessTokenPrefetchHint.proto";
+
+message SCPBSnaptokenSnapSessionResponse {
+	string refreshToken = 1;
+	repeated com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessToken snapAccessTokensArray = 2;
+
+	enum SCPBSnaptokenSnapSessionResponse_Status {
+		STATUS_UNKNOWN = 0;
+		STATUS_SUCCESS = 1;
+		STATUS_SERVER_ERROR = 2;
+		STATUS_GENERIC_ERROR = 3;
+	}
+
+	SCPBSnaptokenSnapSessionResponse_Status status = 3;
+	com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessTokenPrefetchHint prefetchHint = 4;
+}

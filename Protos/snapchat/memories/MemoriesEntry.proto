@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBUInt64Value.proto";
+import "google/protobuf/GPBUInt32Value.proto";
+import "snapchat/memories/MemoriesSnapOrder.proto";
+import "snapchat/memories/MemoriesAssetList.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message MemoriesEntry {
+	string entryId = 1;
+	uint64 seqNum = 2;
+	uint32 entryType = 3;
+	repeated string snapIdsArray = 4;
+	uint64 createTimeMs = 5;
+	uint32 status = 6;
+	bool isPrivate = 7;
+	snapchat.protobuf.SPCPStringListValue highlightedSnapIds = 8;
+	google.protobuf.GPBStringValue title = 9;
+	google.protobuf.GPBUInt64Value lastAutosaveTimeMs = 10;
+	google.protobuf.GPBStringValue externalId = 11;
+	google.protobuf.GPBUInt32Value entrySource = 12;
+	snapchat.memories.MemoriesSnapOrder snapOrder = 13;
+	snapchat.memories.MemoriesAssetList assets = 14;
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 15;
+}

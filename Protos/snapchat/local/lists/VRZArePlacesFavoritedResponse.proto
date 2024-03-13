@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/local/lists/VRZArePlacesFavoritedResponse_PlaceExists.proto";
+
+message VRZArePlacesFavoritedResponse {
+	repeated snapchat.local.lists.VRZArePlacesFavoritedResponse_PlaceExists existsArray = 1;
+}

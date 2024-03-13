@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+import "snapchat/search/lensservice/SCS2LensLensMetadata.proto";
+
+message SCS2LensDocumentResponse {
+	snapchat.search.lensservice.SCS2LensLensMetadata lenses = 1;
+}

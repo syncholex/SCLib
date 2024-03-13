@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBProxCalibration {
+	uint32 covered = 1;
+	uint32 uncovered = 2;
+	uint32 covered2Mm = 3;
+	uint32 covered10Mm = 4;
+	uint32 folded = 5;
+	uint32 calCovered = 6;
+	uint32 calUncovered = 7;
+	uint32 calCovered2Mm = 8;
+	uint32 calCovered10Mm = 9;
+	uint32 calFolded = 10;
+	uint32 ipSocInnerTemp = 11;
+	int32 offset = 12;
+}

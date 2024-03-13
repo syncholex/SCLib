@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamPack.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamFreeGenerationsStat.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamFreeGenerationEntry.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamFullyGeneratedPacks.proto";
+
+message SCPbGenAIDreamGetResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamPack dreamsArray = 2;
+	snapchat.cameos.genai.dreams.SCPbGenAIDreamFreeGenerationsStat freeGenerationsStat = 3;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamFreeGenerationEntry freeGenerationsArray = 4;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamFullyGeneratedPacks generatedPacksArray = 5;
+	repeated string lockedPackIdsArray = 6;
+}

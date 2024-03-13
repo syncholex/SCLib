@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/streaming/SCMTOneSnapInfo.proto";
+import "snapchat/streaming/SCMTPublicMediaInfo.proto";
+import "ranking/core/SCSCOREMediaVariant.proto";
+
+message SCSCOREMediaInfo {
+
+	enum SCSCOREMediaInfo_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND = 3;
+		BLOB = 4;
+		LAGUNA = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSCOREMediaInfo_MediaType mediaType = 1;
+	double mediaLengthSecs = 2;
+
+	enum SCSCOREMediaInfo_Orientation {
+		VERTICAL = 0;
+		UPSIDE_DOWN = 1;
+		HORIZONTAL_LEFT = 2;
+		HORIZONTAL_RIGHT = 3;
+	}
+
+	SCSCOREMediaInfo_Orientation orientation = 3;
+	bool frontFacing = 4;
+	bool zipped = 5;
+	string mediaIdMsm = 6;
+	string mediaKey = 7;
+	string mediaIv = 8;
+	string thumbnailIv = 9;
+	bool isInfiniteDuration = 10;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 12;
+	float aspectRatio = 13;
+
+	enum SCSCOREMediaInfo_ThumbnailVariant {
+		THUMBNAIL_VARIANT_UNKNOWN = 0;
+		THUMBNAIL_VARIANT_SMALL_FIRST_FRAME_IMAGE = 1;
+		THUMBNAIL_VARIANT_LARGE_FIRST_FRAME_IMAGE = 2;
+		THUMBNAIL_VARIANT_SMALL_BEST_FRAME_IMAGE = 3;
+		THUMBNAIL_VARIANT_LARGE_BEST_FRAME_IMAGE = 4;
+		THUMBNAIL_VARIANT_VIDEO = 5;
+		THUMBNAIL_VARIANT_STREAM = 6;
+	}
+
+	repeated SCSCOREMediaInfo_ThumbnailVariant thumbnailVariantsArray = 14 [packed=true];
+	snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 15;
+	string thumbnailDominantColor = 16;
+	snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 17;
+	repeated ranking.core.SCSCOREMediaVariant mediaVariantsArray = 18;
+	string thumbnailURL = 19;
+	string mediaD2SURL = 20;
+	bool skipStreamingGeneration = 21;
+
+	enum ProcessingStatus_Status {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		FAIL = 2;
+		ABORTED = 3;
+	}
+
+	ProcessingStatus_Status processingStatus = 22;
+	string sourceMediaId = 23;
+	bool isDynamicallyGenerated = 24;
+	bool hasAudio = 25;
+	bool hasMusic = 26;
+}

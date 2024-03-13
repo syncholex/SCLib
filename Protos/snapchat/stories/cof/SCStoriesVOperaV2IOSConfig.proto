@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCStoriesVOperaV2IOSConfig {
+	bool enableVopera = 1;
+	bool enableSwipeLeftToProfile = 2;
+	bool enableVoperaOnboarding = 3;
+	bool enableAutoProgressingCreatorStories = 4;
+	bool enableSwipeLeftToAttachments = 5;
+	bool enableSwipeLeftToAllActions = 6;
+	bool enableSearchAndProfileVopera = 7;
+	int32 prefetchAheadCount = 8;
+	bool placeHolderForFutureCofs1 = 9;
+	bool placeHolderForFutureCofs2 = 10;
+	float contextBarHeight = 11;
+	bool contextBarStackEnabled = 12;
+	bool enableBottomProgressBar = 13;
+	bool showNavBarInDfOpera = 14;
+	bool enableContextDrivenSwipePresentation = 15;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSNTFSpotlightThreadedRepliesNotificationMetadata {
+	ranking.core.SCSCOREUUID receiverUserId = 1;
+	bool isEmployee = 2;
+	string parentCommentId = 3;
+	string commentId = 4;
+	string replyPosterBitmojiAvatarId = 5;
+	string replyPosterBitmojiSelfieId = 6;
+	string snapId = 7;
+
+	enum SCSNTFRepliesNotificationType {
+		NON_FRIEND_NOTIFICATION = 0;
+		THRESHOLD_REPLIES_NOTIFICATION = 1;
+		FRIEND_NOTIFICATION = 2;
+		SNAP_STAR_NOTIFICATION = 3;
+		SNAP_CREATOR_NOTIFICATION = 4;
+	}
+
+	SCSNTFRepliesNotificationType repliesNotificationType = 8;
+	string displayName = 9;
+
+	enum SCSNTFRepliesNotificationTriggerAction {
+		UNKNOWN = 0;
+		REPLY_TO_COMMENT = 1;
+		MENTION = 2;
+	}
+
+	SCSNTFRepliesNotificationTriggerAction triggerAction = 10;
+}

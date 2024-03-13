@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "com/snapchat/commerce/domain/order/Order.proto";
+
+message GetOrderHistoryResponse_OrderHistory {
+	repeated com.snapchat.commerce.domain.order.Order ordersArray = 1;
+	bytes paginationCursor = 2;
+}

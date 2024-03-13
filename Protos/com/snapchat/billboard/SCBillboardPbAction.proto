@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbActionSyncContact.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenMini.proto";
+import "com/snapchat/billboard/SCBillboardPbActionBirthdaySettings.proto";
+import "com/snapchat/billboard/SCBillboardPbActionEmailVerification.proto";
+import "com/snapchat/billboard/SCBillboardPbActionPhoneVerification.proto";
+import "com/snapchat/billboard/SCBillboardPbActionSuicidePrevention.proto";
+import "com/snapchat/billboard/SCBillboardPbActionEnableNotification.proto";
+import "com/snapchat/billboard/SCBillboardPbActionPhoneReverification.proto";
+import "com/snapchat/billboard/SCBillboardPbActionEnableMicrophone.proto";
+import "com/snapchat/billboard/SCBillboardPbActionFriendCheckup.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenUrl.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenSettings.proto";
+import "com/snapchat/billboard/SCBillboardPbActionCreateGroup.proto";
+import "com/snapchat/billboard/SCBillboardPbActionLockScreenWidgets.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenDeeplink.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenDwebTray.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenOTLOptInDialog.proto";
+import "com/snapchat/billboard/SCBillboardPbActionAfterDarkCamera.proto";
+import "com/snapchat/billboard/SCBillboardPbActionAfterDarkPostAdd.proto";
+import "com/snapchat/billboard/SCBillboardPbActionDoNothing.proto";
+import "com/snapchat/billboard/SCBillboardPbActionPlusDynamic.proto";
+import "com/snapchat/billboard/SCBillboardPbActionOpenOSSettings.proto";
+import "com/snapchat/billboard/SCBillboardPbActionIOSActionButton.proto";
+import "com/snapchat/billboard/SCBillboardPbActionReplyCamera.proto";
+
+message SCBillboardPbAction {
+
+	oneof action {
+		com.snapchat.billboard.SCBillboardPbActionSyncContact syncContact = 1;
+		com.snapchat.billboard.SCBillboardPbActionOpenMini openMini = 2;
+		com.snapchat.billboard.SCBillboardPbActionBirthdaySettings openBirthdaySettings = 3;
+		com.snapchat.billboard.SCBillboardPbActionEmailVerification verifyEmail = 4;
+		com.snapchat.billboard.SCBillboardPbActionPhoneVerification verifyPhone = 5;
+		com.snapchat.billboard.SCBillboardPbActionSuicidePrevention openSuicidePrevention = 6;
+		com.snapchat.billboard.SCBillboardPbActionEnableNotification enableNotification = 7;
+		com.snapchat.billboard.SCBillboardPbActionPhoneReverification reverifyPhone = 8;
+		com.snapchat.billboard.SCBillboardPbActionEnableMicrophone enableMicrophone = 9;
+		com.snapchat.billboard.SCBillboardPbActionFriendCheckup friendCheckup = 10;
+		com.snapchat.billboard.SCBillboardPbActionOpenUrl openURL = 11;
+		com.snapchat.billboard.SCBillboardPbActionOpenSettings openSettings = 12;
+		com.snapchat.billboard.SCBillboardPbActionCreateGroup createGroup = 13;
+		com.snapchat.billboard.SCBillboardPbActionLockScreenWidgets lockScreenWidgets = 14;
+		com.snapchat.billboard.SCBillboardPbActionOpenDeeplink openDeeplink = 15;
+		com.snapchat.billboard.SCBillboardPbActionOpenDwebTray openDwebTray = 16;
+		com.snapchat.billboard.SCBillboardPbActionOpenOTLOptInDialog openOtlOptIn = 17;
+		com.snapchat.billboard.SCBillboardPbActionAfterDarkCamera afterDarkCamera = 18;
+		com.snapchat.billboard.SCBillboardPbActionAfterDarkPostAdd afterDarkPostAdd = 19;
+		com.snapchat.billboard.SCBillboardPbActionDoNothing doNothing = 20;
+		com.snapchat.billboard.SCBillboardPbActionPlusDynamic plusDynamic = 21;
+		com.snapchat.billboard.SCBillboardPbActionOpenOSSettings openOsSettings = 22;
+		com.snapchat.billboard.SCBillboardPbActionIOSActionButton iosActionButton = 23;
+		com.snapchat.billboard.SCBillboardPbActionReplyCamera openReplyCamera = 24;
+	}
+
+}

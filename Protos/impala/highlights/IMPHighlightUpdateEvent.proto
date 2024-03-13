@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPHighlightUpdateEvent {
+	string profileId = 1;
+	string highlightId = 2;
+	int64 version = 3;
+	bool isDeleted = 4;
+
+	enum IMPHighlightCreationSource {
+		SOURCE_UNKNOWN = 0;
+		SOURCE_PROFILE_MANAGEMENT = 1;
+		SOURCE_SEND_TO = 2;
+	}
+
+	IMPHighlightCreationSource creationSource = 5;
+	bool refreshContent = 6;
+}

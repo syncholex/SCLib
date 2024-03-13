@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCMossVideoMetadata_PrefetchHint.proto";
+
+message SCMossVideoMetadata {
+	uint64 sizeBytes = 1;
+	float ssim = 2;
+	float psnr = 3;
+	bool faststart = 4;
+	float vmaf = 5;
+	uint32 width = 6;
+	uint32 height = 7;
+
+	enum SCMossVideoMetadata_VideoFormat {
+		UNKNOWN = 0;
+		AVC = 1;
+		HEVC = 2;
+		VP9 = 3;
+		AV1 = 4;
+	}
+
+	SCMossVideoMetadata_VideoFormat videoFormat = 8;
+	snapchat.content.SCMossVideoMetadata_PrefetchHint prefetchHint = 9;
+	uint32 lengthMs = 10;
+}

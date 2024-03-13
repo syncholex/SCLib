@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXUserIdentity.proto";
+
+message SCCTXSpotlightAttributionInfo_UserAttributionInfo {
+	snapchat.context2.iz.SCCTXUserIdentity user = 1;
+	bool hasStory = 2;
+}

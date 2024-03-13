@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkGetPlacesProfileRequest {
+	repeated string placeIdsArray = 1;
+	string locale = 2;
+
+	enum SMSdkPlaceProfileViewSource {
+		UNKNOWN = 0;
+		MAP = 1;
+	}
+
+	SMSdkPlaceProfileViewSource viewSource = 3;
+
+	enum SMSdkPlaceProfileModuleType {
+		INFO = 0;
+		LOCATION = 1;
+	}
+
+	repeated SMSdkPlaceProfileModuleType moduleTypesArray = 4 [packed=true];
+}

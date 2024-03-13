@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3RecipeCell {
+	string title = 1;
+	string author = 2;
+	string imageURL = 3;
+	double rating = 4;
+	string cookTime = 5;
+	string actionURL = 6;
+	string recipeId = 7;
+}

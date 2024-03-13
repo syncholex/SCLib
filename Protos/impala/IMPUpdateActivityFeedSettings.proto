@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateShowMentionsStatus.proto";
+
+message IMPUpdateActivityFeedSettings {
+	impala.IMPUpdateShowMentionsStatus updateShowMentionsStatus = 1;
+}

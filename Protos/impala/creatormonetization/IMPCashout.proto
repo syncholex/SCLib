@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPCashout {
+	int64 timestamp = 1;
+	int64 value = 2;
+	int64 crystals = 3;
+
+	enum IMPCashout_State {
+		STATE_UNSET = 0;
+		STATE_PENDING = 1;
+		STATE_PAID = 2;
+	}
+
+	IMPCashout_State state = 4;
+	string cashoutDate = 5;
+}

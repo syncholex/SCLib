@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_Schedule_TimeInterval {
+	int64 startDateTime = 1;
+	int64 endDateTime = 2;
+}

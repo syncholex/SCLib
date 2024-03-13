@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBleAddress {
+	uint32 addrIdPeer = 1;
+	uint32 addrType = 2;
+	bytes addr = 3;
+}

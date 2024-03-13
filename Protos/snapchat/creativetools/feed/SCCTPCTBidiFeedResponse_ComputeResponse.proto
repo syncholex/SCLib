@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package snapchat.creativetools.feed;
+
+import "snapchat/creativetools/compute/SCCTPComputeFeedResponse.proto";
+
+message SCCTPCTBidiFeedResponse_ComputeResponse {
+
+	enum SCCTPCTContext {
+		CONTEXT_UNSET = 0;
+		CHAT = 1;
+		MERCH = 2;
+		PREVIEW = 3;
+		STICKER_KIT = 4;
+		OTHER = 5;
+		TEMPLATE_EXPLORER = 6;
+		CAROUSEL = 7;
+	}
+
+	SCCTPCTContext requestContext = 1;
+
+	enum SCCTPCTFeedType {
+		SEARCH = 0;
+		RECENT = 1;
+		HOMETAB = 2;
+		CUSTOM_STICKER = 4;
+		BITMOJI = 5;
+		SNAPCHAT = 7;
+		EMOJI = 8;
+		UNLOCKED = 9;
+		BLOOP = 10;
+		ROOT = 11;
+		STICKER_PICKER = 12;
+		CAPTION_STYLE = 13;
+		FAVORITES = 14;
+		FOR_YOU = 15;
+		SOUND_FAVORITES = 16;
+		CHAT_REACTIONS = 17;
+		FILTER = 18;
+		GFYCAT = 19;
+		REMOTE_CHAT_SEARCH = 20;
+		SOUND_RECENTS = 21;
+		QUICK_REPLY = 22;
+		SHOPPING = 23;
+		TEMPLATE_HOMETAB = 24;
+	}
+
+	SCCTPCTFeedType feedType = 2;
+	snapchat.creativetools.compute.SCCTPComputeFeedResponse computeFeed = 3;
+}

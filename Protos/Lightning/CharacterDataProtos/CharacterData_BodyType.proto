@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message CharacterData_BodyType {
+
+	enum CharacterData_BodyType_Enum {
+		MALE_AVERAGE = 0;
+		MALE_HEAVY = 1;
+		MALE_HEAVIEST = 2;
+		MALE_SLIM = 3;
+		MALE_FIT = 5;
+		MALE_HEAVIER = 11;
+		FEMALE_HEAVIEST = 2;
+		FEMALE_AVERAGE = 7;
+		FEMALE_HEAVY = 8;
+		FEMALE_SLIM = 9;
+		FEMALE_FIT = 10;
+		FEMALE_HEAVIER = 12;
+	}
+
+	CharacterData_BodyType_Enum value = 1;
+}

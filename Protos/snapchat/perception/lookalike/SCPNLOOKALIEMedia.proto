@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike;
+
+message SCPNLOOKALIEMedia {
+
+	enum SCPNLOOKALIEMediaType {
+		TYPE_UNSET = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		AUDIO = 3;
+		TEXT = 4;
+		BARCODE = 5;
+	}
+
+	SCPNLOOKALIEMediaType mediaType = 1;
+	bytes mediaString = 2;
+	string properties = 100;
+}

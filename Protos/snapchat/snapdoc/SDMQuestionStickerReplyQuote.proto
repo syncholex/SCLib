@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMQuestionStickerReplyQuote {
+	snapchat.core.SCCOREUUID userId = 1;
+}

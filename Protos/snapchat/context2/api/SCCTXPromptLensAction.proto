@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXPromptLensAction {
+	string lensId = 1;
+	string promptId = 2;
+	bytes encryptionKey = 3;
+
+	enum SCCTXPromptLensAction_QaFlowType {
+		QuestionAndAnswer = 0;
+		Question = 1;
+	}
+
+	SCCTXPromptLensAction_QaFlowType qaFlowType = 4;
+}

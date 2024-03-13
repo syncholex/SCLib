@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2SnapProEntity_CarouselConfig {
+
+	enum SCS2SnapProEntity_FeedType {
+		SAVED_STORIES = 0;
+		SPOTLIGHT = 1;
+		LENSES = 2;
+	}
+
+	SCS2SnapProEntity_FeedType feedType = 1;
+}

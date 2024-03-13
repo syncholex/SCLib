@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain;
+
+message PrintingMetadata {
+	bytes snapId = 1;
+	string encryptionKey = 2;
+	string encryptionIv = 3;
+	string URL = 4;
+	string requestId = 5;
+}

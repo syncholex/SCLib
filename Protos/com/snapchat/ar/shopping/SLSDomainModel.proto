@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+import "com/snapchat/ar/shopping/StateModel.proto";
+import "com/snapchat/ar/common/display_card/DisplayCard.proto";
+
+message SLSDomainModel {
+	string domainKey = 1;
+	string domainLabel = 2;
+	com.snapchat.ar.shopping.StateModel stateModel = 3;
+	string domainId = 5;
+
+	enum SLSRenderingOption {
+		RENDERING_OPTION_UNSET = 0;
+		TITLE = 1;
+		PRODUCT_AVAILABILITY = 2;
+		PRICE = 3;
+		PRICE_AVAILABILITY = 4;
+		PRICE_FIRST_COLOR = 5;
+		COLORS = 6;
+		BRAND = 7;
+	}
+
+	SLSRenderingOption textRenderingOptions = 6;
+
+	enum AssetCategory {
+		ASSET_CATEGORY_UNSET = 0;
+		LOCAL = 1;
+		INTERMEDIATE_JSON = 2;
+		PASS_THROUGH = 3;
+	}
+
+	AssetCategory assetCategory = 7;
+	com.snapchat.ar.common.display_card.DisplayCard displayCard = 8;
+}

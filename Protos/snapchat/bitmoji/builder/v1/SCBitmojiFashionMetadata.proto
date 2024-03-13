@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+message SCBitmojiFashionMetadata {
+
+	enum SCBitmojiFashionSubType {
+		FASHION_SUB_TYPE_UNSET = 0;
+		BODY_SUIT = 1;
+		ONE_PIECE = 2;
+	}
+
+	SCBitmojiFashionSubType type = 1;
+
+	enum SCBitmojiTuckState {
+		TUCK_STATE_UNSET = 0;
+		TUCKED = 1;
+		UNTUCKED = 2;
+	}
+
+	SCBitmojiTuckState tuckState = 2;
+
+	enum SCBitmojiOutfitType {
+		OUTFIT_TYPE_UNSET = 0;
+		DEFAULT_OUTFIT_TYPE = 1;
+		LEGACY_OUTFIT_TYPE = 2;
+	}
+
+	SCBitmojiOutfitType outfitType = 3;
+}

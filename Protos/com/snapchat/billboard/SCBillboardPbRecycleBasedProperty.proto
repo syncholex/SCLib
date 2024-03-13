@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbRecycleBasedProperty {
+
+	oneof property {
+		int32 millisSupPropertyId = 1;
+		int32 secsSupPropertyId = 2;
+	}
+
+}

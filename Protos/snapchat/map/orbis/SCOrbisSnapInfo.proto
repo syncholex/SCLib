@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/map/orbis/SCOrbisSssId.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCOrbisSnapInfo {
+	snapchat.map.orbis.SCOrbisSssId sssId = 1;
+	int64 timestampMs = 2;
+	snapchat.core.SCCOREUUID userId = 3;
+	snapchat.core.SCCOREUUID multiSnapBundleId = 4;
+	int32 multiSnapSequenceId = 5;
+
+	enum SCOrbisModeratorDecision {
+		UNKNOWN = 0;
+		ANYONE_CAN_VIEW = 1;
+		NOBODY_CAN_VIEW = 2;
+		NOBODY_IN_SENSITIVE_COUNTRY_CAN_VIEW = 3;
+		NOBODY_IN_MODERATE_COUNTRY_CAN_VIEW = 4;
+	}
+
+	SCOrbisModeratorDecision modDecision = 6;
+	bool isSpotlight = 7;
+}

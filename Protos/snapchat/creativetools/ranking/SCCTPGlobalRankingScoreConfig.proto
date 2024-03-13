@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ranking;
+
+import "snapchat/creativetools/ranking/SCCTPGlobalRankingScoreRange.proto";
+
+message SCCTPGlobalRankingScoreConfig {
+	bool globalRankingScoreEnabled = 1;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange colorFilterScoreRangeListArray = 2;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange motionFilterScoreRangeListArray = 3;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange geoFilterScoreRangeListArray = 4;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange ucoFilterScoreRangeListArray = 5;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange venueFilterScoreRangeListArray = 6;
+
+	enum CarouselSnapSource {
+		CAROUSEL_SNAP_SOURCE_UNSET = 0;
+		POST_CAPTURE_MAIN_CAMERA = 1;
+		POST_CAPTURE_REPLY_CAMERA = 2;
+	}
+
+	CarouselSnapSource carouselSnapSource = 7;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange ucoColorFilterScoreRangeListArray = 8;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange ucoArFilterScoreRangeListArray = 9;
+	repeated snapchat.creativetools.ranking.SCCTPGlobalRankingScoreRange clientMediaFilterScoreRangeListArray = 10;
+	repeated string clientColorFilterNameListArray = 11;
+}

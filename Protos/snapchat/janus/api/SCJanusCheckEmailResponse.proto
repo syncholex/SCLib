@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusCheckEmailResponse_SuccessData.proto";
+import "snapchat/janus/api/SCJanusLoginCodeData.proto";
+import "snapchat/janus/api/SCJanusCheckEmailResponse_ErrorData.proto";
+
+message SCJanusCheckEmailResponse {
+
+	enum SCJanusCheckEmailResponse_StatusCode {
+		UNSET = 0;
+		AVAILABLE = 1;
+		LOGIN_CODE_SENT = 2;
+		ERR_GENERIC_FAILURE = 6;
+		ERR_EMAIL_INVALID = 7;
+		ERR_EMAIL_BLOCKED = 8;
+		ERR_EMAIL_TAKEN = 9;
+		ERR_THROTTLED = 10;
+		ERR_APP_VERSION_UPGRADE = 11;
+	}
+
+	SCJanusCheckEmailResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusCheckEmailResponse_SuccessData successData = 2;
+		snapchat.janus.api.SCJanusLoginCodeData loginCodeData = 3;
+		snapchat.janus.api.SCJanusCheckEmailResponse_ErrorData errorData = 6;
+	}
+
+}

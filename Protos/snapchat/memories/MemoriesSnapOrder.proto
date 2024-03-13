@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message MemoriesSnapOrder {
+	uint64 value = 1;
+}

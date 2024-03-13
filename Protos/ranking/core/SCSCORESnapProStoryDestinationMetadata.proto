@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/core/SCSCORECustomizedTTL.proto";
+
+message SCSCORESnapProStoryDestinationMetadata {
+	ranking.core.SCSCOREUUID businessId = 1;
+	string serviceEndpoint = 2;
+	ranking.core.SCSCORECustomizedTTL customizedTtl = 3;
+}

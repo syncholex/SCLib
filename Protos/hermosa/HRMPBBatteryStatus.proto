@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBBatteryStatus_Status.proto";
+
+message HRMPBBatteryStatus {
+	hermosa.HRMPBBatteryStatus_Status leftStatus = 1;
+	hermosa.HRMPBBatteryStatus_Status rightStatus = 2;
+}

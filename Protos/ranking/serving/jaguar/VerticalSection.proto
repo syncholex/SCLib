@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message VerticalSection {
+
+	enum VerticalSection_GridStyle_Enum {
+		UNKNOWN = 0;
+		TWO_COLUMN_FULL_SCREEN = 1;
+		ONE_COLUMN_FULL_SCREEN = 2;
+		SINGLE_TILE_FULL_SCREEN = 3;
+	}
+
+	VerticalSection_GridStyle_Enum gridStyle = 1;
+}

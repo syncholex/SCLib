@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerCreatorSnap {
+	string rawSnapId = 1;
+}

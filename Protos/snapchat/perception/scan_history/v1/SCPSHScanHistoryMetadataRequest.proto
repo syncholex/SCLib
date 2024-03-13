@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/common/SCPCNCOFConfig.proto";
+
+message SCPSHScanHistoryMetadataRequest {
+	repeated snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 1;
+}

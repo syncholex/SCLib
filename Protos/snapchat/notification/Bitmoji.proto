@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/UserBitmoji.proto";
+import "snapchat/notification/GroupConversationBitmoji.proto";
+import "snapchat/notification/BitmojiInfo.proto";
+
+message Bitmoji {
+
+	oneof bitmojiType {
+		snapchat.notification.UserBitmoji userBitmoji = 1;
+		snapchat.notification.GroupConversationBitmoji groupBitmoji = 2;
+	}
+
+	snapchat.notification.BitmojiInfo bitmojiInfo = 10;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles.infatuation;
+
+import "snapchat/map/garfield/tiles/infatuation/SCMGTINFGeoPivotsList_GeoPivots.proto";
+
+message SCMGTINFGeoPivotsList {
+	repeated snapchat.map.garfield.tiles.infatuation.SCMGTINFGeoPivotsList_GeoPivots geosArray = 1;
+}

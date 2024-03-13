@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyUserInfo.proto";
+import "storyreply/IMPStoryReplyGift.proto";
+import "storyreply/IMPStoryReplyQuestionStickerMetadata.proto";
+
+message IMPStoryReplyStoryReply {
+	storyreply.IMPStoryReplyUserInfo senderInfo = 1;
+	string conversationId = 2;
+	int64 sentTimestampMsec = 3;
+	string text = 4;
+	bool expired = 5;
+	bool deleted = 6;
+	int64 senderSequenceNumber = 7;
+	repeated storyreply.IMPStoryReplyGift giftsArray = 8;
+	bool hasSentGift = 9;
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package snapchat.map.basemap;
+
+message SCMBasemapPersonalizationConfig {
+	bool enableUntiledFavoritesRequest = 1;
+	bool enableClientDrivenFavoritesLayer = 2;
+	bool enableMapboxAnnotationReplacement = 3;
+	bool allowBasemapReactionToFavoritesChange = 4;
+	string customLightStyleName = 5;
+	string customDarkStyleName = 6;
+	bool enableTimeOfDayMapState = 7;
+	bool enableMapStatePlaceHiding = 8;
+	bool enableFastGlEventQueue = 9;
+	bool accessRenderThreadViaBgThread = 10;
+	bool usingNextgenIcons = 11;
+	bool enableEagerSymbolLayoutCulling = 12;
+	bool enableTiltAndRotate = 13;
+	bool enableAutomaticTilt = 14;
+	uint32 maxZoom = 15;
+	bool enableSatelliteLayerSwitcher = 16;
+	bool enableHeatmapLayerSwitcher = 17;
+	bool addHeatmapLayerOnStart = 18;
+	bool enableHeatmapDepthFix = 19;
+	bool enableVisualPlacesTray = 20;
+	bool enableStyleDrivenAnnotationAnimations = 21;
+	bool enableDelayedTileDeletion = 22;
+	bool delayedTileDeletionOnBgThread = 23;
+	uint32 cpuMonitoringTickIntervalMs = 24;
+	bool enableTileUpdateBucketsOptimization = 25;
+	bool enableCameraMapStateProperties = 26;
+	bool enableUserLocationMapStateProperties = 27;
+	bool enableRedundantStateUpdatesCulling = 28;
+	bool enableSkippingTileBucketsUpdates = 29;
+	bool enableCachingParsedVectorTileFeatures = 30;
+	bool enableForwardingValisDataToSdk = 31;
+	bool disablePlatformSpecificBitmojiRendering = 32;
+	bool disablePlatformSpecificPoiStoriesRendering = 33;
+	bool enableInstancedDrawCalls = 34;
+	uint32 maxGeneratedImagesPerTick = 35;
+	uint32 minZoomForTiltAndRotate = 36;
+	bool enable3DOrSatelliteToggle = 37;
+	uint32 zoomFor3DOrSatelliteToggle = 38;
+	bool initialValueOf3DOrSatelliteToggleIs3D = 39;
+}

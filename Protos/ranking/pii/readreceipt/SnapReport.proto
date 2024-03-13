@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/readreceipt/ReadReceiptState.proto";
+
+message SnapReport {
+	ranking.core.SCSCOREUUID viewerUserId = 1;
+	int64 snapViewTimestampMs = 2;
+	ranking.pii.readreceipt.ReadReceiptState readReceiptState = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.preview;
+
+message SCCTPLensToolConfig {
+	string lensId = 1;
+	string lensType = 2;
+
+	enum SCCTPLensToolConfig_ApplyType {
+		UNKNOWN_APPLY_TYPE_UNSET = 0;
+		ALL = 1;
+		IMAGE_ONLY = 2;
+		VIDEO_ONLY = 3;
+	}
+
+	SCCTPLensToolConfig_ApplyType applyType = 3;
+}

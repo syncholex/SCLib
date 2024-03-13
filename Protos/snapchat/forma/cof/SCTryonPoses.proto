@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.forma.cof;
+
+import "snapchat/forma/cof/SCTryonPose.proto";
+
+message SCTryonPoses {
+	repeated snapchat.forma.cof.SCTryonPose posesArray = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.account;
+
+import "snapchat/payments/commerce/common/SCPaymentsContactDetails.proto";
+import "snapchat/payments/commerce/common/SCPaymentsShippingAddress.proto";
+
+message SCPaymentsAccountInfo {
+	snapchat.payments.commerce.common.SCPaymentsContactDetails contactDetails = 1;
+	repeated snapchat.payments.commerce.common.SCPaymentsShippingAddress shippingAddressListArray = 2;
+}

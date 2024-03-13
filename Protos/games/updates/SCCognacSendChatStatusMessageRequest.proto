@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package games.updates;
+
+import "games/updates/SCCognacSendChatStatusInfo.proto";
+
+message SCCognacSendChatStatusMessageRequest {
+	string appId = 1;
+	string conversationId = 2;
+	string updateId = 3;
+	string inputs = 4;
+	repeated string renderUserIdsArray = 5;
+	string senderLocale = 6;
+	games.updates.SCCognacSendChatStatusInfo sendInfo = 7;
+}

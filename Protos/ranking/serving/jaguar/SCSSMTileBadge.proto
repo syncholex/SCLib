@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMTileBadge {
+	string title = 1;
+	string backgroundColor = 2;
+
+	enum SCSSMTileBadge_BadgeSize {
+		UNKNOWN = 0;
+		SMALL = 1;
+		LARGE = 2;
+	}
+
+	SCSSMTileBadge_BadgeSize badgeSize = 3;
+	uint32 textColorArgb = 4;
+	uint32 backgroundColorArgb = 5;
+}

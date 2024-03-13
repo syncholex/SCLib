@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCTARequest.proto";
+import "snapchat/context2/SnapContextUserInfo.proto";
+
+message SCCTXBatchCTARequest {
+	repeated snapchat.context2.iz.SCCTXCTARequest requestsArray = 1;
+	snapchat.context2.SnapContextUserInfo userInfo = 2;
+}

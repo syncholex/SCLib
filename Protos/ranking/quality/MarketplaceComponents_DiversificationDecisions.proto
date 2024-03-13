@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message MarketplaceComponents_DiversificationDecisions {
+	float embeddingSimilarityDemotion = 3;
+	float accountDemotion = 4;
+	float sccDemotion = 5;
+	float partnerDemotion = 9;
+	float nonLocalContentDemotion = 10;
+	float nonSnapCameraDemotion = 11;
+	float subscribedDemotion = 12;
+	float suggestiveDemotion = 13;
+	float coldStartDemotion = 14;
+	float contentAggregatorDemotion = 15;
+	float multiTierModerationDemotion = 16;
+	float topkScoreBoost = 17;
+	int32 creatorExperimentGroupId = 18;
+	float minCosineDistance = 19;
+	float snap2InterestDemotion = 20;
+	float meanCosineDistance = 21;
+	float medianCosineDistance = 22;
+	float embeddingMmrDemotion = 23;
+	float letterboxingDemotion = 24;
+	float dppSimilarity = 25;
+	float embeddingDppDemotion = 26;
+	float contentTypeDemotion = 27;
+}

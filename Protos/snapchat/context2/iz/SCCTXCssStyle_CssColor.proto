@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+message SCCTXCssStyle_CssColor {
+	int32 red = 1;
+	int32 green = 2;
+	int32 blue = 3;
+	float alpha = 4;
+}

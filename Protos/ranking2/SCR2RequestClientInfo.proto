@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2ABTestStudyInfo.proto";
+
+message SCR2RequestClientInfo {
+	string appVersion = 1;
+	string appBuildFlavor = 2;
+	string deviceMode = 3;
+
+	enum SCR2RequestClientInfo_OsType {
+		OS_UNKNOWN = 0;
+		OS_IOS = 1;
+		OS_ANDROID = 2;
+		OS_WEB = 3;
+	}
+
+	SCR2RequestClientInfo_OsType osType = 4;
+	string osVersion = 5;
+	string cityName = 6;
+	int64 forwardRequestTimestampMs = 7;
+	ranking2.SCR2GeoLocation cityLocation = 8;
+	repeated ranking2.SCR2ABTestStudyInfo studyInfoArray = 9;
+	string country = 10;
+
+	enum SCR2RequestClientInfo_Gender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCR2RequestClientInfo_Gender userGender = 11;
+	int32 userAge = 12;
+	bool isEmployee = 13;
+
+	enum SCR2RequestClientInfo_AppVariant {
+		VARIANT_UNKNOWN = 0;
+		VARIANT_ANDROID_MUSHROOM = 1;
+		VARIANT_ANDROID_ORIGINAL = 2;
+		VARIANT_ANDROID_SNAPSHOT = 3;
+	}
+
+	SCR2RequestClientInfo_AppVariant appVariant = 14;
+}

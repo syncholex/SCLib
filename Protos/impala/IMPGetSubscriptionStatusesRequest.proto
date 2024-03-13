@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSubscriptionQueryId.proto";
+
+message IMPGetSubscriptionStatusesRequest {
+	repeated string businessProfileIdsArray = 1;
+	repeated impala.IMPSubscriptionQueryId identifiersArray = 2;
+}

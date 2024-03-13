@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStreamToken_DebugInfo.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_Session.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_DiversificationState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_SuperFeedBlendingState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_DiscoverBlendedFeedState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_DiscoverFeedDiversificationState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_ListRerankingState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_UpNextRedesignState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_SptResponsiveState.proto";
+
+message SCSSMStreamToken {
+	ranking.serving.jaguar.SCSSMStreamToken_DebugInfo debugInfo = 1;
+	int32 nextScoringOffset = 2;
+	bytes criticalStoriesBf = 3;
+	repeated ranking.serving.jaguar.SCSSMStreamToken_Session sessionsArray = 4;
+	int64 lastP2RTsSecs = 5;
+	bool explorationEnabled = 6;
+	int64 randomRankingSeed = 7;
+	ranking.serving.jaguar.SCSSMStreamToken_DiversificationState diversificationState = 8;
+	ranking.serving.jaguar.SCSSMStreamToken_SuperFeedBlendingState superFeedBlendingState = 9;
+	ranking.serving.jaguar.SCSSMStreamToken_DiscoverBlendedFeedState discoverBlendedFeedState = 10;
+	int64 lastFetchedFofsFromAtlasTsSecs = 11;
+	ranking.serving.jaguar.SCSSMStreamToken_DiscoverFeedDiversificationState discoverFeedDiversificationState = 12;
+	ranking.serving.jaguar.SCSSMStreamToken_ListRerankingState listRerankingState = 14;
+	ranking.serving.jaguar.SCSSMStreamToken_UpNextRedesignState upNextRedesignState = 15;
+	ranking.serving.jaguar.SCSSMStreamToken_SptResponsiveState sptResponsiveState = 16;
+	int64 lastFetchedCbFriendsTsSecs = 17;
+}

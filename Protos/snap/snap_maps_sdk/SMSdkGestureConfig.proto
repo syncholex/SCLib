@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkGestureConfig {
+
+	oneof rotationGestureAngleThreshold {
+		float rotationGestureAngleThresholdValue = 1;
+	}
+
+
+	oneof tiltGestureMax2FingerAngle {
+		float tiltGestureMax2FingerAngleValue = 2;
+	}
+
+}

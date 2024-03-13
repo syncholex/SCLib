@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.rtus.proto;
+
+message RTUSBlizzardEvent {
+	int32 payloadId = 1;
+	bytes payloadBytes = 2;
+	int64 clientTs = 3;
+	string eventId = 4;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/WindowedCreatorMetrics.proto";
+
+message CreatorInfo {
+	string creatorUuid = 1;
+	uint64 creatorFp = 2;
+	string creatorCountry = 3;
+	string creatorLocale = 4;
+	bool isOfficialCreator = 5;
+	ranking.indexing.WindowedCreatorMetrics windowedCreatorStats = 6;
+	int32 creatorAge = 7;
+	string creatorGender = 8;
+}

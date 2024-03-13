@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/core/SCSCORETweaks.proto";
+
+message MFCSnapClientInternal {
+	ranking.core.SCSCORETweaks tweaks = 1;
+
+	enum SCSSMDebugOption_Enum {
+		OFF = 0;
+		HTML = 2;
+		PB = 3;
+		HTML_AND_PB = 4;
+		REPLAY = 5;
+	}
+
+	SCSSMDebugOption_Enum debug = 2;
+}

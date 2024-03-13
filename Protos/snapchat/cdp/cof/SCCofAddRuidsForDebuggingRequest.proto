@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/common/SCCOMMONRuid.proto";
+
+message SCCofAddRuidsForDebuggingRequest {
+	repeated snapchat.common.SCCOMMONRuid ruidsArray = 1;
+	repeated string configNamesArray = 2;
+	int32 maxSnapshots = 3;
+}

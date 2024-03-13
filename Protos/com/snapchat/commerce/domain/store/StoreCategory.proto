@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.store;
+
+import "com/snapchat/commerce/domain/store/HeroImageInfo.proto";
+
+message StoreCategory {
+	bytes id_p = 1;
+	string name = 2;
+	repeated com.snapchat.commerce.domain.store.HeroImageInfo heroImageInfoListArray = 3;
+}

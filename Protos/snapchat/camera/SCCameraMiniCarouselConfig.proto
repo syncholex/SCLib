@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message SCCameraMiniCarouselConfig {
+	bool enabled = 1;
+	bool lensExplorerTabBarItemEnabled = 2;
+	bool memoriesFullscreenPresentationEnabled = 3;
+	bool memoriesModalScrollDelegateDisabled = 4;
+
+	enum SCCameraMiniCarouselConfig_ActionBarVariant {
+		UNSET = 0;
+		SHARE_STORY_EDIT = 1;
+		SHARE_STORY = 2;
+		SHARE = 3;
+		SHARE_STORY_ABOVE_CAROUSEL = 4;
+		SHARE_STORY_ICON_ABOVE_CAROUSEL = 5;
+	}
+
+	SCCameraMiniCarouselConfig_ActionBarVariant actionBarVariant = 5;
+
+	enum SCCameraMiniCarouselConfig_CarouselScrollZone {
+		CAROUSEL_SCROLL_ZONE_UNSET = 0;
+		FULL = 1;
+		HALF = 2;
+	}
+
+	SCCameraMiniCarouselConfig_CarouselScrollZone carouselScollZone = 6;
+	bool carouselAlwaysOnRequired = 7;
+	bool carouselStopDecelerationOnOriginal = 8;
+	bool carouselInfoButtonEnabled = 9;
+	bool memoriesFetchBeforeStartupCompletionEnabled = 10;
+
+	enum SCCameraMiniCarouselConfig_CreativeToolbarVariant {
+		CREATIVE_TOOLBAR_VARIANT_UNSET = 0;
+		DEFAULT = 1;
+		EDIT_ONLY = 2;
+		THREE_DOT = 3;
+	}
+
+	SCCameraMiniCarouselConfig_CreativeToolbarVariant creativeToolbarVariant = 11;
+	bool carouselLayoutEnlarged = 12;
+	bool carouselLensBorderCropEnabled = 13;
+	bool carouselLeButtonAlwaysVisible = 14;
+	bool shouldBlurThumbnails = 15;
+	bool shouldAlwaysShowEmptyMemoriesEntryButton = 16;
+
+	enum SCCameraMiniCarouselConfig_CameraRollItemResetButtonPosition {
+		CAMERA_ROLL_ITEM_RESET_BUTTON_POSITION_UNSET = 0;
+		BAR_BOTTOM_LEFT = 1;
+		OPERA_TOP_LEFT = 2;
+	}
+
+	SCCameraMiniCarouselConfig_CameraRollItemResetButtonPosition cameraRollItemResetButtonPosition = 17;
+	bool carouselHapticsOnScrollEnabled = 18;
+
+	enum SCCameraMiniCarouselConfig_CaptureButtonSize {
+		CAPTURE_BUTTON_SIZE_UNSET = 0;
+		CAPTURE_BUTTON_SIZE_SMALL_IN_COOL_RECORDING = 1;
+		CAPTURE_BUTTON_SIZE_LARGE_IN_COOL_RECORDING = 2;
+	}
+
+	SCCameraMiniCarouselConfig_CaptureButtonSize captureButtonSize = 19;
+	bool isSwipeToDismissEnabled = 20;
+	bool isMemoriesCameraWarmupEnabled = 21;
+	bool isMiniCarouselToSnappableImprovementsEnabled = 22;
+	bool isOperaPresentationAnimationEnabled = 23;
+
+	enum SCCameraMiniCarouselConfig_ThumbnailLoadingStyle {
+		THUMBNAL_LOADING_STYLE_UNSET = 0;
+		DURING_G2S = 1;
+		AFTER_G2S = 2;
+		WHEN_IDLE = 3;
+	}
+
+	SCCameraMiniCarouselConfig_ThumbnailLoadingStyle thumbnailLoadingStyle = 25;
+	float captureButtonTapTargetScale = 26;
+	bool shouldAddTopAndBottomGradient = 27;
+	bool shouldMakeLensExplorerButtonLazy = 28;
+	bool operaSwipeToDismissImmediatelyResetCarouselEnabled = 29;
+	bool operaPresentationAnimationUnblockCarouselEnabled = 30;
+	double navigationResetTimeout = 31;
+
+	enum SCCameraMiniCarouselConfig_CarouselTapZone {
+		CAROUSEL_TAP_ZONE_UNSET = 0;
+		CELL_BOUNDS = 1;
+		CELL_NEAREST = 2;
+	}
+
+	SCCameraMiniCarouselConfig_CarouselTapZone carouselTapZone = 32;
+
+	enum SCCameraMiniCarouselConfig_CarouselPlacement {
+		CAROUSEL_PLACEMENT_UNSET = 0;
+		BOTTOM = 1;
+		INLINE = 2;
+	}
+
+	SCCameraMiniCarouselConfig_CarouselPlacement carouselPlacement = 33;
+	bool isCaptureButtonCarouselSwipeEnabled = 34;
+	bool actionBarUseCapriPreviewButtonSize = 35;
+	bool actionBarHighlightButtonUseCapriPreviewButtonColor = 36;
+	bool inlineCarouselCaptureButtonScaleDownOnCrSwipeEnabled = 37;
+	bool navBarFadingTransitionOnCrSwipeEnabled = 38;
+	bool backgroundFadingTransitionOnCrSwipeEnabled = 39;
+	uint32 maxNumberOfCameraRollItems = 40;
+	bool isNavigationLayerEnabled = 41;
+	bool initializeNgsFooterEarlier = 42;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREABFeatureLoggingEntry_ExperimentCr.proto";
+import "ranking/core/SCSCOREABFeatureLoggingEntry_ExperimentFirstChangedPosition.proto";
+import "ranking/core/SCSCOREABFeatureLoggingEntry_CustomFeatures.proto";
+import "ranking/core/SCSCOREABFeatureLoggingEntry_StudyCRInfo.proto";
+
+message SCSCOREABFeatureLoggingEntry {
+	string clientDfSessionId = 1;
+	string requestId = 2;
+	string crStudyId = 3;
+	string userName = 4;
+	string ghostId = 5;
+	repeated ranking.core.SCSCOREABFeatureLoggingEntry_ExperimentCr serverCrPerTypeArray = 6;
+	repeated ranking.core.SCSCOREABFeatureLoggingEntry_ExperimentFirstChangedPosition firstChangedPositionPerTypeArray = 7;
+	repeated ranking.core.SCSCOREABFeatureLoggingEntry_CustomFeatures customFeaturesArray = 8;
+	repeated ranking.core.SCSCOREABFeatureLoggingEntry_StudyCRInfo studyCrsArray = 9;
+}

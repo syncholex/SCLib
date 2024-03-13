@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+message SCPBWeb3SolanaAddresses {
+	repeated string addressesArray = 1;
+}

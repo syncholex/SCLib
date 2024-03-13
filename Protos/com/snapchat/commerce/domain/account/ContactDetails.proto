@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.account;
+
+message ContactDetails {
+	string email = 1;
+	string phone = 2;
+}

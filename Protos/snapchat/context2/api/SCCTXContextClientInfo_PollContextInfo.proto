@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/polls/SCPPollInfo.proto";
+
+message SCCTXContextClientInfo_PollContextInfo {
+	string pollId = 1;
+	string title = 2;
+	snapchat.polls.SCPPollInfo pollInfo = 3;
+
+	enum SCCTXContextClientInfo_PollContextInfo_PollType {
+		UNSET = 0;
+		TWOD_TRY_ON = 1;
+	}
+
+	SCCTXContextClientInfo_PollContextInfo_PollType pollType = 4;
+}

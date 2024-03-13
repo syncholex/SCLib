@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCPbGenAIIdentityDeleteResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLongformVideoInterval.proto";
+
+message SCSSMLongformVideoChapter {
+	ranking.serving.jaguar.SCSSMLongformVideoInterval videoInterval = 1;
+}

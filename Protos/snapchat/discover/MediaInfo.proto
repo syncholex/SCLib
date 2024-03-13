@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message MediaInfo {
+	string mediaId = 1;
+	string color = 2;
+}

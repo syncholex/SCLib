@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.compute;
+
+message SCCTPQueryInterval {
+	uint32 startTimeSec = 1;
+	uint32 durationSec = 2;
+}

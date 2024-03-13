@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingTextFormatAttribute {
+
+	enum SCMessagingTextFormatAttribute_TextFormatAttributeType {
+		BOLD = 0;
+		ITALICS = 1;
+		UNDERLINE = 2;
+	}
+
+	SCMessagingTextFormatAttribute_TextFormatAttributeType textFormatAttributeType = 2;
+}

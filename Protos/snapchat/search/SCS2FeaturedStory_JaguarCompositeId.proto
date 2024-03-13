@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2FeaturedStory_JaguarCompositeId {
+	int32 corpus = 1;
+	string id_p = 2;
+}

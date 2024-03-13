@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightCard.proto";
+import "snapchat/context2/iz/SCCTXHashtag.proto";
+import "snapchat/context2/iz/SCCTXSpotlightPrimaryAction.proto";
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfo.proto";
+import "snapchat/context2/iz/SCCTXSpotlightSubscribeInfo.proto";
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfoV2.proto";
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/iz/SCCTXSpotlightSubtitle.proto";
+
+message SCCTXSpotlightResponse {
+	repeated snapchat.context2.iz.SCCTXSpotlightCard spotlightCardsArray = 1;
+	repeated snapchat.context2.iz.SCCTXHashtag hashtagsArray = 2;
+	snapchat.context2.iz.SCCTXSpotlightPrimaryAction primaryAction = 3;
+
+	oneof attribution {
+		snapchat.context2.iz.SCCTXSpotlightAttributionInfo attributionInfo = 4;
+		snapchat.context2.iz.SCCTXSpotlightAttributionInfoV2 attributionInfoV2 = 6;
+	}
+
+	snapchat.context2.iz.SCCTXSpotlightSubscribeInfo subscribeInfo = 5;
+	snapchat.context2.api.SCCTXAction action = 7;
+	string debugHtml = 8;
+	snapchat.context2.iz.SCCTXSpotlightSubtitle subtitle = 9;
+}

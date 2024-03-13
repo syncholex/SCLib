@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/ChatCompletionConfig.proto";
+
+message ChatCompletionRequest {
+	string useCase = 1;
+	merlin.toolbox.ChatCompletionConfig config = 2;
+}

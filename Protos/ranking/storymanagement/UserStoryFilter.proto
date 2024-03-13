@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/QueryCursor.proto";
+
+message UserStoryFilter {
+	int64 startTsMs = 1;
+	int64 endTsMs = 2;
+	uint32 limit = 3;
+	bool publicOnly = 4;
+	bool isDescending = 5;
+	ranking.storymanagement.QueryCursor queryCursor = 6;
+
+	enum SCSCOREMyStoryVariant_Enum {
+		UNSET = 0;
+		AFTER_DARK = 1;
+	}
+
+	SCSCOREMyStoryVariant_Enum myStoryVariant = 7;
+	bool returnSnapPro = 8;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsRevenueSummary {
+	int64 filledImpressions = 1;
+	double revenue = 2;
+	double ecpm = 3;
+}

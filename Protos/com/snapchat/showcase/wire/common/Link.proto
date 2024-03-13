@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.common;
+
+import "com/snapchat/showcase/wire/common/Weblink.proto";
+import "com/snapchat/showcase/wire/common/IosDeeplink.proto";
+import "com/snapchat/showcase/wire/common/AndroidDeeplink.proto";
+import "com/snapchat/showcase/wire/common/ItemDetailPageDeeplink.proto";
+
+message Link {
+
+	oneof link {
+		com.snapchat.showcase.wire.common.Weblink weblink = 1;
+		com.snapchat.showcase.wire.common.IosDeeplink ios = 2;
+		com.snapchat.showcase.wire.common.AndroidDeeplink android = 3;
+		com.snapchat.showcase.wire.common.ItemDetailPageDeeplink itemDetailPageDeeplink = 4;
+	}
+
+}

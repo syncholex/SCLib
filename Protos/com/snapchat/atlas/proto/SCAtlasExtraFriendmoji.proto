@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.proto;
+
+import "com/snapchat/atlas/proto/SCAtlasEmojiInfo.proto";
+
+message SCAtlasExtraFriendmoji {
+	string categoryName = 1;
+	com.snapchat.atlas.proto.SCAtlasEmojiInfo emojiInfo = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness_BoltMedia.proto";
+
+message IMPBusiness_Logos {
+	string squareFilledIconURL = 1;
+	string squareHeroImageURL = 2;
+	string squareHeroImageBitmojiTemplateId = 3;
+	string horizontalIconURL = 4;
+	impala.IMPBusiness_BoltMedia squareFilledIcon = 5;
+	impala.IMPBusiness_BoltMedia squareHeroImage = 6;
+	impala.IMPBusiness_BoltMedia horizontalIcon = 7;
+	string discoverFeedLogoURL = 20;
+	string megaProfileLogoURL = 21;
+	string manageProfileLogoURL = 22;
+	string originalLogoURL = 100;
+	bool isDefault = 101;
+	bytes originalLogoContentObject = 102;
+}

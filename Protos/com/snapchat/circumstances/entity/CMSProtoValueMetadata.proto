@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "google/protobuf/GPBFileDescriptorProto.proto";
+
+message CMSProtoValueMetadata {
+	string protoSchema = 1;
+	string typeName = 2;
+	google.protobuf.GPBFileDescriptorProto fileDescriptorProto = 3;
+}

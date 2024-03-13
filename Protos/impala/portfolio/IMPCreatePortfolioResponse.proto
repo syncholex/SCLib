@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+import "impala/portfolio/IMPLensPortfolio.proto";
+import "impala/portfolio/IMPStoryPortfolio.proto";
+
+message IMPCreatePortfolioResponse {
+
+	oneof portfolio {
+		impala.portfolio.IMPLensPortfolio lensPortfolio = 1;
+		impala.portfolio.IMPStoryPortfolio storyPortfolio = 2;
+	}
+
+}

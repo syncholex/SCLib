@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.cameos.stories;
+
+import "snapchat/cameos/common/SCCameosCameoStagingAsset.proto";
+
+message SCCameosCameoTileStaging {
+	snapchat.cameos.common.SCCameosCameoStagingAsset assetModel = 1;
+
+	oneof onboardingImageDataReference {
+		string s3OnboardingImagePath = 2;
+		string onboardingImageContentURL = 4;
+	}
+
+
+	oneof staticImageDataReference {
+		string s3StaticImagePath = 3;
+		string staticImageContentURL = 5;
+	}
+
+}

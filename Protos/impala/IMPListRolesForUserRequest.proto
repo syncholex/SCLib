@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPListRolesForUserRequest {
+	string pageId = 1;
+	bool includePublishers = 2;
+}

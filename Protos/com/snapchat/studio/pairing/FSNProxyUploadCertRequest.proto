@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message FSNProxyUploadCertRequest {
+	string lensStudioSerialUuid = 1;
+	string publicCert = 2;
+}

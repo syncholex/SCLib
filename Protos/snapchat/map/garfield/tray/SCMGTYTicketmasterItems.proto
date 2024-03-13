@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/map/garfield/tray/SCMGTYTicketmasterEvent.proto";
+
+message SCMGTYTicketmasterItems {
+	repeated snapchat.map.garfield.tray.SCMGTYTicketmasterEvent eventsArray = 1;
+
+	enum SCMGLTMCategory {
+		UNSET = 0;
+		MISCELLANEOUS = 1;
+		SPORTS = 2;
+		MUSIC = 3;
+		ARTS_AND_THEATRE = 4;
+		UNDEFINED = 5;
+		FILM = 6;
+	}
+
+	repeated SCMGLTMCategory pivotsArray = 2 [packed=true];
+}

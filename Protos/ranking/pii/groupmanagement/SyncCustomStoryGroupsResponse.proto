@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/UserGroupMetadata.proto";
+import "ranking/pii/groupmanagement/UserPendingGroupMetadata.proto";
+
+message SyncCustomStoryGroupsResponse {
+	bytes nextSyncToken = 1;
+	repeated ranking.pii.groupmanagement.UserGroupMetadata userGroupMetadataArray = 2;
+	bool isFullSync = 3;
+	repeated ranking.pii.groupmanagement.UserPendingGroupMetadata userPendingGroupMetadataArray = 4;
+}

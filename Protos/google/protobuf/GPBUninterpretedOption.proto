@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBUninterpretedOption_NamePart.proto";
+
+message GPBUninterpretedOption {
+	repeated google.protobuf.GPBUninterpretedOption_NamePart nameArray = 2;
+	string identifierValue = 3;
+	uint64 positiveIntValue = 4;
+	int64 negativeIntValue = 5;
+	double doubleValue = 6;
+	bytes stringValue = 7;
+	string aggregateValue = 8;
+}

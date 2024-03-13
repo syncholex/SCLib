@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.peliasproxy;
+
+import "snapchat/map/peliasproxy/SCMPPPoint.proto";
+
+message SCMPPReverseGeocodeRequest {
+	snapchat.map.peliasproxy.SCMPPPoint point = 1;
+	int32 numResults = 2;
+}

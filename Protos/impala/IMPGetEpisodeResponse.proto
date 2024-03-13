@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/StoryDoc.proto";
+
+message IMPGetEpisodeResponse {
+	snapchat.storydoc.StoryDoc episode = 1;
+}

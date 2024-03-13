@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+import "snapchat/perception/asr/SCPCNTokenLattice.proto";
+
+message SCPCNTranscribeFinalResponse {
+	string transcription = 1;
+	repeated snapchat.perception.asr.SCPCNTokenLattice tokenLatticeArray = 2;
+}

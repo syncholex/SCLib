@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSnapScanResponse {
+	bool success = 1;
+	bytes snapCodeData = 2;
+}

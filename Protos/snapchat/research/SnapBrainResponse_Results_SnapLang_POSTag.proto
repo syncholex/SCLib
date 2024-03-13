@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapLang_POSTag {
+	string token = 1;
+	string tag = 2;
+}

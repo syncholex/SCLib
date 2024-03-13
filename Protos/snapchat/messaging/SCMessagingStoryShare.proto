@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingStoryShare {
+	string storyId = 1;
+	string mediaType = 2;
+	bool isUserTagged = 3;
+}

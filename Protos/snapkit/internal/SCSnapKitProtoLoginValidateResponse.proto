@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+import "snapkit/internal/user/SCSnapKitProtoKitFeatureItem.proto";
+
+message SCSnapKitProtoLoginValidateResponse {
+	snapkit.internal.user.SCSnapKitProtoKitFeatureItem featureMap = 1;
+	bool consentRequired = 2;
+	bool isFirstParty = 3;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsStoriesAndDiscover {
+
+	enum SCAppInsightsStoriesAndDiscover_Subfeature {
+		UNSET = 0;
+		ADS = 1;
+		CONTENT_QUALITY = 2;
+		DISCOVER = 3;
+		FRIEND_STORIES = 4;
+		PLAYBACK = 5;
+		OPERA = 6;
+		ACTION_BAR = 7;
+		CONTEXT = 8;
+		BROCCOLI = 9;
+		SUPER_FEED = 10;
+		ENSEMBLE = 11;
+	}
+
+	SCAppInsightsStoriesAndDiscover_Subfeature subfeature = 1;
+}

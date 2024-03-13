@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+import "snapchat/spectrum/streaming/schema/instalogger/FeedBaseInfo.proto";
+import "snapchat/spectrum/streaming/schema/instalogger/CompositeStoryId.proto";
+
+message StoryFeedBaseInfo {
+	snapchat.spectrum.streaming.schema.instalogger.FeedBaseInfo feedBaseInfo = 1;
+	string streamId = 2;
+	snapchat.spectrum.streaming.schema.instalogger.CompositeStoryId itemId = 3;
+
+	enum StoryFeedBaseInfo_ItemLayout {
+		LAYOUT_UNKNOWN = 0;
+		LAYOUT_TWO_COLUMNS = 1;
+		LAYOUT_THREE_COLUMNS = 2;
+		LAYOUT_HCAROUSEL = 3;
+		LAYOUT_VLIST_1C = 4;
+		LAYOUT_VLIST_1C_HERO = 7;
+		LAYOUT_VLIST_2C2R = 5;
+		LAYOUT_VLIST_2C4R = 6;
+		LAYOUT_SECTION_HEADER = 8;
+	}
+
+	StoryFeedBaseInfo_ItemLayout itemLayout = 4;
+	int32 itemPosition = 5;
+
+	enum StoryFeedBaseInfo_ItemType {
+		ITEM_TYPE_UNKNOWN = 0;
+		ITEM_TYPE_FRIEND = 12;
+		ITEM_TYPE_PUBLISHER = 1;
+		ITEM_TYPE_ITEM_PROMOTED = 2;
+		ITEM_TYPE_OFFICIAL = 3;
+		ITEM_TYPE_PUBLIC = 4;
+		ITEM_TYPE_CURATED = 5;
+		ITEM_TYPE_DYNAMIC = 6;
+		ITEM_TYPE_MAP = 7;
+		ITEM_TYPE_GROUP = 8;
+		ITEM_TYPE_LIVE = 9;
+		ITEM_TYPE_SOLO = 10;
+		ITEM_TYPE_LENS_OBJECT = 11;
+		ITEM_TYPE_INTEREST = 13;
+		ITEM_TYPE_INTEREST_RELATED = 14;
+		ITEM_TYPE_PRIVATE = 15;
+		ITEM_TYPE_CUSTOM = 16;
+		ITEM_TYPE_GEO = 17;
+		ITEM_TYPE_SHARED = 25;
+		ITEM_TYPE_CREATOR = 18;
+		ITEM_TYPE_PIVOT = 19;
+		ITEM_TYPE_TOOLTIP = 22;
+		ITEM_TYPE_LENS_CHALLENGE_STORY = 20;
+		ITEM_TYPE_COGNAC = 21;
+		ITEM_TYPE_COMMUNITY = 24;
+		ITEM_TYPE_BUTTON = 23;
+	}
+
+	StoryFeedBaseInfo_ItemType itemType = 6;
+	string itemTypeSpecific = 7;
+	int32 rerankingId = 8;
+
+	enum StoryFeedBaseInfo_StoryFeedItemSource {
+		STORY_FEED_ITEM_SOURCE_UNSPECIFIED = 0;
+		STORY_FEED_ITEM_SOURCE_UP_NEXT = 1;
+		STORY_FEED_ITEM_SOURCE_NOTIFICATION = 2;
+		STORY_FEED_ITEM_SOURCE_IN_APP_NOTIFICATION = 4;
+		STORY_FEED_ITEM_SOURCE_RECOMMENDATION = 3;
+		STORY_FEED_ITEM_SOURCE_NAV_CAROUSEL = 5;
+		STORY_FEED_ITEM_SOURCE_BOOST_BASED_RECOMMENDATION = 6;
+		STORY_FEED_ITEM_SOURCE_DEEPLINK = 7;
+	}
+
+	StoryFeedBaseInfo_StoryFeedItemSource storyFeedItemSource = 9;
+	bool isPromoted = 10;
+	bool isSubscribed = 11;
+	bool isExplorationStory = 12;
+	bool isMagellan = 13;
+	string creatorId = 14;
+	bool isBlendedFeed = 15;
+	bool isDiscoverUpNextInfiniteScroll = 16;
+}

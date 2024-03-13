@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+import "snapchat/lenses/cof/SCCustomMetadataStoreConfig.proto";
+
+message SCLensMetadataCentralizedStoreConfig {
+	repeated snapchat.lenses.cof.SCCustomMetadataStoreConfig storeConfigsArray = 1;
+
+	enum SCLensMetadataCentralizedStoreConfig_CentralizedStoreVariant {
+		UNSET = 0;
+		FULL_IN_MEMORY = 1;
+		JUST_ON_DISK = 2;
+		LRU_CACHE = 3;
+	}
+
+	SCLensMetadataCentralizedStoreConfig_CentralizedStoreVariant storeVariant = 2;
+	bool includeExpiredItems = 3;
+	bool resetExpirationDateOnAccess = 4;
+}

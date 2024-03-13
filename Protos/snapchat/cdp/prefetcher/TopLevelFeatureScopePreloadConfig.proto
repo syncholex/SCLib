@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+import "snapchat/cdp/prefetcher/TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig.proto";
+
+message TopLevelFeatureScopePreloadConfig {
+	repeated snapchat.cdp.prefetcher.TopLevelFeatureScopePreloadConfig_FeatureScopePreloadConfig featureScopePreloadConfigListArray = 7;
+}

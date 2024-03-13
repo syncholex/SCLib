@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTMediaInfo.proto";
+import "address/SCMapsAddress.proto";
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/context/SCAttributionInfo.proto";
+import "snapchat/context/SCContextContextHint.proto";
+import "snapchat/research/SASAudioStitch.proto";
+import "snapchat/streaming/SCMTOneSnapInfo.proto";
+import "snapchat/streaming/SCMTPublicMediaInfo.proto";
+
+message SCMTMapSnap {
+	string id_p = 1;
+	string storyId = 2;
+	double timestamp = 3;
+	double lat = 4;
+	double lng = 5;
+	bool shouldFuzz = 6;
+	double fuzzDistance = 7;
+	double timeLength = 8;
+	bool isInfiniteDuration = 9;
+	int32 mediaType = 10;
+	snapchat.map.SCMTMediaInfo mediaInfo = 11;
+	string venueId = 12;
+	address.SCMapsAddress localizedAddresses = 13;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 14;
+	string multisnapId = 15;
+	snapchat.context.SCAttributionInfo attributionInfo = 16;
+	snapchat.context.SCContextContextHint contextHint = 17;
+	string multiSnapBundleId = 18;
+	int32 multiSnapSequenceId = 19;
+	snapchat.research.SASAudioStitch audioStitch = 20;
+	snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 21;
+	snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 22;
+	string unlockablesSnapInfo = 23;
+}

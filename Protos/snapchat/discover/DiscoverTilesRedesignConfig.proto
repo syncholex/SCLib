@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message DiscoverTilesRedesignConfig {
+
+	enum DiscoverTilesRedesignLayout {
+		DISCOVER_TILES_REDESIGN_LAYOUT_UNSET = 0;
+		DISCOVER_TILES_REDESIGN_LAYOUT_BOTTOM_HEADLINE = 1;
+		DISCOVER_TILES_REDESIGN_LAYOUT_CARDS = 2;
+		DISCOVER_TILES_REDESIGN_LAYOUT_TOP_BOTTOM = 3;
+		DISCOVER_TILES_REDESIGN_LAYOUT_CARDS_TOP_BOTTOM = 4;
+	}
+
+	DiscoverTilesRedesignLayout layout = 1;
+	bool showStoryRing = 2;
+	bool showCreatorType = 3;
+	bool shouldTruncateTitle = 4;
+}

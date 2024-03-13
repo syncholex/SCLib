@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinOptionRankingSignals.proto";
+
+message SCMEGetCheckinOptionsRequest {
+	double lat = 1;
+	double lng = 2;
+	double radiusMeters = 3;
+	bool ghostMode = 4;
+	string experimentValue = 5;
+	snapchat.map.SCMECheckinOptionRankingSignals rankingSignals = 6;
+}

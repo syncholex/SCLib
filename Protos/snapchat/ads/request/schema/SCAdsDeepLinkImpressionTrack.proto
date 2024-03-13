@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsRemoteWebpageImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsAppInstallImpressionTrack.proto";
+
+message SCAdsDeepLinkImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBInt32Value deepLinkedToAppCount = 2;
+	google.protobuf.GPBInt32Value deepLinkedToAppInstallCount = 3;
+	google.protobuf.GPBBoolValue deepLinkFallbackToWebview = 4;
+	string deeplinkUri = 5;
+	google.protobuf.GPBBoolValue customProductPageEnabled = 6;
+	google.protobuf.GPBBoolValue deepLinkFallbackToDefaultBrowser = 7;
+	snapchat.ads.request.schema.SCAdsRemoteWebpageImpressionTrack remoteWebpageImpressionTrack = 8;
+
+	enum SCAdsAppInstallStatus {
+		UNKNOWN_INSTALL_STATUS_UNSET = 0;
+		INSTALLED = 1;
+		NOT_INSTALLED = 2;
+	}
+
+	SCAdsAppInstallStatus appInstallStatus = 9;
+	snapchat.ads.request.schema.SCAdsAppInstallImpressionTrack appInstall = 10;
+
+	enum SCAdsCtaActivity {
+		CTA_ACTIVITY_UNSET = 0;
+		SUBSCRIBE_TO_PROFILE = 1;
+	}
+
+	SCAdsCtaActivity ctaActivity = 11;
+}

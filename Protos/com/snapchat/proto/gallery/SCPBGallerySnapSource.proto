@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery;
+
+import "com/snapchat/proto/SCPBSnapCreatorAttribution.proto";
+
+message SCPBGallerySnapSource {
+	int32 type = 1;
+	repeated string attributionArray = 2;
+	string cameraRollId = 3;
+	string externalId = 4;
+	string saverUserId = 5;
+	com.snapchat.proto.SCPBSnapCreatorAttribution creatorAttribution = 6;
+}

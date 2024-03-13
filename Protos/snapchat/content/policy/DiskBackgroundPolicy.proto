@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+import "snapchat/content/policy/DiskScanPolicy.proto";
+import "snapchat/content/policy/DiskReportPolicy.proto";
+import "snapchat/content/policy/DiskDeletionPolicy.proto";
+
+message DiskBackgroundPolicy {
+	snapchat.content.policy.DiskScanPolicy diskScanPolicy = 1;
+	snapchat.content.policy.DiskReportPolicy diskReportPolicy = 2;
+	snapchat.content.policy.DiskDeletionPolicy diskDeletionPolicy = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAppStorePreloadConfig {
+	bool enableAppStorePreload = 1;
+	repeated int32 indicesArray = 2 [packed=true];
+	int32 cacheSize = 3;
+}

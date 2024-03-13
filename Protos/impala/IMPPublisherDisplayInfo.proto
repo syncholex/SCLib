@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPublisherDisplayInfo {
+	string backgroundImageURL = 1;
+	string horizontalLogoURL = 2;
+	bool horizontalLogoHidden = 3;
+	string primaryColor = 4;
+
+	enum IMPPublisherLogoPlacement {
+		LOGO_BOTTOM = 0;
+		LOGO_OFF = 1;
+	}
+
+	IMPPublisherLogoPlacement logoPlacement = 5;
+	string publisherId = 6;
+	string backgroundImageBitmojiTemplateId = 7;
+	bool isBreakingNewsEnabled = 8;
+	bool isNewProfile = 9;
+	int64 subscriberCount = 10;
+	bool hideSubscriberCountBanner = 11;
+	string publisherNameId = 12;
+}

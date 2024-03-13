@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/MemoriesFeaturedStory.proto";
+import "snapchat/memories/MemoriesCommonResponse.proto";
+
+message MemoriesAddCollectionsResponse {
+	repeated snapchat.memories.MemoriesFeaturedStory featuredStoriesArray = 1;
+	snapchat.memories.MemoriesCommonResponse commonResponse = 2;
+}

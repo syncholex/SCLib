@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLinuxCrash {
+
+	enum HRMPBLinuxCrash_CrashType {
+		UNKNOWN = 0;
+		SEG_FAULT = 1;
+		BROKEN_PIPE = 2;
+		ASSERT = 3;
+		UNHANDLED_EXCEPTION = 4;
+	}
+
+	HRMPBLinuxCrash_CrashType type = 1;
+	string identifier = 2;
+	string backtrace = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusRecipientDeviceInfo {
+	bytes publicKey = 1;
+	uint64 keyVersion = 2;
+	bytes wrappedMediaKey = 3;
+	bytes salt = 4;
+	bytes validationTag = 5;
+}

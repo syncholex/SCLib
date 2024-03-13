@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.item.ar.properties;
+
+import "com/snapchat/item_catalog/domain/item/ar/properties/SCShoppingLensGlbData.proto";
+import "com/snapchat/item_catalog/domain/item/ar/properties/Transforms.proto";
+
+message SCShoppingLensGlassesProperties {
+	com.snapchat.item_catalog.domain.item.ar.properties.SCShoppingLensGlbData glbData = 1;
+	com.snapchat.item_catalog.domain.item.ar.properties.Transforms transforms = 2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1ActionTiming.proto";
+import "actionmoji/action/SCMT1Constrain.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+
+message SCMT1Type {
+	int64 id_p = 1;
+	string name = 2;
+	actionmoji.action.SCMT1ActionTiming timing = 3;
+	actionmoji.action.SCMT1Constrain constrain = 4;
+	string place = 5;
+	string event = 6;
+	snapchat.map.common.SCMCLocalizedStringSet placeName = 7;
+	snapchat.map.common.SCMCLocalizedStringSet eventName = 8;
+	string venueId = 9;
+}

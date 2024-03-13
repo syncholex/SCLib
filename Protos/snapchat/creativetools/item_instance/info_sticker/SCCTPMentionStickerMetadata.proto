@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPMentionStickerMetadata {
+
+	enum SCCTPMentionStickerMetadata_Type {
+		TYPE_UNSPECIFIED = 0;
+		LIGHT = 1;
+		DARK = 2;
+		RAINBOW = 3;
+	}
+
+	SCCTPMentionStickerMetadata_Type type = 1;
+	string username = 2;
+	string displayName = 3;
+	snapchat.core.SCCOREUUID userId = 4;
+}

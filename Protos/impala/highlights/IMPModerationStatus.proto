@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/common/IMPContentModerationStatus.proto";
+import "impala/highlights/IMPHighlightSnapModerationStatus.proto";
+
+message IMPModerationStatus {
+
+	enum IMPModerationResult {
+		PASSED = 0;
+		FAILED = 1;
+	}
+
+	IMPModerationResult moderationResult = 1;
+	impala.common.IMPContentModerationStatus titleModerationStatus = 2;
+	impala.common.IMPContentModerationStatus coverModerationStatus = 3;
+	repeated impala.highlights.IMPHighlightSnapModerationStatus snapModerationStatusesArray = 4;
+}

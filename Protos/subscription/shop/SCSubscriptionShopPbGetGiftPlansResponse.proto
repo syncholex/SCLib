@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbGiftPlan.proto";
+
+message SCSubscriptionShopPbGetGiftPlansResponse {
+	repeated subscription.shop.SCSubscriptionShopPbGiftPlan applePlansArray = 1;
+	repeated subscription.shop.SCSubscriptionShopPbGiftPlan googlePlansArray = 2;
+}

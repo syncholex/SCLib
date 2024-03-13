@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPClientSearchTagsInverted_CTIdList.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem_Entity.proto";
+
+message SCCTPClientSearchTagsInverted {
+	snapchat.creativetools.search.SCCTPClientSearchTagsInverted_CTIdList ctIdMap = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem_Entity entityMap = 2;
+}

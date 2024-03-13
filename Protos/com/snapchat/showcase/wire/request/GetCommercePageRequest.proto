@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/CommercePageContext.proto";
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+
+message GetCommercePageRequest {
+
+	enum CommercePageType {
+		PAGE_TYPE_UNSET = 0;
+		SHOPPING_HUB = 1;
+		RECENTLY_VIEWED = 2;
+		SHOPPING_PREFERENCES = 3;
+		DYNAMIC = 4;
+		LOOK_BUILDER = 5;
+	}
+
+	CommercePageType pageType = 1;
+	com.snapchat.showcase.wire.context.CommercePageContext commercePageContext = 2;
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 3;
+}

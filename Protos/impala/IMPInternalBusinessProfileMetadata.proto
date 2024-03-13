@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBoltMediaWithMLSMediaId.proto";
+import "impala/IMPCreatorDiscoveryForBrandsSetting.proto";
+
+message IMPInternalBusinessProfileMetadata {
+	int64 subscriberShardCount = 1;
+	bytes publisherMetadata = 2;
+	string publisherIconURL = 3;
+	string squareFilledIconMediaId = 4;
+	string inventoryItemId = 5;
+	impala.IMPBoltMediaWithMLSMediaId squareFilledIconMedia = 6;
+	impala.IMPBoltMediaWithMLSMediaId heroImageMedia = 7;
+
+	enum IMPConfiguredStatus {
+		CONFIGURED_STATUS_UNKNOW = 0;
+		CONFIGURED_STATUS_ACTIVE = 1;
+		CONFIGURED_STATUS_DISABLED = 2;
+	}
+
+	IMPConfiguredStatus publicStoriesMonetizationSettingsConfiguredStatus = 8;
+	impala.IMPCreatorDiscoveryForBrandsSetting shareAuthorizedDataWithApiPartners = 9;
+}

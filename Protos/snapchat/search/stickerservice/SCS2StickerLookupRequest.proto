@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/SCS2CompositeId.proto";
+
+message SCS2StickerLookupRequest {
+	repeated snapchat.search.SCS2CompositeId compIdsArray = 1;
+	bool includeMetadata = 2;
+}

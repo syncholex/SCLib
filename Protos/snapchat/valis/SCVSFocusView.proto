@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSFocusView {
+	repeated snapchat.core.SCCOREUUID friendIdsArray = 1;
+	bool hasLiveLocation = 2;
+	bool isDismissed = 3;
+}

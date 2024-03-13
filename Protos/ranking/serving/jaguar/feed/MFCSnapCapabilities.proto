@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCStats.proto";
+import "ranking/serving/jaguar/feed/MFCBoost.proto";
+import "ranking/serving/jaguar/feed/MFCExpiration.proto";
+import "ranking/serving/jaguar/feed/MFCSubscription.proto";
+
+message MFCSnapCapabilities {
+	ranking.serving.jaguar.feed.MFCStats stats = 1;
+	ranking.serving.jaguar.feed.MFCBoost boost = 2;
+	ranking.serving.jaguar.feed.MFCExpiration expiration = 3;
+	ranking.serving.jaguar.feed.MFCSubscription subscription = 4;
+}

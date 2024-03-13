@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOPermittedUserActions {
+
+	enum STOPermittedUserActions_ShareOption {
+		NO_SHARE = 0;
+		SHARE_AVAILABLE = 1;
+	}
+
+	STOPermittedUserActions_ShareOption shareOption = 3;
+}

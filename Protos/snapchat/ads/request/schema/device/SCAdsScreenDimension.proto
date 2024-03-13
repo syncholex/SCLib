@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema.device;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsScreenDimension {
+	google.protobuf.GPBInt32Value height = 1;
+	google.protobuf.GPBInt32Value width = 2;
+}

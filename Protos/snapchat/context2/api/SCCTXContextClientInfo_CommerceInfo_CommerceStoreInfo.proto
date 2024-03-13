@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_CommerceInfo_CommerceStoreInfo {
+	string key = 1;
+	string storeId = 2;
+	string categoryId = 3;
+}

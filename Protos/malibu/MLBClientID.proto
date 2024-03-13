@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBClientID {
+	string clientId = 1;
+	bool requestAuthzCode = 2;
+}

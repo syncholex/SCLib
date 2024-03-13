@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPCheckUserEligibilityForPublicProfileCreationResponse_UserEligibilityCheckResult {
+	string userId = 1;
+
+	enum IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult {
+		UNKNOWN = 0;
+		ELIGIBLE = 1;
+		INELIGIBLE = 2;
+	}
+
+	IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult eligibilityResult = 2;
+	repeated string ineligibilityReasonsArray = 3;
+}

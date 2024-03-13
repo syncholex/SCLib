@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message SCFriendingLegacyContactBookUploadRequestParams {
+	string userId = 1;
+	string userAgent = 2;
+	string osType = 3;
+	int32 droppedContacts = 4;
+}

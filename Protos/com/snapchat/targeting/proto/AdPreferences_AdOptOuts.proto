@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message AdPreferences_AdOptOuts {
+	bool audienceMatchOptOut = 1;
+	bool externalActivityMatchOptOut = 2;
+	bool thirdPartyAdNetworkOptOut = 3;
+}

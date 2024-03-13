@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesUnlockableNoFillAdResponse {
+	int32 carouselIndexMap = 1;
+	bytes serveItemId = 2;
+	bytes encryptedAdData = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsEngagementStreamScript.proto";
+
+message SCAdsEngagementStreamMetadata {
+	snapchat.ads.render.schema.SCAdsEngagementStreamScript engagementStreamScript = 1;
+	bool enableAsmV2 = 2;
+}

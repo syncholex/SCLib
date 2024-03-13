@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxMediaInfo.proto";
+import "merlin/toolbox/GeneratedPet.proto";
+
+message GenerateCustomPetsResponse {
+	repeated merlin.toolbox.SCMerlinToolboxMediaInfo generatedPetImagesArray = 1;
+	string imageGenerationPrompt = 2;
+
+	enum GenerateCustomPetsResponse_Status {
+		OK_UNSET = 0;
+		INPUT_NO_ANIMAL = 1;
+	}
+
+	GenerateCustomPetsResponse_Status status = 3;
+	repeated merlin.toolbox.GeneratedPet generatedPetsArray = 4;
+}

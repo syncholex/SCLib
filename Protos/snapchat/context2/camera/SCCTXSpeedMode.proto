@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context2.camera;
+
+message SCCTXSpeedMode {
+
+	enum SCCTXSpeedMode_SpeedType {
+		SPEED_TYPE_SLOW_AS_UNSET = 0;
+		SPEED_TYPE_NORMAL = 1;
+		SPEED_TYPE_FAST = 2;
+	}
+
+	SCCTXSpeedMode_SpeedType speedType = 1;
+}

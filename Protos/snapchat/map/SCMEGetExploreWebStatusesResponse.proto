@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerMapStatus.proto";
+
+message SCMEGetExploreWebStatusesResponse {
+	repeated snapchat.map.SCMEExplorerMapStatus statusesArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCBoltContentDescriptor.proto";
+
+message SCMossHlsVodStreaming {
+	snapchat.content.SCBoltContentDescriptor masterManifest = 1;
+}

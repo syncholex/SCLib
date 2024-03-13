@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3MoreScanCanDoCell.proto";
+
+message SCPCNV3ScanCardMoreScanCanDoModel {
+	repeated snapchat.perception.scan.v3.SCPCNV3MoreScanCanDoCell cellsArray = 1;
+	string header = 2;
+	string subtitle = 3;
+}

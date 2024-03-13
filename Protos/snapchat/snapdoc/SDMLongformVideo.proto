@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/content/MediaReference.proto";
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SDMLongformVideo {
+	string id_p = 2;
+	string rspVideoId = 16;
+	int64 rspVideoFirstFrameAssetId = 17;
+	string manifestURL = 18;
+	string previewURL = 19;
+	string thumbnailURL = 20;
+	string posterURL = 21;
+	bool hasCaptions = 22;
+	snapchat.content.MediaReference videoMedia = 23;
+	snapchat.content.MediaReference placeholderImage = 24;
+	snapchat.snapdoc.SDMMediaId videoMediaId = 25;
+	snapchat.snapdoc.SDMMediaId placeholderImageId = 26;
+}

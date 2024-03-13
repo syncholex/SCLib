@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/lenses/lensgator/SCGMixerResult.proto";
+import "lens_platform/client_server/api/SCLPLensNoFillAdResponse.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCGMixerNamespaceResponse {
+	string namespace_p = 1;
+	uint64 cacheTtlMillis = 2;
+	bytes paginationOffsetToken = 3;
+	repeated snapchat.lenses.lensgator.SCGMixerResult resultsArray = 4;
+	repeated snapchat.lenses.lensgator.SCGMixerResult precachedResultsArray = 5;
+	repeated lens_platform.client_server.api.SCLPLensNoFillAdResponse lensNoFillAdResponseListArray = 6;
+	bytes encryptedUserTrackData = 7;
+	snapchat.core.SCCOREUUID mixerRequestId = 8;
+	string ctRequestId = 9;
+}

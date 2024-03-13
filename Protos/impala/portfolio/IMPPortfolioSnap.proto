@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+message IMPPortfolioSnap {
+	string snapId = 1;
+}

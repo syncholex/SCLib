@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+message SCAPbDataContentResolve_VariantInfo {
+	bytes variantCofConfigId = 1;
+	bytes variantCofRuleId = 2;
+	repeated int32 availableVariantsArray = 3 [packed=true];
+	int32 optimalVariant = 4;
+	int32 variantSelected = 5;
+	repeated int32 cachedVariantsArray = 6 [packed=true];
+}

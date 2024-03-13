@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsOnDeviceAnonymizedId {
+	bytes encryptedAnonymizedId = 1;
+	int64 batchedConversionEventsDateTsMs = 2;
+	int64 generationNumber = 3;
+}

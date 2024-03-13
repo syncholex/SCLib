@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBRange.proto";
+
+message CHRPBMediaData {
+	string uuid = 1;
+
+	enum CHRPBMediaType {
+		UNSET = 0;
+		METADATA = 1;
+		THUMBNAIL = 2;
+		VIDEO = 3;
+		PICTURE = 4;
+		IMU_DATA = 5;
+		ANIMATED_THUMBNAIL = 6;
+	}
+
+	CHRPBMediaType type = 2;
+	cheerios.CHRPBRange requestedRange = 3;
+	cheerios.CHRPBRange actualRange = 4;
+	bytes data_p = 5;
+}

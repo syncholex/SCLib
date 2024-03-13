@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "snapchat/storydoc/StoryDoc.proto";
+import "impala/highlights/IMPThumbnailInfo.proto";
+import "impala/highlights/IMPMediaInfo.proto";
+
+message IMPHighlight {
+	snapchat.storydoc.StoryDoc story = 1;
+	string version = 2;
+	impala.highlights.IMPThumbnailInfo thumbnailInfo = 3;
+	repeated impala.highlights.IMPMediaInfo mediaInfoArray = 4;
+	string compositeId = 5;
+	bool isPinned = 6;
+
+	enum IMPHighlightCreationSource {
+		SOURCE_UNKNOWN = 0;
+		SOURCE_PROFILE_MANAGEMENT = 1;
+		SOURCE_SEND_TO = 2;
+	}
+
+	IMPHighlightCreationSource creationSource = 7;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTWorldEffectSet_EffectVariant {
+	string effectId = 1;
+
+	enum SCMTWorldEffectClientVersion {
+		EFFECTS_CLIENT_ZERO = 0;
+	}
+
+	SCMTWorldEffectClientVersion requiredClientVersion = 2;
+	double minZoomLevel = 3;
+	double maxZoomLevel = 4;
+	bool playsWhenClusterSelected = 5;
+	bool onlyPlayOncePerMapSession = 6;
+	string effectURL = 7;
+}

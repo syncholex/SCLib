@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2BitmojiThumbnail {
+	string tileTemplateId = 1;
+	string fallbackThumbnailURL = 2;
+}

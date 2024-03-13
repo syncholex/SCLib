@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/local/placediscovery/VRZFriendInfoList.proto";
+import "snapchat/local/placediscovery/VRZAnnotationMetadata.proto";
+
+message VRZBasemapPlace {
+
+	enum VRZBasemapRecommendationType {
+		PLACE_UNSET = 0;
+		PLACE_FAVORITES = 1;
+		PLACE_MY_VISIT = 2;
+		PLACE_POPULAR_WITH_FRIENDS = 3;
+		PLACE_ADS_PROMOTED = 4;
+		PLACE_POPULAR_LAST_NIGHT = 5;
+		FRIEND_FAVORITES = 6;
+	}
+
+	repeated VRZBasemapRecommendationType recommendationTypesArray = 1 [packed=true];
+	string placeId = 2;
+	string placeName = 3;
+	snapchat.geo.SPCGPoint geometry = 4;
+	string kindName = 5;
+	google.protobuf.GPBFloatValue minZoom = 6;
+	snapchat.local.placediscovery.VRZFriendInfoList friendInfoByType = 7;
+	string categoryId = 8;
+	repeated string alternateCategoryIdsArray = 9;
+	snapchat.local.placediscovery.VRZAnnotationMetadata annotationMetadata = 10;
+}

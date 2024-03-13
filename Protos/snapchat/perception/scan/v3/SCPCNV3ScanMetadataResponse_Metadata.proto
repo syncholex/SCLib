@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCategoryMetadata.proto";
+
+message SCPCNV3ScanMetadataResponse_Metadata {
+}

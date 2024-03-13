@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "ranking/core/SCSCOREStoryMetadata.proto";
+
+message SCMessagingStoryPostInfo {
+	ranking.core.SCSCOREStoryMetadata storyMetadata = 1;
+}

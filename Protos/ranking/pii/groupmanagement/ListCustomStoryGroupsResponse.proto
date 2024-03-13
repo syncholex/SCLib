@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/CustomStoryGroup.proto";
+
+message ListCustomStoryGroupsResponse {
+	repeated ranking.pii.groupmanagement.CustomStoryGroup customStoryGroupsArray = 1;
+}

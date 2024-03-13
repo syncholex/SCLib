@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbPreviewMedia {
+	string thumbnailMediaURL = 1;
+	string thumbnailMediaPosterURL = 2;
+	string standardMediaURL = 3;
+	string standardMediaPosterURL = 4;
+}

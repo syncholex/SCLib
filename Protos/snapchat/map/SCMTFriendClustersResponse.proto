@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTFriendCluster.proto";
+import "snapchat/map/SCMTMapPoint.proto";
+
+message SCMTFriendClustersResponse {
+	repeated snapchat.map.SCMTFriendCluster friendClusterArray = 1;
+	int32 s2CellLevel = 2;
+	int64 s2CellApproximateLength = 3;
+
+	enum SCMTErrorCode {
+		OK = 0;
+		UNKNOWN_ERROR = 1;
+		CONCURRENCY_ERROR = 2;
+		VERSION_MISMATCH = 3;
+		GHOST_MODE_UPDATE = 4;
+	}
+
+	SCMTErrorCode errorCode = 4;
+	repeated snapchat.map.SCMTMapPoint pointArray = 5;
+	string previousDiffBaseId = 6;
+	string diffBaseId = 7;
+	repeated string removedFriendClusterIdsArray = 8;
+	double nextRequestAfterSecs = 10;
+}

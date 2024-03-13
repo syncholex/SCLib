@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMediaMetadata_MediaEncryptionInfo.proto";
+import "snapchat/messaging/SCMessagingMediaMetadata_MediaDimensions.proto";
+import "snapchat/messaging/SCMessagingMediaMetadata_LegacyDirectDownloadUrl.proto";
+import "snapchat/messaging/SCMessagingDuration.proto";
+
+message SCMessagingMediaMetadata {
+
+	enum SCMessagingMediaMetadata_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		SPECTACLES_VIDEO = 2;
+		GIF = 3;
+		AUDIO = 4;
+		SPECTACLES_IMAGE = 5;
+	}
+
+	SCMessagingMediaMetadata_MediaType type = 2;
+
+	enum SCMessagingMediaMetadata_Orientation {
+		VERTICAL = 0;
+		HORIZONTAL = 1;
+	}
+
+	SCMessagingMediaMetadata_Orientation orientation = 3;
+	snapchat.messaging.SCMessagingMediaMetadata_MediaEncryptionInfo encryptionInfo = 4;
+	snapchat.messaging.SCMessagingMediaMetadata_MediaDimensions dimensions = 5;
+
+	oneof sourceMedia {
+		string sourceMediaId = 6;
+		uint32 contentObjectIndex = 7;
+	}
+
+	bool hasSound = 8;
+	bool zipped = 9;
+	bool frontFacing = 10;
+	snapchat.messaging.SCMessagingMediaMetadata_LegacyDirectDownloadUrl legacyDirectDownloadURL = 11;
+	snapchat.messaging.SCMessagingDuration duration = 12;
+	uint32 mediaDurationMs = 13;
+	bool containsAnimatedStickers = 14;
+}

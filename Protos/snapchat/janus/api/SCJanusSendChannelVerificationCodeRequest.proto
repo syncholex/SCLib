@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusLoginHeader.proto";
+
+message SCJanusSendChannelVerificationCodeRequest {
+	string channelVerificationToken = 1;
+
+	enum SCJanusChannelVerificationType {
+		CHANNEL_VERIFICATION_TYPE_UNSET = 0;
+		CHANNEL_VERIFICATION_TYPE_EMAIL = 1;
+	}
+
+	SCJanusChannelVerificationType channelVerificationType = 2;
+
+	oneof payload {
+		string email = 3;
+	}
+
+	snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}

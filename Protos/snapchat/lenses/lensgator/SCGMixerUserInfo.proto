@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/lenses/lensgator/SCGMixerUserInfo_GeoLocation.proto";
+import "snapchat/lenses/lensgator/SCGMixerUserInfo_ScreenInfo.proto";
+
+message SCGMixerUserInfo {
+	string snapadsId = 1;
+	uint32 snapScore = 2;
+	snapchat.lenses.lensgator.SCGMixerUserInfo_GeoLocation location = 3;
+	string timeZoneId = 4;
+	bool hasBitmoji = 5;
+	bool hasCameo = 6;
+	float aspectRatio = 7;
+	string countryCodeTwoLetter = 8;
+	snapchat.lenses.lensgator.SCGMixerUserInfo_ScreenInfo screenInfo = 9;
+}

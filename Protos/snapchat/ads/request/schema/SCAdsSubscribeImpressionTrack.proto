@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsSubscribeImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBBoolValue channelSubscribedEndStatus = 2;
+}

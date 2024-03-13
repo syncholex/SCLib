@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message TopicDebug_DedupeDebug {
+	string topic = 1;
+	double similarity = 2;
+}

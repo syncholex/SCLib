@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Display.proto";
+import "snapchat/notification/Routing.proto";
+
+message NotificationDisplayModel {
+	snapchat.notification.Display display = 1;
+	snapchat.notification.Routing routing = 2;
+}

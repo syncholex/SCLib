@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMCommerce_Product.proto";
+import "snapchat/snapdoc/SDMCommerce_Store.proto";
+
+message SDMCommerce_Item {
+
+	oneof item {
+		snapchat.snapdoc.SDMCommerce_Product product = 2;
+		snapchat.snapdoc.SDMCommerce_Store store = 3;
+	}
+
+}

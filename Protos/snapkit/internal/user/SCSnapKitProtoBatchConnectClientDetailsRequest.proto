@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoConnectClientDetailsRequest.proto";
+
+message SCSnapKitProtoBatchConnectClientDetailsRequest {
+	repeated snapkit.internal.user.SCSnapKitProtoConnectClientDetailsRequest requestsArray = 1;
+}

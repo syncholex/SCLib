@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsAds {
+
+	enum SCAppInsightsAds_Subfeature {
+		UNSET = 0;
+		MODERATION_FRAUD = 1;
+		AD_LOAD_FREQUENCY = 2;
+		RENDERING_PLAYBACK = 3;
+		AD_RELEVANCE = 4;
+		SPONSORED_AR = 5;
+	}
+
+	SCAppInsightsAds_Subfeature subfeature = 1;
+}

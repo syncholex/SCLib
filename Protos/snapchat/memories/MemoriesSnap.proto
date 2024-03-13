@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/memories/ExternalMetadata.proto";
+import "snapchat/memories/Tag.proto";
+
+message MemoriesSnap {
+	snapchat.core.SCCOREUUID snapId = 1;
+	snapchat.snapdoc.SDMSnapDoc snap = 2;
+	snapchat.memories.ExternalMetadata externalMetadata = 3;
+	string thumbnailURL = 4;
+	uint64 mediaSize = 5;
+	bool isDeleted = 6;
+	repeated snapchat.memories.Tag tagsArray = 7;
+
+	enum SCCOMMONMediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND_DEPRECATED = 3;
+		BLOB = 4;
+		LAGUNA_SOUND = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO_SOUND = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+		WEB = 27;
+	}
+
+	SCCOMMONMediaType mediaType = 8;
+	uint64 snapCreateTimeUtc = 9;
+	string id_p = 10;
+}

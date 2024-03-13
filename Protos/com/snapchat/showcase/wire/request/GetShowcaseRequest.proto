@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/ShowcaseContext.proto";
+import "com/snapchat/showcase/wire/context/UserContext.proto";
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+import "com/snapchat/showcase/wire/context/FilterContext.proto";
+
+message GetShowcaseRequest {
+	com.snapchat.showcase.wire.context.ShowcaseContext showcaseContext = 1;
+	com.snapchat.showcase.wire.context.UserContext userContext = 2;
+	int32 limit = 3;
+	bytes paginationCursor = 4;
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 5;
+	com.snapchat.showcase.wire.context.FilterContext filterContext = 6;
+}

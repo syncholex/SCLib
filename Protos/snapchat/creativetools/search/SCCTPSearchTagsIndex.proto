@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPSearchTagsIndex_IndexEntry.proto";
+
+message SCCTPSearchTagsIndex {
+	repeated bytes itemsArray = 1;
+	repeated snapchat.creativetools.search.SCCTPSearchTagsIndex_IndexEntry indexArray = 2;
+}

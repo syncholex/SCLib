@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEMediaFeatures.proto";
+
+message SCPNLOOKALIEMediaFeaturesList {
+	repeated snapchat.perception.lookalike.features.SCPNLOOKALIEMediaFeatures featuresArray = 1;
+}

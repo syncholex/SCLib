@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPLens {
+	int64 lensId = 1;
+	bool hasUiElements = 2;
+
+	enum SCCTPLens_LensType {
+		UNKNOWN_TYPE_UNSET = 0;
+		RETOUCH = 1;
+		ENHANCE = 2;
+		MAGIC_ERASER = 3;
+		COMBO = 4;
+		CAROUSEL = 5;
+		LIVE_RENDERING = 6;
+	}
+
+	SCCTPLens_LensType lensType = 3;
+}

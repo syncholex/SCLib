@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesChatDock.proto";
+
+message SCCognacContextSwitchingSwitchAppInstanceResponse {
+	cognac.SCCognacAppInstancesChatDock chatDock = 1;
+}

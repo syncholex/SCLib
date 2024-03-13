@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemRecommendationWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ShopOnStoreWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ARTryOnWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/VariantWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/SizeRecommendationWidget.proto";
+
+message ItemDetailPageWidget {
+
+	enum ItemDetailPageWidgetTitle {
+		WIDGET_TITLE_UNSET = 0;
+		SIMILAR_WIDGET_TITLE = 1;
+		FOR_YOU_WIDGET_TITLE = 2;
+		RELATED_ITEMS_WIDGET_TITLE = 3;
+		MORE_FROM_SHOP_WIDGET_TITLE = 4;
+	}
+
+	ItemDetailPageWidgetTitle widgetTitle = 1;
+	string fallbackWidgetTitle = 2;
+
+	oneof widget {
+		com.snapchat.showcase.wire.itemdetailpage.ItemRecommendationWidget itemRecommendationWidget = 3;
+		com.snapchat.showcase.wire.itemdetailpage.ShopOnStoreWidget shopOnStoreWidget = 4;
+		com.snapchat.showcase.wire.itemdetailpage.ARTryOnWidget arTryOnWidget = 5;
+		com.snapchat.showcase.wire.itemdetailpage.VariantWidget variantWidget = 6;
+		com.snapchat.showcase.wire.itemdetailpage.SizeRecommendationWidget sizeRecommendationWidget = 7;
+	}
+
+}

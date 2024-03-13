@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "com/snapchat/auth/proto/tivs/PlatformResponseData.proto";
+
+message TivResponse {
+	string transactionId = 1;
+
+	enum TivResponse_TivResponseStatus {
+		UNSET = 0;
+		APPROVED = 1;
+		DENIED = 2;
+		TIME_OUT = 3;
+		INVALID_APP_VERSION = 4;
+	}
+
+	TivResponse_TivResponseStatus status = 2;
+	com.snapchat.auth.proto.tivs.PlatformResponseData platformResponseData = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPCheckItemsResponse_Item.proto";
+
+message SCCTPCheckItemsResponse {
+	repeated snapchat.creativetools.userdata.SCCTPCheckItemsResponse_Item itemsArray = 1;
+}

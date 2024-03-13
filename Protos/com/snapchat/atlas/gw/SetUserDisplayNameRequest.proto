@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message SetUserDisplayNameRequest {
+	string displayName = 1;
+}

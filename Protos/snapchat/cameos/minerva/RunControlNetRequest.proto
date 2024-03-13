@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message RunControlNetRequest {
+	string prompt = 1;
+	string negativePrompt = 2;
+	string inputImage = 3;
+	string pipeline = 4;
+	bool skipPreprocess = 5;
+	bool useDefaultImage = 6;
+	bool savePreviewImage = 7;
+	bool runPostprocess = 8;
+	string postprocessResolution = 9;
+	string steps = 10;
+	string seed = 11;
+	string strength = 12;
+	string guidanceScale = 13;
+	string callbackSteps = 14;
+	string userId = 15;
+}

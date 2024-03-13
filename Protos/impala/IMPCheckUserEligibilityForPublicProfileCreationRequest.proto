@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo.proto";
+
+message IMPCheckUserEligibilityForPublicProfileCreationRequest {
+	repeated impala.IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo usersArray = 1;
+}

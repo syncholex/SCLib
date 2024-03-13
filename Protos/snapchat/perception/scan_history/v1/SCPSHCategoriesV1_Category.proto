@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHCategoriesV1_Category {
+	string categoryId = 1;
+	string localizedName = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPPutItemsByExternalIDResponse_Result {
+	bool success = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem item = 2;
+
+	enum SCCTPErrorCode {
+		NO_ERROR_UNSET = 0;
+		OTHER = 1;
+		ITEM_BLOCKED = 2;
+	}
+
+	SCCTPErrorCode errorCode = 3;
+}

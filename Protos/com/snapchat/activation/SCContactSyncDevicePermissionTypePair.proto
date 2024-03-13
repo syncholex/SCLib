@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.activation;
+
+message SCContactSyncDevicePermissionTypePair {
+	string deviceId = 1;
+
+	enum SCContactSyncCollectContactType {
+		UNSET = 0;
+		COLLECT_CONTACT_V1 = 1;
+		COLLECT_CONTACT_V2 = 2;
+	}
+
+	SCContactSyncCollectContactType permissionType = 2;
+}

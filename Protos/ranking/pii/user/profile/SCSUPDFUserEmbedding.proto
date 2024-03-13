@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+import "ranking/pii/user/profile/SCSUPEmbeddingMetadata.proto";
+
+message SCSUPDFUserEmbedding {
+	string modelName = 1;
+	ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+	ranking.pii.user.profile.SCSUPEmbeddingMetadata metadata = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.sup.upsell_state;
+
+message SCUpsellStatePbBumpState {
+	uint64 bumpIdMillis = 1;
+	uint64 firstImpressionMillis = 2;
+	uint32 impressionCount = 3;
+}

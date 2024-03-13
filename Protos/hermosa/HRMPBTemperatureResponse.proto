@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBTemperatureResponse {
+	float nordicTemp = 1;
+	int32 ambaTemp = 2;
+	int32 wifiTemp = 3;
+	int32 imageSensorTemp = 4;
+	int32 coulombCtrlTemp = 5;
+
+	enum HRMPBTemperatureResponse_TemperatureStatus {
+		TemperatureNormal = 0;
+		TemperatureLow = 1;
+		TemperatureHigh = 2;
+	}
+
+	HRMPBTemperatureResponse_TemperatureStatus status = 6;
+	int32 usbRegulatorTemp = 7;
+}

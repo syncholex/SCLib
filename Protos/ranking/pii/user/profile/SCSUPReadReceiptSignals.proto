@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPReadRecord.proto";
+import "ranking/pii/user/profile/SCSUPImpressionRecord.proto";
+
+message SCSUPReadReceiptSignals {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPReadRecord readRecordsArray = 2;
+	int64 lastUpdatedTimestampInMsecs = 3;
+	repeated ranking.pii.user.profile.SCSUPImpressionRecord impressionRecordsArray = 4;
+}

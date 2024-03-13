@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message LogoDisplayValue {
+
+	enum LogoDisplay {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	LogoDisplay value = 1;
+}

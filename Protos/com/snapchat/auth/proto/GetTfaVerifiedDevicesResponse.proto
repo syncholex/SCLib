@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+import "com/snapchat/auth/proto/TfaVerifiedDevice.proto";
+
+message GetTfaVerifiedDevicesResponse {
+	repeated com.snapchat.auth.proto.TfaVerifiedDevice verifiedDevicesArray = 1;
+}

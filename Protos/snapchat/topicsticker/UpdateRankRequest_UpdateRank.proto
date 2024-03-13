@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.topicsticker;
+
+import "snapchat/topicsticker/TopicStickerId.proto";
+
+message UpdateRankRequest_UpdateRank {
+	snapchat.topicsticker.TopicStickerId id_p = 1;
+	uint32 newRank = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+import "snapchat/map/SCMTGeoBox.proto";
+
+message SCMTInternalGetSnapsRequest {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+	snapchat.map.SCMTGeoBox viewport = 2;
+}

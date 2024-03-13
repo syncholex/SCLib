@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message AutoEnableRingLightConfig {
+
+	enum AutoEnableRingLightConfig_AutoEnableType {
+		ENABLE_TYPE_UNSET = 0;
+		TOOLTIP_ONLY = 1;
+		TOOLTIP_AND_RING_FLASH = 2;
+		NO_AUTO_ENABLE = 3;
+	}
+
+	AutoEnableRingLightConfig_AutoEnableType autoEnableType = 1;
+	bool enableTooltip = 2;
+	bool showTooltipEveryTime = 3;
+	int32 tooltipShowCount = 4;
+	int32 cooldownDurationMs = 5;
+	int32 debounceDurationMs = 6;
+	float ringFlashSliderValueDefault = 7;
+	float ringFlashAutoEnableLightingThreshold = 8;
+	int32 ringFlashAutoEnableCount = 9;
+
+	enum AutoEnableRingLightConfig_AutoEnableRingLightFrequency {
+		FREQUENCY_UNSET = 0;
+		PER_APP_SESSION = 1;
+		PER_ACCOUNT = 2;
+		ALWAYS = 3;
+	}
+
+	AutoEnableRingLightConfig_AutoEnableRingLightFrequency autoEnableRingLightFrequency = 10;
+}

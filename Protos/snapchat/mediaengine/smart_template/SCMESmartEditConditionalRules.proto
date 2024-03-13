@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMERuleCondition.proto";
+import "snapchat/mediaengine/smart_template/SCMETimingRule.proto";
+import "snapchat/mediaengine/smart_template/SCMEEditRule.proto";
+
+message SCMESmartEditConditionalRules {
+	snapchat.mediaengine.smart_template.SCMERuleCondition ruleCondition = 1;
+	snapchat.mediaengine.smart_template.SCMETimingRule timingRule = 2;
+	repeated snapchat.mediaengine.smart_template.SCMEEditRule editRulesArray = 3;
+}

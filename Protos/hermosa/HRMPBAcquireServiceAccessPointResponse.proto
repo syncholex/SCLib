@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBAccessPoint.proto";
+
+message HRMPBAcquireServiceAccessPointResponse {
+
+	enum HRMPBAcquireServiceAccessPointResponse_AcquireServiceAccessPointStatus {
+		ACQUIRE_AP_STATUS_UNSET = 0;
+		ACQUIRE_AP_STATUS_OK = 1;
+		ACQUIRE_AP_STATUS_SERVICE_NOT_FOUND = 2;
+		ACQUIRE_AP_STATUS_TRANSPORT_NOT_SUPPORTED = 3;
+		ACQUIRE_AP_STATUS_PROTOCOL_NOT_SUPPORTED = 4;
+		ACQUIRE_AP_STATUS_CIPHER_NOT_SUPPORTED = 5;
+		ACQUIRE_AP_STATUS_TRANSPORT_NOT_READY = 6;
+		ACQUIRE_AP_STATUS_ALLOCATE_PORT_FAILURE = 7;
+		ACQUIRE_AP_STATUS_BIND_PORT_FAILURE = 8;
+	}
+
+	HRMPBAcquireServiceAccessPointResponse_AcquireServiceAccessPointStatus status = 1;
+	hermosa.HRMPBAccessPoint accessPoint = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+message SCQuickAddRefreshConfig {
+	bool enabled = 1;
+	bool clearImpressionsOnAppRestart = 2;
+}

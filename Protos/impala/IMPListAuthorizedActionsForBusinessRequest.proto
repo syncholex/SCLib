@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPListAuthorizedActionsForBusinessRequest {
+	string userId = 1;
+	string businessId = 2;
+}

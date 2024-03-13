@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbSnapshotsConfig {
+	bool mySnapshotsManagementEnabled = 1;
+	bool viewingOthersSnapshotsEnabled = 2;
+	bool trailingOverlayPrimaryButtonEnabled = 3;
+}

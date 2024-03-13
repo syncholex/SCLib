@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPAdminHighlight.proto";
+
+message IMPAdminGetHighlightsResponse {
+	repeated impala.highlights.IMPAdminHighlight highlightsArray = 1;
+}

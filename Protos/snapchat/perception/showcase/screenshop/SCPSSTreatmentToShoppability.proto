@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+message SCPSSTreatmentToShoppability {
+	string treatmentId = 1;
+	bool shoppability = 2;
+	repeated string shoppableFramesArray = 3;
+	repeated string boltShoppableFramesArray = 4;
+}

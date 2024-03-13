@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/snapdoc/SDMSnapDoc_ID.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint_Tile.proto";
+
+message STOStoryBody_EntryPoint {
+
+	oneof owner {
+		snapchat.snapdoc.SDMSnapDoc_ID snapId = 1;
+		string segmentId = 3;
+	}
+
+	repeated snapchat.storydoc.STOStoryBody_EntryPoint_Tile tileArray = 2;
+}

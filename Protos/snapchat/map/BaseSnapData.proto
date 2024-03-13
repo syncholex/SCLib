@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/StmsData.proto";
+import "snapchat/map/MapSnapData.proto";
+
+message BaseSnapData {
+	string snapId = 1;
+	snapchat.map.StmsData stmsData = 2;
+	snapchat.map.MapSnapData mapSnapData = 3;
+}

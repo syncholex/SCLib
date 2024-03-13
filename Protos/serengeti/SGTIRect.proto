@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package serengeti;
+
+message SGTIRect {
+	double x = 1;
+	double y = 2;
+	double width = 3;
+	double height = 4;
+}

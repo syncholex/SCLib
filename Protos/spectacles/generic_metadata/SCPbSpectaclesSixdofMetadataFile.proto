@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package spectacles.generic_metadata;
+
+message SCPbSpectaclesSixdofMetadataFile {
+
+	enum SCPbSpectaclesDeviceType {
+		UNSET = 0;
+		LAGUNA = 1;
+		MALIBU = 2;
+		NEWPORT = 3;
+		HERMOSA = 4;
+		CHEERIOS = 5;
+	}
+
+	SCPbSpectaclesDeviceType type = 1;
+	bytes sixdofFile = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEBatchExplorerViewsRequest_Identifier {
+	string statusId = 1;
+	string userId = 2;
+	int64 timestamp = 3;
+}

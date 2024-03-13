@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnapInsights_SectionStats_Viewer.proto";
+
+message IMPBusinessSnapInsights_SectionStats {
+
+	enum IMPBusinessSnapInsights_SectionStats_Type {
+		UNKNOWN = 0;
+		FRIEND = 1;
+		SUBSCRIBER = 2;
+		OTHER = 3;
+	}
+
+	IMPBusinessSnapInsights_SectionStats_Type type = 1;
+	int64 viewCount = 2;
+	int64 screenshotCount = 3;
+	repeated impala.stories.IMPBusinessSnapInsights_SectionStats_Viewer recentViewersArray = 4;
+}

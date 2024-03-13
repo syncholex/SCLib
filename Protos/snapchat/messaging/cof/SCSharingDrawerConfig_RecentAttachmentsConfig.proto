@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message SCSharingDrawerConfig_RecentAttachmentsConfig {
+	uint32 minVisibleCount = 1;
+	uint32 maxCount = 2;
+	uint32 lookbackWindowDays = 3;
+}

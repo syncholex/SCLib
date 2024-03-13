@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPClientSearchTagsInverted_CTMetadata.proto";
+
+message SCCTPClientSearchTagsInverted_CTResult {
+	bytes ctpId = 1;
+	snapchat.creativetools.search.SCCTPClientSearchTagsInverted_CTMetadata metadata = 2;
+}

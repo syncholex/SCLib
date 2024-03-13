@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerLensStoryTile {
+	string id_p = 1;
+	string snapId = 2;
+	string preview = 3;
+	int64 viewCount = 4;
+	string previewKey = 5;
+	string previewIv = 6;
+}

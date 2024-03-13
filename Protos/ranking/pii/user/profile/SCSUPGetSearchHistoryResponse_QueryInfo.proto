@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPGetSearchHistoryResponse_QueryInfo {
+	string searchQueryText = 1;
+	string s2CellId = 2;
+	int64 queryTimeSecs = 4;
+}

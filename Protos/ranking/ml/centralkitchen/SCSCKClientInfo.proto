@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message SCSCKClientInfo {
+
+	enum SCSSMConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSSMConnectionInfo_ConnectionType connectionType = 1;
+	uint32 bandwidthKbps = 2;
+
+	enum SCSCKClientInfo_Weekday {
+		SUNDAY = 0;
+		MONDAY = 1;
+		TUESDAY = 2;
+		WEDNESDAY = 3;
+		THURSDAY = 4;
+		FRIDAY = 5;
+		SATURDAY = 6;
+	}
+
+	SCSCKClientInfo_Weekday weekday = 3;
+	uint32 hour = 4;
+	repeated string languagePrefsArray = 5;
+	string country = 6;
+	bool isSoundOn = 7;
+}

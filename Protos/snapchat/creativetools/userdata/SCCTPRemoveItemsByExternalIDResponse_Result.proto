@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+message SCCTPRemoveItemsByExternalIDResponse_Result {
+	bool success = 1;
+	uint64 ctId = 2;
+	bytes ctpId = 3;
+
+	enum SCCTPErrorCode {
+		NO_ERROR_UNSET = 0;
+		OTHER = 1;
+		ITEM_BLOCKED = 2;
+	}
+
+	SCCTPErrorCode errorCode = 4;
+}

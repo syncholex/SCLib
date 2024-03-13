@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEPassportModel.proto";
+
+message SCMEAddPassportRequest {
+	snapchat.map.SCMEPassportModel passportModel = 1;
+	string userId = 2;
+}

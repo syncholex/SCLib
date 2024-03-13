@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package subscription.appstart.plus_app_start_config;
+
+message PlusAppStartConfig {
+
+	enum PlusAppStartConfig_DefaultTabType {
+		UNSET = 0;
+		MAP = 1;
+		CHAT = 2;
+		CAMERA = 3;
+		DISCOVER = 4;
+		SPOTLIGHT = 5;
+	}
+
+	PlusAppStartConfig_DefaultTabType defaultTab = 1;
+	bool threeTabEnabled = 2;
+}

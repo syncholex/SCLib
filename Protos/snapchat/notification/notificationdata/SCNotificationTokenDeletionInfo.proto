@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+message SCNotificationTokenDeletionInfo {
+	int64 deletionTime = 1;
+
+	enum SCNotificationTokenDeletionReason {
+		UNKNOWN = 0;
+		USER_LOGIN = 1;
+		USER_LOGOUT = 2;
+		USER_UNINSTALL = 3;
+		PURGE_EVENT = 4;
+		TOKEN_INVALID = 5;
+		SESSION_EXPIRED = 6;
+	}
+
+	SCNotificationTokenDeletionReason reason = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "address/SCMapsAddress.proto";
+
+message SCMTLocality {
+	string language = 1;
+	string locality = 2;
+	address.SCMapsAddress address = 3;
+}

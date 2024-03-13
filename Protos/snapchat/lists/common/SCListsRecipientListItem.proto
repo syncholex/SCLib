@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCListsRecipientListItem {
+	snapchat.core.SCCOREUUID recipientId = 1;
+
+	enum SCListsRecipientListItem_RecipientType {
+		RECIPIENT_TYPE_UNSET = 0;
+		RECIPIENT_TYPE_SNAPCHATTER = 1;
+		RECIPIENT_TYPE_GROUP = 2;
+	}
+
+	SCListsRecipientListItem_RecipientType recipientType = 2;
+}

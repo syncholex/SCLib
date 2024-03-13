@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+import "games/leaderboards/SCGamesLeaderboardsClientLeaderboardRecord.proto";
+
+message SCGamesLeaderboardsBatchGetLeaderboardEntriesResponse {
+	repeated games.leaderboards.SCGamesLeaderboardsClientLeaderboardRecord leaderboardEntriesArray = 1;
+}

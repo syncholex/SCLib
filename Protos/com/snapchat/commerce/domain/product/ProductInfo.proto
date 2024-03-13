@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.product;
+
+import "com/snapchat/commerce/domain/product/ProductVariant.proto";
+import "com/snapchat/commerce/domain/product/ProductVariant_VariantCategoryPair.proto";
+import "com/snapchat/commerce/domain/store/StoreInfo.proto";
+import "com/snapchat/commerce/domain/product/ProductInfo_UnlockableInfo.proto";
+import "com/snapchat/commerce/domain/SnapCodeInfo.proto";
+import "com/snapchat/commerce/domain/CustomBitmojiInfo.proto";
+import "com/snapchat/commerce/domain/product/ProductInfo_ImageDetails.proto";
+
+message ProductInfo {
+	bytes id_p = 1;
+	string descriptionHtml = 2;
+	repeated com.snapchat.commerce.domain.product.ProductVariant variantsArray = 3;
+
+	enum CommercePartner {
+		UNSET = 0;
+		SHOPIFY = 1;
+		MINIPROGRAM = 2;
+	}
+
+	CommercePartner commercePartner = 4;
+	bytes storeId = 5;
+	string title = 6;
+	repeated com.snapchat.commerce.domain.product.ProductVariant_VariantCategoryPair productVariantCategoriesArray = 7;
+	com.snapchat.commerce.domain.store.StoreInfo storeInfo = 8;
+	bool shouldUseWebview = 9;
+	uint32 checkoutItemLimit = 10;
+	com.snapchat.commerce.domain.product.ProductInfo_UnlockableInfo unlockableInfo = 11;
+	com.snapchat.commerce.domain.SnapCodeInfo productScanCardInfo = 12;
+	bool isPdpShareable = 13;
+
+	enum ProductType {
+		UNSET = 0;
+		BITMOJI = 1;
+		REGULAR = 2;
+		MEMORIES_PRINT = 3;
+	}
+
+	ProductType type = 14;
+	com.snapchat.commerce.domain.CustomBitmojiInfo customBitmojiInfo = 15;
+	repeated com.snapchat.commerce.domain.product.ProductInfo_ImageDetails imageDetailsListArray = 16;
+	string productURL = 17;
+}

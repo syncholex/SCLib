@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+
+message VRZPlaceConcordanceUpdateData {
+	string placeId = 1;
+	snapchat.local.verrazano.VRZConcordance concordance = 2;
+	bytes logoBoltContentObject = 3;
+}

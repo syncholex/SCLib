@@ -1,0 +1,167 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsPetraFeatureFlags.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsFeatureFlags {
+	bool isPetraCapable = 1;
+	bool isDpaCapable = 2;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	repeated SCAdsAdType protoCapableAdTypesArray = 3 [packed=true];
+	bool canSupportCognacSkippableAds = 4;
+	bool canSupportExtendedPlayAds = 5;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	repeated SCAdsAdType dpaCapableAdTypesArray = 6 [packed=true];
+	bool storyAdsInUserStoriesEnabled = 7;
+	snapchat.ads.request.schema.SCAdsPetraFeatureFlags petraFeatureFlags = 8;
+	bool canSupportShowsSkippableAds = 9;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	repeated SCAdsAdType supportedAdTypesArray = 10 [packed=true];
+
+	enum SCAdsAdditionalFormatType {
+		ADDITIONAL_FORMAT_TYPE_UNSET = 0;
+		BANNER = 1;
+		MEDIUM_RECTANGLE = 2;
+		NATIVE_SQUARE = 3;
+		NATIVE_WIDE = 4;
+		INTERSTITIAL = 5;
+		END_CARD = 6;
+		MEDIUM_RECTANGLE_BACKGROUND = 7;
+	}
+
+	SCAdsAdditionalFormatType additionalFormatType = 11;
+	bool storyAdsInContentInterstitialEnabled = 12;
+	bool canSupportCollectionV2 = 13;
+	string maxSupportedSkAdNetworkVersion = 14;
+	bool canSupportCollectionAppInstall = 15;
+	bool topsnapProductsInShowcaseAttachment = 16;
+	bool canSupportCollectionShowcaseAttachment = 17;
+	bool canSupportLeadGenV15 = 18;
+	string maxSupportedSkAdNetworkViewThroughVersion = 19;
+	bool canSupportDpaStoryAds = 20;
+	google.protobuf.GPBInt32Value supportedLeadGenVersion = 21;
+	bool canSupportDefaultBrowserDeeplinkFallback = 22;
+
+	enum ItemType {
+		ITEM_TYPE_UNSET = 0;
+		PRODUCT = 1;
+		HOTEL = 2;
+		PLACE = 3;
+		FLIGHT = 4;
+	}
+
+	repeated ItemType composerSupportedItemTypesArray = 23 [packed=true];
+	google.protobuf.GPBInt32Value supportedDpaComposerTemplateVersion = 24;
+	bool supportsOrganicStore = 25;
+	bool multiAdPodRequestEnabled = 26;
+	bool offerDisclaimerEnabled = 27;
+	bool canSupportMultiImageComposerTemplates = 28;
+	bool canSupportSkanAdsets = 29;
+	bool isSnapchatPlusAdFreeTier = 30;
+
+	enum SCAdsThirdPartyLoginSource {
+		THIRD_PARTY_LOGIN_SOURCE_UNSET = 0;
+		THIRD_PARTY_LOGIN_SOURCE_AMAZON = 1;
+	}
+
+	repeated SCAdsThirdPartyLoginSource supportedThirdPartyLoginSourcesArray = 31 [packed=true];
+
+	enum SCAdsStickerType {
+		STICKER_TYPE_UNSET = 0;
+		STICKER_SURVEY = 1;
+		MULTI_Q_SURVEY = 2;
+	}
+
+	repeated SCAdsStickerType supportedInteractiveStickersArray = 32 [packed=true];
+	bool isBroccoliCarouselRequest = 33;
+	bool canSupportDpaCollectionAsSnapAd = 34;
+}

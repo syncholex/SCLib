@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message DeviceConfig {
+	int32 resolutionHeight = 1;
+	int32 resolutionWidth = 2;
+	int32 minFps = 3;
+	int32 maxFps = 4;
+	int32 hrsiHeight = 5;
+	int32 hrsiWidth = 6;
+	bool requiresHdr = 7;
+	bool requiresBinning = 8;
+	bool requiresMulticam = 9;
+	bool requiresHighestPhotoQuality = 10;
+	bool requiresHighPhotoQuality = 11;
+	int32 minActiveFps = 12;
+	int32 maxActiveFps = 13;
+	int32 mediaSubtype = 14;
+	bool requiresVideoStabilizationStandard = 15;
+	bool requiresVideoStabilizationCinematic = 16;
+	bool requiresVideoStabilizationCinematicExtended = 17;
+	bool requiresVideoStabilizationAuto = 18;
+	int32 resolutionMaxHeight = 19;
+	int32 hrsiMaxHeight = 20;
+}

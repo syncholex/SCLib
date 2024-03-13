@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+message SCSLIUploadHistoryState {
+
+	enum SCSLIUploadHistoryState_ReadState_Enum {
+		UNKNOWN = 0;
+		UNREAD = 1;
+		READ = 2;
+	}
+
+	SCSLIUploadHistoryState_ReadState_Enum readState = 1;
+}

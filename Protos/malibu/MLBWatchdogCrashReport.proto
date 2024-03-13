@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBWatchdogCrashReport {
+	uint32 pc = 1;
+	uint32 r1 = 2;
+	uint32 r2 = 3;
+	uint32 r3 = 4;
+	uint32 r12 = 5;
+	uint32 lr = 6;
+	uint32 r0 = 7;
+	uint32 xpsr = 8;
+}

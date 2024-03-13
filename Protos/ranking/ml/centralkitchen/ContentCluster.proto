@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message ContentCluster {
+	int32 clusterId = 1;
+	float distanceToCentroid = 2;
+	float cosineSimilarityToCentroid = 3;
+}

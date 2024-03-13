@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCLensCentralCommonPbSnapcode {
+	string imageURL = 1;
+	string deeplink = 2;
+	google.protobuf.GPBTimestamp expiresAt = 3;
+	bool isTemporary = 4;
+}

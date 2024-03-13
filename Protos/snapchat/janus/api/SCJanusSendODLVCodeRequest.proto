@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusLoginHeader.proto";
+
+message SCJanusSendODLVCodeRequest {
+	string odlvToken = 1;
+
+	enum SCJanusODLVType {
+		ODLV_TYPE_UNSET = 0;
+		ODLV_TYPE_SMS = 1;
+		ODLV_TYPE_EMAIL = 2;
+	}
+
+	SCJanusODLVType odlvType = 2;
+	snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}

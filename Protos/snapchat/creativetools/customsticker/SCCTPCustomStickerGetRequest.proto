@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+message SCCTPCustomStickerGetRequest {
+	repeated bytes idsArray = 1;
+}

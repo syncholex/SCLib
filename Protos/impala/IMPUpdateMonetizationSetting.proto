@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateConfiguredStatus.proto";
+import "impala/IMPTermsAndConditions.proto";
+import "impala/IMPUpdateMonetizationPayoutType.proto";
+import "impala/IMPUpdateAccessAdsStatus.proto";
+
+message IMPUpdateMonetizationSetting {
+	impala.IMPUpdateConfiguredStatus configuredStatus = 1;
+	impala.IMPTermsAndConditions monetizationTerms = 2;
+	impala.IMPUpdateMonetizationPayoutType payoutType = 3;
+	impala.IMPUpdateAccessAdsStatus accessAdsStatus = 4;
+}

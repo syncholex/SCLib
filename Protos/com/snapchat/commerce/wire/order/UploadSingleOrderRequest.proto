@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.order;
+
+import "com/snapchat/commerce/domain/order/Order.proto";
+
+message UploadSingleOrderRequest {
+	com.snapchat.commerce.domain.order.Order order = 1;
+}

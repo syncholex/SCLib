@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbGift.proto";
+
+message SCSubscriptionShopPbListGiftResponse {
+	repeated subscription.shop.SCSubscriptionShopPbGift unredeemedGiftsArray = 1;
+	repeated subscription.shop.SCSubscriptionShopPbGift redeemedGiftsArray = 2;
+}

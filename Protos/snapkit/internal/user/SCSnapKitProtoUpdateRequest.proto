@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoUpdateRequest {
+	string applicationId = 1;
+	repeated string scopeNamesArray = 2;
+	repeated string featuresArray = 3;
+}

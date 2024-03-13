@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.item.ar.properties;
+
+import "com/snapchat/item_catalog/domain/item/ar/properties/Vector.proto";
+
+message Transforms {
+	com.snapchat.item_catalog.domain.item.ar.properties.Vector scale = 1;
+	com.snapchat.item_catalog.domain.item.ar.properties.Vector translation = 2;
+	com.snapchat.item_catalog.domain.item.ar.properties.Vector rotation = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.peliasproxy;
+
+import "snapchat/map/peliasproxy/SCMPPPoint.proto";
+
+message SCMPPPlaceSearchRequest {
+	string text = 1;
+	int32 numResults = 2;
+	snapchat.map.peliasproxy.SCMPPPoint focusPoint = 3;
+}

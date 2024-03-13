@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "snapchat/activation/api/SCSuggestUsernamePbNameAndBirthdate.proto";
+
+message SCSuggestUsernamePbSuggestUsernameRequest {
+	snapchat.activation.api.SCSuggestUsernamePbNameAndBirthdate nameAndBirthdate = 1;
+	uint32 versionNumber = 2;
+	string cofDeviceId = 4;
+	string blizzardClientId = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package storyreply;
+
+message IMPStoryReplyGetStoryReplyRequestItem {
+	string conversationId = 1;
+	uint64 messageId = 2;
+	string senderId = 3;
+	string receiverId = 4;
+	string snapId = 5;
+	string profileId = 6;
+}

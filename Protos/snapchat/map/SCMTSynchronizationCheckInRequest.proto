@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTSynchronizationCheckInRequest {
+	repeated snapchat.map.SCMTTileSetId loadingTileSetIdsArray = 1;
+	repeated snapchat.map.SCMTTileSetId servingTileSetIdsArray = 2;
+	repeated snapchat.map.SCMTTileSetId latestTileSetIdsArray = 3;
+}

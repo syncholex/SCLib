@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCTIntentToReaction_IntentReaction {
+
+	enum SCCTPChatReactionIntent_IntentType {
+		REACTION_UNSET = 0;
+		LOVE = 1;
+		LAUGH_CRY = 2;
+		FIRE = 3;
+		THUMBS_UP = 4;
+		THUMBS_DOWN = 5;
+		SAD_CRY = 6;
+		WOW = 7;
+		QUESTION_MARK = 8;
+	}
+
+	SCCTPChatReactionIntent_IntentType intentType = 1;
+	bytes chatReactionId = 2;
+}

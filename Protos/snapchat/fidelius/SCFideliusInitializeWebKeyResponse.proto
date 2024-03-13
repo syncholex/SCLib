@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusInitializeWebKeyResponse {
+	bytes rwk = 1;
+	bytes keyPairId = 2;
+}

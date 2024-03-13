@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicGetMusicTracksRequest {
+	repeated uint64 trackIdsArray = 1 [packed=true];
+	string countryCode = 2;
+	bool excludeOffensiveTracks = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message LiveSubscribeDetail {
+	string streamId = 1;
+
+	enum LiveSubscribeDetail_State {
+		STATE_UNKNOWN = 0;
+		STATE_SUBSCRIBED = 1;
+		STATE_UNSUBSCRIBED = 2;
+	}
+
+	LiveSubscribeDetail_State state = 2;
+	int64 stateTimestampMsecs = 3;
+	int64 stateExpireTimestampMsecs = 4;
+}

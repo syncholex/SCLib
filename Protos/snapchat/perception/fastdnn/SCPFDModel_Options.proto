@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.fastdnn;
+
+message SCPFDModel_Options {
+	bool enableMeanSubtraction = 1;
+	repeated float channelMeansArray = 2 [packed=true];
+
+	enum SCPFDModel_Options_Normalization {
+		NORMALIZATION_NONE = 0;
+		NORMALIZATION_STANDARD = 1;
+		NORMALIZATION_ZERO_CENTERED = 2;
+	}
+
+	SCPFDModel_Options_Normalization normalization = 3;
+	bool enableScale = 4;
+	float scale = 5;
+}

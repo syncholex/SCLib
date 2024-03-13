@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanConfigurationRequest.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanDataRequest.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanStreamRequest_NoBarcodeDetected.proto";
+
+message SCPCNV3ScanStreamRequest {
+	string sessionId = 1;
+	int64 timestampMs = 2;
+	int64 timezoneOffsetSec = 3;
+
+	oneof request {
+		snapchat.perception.scan.v3.SCPCNV3ScanConfigurationRequest configurationRequest = 4;
+		snapchat.perception.scan.v3.SCPCNV3ScanDataRequest dataRequest = 5;
+		snapchat.perception.scan.v3.SCPCNV3ScanStreamRequest_NoBarcodeDetected noBarcodeDetectedRequest = 7;
+	}
+
+	string requestId = 6;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPFavoriteEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnfavoriteEvent.proto";
+
+message SCSUPFavoriteAndUnfavoriteSessions {
+
+	oneof pageSessionRef {
+		string pageSessionId = 1;
+		fixed32 pageSessionIdSaltedHash = 2;
+	}
+
+	uint32 sessionStartTimestamp = 3;
+	repeated ranking.pii.user.profile.SCSUPFavoriteEvent favoriteEventsArray = 4;
+	repeated ranking.pii.user.profile.SCSUPUnfavoriteEvent unfavoriteEventsArray = 5;
+}

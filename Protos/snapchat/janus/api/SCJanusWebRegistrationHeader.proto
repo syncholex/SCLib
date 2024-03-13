@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/core/SCCOREGeoHeader.proto";
+
+message SCJanusWebRegistrationHeader {
+	string clientCookieId = 1;
+	string blizzardClientId = 2;
+	string webClientId = 3;
+	string userAgent = 4;
+	string device = 5;
+	string os = 6;
+	string browser = 7;
+	string ipAddress = 8;
+	snapchat.core.SCCOREGeoHeader geoHeader = 9;
+	bytes authenticationSessionPayload = 10;
+	string networkRequestId = 11;
+	string arkoseToken = 12;
+	string ssoClientId = 13;
+	string continueParam = 14;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusChallengeOrchestrationRequestHeader.proto";
+import "snapchat/janus/api/SCJanusUnavailableChallenges.proto";
+
+message SCJanusRequestChallengeRequest {
+	snapchat.janus.api.SCJanusChallengeOrchestrationRequestHeader challengeOrchestrationRequestHeader = 1;
+	snapchat.janus.api.SCJanusUnavailableChallenges unavailableChallenges = 2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message RingLightConfig_LensConfig {
+	int64 lensId = 1;
+	bool enableNativeToLensTransition = 2;
+	int32 nativeTransitionOutDurationMs = 3;
+	uint32 lensStackingOptions = 4;
+
+	enum RingLightConfig_LensConfig_LensActivationStrategy {
+		LENS_ACTIVATION_STRATEGY_UNSET = 0;
+		LENS_ONLY = 1;
+		FALLBACK_TO_NATIVE = 2;
+		NATIVE_TO_LENS_TRANSITION = 3;
+	}
+
+	RingLightConfig_LensConfig_LensActivationStrategy lensActivationStrategy = 5;
+}

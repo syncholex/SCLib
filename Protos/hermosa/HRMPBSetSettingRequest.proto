@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBSettingValue.proto";
+
+message HRMPBSetSettingRequest {
+	string settingId = 1;
+	hermosa.HRMPBSettingValue value = 2;
+}

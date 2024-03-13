@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLensLaunchInfo {
+	string lensId = 1;
+	string lensName = 2;
+}

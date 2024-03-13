@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMVideoInterval {
+	int32 trackNumber = 1;
+	int32 timeScale = 2;
+	int64 startTime = 3;
+
+	enum SDMVideoInterval_ContentType {
+		UNSET = 0;
+		VIDEO_TRACK = 1;
+		AD = 2;
+	}
+
+	SDMVideoInterval_ContentType contentType = 4;
+}

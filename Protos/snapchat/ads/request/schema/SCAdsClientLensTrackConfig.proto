@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsClientLensTrackConfig {
+
+	enum SCAdsLensImpressionTrack_ClientTrackLoggingStrategy {
+		UNKNOWN_CLIENT_TRACK_LOGGING_STRATEGY = 0;
+		WITH_CAROUSEL_SESSION = 1;
+		INDEPENDENT_ON_SESSION_END = 2;
+		INDEPENDENT_ON_LENS_EXIT = 3;
+	}
+
+	SCAdsLensImpressionTrack_ClientTrackLoggingStrategy strategy = 1;
+
+	enum SCAdsSwipeUpTrack {
+		SWIPE_UP_TRACK_UNSET = 0;
+		ATTACHMENT_OPEN_TRACK = 1;
+		ATTACHMENT_CLOSE_TRACK = 2;
+	}
+
+	SCAdsSwipeUpTrack swipeUpTrack = 2;
+	bool dedupSend = 3;
+	bool rejectMismatchedPostCapture = 4;
+}

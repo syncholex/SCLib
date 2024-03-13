@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.profile.v1;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+
+message SCBitmojiRemoveBitmojiBackgroundURLRequest {
+	string userId = 1;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL backgroundURL = 2;
+}

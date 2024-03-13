@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBOption.proto";
+
+message GPBField {
+
+	enum GPBField_Kind {
+		TYPE_UNKNOWN = 0;
+		TYPE_DOUBLE = 1;
+		TYPE_FLOAT = 2;
+		TYPE_INT64 = 3;
+		TYPE_UINT64 = 4;
+		TYPE_INT32 = 5;
+		TYPE_FIXED64 = 6;
+		TYPE_FIXED32 = 7;
+		TYPE_BOOL = 8;
+		TYPE_STRING = 9;
+		TYPE_GROUP = 10;
+		TYPE_MESSAGE = 11;
+		TYPE_BYTES = 12;
+		TYPE_UINT32 = 13;
+		TYPE_ENUM = 14;
+		TYPE_SFIXED32 = 15;
+		TYPE_SFIXED64 = 16;
+		TYPE_SINT32 = 17;
+		TYPE_SINT64 = 18;
+	}
+
+	GPBField_Kind kind = 1;
+
+	enum GPBField_Cardinality {
+		CARDINALITY_UNKNOWN = 0;
+		CARDINALITY_OPTIONAL = 1;
+		CARDINALITY_REQUIRED = 2;
+		CARDINALITY_REPEATED = 3;
+	}
+
+	GPBField_Cardinality cardinality = 2;
+	int32 number = 3;
+	string name = 4;
+	string typeURL = 6;
+	int32 oneofIndex = 7;
+	bool packed = 8;
+	repeated google.protobuf.GPBOption optionsArray = 9;
+	string jsonName = 10;
+	string defaultValue = 11;
+}

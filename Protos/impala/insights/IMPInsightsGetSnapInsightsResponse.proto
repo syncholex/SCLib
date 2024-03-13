@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsMetrics.proto";
+import "impala/insights/IMPInsightsReadReceiptSection.proto";
+
+message IMPInsightsGetSnapInsightsResponse {
+	repeated impala.insights.IMPInsightsMetrics snapLifetimeMetricsArray = 1;
+	bool isFinishedProcessing = 2;
+	repeated impala.insights.IMPInsightsReadReceiptSection readReceiptSectionsArray = 3;
+}

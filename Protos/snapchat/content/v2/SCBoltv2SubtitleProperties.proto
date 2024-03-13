@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "snapchat/content/v2/SCBoltv2ExternalContentReference.proto";
+
+message SCBoltv2SubtitleProperties {
+	string language = 1;
+
+	oneof externalReference {
+		snapchat.content.v2.SCBoltv2ExternalContentReference externalContentReference = 2;
+		string externalURL = 3;
+	}
+
+}

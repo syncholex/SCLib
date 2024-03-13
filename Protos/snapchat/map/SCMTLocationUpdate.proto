@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTMotionData.proto";
+
+message SCMTLocationUpdate {
+	float lat = 1;
+	float lng = 2;
+	float altitude = 3;
+	float horizontalAccuracy = 4;
+	float verticalAccuracy = 5;
+	snapchat.map.SCMTMotionData motionData = 6;
+	int64 timestamp = 7;
+	bool gpsReset = 8;
+}

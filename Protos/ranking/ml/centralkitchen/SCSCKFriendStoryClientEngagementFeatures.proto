@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message SCSCKFriendStoryClientEngagementFeatures {
+	int64 lastInteractionTimestampInSec = 1;
+	int32 numPrivateStories = 2;
+	int32 smallestPrivateStorySize = 3;
+	int32 numGroupchats = 4;
+	int32 smallestGroupchatSize = 5;
+	int64 lastImpressionTimestampInSec = 6;
+	int32 lastImpressionTimeInMs = 7;
+	int64 lastWatchTimestampInSec = 8;
+	int32 lastWatchTimeInMs = 9;
+	string userId = 10;
+	float lastInteractionAgeInHour = 11;
+	float lastImpressionAgeInHour = 12;
+	float lastWatchAgeInHour = 13;
+}

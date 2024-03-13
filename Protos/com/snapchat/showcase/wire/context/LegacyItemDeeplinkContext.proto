@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message LegacyItemDeeplinkContext {
+	uint64 snapItemId = 1;
+}

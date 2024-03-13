@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/common/SCPCNGeoCoordinate.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanExperiment.proto";
+import "snapchat/perception/scan/v3/SCPCNV3GTQRequest.proto";
+import "snapchat/perception/scan/settings/SCPCNSettingsCategoryPermissionSettings.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanContext_IntrospectionRequest.proto";
+
+message SCPCNV3ScanContext {
+	snapchat.perception.common.SCPCNGeoCoordinate location = 1;
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanExperiment experimentsArray = 4;
+	string freeformTweak = 5;
+	snapchat.perception.scan.v3.SCPCNV3GTQRequest gtqRequest = 6;
+	bool shouldIntrospectRequest = 7;
+	snapchat.perception.scan.settings.SCPCNSettingsCategoryPermissionSettings categoryPermissionSettings = 8;
+	snapchat.bitmoji.avatar.BMCompactAvatarId bitmojiCompactAvatarId = 9;
+	string clientSessionId = 10;
+	string queryId = 11;
+	snapchat.perception.scan.v3.SCPCNV3ScanContext_IntrospectionRequest introspectionRequest = 12;
+
+	enum SCPCNV3ScanSource {
+		SCAN_SOURCE_UNSET = 0;
+		SCAN_SOURCE_MAIN_CAMERA = 1;
+		SCAN_SOURCE_CONTEXT = 2;
+		SCAN_SOURCE_POST_CAPTURE_SNAPCODE = 3;
+		SCAN_SOURCE_RTS = 4;
+		SCAN_SOURCE_CONTEXT_MEMORIES = 5;
+		SCAN_SOURCE_SPOTLIGHT = 6;
+		SCAN_SOURCE_MAP_STORY = 10;
+		SCAN_SOURCE_PUBLIC_MY_STORY = 11;
+		SCAN_SOURCE_SNAPPRO_STORY = 12;
+		SCAN_SOURCE_MY_AI = 9;
+		SCAN_SOURCE_CONTEXT_PUBLIC_STORIES = 8;
+		SCAN_SOURCE_CONTEXT_STORIES = 7;
+	}
+
+	SCPCNV3ScanSource scanSource = 13;
+	bool runPhotomathPreconditions = 14;
+}

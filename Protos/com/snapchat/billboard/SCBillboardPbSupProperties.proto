@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbSupProperties {
+	repeated int32 impressionCountIdArray = 1 [packed=true];
+	repeated int32 firstImpressionMillisIdArray = 2 [packed=true];
+	repeated int32 clickCountIdArray = 3 [packed=true];
+	repeated int32 clickTimeIdArray = 4 [packed=true];
+	repeated int32 dismissCountIdArray = 5 [packed=true];
+	repeated int32 dismissTimeIdArray = 6 [packed=true];
+	repeated int32 firstImpressionSecsIdArray = 8 [packed=true];
+	repeated int32 lastClickSecsIdArray = 9 [packed=true];
+	repeated int32 lastDismissSecsIdArray = 10 [packed=true];
+	repeated int32 lastImpressionMillisIdArray = 11 [packed=true];
+	repeated int32 lastImpressionSecsIdArray = 12 [packed=true];
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoPolygon.proto";
+import "ranking/core/SCSCOREGeoCircle.proto";
+
+message SCSCOREGeoFence {
+
+	oneof shape {
+		ranking.core.SCSCOREGeoPolygon geoPolygon = 1;
+		ranking.core.SCSCOREGeoCircle geoCircle = 2;
+	}
+
+}

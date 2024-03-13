@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNVisualSearchTrace_VisualSearchTraceOperationLog.proto";
+
+message SCPNVisualSearchTrace {
+	repeated snapchat.perception.SCPNVisualSearchTrace_VisualSearchTraceOperationLog operationLogsArray = 1;
+}

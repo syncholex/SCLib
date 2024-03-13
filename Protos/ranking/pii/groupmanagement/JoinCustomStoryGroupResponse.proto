@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/UserGroupMetadata.proto";
+import "ranking/pii/groupmanagement/UserPendingGroupMetadata.proto";
+
+message JoinCustomStoryGroupResponse {
+
+	oneof groupMetadata {
+		ranking.pii.groupmanagement.UserGroupMetadata userGroupMetadata = 1;
+		ranking.pii.groupmanagement.UserPendingGroupMetadata userPendingGroupMetadata = 2;
+	}
+
+}

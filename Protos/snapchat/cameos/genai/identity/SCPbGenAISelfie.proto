@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+import "snapchat/cameos/common/SCCameosEncryptedData.proto";
+
+message SCPbGenAISelfie {
+	snapchat.cameos.common.SCCameosEncryptedData image = 1;
+
+	enum SCPbGenAISelfieTurn {
+		SELFIE_TURN_UNSET = 0;
+		SELFIE_TURN_LEFT = 1;
+		SELFIE_TURN_RIGHT = 2;
+		SELFIE_TURN_UP = 3;
+		SELFIE_TURN_DOWN = 4;
+		SELFIE_TURN_STRAIGHT = 5;
+	}
+
+	SCPbGenAISelfieTurn turn = 2;
+}

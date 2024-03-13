@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBQcomStateChangeEvent {
+
+	enum HRMPBQcomState {
+		QCOM_DOWN = 0;
+		QCOM_UP = 1;
+		QCOM_FASTBOOT = 2;
+		QCOM_USB = 3;
+		QCOM_SUSPEND = 4;
+		QCOM_UP_REQUESTED = 5;
+		QCOM_DOWN_REQUESTED = 6;
+		QCOM_BOOTING = 7;
+		QCOM_UP_REJECTED = 8;
+		QCOM_UNEXPECTED_RESET = 9;
+		QCOM_CHARGER_DETECT = 10;
+	}
+
+	HRMPBQcomState oldState = 1;
+
+	enum HRMPBQcomState {
+		QCOM_DOWN = 0;
+		QCOM_UP = 1;
+		QCOM_FASTBOOT = 2;
+		QCOM_USB = 3;
+		QCOM_SUSPEND = 4;
+		QCOM_UP_REQUESTED = 5;
+		QCOM_DOWN_REQUESTED = 6;
+		QCOM_BOOTING = 7;
+		QCOM_UP_REJECTED = 8;
+		QCOM_UNEXPECTED_RESET = 9;
+		QCOM_CHARGER_DETECT = 10;
+	}
+
+	HRMPBQcomState newState = 2;
+
+	enum HRMPBSocId {
+		APP_SOC = 0;
+		CV_SOC = 1;
+	}
+
+	HRMPBSocId socId = 3;
+}

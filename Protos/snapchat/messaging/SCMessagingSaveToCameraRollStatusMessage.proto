@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/messaging/SCMessagingMediaTypeToCount.proto";
+
+message SCMessagingSaveToCameraRollStatusMessage {
+	snapchat.messaging.SCMessagingUUID userId = 1;
+	uint64 messageId = 2;
+	repeated snapchat.messaging.SCMessagingMediaTypeToCount mediaTypeToCountArray = 3;
+}

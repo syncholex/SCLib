@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message EmailData {
+	string email = 1;
+	string tivURL = 2;
+	string tivApproveURL = 3;
+	string tivDenyURL = 4;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule_ScheduleOnce.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule_Repeat.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule_Intervals.proto";
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem_Schedule_Always.proto";
+
+message SCCTPCTTargetedItem_Schedule {
+
+	oneof scheduleOneof {
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule_ScheduleOnce once = 1;
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule_Repeat repeat = 2;
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule_Intervals intervals = 3;
+		snapchat.creativetools.targeting.SCCTPCTTargetedItem_Schedule_Always always = 4;
+	}
+
+}

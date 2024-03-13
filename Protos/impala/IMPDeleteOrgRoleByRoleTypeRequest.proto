@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPDeleteOrgRoleByRoleTypeRequest {
+	string profileId = 1;
+	string userId = 2;
+	string roleType = 3;
+	string email = 4;
+}

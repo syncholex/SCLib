@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lens.connected;
+
+message SCConnectedLensesInviteFriendsRequest {
+	string conversationId = 1;
+	string lensId = 6;
+}

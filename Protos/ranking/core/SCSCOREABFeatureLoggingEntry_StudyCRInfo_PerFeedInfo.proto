@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREABFeatureLoggingEntry_StudyCRInfo_PerFeedInfo {
+	int32 feedType = 1;
+	float serverCr = 2;
+	int32 firstChangedPosition = 3;
+}

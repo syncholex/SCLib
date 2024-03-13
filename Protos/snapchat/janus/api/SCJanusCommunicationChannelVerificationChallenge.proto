@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCommunicationChannelVerificationChallenge {
+	uint32 numDigits = 1;
+
+	oneof deliveryChannel {
+		string email = 2;
+		string phone = 3;
+	}
+
+}

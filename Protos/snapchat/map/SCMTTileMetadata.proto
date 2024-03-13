@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileId.proto";
+import "snapchat/map/SCMTTileMetadata_Weather.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+import "snapchat/map/SCMTReverseGeocodedPoint.proto";
+
+message SCMTTileMetadata {
+	snapchat.map.SCMTTileId tileId = 1;
+	int32 timeZoneOffsetMs = 2;
+	snapchat.map.SCMTTileMetadata_Weather currentWeather = 3;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 4;
+	repeated snapchat.map.SCMTReverseGeocodedPoint geocodedPointsArray = 5;
+}

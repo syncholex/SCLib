@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+message SCPCNTokenLattice {
+	string token = 1;
+	int32 startMs = 2;
+	int32 endMs = 3;
+}

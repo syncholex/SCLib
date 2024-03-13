@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPRoleSpecification {
+	string receivingUserId = 2;
+	string roleType = 6;
+	string displayNameOverride = 7;
+	string email = 8;
+}

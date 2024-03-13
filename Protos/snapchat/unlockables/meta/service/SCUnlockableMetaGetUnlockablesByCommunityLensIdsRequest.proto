@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+message SCUnlockableMetaGetUnlockablesByCommunityLensIdsRequest {
+	repeated string idsArray = 1;
+}

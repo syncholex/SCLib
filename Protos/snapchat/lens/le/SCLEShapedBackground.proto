@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLEShapedBackground {
+
+	enum SCLEShapedBackground_Shape {
+		RECT_UNSET = 0;
+		OVAL = 1;
+	}
+
+	SCLEShapedBackground_Shape shape = 1;
+
+	enum SCLEColor {
+		TRANSPARENT_UNSET = 0;
+		BRAND_PRIMARY = 1;
+		BACKGROUND_SUBSCREEN = 2;
+		BACKGROUND_DISABLED = 3;
+		ICON_SECONDARY = 4;
+	}
+
+	SCLEColor color = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSUPDiscoverSettingsRequest {
+	ranking.core.SCSCOREUUID userId = 1;
+}

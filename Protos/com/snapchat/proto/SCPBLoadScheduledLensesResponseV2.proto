@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+
+message SCPBLoadScheduledLensesResponseV2 {
+	repeated com.snapchat.proto.SCPBGeofilterResponse activeLensesArray = 1;
+	repeated com.snapchat.proto.SCPBGeofilterResponse precachedLensesArray = 2;
+	int64 cacheTtlMillis = 3;
+	string lensListSignature = 4;
+	string preselectedLensId = 5;
+	repeated com.snapchat.proto.SCPBGeofilterResponse activeRearLensesArray = 6;
+	int64 medianIndexDepth = 7;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse activeLensesChecksumsArray = 8;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse precachedLensesChecksumsArray = 9;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse activeRearLensesChecksumsArray = 10;
+}

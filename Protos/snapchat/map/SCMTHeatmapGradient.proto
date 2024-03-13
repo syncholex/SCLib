@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/common/SCMCRGBA.proto";
+
+message SCMTHeatmapGradient {
+	repeated snapchat.map.common.SCMCRGBA colorsArray = 1;
+	repeated float transitionLocationsArray = 2 [packed=true];
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/category/HNCategoryID.proto";
+import "snapchat/tags/ContentTag.proto";
+
+message STODiscoverChannelFilter {
+	repeated snapchat.category.HNCategoryID categoryIdsArray = 1;
+	repeated snapchat.tags.ContentTag sccTagsArray = 2;
+}

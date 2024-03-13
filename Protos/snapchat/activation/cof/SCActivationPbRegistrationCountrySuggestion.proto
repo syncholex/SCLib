@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+import "snapchat/activation/cof/SCActivationPbCountrySuggestions.proto";
+
+message SCActivationPbRegistrationCountrySuggestion {
+	bool enabled = 1;
+	snapchat.activation.cof.SCActivationPbCountrySuggestions countrySuggestions = 2;
+}

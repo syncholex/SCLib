@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBEncryptionSetupNonceExchangeMessage.proto";
+
+message MLBEncryptionSetupResponse {
+	malibu.MLBEncryptionSetupNonceExchangeMessage setupMessage = 1;
+
+	enum MLBEncryptionSetupResponse_StatusType {
+		SUCCESS = 0;
+		SYSTEM_ERROR = 1;
+	}
+
+	MLBEncryptionSetupResponse_StatusType status = 2;
+}

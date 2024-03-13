@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSConfigOrRule.proto";
+
+message CMSBulkUpdateResponse {
+	repeated com.snapchat.circumstances.entity.CMSConfigOrRule itemsArray = 1;
+}

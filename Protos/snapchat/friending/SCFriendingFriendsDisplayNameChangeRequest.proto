@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendDisplayNameParam.proto";
+
+message SCFriendingFriendsDisplayNameChangeRequest {
+	repeated snapchat.friending.SCFriendingFriendDisplayNameParam paramsArray = 1;
+}

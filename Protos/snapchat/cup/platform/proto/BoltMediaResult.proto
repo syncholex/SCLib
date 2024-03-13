@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/BoltMedia.proto";
+
+message BoltMediaResult {
+	snapchat.cup.platform.proto.BoltMedia boltMedia = 1;
+	bytes secretKey = 2;
+	bytes initialVector = 3;
+}

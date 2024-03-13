@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerCreatorMetadata.proto";
+import "snapchat/lens/le/SCLECollectionLayout.proto";
+
+message SCLELensExplorerCollectionTile {
+	int64 collectionId = 1;
+	string name = 2;
+	string description_p = 3;
+	string tileImageURL = 4;
+	snapchat.lens.le.SCLELensExplorerCreatorMetadata creatorData = 5;
+	string attribution = 6;
+	string deeplinkURL = 7;
+	snapchat.lens.le.SCLECollectionLayout layoutRule = 8;
+}

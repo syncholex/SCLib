@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDNotificationChannel {
+	string channelId = 1;
+	int32 importance = 2;
+	bool bypassDnd = 3;
+	int32 lockscreenVisibility = 4;
+	string soundUri = 5;
+	bool vibrationEnabled = 6;
+	bool showBadge = 7;
+	bool showLights = 8;
+}

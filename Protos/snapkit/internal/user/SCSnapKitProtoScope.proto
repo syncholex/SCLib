@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoScope {
+	string name = 1;
+	bool toggleable = 2;
+	repeated string descriptionsArray = 3;
+	string iconURL = 4;
+}

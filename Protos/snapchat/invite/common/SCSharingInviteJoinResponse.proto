@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSharingInviteJoinResponse {
+
+	oneof invitePayload {
+		snapchat.core.SCCOREUUID groupId = 1;
+		snapchat.core.SCCOREUUID storyId = 2;
+	}
+
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSavedStoryInsightsListForUserItemMetadata.proto";
+import "impala/insights/IMPInsightsSavedStoryInsightsListForUserItemInsights.proto";
+
+message IMPInsightsSavedStoryInsightsListForUserItem {
+	impala.insights.IMPInsightsSavedStoryInsightsListForUserItemMetadata metadata = 1;
+	impala.insights.IMPInsightsSavedStoryInsightsListForUserItemInsights insights = 2;
+	string storyId = 3;
+}

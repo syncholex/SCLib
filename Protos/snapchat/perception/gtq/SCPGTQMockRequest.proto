@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.gtq;
+
+message SCPGTQMockRequest {
+	int32 latencyMs = 1;
+}

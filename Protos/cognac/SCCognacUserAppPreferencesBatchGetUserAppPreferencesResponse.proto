@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacUserAppPreferencesUserAppPreferences.proto";
+
+message SCCognacUserAppPreferencesBatchGetUserAppPreferencesResponse {
+	repeated cognac.SCCognacUserAppPreferencesUserAppPreferences userAppPreferencesArray = 1;
+}

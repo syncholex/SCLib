@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+
+message SCMTHeatmapPoint {
+	snapchat.map.SCMTPoint point = 1;
+	double weight = 4;
+}

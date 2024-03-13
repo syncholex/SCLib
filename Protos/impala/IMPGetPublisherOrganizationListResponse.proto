@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPublisherOrganization.proto";
+
+message IMPGetPublisherOrganizationListResponse {
+	repeated impala.IMPPublisherOrganization publisherOrganizationsArray = 1;
+	string nextPageId = 2;
+}

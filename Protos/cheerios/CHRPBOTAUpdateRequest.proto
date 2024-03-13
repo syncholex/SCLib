@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBOTAUpdateRequest {
+
+	enum CHRPBOTAUpdateRequestType {
+		TYPE_UNSET = 0;
+		GET_CURRENT_VERSION = 1;
+		APPLY_DELTA_PATCH = 2;
+		APPLY_FULL_OTA = 3;
+		GET_CHECKSUM_MD5_SHA = 4;
+		CANCEL = 5;
+		REBOOT_AND_SWITCH_PARTITION = 6;
+	}
+
+	CHRPBOTAUpdateRequestType requestType = 1;
+}

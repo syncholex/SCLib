@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBatteryStatusResponse {
+	int32 soc = 1;
+	int32 voltage = 2;
+	int32 temp = 3;
+	int32 current = 4;
+
+	enum MLBBatteryStatusResponse_SocStatus {
+		SocStateAuto = 0;
+		SocStateCritical = 1;
+		SocStateLow = 2;
+		SocStateNormal = 3;
+	}
+
+	MLBBatteryStatusResponse_SocStatus socStatus = 5;
+
+	enum MLBBatteryStatusResponse_HardwareStatus {
+		NO_BATTERY_UP = 0;
+		SINGLE_BATTERY_UP = 1;
+		BATTERY_UP = 2;
+	}
+
+	MLBBatteryStatusResponse_HardwareStatus hardwareStatus = 6;
+}

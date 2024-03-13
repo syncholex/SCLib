@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMapsSlippyLiveLocationUpsellConfig {
+	string title = 1;
+	string subtitle = 2;
+	string buttonText = 3;
+	snapchat.core.SCCOREUUID friendId = 4;
+	int64 nextRequestAfterMs = 5;
+}

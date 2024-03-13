@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/ScanOcrFrameResult.proto";
+
+message ScanOcrKeyframesResult {
+	repeated snapchat.cup.platform.proto.ScanOcrFrameResult framesArray = 1;
+	int32 outputFrames = 2;
+	int32 outputTextLines = 3;
+}

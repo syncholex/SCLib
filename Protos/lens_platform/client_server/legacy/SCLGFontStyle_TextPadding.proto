@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGFontStyle_TextPadding {
+	double top = 1;
+	double left = 2;
+	double right = 3;
+	double bottom = 4;
+}

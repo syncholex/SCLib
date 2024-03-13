@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.assets;
+
+message SCCameosBloopsStickerAsset {
+	string id_p = 1;
+	bytes webp = 2;
+}

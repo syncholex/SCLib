@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBoardIdResponse {
+	uint32 boardId = 1;
+	uint32 hardwareMajorVersion = 2;
+	uint32 hardwareMinorVersion = 3;
+}

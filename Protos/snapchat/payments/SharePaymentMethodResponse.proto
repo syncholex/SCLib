@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message SharePaymentMethodResponse {
+	string partnerPaymentMethodNonce = 1;
+	string partnerResponseJson = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/camera/SCCTXDirectorMode.proto";
+import "snapchat/context2/camera/SCCTXDualCamera.proto";
+import "snapchat/context2/camera/SCCTXGreenScreen.proto";
+import "snapchat/context2/camera/SCCTXSpeedMode.proto";
+
+message SCCTXContextClientInfo_CameraContextInfo {
+	snapchat.context2.camera.SCCTXDirectorMode directorMode = 1;
+	snapchat.context2.camera.SCCTXDualCamera dualCamera = 2;
+	snapchat.context2.camera.SCCTXGreenScreen greenScreen = 3;
+	snapchat.context2.camera.SCCTXSpeedMode speedMode = 4;
+}

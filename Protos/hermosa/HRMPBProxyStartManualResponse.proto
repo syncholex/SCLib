@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBProxyStartManualResponse {
+
+	enum HRMPBProxyStartManualResponse_ErrorCodes {
+		SUCCESS = 0;
+		DEVICE_OFF = 1;
+		LOW_BATTERY = 2;
+	}
+
+	HRMPBProxyStartManualResponse_ErrorCodes errorCode = 1;
+}

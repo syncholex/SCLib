@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPListRolesForBusinessRequest {
+	string businessId = 1;
+	string pageId = 2;
+	bool ignoreDisplayInfo = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.lc;
+
+import "lens_platform/client_server/api/lc/SCLPCtaItem.proto";
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+import "snapchat/lens/le/SCLELensExplorerLensTile.proto";
+
+message SCLPLensCollectionResponse {
+	int64 id_p = 1;
+	string name = 2;
+	string description_p = 3;
+	string tileImageURL = 4;
+	repeated lens_platform.client_server.api.lc.SCLPCtaItem ctaItemsArray = 5;
+	repeated lens_platform.client_server.lens.SCLPLensSnapchat lensesArray = 6;
+	repeated snapchat.lens.le.SCLELensExplorerLensTile lensTilesArray = 7;
+}

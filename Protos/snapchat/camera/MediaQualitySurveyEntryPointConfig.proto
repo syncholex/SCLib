@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message MediaQualitySurveyEntryPointConfig {
+	bool enableMediaQualitySurveyEntryPoint = 1;
+	int64 coolDownPeriodThreshold1 = 2;
+	int64 coolDownPeriodThreshold2 = 3;
+	int64 numberOfDiscardsThreshold = 4;
+}

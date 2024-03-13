@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/VideoTrack.proto";
+
+message VideoTracksInfo {
+	repeated snapchat.storydoc.VideoTrack videoTracksArray = 1;
+}

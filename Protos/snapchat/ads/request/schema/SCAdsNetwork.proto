@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsNetwork {
+
+	enum SCAdsConnectionType {
+		UNKNOWN_CONNECTION_TYPE = 0;
+		WIFI = 1;
+		CELL = 2;
+		ETHERNET = 3;
+	}
+
+	SCAdsConnectionType connectionType = 1;
+	string mccMnc = 2;
+	bytes clientIp = 3;
+	string carrier = 4;
+	int64 kiloBytesPerSecond = 5;
+
+	enum SCAdsCellularNetworkType {
+		CELLULAR_UNSET = 0;
+		CELLULAR_UNKNOWN = 1;
+		CELLULAR_2G = 2;
+		CELLULAR_3G = 3;
+		CELLULAR_4G = 4;
+		CELLULAR_5G = 5;
+	}
+
+	SCAdsCellularNetworkType cellularNetworkType = 6;
+}

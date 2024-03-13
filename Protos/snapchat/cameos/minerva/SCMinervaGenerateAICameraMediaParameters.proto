@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/SCMinervaGenerateAICameraMediaRequest.proto";
+
+message SCMinervaGenerateAICameraMediaParameters {
+	snapchat.cameos.minerva.SCMinervaGenerateAICameraMediaRequest generateAiCameraMediaRequest = 1;
+	string proxiedModelId = 2;
+}

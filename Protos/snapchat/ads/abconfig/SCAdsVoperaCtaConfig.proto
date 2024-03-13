@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsVoperaCtaConfig_DirectionValue.proto";
+
+message SCAdsVoperaCtaConfig {
+	bool enabled = 1;
+	double ctaHeight = 2;
+	double ctaWidth = 3;
+	snapchat.ads.abconfig.SCAdsVoperaCtaConfig_DirectionValue ctaMargin = 4;
+	snapchat.ads.abconfig.SCAdsVoperaCtaConfig_DirectionValue tappableArea = 5;
+	double hintTriggerDistanceThreshold = 6;
+}

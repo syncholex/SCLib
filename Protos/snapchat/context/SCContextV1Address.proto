@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1Address {
+	string street = 1;
+	string postalCode = 2;
+	string countryCode = 3;
+	string city = 4;
+	string state = 5;
+	string country = 6;
+	string timeZone = 7;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOAdPlacement_FixedAdSlot.proto";
+
+message STOAdPlacement_FixedAdSlots {
+	repeated snapchat.storydoc.STOAdPlacement_FixedAdSlot adsArray = 2;
+	repeated snapchat.storydoc.STOAdPlacement_FixedAdSlot optionalAdsArray = 3;
+}

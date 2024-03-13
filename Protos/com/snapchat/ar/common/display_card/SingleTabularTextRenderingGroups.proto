@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.ar.common.display_card;
+
+import "com/snapchat/ar/common/display_card/TextRenderingGroup.proto";
+
+message SingleTabularTextRenderingGroups {
+	repeated com.snapchat.ar.common.display_card.TextRenderingGroup textRenderingGroupsArray = 1;
+}

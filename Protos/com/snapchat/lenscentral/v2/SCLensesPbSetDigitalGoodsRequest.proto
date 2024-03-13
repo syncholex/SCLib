@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/DigitalGood.proto";
+
+message SCLensesPbSetDigitalGoodsRequest {
+	string lensId = 1;
+	repeated snapchat.lenscentral.common.DigitalGood digitalGoodsArray = 2;
+}

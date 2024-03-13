@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tokens.entitle;
+
+message SCIAPTokenPbEntitleItem {
+	string id_p = 1;
+	string sku = 2;
+
+	enum SCIAPTokenPbEntitleItemType {
+		TYPE_UNSET = 0;
+		DURABLE = 1;
+		CONSUMABLE = 2;
+	}
+
+	SCIAPTokenPbEntitleItemType type = 3;
+	string title = 4;
+	string description_p = 5;
+	uint32 consumptionBalance = 6;
+}

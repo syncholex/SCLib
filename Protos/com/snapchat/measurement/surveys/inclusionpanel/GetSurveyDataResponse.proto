@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.measurement.surveys.inclusionpanel;
+
+import "com/snapchat/measurement/surveys/inclusionpanel/SurveyResponse.proto";
+
+message GetSurveyDataResponse {
+	com.snapchat.measurement.surveys.inclusionpanel.SurveyResponse data_p = 1;
+	bool isOptedIn = 2;
+}

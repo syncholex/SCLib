@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+import "com/snap/opera/config/cof/proto/SCMediaPlayerBufferingConfig.proto";
+
+message SCMeteredMediaPlayerBufferingConfig {
+	repeated int32 atLeastDownloadBandwidthBpsArray = 1 [packed=true];
+	repeated com.snap.opera.config.cof.proto.SCMediaPlayerBufferingConfig bufferingConfigArray = 2;
+}

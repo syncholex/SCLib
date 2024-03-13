@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo.proto";
+import "ranking/pii/user/profile/SCSUPGetFriendInteractionsHistoryResponse_PosterInfo.proto";
+
+message SCSUPGetFriendInteractionsHistoryResponse {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo interactionInfosArray = 2;
+	repeated ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse_PosterInfo posterInfosArray = 3;
+	int64 nextStartTimestamp = 4;
+}

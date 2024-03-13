@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+import "snapchat/unlockables/meta/service/SCUnlockableMetaThumbnailSequence.proto";
+
+message SCUnlockableMetaLensMetadata {
+	string lensId = 1;
+	string creatorName = 2;
+	string userId = 3;
+	string name = 4;
+	int32 lastUpdatedEpoch = 5;
+	string thumbnailURL = 6;
+	snapchat.unlockables.meta.service.SCUnlockableMetaThumbnailSequence thumbnailSequence = 7;
+	string iconURL = 8;
+	string deeplinkURL = 9;
+	string snapcodeURL = 10;
+	string previewVideoURL = 11;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSingleSnapStoryCard_CalloutLabel {
+
+	enum SCSSMSingleSnapStoryCard_CalloutLabel_Type {
+		UNKNOWN = 0;
+		MY_FRIEND = 1;
+		TRENDING_WITH_FRIENDS = 2;
+		SHARED_BY_FRIENDS = 3;
+		RECOMMENDED_BY_FRIENDS = 4;
+		RECOMMENDED_BY_YOU = 5;
+		FRIEND = 6;
+	}
+
+	SCSSMSingleSnapStoryCard_CalloutLabel_Type type = 1;
+	repeated string friendUserIdsArray = 2;
+	int32 friendCount = 3;
+}

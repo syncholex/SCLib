@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+message SCMapsSlippyGetLocationPreferencesReminderRequest {
+	string timezone = 1;
+
+	enum SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource {
+		SOURCE_UNKNOWN = 0;
+		SOURCE_CAMERA = 1;
+		SOURCE_MAP = 2;
+	}
+
+	SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource source = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileId.proto";
+
+message SCMTGetLatestMapTilesRequest {
+	repeated snapchat.map.SCMTTileId tileIdsArray = 1;
+	string flavor = 2;
+}

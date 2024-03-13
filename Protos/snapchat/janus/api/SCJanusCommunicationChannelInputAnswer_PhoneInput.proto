@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCommunicationChannelInputAnswer_PhoneInput {
+	string phoneNumber = 1;
+
+	enum VerificationMethod {
+		VERIFICATION_METHOD_UNSET = 0;
+		SMS = 1;
+		FLASH = 2;
+		SEAMLESS = 3;
+		WHATSAPP = 4;
+	}
+
+	VerificationMethod verificationMethodRequested = 2;
+	string phoneNumberCountryCode = 3;
+}

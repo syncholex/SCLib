@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsStrategyConfig.proto";
+
+message SCAdsStoryConfig {
+	snapchat.ads.abconfig.SCAdsStrategyConfig ads = 1;
+}

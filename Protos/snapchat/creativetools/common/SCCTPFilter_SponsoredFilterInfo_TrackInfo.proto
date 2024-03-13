@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_SponsoredFilterInfo_TrackInfo {
+	string adServeRequestId = 1;
+	bytes rawAdData = 2;
+	bool skipTracking = 3;
+	bytes encryptedSponsoredUnlockableTargetingInfoData = 4;
+	string rankingId = 5;
+	bytes rankingData = 6;
+	bytes encryptedUserTrackData = 7;
+	bytes skAdNetworkAttribution = 8;
+	bytes adId = 9;
+}

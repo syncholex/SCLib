@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTGeoPoint.proto";
+import "address/SCMapsAddress.proto";
+
+message SCMTReverseGeocodedPoint {
+	snapchat.map.SCMTGeoPoint point = 1;
+	address.SCMapsAddress address = 2;
+}

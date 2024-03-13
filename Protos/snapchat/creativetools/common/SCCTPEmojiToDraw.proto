@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPEmojiToDraw {
+	repeated string emojisArray = 1;
+}

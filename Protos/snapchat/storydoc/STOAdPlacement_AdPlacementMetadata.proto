@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOAdPlacement_AdPlacementMetadata_AdInsertionConfig.proto";
+import "snapchat/storydoc/STOAdPlacement_AdPlacementMetadata_AdRequestConfig.proto";
+import "snapchat/storydoc/STOAdPlacement_AdPlacementMetadata_TargetingParameters.proto";
+
+message STOAdPlacement_AdPlacementMetadata {
+	string adUnitId = 1;
+	snapchat.storydoc.STOAdPlacement_AdPlacementMetadata_AdInsertionConfig adInsertionConfig = 2;
+	snapchat.storydoc.STOAdPlacement_AdPlacementMetadata_AdRequestConfig adRequestConfig = 3;
+	snapchat.storydoc.STOAdPlacement_AdPlacementMetadata_TargetingParameters targetingParameters = 4;
+	repeated string adCannotFollowSnapIdsArray = 5;
+	bool enableFullView = 6;
+}

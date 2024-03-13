@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXContextClientInfo_GroupInviteInfo {
+	snapchat.core.SCCOREUUID groupId = 1;
+	snapchat.core.SCCOREUUID groupInviteId = 2;
+	string encryptedGroupInviteId = 3;
+}

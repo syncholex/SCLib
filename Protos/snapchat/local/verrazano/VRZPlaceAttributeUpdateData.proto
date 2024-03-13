@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceAttributeWriteData.proto";
+
+message VRZPlaceAttributeUpdateData {
+	string placeAttributeId = 1;
+	int64 version = 2;
+	snapchat.local.verrazano.VRZPlaceAttributeWriteData writeData = 10;
+}

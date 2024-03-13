@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message DiscoverClientMetadataCachingTTLConfig {
+	int32 dfMetadataColdStartTtlMsWifi = 1;
+	int32 dfMetadataColdStartTtlMsWwan = 2;
+	int32 dfMetadataWarmStartTtlMsWifi = 3;
+	int32 dfMetadataWarmStartTtlMsWwan = 4;
+	int32 dfMetadataBackgroundPrefetchTtlMsWifi = 5;
+	int32 dfMetadataBackgroundPrefetchTtlMsWwan = 6;
+	int32 dfMetadataCacheRefreshTtlMsWifi = 7;
+	int32 dfMetadataCacheRefreshTtlMsWwan = 8;
+}

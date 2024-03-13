@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+message Codec {
+
+	enum CodecProfile {
+		UNKNOWN_CODEC_PROFILE = 0;
+		BASELINE = 1;
+		MAIN = 2;
+		HIGH = 3;
+	}
+
+	CodecProfile profile = 1;
+
+	enum CodecType {
+		UNKNOWN_CODEC_TYPE = 0;
+		H264 = 1;
+		HEVC = 2;
+	}
+
+	CodecType codec = 2;
+}

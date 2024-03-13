@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.activation.challenge;
+
+import "snapchat/activation/challenge/SCUserChallengePbUserChallengePrompt.proto";
+
+message SCUserChallengePbUserChallenges {
+	repeated snapchat.activation.challenge.SCUserChallengePbUserChallengePrompt challengesArray = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBLogFileTransferRequest.proto";
+
+message MLBLogRequest {
+
+	enum MLBLogRequest_LogRequestType {
+		LOG_FILE_LIST = 0;
+		GET_LOG_FILE = 1;
+		ANALYTICS_FILE_LIST = 2;
+		GET_ANALYTICS_FILE = 3;
+		DELETE_ANALYTICS = 4;
+	}
+
+	MLBLogRequest_LogRequestType type = 1;
+	malibu.MLBLogFileTransferRequest logFileTransferRequest = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalListManagedBusinessProfilesRequest {
+	string pageId = 1;
+	string userId = 2;
+	bool suppressSubscriptionQuery = 3;
+	bool loadStories = 4;
+	bool includePublishers = 5;
+	bool includeUserSettings = 6;
+	bool includeRejectedProfiles = 7;
+	bool loadPromotableContents = 8;
+}

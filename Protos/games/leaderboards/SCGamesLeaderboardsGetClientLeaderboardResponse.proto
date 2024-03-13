@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+import "games/leaderboards/SCGamesLeaderboardsClientLeaderboard.proto";
+
+message SCGamesLeaderboardsGetClientLeaderboardResponse {
+	games.leaderboards.SCGamesLeaderboardsClientLeaderboard leaderboard = 1;
+}

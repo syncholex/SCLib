@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Product_BoundingBox_RetrievalRecord {
+	uint32 indexId = 1;
+	string imageURL = 2;
+	string productURL = 3;
+	string productDesc = 4;
+}

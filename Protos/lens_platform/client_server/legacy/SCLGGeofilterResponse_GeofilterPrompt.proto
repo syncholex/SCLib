@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_GeofilterPrompt {
+	string text = 1;
+	string position = 2;
+	int64 fadeInTimeMs = 3;
+	int64 onScreenTimeMs = 4;
+	int64 fadeOutTimeMs = 5;
+}

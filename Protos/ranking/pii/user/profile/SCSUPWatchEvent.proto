@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEventStoryFeatures.proto";
+import "ranking/pii/user/profile/SCSUPEventFeedContextFeatures.proto";
+import "ranking/pii/user/profile/SCSUPStoryCompositionProperties.proto";
+
+message SCSUPWatchEvent {
+	ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+	ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+	uint32 timestamp = 3;
+	uint32 watchTimeMsecs = 4;
+	uint32 numUniqueSnapsWatched = 5;
+	uint32 maxViewedSnapIndex = 6;
+	ranking.pii.user.profile.SCSUPStoryCompositionProperties watchedStoryProperties = 7;
+
+	enum SCSLIEntryIntent_Type {
+		UNKNOWN = 0;
+		OPEN = 1;
+		OPEN_BY_BROWSING = 13;
+		OPEN_VIA_IN_APP_NOTIF = 14;
+		OPEN_VIA_SYSTEM_NOTIF = 15;
+		OPEN_VIA_INTERSTITIAL = 16;
+		NEXT_GROUP = 2;
+		NEXT_GROUP_UNINTENDED = 17;
+		NEXT_ITEM = 3;
+		PREV_GROUP = 4;
+		PREV_GROUP_UNINTENDED = 18;
+		PREV_ITEM = 5;
+		AUTO_ADVANCE = 6;
+		BACK_FROM_ATTACHMENT = 7;
+		BACK_FROM_PROFILE = 8;
+		BACK_FROM_SEND_TO = 9;
+		BACK_FROM_CONTEXT_CARDS = 10;
+		GENERIC_DISMISSAL = 11;
+		FOREGROUND_APP = 12;
+	}
+
+	SCSLIEntryIntent_Type entryIntent = 8;
+
+	enum SCSLIExitIntent_Type {
+		UNKNOWN = 0;
+		DISMISS = 1;
+		DISMISS_BY_NAV_PREV = 14;
+		DISMISS_BY_NAV_NEXT = 15;
+		NEXT_GROUP = 2;
+		NEXT_ITEM = 3;
+		PREV_GROUP = 4;
+		PREV_ITEM = 5;
+		AUTO_ADVANCE = 6;
+		OPEN_ATTACHMENT = 7;
+		OPEN_PROFILE = 8;
+		OPEN_SEND_TO = 9;
+		SHOW_CONTEXT_CARDS = 10;
+		GENERIC_STACKING = 16;
+		RESPOND_TO_IN_APP_NOTIF = 12;
+		RESPOND_TO_SYSTEM_NOTIF = 13;
+		BACKGROUND_APP = 11;
+	}
+
+	SCSLIExitIntent_Type exitIntent = 9;
+	float watchTimePercentile = 10;
+	uint32 watchTimeMsecsV2 = 11;
+}

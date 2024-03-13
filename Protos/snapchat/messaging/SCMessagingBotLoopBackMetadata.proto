@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingBotLoopBackMetadata {
+	uint64 id_p = 1;
+}

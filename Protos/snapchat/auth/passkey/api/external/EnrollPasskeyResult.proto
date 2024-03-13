@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+message EnrollPasskeyResult {
+
+	enum EnrollPasskeyResult_Enum {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_UNMATCHED_CHALLENGE = 2;
+		ERROR_EXPIRED_OR_NO_CHALLENGE = 3;
+		ERROR_UNMATCHED_USER_ID = 4;
+		ERROR_UNEXPECTED_CLIENT_DATA_TYPE = 5;
+		ERROR_UNEXPECTED_RELYING_PARTY_ID = 6;
+		ERROR_USER_UNVERIFIED = 7;
+		ERROR_SUSPICIOUS_SIGN_COUNT = 8;
+		ERROR_UNSUPPORTED_ALGORITHM = 9;
+		ERROR_UNSUPPORTED_KEY_TYPE = 10;
+		ERROR_SECURITY_RESTRICTION = 11;
+	}
+
+	EnrollPasskeyResult_Enum statusCode = 1;
+	string humanReadableLocalizedMessage = 2;
+}

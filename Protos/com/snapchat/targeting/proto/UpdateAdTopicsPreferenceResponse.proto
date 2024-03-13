@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message UpdateAdTopicsPreferenceResponse {
+}

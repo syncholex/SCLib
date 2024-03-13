@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package google.api;
+
+import "google/api/GAPIHttpRule.proto";
+
+message GAPIHttp {
+	repeated google.api.GAPIHttpRule rulesArray = 1;
+	bool fullyDecodeReservedExpansion = 2;
+}

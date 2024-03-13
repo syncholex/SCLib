@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUserStoryCustomMetadata {
+	string id_p = 1;
+	string displayName = 2;
+
+	enum SCSCORECustomStoryType_Enum {
+		UNKNOWN = 0;
+		PRIVATE = 1;
+		CUSTOM = 2;
+		GEO = 3;
+		GROUP_CHAT = 4;
+		SNAP_REQUEST = 5;
+		SHARED = 6;
+		COMMUNITY = 7;
+	}
+
+	SCSCORECustomStoryType_Enum customStoryType = 3;
+}

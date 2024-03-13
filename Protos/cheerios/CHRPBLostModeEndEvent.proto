@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBLostModeEndEvent {
+
+	enum CHRPBLostModeEndEvent_Cause {
+		UNSET = 0;
+		BUTTON_PRESSED = 1;
+		DIAL_TURNED = 2;
+		TIMEOUT = 3;
+		APP = 4;
+	}
+
+	CHRPBLostModeEndEvent_Cause cause = 1;
+}

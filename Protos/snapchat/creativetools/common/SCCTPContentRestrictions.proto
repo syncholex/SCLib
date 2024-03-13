@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPContentRestrictions_CountryList.proto";
+
+message SCCTPContentRestrictions {
+
+	oneof countryRestriction {
+		snapchat.creativetools.common.SCCTPContentRestrictions_CountryList countryBlocklist = 1;
+		snapchat.creativetools.common.SCCTPContentRestrictions_CountryList countryAllowlist = 2;
+	}
+
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.map.achievements;
+
+message SCACHAchievementCountInfo {
+
+	enum SCACHAchievementCountType {
+		UNKNOWN_COUNT = 0;
+		COUNTRIES_VISITED = 1;
+		MUSEUMS_VISITED = 2;
+		MILES_FLOWN = 3;
+		GYMS_VISITED = 4;
+		BARS_VISITED = 5;
+		CLUBS_VISITED = 6;
+		LIBRARIES_VISITED = 7;
+		RETAIL_STORES_VISITED = 8;
+		METERS_FLOWN = 9;
+		METERS_DRIVEN = 10;
+	}
+
+	SCACHAchievementCountType type = 1;
+	int64 cumulativeTotal = 2;
+	int64 weeklyTotal = 3;
+	int64 biWeeklyTotal = 4;
+}

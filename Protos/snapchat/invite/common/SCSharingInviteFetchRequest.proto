@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSharingInviteFetchRequest {
+	snapchat.core.SCCOREUUID inviteId = 1;
+	string shortInviteId = 2;
+	bool allowReturnPendingInvite = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusRegisterWithUsernamePasswordResponse.proto";
+import "snapchat/janus/api/SCJanusRegisterWithGoogleErrorResponse.proto";
+
+message SCJanusRegisterWithGoogleResponse {
+
+	oneof baseResponse {
+		snapchat.janus.api.SCJanusRegisterWithUsernamePasswordResponse response = 1;
+		snapchat.janus.api.SCJanusRegisterWithGoogleErrorResponse googleErrorResponse = 2;
+	}
+
+}

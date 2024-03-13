@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snap.rtus.config;
+
+import "com/snap/rtus/config/RTUSClientSignalConfig.proto";
+
+message RTUSClientConfigWrapper {
+	string version = 1;
+	string team = 2;
+	com.snap.rtus.config.RTUSClientSignalConfig perProductConfig = 3;
+	int64 eventTtlSeconds = 4;
+	int64 diskQuotaBytes = 5;
+}

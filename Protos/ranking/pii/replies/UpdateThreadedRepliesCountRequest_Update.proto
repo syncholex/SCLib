@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message UpdateThreadedRepliesCountRequest_Update {
+	string snapId = 1;
+	ranking.core.SCSCOREUUID replyId = 2;
+	ranking.core.SCSCOREUUID childReplyId = 3;
+	int32 delta = 4;
+	bool isSnapAttributed = 5;
+}

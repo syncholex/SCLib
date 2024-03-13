@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ranking;
+
+message SCCTPGlobalRankingScoreRange {
+	float startingScore = 1;
+	float deltaScore = 2;
+	uint32 count = 3;
+}

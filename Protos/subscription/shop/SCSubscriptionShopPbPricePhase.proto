@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbPricePhase {
+	int64 billingCycleCount = 1;
+	string billingPeriod = 2;
+	int64 priceAmountMicros = 3;
+	string priceCurrencyCode = 4;
+}

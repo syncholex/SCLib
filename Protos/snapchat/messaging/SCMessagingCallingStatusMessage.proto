@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingCallingStatusMessage {
+
+	enum SCMessagingCallingStatusMessage_CallStatus {
+		STARTED = 0;
+		ENDED = 1;
+		LEFT = 2;
+		JOINED = 3;
+		MISSED = 4;
+	}
+
+	SCMessagingCallingStatusMessage_CallStatus callStatus = 1;
+
+	enum SCMessagingCallingStatusMessage_CallType {
+		AUDIO = 0;
+		VIDEO = 1;
+	}
+
+	SCMessagingCallingStatusMessage_CallType callType = 2;
+	snapchat.messaging.SCMessagingUUID userId = 3;
+	uint32 callDuration = 4;
+	repeated snapchat.messaging.SCMessagingUUID participantsArray = 5;
+	snapchat.messaging.SCMessagingUUID callUuid = 6;
+}

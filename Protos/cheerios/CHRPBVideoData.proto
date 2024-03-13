@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBDroppedFramesData.proto";
+
+message CHRPBVideoData {
+	int32 durationMs = 1;
+
+	enum CHRPBVideoCodec {
+		UNKNOWN_UNSET = 0;
+		AVC = 1;
+		HEVC = 2;
+	}
+
+	CHRPBVideoCodec codec = 2;
+	cheerios.CHRPBDroppedFramesData droppedFramesData = 3;
+}

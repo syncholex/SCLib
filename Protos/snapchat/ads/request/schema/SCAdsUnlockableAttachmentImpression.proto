@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsUnlockableLongformVideoView.proto";
+import "snapchat/ads/request/schema/SCAdsUnlockableLongformWebviewView.proto";
+import "snapchat/ads/request/schema/SCAdsUnlockableLongformAppInstall.proto";
+import "snapchat/ads/request/schema/SCAdsUnlockableDeepLink.proto";
+
+message SCAdsUnlockableAttachmentImpression {
+
+	oneof typedTrackData {
+		snapchat.ads.request.schema.SCAdsUnlockableLongformVideoView longformVideoImpression = 1;
+		snapchat.ads.request.schema.SCAdsUnlockableLongformWebviewView remoteWebpageImpression = 2;
+		snapchat.ads.request.schema.SCAdsUnlockableLongformAppInstall appInstallImpression = 3;
+		snapchat.ads.request.schema.SCAdsUnlockableDeepLink deepLinkImpression = 4;
+	}
+
+}

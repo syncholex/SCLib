@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPInternalGetSavedSpotlightIDsRequest {
+	string profileId = 1;
+	string pageId = 2;
+	int32 limit = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+message SCMapsSlippyLocationPreferencesSnapshot {
+
+	enum SCVSLocationSharingAudience {
+		LSA_NONE = 0;
+		LSA_FRIENDS = 1;
+		LSA_CUSTOM = 2;
+		LSA_BLACKLIST = 3;
+	}
+
+	SCVSLocationSharingAudience audience = 1;
+	int64 locationSharingFriendCount = 2;
+	int64 friendCount = 3;
+}

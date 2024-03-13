@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+import "com/snapchat/proto/SCPBSize.proto";
+import "com/snapchat/proto/SCPBIntegerPoint.proto";
+
+message SCPBGeofilterImageMetadata {
+	com.snapchat.proto.SCPBSize imageSizePx = 1;
+	com.snapchat.proto.SCPBSize croppedImageSizePx = 2;
+	com.snapchat.proto.SCPBIntegerPoint croppedImageOffset = 3;
+}

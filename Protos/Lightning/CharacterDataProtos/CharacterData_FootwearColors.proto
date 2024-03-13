@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message CharacterData_FootwearColors {
+	int32 primary = 1;
+	int32 secondary = 2;
+	int32 tertiary = 3;
+	int32 quaternary = 4;
+	int32 sole = 5;
+	int32 metal = 6;
+	int32 laces = 7;
+	int32 detail = 8;
+	int32 elastic = 9;
+	int32 furtrim = 10;
+}

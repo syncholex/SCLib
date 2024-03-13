@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZGetInferredVisitationCandidatesRequest_InferredRankingSignals.proto";
+
+message VRZGetInferredVisitationCandidatesRequest {
+	double lat = 1;
+	double lng = 2;
+	int64 placesLimit = 3;
+	snapchat.local.place.VRZGetInferredVisitationCandidatesRequest_InferredRankingSignals rankingSignals = 4;
+	int64 campusesLimit = 5;
+}

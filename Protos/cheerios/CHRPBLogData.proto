@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBRange.proto";
+
+message CHRPBLogData {
+	string name = 1;
+	cheerios.CHRPBRange requestedRange = 2;
+	cheerios.CHRPBRange actualRange = 3;
+	bytes data_p = 4;
+}

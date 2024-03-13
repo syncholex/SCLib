@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCContextV1Image_InlineImage.proto";
+
+message SCContextV1Image_EncryptedImage {
+	string key = 2;
+	string iv = 3;
+
+	oneof source {
+		string imageURL = 4;
+		snapchat.context.SCContextV1Image_InlineImage inlineImage = 5;
+	}
+
+}

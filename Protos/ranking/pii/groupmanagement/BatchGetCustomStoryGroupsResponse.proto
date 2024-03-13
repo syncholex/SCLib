@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/GroupMetadata.proto";
+
+message BatchGetCustomStoryGroupsResponse {
+	repeated ranking.pii.groupmanagement.GroupMetadata groupMetadatasArray = 1;
+}

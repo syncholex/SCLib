@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileHydrationOption.proto";
+
+message IMPGetPublicProfileRequest {
+	string id_p = 1;
+	impala.IMPProfileHydrationOption hydrationOption = 2;
+	bool includeGatedProfiles = 3;
+	bool includeRejectedProfiles = 4;
+	string userId = 5;
+	bool omitPlaceholderImage = 6;
+	bool createProfileIfNotExist = 7;
+}

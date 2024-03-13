@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNMedia.proto";
+import "snapchat/perception/SCPNAnalyzer.proto";
+import "snapchat/perception/SCPNAnalyzerRequestMetadata.proto";
+import "snapchat/perception/SCPNMediaMap.proto";
+
+message SCPNIrisRequest {
+	snapchat.perception.SCPNMedia media = 1;
+	repeated snapchat.perception.SCPNAnalyzer analyzersArray = 2;
+	snapchat.perception.SCPNAnalyzerRequestMetadata requestMetadata = 3;
+	bool allowPartialResponse = 4;
+	snapchat.perception.SCPNMediaMap mediaMap = 6;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPIds.proto";
+
+message IMPInternalGetProfileLinksRequest {
+
+	oneof ids {
+		impala.IMPIds userIds = 1;
+		impala.IMPIds profileIds = 2;
+	}
+
+}

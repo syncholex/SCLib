@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamPackGeneration.proto";
+
+message SCPbGenAIDreamGetProductRequest {
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamPackGeneration generationsArray = 1;
+}

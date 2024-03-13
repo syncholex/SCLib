@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZModerationReportWriteData_FeedbackTypeValue {
+
+	enum VRZPlaceModeration_FeedbackType {
+		EDIT_NAME = 0;
+		IS_CLOSED = 1;
+		IS_INAPPROPRIATE = 2;
+		FTI_FENCE = 3;
+		SUGGEST_NEARBY = 4;
+		BUSINESS_ONBOARDING = 5;
+		SUGGEST_EDIT = 6;
+		EDIT_ADDRESS = 7;
+		EDIT_CATEGORY = 8;
+		EDIT_GEOMETRY = 9;
+		ADD_PLACE = 10;
+		BUSINESS_ONBOARDING_ADD_PLACE = 11;
+		REPORT_DUPLICATE = 12;
+	}
+
+	VRZPlaceModeration_FeedbackType value = 1;
+}

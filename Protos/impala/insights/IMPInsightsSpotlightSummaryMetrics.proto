@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSpotlightSummaryMetrics {
+	int64 spotlightBoostsSinceLastWeek = 1;
+	int64 spotlightBoostsSinceLastMonth = 2;
+	int64 spotlightBoostsSincePreviousWeek = 3;
+	int64 spotlightBoostsSincePreviousMonth = 4;
+	int64 spotlightViewsSinceLastWeek = 11;
+	int64 spotlightViewsSinceLastMonth = 12;
+	int64 spotlightViewsSincePreviousWeek = 13;
+	int64 spotlightViewsSincePreviousMonth = 14;
+	int64 spotlightSharesSinceLastWeek = 21;
+	int64 spotlightSharesSinceLastMonth = 22;
+	int64 spotlightSharesSincePreviousWeek = 23;
+	int64 spotlightSharesSincePreviousMonth = 24;
+	int64 spotlightSubscribesSinceLastWeek = 31;
+	int64 spotlightSubscribesSinceLastMonth = 32;
+	int64 spotlightSubscribesSincePreviousWeek = 33;
+	int64 spotlightSubscribesSincePreviousMonth = 34;
+	int64 spotlightReachSinceLastWeek = 41;
+	int64 spotlightReachSinceLastMonth = 42;
+	int64 spotlightReachSincePreviousWeek = 43;
+	int64 spotlightReachSincePreviousMonth = 44;
+	int64 spotlightTotalViewTimeMsSinceLastWeek = 51;
+	int64 spotlightTotalViewTimeMsSinceLastMonth = 52;
+	int64 spotlightTotalViewTimeMsSincePreviousWeek = 53;
+	int64 spotlightTotalViewTimeMsSincePreviousMonth = 54;
+	int64 spotlightAverageViewTimeMsSinceLastWeek = 61;
+	int64 spotlightAverageViewTimeMsSinceLastMonth = 62;
+	int64 spotlightAverageViewTimeMsSincePreviousWeek = 63;
+	int64 spotlightAverageViewTimeMsSincePreviousMonth = 64;
+	int64 spotlightViewsSubscribersSinceLastWeek = 65;
+	int64 spotlightViewsSubscribersSinceLastMonth = 66;
+	int64 spotlightViewsSubscribersSincePreviousWeek = 67;
+	int64 spotlightViewsSubscribersSincePreviousMonth = 68;
+	int64 spotlightViewsNonSubscribersSinceLastWeek = 69;
+	int64 spotlightViewsNonSubscribersSinceLastMonth = 70;
+	int64 spotlightViewsNonSubscribersSincePreviousWeek = 71;
+	int64 spotlightViewsNonSubscribersSincePreviousMonth = 72;
+}

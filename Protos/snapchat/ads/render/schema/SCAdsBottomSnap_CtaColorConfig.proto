@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "google/type/GTPColor.proto";
+
+message SCAdsBottomSnap_CtaColorConfig {
+	google.type.GTPColor backgroundColor = 1;
+}

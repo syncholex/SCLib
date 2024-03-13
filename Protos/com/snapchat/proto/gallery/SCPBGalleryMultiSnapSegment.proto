@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery;
+
+message SCPBGalleryMultiSnapSegment {
+	int64 trimmedLeftTime = 1;
+	int64 trimmedRightTime = 2;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+message SCGamesLeaderboardsScoreVisibility {
+
+	oneof scope {
+		string appId = 1;
+		string leaderboardId = 2;
+	}
+
+
+	enum SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType {
+		VISIBILITY_UNSET = 0;
+		VISIBLE = 1;
+		INVISIBLE = 2;
+	}
+
+	SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType scoreVisibilityType = 3;
+}

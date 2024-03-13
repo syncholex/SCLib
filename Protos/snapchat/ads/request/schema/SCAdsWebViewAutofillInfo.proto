@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsWebViewAutofillInfo {
+	google.protobuf.GPBBoolValue autofillConsentPromptEvent = 1;
+	google.protobuf.GPBBoolValue autofillConsentPromptAcceptance = 2;
+	google.protobuf.GPBInt32Value autofillInsertedCount = 3;
+	google.protobuf.GPBBoolValue autofillDetected = 4;
+	google.protobuf.GPBInt32Value autofillDetectedCount = 5;
+	repeated google.protobuf.GPBStringValue autofillDetectedListArray = 6;
+	repeated google.protobuf.GPBStringValue autofillInsertedListArray = 7;
+	google.protobuf.GPBBoolValue autofillSavePromptEvent = 8;
+	google.protobuf.GPBBoolValue autofillSavePromptAcceptance = 9;
+	google.protobuf.GPBBoolValue autofillInsertionEdit = 10;
+	google.protobuf.GPBBoolValue autofillScriptReady = 11;
+	repeated google.protobuf.GPBStringValue submittedListArray = 12;
+	bool hasUserInfoInAutofillSetting = 13;
+	repeated google.protobuf.GPBStringValue autofillSettingAvailableInfoArray = 14;
+	google.protobuf.GPBBoolValue formClickEvent = 15;
+	repeated google.protobuf.GPBStringValue formClickListArray = 16;
+	repeated google.protobuf.GPBStringValue autofillConsentPromptListArray = 17;
+	repeated google.protobuf.GPBStringValue autofillConsentPromptAcceptedListArray = 18;
+	repeated google.protobuf.GPBStringValue autofillMoreEditListArray = 19;
+	google.protobuf.GPBBoolValue autofillSaveSettingEvent = 20;
+	repeated google.protobuf.GPBStringValue autofillSavedInsertedListArray = 21;
+	repeated google.protobuf.GPBStringValue autofillSavedUpdatedListArray = 22;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.deep_link_resolution.dynamic_resolution;
+
+message SCDynamicResolutionLensCarouselResult {
+	string snapcode = 1;
+}

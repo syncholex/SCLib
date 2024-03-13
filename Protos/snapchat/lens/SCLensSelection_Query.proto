@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/lens/SCLensSelection_Criterion.proto";
+
+message SCLensSelection_Query {
+	repeated snapchat.lens.SCLensSelection_Criterion criteriaArray = 1;
+	sint32 limit = 2;
+
+	enum SCLensSelection_Query_Target {
+		ICON = 0;
+		REQUIRED_CONTENT = 1;
+		ASSETS = 3;
+	}
+
+	repeated SCLensSelection_Query_Target targetsArray = 3 [packed=true];
+}

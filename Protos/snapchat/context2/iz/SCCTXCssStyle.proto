@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCssStyle_CssColor.proto";
+import "google/protobuf/GPBDoubleValue.proto";
+
+message SCCTXCssStyle {
+	snapchat.context2.iz.SCCTXCssStyle_CssColor backgroundColor = 1;
+	snapchat.context2.iz.SCCTXCssStyle_CssColor foregroundColor = 2;
+	string border = 3;
+	string borderRadius = 4;
+	string shadow = 5;
+	google.protobuf.GPBDoubleValue opacity = 6;
+	bool outlined = 7;
+
+	enum SCCTXCssStyle_BorderStyle {
+		NONE = 0;
+		ROUNDED_RECT = 1;
+		CIRCULAR = 2;
+	}
+
+	SCCTXCssStyle_BorderStyle borderStyle = 8;
+	bool hasShadow = 9;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsSnapCreationInfo {
+	google.protobuf.GPBInt64Value camera = 1;
+	google.protobuf.GPBBoolValue isAudioOn = 2;
+
+	enum SCAdsMediaType {
+		UNKNOWN_MEDIA_TYPE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		VIDEO_SOUND_LAGUNA = 3;
+		VIDEO_NO_SOUND_LAGUNA = 4;
+		LAGUNAHD_SOUND = 5;
+		LAGUNAHD_NO_SOUND = 6;
+		MALIBU_SOUND = 7;
+		MALIBU_NO_SOUND = 8;
+		NEWPORT_SOUND = 9;
+		NEWPORT_NO_SOUND = 10;
+		GIF = 11;
+		DISCOVER = 12;
+		AUDIO_STITCH = 13;
+		PSYCHOMANTIS = 14;
+		SCREAMINGMANTIS = 15;
+		GHOSTMANTIS = 16;
+		IMAGE = 17;
+		NATIVE_IMAGE = 18;
+		HTML = 19;
+	}
+
+	SCAdsMediaType mediaType = 3;
+	google.protobuf.GPBInt64Value snapDurationMillis = 4;
+	google.protobuf.GPBInt64Value snapPreviewMillis = 5;
+	google.protobuf.GPBInt64Value geofilterLoadedCount = 6;
+
+	enum SCAdsSnapCreationInfo_FilterCarouselEntryDirection {
+		UNKNOWN_FILTER_CAROUSEL_ENTRY_DIRECTION = 0;
+		NONE = 1;
+		LEFT = 2;
+		RIGHT = 3;
+	}
+
+	SCAdsSnapCreationInfo_FilterCarouselEntryDirection filterCarouselEntryDirection = 7;
+	google.protobuf.GPBInt64Value filterSwipeCount = 8;
+}

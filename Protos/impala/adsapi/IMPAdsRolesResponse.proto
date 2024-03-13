@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsRoleSubResponse.proto";
+import "impala/adsapi/IMPAdsPaging.proto";
+
+message IMPAdsRolesResponse {
+	repeated impala.adsapi.IMPAdsRoleSubResponse rolesArray = 1;
+	impala.adsapi.IMPAdsPaging paging = 2;
+}

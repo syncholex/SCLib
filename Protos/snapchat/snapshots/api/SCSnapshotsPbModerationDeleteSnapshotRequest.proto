@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapshots.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSnapshotsPbModerationDeleteSnapshotRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	string boltURL = 2;
+	snapchat.core.SCCOREUUID snapshotSnapId = 3;
+}

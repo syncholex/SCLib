@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+import "snapchat/search/sendtoranking/SCSTRCandidateFeatures.proto";
+
+message SCSTRGetCandidateFeaturesResponse {
+	string modelVersion = 1;
+	repeated snapchat.search.sendtoranking.SCSTRCandidateFeatures candidatesArray = 2;
+}

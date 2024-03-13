@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package weather;
+
+message SCWWeather {
+
+	enum SCWWeather_Condition {
+		UNKNOWN = 0;
+		CLEAR_NIGHT = 1;
+		CLOUDY = 2;
+		HAIL = 3;
+		LIGHTNING = 4;
+		LOW_VISIBILITY = 5;
+		PARTIAL_CLOUDY = 6;
+		PARTIAL_CLOUDY_NIGHT = 7;
+		RAINY = 8;
+		SNOW = 9;
+		SUNNY = 10;
+		WINDY = 11;
+		HOT = 12;
+		COLD = 13;
+	}
+
+	SCWWeather_Condition condition = 1;
+	float temperatureF = 2;
+	int64 epochMs = 3;
+	int64 relativeHumidityPerc = 6;
+	float pressureMb = 7;
+	float windSpeed = 8;
+	int32 precipitationProbability = 9;
+
+	enum SCWDetailedCondition_Enum {
+		UNKNOWN = 0;
+		SUNNY = 1;
+		CLOUDY = 2;
+		RAINY = 3;
+		MOSTLY_CLOUDY_DAY = 4;
+		MOSTLY_CLOUDY_NIGHT = 5;
+		SNOW = 6;
+		HOT = 7;
+		COLD = 8;
+		WINDY = 9;
+		CLEAR = 10;
+		MOSTLY_CLEAR = 11;
+		PARTLY_CLOUDY = 12;
+		INTERMITTENT_CLOUDS_DAY = 13;
+		INTERMITTENT_CLOUDS_NIGHT = 14;
+		MOSTLY_SUNNY = 15;
+		PARTLY_SUNNY = 16;
+		RAIN_SHOWERS = 17;
+		HAZY_SUNSHINE = 18;
+		OVERCAST = 19;
+		FOGGY = 20;
+		MOSTLY_CLOUDY_WITH_SHOWERS_DAY = 21;
+		MOSTLY_CLOUDY_WITH_SHOWERS_NIGHT = 22;
+		PARTLY_SUNNY_WITH_SHOWERS = 23;
+		THUNDERSTORMS = 24;
+		MOSTLY_CLOUDY_WITH_T_STORMS_DAY = 25;
+		MOSTLY_CLOUDY_WITH_T_STORMS_NIGHT = 26;
+		PARTLY_SUNNY_WITH_T_STORMS = 27;
+		FLURRIES = 28;
+		MOSTLY_CLOUDY_WITH_FLURRIES_DAY = 29;
+		MOSTLY_CLOUDY_WITH_FLURRIES_NIGHT = 30;
+		PARTLY_SUNNY_WITH_FLURRIES = 31;
+		MOSTLY_CLOUDY_WITH_SNOW_DAY = 32;
+		MOSTLY_CLOUDY_WITH_SNOW_NIGHT = 33;
+		HAIL = 34;
+		SLEET = 35;
+		FREEZING_RAINING = 36;
+		RAIN_AND_SNOW = 37;
+		HAZY_MOONLIGHT = 38;
+		PARTLY_CLOUDY_WITH_SHOWERS = 39;
+		PARTLY_CLOUDY_WITH_T_STORMS = 40;
+	}
+
+	SCWDetailedCondition_Enum detailedCondition = 10;
+	uint64 sunriseEpochSec = 11;
+	uint64 sunsetEpochSec = 12;
+}

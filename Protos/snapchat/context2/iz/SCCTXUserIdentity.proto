@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXBitmoji.proto";
+import "snapchat/context2/iz/SCCTXSnapProIdentity.proto";
+
+message SCCTXUserIdentity {
+	string id_p = 1;
+	string username = 2;
+	string displayName = 3;
+	string businessProfileId = 4;
+	bool isOfficial = 5;
+	snapchat.context2.iz.SCCTXBitmoji bitmoji = 6;
+	snapchat.context2.iz.SCCTXSnapProIdentity snapProIdentity = 7;
+}

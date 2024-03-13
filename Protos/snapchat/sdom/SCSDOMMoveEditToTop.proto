@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+
+message SCSDOMMoveEditToTop {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingConversationEnvelopeEncryptionV1 {
+	bytes iv = 1;
+	bytes nonce = 2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+import "snapchat/ads/render/schema/SCAdsWebViewAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsAppInstall.proto";
+import "snapchat/ads/render/schema/SCAdsShowcaseAttachment.proto";
+
+message SCAdsCollectionItemAttachment {
+
+	oneof collectionAttachmentType {
+		snapchat.ads.render.schema.SCAdsDeeplink deepLink = 1;
+		snapchat.ads.render.schema.SCAdsWebViewAttachment webviewAttachment = 2;
+		snapchat.ads.render.schema.SCAdsAppInstall appInstall = 3;
+		snapchat.ads.render.schema.SCAdsShowcaseAttachment showcaseAttachment = 4;
+	}
+
+}

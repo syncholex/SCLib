@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "snapchat/content/v2/SCBoltv2SubtitleProperties.proto";
+
+message SCBoltv2VodStreamingProperties {
+	repeated snapchat.content.v2.SCBoltv2SubtitleProperties webvttSubtitlesArray = 1;
+}

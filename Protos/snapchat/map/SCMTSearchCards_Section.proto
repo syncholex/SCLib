@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTSearchCards_Row.proto";
+
+message SCMTSearchCards_Section {
+
+	enum SCMTSearchCards_SectionType {
+		UNKNOWN = 0;
+		NEARBY = 3;
+		LOCATIONS = 4;
+		FRIENDS_MAP = 5;
+		FRIENDS_ALL = 6;
+		STORIES = 8;
+		TOP_STORIES = 9;
+		FRIENDS_FINDER = 10;
+		FRIENDS = 1;
+		HAPPENING_NOW = 2;
+		POIS = 7;
+	}
+
+	SCMTSearchCards_SectionType type = 1;
+	string headline = 2;
+	int32 numToShow = 3;
+	repeated snapchat.map.SCMTSearchCards_Row rowsArray = 10;
+}

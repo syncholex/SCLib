@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2BusinessInfoCard {
+
+	enum SCR2BusinessInfoCard_BusinessInfoCardCategory {
+		UNKNOWN = 0;
+		WEBSITE = 1;
+		MENU = 2;
+		BUSINESS_HOUR = 3;
+		RESERVATION = 4;
+		CONTACT_NUMBER = 5;
+		RATING = 6;
+	}
+
+	SCR2BusinessInfoCard_BusinessInfoCardCategory cardCategory = 1;
+	string displayText = 2;
+	string associatedURL = 3;
+}

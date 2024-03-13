@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.preview;
+
+message SCCTPFilterCarouselOrderingItem {
+	string filterGroup = 1;
+	int32 size = 2;
+}

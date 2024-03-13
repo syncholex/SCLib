@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/request/schema/SCAdsAdTrackItem.proto";
+
+message SCAdsInventoryTrackRequest {
+	bytes requestId = 1;
+
+	enum SCAdsInventoryType {
+		UNKNOWN_INVENTORY_TYPE = 0;
+		DISCOVER = 1;
+		AUTO_ADVANCE = 2;
+		NONPARTNERED_STORY = 3;
+		PARTNERED_STORY = 4;
+		CAMPUS_STORY = 5;
+		LENS_CAROUSEL = 6;
+		FILTER_CAROUSEL = 7;
+		OFFICIAL_STORY = 8;
+		PROMOTED_STORY = 9;
+		SENSITIVE_NONPARTNERED_STORY = 10;
+		SENSITIVE_PARTNERED_STORY = 11;
+		SENSITIVE_CAMPUS_STORY = 12;
+		E2E_TEST = 13;
+		CHANNEL_DISALLOWING_ADS = 14;
+		GENERATED_STORY = 15;
+		SENSITIVE_GENERATED_STORY = 16;
+		CONTENT_INTERSTITIAL = 17;
+		GAMES = 18;
+		AD_NETWORK_RTB = 19;
+		AD_NETWORK_SDK = 20;
+		LENS_EXPLORER = 21;
+		EMBEDDED_WEBVIEW = 22;
+		INTERSTITIAL_SPOTLIGHT = 23;
+		INSTREAM_SPOTLIGHT = 24;
+		AD_NETWORK_HB = 25;
+		POST_CAPTURE_CAROUSEL = 26;
+	}
+
+	SCAdsInventoryType inventoryType = 2;
+	google.protobuf.GPBStringValue inventoryId = 3;
+	repeated snapchat.ads.request.schema.SCAdsAdTrackItem itemsArray = 4;
+	bytes adRequestClientId = 5;
+
+	enum SCAdsInventorySubType {
+		UNKNOWN_INVENTORY_SUB_TYPE = 0;
+		NO_SUBTYPE = 1;
+		SHOWS = 2;
+		ORIGINALS = 3;
+		CURATED_OUR_STORIES = 4;
+		CURATED_OUR_STORIES_PARTNERED = 5;
+		PUBLISHER_CURATED = 6;
+		PUBLISHER = 7;
+		POPULAR = 8;
+		OFFICIAL = 9;
+		PUBLIC = 10;
+		LIVE_STREAM = 11;
+		PAY_TO_PROMOTE = 12;
+	}
+
+	SCAdsInventorySubType inventorySubType = 6;
+}

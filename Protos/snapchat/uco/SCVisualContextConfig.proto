@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.uco;
+
+message SCVisualContextConfig {
+	bool visualContextDetectionEnabled = 1;
+	bool contextConfidenceThresholdEnabled = 2;
+}

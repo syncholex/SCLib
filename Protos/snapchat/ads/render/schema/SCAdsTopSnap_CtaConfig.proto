@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "google/type/GTPColor.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsTopSnap_CtaConfig {
+	google.type.GTPColor foregroundColor = 1;
+	google.type.GTPColor backgroundColor = 2;
+	google.protobuf.GPBInt64Value cardCtaAnimationDelayMs = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "snapchat/content/v2/SCBoltv2ClaimPolicy.proto";
+import "snapchat/content/v2/SCBoltv2MediaOptimizationProperties.proto";
+
+message SCBoltv2Claim {
+	uint32 useCase = 1;
+	string externalId = 2;
+	snapchat.content.v2.SCBoltv2ClaimPolicy claimPolicy = 3;
+	snapchat.content.v2.SCBoltv2MediaOptimizationProperties mediaOptimizationProperties = 4;
+	bool allowReclaim = 5;
+}

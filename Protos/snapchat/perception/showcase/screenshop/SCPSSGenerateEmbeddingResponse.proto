@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+message SCPSSGenerateEmbeddingResponse {
+	repeated float imageEmbeddingArray = 1 [packed=true];
+	string embeddingModelVersion = 2;
+	string detectorVersion = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message RecreateTivRequest {
+	snapchat.core.SCCOREUUID broadcastId = 1;
+}

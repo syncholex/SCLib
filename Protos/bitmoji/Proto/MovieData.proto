@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message MovieData {
+	repeated string framesArray = 1;
+	int32 loopCount = 2;
+}

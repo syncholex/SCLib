@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbRedeemGiftRequest {
+	string giftId = 1;
+}

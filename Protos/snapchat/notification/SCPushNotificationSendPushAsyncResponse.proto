@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCPushNotificationSendPushAsyncResponse {
+	snapchat.notification.SCPushNotificationUUID pushNotificationId = 1;
+
+	enum SCPushNotificationSendPushAsyncResponse_StatusCode {
+		UNKNOWN = 0;
+		RECEIVED = 1;
+		INVALID_REQUEST = 2;
+		THROTTLED = 3;
+		SERVICE_UNAVAILABLE = 4;
+		INTERNAL_ERROR = 5;
+	}
+
+	SCPushNotificationSendPushAsyncResponse_StatusCode status = 2;
+	bool isRetryable = 3;
+}

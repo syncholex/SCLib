@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "activity_center/countdowns/CountdownMetadata.proto";
+
+message SCCountdownsCreateCountdownRequest {
+	google.protobuf.GPBTimestamp createTimestamp = 1;
+	activity_center.countdowns.CountdownMetadata countdownMetadata = 2;
+	repeated string participantsArray = 5;
+}

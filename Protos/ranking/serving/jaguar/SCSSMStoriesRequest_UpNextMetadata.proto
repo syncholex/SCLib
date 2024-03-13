@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSSMStoriesRequest_UpNextMetadata {
+	int32 pageSize = 1;
+	ranking.core.SCCORECompositeStoryId currentStoryId = 2;
+
+	enum SCSSMStoriesRequest_UpNextMetadata_TriggeringAction_Enum {
+		UNKNOWN = 0;
+		STORY_TAP = 1;
+		FS_AUTO_ADVANCE = 2;
+	}
+
+	SCSSMStoriesRequest_UpNextMetadata_TriggeringAction_Enum triggeringAction = 3;
+	repeated ranking.core.SCCORECompositeStoryId defaultPlaylistIdsArray = 4;
+
+	enum SCSSMStoriesRequest_UpNextMetadata_TriggeringSource_Enum {
+		UNKNOWN = 0;
+		FOURTH_TAB_FRIEND_STORIES = 1;
+		SECOND_TAB_FRIEND_STORIES = 2;
+		SUBSCRIPTION_SECTION = 3;
+		FOR_YOU_SECTION = 4;
+		FOURTH_TAB_BADGING = 5;
+		MIXED_FEED = 6;
+		PUSH_NOTIFICATIONS_FRIEND_STORIES = 7;
+		PUSH_NOTIFICATIONS_CREATOR_STORIES = 8;
+	}
+
+	SCSSMStoriesRequest_UpNextMetadata_TriggeringSource_Enum triggeringSource = 5;
+}

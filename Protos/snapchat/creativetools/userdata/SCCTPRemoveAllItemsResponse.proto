@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+message SCCTPRemoveAllItemsResponse {
+	bool success = 1;
+}

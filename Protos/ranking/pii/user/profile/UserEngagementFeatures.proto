@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/StoryEngagementFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message UserEngagementFeatures {
+	string userId = 1;
+	repeated ranking.pii.user.profile.StoryEngagementFeatures friendEngagementFeaturesArray = 2;
+	repeated ranking.pii.user.profile.StoryEngagementFeatures groupEngagementFeaturesArray = 3;
+	ranking.ml.centralkitchen.SCSCKEmbedding viewerEmbeddings = 4;
+}

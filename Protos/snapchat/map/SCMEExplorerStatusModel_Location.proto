@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocality.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+
+message SCMEExplorerStatusModel_Location {
+	double lat = 1;
+	double lng = 2;
+	int64 timestampMs = 3;
+	repeated snapchat.map.SCMTLocality localityArray = 4;
+	snapchat.map.common.SCMCLocalizedStringSet place = 5;
+	snapchat.map.common.SCMCLocalizedStringSet event = 6;
+}

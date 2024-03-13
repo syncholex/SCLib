@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTWorldEffectSet.proto";
+import "snapchat/map/SCMTPrefetchSpecification.proto";
+
+message SCMTMapStyleResponse {
+	string accessToken = 1;
+	string styleJson = 2;
+	bool blockUse = 10;
+	string blockUseText = 11;
+	string styleJsonEtag = 12;
+	bool styleJsonNotModified = 13;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 14;
+	string staticMapAccessToken = 15;
+	string mapboxUsername = 16;
+	string mapboxStyleId = 17;
+
+	enum SCMTMapColorScheme {
+		LIGHT = 0;
+		DARK = 1;
+	}
+
+	SCMTMapColorScheme colorScheme = 18;
+	repeated snapchat.map.SCMTPrefetchSpecification prefetchResourcesArray = 19;
+}

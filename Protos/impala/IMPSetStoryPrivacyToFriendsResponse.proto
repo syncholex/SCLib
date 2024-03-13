@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSetStoryPrivacyToFriendsResponse {
+	bool wasUpdated = 1;
+	string previousSetting = 2;
+}

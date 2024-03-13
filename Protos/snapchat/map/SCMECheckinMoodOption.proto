@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinStickerOption.proto";
+
+message SCMECheckinMoodOption {
+	string id_p = 1;
+	string name = 2;
+	int32 rank = 3;
+	repeated snapchat.map.SCMECheckinStickerOption checkinStickersArray = 4;
+}

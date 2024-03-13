@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/geo/SPCGRect.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Photo.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Priceyness.proto";
+import "snapchat/local/verrazano/VRZOpeningHours.proto";
+
+message VRZPlaceComponentPlaceInfo {
+	string placeId = 1;
+	string placeName = 2;
+	string iconName = 3;
+	string iconURL = 4;
+	snapchat.geo.SPCGPoint location = 5;
+	snapchat.geo.SPCGRect renderingBbox = 6;
+	string categoryDisplayName = 7;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Photo photosArray = 8;
+	snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Priceyness priceyness = 9;
+	snapchat.local.verrazano.VRZOpeningHours openingHours = 10;
+}

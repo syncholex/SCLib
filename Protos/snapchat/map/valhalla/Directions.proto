@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/DirectionsRoute.proto";
+
+message Directions {
+	repeated snapchat.map.valhalla.DirectionsRoute routesArray = 1;
+}

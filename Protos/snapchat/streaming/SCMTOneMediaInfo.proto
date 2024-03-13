@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+message SCMTOneMediaInfo {
+	int64 bitrateKpbs = 1;
+	string encryptionKey = 2;
+	string encryptionIv = 3;
+	string prefixURL = 4;
+	string overlayURL = 5;
+	string compositeURL = 6;
+	string mediaURL = 7;
+	int64 mediaSize = 8;
+	int64 mediaMetadataSize = 9;
+	repeated int64 mediaSegmentSizeArray = 10 [packed=true];
+	string mediaM3U8URL = 11;
+	string previewURL = 12;
+}

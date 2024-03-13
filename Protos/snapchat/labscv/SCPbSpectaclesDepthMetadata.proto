@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.labscv;
+
+import "snapchat/labscv/SCPbSpectaclesAttitudeFrame.proto";
+import "snapchat/labscv/SCPbSpectaclesAlignmentFrame.proto";
+import "snapchat/labscv/SCPbSpectaclesImuAlignmentCompFrame.proto";
+import "snapchat/labscv/SCPbSpectaclesCameraData.proto";
+import "snapchat/labscv/SCPbSpectaclesFactoryData.proto";
+import "snapchat/labscv/SCPbSpectaclesDepthQualityFrame.proto";
+import "snapchat/labscv/SCPbSpectaclesEulerAnglesData.proto";
+
+message SCPbSpectaclesDepthMetadata {
+	string depthVersion = 1;
+	repeated double timestampArray = 2 [packed=true];
+	repeated snapchat.labscv.SCPbSpectaclesAttitudeFrame attitudeDataArray = 3;
+	repeated snapchat.labscv.SCPbSpectaclesAlignmentFrame alignmentDataArray = 4;
+	repeated snapchat.labscv.SCPbSpectaclesImuAlignmentCompFrame imuAlignmentCompDataArray = 5;
+	snapchat.labscv.SCPbSpectaclesCameraData depthCameraData = 6;
+	snapchat.labscv.SCPbSpectaclesCameraData rgbCameraData = 7;
+	snapchat.labscv.SCPbSpectaclesFactoryData factoryData = 8;
+	repeated snapchat.labscv.SCPbSpectaclesDepthQualityFrame depthQualityDataArray = 9;
+	repeated snapchat.labscv.SCPbSpectaclesEulerAnglesData eulerAnglesDataArray = 10;
+	float initialCameraHeightCm = 11;
+	float videoFps = 20;
+}

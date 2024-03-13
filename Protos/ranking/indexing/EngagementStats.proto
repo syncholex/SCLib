@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/EngagementStats_ProductionStats.proto";
+import "ranking/indexing/EngagementStats_ConsumptionStats.proto";
+
+message EngagementStats {
+	ranking.indexing.EngagementStats_ProductionStats productionStats = 1;
+	ranking.indexing.EngagementStats_ConsumptionStats consumptionStats = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snap.rtus.proto;
+
+import "com/snap/rtus/proto/RTUSBlizzardEvent.proto";
+
+message RTUSSignal {
+	repeated com.snap.rtus.proto.RTUSBlizzardEvent blizzardEventsArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbLensRejectionErrors {
+	string heading = 1;
+	repeated string messagesArray = 2;
+	repeated string violatingComponentsArray = 3;
+	bool hasSubmissionErrors = 4;
+}

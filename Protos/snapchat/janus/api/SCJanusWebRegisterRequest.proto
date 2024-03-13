@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusWebRegistrationHeader.proto";
+import "google/type/GTPDate.proto";
+import "snapchat/janus/api/SCJanusWebRegistrationHeaderBrowser.proto";
+
+message SCJanusWebRegisterRequest {
+	snapchat.janus.api.SCJanusWebRegistrationHeader webRegistrationHeader = 1;
+	string email = 2;
+	string username = 3;
+	string password = 4;
+	string firstName = 5;
+	string lastName = 6;
+	google.type.GTPDate birthdate = 7;
+	string timeZone = 8;
+	bool ignoreWelcomeEmail = 9;
+
+	enum SCJanusRegistrationSource {
+		REGISTRATION_SOURCE_UNSET = 0;
+		REGISTRATION_SOURCE_BITMOJI_WEB = 1;
+		REGISTRATION_SOURCE_ACCOUNTS_WEB = 2;
+		REGISTRATION_SOURCE_SNAPKIT_WEB = 3;
+	}
+
+	SCJanusRegistrationSource registrationSource = 10;
+	snapchat.janus.api.SCJanusWebRegistrationHeaderBrowser webRegistrationHeaderBrowser = 11;
+	bytes attestationPayload = 12;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/local/lists/VRZPlaceList.proto";
+
+message VRZGetUserFavoritesListResponse {
+	snapchat.local.lists.VRZPlaceList placeList = 1;
+}

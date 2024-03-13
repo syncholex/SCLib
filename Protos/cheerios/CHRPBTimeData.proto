@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBTimeData {
+	uint64 captureUtc = 1;
+	uint64 sinceSystemBootSec = 2;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsDatePoint.proto";
+import "impala/insights/IMPInsightsSubscribeSourceStats.proto";
+
+message IMPInsightsProfileLevelInsightsForUser {
+	int64 uniqueViewers = 1;
+	int64 uniqueViewersPreviousPeriod = 2;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersForTimestampArray = 3;
+	int64 uniqueViewersSubscribers = 4;
+	int64 uniqueViewersSubscribersPreviousPeriod = 5;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersSubscribersForTimestampArray = 6;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersNonSubscribersForTimestampArray = 7;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersMenForTimestampArray = 8;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersWomenForTimestampArray = 9;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersUnknownGenderForTimestampArray = 10;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewers1317ForTimestampArray = 11;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewers1820ForTimestampArray = 12;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewers2124ForTimestampArray = 13;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewers2534ForTimestampArray = 14;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewers35PlusForTimestampArray = 15;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersUnknownAgeForTimestampArray = 16;
+	double totalTimeViewedMs = 17;
+	double totalTimeViewedPreviousPeriodMs = 18;
+	repeated impala.insights.IMPInsightsDatePoint totalTimeViewedMsForTimestampArray = 19;
+	int64 totalSubscribers = 20;
+	int64 totalSubscribersPreviousPeriod = 21;
+	repeated impala.insights.IMPInsightsDatePoint totalSubscribersForTimestampArray = 22;
+	repeated impala.insights.IMPInsightsSubscribeSourceStats subscribeSourceDistributionArray = 23;
+}

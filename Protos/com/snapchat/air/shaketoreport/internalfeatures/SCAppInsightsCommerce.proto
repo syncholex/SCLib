@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsCommerce {
+
+	enum SCAppInsightsCommerce_Subfeature {
+		UNSET = 0;
+		MEMORIES_SHOPPING_SCREENSHOP = 1;
+		PCS_STORE_PDP = 2;
+		SHOPIFY_STORE_PDP = 3;
+		SHOWCASE_ADS = 4;
+		SNAP_STORE_BITMOJI_MERCH = 5;
+		NATIVE_CHECKOUT = 6;
+		SHOPIFY_ATTACHMENT_TOOL = 7;
+		PCS_ATTACHMENT_TOOL = 8;
+		AR_SHOPPING_SUPPORT = 9;
+		MY_SHOPPING_BAG = 10;
+		SCAN_SHOPPING = 11;
+	}
+
+	SCAppInsightsCommerce_Subfeature subfeature = 1;
+}

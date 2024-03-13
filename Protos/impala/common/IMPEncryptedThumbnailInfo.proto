@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.common;
+
+message IMPEncryptedThumbnailInfo {
+	string encryptedThumbnailURL = 1;
+	string thumbnailKey = 2;
+	string thumbnailIv = 3;
+}

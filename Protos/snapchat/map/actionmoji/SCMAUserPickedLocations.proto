@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "snapchat/map/actionmoji/SCMAHidableLocation.proto";
+
+message SCMAUserPickedLocations {
+	snapchat.map.actionmoji.SCMAHidableLocation home = 1;
+	snapchat.map.actionmoji.SCMAHidableLocation work = 2;
+}

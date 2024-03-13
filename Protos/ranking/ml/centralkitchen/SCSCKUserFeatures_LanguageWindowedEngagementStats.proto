@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSCKUserFeatures_LanguageWindowedEngagementStats {
+	string language = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+}

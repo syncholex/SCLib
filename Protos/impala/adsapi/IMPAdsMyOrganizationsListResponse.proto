@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsMyOrganizationSubResponse.proto";
+import "impala/adsapi/IMPAdsPagination.proto";
+
+message IMPAdsMyOrganizationsListResponse {
+	repeated impala.adsapi.IMPAdsMyOrganizationSubResponse organizationsArray = 1;
+	impala.adsapi.IMPAdsPagination paging = 2;
+}

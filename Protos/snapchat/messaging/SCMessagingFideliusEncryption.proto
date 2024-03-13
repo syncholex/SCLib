@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingFideliusRecipientInfo.proto";
+
+message SCMessagingFideliusEncryption {
+	bytes snapKey = 1;
+	bytes snapIv = 2;
+	bool retried = 3;
+	uint32 version = 4;
+	bytes senderOutBeta = 5;
+	repeated snapchat.messaging.SCMessagingFideliusRecipientInfo fideliusRecipientInfoArray = 6;
+}

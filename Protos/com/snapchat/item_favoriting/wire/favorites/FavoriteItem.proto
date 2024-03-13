@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message FavoriteItem {
+	uint64 snapItemId = 1;
+	google.protobuf.GPBTimestamp timestamp = 2;
+
+	enum FavoriteItemSource {
+		SOURCE_UNSET = 0;
+		FAVORITES = 1;
+		MEMORIES = 2;
+		SHOWCASE = 3;
+		STORES = 4;
+		SCAN = 5;
+		SCREENSHOP = 6;
+	}
+
+	FavoriteItemSource favoriteItemSource = 3;
+
+	enum FavoriteItemType {
+		TYPE_UNSET = 0;
+		PRODUCT = 1;
+		HOTEL = 2;
+	}
+
+	FavoriteItemType favoriteItemType = 4;
+}

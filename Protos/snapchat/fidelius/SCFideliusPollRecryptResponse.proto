@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusNotifyRecryptPackage.proto";
+
+message SCFideliusPollRecryptResponse {
+	repeated snapchat.fidelius.SCFideliusNotifyRecryptPackage notifyRecryptPackagesArray = 1;
+}

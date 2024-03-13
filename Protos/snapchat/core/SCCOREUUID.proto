@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+message SCCOREUUID {
+	fixed64 highBits = 1;
+	fixed64 lowBits = 2;
+}

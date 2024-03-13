@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/SCPBContextFilterSkyItem.proto";
+import "com/snapchat/proto/SCPBPurikuraPatternItem.proto";
+
+message SCPBUnlockablesArSegmentationFilter {
+	com.snapchat.proto.SCPBContextFilterSkyItem sky = 1;
+	com.snapchat.proto.SCPBPurikuraPatternItem portrait = 2;
+	bool shouldStillDisplayWithoutSegmentationMatch = 3;
+}

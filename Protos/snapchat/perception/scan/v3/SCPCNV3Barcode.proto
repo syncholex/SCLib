@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3Barcode {
+
+	enum SCPCNV3Barcode_Format {
+		FORMAT_UNSET = 0;
+		FORMAT_EAN_8 = 1;
+		FORMAT_EAN_13 = 2;
+		FORMAT_UPC_A = 3;
+		FORMAT_UPC_C = 4;
+		FORMAT_CODE_128 = 5;
+		FORMAT_CODE_39 = 6;
+		FORMAT_CODE_93 = 7;
+	}
+
+	SCPCNV3Barcode_Format format = 1;
+	string value = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+import "games/leaderboards/SCGamesLeaderboardsClientLeaderboardRecord.proto";
+
+message SCGamesLeaderboardsListFriendLeaderboardEntriesResponse {
+	repeated games.leaderboards.SCGamesLeaderboardsClientLeaderboardRecord leaderboardEntriesArray = 1;
+	int32 myFriendRank = 2;
+}

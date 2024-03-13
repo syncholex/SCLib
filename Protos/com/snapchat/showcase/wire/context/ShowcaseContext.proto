@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/context/ScanContext.proto";
+import "com/snapchat/showcase/wire/context/ShowcaseAdContext.proto";
+import "com/snapchat/showcase/wire/context/LensContext.proto";
+import "com/snapchat/showcase/wire/context/ScreenshopContext.proto";
+import "com/snapchat/showcase/wire/context/LegacyItemDeeplinkContext.proto";
+import "com/snapchat/showcase/wire/context/ContextCardContext.proto";
+import "com/snapchat/showcase/wire/context/AttachmentToolContext.proto";
+import "com/snapchat/showcase/wire/context/StoreExperienceContext.proto";
+import "com/snapchat/showcase/wire/context/ShopkitContext.proto";
+import "com/snapchat/showcase/wire/context/FavoritesContext.proto";
+import "com/snapchat/showcase/wire/context/ItemVariantContext.proto";
+import "com/snapchat/showcase/wire/context/SharingContext.proto";
+import "com/snapchat/showcase/wire/context/AdsStoreExperienceContext.proto";
+import "com/snapchat/showcase/wire/context/RecentlyViewedContext.proto";
+import "com/snapchat/showcase/wire/context/TopicExperienceContext.proto";
+import "com/snapchat/showcase/wire/context/AresLensContext.proto";
+
+message ShowcaseContext {
+
+	oneof contextType {
+		com.snapchat.showcase.wire.context.ScanContext scanContext = 1;
+		com.snapchat.showcase.wire.context.ShowcaseAdContext showcaseAdContext = 2;
+		com.snapchat.showcase.wire.context.LensContext lensContext = 3;
+		com.snapchat.showcase.wire.context.ScreenshopContext screenshopContext = 4;
+		com.snapchat.showcase.wire.context.LegacyItemDeeplinkContext legacyItemDeeplinkContext = 5;
+		com.snapchat.showcase.wire.context.ContextCardContext contextCardContext = 6;
+		com.snapchat.showcase.wire.context.AttachmentToolContext attachmentToolContext = 7;
+		com.snapchat.showcase.wire.context.StoreExperienceContext storeExperienceContext = 8;
+		com.snapchat.showcase.wire.context.ShopkitContext shopkitContext = 9;
+		com.snapchat.showcase.wire.context.FavoritesContext favoritesContext = 10;
+		com.snapchat.showcase.wire.context.ItemVariantContext itemVariantContext = 11;
+		com.snapchat.showcase.wire.context.SharingContext sharingContext = 12;
+		com.snapchat.showcase.wire.context.AdsStoreExperienceContext adsStoreExperienceContext = 13;
+		com.snapchat.showcase.wire.context.RecentlyViewedContext recentlyViewedContext = 14;
+		com.snapchat.showcase.wire.context.TopicExperienceContext topicExperienceContext = 15;
+		com.snapchat.showcase.wire.context.AresLensContext aresLensContext = 16;
+	}
+
+}

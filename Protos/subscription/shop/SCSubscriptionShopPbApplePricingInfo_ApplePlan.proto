@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbConsumableMetadata.proto";
+import "subscription/shop/SCSubscriptionShopPbFamilyPlanMetadata.proto";
+
+message SCSubscriptionShopPbApplePricingInfo_ApplePlan {
+	string refId = 1;
+	string productId = 2;
+	string promotionalOfferId = 3;
+	subscription.shop.SCSubscriptionShopPbConsumableMetadata consumableMetadata = 4;
+	subscription.shop.SCSubscriptionShopPbFamilyPlanMetadata familyPlanMetadata = 5;
+}

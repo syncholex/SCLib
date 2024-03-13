@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.snapcodes.payloads;
+
+message SCSnapcodePayloadScanToAuth {
+	string clientId = 1;
+	string state = 2;
+	string codeChallenge = 3;
+	repeated string scopesArray = 4;
+	string redirectURL = 5;
+}

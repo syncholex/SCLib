@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPNotification {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	int64 notifiedTimestampInMsecs = 2;
+}

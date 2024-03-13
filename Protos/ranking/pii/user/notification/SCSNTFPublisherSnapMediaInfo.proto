@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+message SCSNTFPublisherSnapMediaInfo {
+	string publisherSnapMediaURL = 1;
+	string publisherSnapHash = 2;
+	string publisherSnapId = 3;
+}

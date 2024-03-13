@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRComparableExpression {
+
+	enum SCSTRComparisonOperator {
+		COMPARISON_OPERATOR_UNSET = 0;
+		EQUAL = 1;
+		NOT_EQUAL = 2;
+		GREATER_THAN = 3;
+		GREATER_THAN_OR_EQUAL = 4;
+		LESS_THAN = 5;
+		LESS_THAN_OR_EQUAL = 6;
+	}
+
+	SCSTRComparisonOperator operator_p = 1;
+	snapchat.sendto.ranking.SCSTRAST lhs = 2;
+	snapchat.sendto.ranking.SCSTRAST rhs = 3;
+}

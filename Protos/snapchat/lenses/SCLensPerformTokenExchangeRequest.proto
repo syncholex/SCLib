@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensPerformTokenExchangeRequest {
+	string apiSpecId = 1;
+	string authorizationCode = 2;
+	string codeVerifier = 3;
+}

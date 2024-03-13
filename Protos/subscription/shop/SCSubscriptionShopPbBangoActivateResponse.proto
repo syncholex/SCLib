@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbBangoActivateResponse {
+
+	enum SCSubscriptionShopPbBangoActivateResponse_Error {
+		ERROR_NO_ERROR = 0;
+		ERROR_ACTIVATION_LINK_USED = 1;
+		ERROR_INVALID_ACTIVATION_LINK = 2;
+		ERROR_EXISTING_SUB = 3;
+	}
+
+	SCSubscriptionShopPbBangoActivateResponse_Error error = 1;
+}

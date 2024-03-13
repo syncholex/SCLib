@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportGetReportsRequest {
+	string referenceId = 1;
+
+	enum SCReportReported_Type {
+		UNSET = 0;
+		USER = 1;
+		PROFILE_PICTURE = 2;
+		LENS = 3;
+		SNAP = 4;
+		SPOTLIGHT_SNAP = 5;
+		CUSTOM_STORY_SNAP = 6;
+		MY_STORY_SNAP = 7;
+		PUBLIC_USER_STORY_SNAP = 8;
+		PUBLISHER_STORY = 9;
+		MAP_STORY_SNAP = 10;
+		HIGHLIGHT_SNAP = 11;
+		TOPIC_STORY_SNAP = 12;
+		PUBLISHER_STORY_TILE = 13;
+		OFFICIAL_USER_STORY_TILE = 14;
+		NON_PARTNER_STORY_TILE = 15;
+		HIGHLIGHT_TILE = 16;
+		CHAT_MEDIA = 17;
+		CHAT_MESSAGE = 24;
+		MEDIA_SHARE = 19;
+		SPOTLIGHT_REPLY = 20;
+		STORE_ITEM = 21;
+		SAVED_STORY_SNAP = 22;
+		SAVED_STORY_TILE = 23;
+		CHAT_WALLPAPER = 25;
+		CAMEOS = 26;
+		SEXTORTION = 27;
+		PROFILE_BACKGROUND = 28;
+		GENERATIVE_CONTENT_FEEDBACK = 29;
+		ILLEGAL = 30;
+		STORY_COMMENT = 31;
+		SNAPGRAPH_ESCALATION_STORY_SNAP = 32;
+		BITMOJI_OUTFIT = 33;
+		TEST_ONLY = 99;
+	}
+
+	SCReportReported_Type type = 2;
+	string reporterId = 3;
+	string reportedUserId = 4;
+	int64 resultLimit = 5;
+	string cursor = 6;
+	int64 fromTimestampMs = 7;
+	bool getRelatedReviews = 8;
+	bool includeSecondaryReportMetadata = 9;
+}

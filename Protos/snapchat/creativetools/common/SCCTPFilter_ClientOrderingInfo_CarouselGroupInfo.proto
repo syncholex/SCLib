@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ClientOrderingInfo_CarouselGroupInfo {
+	string groupName = 1;
+	float carouselScore = 2;
+}

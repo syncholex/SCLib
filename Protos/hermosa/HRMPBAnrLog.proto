@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBAnrLog {
+	string processName = 1;
+	string backtrace = 2;
+	string loadavg = 3;
+}

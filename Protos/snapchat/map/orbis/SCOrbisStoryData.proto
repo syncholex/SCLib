@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/orbis/SCOrbisSnapInfo.proto";
+
+message SCOrbisStoryData {
+	snapchat.core.SCCOREUUID verrazanoId = 1;
+	int64 createdAtMs = 2;
+	int64 updatedAtMs = 3;
+	repeated snapchat.map.orbis.SCOrbisSnapInfo snapsArray = 4;
+
+	enum SCOrbisStoryData_StoryType {
+		UNKNOWN = 0;
+		LOCALITY = 1;
+		VENUE = 2;
+	}
+
+	SCOrbisStoryData_StoryType storyType = 5;
+}

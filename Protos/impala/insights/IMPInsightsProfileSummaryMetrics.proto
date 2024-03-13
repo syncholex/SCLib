@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsProfileSummaryMetrics {
+	int64 subscribersSinceCreation = 1;
+	int64 subscribersSinceLastWeek = 2;
+	int64 subscribersSinceLastMonth = 3;
+	int64 profileViewsSinceLastWeek = 50;
+	int64 profileViewsSinceLastMonth = 51;
+	int64 profileViewsSincePreviousWeek = 52;
+	int64 profileViewsSincePreviousMonth = 53;
+}

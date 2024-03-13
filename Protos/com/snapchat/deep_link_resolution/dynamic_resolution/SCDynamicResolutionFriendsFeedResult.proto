@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.deep_link_resolution.dynamic_resolution;
+
+message SCDynamicResolutionFriendsFeedResult {
+	string username = 1;
+	string linkId = 2;
+}

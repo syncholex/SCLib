@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_Media.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ClientTargetingInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_FriendFilterInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_FrameFilterInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_BitmojiFilterInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_SponsoredFilterInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_Audio.proto";
+import "snapchat/creativetools/common/SCCTPFilter_Attachment.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ClientOrderingInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ClientRenderingInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ArSegmentationInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_Tooltip.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ToastMessage.proto";
+import "snapchat/creativetools/common/SCCTPFilter_SponsoredSlug.proto";
+import "snapchat/creativetools/common/SCCTPFilter_SponsoredTrackInfo.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ClientGeneratedFilter.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPFilter {
+	uint64 filterId = 1;
+	snapchat.creativetools.common.SCCTPFilter_Media media = 2;
+	snapchat.creativetools.common.SCCTPFilter_ClientTargetingInfo clientTargetingInfo = 3;
+	snapchat.creativetools.common.SCCTPFilter_FriendFilterInfo friendFilterInfo = 4;
+	snapchat.creativetools.common.SCCTPFilter_FrameFilterInfo frameFilterInfo = 5;
+	snapchat.creativetools.common.SCCTPFilter_BitmojiFilterInfo bitmojiFilterInfo = 6;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo dynamicFilterInfo = 7;
+	snapchat.creativetools.common.SCCTPFilter_SponsoredFilterInfo sponsoredFilterInfo = 8;
+	snapchat.creativetools.common.SCCTPFilter_Audio audio = 9;
+	snapchat.creativetools.common.SCCTPFilter_Attachment attachment = 10;
+	snapchat.creativetools.common.SCCTPFilter_ClientOrderingInfo clientOrderingInfo = 11;
+	snapchat.creativetools.common.SCCTPFilter_ClientRenderingInfo clientRenderingInfo = 12;
+	int64 clientCacheTtlMinutes = 13;
+
+	enum SCCTPFilter_AutoStackFilterType {
+		AUTO_STACK_UNSET = 0;
+		UNFILTERED = 1;
+		INSTASNAP = 2;
+		MISS_ETIKATE = 3;
+		GREYSCALE = 4;
+		SMOOTHING = 5;
+		SKY_DAYLIGHT = 6;
+		SKY_SUNSET = 7;
+		SKY_NIGHT = 8;
+	}
+
+	SCCTPFilter_AutoStackFilterType autoStackFilterType = 14;
+	snapchat.creativetools.common.SCCTPFilter_ArSegmentationInfo arSegmentationInfo = 15;
+	snapchat.creativetools.common.SCCTPFilter_Tooltip tooltip = 16;
+	snapchat.creativetools.common.SCCTPFilter_ToastMessage toastMessage = 17;
+	bool isSponsored = 18;
+	snapchat.creativetools.common.SCCTPFilter_SponsoredSlug sponsoredSlug = 19;
+	snapchat.creativetools.common.SCCTPFilter_SponsoredTrackInfo sponsoredTrackInfo = 20;
+	bytes encGeoData = 21;
+	snapchat.creativetools.common.SCCTPFilter_ClientGeneratedFilter clientGenFilter = 22;
+	snapchat.core.SCCOREUUID vzPlaceId = 23;
+}

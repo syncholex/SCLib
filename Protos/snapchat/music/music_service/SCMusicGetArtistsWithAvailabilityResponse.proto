@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+
+message SCMusicGetArtistsWithAvailabilityResponse {
+	repeated snapchat.creativetools.common.SCCTPMusicArtist artistsArray = 1;
+}

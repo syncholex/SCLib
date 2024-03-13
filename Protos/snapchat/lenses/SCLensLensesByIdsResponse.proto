@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+
+message SCLensLensesByIdsResponse {
+	repeated bytes geofilterResponsesArray = 1;
+	repeated lens_platform.client_server.lens.SCLPLensSnapchat lensesArray = 2;
+
+	enum SCDHFilterName {
+		FILTER_UNSET = 0;
+		LENS_INVALID_SHOPPING_LENSES = 1;
+		LENS_VISIBILITY = 2;
+		CLIENT_DEVICE_COMPATIBILITY = 3;
+		CLIENT_APP_VERSION_COMPATIBILITY = 4;
+		USER_AGE_COMPATIBILITY = 5;
+		REGULATIONS_COMPLIANCE = 6;
+		COUNTRY_COMPATIBILITY = 7;
+		LOCALE_COMPATIBILITY = 8;
+		USER_BRAND_FRIENDLINESS = 9;
+		LENS_SCHEDULE_COMPATIBILITY = 10;
+		RESOURCES_CONSISTENCY = 11;
+		GRAPHIC_LIB_COMPATIBILITY = 12;
+		BITMOJI_3D_ELIGIBLITY = 13;
+		LENS_DESTINATION_ELIGIBILITY = 14;
+		CAMERA_KIT_CLIENT_COMPATIBILITY = 15;
+		UCO_ELIGIBILITY = 16;
+		CLIENT_OS_COMPATIBILITY = 17;
+		LENS_UNLOCK_AVAILABILITY = 18;
+		LENS_PRESENCE = 19;
+	}
+
+	SCDHFilterName exclusionReason = 3;
+}

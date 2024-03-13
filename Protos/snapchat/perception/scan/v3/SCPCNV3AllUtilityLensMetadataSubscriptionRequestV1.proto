@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3AllUtilityLensMetadataSubscriptionRequestV1 {
+}

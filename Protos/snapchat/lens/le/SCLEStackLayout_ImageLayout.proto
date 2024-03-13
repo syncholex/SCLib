@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLESpaceMultipliers.proto";
+import "snapchat/lens/le/SCLEShapedBackground.proto";
+
+message SCLEStackLayout_ImageLayout {
+	float sizeMultiplier = 1;
+	snapchat.lens.le.SCLESpaceMultipliers paddingMultipliers = 2;
+	snapchat.lens.le.SCLEShapedBackground shapedBackground = 3;
+
+	enum SCLEColor {
+		TRANSPARENT_UNSET = 0;
+		BRAND_PRIMARY = 1;
+		BACKGROUND_SUBSCREEN = 2;
+		BACKGROUND_DISABLED = 3;
+		ICON_SECONDARY = 4;
+	}
+
+	SCLEColor tintColor = 4;
+}

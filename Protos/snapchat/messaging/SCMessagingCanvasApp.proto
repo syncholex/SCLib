@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/messaging/SCMessagingCanvasAppShareCard.proto";
+import "snapchat/messaging/SCMessagingCanvasAppShareImageCard.proto";
+
+message SCMessagingCanvasApp {
+	snapchat.messaging.SCMessagingUUID appId = 1;
+	string deeplinkPayload = 2;
+	snapchat.messaging.SCMessagingCanvasAppShareCard defaultCard = 3;
+	snapchat.messaging.SCMessagingCanvasAppShareImageCard imageCard = 4;
+}

@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message PBUFFriendsScoreRequest {
+	repeated string userIdsArray = 1;
+}

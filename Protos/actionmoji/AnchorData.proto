@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message AnchorData {
+	int64 timestamp = 1;
+	float lat = 2;
+	float lng = 3;
+}

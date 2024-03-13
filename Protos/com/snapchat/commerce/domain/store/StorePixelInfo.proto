@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.store;
+
+message StorePixelInfo {
+	bytes pixelId = 1;
+}

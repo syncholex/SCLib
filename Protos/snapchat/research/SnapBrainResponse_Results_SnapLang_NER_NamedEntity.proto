@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapLang_NER_NamedEntity {
+	string name = 1;
+	string type = 2;
+	string cleanName = 3;
+	bool valid = 4;
+}

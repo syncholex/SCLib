@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportMyReportEventMetadata.proto";
+
+message SCReportMyReportMetadata {
+	string reportTitle = 1;
+	repeated snapchat.abuse.support.SCReportMyReportEventMetadata eventMetadataArray = 2;
+}

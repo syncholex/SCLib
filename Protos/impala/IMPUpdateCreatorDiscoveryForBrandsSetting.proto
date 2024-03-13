@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateConfiguredStatus.proto";
+
+message IMPUpdateCreatorDiscoveryForBrandsSetting {
+	impala.IMPUpdateConfiguredStatus configuredStatus = 1;
+}

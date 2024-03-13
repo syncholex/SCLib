@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+message StoryViewMetadata {
+	uint32 viewDurationMs = 1;
+}

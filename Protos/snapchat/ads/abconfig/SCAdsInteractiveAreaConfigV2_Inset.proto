@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsInteractiveAreaConfigV2_Inset {
+
+	oneof inset {
+		double px = 1;
+		double percentage = 2;
+	}
+
+}

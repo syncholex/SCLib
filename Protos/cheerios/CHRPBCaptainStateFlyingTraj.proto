@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBCaptainStateFlyingTraj {
+
+	enum CHRPBCaptainStateFlyingTraj_TrajectorySubstate {
+		CAPTAIN_STATE_FLYINGTRAJ_GOING_TO_TRAJ_START_POINT = 1;
+		CAPTAIN_STATE_FLYINGTRAJ_TRAJECTORY_FOLLOWING = 2;
+		CAPTAIN_STATE_FLYINGTRAJ_FLYING_BACK_NORMAL = 3;
+		CAPTAIN_STATE_FLYINGTRAJ_FLYING_BACK_EMERGENCY = 4;
+		CAPTAIN_STATE_FLYINGTRAJ_HOVERING = 5;
+	}
+
+	CHRPBCaptainStateFlyingTraj_TrajectorySubstate substate = 1;
+
+	enum CHRPBCaptainStateFlyingTraj_TrajectoryTask {
+		CAPTAIN_TRAJECTORY_TASK_FADEAWAY = 1;
+		CAPTAIN_TRAJECTORY_TASK_TRIPOD = 2;
+		CAPTAIN_TRAJECTORY_TASK_ORBIT = 3;
+		CAPTAIN_TRAJECTORY_TASK_FOLLOW = 4;
+	}
+
+	CHRPBCaptainStateFlyingTraj_TrajectoryTask task = 2;
+}

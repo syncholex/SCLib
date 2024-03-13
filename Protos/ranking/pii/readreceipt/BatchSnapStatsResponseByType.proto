@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/SingleSnapStatsResponse.proto";
+
+message BatchSnapStatsResponseByType {
+
+	enum StoryType_Enum {
+		UNKNOWN = 0;
+		USER = 1;
+		GROUP = 2;
+		SNAPPRO = 3;
+		APP = 4;
+		OUR = 5;
+		TEAM_SNAPCHAT = 6;
+		PUBLISHER_FRIEND = 7;
+		SAVED = 8;
+		CUSTOM = 9;
+	}
+
+	StoryType_Enum storyType = 1;
+	repeated ranking.pii.readreceipt.SingleSnapStatsResponse responsesArray = 2;
+}

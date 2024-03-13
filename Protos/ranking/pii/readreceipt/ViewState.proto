@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message ViewState {
+	int64 viewTimeMs = 1;
+	int64 screenshotTimeMs = 2;
+	ranking.core.SCSCOREUUID snapOwnerId = 3;
+
+	enum StoryType_Enum {
+		UNKNOWN = 0;
+		USER = 1;
+		GROUP = 2;
+		SNAPPRO = 3;
+		APP = 4;
+		OUR = 5;
+		TEAM_SNAPCHAT = 6;
+		PUBLISHER_FRIEND = 7;
+		SAVED = 8;
+		CUSTOM = 9;
+	}
+
+	StoryType_Enum storyType = 4;
+	int64 rewatchTimeMs = 5;
+}

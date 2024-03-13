@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusBootstrapData.proto";
+import "snapchat/janus/api/SCJanusAndroidSafetynetData.proto";
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusVerifyODLVResponse {
+
+	enum SCJanusVerifyODLVResponse_StatusCode {
+		UNSET = 0;
+		VERIFY_SUCCESS = 1;
+		ANDROID_SAFETYNET_REQUESTED = 2;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_THROTTLED = 11;
+		ERR_INVALID_TOKEN = 12;
+		ERR_CODE_MISMATCH = 13;
+		ERR_APP_VERSION_UPGRADE = 14;
+		ERR_BLOCKED = 15;
+	}
+
+	SCJanusVerifyODLVResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusBootstrapData bootstrapData = 2;
+		snapchat.janus.api.SCJanusAndroidSafetynetData androidSafetynetData = 3;
+		snapchat.janus.api.SCJanusErrorData errorData = 10;
+	}
+
+}

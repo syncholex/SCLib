@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBUbloxMessage {
+	uint32 classId = 1;
+	uint32 msgId = 2;
+	bytes payload = 3;
+}

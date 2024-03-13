@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusiness_BoltMedia.proto";
+
+message IMPShowMetadata {
+	string showId = 1;
+	string name = 2;
+	string description_p = 3;
+	string backgroundImageURL = 4;
+	string horizontalLogoURL = 5;
+
+	enum IMPShowType {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	IMPShowType showType = 6;
+	string overlayButtonText = 7;
+	int64 publisherId = 8;
+	string publisherName = 9;
+	string businessProfileId = 10;
+	string logoURL = 12;
+
+	enum IMPLogoDisplay {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	IMPLogoDisplay profileLogoDisplay = 13;
+	string deeplink = 14;
+	string websiteURL = 15;
+	int32 totalExtrasCount = 16;
+	string heroTeaserURL = 17;
+	bool isRollingNewsEnabled = 19;
+	impala.IMPBusiness_BoltMedia horizontalLogo = 20;
+	impala.IMPBusiness_BoltMedia heroIcon = 21;
+
+	enum IMPShowMetadata_Status {
+		ENABLED = 0;
+		DISABLED = 1;
+	}
+
+	IMPShowMetadata_Status status = 22;
+}

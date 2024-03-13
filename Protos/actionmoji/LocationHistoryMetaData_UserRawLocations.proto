@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/PreciseLocation.proto";
+import "actionmoji/PastTopLocation.proto";
+
+message LocationHistoryMetaData_UserRawLocations {
+	repeated actionmoji.PreciseLocation preciseLocationsArray = 1;
+	repeated actionmoji.PastTopLocation pastHomeLocationsArray = 2;
+	repeated actionmoji.PastTopLocation pastWorkLocationsArray = 3;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCTA.proto";
+import "snapchat/context2/api/SCCTXAction.proto";
+import "snapchat/context2/SnapContextPlaceholderCards.proto";
+import "snapchat/context2/iz/SCCTXPostSnapActions.proto";
+import "snapchat/context2/iz/SCCTXPostSnapFeedAction.proto";
+import "snapchat/context2/iz/SCCTXUserIdentity.proto";
+import "snapchat/context2/iz/SCCTXMiniContextCard.proto";
+
+message SCCTXCTAResponse {
+	snapchat.context2.iz.SCCTXCTA cta = 1;
+	snapchat.context2.api.SCCTXAction swipeUpAction = 2;
+	string contentsSummary = 3;
+	string error = 4;
+	snapchat.context2.SnapContextPlaceholderCards placeholderCards = 5;
+	snapchat.context2.iz.SCCTXPostSnapActions postSnapActions = 7;
+	snapchat.context2.iz.SCCTXPostSnapFeedAction postSnapFeedAction = 8;
+	string availableContextCards = 9;
+	repeated snapchat.context2.iz.SCCTXUserIdentity userInfoArray = 10;
+	string debugHtml = 11;
+	repeated snapchat.context2.iz.SCCTXMiniContextCard miniContextCardsArray = 12;
+}

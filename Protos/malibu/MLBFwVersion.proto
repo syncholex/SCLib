@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBFwVersion {
+	string gitCommit = 1;
+	string gitTag = 2;
+	string gitBranch = 3;
+}

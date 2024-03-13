@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+message SCGProxyToGtqParams {
+	bool proxyRequestToGtq = 1;
+	bool enableUnlocks = 2;
+	bool enableTargeted = 3;
+	bool enableGeo = 4;
+	bool enableSponsored = 5;
+	bool enableRanked = 6;
+	bool enableScheduled = 7;
+	bool overrideCofParams = 8;
+}

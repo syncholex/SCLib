@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPerFriendSharingMode {
+	string userId = 1;
+
+	enum SCMTLocationSharingMode {
+		GHOST = 0;
+		CITY = 1;
+		PRECISE = 2;
+	}
+
+	SCMTLocationSharingMode sharingMode = 2;
+}

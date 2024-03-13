@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+message SCSnapKitProtoOAuthClient {
+	string id_p = 1;
+
+	enum SCSnapKitProtoOAuthClient_Confidentiality {
+		UNKNOWN = 0;
+		PUBLIC = 1;
+		CONFIDENTIAL = 2;
+	}
+
+	SCSnapKitProtoOAuthClient_Confidentiality confidentiality = 2;
+	repeated string approvedScopesArray = 3;
+}

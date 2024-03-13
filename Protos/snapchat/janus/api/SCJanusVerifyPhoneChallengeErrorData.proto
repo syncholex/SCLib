@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusVerifyPhoneChallengeErrorData {
+
+	enum SCJanusVerifyPhoneChallengeErrorData_ErrorCode {
+		UNSET = 0;
+		MISSING_PARAM = 1;
+		INVALID_USER_ID = 2;
+		EXPIRED_OTP_CODE = 3;
+		LOCKED_OTP_CODE = 4;
+		INCORRECT_OTP_CODE = 5;
+	}
+
+	SCJanusVerifyPhoneChallengeErrorData_ErrorCode errorCode = 1;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/StatusScheduled.proto";
+import "ranking/storymanagement/StatusError.proto";
+import "ranking/storymanagement/story/Owner.proto";
+
+message ScheduleMetadata {
+
+	oneof status {
+		ranking.storymanagement.StatusScheduled statusScheduled = 1;
+		ranking.storymanagement.StatusError statusError = 2;
+	}
+
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 3;
+	uint64 expirationTsMs = 4;
+	ranking.storymanagement.story.Owner owner = 5;
+	bytes messagingDestinationId = 6;
+	string postScheduleId = 7;
+}

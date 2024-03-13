@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPBasicAttributes.proto";
+import "ranking/pii/user/profile/SCSUPContentEngagement.proto";
+import "ranking/pii/user/profile/SCSUPRecommendedUsers.proto";
+import "ranking/pii/user/profile/SCSUPInterests.proto";
+import "ranking/pii/user/profile/SCSUPFriendScores.proto";
+import "ranking/pii/user/profile/Subscriptions.proto";
+import "ranking/ml/centralkitchen/SCSCKCentralKitchenUserData.proto";
+import "ranking/pii/user/profile/SCSUPReadReceipt.proto";
+import "ranking/pii/user/profile/SCSUPNotifications.proto";
+import "ranking/pii/user/notification/SCSNTFUserOptInNotifications.proto";
+import "ranking/pii/user/profile/SCSUPRegisteredInterests.proto";
+import "ranking/pii/user/profile/SCSUPFeedsImpressions.proto";
+import "ranking/pii/user/profile/UserEngagementFeatures.proto";
+import "ranking/pii/user/profile/SCSUPABExperiments.proto";
+import "ranking/pii/user/profile/UserMetadataFeatures.proto";
+import "ranking/pii/user/profile/SCSUPUserRecentEvents.proto";
+import "ranking/pii/user/profile/DiscoverUserEmbedding.proto";
+
+message SCSUPUserProfileResponse {
+	ranking.pii.user.profile.SCSUPBasicAttributes basicAttributes = 1;
+	ranking.pii.user.profile.SCSUPContentEngagement contentEngagement = 3;
+	ranking.pii.user.profile.SCSUPRecommendedUsers recommendedUsers = 5;
+	ranking.pii.user.profile.SCSUPInterests interests = 6;
+	ranking.pii.user.profile.SCSUPFriendScores friendScores = 7;
+	ranking.pii.user.profile.Subscriptions subscriptions = 9;
+	ranking.ml.centralkitchen.SCSCKCentralKitchenUserData centralKitchenUserData = 10;
+	ranking.pii.user.profile.SCSUPReadReceipt readReceipt = 11;
+	ranking.pii.user.profile.SCSUPInterests negativeInterests = 12;
+	ranking.pii.user.profile.SCSUPNotifications notifications = 13;
+	ranking.pii.user.notification.SCSNTFUserOptInNotifications userOptInNotifications = 15;
+	ranking.pii.user.profile.SCSUPRegisteredInterests registeredInterests = 17;
+	ranking.pii.user.profile.SCSUPFeedsImpressions feedsImpressions = 18;
+	ranking.pii.user.profile.UserEngagementFeatures friendEngagement = 19;
+	ranking.pii.user.profile.SCSUPABExperiments abExperiments = 20;
+	ranking.pii.user.profile.UserMetadataFeatures friendMetadata = 21;
+	ranking.pii.user.profile.SCSUPContentEngagement intraDayContentEngagement = 23;
+	ranking.pii.user.profile.SCSUPUserRecentEvents recentEvents = 24;
+	ranking.pii.user.profile.UserEngagementFeatures longWindowFriendEngagement = 26;
+	ranking.pii.user.profile.DiscoverUserEmbedding userEmbedding = 27;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsStoreContext.proto";
+
+message SCAdsOrganicAdToken {
+	repeated int64 productIdsArray = 1 [packed=true];
+	snapchat.ads.render.schema.SCAdsStoreContext storeContext = 2;
+}

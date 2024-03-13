@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingParticipantChangeStatusMessage_Entry {
+	snapchat.messaging.SCMessagingUUID affectedUser = 1;
+
+	enum SCMessagingParticipantChangeStatusMessage_Entry_StatusChange {
+		ADDED = 0;
+		CREATED = 1;
+		LEFT = 2;
+	}
+
+	SCMessagingParticipantChangeStatusMessage_Entry_StatusChange statusChange = 2;
+
+	enum SCMessagingChangeOrigin {
+		CHANGE_ORIGIN_UNSET = 0;
+		CHANGE_ORIGIN_GROUP_INVITE_STICKER = 1;
+		CHANGE_ORIGIN_GROUP_INVITE_LINK = 2;
+		CHANGE_ORIGIN_COMMUNITY_GROUP_JOIN = 3;
+	}
+
+	SCMessagingChangeOrigin changeOrigin = 3;
+
+	enum SCMessagingParticipantChangeStatusMessage_Entry_LeaveReason {
+		LEAVE_REASON_UNSET = 0;
+		LEAVE_REASON_SELF_INITIATED = 1;
+		LEAVE_REASON_KICKED = 2;
+	}
+
+	SCMessagingParticipantChangeStatusMessage_Entry_LeaveReason leaveReason = 4;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiGetDropRequest {
+	int32 dropId = 1;
+}

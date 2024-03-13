@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_SponsoredSlug.proto";
+import "snapchat/creativetools/common/SCCTPFilter_SponsoredFilterInfo_TrackInfo.proto";
+
+message SCCTPFilter_SponsoredFilterInfo {
+	snapchat.creativetools.common.SCCTPFilter_SponsoredSlug sponsoredSlug = 1;
+	snapchat.creativetools.common.SCCTPFilter_SponsoredFilterInfo_TrackInfo trackInfo = 2;
+}

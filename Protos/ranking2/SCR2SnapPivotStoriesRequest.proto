@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2SnapPivotInfo.proto";
+
+message SCR2SnapPivotStoriesRequest {
+	ranking2.SCR2SnapPivotInfo pivotInfo = 1;
+	bool isProbe = 2;
+	bool excludeNearby = 3;
+}

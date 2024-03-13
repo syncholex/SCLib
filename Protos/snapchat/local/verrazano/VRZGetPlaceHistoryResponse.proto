@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceHistoryStep.proto";
+
+message VRZGetPlaceHistoryResponse {
+	repeated snapchat.local.verrazano.VRZPlaceHistoryStep stepsArray = 1;
+}

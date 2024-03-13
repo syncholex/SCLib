@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.preview;
+
+message AiCropToolEnhanceResolutionLimits {
+	int32 maxWidth = 1;
+	int32 maxHeight = 2;
+	float maxPixelsAsCanvasMultiple = 3;
+	int32 maxPixelsCount = 4;
+}

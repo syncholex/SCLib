@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.security;
+
+message PreAuthAttestationConfig {
+	bool useV12PayloadForRegister = 1;
+	bool useV12PayloadForLogin = 2;
+}

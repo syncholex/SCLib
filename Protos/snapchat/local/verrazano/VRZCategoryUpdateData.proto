@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZCategoryWriteData.proto";
+
+message VRZCategoryUpdateData {
+	string categoryId = 1;
+	int64 version = 2;
+	snapchat.local.verrazano.VRZCategoryWriteData writeData = 10;
+}

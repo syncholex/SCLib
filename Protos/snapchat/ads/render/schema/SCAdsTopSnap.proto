@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsWebView.proto";
+import "snapchat/ads/render/schema/SCAdsMediaTopSnap.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/render/schema/SCAdsComposerTopSnap.proto";
+import "snapchat/ads/render/schema/SCAdsTopSnap_CtaConfig.proto";
+import "snapchat/ads/render/schema/SCAdsARShoppingExperience.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/ads/core/schema/SCAdsVOperaSwipeConfig.proto";
+
+message SCAdsTopSnap {
+
+	oneof topSnapType {
+		snapchat.ads.render.schema.SCAdsWebView webviewTopSnap = 1;
+		snapchat.ads.render.schema.SCAdsMediaTopSnap mediaTopSnap = 2;
+		snapchat.ads.render.schema.SCAdsComposerTopSnap composerTopSnap = 7;
+	}
+
+	string swipeUpArrowText = 3;
+	google.protobuf.GPBBoolValue enableComposerTopSnap = 4;
+
+	enum ItemType {
+		ITEM_TYPE_UNSET = 0;
+		PRODUCT = 1;
+		HOTEL = 2;
+		PLACE = 3;
+		FLIGHT = 4;
+	}
+
+	ItemType itemType = 5;
+
+	enum SCAdsComposerAutomaticTemplateType {
+		TEMPLATE_TYPE_UNSET = 0;
+		DEFAULT_TO_FILL_HEIGHT = 1;
+		ECHO_TALL = 2;
+		ECHO_WIDE = 3;
+		PRESET_COLOR = 4;
+		WHITE_TALL = 5;
+		WHITE_WIDE = 6;
+		MULTI_CAROUSEL = 7;
+		MULTI_SLIDESHOW = 8;
+	}
+
+	SCAdsComposerAutomaticTemplateType composerAutomaticTemplateType = 6;
+	snapchat.ads.render.schema.SCAdsTopSnap_CtaConfig ctaConfig = 8;
+	snapchat.ads.render.schema.SCAdsARShoppingExperience arShoppingExperience = 9;
+	google.protobuf.GPBInt64Value swipeToAttachmentRestrictionDurationMs = 10;
+	snapchat.ads.core.schema.SCAdsVOperaSwipeConfig vOperaSwipeConfig = 11;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsCookieInfo {
+	string cookieName = 1;
+	bytes cookieContent = 2;
+
+	enum SCAdsCookieInfo_CookieContentTransformation {
+		UTF8_DECODE = 0;
+		BASE64_ENCODE = 1;
+	}
+
+	SCAdsCookieInfo_CookieContentTransformation cookieContentTransformation = 3;
+
+	enum SCAdsCookieInfo_CookieType {
+		UNKNOWN = 0;
+		PRODUCT = 1;
+		AD = 2;
+	}
+
+	SCAdsCookieInfo_CookieType cookieType = 4;
+}

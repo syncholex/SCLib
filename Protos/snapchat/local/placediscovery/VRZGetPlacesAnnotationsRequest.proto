@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message VRZGetPlacesAnnotationsRequest {
+	repeated string placeIdsArray = 1;
+	google.protobuf.GPBBoolValue darkModeEnabled = 2;
+}

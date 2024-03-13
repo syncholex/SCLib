@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCGeoIOSLensMigrationConfig {
+	bool enabled = 1;
+	bool skipLegacyLocationTrigger = 2;
+
+	enum SCGeoIOSLensMigrationConfig_GeoFetchOption {
+		UNSET_NO_LOCATION_TRIGGER = 0;
+		FETCH_AFTER_LOCATION_RETRIEVED = 1;
+		FETCH_BEFORE_AND_AFTER_LOCATION_RETRIEVED = 2;
+	}
+
+	SCGeoIOSLensMigrationConfig_GeoFetchOption geoFetchOption = 3;
+	bool turnOffDirectServe = 4;
+	bool triggerCameraVisible = 5;
+	bool triggerStartupCompleted = 6;
+	bool triggerLensSessionStarted = 7;
+	int32 debounceTriggersMs = 8;
+	bool turnOffLoadedLensesFirst = 9;
+	int32 restartLensSessionBackgroundTimeoutMs = 10;
+}

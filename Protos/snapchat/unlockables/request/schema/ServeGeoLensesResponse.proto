@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+import "lens_platform/client_server/api/featured/SCLPFetchLocationsResponse.proto";
+
+message ServeGeoLensesResponse {
+	repeated lens_platform.client_server.lens.SCLPLensSnapchat lensesArray = 1;
+	lens_platform.client_server.api.featured.SCLPFetchLocationsResponse locationsResponse = 2;
+}

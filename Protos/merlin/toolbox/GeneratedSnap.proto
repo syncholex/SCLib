@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxMediaInfo.proto";
+
+message GeneratedSnap {
+	merlin.toolbox.SCMerlinToolboxMediaInfo image = 1;
+	string generationPrompt = 2;
+	string model = 3;
+	int64 seed = 4;
+}

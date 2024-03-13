@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3FoodCell.proto";
+
+message SCPCNV3ScanCardFoodModel {
+	string header = 1;
+	repeated snapchat.perception.scan.v3.SCPCNV3FoodCell cellsArray = 2;
+}

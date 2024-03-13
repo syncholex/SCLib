@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGRect.proto";
+
+message VRZFilterPlacesInBoundsRequest {
+	snapchat.geo.SPCGRect bounds = 1;
+	repeated string placeIdsArray = 2;
+}

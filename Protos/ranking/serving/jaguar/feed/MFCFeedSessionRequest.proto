@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCFeedSessionRequest {
+	string clientPageSessionId = 1;
+	bytes sessionToken = 2;
+	uint32 pageSize = 3;
+}

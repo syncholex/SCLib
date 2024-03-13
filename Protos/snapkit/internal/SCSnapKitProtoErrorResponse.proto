@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+message SCSnapKitProtoErrorResponse {
+
+	enum SCSnapKitProtoErrorType_Enum {
+		UNKNOWN = 0;
+		OLDER_CLIENT_VERSION = 1;
+		STATED_AGE_CHECK_FAILED = 2;
+		WEB_LOGIN_DISABLED = 3;
+	}
+
+	SCSnapKitProtoErrorType_Enum errorType = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+import "snapkit/internal/user/SCSnapKitProtoKitFeatureItem.proto";
+import "snapkit/internal/SCSnapKitProtoEncryptionMetadata.proto";
+
+message SCSnapKitProtoCreativeKitValidateResponse {
+	snapkit.internal.user.SCSnapKitProtoKitFeatureItem featureMap = 1;
+	snapkit.internal.SCSnapKitProtoEncryptionMetadata encryptionMetadata = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHOpenActionSheet_ActionSheetCell.proto";
+
+message SCPSHOpenActionSheet {
+	repeated snapchat.perception.scan_history.v1.SCPSHOpenActionSheet_ActionSheetCell actionSheetCellsArray = 3;
+}

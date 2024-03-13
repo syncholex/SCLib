@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "com/snapchat/auth/proto/tivs/TivResponseDwebData.proto";
+
+message TransactionDwebData {
+	string transactionId = 1;
+	string broadcastId = 2;
+	string authnSessionId = 3;
+	com.snapchat.auth.proto.tivs.TivResponseDwebData dwebData = 4;
+}

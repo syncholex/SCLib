@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/Icon.proto";
+import "snapchat/notification/VisibleDisplay_DisplayStyle.proto";
+import "snapchat/notification/ActionButtons.proto";
+import "snapchat/notification/BadgePolicy.proto";
+import "snapchat/notification/ClearingPolicy.proto";
+
+message VisibleDisplay {
+	string title = 1;
+	string body = 2;
+	snapchat.notification.Icon icon = 3;
+	repeated snapchat.notification.VisibleDisplay_DisplayStyle displayStylesArray = 4;
+	snapchat.notification.ActionButtons actionButtons = 5;
+	snapchat.notification.BadgePolicy badgePolicy = 6;
+	snapchat.notification.ClearingPolicy clearingPolicy = 7;
+}

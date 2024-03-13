@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "snapchat/map/SCMTUserLocationRequest.proto";
+import "actionmoji/LoggedAction.proto";
+import "actionmoji/KalmanData.proto";
+import "snapchat/map/SCMTLocationUpdate.proto";
+import "snapchat/map/SCMTKalmanData.proto";
+
+message LocationHistoryEntry {
+	int64 timestamp = 1;
+	snapchat.map.SCMTUserLocationRequest request = 2;
+	actionmoji.LoggedAction action = 3;
+	actionmoji.KalmanData kalmanData = 4;
+	snapchat.map.SCMTLocationUpdate lastSavedLocation = 5;
+	snapchat.map.SCMTKalmanData locationKalmanData = 6;
+}

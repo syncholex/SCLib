@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMClientInfo.proto";
+import "ranking/core/SCSCOREABTestStudyInfo.proto";
+import "ranking/core/SCSCORETweaks.proto";
+import "ranking/serving/jaguar/SCSSMAdsClientInfo.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_DeltaFetchInfo.proto";
+import "ranking/serving/jaguar/BadgeMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_TopicMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_FeedRequestMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_PaginationInfo.proto";
+import "ranking/core/OurStoryFilterOptions.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_LightModeParams.proto";
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_CategoryPillsInfo.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_ResponsiveModeMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_NotificationCacheParams.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_UpNextMetadata.proto";
+import "ranking/serving/jaguar/FriendsOfFriendsRequestParams.proto";
+
+message SCSSMStoriesRequest {
+	string requestId = 1;
+	int64 requestTimestampMs = 2;
+
+	enum SCSSMStoriesRequest_Origin {
+		UNKNOWN_ORIGIN = 0;
+		ORIGIN_SNAPCHAT_APP = 1;
+		ORIGIN_SNAPWEB = 8;
+		ORIGIN_BIB_WEB = 16;
+		ORIGIN_VIRTUAL_CAMERA = 9;
+		ORIGIN_OPT_IN_STORY_NOTIF = 10;
+		ORIGIN_MESSAGING = 11;
+		ORIGIN_FSN = 12;
+		ORIGIN_FSN_MAP = 15;
+		ORIGIN_PUBLISHER_DEEPLINK_LONGFORM = 14;
+		ORIGIN_PERCEPTION_SCAN = 17;
+		ORIGIN_LENS_EXPLORER = 18;
+		ORIGIN_INTERNAL_SNAPGRAPH = 2;
+		ORIGIN_INTERNAL_EVAL = 3;
+		ORIGIN_INTERNAL_DEBUG_SERVER = 4;
+		ORIGIN_INTERNAL_TEST = 5;
+		ORIGIN_INTERNAL_AUTOMATION = 6;
+		ORIGIN_INTERNAL_LOADTEST = 7;
+		ORIGIN_INTERNAL_STORYTELLER = 13;
+		ORIGIN_SNAPCHAT_WEB = 19;
+	}
+
+	SCSSMStoriesRequest_Origin origin = 3;
+	ranking.serving.jaguar.SCSSMClientInfo clientInfo = 4;
+
+	enum SCSSMStoriesRequest_Trigger {
+		TRIGGER_UNKNOWN = 0;
+		TRIGGER_APP_OPEN = 1;
+		TRIGGER_CACHE_REFRESH = 2;
+		TRIGGER_PULL_TO_REFRESH = 3;
+		TRIGGER_SCROLL = 4;
+		TRIGGER_BADGE_TAP = 5;
+		TRIGGER_ENTER_SPOTLIGHT_TAB = 6;
+		TRIGGER_BACKGROUND_PREFETCH = 7;
+		TRIGGER_LOCAL_REORDER = 8;
+		TRIGGER_MANAGEMENT_PAGE = 9;
+		TRIGGER_PREFETCH_HERO_SECTION = 10;
+		TRIGGER_UP_NEXT = 11;
+	}
+
+	SCSSMStoriesRequest_Trigger trigger = 5;
+	bytes lastStreamToken = 6;
+	int32 nextScrollOffset = 7;
+	repeated ranking.core.SCSCOREABTestStudyInfo studyInfoArray = 8;
+	ranking.core.SCSCORETweaks tweaks = 9;
+	ranking.serving.jaguar.SCSSMAdsClientInfo adsClientInfo = 10;
+
+	enum SCSSMDebugOption_Enum {
+		OFF = 0;
+		HTML = 2;
+		PB = 3;
+		HTML_AND_PB = 4;
+		REPLAY = 5;
+	}
+
+	SCSSMDebugOption_Enum debug = 11;
+	int32 feedType = 12;
+	string clientDfSessionId = 13;
+	bytes lastStreamTokens = 14;
+	bytes lastMetaStreamToken = 15;
+	repeated int32 feedTypesArray = 18 [packed=true];
+	ranking.serving.jaguar.SCSSMStoriesRequest_DeltaFetchInfo deltaFetchInfo = 19;
+	int32 numStories = 20;
+
+	enum SCSSMStoriesRequest_RequestSource_Enum {
+		UNKNOWN = 0;
+		DISCOVER_PAGE = 1;
+		PREMIUM_PAGE = 2;
+		PREMIUM_PAGE_PREFETCH = 3;
+		LENS_EXPLORER = 4;
+		LENS_PREMIUM_PAGE = 7;
+		LENS_CREATORS_PAGE = 8;
+		TOPIC_PAGE = 5;
+		BOOST_MANAGEMENT_PAGE = 6;
+		SEARCH_BACKEND = 9;
+		NOTIFICATION_CAMPAIGN = 10;
+		OUR_STORY_SETTING_PAGE = 11;
+		SPOTLIGHT_TRENDING_PAGE = 12;
+		FRIEND_PROFILE_MADE_FOR_US = 13;
+		MUSIC_PICKER = 14;
+		NOTIFICATION_REQUEST_THUMBNAIL_URL = 15;
+		MIXED_CAROUSEL_2ND_TAB = 16;
+		MIXED_CAROUSEL_4TH_TAB = 17;
+		MIXED_FEED_4TH_TAB = 18;
+	}
+
+	SCSSMStoriesRequest_RequestSource_Enum requestSource = 21;
+	ranking.serving.jaguar.BadgeMetadata badgeMetadata = 22;
+
+	enum SCSCOREABPriority_Enum {
+		AB_PRIORITY_UNKNOWN = 0;
+		AB_PRIORITY_ONLY_REQUEST = 1;
+		AB_PRIORITY_PREFER_REQUEST = 2;
+		AB_PRIORITY_ONLY_PROFILE = 3;
+		AB_PRIORITY_PREFER_PROFILE = 4;
+	}
+
+	SCSCOREABPriority_Enum studyPriority = 23;
+	ranking.serving.jaguar.SCSSMStoriesRequest_TopicMetadata topicMetadata = 24;
+	ranking.serving.jaguar.SCSSMStoriesRequest_FeedRequestMetadata feedRequestMetadata = 25;
+	ranking.serving.jaguar.SCSSMStoriesRequest_PaginationInfo paginationInfo = 26;
+	ranking.core.OurStoryFilterOptions ourStoryFilterOptions = 28;
+	ranking.serving.jaguar.SCSSMStoriesRequest_LightModeParams lightModeParams = 29;
+
+	enum SCSSMStoriesRequest_SpotlightNotificationInventoryType_Enum {
+		UNKNOWN = 0;
+		SUBSCRIPTION = 1;
+		TOP_RANKED = 2;
+		FRIEND = 3;
+	}
+
+	SCSSMStoriesRequest_SpotlightNotificationInventoryType_Enum spotlightNotificationInventoryType = 30;
+	ranking.core.SCCORECompositeStoryId upnextCompositeStoryId = 31;
+	ranking.serving.jaguar.SCSSMStoriesRequest_CategoryPillsInfo categoryPillsInfo = 32;
+	ranking.serving.jaguar.SCSSMStoriesRequest_ResponsiveModeMetadata responsiveModeMetadata = 33;
+	ranking.serving.jaguar.SCSSMStoriesRequest_NotificationCacheParams notificationCacheParams = 34;
+	bool isUpNextRequest = 35;
+	ranking.serving.jaguar.SCSSMStoriesRequest_UpNextMetadata upNextMetadata = 36;
+	ranking.serving.jaguar.FriendsOfFriendsRequestParams fofRequestParams = 37;
+}

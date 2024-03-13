@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTSynchronizationCheckInResponse {
+
+	enum SCMTMapServerStatus {
+		WARMING = 0;
+		SERVING = 1;
+		UNHEALTHY = 2;
+	}
+
+	SCMTMapServerStatus status = 1;
+	repeated snapchat.map.SCMTTileSetId loadedTileSetIdsArray = 2;
+}

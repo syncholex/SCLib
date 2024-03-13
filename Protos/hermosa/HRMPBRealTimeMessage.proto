@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBRealTimeMessage {
+	uint64 timeUtc = 1;
+	int32 timeZone = 2;
+	string timeZoneStr = 3;
+}

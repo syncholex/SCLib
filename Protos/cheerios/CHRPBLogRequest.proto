@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBLogFileTransferRequest.proto";
+
+message CHRPBLogRequest {
+
+	enum CHRPBLogRequestType {
+		LOG_REQUEST_UNSET = 0;
+		DEBUGGING_FILE_LIST = 1;
+		GET_DEBUGGING_FILE = 2;
+		DELETE_DEBUGGING = 3;
+		ANALYTICS_FILE_LIST = 4;
+		GET_ANALYTICS_FILE = 5;
+		DELETE_ANALYTICS = 6;
+	}
+
+	CHRPBLogRequestType type = 1;
+	cheerios.CHRPBLogFileTransferRequest logFileTransferRequest = 2;
+}

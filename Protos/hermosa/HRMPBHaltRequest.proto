@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBHaltRequest {
+	bool rebootSoc = 1;
+	bool holdAppSocPower = 2;
+	bool schedulePostOtaTasks = 3;
+}

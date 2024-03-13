@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message GetControlNetResultRequest {
+	string taskId = 1;
+	string outputType = 2;
+	string userId = 3;
+}

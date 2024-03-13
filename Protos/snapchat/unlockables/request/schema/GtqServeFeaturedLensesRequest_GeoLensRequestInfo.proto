@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULGeoCircle.proto";
+
+message GtqServeFeaturedLensesRequest_GeoLensRequestInfo {
+	bool enableGeoLens = 1;
+	snapchat.unlockables.request.schema.SCULGeoCircle userLocationWithAccuracy = 2;
+	bool includeNearbyFetchLocations = 3;
+}

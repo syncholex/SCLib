@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message RankByStage {
+	int32 retrievalRank = 1;
+	int32 mcScorerRank = 2;
+	int32 mktplcValueRank = 3;
+}

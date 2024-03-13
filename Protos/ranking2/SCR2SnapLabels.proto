@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2SnapLabel.proto";
+import "ranking2/SCR2FeatureVector.proto";
+import "ranking2/SCR2SnapLabelsPerFrame.proto";
+
+message SCR2SnapLabels {
+	string snaplabelVersion = 1;
+	repeated ranking2.SCR2SnapLabel snaplabelsArray = 2;
+	ranking2.SCR2FeatureVector featureVector = 3;
+	repeated ranking2.SCR2SnapLabel thumbnailSnaplabelsArray = 4;
+	bool isSelfie = 5;
+	repeated ranking2.SCR2SnapLabelsPerFrame snaplabelsPerFrameArray = 6;
+}

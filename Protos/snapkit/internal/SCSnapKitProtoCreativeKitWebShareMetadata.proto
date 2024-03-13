@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+message SCSnapKitProtoCreativeKitWebShareMetadata {
+	string pageTitle = 1;
+	string iconURL = 2;
+	string publisherId = 3;
+	string snapcodeURL = 4;
+	string stickerURL = 5;
+	string attributionName = 6;
+	string appId = 7;
+	string thumbnailURL = 8;
+	bool suppressSticker = 9;
+}

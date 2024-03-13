@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileAndUserData.proto";
+
+message IMPGetPublicProfilesResponse {
+	impala.IMPProfileAndUserData profilesByProfileId = 1;
+}

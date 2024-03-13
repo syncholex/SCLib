@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3CameraShortcutAction_AddMusic {
+	string trackId = 1;
+	string iconURL = 2;
+}

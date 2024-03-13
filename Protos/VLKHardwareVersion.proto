@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKHardwareVersion {
+	int32 majorNumber = 1;
+	int32 minorNumber = 2;
+}

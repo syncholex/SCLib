@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicGetPlaylistRequest {
+	int64 playlistId = 1;
+}

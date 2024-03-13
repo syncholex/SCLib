@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/communityorg/SCCommunityOrgPbMemberRankingMetadata.proto";
+
+message SCCommunityOrgPbMemberRankingInfo {
+	ranking.core.SCSCOREUUID userId = 1;
+	float sortScore = 2;
+	ranking.communityorg.SCCommunityOrgPbMemberRankingMetadata metadata = 3;
+}

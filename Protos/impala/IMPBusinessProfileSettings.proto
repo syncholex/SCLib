@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPTermsAndConditions.proto";
+import "impala/IMPMonetizationSettings.proto";
+import "impala/IMPAudienceGateSettings.proto";
+import "impala/IMPCreatorDiscoveryForBrandsSettings.proto";
+import "impala/IMPActivityFeedSettings.proto";
+
+message IMPBusinessProfileSettings {
+	bool showStoryReplies = 1;
+	bool showSubscriberCount = 2;
+	bool showGifting = 3;
+	impala.IMPTermsAndConditions giftingTerms = 4;
+	impala.IMPMonetizationSettings monetizationSettings = 5;
+	impala.IMPAudienceGateSettings audienceGateSettings = 6;
+	impala.IMPCreatorDiscoveryForBrandsSettings creatorDiscoveryForBrandsSettings = 7;
+	impala.IMPActivityFeedSettings activityFeedSettings = 8;
+}

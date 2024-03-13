@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanAffordance_ViewfinderAffordance.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanAffordance_ShazamAffordance.proto";
+
+message SCPCNV3ScanAffordance {
+	string iconURL = 1;
+	string title = 2;
+
+	oneof affordance {
+		snapchat.perception.scan.v3.SCPCNV3ScanAffordance_ViewfinderAffordance viewfinderAffordance = 3;
+		snapchat.perception.scan.v3.SCPCNV3ScanAffordance_ShazamAffordance shazamAffordance = 4;
+	}
+
+	string subtitle = 6;
+}

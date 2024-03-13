@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+import "snapchat/polls/SCPPollInfo.proto";
+
+message SCCTPPollStickerMetadata {
+	bool isDynamic = 1;
+	snapchat.polls.SCPPollInfo pollInfo = 2;
+}

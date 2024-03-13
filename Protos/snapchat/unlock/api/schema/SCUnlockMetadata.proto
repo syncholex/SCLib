@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlockables/request/schema/SCULUnlockablesSnapInfo.proto";
+
+message SCUnlockMetadata {
+	string deepLinkAppId = 1;
+	string deepLinkProperties = 2;
+	snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo snapInfo = 3;
+
+	enum SCInverseUnlockReason {
+		INVERSE_UNLOCK_REASON_UNSET = 0;
+		DISLIKED_LENS = 1;
+		DISLIKED_CREATOR = 2;
+		BROKEN_LENS = 3;
+	}
+
+}

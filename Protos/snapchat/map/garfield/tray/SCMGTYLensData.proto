@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/map/garfield/tray/SCMGTYLensCreator.proto";
+
+message SCMGTYLensData {
+	string lensId = 1;
+	string title = 2;
+	string artist = 3;
+	string address = 4;
+	string description_p = 5;
+	string URL = 6;
+	snapchat.map.garfield.tray.SCMGTYLensCreator lensCreator = 7;
+	string secondaryLensId = 8;
+	snapchat.map.garfield.tray.SCMGTYLensCreator secondaryLensCreator = 9;
+	string thumbnailURL = 10;
+}

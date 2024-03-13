@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBGetUserDeviceSecurityResponse {
+
+	enum HRMPBGetUserDeviceSecurityResponse_UserDeviceSecurityResponseCode {
+		SUCCESS = 0;
+		ERR = 1;
+	}
+
+	HRMPBGetUserDeviceSecurityResponse_UserDeviceSecurityResponseCode code = 1;
+	bool requirePasscode = 2;
+
+	enum HRMPBLockOutEvent {
+		EVERY_DEVICE_REMOVAL = 0;
+		EVERY_RESYART = 1;
+		TIMEOUT = 2;
+	}
+
+	HRMPBLockOutEvent lockoutEvent = 3;
+	int32 lockoutTime = 4;
+	bool phoneProximity = 5;
+	bool userLockedOut = 6;
+	int32 attemptsLeft = 7;
+	int32 timeUntilUnlock = 8;
+	bool directBoot = 9;
+	bool unlocked = 10;
+}

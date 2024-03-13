@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/iz/SCCTXEncryptedMedia.proto";
+
+message SCCTXSoundProfileAction {
+	uint64 soundId = 1;
+	string title = 2;
+	string artistName = 3;
+	snapchat.context2.iz.SCCTXEncryptedMedia albumArtMedia = 4;
+
+	enum SCCTPMusicTrackType {
+		TRACK_TYPE_UNSET = 0;
+		LICENSED = 1;
+		CUSTOM_SOUND = 2;
+		SPOTLIGHT_ORIGINAL_SOUND = 3;
+	}
+
+	SCCTPMusicTrackType trackType = 5;
+	string publicProfileId = 6;
+}

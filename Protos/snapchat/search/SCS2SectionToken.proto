@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2SectionToken {
+	int32 nextScoringOffset = 1;
+	bytes previousResultsBloomFilter = 2;
+}

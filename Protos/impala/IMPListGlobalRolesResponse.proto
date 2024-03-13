@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPRole.proto";
+
+message IMPListGlobalRolesResponse {
+	repeated impala.IMPRole rolesArray = 1;
+	string nextPageId = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkLatLng.proto";
+import "snap/snap_maps_sdk/SMSdkLineString.proto";
+
+message SMSdkGeometry {
+
+	oneof geometryType {
+		snap.snap_maps_sdk.SMSdkLatLng point = 1;
+		snap.snap_maps_sdk.SMSdkLineString line = 2;
+	}
+
+}

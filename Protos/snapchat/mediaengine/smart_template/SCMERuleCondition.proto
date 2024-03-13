@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "google/protobuf/GPBEmpty.proto";
+
+message SCMERuleCondition {
+
+	oneof condition {
+		google.protobuf.GPBEmpty alwaysTrue = 1;
+		uint64 minimalMediaLengthMs = 2;
+	}
+
+}

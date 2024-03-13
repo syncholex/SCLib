@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+import "games/leaderboards/SCGamesLeaderboardsScoreVisibility.proto";
+
+message SCGamesLeaderboardsGetScoreVisibilitiesResponse {
+	repeated games.leaderboards.SCGamesLeaderboardsScoreVisibility scoreVisibilityArray = 1;
+}

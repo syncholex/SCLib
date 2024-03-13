@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerStatus.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPCustomStickerListPackResponse {
+	snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem customStickerPack = 2;
+}

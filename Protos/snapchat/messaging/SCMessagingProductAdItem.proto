@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingProductAdItemInstallmentInfo.proto";
+import "snapchat/messaging/SCMessagingProductAdItemPrice.proto";
+import "snapchat/messaging/SCMessagingAdItemPostbackInfo.proto";
+
+message SCMessagingProductAdItem {
+	string adId = 1;
+	string impressionId = 2;
+	uint32 rank = 3;
+	string attachmentURL = 4;
+	string brandName = 5;
+	string productName = 6;
+	double starRating = 7;
+	string shippingDescription = 8;
+	string productImageURL = 9;
+
+	oneof paymentInfo {
+		snapchat.messaging.SCMessagingProductAdItemInstallmentInfo installmentInfo = 10;
+		snapchat.messaging.SCMessagingProductAdItemPrice priceInfo = 11;
+	}
+
+	snapchat.messaging.SCMessagingAdItemPostbackInfo postbackInfo = 12;
+}

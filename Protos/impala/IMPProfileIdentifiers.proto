@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileIdentifiers {
+	string businessProfileId = 1;
+	int64 publisherId = 2;
+	string hostAccountUsername = 3;
+	string hostAccountUserId = 4;
+	string organizationId = 5;
+	string hostAccountMutableUsername = 6;
+	string publisherNameId = 7;
+	string legacyPublisherNameId = 8;
+	string inventoryItemId = 9;
+}

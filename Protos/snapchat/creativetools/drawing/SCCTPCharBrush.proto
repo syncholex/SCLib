@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.drawing;
+
+message SCCTPCharBrush {
+	string char_p = 1;
+}

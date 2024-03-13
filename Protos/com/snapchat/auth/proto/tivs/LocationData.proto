@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message LocationData {
+	string city = 1;
+	string country = 2;
+	string ipAddress = 3;
+	double longitude = 4;
+	double latitude = 5;
+	uint32 asn = 6;
+}

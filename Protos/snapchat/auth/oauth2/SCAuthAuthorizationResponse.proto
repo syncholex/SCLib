@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+import "snapchat/auth/oauth2/SCAuthScope.proto";
+
+message SCAuthAuthorizationResponse {
+	string approvalToken = 1;
+	string clientName = 2;
+	string clientDescription = 3;
+	string clientIconURL = 4;
+	repeated snapchat.auth.oauth2.SCAuthScope scopesRequestedArray = 5;
+	bool consentRequired = 6;
+}

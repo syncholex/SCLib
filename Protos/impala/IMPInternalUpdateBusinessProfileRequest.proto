@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateInt.proto";
+import "impala/IMPUpdateBytes.proto";
+import "impala/IMPUpdateBusinessProfileRequest.proto";
+import "impala/IMPContentIdentifiersUpdate.proto";
+import "impala/IMPShowDisplayInfo.proto";
+import "impala/IMPUpdateString.proto";
+import "impala/IMPDeeplinks.proto";
+import "impala/IMPUpdateBool.proto";
+import "impala/profile/IMPContentIdentifiersUpdateV2.proto";
+import "impala/IMPCommerceStoreInfo.proto";
+import "impala/IMPUpdateInternalProfileCategory.proto";
+import "impala/IMPUpdateProfileTier.proto";
+import "snapchat/discover/PartialPublisherMetadata.proto";
+import "impala/IMPTermsAndConditions.proto";
+
+message IMPInternalUpdateBusinessProfileRequest {
+	string id_p = 1;
+	impala.IMPUpdateInt subscriberCount = 2;
+	impala.IMPUpdateInt subscriberShardCount = 3;
+	impala.IMPUpdateBytes publisherMetadata = 4;
+	impala.IMPUpdateBusinessProfileRequest updateBusinessProfile = 5;
+	impala.IMPContentIdentifiersUpdate contentIdentifiersUpdate = 6;
+	impala.IMPUpdateInt initiallyDisplayedContentIndex = 7;
+	impala.IMPShowDisplayInfo showDisplayInfo = 8;
+	impala.IMPUpdateString publisherIconURL = 9;
+	impala.IMPDeeplinks deeplinks = 10;
+	impala.IMPUpdateString verifiedUserEmoji = 11;
+	impala.IMPUpdateBool isOfficial = 12;
+	impala.profile.IMPContentIdentifiersUpdateV2 contentsUpdate = 13;
+	impala.IMPCommerceStoreInfo commerceStoreInfo = 15;
+	impala.IMPUpdateBool canEditHighlights = 16;
+	impala.IMPUpdateBool isLensCreator = 17;
+	impala.IMPUpdateBool isBrandProfile = 18;
+	int64 publisherId = 19;
+	impala.IMPUpdateString squareFilledIconMediaId = 20;
+	impala.IMPUpdateInternalProfileCategory internalCategory = 21;
+	impala.IMPUpdateProfileTier tier = 22;
+	impala.IMPUpdateString organizationId = 23;
+	snapchat.discover.PartialPublisherMetadata partialPublisherMetadata = 24;
+	impala.IMPUpdateString lastModifiedByUserId = 25;
+	impala.IMPUpdateBool canAccessStoryReplies = 26;
+	impala.IMPUpdateBool canAccessGifting = 27;
+	impala.IMPTermsAndConditions giftingTerms = 28;
+	impala.IMPUpdateBool canDisplayWebsite = 29;
+	impala.IMPUpdateString profileIconPrimaryColorHex = 30;
+	impala.IMPUpdateBool isCommentsDisabled = 31;
+	int64 expectedVersion = 100;
+	bool skipStoreSubscriptionCount = 101;
+}

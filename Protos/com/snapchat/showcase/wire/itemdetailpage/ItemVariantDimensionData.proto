@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimension.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/AgeGroupDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ColorDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/GenderDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/MaterialDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/PatternDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/SizeDimensionData.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/CustomDimensionData.proto";
+
+message ItemVariantDimensionData {
+	com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimension itemVariantDimension = 1;
+
+	oneof dimensionData {
+		com.snapchat.showcase.wire.itemdetailpage.AgeGroupDimensionData ageGroupDimension = 2;
+		com.snapchat.showcase.wire.itemdetailpage.ColorDimensionData colorVariant = 3;
+		com.snapchat.showcase.wire.itemdetailpage.GenderDimensionData genderVariant = 4;
+		com.snapchat.showcase.wire.itemdetailpage.MaterialDimensionData materialVariant = 5;
+		com.snapchat.showcase.wire.itemdetailpage.PatternDimensionData patternVariant = 6;
+		com.snapchat.showcase.wire.itemdetailpage.SizeDimensionData sizeVariant = 7;
+		com.snapchat.showcase.wire.itemdetailpage.CustomDimensionData customVariant = 8;
+	}
+
+}

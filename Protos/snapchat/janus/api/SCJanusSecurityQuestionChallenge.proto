@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusSecurityQuestionChallenge {
+
+	enum SCJanusSecurityQuestionType {
+		SECURITY_QUESTION_TYPE_UNSET = 0;
+		PHONE_NUMBER = 1;
+		EMAIL_ADDRESS = 2;
+		BIRTHDATE = 3;
+		USERNAME = 4;
+	}
+
+	SCJanusSecurityQuestionType securityQuestionType = 1;
+}

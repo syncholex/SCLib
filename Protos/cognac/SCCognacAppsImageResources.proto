@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsImageResources {
+	string iconImageURL = 1;
+	string loadingImageURL = 2;
+	string logoImageURL = 3;
+	string verticalImageURL = 4;
+	string horizontalImageURL = 5;
+	string squareImageURL = 6;
+}

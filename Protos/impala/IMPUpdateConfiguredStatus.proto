@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateConfiguredStatus {
+
+	enum IMPConfiguredStatus {
+		CONFIGURED_STATUS_UNKNOW = 0;
+		CONFIGURED_STATUS_ACTIVE = 1;
+		CONFIGURED_STATUS_DISABLED = 2;
+	}
+
+	IMPConfiguredStatus val = 1;
+}

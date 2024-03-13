@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.music.custom_sounds;
+
+import "snapchat/music/custom_sounds/SCMusicCustomSound.proto";
+
+message SCMusicUpdateSoundResponse {
+	snapchat.music.custom_sounds.SCMusicCustomSound customSound = 1;
+
+	enum SCMusicCreateSoundErrorStatus {
+		UNSET = 0;
+		COPYRIGHT_VIOLATION = 1;
+		INVALID_TITLE = 2;
+		INVALID_ARTIST_NAME = 3;
+		INVALID_AUDIO_DATA = 4;
+	}
+
+	SCMusicCreateSoundErrorStatus errorStatus = 2;
+}

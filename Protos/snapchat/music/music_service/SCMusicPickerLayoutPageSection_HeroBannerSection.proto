@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBanner.proto";
+
+message SCMusicPickerLayoutPageSection_HeroBannerSection {
+	repeated snapchat.music.music_service.SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBanner heroBannersArray = 1;
+}

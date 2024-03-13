@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ClientGeneratedFilter_ColorFilter {
+
+	enum SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type {
+		UNSET = 0;
+		SMOOTHING = 1;
+		INSTASNAP = 2;
+		MISS_ETIKATE = 3;
+		GREYSCALE = 4;
+	}
+
+	SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type type = 1;
+}

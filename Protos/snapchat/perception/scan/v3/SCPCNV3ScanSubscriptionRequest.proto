@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3CreativeLensSubscriptionRequestV1.proto";
+import "snapchat/perception/scan/v3/SCPCNV3AllUtilityLensMetadataSubscriptionRequestV1.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardSubscriptionRequestV1.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CategorySubscriptionRequestV1.proto";
+
+message SCPCNV3ScanSubscriptionRequest {
+	string subscriptionId = 1;
+	bool closeAfterFirstResponse = 2;
+
+	oneof subscriptionRequest {
+		snapchat.perception.scan.v3.SCPCNV3CreativeLensSubscriptionRequestV1 creativeLensSubscriptionRequestV1 = 3;
+		snapchat.perception.scan.v3.SCPCNV3AllUtilityLensMetadataSubscriptionRequestV1 allUtilityLensMetadataRequestV1 = 4;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardSubscriptionRequestV1 scanCardSubscriptionRequestV1 = 5;
+		snapchat.perception.scan.v3.SCPCNV3CategorySubscriptionRequestV1 categorySubscriptionRequestV1 = 6;
+	}
+
+}

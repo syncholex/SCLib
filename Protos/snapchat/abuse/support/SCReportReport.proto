@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportReporter.proto";
+import "snapchat/abuse/support/SCReportReported.proto";
+import "snapchat/abuse/support/SCReportReportEntryPoint.proto";
+import "snapchat/abuse/support/SCReportReportReasonId.proto";
+
+message SCReportReport {
+	snapchat.abuse.support.SCReportReporter reporter = 1;
+	snapchat.abuse.support.SCReportReported reported = 2;
+	string comment = 3;
+
+	enum SCReportReportReason {
+		REASON_UNSET = 0;
+		DONT_LIKE_WANT_TO_SEE = 1;
+		IMPERSONATION_FIRST_PERSON = 2;
+		IMPERSONATION_GENERAL = 3;
+		SPAM_FIRST_PERSON = 4;
+		SPAM_GENERAL = 5;
+		SPAM_FRIEND_REQUEST = 35;
+		SPAM_CREEPY = 36;
+		HATE_SPEECH_GENERAL = 7;
+		VIOLENT_DISTURBING_GENERAL = 9;
+		THREAT_THREATENING_FIRST_PERSON = 10;
+		THREAT_THREATENING_GENERAL = 11;
+		THREAT_SEXTORTION = 37;
+		INAPPROPRIATE_FIRST_PERSON = 12;
+		INAPPROPRIATE_PROMOTION = 25;
+		INAPPROPRIATE_GENERAL = 13;
+		INAPPROPRIATE_LENS = 14;
+		INAPPROPRIATE_ATTACHMENT = 15;
+		INAPPROPRIATE_CHILD = 30;
+		BULLYING_HARASSMENT_FIRST_PERSON = 16;
+		BULLYING_HARASSMENT_GENERAL = 17;
+		BULLYING_HARASSMENT_SEXUAL = 34;
+		PRIVACY_INVASION_FIRST_PERSON = 18;
+		SELF_HARM_SUICIDE = 20;
+		SELF_HARM_SUICIDE_PROMOTE = 31;
+		TERRORISM_EXTREMISM = 21;
+		FRAUDULENT_INFORMATION = 22;
+		FRAUDULENT_INFORMATION_POLITICS = 27;
+		FRAUDULENT_INFORMATION_HEALTH = 28;
+		FRAUDULENT_INFORMATION_SOCIAL_ISSUES = 29;
+		DRUG_SALE_USE = 23;
+		WEAPON_SALE_USE = 24;
+		UNDER_THIRTEEN = 26;
+		COUNTERFEIT_GOODS = 32;
+		FEATURE_BROKEN = 33;
+		ILLEGAL_GENERAL = 38;
+		REPORT_SNAPGRAPH_ESCALATION = 39;
+	}
+
+	SCReportReportReason reason = 4;
+	int64 serverReceivedAtMs = 5;
+	snapchat.abuse.support.SCReportReportEntryPoint entrypoint = 6;
+	snapchat.abuse.support.SCReportReportReasonId reasonId = 7;
+	bool isTestReport = 8;
+}

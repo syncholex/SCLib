@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoriesResponse.proto";
+import "ranking/core/SCSCOREResponseStatus.proto";
+import "ranking/serving/jaguar/SCSSMRTUSResponse.proto";
+
+message SCSSMStoriesBatchResponse {
+	string requestId = 1;
+	bytes metaStreamToken = 2;
+	repeated ranking.serving.jaguar.SCSSMStoriesResponse storiesResponsesArray = 3;
+	string debugHtml = 4;
+	bytes debugPb = 5;
+	ranking.core.SCSCOREResponseStatus status = 6;
+	ranking.serving.jaguar.SCSSMRTUSResponse rtusResponse = 7;
+	repeated fixed64 upNextDefaultPlaylistDedupeFpsArray = 8 [packed=true];
+}

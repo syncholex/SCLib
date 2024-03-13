@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsThirdPartyAdNetworkInfo {
+	bytes requestSignals = 2;
+
+	enum SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation {
+		UTF8_DECODE = 0;
+		BASE64_ENCODE = 1;
+		PROTO = 2;
+	}
+
+	SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation contentTransformation = 3;
+
+	enum SCAdsThirdPartyAdNetworkType {
+		AD_NETWORK_TYPE_UNKNOWN = 0;
+		AD_NETWORK_TYPE_PETRA = 1;
+	}
+
+	SCAdsThirdPartyAdNetworkType adNetworkType = 4;
+}

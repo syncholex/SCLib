@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2SportsGame {
+	string homeTeam = 1;
+	string awayTeam = 2;
+	int32 homeScore = 3;
+	int32 awayScore = 4;
+	string homeImageURL = 5;
+	string awayImageURL = 6;
+	string gameStatus = 7;
+}

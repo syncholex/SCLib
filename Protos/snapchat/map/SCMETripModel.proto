@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocality.proto";
+
+message SCMETripModel {
+	string id_p = 1;
+	repeated snapchat.map.SCMTLocality primaryLocalityArray = 2;
+	repeated snapchat.map.SCMTLocality secondaryLocalityArray = 3;
+	repeated snapchat.map.SCMTLocality tertiaryLocalityArray = 4;
+	int64 totalLocalities = 5;
+	int64 startTimestamp = 6;
+	int64 endTimestamp = 7;
+}

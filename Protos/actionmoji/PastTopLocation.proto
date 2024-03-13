@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message PastTopLocation {
+	int64 s2CellId = 1;
+	int64 mostRecentlyInferredTimeMs = 2;
+}

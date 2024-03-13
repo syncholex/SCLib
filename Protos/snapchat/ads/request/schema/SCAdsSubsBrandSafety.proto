@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsSubsBrandSafety {
+
+	enum SCAdsSubsBrandSafety_Mode {
+		UNKNOWN = 0;
+		COMPLETE_CHECK = 1;
+		PARTIAL_CHECK = 2;
+	}
+
+	SCAdsSubsBrandSafety_Mode mode = 1;
+	bool isBrandSafe = 2;
+}

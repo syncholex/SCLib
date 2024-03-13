@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBTelemetryLoggerConfigEvent_LoggerConfigData.proto";
+
+message HRMPBTelemetryLoggerConfigEvent {
+	repeated hermosa.HRMPBTelemetryLoggerConfigEvent_LoggerConfigData dataArray = 1;
+}

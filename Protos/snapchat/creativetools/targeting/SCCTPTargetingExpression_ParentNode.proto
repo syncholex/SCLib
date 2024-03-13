@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPTargetingExpression.proto";
+
+message SCCTPTargetingExpression_ParentNode {
+
+	enum SCCTPTargetingExpression_ParentNode_BooleanOperator {
+		UNKNOWN_BOOLEAN_OPERATOR = 0;
+		AND = 1;
+		OR = 2;
+	}
+
+	SCCTPTargetingExpression_ParentNode_BooleanOperator booleanOperator = 1;
+	repeated snapchat.creativetools.targeting.SCCTPTargetingExpression childrenArray = 2;
+}

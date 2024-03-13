@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.map.friends;
+
+message SCMEFriend {
+	string fromUserId = 1;
+	string toUserId = 2;
+
+	enum SCMEFriend_Relationship {
+		FRIEND = 0;
+		PENDING = 1;
+		BLOCKED = 2;
+		DELETED = 3;
+		FOLLOWING = 4;
+	}
+
+	SCMEFriend_Relationship relationship = 3;
+	int64 versionTimestamp = 11;
+	int64 createdAt = 12;
+	int64 addedAt = 14;
+	int64 reverseAddedAt = 15;
+}

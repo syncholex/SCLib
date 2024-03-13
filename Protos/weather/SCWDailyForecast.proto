@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package weather;
+
+import "weather/SCWWeather.proto";
+
+message SCWDailyForecast {
+	weather.SCWWeather day = 2;
+	weather.SCWWeather night = 3;
+}

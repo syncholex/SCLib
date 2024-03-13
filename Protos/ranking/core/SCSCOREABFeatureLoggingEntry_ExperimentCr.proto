@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREABFeatureLoggingEntry_ExperimentCr {
+	int32 feedType = 1;
+	float serverCr = 2;
+}

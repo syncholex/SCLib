@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.hometab;
+
+import "snapchat/creativetools/common/SCCTPCTComputeBackendData.proto";
+
+message SCCTPGTQComparisonRequest {
+	repeated string geofilterIdsArray = 2;
+	snapchat.creativetools.common.SCCTPCTComputeBackendData commonReqParams = 3;
+}

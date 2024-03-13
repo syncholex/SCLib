@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/telephony/api/SCTelephonyOTPChallenge.proto";
+import "snapchat/telephony/api/RequestHeader.proto";
+
+message SCTelephonyVerifyPhoneChallengeData {
+
+	oneof channelId {
+		snapchat.core.SCCOREUUID userId = 1;
+	}
+
+	string authSessionId = 3;
+
+	enum PhoneChallengeUseCase {
+		PHONE_CHALLENGE_USE_CASE_UNSET = 0;
+		TWO_FACTOR_AUTHENTICATION = 1;
+		MAGIC_CODE_LOGIN = 2;
+		ON_DEMAND_LOGIN_VERIFICATION = 3;
+		NEW_USER_PHONE_VERIFICATION = 4;
+		ACCOUNT_RECOVERY = 5;
+		PHONE_FIRST_ONBOARDING = 6;
+		PHONE_IAR_NEW_USER = 15;
+	}
+
+
+	oneof challengeAnswer {
+		snapchat.telephony.api.SCTelephonyOTPChallenge otpChallengeAnswer = 4;
+	}
+
+	PhoneChallengeUseCase phoneChallengeUseCase = 5;
+	snapchat.telephony.api.RequestHeader requestHeader = 6;
+}

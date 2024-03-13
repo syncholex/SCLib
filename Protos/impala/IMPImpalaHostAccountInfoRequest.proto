@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPImpalaHostAccountInfoRequest {
+	string userId = 1;
+	string username = 2;
+	repeated string userIdsArray = 3;
+	repeated string usernamesArray = 4;
+}

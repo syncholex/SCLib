@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+import "snapchat/au/mmai/similarity_search_service/vectors/MMAIVector.proto";
+import "snapchat/au/mmai/similarity_search_service/search/MMAIMetadataValue.proto";
+
+message MMAISearchResult {
+	string identifier = 1;
+	string matchedIndex = 2;
+	float score = 100;
+	snapchat.au.mmai.similarity_search_service.vectors.MMAIVector vector = 101;
+	snapchat.au.mmai.similarity_search_service.search.MMAIMetadataValue metadataFields = 200;
+}

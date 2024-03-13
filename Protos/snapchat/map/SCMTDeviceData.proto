@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocationPermission.proto";
+
+message SCMTDeviceData {
+	bool isBackgrounded = 1;
+	float batteryLevel = 2;
+	bool devicePluggedIn = 3;
+	bool headphoneOutput = 4;
+	string wifiSsid = 5;
+	bool isOtherAudioPlaying = 6;
+	snapchat.map.SCMTLocationPermission locationPermission = 7;
+}

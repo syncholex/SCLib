@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkImage {
+	string URL = 1;
+	string key = 2;
+	string iv = 3;
+}

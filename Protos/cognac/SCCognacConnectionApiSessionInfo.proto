@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacConnectionApiSessionInfo {
+	string sessionId = 1;
+	int32 participantCount = 2;
+
+	oneof id {
+		string oneOnOneConversationId = 3;
+		string groupConversationId = 4;
+		string sharedId = 5;
+		string soloId = 6;
+	}
+
+}

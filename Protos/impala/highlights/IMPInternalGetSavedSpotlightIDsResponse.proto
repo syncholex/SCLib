@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPInternalGetSavedSpotlightIDsResponse {
+	repeated string spotlightIdsArray = 1;
+	string pageId = 2;
+}

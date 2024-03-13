@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+import "snapchat/payments/BillingAddress.proto";
+
+message CreditCard {
+	string id_p = 1;
+
+	enum CreditCard_CardType {
+		UNSET = 0;
+		AMEX = 1;
+		CARTE_BANCAIRE = 2;
+		DINERS_CLUB = 3;
+		DISCOVER = 4;
+		JCB = 5;
+		MAESTRO = 6;
+		MASTERCARD = 7;
+		VISA = 8;
+	}
+
+	CreditCard_CardType cardType = 2;
+	string expirationMonth = 3;
+	string expirationYear = 4;
+	string last4 = 5;
+	snapchat.payments.BillingAddress billingAddress = 6;
+}

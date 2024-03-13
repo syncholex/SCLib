@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+
+message SCGLensAndChecksum {
+	lens_platform.client_server.lens.SCLPLensSnapchat lens = 1;
+	bytes checksum = 2;
+}

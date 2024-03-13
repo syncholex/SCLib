@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSLocationUpdate.proto";
+import "snapchat/valis/SCVSViewportUpdate.proto";
+import "snapchat/valis/SCVSDeviceData.proto";
+import "snapchat/valis/SCVSClusterFullSync.proto";
+import "snapchat/valis/SCVSClusterStopSync.proto";
+import "snapchat/valis/SCVSUserAction.proto";
+import "snapchat/valis/SCVSFocusView.proto";
+import "snapchat/valis/SCVSNotificationAckUpdate.proto";
+
+message SCVSClientUpdate {
+
+	oneof message {
+		snapchat.valis.SCVSLocationUpdate locationUpdate = 1;
+		snapchat.valis.SCVSViewportUpdate viewportUpdate = 2;
+		snapchat.valis.SCVSDeviceData deviceDataUpdate = 3;
+		snapchat.valis.SCVSClusterFullSync clusterFullSyncUpdate = 4;
+		snapchat.valis.SCVSClusterStopSync clusterStopSyncUpdate = 5;
+		snapchat.valis.SCVSUserAction userActionUpdate = 6;
+		snapchat.valis.SCVSFocusView focusView = 8;
+		snapchat.valis.SCVSNotificationAckUpdate notificationAckUpdate = 9;
+	}
+
+	bool ghostMode = 7;
+	bool isUpgradedToLiveOnly = 10;
+	bool pauseAllLiveSessions = 11;
+}

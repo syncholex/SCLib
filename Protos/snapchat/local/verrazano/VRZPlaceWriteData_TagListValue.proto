@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace_Tag.proto";
+
+message VRZPlaceWriteData_TagListValue {
+	repeated snapchat.local.verrazano.VRZPlace_Tag valueArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.marketplace.lenspack;
+
+import "com/snapchat/marketplace/lenspack/LensPack.proto";
+
+message GetLensPacksResponse {
+	repeated com.snapchat.marketplace.lenspack.LensPack lensPacksArray = 1;
+}

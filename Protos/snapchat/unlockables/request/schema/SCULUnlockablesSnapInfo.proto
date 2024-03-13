@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULFilterInfo.proto";
+import "snapchat/unlockables/request/schema/SCULLensInfo.proto";
+import "snapchat/unlockables/request/schema/SCULStickerInfo.proto";
+
+message SCULUnlockablesSnapInfo {
+	string snapSessionId = 1;
+	repeated snapchat.unlockables.request.schema.SCULFilterInfo filtersArray = 2;
+	repeated snapchat.unlockables.request.schema.SCULLensInfo lensesArray = 3;
+	repeated snapchat.unlockables.request.schema.SCULStickerInfo stickersArray = 4;
+
+	enum SCULUnlockablesSnapInfo_SnapSource {
+		UNKNOWN = 0;
+		CAMERA = 1;
+		MEMORY = 2;
+	}
+
+	SCULUnlockablesSnapInfo_SnapSource snapSource = 5;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+message SCS2StickerResultTypeOption_BitmojiOption {
+
+	enum SCCTPBitmojiSticker_Type {
+		SOLOMOJI = 0;
+		FRIENDMOJI = 1;
+	}
+
+	repeated SCCTPBitmojiSticker_Type typesArray = 1 [packed=true];
+	bool includeAnimated = 2;
+	bool includeCustomoji = 3;
+}

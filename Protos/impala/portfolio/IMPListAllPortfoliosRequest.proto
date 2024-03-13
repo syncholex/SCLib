@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+message IMPListAllPortfoliosRequest {
+	string pageId = 1;
+
+	enum IMPPortfolioType {
+		PORTFOLIO_UNSET = 0;
+		PORTFOLIO_LENS = 1;
+		PORTFOLIO_STORY = 2;
+	}
+
+	IMPPortfolioType portfolioType = 2;
+}

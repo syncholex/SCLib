@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.cof;
+
+import "snapchat/cdp/cof/events/COFRecoveryEvent.proto";
+import "snapchat/cdp/cof/events/COFSyncEvent.proto";
+
+message CofEvent {
+
+	oneof event {
+		snapchat.cdp.cof.events.COFRecoveryEvent cofRecoveryEvent = 1;
+		snapchat.cdp.cof.events.COFSyncEvent cofSyncEvent = 2;
+	}
+
+}

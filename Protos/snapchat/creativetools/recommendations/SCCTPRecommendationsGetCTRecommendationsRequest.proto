@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.recommendations;
+
+import "snapchat/creativetools/recommendations/SCCTPRecommendationsCTContext.proto";
+
+message SCCTPRecommendationsGetCTRecommendationsRequest {
+	repeated snapchat.creativetools.recommendations.SCCTPRecommendationsCTContext contextsArray = 1;
+	string cameraType = 2;
+}

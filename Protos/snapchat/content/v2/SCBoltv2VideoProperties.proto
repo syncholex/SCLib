@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "snapchat/content/v2/SCBoltv2SegmentFrameProperties.proto";
+import "snapchat/content/v2/SCBoltv2SegmentTimeProperties.proto";
+
+message SCBoltv2VideoProperties {
+	bool calculateVmaf = 1;
+
+	oneof segmentProperties {
+		snapchat.content.v2.SCBoltv2SegmentFrameProperties segmentFrameProperties = 2;
+		snapchat.content.v2.SCBoltv2SegmentTimeProperties segmentTimeProperties = 3;
+	}
+
+
+	enum SCBoltv2AudioNormalizationProperties {
+		NOT_SET = 0;
+		FORCE_AUDIO_NORMALIZATION = 1;
+		SKIP_AUDIO_NORMALIZATION = 2;
+	}
+
+	SCBoltv2AudioNormalizationProperties audioNormalizationProperties = 4;
+}

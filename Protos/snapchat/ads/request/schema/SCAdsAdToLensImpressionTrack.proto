@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsLensCarouselImpressionTrack.proto";
+
+message SCAdsAdToLensImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	repeated snapchat.ads.request.schema.SCAdsLensCarouselImpressionTrack adToLensCarouselImpressionsArray = 2;
+}

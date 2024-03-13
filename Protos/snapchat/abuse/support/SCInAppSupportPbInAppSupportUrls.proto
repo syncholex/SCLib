@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCInAppSupportPbInAppSupportUrls {
+	string iNeedHelpURL = 1;
+	string accountCompromisedFormURL = 2;
+	string loginPasswordURL = 3;
+	string resetPasswordViaEmailURL = 4;
+	string loginVerificationCodeURL = 5;
+}

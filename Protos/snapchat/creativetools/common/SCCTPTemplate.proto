@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message SCCTPTemplate {
+	snapchat.creativetools.common.SCCTPEncryptedMedia encryptedPreviewVideo = 2;
+	bytes serializedSnapDoc = 3;
+	uint64 creationTimestamp = 4;
+
+	enum SCCTPTemplate_Type {
+		UNSET = 0;
+		SNAPCHAT = 1;
+		MASHUPS = 2;
+	}
+
+	SCCTPTemplate_Type type = 5;
+	snapchat.creativetools.common.SCCTPEncryptedMedia thumbnail = 6;
+}

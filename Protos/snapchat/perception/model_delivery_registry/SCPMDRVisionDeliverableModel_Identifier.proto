@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRVisionDeliverableModel_Identifier {
+	string name = 1;
+	string flavor = 2;
+
+	enum SCPVNRequestType {
+		REQUESTTYPE_UNSET = 0;
+		REQUESTTYPE_DETECT_BARCODES = 1;
+	}
+
+	SCPVNRequestType requestType = 3;
+	string version = 4;
+}

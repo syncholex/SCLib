@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCORETweakParameter {
+
+	oneof value {
+		int32 intValue = 1;
+		float floatValue = 2;
+		bool boolValue = 3;
+		string stringValue = 4;
+	}
+
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingCountdownStatusMessage {
+	snapchat.messaging.SCMessagingUUID countdownId = 1;
+
+	enum SCMessagingCountdownStatusMessage_CountdownStatusType {
+		COUNTDOWN_STATUS_UNSET = 0;
+		COUNTDOWN_STATUS_CREATED = 1;
+		COUNTDOWN_STATUS_DELETED = 2;
+		COUNTDOWN_STATUS_UPDATED = 3;
+		COUNTDOWN_STATUS_STARTED = 4;
+	}
+
+	SCMessagingCountdownStatusMessage_CountdownStatusType statusType = 2;
+	string countdownName = 3;
+}

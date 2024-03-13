@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstance.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCCognacAppInstancesChatDockEntry {
+	cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+	google.protobuf.GPBTimestamp expirationTimestamp = 2;
+	int64 expirationDurationSeconds = 3;
+	bool terminated = 4;
+	int64 version = 5;
+}

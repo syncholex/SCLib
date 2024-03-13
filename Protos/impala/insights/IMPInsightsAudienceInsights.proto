@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsAudienceInsights_GenderStats.proto";
+import "impala/insights/IMPInsightsAudienceInsights_AgeStats.proto";
+import "impala/insights/IMPInsightsAudienceInsights_GenderAgeStats.proto";
+import "impala/insights/IMPInsightsAudienceInsights_SubscribeSourceStats.proto";
+import "impala/insights/IMPInsightsAudienceInsights_LifestyleStats.proto";
+import "impala/insights/IMPInsightsAudienceInsights_RegionStats.proto";
+
+message IMPInsightsAudienceInsights {
+	repeated impala.insights.IMPInsightsAudienceInsights_GenderStats genderDistributionArray = 2;
+	repeated impala.insights.IMPInsightsAudienceInsights_AgeStats ageDistributionArray = 3;
+	repeated impala.insights.IMPInsightsAudienceInsights_GenderAgeStats genderAgeDistributionArray = 4;
+	repeated impala.insights.IMPInsightsAudienceInsights_SubscribeSourceStats subscribeSourceDistributionArray = 5;
+	repeated impala.insights.IMPInsightsAudienceInsights_LifestyleStats lifestyleDistributionArray = 6;
+	repeated impala.insights.IMPInsightsAudienceInsights_RegionStats topRegionsArray = 7;
+}

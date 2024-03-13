@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBLogFileMetadata.proto";
+import "malibu/MLBLogData.proto";
+
+message MLBLogResponse {
+	repeated malibu.MLBLogFileMetadata logFileMetadataArray = 1;
+	malibu.MLBLogData logData = 2;
+	bool deletedAnalytics = 3;
+}

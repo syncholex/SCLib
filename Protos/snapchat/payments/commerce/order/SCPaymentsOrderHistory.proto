@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+import "snapchat/payments/commerce/order/SCPaymentsOrder.proto";
+
+message SCPaymentsOrderHistory {
+	repeated snapchat.payments.commerce.order.SCPaymentsOrder ordersArray = 1;
+	uint32 cursor = 2;
+}

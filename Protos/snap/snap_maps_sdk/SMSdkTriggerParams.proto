@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkTriggerParams_State.proto";
+
+message SMSdkTriggerParams {
+	string clientDataSource = 1;
+	string featureId = 2;
+	repeated snap.snap_maps_sdk.SMSdkTriggerParams_State contextArray = 3;
+}

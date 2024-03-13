@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOVisibility_Geofence.proto";
+
+message STOVisibility_ContentGeoAccess {
+	repeated snapchat.storydoc.STOVisibility_Geofence discoverFeedWhitelistArray = 1;
+	repeated snapchat.storydoc.STOVisibility_Geofence searchWhitelistArray = 2;
+	repeated snapchat.storydoc.STOVisibility_Geofence snapcodeWhitelistArray = 3;
+	repeated snapchat.storydoc.STOVisibility_Geofence shareWhitelistArray = 4;
+}

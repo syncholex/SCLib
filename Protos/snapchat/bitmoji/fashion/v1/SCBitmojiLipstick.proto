@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiLipstick {
+	int32 lipstickTone = 1;
+}

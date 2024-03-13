@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingSnapViewability {
+
+	enum SCMessagingSnapPostOpenViewingPolicy {
+		POLICY_UNSET_OR_ENVELOPE = 0;
+		POLICY_MEDIA = 1;
+	}
+
+	SCMessagingSnapPostOpenViewingPolicy snapPostOpenViewingPolicy = 1;
+}

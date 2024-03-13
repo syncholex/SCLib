@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDReadPermissionSettingsResponse {
+	string userId = 1;
+	bool contactAccessAppEnabled = 2;
+	bool notificationAppEnabled = 3;
+	bool locationAppEnabled = 4;
+	bool cameraRollAppEnabled = 5;
+	bool bluetoothAppEnabled = 6;
+	bool microphoneAppEnabled = 7;
+	bool cameraAppEnabled = 8;
+	bool locationDeviceEnabled = 9;
+	bool bluetoothDeviceEnabled = 10;
+
+	oneof optionalInteractiveNotificationAppEnabled {
+		bool interactiveNotificationAppEnabled = 11;
+	}
+
+	bool userLocationAppEnabled = 12;
+	bool userContactAppEnabled = 13;
+
+	enum SCIDPhotoPermissionAuthorizationStatus {
+		UNSET = 0;
+		AUTHORIZED = 1;
+		NOT_DETERMINED = 2;
+		RESTRICTED = 3;
+		DENIED = 4;
+		LIMITED = 5;
+	}
+
+	SCIDPhotoPermissionAuthorizationStatus photoPermissionAuthorizationStatus = 14;
+}

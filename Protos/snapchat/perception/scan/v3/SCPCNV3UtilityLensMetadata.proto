@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3UtilityLensViewModel.proto";
+
+message SCPCNV3UtilityLensMetadata {
+	string lensId = 1;
+	string name = 2;
+	string iconURL = 3;
+	snapchat.perception.scan.v3.SCPCNV3UtilityLensViewModel frontFacingViewModel = 4;
+	snapchat.perception.scan.v3.SCPCNV3UtilityLensViewModel backFacingViewModel = 5;
+	bool cameraPickerEnabled = 6;
+	bool barcodeRequired = 7;
+}

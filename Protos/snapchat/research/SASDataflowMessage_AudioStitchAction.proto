@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioStitch.proto";
+
+message SASDataflowMessage_AudioStitchAction {
+	snapchat.research.SASAudioStitch audioStitch = 1;
+
+	enum SASAction {
+		PUT = 0;
+		DELETE = 1;
+	}
+
+	SASAction action = 2;
+}

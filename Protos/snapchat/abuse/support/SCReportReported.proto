@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportUserReportData.proto";
+import "snapchat/abuse/support/SCReportProfilePictureReportData.proto";
+import "snapchat/abuse/support/SCReportLensReportData.proto";
+import "snapchat/abuse/support/SCReportPrivateSnapReportData.proto";
+import "snapchat/abuse/support/SCReportSpotlightStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportCustomStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportMyStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportPublicUserStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportPublisherStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportMapStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportHighlightSnapReportData.proto";
+import "snapchat/abuse/support/SCReportTopicStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportPublisherStoryTileReportData.proto";
+import "snapchat/abuse/support/SCReportOfficialUserStoryTileReportData.proto";
+import "snapchat/abuse/support/SCReportNonPartnerStoryTileReportData.proto";
+import "snapchat/abuse/support/SCReportHighlightTileReportData.proto";
+import "snapchat/abuse/support/SCReportChatMediaReportData.proto";
+import "snapchat/abuse/support/SCReportMediaShareReportData.proto";
+import "snapchat/abuse/support/SCReportSpotlightReplyReportData.proto";
+import "snapchat/abuse/support/SCReportStoreItemReportData.proto";
+import "snapchat/abuse/support/SCReportSavedStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportSavedStoryTileReportData.proto";
+import "snapchat/abuse/support/SCReportChatMessageReportData.proto";
+import "snapchat/abuse/support/SCReportChatWallpaperReportData.proto";
+import "snapchat/abuse/support/SCReportCameosReportData.proto";
+import "snapchat/abuse/support/SCReportSextortionReportData.proto";
+import "snapchat/abuse/support/SCReportProfileBackgroundReportData.proto";
+import "snapchat/abuse/support/SCReportGenerativeContentCreationFeedbackReportData.proto";
+import "snapchat/abuse/support/SCReportStoryCommentReportData.proto";
+import "snapchat/abuse/support/SCReportSnapgraphEscalationStorySnapReportData.proto";
+import "snapchat/abuse/support/SCReportBitmojiOutfitReportData.proto";
+import "snapchat/abuse/support/SCReportTestReportData.proto";
+
+message SCReportReported {
+
+	oneof reportedData {
+		snapchat.abuse.support.SCReportUserReportData userReportData = 101;
+		snapchat.abuse.support.SCReportProfilePictureReportData profilePictureReportData = 102;
+		snapchat.abuse.support.SCReportLensReportData lensReportData = 103;
+		snapchat.abuse.support.SCReportPrivateSnapReportData privateSnapReportData = 104;
+		snapchat.abuse.support.SCReportSpotlightStorySnapReportData spotlightSnapReportData = 105;
+		snapchat.abuse.support.SCReportCustomStorySnapReportData customStorySnapReportData = 106;
+		snapchat.abuse.support.SCReportMyStorySnapReportData myStorySnapReportData = 107;
+		snapchat.abuse.support.SCReportPublicUserStorySnapReportData publicUserStorySnapReportData = 108;
+		snapchat.abuse.support.SCReportPublisherStorySnapReportData publisherStorySnapReportData = 109;
+		snapchat.abuse.support.SCReportMapStorySnapReportData mapStorySnapReportData = 110;
+		snapchat.abuse.support.SCReportHighlightSnapReportData highlightSnapReportData = 111;
+		snapchat.abuse.support.SCReportTopicStorySnapReportData topicStorySnapReportData = 112;
+		snapchat.abuse.support.SCReportPublisherStoryTileReportData publisherStoryTileReportData = 113;
+		snapchat.abuse.support.SCReportOfficialUserStoryTileReportData officialUserStoryTileReportData = 114;
+		snapchat.abuse.support.SCReportNonPartnerStoryTileReportData nonPartnerStoryTileReportData = 115;
+		snapchat.abuse.support.SCReportHighlightTileReportData highlightTileReportData = 116;
+		snapchat.abuse.support.SCReportChatMediaReportData chatMediaReportData = 117;
+		snapchat.abuse.support.SCReportMediaShareReportData mediaShareReportData = 119;
+		snapchat.abuse.support.SCReportSpotlightReplyReportData spotlightReplyReportData = 120;
+		snapchat.abuse.support.SCReportStoreItemReportData storeItemReportData = 121;
+		snapchat.abuse.support.SCReportSavedStorySnapReportData savedStorySnapReportData = 122;
+		snapchat.abuse.support.SCReportSavedStoryTileReportData savedStoryTileReportData = 123;
+		snapchat.abuse.support.SCReportChatMessageReportData chatMessageReportData = 124;
+		snapchat.abuse.support.SCReportChatWallpaperReportData chatWallpaperReportData = 125;
+		snapchat.abuse.support.SCReportCameosReportData cameosReportData = 126;
+		snapchat.abuse.support.SCReportSextortionReportData sextortionReportData = 127;
+		snapchat.abuse.support.SCReportProfileBackgroundReportData profileBackgroundReportData = 128;
+		snapchat.abuse.support.SCReportGenerativeContentCreationFeedbackReportData generativeContentCreationFeedbackReportData = 129;
+		snapchat.abuse.support.SCReportStoryCommentReportData storyCommentReportData = 130;
+		snapchat.abuse.support.SCReportSnapgraphEscalationStorySnapReportData snapgraphEscalationStorySnapReportData = 131;
+		snapchat.abuse.support.SCReportBitmojiOutfitReportData bitmojiOutfitReportData = 132;
+		snapchat.abuse.support.SCReportTestReportData testReportData = 199;
+	}
+
+}

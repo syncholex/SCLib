@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/common/SCPCNDecryptionKeyIv.proto";
+
+message SCPCNV3ScanCardSpotlightVideo {
+	string thumbnailURL = 1;
+	snapchat.perception.common.SCPCNDecryptionKeyIv decryptionKeyIv = 2;
+	int64 viewCount = 3;
+	string snapId = 4;
+}

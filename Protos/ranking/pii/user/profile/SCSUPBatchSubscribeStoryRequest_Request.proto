@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPActionableStoryKey.proto";
+
+message SCSUPBatchSubscribeStoryRequest_Request {
+	ranking.pii.user.profile.SCSUPActionableStoryKey storyKey = 1;
+
+	enum SCSUPSubscribeStoryRequest_SubscribeState {
+		SUB_STATE_UNKNOWN = 0;
+		SUB_STATE_SUBSCRIBED = 1;
+		SUB_STATE_UNSUBSCRIBED = 2;
+		SUB_STATE_HIDDEN = 3;
+		SUB_STATE_UNHIDDEN = 4;
+	}
+
+	SCSUPSubscribeStoryRequest_SubscribeState toState = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPAdminHighlight.proto";
+
+message IMPAdminListManagedSpotlightHighlightsResponse {
+	repeated impala.highlights.IMPAdminHighlight spotlightHighlightsArray = 1;
+	string nextPageId = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_QuestionStickerInfo {
+	string question = 1;
+	uint64 questionCreationTimestamp = 2;
+}

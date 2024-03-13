@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+message SCCrystalHubGetActivityRequest {
+	string payoutEndDate = 1;
+	string cashoutEndDate = 2;
+	int64 pageSize = 3;
+}

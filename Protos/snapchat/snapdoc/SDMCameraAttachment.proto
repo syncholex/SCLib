@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMLensCarousel.proto";
+
+message SDMCameraAttachment {
+	snapchat.snapdoc.SDMLensCarousel carousel = 1;
+
+	enum SDMCameraAttachment_SendToBehavior {
+		DEFAULT_SEND_TO = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	SDMCameraAttachment_SendToBehavior sendToBehavior = 2;
+	string id_p = 3;
+}

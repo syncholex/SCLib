@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema.engagement;
+
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsRequestEngagementFriendUserStories {
+	google.protobuf.GPBInt32Value numUnviewedFriendStories = 1;
+}

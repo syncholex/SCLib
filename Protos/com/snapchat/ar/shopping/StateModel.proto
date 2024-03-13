@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+import "com/snapchat/ar/shopping/StateProducts.proto";
+
+message StateModel {
+
+	oneof state {
+		com.snapchat.ar.shopping.StateProducts products = 1;
+		string key = 2;
+	}
+
+}

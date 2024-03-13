@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBCustomFlightMode.proto";
+import "cheerios/CHRPBFlightModeSettings.proto";
+
+message CHRPBFlightSettings {
+	cheerios.CHRPBCustomFlightMode customFlightMode = 1;
+	cheerios.CHRPBFlightModeSettings hoverSettings = 2;
+	cheerios.CHRPBFlightModeSettings revealSettings = 3;
+	cheerios.CHRPBFlightModeSettings followSettings = 4;
+	cheerios.CHRPBFlightModeSettings orbitSettings = 5;
+	cheerios.CHRPBFlightModeSettings customSettings = 6;
+}

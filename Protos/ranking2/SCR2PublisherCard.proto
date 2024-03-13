@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2ShowMetadata.proto";
+
+message SCR2PublisherCard {
+	string name = 1;
+	string publisherName = 2;
+	string formalName = 3;
+	string description_p = 4;
+	string searchIconURL = 5;
+	string filledIconURL = 6;
+	string editionDeeplinkURL = 7;
+	string publisherDeeplinkURL = 8;
+	string primaryColor = 9;
+	int64 editionId = 10;
+	int64 publisherId = 11;
+	string horizontalIconURL = 12;
+	string businessProfileId = 13;
+	ranking2.SCR2ShowMetadata showMetadata = 14;
+	bool isShareable = 15;
+	string profileLargeLogoURL = 16;
+	string websiteURL = 17;
+	string profileLargeLogoBitmojiTemplateId = 18;
+
+	enum SCR2LogoDisplay_Enum {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	SCR2LogoDisplay_Enum profileLogoDisplay = 19;
+
+	enum SCR2PublisherAdSetting_Enum {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	SCR2PublisherAdSetting_Enum adSetting = 20;
+}

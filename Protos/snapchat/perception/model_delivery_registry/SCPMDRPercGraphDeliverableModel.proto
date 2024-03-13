@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRPercGraphDeliverableModel_Identifier.proto";
+
+message SCPMDRPercGraphDeliverableModel {
+	snapchat.perception.model_delivery_registry.SCPMDRPercGraphDeliverableModel_Identifier identifier = 1;
+	bytes model = 2;
+}

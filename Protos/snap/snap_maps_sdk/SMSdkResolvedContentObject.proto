@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkContentObject.proto";
+
+message SMSdkResolvedContentObject {
+	snap.snap_maps_sdk.SMSdkContentObject contentObject = 1;
+
+	oneof result {
+		bytes resolvedData = 2;
+		string errorMessage = 3;
+	}
+
+}

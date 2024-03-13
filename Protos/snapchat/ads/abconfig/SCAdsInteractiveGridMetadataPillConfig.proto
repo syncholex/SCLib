@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsInteractiveGridMetadataPillConfig {
+	int32 maxTextWidth = 1;
+	int32 borderRadius = 2;
+	int32 textPadding = 3;
+	int32 maxNumberOfLines = 4;
+	int32 positionOffsetX = 5;
+	int32 positionOffsetY = 6;
+}

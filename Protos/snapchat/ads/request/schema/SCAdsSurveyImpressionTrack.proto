@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsSurveyAnswer.proto";
+
+message SCAdsSurveyImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	snapchat.ads.request.schema.SCAdsSurveyAnswer answer = 2;
+}

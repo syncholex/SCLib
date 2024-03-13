@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBTimeData {
+	uint64 captureUtc = 1;
+	uint64 sinceNordicBoot = 2;
+}

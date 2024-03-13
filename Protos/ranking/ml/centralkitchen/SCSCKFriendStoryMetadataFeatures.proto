@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKFriendStoryContentFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryStoryContentFeatures.proto";
+import "ranking/indexing/ScpBoostInfo.proto";
+
+message SCSCKFriendStoryMetadataFeatures {
+	int32 numStorySnapsViewedPast24Hours = 1;
+	int32 numStorySnapsScreenshotsPast24Hours = 2;
+	int32 numStorySnapsPast24Hours = 3;
+	int32 numPrivateStorySnapsViewedPast24Hours = 4;
+	int32 numPrivateStorySnapsPast24Hours = 5;
+	bool isStoryCompletelyViewed = 6;
+	bool isPrivateStoryCompletelyViewed = 7;
+	bool isPrivateStory = 8;
+	bool isMergedStory = 9;
+	float latestStoryItemAgeInHour = 10;
+	float oldestUnviewedItemAgeInHour = 11;
+	float newestUnviewedItemAgeInHour = 12;
+	ranking.ml.centralkitchen.SCSCKFriendStoryContentFeatures friendStoryUnviewedContentFeatures = 13;
+
+	enum SCSCKFriendStoryMetadataFeatures_StoryType_Enum {
+		UNKNOWN = 0;
+		FRIEND = 1;
+		GROUP = 2;
+		CUSTOM_MOB_STORY = 3;
+		GEOFENCE_MOB_STORY = 4;
+		PRIVATE_MOB_STORY = 5;
+		SHARED_MOB_STORY = 6;
+		COMMUNITY_MOB_STORY = 7;
+	}
+
+	SCSCKFriendStoryMetadataFeatures_StoryType_Enum storyType = 14;
+	ranking.ml.centralkitchen.SCSCKFriendStoryStoryContentFeatures friendStoryViewedContentFeatures = 15;
+	ranking.indexing.ScpBoostInfo scpBoostInfo = 16;
+	repeated int32 storyLevelSccTagsThumbnailArray = 17 [packed=true];
+	repeated int32 storyLevelSccTagsUnviewedArray = 18 [packed=true];
+	repeated int32 storyLevelSccTagsViewedArray = 19 [packed=true];
+}

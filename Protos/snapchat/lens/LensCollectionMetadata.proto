@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/lens/le/SCLELensExplorerHeroTile_LayoutElement.proto";
+import "snapchat/lens/LensCollectionMetadata_Localizations.proto";
+
+message LensCollectionMetadata {
+	int64 id_p = 1;
+	string name = 2;
+	string attributionUserId = 3;
+	string customAttributionName = 4;
+	string description_p = 5;
+	string tileImageURL = 6;
+	repeated int64 lensIdsArray = 7 [packed=true];
+	google.protobuf.GPBTimestamp startDateTime = 8;
+	google.protobuf.GPBTimestamp endDateTime = 9;
+	google.protobuf.GPBTimestamp updatedAt = 10;
+	google.protobuf.GPBTimestamp createDateTime = 11;
+
+	enum LensCollectionMetadata_Visibility {
+		VISIBILITY_UNSET = 0;
+		PUBLIC = 1;
+		EMPLOYEE_WHITELIST = 2;
+		TESTER_GROUP_WHITELIST = 3;
+		OFF = 4;
+	}
+
+	LensCollectionMetadata_Visibility visibility = 12;
+	double collectionScore = 13;
+	repeated int64 includeLensIdsArray = 14 [packed=true];
+	repeated int64 excludeLensIdsArray = 15 [packed=true];
+
+	enum LensCollectionMetadata_Type {
+		TYPE_UNSET = 0;
+		MANUAL = 1;
+		ALGORITHMIC = 2;
+		USER_CREATED = 3;
+		HERO_TILE = 4;
+	}
+
+	LensCollectionMetadata_Type collectionType = 16;
+	int64 seedLensId = 17;
+	string tileImageWebpURL = 18;
+	string deeplinkURL = 19;
+	bool showCollectionName = 20;
+	string layoutId = 21;
+	repeated snapchat.lens.le.SCLELensExplorerHeroTile_LayoutElement elementsArray = 22;
+	snapchat.lens.LensCollectionMetadata_Localizations localizations = 23;
+}

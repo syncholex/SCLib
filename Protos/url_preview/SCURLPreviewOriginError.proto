@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package url_preview;
+
+message SCURLPreviewOriginError {
+	bool retryable = 1;
+	int32 HTTPResponseCode = 2;
+}

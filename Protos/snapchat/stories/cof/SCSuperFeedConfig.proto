@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCSuperFeedConfig {
+	bool enableSuperFeedInCameraTab = 1;
+	bool enableSuperFeedIn4ThTab = 2;
+	bool includeFriendStories = 3;
+	bool useNewFeedType = 4;
+	bool canOpenSuperFeedIn4ThTab = 5;
+	bool showForYouStoriesInStoryRing = 6;
+	bool enableOperaPreload = 7;
+	bool disableWatchedFriendStoriesReordering = 8;
+	bool syncFriendStoriesMetadataForSuperFeedResponse = 9;
+	bool enableSuperFeedSession = 10;
+	int32 superFeedSessionTtl = 11;
+	bool displayFriendsStoriesAtTopInSession = 12;
+	int32 friendsBlendingWeight = 13;
+	int32 subsBlendingWeight = 14;
+	int32 foryouBlendingWeight = 15;
+	int32 spotlightBlendingWeight = 16;
+	bool filterOutFriends = 17;
+	bool filterOutSubs = 18;
+	bool filterOutForyou = 19;
+	bool filterOutSpotlight = 20;
+	int32 friendsBlendingOrder = 21;
+	int32 subsBlendingOrder = 22;
+	int32 foryouBlendingOrder = 23;
+	int32 spotlightBlendingOrder = 24;
+	int32 constraintBlendingCreatorQuota = 25;
+	int32 constraintBlendingCreatorRollingWindow = 26;
+	double constraintBlendingCreatorViolationDemotion = 27;
+	double incompleteStoryDemotion = 28;
+	double filterMinDurationMs = 29;
+	double filterMaxDurationMs = 30;
+	int32 numStoriesSfBlend = 31;
+	bool sharedStoriesEnabled = 32;
+}

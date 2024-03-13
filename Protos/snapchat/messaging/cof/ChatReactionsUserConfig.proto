@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message ChatReactionsUserConfig {
+	repeated uint64 selectableIntentsArray = 1 [packed=true];
+}

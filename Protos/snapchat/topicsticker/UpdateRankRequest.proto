@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.topicsticker;
+
+import "snapchat/topicsticker/UpdateRankRequest_UpdateRank.proto";
+
+message UpdateRankRequest {
+	repeated snapchat.topicsticker.UpdateRankRequest_UpdateRank updateRanksArray = 1;
+}

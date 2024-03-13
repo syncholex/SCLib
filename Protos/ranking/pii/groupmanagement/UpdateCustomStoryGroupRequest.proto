@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/UserMembership.proto";
+import "ranking/pii/groupmanagement/BoltMediaClientInfo.proto";
+import "ranking/pii/groupmanagement/CommunityProfileMetadata.proto";
+
+message UpdateCustomStoryGroupRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	ranking.core.SCSCOREUUID groupId = 2;
+	uint64 groupVersion = 3;
+	string displayName = 4;
+
+	oneof autoSaveToMemories {
+		bool enableAutoSaveToMemories = 5;
+		bool disableAutoSaveToMemories = 6;
+	}
+
+	repeated ranking.pii.groupmanagement.UserMembership addedMembersArray = 7;
+	repeated ranking.pii.groupmanagement.UserMembership modifiedMembersArray = 8;
+	repeated ranking.core.SCSCOREUUID removedMembersArray = 9;
+	string description_p = 10;
+	ranking.pii.groupmanagement.BoltMediaClientInfo boltMediaClientInfo = 11;
+	repeated ranking.core.SCSCOREUUID bannedMembersArray = 12;
+	repeated ranking.core.SCSCOREUUID unbannedMembersArray = 13;
+	ranking.pii.groupmanagement.CommunityProfileMetadata communityProfileMetadata = 14;
+}

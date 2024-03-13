@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHObjectKey.proto";
+
+message SCDHDatasetParameter {
+	snapchat.domainhub.common.SCDHObjectKey objectKey = 1;
+
+	enum SCDHParameterName {
+		PARAMETER_UNSET = 0;
+		APP_TYPE = 1;
+		APP_VERSION = 2;
+		LOCALES = 3;
+		AB_EXPERIMENTS = 4;
+		SNAPCHAT_USER_ID = 5;
+		IS_EMPLOYEE = 6;
+		SNAP_AD_ID = 7;
+		DESTINATION_TYPE = 8;
+		UNLOCK_TYPE = 9;
+		AD_TYPE = 10;
+		IS_TESTER = 11;
+		LENS_CAROUSEL_POSITION = 12;
+		LENS_COLLECTION_ID = 13;
+		TIMEZONE_ID = 14;
+		SHOPPING_LENS_DELIVERY_CHANNEL = 15;
+		SCT_ATTACHMENT = 16;
+		AD_ASSOCIATED_PROFILE_ID = 17;
+		BUNDLE_VERSION = 18;
+		CLIENT_OS = 19;
+		LENS_CORE_VERSION = 20;
+		COUNTRY_CODE = 21;
+		DEMOGRAPHICS = 22;
+		BRAND_SAFETY_ACCOUNT_TYPE = 23;
+		BITMOJI_GENDER = 24;
+		AD_PRODUCT_TYPE = 25;
+		DEVICE_MODEL = 26;
+		DELIVERY_FLOW = 27;
+	}
+
+	SCDHParameterName name = 2;
+
+	oneof value {
+		bytes bytesValue = 3;
+		int32 intValue = 4;
+		int64 longValue = 5;
+		string stringValue = 6;
+		bool boolValue = 7;
+	}
+
+}

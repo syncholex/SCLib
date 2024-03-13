@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/genai/dreams/SCPbGenAILoraStyle.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIOneShotProperties.proto";
+
+message SCPbGenAIDreamPrompt {
+	string id_p = 1;
+	string prompt = 2;
+	string poseURL = 3;
+	string negativePrompt = 4;
+	snapchat.cameos.genai.dreams.SCPbGenAILoraStyle loraStyle = 5;
+	snapchat.cameos.genai.dreams.SCPbGenAIOneShotProperties oneShotProperties = 6;
+	string modelId = 7;
+}

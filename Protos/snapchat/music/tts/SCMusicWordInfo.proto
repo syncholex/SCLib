@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.tts;
+
+message SCMusicWordInfo {
+	int32 startTime = 1;
+	int32 endTime = 2;
+	string word = 3;
+}

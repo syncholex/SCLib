@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+import "validate/FieldRules.proto";
+
+message MapRules {
+	uint64 minPairs = 1;
+	uint64 maxPairs = 2;
+	bool noSparse = 3;
+	validate.FieldRules keys = 4;
+	validate.FieldRules values = 5;
+	bool ignoreEmpty = 6;
+}

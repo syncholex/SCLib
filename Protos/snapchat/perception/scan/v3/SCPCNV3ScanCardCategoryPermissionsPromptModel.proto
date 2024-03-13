@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3Notification.proto";
+import "snapchat/perception/scan/v3/SCPCNV3AlertDialog.proto";
+
+message SCPCNV3ScanCardCategoryPermissionsPromptModel {
+	string categoryId = 1;
+	string headerText = 2;
+	string headerIconURL = 3;
+	string bodyText = 4;
+	string ctaText = 5;
+	snapchat.perception.scan.v3.SCPCNV3Notification enabledPermissionsNotification = 6;
+	snapchat.perception.scan.v3.SCPCNV3AlertDialog dismissAlertDialog = 7;
+}

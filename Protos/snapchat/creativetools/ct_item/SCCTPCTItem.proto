@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ct_item;
+
+import "snapchat/creativetools/common/SCCTPCompositeId.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem_Entity.proto";
+import "snapchat/creativetools/common/SCCTPCTConfig.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem_AssociatedId.proto";
+
+message SCCTPCTItem {
+	snapchat.creativetools.common.SCCTPCompositeId legacyCompositeId = 1;
+	snapchat.creativetools.ct_item.SCCTPCTItem_Entity entity = 2;
+	snapchat.creativetools.common.SCCTPCTConfig config = 3;
+	uint64 ctId = 4;
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem_AssociatedId associatedIdsArray = 5;
+	bytes id_p = 6;
+
+	enum SCCTPSyncSensitivity {
+		SYNC_SENSITIVITY_UNSET = 0;
+		HIGH = 1;
+		LOW = 2;
+	}
+
+	SCCTPSyncSensitivity syncSensitivity = 7;
+}

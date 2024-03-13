@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SCGIGroupInvitePersonInfo {
+	string userId = 1;
+	string username = 2;
+	string displayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+	string mutableUsername = 6;
+}

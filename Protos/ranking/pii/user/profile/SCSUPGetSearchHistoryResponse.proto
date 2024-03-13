@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPGetSearchHistoryResponse_QueryInfo.proto";
+
+message SCSUPGetSearchHistoryResponse {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPGetSearchHistoryResponse_QueryInfo queryInfosArray = 2;
+}

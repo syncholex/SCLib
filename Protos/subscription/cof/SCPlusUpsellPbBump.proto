@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package subscription.cof;
+
+import "subscription/cof/SCPlusUpsellPbImpressionConfig.proto";
+
+message SCPlusUpsellPbBump {
+	uint64 bumpIdMillis = 1;
+	subscription.cof.SCPlusUpsellPbImpressionConfig impressionConfig = 2;
+	uint32 maxImpressions = 3;
+	uint64 maxDurationMillis = 4;
+}

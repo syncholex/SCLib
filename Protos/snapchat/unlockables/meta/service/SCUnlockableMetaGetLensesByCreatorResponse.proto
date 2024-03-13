@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+import "snapchat/unlockables/meta/service/SCUnlockableMetaLensMetadata.proto";
+
+message SCUnlockableMetaGetLensesByCreatorResponse {
+	repeated snapchat.unlockables.meta.service.SCUnlockableMetaLensMetadata lensesArray = 1;
+	bool hasMoreResults = 2;
+	int32 nextStartIndex = 3;
+}

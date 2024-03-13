@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message BundleInfo {
+	string snapId = 1;
+	string bundleId = 2;
+	int32 segmentId = 3;
+	int32 segmentCount = 4;
+}

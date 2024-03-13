@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/UserMembership.proto";
+
+message UpdateCustomStoryGroupLegacyRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	ranking.core.SCSCOREUUID groupId = 2;
+	string displayName = 3;
+
+	oneof autoSaveToMemories {
+		bool enableAutoSaveToMemories = 4;
+		bool disableAutoSaveToMemories = 5;
+	}
+
+	repeated ranking.pii.groupmanagement.UserMembership membersArray = 6;
+	int64 updateTsMs = 7;
+}

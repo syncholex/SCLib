@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacConnectionApiGetValidSessionsRequest {
+	string userId = 1;
+	string appId = 2;
+}

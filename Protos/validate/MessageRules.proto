@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package validate;
+
+message MessageRules {
+	bool skip = 1;
+	bool required = 2;
+}

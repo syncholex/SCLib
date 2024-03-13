@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.common;
+
+message IosDeeplink {
+	string iosUri = 1;
+	string iosAppId = 2;
+}

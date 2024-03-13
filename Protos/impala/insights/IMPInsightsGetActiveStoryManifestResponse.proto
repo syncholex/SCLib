@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "snapchat/context/SCStoryManifest.proto";
+
+message IMPInsightsGetActiveStoryManifestResponse {
+	snapchat.context.SCStoryManifest manifest = 1;
+}

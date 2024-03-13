@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/LensUIAction.proto";
+
+message Breadcrumb {
+
+	enum Event {
+		EVENT_UNSET = 0;
+		ON_CREATE = 1;
+		ON_START = 2;
+		ON_RESUME = 3;
+		ON_PAUSE = 4;
+		ON_STOP = 5;
+		ON_DESTROY = 6;
+		LAND_ON_PAGE = 7;
+		NAVIGATE_PAGE = 8;
+		LENS_UI_ACTION = 9;
+	}
+
+	Event event = 1;
+
+	enum Page {
+		PAGE_UNSET = 0;
+		CAMERA_FIXED = 1;
+		CAMERA_STACKED = 2;
+		CAMERA_DIRECTOR_MODE = 3;
+		CAMERA_BANNER = 4;
+		CAMERA_LOCKSCREEN = 5;
+		FRIENDS_FEED = 6;
+		DISCOVER_FEED = 7;
+		MEMORIES = 8;
+		SEARCH_V2_PULL_DOWN = 9;
+		CHAT = 10;
+		MAP = 11;
+		SPOTLIGHT = 12;
+		MY_PROFILE = 13;
+		SPOTLIGHT_TRENDING = 14;
+		DF_SUBSCRIPTIONS = 15;
+		DISCOVER_STORIES_PLAYBACK = 16;
+	}
+
+
+	enum Page {
+		PAGE_UNSET = 0;
+		CAMERA_FIXED = 1;
+		CAMERA_STACKED = 2;
+		CAMERA_DIRECTOR_MODE = 3;
+		CAMERA_BANNER = 4;
+		CAMERA_LOCKSCREEN = 5;
+		FRIENDS_FEED = 6;
+		DISCOVER_FEED = 7;
+		MEMORIES = 8;
+		SEARCH_V2_PULL_DOWN = 9;
+		CHAT = 10;
+		MAP = 11;
+		SPOTLIGHT = 12;
+		MY_PROFILE = 13;
+		SPOTLIGHT_TRENDING = 14;
+		DF_SUBSCRIPTIONS = 15;
+		DISCOVER_STORIES_PLAYBACK = 16;
+	}
+
+
+	oneof pageTo {
+		Page pageToId = 2;
+		string pageToName = 16;
+	}
+
+
+	oneof pageFrom {
+		Page pageFromId = 3;
+		string pageFromName = 17;
+	}
+
+	snapchat.appinsights.metadata.LensUIAction lensUiAction = 4;
+}

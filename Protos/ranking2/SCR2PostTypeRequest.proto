@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2PlaceLikelihood.proto";
+
+message SCR2PostTypeRequest {
+	ranking2.SCR2GeoLocation location = 1;
+	string queryText = 2;
+
+	enum SCR2PostTypeRequest_QueryTextOrigin {
+		UNKNOWN = 0;
+		QUERY_TEXT_ORIGIN_USER_INPUT = 1;
+		QUERY_TEXT_ORIGIN_AUTO_COMPLETE = 2;
+		QUERY_TEXT_ORIGIN_EMOJI_SUGGESTION = 3;
+		QUERY_TEXT_ORIGIN_RELATED_SEARCH = 4;
+		QUERY_TEXT_HERO_CARD_SEE_MORE = 5;
+		QUERY_TEXT_SPELL_CORRECTION_ESCAPE_HATCH = 6;
+		QUERY_TEXT_ORIGIN_PRE_TYPE_SUGGESTION = 7;
+		QUERY_TEXT_SPELL_CORRECTION = 8;
+	}
+
+	SCR2PostTypeRequest_QueryTextOrigin queryTextOrigin = 3;
+	string suggestionText = 4;
+	repeated ranking2.SCR2PlaceLikelihood candidatePlacesArray = 5;
+}

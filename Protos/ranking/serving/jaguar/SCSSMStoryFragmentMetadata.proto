@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoryFragmentMetadata {
+	int64 sequenceMin = 1;
+	int64 sequenceMax = 2;
+	int64 sequenceBegin = 3;
+	int64 sequenceEnd = 4;
+	bytes deltaSyncToken = 5;
+}

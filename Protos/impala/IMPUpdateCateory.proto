@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateCateory {
+
+	enum IMPBusinessCategoryV3 {
+		CATEGORY_V3_UNKNOWN = 0;
+		CATEGORY_V3_BUSINESS_GROUP = 1;
+		CATEGORY_V3_PEOPLE = 2;
+		CATEGORY_V3_PRODUCT_BRAND = 3;
+	}
+
+	IMPBusinessCategoryV3 val = 1;
+}

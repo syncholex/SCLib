@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource.proto";
+
+message SCCTPCTFeedNode {
+
+	enum SCCTPCTFeedType {
+		SEARCH = 0;
+		RECENT = 1;
+		HOMETAB = 2;
+		CUSTOM_STICKER = 4;
+		BITMOJI = 5;
+		SNAPCHAT = 7;
+		EMOJI = 8;
+		UNLOCKED = 9;
+		BLOOP = 10;
+		ROOT = 11;
+		STICKER_PICKER = 12;
+		CAPTION_STYLE = 13;
+		FAVORITES = 14;
+		FOR_YOU = 15;
+		SOUND_FAVORITES = 16;
+		CHAT_REACTIONS = 17;
+		FILTER = 18;
+		GFYCAT = 19;
+		REMOTE_CHAT_SEARCH = 20;
+		SOUND_RECENTS = 21;
+		QUICK_REPLY = 22;
+		SHOPPING = 23;
+		TEMPLATE_HOMETAB = 24;
+	}
+
+	SCCTPCTFeedType type = 1;
+	string name = 2;
+	snapchat.creativetools.common.SCCTPMediaContent media = 3;
+	repeated snapchat.creativetools.common.SCCTPCTFeedNode nodesArray = 4;
+	snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource source = 5;
+	uint64 id_p = 6;
+	uint32 spanCount = 7;
+	bool isContextIndependent = 8;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api;
+
+message SCLPLensNoFillAdResponse {
+	int64 carouselIndex = 1;
+	bytes serveItemId = 2;
+	bytes encryptedAdData = 3;
+}

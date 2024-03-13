@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+message SCGFetchMixerResultsRequest_NetworkProfile {
+
+	enum SCGFetchMixerResultsRequest_NetworkProfile_Reachability {
+		REACHABILITY_UNSET = 0;
+		WWAN = 1;
+		WIFI = 2;
+	}
+
+	SCGFetchMixerResultsRequest_NetworkProfile_Reachability reachability = 1;
+
+	enum NetworkConnectionClassType {
+		CONNECTIONCLASS_UNDER400KBITPS = 0;
+		CONNECTIONCLASS_400KBITPS_800KBITPS = 1;
+		CONNECTIONCLASS_800KBITPS_1600KBITPS = 2;
+		CONNECTIONCLASS_1600KBITPS_4MBITPS = 3;
+		CONNECTIONCLASS_4MBITPS_8MBITPS = 4;
+		CONNECTIONCLASS_8MBITPS_16MBITPS = 5;
+		CONNECTIONCLASS_ABOVE16MBITPS = 6;
+		UNRECOGNIZED_VALUE = 7;
+	}
+
+	NetworkConnectionClassType downloadBandwidthClass = 2;
+	int64 downloadBandwidthEstimation = 3;
+}

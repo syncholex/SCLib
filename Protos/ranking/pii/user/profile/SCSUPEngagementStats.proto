@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEngagementStats_PublisherHidesStats.proto";
+
+message SCSUPEngagementStats {
+	uint64 numImpressions = 1;
+	uint64 numLongImpressions = 2;
+	float impressionTotalTimeSecs = 3;
+	uint64 numRawWatches = 4;
+	uint64 numCompleteWatches = 5;
+	uint64 numScreenshots = 6;
+	float totalWatchTimeSecs = 7;
+	float averageCompletionPercent = 8;
+	uint64 numFavorites = 9;
+	uint64 numUnfavorites = 10;
+	uint64 numHides = 11;
+	uint64 numShares = 12;
+	uint64 numSends = 13;
+	uint64 numUniqueWatches = 14;
+	uint64 numSnapWatches = 15;
+	ranking.pii.user.profile.SCSUPEngagementStats_PublisherHidesStats publisherHidesStats = 16;
+	uint64 numRequestDedupedImpressions = 17;
+	uint64 numRequestDedupedWatches = 18;
+	uint64 numLongWatches = 19;
+	float numImpressionsWithDecay = 20;
+	float numRawWatchesWithDecay = 21;
+	float numRequestDedupedImpressionsWithDecay = 22;
+	float numRequestDedupedWatchesWithDecay = 23;
+	float impressionTotalTimeSecsWithDecay = 24;
+	float totalWatchTimeSecsWithDecay = 25;
+	float numQualifiedImpressionsWithDecay = 26;
+	float qualifiedImpressionTotalTimeSecsWithDecay = 27;
+	float numRequestDedupedQualifiedImpressionsWithDecay = 28;
+	int32 selectionRank = 29;
+	uint64 numBoosts = 30;
+	uint64 numUnboosts = 31;
+	uint64 numRequestDedupedBoosts = 32;
+	uint64 numWatchesBelow1P5Secs = 33;
+	uint64 numWatchesAbove20Secs = 34;
+	uint64 numReports = 35;
+	uint64 numDismisses = 36;
+	uint64 numOpenProfiles = 37;
+	uint64 numWatchesBelow3Secs = 38;
+}

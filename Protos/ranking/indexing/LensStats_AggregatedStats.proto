@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message LensStats_AggregatedStats {
+	float popularity = 1;
+	float unlockRate = 2;
+	float contentProductionRate = 3;
+	float unlockLift = 4;
+	float productionLift = 5;
+	float consumptionLift = 6;
+	float reachScore = 7;
+	float productionVolume = 8;
+	float carouselLensUseRate = 9;
+	float carouselProductionVolume = 10;
+	float leSendRate = 11;
+	float leSaveRate = 12;
+	float lePostRate = 13;
+	float appwideProductionVolume = 15;
+	float appwideLensUseRate = 16;
+}

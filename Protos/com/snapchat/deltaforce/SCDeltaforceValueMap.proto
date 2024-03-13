@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforceValueMap {
+	com.snapchat.deltaforce.SCDeltaforceValue valueMap = 1;
+}

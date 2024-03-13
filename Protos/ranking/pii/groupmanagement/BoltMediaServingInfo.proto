@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+message BoltMediaServingInfo {
+	string mediaKey = 1;
+	string mediaIv = 2;
+	bytes rawImageCo = 3;
+	bytes transcodedThumbnailCo = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.aura.setting;
+
+message SCAuraPbBirthInfoSetting {
+	uint32 hourOfDay = 1;
+	uint32 minuteOfHour = 2;
+	string locationName = 3;
+	double latitude = 4;
+	double longitude = 5;
+}

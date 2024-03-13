@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+message SCMTStreamingMediaInfo {
+	string prefixURL = 1;
+	string compositeURL = 2;
+	string segmentCompositeURL = 3;
+	string segmentPreviewCompositeURL = 4;
+	string overlayURL = 5;
+	string previewURL = 6;
+	string previewWithOverlayURL = 7;
+	string mediaURL = 10;
+	int64 mediaSize = 11;
+	int64 mediaEncSize = 12;
+	string mediaVideoURL = 20;
+	int64 mediaVideoSize = 21;
+	string mediaAudioURL = 22;
+	int64 mediaAudioSize = 23;
+	int64 mediaVideoFirstSegmentSize = 24;
+	int64 mediaAudioFirstSegmentSize = 25;
+	int64 mediaVideoIndexSize = 26;
+	repeated int64 mediaVideoSegmentSizeArray = 27 [packed=true];
+	int64 mediaAudioIndexSize = 28;
+	repeated int64 mediaAudioSegmentSizeArray = 29 [packed=true];
+	string mediaM3U8URL = 30;
+	int64 mediaEncVideoSize = 31;
+	int64 mediaEncAudioSize = 32;
+	string encryptionKey = 33;
+	string encryptionIv = 34;
+	int32 mediaWidth = 40;
+	int32 mediaHeight = 41;
+	string muxedCompositeURL = 50;
+	string mediaWithOverlayURL = 61;
+	int64 mediaWithOverlaySize = 62;
+	int64 mediaWithOverlayVideoSize = 63;
+	int64 mediaWithOverlayEncVideoSize = 64;
+}

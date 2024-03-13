@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.music.tts;
+
+import "snapchat/music/tts/SCMusicWordInfo.proto";
+import "snapchat/music/tts/SCMusicPhonemeInfo.proto";
+
+message SCMusicSynthesizeResponse {
+	bytes audio = 1;
+	repeated snapchat.music.tts.SCMusicWordInfo wordsInfoArray = 2;
+	repeated snapchat.music.tts.SCMusicPhonemeInfo phonemesInfoArray = 3;
+	uint32 voiceStyle = 4;
+}

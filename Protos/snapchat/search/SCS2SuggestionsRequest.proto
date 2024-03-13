@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2UserInfo.proto";
+import "snapchat/search/SCS2Tweak.proto";
+import "snapchat/search/SCS2SuggestionsRequest_SearchContext.proto";
+
+message SCS2SuggestionsRequest {
+	repeated snapchat.search.SCS2CompositeId compIdsArray = 1;
+	snapchat.search.SCS2UserInfo userInfo = 2;
+	bool enableDebug = 3;
+	repeated snapchat.search.SCS2Tweak tweaksArray = 4;
+}

@@ -1,0 +1,206 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/core/schema/SCAdsSwipeSensitivityConfig.proto";
+
+message SCAdsViewContext {
+
+	enum SCAdsExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		AUTO_ADVANCE = 1;
+		TAP_LEFT = 2;
+		TAP_RIGHT = 3;
+		SWIPE_LEFT = 4;
+		SWIPE_RIGHT = 5;
+		SWIPE_DOWN = 6;
+		SWIPE_UP = 7;
+		BACKGROUND = 8;
+		BACK_PRESSED = 9;
+		LONG_PRESSED = 10;
+		OTHER = 11;
+		TAP_SEARCH = 12;
+		TAP_USER_PROFILE = 13;
+		TAP_BRAND_PROFILE = 14;
+		TAP_TRENDING = 15;
+		TAP_SHARE = 16;
+		TAP_HOME = 17;
+		TAP_NAV_BAR = 18;
+	}
+
+	SCAdsExitEvent exitEvent = 1;
+
+	enum SCAdsViewSource {
+		UNKNOWN_VIEW_SOURCE_UNSET = 0;
+		VIEW_SOURCE_DISCOVER = 1;
+		LIVE_STORIES = 2;
+		PLAYLIST = 3;
+		RECENT_UPDATE = 4;
+		OFFICIAL_STORIES = 5;
+		GENERATED_STORIES = 6;
+		FEED = 7;
+		CHAT_HEADER = 8;
+		PROMOTED_STORIES = 9;
+		DISCOVER_FEED_FRIENDS = 10;
+		COGNAC = 11;
+		VIEW_SOURCE_CONTENT_INTERSTITIAL = 12;
+		DF_CATEGORICAL = 13;
+		DF_FOR_YOU = 14;
+		DF_SUBSCRIPTIONS = 15;
+		PREMIUM_FEED = 16;
+		PF_CONTINUE_WATCHING = 17;
+		PF_HAPPENING_NOW = 18;
+		PF_HERO_TILE = 19;
+		PF_MORE_SHOWS = 20;
+		PF_SUBSCRIPTIONS = 21;
+		PROFILE_PUBLISHER_EDITIONS = 22;
+		PROFILE_SHOW_SEASON = 23;
+		PROFILE_UP_NEXT = 24;
+		SEARCH_DISCOVER = 25;
+		SEARCH_DISCOVER_ARCHIVED = 26;
+		SEARCH_SF = 27;
+		DF_SINGLE_TILE_FOR_YOU = 28;
+		DF_SPOTLIGHT_ALL = 29;
+		SPOTLIGHT_FEED = 30;
+		CHAT = 31;
+		MINI_PROFILE = 32;
+		FEED_DIRECT_SNAP = 33;
+		FEED_STORY_SNAP = 34;
+		SUPER_FEED = 35;
+		DEEPLINK = 36;
+		PROFILE_STORY = 37;
+		SPOTLIGHT_MIXED_FEED = 38;
+	}
+
+	SCAdsViewSource viewSource = 2;
+	google.protobuf.GPBInt32Value storiesLeft = 3;
+
+	enum SCAdsViewContext_Position {
+		UNKNOWN_POSITION = 0;
+		POST_ROLL = 1;
+		MID_ROLL = 2;
+		PRE_ROLL = 3;
+	}
+
+	SCAdsViewContext_Position renderedPosition = 4;
+
+	enum SCAdsViewContext_Position {
+		UNKNOWN_POSITION = 0;
+		POST_ROLL = 1;
+		MID_ROLL = 2;
+		PRE_ROLL = 3;
+	}
+
+	SCAdsViewContext_Position intendedPosition = 5;
+	google.protobuf.GPBInt32Value adIndexPos = 6;
+	google.protobuf.GPBInt32Value snapIndex = 7;
+	google.protobuf.GPBInt32Value snapCount = 8;
+	google.protobuf.GPBStringValue editionId = 9;
+	google.protobuf.GPBStringValue publisherId = 10;
+	google.protobuf.GPBStringValue posterId = 11;
+	google.protobuf.GPBFloatValue audioPlaybackVolume = 12;
+	google.protobuf.GPBInt32Value autoAdvanceIndex = 13;
+	google.protobuf.GPBInt32Value autoAdvanceCount = 14;
+	google.protobuf.GPBBoolValue isArchivedEdition = 15;
+	google.protobuf.GPBBoolValue useTrackAndGet = 16;
+
+	enum SCAdsViewContext_AttachmentTriggerType {
+		NONE = 0;
+		SWIPE_UP = 1;
+		TAP = 2;
+		SWIPE_LEFT = 3;
+		FOREGROUND = 4;
+	}
+
+	SCAdsViewContext_AttachmentTriggerType attachmentTriggerType = 17;
+
+	enum SCAdsOperaType {
+		HORIZONTAL_UNSET = 0;
+		VERTICAL = 1;
+		ARTIFICIAL_OPERA_TYPE = 2;
+	}
+
+	SCAdsOperaType operaType = 18;
+	google.protobuf.GPBBoolValue isOptionalAdBreak = 19;
+
+	enum SCAdsViewContext_OperaActionBarType {
+		OPAQUE = 0;
+		TRANSLUCENT = 1;
+	}
+
+	SCAdsViewContext_OperaActionBarType operaActionBarType = 20;
+	google.protobuf.GPBInt32Value placementInPod = 21;
+	google.protobuf.GPBInt32Value adsPerPod = 22;
+
+	enum SCAdsStoryType {
+		STORY_TYPE_UNSET = 0;
+		STORY_TYPE_MY = 1;
+		STORY_TYPE_OUR = 2;
+		STORY_TYPE_USER = 3;
+		STORY_TYPE_BRAND = 4;
+		STORY_TYPE_AD = 5;
+		STORY_TYPE_DYNAMIC = 6;
+		STORY_TYPE_GROUP = 7;
+		STORY_TYPE_PROMOTED = 8;
+		STORY_TYPE_LIVE_STREAMING = 9;
+		STORY_TYPE_PUBLISHER = 10;
+		STORY_TYPE_SHOW = 11;
+		STORY_TYPE_IMPALA = 12;
+		STORY_TYPE_THIRD_PARTY_APP = 13;
+		STORY_TYPE_MIXED = 14;
+		STORY_TYPE_COMMUNITY = 15;
+	}
+
+	SCAdsStoryType precedingStoryType = 23;
+
+	enum SCAdsAdInsertionDelayedReason {
+		AD_INSERTION_DELAYED_REASON_UNSET = 0;
+		EOV_THRESHOLD_NOT_MET = 1;
+	}
+
+	SCAdsAdInsertionDelayedReason adInsertionDelayedReason = 24;
+	google.protobuf.GPBBoolValue isWithinPayToPromoteContent = 25;
+	google.protobuf.GPBStringValue profileId = 26;
+	google.protobuf.GPBStringValue organicAssetId = 27;
+
+	enum SCAdsViewContext_OrganicAssetType {
+		ORGANIC_ASSET_TYPE_UNKNOWN = 0;
+		ORGANIC_ASSET_TYPE_STORY = 1;
+		ORGANIC_ASSET_TYPE_GAME = 2;
+	}
+
+	SCAdsViewContext_OrganicAssetType organicAssetType = 28;
+	google.protobuf.GPBStringValue organicContextAssetId = 29;
+
+	enum SCAdsViewContext_OrganicContextAssetType {
+		ORGANIC_CONTENT_ASSET_TYPE_UNKNOWN = 0;
+		ORGANIC_CONTENT_ASSET_TYPE_STORY = 1;
+	}
+
+	SCAdsViewContext_OrganicContextAssetType organicContextAssetType = 30;
+	google.protobuf.GPBStringValue parentAdId = 31;
+	google.protobuf.GPBStringValue organicContextProfileId = 32;
+	google.protobuf.GPBBoolValue subscriberStatus = 33;
+	google.protobuf.GPBStringValue gameBuildId = 34;
+	google.protobuf.GPBStringValue podId = 35;
+	google.protobuf.GPBInt32Value podIndexPos = 36;
+	google.protobuf.GPBInt32Value adsPerPodOriginal = 37;
+	google.protobuf.GPBStringValue publisherName = 38;
+
+	enum SCAdsViewContext_VOperaType {
+		UNSET_VOPERA_TYPE = 0;
+		VOPERA_M2 = 1;
+		VOPERA_M3 = 2;
+	}
+
+	SCAdsViewContext_VOperaType voperaType = 39;
+	google.protobuf.GPBInt32Value swipeToAttachmentRestrictionDurationMs = 40;
+	google.protobuf.GPBInt32Value cardCtaAnimationDelayMs = 41;
+	google.protobuf.GPBBoolValue serverDrivenSsfEnabled = 42;
+	snapchat.ads.core.schema.SCAdsSwipeSensitivityConfig swipeSensitivityConfig = 43;
+	google.protobuf.GPBInt32Value voperaSwipeLeftHintDisplayTimeMs = 44;
+}

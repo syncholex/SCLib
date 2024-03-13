@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsDeviceCompatibility {
+	bool compatible = 1;
+
+	enum SCCognacAppsDeviceIncompatibilityReason {
+		UNKNOWN = 0;
+		GPU_UNSUPPORTED = 1;
+		NO_GYROSCOPE = 2;
+	}
+
+	SCCognacAppsDeviceIncompatibilityReason incompatibilityReason = 2;
+}

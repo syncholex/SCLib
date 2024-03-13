@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXSnapKitActionInfo.proto";
+
+message SCCTXSnapKitInviteOpenAction {
+	snapchat.context2.api.SCCTXSnapKitActionInfo snapKitActionInfo = 1;
+	string androidPackageName = 2;
+	string appStoreListingURL = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosBloopsMetaConfigKey.proto";
+import "snapchat/cameos/common/SCCameosBloopsConfig.proto";
+
+message SCCameosBloopsMetaConfig {
+	snapchat.cameos.common.SCCameosBloopsMetaConfigKey key = 1;
+	snapchat.cameos.common.SCCameosBloopsConfig config = 2;
+}

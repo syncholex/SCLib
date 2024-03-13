@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlock;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+
+message SCPBUnlockOrderedUnlocks {
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse unlocksArray = 1;
+}

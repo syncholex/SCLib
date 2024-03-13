@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.remix;
+
+message SCCTPRemixStitchingSettings {
+	bool isStitchingEnabled = 1;
+	int32 minimumNonRemixTotalDurationMs = 2;
+	int32 minimumRemixTotalDurationMs = 3;
+	int32 mediaQualityLevel = 4;
+}

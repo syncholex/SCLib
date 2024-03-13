@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZCandidatePlace.proto";
+
+message VRZCandidatePlaces {
+	repeated snapchat.local.placediscovery.VRZCandidatePlace candidatePlacesArray = 1;
+	int32 totalPlacesInQuad = 2;
+}

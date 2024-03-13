@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2Tweak {
+	string id_p = 1;
+
+	oneof value {
+		int32 intValue = 2;
+		float floatValue = 3;
+		bool boolValue = 4;
+		string stringValue = 5;
+	}
+
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbFullScreenTakeoverImage.proto";
+import "com/snapchat/billboard/SCBillboardPbFullSceenTakeoverTitle.proto";
+import "com/snapchat/billboard/SCBillboardPbFullScreenTakeoverUIComponent.proto";
+import "com/snapchat/billboard/SCBillboardPbFullSceenTakeoverClickButton.proto";
+import "com/snapchat/billboard/SCBillboardPbFullSceenTakeoverDismissButton.proto";
+
+message SCBillboardPbFullScreenTakeoverUXConfig {
+	com.snapchat.billboard.SCBillboardPbFullScreenTakeoverImage mainImage = 1;
+	com.snapchat.billboard.SCBillboardPbFullSceenTakeoverTitle title = 2;
+	repeated com.snapchat.billboard.SCBillboardPbFullScreenTakeoverUIComponent uiComponentsArray = 3;
+	com.snapchat.billboard.SCBillboardPbFullSceenTakeoverClickButton clickButton = 4;
+	com.snapchat.billboard.SCBillboardPbFullSceenTakeoverDismissButton dismissButton = 5;
+
+	enum SCBillboardPbFullScreenTakeoverUXConfig_DismissType {
+		UNSET = 0;
+		PULL_DOWN = 1;
+		TAP_OUTSIDE = 2;
+	}
+
+	repeated SCBillboardPbFullScreenTakeoverUXConfig_DismissType dismissTypesArray = 6 [packed=true];
+}

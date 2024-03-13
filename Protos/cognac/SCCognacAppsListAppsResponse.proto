@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsApp.proto";
+
+message SCCognacAppsListAppsResponse {
+	repeated cognac.SCCognacAppsApp appsArray = 1;
+
+	enum SCCognacAppsListAppsResponse_LandingTreatment {
+		LANDING_UNKNOWN = 0;
+		LANDING_ALL = 1;
+		LANDING_GAMES = 2;
+		LANDING_MINIS = 3;
+	}
+
+	SCCognacAppsListAppsResponse_LandingTreatment landingTreatment = 2;
+}

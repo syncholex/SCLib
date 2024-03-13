@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+import "com/snapchat/item_favoriting/wire/favorites/FavoriteItem.proto";
+
+message FullFavoritesSyncResponse {
+
+	oneof checkpointType {
+		bytes queryCheckpointToken = 1;
+		bytes deltaSyncCheckpointToken = 2;
+	}
+
+	repeated com.snapchat.item_favoriting.wire.favorites.FavoriteItem favoritedItemsArray = 3;
+}

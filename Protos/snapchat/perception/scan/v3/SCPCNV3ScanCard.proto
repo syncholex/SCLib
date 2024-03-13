@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardWithLensesModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardMoreScanCanDoModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardTipsModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardFoodModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardBitmojiFashionModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardWebResultModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardSpotlightTopicModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardWithLensesModelV2.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardProfileModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardGenericInfoModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardImageWebResultModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardShowcaseModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardVisualKnowledgeModel.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardSupergreatProductReviewsModel.proto";
+
+message SCPCNV3ScanCard {
+
+	oneof scanCard {
+		snapchat.perception.scan.v3.SCPCNV3ScanCardModel scanCardModel = 1;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModel scanCardWithLensesModel = 2;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardMoreScanCanDoModel scanCardMoreScanCanDoModel = 3;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardTipsModel scanCardTipsModel = 4;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardFoodModel scanCardFoodModel = 7;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardBitmojiFashionModel scanCardBitmojiFashionModel = 9;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardWebResultModel scanCardWebResultModel = 10;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardSpotlightTopicModel scanCardSpotlightTopicModel = 11;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModelV2 scanCardWithLensesModelV2 = 12;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardProfileModel scanCardProfileModel = 13;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardGenericInfoModel scanCardGenericInfoModel = 14;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardImageWebResultModel scanCardImageWebResultModel = 15;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardShowcaseModel scanCardShowcaseModel = 17;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardVisualKnowledgeModel scanCardVisualKnowledgeModel = 18;
+		snapchat.perception.scan.v3.SCPCNV3ScanCardSupergreatProductReviewsModel scanCardSupergreatProductReviewsModel = 19;
+	}
+
+
+	enum SCPCNV3ScanCardCodeSource {
+		CODE_SOURCE_UNSET = 0;
+		CODE_SOURCE_IMAGECODE = 1;
+		CODE_SOURCE_BARCODE = 2;
+	}
+
+	SCPCNV3ScanCardCodeSource codeSource = 16;
+}

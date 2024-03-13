@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBOption.proto";
+
+message GPBEnumValue {
+	string name = 1;
+	int32 number = 2;
+	repeated google.protobuf.GPBOption optionsArray = 3;
+}

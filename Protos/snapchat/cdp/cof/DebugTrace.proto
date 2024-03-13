@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/CofStepInfo.proto";
+import "snapchat/cdp/cof/AbStepInfo.proto";
+
+message DebugTrace {
+	snapchat.cdp.cof.CofStepInfo lastCofStep = 1;
+	snapchat.cdp.cof.AbStepInfo lastAbStep = 2;
+	uint32 budgetGroupId = 3;
+}

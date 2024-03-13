@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPAuthorizeGlobalActionsResponse {
+	bool authorized = 1;
+}

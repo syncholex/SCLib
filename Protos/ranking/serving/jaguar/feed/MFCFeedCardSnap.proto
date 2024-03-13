@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "ranking/serving/jaguar/SCSSMSnapFragmentMetadata.proto";
+import "ranking/serving/jaguar/feed/MFCSnapCapabilities.proto";
+import "ranking/serving/jaguar/feed/MFCSnapLogging.proto";
+
+message MFCFeedCardSnap {
+	string snapId = 1;
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 2;
+	ranking.serving.jaguar.SCSSMSnapFragmentMetadata snapFragmentMetadata = 3;
+	ranking.serving.jaguar.feed.MFCSnapCapabilities snapCapabilities = 4;
+	ranking.serving.jaguar.feed.MFCSnapLogging snapLogging = 5;
+}

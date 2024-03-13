@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCTFeedNode_CTFeedSource_NoSource {
+}

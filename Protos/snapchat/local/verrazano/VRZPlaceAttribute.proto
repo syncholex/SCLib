@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabels.proto";
+import "snapchat/local/verrazano/VRZBlockedServices.proto";
+
+message VRZPlaceAttribute {
+	string id_p = 1;
+	int64 version = 2;
+	int64 createdAtMs = 3;
+	int64 updatedAtMs = 4;
+	int64 deprecatedAtMs = 5;
+	string name = 6;
+	string iconURL = 7;
+	repeated snapchat.local.verrazano.VRZConcordance concordancesArray = 8;
+	repeated snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 9;
+	snapchat.local.verrazano.VRZBlockedServices isBlocked = 10;
+	string emojiUnicode = 11;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+message SCMADeleteUserGeneratedActionmojiAssetRequest {
+	string assetId = 1;
+
+	enum SCMAAssetType {
+		ASSET_TYPE_UNSET = 0;
+		ASSET_TYPE_CAR = 1;
+		ASSET_TYPE_PET = 2;
+	}
+
+	SCMAAssetType assetType = 2;
+}

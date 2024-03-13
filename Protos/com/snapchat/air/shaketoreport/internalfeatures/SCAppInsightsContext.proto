@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsContext {
+
+	enum SCAppInsightsContext_Subfeature {
+		UNSET = 0;
+		ACTION_BAR = 1;
+		ACTION_MENU = 2;
+		CARDS = 3;
+		CHAT_MEDIA = 4;
+		LOGGING = 5;
+		MEMORIES = 6;
+		MESSAGING = 7;
+		POLLS = 8;
+		POST_SNAP_ACTIONS = 9;
+		REMIX = 10;
+		REPLY_ALL = 11;
+		SPOTLIGHT = 12;
+		TAPPABLE_ELEMENTS = 13;
+	}
+
+	SCAppInsightsContext_Subfeature subfeature = 1;
+}

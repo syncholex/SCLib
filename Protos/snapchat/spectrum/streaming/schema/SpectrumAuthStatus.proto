@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+message SpectrumAuthStatus {
+
+	enum SpectrumAuthStatus_SpectrumAuthType {
+		AUTH_TYPE_NA_UNSET = 0;
+		AUTH_TYPE_SNAPTOKEN = 1;
+		AUTH_TYPE_NOAUTH = 2;
+		AUTH_TYPE_SNAP_OAUTH2 = 3;
+	}
+
+	SpectrumAuthStatus_SpectrumAuthType authType = 1;
+}

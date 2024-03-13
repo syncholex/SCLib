@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.decoding;
+
+message SCDeeplinkDecodeRawLinkOnlyRequest {
+	string shortLink = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "google/protobuf/GPBEmpty.proto";
+
+message SDMDuration {
+
+	oneof displayDuration {
+		google.protobuf.GPBEmpty infinite = 1;
+		google.protobuf.GPBEmpty playOnce = 2;
+		uint32 durationSeconds = 3;
+	}
+
+}

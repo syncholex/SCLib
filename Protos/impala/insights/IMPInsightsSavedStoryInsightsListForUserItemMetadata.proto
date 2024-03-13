@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsSavedStoryInsightsListForUserItemMetadata {
+	string storyName = 2;
+	string thumbnailURL = 3;
+	int64 snapCount = 4;
+	string firstLiveDate = 5;
+	bytes contentObject = 6;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+message SCCORECodeProperties {
+	uint32 errorCode = 1;
+	string errorDescription = 2;
+	bool isRetryable = 3;
+	string source = 4;
+}

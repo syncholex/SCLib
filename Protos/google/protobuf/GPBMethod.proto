@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBOption.proto";
+
+message GPBMethod {
+	string name = 1;
+	string requestTypeURL = 2;
+	bool requestStreaming = 3;
+	string responseTypeURL = 4;
+	bool responseStreaming = 5;
+	repeated google.protobuf.GPBOption optionsArray = 6;
+
+	enum GPBSyntax {
+		SYNTAX_PROTO2 = 0;
+		SYNTAX_PROTO3 = 1;
+		SYNTAX_EDITIONS = 2;
+	}
+
+	GPBSyntax syntax = 7;
+}

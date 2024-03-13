@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGarment.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiOutfit.proto";
+
+message SCBitmojiFashionItem {
+
+	oneof item {
+		snapchat.bitmoji.fashion.v1.SCBitmojiGarment garment = 1;
+		snapchat.bitmoji.fashion.v1.SCBitmojiOutfit outfit = 2;
+	}
+
+}

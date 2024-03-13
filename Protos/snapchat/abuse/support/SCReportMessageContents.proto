@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportUnknown.proto";
+import "snapchat/abuse/support/SCReportText.proto";
+import "snapchat/abuse/support/SCReportChatMedia.proto";
+import "snapchat/abuse/support/SCReportSnap.proto";
+import "snapchat/abuse/support/SCReportQnaResponse.proto";
+import "snapchat/abuse/support/SCReportTinySnap.proto";
+import "snapchat/abuse/support/SCReportStoryShare.proto";
+
+message SCReportMessageContents {
+
+	oneof content {
+		snapchat.abuse.support.SCReportUnknown unknown = 1;
+		snapchat.abuse.support.SCReportText text = 2;
+		snapchat.abuse.support.SCReportChatMedia chatMedia = 3;
+		snapchat.abuse.support.SCReportSnap snap = 4;
+		snapchat.abuse.support.SCReportQnaResponse qnaResponse = 5;
+		snapchat.abuse.support.SCReportTinySnap tinySnap = 6;
+		snapchat.abuse.support.SCReportStoryShare storyShare = 7;
+	}
+
+}

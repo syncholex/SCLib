@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBWifiAPInfo.proto";
+
+message MLBWifiAPList {
+	repeated malibu.MLBWifiAPInfo wifiApArray = 1;
+}

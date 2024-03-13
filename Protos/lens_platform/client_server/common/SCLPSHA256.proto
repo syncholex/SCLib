@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package lens_platform.client_server.common;
+
+message SCLPSHA256 {
+	bytes data_p = 1;
+}

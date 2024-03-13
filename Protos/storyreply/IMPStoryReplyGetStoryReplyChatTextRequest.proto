@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyMessageKey.proto";
+
+message IMPStoryReplyGetStoryReplyChatTextRequest {
+	repeated storyreply.IMPStoryReplyMessageKey keyArray = 1;
+}

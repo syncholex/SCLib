@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbAction.proto";
+
+message SCBillboardPbFullSceenTakeoverClickButton {
+	string textKey = 1;
+	com.snapchat.billboard.SCBillboardPbAction action = 2;
+}

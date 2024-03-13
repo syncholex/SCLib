@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+message SCBoltUInt64Value {
+	uint64 value = 1;
+}

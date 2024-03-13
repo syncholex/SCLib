@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.customoji;
+
+message BMRenderCustomojiImageRequest {
+	string text = 1;
+	int32 customojiId = 2;
+	string locale = 3;
+	string avatarId = 4;
+	int32 scale = 5;
+}

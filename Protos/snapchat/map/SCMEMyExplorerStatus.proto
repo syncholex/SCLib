@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerStatus.proto";
+
+message SCMEMyExplorerStatus {
+	snapchat.map.SCMEExplorerStatus status = 1;
+	int64 viewCount = 2;
+	repeated string viewerIdsArray = 3;
+}

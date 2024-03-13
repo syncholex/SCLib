@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+import "com/snapchat/showcase/wire/context/ShowcaseContext.proto";
+
+message GetSizeRecommendationsRequest {
+	uint64 snapItemId = 1;
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 2;
+	com.snapchat.showcase.wire.context.ShowcaseContext showcaseContext = 3;
+}

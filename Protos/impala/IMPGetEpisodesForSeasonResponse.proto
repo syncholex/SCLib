@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/StoryDoc.proto";
+import "impala/IMPWatchedState.proto";
+
+message IMPGetEpisodesForSeasonResponse {
+	repeated snapchat.storydoc.StoryDoc episodesArray = 1;
+	string nextPageId = 2;
+	repeated impala.IMPWatchedState watchedStatesArray = 3;
+}

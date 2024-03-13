@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGTextColor.proto";
+
+message SCLGTextShadow {
+	lens_platform.client_server.legacy.SCLGTextColor color = 1;
+	double x = 2;
+	double y = 3;
+	double radius = 4;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/communityorg/SCCommunityOrgPbCohort.proto";
+import "ranking/communityorg/SCCommunityOrgPbCommunityWaitlist.proto";
+
+message SCCommunityOrgPbCommunity {
+
+	oneof groupStatus {
+		ranking.core.SCSCOREUUID groupId = 1;
+		ranking.communityorg.SCCommunityOrgPbCommunityWaitlist communityWaitlist = 3;
+	}
+
+	ranking.communityorg.SCCommunityOrgPbCohort cohort = 2;
+}

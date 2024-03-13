@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/EmailCredential.proto";
+
+message UpdateCustomStoryGroupMembershipRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	ranking.core.SCSCOREUUID groupId = 2;
+
+	enum UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType {
+		UNKNOWN = 0;
+		BLOCK = 1;
+		UNBLOCK = 2;
+		LEAVE = 3;
+		AUTO_SAVE_TO_MEMORIES = 4;
+		SHOW_ON_FRIENDSHIP_PROFILE = 5;
+		USER_VERIFY_CREDENTIAL = 6;
+		USER_WITHDRAW_PENDING_MEMBERSHIP = 7;
+		USER_ADMITTED_TO_JOIN = 8;
+	}
+
+	UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType updateMembershipType = 3;
+
+	oneof autoSaveToMemories {
+		bool enableAutoSaveToMemories = 4;
+		bool disableAutoSaveToMemories = 5;
+	}
+
+
+	oneof showOnFriendshipProfile {
+		bool enableShowOnFriendshipProfile = 6;
+		bool disableShowOnFriendshipProfile = 7;
+	}
+
+}

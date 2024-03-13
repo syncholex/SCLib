@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEngagementStats.proto";
+
+message SCSUPMapStoryUserEngagement {
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedFollowStats = 1;
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedNoFollowStats = 2;
+	ranking.pii.user.profile.SCSUPEngagementStats mapStoryFpStats = 3;
+}

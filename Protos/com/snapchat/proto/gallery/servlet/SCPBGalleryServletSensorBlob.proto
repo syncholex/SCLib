@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+message SCPBGalleryServletSensorBlob {
+	string data_p = 1;
+	int32 sensorMajorVersion = 2;
+	int32 sensorMinorVersion = 3;
+}

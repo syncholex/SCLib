@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPEngagementStats.proto";
+
+message SCSCKUserFeatures_UserStoryEngagementStats {
+	fixed64 storyKey = 1;
+	ranking.pii.user.profile.SCSUPEngagementStats engagementStats = 2;
+}

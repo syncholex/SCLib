@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHNoSessionsV1 {
+	string bitmojiTemplateId = 1;
+	string fallbackImageURL = 2;
+	string title = 3;
+	string subtitle = 4;
+	string footerText = 5;
+	string footerURL = 6;
+}

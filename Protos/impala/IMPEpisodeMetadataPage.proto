@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPEpisodeMetadata.proto";
+
+message IMPEpisodeMetadataPage {
+	repeated impala.IMPEpisodeMetadata episodesArray = 1;
+	string nextPageId = 2;
+}

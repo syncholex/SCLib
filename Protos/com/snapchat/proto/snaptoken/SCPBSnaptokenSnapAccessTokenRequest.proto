@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto.snaptoken;
+
+message SCPBSnaptokenSnapAccessTokenRequest {
+	string refreshToken = 1;
+	string scope = 2;
+}

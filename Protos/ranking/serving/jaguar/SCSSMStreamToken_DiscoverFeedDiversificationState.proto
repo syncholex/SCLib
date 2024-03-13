@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStreamToken_DiscoverFeedDiversificationState_StoryInfo.proto";
+
+message SCSSMStreamToken_DiscoverFeedDiversificationState {
+	int32 numOfStoryServed = 1;
+	repeated ranking.serving.jaguar.SCSSMStreamToken_DiscoverFeedDiversificationState_StoryInfo storyInfosArray = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPLensToolMetadata {
+	bool isFromToolbar = 1;
+}

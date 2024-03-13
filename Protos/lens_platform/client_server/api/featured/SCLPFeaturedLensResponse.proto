@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.featured;
+
+import "lens_platform/client_server/api/featured/SCLPFeaturedLensNamespaceResponse.proto";
+import "lens_platform/client_server/api/featured/SCLPFetchLocationsResponse.proto";
+
+message SCLPFeaturedLensResponse {
+	repeated lens_platform.client_server.api.featured.SCLPFeaturedLensNamespaceResponse itemsArray = 1;
+	lens_platform.client_server.api.featured.SCLPFetchLocationsResponse fetchLocationsResponse = 2;
+}

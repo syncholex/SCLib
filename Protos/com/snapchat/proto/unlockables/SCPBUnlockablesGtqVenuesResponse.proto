@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/SCPBVenue.proto";
+
+message SCPBUnlockablesGtqVenuesResponse {
+	repeated com.snapchat.proto.SCPBVenue venueFiltersArray = 1;
+}

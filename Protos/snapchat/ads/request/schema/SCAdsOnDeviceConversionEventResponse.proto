@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsEncryptedConversionEventInfo.proto";
+
+message SCAdsOnDeviceConversionEventResponse {
+	repeated snapchat.ads.request.schema.SCAdsEncryptedConversionEventInfo encryptedConversionEventListArray = 1;
+}

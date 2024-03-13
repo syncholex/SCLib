@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMapsSlippyAreUpsellsAvailableRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+
+	enum SCMapsSlippyActionName {
+		AN_UNKNOWN = 0;
+		AN_LOCATION_SHARE = 1;
+		AN_LIVE_LOCATION_UPSELL = 2;
+	}
+
+	repeated SCMapsSlippyActionName actionNamesArray = 2 [packed=true];
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensExplorerImageSequence {
+	string URLPattern = 1;
+	int32 size = 2;
+	int32 frameIntervalMs = 3;
+}

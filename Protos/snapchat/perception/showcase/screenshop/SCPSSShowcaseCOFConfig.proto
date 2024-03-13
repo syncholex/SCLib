@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/common/Value.proto";
+
+message SCPSSShowcaseCOFConfig {
+	string name = 1;
+	snapchat.common.Value value = 2;
+}

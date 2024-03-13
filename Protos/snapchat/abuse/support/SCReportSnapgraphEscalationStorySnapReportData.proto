@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportSnapgraphEscalationStorySnapReportData {
+	string snapId = 1;
+	string escalationReason = 2;
+
+	enum SCReportSnapgraphEscalationStorySnapReportData_ModerationMode {
+		UNSET = 0;
+		MODERATION = 1;
+		REMODERATION = 2;
+		APPEAL = 3;
+		AUTO_MODERATION = 4;
+		USER_REPORT_MODERATION = 5;
+	}
+
+	SCReportSnapgraphEscalationStorySnapReportData_ModerationMode moderationMode = 3;
+}

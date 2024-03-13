@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message SCULRequestInfo_ScreenInfo {
+	float screenWidthIn = 1;
+	float screenHeightIn = 2;
+	int32 screenWidthPx = 3;
+	int32 screenHeightPx = 4;
+}

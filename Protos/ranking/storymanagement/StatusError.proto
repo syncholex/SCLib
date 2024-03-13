@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+message StatusError {
+	int64 errorTsMs = 1;
+}

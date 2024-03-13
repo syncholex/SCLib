@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.gamedb;
+
+message SCMTRemoveGameMarkerWithReasonRequest {
+	string id_p = 1;
+	string reason = 2;
+}

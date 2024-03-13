@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbClientUsernameSuggestionAlgorithm.proto";
+
+message SCClientUsernameSuggestionConfigPbClientUsernameSuggestionConfig {
+	int32 uiBlockingTimeInMillisecond = 1;
+	snapchat.activation.cof.SCClientUsernameSuggestionConfigPbClientUsernameSuggestionAlgorithm clientUsernameSuggestionAlgorithm = 2;
+}

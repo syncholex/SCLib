@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBPowerWatchdogStatus {
+	bool isEnabled = 1;
+	uint32 msUntilExpiration = 2;
+}

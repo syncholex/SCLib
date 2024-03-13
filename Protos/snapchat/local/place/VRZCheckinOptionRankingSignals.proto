@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZCheckinOptionRankingSignals {
+	string wifiSsid = 1;
+	bool isConnectedToWifi = 2;
+	int32 chosenOptionIndex = 4;
+	int32 optionTapCount = 5;
+	double speedMetersPerSecond = 6;
+	double altitudeMeters = 7;
+}

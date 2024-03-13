@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetBusinessUserLinksRequest {
+	repeated string userIdArray = 1;
+}

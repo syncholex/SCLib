@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/ChatFlashbackIndex_ConversationMessagesGroupedByDay.proto";
+
+message ChatFlashbackIndex {
+	repeated snapchat.memories.ChatFlashbackIndex_ConversationMessagesGroupedByDay conversationMessagesGroupedByDayArray = 1;
+}

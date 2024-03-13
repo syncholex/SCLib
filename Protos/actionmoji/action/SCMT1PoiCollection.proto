@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1Poi.proto";
+
+message SCMT1PoiCollection {
+	repeated actionmoji.action.SCMT1Poi poisArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.sectioned_results;
+
+import "snapchat/creativetools/sectioned_results/SCCTPResultSection.proto";
+
+message SCCTPSectionedResults {
+	string debugHtml = 2;
+	repeated snapchat.creativetools.sectioned_results.SCCTPResultSection sectionsArray = 3;
+}

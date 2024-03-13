@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2PageFooter {
+
+	enum SCR2PageFooter_FooterType {
+		UNKNOWN_FOOTER = 0;
+		GOOGLE_LOCATION_ATTRIBUTION = 1;
+	}
+
+	SCR2PageFooter_FooterType type = 1;
+}

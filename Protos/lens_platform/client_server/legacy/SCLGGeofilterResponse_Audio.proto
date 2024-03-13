@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_Audio {
+	string URL = 1;
+	bool isLooping = 2;
+}

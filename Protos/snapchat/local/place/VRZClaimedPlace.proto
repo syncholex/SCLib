@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Photo.proto";
+import "snapchat/geo/SPCGRect.proto";
+
+message VRZClaimedPlace {
+	string placeId = 1;
+	string name = 2;
+	double distanceM = 3;
+	string displayAddress = 4;
+	string storyThumbnailURL = 5;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Photo photosArray = 6;
+	snapchat.geo.SPCGRect bounds = 7;
+}

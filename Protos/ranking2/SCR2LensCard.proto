@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2LensCard {
+	string lensId = 1;
+	string lensName = 2;
+	string iconURL = 3;
+	string deeplinkURL = 4;
+	string creatorName = 5;
+	bool hasUnlocked = 6;
+}

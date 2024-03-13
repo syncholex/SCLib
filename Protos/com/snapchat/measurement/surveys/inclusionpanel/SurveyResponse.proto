@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.measurement.surveys.inclusionpanel;
+
+import "com/snapchat/measurement/surveys/inclusionpanel/QuestionResponse.proto";
+
+message SurveyResponse {
+	int32 version = 1;
+	repeated com.snapchat.measurement.surveys.inclusionpanel.QuestionResponse responsesArray = 2;
+}

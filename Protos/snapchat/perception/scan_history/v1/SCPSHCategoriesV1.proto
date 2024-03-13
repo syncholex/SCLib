@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHCategoriesV1_Category.proto";
+
+message SCPSHCategoriesV1 {
+	repeated snapchat.perception.scan_history.v1.SCPSHCategoriesV1_Category categoriesArray = 1;
+}

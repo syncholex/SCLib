@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message PublishingApprovalsValue {
+
+	enum PublishingApproval {
+		SPM = 0;
+		PROGRAMMING = 1;
+		COMPLIANCE = 2;
+	}
+
+	repeated PublishingApproval valueArray = 1 [packed=true];
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsLens {
+	string businessId = 1;
+	string lensId = 2;
+	string name = 3;
+	int64 createdTimestampSec = 4;
+	string thumbnailURL = 5;
+	string iconURL = 6;
+	string deeplinkURL = 7;
+}

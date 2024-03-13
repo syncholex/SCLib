@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCOREClientInfo.proto";
+import "ranking/pii/readreceipt/SnapReadReceipt.proto";
+
+message IndexReadReceiptsRequest {
+	string requestId = 1;
+	int64 requestTimestampMs = 2;
+
+	enum SCSCORERequestOrigin_Enum {
+		UNKNOWN = 0;
+		SNAPCHAT_APP = 1;
+		ADD_FRIEND = 41;
+		PROFILE_ADD_FRIEND = 42;
+		PROFILE_FRIENDING_SUBTEXT = 43;
+		STORY_INDICATOR_IN_REGISTRATION = 44;
+		SEARCH_QUICK_ADD = 45;
+		FSN = 2;
+		IMPALA = 3;
+		CONTENT_INSIGHTS_PIPELINE = 4;
+		SNAPKIT = 8;
+		MIXER = 9;
+		STORY_STUDIO = 12;
+		NOTIFICATION_INDEXER = 13;
+		NOTIFICATION_SENDER = 16;
+		SPAM_SERVICE = 14;
+		ORCA = 15;
+		STORY_MANAGEMENT = 17;
+		STORY_TELLER = 18;
+		GRAVY = 19;
+		SNAPWEB = 20;
+		SNAPJOINER_V2 = 21;
+		SNAPJOINER_V1 = 40;
+		MODERATION_SERVICE = 22;
+		HIGHLIGHT_SERVICE = 23;
+		TEST_PLATFORM = 24;
+		BUSINESS_API = 25;
+		ADS_MEDIA_THRU_BUSINESS_API = 50;
+		COMMUNITY_ORG = 26;
+		MUSIC = 27;
+		CHANGE_USER_SERVICE = 28;
+		CHARMS = 29;
+		PIE_REVIEW_TOOL_BACKFILL = 30;
+		SEARCH_DNS = 31;
+		PFE = 32;
+		CONTEXT = 33;
+		MAPS_CONTENT = 34;
+		READ_RECEIPT_INDEXER = 35;
+		MCS = 36;
+		CAMEOS = 37;
+		CDS = 38;
+		USI = 39;
+		REPLIES_SERVER = 46;
+		INVITE = 47;
+		LISTS = 48;
+		CONTENT_MODERATION_PLATFORM = 49;
+		MERLIN = 51;
+		SPAM_TOOLS = 52;
+		ADS_API = 53;
+		GROWTH_NOTIFICATION = 54;
+		SNAPCHAT_WEB = 55;
+		ACCOUNT_SERVICE = 56;
+		MINERVA = 57;
+		INTERNAL_TEST = 5;
+		INTERNAL_AUTOMATION = 6;
+		INTERNAL_LOADTEST = 7;
+		INTERNAL_PUBSUB = 10;
+		INTERNAL_BACKFILL = 11;
+	}
+
+	SCSCORERequestOrigin_Enum origin = 3;
+	ranking.core.SCSCOREClientInfo clientInfo = 4;
+	repeated ranking.pii.readreceipt.SnapReadReceipt snapReadReceiptsArray = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+message SCCOREIPAddress {
+
+	oneof ipAddr {
+		fixed32 v4 = 1;
+		bytes v6 = 2;
+	}
+
+}

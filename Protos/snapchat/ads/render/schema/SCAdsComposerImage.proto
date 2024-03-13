@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsComposerImage {
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo renderInfo = 1;
+	google.protobuf.GPBInt32Value width = 2;
+	google.protobuf.GPBInt32Value height = 3;
+	google.protobuf.GPBStringValue backgroundColor = 4;
+}

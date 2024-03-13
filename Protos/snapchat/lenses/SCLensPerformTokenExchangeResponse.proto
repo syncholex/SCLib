@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensTokenDetails.proto";
+import "snapchat/lenses/SCLensTokenExchangeError.proto";
+
+message SCLensPerformTokenExchangeResponse {
+
+	oneof response {
+		snapchat.lenses.SCLensTokenDetails tokenDetails = 1;
+		snapchat.lenses.SCLensTokenExchangeError error = 2;
+	}
+
+}

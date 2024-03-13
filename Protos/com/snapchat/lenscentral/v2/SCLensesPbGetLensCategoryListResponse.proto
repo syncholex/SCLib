@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "com/snapchat/lenses/taxonomy/LensCategoryList.proto";
+
+message SCLensesPbGetLensCategoryListResponse {
+	com.snapchat.lenses.taxonomy.LensCategoryList lensCategoryList = 1;
+}

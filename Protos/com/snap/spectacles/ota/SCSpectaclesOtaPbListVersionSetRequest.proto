@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbListVersionSetRequest {
+	string productGeneration = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSocketAddress {
+
+	enum HRMPBAddressFamily {
+		ADDRESS_FAMILY_IP_V4 = 0;
+		ADDRESS_FAMILY_IP_V6 = 1;
+	}
+
+	HRMPBAddressFamily family = 1;
+	bytes ip = 2;
+	uint32 port = 3;
+}

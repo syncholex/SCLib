@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlock/api/schema/SCUnlockGroup.proto";
+
+message SCBasicUnlocksRequest {
+	string userId = 1;
+	repeated snapchat.unlock.api.schema.SCUnlockGroup requiredGroupsArray = 2;
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 3;
+	int32 offset = 4;
+	int32 limit = 5;
+
+	enum SCSortingType {
+		SORTING_TYPE_UNSET = 0;
+		ASCENDING = 1;
+		DESCENDING = 2;
+	}
+
+	SCSortingType sortingType = 6;
+}

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsWebViewLoadInfo {
+	google.protobuf.GPBInt64Value domDownloadLatencyMillis = 1;
+	google.protobuf.GPBInt64Value domLoadLatencyMillis = 2;
+	google.protobuf.GPBInt64Value firstContentfulPaintLatency = 3;
+	google.protobuf.GPBInt64Value fullLoadLatency = 4;
+	google.protobuf.GPBInt32Value loadProgress = 5;
+	google.protobuf.GPBBoolValue hasSubsequentNavigation = 6;
+	google.protobuf.GPBInt32Value resourcesLoadedFromCache = 7;
+	google.protobuf.GPBInt32Value resourcesLoadedFromNetwork = 8;
+	google.protobuf.GPBInt64Value resourcesLoadedSizeBytes = 9;
+	google.protobuf.GPBStringValue browserUserAgent = 10;
+	google.protobuf.GPBStringValue pageURL = 11;
+	google.protobuf.GPBInt32Value cssResourcesCacheLoad = 12;
+	google.protobuf.GPBInt32Value scriptResourcesCacheLoad = 13;
+	google.protobuf.GPBInt32Value imgResourcesCacheLoad = 14;
+	google.protobuf.GPBInt32Value linkResourcesCacheLoad = 15;
+	google.protobuf.GPBInt32Value cssResourcesNetworkLoad = 16;
+	google.protobuf.GPBInt32Value scriptResourcesNetworkLoad = 17;
+	google.protobuf.GPBInt32Value imgResourcesNetworkLoad = 18;
+	google.protobuf.GPBInt32Value linkResourcesNetworkLoad = 19;
+	google.protobuf.GPBInt64Value webviewInitializeStartTsMs = 20;
+	google.protobuf.GPBInt64Value webviewInitializeEndTsMs = 21;
+	google.protobuf.GPBInt64Value webviewLoadURLTsMs = 22;
+	google.protobuf.GPBInt64Value webviewNavigationStartTsMs = 23;
+	google.protobuf.GPBInt64Value htmlResponseStartLatencyMs = 24;
+	google.protobuf.GPBInt64Value domInteractiveLatencyMs = 25;
+	google.protobuf.GPBInt64Value domContentLoadedStartLatencyMs = 26;
+	google.protobuf.GPBInt64Value domCompleteLatencyMs = 27;
+	google.protobuf.GPBStringValue perfMetricsPageURL = 28;
+	google.protobuf.GPBBoolValue webviewInitializedSuccessfully = 29;
+	google.protobuf.GPBStringValue webviewInitializeErrorReason = 30;
+	google.protobuf.GPBInt64Value webviewNavigationFinishTsMs = 31;
+
+	enum SCAdsSubsequentNavigationType {
+		TYPE_UNSET = 0;
+		OTHER = 1;
+		LINK_ACTIVATED = 2;
+		BACK_FORWARD = 3;
+		RELOAD = 4;
+	}
+
+	repeated SCAdsSubsequentNavigationType subNavigationTypesArray = 32 [packed=true];
+	google.protobuf.GPBInt64Value htmlResolveServerRedirectCount = 33;
+	google.protobuf.GPBInt64Value htmlResolveServerRedirectCompleteTsMs = 34;
+	google.protobuf.GPBStringValue serverRedirectResolvedURL = 35;
+	google.protobuf.GPBBoolValue hasPostClickEngagement = 36;
+}

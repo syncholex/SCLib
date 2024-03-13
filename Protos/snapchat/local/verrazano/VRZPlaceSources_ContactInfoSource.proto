@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeSource.proto";
+
+message VRZPlaceSources_ContactInfoSource {
+	snapchat.local.verrazano.VRZAttributeSource phoneNumber = 1;
+	repeated snapchat.local.verrazano.VRZAttributeSource alternatePhoneNumbersArray = 2;
+	snapchat.local.verrazano.VRZAttributeSource emailAddress = 3;
+	snapchat.local.verrazano.VRZAttributeSource website = 4;
+	snapchat.local.verrazano.VRZAttributeSource menuURL = 5;
+}

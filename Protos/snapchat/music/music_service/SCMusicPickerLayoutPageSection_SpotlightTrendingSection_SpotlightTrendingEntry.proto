@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message SCMusicPickerLayoutPageSection_SpotlightTrendingSection_SpotlightTrendingEntry {
+	snapchat.creativetools.common.SCCTPMusicTrack track = 1;
+	uint64 topicId = 2;
+	string snapId = 3;
+	snapchat.creativetools.common.SCCTPEncryptedMedia thumbnail = 4;
+}

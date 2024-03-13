@@ -1,0 +1,61 @@
+syntax = "proto2";
+
+import "VLKGpsData.proto";
+import "VLKIMUDataFrame.proto";
+import "VLKMultisnap.proto";
+
+message VLKVideoMetadata {
+	VLKGpsData gpsData = 1;
+	int32 nrfTemperature = 2;
+	int32 ambientLightIntensity = 3;
+	repeated VLKIMUDataFrame imuDataArray = 4;
+	string bleUuid = 5;
+	uint64 recordTimeUtc = 6;
+	uint64 estimatedSecSinceUtclost = 7;
+	uint64 currentSessionStartTimeSecSinceUtclost = 8;
+	uint32 nordicLastBootSession = 9;
+	uint64 videoDurationInMs = 10;
+	int32 batterySoc = 11;
+	bool bleConnected = 12;
+	int32 ambaTemperature = 13;
+	int32 sensorBeginTemp = 14;
+	int32 sensorEndTemp = 15;
+	string firmwareVersion = 16;
+	uint64 videoAdjParamVersion = 17;
+	bytes randBytesForClient = 18;
+	string lowResVideoName = 19;
+	string highResVideoName = 20;
+	string thumbNailPicName = 21;
+	uint64 rtosLogSessionId = 22;
+	string hLthumbNailPicName = 23;
+	uint32 storagePercentage = 24;
+
+	enum VLKBtnBehavior {
+		UNAVAILABLE = 0;
+		SINGLETAP = 1;
+		SINGLETAP_HOLD = 2;
+		DOUBLETAP = 3;
+		DOUBLETAP_HOLD = 4;
+		TRIPLETAP = 5;
+		TRIPLETAP_HOLD = 6;
+		HOLD_FOR_PICTURE = 7;
+	}
+
+	VLKBtnBehavior btnBehavior = 25;
+	uint32 ambientLightVal = 26;
+	bool snapcodeDetected = 27;
+	bool userAssociated = 28;
+	uint32 imageSensorCurrentAgc = 29;
+	uint32 imageSensorCurrentDgc = 30;
+	uint32 startEvIndex = 31;
+	uint32 endEvIndex = 32;
+
+	enum VLKMediaType {
+		VIDEO = 1;
+		PICTURE = 2;
+	}
+
+	VLKMediaType mediaType = 33;
+	string pictureName = 34;
+	VLKMultisnap multisnap = 35;
+}

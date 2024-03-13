@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.ar.common.display_card;
+
+message RenderingOption {
+
+	enum RenderingOptionField {
+		RENDERING_OPTION_UNSET = 0;
+		TITLE = 1;
+		PRODUCT_AVAILABILITY = 2;
+		PRICE = 3;
+		PRICE_AVAILABILITY = 4;
+		PRICE_FIRST_COLOR = 5;
+		COLORS = 6;
+		BRAND = 7;
+	}
+
+	RenderingOptionField name = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/content/MediaReference.proto";
+
+message SCMessagingContentEnvelope_MediaReferenceList {
+	repeated snapchat.content.MediaReference mediaReferenceArray = 1;
+}

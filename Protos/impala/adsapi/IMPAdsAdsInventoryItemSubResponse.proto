@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsAdsInventoryItem.proto";
+
+message IMPAdsAdsInventoryItemSubResponse {
+	impala.adsapi.IMPAdsAdsInventoryItem inventoryItem = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPUIntRange.proto";
+
+message SCCTPFlattenedRules_CategoryRule_UIntRule {
+	bool allowed = 1;
+	bool blocked = 2;
+	repeated snapchat.creativetools.targeting.SCCTPUIntRange rangesArray = 3;
+}

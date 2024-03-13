@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion.messages;
+
+message SCFormaEncryptedMedia {
+	string mediaURL = 1;
+	bytes key = 2;
+	bytes iv = 3;
+}

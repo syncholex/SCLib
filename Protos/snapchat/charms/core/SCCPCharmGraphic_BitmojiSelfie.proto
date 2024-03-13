@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmGraphic_BitmojiSelfie {
+	snapchat.charms.common.SCCPUUID userId = 1;
+}

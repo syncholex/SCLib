@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbGetSnappableRequest {
+	string id_p = 1;
+}

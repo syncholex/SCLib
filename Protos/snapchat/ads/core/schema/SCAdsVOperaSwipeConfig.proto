@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.core.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsVOperaSwipeConfig {
+	google.protobuf.GPBFloatValue swipeToAttachmentDistanceThreshold = 1;
+	google.protobuf.GPBFloatValue swipeToAttachmentVelocityThreshold = 2;
+	google.protobuf.GPBFloatValue swipeToAttachmentLeftAngleThresholdDegrees = 3;
+	google.protobuf.GPBFloatValue swipeToAttachmentRightAngleThresholdDegrees = 4;
+	google.protobuf.GPBFloatValue swipeRestrictionDurationMs = 5;
+	google.protobuf.GPBFloatValue swipeToHintDistanceThreshold = 6;
+	google.protobuf.GPBFloatValue swipeToHintVelocityThreshold = 7;
+	google.protobuf.GPBFloatValue swipeToHintLeftAngleThresholdDegrees = 8;
+	google.protobuf.GPBFloatValue swipeToHintRightAngleThresholdDegrees = 9;
+}

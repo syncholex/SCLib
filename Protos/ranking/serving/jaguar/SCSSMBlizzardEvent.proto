@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMBlizzardEvent {
+	int32 payloadId = 1;
+	bytes payloadBytes = 2;
+	int64 clientTs = 3;
+	string eventId = 4;
+}

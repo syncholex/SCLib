@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message FFAvatarScopeConfig {
+	bool useViewContainer = 1;
+	bool useAvatarVm = 2;
+}

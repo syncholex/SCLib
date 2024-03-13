@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkConfig {
+	string name = 1;
+
+	oneof value {
+		bool boolValue = 2;
+		int32 intValue = 3;
+		string stringValue = 4;
+		uint32 uintValue = 5;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+import "snapchat/activation/cof/SCClientUsernameSuggestionConfigPbRandomChars.proto";
+
+message SCClientUsernameSuggestionConfigPbInitialsWithRandomChars {
+	snapchat.activation.cof.SCClientUsernameSuggestionConfigPbRandomChars randomChars = 1;
+}

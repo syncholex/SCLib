@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZInferredVisitationCandidate.proto";
+import "snapchat/local/place/VRZCampusCandidate.proto";
+
+message VRZGetInferredVisitationCandidatesResponse {
+	repeated snapchat.local.place.VRZInferredVisitationCandidate candidatesArray = 1;
+	repeated snapchat.local.place.VRZCampusCandidate campusCandidatesArray = 2;
+}

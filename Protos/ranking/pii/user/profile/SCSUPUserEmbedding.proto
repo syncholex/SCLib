@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPUserEmbedding_VersionedEmbeddings.proto";
+
+message SCSUPUserEmbedding {
+	repeated ranking.pii.user.profile.SCSUPUserEmbedding_VersionedEmbeddings versionedEmbeddingsArray = 1;
+}

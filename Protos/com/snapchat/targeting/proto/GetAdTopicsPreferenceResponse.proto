@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/AdTopicsPreference.proto";
+
+message GetAdTopicsPreferenceResponse {
+	com.snapchat.targeting.proto.AdTopicsPreference adTopicsPreference = 1;
+}

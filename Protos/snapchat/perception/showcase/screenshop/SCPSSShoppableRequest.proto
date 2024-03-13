@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+message SCPSSShoppableRequest {
+	string reqId = 1;
+	repeated bytes imagesArray = 2;
+	uint32 shoppabilityVersion = 3;
+}

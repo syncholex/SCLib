@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbSetLensCategoryRequest {
+	string lensId = 1;
+	string primaryCategoryId = 2;
+	string secondaryCategoryId = 3;
+}

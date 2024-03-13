@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSShareLocationPreferences.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSSetPreferencesRequest {
+	snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+	int64 ghostModeDuration = 2;
+	snapchat.core.SCCOREUUID userId = 3;
+}

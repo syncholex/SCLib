@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2OnDemandDebugRequest {
+
+	enum SCR2OnDemandDebugRequest_SourceType {
+		UNKNOWN = 0;
+		SNAP = 1;
+		SNAP_OVERLAY = 2;
+		STORY = 3;
+		QUERY = 4;
+		STORY_RATING = 5;
+		AST_CONFIG = 6;
+		DISCOVER_FEED_STORY_RATING = 7;
+	}
+
+	SCR2OnDemandDebugRequest_SourceType sourceType = 1;
+	string storyId = 2;
+	string snapId = 3;
+	string storyDebugId = 4;
+	string extra = 5;
+	string queryDebugId = 6;
+}

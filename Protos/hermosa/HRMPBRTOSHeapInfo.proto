@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBRTOSHeapInfo {
+	uint32 rtosFreeHeapSize = 1;
+	uint32 rtosHeapLowWatermarkSize = 2;
+}

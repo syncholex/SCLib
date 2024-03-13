@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULSnapInfo.proto";
+import "snapchat/ads/request/schema/SCAdsCommonRequestData.proto";
+import "snapchat/unlockables/request/schema/SCULSingleUnlockableTrack.proto";
+
+message SCULUnlockableTrackRequest {
+	snapchat.unlockables.request.schema.SCULSnapInfo snapInfo = 1;
+	bool doNotForward = 2;
+	bytes encryptedUnlockablesDirectPayload = 16;
+	bytes serializedV1Track = 17;
+	string serializedV1TrackStr = 18;
+	snapchat.ads.request.schema.SCAdsCommonRequestData commonRequestData = 19;
+	repeated snapchat.unlockables.request.schema.SCULSingleUnlockableTrack trackV2Array = 20;
+	string snapadsId = 21;
+}

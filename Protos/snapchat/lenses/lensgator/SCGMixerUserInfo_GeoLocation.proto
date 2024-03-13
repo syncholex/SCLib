@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+message SCGMixerUserInfo_GeoLocation {
+	double latitude = 1;
+	double longitude = 2;
+	double horizontalAccuracyMeters = 3;
+	uint64 timestampMsecs = 4;
+}

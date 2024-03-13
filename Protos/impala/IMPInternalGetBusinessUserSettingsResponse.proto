@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessUserSettings.proto";
+
+message IMPInternalGetBusinessUserSettingsResponse {
+	impala.IMPBusinessUserSettings userSettings = 1;
+}

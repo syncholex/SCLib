@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerStatusModel.proto";
+
+message SCMEExplorerStatusQueue {
+	string userId = 1;
+	repeated snapchat.map.SCMEExplorerStatusModel queueArray = 2;
+	repeated string recentLocalitiesArray = 3;
+	int64 recentlyViewedFriendLocalities = 4;
+	bool isOnboarded = 5;
+}

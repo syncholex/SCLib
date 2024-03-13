@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensRemoteApiDeleteOAuth2TokensRequest {
+	string apiSpecId = 1;
+}

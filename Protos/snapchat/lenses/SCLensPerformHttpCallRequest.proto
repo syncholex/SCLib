@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensPerformHttpCallRequest {
+	string URL = 1;
+
+	enum SCLensHttpRequestMethod {
+		HTTP_METHOD_UNSET = 0;
+		HTTP_METHOD_GET = 1;
+		HTTP_METHOD_POST = 2;
+		HTTP_METHOD_PUT = 3;
+		HTTP_METHOD_DELETE = 4;
+		HTTP_METHOD_PATCH = 5;
+	}
+
+	SCLensHttpRequestMethod method = 2;
+	string headers = 3;
+	bytes body = 4;
+	string apiSpecId = 5;
+	bool isStudioDev = 6;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalValidateUnshareStoreToProfileRequest {
+	string storeId = 1;
+	repeated string profileIdsArray = 2;
+	string principalName = 3;
+
+	enum IMPStoreVisibilityStatus {
+		STORE_VISIBILITY_UNKNOWN = 0;
+		VISIBLE = 1;
+		HIDDEN = 2;
+	}
+
+	IMPStoreVisibilityStatus storeVisibilityStatus = 4;
+}

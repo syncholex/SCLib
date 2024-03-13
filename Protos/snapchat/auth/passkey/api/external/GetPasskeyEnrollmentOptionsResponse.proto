@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+import "snapchat/auth/passkey/api/external/GetPasskeyEnrollmentOptionsResult.proto";
+import "snapchat/auth/passkey/models/RelyingParty.proto";
+import "snapchat/auth/passkey/models/Algorithm.proto";
+import "snapchat/auth/passkey/models/CredentialDescriptor.proto";
+
+message GetPasskeyEnrollmentOptionsResponse {
+	snapchat.auth.passkey.api.external.GetPasskeyEnrollmentOptionsResult result = 1;
+	snapchat.auth.passkey.models.RelyingParty relyingParty = 2;
+	bytes nonce = 3;
+	repeated snapchat.auth.passkey.models.Algorithm supportedAlgorithmsArray = 4;
+	string userVerificationRequirement = 5;
+	string attestationPreference = 6;
+	repeated snapchat.auth.passkey.models.CredentialDescriptor excludedCredentialsArray = 7;
+}

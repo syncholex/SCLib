@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateInt.proto";
+
+message IMPUpdateAgeGateSettings {
+	impala.IMPUpdateInt globalAgeMin = 1;
+	impala.IMPUpdateInt countryAgeMinMap = 2;
+}

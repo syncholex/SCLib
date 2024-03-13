@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.protobuf;
+
+message SPCPInt64ListValue {
+	repeated int64 valueArray = 1 [packed=true];
+}

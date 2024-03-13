@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+import "impala/portfolio/IMPLensPortfolio.proto";
+import "impala/portfolio/IMPStoryPortfolio.proto";
+
+message IMPUpdatePortfolioRequest {
+	string profileId = 1;
+
+	enum IMPPortfolioType {
+		PORTFOLIO_UNSET = 0;
+		PORTFOLIO_LENS = 1;
+		PORTFOLIO_STORY = 2;
+	}
+
+	IMPPortfolioType portfolioType = 2;
+
+	oneof portfolio {
+		impala.portfolio.IMPLensPortfolio lensPortfolio = 3;
+		impala.portfolio.IMPStoryPortfolio storyPortfolio = 4;
+	}
+
+}

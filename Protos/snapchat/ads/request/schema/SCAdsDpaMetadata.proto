@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/common/dpa/SCAdsFillWidth.proto";
+import "snapchat/ads/common/dpa/SCAdsFillHeight.proto";
+import "snapchat/ads/common/dpa/SCAdsFit.proto";
+import "snapchat/ads/common/dpa/SCAdsHeader.proto";
+import "snapchat/ads/common/dpa/SCAdsTilt.proto";
+import "snapchat/ads/common/dpa/SCAdsCarousel.proto";
+import "snapchat/ads/common/dpa/SCAdsSlideshow.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoTall.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoWide.proto";
+import "snapchat/ads/common/dpa/SCAdsPresetColor.proto";
+import "snapchat/ads/common/dpa/SCAdsWhiteTall.proto";
+import "snapchat/ads/common/dpa/SCAdsWhiteWide.proto";
+import "snapchat/ads/common/dpa/SCAdsColorBackground.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoBackground.proto";
+import "snapchat/ads/common/dpa/SCAdsGrid.proto";
+
+message SCAdsDpaMetadata {
+
+	enum SCAdsProtoDpaLayoutType {
+		UNKNOWN_LAYOUT_TYPE = 0;
+		FILL_WIDTH = 1;
+		FILL_HEIGHT = 2;
+		FIT = 3;
+		HEADER = 4;
+		TILT = 5;
+		AUTOMATIC = 6;
+		CAROUSEL = 7;
+		SLIDESHOW = 8;
+	}
+
+	SCAdsProtoDpaLayoutType layout = 1;
+	google.protobuf.GPBStringValue templateName = 2;
+	google.protobuf.GPBFloatValue aspectRatio = 3;
+	google.protobuf.GPBBoolValue isFallbackAspectRatio = 4;
+	google.protobuf.GPBInt32Value numImagesShown = 5;
+
+	oneof template {
+		snapchat.ads.common.dpa.SCAdsFillWidth fillWidth = 6;
+		snapchat.ads.common.dpa.SCAdsFillHeight fillHeight = 7;
+		snapchat.ads.common.dpa.SCAdsFit fit = 8;
+		snapchat.ads.common.dpa.SCAdsHeader header = 9;
+		snapchat.ads.common.dpa.SCAdsTilt tilt = 10;
+		snapchat.ads.common.dpa.SCAdsCarousel carousel = 11;
+		snapchat.ads.common.dpa.SCAdsSlideshow slideshow = 12;
+		snapchat.ads.common.dpa.SCAdsEchoTall echoTall = 13;
+		snapchat.ads.common.dpa.SCAdsEchoWide echoWide = 14;
+		snapchat.ads.common.dpa.SCAdsPresetColor presetColor = 15;
+		snapchat.ads.common.dpa.SCAdsWhiteTall whiteTall = 16;
+		snapchat.ads.common.dpa.SCAdsWhiteWide whiteWide = 17;
+		snapchat.ads.common.dpa.SCAdsGrid grid = 20;
+	}
+
+
+	oneof background {
+		snapchat.ads.common.dpa.SCAdsColorBackground colorBackground = 18;
+		snapchat.ads.common.dpa.SCAdsEchoBackground echoBackground = 19;
+	}
+
+}

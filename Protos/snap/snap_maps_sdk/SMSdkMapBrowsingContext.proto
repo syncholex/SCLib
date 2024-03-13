@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_DefaultBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_FriendsTrayBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_PlacesTrayBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_BitmojiTrayBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_FocusViewBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_FilteredBrowsingContext.proto";
+import "snap/snap_maps_sdk/SMSdkMapBrowsingContext_PlaceProfileBrowsingContext.proto";
+
+message SMSdkMapBrowsingContext {
+
+	oneof browsingContext {
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_DefaultBrowsingContext defaultBrowsingContext = 1;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_FriendsTrayBrowsingContext friendsTrayBrowsingContext = 2;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_PlacesTrayBrowsingContext placesTrayBrowsingContext = 3;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_BitmojiTrayBrowsingContext bitmojiTrayBrowsingContext = 4;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_FocusViewBrowsingContext focusViewBrowsingContext = 5;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_FilteredBrowsingContext filteredBrowsingContext = 6;
+		snap.snap_maps_sdk.SMSdkMapBrowsingContext_PlaceProfileBrowsingContext placeProfileBrowsingContext = 7;
+	}
+
+}

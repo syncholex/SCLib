@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message Youtube8MScores {
+	float score = 1;
+	string tag = 2;
+}

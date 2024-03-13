@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingStatusScreenCaptureDisplayInfo {
+
+	enum SCMessagingScreenCaptureStatusMessage_CaptureType {
+		SCREEN_SHOT = 0;
+		SCREEN_RECORD = 1;
+	}
+
+	SCMessagingScreenCaptureStatusMessage_CaptureType captureType = 1;
+}

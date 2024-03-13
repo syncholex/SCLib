@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPSpotlightUserEmbedding.proto";
+import "ranking/pii/user/profile/SCSUPDFUserEmbedding.proto";
+
+message DiscoverUserEmbedding {
+	ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbedding = 1;
+	ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbeddingV2C = 2;
+	ranking.pii.user.profile.SCSUPDFUserEmbedding dfUserEmbedding = 3;
+	ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbeddingV2V = 4;
+	ranking.pii.user.profile.SCSUPSpotlightUserEmbedding ttUserEmbeddings = 5;
+}

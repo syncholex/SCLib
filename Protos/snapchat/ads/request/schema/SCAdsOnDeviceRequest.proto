@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsOnDevicePublicKey.proto";
+
+message SCAdsOnDeviceRequest {
+	snapchat.ads.request.schema.SCAdsOnDevicePublicKey onDevicePublicKey = 1;
+	int64 latestGenerationNumber = 2;
+	int64 serverLastFetchTsMs = 3;
+}

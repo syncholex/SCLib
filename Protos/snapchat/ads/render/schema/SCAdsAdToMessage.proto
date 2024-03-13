@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsAdToMessage {
+	string phoneNumber = 1;
+	string phoneNumberAlias = 2;
+
+	oneof messageContentInfo {
+		string messageId = 3;
+		string messageText = 4;
+	}
+
+}

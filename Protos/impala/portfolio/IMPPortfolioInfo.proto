@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+message IMPPortfolioInfo {
+	string businessBio = 1;
+	string businessEmail = 2;
+	repeated string languageCodesArray = 3;
+}

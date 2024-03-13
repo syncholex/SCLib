@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/genai/dreams/SCPbGenAIDreamPackGeneration.proto";
+
+message SCPbGenAIDreamGetByStatusResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDreamPackGeneration generationsArray = 2;
+}

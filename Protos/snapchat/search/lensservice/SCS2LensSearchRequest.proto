@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+import "snapchat/search/lensservice/SCS2LensSearchByUserQuery.proto";
+import "snapchat/search/lensservice/SCS2LensSearchByTextMatch.proto";
+import "snapchat/search/lensservice/SCS2LensSearchByTopLenses.proto";
+import "snapchat/search/lensservice/SCS2LensUserInfo.proto";
+
+message SCS2LensSearchRequest {
+
+	oneof query {
+		snapchat.search.lensservice.SCS2LensSearchByUserQuery user = 1;
+		snapchat.search.lensservice.SCS2LensSearchByTextMatch textMatch = 2;
+		snapchat.search.lensservice.SCS2LensSearchByTopLenses topLenses = 3;
+	}
+
+	snapchat.search.lensservice.SCS2LensUserInfo userInfo = 4;
+	bool returnInactive = 5;
+	bool returnIncompatible = 6;
+	bool returnOrganic = 7;
+	int32 maxCount = 8;
+	int32 resultStartIndex = 9;
+}

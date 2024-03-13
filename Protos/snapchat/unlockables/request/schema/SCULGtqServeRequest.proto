@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULGeoCircle.proto";
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlockables/request/schema/SCULSyncInfo.proto";
+import "snapchat/unlockables/request/schema/SCULUserInfo.proto";
+
+message SCULGtqServeRequest {
+	bytes encryptedUnlockablesDirectPayload = 1;
+	snapchat.unlockables.request.schema.SCULGeoCircle currentLocationWithAccuracy = 2;
+	snapchat.ads.request.schema.SCAdsAdRequest adRequest = 3;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 4;
+	snapchat.unlockables.request.schema.SCULSyncInfo syncInfo = 5;
+	snapchat.unlockables.request.schema.SCULUserInfo userInfo = 6;
+	bool skipVenues = 7;
+	bytes checksumMap = 8;
+	bool skipUco = 9;
+	bool skipSponsoredLens = 10;
+	bool skipGeoLens = 11;
+	bool skipTargetingLens = 12;
+
+	enum SCAdsSponsoredLensNamespace {
+		SPONSORED_LENS_NAMESPACE_UNSET = 0;
+		LIVE_CAMERA_FRONT = 1;
+		LIVE_CAMERA_REAR = 2;
+		REPLY_CAMERA = 3;
+		REPLY_CAMERA_NO_PARENTING = 4;
+		UCO = 5;
+	}
+
+	repeated SCAdsSponsoredLensNamespace requestNamespacesArray = 13 [packed=true];
+}

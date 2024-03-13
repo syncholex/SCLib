@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkValue_List.proto";
+import "snap/snap_maps_sdk/SMSdkValue_NullValue.proto";
+import "snap/snap_maps_sdk/SMSdkValue_ValueObject.proto";
+
+message SMSdkValue {
+
+	oneof value {
+		bool boolValue = 1;
+		string stringValue = 2;
+		uint64 uint64Value = 3;
+		int64 int64Value = 4;
+		double doubleValue = 5;
+		snap.snap_maps_sdk.SMSdkValue_List listValue = 6;
+		snap.snap_maps_sdk.SMSdkValue_NullValue nullValue = 7;
+		snap.snap_maps_sdk.SMSdkValue_ValueObject valueObject = 8;
+	}
+
+}

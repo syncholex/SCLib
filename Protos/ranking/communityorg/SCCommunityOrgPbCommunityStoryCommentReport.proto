@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/communityorg/SCCommunityOrgPbReportedCommentMetadata.proto";
+import "ranking/communityorg/SCCommunityOrgPbReportedCommentSnapMetadata.proto";
+
+message SCCommunityOrgPbCommunityStoryCommentReport {
+	ranking.core.SCSCOREUUID reporterUserId = 1;
+	ranking.communityorg.SCCommunityOrgPbReportedCommentMetadata reportedCommentMetadata = 2;
+	ranking.communityorg.SCCommunityOrgPbReportedCommentSnapMetadata reportedCommentSnapMetadata = 3;
+	string reportReasonId = 4;
+	string reportMessage = 5;
+}

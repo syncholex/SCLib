@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/context2/SCGIGroupMetadata.proto";
+
+message SCGIGroupStickerMemoriesModel {
+	string title = 1;
+	snapchat.context2.SCGIGroupMetadata metadata = 2;
+	string groupId = 3;
+}

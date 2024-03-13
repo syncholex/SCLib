@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSClientUpdate.proto";
+
+message SCVSClientUpdateRequest {
+	repeated snapchat.valis.SCVSClientUpdate updatesArray = 1;
+	bool ghostMode = 2;
+	int64 serverRequestTimestamp = 3;
+}

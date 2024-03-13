@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHMediaObjectV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHResultV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHResultAction.proto";
+
+message SCPSHSessionsV1_Session {
+	bytes id_p = 1;
+	string primaryText = 2;
+	string secondaryText = 3;
+	snapchat.perception.scan_history.v1.SCPSHMediaObjectV1 mediaObjectV1 = 4;
+	repeated snapchat.perception.scan_history.v1.SCPSHResultV1 resultsV1Array = 5;
+	snapchat.perception.scan_history.v1.SCPSHResultAction tapAction = 6;
+}

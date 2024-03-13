@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsDatePoint.proto";
+
+message IMPInsightsStoryLevelInsights {
+	int64 uniqueViewers = 1;
+	int64 uniqueViewersSubscriber = 2;
+	int64 uniqueViewersPaid = 3;
+	int64 uniqueViewersMale = 4;
+	int64 uniqueViewersFemale = 5;
+	int64 uniqueViewers13To17 = 6;
+	int64 uniqueViewers18To21 = 7;
+	int64 uniqueViewers25To34 = 8;
+	int64 uniqueViewers35Plus = 9;
+	double timeSpentMs = 10;
+	double attachmentConversion = 11;
+	int64 screenshots = 12;
+	int64 shares = 13;
+	double snapsPerUser = 14;
+	int64 subscribersAdded = 15;
+	int64 subscribersAddedPaid = 16;
+	int64 totalStoryViews = 17;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersForTimestampArray = 18;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersPaidForTimestampArray = 19;
+	repeated impala.insights.IMPInsightsDatePoint uniqueViewersOrganicForTimestampArray = 20;
+	int64 uniqueViewersGenderUnknown = 21;
+	int64 uniqueViewers22To24 = 22;
+	int64 uniqueViewersAgeUnknown = 23;
+}

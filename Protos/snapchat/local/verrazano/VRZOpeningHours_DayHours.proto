@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpeningHours_TimeRange.proto";
+
+message VRZOpeningHours_DayHours {
+
+	enum VRZOpeningHours_Day {
+		DAY_UNKNOWN = 0;
+		MONDAY = 1;
+		TUESDAY = 2;
+		WEDNESDAY = 3;
+		THURSDAY = 4;
+		FRIDAY = 5;
+		SATURDAY = 6;
+		SUNDAY = 7;
+	}
+
+	VRZOpeningHours_Day day = 1;
+	repeated snapchat.local.verrazano.VRZOpeningHours_TimeRange hoursArray = 2;
+}

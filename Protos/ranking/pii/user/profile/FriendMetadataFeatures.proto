@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message FriendMetadataFeatures {
+	ranking.core.SCSCOREUUID friendId = 1;
+	int32 mutualFriendCount = 2;
+	int32 friendCount = 3;
+}

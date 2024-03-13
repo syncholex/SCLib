@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPlaceInfo_Point.proto";
+
+message IMPPlaceInfo_Rect {
+	impala.IMPPlaceInfo_Point p1 = 1;
+	impala.IMPPlaceInfo_Point p2 = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingText.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCMessagingTinySnap {
+	snapchat.messaging.SCMessagingText text = 1;
+	snapchat.snapdoc.SDMSnapDoc snapdoc = 2;
+}

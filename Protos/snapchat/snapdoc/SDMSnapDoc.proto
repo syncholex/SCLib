@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMSnapEnvelope.proto";
+import "snapchat/snapdoc/SDMSnapDoc_ID.proto";
+import "snapchat/content/MediaReference.proto";
+import "snapchat/snapdoc/SDMPlayback.proto";
+import "snapchat/snapdoc/SDMThumbnail.proto";
+import "snapchat/snapdoc/SDMUnlockables.proto";
+import "snapchat/snapdoc/SDMSpectacles.proto";
+import "snapchat/snapdoc/SDMLens.proto";
+import "snapchat/snapdoc/SDMCreativeKitSourceApp.proto";
+import "snapchat/snapdoc/SDMAttachments.proto";
+import "snapchat/snapdoc/SDMCreativeToolsAnalytics.proto";
+import "snapchat/snapdoc/SDMLegacyMultisnap.proto";
+import "snapchat/snapdoc/SDMPermittedUserActions.proto";
+import "snapchat/snapdoc/SDMTiming.proto";
+import "snapchat/snapdoc/SDMAttribution.proto";
+import "snapchat/snapdoc/SDMCaptureCharacteristics.proto";
+import "snapchat/snapdoc/SDMPackaging.proto";
+import "snapchat/snapdoc/SDMGeneratedCameo.proto";
+import "snapchat/snapdoc/SDMProvenance.proto";
+import "snapchat/snapdoc/SDMVideoInterval.proto";
+import "snapchat/snapdoc/SDMCameoMetadata.proto";
+import "snapchat/snapdoc/SDMLocation.proto";
+import "snapchat/snapdoc/SDMStickerMetadata.proto";
+import "snapchat/snapdoc/SDMAdsTracking.proto";
+import "snapchat/grid/SDMGridProperties.proto";
+import "snapchat/creativetools/drawing/SCCTPDrawings.proto";
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+import "snapchat/snapdoc/SDMAdPlacement.proto";
+import "snapchat/snapdoc/SDMWeatherInfo.proto";
+import "snapchat/snapdoc/SDMEditInfo.proto";
+
+message SDMSnapDoc {
+	repeated snapchat.snapdoc.SDMSnapEnvelope envelopeArray = 2;
+	snapchat.snapdoc.SDMSnapDoc_ID id_p = 3;
+	repeated snapchat.content.MediaReference mediaReferencesArray = 4;
+	snapchat.snapdoc.SDMPlayback playback = 5;
+	snapchat.snapdoc.SDMThumbnail thumbnail = 7;
+	int64 mediaListIdCounter = 8;
+	snapchat.snapdoc.SDMUnlockables unlockables = 9;
+	snapchat.snapdoc.SDMSpectacles spectacles = 10;
+	snapchat.snapdoc.SDMLens lens = 11;
+	snapchat.snapdoc.SDMCreativeKitSourceApp creativeKitSourceApp = 12;
+	snapchat.snapdoc.SDMAttachments attachments = 13;
+	snapchat.snapdoc.SDMCreativeToolsAnalytics creativeToolsAnalytics = 14;
+	snapchat.snapdoc.SDMLegacyMultisnap legacyMultisnap = 15;
+	snapchat.snapdoc.SDMPermittedUserActions permittedUserActions = 16;
+	snapchat.snapdoc.SDMTiming timing = 17;
+	snapchat.snapdoc.SDMAttribution attribution = 18;
+	snapchat.snapdoc.SDMCaptureCharacteristics captureCharacteristics = 19;
+	snapchat.snapdoc.SDMPackaging packaging = 20;
+	snapchat.snapdoc.SDMGeneratedCameo generatedCameo = 21;
+	snapchat.snapdoc.SDMProvenance provenance = 22;
+	snapchat.snapdoc.SDMVideoInterval videoInterval = 23;
+	snapchat.snapdoc.SDMCameoMetadata cameo = 24;
+	snapchat.snapdoc.SDMLocation location = 25;
+	repeated snapchat.snapdoc.SDMStickerMetadata stickerMetadataArray = 26;
+	snapchat.snapdoc.SDMAdsTracking adsTracking = 27;
+	snapchat.grid.SDMGridProperties gridProperties = 28;
+	snapchat.creativetools.drawing.SCCTPDrawings drawings = 29;
+	snapchat.cameos.stories.SCCameosCameoTile cameoTile = 30;
+	snapchat.snapdoc.SDMAdPlacement adPlacement = 31;
+
+	enum SDMSnapDoc_CompletionState {
+		UNSET = 0;
+		FROZEN = 1;
+		STRIPPED = 2;
+		COMPLETED_V1 = 3;
+	}
+
+	SDMSnapDoc_CompletionState completionState = 32;
+	snapchat.snapdoc.SDMWeatherInfo weatherInfo = 33;
+
+	enum SDMBatteryStatus {
+		BATTERY_STATUS_UNSET = 0;
+		BATTERY_LOW = 1;
+		BATTERY_FULL = 2;
+	}
+
+	SDMBatteryStatus batteryStatus = 34;
+	string captureSessionId = 35;
+	bytes contentVersionUuid = 36;
+	snapchat.snapdoc.SDMEditInfo editInfo = 37;
+}

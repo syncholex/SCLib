@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletQuota.proto";
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletEntryResult.proto";
+
+message SCPBGalleryServletDeleteEntriesResponse {
+	int32 serviceStatusCode = 1;
+	string userString = 2;
+	int64 backoffTime = 3;
+	string debugInfo = 4;
+	com.snapchat.proto.gallery.servlet.SCPBGalleryServletQuota quota = 5;
+	int32 totalEntryCount = 6;
+	repeated com.snapchat.proto.gallery.servlet.SCPBGalleryServletEntryResult entriesArray = 501;
+	int64 lastSeqnum = 502;
+}

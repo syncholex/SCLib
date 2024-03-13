@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSNormalizedBoundingPoly.proto";
+import "snapchat/perception/showcase/screenshop/SCPSSScreenshopShowcaseContextWithBoundingPoly.proto";
+
+message SCPSSShowcaseResponse {
+	bytes bytes = 1;
+	repeated snapchat.perception.showcase.screenshop.SCPSSNormalizedBoundingPoly boundingBoxesArray = 2;
+	repeated snapchat.perception.showcase.screenshop.SCPSSScreenshopShowcaseContextWithBoundingPoly multipleItemsArray = 3;
+}

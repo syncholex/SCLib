@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+import "snapchat/bitmoji/SCBitmojiUUID.proto";
+
+message SCBitmojiUpdateAvatarDataPayload {
+	int64 gender = 1;
+	int64 style = 2;
+	int64 optionIds = 3;
+	snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 4;
+}

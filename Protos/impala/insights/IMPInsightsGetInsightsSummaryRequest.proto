@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/common/IMPClientInfo.proto";
+
+message IMPInsightsGetInsightsSummaryRequest {
+	string businessId = 1;
+	bool includePreviousPeriods = 2;
+	bool excludeAudienceInsights = 3;
+	impala.common.IMPClientInfo clientInfo = 4;
+}

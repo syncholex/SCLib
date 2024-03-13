@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+
+message MFCStats {
+	ranking.serving.jaguar.SCSSMEngagementStats engagement = 1;
+}

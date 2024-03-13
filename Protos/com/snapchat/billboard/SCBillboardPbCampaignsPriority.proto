@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbCampaignSnapshot.proto";
+
+message SCBillboardPbCampaignsPriority {
+	repeated string campaignIdsByPriorityArray = 1;
+	repeated com.snapchat.billboard.SCBillboardPbCampaignSnapshot campaignSnapshotsArray = 2;
+	int32 maxCampaignNums = 3;
+	int32 backgroundComputeIntervalSec = 4;
+}

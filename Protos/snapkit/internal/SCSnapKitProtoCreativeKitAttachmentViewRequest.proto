@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+message SCSnapKitProtoCreativeKitAttachmentViewRequest {
+	string snapKitApplicationId = 1;
+	bool hasJustConsented = 2;
+}

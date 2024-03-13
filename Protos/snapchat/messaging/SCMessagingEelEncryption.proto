@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingEelEncryption {
+	bytes cekIv = 1;
+	bytes nonce = 2;
+	bytes senderPublicKey = 3;
+	int32 senderVersion = 4;
+	bytes cek = 16;
+}

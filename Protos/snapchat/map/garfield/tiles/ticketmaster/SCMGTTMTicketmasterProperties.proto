@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles.ticketmaster;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/garfield/tiles/ticketmaster/SCMGTTMEventProperties.proto";
+import "snapchat/map/garfield/image/SCMGIImageReference.proto";
+
+message SCMGTTMTicketmasterProperties {
+	string name = 1;
+	snapchat.core.SCCOREUUID verrazanoId = 2;
+
+	enum SCMGLTMCategory {
+		UNSET = 0;
+		MISCELLANEOUS = 1;
+		SPORTS = 2;
+		MUSIC = 3;
+		ARTS_AND_THEATRE = 4;
+		UNDEFINED = 5;
+		FILM = 6;
+	}
+
+	repeated SCMGLTMCategory categoriesArray = 3 [packed=true];
+	repeated snapchat.map.garfield.tiles.ticketmaster.SCMGTTMEventProperties eventsArray = 4;
+	snapchat.map.garfield.image.SCMGIImageReference mapPinImage = 5;
+	uint64 numEvents = 6;
+	bool isPopular = 7;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.shipping;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/payments/commerce/shipping/SCPaymentsShippingOption.proto";
+import "snapchat/payments/commerce/common/SCPaymentsShippingAddress.proto";
+
+message SCPaymentsShippingDetail {
+	google.protobuf.GPBTimestamp shipByDate = 1;
+	google.protobuf.GPBTimestamp receivedByDate = 2;
+	repeated snapchat.payments.commerce.shipping.SCPaymentsShippingOption shippingOptionsArray = 3;
+	uint32 estimatedShippingDays = 4;
+	snapchat.payments.commerce.common.SCPaymentsShippingAddress shippingAddress = 5;
+	repeated string trackingNumbersArray = 6;
+	string deliveryNote = 7;
+	string chosenShippingOptionHandle = 8;
+}

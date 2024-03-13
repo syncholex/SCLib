@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+message SCDHObjectKey {
+
+	enum SCDHKind {
+		KIND_UNSET = 0;
+		LENS = 1;
+		ASSET = 2;
+		TARGETING_CAMPAIGN = 3;
+	}
+
+	SCDHKind kind = 1;
+	string id_p = 2;
+}

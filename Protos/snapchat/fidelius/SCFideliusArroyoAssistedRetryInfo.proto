@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusMessageIdentifier.proto";
+
+message SCFideliusArroyoAssistedRetryInfo {
+	snapchat.fidelius.SCFideliusMessageIdentifier messageId = 1;
+	bytes publicKey = 2;
+	uint64 keyVersion = 3;
+	bytes salt = 4;
+	bytes phi = 5;
+	bytes validationTag = 6;
+}

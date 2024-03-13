@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+import "snapchat/search/lensservice/SCS2LensLensMetadata.proto";
+
+message SCS2LensSearchResponse {
+	repeated snapchat.search.lensservice.SCS2LensLensMetadata lensesArray = 1;
+	bool hasMoreResults = 2;
+	int32 nextStartIndex = 3;
+}

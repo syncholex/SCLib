@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNVisualSearchTrace.proto";
+
+message SCPNAnalyzerResponseMetadata {
+	snapchat.perception.SCPNVisualSearchTrace trace = 1;
+}

@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2PreTypeRequest.proto";
+import "ranking2/SCR2PostTypeRequest.proto";
+import "ranking2/SCR2CategoricalRequest.proto";
+import "ranking2/SCR2MapPipelineRequest.proto";
+import "ranking2/SCR2SearchTweakParameter.proto";
+import "ranking2/SCR2SharedStoryRequest.proto";
+import "ranking2/SCR2PartialStoryRequest.proto";
+import "ranking2/SCR2CandidateStoriesRequest.proto";
+import "ranking2/SCR2SnapToStoriesRequest.proto";
+import "ranking2/SCR2SnapPivotStoriesRequest.proto";
+import "ranking2/SCR2SnapFeedRequest.proto";
+import "ranking2/SCR2PublicUserRequest.proto";
+import "ranking2/SCR2WatchNextRequest.proto";
+import "ranking2/SCR2PartialPostTypeRequest.proto";
+import "ranking2/SCR2ShazamRequest.proto";
+import "ranking2/SCR2GeofilterStoryRequest.proto";
+import "ranking2/SCR2CognacClientInfo.proto";
+
+message SCR2SearchRequest {
+	string searchSessionId = 1;
+	string searchSessionQueryId = 2;
+	int64 creationTimestampMs = 3;
+
+	enum SCR2SearchRequest_Origin {
+		UNKNOWN_ORIGIN = 0;
+		ORIGIN_SNAPCHAT_APP = 1;
+		ORIGIN_MAP_PIPELINE = 2;
+		ORIGIN_DEBUG_SERVER = 3;
+		ORIGIN_TEST = 4;
+		ORIGIN_SHARING_SERVER = 5;
+		ORIGIN_EVAL = 6;
+		ORIGIN_SNAPGRAPH = 7;
+		ORIGIN_CONTEXT_MENU = 8;
+		ORIGIN_IDENTITY = 9;
+		ORIGIN_CONTEXT_V2 = 11;
+	}
+
+	SCR2SearchRequest_Origin origin = 4;
+
+	enum SCR2SearchRequest_EntryPoint {
+		UNKNOWN_ENTRY_POINT = 0;
+		ENTRY_POINT_FEED = 1;
+		ENTRY_POINT_CAMERA = 2;
+		ENTRY_POINT_STORIES = 3;
+		ENTRY_POINT_MAP = 4;
+		ENTRY_POINT_LENS_DISCOVER = 5;
+	}
+
+	SCR2SearchRequest_EntryPoint entryPoint = 5;
+
+	oneof requestTypeParams {
+		ranking2.SCR2PreTypeRequest preTypeRequest = 6;
+		ranking2.SCR2PostTypeRequest postTypeRequest = 7;
+		ranking2.SCR2CategoricalRequest categoricalRequest = 8;
+		ranking2.SCR2MapPipelineRequest mapPipelineRequest = 9;
+		ranking2.SCR2SharedStoryRequest sharedStoryRequest = 16;
+		ranking2.SCR2PartialStoryRequest partialStoryRequest = 17;
+		ranking2.SCR2CandidateStoriesRequest candidateStoriesRequest = 23;
+		ranking2.SCR2SnapToStoriesRequest snapToStoriesRequest = 24;
+		ranking2.SCR2SnapPivotStoriesRequest snapPivotStoriesRequest = 25;
+		ranking2.SCR2SnapFeedRequest snapFeedRequest = 27;
+		ranking2.SCR2PublicUserRequest publicUserRequest = 28;
+		ranking2.SCR2WatchNextRequest watchNextRequest = 29;
+		ranking2.SCR2PartialPostTypeRequest partialPostTypeRequest = 32;
+		ranking2.SCR2ShazamRequest shazamRequest = 33;
+		ranking2.SCR2GeofilterStoryRequest geofilterStoryRequest = 34;
+	}
+
+	repeated string languagePreferencesArray = 10;
+	int32 debugLevel = 11;
+	ranking2.SCR2SearchTweakParameter tweakParameters = 12;
+	string debugMap = 13;
+	string timeZone = 14;
+	string countryCode = 15;
+	string experimentSetting = 18;
+	string expConfigMap = 20;
+	bool isLocationDisabled = 21;
+	string extraLogData = 26;
+	repeated int64 lastInteractionTimestampsMsArray = 31 [packed=true];
+	bool hasBitmojiAvatar = 35;
+	ranking2.SCR2CognacClientInfo cognacClientInfo = 36;
+}

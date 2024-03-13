@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusVerifyPhoneChallengeErrorData.proto";
+import "snapchat/telephony/api/SCTelephonyVerifyPhoneChallengeSuccessData.proto";
+
+message SCJanusVerifyChallengeInternalResponse {
+
+	enum SCJanusVerifyChallengeInternalResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERR_THROTTLED = 7;
+		ERR_VERIFY_PHONE_CHALLENGE = 8;
+	}
+
+	SCJanusVerifyChallengeInternalResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusVerifyPhoneChallengeErrorData verifyPhoneChallengeErrorData = 2;
+		snapchat.telephony.api.SCTelephonyVerifyPhoneChallengeSuccessData verifyPhoneChallengeSuccessData = 3;
+	}
+
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbUpdateVersionSetRequest {
+	string productGeneration = 1;
+	string versionSetName = 2;
+	string branch = 3;
+	string buildFlavor = 4;
+	string releaseVersion = 5;
+	string patchVersion = 6;
+	string commitSha = 7;
+	string binaryName = 8;
+	string downloadURL = 9;
+	string metadataName = 10;
+	string metadataURL = 11;
+	bool isGatewayBuild = 12;
+}

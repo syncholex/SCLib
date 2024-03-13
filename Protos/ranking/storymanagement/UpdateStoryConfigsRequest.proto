@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/storymanagement/StoryPrivacySettings.proto";
+import "ranking/storymanagement/AutoSaveToMemoriesSettings.proto";
+
+message UpdateStoryConfigsRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	string storyId = 2;
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 3;
+
+	enum SCSCOREMyStoryVariant_Enum {
+		UNSET = 0;
+		AFTER_DARK = 1;
+	}
+
+	SCSCOREMyStoryVariant_Enum myStoryVariant = 4;
+	ranking.storymanagement.StoryPrivacySettings storyPrivacySettings = 5;
+	ranking.storymanagement.AutoSaveToMemoriesSettings autoSaveToMemoriesSettings = 6;
+}

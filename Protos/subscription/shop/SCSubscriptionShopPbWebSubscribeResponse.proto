@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbWebSubscribeResponse {
+
+	enum SCSubscriptionShopPbWebSubscribeResponse_Status {
+		STATUS_NO_ERROR = 0;
+		STATUS_PAYMENT_FAILURE = 1;
+		STATUS_SUBSCRIPTION_ALREADY_EXISTS = 2;
+	}
+
+	SCSubscriptionShopPbWebSubscribeResponse_Status status = 1;
+}

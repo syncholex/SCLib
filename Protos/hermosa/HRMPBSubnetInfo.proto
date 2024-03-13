@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBSubnetReachabilityDetection.proto";
+
+message HRMPBSubnetInfo {
+
+	enum HRMPBAddressFamily {
+		ADDRESS_FAMILY_IP_V4 = 0;
+		ADDRESS_FAMILY_IP_V6 = 1;
+	}
+
+	HRMPBAddressFamily family = 1;
+	bytes host = 2;
+	bytes gateway = 3;
+	bytes mask = 4;
+	repeated hermosa.HRMPBSubnetReachabilityDetection detectionsArray = 5;
+}

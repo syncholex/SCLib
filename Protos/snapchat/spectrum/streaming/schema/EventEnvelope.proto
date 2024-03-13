@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+message EventEnvelope {
+	bytes eventBytes = 1;
+	int64 clientEpochMs = 2;
+	int64 sequenceNumber = 3;
+	string voltronStitchId = 4;
+	int64 clientNodepEpochMs = 5;
+
+	enum SpectrumNetworkConnectivityType {
+		SPECTRUM_NETWORK_CONNECTIVITY_TYPE_UNSET = 0;
+		SPECTRUM_NETWORK_CONNECTIVITY_TYPE_WIFI = 1;
+		SPECTRUM_NETWORK_CONNECTIVITY_TYPE_MOBILE = 2;
+		SPECTRUM_NETWORK_CONNECTIVITY_TYPE_UNREACHABLE_OFFLINE = 3;
+		SPECTRUM_NETWORK_CONNECTIVITY_TYPE_RESTRICTED = 4;
+	}
+
+	SpectrumNetworkConnectivityType networkConnectivityType = 7;
+}

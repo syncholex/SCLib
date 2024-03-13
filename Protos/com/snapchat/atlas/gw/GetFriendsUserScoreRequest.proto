@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message GetFriendsUserScoreRequest {
+	bytes requestingUserId = 1;
+	repeated bytes friendUserIdsArray = 2;
+}

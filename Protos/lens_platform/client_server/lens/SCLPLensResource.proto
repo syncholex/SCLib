@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/common/SCLPSHA256.proto";
+
+message SCLPLensResource {
+
+	enum SCLPLensResource_ResourceFormat {
+		UNSET = 0;
+		LNS = 1;
+	}
+
+	SCLPLensResource_ResourceFormat format = 1;
+	string fileURL = 2;
+	lens_platform.client_server.common.SCLPSHA256 checksum = 3;
+
+	enum SCLPLensResource_ResourceInternalType {
+		INTERNAL_TYPE_UNSET = 0;
+		LNS_V2 = 1;
+		LNS_V3 = 2;
+	}
+
+	SCLPLensResource_ResourceInternalType internalType = 4;
+	int32 internalTargetingGroupId = 5;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBMultisnap {
+	int32 index = 1;
+	string firstVideoUuid = 2;
+}

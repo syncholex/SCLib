@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain;
+
+import "com/snapchat/commerce/domain/CustomBitmojiInfo_CustomImageFrame.proto";
+
+message CustomBitmojiInfo_CustomImageInfo {
+	bytes externalImageId = 1;
+	uint32 height = 2;
+	uint32 width = 3;
+	com.snapchat.commerce.domain.CustomBitmojiInfo_CustomImageFrame customImageFrame = 4;
+	double customImageRotationAngle = 5;
+}

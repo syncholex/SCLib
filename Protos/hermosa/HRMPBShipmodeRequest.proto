@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBShipmodeRequest {
+	uint32 delayHrs = 1;
+	bool deleteContent = 2;
+	bool skipUnpair = 3;
+
+	enum HRMPBShipmodeRequest_ShipmodeLevel {
+		SHIPMODE = 0;
+		DEEPSHIP = 1;
+		DEEPSHIP2 = 2;
+	}
+
+	HRMPBShipmodeRequest_ShipmodeLevel level = 4;
+}

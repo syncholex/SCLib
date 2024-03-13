@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/SnapInfo.proto";
+
+message OffPlatformShareMetadata {
+	string shareDestination = 1;
+	snapchat.spectrum.streaming.schema.snap_feed_ranking.SnapInfo snapInfo = 2;
+}

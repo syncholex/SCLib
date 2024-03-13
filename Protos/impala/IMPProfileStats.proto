@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPProfileStats {
+	int64 subscriberCount = 1;
+}

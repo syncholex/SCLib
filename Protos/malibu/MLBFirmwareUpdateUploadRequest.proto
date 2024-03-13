@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBFirmwareUpdateUploadRequest {
+
+	enum MLBFirmwareUpdateUploadRequestType {
+		DIFF = 0;
+		TAR = 1;
+	}
+
+	MLBFirmwareUpdateUploadRequestType type = 1;
+	bytes data_p = 2;
+	uint32 startPos = 3;
+	bool overwriteExistingFile = 4;
+}

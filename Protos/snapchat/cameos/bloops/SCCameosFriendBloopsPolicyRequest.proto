@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+message SCCameosFriendBloopsPolicyRequest {
+
+	enum SCCameosFriendBloopsPolicy {
+		ONLY_ME_POLICY = 0;
+		FRIENDS_POLICY = 1;
+		EVERYONE_POLICY = 2;
+	}
+
+	SCCameosFriendBloopsPolicy friendBloopsPolicy = 1;
+}

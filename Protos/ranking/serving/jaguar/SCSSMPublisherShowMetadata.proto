@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMPublisherShowMetadata {
+	string showId = 1;
+	string showName = 2;
+	string showDescription = 3;
+	string showHeroImageURL = 4;
+
+	enum IMPShowType {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	IMPShowType showType = 5;
+	string episodeSubtitle = 7;
+	string profileOverlayButtonText = 8;
+	int32 seasonNumber = 9;
+	int32 episodeNumber = 10;
+	string seasonId = 11;
+
+	enum SCSCORELogoDisplay_Enum {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	SCSCORELogoDisplay_Enum profileLogoDisplay = 12;
+	string coverMediaManifest = 13;
+}

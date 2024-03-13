@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2OpeningHours_TimeRange.proto";
+
+message SCR2OpeningHours_DayHours {
+
+	enum SCR2OpeningHours_Day {
+		UNKNOWN = 0;
+		MONDAY = 1;
+		TUESDAY = 2;
+		WEDNESDAY = 3;
+		THURSDAY = 4;
+		FRIDAY = 5;
+		SATURDAY = 6;
+		SUNDAY = 7;
+	}
+
+	SCR2OpeningHours_Day day = 1;
+	repeated ranking2.SCR2OpeningHours_TimeRange hoursArray = 2;
+}

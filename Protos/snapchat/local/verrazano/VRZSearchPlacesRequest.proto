@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPaginationData.proto";
+
+message VRZSearchPlacesRequest {
+	snapchat.local.verrazano.VRZPaginationData pagination = 1;
+	string name = 2;
+	repeated string placeTypeIdsArray = 3;
+	string snapproAccountId = 4;
+}

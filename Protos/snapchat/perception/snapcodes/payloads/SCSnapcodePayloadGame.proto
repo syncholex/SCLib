@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.snapcodes.payloads;
+
+message SCSnapcodePayloadGame {
+	string title = 1;
+	string appId = 2;
+	string iconURL = 3;
+	string buildId = 4;
+	string orgId = 5;
+	string payload = 6;
+
+	enum SCSnapcodePayloadGame_AppType {
+		UNSET = 0;
+		GAME = 1;
+		MINI = 2;
+	}
+
+	SCSnapcodePayloadGame_AppType appType = 7;
+	string path = 8;
+}

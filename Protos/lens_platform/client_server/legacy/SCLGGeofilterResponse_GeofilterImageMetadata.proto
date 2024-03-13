@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse_GeofilterImageMetadata_Size.proto";
+import "lens_platform/client_server/legacy/SCLGIntegerPoint.proto";
+
+message SCLGGeofilterResponse_GeofilterImageMetadata {
+	lens_platform.client_server.legacy.SCLGGeofilterResponse_GeofilterImageMetadata_Size imageSizePx = 1;
+	lens_platform.client_server.legacy.SCLGGeofilterResponse_GeofilterImageMetadata_Size croppedImageSizePx = 2;
+	lens_platform.client_server.legacy.SCLGIntegerPoint croppedImageOffset = 3;
+}

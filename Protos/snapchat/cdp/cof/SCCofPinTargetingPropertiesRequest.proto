@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/FeatureProvidedSignals.proto";
+
+message SCCofPinTargetingPropertiesRequest {
+	string userId = 1;
+	snapchat.cdp.cof.FeatureProvidedSignals targetingProperties = 2;
+	int32 ttlSeconds = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCMessagingSnapStoryId {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	string legacyStoryId = 2;
+	string posterOwnerId = 3;
+}

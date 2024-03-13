@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBCameraSessionEvent {
+
+	enum HRMPBCameraSessionEvent_CameraSessionStatus {
+		SESSION_START = 0;
+		SESSION_END = 1;
+	}
+
+	HRMPBCameraSessionEvent_CameraSessionStatus status = 1;
+	uint32 cameraMode = 2;
+}

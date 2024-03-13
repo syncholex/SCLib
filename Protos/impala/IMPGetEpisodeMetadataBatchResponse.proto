@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPEpisodeMetadata.proto";
+
+message IMPGetEpisodeMetadataBatchResponse {
+	repeated impala.IMPEpisodeMetadata episodesArray = 1;
+}

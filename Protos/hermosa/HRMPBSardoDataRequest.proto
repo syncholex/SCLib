@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBQuaternion.proto";
+import "hermosa/HRMPBTranslation.proto";
+
+message HRMPBSardoDataRequest {
+	hermosa.HRMPBQuaternion quaternion = 1;
+	hermosa.HRMPBTranslation translation = 2;
+	uint32 msecSinceSync = 3;
+	double captureTimestamp = 4;
+
+	enum HRMPBSardoDataRequest_TrackingQuality {
+		UNKNOWN = 0;
+		LIMITED = 1;
+		NORMAL = 2;
+	}
+
+	HRMPBSardoDataRequest_TrackingQuality trackingQuality = 5;
+	uint64 captureTimestampMs = 6;
+}

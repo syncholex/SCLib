@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRSnapScanDeliverableModel_Identifier {
+	string name = 1;
+	string flavor = 2;
+	string version = 3;
+}

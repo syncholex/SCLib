@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPDismissSubscriptionSuggestionRequest {
+	string creatorUserId = 1;
+	string userId = 2;
+	int64 requestTimestampMillisecs = 3;
+}

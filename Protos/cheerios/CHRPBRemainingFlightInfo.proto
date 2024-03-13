@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBDialPosition.proto";
+
+message CHRPBRemainingFlightInfo {
+	uint32 remainingFlightsTime = 1;
+	uint32 estimatedFlightTime = 2;
+	cheerios.CHRPBDialPosition currentDialPosition = 3;
+}

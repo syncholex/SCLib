@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXAstrologyProfileAction_MyPersonalityProfile.proto";
+import "snapchat/context2/api/SCCTXAstrologyProfileAction_FriendPersonalityProfile.proto";
+import "snapchat/context2/api/SCCTXAstrologyProfileAction_FriendCompatibilityProfile.proto";
+
+message SCCTXAstrologyProfileAction {
+
+	oneof profile {
+		snapchat.context2.api.SCCTXAstrologyProfileAction_MyPersonalityProfile myPersonalityProfile = 1;
+		snapchat.context2.api.SCCTXAstrologyProfileAction_FriendPersonalityProfile friendPersonalityProfile = 2;
+		snapchat.context2.api.SCCTXAstrologyProfileAction_FriendCompatibilityProfile friendCompatibilityProfile = 3;
+	}
+
+}

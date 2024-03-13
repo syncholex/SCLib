@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBProjectorCalibration {
+	uint32 dutyCycleRed = 1;
+	uint32 dutyCycleGreen = 2;
+	uint32 dutyCycleBlue = 3;
+	uint32 idacRed = 4;
+	uint32 idacGreen = 5;
+	uint32 idacBlue = 6;
+	uint32 boresightCorrection = 7;
+	repeated uint32 lumTableIdacArray = 8;
+	repeated uint32 lumTableRedArray = 9;
+	repeated uint32 lumTableGreenArray = 10;
+	repeated uint32 lumTableBlueArray = 11;
+	uint32 opticalBoresight = 12;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceItemKey.proto";
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforceProjectedItem {
+	com.snapchat.deltaforce.SCDeltaforceItemKey key = 1;
+	com.snapchat.deltaforce.SCDeltaforceValue property = 2;
+	uint64 lastModified = 3;
+}

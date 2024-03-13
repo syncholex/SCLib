@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbRedeemGiftResponse_ApplePromotionalOfferRedeemAction.proto";
+
+message SCSubscriptionShopPbRedeemGiftResponse {
+
+	enum SCSubscriptionShopPbRedeemGiftResponse_Error {
+		ERROR_NO_ERROR = 0;
+		ERROR_CANT_REDEEM_YET = 1;
+		ERROR_USER_SUBSCRIBED_PROVIDER_MISMATCH = 2;
+		ERROR_USER_SUBSCRIBED_PROVIDER_INCOMPATIBLE = 3;
+		ERROR_USER_IN_HIGHER_TIER = 4;
+	}
+
+	SCSubscriptionShopPbRedeemGiftResponse_Error error = 1;
+	subscription.shop.SCSubscriptionShopPbRedeemGiftResponse_ApplePromotionalOfferRedeemAction applePromotionalOfferRedeemAction = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPBitmojiSticker.proto";
+import "snapchat/creativetools/common/SCCTPEmoji.proto";
+import "snapchat/creativetools/common/SCCTPSnapSticker.proto";
+import "snapchat/creativetools/common/SCCTPCameo.proto";
+import "snapchat/creativetools/common/SCCTPCustomSticker.proto";
+
+message SCCTPChatReactionIntent_ReactionSticker {
+
+	oneof sticker {
+		snapchat.creativetools.common.SCCTPBitmojiSticker bitmoji = 1;
+		snapchat.creativetools.common.SCCTPEmoji emoji = 2;
+		snapchat.creativetools.common.SCCTPSnapSticker snapSticker = 3;
+		snapchat.creativetools.common.SCCTPCameo cameo = 4;
+		snapchat.creativetools.common.SCCTPCustomSticker customSticker = 5;
+	}
+
+}

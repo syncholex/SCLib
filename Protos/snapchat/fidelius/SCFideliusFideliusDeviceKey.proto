@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusFideliusDeviceKey {
+	bytes publicKey = 1;
+	bytes hashedPublicKey = 2;
+	bytes iwek = 3;
+	uint64 version = 4;
+	uint64 createdTimestamp = 5;
+	uint64 lastUpdatedTimestamp = 6;
+	repeated string authSessionIdsArray = 7;
+}

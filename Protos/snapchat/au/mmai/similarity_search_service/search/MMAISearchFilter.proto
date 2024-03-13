@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+import "snapchat/au/mmai/similarity_search_service/search/MMAIMetadataValue.proto";
+
+message MMAISearchFilter {
+	string metadataKey = 1;
+
+	enum MMAISearchFilterCondition {
+		CONDITION_UNSET = 0;
+		CONDITION_EQUALS = 1;
+		CONDITION_NOT_EQUALS = 2;
+		CONDITION_GREATER_THAN = 3;
+		CONDITION_GREATER_OR_EQUAL_TO = 4;
+		CONDITION_LESS_THAN = 5;
+		CONDITION_LESS_OR_EQUAL_TO = 6;
+	}
+
+	MMAISearchFilterCondition condition = 2;
+	snapchat.au.mmai.similarity_search_service.search.MMAIMetadataValue value = 3;
+}

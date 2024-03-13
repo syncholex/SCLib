@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.labscv;
+
+message SCPbSpectaclesAttitudeFrame {
+	double timestamp = 1;
+	float roll = 2;
+	float pitch = 3;
+	float yaw = 4;
+	float translationX = 5;
+	float translationY = 6;
+	float translationZ = 7;
+	float quaternionW = 8;
+	float quaternionX = 9;
+	float quaternionY = 10;
+	float quaternionZ = 11;
+	bool useQuaternion = 12;
+}

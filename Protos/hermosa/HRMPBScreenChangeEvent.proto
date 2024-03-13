@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBScreenChangeEvent {
+
+	enum HRMPBScreenChangeEvent_ScreenState {
+		UNKNOWN = 0;
+		ON = 1;
+		OFF = 2;
+	}
+
+	HRMPBScreenChangeEvent_ScreenState state = 1;
+}

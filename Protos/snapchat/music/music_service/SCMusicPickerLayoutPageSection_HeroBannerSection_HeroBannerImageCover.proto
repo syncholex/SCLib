@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerAction.proto";
+
+message SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerImageCover {
+	string title = 1;
+	string subtitle = 2;
+
+	enum SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerImageCover_HeroBannerImageCoverSize {
+		HERO_BANNER_IMAGE_COVER_SIZE_UNSET = 0;
+		SMALL = 1;
+		LARGE = 2;
+	}
+
+	SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerImageCover_HeroBannerImageCoverSize size = 3;
+	snapchat.creativetools.common.SCCTPEncryptedMedia backgroundImage = 4;
+	snapchat.music.music_service.SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerAction action = 5;
+}

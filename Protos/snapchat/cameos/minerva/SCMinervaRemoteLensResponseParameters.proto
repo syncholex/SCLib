@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/PredictionStatus.proto";
+
+message SCMinervaRemoteLensResponseParameters {
+	snapchat.cameos.minerva.PredictionStatus predictionStatus = 1;
+	int64 seed = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMPackaging_PackagedImage {
+	string filename = 1;
+
+	enum SDMPackaging_Docking {
+		DOCKING_CENTER = 0;
+		DOCKING_TOP = 1;
+		DOCKING_BOTTOM = 2;
+	}
+
+	SDMPackaging_Docking docking = 2;
+}

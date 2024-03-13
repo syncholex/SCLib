@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBMethod.proto";
+import "google/protobuf/GPBOption.proto";
+import "google/protobuf/GPBSourceContext.proto";
+import "google/protobuf/GPBMixin.proto";
+
+message GPBApi {
+	string name = 1;
+	repeated google.protobuf.GPBMethod methodsArray = 2;
+	repeated google.protobuf.GPBOption optionsArray = 3;
+	string version = 4;
+	google.protobuf.GPBSourceContext sourceContext = 5;
+	repeated google.protobuf.GPBMixin mixinsArray = 6;
+
+	enum GPBSyntax {
+		SYNTAX_PROTO2 = 0;
+		SYNTAX_PROTO3 = 1;
+		SYNTAX_EDITIONS = 2;
+	}
+
+	GPBSyntax syntax = 7;
+}

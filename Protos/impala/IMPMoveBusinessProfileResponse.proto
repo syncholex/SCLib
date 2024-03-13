@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPMoveBusinessProfileResponse {
+	string previousOrganizationId = 1;
+	string previousBusinessAccountId = 2;
+	string organizationId = 3;
+	string businessAccountId = 4;
+}

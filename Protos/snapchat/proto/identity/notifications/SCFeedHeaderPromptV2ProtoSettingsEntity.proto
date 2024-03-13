@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.proto.identity.notifications;
+
+import "snapchat/proto/identity/notifications/SCFeedHeaderPromptV2ProtoSetting.proto";
+
+message SCFeedHeaderPromptV2ProtoSettingsEntity {
+	int32 cooldownInDays = 1;
+	repeated snapchat.proto.identity.notifications.SCFeedHeaderPromptV2ProtoSetting typesArray = 2;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCORERankingMetadata.proto";
+import "ranking/core/SCSCOREExperimentalMetadata.proto";
+import "snapchat/snapdoc/SDMLocation.proto";
+import "ranking/core/SCSCORECaptionMetadata.proto";
+import "ranking/core/SCSCOREGeoAddress.proto";
+import "ranking/core/SCSCORETimeZone.proto";
+
+message SCSCOREStoryMetadata {
+	string clientId = 1;
+	ranking.core.SCSCORERankingMetadata rankingMetadata = 3;
+	ranking.core.SCSCOREExperimentalMetadata experimentalMetadata = 4;
+	snapchat.snapdoc.SDMLocation location = 5;
+	bytes thumbnailData = 6;
+	ranking.core.SCSCORECaptionMetadata captionMetadata = 7;
+	string captionText = 8;
+	ranking.core.SCSCOREGeoAddress geoAddressFromIp = 9;
+
+	enum SCSCOREMediaInfo_Orientation {
+		VERTICAL = 0;
+		UPSIDE_DOWN = 1;
+		HORIZONTAL_LEFT = 2;
+		HORIZONTAL_RIGHT = 3;
+	}
+
+	SCSCOREMediaInfo_Orientation orientation = 11;
+	string locale = 12;
+	ranking.core.SCSCORETimeZone timeZone = 13;
+	int64 goLiveTsMs = 14;
+	string routeTag = 100;
+}

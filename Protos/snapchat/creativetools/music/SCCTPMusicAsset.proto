@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.music;
+
+import "snapchat/creativetools/common/SCCTPContentRestrictions.proto";
+import "snapchat/creativetools/music/SCCTPMusicAsset_RemoteMedia.proto";
+
+message SCCTPMusicAsset {
+	uint64 trackId = 1;
+
+	oneof audio {
+		bytes audioData = 2;
+		snapchat.creativetools.music.SCCTPMusicAsset_RemoteMedia remoteAudioData = 5;
+	}
+
+	snapchat.creativetools.common.SCCTPContentRestrictions contentRestrictions = 3;
+	double startOffsetSeconds = 4;
+}

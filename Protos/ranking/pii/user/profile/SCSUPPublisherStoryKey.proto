@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPPublisherStoryKey {
+	int64 publisherId = 1;
+	int64 editionId = 2;
+	string publisherName = 3;
+}

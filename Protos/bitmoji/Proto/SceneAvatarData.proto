@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+import "Lightning/CharacterDataProtos/CharacterData.proto";
+
+message SceneAvatarData {
+	string animationId = 1;
+	string scope = 2;
+	Lightning.CharacterDataProtos.CharacterData overrideCharacterData = 3;
+}

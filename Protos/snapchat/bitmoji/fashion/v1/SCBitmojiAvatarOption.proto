@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiAvatarOption {
+	string optionKey = 1;
+	int32 optionValue = 2;
+}

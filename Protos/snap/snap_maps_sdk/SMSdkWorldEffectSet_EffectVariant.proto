@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkWorldEffectSet_EffectVariant {
+	double minZoomLevel = 3;
+	double maxZoomLevel = 4;
+	bool playsWhenClusterSelected = 5;
+	bool onlyPlayOncePerMapSession = 6;
+	string effectURL = 7;
+}

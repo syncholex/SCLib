@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message Fixed64Rules {
+	fixed64 const_p = 1;
+	fixed64 lt = 2;
+	fixed64 lte = 3;
+	fixed64 gt = 4;
+	fixed64 gte = 5;
+	repeated fixed64 inArray = 6;
+	repeated fixed64 notInArray = 7;
+	bool ignoreEmpty = 8;
+}

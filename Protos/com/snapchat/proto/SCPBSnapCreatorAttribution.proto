@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBSnapCreatorAttribution {
+	string creatorId = 1;
+	int32 creatorType = 2;
+	string creatorDisplayName = 3;
+	string originalStoryId = 4;
+	int64 originalTimestamp = 5;
+	int32 visibility = 6;
+	string logoURL = 7;
+	string creatorUsername = 8;
+	string editionId = 9;
+	string attachment = 10;
+}

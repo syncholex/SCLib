@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCContextV1GeoLocation.proto";
+import "snapchat/context/SCContextV1Address.proto";
+import "snapchat/context/SCContextV1Hours.proto";
+
+message SCContextV1VenueOverrides {
+	string name = 1;
+	string websiteURL = 2;
+	string phoneNumber = 3;
+	snapchat.context.SCContextV1GeoLocation location = 4;
+	repeated string categoriesArray = 5;
+	string categoryDisplayName = 6;
+	snapchat.context.SCContextV1Address address = 7;
+	snapchat.context.SCContextV1Hours hours = 8;
+}

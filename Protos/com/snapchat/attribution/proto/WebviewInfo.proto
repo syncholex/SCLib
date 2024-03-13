@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.snapchat.attribution.proto;
+
+import "snapchat/ads/request/schema/SCAdsApplication.proto";
+
+message WebviewInfo {
+	string pixelToken = 1;
+	bytes serveItemId = 2;
+
+	enum WebviewInfo_WebViewType {
+		UNKNOWN_UNSET = 0;
+		AD_WEB_VIEW = 1;
+		ORGANIC_WEB_VIEW = 2;
+		COMMERCE_WEB_VIEW = 3;
+	}
+
+	WebviewInfo_WebViewType webViewType = 3;
+
+	enum SCAdsDevice_ATTAuthStatusType {
+		NOT_DETERMINED = 0;
+		RESTRICTED = 1;
+		DENIED = 2;
+		AUTHORIZED = 3;
+	}
+
+	SCAdsDevice_ATTAuthStatusType attStatus = 4;
+	string appVersion = 5;
+	string osType = 6;
+	string osVersion = 7;
+	string originalPayload = 8;
+	bool isDebugRequest = 9;
+	snapchat.ads.request.schema.SCAdsApplication application = 10;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZCollabFilterSimilarPlace.proto";
+
+message VRZSimilarPlacesInfo {
+	string placeId = 1;
+	repeated snapchat.local.verrazano.VRZCollabFilterSimilarPlace similarPlacesArray = 2;
+	int32 userCount = 3;
+}

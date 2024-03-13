@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementSignals.proto";
+
+message SCSUPFriendStoryWindowedEngagementStats {
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastDay = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastThreeDays = 2;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastWeek = 3;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastTwoWeeks = 4;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastFourWeeks = 5;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals dailyWindowedEngagementSignals = 6;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastThreeMonths = 8;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastSixHours = 9;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastTwelveHours = 10;
+	ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastThreeWeeks = 11;
+}

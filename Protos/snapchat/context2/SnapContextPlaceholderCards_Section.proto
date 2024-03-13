@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SnapContextPlaceholderCards_Section {
+	string title = 1;
+	repeated float cardHeightsArray = 2 [packed=true];
+	repeated bool excludedFromCardsAboveKeyboardArray = 3 [packed=true];
+}

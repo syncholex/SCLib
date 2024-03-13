@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package storyreply;
+
+message IMPStoryReplyGift {
+	string giftId = 5;
+	string orderReferenceId = 6;
+	string thumbnailContentURL = 7;
+	string openAnimationContentURL = 8;
+	string gradientStartColor = 9;
+	string gradientStopColor = 10;
+	string openAudioContentURL = 11;
+}

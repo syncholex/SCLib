@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/context/ShowcaseContext.proto";
+
+message CommercePageContext {
+	repeated com.snapchat.showcase.wire.context.ShowcaseContext showcaseContextsArray = 1;
+	bytes internalCommerceContext = 2;
+}

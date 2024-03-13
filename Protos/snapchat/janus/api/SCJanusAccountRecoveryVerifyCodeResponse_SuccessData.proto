@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusAccountRecoveryVerifyCodeResponse_SuccessData {
+	string humanReadableMessage = 2;
+	string username = 3;
+}

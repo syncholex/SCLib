@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationNotificationTTL {
+	uint32 ttlInSec = 1;
+}

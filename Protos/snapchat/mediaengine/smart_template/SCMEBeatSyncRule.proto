@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMESelectedMusicMetadata.proto";
+import "snapchat/mediaengine/smart_template/SCMEMediaSyncPointRule.proto";
+
+message SCMEBeatSyncRule {
+	snapchat.mediaengine.smart_template.SCMESelectedMusicMetadata musicMetadata = 1;
+	uint64 maxOverallDurationMs = 4;
+	repeated float allowedPlaybackSpeedsArray = 5 [packed=true];
+	repeated snapchat.mediaengine.smart_template.SCMEMediaSyncPointRule mediaRulesArray = 6;
+}

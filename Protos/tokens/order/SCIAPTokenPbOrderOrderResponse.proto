@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package tokens.order;
+
+import "tokens/order/SCIAPTokenPbOrderOrderRecord.proto";
+import "tokens/order/SCIAPTokenPbOrderBalance.proto";
+
+message SCIAPTokenPbOrderOrderResponse {
+	tokens.order.SCIAPTokenPbOrderOrderRecord order = 1;
+	tokens.order.SCIAPTokenPbOrderBalance balance = 2;
+}

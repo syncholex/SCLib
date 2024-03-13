@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_FaceFrontalizer_DetectedFace.proto";
+
+message SnapBrainResponse_Results_FaceFrontalizer {
+	repeated snapchat.research.SnapBrainResponse_Results_FaceFrontalizer_DetectedFace facesArray = 1;
+	string faceVersion = 2;
+}

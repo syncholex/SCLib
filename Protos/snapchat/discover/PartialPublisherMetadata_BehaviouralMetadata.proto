@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/discover/FeaturesValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/discover/TypeValue.proto";
+import "snapchat/discover/AdSettingValue.proto";
+import "snapchat/discover/ModerationLevelValue.proto";
+import "snapchat/discover/AudioClassificationValue.proto";
+import "snapchat/discover/DiscoverChannelsFilterValue.proto";
+import "snapchat/discover/TierLevelValue.proto";
+
+message PartialPublisherMetadata_BehaviouralMetadata {
+	google.protobuf.GPBBoolValue adsEnabled = 1;
+	google.protobuf.GPBBoolValue isComScoreIntegrationEnabled = 2;
+	google.protobuf.GPBBoolValue isOurStories = 3;
+	google.protobuf.GPBBoolValue isShow = 4;
+	snapchat.discover.FeaturesValue publisherFeatures = 5;
+	google.protobuf.GPBBoolValue subscribable = 6;
+	google.protobuf.GPBStringValue tier = 7;
+	google.protobuf.GPBInt32Value topsnapLimit = 8;
+	snapchat.discover.TypeValue type = 9;
+	google.protobuf.GPBBoolValue rollingNewsEnabled = 10;
+	google.protobuf.GPBBoolValue videoModeEnabled = 11;
+	snapchat.discover.AdSettingValue adSetting = 12;
+	snapchat.discover.ModerationLevelValue moderationLevel = 13;
+	google.protobuf.GPBInt32Value targetSnapLengthMs = 14;
+	snapchat.discover.AudioClassificationValue audioClassification = 15;
+	google.protobuf.GPBBoolValue isAdsPreRollEnabled = 16;
+	google.protobuf.GPBInt32Value webviewLimit = 17;
+	google.protobuf.GPBBoolValue isDynamicAdsEnabled = 18;
+	snapchat.discover.DiscoverChannelsFilterValue discoverChannelFilterSet = 19;
+	snapchat.discover.TierLevelValue tierLevel = 20;
+}

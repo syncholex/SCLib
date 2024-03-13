@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+import "impala/portfolio/IMPPortfolios.proto";
+
+message IMPListAllPortfoliosResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.portfolio.IMPPortfolios portfoliosArray = 3;
+}

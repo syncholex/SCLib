@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto;
+
+message EnableSmsTfaRequest {
+	string smsCode = 1;
+	string deviceId = 2;
+	string persistentAttestationDeviceId = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+
+message IMPGetBusinessProfilesResponse {
+	impala.IMPBusinessProfileAndUserData profilesByProfileId = 1;
+	impala.IMPBusinessProfileAndUserData profilesByPublisherId = 2;
+}

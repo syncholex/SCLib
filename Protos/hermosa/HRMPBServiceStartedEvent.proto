@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBServiceStartedEvent {
+	string serviceName = 1;
+	repeated uint32 rpcTypesArray = 2 [packed=true];
+}

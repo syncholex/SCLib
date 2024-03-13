@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.query;
+
+import "snapchat/perception/lookalike/SCPNLOOKALIEMediaReference.proto";
+
+message Hit {
+	snapchat.perception.lookalike.SCPNLOOKALIEMediaReference matchedContent = 1;
+	snapchat.perception.lookalike.SCPNLOOKALIEMediaReference sourceMedia = 2;
+	float score = 3;
+	string properties = 100;
+}

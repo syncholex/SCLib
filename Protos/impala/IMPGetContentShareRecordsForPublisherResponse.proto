@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPContentShareRecord.proto";
+
+message IMPGetContentShareRecordsForPublisherResponse {
+	repeated impala.IMPContentShareRecord recordsArray = 1;
+}

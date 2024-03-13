@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cup.embed.proto;
+
+message PsuggestiveScore {
+	float score = 1;
+
+	enum PsuggestiveScoreVersion {
+		PSUGGESTIVE_SCORE_VERSION_UNSET = 0;
+		PSUGGESTIVE_V1 = 1;
+	}
+
+	PsuggestiveScoreVersion version = 2;
+}

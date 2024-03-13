@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.cof;
+
+import "subscription/cof/SCPlusUpsellPbImpressionConfig.proto";
+import "subscription/cof/SCPlusUpsellPbBump.proto";
+
+message SCPlusUpsellPbUpsellConfig {
+	subscription.cof.SCPlusUpsellPbImpressionConfig impressionConfig = 1;
+	repeated subscription.cof.SCPlusUpsellPbBump bumpArray = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse_DynamicContextProperties_TimeComponent.proto";
+
+message SCLGGeofilterResponse_DynamicContextProperties {
+	string deeplinkProperties = 1;
+	repeated lens_platform.client_server.legacy.SCLGGeofilterResponse_DynamicContextProperties_TimeComponent relativeTimeComponentsArray = 2;
+}

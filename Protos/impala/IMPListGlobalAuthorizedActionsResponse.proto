@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPListGlobalAuthorizedActionsResponse {
+	repeated string authorizedActionsArray = 1;
+}

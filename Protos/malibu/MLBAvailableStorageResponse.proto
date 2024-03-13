@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAvailableStorageResponse {
+
+	enum MLBAvailableStorageResponse_Status {
+		StorageAvailable = 0;
+		StorageFull = 1;
+	}
+
+	MLBAvailableStorageResponse_Status status = 1;
+	uint32 availableStorage = 2;
+	uint32 availableStoragePercentage = 3;
+}

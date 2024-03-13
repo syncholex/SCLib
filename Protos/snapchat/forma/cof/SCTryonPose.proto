@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.forma.cof;
+
+message SCTryonPose {
+	string poseId = 1;
+	string poseImageURL = 2;
+
+	enum SCTryonPoseCategory {
+		CATEGORY_UNSET = 0;
+		FEMALE = 1;
+		MALE = 2;
+		UNISEX = 3;
+	}
+
+	SCTryonPoseCategory poseCategory = 3;
+}

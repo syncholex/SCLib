@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo {
+	string userId = 1;
+
+	enum IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType {
+		FULL_CHECK = 0;
+		AGE_ONLY = 1;
+		PROMOTION = 2;
+		STANDARD_TIER = 3;
+	}
+
+	IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType type = 2;
+}

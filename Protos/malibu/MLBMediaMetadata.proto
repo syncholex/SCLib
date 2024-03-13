@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBMediaTypeAndSize.proto";
+
+message MLBMediaMetadata {
+	string uuid = 1;
+	repeated malibu.MLBMediaTypeAndSize mediaArray = 2;
+}

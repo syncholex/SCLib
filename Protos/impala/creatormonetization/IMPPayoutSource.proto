@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPPayoutSource {
+	int64 value = 1;
+
+	enum IMPPayoutType {
+		UNKNOWN_UNSET = 0;
+		SPOTLIGHT = 1;
+		SPOTLIGHT_REALLOCATION = 2;
+		GIFT = 3;
+		SPOTLIGHT_CHALLENGE = 4;
+		STORY = 5;
+		LENS_CREATOR_FUND = 6;
+		LENS_ILDG = 7;
+	}
+
+	IMPPayoutType payoutType = 2;
+	int64 earnedTimestamp = 3;
+	int64 valueCents = 4;
+	string earnedDate = 5;
+	string description_p = 6;
+}

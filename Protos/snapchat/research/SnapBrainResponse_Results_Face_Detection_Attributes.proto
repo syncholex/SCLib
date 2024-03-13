@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_Face_Detection_Attributes_Gender.proto";
+
+message SnapBrainResponse_Results_Face_Detection_Attributes {
+	uint32 age = 1;
+	snapchat.research.SnapBrainResponse_Results_Face_Detection_Attributes_Gender gender = 2;
+	double headwear = 3;
+	double joy = 4;
+}

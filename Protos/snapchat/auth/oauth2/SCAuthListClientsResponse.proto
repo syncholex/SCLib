@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+import "snapchat/auth/oauth2/SCAuthClient.proto";
+
+message SCAuthListClientsResponse {
+	repeated snapchat.auth.oauth2.SCAuthClient clientsArray = 1;
+}

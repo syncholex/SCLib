@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMAppInfo.proto";
+import "ranking/core/SCSCOREGeoLocation.proto";
+import "ranking/serving/jaguar/SCSSMConnectionInfo.proto";
+import "ranking/serving/jaguar/SCSSMDeviceInfo.proto";
+import "ranking/serving/jaguar/SCSSMUserRecentTapHistory.proto";
+import "ranking/serving/jaguar/SCSSMUserRecentInteractionsHistory.proto";
+import "ranking/serving/jaguar/SCSSMRTUSSignal.proto";
+
+message SCSSMClientInfo {
+	string userId = 1;
+	ranking.serving.jaguar.SCSSMAppInfo appInfo = 2;
+	ranking.core.SCSCOREGeoLocation location = 3;
+	string countryCode = 4;
+	string locale = 5;
+	repeated string languagePreferencesArray = 6;
+	string timeZone = 7;
+	repeated int64 lastInteractionTimestampsMsArray = 8 [packed=true];
+
+	enum SCSSMClientInfo_Gender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCSSMClientInfo_Gender userGender = 9;
+	int32 userAge = 10;
+	string userEmail = 11;
+	bool isEmployee = 12;
+	bool soundIsOn = 13;
+	ranking.serving.jaguar.SCSSMConnectionInfo connectionInfo = 14;
+	ranking.serving.jaguar.SCSSMDeviceInfo deviceInfo = 15;
+	ranking.serving.jaguar.SCSSMUserRecentTapHistory tapHistory = 16;
+	bool isNewUser = 17;
+	bool userRegisteredInCheetah = 18;
+	string userName = 19;
+	ranking.serving.jaguar.SCSSMUserRecentInteractionsHistory interactionsHistory = 20;
+	bool hasBitmojiAvatar = 21;
+	int64 userCreationTimestampMs = 24;
+	int32 bidirectionalFriendCount = 25;
+	bool isCameosFeatureRestricted = 26;
+
+	enum SCSSMCameosFeatureStatus_Enum {
+		UNSET = 0;
+		RESTRICTED = 1;
+		ALLOWED = 2;
+	}
+
+	SCSSMCameosFeatureStatus_Enum cameosFeatureRestricted = 27;
+	bool isVerticalNavigation = 29;
+	ranking.serving.jaguar.SCSSMRTUSSignal realTimeUserSequence = 30;
+}

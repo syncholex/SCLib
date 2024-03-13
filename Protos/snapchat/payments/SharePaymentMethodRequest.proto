@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message SharePaymentMethodRequest {
+	string userId = 1;
+	string paymentMethodId = 2;
+	string miniProgramId = 3;
+	string partnerCustomerId = 4;
+
+	enum SharePaymentMethodRequest_DestinationVault {
+		UNSET = 0;
+		BRAINTREE = 1;
+		SHOPIFY = 2;
+		SALESFORCE = 3;
+		BIG_COMMERCE = 4;
+	}
+
+	SharePaymentMethodRequest_DestinationVault destinationVault = 5;
+	string destinationURL = 6;
+	string authToken = 7;
+	string amount = 8;
+	string cardType = 9;
+}

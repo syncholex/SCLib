@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/storymanagement/StoryQuery.proto";
+import "ranking/storymanagement/story/Owner.proto";
+
+message GetStoryDraftingSnapsRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	ranking.storymanagement.StoryQuery query = 2;
+
+	enum StoryDraftingStatus_Enum {
+		UNKNOWN = 0;
+		SCHEDULED = 1;
+		ERROR = 2;
+	}
+
+	StoryDraftingStatus_Enum storyStatusFilter = 3;
+	ranking.storymanagement.story.Owner storyOwner = 4;
+}

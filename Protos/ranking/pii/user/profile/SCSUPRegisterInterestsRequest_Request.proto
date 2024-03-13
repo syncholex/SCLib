@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPRegisterInterestsRequest_Request {
+	int32 interestId = 1;
+
+	enum SCSUPRegisterState_Enum {
+		UNKNOWN = 0;
+		REGISTERED = 1;
+		UNREGISTERED = 2;
+	}
+
+	SCSUPRegisterState_Enum toState = 2;
+}

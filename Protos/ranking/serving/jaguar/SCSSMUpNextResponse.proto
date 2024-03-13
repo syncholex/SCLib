@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryCard.proto";
+
+message SCSSMUpNextResponse {
+	string requestId = 1;
+	repeated ranking.serving.jaguar.SCSSMStoryCard recommendedStoriesArray = 2;
+	string debugHtml = 3;
+	bytes debugPb = 4;
+	string hpoPb = 5;
+}

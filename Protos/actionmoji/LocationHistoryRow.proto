@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/LocationHistoryEntry.proto";
+
+message LocationHistoryRow {
+	string rowKey = 1;
+	actionmoji.LocationHistoryEntry locationHistoryEntry = 2;
+}

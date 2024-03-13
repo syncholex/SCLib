@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensGeopoint.proto";
+
+message SCLensGeocircle {
+	double radius = 1;
+	snapchat.lenses.SCLensGeopoint center = 2;
+}

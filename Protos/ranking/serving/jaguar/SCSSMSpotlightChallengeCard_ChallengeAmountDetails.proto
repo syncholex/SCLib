@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSpotlightChallengeCard_ChallengeAmountDetails {
+	int64 totalAmount = 1;
+	repeated int64 amountsForEachPlaceArray = 2 [packed=true];
+}

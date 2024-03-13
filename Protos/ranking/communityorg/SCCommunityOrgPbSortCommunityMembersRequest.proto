@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbSortCommunityMembersRequest {
+	ranking.core.SCSCOREUUID orgId = 1;
+	ranking.core.SCSCOREUUID groupId = 2;
+	ranking.core.SCSCOREUUID userId = 3;
+	repeated ranking.core.SCSCOREUUID membersUserIdsArray = 4;
+
+	enum SCCommunityOrgPbSortCommunityMembersRequest_Surface {
+		UNSET = 0;
+		MEMBER_PROFILE = 1;
+		NON_MEMBER_PROFILE = 2;
+	}
+
+	SCCommunityOrgPbSortCommunityMembersRequest_Surface surface = 5;
+}

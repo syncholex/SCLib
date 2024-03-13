@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiDrop.proto";
+
+message SCBitmojiGetDropResponse {
+	snapchat.bitmoji.fashion.v1.SCBitmojiDrop drop = 1;
+}

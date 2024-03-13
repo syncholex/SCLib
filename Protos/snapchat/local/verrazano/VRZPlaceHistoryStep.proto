@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace.proto";
+import "snapchat/local/verrazano/VRZChangeset.proto";
+
+message VRZPlaceHistoryStep {
+	snapchat.local.verrazano.VRZPlace place = 1;
+	snapchat.local.verrazano.VRZChangeset changeset = 2;
+}

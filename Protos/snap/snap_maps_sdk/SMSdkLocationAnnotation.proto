@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "google/protobuf/GPBEmpty.proto";
+
+message SMSdkLocationAnnotation {
+
+	oneof annotation {
+		google.protobuf.GPBEmpty home = 1;
+		google.protobuf.GPBEmpty work = 2;
+	}
+
+}

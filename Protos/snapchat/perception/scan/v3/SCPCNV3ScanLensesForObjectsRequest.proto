@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3GTQRequest.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanExperiment.proto";
+
+message SCPCNV3ScanLensesForObjectsRequest {
+	string requestId = 1;
+	repeated string objectCategoriesArray = 2;
+	snapchat.perception.scan.v3.SCPCNV3GTQRequest gtqRequest = 3;
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanExperiment experimentsArray = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+message TokenConsumption {
+	uint64 promptToken = 1;
+	uint64 completionToken = 2;
+	uint64 totalToken = 3;
+}

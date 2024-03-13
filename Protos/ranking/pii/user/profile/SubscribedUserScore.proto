@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SubscribedUserScore {
+	string userId = 1;
+	float friendScore = 2;
+	int64 relationshipTimestampMsecs = 3;
+}

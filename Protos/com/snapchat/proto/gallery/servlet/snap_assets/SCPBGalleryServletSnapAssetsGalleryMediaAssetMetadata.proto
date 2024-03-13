@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet.snap_assets;
+
+import "com/snapchat/proto/gallery/SCPBGalleryMediaAttribute.proto";
+
+message SCPBGalleryServletSnapAssetsGalleryMediaAssetMetadata {
+	int32 mediaType = 1;
+	int64 captureTime = 2;
+	string mediaFormat = 3;
+	repeated com.snapchat.proto.gallery.SCPBGalleryMediaAttribute mediaAttributesArray = 4;
+}

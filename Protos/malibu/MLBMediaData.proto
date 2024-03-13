@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBRange.proto";
+
+message MLBMediaData {
+	string uuid = 1;
+
+	enum MLBMediaType {
+		METADATA = 0;
+		THUMBNAIL = 1;
+		HIGHLIGHT_THUMBNAIL = 2;
+		SD_VIDEO = 3;
+		HD_VIDEO = 4;
+		PICTURE = 5;
+		IMU_DATA = 6;
+		METADATA_NO_UTC = 7;
+	}
+
+	MLBMediaType type = 2;
+	malibu.MLBRange requestedRange = 3;
+	malibu.MLBRange actualRange = 4;
+	bytes data_p = 5;
+}

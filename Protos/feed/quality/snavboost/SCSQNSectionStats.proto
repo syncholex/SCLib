@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package feed.quality.snavboost;
+
+message SCSQNSectionStats {
+	float numRequestDedupedImpressions = 1;
+	float numStoryImpressions = 2;
+	float numRequestDedupedStoryImpressions = 3;
+	float impressionTotalTimeSecs = 4;
+	float numRequestDedupedWatches = 5;
+	float numStoryWatches = 6;
+	float numRequestDedupedStoryWatches = 7;
+	float totalWatchTimeSecs = 8;
+	float numRequestDedupedQualifiedImpressions = 9;
+	float numRequestDedupedPivotImpressions = 10;
+	float pivotImpressionTotalTimeSecs = 11;
+	float numPivotClicks = 12;
+	float numRequestDedupedPivotClicks = 13;
+	float numCompleteWatches = 14;
+	float numWatchesBelow1P5Secs = 15;
+	float numWatchesAbove20Secs = 16;
+	float numRequestDedupedBoosts = 17;
+	float numOpenProfiles = 18;
+	float numWatchesBelow3Secs = 19;
+}

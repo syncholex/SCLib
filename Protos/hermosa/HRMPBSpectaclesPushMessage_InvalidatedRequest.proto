@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSpectaclesPushMessage_InvalidatedRequest {
+	uint32 methodIndex = 1;
+	uint32 requestId = 2;
+	uint64 methodUuid = 3;
+}

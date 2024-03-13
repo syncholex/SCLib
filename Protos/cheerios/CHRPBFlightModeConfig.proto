@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBFlightModeConfig {
+
+	enum CHRPBFlightModeConfig_FlightModeType {
+		UNSET = 0;
+		HOVER = 1;
+		REVEAL = 2;
+		FOLLOW = 3;
+		ORBIT = 4;
+		CUSTOM = 5;
+	}
+
+	CHRPBFlightModeConfig_FlightModeType type = 1;
+}

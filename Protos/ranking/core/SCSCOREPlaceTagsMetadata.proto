@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoLocation.proto";
+
+message SCSCOREPlaceTagsMetadata {
+	bool placeTagged = 1;
+	uint64 placeItemCount = 2;
+	uint64 placeItemIndex = 3;
+	string placeTagId = 4;
+	repeated string placesListedArray = 5;
+	ranking.core.SCSCOREGeoLocation geoLocation = 6;
+	string sourceType = 7;
+	string snapSource = 8;
+	int64 timestampMs = 9;
+}

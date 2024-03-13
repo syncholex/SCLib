@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message ShareOptionValue {
+
+	enum ShareOption {
+		NO_SHARE = 0;
+		SHARE_LIVE = 1;
+		SHARE_LIVE_ARCHIVED = 2;
+	}
+
+	ShareOption value = 1;
+}

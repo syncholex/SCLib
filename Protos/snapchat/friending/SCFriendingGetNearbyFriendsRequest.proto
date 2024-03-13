@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingLocation.proto";
+
+message SCFriendingGetNearbyFriendsRequest {
+	repeated snapchat.friending.SCFriendingLocation locationsArray = 1;
+	bool isOnNearbyPage = 2;
+}

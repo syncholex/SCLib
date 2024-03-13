@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpMetadata.proto";
+import "snapchat/local/verrazano/VRZResponseMessageFlags.proto";
+import "snapchat/local/verrazano/VRZPlaceWriteData.proto";
+
+message VRZCreatePlacesRequest {
+	snapchat.local.verrazano.VRZOpMetadata opMetadata = 1;
+	snapchat.local.verrazano.VRZResponseMessageFlags responseFlags = 2;
+	bool allowPartialResults = 3;
+	repeated snapchat.local.verrazano.VRZPlaceWriteData writeDataArray = 10;
+}

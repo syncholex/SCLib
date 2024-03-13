@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3Wallet.proto";
+
+message SCPBWeb3RemoveWalletRequest {
+	snapchat.web3.SCPBWeb3Wallet walletToRemove = 1;
+}

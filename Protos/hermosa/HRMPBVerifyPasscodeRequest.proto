@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBVerifyPasscodeRequest {
+	string passcode = 1;
+
+	enum HRMPBVerifyPasscodeRequestPurpose {
+		USER_UNLOCK = 0;
+		PROXIMITY_UNLOCK = 1;
+		VERIFY = 2;
+	}
+
+	HRMPBVerifyPasscodeRequestPurpose type = 2;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message PredictionStatus {
+
+	enum PredictionStatusCode {
+		STATUS_CODE_UNSET = 0;
+		OK = 1;
+		ERROR = 2;
+	}
+
+	PredictionStatusCode statusCode = 1;
+
+	enum PredictionErrorCode {
+		ERROR_CODE_UNSET = 0;
+		INTERNAL_ERROR = 1;
+		INPUT_SAFETY_CHECK_FAILED = 2;
+		OUTPUT_SAFETY_CHECK_FAILED = 3;
+	}
+
+	PredictionErrorCode errorCode = 2;
+}

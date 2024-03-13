@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBMediaMetadata.proto";
+import "cheerios/CHRPBMediaData.proto";
+import "cheerios/CHRPBMediaFileMetadata.proto";
+
+message CHRPBMediaResponse {
+	repeated cheerios.CHRPBMediaMetadata availableMediaArray = 1;
+	cheerios.CHRPBMediaData mediaData = 2;
+	cheerios.CHRPBMediaFileMetadata metadata = 3;
+}

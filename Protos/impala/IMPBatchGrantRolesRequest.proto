@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPGrantRoleToUserRequest.proto";
+
+message IMPBatchGrantRolesRequest {
+	repeated impala.IMPGrantRoleToUserRequest rolesArray = 1;
+}

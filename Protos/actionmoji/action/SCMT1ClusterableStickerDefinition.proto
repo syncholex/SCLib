@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1ClusterableStickerDefinition {
+	string leftId = 1;
+	string rightId = 2;
+	string description_p = 3;
+	double probability = 4;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLastKnownLocation.proto";
+
+message SCMTFriendLocationsRequest {
+	float lat = 1;
+	float lng = 2;
+	string continuationId = 3;
+	int32 requestedChunkSize = 4;
+	string language = 5;
+	repeated snapchat.map.SCMTLastKnownLocation lastKnownLocationArray = 6;
+}

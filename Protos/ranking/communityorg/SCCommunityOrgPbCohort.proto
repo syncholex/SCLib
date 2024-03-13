@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbCohortDataGraduationYear.proto";
+import "ranking/communityorg/SCCommunityOrgPbCohortDataStartYear.proto";
+import "ranking/communityorg/SCCommunityOrgPbCohortDataAlumni.proto";
+
+message SCCommunityOrgPbCohort {
+	string cohortId = 1;
+	string cohortName = 2;
+
+	oneof cohortType {
+		ranking.communityorg.SCCommunityOrgPbCohortDataGraduationYear cohortTypeYear = 3;
+		ranking.communityorg.SCCommunityOrgPbCohortDataStartYear cohortTypeStartYear = 4;
+		ranking.communityorg.SCCommunityOrgPbCohortDataAlumni cohortTypeAlumni = 5;
+	}
+
+}

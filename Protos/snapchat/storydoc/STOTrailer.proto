@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/StoryDoc_ID.proto";
+
+message STOTrailer {
+	snapchat.storydoc.StoryDoc_ID id_p = 1;
+}

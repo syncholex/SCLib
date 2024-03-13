@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.appinsights.errorcode;
+
+import "snapchat/appinsights/errorcode/ErrorCode.proto";
+
+message ThrottlingRule {
+	snapchat.appinsights.errorcode.ErrorCode errorCode = 1;
+	int32 allowedReportsPerWindow = 2;
+	int32 sampleRate = 3;
+	bool disabled = 4;
+	int32 throttlingWindowInSecs = 5;
+}

@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "address/SCMapsAddress.proto";
+import "snapchat/context/SCStoryElement_SnapInfo_TitleForZoom.proto";
+import "snapchat/context/SCLocalizedStringSet.proto";
+import "snapchat/research/SASAudioStitch.proto";
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/context/SCContextContextHint.proto";
+import "snapchat/streaming/SCMTOneSnapInfo.proto";
+import "snapchat/streaming/SCMTPublicMediaInfo.proto";
+import "snapchat/streaming/SCMTThumbnailInfo.proto";
+import "address/SCMapsAddressIds.proto";
+import "snapchat/context/SCSnapBoltMediaInfo.proto";
+import "snapchat/snapdoc/SDMSponsor.proto";
+import "impala/common/IMPContentModerationStatus.proto";
+import "snapchat/snapmod/Audience.proto";
+
+message SCStoryElement_SnapInfo {
+	string snapMediaId = 1;
+
+	enum SCSnapMediaType {
+		SNAP_MEDIA_TYPE_IMAGE = 0;
+		SNAP_MEDIA_TYPE_VIDEO = 1;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND = 2;
+		SNAP_MEDIA_TYPE_FRIEND = 3;
+		SNAP_MEDIA_TYPE_BLOB = 4;
+		SNAP_MEDIA_TYPE_LAGUNA = 5;
+		SNAP_MEDIA_TYPE_LAGUNA_NO_SOUND = 6;
+		SNAP_MEDIA_TYPE_AUDIO_STITCH = 9;
+		SNAP_MEDIA_TYPE_PSYCHOMANTIS = 10;
+		SNAP_MEDIA_TYPE_SCREAMINGMANTIS = 11;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_MALIBU = 12;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_MALIBU = 13;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_LAGUNA_HD = 14;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_LAGUNA_HD = 15;
+		SNAP_MEDIA_TYPE_GHOSTMANTIS = 16;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_NEWPORT = 17;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_NEWPORT = 18;
+		SNAP_MEDIA_TYPE_AUDIO = 19;
+		SNAP_MEDIA_TYPE_BLOOP = 20;
+		SNAP_MEDIA_TYPE_SPECTACLES_IMAGE = 21;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO = 22;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO_NO_SOUND = 23;
+		SNAP_MEDIA_TYPE_CHEERIOS_IMAGE = 24;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_SOUND = 25;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSnapMediaType snapMediaType = 2;
+	string creatorId = 3;
+	string mediaKey = 4;
+	string mediaIv = 5;
+	string mediaURL = 6;
+	bool isZipped = 7;
+	string deprecatedTitle = 8;
+	address.SCMapsAddress localizedAddresses = 9;
+	repeated snapchat.context.SCStoryElement_SnapInfo_TitleForZoom titlesForMaxZoomArray = 10;
+	snapchat.context.SCLocalizedStringSet title = 11;
+	string venueId = 12;
+	snapchat.research.SASAudioStitch audioStitch = 13;
+	snapchat.context.SCLocalizedStringSet localitySubtitle = 14;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 15;
+	bool suppressContext = 16;
+	snapchat.context.SCContextContextHint contextHint = 17;
+	snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 18;
+	string attachmentURL = 19;
+	snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 20;
+	string overlayText = 21;
+	string unlockablesSnapInfo = 22;
+
+	enum SCStoryElement_SnapInfo_Source {
+		UNKNOWN = 0;
+		CAMERA_ROLL = 1;
+		MEMORIES = 2;
+	}
+
+	SCStoryElement_SnapInfo_Source source = 23;
+	snapchat.streaming.SCMTThumbnailInfo streamingThumbnailInfo = 24;
+	bool hasLensMetadata = 25;
+
+	enum SCDynamicSnapSource {
+		PUBLIC_USER = 0;
+		OUR_STORY = 1;
+		SINGLE_SNAP_STORY = 2;
+		VENUE_PROFILE = 3;
+	}
+
+	SCDynamicSnapSource dynamicSnapSource = 26;
+	bytes boltContentObject = 27;
+	string decryptedBurntInContentURL = 28;
+	address.SCMapsAddressIds addressIds = 29;
+	snapchat.context.SCSnapBoltMediaInfo snapBoltMediaInfo = 30;
+	snapchat.snapdoc.SDMSponsor sponsor = 31;
+	string sourceContentURL = 32;
+	impala.common.IMPContentModerationStatus contentModerationStatus = 33;
+
+	enum SCStoryElement_SnapInfo_OurStoryDestination {
+		UNKNOWN_DESTINATION = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	repeated SCStoryElement_SnapInfo_OurStoryDestination destinationArray = 34 [packed=true];
+	snapchat.snapmod.Audience modAudience = 35;
+}

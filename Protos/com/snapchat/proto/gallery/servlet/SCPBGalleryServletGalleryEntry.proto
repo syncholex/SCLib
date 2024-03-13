@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletGallerySnap.proto";
+
+message SCPBGalleryServletGalleryEntry {
+	string entryId = 1;
+	int64 seqNum = 2;
+	int32 entryType = 3;
+	repeated com.snapchat.proto.gallery.servlet.SCPBGalleryServletGallerySnap snapsArray = 4;
+	repeated string highlightedSnapIdsArray = 5;
+	int64 createTime = 6;
+	int32 status = 7;
+	string title = 8;
+	bool isPrivate = 9;
+	int64 lastAutosaveTime = 10;
+	string externalId = 11;
+	int32 entrySource = 12;
+	float snapOrder = 13;
+	int64 snapOrderV2 = 14;
+	string shareLinkInfo = 15;
+	string snapDoc = 16;
+	repeated string assetsArray = 17;
+	int32 folderType = 18;
+}

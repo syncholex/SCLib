@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package validate;
+
+message BytesRules {
+	bytes const_p = 1;
+	uint64 minLen = 2;
+	uint64 maxLen = 3;
+	string pattern = 4;
+	bytes prefix = 5;
+	bytes suffix = 6;
+	bytes contains = 7;
+	repeated bytes inArray = 8;
+	repeated bytes notInArray = 9;
+
+	oneof wellKnown {
+		bool ip = 10;
+		bool ipv4 = 11;
+		bool ipv6 = 12;
+	}
+
+	uint64 len = 13;
+	bool ignoreEmpty = 14;
+}

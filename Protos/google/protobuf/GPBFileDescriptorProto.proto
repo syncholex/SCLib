@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBDescriptorProto.proto";
+import "google/protobuf/GPBEnumDescriptorProto.proto";
+import "google/protobuf/GPBServiceDescriptorProto.proto";
+import "google/protobuf/GPBFieldDescriptorProto.proto";
+import "google/protobuf/GPBFileOptions.proto";
+import "google/protobuf/GPBSourceCodeInfo.proto";
+
+message GPBFileDescriptorProto {
+	string name = 1;
+	string package = 2;
+	repeated string dependencyArray = 3;
+	repeated google.protobuf.GPBDescriptorProto messageTypeArray = 4;
+	repeated google.protobuf.GPBEnumDescriptorProto enumTypeArray = 5;
+	repeated google.protobuf.GPBServiceDescriptorProto serviceArray = 6;
+	repeated google.protobuf.GPBFieldDescriptorProto extensionArray = 7;
+	google.protobuf.GPBFileOptions options = 8;
+	google.protobuf.GPBSourceCodeInfo sourceCodeInfo = 9;
+	repeated int32 publicDependencyArray = 10;
+	repeated int32 weakDependencyArray = 11;
+	string syntax = 12;
+}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDIosNotificationPermissionsRequest {
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting lockScreen = 1;
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting carPlay = 2;
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting alert = 3;
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting badge = 4;
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting sound = 5;
+
+	enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+		notSupported = 0;
+		disabled = 1;
+		enabled = 2;
+	}
+
+	SCIDIosNotificationPermissionsRequest_UNNotificationSetting criticalAlert = 6;
+	int32 authorizationStatus = 7;
+}

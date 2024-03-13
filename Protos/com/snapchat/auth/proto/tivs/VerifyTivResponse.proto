@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message VerifyTivResponse {
+	snapchat.core.SCCOREUUID userId = 1;
+
+	enum VerifyTivError_Enum {
+		UNSET = 0;
+		NO_ERROR = 1;
+		STATUS_ALREADY_APPROVED = 2;
+		STATUS_DENIED = 3;
+		STATUS_ALREADY_TIMED_OUT = 4;
+		TIV_BROADCAST_NOT_FOUND = 5;
+		TIV_NOT_FOUND = 6;
+	}
+
+	VerifyTivError_Enum error = 2;
+}

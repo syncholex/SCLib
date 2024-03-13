@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLISpectrumParameters.proto";
+
+message SCSLIClientInfo {
+	int64 uploadTimestampMsecs = 1;
+	bool isLowScoreUser = 2;
+	int32 accountAgeDays = 3;
+	ranking.logging.instant.SCSLISpectrumParameters spectrumParameters = 4;
+}

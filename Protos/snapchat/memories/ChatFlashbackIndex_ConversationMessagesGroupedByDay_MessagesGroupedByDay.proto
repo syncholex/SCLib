@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message ChatFlashbackIndex_ConversationMessagesGroupedByDay_MessagesGroupedByDay {
+	string groupKey = 1;
+	repeated uint64 messageIdsArray = 2 [packed=true];
+}

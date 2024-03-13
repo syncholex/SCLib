@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBLensCategoryDatum {
+	string id_p = 1;
+	string name = 2;
+	string activator = 3;
+	string config = 4;
+	string configChecksum = 5;
+	repeated string additionalCarouselCategoriesArray = 6;
+	int32 additionalCarouselLensesLimit = 7;
+}

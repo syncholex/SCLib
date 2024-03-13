@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cdp.networkmanager;
+
+import "snapchat/cdp/networkmanager/PrewarmConfig_HostConfig_Concurrent.proto";
+import "snapchat/cdp/networkmanager/PrewarmConfig_HostConfig_Recurring.proto";
+
+message PrewarmConfig_HostConfig {
+	string endpoint = 1;
+	snapchat.cdp.networkmanager.PrewarmConfig_HostConfig_Concurrent concurrentOperation = 2;
+	snapchat.cdp.networkmanager.PrewarmConfig_HostConfig_Recurring recurringOperation = 3;
+}

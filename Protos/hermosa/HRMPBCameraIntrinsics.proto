@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBVec2I.proto";
+import "hermosa/HRMPBVec2D.proto";
+
+message HRMPBCameraIntrinsics {
+	hermosa.HRMPBVec2I resolution = 1;
+	hermosa.HRMPBVec2D focalLength = 2;
+	hermosa.HRMPBVec2D principalPoint = 3;
+	string distortionModel = 4;
+	repeated double distortionParametersArray = 5 [packed=true];
+}

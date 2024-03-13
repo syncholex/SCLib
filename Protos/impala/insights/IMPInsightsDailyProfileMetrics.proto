@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDailyProfileMetrics {
+	int64 timestampMsecs = 1;
+	int64 profileViews = 2;
+	int64 subscriberCount = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPInternalGetSpotlightVisibilityRequest {
+	string spotlightId = 1;
+	string userId = 2;
+}

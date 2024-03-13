@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/content/MediaReference.proto";
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SDMThumbnail {
+	string URL = 1;
+	bytes key = 2;
+	bytes iv = 3;
+	bool needsAuth = 4;
+	snapchat.content.MediaReference thumbnailReference = 5;
+	snapchat.snapdoc.SDMMediaId thumbnailMediaId = 6;
+	snapchat.snapdoc.SDMMediaId videoThumbnailMediaId = 7;
+	snapchat.content.MediaReference videoThumbnailReference = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/messaging/SCMessagingMediaMetadata.proto";
+
+message SCMessagingSnapKitInviteShare {
+	snapchat.messaging.SCMessagingUUID appId = 1;
+	snapchat.messaging.SCMessagingMediaMetadata stickerMediaMetadata = 2;
+	string inviteUri = 3;
+}

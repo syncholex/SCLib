@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMLongformVideo.proto";
+
+message SDMArticle {
+	string editorHtml = 1;
+	repeated snapchat.snapdoc.SDMLongformVideo videosArray = 2;
+	string id_p = 3;
+	repeated bytes imageContentObjectsArray = 4;
+}

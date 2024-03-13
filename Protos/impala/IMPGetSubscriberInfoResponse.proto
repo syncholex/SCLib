@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSubscriberInfo.proto";
+
+message IMPGetSubscriberInfoResponse {
+	repeated impala.IMPSubscriberInfo subscriberInfosArray = 1;
+}

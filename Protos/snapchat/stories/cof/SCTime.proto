@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCTime {
+	uint32 hour = 1;
+	uint32 minute = 2;
+}

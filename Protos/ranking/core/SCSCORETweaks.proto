@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCORETweakParameter.proto";
+
+message SCSCORETweaks {
+	ranking.core.SCSCORETweakParameter parameters = 1;
+}

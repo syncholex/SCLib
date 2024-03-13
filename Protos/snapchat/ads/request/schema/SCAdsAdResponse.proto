@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsInventoryResponse.proto";
+
+message SCAdsAdResponse {
+	bytes encryptedUserTrackData = 1;
+	repeated snapchat.ads.request.schema.SCAdsInventoryResponse inventoryResponsesArray = 2;
+}

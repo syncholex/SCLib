@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZResponseMessageFlags.proto";
+
+message VRZGetPlaceHistoryRequest {
+	string placeId = 1;
+	snapchat.local.verrazano.VRZResponseMessageFlags responseFlags = 2;
+}

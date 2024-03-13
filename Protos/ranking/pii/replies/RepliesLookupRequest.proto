@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/pii/replies/ReplyIdentifier.proto";
+
+message RepliesLookupRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	repeated ranking.pii.replies.ReplyIdentifier replyIdentifiersArray = 2;
+
+	enum CommentsConsistency_Enum {
+		NONE = 0;
+		STRONG_CONSISTENCY = 1;
+		EVENTUAL_CONSISTENCY = 2;
+	}
+
+	CommentsConsistency_Enum consistencyRequested = 3;
+}

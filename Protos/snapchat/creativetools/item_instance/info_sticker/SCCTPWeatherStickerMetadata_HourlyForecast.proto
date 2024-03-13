@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPWeatherStickerMetadata_HourlyForecast {
+	float celsius = 2;
+	string weatherCondition = 3;
+	string displayTime = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2User.proto";
+import "snapchat/search/SCS2StorySummaryInfo.proto";
+
+message SCS2Friend {
+	snapchat.search.SCS2User user = 1;
+	snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 2;
+}

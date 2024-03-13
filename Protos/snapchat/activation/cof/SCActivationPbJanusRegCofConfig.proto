@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbJanusRegCofConfig {
+
+	enum SCActivationPbJanusRegCofConfig_Mode {
+		DEFAULT_UNSET = 0;
+		CONTROL = 1;
+		ENABLE_REG = 2;
+		HOLDOUT = 3;
+	}
+
+	SCActivationPbJanusRegCofConfig_Mode janusRegMode = 1;
+}

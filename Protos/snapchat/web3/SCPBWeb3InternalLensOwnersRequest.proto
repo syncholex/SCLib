@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+message SCPBWeb3InternalLensOwnersRequest {
+	string lensId = 1;
+	string userId = 2;
+}

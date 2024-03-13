@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/replies/ReactionCount.proto";
+import "ranking/pii/replies/ReplyAttribution.proto";
+
+message Reply {
+	ranking.core.SCSCOREUUID replyId = 1;
+	ranking.core.SCSCOREUUID snapPosterId = 2;
+	string snapId = 3;
+	string replyText = 4;
+	repeated ranking.pii.replies.ReactionCount reactCountsArray = 5;
+	int64 reportCount = 6;
+	ranking.core.SCSCOREUUID replyPosterId = 7;
+
+	enum ApprovalState_Enum {
+		UNKNOWN = 0;
+		DELETED = 1;
+		PENDING = 2;
+		APPROVED = 3;
+		PINNED = 4;
+		MODERATED = 5;
+		REJECTED = 6;
+	}
+
+	ApprovalState_Enum approvalState = 8;
+	string replyPosterFirstName = 9;
+	string replyPosterLastName = 10;
+	int64 replyTimestampMs = 11;
+	string replyPosterDisplayName = 12;
+	string replyPosterBitmojiAvatarId = 13;
+	string replyPosterBitmojiSelfieId = 14;
+	int64 lastStateUpdateTsMs = 15;
+
+	enum ModerationFilterType_Enum {
+		UNKNOWN = 0;
+		ALD = 1;
+		TEXT_MODERATION = 2;
+		ALD_NORMALIZED = 3;
+		HUMAN = 4;
+		AGE_POLICY = 5;
+	}
+
+	repeated ModerationFilterType_Enum moderationFilterTypeArray = 16 [packed=true];
+	bytes snapModerationFeatures = 17;
+	float textModerationPredictionScore = 18;
+
+	enum ReplyBadge_Enum {
+		NONE = 0;
+		FROM_SNAP_CREATOR = 1;
+		FROM_SNAP_STAR = 2;
+	}
+
+	repeated ReplyBadge_Enum badgesArray = 19 [packed=true];
+	ranking.core.SCSCOREUUID replyPosterProfileId = 20;
+	ranking.core.SCSCOREUUID parentCommentId = 21;
+	int64 threadedReplyCount = 22;
+	string storyId = 23;
+	string language = 24;
+	repeated ranking.pii.replies.ReplyAttribution attributionsArray = 25;
+	string replyPosterProfileLogoURL = 26;
+
+	oneof replyPosterProfile {
+		ranking.core.SCSCOREUUID businessProfileId = 27;
+		ranking.core.SCSCOREUUID friendProfileId = 28;
+	}
+
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEventStoryFeatures.proto";
+import "ranking/pii/user/profile/SCSUPEventFeedContextFeatures.proto";
+
+message SCSUPScreenshotEvent {
+	ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+	ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+	int32 timestamp = 3;
+
+	enum SCSLIStoryFeedInteractionContext_Enum {
+		DEFAULT = 0;
+		FEED_PAGE = 1;
+		ACTION_MENU = 2;
+		STORY_PLAYER = 3;
+		CONTEXT_MENU = 4;
+		DROP_DOWN_TOAST = 5;
+		PLAY_BUTTON = 6;
+		TILE_HEADER = 7;
+	}
+
+	SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+import "snapchat/auth/passkey/api/external/EnrollPasskeyResult.proto";
+import "snapchat/auth/passkey/models/Passkey.proto";
+
+message EnrollPasskeyResponse {
+	snapchat.auth.passkey.api.external.EnrollPasskeyResult result = 1;
+	snapchat.auth.passkey.models.Passkey passkey = 2;
+}

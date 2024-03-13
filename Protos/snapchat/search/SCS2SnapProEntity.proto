@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+import "snapchat/search/SCS2SnapProEntity_CarouselConfig.proto";
+
+message SCS2SnapProEntity {
+	impala.IMPBusinessProfileAndUserData profile = 1;
+	snapchat.search.SCS2SnapProEntity_CarouselConfig carouselConfig = 2;
+}

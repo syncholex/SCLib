@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusAccountDeactivationData {
+
+	enum SCJanusAccountDeactivationData_ReactivationStatus {
+		UNSET = 0;
+		DEACTIVATED = 1;
+		REACTIVATION_IN_PROGRESS = 2;
+	}
+
+	SCJanusAccountDeactivationData_ReactivationStatus reactivationStatus = 1;
+	string humanReadableMessage = 2;
+	string reactivationToken = 3;
+}

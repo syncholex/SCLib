@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSUPPublicUserEngagement {
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedFollowStats = 1;
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedNoFollowStats = 2;
+	ranking.pii.user.profile.SCSUPEngagementStats topPublicUserStats = 3;
+	ranking.pii.user.profile.SCSUPEngagementStats topPublicUserFpStats = 4;
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedOfficialStats = 5;
+	ranking.pii.user.profile.SCSUPEngagementStats aggregatedNonOfficialStats = 6;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTopPublicUserFpStats = 7;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTopPublicUserSpotlightFeedStats = 8;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedSpotlightFeedStats = 9;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedLanguageStats = 10;
+	ranking.pii.user.profile.SCSUPEngagementStats topSavedStoryFpStats = 11;
+}

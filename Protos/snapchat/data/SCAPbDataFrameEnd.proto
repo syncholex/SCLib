@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+message SCAPbDataFrameEnd {
+	int32 lastSequenceNumber = 1;
+}

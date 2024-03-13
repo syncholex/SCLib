@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.peliasproxy;
+
+import "snapchat/map/peliasproxy/SCMPPPoint.proto";
+import "snapchat/map/peliasproxy/SCMPPReverseGeocodeProperties.proto";
+
+message SCMPPReverseGeocodeFeature {
+
+	oneof geometry {
+		snapchat.map.peliasproxy.SCMPPPoint point = 1;
+	}
+
+	snapchat.map.peliasproxy.SCMPPReverseGeocodeProperties properties = 10;
+}

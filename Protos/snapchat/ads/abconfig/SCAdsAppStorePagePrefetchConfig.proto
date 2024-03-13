@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAppStorePagePrefetchConfig {
+	bool maxConcurrentPrefetchOperations = 1;
+
+	enum SCAdsAppStorePagePrefetchConfig_PrefetchOrder {
+		UNSET = 0;
+		LIFO = 1;
+		FIFO = 2;
+	}
+
+	SCAdsAppStorePagePrefetchConfig_PrefetchOrder prefetchOrder = 2;
+	bool useJobScheduler = 3;
+	bool preloadOnBgQueue = 4;
+}

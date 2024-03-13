@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_PlaylistGridSection_Entry.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_PlaylistGridSection {
+	repeated snapchat.music.music_service.SCMusicPickerLayoutPageSection_PlaylistGridSection_Entry entriesArray = 1;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference viewAllPage = 2;
+}

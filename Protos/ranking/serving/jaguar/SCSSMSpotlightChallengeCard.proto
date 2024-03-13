@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/serving/jaguar/SCSSMSpotlightChallengeCard_ChallengeAmountDetails.proto";
+
+message SCSSMSpotlightChallengeCard {
+	ranking.core.SCSCOREUUID id_p = 1;
+	string title = 2;
+	string imageURL = 3;
+	string description_p = 4;
+	string details = 5;
+	string termsAndConditionsURL = 6;
+	int64 submissionStartTsMs = 7;
+	int64 submissionEndTsMs = 8;
+	string bitmojiThumbnailTemplateId = 9;
+	ranking.serving.jaguar.SCSSMSpotlightChallengeCard_ChallengeAmountDetails amountDetails = 10;
+	uint64 totalSubmissionCount = 11;
+	string topicId = 12;
+
+	enum SCCTTopicStory_Type {
+		UNSET = 0;
+		HASHTAG = 1;
+		LENS = 2;
+		MUSIC = 3;
+		ORIGINAL_SOUND = 4;
+		THIRD_PARTY_APP = 5;
+		CHALLENGE = 6;
+		CHEERIOS = 7;
+		REMIXES = 8;
+		UNUSED_9 = 9;
+	}
+
+	SCCTTopicStory_Type topicStoryType = 13;
+	string legalText = 14;
+	string stringId = 15;
+}

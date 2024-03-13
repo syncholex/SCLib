@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimension.proto";
+
+message VariantWidget {
+	repeated com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimension itemVariantDimensionsArray = 1;
+	bytes variantContext = 2;
+}

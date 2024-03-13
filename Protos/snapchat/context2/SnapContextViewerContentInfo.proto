@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SnapContextViewerContentInfo {
+	repeated snapchat.core.SCCOREUUID mentionedFriendUserIdsArray = 1;
+	string gameUserToken = 2;
+	bool areMutualFriendsWithUserInAstrologyProfileInfo = 3;
+}

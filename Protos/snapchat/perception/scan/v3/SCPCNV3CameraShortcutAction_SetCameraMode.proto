@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3CameraShortcutAction_SetCameraMode {
+
+	enum SCPCNV3CameraShortcutAction_SetCameraMode_Mode {
+		MODE_UNSET = 0;
+		MODE_TIMELINE = 1;
+		MODE_MULTISNAP = 2;
+		MODE_GRID = 3;
+		MODE_TIMER = 4;
+		MODE_FOCUS = 5;
+		MODE_3D = 6;
+		MODE_NIGHT = 7;
+	}
+
+	SCPCNV3CameraShortcutAction_SetCameraMode_Mode mode = 1;
+	string iconURL = 2;
+}

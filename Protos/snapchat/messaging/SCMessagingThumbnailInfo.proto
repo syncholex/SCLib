@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SCMessagingThumbnailInfo {
+	snapchat.snapdoc.SDMMediaId mediaId = 1;
+	uint32 mediaReferenceListIndex = 2;
+}

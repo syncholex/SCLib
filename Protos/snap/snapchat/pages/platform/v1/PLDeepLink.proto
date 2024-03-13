@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.platform.v1;
+
+message PLDeepLink {
+
+	enum PLSourceType {
+		SOURCE_TYPE_UNSET = 0;
+		FEED_HEADER_PROMPT = 1;
+		TEAM_SNAPCHAT = 2;
+		MAP = 3;
+		CHAT = 4;
+		GROUP_CHAT = 5;
+		PROFILE = 6;
+		SETTINGS = 7;
+		SETTINGS_HEADER_PROMPT = 8;
+		MAPS_HEADER_PROMPT = 9;
+		MAPS_LOCATION_UPGRADE_TRAY = 10;
+		SEARCH = 11;
+		EXTERNAL = 12;
+		SPOTLIGHT = 13;
+	}
+
+	PLSourceType source = 1;
+}

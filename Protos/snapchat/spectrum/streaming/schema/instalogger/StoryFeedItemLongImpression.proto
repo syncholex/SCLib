@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+import "snapchat/spectrum/streaming/schema/instalogger/StoryFeedBaseInfo.proto";
+
+message StoryFeedItemLongImpression {
+	snapchat.spectrum.streaming.schema.instalogger.StoryFeedBaseInfo baseInfo = 1;
+
+	enum Action_Type {
+		ACTION_UNKNOWN_UNSET = 0;
+		ACTION_SWIPE_DOWN = 1;
+		ACTION_SWIPE_UP = 2;
+		ACTION_SWIPE_LEFT = 3;
+		ACTION_SWIPE_RIGHT = 4;
+		ACTION_TAP_AND_HOLD = 5;
+		ACTION_TAP = 6;
+		ACTION_PINCH = 7;
+		ACTION_DOUBLE_TAP = 8;
+		ACTION_FOREGROUNDED = 9;
+		ACTION_BACKGROUNDED = 10;
+	}
+
+	Action_Type gesture = 2;
+	string tileId = 3;
+	bool tileAutoplayed = 4;
+	int64 impressionStartMsecs = 5;
+	float impressionTimeSecs = 6;
+	float minimalVisibleFraction = 7;
+	bytes attachedInfo = 8;
+	string variantId = 9;
+	string triggeringItemId = 10;
+	int32 triggeringItemPlaylistOffset = 11;
+	bool withViewedState = 12;
+
+	enum StoryFeedItemLongImpression_ExitEventType_Enum {
+		UNSPECIFIED = 0;
+		SCROLLED_OUT = 1;
+		CURRENT_STORY_ACTION = 2;
+		OTHER_STORY_ACTION = 3;
+		PAGE_EXIT = 4;
+		APP_BACKGROUNDED = 5;
+		PULL_TO_REFRESH = 6;
+	}
+
+	StoryFeedItemLongImpression_ExitEventType_Enum exitEvent = 13;
+	string broccoliPageType = 14;
+}

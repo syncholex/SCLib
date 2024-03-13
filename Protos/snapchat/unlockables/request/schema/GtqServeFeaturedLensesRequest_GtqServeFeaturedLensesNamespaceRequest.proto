@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest {
+	string namespaceId = 1;
+	bytes checksums = 3;
+	bytes namespaceStreamToken = 4;
+}

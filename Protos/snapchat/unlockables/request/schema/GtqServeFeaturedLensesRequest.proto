@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest.proto";
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest_CachedUnlockableItem.proto";
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest_NetworkProfile.proto";
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest_SponsoredLensRequestInfo.proto";
+import "snapchat/unlockables/request/schema/GtqServeFeaturedLensesRequest_GeoLensRequestInfo.proto";
+import "snapchat/lens_ranking/context/SCLensRankingPredictedContext.proto";
+import "snapchat/lenses/interactions/SCLensHistoricalInteraction.proto";
+import "com/snap/rtus/proto/RTUSSignal.proto";
+
+message GtqServeFeaturedLensesRequest {
+	repeated snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest namespacesArray = 1;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+	bytes encryptedUnlockablesDirectPayload = 3;
+	string snapadsId = 4;
+	repeated snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest_CachedUnlockableItem cachedUnlockableIdsArray = 5;
+	snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest_NetworkProfile networkProfile = 6;
+
+	enum GtqServeFeaturedLensesRequest_LensFeature {
+		LENS_FEATURE_UNSET = 0;
+		CAMEOS = 1;
+	}
+
+	repeated GtqServeFeaturedLensesRequest_LensFeature lensFeaturesArray = 7 [packed=true];
+	bytes streamToken = 8;
+	snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest_SponsoredLensRequestInfo sponsoredLensRequestInfo = 9;
+	bool enableUnlocks = 10;
+	bool enableTargeting = 11;
+	snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest_GeoLensRequestInfo geoLensRequestInfo = 12;
+	string requestId = 13;
+	snapchat.lens_ranking.context.SCLensRankingPredictedContext predictedContext = 14;
+	bool useBackendPrefetchRules = 15;
+	bool excludeScheduled = 16;
+	bool excludePersonalized = 17;
+	repeated snapchat.lenses.interactions.SCLensHistoricalInteraction historicalInteractionsArray = 18;
+	com.snap.rtus.proto.RTUSSignal realTimeUserInteractions = 19;
+}

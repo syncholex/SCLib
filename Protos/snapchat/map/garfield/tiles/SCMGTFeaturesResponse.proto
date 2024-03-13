@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles;
+
+import "snapchat/map/garfield/tiles/SCMGTFeature.proto";
+
+message SCMGTFeaturesResponse {
+	repeated snapchat.map.garfield.tiles.SCMGTFeature featuresArray = 1;
+	uint64 cacheChecksum = 2;
+}

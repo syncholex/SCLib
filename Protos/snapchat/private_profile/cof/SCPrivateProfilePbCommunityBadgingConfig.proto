@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbCommunityBadgingConfig {
+	int32 cooldownDays = 1;
+	int32 interactionCap = 2;
+}

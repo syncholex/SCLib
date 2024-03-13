@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package tokens.order;
+
+message SCIAPTokenPbOrderListItemsRequest {
+	string appId = 1;
+	string locale = 2;
+}

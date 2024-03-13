@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/ShowcaseContext.proto";
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+
+message GetItemDetailPageRequest {
+	com.snapchat.showcase.wire.context.ShowcaseContext showcaseContext = 1;
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 2;
+	uint64 snapItemId = 5;
+}

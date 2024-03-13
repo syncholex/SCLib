@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2StoryThumbnail {
+	string thumbnailURL = 1;
+	string thumbnailIv = 2;
+	string mediaKey = 3;
+	string videoThumbnailURL = 4;
+	string videoFirstFrameThumbnailURL = 5;
+	float aspectRatio = 6;
+
+	enum SCR2MediaInfo_ThumbnailVariant {
+		THUMBNAIL_VARIANT_UNKNOWN = 0;
+		THUMBNAIL_VARIANT_SMALL_FIRST_FRAME_IMAGE = 1;
+		THUMBNAIL_VARIANT_LARGE_FIRST_FRAME_IMAGE = 2;
+		THUMBNAIL_VARIANT_SMALL_BEST_FRAME_IMAGE = 3;
+		THUMBNAIL_VARIANT_LARGE_BEST_FRAME_IMAGE = 4;
+		THUMBNAIL_VARIANT_VIDEO = 5;
+		THUMBNAIL_VARIANT_STREAM = 6;
+	}
+
+	repeated SCR2MediaInfo_ThumbnailVariant thumbnailVariantsArray = 7 [packed=true];
+}

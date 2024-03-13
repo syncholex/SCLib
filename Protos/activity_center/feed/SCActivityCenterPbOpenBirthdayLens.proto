@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package activity_center.feed;
+
+message SCActivityCenterPbOpenBirthdayLens {
+	string lensId = 1;
+}

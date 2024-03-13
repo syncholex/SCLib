@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2OpeningHours_HourMinute {
+	int32 hour = 1;
+	int32 minute = 2;
+}

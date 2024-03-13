@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+message SCSLISpectrumParameters {
+	bool alsoLoggedToSpectrum = 1;
+}

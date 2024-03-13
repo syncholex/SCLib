@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.proto;
+
+message SCAtlasEmojiInfo {
+
+	enum SCAtlasEmojiType {
+		EMOJI_TYPE_UNSET = 0;
+		EMOJI_TYPE_UNICODE = 1;
+	}
+
+	SCAtlasEmojiType type = 1;
+	string source = 2;
+	string title = 3;
+	string emojiDescription = 4;
+	string emojiPickerDescription = 5;
+
+	enum SCAtlasEmojiType {
+		EMOJI_TYPE_UNSET = 0;
+		EMOJI_TYPE_UNICODE = 1;
+	}
+
+	SCAtlasEmojiType defaultType = 6;
+	string defaultValue = 7;
+	int32 emojiLegendRank = 8;
+}

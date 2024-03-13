@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileLiveStory.proto";
+import "impala/IMPProfileStory.proto";
+import "impala/IMPProfileSpotlight.proto";
+import "impala/IMPProfileLens.proto";
+import "impala/IMPProfileCommerceStore.proto";
+import "impala/IMPProfileEpisode.proto";
+import "impala/IMPProfileShow.proto";
+import "impala/IMPProfileRelatedAccounts.proto";
+import "impala/IMPProfilePlaceCollection.proto";
+import "impala/IMPProfilePlace.proto";
+import "impala/IMPProfilePromotableContents.proto";
+
+message IMPProfileContents {
+
+	enum IMPProfileContentType {
+		PROFILE_CONTENT_UNSET = 0;
+		PROFILE_CONTENT_LIVE_STORY = 1;
+		PROFILE_CONTENT_STORY = 2;
+		PROFILE_CONTENT_SPOTLIGHT = 3;
+		PROFILE_CONTENT_LENS = 4;
+		PROFILE_CONTENT_STORE = 5;
+		PROFILE_CONTENT_EPISODE = 6;
+		PROFILE_CONTENT_SHOW = 7;
+		PROFILE_CONTENT_RELATED_ACCOUNT = 8;
+		PROFILE_CONTENT_PLACE_COLLECTION = 9;
+		PROFILE_CONTENT_PLACE = 10;
+		PROFILE_CONTENT_PROMOTION = 11;
+	}
+
+	repeated IMPProfileContentType orderedContentTypesArray = 1 [packed=true];
+	impala.IMPProfileLiveStory liveStory = 2;
+	impala.IMPProfileStory story = 3;
+	impala.IMPProfileSpotlight spotlight = 4;
+	impala.IMPProfileLens lens = 5;
+	impala.IMPProfileCommerceStore store = 6;
+	impala.IMPProfileEpisode episode = 7;
+	impala.IMPProfileShow show = 8;
+	impala.IMPProfileRelatedAccounts relatedAccounts = 9;
+	impala.IMPProfilePlaceCollection placeCollection = 10;
+	impala.IMPProfilePlace place = 11;
+	impala.IMPProfilePromotableContents promotableContents = 12;
+}

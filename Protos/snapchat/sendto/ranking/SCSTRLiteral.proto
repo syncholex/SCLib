@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRLiteral_Null.proto";
+import "snapchat/sendto/ranking/SCSTRLiteral_List.proto";
+import "snapchat/sendto/ranking/SCSTRLiteral_Map.proto";
+
+message SCSTRLiteral {
+
+	oneof value {
+		snapchat.sendto.ranking.SCSTRLiteral_Null null = 1;
+		string string = 2;
+		bool bool_p = 3;
+		double double_p = 4;
+		snapchat.sendto.ranking.SCSTRLiteral_List list = 5;
+		snapchat.sendto.ranking.SCSTRLiteral_Map map = 6;
+	}
+
+}

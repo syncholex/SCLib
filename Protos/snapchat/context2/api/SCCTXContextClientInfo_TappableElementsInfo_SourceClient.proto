@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREAppVersion.proto";
+
+message SCCTXContextClientInfo_TappableElementsInfo_SourceClient {
+
+	enum SCCOREOsType {
+		UNKNOWN_OS_TYPE = 0;
+		OS_IOS = 1;
+		OS_ANDROID = 2;
+		OS_WEB = 3;
+	}
+
+	SCCOREOsType os = 1;
+	snapchat.core.SCCOREAppVersion appVersion = 2;
+}

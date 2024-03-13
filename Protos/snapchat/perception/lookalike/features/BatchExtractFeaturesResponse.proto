@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEMediaFeaturesList.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message BatchExtractFeaturesResponse {
+	snapchat.perception.lookalike.features.SCPNLOOKALIEMediaFeaturesList featuresList = 1;
+	google.protobuf.GPBTimestamp requestTime = 100;
+	google.protobuf.GPBTimestamp responseTime = 101;
+	string properties = 200;
+}

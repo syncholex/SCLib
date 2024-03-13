@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/custom_sounds/SCMusicCustomSound.proto";
+
+message SCMusicGetMyCustomSoundsPlaylistResponse {
+	repeated snapchat.music.custom_sounds.SCMusicCustomSound customSoundsArray = 1;
+}

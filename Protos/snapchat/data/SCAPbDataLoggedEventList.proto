@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+import "snapchat/data/SCAPbDataLoggedEvent.proto";
+import "snapchat/data/SCAPbDataSequentialItem.proto";
+
+message SCAPbDataLoggedEventList {
+	repeated snapchat.data.SCAPbDataLoggedEvent eventsArray = 1;
+	repeated snapchat.data.SCAPbDataSequentialItem sequentialItemsArray = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPSendReplyEvent.proto";
+
+message SCSUPSendReplySessions {
+
+	oneof pageSessionRef {
+		string pageSessionId = 1;
+		fixed32 pageSessionIdSaltedHash = 2;
+	}
+
+	uint32 sessionStartTimestamp = 3;
+	repeated ranking.pii.user.profile.SCSUPSendReplyEvent sendReplyEventsArray = 4;
+}

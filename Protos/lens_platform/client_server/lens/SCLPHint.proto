@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/lens/SCLPHint_HintData.proto";
+
+message SCLPHint {
+	string hintId = 1;
+	repeated lens_platform.client_server.lens.SCLPHint_HintData additionalHintsArray = 2;
+}

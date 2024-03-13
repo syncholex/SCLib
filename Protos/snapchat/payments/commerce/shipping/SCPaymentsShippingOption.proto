@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.shipping;
+
+message SCPaymentsShippingOption {
+	string handle = 1;
+	uint64 price = 2;
+	string title = 3;
+}

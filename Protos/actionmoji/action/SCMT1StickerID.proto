@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1StickerID {
+	string nonClusterableId = 1;
+	string clusterableLeftId = 2;
+	string clusterableRightId = 3;
+	bool shadow = 4;
+}

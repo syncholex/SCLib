@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCPushNotificationCancelNotificationRequest {
+	snapchat.notification.SCPushNotificationUUID requestId = 1;
+}

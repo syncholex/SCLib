@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/perception/showcase/screenshop/SCPSSShoppabilityIndicator.proto";
+
+message SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility {
+
+	enum SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		FAIL = 2;
+	}
+
+	SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus processingStatus = 1;
+	snapchat.perception.showcase.screenshop.SCPSSShoppabilityIndicator shoppabilityIndicator = 2;
+}

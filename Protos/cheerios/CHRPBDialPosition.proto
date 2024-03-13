@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBDialPosition {
+
+	enum CHRPBDialPosition_Position {
+		DIAL_POSITION_UNKNOWN = 1;
+		DIAL_POSITION_OFF = 2;
+		DIAL_POSITION_HOVER = 3;
+		DIAL_POSITION_ORBIT = 4;
+		DIAL_POSITION_FOLLOW = 5;
+		DIAL_POSITION_PULLBACK = 6;
+		DIAL_POSITION_TRANSFER = 7;
+		DIAL_POSITION_CUSTOM = 8;
+	}
+
+	CHRPBDialPosition_Position position = 1;
+}

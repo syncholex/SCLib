@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPCTTargetedItem.proto";
+
+message SCCTPCTTargetedItems {
+	repeated snapchat.creativetools.targeting.SCCTPCTTargetedItem itemsArray = 1;
+}

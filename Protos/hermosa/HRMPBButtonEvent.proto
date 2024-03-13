@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBButtonEvent {
+
+	enum HRMPBButtonEvent_Side {
+		LEFT = 0;
+		RIGHT = 1;
+		BOTH = 2;
+	}
+
+	HRMPBButtonEvent_Side side = 1;
+
+	enum HRMPBButtonEvent_ButtonEventType {
+		BUTTON_DOWN = 0;
+		BUTTON_HOLD = 1;
+		BUTTON_UP = 2;
+		BUTTON_SHORT_PRESS = 3;
+		BUTTON_DOUBLE_PRESS = 4;
+		BUTTON_LONG_PRESS = 5;
+		BUTTON_HOLD_SHORT = 6;
+		BUTTON_HOLD_MEDIUM = 7;
+		BUTTON_HOLD_LONG = 8;
+		BUTTON_HOLD_VERY_LONG = 9;
+		BUTTON_HOLD_3S = 10;
+		BUTTON_ABORT = 100;
+	}
+
+	HRMPBButtonEvent_ButtonEventType eventType = 2;
+	int32 durationMs = 3;
+}

@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+import "Lightning/CharacterDataProtos/HeadPieceMod.proto";
+import "Lightning/CharacterDataProtos/CharacterData_BodyType.proto";
+import "Lightning/CharacterDataProtos/CharacterData_BreastType.proto";
+import "Lightning/CharacterDataProtos/CharacterData_Proportion.proto";
+import "Lightning/CharacterDataProtos/CharacterData_CategoryColours.proto";
+import "Lightning/CharacterDataProtos/CharacterData_FacialFeature.proto";
+
+message CharacterData {
+	string headPieceMappings = 1;
+	int32 colourMappings = 2;
+	Lightning.CharacterDataProtos.HeadPieceMod headPieceMods = 3;
+
+	enum CharacterData_Gender {
+		NONE = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	CharacterData_Gender gender = 4;
+	Lightning.CharacterDataProtos.CharacterData_BodyType bodyType = 5;
+	Lightning.CharacterDataProtos.CharacterData_BreastType breastType = 6;
+	Lightning.CharacterDataProtos.CharacterData_Proportion proportion = 7;
+	string clothingName = 8;
+
+	enum CharacterData_ClothingType {
+		UNSET = 0;
+		SPLIT_CLOTHES = 1;
+		GRANULAR_CLOTHES = 2;
+		FULL_OUTFIT = 3;
+		DETAILED_FULL_OUTFIT = 4;
+	}
+
+	CharacterData_ClothingType clothingType = 9;
+	string splitClothing = 10;
+	string granularClothing = 11;
+	Lightning.CharacterDataProtos.CharacterData_CategoryColours customColours = 12;
+	string characterId = 13;
+
+	enum CharacterData_Style {
+		UNKNOWN = 0;
+		BITSTRIPS = 1;
+		BITMOJI = 4;
+		DELUXE = 5;
+	}
+
+	CharacterData_Style style = 14;
+	Lightning.CharacterDataProtos.CharacterData_FacialFeature facialFeatures = 15;
+	bool isMappedFromLegacy = 16;
+}

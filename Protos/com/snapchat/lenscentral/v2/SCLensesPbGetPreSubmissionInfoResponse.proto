@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensStudioAnalytics.proto";
+import "snapchat/lenscentral/common/DigitalGood.proto";
+
+message SCLensesPbGetPreSubmissionInfoResponse {
+	string name = 1;
+	string iconURL = 2;
+	int64 size = 3;
+	string previewURL = 4;
+	bool isSameUser = 5;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensStudioAnalytics analytics = 6;
+
+	enum SCLensesPbGetPreSubmissionInfoResponse_LensSubmissionFlowType {
+		LENS_SUBMISSION_FLOW_TYPE_UNSET = 0;
+		LENS_SUBMISSION_FLOW_TYPE_LEGACY_NON_LENS_SPACE_ONLY = 1;
+		LENS_SUBMISSION_FLOW_TYPE_LENS_SPACE_ONLY = 2;
+		LENS_SUBMISSION_FLOW_TYPE_LEGACY_AND_LENS_SPACE = 3;
+	}
+
+	SCLensesPbGetPreSubmissionInfoResponse_LensSubmissionFlowType lensSubmissionFlowType = 7;
+	repeated snapchat.lenscentral.common.DigitalGood digitalGoodsArray = 8;
+}

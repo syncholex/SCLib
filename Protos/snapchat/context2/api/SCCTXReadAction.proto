@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXReadAction {
+
+	enum SCCTXReadAction_ReadType {
+		ReadTypeUnknown = 0;
+		ReadTypeMore = 1;
+		ReadTypeLess = 2;
+	}
+
+	SCCTXReadAction_ReadType readType = 1;
+}

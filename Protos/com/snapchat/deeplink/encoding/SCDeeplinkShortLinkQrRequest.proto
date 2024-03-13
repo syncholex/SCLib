@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.encoding;
+
+message SCDeeplinkShortLinkQrRequest {
+
+	enum ErrorCorrectionLevel {
+		ERROR_CORRECTION_UNSET = 0;
+		LOW = 1;
+		MEDIUM = 2;
+		QUARTILE = 3;
+		HIGH = 4;
+	}
+
+	ErrorCorrectionLevel errorCorrectionLevel = 1;
+	float overlayAreaRatio = 2;
+	bool hostImage = 3;
+}

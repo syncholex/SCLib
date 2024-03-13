@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSavedStoryLifetimeInsights.proto";
+
+message IMPInsightsGetSavedStoryInsightsResponse {
+	string nextPageId = 1;
+	repeated impala.insights.IMPInsightsSavedStoryLifetimeInsights savedStoryInsightsArray = 2;
+}

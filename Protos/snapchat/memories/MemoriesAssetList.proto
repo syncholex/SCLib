@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/MemoriesAsset.proto";
+
+message MemoriesAssetList {
+	repeated snapchat.memories.MemoriesAsset valueArray = 1;
+}

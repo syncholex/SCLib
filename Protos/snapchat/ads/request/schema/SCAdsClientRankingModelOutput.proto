@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsClientRankingModelOutput {
+	google.protobuf.GPBStringValue modelId = 1;
+	google.protobuf.GPBFloatValue score = 2;
+	google.protobuf.GPBInt64Value inferenceLatency = 3;
+	google.protobuf.GPBInt64Value loadingLatency = 4;
+	google.protobuf.GPBStringValue error = 5;
+}

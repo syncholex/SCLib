@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicPickerLayoutPageSection_PickerLayoutPageSectionReference {
+
+	enum SCMusicPickerLayoutPageSection_PickerLayoutPageSectionLoadingStyle {
+		UNSET = 0;
+		HIDE_UNTIL_LOADED = 1;
+		TRACK_LIST = 2;
+	}
+
+	SCMusicPickerLayoutPageSection_PickerLayoutPageSectionLoadingStyle loadingStyle = 1;
+	repeated string requiredParamsArray = 2;
+}

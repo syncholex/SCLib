@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.cof;
+
+message SCLiveMirrorConfig_LinkPageFlow {
+
+	enum SCLiveMirrorConfig_LinkPage {
+		UNKNOWN_UNSET = 0;
+		CHAT = 1;
+		PREVIEW = 2;
+		SETTINGS = 3;
+		EXTERNAL = 4;
+		LENS = 5;
+		ODG = 6;
+		MAP = 7;
+		LOCATIONSHARINGSETTINGS = 8;
+		PROFILE = 9;
+		SNAPCODE = 10;
+		COMMERCE_PRODUCT = 11;
+		PUBLISHER_PROFILE = 12;
+		DISCOVER_EDITION = 13;
+		REGISTRATION = 14;
+		CONTEXT = 15;
+		LOGINKIT = 16;
+		FRIEND_PROFILE = 17;
+		CAMERA_TAKEOVER = 18;
+		CHAT_OUTFIT_SHARE = 19;
+	}
+
+	SCLiveMirrorConfig_LinkPage page = 1;
+
+	enum SCLiveMirrorConfig_Flow {
+		UNSET = 0;
+		V1_OUTFITS_OR_EDIT = 1;
+		V2_EDIT_OR_DONE = 2;
+		V3_EDIT_OR_OUTFITS_OR_DONE = 3;
+		V3_FULL_BODY_EDIT_OR_OUTFITS_OR_DONE = 4;
+		V3_FULL_BODY_EDIT_OR_OUTFITS_OR_DONE_SELECT_CTA = 5;
+		V4_SAVE_3D_PAJAMAS = 6;
+	}
+
+	SCLiveMirrorConfig_Flow flow = 2;
+}

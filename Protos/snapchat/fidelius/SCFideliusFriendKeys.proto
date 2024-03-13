@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/fidelius/SCFideliusFriendDeviceKey.proto";
+
+message SCFideliusFriendKeys {
+	snapchat.core.SCCOREUUID userId = 1;
+	repeated snapchat.fidelius.SCFideliusFriendDeviceKey friendDeviceKeysArray = 2;
+}

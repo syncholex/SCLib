@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message VLKNrfBatteryInfo {
+	int32 batteryVoltage = 1;
+	int32 batteryCurrent = 2;
+	bool chargerConnected = 3;
+}

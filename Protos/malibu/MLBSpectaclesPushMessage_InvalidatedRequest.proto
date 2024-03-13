@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSpectaclesPushMessage_InvalidatedRequest {
+	uint32 methodIndex = 1;
+	uint32 requestId = 2;
+	uint64 methodUuid = 3;
+}

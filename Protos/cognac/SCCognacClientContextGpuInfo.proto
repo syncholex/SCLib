@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacClientContextGpuInfo {
+	string rendererName = 1;
+	string venderName = 2;
+	string version = 3;
+}

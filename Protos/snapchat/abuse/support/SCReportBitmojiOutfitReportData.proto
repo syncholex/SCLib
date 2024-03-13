@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGarment.proto";
+
+message SCReportBitmojiOutfitReportData {
+	string reportedUserId = 1;
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiGarment ugcGarmentsArray = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmGraphic_Friendmoji {
+	string templateId = 1;
+	snapchat.charms.common.SCCPUUID user1Id = 2;
+	snapchat.charms.common.SCCPUUID user2Id = 3;
+}

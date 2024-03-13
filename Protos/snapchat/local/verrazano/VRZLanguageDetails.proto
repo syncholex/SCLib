@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZLanguageDetails {
+	repeated string spokenArray = 1;
+	repeated string officialArray = 2;
+	string snapPreferred = 3;
+}

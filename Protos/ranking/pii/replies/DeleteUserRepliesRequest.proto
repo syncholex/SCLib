@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/replies/ReplyDeletion.proto";
+
+message DeleteUserRepliesRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	ranking.core.SCSCOREUUID replyViewerUserId = 2;
+	repeated ranking.core.SCSCOREUUID replyIdArray = 3;
+	repeated ranking.pii.replies.ReplyDeletion replyDeletionArray = 4;
+}

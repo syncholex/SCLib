@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message IldgEligibilityBreakdown {
+
+	enum IldgEligibilityCriterion {
+		ILDG_ELIGIBILITY_UNSET = 0;
+		ILDG_ELIGIBILITY_USER_AGE = 1;
+		ILDG_ELIGIBILITY_RESIDING_COUNTRY = 2;
+		ILDG_ELIGIBILITY_ACCOUNT_AGE = 3;
+		ILDG_ELIGIBILITY_PUBLIC_PROFILE = 4;
+		ILDG_ELIGIBILITY_LENS_PERFORMANCE = 5;
+	}
+
+	IldgEligibilityCriterion criterion = 1;
+	bool eligible = 2;
+}

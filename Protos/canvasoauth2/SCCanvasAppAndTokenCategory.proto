@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package canvasoauth2;
+
+message SCCanvasAppAndTokenCategory {
+	string appId = 1;
+
+	enum SCCanvasTokenCategory {
+		UNKNOWN_TYPE = 0;
+		PUBLIC_WEBVIEW = 1;
+		PRIVATE_CLIENT = 2;
+		PRIVATE_WEBVIEW = 3;
+	}
+
+	repeated SCCanvasTokenCategory tokenCategoryArray = 2 [packed=true];
+}

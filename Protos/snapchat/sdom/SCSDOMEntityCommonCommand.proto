@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMDeleteEntity.proto";
+import "snapchat/sdom/SCSDOMSetEntityTime.proto";
+import "snapchat/sdom/SCSDOMAddTagToEntity.proto";
+import "snapchat/sdom/SCSDOMRemoveTagFromEntity.proto";
+import "snapchat/sdom/SCSDOMChangeEntityAudioVolume.proto";
+import "snapchat/sdom/SCSDOMChangeEntityPlaySpeed.proto";
+import "snapchat/sdom/SCSDOMUpdateEntityEditCapabilities.proto";
+import "snapchat/sdom/SCSDOMTransformEntity.proto";
+
+message SCSDOMEntityCommonCommand {
+
+	oneof command {
+		snapchat.sdom.SCSDOMDeleteEntity deleteEntity = 1;
+		snapchat.sdom.SCSDOMSetEntityTime setEntityTime = 2;
+		snapchat.sdom.SCSDOMAddTagToEntity addTagToEntity = 3;
+		snapchat.sdom.SCSDOMRemoveTagFromEntity removeTagFromEntity = 4;
+		snapchat.sdom.SCSDOMChangeEntityAudioVolume changeEntityAudioVolume = 5;
+		snapchat.sdom.SCSDOMChangeEntityPlaySpeed changeEntityPlaySpeed = 6;
+		snapchat.sdom.SCSDOMUpdateEntityEditCapabilities updateEntityEditCapabilities = 7;
+		snapchat.sdom.SCSDOMTransformEntity transformEntity = 8;
+	}
+
+}

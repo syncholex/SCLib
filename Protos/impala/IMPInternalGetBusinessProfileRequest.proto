@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPInternalBusinessId.proto";
+import "impala/IMPInternalGetBusinessProfileOptions.proto";
+
+message IMPInternalGetBusinessProfileRequest {
+	string id_p = 1;
+	impala.IMPInternalBusinessId internalId = 2;
+	bool includePortfolios = 3;
+	bool includeProfilesWithSoftDeletedHostUser = 4;
+	impala.IMPInternalGetBusinessProfileOptions options = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanFeedbackRequest_WebFeedback.proto";
+
+message SCPCNV3ScanFeedbackRequest {
+	string id_p = 1;
+	string scanQueryId = 2;
+	string scanRequestId = 3;
+	string scanResultId = 4;
+}

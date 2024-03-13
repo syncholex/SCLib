@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSeasonMetadata.proto";
+
+message IMPSeasonMetadataPage {
+	repeated impala.IMPSeasonMetadata seasonsArray = 1;
+	string nextPageId = 2;
+}

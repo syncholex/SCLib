@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMCommerce_Item.proto";
+
+message SDMCommerce {
+	repeated snapchat.snapdoc.SDMCommerce_Item itemsArray = 1;
+	string id_p = 2;
+}

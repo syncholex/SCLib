@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPAccountServiceError {
+
+	enum IMPAccountServiceErrorCode {
+		GENERIC_ERROR = 0;
+		PROFILE_NOT_FOUND = 1;
+		PROFILE_DELETED_ERROR = 2;
+		BAD_REQUEST = 3;
+		USER_NOT_ELIGIBLE_FOR_PUBLIC_PROFILE = 4;
+		PROFILE_AGE_RESTRICTED_ERROR = 100;
+		PROFILE_INTERNAL_ONLY_ERROR = 101;
+		PROFILE_HOST_USER_EMAIL_OR_PHONE_NOT_VERIFIED = 102;
+	}
+
+	IMPAccountServiceErrorCode errorCode = 1;
+	string errorMessage = 2;
+}

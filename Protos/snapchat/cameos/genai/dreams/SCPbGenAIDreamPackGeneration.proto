@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/genai/dreams/SCPbGenAIGeneratedDreams.proto";
+
+message SCPbGenAIDreamPackGeneration {
+	string generationId = 1;
+	string packId = 2;
+	repeated string identityIdsArray = 3;
+
+	enum SCPbGenAIDreamGenerationStatus {
+		DREAM_GENERATION_STATUS_UNSET = 0;
+		DREAM_GENERATION_STATUS_IN_PROGRESS = 1;
+		DREAM_GENERATION_STATUS_SUCCEED = 2;
+		DREAM_GENERATION_STATUS_FAILED = 3;
+		DREAM_GENERATION_STATUS_CREATED = 4;
+		DREAM_GENERATION_STATUS_UNPACKED = 5;
+		DREAM_GENERATION_STATUS_NON_RETRYABLE_FAILED = 6;
+	}
+
+	SCPbGenAIDreamGenerationStatus status = 4;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIGeneratedDreams generatedDreamsArray = 5;
+	repeated string userIdsArray = 6;
+}

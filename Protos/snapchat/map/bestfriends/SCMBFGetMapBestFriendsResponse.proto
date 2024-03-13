@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.bestfriends;
+
+import "snapchat/map/bestfriends/SCMBFFriend.proto";
+
+message SCMBFGetMapBestFriendsResponse {
+	repeated snapchat.map.bestfriends.SCMBFFriend bestFriendsArray = 1;
+	int64 lifespanMinutes = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalBusinessId {
+
+	oneof id {
+		string profileId = 1;
+		string hostAccountUserId = 2;
+		string businessAccountId = 3;
+		int64 publisherId = 4;
+	}
+
+}

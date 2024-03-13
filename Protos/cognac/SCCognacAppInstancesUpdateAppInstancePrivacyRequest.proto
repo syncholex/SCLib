@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppInstancesUpdateAppInstancePrivacyRequest {
+	string appInstanceId = 1;
+
+	enum SCCognacAppInstancesAppInstance_AppInstancePrivacy {
+		UNKNOWN = 0;
+		PUBLIC = 1;
+		PRIVATE = 2;
+	}
+
+	SCCognacAppInstancesAppInstance_AppInstancePrivacy newPrivacy = 2;
+}

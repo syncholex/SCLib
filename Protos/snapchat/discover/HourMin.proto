@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message HourMin {
+	int32 hour = 1;
+	int32 minute = 2;
+}

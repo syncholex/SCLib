@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicUpdateOriginalSoundRequest {
+	uint64 trackId = 1;
+	string title = 2;
+}

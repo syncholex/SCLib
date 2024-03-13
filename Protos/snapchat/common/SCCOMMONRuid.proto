@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.common;
+
+message SCCOMMONRuid {
+
+	enum SCCOMMONRuid_Type {
+		UNSET = 0;
+		USER = 1;
+		DEVICE = 2;
+		WEB_CLIENT = 3;
+		AD_ACCOUNT = 4;
+		USERNAME = 5;
+		AD_MODERATION_AD = 6;
+		WEB_SNAPCHAT_USER = 7;
+		INTERNAL = 8;
+		AM_ORGANIZATION = 9;
+		AM_MEMBER = 10;
+		AM_SESSION = 11;
+		AM_PROFILE = 12;
+		AM_SNAPCHAT_USER = 13;
+		SNAPCHAT_ADVERTISING = 14;
+		AM_CLIENT = 15;
+		MISCHIEF = 16;
+		ARES_VISITOR = 17;
+		POD_NAME = 18;
+	}
+
+	SCCOMMONRuid_Type type = 1;
+	string stringValue = 2;
+	string loggingIdValue = 3;
+}

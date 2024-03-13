@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbActionReplyCamera {
+	string username = 1;
+	string lensId = 2;
+	string lensName = 3;
+	string lensIconURL = 4;
+}

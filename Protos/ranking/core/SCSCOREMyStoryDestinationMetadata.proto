@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCORECustomizedTTL.proto";
+
+message SCSCOREMyStoryDestinationMetadata {
+
+	enum SCSCOREMyStoryDestinationMetadata_PrivacyOverride {
+		UNSET = 0;
+		FRIENDS = 1;
+		CUSTOM = 2;
+	}
+
+	SCSCOREMyStoryDestinationMetadata_PrivacyOverride privacyOverride = 1;
+	ranking.core.SCSCORECustomizedTTL customizedTtl = 2;
+
+	enum SCSCOREMyStoryVariant_Enum {
+		UNSET = 0;
+		AFTER_DARK = 1;
+	}
+
+	SCSCOREMyStoryVariant_Enum myStoryVariant = 3;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+
+message SCFriendSuggestionPushNotification {
+	string userId = 1;
+	string mutableUsername = 2;
+	string displayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+	string bitmojiSceneId = 6;
+	string bitmojiBackgroundId = 7;
+	string suggestionSubtext = 8;
+	string suggestionSubtextLowercase = 9;
+	string suggestionToken = 10;
+	uint32 isViewed = 11;
+	uint32 isFromImc = 12;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 13;
+}

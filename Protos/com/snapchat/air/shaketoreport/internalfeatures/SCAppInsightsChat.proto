@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsChat {
+
+	enum SCAppInsightsChat_Subfeature {
+		UNSET = 0;
+		BOT = 1;
+		STREAK_RESTORE = 2;
+		CHAT_WALLPAPERS = 3;
+		CHAT_REPLY = 4;
+		CHAT_REACTIONS = 5;
+		FAMILY_CENTER = 6;
+		TWENTYFOUR_HOUR_SNAPS = 7;
+	}
+
+	SCAppInsightsChat_Subfeature subfeature = 1;
+}

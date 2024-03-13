@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+import "com/snapchat/showcase/wire/context/ContextCardContext_Item.proto";
+
+message ContextCardContext {
+	repeated com.snapchat.showcase.wire.context.ContextCardContext_Item itemsArray = 1;
+}

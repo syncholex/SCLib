@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMEBeatSyncQueryArgs.proto";
+
+message SCMEListSmartTemplateRequest {
+
+	enum SCMEPlatform {
+		PLATFORM_UNSET = 0;
+		PLATFORM_IOS = 1;
+		PLATFORM_ANDROID = 2;
+	}
+
+	SCMEPlatform platform = 1;
+
+	enum SCMECheeriosPath {
+		CHEERIOS_PATH_UNSET = 0;
+		HOVER = 1;
+		FOLLOW = 2;
+		REVEAL = 3;
+		ORBIT = 4;
+	}
+
+
+	oneof featureArgs {
+		SCMECheeriosPath cheeriosPath = 2;
+		snapchat.mediaengine.smart_template.SCMEBeatSyncQueryArgs beatSyncArgs = 3;
+	}
+
+}

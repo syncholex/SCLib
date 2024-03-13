@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCSpotlightSoundToggleConfig {
+
+	enum SCSpotlightSoundToggleConfig_ToggleButton {
+		TOGGLE_BUTTON_UNSET = 0;
+		TOGGLE_BUTTON_NONE = 1;
+		TOGGLE_BUTTON_PERSISTENT = 2;
+		TOGGLE_BUTTON_ONLY_WHEN_MUTED = 3;
+	}
+
+	SCSpotlightSoundToggleConfig_ToggleButton soundToggleButton = 1;
+	bool showUnmuteSoundNotification = 2;
+}

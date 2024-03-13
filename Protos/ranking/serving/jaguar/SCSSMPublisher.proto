@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMPublisher {
+	string name = 1;
+	string publisherName = 2;
+	string publisherFormalName = 3;
+	int64 publisherId = 4;
+	string primaryColor = 5;
+	string secondaryColor = 6;
+	string publisherDeeplinkURL = 7;
+	string publisherDescription = 8;
+
+	enum SCSCOREPublisherType {
+		PUBLISHER_UNKNOWN = 0;
+		PUBLISHER_DISCOVER = 1;
+		PUBLISHER_SHOWS = 2;
+		PUBLISHER_HN_NEWS = 3;
+	}
+
+	SCSCOREPublisherType publisherType = 9;
+	bool isNews = 10;
+	string filledIconURL = 11;
+	string horizontalIconURL = 12;
+	bool isSubscribable = 13;
+	string businessProfileId = 14;
+	bool allowNotifOptInMsg = 15;
+	string heroImageURL = 16;
+	string websiteURL = 17;
+	string heroImageBitmojiTemplateId = 18;
+
+	enum SCSCORELogoDisplay_Enum {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	SCSCORELogoDisplay_Enum profileLogoDisplay = 19;
+
+	enum SCSCOREPublisherAdSetting_Enum {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	SCSCOREPublisherAdSetting_Enum adSetting = 20;
+	bool rollingNewsEnabled = 21;
+	bool isCommentsDisabled = 22;
+}

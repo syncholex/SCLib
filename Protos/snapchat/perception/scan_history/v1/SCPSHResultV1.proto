@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHUtilityResultV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHLensesResultV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHResultAction.proto";
+import "snapchat/perception/scan_history/v1/SCPSHSnapcodeResultV1.proto";
+
+message SCPSHResultV1 {
+	bytes id_p = 1;
+
+	oneof result {
+		snapchat.perception.scan_history.v1.SCPSHUtilityResultV1 utilityResultV1 = 2;
+		snapchat.perception.scan_history.v1.SCPSHLensesResultV1 lensesResultV1 = 3;
+		snapchat.perception.scan_history.v1.SCPSHSnapcodeResultV1 snapcodeResultV1 = 5;
+	}
+
+	snapchat.perception.scan_history.v1.SCPSHResultAction tapAction = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMBlizzardEvent.proto";
+
+message SCSSMRTUSSignal {
+	repeated ranking.serving.jaguar.SCSSMBlizzardEvent blizzardEventsArray = 1;
+}

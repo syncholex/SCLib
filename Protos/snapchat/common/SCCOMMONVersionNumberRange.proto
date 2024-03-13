@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.common;
+
+import "snapchat/common/SCCOMMONVersionNumber.proto";
+
+message SCCOMMONVersionNumberRange {
+	snapchat.common.SCCOMMONVersionNumber min = 1;
+	bool minInclusive = 2;
+	snapchat.common.SCCOMMONVersionNumber max = 3;
+	bool maxInclusive = 4;
+}

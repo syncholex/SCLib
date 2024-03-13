@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthScope {
+	string name = 1;
+	repeated string descriptionsArray = 2;
+	bool toggleable = 3;
+	string icon = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSExperiment.proto";
+
+message CMSStudy {
+	string name = 1;
+	repeated com.snapchat.circumstances.entity.CMSExperiment experimentArray = 2;
+	string version = 3;
+}

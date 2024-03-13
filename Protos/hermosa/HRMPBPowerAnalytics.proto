@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPowerAnalytics {
+	uint32 ambaBootsSinceLastCapture = 1;
+	uint32 ambaUpMsSinceLastCapture = 2;
+}

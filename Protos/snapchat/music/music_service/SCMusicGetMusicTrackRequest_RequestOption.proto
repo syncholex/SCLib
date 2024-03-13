@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicGetMusicTrackRequest_RequestOption_MusicTrack.proto";
+import "snapchat/music/music_service/SCMusicGetMusicTrackRequest_RequestOption_MusicArtist.proto";
+import "snapchat/music/music_service/SCMusicGetMusicTrackRequest_RequestOption_Availability.proto";
+import "snapchat/music/music_service/SCMusicGetMusicTrackRequest_RequestOption_MusicBeatSync.proto";
+
+message SCMusicGetMusicTrackRequest_RequestOption {
+
+	oneof requestOptions {
+		snapchat.music.music_service.SCMusicGetMusicTrackRequest_RequestOption_MusicTrack musicTrack = 1;
+		snapchat.music.music_service.SCMusicGetMusicTrackRequest_RequestOption_MusicArtist artist = 2;
+		snapchat.music.music_service.SCMusicGetMusicTrackRequest_RequestOption_Availability availability = 3;
+		snapchat.music.music_service.SCMusicGetMusicTrackRequest_RequestOption_MusicBeatSync musicBeatSync = 4;
+	}
+
+}

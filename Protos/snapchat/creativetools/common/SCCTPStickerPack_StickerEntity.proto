@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPSnapSticker.proto";
+
+message SCCTPStickerPack_StickerEntity {
+}

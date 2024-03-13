@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTShareLocationPreferences.proto";
+
+message SCMTInternalGetShareLocationPreferencesResponse {
+	snapchat.map.SCMTShareLocationPreferences preferences = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.appinsights.errorcode;
+
+import "snapchat/appinsights/errorcode/ThrottlingRule.proto";
+
+message ThrottlingRules {
+	repeated snapchat.appinsights.errorcode.ThrottlingRule throttlingRulesArray = 1;
+	int32 globalAllowedReportsPerMinute = 2;
+}

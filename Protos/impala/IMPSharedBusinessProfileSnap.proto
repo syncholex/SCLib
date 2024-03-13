@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfile.proto";
+
+message IMPSharedBusinessProfileSnap {
+	impala.IMPBusinessProfile businessProfile = 1;
+	string snapId = 2;
+	bool isUserQuoted = 3;
+}

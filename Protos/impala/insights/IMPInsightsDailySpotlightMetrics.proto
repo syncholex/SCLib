@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDailySpotlightMetrics {
+	int64 timestampMsecs = 1;
+	int64 spotlightBoosts = 2;
+	int64 spotlightViews = 3;
+	int64 spotlightShares = 4;
+	int64 spotlightSubscribes = 5;
+	int64 spotlightReach = 6;
+	int64 spotlightTotalViewTimeMs = 7;
+	int64 spotlightAverageViewTimeMs = 8;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+message SCExoPlayerReuseConfig {
+	bool enable = 1;
+	int32 numberOfPlayers = 2;
+	bool cleanSurfaceOnRecycle = 3;
+	bool cleanSurfaceOnRelease = 4;
+
+	enum SCExoPlayerReuseConfig_PlayerReuseStrategy {
+		FIFO = 0;
+		LIFO = 1;
+	}
+
+	SCExoPlayerReuseConfig_PlayerReuseStrategy reuseStrategy = 5;
+	bool syncSurfaceCleanup = 6;
+	bool handleMediaCodecsInVideoLayer = 7;
+	bool flushCodecsIfReconfigurationNeeded = 8;
+	bool forceFlushCodecsOnReuse = 9;
+	bool dontReuseCodecsWhenReconfigNeeded = 10;
+	bool reconfigureAndFlushWhenReconfigNeeded = 11;
+	bool waitForSurfaceToStartPlayback = 12;
+	bool disableDummySurface = 13;
+	bool resetPlayerWhenCleanup = 14;
+	bool disableRecyclableReceivingError = 15;
+	bool reuseSameProtocolInstance = 16;
+}

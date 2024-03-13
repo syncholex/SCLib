@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "snapchat/notification/SCPushNotificationPushNotificationResult.proto";
+
+message SCSNTFNotificationResponse {
+	uint32 deliveryStatusCode = 1;
+
+	enum PushEligibilityCheckDetail_Enum {
+		UNKNOWN = 0;
+		ERROR_INVALID_PROTO = 1;
+		ERROR_NO_USER_ID = 2;
+		ERROR_USER_NOT_FOUND = 3;
+		SKIP_IS_DRY_RUN = 4;
+		SKIP_USER_IS_NOT_EMPLOYEE = 5;
+		SKIP_USER_DEVICE_TOKEN_NOT_AVAILABLE = 6;
+		SKIP_CAMPAIGN_POPULAR_USER_OR_CELEBRITY = 7;
+		SKIP_CAMPAIGN_BLACK_LIST_USER = 8;
+		SKIP_AB_CONFIG_ENABLE = 9;
+		SKIP_AB_CONFIG_MIN_INTERVAL = 10;
+		ELIGIBLE_TO_PUSH = 11;
+		SKIP_ALREADY_WATCHED = 12;
+	}
+
+	PushEligibilityCheckDetail_Enum pushEligibilityCheckDetail = 2;
+	string notificationId = 3;
+	snapchat.notification.SCPushNotificationPushNotificationResult result = 4;
+}

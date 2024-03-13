@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+message SCBoltv2UserContext {
+	string userCountry = 1;
+	string userIp = 2;
+	string userId = 3;
+	string userRegion = 4;
+	string appVersion = 10;
+}

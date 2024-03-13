@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "snapchat/lenscentral/common/SnapchatStats.proto";
+
+message LensCentralStats {
+	snapchat.lenscentral.common.SnapchatStats snapchat = 1;
+}

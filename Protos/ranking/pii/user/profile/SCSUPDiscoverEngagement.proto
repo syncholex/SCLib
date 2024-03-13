@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPDiscoverEngagement {
+	bool isChannelSubscribed = 1;
+	int32 channelViewCount = 2;
+	int32 channelFinishedCount = 3;
+	float channelViewTimeInSecs = 4;
+	uint32 totalHides = 5;
+	uint32 totalUnhides = 6;
+	int64 lastStateUpdateMsecs = 7;
+}

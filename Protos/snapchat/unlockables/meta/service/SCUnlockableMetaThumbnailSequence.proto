@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+message SCUnlockableMetaThumbnailSequence {
+	string URLPattern = 1;
+	int32 numThumbnails = 2;
+	int32 animationIntervalMs = 3;
+}

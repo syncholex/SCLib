@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetSubscriberCountRequest {
+	string profileId = 1;
+	int64 when = 2;
+
+	enum IMPGetSubscriberCountRequest_CountSourceType {
+		SNAP_PRO = 0;
+		ATLAS = 1;
+	}
+
+	IMPGetSubscriberCountRequest_CountSourceType sourceType = 3;
+}

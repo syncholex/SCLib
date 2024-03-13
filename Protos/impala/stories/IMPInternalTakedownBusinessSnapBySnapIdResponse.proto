@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnap.proto";
+
+message IMPInternalTakedownBusinessSnapBySnapIdResponse {
+	impala.stories.IMPBusinessSnap deletedSnap = 1;
+}

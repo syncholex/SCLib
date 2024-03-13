@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results.proto";
+
+message SnapBrainResponse {
+	snapchat.research.SnapBrainResponse_Results results = 1;
+	string error = 2;
+	string requestId = 3;
+
+	enum Analyzer {
+		length = 0;
+		tag_v1 = 1;
+		quality_v1 = 2;
+		face_v1 = 3;
+		interestingness_v1 = 4;
+		audiofp_v1 = 5;
+		hydra_v1 = 6;
+		open_nsfw = 7;
+		mediainfo_v1 = 8;
+		spokenkeywords_v1 = 9;
+		logo_detection_v1 = 10;
+		snaplang_v1 = 11;
+		tag_v2 = 12;
+		euler_angles_v1 = 13;
+		spokenkeywords_v2 = 14;
+		object_detection_v1 = 15;
+		music_v1 = 16;
+		context_v1 = 17;
+		product_v1 = 18;
+		safety_v1 = 19;
+		snap_text_v1 = 20;
+		sound_v1 = 21;
+		tag_lite = 22;
+		face_frontalizer_v1 = 23;
+		discover_tags_v1 = 24;
+		sound_v2 = 25;
+	}
+
+	repeated Analyzer analyzersRunArray = 4 [packed=true];
+
+	enum SnapBrainResponse_StatusCode {
+		SUCCESS = 0;
+		UNKNOWN_ERROR = 1;
+		MEDIA_FETCH_ERROR = 2;
+		MEDIA_DECODE_ERROR = 3;
+	}
+
+	SnapBrainResponse_StatusCode statusCode = 5;
+}

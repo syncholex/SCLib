@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/stickerservice/SCS2StickerResultTypeOption_CameoOption.proto";
+import "snapchat/search/stickerservice/SCS2StickerResultTypeOption_BitmojiOption.proto";
+import "snapchat/search/stickerservice/SCS2StickerResultTypeOption_GfycatOption.proto";
+
+message SCS2StickerResultTypeOption {
+
+	enum SCS2StickerResult_ResultType {
+		RESULT_TYPE_UNKNOWN = 0;
+		RESULT_TYPE_SNAPCHAT_STICKER = 1;
+		RESULT_TYPE_EMOJI = 2;
+		RESULT_TYPE_BITMOJI_STICKER = 3;
+		RESULT_TYPE_CAMEO = 4;
+		RESULT_TYPE_GIPHY = 5;
+		RESULT_TYPE_GFYCAT = 6;
+		RESULT_TYPE_SHOPPABLE_STICKER = 7;
+		RESULT_TYPE_METADATA = 8;
+	}
+
+	SCS2StickerResult_ResultType resultType = 1;
+
+	oneof resultOptions {
+		snapchat.search.stickerservice.SCS2StickerResultTypeOption_CameoOption cameosOption = 2;
+		snapchat.search.stickerservice.SCS2StickerResultTypeOption_BitmojiOption bitmojiOption = 3;
+		snapchat.search.stickerservice.SCS2StickerResultTypeOption_GfycatOption gfycatOption = 4;
+	}
+
+}

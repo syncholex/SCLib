@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsApp.proto";
+
+message SCCognacAppsListSearchAppsResponse {
+	repeated cognac.SCCognacAppsApp appsArray = 1;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPNormalizedStats {
+	float numRequestDedupedWatches = 1;
+	float numWatchesAbove20Secs = 2;
+	float numRequestDedupedBoosts = 3;
+	float numSends = 4;
+	float numCompleteWatches = 5;
+	float numHides = 6;
+	float numDismisses = 7;
+	float totalWatchTimeSecs = 8;
+	float relativeNumRequestDedupedWatches = 9;
+	float relativeNumWatchesAbove20Secs = 10;
+	float relativeNumRequestDedupedBoosts = 11;
+	float relativeNumSends = 12;
+	float relativeNumCompleteWatches = 13;
+	float relativeNumHides = 14;
+	float relativeNumDismisses = 15;
+	float relativeTotalWatchTimeSecs = 16;
+	float computedPositiveAffinityV1 = 17;
+	float computedPositiveAffinityV2 = 18;
+	float computedNegativeAffinityV1 = 19;
+	float computedNegativeAffinityV2 = 20;
+}

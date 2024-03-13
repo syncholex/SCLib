@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsDebugConfig.proto";
+import "snapchat/ads/request/schema/SCAdsABTest.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsUserData {
+	bytes said = 1;
+	bool isAdsHoldout = 2;
+	snapchat.ads.request.schema.SCAdsDebugConfig debugConfig = 3;
+	snapchat.ads.request.schema.SCAdsABTest abTest = 4;
+	bool isEmployee = 5;
+	bool isNewUser = 6;
+	string targetingToken = 7;
+	google.protobuf.GPBInt64Value createdTimestampMillis = 8;
+	google.protobuf.GPBInt32Value age = 9;
+
+	enum SCAdsGender_Enum {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+		OTHER = 3;
+	}
+
+	SCAdsGender_Enum gender = 10;
+
+	enum SnapUserStatus {
+		UNK = 0;
+		SC = 1;
+		NSC = 2;
+	}
+
+	SnapUserStatus snapUserStatus = 11;
+	bool storyAdsInUserStoriesEnabled = 12;
+	bool isPartiallyFilled = 13;
+	bytes userId = 14;
+	bytes clientIp = 15;
+}

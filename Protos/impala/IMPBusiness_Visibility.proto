@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/STOContentAccessLists.proto";
+import "snapchat/tags/ContentTag.proto";
+
+message IMPBusiness_Visibility {
+	bool isEnabled = 1;
+	bool isSearchable = 2;
+	bool isEmployeeOnly = 3;
+	bool isTest = 4;
+	repeated int64 geofenceIdsArray = 5 [packed=true];
+	string primaryLanguage = 6;
+	repeated string whitelistLanguageArray = 7;
+	repeated string blacklistLanguageArray = 8;
+	snapchat.storydoc.STOContentAccessLists contentAccessLists = 9;
+	repeated string localContentArray = 10;
+
+	enum IMPDiscoverRegion {
+		ALL = 0;
+		DEV_TEST = 1;
+		INTERNATIONAL = 2;
+		US = 3;
+		UK = 4;
+		AU = 5;
+		CA = 6;
+		SUB = 7;
+		QA = 8;
+	}
+
+	repeated IMPDiscoverRegion regionsArray = 11 [packed=true];
+	repeated snapchat.tags.ContentTag tagsArray = 12;
+
+	enum IMPAgeGateLevel {
+		UNRESTRICTED = 0;
+		EXPLICIT = 1;
+	}
+
+	IMPAgeGateLevel ageGate = 13;
+	string homeCountry = 14;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCReportSpotlightReplyReportData {
+	string snapId = 1;
+	snapchat.core.SCCOREUUID replyId = 2;
+}

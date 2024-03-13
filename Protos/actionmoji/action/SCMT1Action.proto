@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1ActionTiming.proto";
+import "actionmoji/action/SCMT1StickerID.proto";
+import "actionmoji/action/SCMT1Constrain.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+import "actionmoji/action/SCMT1ActionTypeID.proto";
+import "actionmoji/action/SCMT1StickerDynamicElement.proto";
+
+message SCMT1Action {
+
+	enum SCMT1ActionID {
+		Unknown = 0;
+		Walking = 1;
+		Running = 2;
+		Biking = 3;
+		Driving = 4;
+		Train = 5;
+		Flying = 6;
+		Sleeping = 7;
+		Restaurant = 8;
+		Cafe = 9;
+		Bar = 10;
+		Event = 11;
+		Headphone = 12;
+		Work = 13;
+		Boat = 14;
+		WakeUp = 15;
+		Beach = 16;
+		Airport = 17;
+		Runway = 18;
+		Tennis = 19;
+		Shopping = 20;
+		GolfCourse = 21;
+		Birthday = 22;
+		NationalPark = 23;
+		Lead = 24;
+		Beacon = 25;
+		Misc = 26;
+		PhysicalProp = 27;
+		Campus = 28;
+		Trigger = 29;
+		Scooter = 30;
+		MovieTheater = 31;
+		Directive = 32;
+		Skiing = 33;
+		ChairLift = 34;
+		School = 35;
+		Gym = 36;
+		Spectacles = 37;
+	}
+
+	SCMT1ActionID actionId = 1;
+	string subtype = 2;
+	actionmoji.action.SCMT1ActionTiming timing = 3;
+	actionmoji.action.SCMT1StickerID stickerId = 4;
+	double confidence = 5;
+	bool isReversed = 6;
+	actionmoji.action.SCMT1Constrain constrain = 7;
+
+	enum SCMT1ClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMT1ClusteringPolicy clusteringPolicy = 8;
+	bool shouldSelectForLogging = 9;
+	string clusterId = 10;
+	string place = 11;
+	string event = 12;
+	snapchat.map.common.SCMCLocalizedStringSet placeName = 13;
+	snapchat.map.common.SCMCLocalizedStringSet eventName = 14;
+	actionmoji.action.SCMT1ActionTypeID typeId = 15;
+	int32 priority = 16;
+	string venueId = 17;
+	repeated actionmoji.action.SCMT1StickerDynamicElement dynamicElementsArray = 18;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusTwoFAData {
+	string twoFaToken = 1;
+	bool smsEnabled = 2;
+	bool otpEnabled = 3;
+	string obfuscatedPhone = 4;
+}

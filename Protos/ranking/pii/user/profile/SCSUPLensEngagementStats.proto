@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPLensEngagementStats_ActionCounts.proto";
+
+message SCSUPLensEngagementStats {
+	ranking.pii.user.profile.SCSUPLensEngagementStats_ActionCounts recentActions = 1;
+	ranking.pii.user.profile.SCSUPLensEngagementStats_ActionCounts olderActions = 2;
+}

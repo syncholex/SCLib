@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+message UpdateUserDeviceInformationRequest {
+	string userDeviceTimezone = 1;
+}

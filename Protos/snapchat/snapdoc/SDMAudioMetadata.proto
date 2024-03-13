@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMAudioMetadata {
+
+	enum SDMAudioCodecFormat {
+		AUDIO_UNSET = 0;
+		AAC = 1;
+		HEAAC = 2;
+		OPUS = 3;
+	}
+
+	SDMAudioCodecFormat codecFormat = 1;
+}

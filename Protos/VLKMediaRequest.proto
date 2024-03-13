@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+import "VLKMediaFileTransferRequest.proto";
+import "VLKMediaFileDeletionLogicRequest.proto";
+
+message VLKMediaRequest {
+
+	enum VLKMediaRequest_MediaRequestType {
+		LIST_AVAILABLE_MEDIA = 1;
+		GET_MEDIA_FILE = 2;
+		DELETE_MEDIA_FILE = 3;
+		MARK_TRANSFER_MEDIA_FILE = 4;
+		START_AS_NEED_DELETION = 5;
+	}
+
+	VLKMediaRequest_MediaRequestType type = 1;
+	VLKMediaFileTransferRequest mediaFileTransferRequest = 2;
+	VLKMediaFileDeletionLogicRequest mediaFileDeletionLogicRequest = 3;
+	int32 sequenceNumber = 4;
+}

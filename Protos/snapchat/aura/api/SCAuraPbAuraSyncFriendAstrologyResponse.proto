@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.aura.api;
+
+import "snapchat/aura/common/SCAuraPbUUID.proto";
+import "snapchat/aura/core/SCAuraPbAstrologyProfile.proto";
+import "google/protobuf/GPBEmpty.proto";
+
+message SCAuraPbAuraSyncFriendAstrologyResponse {
+	snapchat.aura.common.SCAuraPbUUID requestId = 1;
+	bytes nextSyncToken = 2;
+	uint64 nextSyncEpochSec = 3;
+
+	oneof personalityProfile {
+		snapchat.aura.core.SCAuraPbAstrologyProfile friendPersonalityProfile = 4;
+		google.protobuf.GPBEmpty friendPersonalityProfileNotModified = 5;
+	}
+
+
+	oneof compatibilityProfile {
+		snapchat.aura.core.SCAuraPbAstrologyProfile friendCompatibilityProfile = 6;
+		google.protobuf.GPBEmpty friendCompatibilityProfileNotModified = 7;
+	}
+
+}

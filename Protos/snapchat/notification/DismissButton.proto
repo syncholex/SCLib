@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message DismissButton {
+	string text = 1;
+}

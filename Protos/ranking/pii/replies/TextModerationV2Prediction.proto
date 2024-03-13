@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+message TextModerationV2Prediction {
+	string label = 1;
+	float score = 2;
+}

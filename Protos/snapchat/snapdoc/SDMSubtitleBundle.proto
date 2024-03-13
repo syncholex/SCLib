@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMSubtitleBundle_Subtitle.proto";
+
+message SDMSubtitleBundle {
+	repeated snapchat.snapdoc.SDMSubtitleBundle_Subtitle subtitlesArray = 1;
+}

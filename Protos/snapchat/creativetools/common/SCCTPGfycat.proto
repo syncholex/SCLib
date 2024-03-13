@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPGfycat_MediaAsset.proto";
+
+message SCCTPGfycat {
+	string gfycatId = 1;
+	string title = 2;
+	string description_p = 3;
+	repeated snapchat.creativetools.common.SCCTPGfycat_MediaAsset mediaAssetsArray = 4;
+	repeated string tagsArray = 5;
+
+	enum SCCTPGfycat_ContentType {
+		CONTENT_UNSET = 0;
+		STICKER = 1;
+		GIF = 2;
+	}
+
+	SCCTPGfycat_ContentType contentType = 6;
+	bool hasAudio = 7;
+	uint64 viewCount = 8;
+	uint64 likes = 9;
+	bool published = 10;
+	bool userNsfw = 11;
+	repeated string categoriesArray = 12;
+	uint64 frameCount = 13;
+	float frameRate = 14;
+	string avgColor = 15;
+	string slugs = 16;
+	string creatorGfycatUsername = 17;
+}

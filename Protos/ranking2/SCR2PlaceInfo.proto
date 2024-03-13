@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoLocation.proto";
+import "ranking2/SCR2GeoAddress.proto";
+import "ranking2/SCR2GeoFence.proto";
+import "ranking2/SCR2OpeningHours.proto";
+import "ranking2/place/SCR2PlaceNames.proto";
+
+message SCR2PlaceInfo {
+	string placesApiId = 1;
+	string name = 2;
+	string type = 3;
+	double score = 4;
+	ranking2.SCR2GeoLocation geoLocation = 5;
+	ranking2.SCR2GeoAddress geoAddress = 6;
+	double rating = 7;
+	string locale = 8;
+	ranking2.SCR2GeoFence geofence = 9;
+	uint32 area = 10;
+	uint32 perimeter = 11;
+
+	enum SCR2PlaceSource {
+		UNKNOWN = 0;
+		SNAP_GRAPH_PLACE = 1;
+		SNAP_GRAPH_STORY = 2;
+		GEO_FILTER = 3;
+		OSM = 4;
+		FOUR_SQUARE = 5;
+		GOOGLE = 6;
+		CORRECTION = 7;
+		BOUNDARY = 8;
+		SNAP_GRAPH_ENTITY = 9;
+		FACTUAL = 10;
+		EXPLICITLY_SPECIFIED = 11;
+	}
+
+	SCR2PlaceSource source = 12;
+	string curatedType = 13;
+	bool placeIsDeleted = 14;
+	repeated string tagsArray = 15;
+	string venueId = 16;
+	ranking2.SCR2OpeningHours openingHours = 17;
+	uint32 priceTier = 18;
+	string phone = 19;
+	double foursquareRating = 20;
+	string website = 21;
+	string parentId = 22;
+	uint64 numVfSubmissions = 23;
+	double avgAltitude = 24;
+	uint64 impressions30D = 25;
+	float ctr30D = 26;
+	ranking2.place.SCR2PlaceNames names = 27;
+}

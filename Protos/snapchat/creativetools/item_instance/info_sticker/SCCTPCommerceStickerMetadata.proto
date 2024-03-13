@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPCommerceStickerMetadata_StoreAttachment.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPCommerceStickerMetadata_ProductAttachment.proto";
+
+message SCCTPCommerceStickerMetadata {
+	string storeId = 1;
+	string displayName = 2;
+	string actionId = 3;
+
+	enum SCCTPCommerceStickerMetadata_Style {
+		DARK_UNSET = 0;
+		LIGHT = 1;
+	}
+
+	SCCTPCommerceStickerMetadata_Style style = 4;
+
+	oneof attachmentType {
+		snapchat.creativetools.item_instance.info_sticker.SCCTPCommerceStickerMetadata_StoreAttachment store = 5;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPCommerceStickerMetadata_ProductAttachment product = 6;
+	}
+
+}

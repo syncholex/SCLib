@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1Constraints.proto";
+
+message SCMT1HomeWorkInfo {
+	bool atHome = 1;
+	bool atWork = 2;
+	actionmoji.action.SCMT1Constraints constraints = 3;
+}

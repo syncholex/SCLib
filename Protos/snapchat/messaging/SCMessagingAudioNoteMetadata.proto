@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingTranscriptions.proto";
+
+message SCMessagingAudioNoteMetadata {
+	bool allowsTranscription = 1;
+	snapchat.messaging.SCMessagingTranscriptions transcriptions = 10;
+}

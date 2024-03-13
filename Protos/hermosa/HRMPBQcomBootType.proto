@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBQcomBootType {
+
+	enum HRMPBQcomBootType_Type {
+		DOWN = 0;
+		UP = 1;
+		USB = 2;
+		FASTBOOT = 3;
+		SUSPEND = 4;
+		RESUME = 5;
+		GRACEFUL_SHUTDOWN = 6;
+		RESTART = 7;
+		EXIT_PREBOOT = 8;
+	}
+
+	HRMPBQcomBootType_Type type = 1;
+	bool force = 2;
+
+	enum HRMPBQcomShutdownReason {
+		GRACEFUL = 0;
+		THERMAL_ENGINE = 1;
+		UNKNOWN_SHUTDOWN_REASON = 2;
+		LOW_BATTERY = 3;
+	}
+
+	HRMPBQcomShutdownReason reason = 3;
+
+	enum HRMPBSocId {
+		APP_SOC = 0;
+		CV_SOC = 1;
+	}
+
+	HRMPBSocId socId = 4;
+}

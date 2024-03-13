@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "snapchat/cdp/cof/ClientTargetingExpression.proto";
+
+message CMSSequenceIdCandidate {
+	snapchat.cdp.cof.ClientTargetingExpression targetingExpression = 1;
+	int32 sequenceId = 2;
+	int32 experimentIdToSequenceId = 3;
+}

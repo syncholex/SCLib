@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBUbloxMessage {
+	uint32 classId = 1;
+	uint32 msgId = 2;
+	bytes payload = 3;
+}

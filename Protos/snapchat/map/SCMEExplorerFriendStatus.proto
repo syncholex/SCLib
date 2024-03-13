@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerFriendStatus_StatusData.proto";
+
+message SCMEExplorerFriendStatus {
+	string status = 1;
+	repeated snapchat.map.SCMEExplorerFriendStatus_StatusData statusDataArray = 2;
+	double zoom = 3;
+
+	enum SCMEStatusType {
+		STATUS_UNKNOWN = 0;
+		STATUS_TRAVEL = 1;
+		STATUS_FLIGHT = 2;
+		STATUS_DRIVE = 3;
+		STATUS_TRAIN = 4;
+		STATUS_NEW_USER = 5;
+		STATUS_APPEARED = 6;
+		STATUS_LEAD = 7;
+		STATUS_PLACE = 8;
+		STATUS_MOVED = 9;
+		STATUS_FLIGHT_PARTIAL = 10;
+		STATUS_DRIVE_LONG = 11;
+		STATUS_VENUE = 12;
+		STATUS_AIRPORT = 13;
+		STATUS_MOVED_SLOW = 14;
+		STATUS_CUSTOM = 15;
+	}
+
+	SCMEStatusType statusType = 4;
+}

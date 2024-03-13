@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetReferralUserInfoResponse {
+	string profilePicURL = 1;
+	string displayName = 2;
+	string bitmojiAvatarId = 3;
+}

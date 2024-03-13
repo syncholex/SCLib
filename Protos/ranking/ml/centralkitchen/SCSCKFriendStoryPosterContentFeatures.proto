@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/WindowedIntMetrics.proto";
+
+message SCSCKFriendStoryPosterContentFeatures {
+	ranking.pii.user.profile.WindowedIntMetrics numVideoSnaps = 1;
+	ranking.pii.user.profile.WindowedIntMetrics numVideoNoSoundSnaps = 2;
+	ranking.pii.user.profile.WindowedIntMetrics numImageSnaps = 3;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithCaption = 4;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithDrawing = 5;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithFilter = 6;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithLens = 7;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithTag = 8;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithVenue = 9;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithSticker = 10;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithBitmojiSticker = 11;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithCustomSticker = 12;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithEmojiSticker = 13;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithInfoSticker = 14;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithAttachment = 15;
+	ranking.pii.user.profile.WindowedIntMetrics numStorySnapPosts = 16;
+	ranking.pii.user.profile.WindowedIntMetrics numDaysWithStorySnapPosts = 17;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsWithMusic = 18;
+}

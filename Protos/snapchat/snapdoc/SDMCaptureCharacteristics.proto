@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMCaptureCharacteristics {
+	bool flashOn = 1;
+	bool frontFacing = 2;
+}

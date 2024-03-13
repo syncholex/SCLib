@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendAddParam.proto";
+
+message SCFriendingFriendsAddRequest {
+	string page = 1;
+	repeated snapchat.friending.SCFriendingFriendAddParam paramsArray = 2;
+}

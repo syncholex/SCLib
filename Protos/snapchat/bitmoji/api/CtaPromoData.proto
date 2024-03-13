@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+import "snapchat/bitmoji/api/CtaPromoData_CtaPromoItem.proto";
+
+message CtaPromoData {
+	snapchat.bitmoji.api.CtaPromoData_CtaPromoItem create = 1;
+	snapchat.bitmoji.api.CtaPromoData_CtaPromoItem outfit = 2;
+	snapchat.bitmoji.api.CtaPromoData_CtaPromoItem edit = 3;
+	snapchat.bitmoji.api.CtaPromoData_CtaPromoItem selfie = 4;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusOTPChallenge.proto";
+import "snapchat/janus/api/SCJanusPasswordChallenge.proto";
+import "snapchat/janus/api/SCJanusSecurityQuestionChallenge.proto";
+import "snapchat/janus/api/SCJanusTIVChallenge.proto";
+import "snapchat/janus/api/SCJanusTwoFAChallenge.proto";
+import "snapchat/janus/api/SCJanusSelectCommunicationChannel.proto";
+import "snapchat/janus/api/SCJanusCommunicationChannelChallenge.proto";
+import "snapchat/janus/api/SCJanusInternalIdentityVerificationChallenge.proto";
+import "snapchat/janus/api/SCJanusVendorIntegrityChallenge.proto";
+
+message SCJanusChallengeData {
+
+	oneof challenge {
+		snapchat.janus.api.SCJanusOTPChallenge otpChallenge = 1;
+		snapchat.janus.api.SCJanusPasswordChallenge passwordChallenge = 2;
+		snapchat.janus.api.SCJanusSecurityQuestionChallenge securityQuestionChallenge = 3;
+		snapchat.janus.api.SCJanusTIVChallenge tivChallenge = 4;
+		snapchat.janus.api.SCJanusTwoFAChallenge twoFaChallenge = 5;
+		snapchat.janus.api.SCJanusSelectCommunicationChannel selectCommunicationChannel = 6;
+		snapchat.janus.api.SCJanusCommunicationChannelChallenge communicationChannelChallenge = 7;
+		snapchat.janus.api.SCJanusInternalIdentityVerificationChallenge internalIdentityVerificationChallenge = 8;
+		snapchat.janus.api.SCJanusVendorIntegrityChallenge vendorIntegrityChallenge = 9;
+	}
+
+}

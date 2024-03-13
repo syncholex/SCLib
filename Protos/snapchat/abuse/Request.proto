@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse;
+
+import "snapchat/abuse/Request_Signals.proto";
+
+message Request {
+	string userId = 1;
+	string caller = 2;
+	snapchat.abuse.Request_Signals requestSignals = 3;
+	int64 lookbackDays = 4;
+}

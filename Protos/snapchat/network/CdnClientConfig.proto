@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.network;
+
+import "snapchat/network/CdnClientConfig_RoutingDefinition.proto";
+
+message CdnClientConfig {
+	repeated snapchat.network.CdnClientConfig_RoutingDefinition routingDefinitionsArray = 1;
+}

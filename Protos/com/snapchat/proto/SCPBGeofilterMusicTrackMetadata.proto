@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBGeofilterMusicTrackMetadata {
+	string trackId = 1;
+	bytes contentRestrictions = 2;
+}

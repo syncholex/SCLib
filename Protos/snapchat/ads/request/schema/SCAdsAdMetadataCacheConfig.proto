@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsAdMetadataCacheConfig {
+	int64 adMetadataCacheTtlSecs = 1;
+	int64 adMetadataBackupCacheTtlSecs = 2;
+}

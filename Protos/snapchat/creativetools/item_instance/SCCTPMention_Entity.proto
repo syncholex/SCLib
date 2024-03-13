@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPMention_User.proto";
+import "snapchat/creativetools/item_instance/SCCTPMention_Place.proto";
+
+message SCCTPMention_Entity {
+
+	oneof entityOneof {
+		snapchat.creativetools.item_instance.SCCTPMention_User user = 1;
+		snapchat.creativetools.item_instance.SCCTPMention_Place place = 2;
+	}
+
+}

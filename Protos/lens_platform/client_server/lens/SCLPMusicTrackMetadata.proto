@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "snapchat/creativetools/common/SCCTPContentRestrictions.proto";
+
+message SCLPMusicTrackMetadata {
+	uint64 trackId = 1;
+	snapchat.creativetools.common.SCCTPContentRestrictions contentRestrictions = 2;
+}

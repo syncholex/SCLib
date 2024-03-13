@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package lens_platform.client_server.common;
+
+message SCLPLongFormVideoAttachment {
+	string videoId = 1;
+
+	enum SCLPLongFormVideoAttachment_VideoPlatform {
+		PLATFORM_UNSET = 0;
+		BRIGHTCOVE = 1;
+		SNAPCHAT = 2;
+	}
+
+	SCLPLongFormVideoAttachment_VideoPlatform videoPlatform = 2;
+	string videoURL = 3;
+}

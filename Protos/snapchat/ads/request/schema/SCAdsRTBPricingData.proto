@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsRTBPricingData {
+	int64 bidMicroDollars = 1;
+	double finalBid = 2;
+	double runnerUpBid = 3;
+	double paidPrice = 4;
+	double internalFloor = 5;
+	double bidRequestFloor = 6;
+	double eventProb = 7;
+	double lambda = 8;
+	double gamma = 9;
+	double phi = 10;
+	string exchange = 11;
+}

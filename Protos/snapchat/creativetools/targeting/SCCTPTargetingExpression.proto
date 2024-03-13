@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+import "snapchat/creativetools/targeting/SCCTPTargetingExpression_ParentNode.proto";
+import "snapchat/creativetools/targeting/SCCTPTargetingExpression_LeafNode.proto";
+
+message SCCTPTargetingExpression {
+
+	oneof node {
+		snapchat.creativetools.targeting.SCCTPTargetingExpression_ParentNode parentNode = 1;
+		snapchat.creativetools.targeting.SCCTPTargetingExpression_LeafNode leafNode = 2;
+	}
+
+}

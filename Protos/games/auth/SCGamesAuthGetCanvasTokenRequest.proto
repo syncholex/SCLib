@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package games.auth;
+
+message SCGamesAuthGetCanvasTokenRequest {
+	string externalUserId = 1;
+	string appId = 2;
+
+	oneof sessionId {
+		string appinstanceId = 3;
+		string scopeId = 4;
+	}
+
+	bool isDev = 5;
+}

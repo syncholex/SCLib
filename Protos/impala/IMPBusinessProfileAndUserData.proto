@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfile.proto";
+import "impala/IMPPendingRoleInvite.proto";
+import "impala/IMPBusinessProfileUserData.proto";
+import "impala/stories/common/IMPBusinessStory.proto";
+import "impala/IMPBusinessProfileFeatures.proto";
+import "impala/IMPBusinessProfileSettings.proto";
+import "impala/IMPPromotableContent.proto";
+
+message IMPBusinessProfileAndUserData {
+	impala.IMPBusinessProfile businessProfile = 1;
+	bool isSubscribed = 2;
+	repeated string allowedActionsArray = 3;
+	repeated impala.IMPPendingRoleInvite pendingRoleInvitesArray = 4;
+	impala.IMPBusinessProfileUserData userData = 5;
+	impala.stories.common.IMPBusinessStory story = 6;
+	impala.IMPBusinessProfileFeatures businessProfileFeatures = 7;
+	impala.IMPBusinessProfileSettings businessProfileSettings = 8;
+	repeated impala.IMPPromotableContent promotableContentsArray = 9;
+}

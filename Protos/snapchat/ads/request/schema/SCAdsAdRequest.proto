@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsUser.proto";
+import "snapchat/ads/request/schema/SCAdsApplication.proto";
+import "snapchat/ads/request/schema/SCAdsPreferences.proto";
+import "snapchat/ads/request/schema/SCAdsDevice.proto";
+import "snapchat/ads/request/schema/SCAdsNetwork.proto";
+import "snapchat/ads/request/schema/SCAdsInventoryRequest.proto";
+import "snapchat/ads/request/schema/SCAdsMixerInfo.proto";
+import "snapchat/ads/request/schema/SCAdsStoryItem.proto";
+import "snapchat/ads/request/schema/SCAdsDiscoverPage.proto";
+import "snapchat/ads/request/schema/SCAdsLocation.proto";
+import "snapchat/ads/request/schema/SCAdsThirdPartyAdNetworkInfo.proto";
+import "snapchat/ads/request/schema/SCAdsAdRankingContext.proto";
+import "snapchat/ads/request/schema/SCAdsLensRankingContext.proto";
+import "snapchat/ads/request/schema/SCAdsFeatureContext.proto";
+
+message SCAdsAdRequest {
+	snapchat.ads.request.schema.SCAdsUser user = 1;
+	snapchat.ads.request.schema.SCAdsApplication application = 2;
+	snapchat.ads.request.schema.SCAdsPreferences preferences = 3;
+	snapchat.ads.request.schema.SCAdsDevice device = 4;
+	snapchat.ads.request.schema.SCAdsNetwork network = 5;
+	repeated snapchat.ads.request.schema.SCAdsInventoryRequest inventoryRequestsArray = 6;
+	bool isDebug = 7;
+	snapchat.ads.request.schema.SCAdsMixerInfo mixerInfo = 8;
+	repeated snapchat.ads.request.schema.SCAdsStoryItem storiesArray = 9;
+	int64 timestamp = 10;
+	repeated bytes recentViewReceiptsArray = 11;
+	snapchat.ads.request.schema.SCAdsDiscoverPage discoverPage = 12;
+	bytes clientRequestId = 13;
+	snapchat.ads.request.schema.SCAdsLocation location = 14;
+	repeated snapchat.ads.request.schema.SCAdsThirdPartyAdNetworkInfo thirdPartyAdNetworkInfosArray = 15;
+	snapchat.ads.request.schema.SCAdsAdRankingContext adRankingContext = 16;
+	snapchat.ads.request.schema.SCAdsLensRankingContext lensRankingContext = 17;
+	snapchat.ads.request.schema.SCAdsFeatureContext featureContext = 18;
+}

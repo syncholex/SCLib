@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetShowMetadataRequest {
+	string showId = 1;
+	string editionId = 2;
+}

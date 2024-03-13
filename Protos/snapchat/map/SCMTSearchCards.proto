@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTSearchCards_Section.proto";
+
+message SCMTSearchCards {
+	repeated snapchat.map.SCMTSearchCards_Section sectionsArray = 1;
+}

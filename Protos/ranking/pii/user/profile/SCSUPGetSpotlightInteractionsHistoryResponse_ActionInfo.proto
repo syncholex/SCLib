@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo {
+	string storySnapURL = 1;
+	int64 timestampSecs = 2;
+
+	enum SCSUPSpotlightFeedInteractionType_Action {
+		UNKNOWN = 0;
+		VIEW = 1;
+		SHARE = 2;
+		FAVORITE = 3;
+		UNFAVORITE = 4;
+		BOOST = 5;
+		UNBOOST = 6;
+	}
+
+	SCSUPSpotlightFeedInteractionType_Action type = 3;
+	string value = 4;
+}

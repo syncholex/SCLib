@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRFastDNNDeliverableModel_Identifier.proto";
+import "snapchat/perception/fastdnn/SCPFDModel.proto";
+
+message SCPMDRFastDNNDeliverableModel {
+	snapchat.perception.model_delivery_registry.SCPMDRFastDNNDeliverableModel_Identifier identifier = 1;
+	snapchat.perception.fastdnn.SCPFDModel model = 2;
+}

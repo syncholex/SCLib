@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerCreatorMetadata.proto";
+
+message SCLELensExplorerLensTopicTile {
+	string id_p = 1;
+	string name = 2;
+	string preview = 3;
+	int64 playCount = 4;
+	string lensIcon = 5;
+	snapchat.lens.le.SCLELensExplorerCreatorMetadata creatorData = 6;
+	string previewKey = 7;
+	string previewIv = 8;
+}

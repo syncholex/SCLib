@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusUnavailableChallenges {
+
+	enum SCJanusChallengeType {
+		CHALLENGE_TYPE_UNSET = 0;
+		PASSWORD = 1;
+		SECURITY_QUESTION = 2;
+		OTP = 3;
+		TIV = 4;
+		TWO_FA = 5;
+		INTERNAL_IDENTITY_VERIFICATION = 6;
+		COMMUNICATION_CHANNEL_VERIFICATION = 7;
+		SECURITY_QUESTION_PHONE_NUMBER = 8;
+		SECURITY_QUESTION_EMAIL = 9;
+		SECURITY_QUESTION_BIRTHDATE = 10;
+		SECURITY_QUESTION_USERNAME = 11;
+	}
+
+	repeated SCJanusChallengeType challengeTypesArray = 1 [packed=true];
+
+	enum SCJanusCommunicationChannel {
+		COMMUNICATION_CHANNEL_UNSET = 0;
+		SMS = 1;
+		EMAIL = 2;
+		PUSH = 3;
+		TOTP = 4;
+		IN_BAND = 5;
+	}
+
+	repeated SCJanusCommunicationChannel communicationChannelsArray = 2 [packed=true];
+}

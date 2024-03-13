@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+import "snapchat/bitmoji/builder/common/SCBitmojiAvatarBuilderCategory.proto";
+import "snapchat/bitmoji/builder/v1/SCBitmojiAvatarBuilderOption.proto";
+import "snapchat/bitmoji/builder/common/SCBitmojiBrand.proto";
+
+message SCBitmojiHomePageOption {
+	snapchat.bitmoji.builder.common.SCBitmojiAvatarBuilderCategory avatarBuilderCategory = 1;
+	snapchat.bitmoji.builder.v1.SCBitmojiAvatarBuilderOption avatarBuilderOption = 2;
+	snapchat.bitmoji.builder.common.SCBitmojiBrand brand = 3;
+}

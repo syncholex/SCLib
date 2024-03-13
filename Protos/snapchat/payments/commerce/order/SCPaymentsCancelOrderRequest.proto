@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+message SCPaymentsCancelOrderRequest {
+
+	enum SCPaymentsRequestSource {
+		REQUEST_SOURCE_UNSET = 0;
+		USER = 1;
+		MERCHANT = 2;
+		SNAP = 3;
+	}
+
+	SCPaymentsRequestSource requestSource = 1;
+	string requester = 2;
+	string orderId = 3;
+	string requestId = 4;
+}

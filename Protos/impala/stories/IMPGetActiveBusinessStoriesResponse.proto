@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/common/IMPBusinessStory.proto";
+
+message IMPGetActiveBusinessStoriesResponse {
+	repeated impala.stories.common.IMPBusinessStory storiesArray = 1;
+}

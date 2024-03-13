@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTFriendClustersRequest {
+	string language = 1;
+	float lat = 2;
+	float lng = 3;
+	repeated string bleBeaconIdArray = 4;
+	string countryCode = 5;
+	string diffBaseId = 6;
+}

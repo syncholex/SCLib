@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMUserStoryInteractionFeatures.proto";
+import "ranking/serving/jaguar/SCSSMUserCorpusInteractionFeatures.proto";
+
+message SCSSMUserRecentInteractionsHistory {
+	repeated ranking.serving.jaguar.SCSSMUserStoryInteractionFeatures userStoryInteractionsArray = 1;
+	repeated ranking.serving.jaguar.SCSSMUserCorpusInteractionFeatures userCorpusInteractionsArray = 2;
+	repeated ranking.serving.jaguar.SCSSMUserStoryInteractionFeatures userHeroInteractionsArray = 3;
+	repeated ranking.serving.jaguar.SCSSMUserStoryInteractionFeatures userNewsInteractionsArray = 5;
+	repeated ranking.serving.jaguar.SCSSMUserStoryInteractionFeatures userSpotlightTileInteractionsArray = 7;
+	repeated ranking.serving.jaguar.SCSSMUserStoryInteractionFeatures userStoryTileImpressionInteractionsArray = 8;
+}

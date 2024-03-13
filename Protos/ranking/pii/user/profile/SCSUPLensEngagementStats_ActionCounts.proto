@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPLensEngagementStats_ActionCounts {
+	uint32 numSnapsSend = 1;
+	uint32 numStoryPosts = 2;
+	uint32 numSnapRecipients = 3;
+	uint32 numSnapSaves = 4;
+	uint32 numSnapViews = 5;
+	uint32 numStoryViews = 6;
+	uint32 snapViewInSecs = 7;
+	uint32 storyViewInSecs = 8;
+	uint32 numUnlocks = 9;
+	uint32 numShares = 10;
+	uint32 numScans = 11;
+}

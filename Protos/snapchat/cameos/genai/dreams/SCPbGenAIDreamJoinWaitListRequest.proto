@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+message SCPbGenAIDreamJoinWaitListRequest {
+	string packId = 1;
+}

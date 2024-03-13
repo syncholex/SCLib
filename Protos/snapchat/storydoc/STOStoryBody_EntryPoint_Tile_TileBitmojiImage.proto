@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOStoryBody_EntryPoint_Tile_TileBitmojiImage {
+	string templateId = 1;
+	string URL = 2;
+	bytes contentObject = 3;
+}

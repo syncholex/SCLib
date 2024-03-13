@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/TopLocationSummary.proto";
+import "actionmoji/PreciseLocation.proto";
+import "actionmoji/LocationHistoryMetaData_Visitation.proto";
+import "snapchat/map/actionmoji/SCMAUserPickedLocations.proto";
+import "actionmoji/LocationHistoryMetaData_UserRawLocations.proto";
+
+message LocationHistoryMetaData {
+	int64 homeS2CellId = 1;
+	int64 workS2CellId = 2;
+	repeated actionmoji.TopLocationSummary dailyTopLocationsArray = 3;
+	repeated actionmoji.TopLocationSummary topLocationsPer6DayArray = 4;
+	repeated string visitedLocalitiesArray = 5;
+	repeated actionmoji.PreciseLocation visitedLocationsArray = 6;
+	repeated actionmoji.LocationHistoryMetaData_Visitation visitationsArray = 7;
+	snapchat.map.actionmoji.SCMAUserPickedLocations userPickedLocations = 8;
+	actionmoji.LocationHistoryMetaData_UserRawLocations userRawLocations = 9;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensExplorerOrderedScheduledLenses {
+	repeated int64 unlockableIdsArray = 1 [packed=true];
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_UnlockableContext {
+	repeated string triggerContextsArray = 1;
+	repeated string friendContextsArray = 2;
+	repeated string cameraContextsArray = 3;
+	repeated string mediaTypeContextsArray = 4;
+	repeated int64 actionmojiContextsArray = 5 [packed=true];
+	repeated string visualContextsArray = 6;
+	repeated string lensApplicableContextsArray = 7;
+}

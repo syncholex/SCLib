@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "snapchat/map/locationcontext/SCMLCFriendLocationContext.proto";
+
+message SCMLCGetLocationContextResponse {
+	repeated snapchat.map.locationcontext.SCMLCFriendLocationContext friendLocationContextsArray = 1;
+	int32 nextRequestAfterSecs = 3;
+}

@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsBudgetAbStudy.proto";
+import "snapchat/ads/request/schema/SCAdsPredictionStudy.proto";
+import "snapchat/ads/request/schema/SCAdsClientRankingStudy.proto";
+import "snapchat/ads/request/schema/SCAdsWebviewPrefetchStudy.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsOnDeviceInventoryConfigs.proto";
+import "snapchat/ads/request/schema/SCAdsAbConsoleStudyTreatmentData.proto";
+import "snapchat/common/Value.proto";
+import "snapchat/ads/request/schema/SCAdsClientRankingAb.proto";
+
+message SCAdsABTest {
+	string adLoadTestExperimentGroup = 1;
+	snapchat.ads.request.schema.SCAdsBudgetAbStudy budgetAbStudy = 2;
+	snapchat.ads.request.schema.SCAdsPredictionStudy skipPrediction = 3;
+	snapchat.ads.request.schema.SCAdsPredictionStudy swipePrediction = 4;
+	snapchat.ads.request.schema.SCAdsPredictionStudy installPrediction = 5;
+	snapchat.ads.request.schema.SCAdsClientRankingStudy clientRankingAbStudy = 6;
+	snapchat.ads.request.schema.SCAdsWebviewPrefetchStudy webviewPrefetchStudy = 7;
+	string abTestUserSegment = 8;
+	string abTestUserSegment20 = 9;
+	bool storyAdsDisabled = 10;
+	bool discoverFeedCarouselAdsEnabled = 11;
+	int32 discoverFeedCarouselAdsNumOrganicTilesBetweenAds = 12;
+	int32 discoverFeedCarouselAdsMinFeedAdPositionIndex = 13;
+	bool userInAdsHoldout = 14;
+	google.protobuf.GPBBoolValue adserverOgRouteToApiGw = 15;
+	bool isAcquiredUser = 16;
+	uint32 latencyDelayMs = 17;
+	google.protobuf.GPBInt32Value newUserGracePeriodDaysSinceCreation = 18;
+	google.protobuf.GPBInt32Value discoverFeedStoryAdsNumOrganicTilesBetweenAds = 19;
+	google.protobuf.GPBInt32Value discoverFeedStoryAdsMinFeedAdPositionIndex = 20;
+	bool arShoppingEnabled = 21;
+	float webviewPrefetchThreshold = 22;
+	snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfigs onDeviceInventoryConfigs = 23;
+	bool webviewPrefetchDisableOverride = 24;
+	bool arShoppingRemoteLensEnabled = 25;
+	int32 voperaVariantIdentifier = 26;
+	string lookserySponsoredGeoBackStudyGroup = 27;
+	bool disableBlockWebviewPreloading = 28;
+	bool isForcedExternalBrowser = 29;
+	bool shouldWebviewURLAddClickId = 30;
+	bool webviewLightningModeSafeguardEnabled = 31;
+	bool webviewClientCrawlSafeguardEnabled = 32;
+	bool storiesRemoveInterstitial = 33;
+	bool storiesEnableThinProgressBar = 34;
+	bool storiesEnableProgressBar = 35;
+	bool shouldDeeplinkURLAddClickId = 36;
+	bool webviewLightningModeServerRedirectURLEnable = 37;
+	bool webviewExtendedLifecycleServerControlEnabled = 38;
+	float lightningModeServerAppraisalScoreThreshold = 39;
+	bool webviewLightningModeNonDoubleclickServerRedirectURLEnable = 40;
+	bool webviewLightningModeJavascriptRedirectURLEnable = 41;
+	bool forceExtBrowserAndroidNonPixelStar = 42;
+	repeated snapchat.ads.request.schema.SCAdsAbConsoleStudyTreatmentData treatmentDataForAllowlistedAbConsoleStudiesArray = 43;
+	snapchat.common.Value dynamicConfigs = 44;
+	bool storyAdMapExcluded = 45;
+	int32 storyAdSeeMore = 46;
+	repeated snapchat.ads.request.schema.SCAdsClientRankingAb clientRankingAbsArray = 47;
+	bool isVOperaCtaCustomizationOn = 48;
+	bool isPostCaptureAdServingBlocked = 49;
+}

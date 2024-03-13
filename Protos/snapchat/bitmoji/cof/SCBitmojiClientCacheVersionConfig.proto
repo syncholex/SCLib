@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.cof;
+
+message SCBitmojiClientCacheVersionConfig {
+	uint32 currentCacheVersion = 1;
+	uint32 nextCacheVersion = 2;
+	float nextCacheVersionThreshold = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/communityorg/SCCommunityOrgPbDefaultCohortLookupParams.proto";
+
+message SCCommunityOrgPbLookupCommunitiesByOrgID {
+	ranking.core.SCSCOREUUID orgId = 1;
+	ranking.communityorg.SCCommunityOrgPbDefaultCohortLookupParams defaultCohortsParams = 2;
+}

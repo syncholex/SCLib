@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_TrackListSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_MyCustomSoundsSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_PlaylistGridSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_PlaylistListSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_ArtistListSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_HeroBannerSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_MusicItemPreviewSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_SpotlightTrendingSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_LensesSection.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_PickerLayoutPageSectionReference.proto";
+
+message SCMusicPickerLayoutPageSection {
+	string title = 1;
+
+	oneof section {
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_TrackListSection trackListSection = 2;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_MyCustomSoundsSection myCustomSoundsSection = 3;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_PlaylistGridSection playlistGridSection = 4;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_PlaylistListSection playlistListSection = 6;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_ArtistListSection artistListSection = 7;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_HeroBannerSection heroBannerSection = 8;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_MusicItemPreviewSection musicItemPreviewSection = 9;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_SpotlightTrendingSection spotlightTrendingSection = 10;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_LensesSection lensesSection = 11;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_PickerLayoutPageSectionReference sectionReference = 12;
+	}
+
+	string id_p = 5;
+}

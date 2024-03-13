@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSConfigValue.proto";
+
+message CMSExperiment {
+	int32 experimentId = 1;
+	float trafficPct = 2;
+	com.snapchat.circumstances.entity.CMSConfigValue configValue = 3;
+}

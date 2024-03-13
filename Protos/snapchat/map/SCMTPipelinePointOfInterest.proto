@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterest.proto";
+
+message SCMTPipelinePointOfInterest {
+	snapchat.map.SCMTPointOfInterest poi = 1;
+	float minAllowedZoom = 2;
+	int32 leadSourceMask = 3;
+	bool hasTitle = 4;
+	bool isPopupStory = 5;
+}

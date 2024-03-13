@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZAnnotationMetadata_PWFMetadata.proto";
+import "snapchat/local/placediscovery/VRZAnnotationMetadata_FavoriteMetadata.proto";
+import "snapchat/local/placediscovery/VRZAnnotationMetadata_VisitedMetadata.proto";
+
+message VRZAnnotationMetadata {
+	snapchat.local.placediscovery.VRZAnnotationMetadata_PWFMetadata pwfMetadata = 1;
+	snapchat.local.placediscovery.VRZAnnotationMetadata_FavoriteMetadata favoriteMetadata = 2;
+	snapchat.local.placediscovery.VRZAnnotationMetadata_VisitedMetadata visitedMetadata = 3;
+}

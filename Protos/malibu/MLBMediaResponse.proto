@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBMediaMetadata.proto";
+import "malibu/MLBMediaData.proto";
+
+message MLBMediaResponse {
+	repeated malibu.MLBMediaMetadata availableMediaArray = 1;
+	malibu.MLBMediaData mediaData = 2;
+}

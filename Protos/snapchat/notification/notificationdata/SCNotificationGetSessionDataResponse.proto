@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationSessionData.proto";
+
+message SCNotificationGetSessionDataResponse {
+
+	enum SCNotificationStatusCode {
+		UNKNOWN_STATUS = 0;
+		OK = 1;
+		INVALID_REQUEST = 2;
+		PERSISTENCE_ERROR = 3;
+		NOT_AUTHORIZED = 4;
+		NONE_EXISTING_USER = 5;
+		INTERNAL_FAILURE = 9;
+	}
+
+	SCNotificationStatusCode statusCode = 1;
+	repeated snapchat.notification.notificationdata.SCNotificationSessionData sessionDataArray = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsMidRollStoryAdConfig {
+	bool enablePublisherStories = 1;
+	bool enableShows = 2;
+	uint32 additionalNumberOfSnapsWithPreparedMedia = 3;
+}

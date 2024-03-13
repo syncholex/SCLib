@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.user_sessions;
+
+message RevokeSessionExternalRequest {
+
+	enum SurfaceExternal {
+		SURFACE_UNSET = 0;
+		SNAPCHAT_APP = 1;
+		SNAPCHAT_WEB = 2;
+	}
+
+	SurfaceExternal surface = 1;
+	string sessionId = 2;
+}

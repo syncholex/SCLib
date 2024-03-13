@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMSponsor.proto";
+
+message SDMAttribution {
+	string userId = 1;
+	string username = 2;
+	snapchat.snapdoc.SDMSponsor sponsor = 3;
+}

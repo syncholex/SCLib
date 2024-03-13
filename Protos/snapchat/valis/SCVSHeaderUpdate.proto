@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSWeather.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+import "weather/SCWTimeZone.proto";
+import "snapchat/valis/SCVSLocality.proto";
+
+message SCVSHeaderUpdate {
+	snapchat.valis.SCVSWeather weather = 1;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 2;
+	weather.SCWTimeZone timeZone = 3;
+	snapchat.valis.SCVSLocality locality = 4;
+}

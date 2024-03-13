@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCBoltContentDescriptor.proto";
+import "snapchat/content/SCMossMediaBundle.proto";
+
+message SCBoltContentObject {
+	bytes contentObjectId = 1;
+
+	oneof content {
+		snapchat.content.SCBoltContentDescriptor contentDescriptor = 2;
+		snapchat.content.SCMossMediaBundle mediaBundle = 3;
+	}
+
+}

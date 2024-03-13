@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsRTBPricingData.proto";
+
+message SCAdsRTBTrackData {
+
+	enum SCAdsRTBTrackType {
+		UNKNOWN_TRACK_TYPE = 0;
+		IMPRESSION = 1;
+		CLICK = 2;
+	}
+
+	SCAdsRTBTrackType rtbTrackType = 1;
+	snapchat.ads.request.schema.SCAdsRTBPricingData rtbPricingData = 2;
+}

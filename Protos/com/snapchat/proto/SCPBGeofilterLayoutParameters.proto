@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBGeofilterLayoutParameters {
+	float xOffset = 1;
+	float yOffset = 2;
+	float xSize = 3;
+	float ySize = 4;
+	float rotation = 5;
+	int32 zIndex = 6;
+}

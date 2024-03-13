@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.common;
+
+import "snapchat/map/common/SCMCLocalizedStringSet_String.proto";
+
+message SCMCLocalizedStringSet {
+	string fallback = 1;
+	repeated snapchat.map.common.SCMCLocalizedStringSet_String stringsArray = 2;
+}

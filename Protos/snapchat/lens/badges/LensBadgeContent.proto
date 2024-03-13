@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lens.badges;
+
+message LensBadgeContent {
+	string badgeTypeId = 1;
+	string titleLocalized = 2;
+	string iconURL = 3;
+	string lensExplorerFeedId = 4;
+}

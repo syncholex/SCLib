@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.playlist;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCMGPHeatPlaylistQuery {
+	snapchat.geo.SPCGPoint centerLocation = 1;
+	float radiusMeters = 2;
+	float maximumFuzzRadiusMeters = 3;
+	bool wantThumbnail = 4;
+	string userId = 5;
+	bool isUnder18YoUser = 6;
+}

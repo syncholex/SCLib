@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+message SCPSHUtilityResultV1 {
+	string iconURL = 1;
+	string itemImageURL = 2;
+	string title = 3;
+	string subtitle = 4;
+}

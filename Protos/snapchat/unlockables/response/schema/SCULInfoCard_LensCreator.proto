@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+message SCULInfoCard_LensCreator {
+	string displayName = 1;
+	string userId = 2;
+	string snapProId = 3;
+	bool isOfficial = 4;
+
+	enum SCULInfoCard_LensCreator_AvailableLensCreatorAction {
+		UNKNOWN_LENS_CREATOR_ACTION = 0;
+		SUBSCRIBE_TO_LENS_CREATOR = 1;
+		BLOCK_LENS_CREATOR = 2;
+	}
+
+	repeated SCULInfoCard_LensCreator_AvailableLensCreatorAction availableLensCreatorActionsArray = 5 [packed=true];
+
+	enum SCULInfoCard_LensCreator_SnapProProfileCategory {
+		UNKNOWN_PROFILE_CATEGORY = 0;
+		PEOPLE_PROFILE_CATEGORY = 1;
+		BUSINESS_PROFILE_CATEGORY = 2;
+	}
+
+	SCULInfoCard_LensCreator_SnapProProfileCategory snapProProfileCategory = 6;
+	string creatorIconURL = 7;
+}

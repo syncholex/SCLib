@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBUserData.proto";
+import "hermosa/HRMPBCalibInfo.proto";
+import "hermosa/HRMPBShipmodeStatus.proto";
+import "hermosa/HRMPBBattLearningParams.proto";
+import "hermosa/HRMPBBoardIdResponse.proto";
+import "hermosa/HRMPBBatteryStatus.proto";
+
+message HRMPBNrfFdsEntry {
+
+	oneof entry {
+		string stringField = 1;
+		uint32 intField = 2;
+		bool boolField = 3;
+		bool battAnimEnabled = 4;
+		hermosa.HRMPBUserData userData = 5;
+		hermosa.HRMPBCalibInfo alsCalib = 6;
+		hermosa.HRMPBCalibInfo proxCalib = 7;
+		hermosa.HRMPBCalibInfo imuCalib = 8;
+		hermosa.HRMPBShipmodeStatus shipmodeStatus = 9;
+		hermosa.HRMPBBattLearningParams battLearningParamsL = 10;
+		hermosa.HRMPBBattLearningParams battLearningParamsR = 11;
+		uint32 factoryResetMagic = 12;
+		bool uartEnabled = 13;
+		bool ancsEnabled = 14;
+		string serialNumber = 15;
+		hermosa.HRMPBBoardIdResponse boardId = 16;
+		HRMPBBatteryPreservationModeRequest_Mode battPreservationMode = 17;
+		string lockScreenPin = 18;
+		bool postOtaTasksScheduled = 19;
+		hermosa.HRMPBBatteryStatus batteryStatus = 20;
+	}
+
+
+	enum HRMPBBatteryPreservationModeRequest_Mode {
+		UNKNOWN = 0;
+		DISABLED = 1;
+		ALWAYS_ON = 2;
+		AUTO = 3;
+	}
+
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTMediaInfo {
+	string mediaKey = 1;
+	string mediaIv = 2;
+	string mediaURL = 3;
+	string mediaId = 4;
+	string thumbnailIv = 6;
+	bool zipped = 8;
+}

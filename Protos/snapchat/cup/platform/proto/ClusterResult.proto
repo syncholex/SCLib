@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message ClusterResult {
+	int32 clusterId = 1;
+	float l2Distance = 2;
+	float cosineSimilarity = 3;
+}

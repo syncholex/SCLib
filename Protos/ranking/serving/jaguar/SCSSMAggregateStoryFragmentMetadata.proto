@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMSingleStoryFragmentMetadata.proto";
+
+message SCSSMAggregateStoryFragmentMetadata {
+	repeated ranking.serving.jaguar.SCSSMSingleStoryFragmentMetadata singleStoryFragmentMetadataListArray = 1;
+}

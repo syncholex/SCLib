@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.sectioned_results;
+
+message SCCTPClientCachedCTItem {
+	bytes id_p = 1;
+	uint32 version = 2;
+}

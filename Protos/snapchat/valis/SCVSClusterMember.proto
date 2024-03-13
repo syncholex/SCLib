@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "actionmoji/action/SCMT1Type.proto";
+import "actionmoji/action/SCMT1Sticker.proto";
+import "snapchat/map/SCMEExplorerFriendStatus.proto";
+import "snapchat/valis/SCVSLocationAnnotation.proto";
+
+message SCVSClusterMember {
+	snapchat.core.SCCOREUUID userId = 1;
+	int64 timestamp = 2;
+	repeated actionmoji.action.SCMT1Type actionTypeArray = 3;
+	actionmoji.action.SCMT1Sticker typeSticker = 4;
+	float horizontalAccuracyMeters = 5;
+	snapchat.map.SCMEExplorerFriendStatus friendStatus = 6;
+	bool isLiveLocation = 7;
+	int64 liveSessionExpirationMs = 8;
+	snapchat.core.SCCOREUUID liveSessionId = 9;
+	bool isLiveSessionIndefinite = 10;
+	repeated snapchat.valis.SCVSLocationAnnotation locationAnnotationsArray = 11;
+}

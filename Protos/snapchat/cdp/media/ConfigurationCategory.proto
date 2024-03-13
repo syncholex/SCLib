@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+message ConfigurationCategory {
+	int32 intConfigs = 1;
+	int64 longConfigs = 2;
+	float floatConfigs = 3;
+	string stringConfigs = 4;
+}

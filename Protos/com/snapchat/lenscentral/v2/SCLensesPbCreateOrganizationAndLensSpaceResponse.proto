@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbOrganization.proto";
+
+message SCLensesPbCreateOrganizationAndLensSpaceResponse {
+	snapchat.lenscentral.common.SCLensCentralCommonPbOrganization organization = 1;
+}

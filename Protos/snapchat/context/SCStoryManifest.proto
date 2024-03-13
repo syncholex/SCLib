@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+import "snapchat/context/SCLocalizedStringSet.proto";
+import "snapchat/context/SCStoryElement.proto";
+import "snapchat/context/SCUserAction.proto";
+
+message SCStoryManifest {
+	string id_p = 1;
+	string version = 2;
+	string displayName = 3;
+	string unviewedThumbnailURL = 4;
+	string viewedThumbnailURL = 5;
+	repeated string tileUrlsArray = 6;
+	int64 sunriseTimestamp = 7;
+	int64 sunsetTimestamp = 8;
+	double totalDuration = 9;
+	int32 totalCount = 10;
+	snapchat.context.SCLocalizedStringSet title = 11;
+	repeated snapchat.context.SCStoryElement elementsArray = 100;
+	snapchat.context.SCUserAction defaultPressAndHoldAction = 200;
+	repeated snapchat.context.SCStoryElement ineligibleResultsArray = 300;
+}

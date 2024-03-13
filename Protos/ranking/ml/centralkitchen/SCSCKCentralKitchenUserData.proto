@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message SCSCKCentralKitchenUserData {
+	ranking.ml.centralkitchen.SCSCKEmbedding userEmbedding = 1;
+	string userId = 2;
+}

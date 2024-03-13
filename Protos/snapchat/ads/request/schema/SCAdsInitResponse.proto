@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsOnDeviceResponse.proto";
+
+message SCAdsInitResponse {
+	bytes sessionId = 1;
+	google.protobuf.GPBInt32Value timeToLiveSeconds = 2;
+	string initHostAndPath = 3;
+	string serveHostAndPath = 4;
+	string trackHostAndPath = 5;
+	string trackAndGetHostAndPath = 6;
+	string serveHostAndPathBatch = 7;
+	string initHostAndPathV2 = 8;
+	string trackHostAndPathV2 = 9;
+	string batchTrackHostAndPathV2 = 10;
+	bool shouldInitializePetra = 11;
+	bytes sceid = 12;
+	bytes pixelToken = 13;
+	bytes encryptedUserData = 14;
+	string initGatewayHostAndPathV1 = 15;
+	bool shouldDisableServeRequest = 16;
+	snapchat.ads.request.schema.SCAdsOnDeviceResponse onDeviceResponse = 17;
+	string conversionProfileHostAndPathV1 = 18;
+	bool shouldSendGeoLocation = 19;
+	string appIdObfuscationHostAndPathV1 = 20;
+}

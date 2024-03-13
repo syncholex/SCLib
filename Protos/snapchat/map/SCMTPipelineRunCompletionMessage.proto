@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTPipelineRunCompletionMessage {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+}

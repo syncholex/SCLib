@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/cdp/cof/ClientTargetingExpression.proto";
+
+message ConfigResult_InternalFields_SequenceIdCandidate {
+	snapchat.cdp.cof.ClientTargetingExpression targetingExpression = 1;
+	int32 sequenceId = 2;
+}

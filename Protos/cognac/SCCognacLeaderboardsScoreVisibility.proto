@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacLeaderboardsScoreVisibility {
+
+	oneof scope {
+		string appId = 1;
+		string leaderboardId = 2;
+	}
+
+
+	enum SCCognacLeaderboardsScoreVisibility_ScoreVisibilityType {
+		VISIBLE = 0;
+		INVISIBLE = 1;
+	}
+
+	SCCognacLeaderboardsScoreVisibility_ScoreVisibilityType scoreVisibilityType = 3;
+}

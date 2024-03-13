@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMediaMetadata.proto";
+
+message SCMessagingCanvasAppShareImageCard {
+	string primaryImageURL = 1;
+	snapchat.messaging.SCMessagingMediaMetadata primaryImageMetadata = 2;
+	string actionCta = 3;
+}

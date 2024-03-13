@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacDiscoverRankingFeaturesDiscoverRankingFeatures_InteractionFeatures {
+	int64 lastInteractionMsecs = 1;
+}

@@ -1,0 +1,187 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPStoryCompositionProperties.proto";
+import "ranking/ml/centralkitchen/ContentSignals.proto";
+import "ranking/ml/centralkitchen/ContentCluster.proto";
+import "ranking/indexing/Hashtag.proto";
+import "ranking/quality/SCCUContentSignal.proto";
+import "ranking/quality/SCCULabelScorePair.proto";
+import "ranking/pii/user/profile/SCSUPLanguageLabels.proto";
+import "ranking/pii/user/profile/SCSUPEventStoryFeatures_ContentSignals.proto";
+import "ranking/quality/SCCUDocumentContentSignals.proto";
+
+message SCSUPEventStoryFeatures {
+
+	oneof storyRef {
+		string storyId = 1;
+		fixed64 storyIdSaltedHash = 2;
+	}
+
+
+	oneof tileRef {
+		string tileId = 3;
+		fixed64 tileIdSaltedHash = 4;
+	}
+
+	ranking.pii.user.profile.SCSUPStoryCompositionProperties storyProperties = 5;
+	repeated string snapIdsArray = 6;
+
+	oneof creatorRef {
+		string creatorId = 7;
+		fixed64 creatorIdSaltedHash = 8;
+	}
+
+	ranking.ml.centralkitchen.ContentSignals storyContentSignals = 9;
+
+	enum SCFEEDStoryCorpus_Corpus {
+		UNSET = 0;
+		TOPICS = 1;
+		EVENTS = 2;
+		PLACES = 3;
+		LOCATIONS = 4;
+		BREAKING_NEWS = 5;
+		TRENDING_TOPICS = 6;
+		REGIONAL_TOPICS = 7;
+		POLYGON = 8;
+		TOPSHARED = 9;
+		SNAPCASTS = 10;
+		SPOTTED = 11;
+		MANUAL_STORYBUILDER = 12;
+		SOLO = 13;
+		MAPS_STORY = 14;
+		MAPS_CALLOUT = 15;
+		PUBLISHER = 16;
+		PUBLIC_USER = 17;
+		RECOMMENDED_USER = 18;
+		PROMOTED_STORY = 19;
+		GROUP_STORY = 20;
+		LIVE_STREAM = 21;
+		FEATURED = 22;
+		COGNAC = 23;
+		LENS_OBJECT = 24;
+		LENS_CHALLENGE = 27;
+		LENS_CHALLENGE_STORY = 28;
+		SELECTION = 25;
+		FRIEND_STORY = 26;
+		CHANNEL_PIVOT = 29;
+		CUSTOM_STORY = 30;
+		OUR_STORY = 31;
+		LENS_CATEGORY = 32;
+		BADGE = 33;
+		TOPIC_RECENT_SNAPS = 34;
+		SINGLE_SNAP = 35;
+		HERO_STORY = 36;
+		PUBLISHER_SEGMENT = 37;
+		LENS_CREATOR = 38;
+		TOPIC_HUMAN_MODERATED_SNAPS = 39;
+		TOPIC_POPULAR_HUMAN_MODERATED_SNAPS = 40;
+		TOPIC_POPULAR_AUTO_MODERATED_SNAPS = 41;
+		LENS_COLLECTION = 42;
+		SAVED_STORY = 43;
+		AGGREGATED_FRIENDS_STORY = 44;
+		UNUSED_45 = 45;
+		UNUSED_46 = 46;
+		UNUSED_47 = 47;
+		UNUSED_48 = 48;
+		UNUSED_49 = 49;
+		UNUSED_50 = 50;
+		UNUSED_51 = 51;
+		UNUSED_52 = 52;
+		PUBLIC_USER_SNAP = 1000;
+		BUNDLE_SNAP = 1001;
+		MY_STORY_SNAP = 1002;
+		CUSTOM_STORY_SNAP = 1003;
+		PUBLIC_USER_TILE = 2000;
+		BUNDLE_TILE = 2001;
+	}
+
+	SCFEEDStoryCorpus_Corpus storyCorpus = 10;
+
+	enum SCSCOREStorySubtype_Enum {
+		UNKNOWN = 0;
+		PUBLIC_USER_OFFICIAL = 15;
+		PUBLIC_USER_POPULAR = 16;
+		PUBLIC_USER_OTHERS = 7;
+		PUBLISHER_SHOW = 9;
+		PUBLISHER_ORIGINAL = 13;
+		PUBLISHER_CURATED = 14;
+		PUBLISHER_INTERNAL_CURATED = 17;
+		PUBLISHER_PARTNER_CURATED = 19;
+		PUBLISHER_HN_NEWS = 18;
+		PUBLISHER_SEGMENT = 20;
+		PUBLISHER_DYNAMIC_EDITION = 35;
+		SHOWS_SEGMENT = 21;
+		ORIGINAL_SEGMENT = 22;
+		PUBLISHER_OTHERS = 10;
+		PUBLIC_USER_SUBSCRIPTION = 1;
+		PUBLIC_USER_FRIENDS_FOLLOWING = 2;
+		PUBLIC_USER_FOLLOWING_SIMILARITY = 3;
+		PUBLIC_USER_TAP_SIMILARITY = 4;
+		PUBLIC_USER_SUB_SIMILARITY = 12;
+		PUBLIC_USER_COHORTS = 5;
+		PUBLIC_USER_IMPORTANT = 6;
+		PUBLIC_USER_LOCAL = 8;
+		PUBLIC_USER_RANDOM_BUCKET = 11;
+		SINGLE_SNAP_EXPLORE_NEW = 23;
+		SINGLE_SNAP_UNKNOWN_STAGE = 24;
+		SINGLE_SNAP_TIER0 = 33;
+		SINGLE_SNAP_TIER1 = 25;
+		SINGLE_SNAP_TIER2 = 26;
+		SINGLE_SNAP_EXPLOIT = 27;
+		SINGLE_SNAP_TIER3 = 28;
+		SINGLE_SNAP_TIER4 = 29;
+		SINGLE_SNAP_EXPLOIT_FALLBACK = 30;
+		SINGLE_SNAP_EXPLOIT_STARRED = 31;
+		SINGLE_SNAP_EXPLOIT_PARTNER = 32;
+		LENS_OBJECT_TIER1 = 34;
+		SAVED_STORY_OFFICIAL = 36;
+		SAVED_STORY_PUBLIC = 37;
+		AFTER_DARK = 38;
+		FRIENDS_OF_FRIENDS = 39;
+		MY_STORY_FRIENDS_ONLY = 40;
+		MY_STORY_EVERYONE = 41;
+		USER_PUBLIC = 42;
+		PRIVATE = 43;
+		CUSTOM = 44;
+		SHARED = 45;
+		SHARED_COMMUNITY = 46;
+		MIXED = 47;
+		MY_STORY_SELF_VIEW = 48;
+		UNUSED_49 = 49;
+		UNUSED_50 = 50;
+		UNUSED_51 = 51;
+		UNUSED_52 = 52;
+		UNUSED_53 = 53;
+		UNUSED_54 = 54;
+		UNUSED_55 = 55;
+	}
+
+	SCSCOREStorySubtype_Enum storySubtype = 11;
+	int64 storyVersion = 12;
+	fixed64 storyBareIdSaltedHash = 13;
+	ranking.ml.centralkitchen.ContentCluster sccClusterIdV1 = 14;
+	string id_p = 15;
+	repeated ranking.indexing.Hashtag hashtagsArray = 16;
+	fixed64 creatorIdSaltedHashV2 = 17;
+	repeated ranking.quality.SCCUContentSignal contentSignalsArray = 18;
+	repeated ranking.quality.SCCUContentSignal dfStoryContentSignalsArray = 19;
+	ranking.quality.SCCULabelScorePair storyScc = 20;
+	bytes storyEmbeddings = 21;
+	string sccPlusV3Tags = 22;
+	string sccPlusV3TagsTile = 23;
+	string snap2InterestV1Tags = 24;
+	string snap2InterestV1TagsTile = 25;
+	string unifiedSnap2InterestV1 = 26;
+	ranking.pii.user.profile.SCSUPLanguageLabels languageLabels = 27;
+	string unifiedSnap2InterestV1TagsTile = 28;
+	float psuggestiveV1Tile = 29;
+	string psuggestiveAcumenTile = 30;
+	string sccPlusV3TagsSnapLevel = 31;
+	string snap2InterestV2Tags = 32;
+	ranking.pii.user.profile.SCSUPEventStoryFeatures_ContentSignals storySignals = 33;
+	ranking.pii.user.profile.SCSUPEventStoryFeatures_ContentSignals snapSignals = 34;
+	ranking.pii.user.profile.SCSUPEventStoryFeatures_ContentSignals tileSignals = 35;
+	ranking.quality.SCCUDocumentContentSignals snapContentSignals = 36;
+}

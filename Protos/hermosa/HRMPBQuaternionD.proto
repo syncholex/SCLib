@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package hermosa;
+
+message HRMPBQuaternionD {
+	double w = 1;
+	double x = 2;
+	double y = 3;
+	double z = 4;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbVerifyAdAccountMembershipResponse {
+	bool isMember = 1;
+}

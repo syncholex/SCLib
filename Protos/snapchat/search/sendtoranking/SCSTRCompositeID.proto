@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+message SCSTRCompositeID {
+	string id_p = 1;
+
+	enum SCSTRCompositeID_Corpus {
+		TYPE_UNSET = 0;
+		SNAPCHAT_USER = 1;
+		CONTACTBOOK = 2;
+		GROUP = 3;
+	}
+
+	SCSTRCompositeID_Corpus corpus = 2;
+}

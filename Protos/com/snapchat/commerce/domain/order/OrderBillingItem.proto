@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "com/snapchat/commerce/domain/order/ItemInfo.proto";
+import "com/snapchat/commerce/domain/PrintingMetadata.proto";
+
+message OrderBillingItem {
+	com.snapchat.commerce.domain.order.ItemInfo itemInfo = 1;
+
+	enum CommercePartner {
+		UNSET = 0;
+		SHOPIFY = 1;
+		MINIPROGRAM = 2;
+	}
+
+	CommercePartner commercePartner = 2;
+	string variantDescription = 3;
+	string productImageURL = 4;
+	com.snapchat.commerce.domain.PrintingMetadata printingMetadata = 5;
+}

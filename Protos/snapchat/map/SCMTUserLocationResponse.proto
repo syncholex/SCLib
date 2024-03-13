@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTUserLocationResponse {
+	int64 timestamp = 1;
+	double nextRequestAfterSecs = 10;
+}

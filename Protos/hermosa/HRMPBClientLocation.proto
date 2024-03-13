@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBLocationData.proto";
+
+message HRMPBClientLocation {
+
+	enum HRMPBClientLocation_LocationStatus {
+		OK_UNSET = 0;
+		ERROR = 1;
+		SYSTEM_PERMISSION_NOT_ASKED_YET = 2;
+		SYSTEM_PERMISSION_REFUSED = 3;
+		LOCATION_NOT_ACQUIRED_IN_TIMEOUT_TIME = 4;
+		LOCATION_WITH_DEGRADED_PRECISION = 5;
+	}
+
+	HRMPBClientLocation_LocationStatus status = 1;
+	string debugMessage = 2;
+	hermosa.HRMPBLocationData location = 3;
+}

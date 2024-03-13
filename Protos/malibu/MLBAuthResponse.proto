@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBAuthRequest.proto";
+
+message MLBAuthResponse {
+	malibu.MLBAuthRequest requestInfo = 1;
+	bytes responseData = 2;
+}

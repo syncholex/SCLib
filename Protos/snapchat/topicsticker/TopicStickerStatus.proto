@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.topicsticker;
+
+import "snapchat/topicsticker/TopicStickerStatus_StatusUnavailable.proto";
+import "snapchat/topicsticker/TopicStickerStatus_StatusAvailable.proto";
+import "snapchat/topicsticker/TopicStickerStatus_StatusDeleted.proto";
+import "snapchat/topicsticker/TopicStickerStatus_StatusScheduled.proto";
+
+message TopicStickerStatus {
+
+	oneof status {
+		snapchat.topicsticker.TopicStickerStatus_StatusUnavailable unavailableStatus = 5;
+		snapchat.topicsticker.TopicStickerStatus_StatusAvailable availableStatus = 6;
+		snapchat.topicsticker.TopicStickerStatus_StatusDeleted deletedStatus = 7;
+		snapchat.topicsticker.TopicStickerStatus_StatusScheduled scheduledStatus = 8;
+	}
+
+}

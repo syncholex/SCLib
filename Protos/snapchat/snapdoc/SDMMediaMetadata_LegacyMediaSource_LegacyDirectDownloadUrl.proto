@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl {
+	string URL = 1;
+	uint64 expirySeconds = 2;
+
+	enum SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType {
+		GCS = 0;
+		S3 = 1;
+		UNRECOGNIZED_VALUE = 2;
+	}
+
+	SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType type = 3;
+	string region = 4;
+}

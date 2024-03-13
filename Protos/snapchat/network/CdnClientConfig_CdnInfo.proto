@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.network;
+
+message CdnClientConfig_CdnInfo {
+
+	enum CdnClientConfig_CdnId {
+		UNSET = 0;
+		GOOGLE = 1;
+		AMAZON = 2;
+	}
+
+	CdnClientConfig_CdnId cdnId = 1;
+	string host = 2;
+}

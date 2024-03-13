@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMContext.proto";
+import "snapchat/snapdoc/SDMGameAttachment.proto";
+import "snapchat/snapdoc/SDMWebPage.proto";
+import "snapchat/snapdoc/SDMCameraAttachment.proto";
+import "snapchat/snapdoc/SDMAppDeepLink.proto";
+import "snapchat/snapdoc/SDMAppInstall.proto";
+import "snapchat/snapdoc/SDMCommerce.proto";
+import "snapchat/snapdoc/SDMLongformVideo.proto";
+import "snapchat/snapdoc/SDMNotificationSettings.proto";
+import "snapchat/snapdoc/SDMSubscription.proto";
+import "snapchat/snapdoc/SDMSnapProStoryReplyQuote.proto";
+import "snapchat/snapdoc/SDMPlaceMetadata.proto";
+import "snapchat/snapdoc/SDMQuestionStickerReplyQuote.proto";
+
+message SDMAttachments_Attachment {
+
+	oneof attachment {
+		snapchat.snapdoc.SDMContext context = 1;
+		snapchat.snapdoc.SDMGameAttachment gameAttachment = 2;
+		snapchat.snapdoc.SDMWebPage webPage = 3;
+		snapchat.snapdoc.SDMCameraAttachment cameraAttachment = 4;
+		snapchat.snapdoc.SDMAppDeepLink appDeepLink = 5;
+		snapchat.snapdoc.SDMAppInstall appInstall = 6;
+		snapchat.snapdoc.SDMCommerce commerce = 7;
+		snapchat.snapdoc.SDMLongformVideo longformVideo = 8;
+		snapchat.snapdoc.SDMNotificationSettings notificationSettings = 9;
+		snapchat.snapdoc.SDMSubscription subscription = 10;
+		snapchat.snapdoc.SDMSnapProStoryReplyQuote snapProStoryReplyQuote = 11;
+		snapchat.snapdoc.SDMPlaceMetadata placeMetadata = 12;
+		snapchat.snapdoc.SDMQuestionStickerReplyQuote questionStickerReplyQuote = 13;
+	}
+
+}

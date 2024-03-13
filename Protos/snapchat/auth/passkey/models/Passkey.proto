@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.models;
+
+message Passkey {
+	string passkeyId = 1;
+	string name = 2;
+	uint64 creationTimeMs = 3;
+	uint64 lastUsedTimeMs = 4;
+}

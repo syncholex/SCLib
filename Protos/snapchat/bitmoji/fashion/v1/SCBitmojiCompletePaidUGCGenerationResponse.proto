@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiCategory.proto";
+
+message SCBitmojiCompletePaidUGCGenerationResponse {
+	string optionId = 1;
+	snapchat.bitmoji.fashion.v1.SCBitmojiCategory closetCategory = 2;
+	int64 updateTime = 3;
+}

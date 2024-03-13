@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBMediaTypeAndSize.proto";
+
+message CHRPBMediaMetadata {
+	string uuid = 1;
+	repeated cheerios.CHRPBMediaTypeAndSize mediaArray = 2;
+}

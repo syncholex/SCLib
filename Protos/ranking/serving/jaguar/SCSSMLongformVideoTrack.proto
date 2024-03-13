@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMLongformVideoTrack {
+	string videoId = 1;
+
+	oneof content {
+		string hlsManifestURL = 2;
+		string dashManifestURL = 7;
+		bytes videoContentObject = 8;
+	}
+
+	int64 durationMsecs = 3;
+	int32 timeScale = 4;
+	int64 duration = 5;
+
+	enum SDMDynamicUrlType {
+		NONE = 0;
+		BITMOJI = 1;
+	}
+
+	SDMDynamicUrlType dynamicURLType = 6;
+}

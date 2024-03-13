@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.common;
+
+message SCBitmojiBadge {
+	int64 startTimeEpoch = 6;
+	int64 endTimeEpoch = 7;
+}

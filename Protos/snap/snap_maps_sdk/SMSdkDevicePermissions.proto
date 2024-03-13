@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message SMSdkDevicePermissions {
+	google.protobuf.GPBBoolValue notificationsAllowed = 1;
+	google.protobuf.GPBBoolValue backgroundLocation = 2;
+	google.protobuf.GPBBoolValue preciseLocation = 3;
+	google.protobuf.GPBBoolValue deviceLocation = 4;
+}

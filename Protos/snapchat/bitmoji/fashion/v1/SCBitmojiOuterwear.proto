@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiOuterwear {
+	int32 outerwear = 1;
+	int32 outerwearTone1 = 2;
+	int32 outerwearTone2 = 3;
+	int32 outerwearTone3 = 4;
+	int32 outerwearTone4 = 5;
+	int32 outerwearTone5 = 6;
+	int32 outerwearTone6 = 7;
+	int32 outerwearTone7 = 8;
+	int32 outerwearTone8 = 9;
+	int32 outerwearTone9 = 10;
+	int32 outerwearTone10 = 11;
+}

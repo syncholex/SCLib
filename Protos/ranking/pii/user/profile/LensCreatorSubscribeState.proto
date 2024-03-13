@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message LensCreatorSubscribeState {
+
+	enum LensCreatorSubscribeState_State {
+		STATE_UNKNOWN = 0;
+		STATE_SUBSCRIBED = 1;
+		STATE_UNSUBSCRIBED = 2;
+	}
+
+	LensCreatorSubscribeState_State state = 1;
+	int64 stateTimestampMsecs = 2;
+	int64 stateExpireTimestampMsecs = 3;
+}

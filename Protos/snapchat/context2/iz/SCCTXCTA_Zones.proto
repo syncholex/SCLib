@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCTAZone.proto";
+
+message SCCTXCTA_Zones {
+	snapchat.context2.iz.SCCTXCTAZone leading = 1;
+	snapchat.context2.iz.SCCTXCTAZone center = 2;
+	snapchat.context2.iz.SCCTXCTAZone trailing = 3;
+}

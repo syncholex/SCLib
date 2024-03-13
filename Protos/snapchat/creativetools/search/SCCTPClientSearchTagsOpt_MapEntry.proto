@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPClientSearchTags_ItemInfo.proto";
+
+message SCCTPClientSearchTagsOpt_MapEntry {
+	uint64 key = 1;
+	snapchat.creativetools.search.SCCTPClientSearchTags_ItemInfo value = 2;
+}

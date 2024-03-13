@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceAttributeData {
+	string placeAttributeId = 1;
+	bool isApplicable = 2;
+}

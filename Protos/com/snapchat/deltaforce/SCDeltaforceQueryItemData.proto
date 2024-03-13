@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceProjectedItem.proto";
+import "com/snapchat/deltaforce/SCDeltaforceItem.proto";
+
+message SCDeltaforceQueryItemData {
+
+	oneof type {
+		com.snapchat.deltaforce.SCDeltaforceProjectedItem projectedItem = 1;
+		com.snapchat.deltaforce.SCDeltaforceItem item = 2;
+	}
+
+}

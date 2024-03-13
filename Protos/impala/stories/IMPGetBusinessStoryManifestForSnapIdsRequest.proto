@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPGetBusinessStoryManifestForSnapIdsRequest {
+	string businessId = 1;
+	repeated string snapIdsArray = 2;
+}

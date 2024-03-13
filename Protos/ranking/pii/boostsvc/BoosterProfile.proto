@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/boostsvc/BoostItem.proto";
+
+message BoosterProfile {
+	ranking.core.SCSCOREUUID userId = 1;
+	repeated ranking.pii.boostsvc.BoostItem boostItemsArray = 2;
+}

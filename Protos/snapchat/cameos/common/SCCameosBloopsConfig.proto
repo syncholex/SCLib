@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosBloopsConfig {
+	string configForGender = 1;
+	string modelsPrefix = 2;
+	string onboardingConfig = 3;
+	string commonSearchResources = 4;
+	string sdkConfig = 5;
+}

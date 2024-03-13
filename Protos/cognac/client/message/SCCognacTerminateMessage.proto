@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac.client.message;
+
+import "cognac/SCCognacAppInstancesChatDockEntry.proto";
+import "cognac/SCCognacAppInstancesChatDock.proto";
+
+message SCCognacTerminateMessage {
+	cognac.SCCognacAppInstancesChatDockEntry terminatedChatDockEntry = 1;
+	cognac.SCCognacAppInstancesChatDock chatDock = 2;
+}

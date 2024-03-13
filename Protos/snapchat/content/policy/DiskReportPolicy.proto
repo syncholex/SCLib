@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+import "snapchat/content/policy/DiskReportRule.proto";
+
+message DiskReportPolicy {
+	snapchat.content.policy.DiskReportRule blizzardDiskReportRule = 1;
+	snapchat.content.policy.DiskReportRule grapheneDiskReportRule = 2;
+}

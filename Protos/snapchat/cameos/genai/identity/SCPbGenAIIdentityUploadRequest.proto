@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+import "snapchat/cameos/genai/identity/SCPbGenAIIdentity.proto";
+
+message SCPbGenAIIdentityUploadRequest {
+	snapchat.cameos.genai.identity.SCPbGenAIIdentity identity = 1;
+}

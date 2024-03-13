@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message ContentAgeGateLevelValue {
+
+	enum ContentAgeGateLevel {
+		UNRESTRICTED = 0;
+		EXPLICIT = 1;
+	}
+
+	ContentAgeGateLevel value = 1;
+}

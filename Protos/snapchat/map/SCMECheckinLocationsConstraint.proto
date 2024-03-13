@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMECheckinLocationsConstraint {
+	double centerLat = 1;
+	double centerLng = 2;
+	double radiusMeters = 3;
+	int64 expirationTimestampMs = 4;
+	double targetAccuracyMeters = 5;
+}

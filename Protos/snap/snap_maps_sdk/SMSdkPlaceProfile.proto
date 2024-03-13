@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkPlaceInfo.proto";
+import "snap/snap_maps_sdk/SMSdkPlaceLocation.proto";
+
+message SMSdkPlaceProfile {
+	snap.snap_maps_sdk.SMSdkPlaceInfo placeInfo = 1;
+	snap.snap_maps_sdk.SMSdkPlaceLocation placeLocation = 2;
+	string placeId = 5;
+}

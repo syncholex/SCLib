@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/lens/SCLPLensResource.proto";
+import "lens_platform/client_server/lens/SCLPLensAsset.proto";
+import "lens_platform/client_server/lens/SCLPApplicableContext.proto";
+
+message SCLPLens {
+	int64 id_p = 1;
+	string iconURL = 5;
+	string name = 6;
+	repeated lens_platform.client_server.lens.SCLPLensResource resourcesArray = 7;
+	repeated lens_platform.client_server.lens.SCLPLensAsset assetsArray = 8;
+	lens_platform.client_server.lens.SCLPApplicableContext applicableContext = 9;
+	int64 demoStartDate = 11;
+	string bitmojiComicId = 12;
+
+	enum SCLPLens_ActivationCamera {
+		ACTIVATION_LEVEL_UNSET = 0;
+		FRONT = 1;
+		REAR = 2;
+	}
+
+	SCLPLens_ActivationCamera activationCamera = 13;
+
+	enum SCLPLensDescriptor {
+		LENS_DESCRIPTOR_UNSET = 0;
+		SNAPPABLE = 1;
+		REQUIRES_BITMOJI = 2;
+		REQUIRES_FRIENDMOJI = 3;
+		SUPPORTS_MAGIC_MOMENT = 4;
+		SUPPORTS_WORLD_LENS_POST_CAPTURE = 5;
+		SUPPORTS_NEWPORT_DEPTH = 6;
+		SUPPORTS_INTERACTIVE_SNAP_WITH_DEPTH = 7;
+		SUPPORTS_INTERACTIVE_SNAP = 8;
+		BUILT_FOR_HERMOSA = 9;
+		REQUIRES_CAMEOS = 10;
+		CONNECTED_LENS = 11;
+		REQUIRES_REMOTE_SERVICE = 12;
+		HAIRSTYLE = 13;
+		IS_SHOPPING = 14;
+		SCAN_BACKEND = 15;
+		SNAPML_AUDIO = 16;
+		BODY_MESH_3D = 17;
+		VOICEML_LENS = 18;
+		EXPERIMENTAL_API = 19;
+		SNAP_TRACKS = 20;
+		VOICEML_TTS_LENS = 21;
+		PHYSICS = 22;
+		LOCATION_MESH = 23;
+		CLOTH = 24;
+		TWOD_TRY_ON = 25;
+		BODY_DEPTH = 26;
+		BODY_NORMALS = 27;
+		SUPPORTS_CLOUD_STORAGE = 28;
+		BITMOJI_3D = 29;
+		LOCATION_STORAGE_AUTHORING = 30;
+		LENSCLOUD_REMOTE_ASSETS = 31;
+		VOICEML_DIALOG_LENS = 32;
+		LOCALIZED_STRINGS = 33;
+		USE_LOCALIZATION = 34;
+		RAYTRACING = 35;
+		ORDER_INDEPENDENT_TRANSPARENCY = 36;
+		CUBEMAPS = 37;
+		WATERMARK = 38;
+		POST_CAPTURE_DYNAMIC_LENS = 39;
+		GENERATIVE_AI = 40;
+		POST_CAPTURE_ANIMATED_LENS = 41;
+		SNAP_CODE_UNLOCK_ONLY = 42;
+		USE_GEN_AI = 43;
+		MAP_MODULE = 44;
+		OVERRIDE_CAPTURE_BUTTON = 45;
+		USE_SNAPML = 46;
+	}
+
+	repeated SCLPLensDescriptor descriptorsArray = 15 [packed=true];
+	bool studioPreview = 16;
+
+	enum SCLPLens_ApiLevel {
+		API_LEVEL_UNSET = 0;
+		PUBLIC = 1;
+		PRIVATE = 2;
+		DEV = 3;
+	}
+
+	SCLPLens_ApiLevel apiLevel = 17;
+}

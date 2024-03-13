@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsExitEventSwipeInfo {
+	google.protobuf.GPBFloatValue exitCoordStartSwipeTapPositionXRelative = 1;
+	google.protobuf.GPBFloatValue exitCoordStartSwipeTapPositionX = 2;
+	google.protobuf.GPBFloatValue exitCoordStartSwipeTapPositionYRelative = 3;
+	google.protobuf.GPBFloatValue exitCoordStartSwipeTapPositionY = 4;
+	google.protobuf.GPBFloatValue exitCoordEndSwipeTapPositionXRelative = 5;
+	google.protobuf.GPBFloatValue exitCoordEndSwipeTapPositionX = 6;
+	google.protobuf.GPBFloatValue exitCoordEndSwipeTapPositionYRelative = 7;
+	google.protobuf.GPBFloatValue exitCoordEndSwipeTapPositionY = 8;
+	google.protobuf.GPBFloatValue exitCoordSwipeTapDuration = 9;
+}

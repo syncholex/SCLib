@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+import "Bitmoji/Proto/AnimatedBitmojiData.proto";
+import "Bitmoji/Proto/MovieData.proto";
+
+message SceneExtraData {
+	int32 height = 1;
+	int32 width = 2;
+	float xOffset = 3;
+	float yOffset = 4;
+
+	enum TrimType {
+		TRIM_NONE = 0;
+		TRIM_CIRCLE = 1;
+		TRIM_FULL = 2;
+	}
+
+	TrimType trim = 5;
+	string colorEffect = 6;
+	string environmentId = 7;
+	float indirectLightIntensity = 8;
+	bool disableShadows = 9;
+	repeated Bitmoji.Proto.AnimatedBitmojiData animatedBitmojiDataArray = 10;
+	bool isAnimated = 11;
+
+	enum RenderingStyle {
+		STYLE_DEFAULT = 0;
+		STYLE_2D = 1;
+		STYLE_OUTLINE = 2;
+		STYLE_CUSTOM_1 = 11;
+		STYLE_CUSTOM_2 = 12;
+		STYLE_CUSTOM_3 = 13;
+	}
+
+	RenderingStyle renderingStyle = 12;
+	repeated string nodesToRejectArray = 13;
+	bool isMovieFrame = 14;
+	int32 movieFrameDurationMs = 15;
+	Bitmoji.Proto.MovieData movieData = 16;
+}

@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAuthRequest {
+
+	enum MLBAuthRequest_AuthOperation {
+		GET_MFI_CERT = 0;
+		GET_SC_CERT = 1;
+		GET_MFI_RESPONSE = 2;
+		GET_APP_AUTH_CHALLENGE = 3;
+		RETURN_APP_AUTH_RESPONSE = 4;
+	}
+
+	MLBAuthRequest_AuthOperation authOperation = 1;
+	bytes mfiChallenge = 2;
+	bytes appAuthResponse = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPSearchTagsByStickerId_StickerInfo.proto";
+
+message SCCTPSearchTagsByStickerId {
+	repeated snapchat.creativetools.search.SCCTPSearchTagsByStickerId_StickerInfo stickerInfosArray = 1;
+}

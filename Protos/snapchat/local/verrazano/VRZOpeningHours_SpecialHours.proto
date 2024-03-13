@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpeningHours_TimeRange.proto";
+
+message VRZOpeningHours_SpecialHours {
+	string description_p = 1;
+	repeated snapchat.local.verrazano.VRZOpeningHours_TimeRange hoursArray = 2;
+}

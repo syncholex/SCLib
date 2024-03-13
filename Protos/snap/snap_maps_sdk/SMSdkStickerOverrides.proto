@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkStickerOverrides_StickerOverride.proto";
+
+message SMSdkStickerOverrides {
+	repeated snap.snap_maps_sdk.SMSdkStickerOverrides_StickerOverride overridesArray = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXLensProfileAction {
+	string lensId = 1;
+	string title = 2;
+	string iconURL = 3;
+	string creatorId = 4;
+	string creatorName = 5;
+	bool isOfficialCreator = 6;
+	bool isBusinessProfile = 8;
+}

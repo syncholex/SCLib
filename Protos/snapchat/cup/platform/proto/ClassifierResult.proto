@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/LabelScorePair.proto";
+
+message ClassifierResult {
+	repeated snapchat.cup.platform.proto.LabelScorePair labelScorePairsArray = 1;
+}

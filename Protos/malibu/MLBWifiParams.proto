@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBWifiParams {
+
+	enum MLBWifiParams_WifiSetting {
+		DISABLED = 0;
+		AP = 1;
+		STA = 2;
+		P2P = 3;
+		SCAN = 4;
+	}
+
+	MLBWifiParams_WifiSetting type = 1;
+	string ssid = 2;
+	string password = 3;
+	uint32 frequency = 4;
+	string country = 5;
+
+	enum MLBWifiParams_WifiFrequencyStrategy {
+		USE_BEST_AVAILABLE = 0;
+		USE_2_4GHZ_ONLY = 1;
+	}
+
+	MLBWifiParams_WifiFrequencyStrategy frequencyStrategy = 6;
+}

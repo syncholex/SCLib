@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSlamEvent {
+
+	enum HRMPBSlamEvent_SlamEventEnum {
+		UNKNOWN_EVENT = -1;
+		INITIALIZED = 1;
+		DIVERGED = 2;
+		SYSTEM_DEGRADED = 3;
+		DATA_NOT_VALID = 4;
+		SENSORS_AVAILABLE = 5;
+	}
+
+	HRMPBSlamEvent_SlamEventEnum slamEvent = 1;
+}

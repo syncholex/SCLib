@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCBoostMetadata {
+
+	enum BoostType_Enum {
+		UNKNOWN = 0;
+		BOOST_ONLY = 1;
+		RECOMMEND = 2;
+	}
+
+	BoostType_Enum boostType = 1;
+	int64 timestampMsec = 2;
+}

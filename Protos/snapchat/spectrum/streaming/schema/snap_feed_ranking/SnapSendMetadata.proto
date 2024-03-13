@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/SnapInfo.proto";
+
+message SnapSendMetadata {
+	snapchat.spectrum.streaming.schema.snap_feed_ranking.SnapInfo snapInfo = 1;
+	bool postedToStory = 2;
+	uint32 recipientCount = 3;
+}

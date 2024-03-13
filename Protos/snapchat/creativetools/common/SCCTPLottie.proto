@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPLottie {
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 1;
+}

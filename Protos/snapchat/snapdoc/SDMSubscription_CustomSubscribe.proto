@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMSubscription_CustomSubscribe_Publisher.proto";
+import "snapchat/snapdoc/SDMSubscription_CustomSubscribe_PublicUser.proto";
+
+message SDMSubscription_CustomSubscribe {
+	string displayName = 1;
+
+	oneof subject {
+		snapchat.snapdoc.SDMSubscription_CustomSubscribe_Publisher publisher = 2;
+		snapchat.snapdoc.SDMSubscription_CustomSubscribe_PublicUser publicUser = 3;
+	}
+
+	string primaryColor = 4;
+	string secondaryColor = 5;
+}

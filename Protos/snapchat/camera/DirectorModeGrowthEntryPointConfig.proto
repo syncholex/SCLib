@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message DirectorModeGrowthEntryPointConfig {
+	bool enableDmGrowthEntryPoint = 1;
+	int32 dmGrowthEntryPointText = 2;
+	string dmGrowthEntryPointIconURL = 3;
+}

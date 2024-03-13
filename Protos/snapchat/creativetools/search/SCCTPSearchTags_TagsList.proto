@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+message SCCTPSearchTags_TagsList {
+	repeated string tagsArray = 1;
+}

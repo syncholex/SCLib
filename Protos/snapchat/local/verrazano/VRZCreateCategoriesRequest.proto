@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpMetadata.proto";
+import "snapchat/local/verrazano/VRZCategoryWriteData.proto";
+
+message VRZCreateCategoriesRequest {
+	snapchat.local.verrazano.VRZOpMetadata opMetadata = 1;
+	repeated snapchat.local.verrazano.VRZCategoryWriteData writeDataArray = 10;
+}

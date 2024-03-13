@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSShareLocationPreferences_LiveSession {
+	snapchat.core.SCCOREUUID friendId = 1;
+	int64 durationMs = 2;
+	int64 expirationMs = 3;
+	snapchat.core.SCCOREUUID sessionId = 4;
+	bool indefinite = 5;
+	int64 startMs = 6;
+}

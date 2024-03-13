@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMOurStoryMetadata_LensMetaData {
+	string iconURL = 1;
+	string deeplinkURL = 2;
+	string creatorName = 3;
+}

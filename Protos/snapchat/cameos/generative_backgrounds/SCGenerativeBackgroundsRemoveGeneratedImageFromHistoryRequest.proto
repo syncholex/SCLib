@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+message SCGenerativeBackgroundsRemoveGeneratedImageFromHistoryRequest {
+	string generatedImageURL = 1;
+	bool removeAll = 2;
+}

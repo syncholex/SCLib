@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/Shortcut.proto";
+import "ranking/pii/groupmanagement/BestFriend.proto";
+
+message PrivateStoryProfileMetadata {
+
+	oneof subtype {
+		ranking.pii.groupmanagement.Shortcut shortcut = 1;
+		ranking.pii.groupmanagement.BestFriend bestFriend = 2;
+	}
+
+}

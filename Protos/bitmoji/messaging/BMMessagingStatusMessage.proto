@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package bitmoji.messaging;
+
+import "snapchat/messaging/SCMessagingParticipantChangeStatusMessage.proto";
+import "snapchat/messaging/SCMessagingNameChangeStatusMessage.proto";
+import "snapchat/messaging/SCMessagingMessageEraseStatusMessage.proto";
+import "snapchat/messaging/SCMessagingGroupChatCreatedStatusMessage.proto";
+
+message BMMessagingStatusMessage {
+
+	oneof status {
+		snapchat.messaging.SCMessagingParticipantChangeStatusMessage participantChange = 1;
+		snapchat.messaging.SCMessagingNameChangeStatusMessage nameStatusChange = 2;
+		snapchat.messaging.SCMessagingMessageEraseStatusMessage messageErase = 3;
+		snapchat.messaging.SCMessagingGroupChatCreatedStatusMessage groupChatCreated = 4;
+	}
+
+}

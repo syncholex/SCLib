@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "snapchat/local/placediscovery/VRZFriendCheckin.proto";
+
+message VRZFriendCheckins {
+	repeated snapchat.local.placediscovery.VRZFriendCheckin checkinsArray = 1;
+}

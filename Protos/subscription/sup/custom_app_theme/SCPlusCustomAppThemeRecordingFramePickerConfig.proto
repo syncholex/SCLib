@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeRecordingFramePickerConfig_FrameConfig.proto";
+
+message SCPlusCustomAppThemeRecordingFramePickerConfig {
+	repeated subscription.sup.custom_app_theme.SCPlusCustomAppThemeRecordingFramePickerConfig_FrameConfig optionsArray = 1;
+}

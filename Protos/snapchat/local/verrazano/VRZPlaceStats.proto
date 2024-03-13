@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceStats {
+	string localizedFavoriteDisplayCount = 1;
+	int64 favoriteCount = 2;
+}

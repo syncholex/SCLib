@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusFideliusClientInit.proto";
+import "snapchat/janus/api/SCJanusCofTags.proto";
+import "snapchat/janus/api/SCJanusLoginHeader.proto";
+
+message SCJanusVerifyTwoFARequest {
+	string twoFaToken = 1;
+
+	enum SCJanusTwoFAType {
+		TWO_FA_TYPE_UNSET = 0;
+		TWO_FA_TYPE_SMS = 1;
+		TWO_FA_TYPE_OTP = 2;
+	}
+
+	SCJanusTwoFAType twoFaType = 2;
+	string twoFaCode = 3;
+	bool rememberDevice = 4;
+	snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 5;
+	snapchat.janus.api.SCJanusCofTags cofTags = 6;
+	snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}

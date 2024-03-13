@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/EditionHideDetail.proto";
+
+message UserHiddenEditions {
+	string userId = 1;
+	ranking.pii.user.profile.EditionHideDetail hiddenEditions = 2;
+}

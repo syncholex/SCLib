@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package cognac;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "cognac/SCCognacAppsImageResources.proto";
+import "cognac/SCCognacAppsBuildLocalization.proto";
+import "cognac/SCCognacAppsPlayerLimits.proto";
+import "cognac/SCCognacAppsMajorUpdateVersion.proto";
+import "cognac/SCCognacAuthClientAuthClient.proto";
+import "cognac/SCCognacAppsLensMetadata.proto";
+import "cognac/SCCognacClientRuntimeClientRuntimeInfo.proto";
+import "cognac/SCCognacAppsDevMetadata.proto";
+
+message SCCognacAppsBuild {
+	string id_p = 1;
+	google.protobuf.GPBTimestamp creationTimestamp = 2;
+	google.protobuf.GPBTimestamp lastUpdateTimestamp = 3;
+	string title = 4;
+	string description_p = 5;
+	string contentURL = 6;
+	string preloadURL = 7;
+	cognac.SCCognacAppsImageResources imageResources = 8;
+	cognac.SCCognacAppsBuildLocalization localization = 9;
+	cognac.SCCognacAppsPlayerLimits playerLimits = 10;
+	string privacyPolicyURL = 11;
+	string termsOfServiceURL = 12;
+	string buildVersion = 13;
+	cognac.SCCognacAppsMajorUpdateVersion majorUpdateVersion = 14;
+	cognac.SCCognacAuthClientAuthClient authClient = 15;
+	cognac.SCCognacAppsLensMetadata lensMetadata = 16;
+
+	enum SCCognacClientRuntimeClientRuntimeType {
+		ORIGINAL = 0;
+		PRIVATE = 1;
+	}
+
+	SCCognacClientRuntimeClientRuntimeType clientRuntimeType = 17;
+	cognac.SCCognacClientRuntimeClientRuntimeInfo clientRuntimeInfo = 18;
+
+	enum SCCognacAppsBuildType {
+		PRODUCTION = 0;
+		TEST = 1;
+		DEVELOPMENT = 2;
+	}
+
+	SCCognacAppsBuildType buildType = 19;
+	cognac.SCCognacAppsDevMetadata devMetadata = 20;
+}

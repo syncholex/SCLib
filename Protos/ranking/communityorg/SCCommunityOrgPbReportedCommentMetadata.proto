@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbReportedCommentMetadata {
+	ranking.core.SCSCOREUUID replyId = 1;
+	ranking.core.SCSCOREUUID replyPosterId = 7;
+}

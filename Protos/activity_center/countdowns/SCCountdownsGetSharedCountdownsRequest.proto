@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+message SCCountdownsGetSharedCountdownsRequest {
+	string userId1 = 1;
+	string userId2 = 2;
+}

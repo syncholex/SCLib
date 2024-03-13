@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+message SCPaymentsDiscountDetail {
+	string discountId = 1;
+	string discountName = 2;
+	uint64 amount = 3;
+	bool applicable = 4;
+	string nonApplicableReason = 5;
+}

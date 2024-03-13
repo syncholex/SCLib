@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+import "snapchat/core/SCCOREAppVersion_VersionNumber.proto";
+
+message SCCOREAppVersion {
+	snapchat.core.SCCOREAppVersion_VersionNumber versionNumber = 1;
+
+	enum SCCOREAppVersion_Flavor {
+		UNKNOWN = 0;
+		DEBUG = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		PRODUCTION = 4;
+		BETA = 5;
+		GOLD = 6;
+	}
+
+	SCCOREAppVersion_Flavor flavor = 2;
+}

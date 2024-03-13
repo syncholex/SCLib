@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto.gallery.servlet;
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletQuotaUsage.proto";
+
+message SCPBGalleryServletQuota {
+	bool unlimited = 1;
+	com.snapchat.proto.gallery.servlet.SCPBGalleryServletQuotaUsage snapNumber = 2;
+}

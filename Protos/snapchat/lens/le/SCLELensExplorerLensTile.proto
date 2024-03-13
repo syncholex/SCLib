@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensPreviewTile.proto";
+import "snapchat/lens/le/SCLELensExplorerCreatorMetadata.proto";
+import "snapchat/lens/le/SCLERankingInfo.proto";
+import "snapchat/lens/le/SCLELensLayout.proto";
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+
+message SCLELensExplorerLensTile {
+	int64 lensId = 1;
+	string lensName = 2;
+	snapchat.lens.le.SCLELensPreviewTile lensPreview = 3;
+
+	enum SCLELensExplorerLensTile_Camera {
+		UNSET = 0;
+		FRONT = 1;
+		REAR = 2;
+	}
+
+	SCLELensExplorerLensTile_Camera activationCamera = 4;
+	snapchat.lens.le.SCLELensExplorerCreatorMetadata creatorData = 5;
+	snapchat.lens.le.SCLERankingInfo rankingInfo = 6;
+	snapchat.lens.le.SCLELensLayout layoutRules = 7;
+
+	enum SCLELensExplorerLensTile_LensAttribution {
+		NONE_UNSET = 0;
+		FAVORITED = 1;
+		PURCHASED = 2;
+	}
+
+	SCLELensExplorerLensTile_LensAttribution lensAttribution = 8;
+	lens_platform.client_server.lens.SCLPLensSnapchat lensMetadata = 9;
+}

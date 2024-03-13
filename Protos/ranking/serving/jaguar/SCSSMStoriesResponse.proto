@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCSCOREResponseStatus.proto";
+import "ranking/serving/jaguar/SCSSMOrderedStoriesStream.proto";
+import "ranking/serving/jaguar/SCSSMClientScoringParams.proto";
+import "ranking/serving/jaguar/SCSSMDiscoverFeedMetadata.proto";
+import "ranking/serving/jaguar/FeedTypeMetadata.proto";
+import "ranking/serving/jaguar/SCSSMRTUSResponse.proto";
+
+message SCSSMStoriesResponse {
+	string requestId = 1;
+	ranking.core.SCSCOREResponseStatus status = 2;
+	ranking.serving.jaguar.SCSSMOrderedStoriesStream orderedStoriesStream = 3;
+	string debugHtml = 5;
+	ranking.serving.jaguar.SCSSMClientScoringParams clientScoringParams = 6;
+	bytes debugPb = 7;
+	ranking.serving.jaguar.SCSSMDiscoverFeedMetadata discoverFeedMetadata = 8;
+	bool eof = 9;
+	ranking.serving.jaguar.FeedTypeMetadata feedMetadata = 10;
+	bool isDegradedMode = 11;
+	string hpoPb = 12;
+	int32 predictedSessionDepth = 13;
+	ranking.serving.jaguar.SCSSMRTUSResponse rtusResponse = 14;
+	string onDemandDebugKey = 100;
+}

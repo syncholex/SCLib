@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensLinkedResource {
+	string URL = 1;
+	bytes encryptionKey = 2;
+}

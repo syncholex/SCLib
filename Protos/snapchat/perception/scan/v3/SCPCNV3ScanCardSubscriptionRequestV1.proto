@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3ScanCardSubscriptionRequestV1 {
+
+	oneof service {
+		bool allUtilities = 1;
+		string utilityServiceId = 2;
+	}
+
+}

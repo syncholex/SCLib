@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.friending.cof;
+
+import "snapchat/friending/cof/SCSuggestionNotificationConfig.proto";
+
+message SCFriendingReliablePinningConfig {
+	bool enabled = 1;
+	snapchat.friending.cof.SCSuggestionNotificationConfig topSuggestionsConfig = 2;
+	snapchat.friending.cof.SCSuggestionNotificationConfig recentlyJoinersConfig = 3;
+	int32 rankingMode = 4;
+	bool deprecateCallSuggestFriendNotification = 5;
+}

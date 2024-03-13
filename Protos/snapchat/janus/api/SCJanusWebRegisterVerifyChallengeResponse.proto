@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusWebBootstrapData.proto";
+import "snapchat/janus/api/SCJanusChallengeData.proto";
+import "snapchat/janus/api/SCJanusDeniedData.proto";
+import "snapchat/janus/api/SCJanusChallengeOrchestrationErrorData.proto";
+import "snapchat/janus/api/SCJanusWebBootstrapDataBrowser.proto";
+
+message SCJanusWebRegisterVerifyChallengeResponse {
+
+	enum SCJanusWebRegisterVerifyChallengeResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		CHALLENGED = 2;
+		ERR_FAILED_CHALLENGE = 9;
+		ERR_DENIED = 10;
+		ERR_BLOCKED = 11;
+		ERR_THROTTLED = 12;
+	}
+
+	SCJanusWebRegisterVerifyChallengeResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusWebBootstrapData bootstrapData = 2;
+		snapchat.janus.api.SCJanusChallengeData challengeData = 3;
+		snapchat.janus.api.SCJanusDeniedData deniedData = 4;
+		snapchat.janus.api.SCJanusChallengeOrchestrationErrorData errorData = 5;
+		snapchat.janus.api.SCJanusWebBootstrapDataBrowser bootstrapDataBrowser = 6;
+	}
+
+}

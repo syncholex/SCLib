@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBContextNotifAnim {
+	uint32 solidDuration = 1;
+	uint32 blinkCount = 2;
+	uint32 blinkDurationOnInMs = 3;
+	uint32 blinkDurationOffInMs = 4;
+	uint32 color = 5;
+
+	enum HRMPBContextNotifAnim_LedSide {
+		NONE_ENABLED = 0;
+		LEFT_ENABLED = 1;
+		RIGHT_ENABLED = 2;
+		BOTH_ENABLED = 3;
+	}
+
+	HRMPBContextNotifAnim_LedSide ledSideEnabled = 6;
+}

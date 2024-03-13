@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_SnapText_OCRRecord.proto";
+
+message SnapBrainResponse_Results_SnapText {
+	repeated snapchat.research.SnapBrainResponse_Results_SnapText_OCRRecord ocrArray = 1;
+}

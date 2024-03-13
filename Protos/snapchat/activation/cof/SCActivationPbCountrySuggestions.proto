@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbCountrySuggestions {
+	repeated string countriesArray = 1;
+}

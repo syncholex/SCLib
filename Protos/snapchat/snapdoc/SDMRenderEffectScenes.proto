@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMRenderEffectScene.proto";
+
+message SDMRenderEffectScenes {
+	repeated snapchat.snapdoc.SDMRenderEffectScene renderEffectScenesArray = 1;
+	uint32 renderEffectOutputCounter = 3;
+	uint32 renderEffectNodeIndexCounter = 4;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMusicOriginalSoundsOriginalSound {
+	snapchat.creativetools.common.SCCTPMusicTrack musicTrackInfo = 1;
+	string snapId = 2;
+	snapchat.core.SCCOREUUID creatorUserId = 3;
+	bool isCopyrightViolation = 4;
+	repeated string isrcsArray = 5;
+}

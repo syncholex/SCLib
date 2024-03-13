@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsTileInsights.proto";
+
+message IMPInsightsTileLifetimeInsights {
+	bytes tileMetadata = 1;
+	impala.insights.IMPInsightsTileInsights tileInsights = 2;
+}

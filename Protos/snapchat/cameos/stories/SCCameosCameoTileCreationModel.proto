@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.stories;
+
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+
+message SCCameosCameoTileCreationModel {
+	snapchat.cameos.stories.SCCameosCameoTile cameoTile = 1;
+	string generatedCameoPreviewURL = 2;
+}

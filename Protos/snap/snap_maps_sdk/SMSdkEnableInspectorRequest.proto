@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkEnableInspectorRequest_InspectorServer.proto";
+import "snap/snap_maps_sdk/SMSdkEnableInspectorRequest_InspectorClient.proto";
+
+message SMSdkEnableInspectorRequest {
+
+	oneof inspectorMode {
+		snap.snap_maps_sdk.SMSdkEnableInspectorRequest_InspectorServer inspectorServer = 1;
+		snap.snap_maps_sdk.SMSdkEnableInspectorRequest_InspectorClient inspectorClient = 2;
+	}
+
+}

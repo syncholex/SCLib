@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message TaskResult {
+	bytes result = 1;
+	int32 taskType = 2;
+
+	enum TaskResultStatus {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILURE = 2;
+		DEPENDENCY_FAILURE = 3;
+		SKIPPED = 4;
+		DEPENDENCY_SKIPPED = 5;
+	}
+
+	TaskResultStatus status = 3;
+	google.protobuf.GPBTimestamp createdAt = 4;
+	string errorMessage = 5;
+	int32 experimentId = 6;
+	string studyName = 7;
+}

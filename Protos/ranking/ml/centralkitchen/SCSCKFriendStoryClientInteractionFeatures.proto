@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message SCSCKFriendStoryClientInteractionFeatures {
+	bool isInteractionFeaturesOnLatestVersion = 1;
+	float latestImpressionAgeInHour = 2;
+	int32 totalImpressionCount = 3;
+	float totalImpressionTimeInHour = 4;
+}

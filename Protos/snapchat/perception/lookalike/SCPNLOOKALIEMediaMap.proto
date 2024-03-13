@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike;
+
+import "snapchat/perception/lookalike/SCPNLOOKALIEMedia.proto";
+
+message SCPNLOOKALIEMediaMap {
+	snapchat.perception.lookalike.SCPNLOOKALIEMedia map = 1;
+}

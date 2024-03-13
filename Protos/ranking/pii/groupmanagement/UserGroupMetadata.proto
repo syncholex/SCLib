@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/GroupMetadata.proto";
+import "ranking/pii/groupmanagement/UserGroupBlockedParticipantsExceptions.proto";
+
+message UserGroupMetadata {
+
+	enum SCSCORECustomStoryMembership_Enum {
+		UNKNOWN = 0;
+		VIEWER = 1;
+		POSTER = 2;
+		OWNER = 3;
+		MODERATOR = 4;
+	}
+
+	SCSCORECustomStoryMembership_Enum membership = 1;
+	ranking.pii.groupmanagement.GroupMetadata metadata = 2;
+	ranking.pii.groupmanagement.UserGroupBlockedParticipantsExceptions userGroupBlockedParticipantsExceptions = 3;
+}

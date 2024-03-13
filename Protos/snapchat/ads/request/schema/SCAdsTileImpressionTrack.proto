@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsTileImpressionTrack {
+	google.protobuf.GPBBoolValue isViewed = 1;
+	google.protobuf.GPBBoolValue isViewedAppSession = 2;
+	google.protobuf.GPBBoolValue tileTapped = 3;
+	google.protobuf.GPBFloatValue tileTimeViewedSeconds = 4;
+	google.protobuf.GPBBoolValue hasCta = 5;
+	google.protobuf.GPBBoolValue ctaTapped = 6;
+}

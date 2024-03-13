@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkMapSdkInitializationParams_ApplicationInfo.proto";
+import "snap/snap_maps_sdk/SMSdkConfig.proto";
+import "snap/snap_maps_sdk/SMSdkMapSdkInitializationParams_LocalizedString.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SMSdkMapSdkInitializationParams {
+	snap.snap_maps_sdk.SMSdkMapSdkInitializationParams_ApplicationInfo appInfo = 1;
+	repeated snap.snap_maps_sdk.SMSdkConfig configsArray = 2;
+	repeated snap.snap_maps_sdk.SMSdkMapSdkInitializationParams_LocalizedString localizedStringsArray = 3;
+	google.protobuf.GPBStringValue cachePath = 4;
+	google.protobuf.GPBStringValue assetsPath = 5;
+	bool clearCache = 6;
+}

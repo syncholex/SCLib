@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.music.common;
+
+message SCMusicError {
+
+	enum SCMusicErrorStatus {
+		UNSET = 0;
+		BAD_REQUEST = 400;
+		NOT_FOUND = 404;
+		INTERNAL_ERROR = 500;
+		TIMEOUT = 504;
+	}
+
+	SCMusicErrorStatus status = 1;
+	string message = 2;
+}

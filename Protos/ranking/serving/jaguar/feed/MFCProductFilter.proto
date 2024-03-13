@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/SCSSMStoriesRequest_SpotlightNotificationInventoryType.proto";
+import "ranking/serving/jaguar/SCSSMStoriesRequest_TopicMetadata.proto";
+import "ranking/core/OurStoryFilterOptions.proto";
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/feed/MFCPublicProfileFilter.proto";
+
+message MFCProductFilter {
+	ranking.serving.jaguar.SCSSMStoriesRequest_SpotlightNotificationInventoryType spotlightNotificationInventoryType = 1;
+	ranking.serving.jaguar.SCSSMStoriesRequest_TopicMetadata topicMetadata = 2;
+	ranking.core.OurStoryFilterOptions ourStoryFilterOptions = 3;
+	ranking.core.SCCORECompositeStoryId upnextCompositeStoryId = 4;
+
+	enum SCSSMCameosFeatureStatus_Enum {
+		UNSET = 0;
+		RESTRICTED = 1;
+		ALLOWED = 2;
+	}
+
+	SCSSMCameosFeatureStatus_Enum cameosFeatureRestricted = 5;
+	ranking.serving.jaguar.feed.MFCPublicProfileFilter publicProfileFilter = 6;
+}

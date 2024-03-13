@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoriesRequest_FeedRequestMetadata_FeedOptions {
+
+	enum SCSSMStoriesRequest_FeedRequestMetadata_ThumbnailOption_Enum {
+		UNKNOWN = 0;
+		OLDEST_SNAP_FIRST_FRAME_CONTENT_OBJECT = 1;
+	}
+
+	SCSSMStoriesRequest_FeedRequestMetadata_ThumbnailOption_Enum thumbnailOption = 1;
+
+	enum SCSSMStoriesRequest_FeedRequestMetadata_SectionDisplayNameOption_Enum {
+		UNKNOWN = 0;
+		SPOTLIGHT = 1;
+		DISCOVER = 2;
+	}
+
+	SCSSMStoriesRequest_FeedRequestMetadata_SectionDisplayNameOption_Enum sectionDisplayNameOption = 2;
+	repeated int32 overrideStoryTypesArray = 3 [packed=true];
+}

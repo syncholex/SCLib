@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesPostCaptureLensData {
+	string resourceURL = 1;
+	string resourceSignature = 2;
+}

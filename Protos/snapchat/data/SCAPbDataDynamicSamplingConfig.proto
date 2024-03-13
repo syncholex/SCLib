@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+message SCAPbDataDynamicSamplingConfig {
+	repeated string overriddenEventNamesArray = 1;
+}

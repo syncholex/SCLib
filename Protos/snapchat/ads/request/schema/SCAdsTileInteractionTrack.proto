@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/ads/request/schema/SCAdsAppInstallImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsRemoteWebpageImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsDeepLinkImpressionTrack.proto";
+
+message SCAdsTileInteractionTrack {
+	google.protobuf.GPBBoolValue ctaTapped = 1;
+	google.protobuf.GPBFloatValue tileTimeViewedSeconds = 2;
+
+	oneof typedTrackData {
+		snapchat.ads.request.schema.SCAdsAppInstallImpressionTrack appInstall = 3;
+		snapchat.ads.request.schema.SCAdsRemoteWebpageImpressionTrack remoteWebpage = 4;
+		snapchat.ads.request.schema.SCAdsDeepLinkImpressionTrack deepLink = 5;
+	}
+
+}

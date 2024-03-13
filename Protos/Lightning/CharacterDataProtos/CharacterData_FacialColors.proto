@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message CharacterData_FacialColors {
+	int32 primary = 1;
+	int32 secondary = 2;
+	int32 tertiary = 3;
+	int32 quaternary = 4;
+	int32 quinary = 5;
+	int32 senary = 6;
+	int32 septenary = 7;
+	int32 octonary = 8;
+	int32 nonary = 9;
+	int32 denary = 10;
+}

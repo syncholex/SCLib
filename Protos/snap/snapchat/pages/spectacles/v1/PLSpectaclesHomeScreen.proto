@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.spectacles.v1;
+
+message PLSpectaclesHomeScreen {
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerFriendStatus.proto";
+import "snapchat/map/SCMEExplorerMapStatus.proto";
+
+message SCMEExplorerStatus {
+	snapchat.map.SCMEExplorerFriendStatus friendStatus = 1;
+	snapchat.map.SCMEExplorerMapStatus mapStatus = 2;
+	double score = 4;
+
+	enum SCMEStatusVersion {
+		VERSION_ZERO = 0;
+		VERSION_ONE = 1;
+		VERSION_TWO = 2;
+	}
+
+	SCMEStatusVersion version = 5;
+}

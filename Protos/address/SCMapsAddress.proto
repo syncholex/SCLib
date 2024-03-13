@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package address;
+
+message SCMapsAddress {
+	string adminArea1 = 1;
+	string adminArea2 = 2;
+	string adminArea3 = 3;
+	string adminArea4 = 4;
+	string adminArea5 = 5;
+	string locality = 6;
+	string sublocality = 7;
+	string colloquialArea = 8;
+	string neighborhood = 9;
+	string premise = 10;
+	string subpremise = 11;
+	string pointOfInterest = 12;
+	string country = 13;
+	string countryCode = 14;
+	string postalCode = 15;
+	string mediaMarketId = 16;
+	string congressionalDistrictId = 17;
+	string macroArea = 18;
+}

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/telephony/api/RequestHeader.proto";
+import "snapchat/telephony/api/SCTelephonyOTPChallenge.proto";
+
+message SCTelephonyCreatePhoneChallengeData {
+
+	oneof channelId {
+		snapchat.core.SCCOREUUID userId = 1;
+		string phoneNumber = 2;
+	}
+
+	string authSessionId = 3;
+
+	enum SCTelephonyPhoneChallengeType {
+		CHALLENGE_TYPE_UNSET = 0;
+		OTP = 1;
+		TIV = 2;
+	}
+
+	SCTelephonyPhoneChallengeType type = 4;
+
+	enum PhoneChallengeUseCase {
+		PHONE_CHALLENGE_USE_CASE_UNSET = 0;
+		TWO_FACTOR_AUTHENTICATION = 1;
+		MAGIC_CODE_LOGIN = 2;
+		ON_DEMAND_LOGIN_VERIFICATION = 3;
+		NEW_USER_PHONE_VERIFICATION = 4;
+		ACCOUNT_RECOVERY = 5;
+		PHONE_FIRST_ONBOARDING = 6;
+		PHONE_IAR_NEW_USER = 15;
+	}
+
+	PhoneChallengeUseCase phoneChallengeUseCase = 5;
+
+	enum SCTelephonyCreatePhoneChallengeData_ChallengeDeliveryMethod {
+		CHALLENGE_METHOD_UNSET = 0;
+		SMS = 1;
+		WHATSAPP = 2;
+	}
+
+	SCTelephonyCreatePhoneChallengeData_ChallengeDeliveryMethod phoneChallengeDeliveryMethod = 6;
+	string locale = 7;
+	snapchat.telephony.api.RequestHeader requestHeader = 8;
+
+	oneof customChallenge {
+		snapchat.telephony.api.SCTelephonyOTPChallenge otpChallenge = 9;
+	}
+
+	bytes challengeMetadata = 10;
+}

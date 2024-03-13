@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXCameraV2Action_Music.proto";
+import "snapchat/context2/camera/SCCTXTimeline.proto";
+import "snapchat/context2/camera/SCCTXDirectorMode.proto";
+import "snapchat/context2/camera/SCCTXDualCamera.proto";
+import "snapchat/context2/camera/SCCTXGreenScreen.proto";
+import "snapchat/context2/camera/SCCTXSpeedMode.proto";
+
+message SCCTXCameraV2Action {
+
+	oneof tool {
+		snapchat.context2.api.SCCTXCameraV2Action_Music music = 1;
+	}
+
+	snapchat.context2.camera.SCCTXTimeline timeline = 2;
+	snapchat.context2.camera.SCCTXDirectorMode directorMode = 3;
+	snapchat.context2.camera.SCCTXDualCamera dualCamera = 4;
+	snapchat.context2.camera.SCCTXGreenScreen greenScreen = 5;
+	snapchat.context2.camera.SCCTXSpeedMode speedMode = 6;
+}

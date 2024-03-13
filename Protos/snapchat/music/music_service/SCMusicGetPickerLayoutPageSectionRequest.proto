@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicGetPickerLayoutPageSectionRequest {
+	string sectionId = 1;
+	string requiredParams = 2;
+}

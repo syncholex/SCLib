@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthRevokeClientsRequest {
+	string userId = 1;
+	repeated string clientIdsArray = 2;
+}

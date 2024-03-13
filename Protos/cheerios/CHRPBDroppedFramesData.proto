@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBDroppedFramesData {
+	int32 vin0Cnt = 1;
+	int32 vin1Cnt = 2;
+}

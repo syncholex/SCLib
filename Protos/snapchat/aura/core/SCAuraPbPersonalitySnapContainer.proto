@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.aura.core;
+
+message SCAuraPbPersonalitySnapContainer {
+	bytes serializedSnapData = 1;
+	string chromeTitle = 2;
+	string chromeSubtitle = 3;
+}

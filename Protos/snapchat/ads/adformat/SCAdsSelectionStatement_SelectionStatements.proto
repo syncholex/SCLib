@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.adformat;
+
+import "snapchat/ads/adformat/SCAdsSelectionStatement.proto";
+
+message SCAdsSelectionStatement_SelectionStatements {
+	repeated snapchat.ads.adformat.SCAdsSelectionStatement statementsArray = 1;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package subscription.streak_restore;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCStreakRestoreProtoGetStreakRestoreProductResponse {
+
+	enum SCStreakRestoreProtoGetStreakRestoreProductResponse_Error {
+		ERROR_UNSET = 0;
+		ERROR_UNABLE_TO_RESTORE = 1;
+	}
+
+	SCStreakRestoreProtoGetStreakRestoreProductResponse_Error error = 1;
+	string appleProductId = 2;
+	string googleProductId = 3;
+	uint32 numFreeRestoresLeft = 4;
+	snapchat.core.SCCOREUUID externalId = 5;
+	uint32 numFreePlusRestoresLeft = 6;
+}

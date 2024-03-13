@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.store;
+
+message GetStoreInfoRequest {
+	bytes storeId = 1;
+}

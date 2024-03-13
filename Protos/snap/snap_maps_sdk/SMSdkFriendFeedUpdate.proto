@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkFriendFeedItem.proto";
+
+message SMSdkFriendFeedUpdate {
+	repeated snap.snap_maps_sdk.SMSdkFriendFeedItem friendFeedItemsArray = 1;
+}

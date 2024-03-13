@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message GetLocationHistoryMetaDataRequest {
+	string userId = 1;
+	bool includeHomeAndWork = 2;
+	bool includeWeeklyTopLocations = 3;
+	bool includeDailyTopLocations = 4;
+	bool includeVisitations = 5;
+}

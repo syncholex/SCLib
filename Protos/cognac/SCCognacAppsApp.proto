@@ -1,0 +1,110 @@
+syntax = "proto3";
+
+package cognac;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "cognac/SCCognacAppsPublisher.proto";
+import "cognac/SCCognacAppsImageResources.proto";
+import "cognac/SCCognacAppsPlayerLimits.proto";
+import "cognac/SCCognacAppsRankingSignal.proto";
+import "cognac/SCCognacAppsDeviceCompatibility.proto";
+import "cognac/SCCognacAppsContentUpdateAlert.proto";
+import "cognac/SCCognacAppsLeaderboardInfo.proto";
+import "cognac/SCCognacAppsSnapCanvasSDKInfo.proto";
+import "cognac/SCCognacAuthClientAuthClient.proto";
+import "cognac/SCCognacAppsLensMetadata.proto";
+import "cognac/SCCognacClientRuntimeClientRuntimeInfo.proto";
+import "cognac/SCCognacAppsDevMetadata.proto";
+
+message SCCognacAppsApp {
+	string id_p = 1;
+	google.protobuf.GPBTimestamp creationTimestamp = 2;
+	google.protobuf.GPBTimestamp lastUpdateTimestamp = 3;
+	string title = 4;
+	string description_p = 5;
+	cognac.SCCognacAppsPublisher publisher = 6;
+	string buildId = 7;
+	string contentURL = 8;
+	string preloadConfig = 9;
+	cognac.SCCognacAppsImageResources imageResources = 10;
+	cognac.SCCognacAppsPlayerLimits playerLimits = 11;
+	cognac.SCCognacAppsRankingSignal rankingSignal = 13;
+	cognac.SCCognacAppsDeviceCompatibility deviceCompatibility = 14;
+	string privacyPolicyURL = 15;
+	string termsOfServiceURL = 16;
+	cognac.SCCognacAppsContentUpdateAlert contentUpdateAlert = 17;
+	string buildVersion = 18;
+	cognac.SCCognacAppsLeaderboardInfo leaderboardInfo = 19;
+
+	enum SCCognacAppsApp_Type {
+		UNKNOWN = 0;
+		GAME = 1;
+		CYPRESS = 2;
+		LENS = 3;
+	}
+
+	SCCognacAppsApp_Type type = 20;
+	cognac.SCCognacAppsSnapCanvasSDKInfo snapCanvasSdkInfo = 21;
+	cognac.SCCognacAuthClientAuthClient authClient = 22;
+	cognac.SCCognacAppsLensMetadata lensMetadata = 23;
+	string englishTitle = 24;
+
+	enum SCCognacAppsApp_PrivacyModel {
+		UNKNOWN_PRIVACY = 0;
+		SOCIAL = 1;
+		ACCOUNT_LINKED = 2;
+	}
+
+	SCCognacAppsApp_PrivacyModel privacyModel = 25;
+
+	enum SCCognacAppsApp_Category {
+		LEGACY = 0;
+		CUSTOM = 1;
+		ASYNC = 2;
+		RTM = 3;
+	}
+
+	SCCognacAppsApp_Category category = 26;
+
+	enum SCCognacClientRuntimeClientRuntimeType {
+		ORIGINAL = 0;
+		PRIVATE = 1;
+	}
+
+	SCCognacClientRuntimeClientRuntimeType clientRuntimeType = 27;
+	cognac.SCCognacClientRuntimeClientRuntimeInfo clientRuntimeInfo = 28;
+
+	enum SCCognacAppsApp_Genre {
+		UNKNOWN_GENRE = 0;
+		TRAVEL = 1;
+		PRODUCTIVITY = 2;
+		SHOPPING = 3;
+		PERSONAL_FINANCE = 4;
+		LIFESTYLE = 5;
+		DATING = 6;
+		UTILITIES = 7;
+		EDUCATION = 8;
+		EVENTS = 9;
+		HEALTH_FITNESS = 10;
+		ARCADE = 11;
+		SIMULATION = 12;
+		ROLE_PLAYING = 13;
+		PUZZLE = 14;
+		ADVENTURE = 15;
+		STRATEGY = 16;
+		ACTION = 17;
+		SPORTS = 18;
+		CARD = 19;
+	}
+
+	SCCognacAppsApp_Genre genre = 29;
+
+	enum SCCognacAppsBuildType {
+		PRODUCTION = 0;
+		TEST = 1;
+		DEVELOPMENT = 2;
+	}
+
+	SCCognacAppsBuildType buildType = 30;
+	cognac.SCCognacAppsDevMetadata devMetadata = 31;
+}

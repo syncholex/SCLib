@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.notif;
+
+message ReportDeviceStateResponse {
+	int64 statusCode = 1;
+}

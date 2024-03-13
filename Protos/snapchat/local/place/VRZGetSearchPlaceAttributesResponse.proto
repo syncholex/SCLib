@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZSearchPlaceAttributeResult.proto";
+
+message VRZGetSearchPlaceAttributesResponse {
+	repeated snapchat.local.place.VRZSearchPlaceAttributeResult resultsArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message AdTopicsPreference {
+	bool politicalAdsOptOut = 1;
+	bool alcoholAdsOptOut = 2;
+	bool gamblingAdsOptOut = 3;
+}

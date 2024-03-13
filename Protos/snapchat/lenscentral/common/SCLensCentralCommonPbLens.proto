@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbSnapcode.proto";
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensRejectionErrors.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbPreviewMedia.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensAccountID.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensCta.proto";
+import "snapchat/lenscentral/common/DigitalGood.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbDistribution.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensDiscoverability.proto";
+import "snapchat/lenscentral/common/SCLensCentralCommonPbDistributionRestriction.proto";
+import "snapchat/lenscentral/common/LensCentralStats.proto";
+
+message SCLensCentralCommonPbLens {
+	string id_p = 1;
+	string name = 2;
+	snapchat.lenscentral.common.SCLensCentralCommonPbSnapcode snapcode = 3;
+	string iconURL = 4;
+	repeated string tagsArray = 5;
+	repeated string scanTriggersArray = 6;
+
+	enum SCLensCentralCommonPbVisibility {
+		VISIBILITY_UNSET = 0;
+		VISIBILITY_PUBLIC = 1;
+		VISIBILITY_HIDDEN = 2;
+		VISIBILITY_OFFLINE = 3;
+		VISIBILITY_DONT_PUBLISH_TO_SNAPCHAT = 4;
+	}
+
+	SCLensCentralCommonPbVisibility visibility = 7;
+	string organizationId = 8;
+	string adAccountId = 9;
+
+	enum SCLensCentralCommonPbLensStatus {
+		LENS_STATUS_UNSET = 0;
+		LENS_STATUS_IN_REVIEW = 1;
+		LENS_STATUS_INVALID = 2;
+		LENS_STATUS_READY = 3;
+		LENS_STATUS_FINALIZED = 4;
+		LENS_STATUS_REJECTED = 5;
+		LENS_STATUS_FINALIZING = 6;
+		LENS_STATUS_LIVE = 7;
+		LENS_STATUS_OFFLINE = 8;
+		LENS_STATUS_HIDDEN = 9;
+		LENS_STATUS_AWAITING_PRODUCT_TAGGING = 10;
+		LENS_STATUS_NOT_PUBLISHED_TO_SNAPCHAT = 11;
+		LENS_STATUS_PROCESSING = 12;
+		LENS_STATUS_AVAILABLE = 13;
+	}
+
+	SCLensCentralCommonPbLensStatus status = 10;
+	google.protobuf.GPBTimestamp updatedAt = 11;
+	string updatedBy = 12;
+	bool locked = 13;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensRejectionErrors rejectionErrors = 14;
+	string previewURL = 15;
+	int64 unlockableId = 16;
+	string ownerId = 17;
+	snapchat.lenscentral.common.SCLensCentralCommonPbPreviewMedia previewMedia = 18;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensAccountID lensAccountId = 19;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensCta lensCta = 20;
+	bool isShopping = 21;
+	string primaryCategoryId = 22;
+	string secondaryCategoryId = 23;
+	repeated snapchat.lenscentral.common.DigitalGood digitalGoodsArray = 24;
+	repeated snapchat.lenscentral.common.SCLensCentralCommonPbDistribution distributionsArray = 25;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensDiscoverability discoverability = 26;
+	google.protobuf.GPBTimestamp createdAt = 27;
+
+	enum SCLensCentralCommonPbSourceApplication {
+		SOURCE_APPLICATION_UNSET = 0;
+		SOURCE_APPLICATION_LENS_STUDIO = 1;
+		SOURCE_APPLICATION_LENS_WEB_BUILDER = 2;
+		SOURCE_APPLICATION_BBG_FINALIZATION_TOOL = 3;
+	}
+
+	SCLensCentralCommonPbSourceApplication sourceApplication = 28;
+
+	enum SCLensCentralCommonPbLens_LensCreatorPayoutEligibility {
+		LENS_CREATOR_PAYOUT_ELIGIBILITY_UNSET = 0;
+		LENS_CREATOR_PAYOUT_ELIGIBILITY_PENDING = 1;
+		LENS_CREATOR_PAYOUT_ELIGIBILITY_ELIGIBLE = 2;
+		LENS_CREATOR_PAYOUT_ELIGIBILITY_INELIGIBLE = 3;
+	}
+
+	SCLensCentralCommonPbLens_LensCreatorPayoutEligibility lensCreatorPayoutEligibility = 29;
+
+	enum LensFeature {
+		LENS_FEATURE_UNSET = 0;
+		NEWPORT = 1;
+		ML_COMPONENTS = 2;
+		MUSIC = 3;
+		BRAND = 4;
+		MARKER_IMAGE = 5;
+		MARKER_SNAPCODE = 6;
+		CONNECTED_LENS = 7;
+		COLOCATED = 8;
+		SNAPML_AUDIO = 9;
+		SCAN_COMPONENT = 10;
+		KINNEY = 11;
+		SHOPPING = 12;
+		REMOTE_API = 13;
+		CUSTOM_LANDMARKER = 14;
+		SNAP_TRACKS = 15;
+		THREE_D_BITMOJI = 16;
+		CITY_SCALE = 17;
+		ML_VOICE = 18;
+		IN_LENS_PURCHASE = 19;
+		GIPHY = 20;
+		USE_LOCALIZATION = 21;
+		REMOTE_ASSET = 22;
+		CREATOR_PAYOUT_ENROLLED = 23;
+		MAP_API = 24;
+		CHAT_GPT = 25;
+		MULTIPLE_REMOTE_API = 26;
+		POST_CAPTURE = 27;
+	}
+
+	repeated LensFeature lensFeaturesArray = 30 [packed=true];
+	repeated snapchat.lenscentral.common.SCLensCentralCommonPbDistributionRestriction distributionRestrictionsArray = 31;
+	snapchat.lenscentral.common.LensCentralStats stats = 100;
+}

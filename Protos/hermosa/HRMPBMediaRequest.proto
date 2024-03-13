@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBMediaFileTransferRequest.proto";
+import "hermosa/HRMPBMediaFileDeletionRequest.proto";
+import "hermosa/HRMPBMediaFileMarkTransferredRequest.proto";
+
+message HRMPBMediaRequest {
+
+	enum HRMPBMediaRequest_MediaRequestType {
+		LIST_AVAILABLE_MEDIA = 0;
+		GET_MEDIA_FILE = 1;
+		DELETE_MEDIA_FILE = 2;
+		START_AS_NEED_DELETION = 3;
+		MARK_TRANSFERRED = 4;
+	}
+
+	HRMPBMediaRequest_MediaRequestType type = 1;
+	hermosa.HRMPBMediaFileTransferRequest mediaFileTransferRequest = 2;
+	hermosa.HRMPBMediaFileDeletionRequest mediaFileDeletionRequest = 3;
+	hermosa.HRMPBMediaFileMarkTransferredRequest mediaFileMarkTransferredRequest = 4;
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_AggregatedRating.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Photo.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Review.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Tippet.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_EditorialDescription.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Priceyness.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_PopularitySnippet.proto";
+import "snapchat/local/verrazano/VRZAttributeSource.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_ReviewLandingPage.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_OrderDeliveryDetail.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_ReservationDetail.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_MenuDetail.proto";
+
+message VRZPlaceRatingsAndReviews {
+	string placeId = 1;
+	int64 updatedAtMs = 2;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_AggregatedRating aggregatedRatingsArray = 3;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Photo photosArray = 4;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Review reviewsArray = 5;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Tippet tippetsArray = 6;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_EditorialDescription editorialDescriptionArray = 7;
+	snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Priceyness priceyness = 8;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_PopularitySnippet popularitySnippetArray = 9;
+	snapchat.local.verrazano.VRZAttributeSource menuURL = 10;
+	snapchat.local.verrazano.VRZAttributeSource reservationURL = 11;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_ReviewLandingPage reviewLandingPagesArray = 12;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_OrderDeliveryDetail orderDeliveryDetailsArray = 13;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_ReservationDetail reservationDetailsArray = 14;
+	snapchat.local.verrazano.VRZPlaceRatingsAndReviews_MenuDetail menuDetails = 15;
+}

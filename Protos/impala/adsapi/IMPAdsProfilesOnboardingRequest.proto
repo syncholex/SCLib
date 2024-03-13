@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsProfileOnboardingRequest.proto";
+
+message IMPAdsProfilesOnboardingRequest {
+	repeated impala.adsapi.IMPAdsProfileOnboardingRequest organizationsArray = 1;
+}

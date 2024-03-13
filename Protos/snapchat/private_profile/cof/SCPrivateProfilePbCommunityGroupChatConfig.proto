@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbCommunityGroupChatConfig {
+	bool featureEnabled = 1;
+	bool collegeEnabled = 2;
+	bool highschoolEnabled = 3;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1Asset {
+	int32 id_p = 1;
+
+	enum SCMT1Asset_Type {
+		NON_CLUSTERABLE = 0;
+		NON_CLUSTERABLE_PAIR = 1;
+		CLUSTERABLE = 2;
+		PROP = 3;
+		FLOOR = 4;
+		PERSON = 5;
+	}
+
+	SCMT1Asset_Type type = 2;
+	string name = 3;
+
+	enum SCMT1Asset_Status {
+		ENABLED = 0;
+	}
+
+	SCMT1Asset_Status status = 4;
+	string leftId = 5;
+	string rightId = 6;
+	bool hasShadow = 7;
+	string URL = 8;
+	bool isMotion = 9;
+	bool isClusterable = 10;
+	bool isNonClusterable = 11;
+	bool isUnsafeToAutoAssign = 12;
+}

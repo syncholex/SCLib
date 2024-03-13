@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensARBarCofConfig_Unlock {
+	uint32 capacity = 1;
+	uint32 step = 2;
+}

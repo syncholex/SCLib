@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.cof;
+
+message SCBitmojiProfilePbBitmojiProfileFlatlandWebViewConfig {
+	bool enabled = 1;
+
+	enum SCBitmojiProfilePbBitmojiProfileFlatlandWebViewConfig_WebViewType {
+		UNSET = 0;
+		EMPTY = 1;
+		NATIVE_IMAGE_DOWNLOAD = 2;
+		WEB_IMAGE_DOWNLOAD = 3;
+	}
+
+	SCBitmojiProfilePbBitmojiProfileFlatlandWebViewConfig_WebViewType webViewType = 2;
+}

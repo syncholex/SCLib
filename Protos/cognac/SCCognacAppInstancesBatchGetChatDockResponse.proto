@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesChatDock.proto";
+
+message SCCognacAppInstancesBatchGetChatDockResponse {
+	repeated cognac.SCCognacAppInstancesChatDock chatDocksArray = 1;
+}

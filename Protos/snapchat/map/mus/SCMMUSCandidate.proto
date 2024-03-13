@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/mus/SCMMUSFriendTravelStatusPayload.proto";
+import "snapchat/map/mus/SCMMUSFriendsUpgradedToLivePayload.proto";
+
+message SCMMUSCandidate {
+	snapchat.core.SCCOREUUID recipientUserId = 1;
+
+	enum SCMMUSCandidate_CandidateType {
+		CANDIDATE_TYPE_UNSET = 0;
+		CANDIDATE_TYPE_FRIEND_TRAVEL_STATUS = 1;
+		CANDIDATE_TYPE_FRIEND_TRAVEL_STATUS_BACK_IN_TOWN = 2;
+		CANDIDATE_TYPE_FRIENDS_UPGRADED_TO_LIVE = 3;
+	}
+
+	SCMMUSCandidate_CandidateType candidateType = 2;
+	int64 expirationTimestampMs = 3;
+	string title = 4;
+	string subtitle = 5;
+	bool shouldProcessOffline = 6;
+
+	oneof payload {
+		snapchat.map.mus.SCMMUSFriendTravelStatusPayload friendTravelStatusPayload = 100;
+		snapchat.map.mus.SCMMUSFriendsUpgradedToLivePayload friendsUpgradedToLivePayload = 101;
+	}
+
+}

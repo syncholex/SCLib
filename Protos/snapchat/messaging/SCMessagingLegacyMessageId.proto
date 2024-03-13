@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingLegacyMessageId {
+
+	oneof legacyMessageId {
+		snapchat.messaging.SCMessagingUUID chatMessageId = 1;
+		int64 oneOnOneSnapId = 2;
+		string stringMessageId = 3;
+	}
+
+	bool isLowercase = 4;
+}

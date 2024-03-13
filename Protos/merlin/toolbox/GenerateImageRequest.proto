@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/ImageGenerationConfig.proto";
+
+message GenerateImageRequest {
+	merlin.toolbox.ImageGenerationConfig config = 1;
+
+	enum ImageGenerationUseCase {
+		UNSET = 0;
+		MY_AI_TEXT_TO_IMAGE = 1;
+		MY_AI_STORY = 2;
+		MY_AI_IMAGE_TO_IMAGE = 3;
+		MY_AI_GALAHAD = 4;
+	}
+
+	ImageGenerationUseCase useCase = 2;
+}

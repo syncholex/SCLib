@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message TivLandingPageMetadata {
+	string bitmojiAvatarId = 1;
+}

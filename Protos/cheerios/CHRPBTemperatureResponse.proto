@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBTemperatureResponse {
+	float mainSocTempC = 1;
+	int32 imageSensorTempC = 2;
+
+	enum CHRPBTemperatureResponse_TemperatureStatus {
+		TEMPERATURE_NORMAL_UNSET = 0;
+		TEMPERATURE_LOW = 1;
+		TEMPERATURE_HIGH = 2;
+	}
+
+	CHRPBTemperatureResponse_TemperatureStatus status = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.snapshots.api;
+
+message SCSnapshotsPbModerationDeleteSnapshotResponse {
+
+	enum SCSnapshotsPbModerationDeleteSnapshotResponse_Status {
+		UNSET = 0;
+		DELETED = 1;
+		NOT_FOUND = 2;
+		NOT_MATCH = 3;
+	}
+
+	SCSnapshotsPbModerationDeleteSnapshotResponse_Status status = 1;
+}

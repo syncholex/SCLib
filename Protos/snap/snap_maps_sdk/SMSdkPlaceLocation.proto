@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkPlaceLocation {
+	string kindName = 6;
+}

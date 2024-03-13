@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiIsCostumeCompatibleResponse {
+	bool isCostumeCompatible = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/snapdoc/SDMImageMetadata.proto";
+
+message SCSDOMImageAttributes {
+	google.protobuf.GPBEmpty imageClip = 1;
+	snapchat.snapdoc.SDMImageMetadata imageMetadata = 2;
+}

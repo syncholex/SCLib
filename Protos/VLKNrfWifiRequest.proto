@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message VLKNrfWifiRequest {
+
+	enum VLKNrfWifiRequest_NrfWifiRequestType {
+		START_AP = 1;
+		START_P2P = 2;
+		STOP = 3;
+		START_STA = 4;
+	}
+
+	VLKNrfWifiRequest_NrfWifiRequestType requestType = 1;
+	string name = 2;
+	int32 frequencyChannel = 3;
+	string ssidPassword = 4;
+}

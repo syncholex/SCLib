@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCLegacyDeltaPullParams.proto";
+
+message MFCDeltaPull {
+
+	oneof variant {
+		ranking.serving.jaguar.feed.MFCLegacyDeltaPullParams legacyDeltaPullParams = 1;
+		bytes deltaPullToken = 2;
+	}
+
+}

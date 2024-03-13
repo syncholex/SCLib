@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+message SCULInfoCard_Attachment_WebView {
+	string webViewURL = 1;
+	bool shouldAutoFill = 2;
+}

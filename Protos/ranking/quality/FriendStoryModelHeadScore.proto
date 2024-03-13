@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message FriendStoryModelHeadScore {
+	string name = 1;
+	float score = 2;
+}

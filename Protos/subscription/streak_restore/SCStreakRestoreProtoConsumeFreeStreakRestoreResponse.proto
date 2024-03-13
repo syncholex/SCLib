@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.streak_restore;
+
+message SCStreakRestoreProtoConsumeFreeStreakRestoreResponse {
+
+	enum SCStreakRestoreProtoConsumeFreeStreakRestoreResponse_Error {
+		ERROR_UNSET = 0;
+		ERROR_NO_FREE_RESTORES_LEFT = 1;
+	}
+
+	SCStreakRestoreProtoConsumeFreeStreakRestoreResponse_Error error = 1;
+}

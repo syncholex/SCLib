@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.topics;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTTopicStickerMemoriesModel {
+	snapchat.core.SCCOREUUID topicId = 1;
+	string stickerText = 2;
+}

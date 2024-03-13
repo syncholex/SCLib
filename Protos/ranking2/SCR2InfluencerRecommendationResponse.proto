@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2InfluencerRecommendationResponse_InfluencerInfo.proto";
+
+message SCR2InfluencerRecommendationResponse {
+	repeated ranking2.SCR2InfluencerRecommendationResponse_InfluencerInfo rankedInfluencersArray = 1;
+}

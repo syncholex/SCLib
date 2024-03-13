@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "feed/core/SCFEEDCompositeStoryId.proto";
+import "snapchat/search/SCS2Publisher.proto";
+
+message SCS2HappeningNow {
+	feed.core.SCFEEDCompositeStoryId compStoryId = 1;
+	string title = 2;
+	string publisherName = 3;
+	double timestampMs = 5;
+	string thumbnailURL = 6;
+	snapchat.search.SCS2Publisher publisher = 7;
+	int64 editionId = 8;
+	string category = 9;
+	bool isBreaking = 10;
+	string horizontalPublisherIconURL = 11;
+	bool isOptInNotificationStory = 12;
+}

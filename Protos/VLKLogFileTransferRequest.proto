@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+import "VLKRange.proto";
+
+message VLKLogFileTransferRequest {
+	string name = 1;
+	VLKRange range = 2;
+}

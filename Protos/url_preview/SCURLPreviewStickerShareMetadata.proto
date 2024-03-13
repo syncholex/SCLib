@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package url_preview;
+
+import "url_preview/SCURLPreviewMedia.proto";
+
+message SCURLPreviewStickerShareMetadata {
+	string appId = 1;
+	string publisherId = 2;
+	url_preview.SCURLPreviewMedia sticker = 3;
+	bool suppressSticker = 4;
+}

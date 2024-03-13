@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPWatchedState.proto";
+
+message IMPShowWatchedState {
+	string showId = 1;
+	impala.IMPWatchedState lastWatchedEpisode = 2;
+	impala.IMPWatchedState highestWatchedEpisode = 3;
+	bool showProfileViewed = 4;
+	repeated impala.IMPWatchedState lastWatchedEpisodesArray = 5;
+}

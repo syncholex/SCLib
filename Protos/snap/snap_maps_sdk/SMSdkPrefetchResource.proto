@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkPrefetchResource {
+
+	enum SMSdkPrefetchResource_Method {
+		UNKNOWN = 0;
+		HTTP_GET = 1;
+		HTTP_POST = 2;
+	}
+
+	SMSdkPrefetchResource_Method method = 1;
+	string URL = 2;
+}

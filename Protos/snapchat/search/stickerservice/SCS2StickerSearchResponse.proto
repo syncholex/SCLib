@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/stickerservice/SCS2StickerSection.proto";
+import "snapchat/search/SCS2ServiceDebug.proto";
+
+message SCS2StickerSearchResponse {
+	repeated snapchat.search.stickerservice.SCS2StickerSection sectionsArray = 1;
+	string debugHtml = 2;
+	snapchat.search.SCS2ServiceDebug serviceDebug = 3;
+}

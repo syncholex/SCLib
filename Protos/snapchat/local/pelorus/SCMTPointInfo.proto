@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.pelorus;
+
+message SCMTPointInfo {
+	double bearing = 1;
+	double distance = 2;
+	double likelyDistance = 3;
+}

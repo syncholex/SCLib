@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.bloops;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCCameosCameosAdsPolicyResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}

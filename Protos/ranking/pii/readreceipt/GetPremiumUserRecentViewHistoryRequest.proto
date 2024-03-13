@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+
+message GetPremiumUserRecentViewHistoryRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	ranking.core.SCSCOREUUID userId = 2;
+	int32 maxStoryPerPublisher = 3;
+	int64 afterTimestampMs = 4;
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	PremiumContentType_Enum contentType = 5;
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	repeated PremiumContentType_Enum contentTypeListArray = 6 [packed=true];
+}

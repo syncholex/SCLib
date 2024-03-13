@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPMediaInfo {
+	string highlightSnapId = 1;
+
+	enum IMPUploadMediaType {
+		UNKNOWN = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+	}
+
+	IMPUploadMediaType mediaType = 2;
+	bytes boltContentObject = 3;
+	string thumbnailContentURL = 4;
+	string decryptedBurntInContentURL = 5;
+	string mediaContentURL = 6;
+	int64 timestampMs = 7;
+	string highlightSpotlightId = 8;
+	string boltContentURL = 9;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/ChatCompletionOpenAI_Message.proto";
+import "merlin/toolbox/ResponseFormat.proto";
+
+message ChatCompletionOpenAI {
+	string model = 1;
+	repeated merlin.toolbox.ChatCompletionOpenAI_Message messagesArray = 2;
+	float temperature = 3;
+	string user = 5;
+	uint32 maxTokens = 6;
+	float topP = 7;
+	merlin.toolbox.ResponseFormat responseFormat = 8;
+}

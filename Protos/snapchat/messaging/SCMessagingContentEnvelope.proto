@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingContentEnvelope_RemoteMediaInfo.proto";
+import "snapchat/messaging/SCMessagingEnvelopeEncryption.proto";
+import "snapchat/messaging/SCMessagingContentEnvelope_MediaReferenceList.proto";
+import "snapchat/messaging/SCMessagingContentEnvelope_DisplayInfo.proto";
+import "snapchat/messaging/SCMessagingContentEnvelope_Thumbnails.proto";
+import "snapchat/messaging/SCMessagingContentEnvelope_FeedDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingAudioNoteMetadata.proto";
+import "snapchat/messaging/SCMessagingContentEnvelope_BotMentionResponseMetadata.proto";
+import "snapchat/messaging/SCMessagingSnapReplyMetadata.proto";
+import "snapchat/messaging/SCMessagingShareMetadata.proto";
+import "snapchat/messaging/SCMessagingMediaMetadataInfo.proto";
+
+message SCMessagingContentEnvelope {
+	repeated snapchat.messaging.SCMessagingContentEnvelope_RemoteMediaInfo mediaInfoArray = 1;
+
+	enum SCMessagingContentEnvelope_ContentType {
+		SNAP = 0;
+		CHAT = 1;
+		EXTERNAL_MEDIA = 2;
+		SHARE = 3;
+		NOTE = 4;
+		STICKER = 5;
+		STATUS = 6;
+		LOCATION = 8;
+		STATUS_SAVE_TO_CAMERA_ROLL = 9;
+		STATUS_CONVERSATION_CAPTURE_SCREENSHOT = 10;
+		STATUS_CONVERSATION_CAPTURE_RECORD = 11;
+		STATUS_CALL_MISSED_VIDEO = 12;
+		STATUS_CALL_MISSED_AUDIO = 13;
+		STATUS_INVITE_LINK_CHANGE = 14;
+		CANVAS_APP = 15;
+		LIVE_LOCATION_SHARE = 16;
+		CREATIVE_TOOL_ITEM = 17;
+		FAMILY_CENTER_INVITE = 18;
+		FAMILY_CENTER_ACCEPT = 19;
+		FAMILY_CENTER_LEAVE = 20;
+		SNAP_NOT_VIEWABLE = 21;
+		STATUS_PLUS_GIFT = 22;
+		NON_PARTICIPANT_BOT_RESPONSE = 23;
+		EEL_UPGRADE_PROMPT = 24;
+		PROMPT_LENS_RESPONSE = 25;
+		TINY_SNAP = 26;
+		STATUS_COUNTDOWN = 27;
+		MAP_REACTION = 28;
+	}
+
+	SCMessagingContentEnvelope_ContentType contentType = 2;
+	snapchat.messaging.SCMessagingEnvelopeEncryption encryption = 3;
+	bytes contents = 4;
+	repeated snapchat.messaging.SCMessagingContentEnvelope_MediaReferenceList mediaReferenceListsArray = 5;
+	snapchat.messaging.SCMessagingContentEnvelope_DisplayInfo displayInfo = 6;
+
+	enum SCMessagingContentEnvelope_SavePolicy {
+		UNSET = 0;
+		PROHIBITED = 1;
+		LIFETIME = 2;
+		VIEW_SESSION = 3;
+		BUNDLED_VIEW_SESSION = 4;
+	}
+
+	SCMessagingContentEnvelope_SavePolicy savePolicy = 7;
+	snapchat.messaging.SCMessagingContentEnvelope_Thumbnails thumbnails = 8;
+	snapchat.messaging.SCMessagingContentEnvelope_FeedDisplayInfo feedDisplayInfo = 9;
+
+	oneof messageTypeMetadata {
+		snapchat.messaging.SCMessagingAudioNoteMetadata audioNoteMetadata = 11;
+		snapchat.messaging.SCMessagingSnapReplyMetadata snapReplyMetadata = 13;
+		snapchat.messaging.SCMessagingShareMetadata shareMetadata = 14;
+	}
+
+	snapchat.messaging.SCMessagingContentEnvelope_BotMentionResponseMetadata botMentionResponseMetadata = 12;
+	repeated snapchat.messaging.SCMessagingMediaMetadataInfo mediaMetadataInfoListArray = 15;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+message SCNotificationPushNotificationEncryptionData {
+	string encryptionSecret = 1;
+
+	enum SCNotificationEncryptionType {
+		UNKNOWN_ENCRYPTION_TYPE = 0;
+		NO_ENCRYPTION = 1;
+		ENCRYPTION_V1 = 2;
+	}
+
+	SCNotificationEncryptionType encryptionType = 2;
+}

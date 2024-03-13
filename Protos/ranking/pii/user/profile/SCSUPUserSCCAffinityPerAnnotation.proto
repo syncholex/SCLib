@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPUserSCCAffinityFeatureValue.proto";
+import "ranking/pii/user/profile/SCSUPNormalizedStats.proto";
+
+message SCSUPUserSCCAffinityPerAnnotation {
+	ranking.pii.user.profile.SCSUPUserSCCAffinityFeatureValue annotationFeatures = 1;
+	ranking.pii.user.profile.SCSUPNormalizedStats normAnnotationFeatures = 2;
+}

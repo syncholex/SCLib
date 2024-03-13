@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/BadgePolicy_None.proto";
+import "snapchat/notification/BadgePolicy_Increment.proto";
+
+message BadgePolicy {
+
+	oneof policy {
+		snapchat.notification.BadgePolicy_None none = 1;
+		snapchat.notification.BadgePolicy_Increment increment = 2;
+	}
+
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package tokens.entitle;
+
+message SCIAPTokenPbEntitleConsumeItemRequest {
+	string id_p = 1;
+	string appId = 2;
+	string itemSku = 3;
+	uint32 consumptionQuantity = 4;
+}

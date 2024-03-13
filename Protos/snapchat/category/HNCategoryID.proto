@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.category;
+
+message HNCategoryID {
+	string value = 1;
+}

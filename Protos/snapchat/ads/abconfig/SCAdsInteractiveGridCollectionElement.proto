@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveGridCollectionDefaultAttachment.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveGridCollectionItem.proto";
+
+message SCAdsInteractiveGridCollectionElement {
+
+	oneof value {
+		snapchat.ads.abconfig.SCAdsInteractiveGridCollectionDefaultAttachment defaultAttachment = 1;
+		snapchat.ads.abconfig.SCAdsInteractiveGridCollectionItem collectionItem = 2;
+	}
+
+}

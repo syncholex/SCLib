@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGArSegmentationFilter_PurikuraPatternItem {
+	string uuid = 1;
+	string URL = 2;
+	int32 thumbnailX = 3;
+	int32 thumbnailY = 4;
+	int32 thumbnailWidth = 5;
+	int32 thumbnailHeight = 6;
+	string colorFilter = 7;
+	bool bokeh = 8;
+	string beauty = 9;
+}

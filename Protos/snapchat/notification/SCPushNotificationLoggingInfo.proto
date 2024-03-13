@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationLoggingInfo {
+	string browserInfo = 1;
+	int64 tokenCreationTime = 2;
+	float loggingSampleRate = 3;
+	string sampleReason = 4;
+	string contentIdentifier = 5;
+	bool isEmployee = 6;
+	string appVersionMajor = 7;
+	string appVersionMinor = 8;
+	string appVersionBug = 9;
+	string appVariant = 10;
+	string osVersion = 11;
+	string lastRegion = 12;
+	string lastCountry = 13;
+	string userNameForBlizzard = 14;
+	string deviceType = 15;
+	string senderOrigin = 16;
+	float sendTime = 17;
+	bool isLogOutNotification = 18;
+	string pushType = 19;
+	string senderUserGuid = 20;
+	bool isSenderUserNameMissing = 21;
+	int32 resendCount = 22;
+	bool isSilent = 23;
+	string recipientUserGuid = 24;
+}

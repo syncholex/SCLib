@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbAddFamilyPlanParticipantResponse {
+
+	enum SCSubscriptionShopPbAddFamilyPlanParticipantResponse_Error {
+		ERROR_UNSET = 0;
+		ERROR_FAMILY_PLAN_NOT_FOUND = 1;
+		ERROR_MAX_PARTICIPANTS_EXCEEDED = 2;
+		ERROR_PARTICIPANT_ON_EXISTING_PLAN = 3;
+	}
+
+	SCSubscriptionShopPbAddFamilyPlanParticipantResponse_Error error = 1;
+}

@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMMediaMetadata_MediaEncryptionInfo.proto";
+import "snapchat/snapdoc/SDMMediaMetadata_MediaDimensions.proto";
+import "snapchat/snapdoc/SDMMediaMetadata_LegacyMediaSource.proto";
+import "snapchat/content/MediaReference.proto";
+import "snapchat/snapdoc/SDMMediaId.proto";
+import "snapchat/snapdoc/SDMCaptureCharacteristics.proto";
+import "snapchat/snapdoc/SDMAudioMetadata.proto";
+import "snapchat/snapdoc/SDMImageMetadata.proto";
+import "snapchat/snapdoc/SDMVideoMetadata.proto";
+import "snapchat/snapdoc/SDMMediaOriginCamera.proto";
+import "snapchat/snapdoc/SDMMediaOriginExternalStorage.proto";
+import "snapchat/snapdoc/SDMMediaOriginPixy.proto";
+import "snapchat/snapdoc/SDMMediaOriginSpectacles.proto";
+import "snapchat/snapdoc/SDMMediaOriginAI.proto";
+
+message SDMMediaMetadata {
+
+	enum SDMMediaMetadata_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		GIF = 2;
+		AUDIO = 3;
+		UNKNOWN = 4;
+	}
+
+	SDMMediaMetadata_MediaType type = 2;
+
+	enum SDMMediaMetadata_Orientation {
+		VERTICAL = 0;
+		HORIZONTAL = 1;
+	}
+
+	SDMMediaMetadata_Orientation orientation = 3;
+	snapchat.snapdoc.SDMMediaMetadata_MediaEncryptionInfo encryptionInfoV1 = 4;
+	snapchat.snapdoc.SDMMediaMetadata_MediaDimensions dimensions = 5;
+
+	oneof sourceMedia {
+		snapchat.snapdoc.SDMMediaMetadata_LegacyMediaSource legacyMediaSource = 6;
+		bytes contentDescriptor = 7;
+	}
+
+	string mediaURL = 9;
+	bool hasSound = 12;
+	bool zipped = 13;
+	bool frontFacing = 14;
+	uint32 mediaDurationMs = 15;
+	snapchat.content.MediaReference mediaReference = 17;
+	snapchat.snapdoc.SDMMediaId mediaId = 18;
+	snapchat.snapdoc.SDMMediaMetadata_MediaEncryptionInfo encryptionInfoV2 = 19;
+
+	enum Asset_AssetType {
+		UNSET = 0;
+		BLOOPS_STICKER = 1;
+		MUSIC = 2;
+		RAW_MEDIA = 3;
+		CANVAS_STICKER = 4;
+		BASE_MEDIA = 5;
+		OVERLAY = 6;
+		EDITS = 7;
+		FIRST_FRAME = 8;
+		THUMBNAIL = 9;
+		CAMEO = 10;
+		WEB_THUMBNAIL = 11;
+		WEB_MEDIA = 12;
+		LENS_ASSET = 13;
+		VOICEOVER = 14;
+		AVATAR_IMAGE = 15;
+		SPECTACLES_SIXDOF = 16;
+		PLAIN_MEDIA = 17;
+		LENS_MEDIA = 18;
+		LOCAL_BURN_IN_ASSET = 19;
+	}
+
+	Asset_AssetType assetType = 20;
+	snapchat.snapdoc.SDMCaptureCharacteristics captureCharacteristics = 21;
+
+	enum SDMMediaMetadata_DisplayOrientation {
+		UNSET = 0;
+		UP = 1;
+		DOWN = 2;
+		LEFT = 3;
+		RIGHT = 4;
+		UP_MIRRORED = 5;
+		DOWN_MIRRORED = 6;
+		LEFT_MIRRORED = 7;
+		RIGHT_MIRRORED = 8;
+	}
+
+	SDMMediaMetadata_DisplayOrientation displayOrientation = 22;
+	snapchat.snapdoc.SDMAudioMetadata audio = 23;
+	snapchat.snapdoc.SDMImageMetadata image = 24;
+	snapchat.snapdoc.SDMVideoMetadata video = 25;
+
+	oneof origin {
+		snapchat.snapdoc.SDMMediaOriginCamera mediaOriginCamera = 26;
+		snapchat.snapdoc.SDMMediaOriginExternalStorage mediaOriginExternalStorage = 27;
+		snapchat.snapdoc.SDMMediaOriginPixy mediaOriginPixy = 28;
+		snapchat.snapdoc.SDMMediaOriginSpectacles mediaOriginSpectacles = 29;
+		snapchat.snapdoc.SDMMediaOriginAI mediaOriginAi = 30;
+	}
+
+}

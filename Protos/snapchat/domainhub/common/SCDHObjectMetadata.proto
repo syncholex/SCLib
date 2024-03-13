@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHTrackingData.proto";
+import "snapchat/domainhub/common/SCDHDatasetReference.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCDHObjectMetadata {
+	int32 objectVersion = 1;
+	bool archived = 2;
+	snapchat.domainhub.common.SCDHTrackingData trackingData = 3;
+	string branchName = 4;
+	string mainBranchId = 5;
+	string sourceId = 6;
+	repeated snapchat.domainhub.common.SCDHDatasetReference snapshotArray = 7;
+	int32 sourceVersion = 8;
+	string checksum = 9;
+	google.protobuf.GPBTimestamp expiresAt = 10;
+}

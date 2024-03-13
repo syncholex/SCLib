@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/CalculateActionStickerRequest.proto";
+
+message BatchCalculateActionStickerForUserRequest {
+	string actionmojiId = 1;
+	string username = 2;
+	repeated actionmoji.CalculateActionStickerRequest requestsArray = 3;
+}

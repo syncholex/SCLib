@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/OurStoryFilter.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/storymanagement/UserStoryFilter.proto";
+import "ranking/storymanagement/CustomStoryFilter.proto";
+import "ranking/storymanagement/SnapProStoryFilter.proto";
+import "ranking/storymanagement/SavedStoryFilter.proto";
+
+message StoryQuery {
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 1;
+
+	oneof storyFilter {
+		ranking.storymanagement.OurStoryFilter ourstoryFilter = 2;
+		ranking.storymanagement.UserStoryFilter userstoryFilter = 4;
+		ranking.storymanagement.CustomStoryFilter customstoryFilter = 5;
+		ranking.storymanagement.SnapProStoryFilter snapprostoryFilter = 6;
+		ranking.storymanagement.SavedStoryFilter savedstoryFilter = 7;
+	}
+
+	ranking.core.SCSCOREUUID storyId = 3;
+}

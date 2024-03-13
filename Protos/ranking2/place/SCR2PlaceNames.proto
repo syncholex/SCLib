@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+message SCR2PlaceNames {
+	string name = 1;
+	string shortName = 2;
+	string abbrName = 3;
+	repeated string aliasArray = 4;
+	string nameByLang = 5;
+}

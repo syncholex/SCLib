@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.store;
+
+message SnapCommercePolicy {
+	string snapCommercePolicyURL = 1;
+	string snapCommercePolicyLabel = 2;
+}

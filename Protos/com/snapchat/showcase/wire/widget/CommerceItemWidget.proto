@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommerceItemWidgetHeader.proto";
+import "com/snapchat/showcase/wire/widget/CommerceAction.proto";
+
+message CommerceItemWidget {
+	com.snapchat.showcase.wire.widget.CommerceItemWidgetHeader header = 1;
+	uint64 limit = 2;
+
+	enum CommerceItemDescriptionType {
+		DESCRIPTION_TYPE_UNSET = 0;
+		SINGLE_MERCHANT = 1;
+		MULTI_MERCHANT = 2;
+	}
+
+	CommerceItemDescriptionType descriptionType = 3;
+	com.snapchat.showcase.wire.widget.CommerceAction actionForSection = 4;
+}

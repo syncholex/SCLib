@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbBusinessApiSetVisibilityRequest {
+	string userId = 1;
+	string lensId = 2;
+
+	enum SCLensCentralCommonPbVisibility {
+		VISIBILITY_UNSET = 0;
+		VISIBILITY_PUBLIC = 1;
+		VISIBILITY_HIDDEN = 2;
+		VISIBILITY_OFFLINE = 3;
+		VISIBILITY_DONT_PUBLISH_TO_SNAPCHAT = 4;
+	}
+
+	SCLensCentralCommonPbVisibility visibility = 3;
+}

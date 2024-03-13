@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZContactInfo_PhoneNumber.proto";
+
+message VRZContactInfo {
+	snapchat.local.verrazano.VRZContactInfo_PhoneNumber phoneNumber = 1;
+	repeated snapchat.local.verrazano.VRZContactInfo_PhoneNumber alternatePhoneNumbersArray = 2;
+	string emailAddress = 3;
+	string website = 4;
+	string menuURL = 5;
+}

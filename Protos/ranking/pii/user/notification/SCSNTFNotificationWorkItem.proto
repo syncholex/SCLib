@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFNotificationRequest.proto";
+
+message SCSNTFNotificationWorkItem {
+	ranking.pii.user.notification.SCSNTFNotificationRequest request = 1;
+	string startKey = 2;
+	string endKey = 3;
+}

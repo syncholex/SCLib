@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/map/slippy/SCMapsSlippyReaction.proto";
+
+message SCMapsSlippyUpdateReactionRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+
+	enum SCMapsSlippyActionName {
+		AN_UNKNOWN = 0;
+		AN_LOCATION_SHARE = 1;
+		AN_LIVE_LOCATION_UPSELL = 2;
+	}
+
+	SCMapsSlippyActionName actionName = 2;
+	snapchat.map.slippy.SCMapsSlippyReaction reaction = 3;
+}

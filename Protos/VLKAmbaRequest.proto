@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+import "VLKAuthRequest.proto";
+import "VLKMediaRequest.proto";
+import "VLKFirmwareUpdateUploadRequest.proto";
+import "VLKLogRequest.proto";
+
+message VLKAmbaRequest {
+	VLKAuthRequest authRequest = 3;
+	VLKMediaRequest mediaRequest = 4;
+	VLKFirmwareUpdateUploadRequest fwUpdateUploadRequest = 5;
+	VLKLogRequest logRequest = 6;
+	bool wifiSharingRequest = 7;
+}

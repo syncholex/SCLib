@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHDeleteScanSessionsRequestV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHDeleteScanResultsRequestV1.proto";
+import "snapchat/perception/scan_history/v1/SCPSHDeleteAllScansRequestV1.proto";
+import "snapchat/perception/common/SCPCNCOFConfig.proto";
+
+message SCPSHDeleteScanHistoryRequest {
+
+	oneof request {
+		snapchat.perception.scan_history.v1.SCPSHDeleteScanSessionsRequestV1 deleteScanSessionsRequestV1 = 1;
+		snapchat.perception.scan_history.v1.SCPSHDeleteScanResultsRequestV1 deleteScanResultsRequestV1 = 2;
+		snapchat.perception.scan_history.v1.SCPSHDeleteAllScansRequestV1 deleteAllScansRequestV1 = 3;
+	}
+
+	string id_p = 4;
+	repeated snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 5;
+}

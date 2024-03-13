@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map.friends;
+
+message SCMEUser {
+	string userId = 1;
+}

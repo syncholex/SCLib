@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASTrackMatch {
+	string submissionId = 1;
+	string trackId = 2;
+	double matchTime = 3;
+	int32 matchScore = 4;
+	double matchLength = 5;
+}

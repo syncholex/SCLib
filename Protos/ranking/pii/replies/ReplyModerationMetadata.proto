@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/ReplyIdentifier.proto";
+
+message ReplyModerationMetadata {
+	ranking.pii.replies.ReplyIdentifier replyIdentifier = 1;
+	bytes moderationFeatures = 2;
+}

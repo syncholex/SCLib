@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsProfileLevelInsightsForUser.proto";
+
+message IMPInsightsGetProfileInsightsForUserResponse {
+	impala.insights.IMPInsightsProfileLevelInsightsForUser profileInsightsForUser = 1;
+}

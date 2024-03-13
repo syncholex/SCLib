@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPRoleSpecification.proto";
+
+message IMPGrantRoleToUserRequest {
+	string businessId = 1;
+	string receivingUserId = 2;
+	string roleType = 6;
+	impala.IMPRoleSpecification role = 7;
+}

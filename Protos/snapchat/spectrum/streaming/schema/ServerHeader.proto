@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+import "snapchat/spectrum/streaming/schema/UserLocation.proto";
+import "snapchat/spectrum/streaming/schema/SpectrumAuthStatus.proto";
+
+message ServerHeader {
+	int64 serverTimestampMsecs = 1;
+	snapchat.spectrum.streaming.schema.UserLocation userLocation = 2;
+	int64 uploadTimestampMsecs = 3;
+	bool attestationSuccess = 4;
+	string attestationFailureReason = 5;
+	snapchat.spectrum.streaming.schema.SpectrumAuthStatus authStatus = 6;
+	string serverUserGuid = 7;
+	string userAgent = 8;
+	string meshLoggerMaxSequenceId = 9;
+	string meshLoggerInstanceId = 10;
+	string clientIp = 11;
+}

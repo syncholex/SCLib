@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKMediaFileDeletionLogicRequest {
+	string uuid = 1;
+	bool includeHq = 2;
+}

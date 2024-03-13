@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+message SCCameosError {
+
+	enum SCCameosErrorStatus {
+		UNKNOWN = 0;
+		NO_CONTENT = 204;
+		BAD_REQUEST = 400;
+		UNAUTHORIZED = 401;
+		FORBIDDEN = 403;
+		NOT_FOUND = 404;
+		NOT_ACCEPTABLE = 406;
+		CONFLICT = 409;
+		TOO_MANY_REQUESTS = 429;
+		INTERNAL_ERROR = 500;
+		TIMEOUT = 504;
+		ALD_TRIGGERED = 410;
+	}
+
+	SCCameosErrorStatus status = 1;
+	string message = 2;
+	string errorCode = 3;
+}

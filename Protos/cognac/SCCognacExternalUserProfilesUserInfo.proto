@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacExternalUserProfilesUserInfo {
+	string userId = 1;
+	string avatarId = 2;
+}

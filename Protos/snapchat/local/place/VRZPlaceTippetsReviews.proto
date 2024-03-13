@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Tippet.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_Review.proto";
+import "snapchat/local/verrazano/VRZPlaceRatingsAndReviews_ReviewLandingPage.proto";
+
+message VRZPlaceTippetsReviews {
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Tippet tippetsArray = 1;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_Review reviewsArray = 2;
+	repeated snapchat.local.verrazano.VRZPlaceRatingsAndReviews_ReviewLandingPage reviewLandingPagesArray = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message VRZPlacePhotoData {
+	bytes boltContentObject = 1;
+	snapchat.geo.SPCGPoint captureLocation = 2;
+	float altitudeM = 3;
+	uint64 timestampMs = 4;
+	string boltResourceUri = 5;
+	google.protobuf.GPBBoolValue isPhotoCaptureRemote = 6;
+}

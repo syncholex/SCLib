@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiStartUGCGenerationResponse {
+	string requestId = 1;
+	string productId = 2;
+	uint32 numFreeGenerations = 3;
+	uint32 numPlusGenerations = 4;
+	bool isPlus = 5;
+}

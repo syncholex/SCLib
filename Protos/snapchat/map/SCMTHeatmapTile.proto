@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTHeatmapPoint.proto";
+import "snapchat/map/SCMTHeatmapFuzzPoint.proto";
+
+message SCMTHeatmapTile {
+	repeated snapchat.map.SCMTHeatmapPoint pointsArray = 1;
+	repeated snapchat.map.SCMTHeatmapFuzzPoint fuzzedPointsArray = 2;
+	double maximumFuzzRadius = 4;
+}

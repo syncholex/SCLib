@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxMediaInfo.proto";
+
+message GenerateCustomPetsRequest {
+	merlin.toolbox.SCMerlinToolboxMediaInfo petImage = 1;
+	bool skipBgRemoval = 2;
+}

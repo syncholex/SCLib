@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStreamToken_SCCState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_DiversificationState_CreatorDiversificationState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_Snap2InterestTags.proto";
+
+message SCSSMStreamToken_DiversificationState {
+	uint32 suggestiveFreePrefix = 2;
+	uint32 coldStartFreePrefix = 3;
+	repeated bool subscriptionLastWindowArray = 4 [packed=true];
+	repeated bool partnerLastWindowArray = 5 [packed=true];
+	repeated bool nonLocalLastWindowArray = 6 [packed=true];
+	repeated bool nonSnapCameraLastWindowArray = 7 [packed=true];
+	repeated ranking.serving.jaguar.SCSSMStreamToken_SCCState sccLastWindowArray = 8;
+	ranking.serving.jaguar.SCSSMStreamToken_DiversificationState_CreatorDiversificationState creatorDiversificationState = 9;
+	uint32 lastBibStoryIndex = 10;
+	uint32 bibPromotionInSession = 11;
+	repeated double suggestiveLastWindowArray = 13 [packed=true];
+	repeated ranking.serving.jaguar.SCSSMStreamToken_Snap2InterestTags snap2InterestTagWindowArray = 14;
+	int32 snap2InterestTagCount = 15;
+	repeated bool letterboxingLastWindowArray = 16 [packed=true];
+	repeated bool postedByFriendLastWindowArray = 17 [packed=true];
+	repeated int32 storyTypesArray = 18 [packed=true];
+	repeated bool fpsLastWindowArray = 19 [packed=true];
+	repeated bool motionLastWindowArray = 20 [packed=true];
+	repeated bool sharpnessLastWindowArray = 21 [packed=true];
+	repeated bool luminanceLastWindowArray = 22 [packed=true];
+}

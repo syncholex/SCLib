@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2LinkedSearch {
+	string linkedSearchQuery = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message FriendStoryAdjustments {
+	float conversationBoost = 1;
+	float storyTypeBoost = 2;
+	float expireBoost = 3;
+	float teamSnapchatBoost = 4;
+	float optInNotifBoost = 5;
+	float impDemotion = 6;
+	float scpBoost = 7;
+	float impDemotionSigmoid = 8;
+	float sccBoost = 9;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPUploadMediaInfo.proto";
+
+message IMPBoltUploadObject {
+	bytes boltContentObject = 1;
+	impala.highlights.IMPUploadMediaInfo mediaInfo = 2;
+	string mediaKey = 3;
+	string mediaIv = 4;
+}

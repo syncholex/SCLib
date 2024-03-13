@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+import "com/snapchat/atlas/gw/BitmojiPublicInfo.proto";
+
+message SnapchatterPublicInfo {
+	bytes userId = 1;
+	string username = 2;
+	string displayName = 3;
+	bool isOfficial = 4;
+	bool isPopular = 5;
+	string snapProId = 6;
+	string mutableUsername = 7;
+	com.snapchat.atlas.gw.BitmojiPublicInfo bitmojiPublicInfo = 8;
+}

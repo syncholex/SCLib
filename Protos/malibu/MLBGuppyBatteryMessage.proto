@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBGuppyBatteryMessage {
+	int32 batteryLevel = 1;
+	int64 timeSinceUpdatedInMs = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1Html_InlineHtml {
+	string html = 1;
+	string baseURL = 2;
+}

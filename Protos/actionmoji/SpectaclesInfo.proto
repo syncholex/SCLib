@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message SpectaclesInfo {
+	int64 lastContentTakenTimestampMs = 1;
+
+	enum SpectaclesInfo_Color {
+		UNSET = 0;
+		BLACK = 1;
+		CORAL = 2;
+		TEAL = 3;
+		ONYX = 4;
+		RUBY = 5;
+		SAPPHIRE = 6;
+		VERONICA = 7;
+		NICO = 8;
+	}
+
+	SpectaclesInfo_Color color = 2;
+	bool isConnected = 3;
+}

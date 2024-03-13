@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkFriendInfo_Birthday {
+	uint32 birthdayMonth = 1;
+	uint32 birthdayDay = 2;
+}

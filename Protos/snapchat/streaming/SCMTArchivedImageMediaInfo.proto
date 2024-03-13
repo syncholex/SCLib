@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.streaming;
+
+message SCMTArchivedImageMediaInfo {
+	string mediaURL = 1;
+}

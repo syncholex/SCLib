@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message EelClientConfig_DecryptNoFallbackConfig {
+	bool snap = 1;
+	bool text = 2;
+	bool other = 3;
+}

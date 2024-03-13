@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message PriceTier {
+	uint32 tier = 1;
+	uint32 tokens = 2;
+}

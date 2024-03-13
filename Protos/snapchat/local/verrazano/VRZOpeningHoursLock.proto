@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeLock.proto";
+
+message VRZOpeningHoursLock {
+	snapchat.local.verrazano.VRZAttributeLock dayHoursLock = 1;
+	snapchat.local.verrazano.VRZAttributeLock specialHoursLock = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.pins;
+
+import "snapchat/map/pins/SCMPPin.proto";
+
+message SCMPGetPinsResponse {
+	repeated snapchat.map.pins.SCMPPin pinsArray = 1;
+}

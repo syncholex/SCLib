@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsClientRankingAb {
+	int32 rankingSlotId = 1;
+	int64 segmentId = 2;
+	int64 experimentId = 3;
+}

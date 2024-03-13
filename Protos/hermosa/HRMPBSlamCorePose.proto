@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBSE3D.proto";
+import "hermosa/HRMPBTrackingMode.proto";
+import "hermosa/HRMPBPoseType.proto";
+import "hermosa/HRMPBPoseCoordinateSystem.proto";
+
+message HRMPBSlamCorePose {
+	hermosa.HRMPBSE3D pose = 1;
+	hermosa.HRMPBSE3D appliedMapCorrection = 2;
+	int64 poseTimestampNs = 3;
+	hermosa.HRMPBTrackingMode trackingMode = 4;
+	hermosa.HRMPBPoseType poseType = 5;
+	hermosa.HRMPBPoseCoordinateSystem poseCs = 6;
+}

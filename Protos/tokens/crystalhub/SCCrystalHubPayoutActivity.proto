@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+import "tokens/crystalhub/SCCrystalHubPayoutSource.proto";
+import "tokens/crystalhub/SCCrystalHubForfeitInfo.proto";
+
+message SCCrystalHubPayoutActivity {
+
+	enum SCCrystalHubPayoutType {
+		UNKNOWN_UNSET = 0;
+		SPOTLIGHT = 1;
+		GIFT = 2;
+		SPOTLIGHT_CHALLENGE = 3;
+		STORY = 4;
+		PLUS_REFERRAL = 5;
+		LENS_CREATOR_FUND = 6;
+		LENS_ILDG = 7;
+	}
+
+	SCCrystalHubPayoutType payoutType = 1;
+	int64 earnedTimestamp = 2;
+	int64 crystalValue = 3;
+	repeated tokens.crystalhub.SCCrystalHubPayoutSource payoutSourcesArray = 4;
+
+	enum SCCrystalHubPayoutActivity_Status {
+		STATUS_UNSET = 0;
+		STATUS_PENDING = 1;
+		STATUS_COMPLETE = 2;
+		STATUS_FORFEITED = 3;
+	}
+
+	SCCrystalHubPayoutActivity_Status status = 5;
+	string payoutDate = 6;
+	tokens.crystalhub.SCCrystalHubForfeitInfo forfeitInfo = 7;
+}

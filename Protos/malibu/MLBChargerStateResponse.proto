@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBChargerStateResponse {
+	bool isChargerConnected = 1;
+	bool isFullyCharged = 2;
+	int32 batteryTemperatureLeft = 3;
+
+	enum MLBChargerStateResponse_ChargingCurrentRange {
+		CONSTANT_CURRENT_LIMIT_11mA = 0;
+		CONSTANT_CURRENT_LIMIT_23mA = 1;
+		CONSTANT_CURRENT_LIMIT_35mA = 2;
+		CONSTANT_CURRENT_LIMIT_47mA = 3;
+		CONSTANT_CURRENT_LIMIT_59mA = 4;
+		CONSTANT_CURRENT_LIMIT_70mA = 5;
+		CONSTANT_CURRENT_LIMIT_82mA = 6;
+		CONSTANT_CURRENT_LIMIT_94mA = 7;
+		CONSTANT_CURRENT_LIMIT_106mA = 8;
+		CONSTANT_CURRENT_LIMIT_118mA = 9;
+		CONSTANT_CURRENT_LIMIT_130mA = 10;
+		CONSTANT_CURRENT_LIMIT_NOT_AVAILABLE = 11;
+	}
+
+	MLBChargerStateResponse_ChargingCurrentRange chargingLimit = 4;
+	int32 chargingCurrent = 5;
+	int32 batteryTemperatureRight = 6;
+}

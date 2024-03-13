@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextShadow {
+	string color = 1;
+	int32 shadowOffsetX = 2;
+	int32 shadowOffsetY = 3;
+	float blurRadius = 4;
+}

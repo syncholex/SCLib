@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPRemoveItemsByExternalIDResponse_Result.proto";
+
+message SCCTPRemoveItemsByExternalIDResponse {
+	repeated snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDResponse_Result resultsArray = 1;
+}

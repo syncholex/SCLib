@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/geo/SPCGMultiPolygon.proto";
+
+message STOVisibility_Geofence {
+
+	oneof geo {
+		string countryCode = 3;
+		string geofenceId = 4;
+		snapchat.geo.SPCGMultiPolygon fence = 5;
+	}
+
+}

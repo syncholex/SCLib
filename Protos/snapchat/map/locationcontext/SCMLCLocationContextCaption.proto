@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "snapchat/map/locationcontext/SCMLCTimeZoneInfo.proto";
+import "snapchat/map/locationcontext/SCMLCNearbyFriendInfo.proto";
+import "snapchat/map/locationcontext/SCMLCGradient.proto";
+
+message SCMLCLocationContextCaption {
+	string type = 1;
+	string text = 2;
+	int32 effectiveSecsAgo = 3;
+	int32 expireAfterSecs = 4;
+	int32 priority = 5;
+
+	oneof additionalInfo {
+		snapchat.map.locationcontext.SCMLCTimeZoneInfo timeZoneInfo = 6;
+		snapchat.map.locationcontext.SCMLCNearbyFriendInfo nearbyFriendInfo = 7;
+	}
+
+	repeated string titlesArray = 8;
+	snapchat.map.locationcontext.SCMLCGradient lightModeGradient = 9;
+	snapchat.map.locationcontext.SCMLCGradient darkModeGradient = 10;
+}

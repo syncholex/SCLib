@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeChatIcons_Icon.proto";
+
+message SCPlusCustomAppThemeChatIcons {
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeChatIcons_Icon chatNew = 1;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeChatIcons_Icon snapNoAudioNew = 2;
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeChatIcons_Icon snapAudioNew = 3;
+}

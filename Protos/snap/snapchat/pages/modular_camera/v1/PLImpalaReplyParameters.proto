@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.modular_camera.v1;
+
+message PLImpalaReplyParameters {
+	string businessProfileId = 1;
+}

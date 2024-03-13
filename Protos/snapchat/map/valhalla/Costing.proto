@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/Costing_Options.proto";
+
+message Costing {
+	snapchat.map.valhalla.Costing_Options options = 1;
+}

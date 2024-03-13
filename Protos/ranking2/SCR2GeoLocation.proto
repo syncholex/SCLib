@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2GeoLocation {
+	double latitude = 1;
+	double longitude = 2;
+	double altitude = 3;
+	double radiusInMeters = 4;
+	int64 timestampInMsecs = 5;
+}

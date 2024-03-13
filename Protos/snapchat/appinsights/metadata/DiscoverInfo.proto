@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/DiscoverFeedGenerateOperaPlaylistDuplicateId.proto";
+import "snapchat/appinsights/metadata/MixerStoriesDuplicateId.proto";
+import "snapchat/appinsights/metadata/DiscoverFeedStoriesDuplicateSnapId.proto";
+
+message DiscoverInfo {
+
+	oneof messagingInfo {
+		snapchat.appinsights.metadata.DiscoverFeedGenerateOperaPlaylistDuplicateId discoverFeedGenerateOperaPlaylistDuplicateId = 1;
+		snapchat.appinsights.metadata.MixerStoriesDuplicateId mixerStoriesFeedDuplicateId = 2;
+		snapchat.appinsights.metadata.DiscoverFeedStoriesDuplicateSnapId discoverFeedStoriesDuplicateSnapId = 3;
+	}
+
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsLensProductImpressionTrack {
+	int64 productId = 1;
+	google.protobuf.GPBStringValue option = 2;
+	google.protobuf.GPBInt32Value positionIndex = 3;
+	google.protobuf.GPBInt32Value swipedOverCount = 4;
+	google.protobuf.GPBInt64Value totalTimeMillis = 5;
+	google.protobuf.GPBBoolValue withSnapSend = 6;
+	google.protobuf.GPBBoolValue withStoryPost = 7;
+	google.protobuf.GPBBoolValue withSnapSave = 8;
+	google.protobuf.GPBBoolValue productTapped = 9;
+	google.protobuf.GPBInt64Value firstTriggerTimestamp = 10;
+}

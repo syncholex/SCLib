@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2.ast;
+
+import "ranking2/ast/SCR2AstSignal.proto";
+
+message SCR2AstSignals {
+	repeated ranking2.ast.SCR2AstSignal signalArray = 1;
+}

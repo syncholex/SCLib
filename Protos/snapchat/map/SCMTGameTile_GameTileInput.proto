@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/gamedb/SCMTGameMarkerEntry.proto";
+
+message SCMTGameTile_GameTileInput {
+	snapchat.map.gamedb.SCMTGameMarkerEntry gameMarkerEntry = 1;
+	float minZoom = 2;
+}

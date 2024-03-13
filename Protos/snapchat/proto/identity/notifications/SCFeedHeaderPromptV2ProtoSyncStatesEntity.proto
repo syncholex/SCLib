@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.proto.identity.notifications;
+
+import "snapchat/proto/identity/notifications/SCFeedHeaderPromptV2ProtoSyncState.proto";
+
+message SCFeedHeaderPromptV2ProtoSyncStatesEntity {
+	int64 lastInteractedTs = 1;
+	repeated snapchat.proto.identity.notifications.SCFeedHeaderPromptV2ProtoSyncState typesArray = 2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPLogoDimension.proto";
+
+message IMPProfileLogoInfo {
+	impala.IMPLogoDimension heroImageDimension = 1;
+	string primaryColor = 2;
+	string secondaryColor = 3;
+	string originalHeroImageURL = 4;
+	int32 heroImageVerticalPosition = 5;
+}

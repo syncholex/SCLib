@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPProxySource {
+
+	enum SCCTPProxySourceEnum {
+		PROXY_SOURCE_UNSET = 0;
+		PROXY_SOURCE_COLOR = 1;
+		PROXY_SOURCE_MOTION = 2;
+		PROXY_SOURCE_UCO_COLOR = 3;
+		PROXY_SOURCE_UCO_AR = 4;
+		PROXY_SOURCE_VENUE = 5;
+		PROXY_SOURCE_CLIENT_MEDIA = 6;
+	}
+
+}

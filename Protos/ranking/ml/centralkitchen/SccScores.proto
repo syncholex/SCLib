@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+message SccScores {
+	float tagScore = 1;
+	uint32 sccTag = 2;
+}

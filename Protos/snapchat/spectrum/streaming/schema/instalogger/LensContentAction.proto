@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+import "snapchat/spectrum/streaming/schema/instalogger/StoryFeedBaseInfo.proto";
+
+message LensContentAction {
+	snapchat.spectrum.streaming.schema.instalogger.StoryFeedBaseInfo baseInfo = 1;
+
+	enum LensContentAction_ActionType {
+		ACTION_TYPE_UNKNOWN = 0;
+		ACTION_TYPE_SNAP_SAVE = 1;
+		ACTION_TYPE_SNAP_SEND = 2;
+		ACTION_TYPE_SNAP_POST = 3;
+	}
+
+	LensContentAction_ActionType action = 2;
+	int32 numRecipients = 3;
+	bytes attachedInfo = 4;
+}

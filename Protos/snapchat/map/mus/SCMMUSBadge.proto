@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+message SCMMUSBadge {
+	int64 timestampMs = 1;
+}

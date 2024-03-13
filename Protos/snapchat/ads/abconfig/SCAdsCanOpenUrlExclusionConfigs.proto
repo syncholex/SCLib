@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsCanOpenUrlExclusionConfig.proto";
+
+message SCAdsCanOpenUrlExclusionConfigs {
+	repeated snapchat.ads.abconfig.SCAdsCanOpenUrlExclusionConfig canOpenURLExclusionConfigArray = 1;
+}

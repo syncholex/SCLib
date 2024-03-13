@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFOptInResponse_ErrorReason.proto";
+
+message SCSNTFOptInResponse {
+
+	enum SCSNTFOptInResponse_Status_Enum {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		ERROR_BAD_REQUEST = 2;
+	}
+
+	SCSNTFOptInResponse_Status_Enum status = 1;
+	ranking.pii.user.notification.SCSNTFOptInResponse_ErrorReason errorReason = 2;
+}

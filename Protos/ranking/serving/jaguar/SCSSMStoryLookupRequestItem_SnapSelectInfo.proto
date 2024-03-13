@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoryLookupRequestItem_SnapSelectInfo {
+	repeated string snapIdsArray = 1;
+	repeated string snapIdsExcludingModerationArray = 2;
+}

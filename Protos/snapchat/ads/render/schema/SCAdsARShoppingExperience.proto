@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsTapToTryOn.proto";
+
+message SCAdsARShoppingExperience {
+	uint64 unlockableId = 1;
+	snapchat.ads.render.schema.SCAdsTapToTryOn tryOnButton = 2;
+	bytes getShowcaseResponse = 108;
+}

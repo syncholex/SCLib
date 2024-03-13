@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPlaylist.proto";
+
+message SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPreviewItem {
+
+	oneof content {
+		snapchat.creativetools.common.SCCTPMusicTrack track = 1;
+		snapchat.creativetools.common.SCCTPMusicArtist artist = 2;
+		snapchat.music.music_service.SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPlaylist playlist = 3;
+	}
+
+}

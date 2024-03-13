@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+message HeaderEnvelope {
+	bytes clientHeaderBytes = 1;
+	bytes serverHeaderBytes = 2;
+	string sessionId = 3;
+	string partitionKey = 4;
+	int32 kafkaClusterNumber = 5;
+	bytes ingestorHeaderBytes = 6;
+}

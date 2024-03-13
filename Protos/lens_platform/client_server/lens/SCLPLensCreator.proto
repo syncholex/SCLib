@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCLPLensCreator {
+	snapchat.core.SCCOREUUID id_p = 1;
+	string displayName = 2;
+	snapchat.core.SCCOREUUID snapProProfileId = 3;
+	bool deactivated = 4;
+	bool officialLensCreator = 5;
+	bool community = 6;
+}

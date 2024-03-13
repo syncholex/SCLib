@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+message ParticipantInfo {
+	string userId = 1;
+	string displayName = 2;
+}

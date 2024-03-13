@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message WindowedFloatMetrics {
+	float value3D = 1;
+	float value7D = 2;
+	float value14D = 3;
+	float value28D = 4;
+	float value24H = 5;
+	float value18H = 6;
+	float value12H = 7;
+	float value6H = 8;
+	float value3H = 9;
+	float value1H = 10;
+	float value56D = 11;
+	float value84D = 12;
+	float value168D = 13;
+	float value224D = 14;
+	float value280D = 15;
+	float value336D = 16;
+}

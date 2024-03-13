@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+message SCRemoveUnlockRequest {
+	int64 unlockableId = 1;
+
+	enum SCUnlockType {
+		UNLOCK_TYPE_UNSET = 0;
+		EXPIRABLE = 1;
+		NOT_EXPIRABLE = 2;
+		SOCIAL = 3;
+		INVERSE = 4;
+	}
+
+	repeated SCUnlockType unlockTypesArray = 4 [packed=true];
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 5;
+}

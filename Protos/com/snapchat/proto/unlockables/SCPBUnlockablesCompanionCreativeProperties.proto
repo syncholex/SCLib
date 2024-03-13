@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesRatingStickerProperties.proto";
+
+message SCPBUnlockablesCompanionCreativeProperties {
+	string companionCreativeType = 1;
+	bool movable = 2;
+	bool modifiable = 3;
+	com.snapchat.proto.unlockables.SCPBUnlockablesRatingStickerProperties ratingStickerProperties = 4;
+}

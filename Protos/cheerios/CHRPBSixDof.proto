@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBAttitudeFrame.proto";
+import "cheerios/CHRPBCameraData.proto";
+
+message CHRPBSixDof {
+	repeated cheerios.CHRPBAttitudeFrame attitudeDataArray = 1;
+	cheerios.CHRPBCameraData cameraData = 2;
+	float videoFps = 3;
+}

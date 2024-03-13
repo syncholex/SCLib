@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+message CodedDescription {
+	string description_p = 1;
+	uint64 code = 2;
+}

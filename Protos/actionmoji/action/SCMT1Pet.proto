@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1Pet {
+
+	oneof pet {
+		int32 petAssetId = 1;
+		string petRenderURL = 2;
+	}
+
+}

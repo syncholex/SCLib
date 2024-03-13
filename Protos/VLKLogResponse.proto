@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+import "VLKLogFileMetadata.proto";
+
+message VLKLogResponse {
+	repeated VLKLogFileMetadata logFileMetadataArray = 1;
+	bytes logData = 2;
+}

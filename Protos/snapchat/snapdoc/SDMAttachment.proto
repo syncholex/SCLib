@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMAttachment {
+	string remoteURL = 1;
+}

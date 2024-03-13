@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalValidateShareStoreToProfileRequest {
+	string storeOrganizationId = 1;
+	repeated string profileIdsArray = 2;
+	string principalName = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+import "com/snapchat/proto/SCPBIntegerPoint.proto";
+
+message SCPBTextShadowParameters {
+	string color = 1;
+	com.snapchat.proto.SCPBIntegerPoint shadowOffset = 2;
+	float blurRadius = 3;
+}

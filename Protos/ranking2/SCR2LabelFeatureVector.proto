@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2LabelFeatureVector {
+	string version = 1;
+	string tfnode = 2;
+	repeated float featureVectorArray = 3 [packed=true];
+	int32 frameNumber = 4;
+}

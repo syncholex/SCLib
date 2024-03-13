@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+message SCPMDRFastDNNDeliverableModel_Identifier {
+	string name = 1;
+	string flavor = 2;
+
+	enum SCPFDBackend {
+		BACKEND_UNKNOWN = 0;
+		BACKEND_LIBDNN = 1;
+		BACKEND_COREML = 2;
+		BACKEND_SNPE = 4;
+		BACKEND_MACE = 8;
+		BACKEND_HEXAGON = 16;
+		BACKEND_ONNX = 32;
+	}
+
+	SCPFDBackend backend = 3;
+	string version = 4;
+}

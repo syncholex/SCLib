@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/core/SCCPCharmDescription.proto";
+import "snapchat/charms/core/SCCPCharmGraphic.proto";
+
+message SCCPCharm {
+	int32 identifier = 1;
+	string displayName = 2;
+	snapchat.charms.core.SCCPCharmDescription description_p = 3;
+	string dialogButtonText = 4;
+	snapchat.charms.core.SCCPCharmGraphic graphic = 5;
+	bool hideable = 6;
+	sint64 displayOrder = 7;
+}

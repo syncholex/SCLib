@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.topicstickervending;
+
+import "snapchat/topicsticker/TopicStickerId.proto";
+
+message GetTopicStickersRequest {
+	repeated snapchat.topicsticker.TopicStickerId idsArray = 1;
+	bool consistentRead = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTMotionData.proto";
+import "snapchat/map/SCMTDeviceData.proto";
+
+message SCMTUserLocationRequest {
+	float lat = 1;
+	float lng = 2;
+	float altitude = 9;
+	float horizontalAccuracy = 10;
+	float verticalAccuracy = 11;
+	snapchat.map.SCMTMotionData motionData = 12;
+	int64 locationUpdatedTimestamp = 16;
+	repeated string logMessageArray = 17;
+	snapchat.map.SCMTDeviceData deviceData = 18;
+}

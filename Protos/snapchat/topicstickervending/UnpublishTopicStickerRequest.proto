@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.topicstickervending;
+
+import "snapchat/topicsticker/TopicStickerId.proto";
+
+message UnpublishTopicStickerRequest {
+	snapchat.topicsticker.TopicStickerId id_p = 1;
+}

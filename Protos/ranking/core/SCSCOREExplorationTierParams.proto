@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREExplorationTierParams {
+	int32 viewUpperBound = 1;
+	int32 viewLowerBound = 2;
+	int32 maxAllowedHides = 3;
+	double longViewPromotionRate = 4;
+	double boostPromotionRate = 5;
+	double minBoosts = 6;
+	double engagementPromotionRate = 7;
+	double engagementPromotionProbability = 8;
+	double engagementDemotionProbability = 9;
+	int32 moderationViewUpperBound = 10;
+	int32 viewUpperBoundExperiment = 11;
+}

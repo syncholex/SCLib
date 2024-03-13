@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsAdUATInfoCardConfig_Animation.proto";
+
+message SCAdsAdUATInfoCardConfig_AdUATInfoCardStyleConfig {
+
+	enum SCAdsAdUATInfoCardConfig_AdUATInfoCardType {
+		INFO_CARD_TYPE_UNSET = 0;
+		DEFAULT = 1;
+		VERTICAL = 2;
+		SPOTLIGHT_SMALL_CARD = 3;
+		SPOTLIGHT_LARGE_CARD = 4;
+	}
+
+	SCAdsAdUATInfoCardConfig_AdUATInfoCardType cardType = 1;
+
+	enum SCAdsAdUATInfoCardConfig_AdUATInfoCardAnimationType {
+		ANIMATION_TYPE_UNSET = 0;
+		SLIDE_UP = 1;
+		SLIDE_UP_AND_COLOR_CHANGE = 2;
+		EXPAND = 3;
+		SLIDE_IN = 4;
+	}
+
+	SCAdsAdUATInfoCardConfig_AdUATInfoCardAnimationType animationType = 2;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_Animation cardAnimation = 3;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_Animation cardColorAnimation = 4;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_Animation buttonAnimation = 5;
+
+	enum SCAdsAdUATInfoCardConfig_AdUATButtonStyle {
+		UAT_BUTTON_STYLE_UNSET = 0;
+		REGULAR = 1;
+		PROMINENT = 2;
+		HIGHLIGHTED = 3;
+	}
+
+	SCAdsAdUATInfoCardConfig_AdUATButtonStyle buttonStyle = 6;
+
+	enum SCAdsAdUATInfoCardConfig_AdUATCollectionCardType {
+		COLLECTION_CARD_TYPE_UNSET = 0;
+		GRID_UAT = 1;
+		HORIZONTAL_UAT = 2;
+		VERTICAL_UAT = 3;
+		SPOTLIGHT_UAT = 4;
+	}
+
+	SCAdsAdUATInfoCardConfig_AdUATCollectionCardType collectionCardType = 7;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_Animation collectionCardAnimation = 8;
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_Animation collectionCardFinalAnimation = 9;
+}

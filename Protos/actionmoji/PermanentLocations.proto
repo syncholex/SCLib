@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/S2CellData.proto";
+import "actionmoji/CampusData.proto";
+
+message PermanentLocations {
+	actionmoji.S2CellData home = 1;
+	actionmoji.S2CellData work = 2;
+	float homeConfidence = 3;
+	float workConfidence = 4;
+	int64 firstLocationShare = 5;
+	actionmoji.CampusData campus = 6;
+}

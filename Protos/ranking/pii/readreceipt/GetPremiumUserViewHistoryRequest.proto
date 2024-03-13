@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/readreceipt/PremiumContentId.proto";
+
+message GetPremiumUserViewHistoryRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	ranking.core.SCSCOREUUID userId = 2;
+	repeated ranking.pii.readreceipt.PremiumContentId idsArray = 3;
+}

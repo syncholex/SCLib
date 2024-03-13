@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+message SCSuperFeedPersistenceConfig_MediaConfig {
+	uint32 numStoriesToPrefetchMedia = 1;
+	uint32 numSnapsInStory = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message CupAbusiveLanguageResult_Result {
+	string text = 1;
+	bool isAbusive = 2;
+}

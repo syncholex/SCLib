@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPExtraContent.proto";
+
+message IMPGetExtrasForShowResponse {
+	repeated impala.IMPExtraContent extrasArray = 1;
+}

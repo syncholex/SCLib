@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLensLaunchResponse {
+
+	enum HRMPBLensLaunchResponse_LensLaunchStatus {
+		OK = 1;
+		ERROR_UNKNOWN = 2;
+		ERROR_UNAVAILABLE = 3;
+		ERROR_LENS_CORE = 4;
+	}
+
+	HRMPBLensLaunchResponse_LensLaunchStatus status = 1;
+	bool success = 2;
+}

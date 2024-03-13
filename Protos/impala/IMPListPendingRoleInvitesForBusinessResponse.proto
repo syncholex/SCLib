@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPendingRoleInvite.proto";
+
+message IMPListPendingRoleInvitesForBusinessResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.IMPPendingRoleInvite invitesArray = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "merlin/toolbox/GeneratedPet.proto";
+
+message SCMACustomPet {
+	string renderURL = 1;
+	bytes contentObject = 2;
+	string chatGptPrompt = 3;
+	int64 serverLastSelectedTimestampMs = 4;
+	int64 serverCreationTimestampMs = 5;
+	string assetId = 6;
+	merlin.toolbox.GeneratedPet generatedPetInfo = 7;
+}

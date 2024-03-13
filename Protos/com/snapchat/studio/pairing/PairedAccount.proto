@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message PairedAccount {
+	string accountId = 1;
+
+	enum PairedAccount_Origin {
+		UNSET = 0;
+		UNKNOWN = 1;
+		CAMERA_KIT = 2;
+		SNAPCHAT = 3;
+		SPECTACLES = 4;
+	}
+
+	PairedAccount_Origin origin = 2;
+}

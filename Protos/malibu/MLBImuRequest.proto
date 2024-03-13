@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBImuRequest {
+
+	enum MLBImuRequest_Type {
+		READ_ACCEL = 0;
+		READ_ACCEL_CALIB = 1;
+		READ_GYRO = 2;
+		READ_GYRO_CALIB = 3;
+		TEST_INT = 4;
+		GESTURE_CHECK = 5;
+	}
+
+	MLBImuRequest_Type requestType = 1;
+}

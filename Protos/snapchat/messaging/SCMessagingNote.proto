@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingAudioNote.proto";
+import "snapchat/messaging/SCMessagingVideoNote.proto";
+
+message SCMessagingNote {
+
+	oneof note {
+		snapchat.messaging.SCMessagingAudioNote audio = 1;
+		snapchat.messaging.SCMessagingVideoNote video = 2;
+	}
+
+}

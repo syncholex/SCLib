@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbGetVersionSetRequest {
+	string productGeneration = 1;
+	string versionSetName = 2;
+	string currentOsVersion = 3;
+	string currentFullOsVersion = 4;
+	string buildFlavor = 5;
+	bool requireFullOta = 6;
+}

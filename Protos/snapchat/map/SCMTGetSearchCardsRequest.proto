@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTGeoBox.proto";
+
+message SCMTGetSearchCardsRequest {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+	snapchat.map.SCMTPoint userLocation = 2;
+	snapchat.map.SCMTPoint mapLocation = 3;
+	double zoom = 4;
+	string query = 6;
+	snapchat.map.SCMTGeoBox viewport = 10;
+	string experimentValue = 11;
+}

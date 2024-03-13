@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+message CMSAppVersionRange {
+	string minAppVersion = 1;
+	string maxAppVersion = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+message PremiumContentId {
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	PremiumContentType_Enum contentType = 1;
+
+	oneof contentId {
+		string contentGroupId = 2;
+		string seasonId = 3;
+		string storyId = 4;
+	}
+
+}

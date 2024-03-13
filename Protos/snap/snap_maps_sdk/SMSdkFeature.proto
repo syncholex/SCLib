@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkGeometry.proto";
+import "snap/snap_maps_sdk/SMSdkFeature_Property.proto";
+
+message SMSdkFeature {
+	string id_p = 1;
+	snap.snap_maps_sdk.SMSdkGeometry geometry = 2;
+	repeated snap.snap_maps_sdk.SMSdkFeature_Property propertiesArray = 3;
+	string sourceId = 4;
+	string sourceLayer = 5;
+	string layerId = 6;
+}

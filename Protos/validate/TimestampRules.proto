@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package validate;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "google/protobuf/GPBDuration.proto";
+
+message TimestampRules {
+	bool required = 1;
+	google.protobuf.GPBTimestamp const_p = 2;
+	google.protobuf.GPBTimestamp lt = 3;
+	google.protobuf.GPBTimestamp lte = 4;
+	google.protobuf.GPBTimestamp gt = 5;
+	google.protobuf.GPBTimestamp gte = 6;
+	bool ltNow = 7;
+	bool gtNow = 8;
+	google.protobuf.GPBDuration within = 9;
+}

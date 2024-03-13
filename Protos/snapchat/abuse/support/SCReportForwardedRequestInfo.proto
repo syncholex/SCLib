@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportForwardedRequestInfo {
+	string ip = 1;
+	string country = 2;
+	string region = 3;
+	string city = 4;
+	string userAgent = 5;
+	string principal = 6;
+}

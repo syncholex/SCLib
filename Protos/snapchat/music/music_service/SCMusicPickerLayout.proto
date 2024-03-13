@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutTab.proto";
+
+message SCMusicPickerLayout {
+	repeated snapchat.music.music_service.SCMusicPickerLayoutTab tabsArray = 1;
+	uint32 tabStartIndex = 2;
+}

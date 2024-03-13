@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/lens/badges/LensBadgeContent.proto";
+
+message SCULInfoCard_LensBadges {
+	repeated snapchat.lens.badges.LensBadgeContent badgeContentArray = 1;
+	bool isTrending = 2;
+}

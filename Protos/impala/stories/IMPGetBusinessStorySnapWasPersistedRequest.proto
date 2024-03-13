@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPGetBusinessStorySnapWasPersistedRequest {
+	string businessId = 1;
+	string clientId = 2;
+}

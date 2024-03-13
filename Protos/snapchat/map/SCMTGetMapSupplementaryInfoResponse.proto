@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTMapAnnouncement.proto";
+
+message SCMTGetMapSupplementaryInfoResponse {
+	repeated snapchat.map.SCMTMapAnnouncement announcementsArray = 1;
+}

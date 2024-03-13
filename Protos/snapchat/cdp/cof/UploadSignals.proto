@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message UploadSignals {
+	bool chunkUploadSupportRequired = 1;
+	string cloudfrontPop = 2;
+	string gcdnPop = 3;
+
+	enum ChunkUploadPreference {
+		PREFERENCE_UNSET = 0;
+		GCS = 1;
+		S3 = 2;
+		AUTO = 3;
+	}
+
+	ChunkUploadPreference chunkUploadPreference = 4;
+}

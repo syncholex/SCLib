@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+message SCCommunityOrgPbUpdateWaitlistToVerifiedResponse {
+
+	enum SCCommunityOrgPbUpdateWaitlistToVerifiedResponse_Status {
+		UNSET = 0;
+		SUCCESS = 1;
+		FAILED = 2;
+		RECORD_NOT_FOUND = 3;
+	}
+
+	SCCommunityOrgPbUpdateWaitlistToVerifiedResponse_Status status = 1;
+}

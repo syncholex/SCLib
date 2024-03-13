@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateRoleRequest {
+	string businessId = 1;
+	string userId = 2;
+	string roleId = 3;
+	string newRoleType = 4;
+}

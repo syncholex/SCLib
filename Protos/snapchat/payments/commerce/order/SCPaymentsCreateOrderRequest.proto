@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+import "snapchat/payments/commerce/order/SCPaymentsLineItem.proto";
+import "snapchat/payments/commerce/common/SCPaymentsContactDetails.proto";
+import "snapchat/payments/commerce/common/SCPaymentsShippingAddress.proto";
+
+message SCPaymentsCreateOrderRequest {
+	string userId = 1;
+	string storeId = 2;
+	repeated snapchat.payments.commerce.order.SCPaymentsLineItem lineItemsArray = 3;
+	snapchat.payments.commerce.common.SCPaymentsContactDetails contactDetails = 4;
+	snapchat.payments.commerce.common.SCPaymentsShippingAddress shippingAddress = 5;
+
+	enum SCPaymentsOrderSource {
+		ORDER_SOURCE_UNSET = 0;
+		PROFILE_STORE = 1;
+		ADS = 2;
+		MINI = 3;
+	}
+
+	SCPaymentsOrderSource orderSource = 6;
+	string requestId = 7;
+}

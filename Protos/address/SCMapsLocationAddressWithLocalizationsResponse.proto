@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package address;
+
+import "address/SCMapsAddress.proto";
+import "address/SCMapsAddressIds.proto";
+
+message SCMapsLocationAddressWithLocalizationsResponse {
+	address.SCMapsAddress addresses = 1;
+	address.SCMapsAddress ids = 2;
+	address.SCMapsAddressIds uuids = 3;
+}

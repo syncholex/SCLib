@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCSCOREAppInfo.proto";
+import "snapchat/cdp/cof/SCCofConfigWithNamespace.proto";
+
+message SCSUPABExperimentsRequest {
+	string sessionId = 1;
+	repeated string studyIdsArray = 2;
+	bool forceRefresh = 3;
+	ranking.core.SCSCOREAppInfo appInfo = 5;
+	string abToCofConfig = 6;
+	bool forceLoadFromCof = 7;
+	repeated snapchat.cdp.cof.SCCofConfigWithNamespace cofsArray = 8;
+	uint32 versionForCache = 9;
+}

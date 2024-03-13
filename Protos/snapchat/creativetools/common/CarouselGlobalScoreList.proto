@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/CarouselGlobalScore.proto";
+
+message CarouselGlobalScoreList {
+	repeated snapchat.creativetools.common.CarouselGlobalScore carouselGlobalScoreEntryArray = 1;
+}

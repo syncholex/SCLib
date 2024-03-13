@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerCreateRequest.proto";
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerDeleteRequest.proto";
+
+message SCCTPCustomStickerBatchOpsRequest {
+	repeated snapchat.creativetools.customsticker.SCCTPCustomStickerCreateRequest createRequestsArray = 1;
+	repeated snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteRequest deleteRequestsArray = 2;
+}

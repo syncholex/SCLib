@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensGetOAuth2InfoResponse {
+	string clientId = 1;
+
+	enum SCLensGetOAuth2InfoResponse_GrantType {
+		GRANT_TYPE_UNSET = 0;
+		AUTHORIZATION_CODE = 1;
+		AUTHORIZATION_CODE_WITH_PKCE = 2;
+		IMPLICIT = 3;
+		CLIENT_CREDENTIALS = 4;
+	}
+
+	SCLensGetOAuth2InfoResponse_GrantType grantType = 2;
+	string authorizationURL = 3;
+	string scope = 4;
+}

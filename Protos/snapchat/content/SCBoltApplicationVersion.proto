@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+message SCBoltApplicationVersion {
+	int32 applicableVersionMajor = 1;
+	int32 applicableVersionMinor = 2;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCard.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcut.proto";
+import "snapchat/perception/scan/v3/SCPCNV3Snapcode.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanToLensResult.proto";
+import "snapchat/perception/scan/v3/SCPCNV3CategoryResponseV1_Result_PillCategoryDone.proto";
+
+message SCPCNV3CategoryResponseV1_Result {
+
+	oneof result {
+		snapchat.perception.scan.v3.SCPCNV3ScanCard scanCard = 1;
+		snapchat.perception.scan.v3.SCPCNV3CameraShortcut cameraShortcut = 2;
+		snapchat.perception.scan.v3.SCPCNV3Snapcode snapcode = 4;
+		snapchat.perception.scan.v3.SCPCNV3ScanToLensResult scanToLensResult = 12;
+		snapchat.perception.scan.v3.SCPCNV3CategoryResponseV1_Result_PillCategoryDone pillCategoryDone = 15;
+	}
+
+	string id_p = 3;
+	string requestId = 5;
+	int64 timestampMs = 6;
+	int32 trayRank = 7;
+	repeated string trayPillIdsArray = 8;
+	string categoryId = 13;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+message SCR2PlaceStats {
+	int32 numSnapCaptionMentions = 1;
+	int32 numVenueFilterSubmissions = 2;
+}

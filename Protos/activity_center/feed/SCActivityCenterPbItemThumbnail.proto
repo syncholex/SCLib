@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package activity_center.feed;
+
+import "activity_center/feed/SCActivityCenterPbActionmoji.proto";
+import "activity_center/feed/SCActivityCenterPbFriendmoji.proto";
+import "activity_center/feed/SCActivityCenterPbAvatar.proto";
+import "activity_center/feed/SCActivityCenterPbLens.proto";
+
+message SCActivityCenterPbItemThumbnail {
+
+	oneof thumbnailInfo {
+		activity_center.feed.SCActivityCenterPbActionmoji actionmoji = 1;
+		activity_center.feed.SCActivityCenterPbFriendmoji friendmoji = 2;
+		string URL = 3;
+		activity_center.feed.SCActivityCenterPbAvatar avatar = 4;
+		activity_center.feed.SCActivityCenterPbLens lens = 5;
+	}
+
+}

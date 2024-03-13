@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.spotlight.cof;
+
+message SCSpotlightProgressBarConfig {
+	bool enabled = 1;
+	bool allowScrubbing = 2;
+
+	enum SCSpotlightProgressBarConfig_ProgressBarPosition {
+		PROGRESS_BAR_POSITION_UNSET = 0;
+		PROGRESS_BAR_POSITION_TOP = 1;
+		PROGRESS_BAR_POSITION_BOTTOM = 2;
+	}
+
+	SCSpotlightProgressBarConfig_ProgressBarPosition position = 3;
+	float minStoryDurationSeconds = 4;
+	float scrubberFadeDurationSeconds = 5;
+	bool requireTapToUnhide = 6;
+}

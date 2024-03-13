@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBRange.proto";
+
+message MLBGpsRequest {
+
+	enum MLBGpsRequest_RequestType {
+		ALMANAC_UPLOAD = 1;
+	}
+
+	MLBGpsRequest_RequestType type = 1;
+	malibu.MLBRange fileRange = 2;
+	bytes fileData = 3;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCAppealPbAppealData {
+	string appealId = 1;
+
+	enum SCAppealPbAppealData_AppealStatus {
+		UNSET = 0;
+		APPEAL_SUBMITTED = 1;
+		APPEAL_TASK_CREATED = 2;
+		APPEAL_APPROVED = 3;
+		APPEAL_REJECTED = 4;
+		APPEAL_FORCE_CLOSED = 5;
+	}
+
+	SCAppealPbAppealData_AppealStatus appealStatus = 2;
+
+	enum SCAppealPbAppealData_AppealType {
+		DEFAULT_UNSET = 0;
+		ACCOUNT_UNLOCK = 1;
+	}
+
+	SCAppealPbAppealData_AppealType appealType = 3;
+	int64 serverReceivedAtMs = 4;
+	int64 lastStatusUpdateAtMs = 5;
+	string requesterUserId = 6;
+	string referenceId = 7;
+	string taskId = 8;
+}

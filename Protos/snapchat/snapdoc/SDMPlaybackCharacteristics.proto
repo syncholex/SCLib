@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/snapdoc/SDMSeekPointMetadata.proto";
+
+message SDMPlaybackCharacteristics {
+	bool hasSound = 5;
+
+	oneof displayDuration {
+		google.protobuf.GPBEmpty infinite = 6;
+		google.protobuf.GPBEmpty playOnce = 7;
+		uint32 durationSeconds = 8;
+	}
+
+	repeated int64 seekPointsMsArray = 9 [packed=true];
+	repeated snapchat.snapdoc.SDMSeekPointMetadata seekPointsMetadataArray = 10;
+}

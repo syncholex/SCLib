@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUserStoryPublicUserMetadata {
+	bool isPopular = 1;
+	bool isOfficial = 2;
+	bool isFollowed = 3;
+	int32 brandFriendliness = 4;
+}

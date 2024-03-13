@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBleCentralPairResponse {
+
+	enum HRMPBBleCentralPairResponse_BlePairStatus {
+		OK = 1;
+		ERROR_NOT_FOUND = 2;
+		ERROR_TIMED_OUT = 3;
+		ERROR_OTHER = 4;
+	}
+
+	HRMPBBleCentralPairResponse_BlePairStatus status = 1;
+	bytes sessionToken = 2;
+}

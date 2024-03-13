@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSavedStoryInsightsForUser.proto";
+
+message IMPInsightsGetSavedStoryInsightsForUserResponse {
+	impala.insights.IMPInsightsSavedStoryInsightsForUser savedStoryInsightsForUser = 1;
+}

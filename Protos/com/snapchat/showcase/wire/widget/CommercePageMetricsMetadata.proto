@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+message CommercePageMetricsMetadata {
+	string commercePage = 1;
+	string storeId = 2;
+	string topic = 3;
+	string sectionName = 4;
+}

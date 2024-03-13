@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCOFConfigs.proto";
+
+message SCPCNV3ScanExperiment {
+	string name = 1;
+
+	oneof treatmentInfo {
+		string treatmentName = 3;
+		snapchat.perception.scan.v3.SCPCNV3ScanCOFConfigs configs = 5;
+	}
+
+}

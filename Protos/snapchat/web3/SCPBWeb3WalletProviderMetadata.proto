@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3FTXMetadata.proto";
+
+message SCPBWeb3WalletProviderMetadata {
+}

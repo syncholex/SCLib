@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbSubscribeResponse {
+
+	enum SCSubscriptionEnumPbSubscriptionTier {
+		SUBSCRIPTION_TIER_NO_ACCESS = 0;
+		SUBSCRIPTION_TIER_SNAPCHAT_PLUS = 1;
+		SUBSCRIPTION_TIER_SNAPCHAT_PLUS_AD_FREE = 2;
+	}
+
+	SCSubscriptionEnumPbSubscriptionTier tier = 1;
+
+	enum SCSubscriptionEnumPbSubscriptionError {
+		SUBSCRIPTION_ERROR_NO_ERROR = 0;
+		SUBSCRIPTION_ERROR_LINKED_TO_DIFFERENT_USER = 1;
+		SUBSCRIPTION_ERROR_INVALID_TRANSACTION_ID = 2;
+	}
+
+	SCSubscriptionEnumPbSubscriptionError error = 2;
+
+	enum SCSubscriptionEnumPbSubscriptionStatus {
+		UNSET = 0;
+		ACTIVE = 1;
+		BILLING_RETRY = 2;
+		BILLING_GRACE_PERIOD = 3;
+		CANCELED = 4;
+		PENDING = 5;
+		PAUSED = 6;
+		ON_HOLD = 7;
+		EXPIRED = 8;
+		REVOKED = 9;
+	}
+
+	SCSubscriptionEnumPbSubscriptionStatus status = 3;
+}

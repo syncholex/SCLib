@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.preview;
+
+message PostCaptureAIModeConfig {
+	bool enableAiMode = 1;
+	int64 aiModeLensId = 2;
+	bool disableFaceDetection = 3;
+	bool enableForReplyCamera = 4;
+	bool enableForMemoriesImport = 5;
+	bool enableForCrImport = 6;
+	float aspectRatioThreshold = 7;
+}

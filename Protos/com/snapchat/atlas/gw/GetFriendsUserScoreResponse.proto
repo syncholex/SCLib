@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.gw;
+
+import "com/snapchat/atlas/gw/UserScore.proto";
+
+message GetFriendsUserScoreResponse {
+	repeated com.snapchat.atlas.gw.UserScore scoresArray = 1;
+}

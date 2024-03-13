@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsComposerItem.proto";
+import "snapchat/ads/common/dpa/SCAdsFillWidth.proto";
+import "snapchat/ads/common/dpa/SCAdsFillHeight.proto";
+import "snapchat/ads/common/dpa/SCAdsFit.proto";
+import "snapchat/ads/common/dpa/SCAdsHeader.proto";
+import "snapchat/ads/common/dpa/SCAdsTilt.proto";
+import "snapchat/ads/common/dpa/SCAdsCarousel.proto";
+import "snapchat/ads/common/dpa/SCAdsSlideshow.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoTall.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoWide.proto";
+import "snapchat/ads/common/dpa/SCAdsPresetColor.proto";
+import "snapchat/ads/common/dpa/SCAdsWhiteTall.proto";
+import "snapchat/ads/common/dpa/SCAdsWhiteWide.proto";
+import "snapchat/ads/common/dpa/SCAdsColorBackground.proto";
+import "snapchat/ads/common/dpa/SCAdsEchoBackground.proto";
+import "snapchat/adindex/protobuf/OverlaySpec.proto";
+import "snapchat/ads/common/dpa/SCAdsGrid.proto";
+
+message SCAdsComposerTopSnap {
+	repeated snapchat.ads.render.schema.SCAdsComposerItem itemsArray = 1;
+
+	oneof template {
+		snapchat.ads.common.dpa.SCAdsFillWidth fillWidth = 2;
+		snapchat.ads.common.dpa.SCAdsFillHeight fillHeight = 3;
+		snapchat.ads.common.dpa.SCAdsFit fit = 4;
+		snapchat.ads.common.dpa.SCAdsHeader header = 5;
+		snapchat.ads.common.dpa.SCAdsTilt tilt = 6;
+		snapchat.ads.common.dpa.SCAdsCarousel carousel = 7;
+		snapchat.ads.common.dpa.SCAdsSlideshow slideshow = 8;
+		snapchat.ads.common.dpa.SCAdsEchoTall echoTall = 9;
+		snapchat.ads.common.dpa.SCAdsEchoWide echoWide = 10;
+		snapchat.ads.common.dpa.SCAdsPresetColor presetColor = 11;
+		snapchat.ads.common.dpa.SCAdsWhiteTall whiteTall = 12;
+		snapchat.ads.common.dpa.SCAdsWhiteWide whiteWide = 13;
+		snapchat.ads.common.dpa.SCAdsGrid grid = 17;
+	}
+
+
+	oneof background {
+		snapchat.ads.common.dpa.SCAdsColorBackground colorBackground = 14;
+		snapchat.ads.common.dpa.SCAdsEchoBackground echoBackground = 15;
+	}
+
+	repeated snapchat.adindex.protobuf.OverlaySpec overlaySpecsArray = 16;
+}

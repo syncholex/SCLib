@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package tokens.order;
+
+message SCIAPTokenPbOrderBalance {
+	int64 total = 1;
+}

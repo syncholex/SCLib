@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZFilteredPlace.proto";
+
+message VRZFilterPlacesInBoundsResponse {
+	repeated snapchat.local.place.VRZFilteredPlace placesArray = 1;
+}

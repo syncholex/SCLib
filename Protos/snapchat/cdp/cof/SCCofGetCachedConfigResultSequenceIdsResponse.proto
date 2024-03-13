@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message SCCofGetCachedConfigResultSequenceIdsResponse {
+	bytes serializedBitmap = 1;
+}

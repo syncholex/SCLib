@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Music_MusicSegment {
+	float start = 1;
+	float end = 2;
+	float score = 3;
+}

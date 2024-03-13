@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbGetSiblingCommunityGroupsRequest {
+	ranking.core.SCSCOREUUID groupId = 1;
+	ranking.core.SCSCOREUUID orgId = 2;
+	uint32 membersCount = 3;
+}

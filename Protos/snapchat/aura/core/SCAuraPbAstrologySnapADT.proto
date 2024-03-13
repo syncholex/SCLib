@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.aura.core;
+
+import "snapchat/aura/core/SCAuraPbPersonalitySnapContainer.proto";
+import "snapchat/aura/core/SCAuraPbCompatibilitySnapContainer.proto";
+import "snapchat/aura/core/SCAuraPbSummarySnapContainer.proto";
+
+message SCAuraPbAstrologySnapADT {
+
+	oneof type {
+		snapchat.aura.core.SCAuraPbPersonalitySnapContainer personalitySnap = 1;
+		snapchat.aura.core.SCAuraPbCompatibilitySnapContainer compatibilitySnap = 2;
+		snapchat.aura.core.SCAuraPbSummarySnapContainer summarySnap = 3;
+	}
+
+}

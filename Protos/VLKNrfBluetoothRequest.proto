@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+message VLKNrfBluetoothRequest {
+
+	enum VLKNrfBluetoothRequest_NrfBluetoothRequestType {
+		START_IAP = 1;
+		START_RFCOMM = 2;
+		STOP = 3;
+	}
+
+	VLKNrfBluetoothRequest_NrfBluetoothRequestType requestType = 1;
+	string name = 2;
+	bytes bluetoothUuid = 3;
+}

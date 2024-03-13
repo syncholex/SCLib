@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/invite/common/SCSharingInviteUpdateRequest_UpdateExpiration.proto";
+
+message SCSharingInviteUpdateRequest {
+
+	oneof inviteId {
+		snapchat.core.SCCOREUUID longId = 1;
+		string shortId = 2;
+	}
+
+
+	enum SCSharingInviteStatus {
+		INVITE_STATUS_UNSET = 0;
+		PENDING = 1;
+		ACTIVE = 2;
+	}
+
+	SCSharingInviteStatus status = 3;
+	snapchat.invite.common.SCSharingInviteUpdateRequest_UpdateExpiration expiration = 4;
+	bytes payload = 5;
+}

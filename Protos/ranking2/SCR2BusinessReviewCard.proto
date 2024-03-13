@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2BusinessReviewCard {
+
+	enum SCR2BusinessReviewCard_ReviewSource {
+		RS_UNKNOWN = 0;
+		RS_FOURSQUARE = 1;
+	}
+
+	SCR2BusinessReviewCard_ReviewSource source = 1;
+	string reviewerName = 2;
+	string content = 3;
+	string date = 4;
+}

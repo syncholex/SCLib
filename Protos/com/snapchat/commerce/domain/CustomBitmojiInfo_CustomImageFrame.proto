@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain;
+
+message CustomBitmojiInfo_CustomImageFrame {
+	uint32 topLeftX = 1;
+	uint32 topLeftY = 2;
+	uint32 frameHeight = 3;
+	uint32 frameWidth = 4;
+}

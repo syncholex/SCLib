@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+message SCSnapKitProtoCreativeKitValidateRequest {
+	string oauthClientId = 1;
+	string appIdentifier = 2;
+	string androidAppSignature = 3;
+	string eid = 4;
+}

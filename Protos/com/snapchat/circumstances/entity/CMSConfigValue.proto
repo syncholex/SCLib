@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "google/protobuf/GPBAny.proto";
+import "com/snapchat/circumstances/entity/CMSIntInt.proto";
+
+message CMSConfigValue {
+
+	oneof value {
+		string stringValue = 1;
+		int32 intValue = 2;
+		int64 longValue = 3;
+		bool boolValue = 4;
+		float floatValue = 5;
+		google.protobuf.GPBAny anyValue = 6;
+		fixed64 intPairValue = 7;
+		com.snapchat.circumstances.entity.CMSIntInt intIntValue = 8;
+	}
+
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/VideoDescription.proto";
+
+message MediaReference {
+	string URL = 2;
+	bytes contentObject = 3;
+	snapchat.content.VideoDescription videoDescription = 5;
+	int64 mediaListId = 6;
+
+	enum MediaReference_ClaimBehavior {
+		CAN_EXTEND_MEDIA_CLAIM = 0;
+		DO_NOT_CLAIM = 1;
+	}
+
+	MediaReference_ClaimBehavior claimBehavior = 7;
+
+	enum SCCMediaType {
+		Unassigned = 0;
+		Overlay = 1;
+		Image = 2;
+		Video = 3;
+		AssetBundle = 4;
+		Audio = 5;
+		AnimatedImage = 6;
+		Font = 7;
+		WebViewContent = 8;
+		VideoNoAudio = 9;
+		Subtitles = 10;
+		DataBlob = 11;
+	}
+
+	SCCMediaType mediaType = 8;
+	string localContentKey = 9;
+	string localCacheKey = 10;
+}

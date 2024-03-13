@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+
+message GetUserRepliesRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	ranking.core.SCSCOREUUID replyViewerUserId = 2;
+	string snapId = 3;
+
+	enum ApprovalState_Enum {
+		UNKNOWN = 0;
+		DELETED = 1;
+		PENDING = 2;
+		APPROVED = 3;
+		PINNED = 4;
+		MODERATED = 5;
+		REJECTED = 6;
+	}
+
+	ApprovalState_Enum approvalState = 4;
+	bytes paginationCursor = 5;
+}

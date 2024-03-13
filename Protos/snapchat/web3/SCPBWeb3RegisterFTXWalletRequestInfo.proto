@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+message SCPBWeb3RegisterFTXWalletRequestInfo {
+	string nonce = 1;
+	string redirectLink = 2;
+}

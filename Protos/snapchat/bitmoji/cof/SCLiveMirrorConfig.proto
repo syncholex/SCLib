@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.cof;
+
+import "snapchat/bitmoji/cof/SCLiveMirrorConfig_LinkPageFlow.proto";
+
+message SCLiveMirrorConfig {
+	repeated snapchat.bitmoji.cof.SCLiveMirrorConfig_LinkPageFlow flowsArray = 1;
+}

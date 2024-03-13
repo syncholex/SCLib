@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPDeactivatePublicProfileRequest {
+	string id_p = 1;
+
+	enum IMPDeactivateReason {
+		NONE = 0;
+		TOO_YOUNG_FOR_PUBLIC_PROFILE = 1;
+		PUBLISHER_ARCHIVED = 2;
+		DELETED_HOST_USER = 3;
+	}
+
+	IMPDeactivateReason reason = 2;
+}

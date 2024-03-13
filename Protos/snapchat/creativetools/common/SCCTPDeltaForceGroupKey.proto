@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPDeltaForceGroupKey {
+	string kind = 1;
+
+	oneof keyType {
+		string name = 2;
+		uint64 id_p = 3;
+	}
+
+}

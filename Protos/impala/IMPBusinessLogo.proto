@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPBusinessLogo {
+	string discoverFeedLogoURL = 1;
+	string megaProfileLogoURL = 2;
+	string manageProfileLogoURL = 3;
+	string originalLogoURL = 4;
+	bool isDefault = 100;
+}

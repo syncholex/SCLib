@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.topicstickervending;
+
+import "snapchat/topicsticker/TopicStickerStatus.proto";
+
+message QueryTopicStickersRequest {
+	string cursor = 1;
+	uint32 limit = 2;
+
+	enum TopicStickerUpdatedAtOrder {
+		TOPIC_STICKER_UPDATED_AT_ORDER_UNSET = 0;
+		CHRONOLOGICAL = 1;
+		REVERSE_CHRONOLOGICAL = 2;
+	}
+
+
+	enum TopicStickerRankOrder {
+		TOPIC_STICKER_RANK_ORDER_UNSET = 0;
+		RANK_ASCENDING = 1;
+		RANK_DESCENDING = 2;
+	}
+
+
+	oneof order {
+		TopicStickerUpdatedAtOrder updatedAtOrder = 3;
+		TopicStickerRankOrder rankOrder = 4;
+	}
+
+	snapchat.topicsticker.TopicStickerStatus status = 5;
+	string text = 6;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBShipmodeRequest {
+	uint32 delayHrs = 1;
+	bool deleteContent = 2;
+}

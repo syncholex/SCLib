@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/ClientGeneratedCollection.proto";
+
+message MemoriesAddCollectionsRequest {
+	repeated snapchat.memories.ClientGeneratedCollection clientGeneratedCollectionsArray = 1;
+}

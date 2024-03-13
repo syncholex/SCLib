@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/cdp/cof/PartialToken.proto";
+import "snapchat/janus/api/SCJanusDeviceToken.proto";
+
+message SCJanusLoginHeader {
+	string blizzardClientId = 1;
+	string loginFlowSessionId = 2;
+	string authenticationSessionId = 3;
+	string loginAttemptId = 4;
+	string networkRequestId = 5;
+	string cofDeviceId = 6;
+	snapchat.cdp.cof.PartialToken cofConfigData = 7;
+	snapchat.janus.api.SCJanusDeviceToken deviceToken = 10;
+	bytes clientAttestationPayload = 11;
+	string iosDeviceCheckToken = 12;
+	string androidSafetynetAttestation = 13;
+	repeated bytes vendorAttestationPayloadsArray = 14;
+}

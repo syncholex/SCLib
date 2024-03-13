@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.useragent;
+
+message SCUserAgentDeviceInfo {
+	string model = 1;
+
+	enum SCUserAgentOsType {
+		OS_TYPE_UNSET = 0;
+		IOS = 1;
+		ANDROID = 2;
+		MAC_OS = 3;
+		WINDOWS = 4;
+		LINUX = 5;
+	}
+
+	SCUserAgentOsType platform = 2;
+	string platformVersion = 3;
+	string architecture = 4;
+}

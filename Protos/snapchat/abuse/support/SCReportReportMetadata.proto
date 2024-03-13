@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportReport.proto";
+import "google/protobuf/GPBStruct.proto";
+import "snapchat/abuse/support/SCReportReviewMetadata.proto";
+
+message SCReportReportMetadata {
+	snapchat.abuse.support.SCReportReport report = 1;
+	google.protobuf.GPBStruct review = 2;
+	int64 reportProcessedTimestampMs = 3;
+	string reportType = 4;
+	repeated snapchat.abuse.support.SCReportReviewMetadata relatedReviewsArray = 5;
+	string reporterUsername = 6;
+	string queueId = 7;
+}

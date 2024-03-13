@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBCalibrationResult.proto";
+
+message CHRPBCalibrationStatus {
+	repeated cheerios.CHRPBCalibrationResult resultsArray = 1;
+
+	enum CHRPBCalibrationDirection {
+		DIR_UNSET = 0;
+		X_UP = 1;
+		X_DOWN = 2;
+		Y_UP = 3;
+		Y_DOWN = 4;
+		Z_UP = 5;
+		Z_DOWN = 6;
+	}
+
+	CHRPBCalibrationDirection direction = 2;
+
+	enum CHRPBCalibrationStatus_CalibrationState {
+		CALI_UNSET = 0;
+		CALI_OK = 1;
+		CALI_ERROR = 2;
+		CALI_IDLE = 3;
+		CALI_DOING = 4;
+	}
+
+	CHRPBCalibrationStatus_CalibrationState state = 3;
+}

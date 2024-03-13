@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBSettingValue.proto";
+import "hermosa/HRMPBSettingOption.proto";
+
+message HRMPBSetting {
+	string settingId = 1;
+	string title = 2;
+	string desc = 3;
+	hermosa.HRMPBSettingValue value = 4;
+
+	enum HRMPBSettingCategory {
+		EXPERIMENTS = 1;
+		CAMERA = 2;
+		INTERNAL = 3;
+	}
+
+	HRMPBSettingCategory category = 5;
+	repeated hermosa.HRMPBSettingOption optionsArray = 6;
+}

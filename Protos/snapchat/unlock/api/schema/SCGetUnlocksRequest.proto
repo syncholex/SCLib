@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlock/api/schema/SCUnlockGroup.proto";
+import "snapchat/unlock/api/schema/SCUnlockGroupRequest.proto";
+
+message SCGetUnlocksRequest {
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 1;
+	bytes checksums = 2;
+	repeated snapchat.unlock.api.schema.SCUnlockGroup requiredGroupsArray = 3;
+
+	enum SCUnlocksNamespace {
+		UNLOCKS_NAMESPACE_UNSET = 0;
+		DEFAULT = 1;
+		HERMOSA = 2;
+		PURCHASES = 3;
+		AVALON = 4;
+	}
+
+	SCUnlocksNamespace unlocksNamespace = 4;
+	repeated snapchat.unlock.api.schema.SCUnlockGroupRequest requestedGroupsArray = 5;
+}

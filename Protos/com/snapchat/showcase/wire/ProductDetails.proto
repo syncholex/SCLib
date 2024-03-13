@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire;
+
+import "com/snapchat/showcase/wire/ProductMetadata.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message ProductDetails {
+	com.snapchat.showcase.wire.ProductMetadata productMetadata = 1;
+	string description_p = 2;
+	repeated snapchat.ads.render.schema.SCAdsMediaRenderInfo additionalImagesArray = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/minerva/SCMinervaGenerateDreamsRequestID.proto";
+
+message SCMinervaGenerateDreamsResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	snapchat.cameos.minerva.SCMinervaGenerateDreamsRequestID requestId = 2;
+}

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package com.snapchat.atlas.proto;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "google/type/GTPDate.proto";
+import "com/snapchat/atlas/proto/SCAtlasFriendmoji.proto";
+import "snapchat/fidelius/SCFideliusFriendDeviceKey.proto";
+import "snapchat/bitmoji/profile/v1/SCBitmojiBitmojiBackgroundURL.proto";
+import "snapchat/bitmoji/profile/v1/SCBitmojiAvatarMetadata.proto";
+
+message SCAtlasOutgoingFriend {
+	snapchat.core.SCCOREUUID userId = 1;
+	string mutableUsername = 2;
+	string displayName = 3;
+
+	enum SCAtlasFriendLinkType {
+		FRIEND_LINK_TYPE_UNSET = 0;
+		FRIEND_LINK_TYPE_UNKNOWN = 1;
+		FRIEND_LINK_TYPE_FRIEND = 2;
+		FRIEND_LINK_TYPE_PENDING = 3;
+		FRIEND_LINK_TYPE_FOLLOWING = 4;
+		FRIEND_LINK_TYPE_BLOCKED = 5;
+		FRIEND_LINK_TYPE_DELETED = 6;
+		FRIEND_LINK_TYPE_LOCKED = 7;
+		FRIEND_LINK_TYPE_INVITED = 8;
+	}
+
+	SCAtlasFriendLinkType friendLinkType = 4;
+	google.type.GTPDate birthday = 5;
+	int64 addedTs = 6;
+	int64 reverseAddedTs = 7;
+	bool canFriendSeeCustomStories = 8;
+	repeated com.snapchat.atlas.proto.SCAtlasFriendmoji friendmojisArray = 9;
+	string bitmojiAvatarId = 10;
+	string bitmojiSelfieId = 11;
+	string bitmojiSceneId = 12;
+	string bitmojiBackgroundId = 13;
+	bool isBitmojiFriendmojiSharingSupported = 14;
+	repeated snapchat.fidelius.SCFideliusFriendDeviceKey fideliusFriendInfoArray = 15;
+	bool isStoryMuted = 16;
+	snapchat.core.SCCOREUUID snapProId = 17;
+	bool isCameosSharingSupported = 18;
+	int32 cameosSharingPolicy = 19;
+	int32 plusBadgeVisibility = 20;
+	string postViewEmoji = 22;
+	snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 23;
+	int32 dreamsGeneratingPolicy = 24;
+	snapchat.bitmoji.profile.v1.SCBitmojiAvatarMetadata bitmojiAvatarMetadata = 25;
+}

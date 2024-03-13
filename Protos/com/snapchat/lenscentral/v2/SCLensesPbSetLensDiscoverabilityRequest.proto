@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensDiscoverability.proto";
+
+message SCLensesPbSetLensDiscoverabilityRequest {
+	string lensId = 1;
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensDiscoverability discoverability = 2;
+}

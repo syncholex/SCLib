@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCNotificationNotificationSettingUpdateRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+
+	oneof settingUpdate {
+		SCNotificationNotificationSetting sound = 2;
+		SCNotificationNotificationSetting ringingSound = 3;
+		SCNotificationNotificationSetting enabled = 4;
+		SCNotificationNotificationPrivacySetting privacy = 5;
+		SCNotificationNotificationSetting bitmoji = 6;
+		SCNotificationNotificationSetting webPushEnabled = 7;
+	}
+
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+
+	enum SCNotificationNotificationPrivacySetting {
+		UNKNOWN_PRIVACY = 0;
+		EVERYONE = 1;
+		FRIENDS = 2;
+	}
+
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+
+	enum SCNotificationNotificationSetting {
+		UNKNOWN_SETTING = 0;
+		SETTING_TRUE = 1;
+		SETTING_FALSE = 2;
+	}
+
+}

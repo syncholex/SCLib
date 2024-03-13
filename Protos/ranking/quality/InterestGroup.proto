@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message InterestGroup {
+
+	enum InterestGroupType_Enum {
+		UNKNOWN = 0;
+		POP_CULTURE = 1;
+		NEWS = 2;
+		SPORTS = 3;
+		FUN_TRIVIA = 4;
+		FASHION_STYLE = 5;
+		CELEBRITY = 6;
+		BEAUTY = 7;
+		MUSIC_POP = 8;
+		MUSIC_HIPHOP = 9;
+		SCIENCE_TECHNOLOGY = 10;
+		GAMING = 11;
+		LIFESTYLE = 12;
+		ENTERTAINMENT = 13;
+		BEAUTY_FASHION_STYLE = 14;
+		FOOD_TRAVEL = 15;
+		MUSIC = 16;
+		LIVING = 17;
+		FOOD = 18;
+		ANIMALS = 19;
+		FINANCE = 20;
+		LOVE = 21;
+		MUSIC_EDM = 22;
+		FORTNITE = 23;
+		WORLD_NEWS = 24;
+		NFL = 25;
+		STUDENT_LIFE = 26;
+		SCIENCE_AND_TECHNOLOGY = 27;
+	}
+
+	InterestGroupType_Enum interestGroupType = 1;
+	float score = 2;
+}

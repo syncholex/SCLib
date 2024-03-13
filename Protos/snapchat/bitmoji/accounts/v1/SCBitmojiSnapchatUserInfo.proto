@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.accounts.v1;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCBitmojiSnapchatUserInfo {
+	string snapchatUserId = 1;
+	string bitmojiLinkageId = 2;
+	google.protobuf.GPBTimestamp created = 3;
+}

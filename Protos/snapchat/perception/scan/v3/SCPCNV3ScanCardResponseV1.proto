@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardModel.proto";
+
+message SCPCNV3ScanCardResponseV1 {
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanCardModel scanCardArray = 1;
+}

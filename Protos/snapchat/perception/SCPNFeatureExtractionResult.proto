@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/lookalike/features/ExtractFeaturesResponse.proto";
+
+message SCPNFeatureExtractionResult {
+	snapchat.perception.lookalike.features.ExtractFeaturesResponse lookalikeFeatures = 1;
+}

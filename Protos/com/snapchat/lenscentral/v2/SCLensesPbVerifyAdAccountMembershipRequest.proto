@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+message SCLensesPbVerifyAdAccountMembershipRequest {
+	string userId = 1;
+	string accountId = 2;
+	string organizationId = 3;
+}

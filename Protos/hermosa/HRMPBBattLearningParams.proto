@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBattLearningParams {
+	uint32 rcomp0 = 1;
+	uint32 tempCo = 2;
+	uint32 fullCapRep = 3;
+	uint32 cycles = 4;
+	uint32 fullCapNom = 5;
+}

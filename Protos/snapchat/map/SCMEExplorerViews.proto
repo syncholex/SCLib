@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEExplorerViews {
+	string statusId = 1;
+	string userId = 2;
+	int64 viewCount = 3;
+	repeated string viewerIdsArray = 4;
+}

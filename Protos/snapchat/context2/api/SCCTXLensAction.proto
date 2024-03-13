@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXLensAction_CustomizationInfo.proto";
+
+message SCCTXLensAction {
+	string lensId = 1;
+	string deeplink = 2;
+	repeated string shoppingLensProductIdsArray = 3;
+
+	enum SCCTXLensAction_CameraMode {
+		CameraModeLensOnly = 0;
+		CameraModeReplyEnabled = 1;
+	}
+
+	SCCTXLensAction_CameraMode cameraMode = 4;
+	snapchat.context2.api.SCCTXLensAction_CustomizationInfo customizationInfo = 5;
+}

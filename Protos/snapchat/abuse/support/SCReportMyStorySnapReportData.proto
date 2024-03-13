@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportMyStorySnapReportData {
+	string snapId = 1;
+	bool usesCameraRollPickerLens = 2;
+}

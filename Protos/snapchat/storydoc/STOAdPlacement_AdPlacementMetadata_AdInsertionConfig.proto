@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOAdPlacement_AdPlacementMetadata_AdInsertionConfig {
+	uint32 firstOnStart = 1;
+	uint32 firstOnResume = 2;
+	uint32 interval = 3;
+	uint32 minSnapsAfterAd = 4;
+}

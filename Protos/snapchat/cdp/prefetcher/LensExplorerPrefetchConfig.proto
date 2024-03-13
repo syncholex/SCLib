@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+import "snapchat/cdp/prefetcher/BackgroundPrefetchConfig.proto";
+
+message LensExplorerPrefetchConfig {
+	bool prefetchArchive = 1;
+
+	enum LensExplorerPrefetchConfig_PrefetchMode {
+		NONE_UNSET = 0;
+		FOREGROUND = 1;
+		BACKGROUND = 2;
+		ALL = 3;
+	}
+
+	LensExplorerPrefetchConfig_PrefetchMode prefetchMode = 2;
+	int32 lensesCount = 3;
+	int64 lastUserActivityPeriod = 4;
+	snapchat.cdp.prefetcher.BackgroundPrefetchConfig backgroundPrefetchConfig = 5;
+	repeated string feedIdsArray = 6;
+	int32 prefetchLensAnimationsCount = 7;
+	int32 containerPrefetchLensesCount = 8;
+}

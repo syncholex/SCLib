@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.order;
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+import "com/snapchat/commerce/domain/account/ContactDetails.proto";
+import "com/snapchat/commerce/domain/order/CheckoutLineItem.proto";
+import "com/snapchat/commerce/domain/order/TaxItem.proto";
+import "com/snapchat/commerce/domain/account/ShippingAddress.proto";
+import "com/snapchat/commerce/domain/order/ShippingOption.proto";
+import "com/snapchat/commerce/domain/order/DiscountInfo.proto";
+
+message Checkout {
+	bytes id_p = 1;
+
+	enum CommercePartner {
+		UNSET = 0;
+		SHOPIFY = 1;
+		MINIPROGRAM = 2;
+	}
+
+	CommercePartner commercePartner = 2;
+	bytes storeId = 3;
+	com.snapchat.commerce.domain.CurrencyAmount totalPrice = 4;
+	com.snapchat.commerce.domain.account.ContactDetails contactDetails = 5;
+	string webURL = 6;
+	repeated com.snapchat.commerce.domain.order.CheckoutLineItem lineItemsArray = 7;
+	repeated com.snapchat.commerce.domain.order.TaxItem taxItemsArray = 8;
+	com.snapchat.commerce.domain.account.ShippingAddress shippingAddress = 9;
+	repeated com.snapchat.commerce.domain.order.ShippingOption shippingOptionArray = 10;
+	string shippingOptionHandle = 11;
+	bool shouldUseWebview = 12;
+	string discountCode = 13;
+	com.snapchat.commerce.domain.order.DiscountInfo discountInfo = 14;
+	bool userHasPaymentMethod = 15;
+	string externalId = 16;
+	string additionalParameters = 17;
+	string traceId = 18;
+}

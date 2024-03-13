@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message FSNProxyPairAccountRequest {
+	string accountId = 1;
+	string lensStudioSerialUuid = 2;
+}

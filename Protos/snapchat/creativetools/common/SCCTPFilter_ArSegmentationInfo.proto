@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_ArSegmentationInfo_SkyFilter.proto";
+import "snapchat/creativetools/common/SCCTPFilter_ArSegmentationInfo_PortraitFilter.proto";
+
+message SCCTPFilter_ArSegmentationInfo {
+	bool shouldDisplayWithoutSegmentationMatch = 1;
+	bool isBasic = 2;
+
+	oneof filter {
+		snapchat.creativetools.common.SCCTPFilter_ArSegmentationInfo_SkyFilter skyFilter = 3;
+		snapchat.creativetools.common.SCCTPFilter_ArSegmentationInfo_PortraitFilter portraitFilter = 4;
+	}
+
+}

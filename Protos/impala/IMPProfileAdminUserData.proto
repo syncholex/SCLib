@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPendingRoleInvite.proto";
+import "impala/IMPRole.proto";
+import "impala/IMPProfileUserSettings.proto";
+
+message IMPProfileAdminUserData {
+	repeated string allowedActionsArray = 2;
+	repeated impala.IMPPendingRoleInvite pendingRoleInvitesArray = 3;
+	repeated impala.IMPRole rolesArray = 4;
+	impala.IMPProfileUserSettings userSettings = 6;
+}

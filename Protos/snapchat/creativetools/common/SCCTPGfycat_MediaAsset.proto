@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPGfycat_MediaAsset {
+
+	enum SCCTPGfycat_FileFormat {
+		FORMAT_UNSET = 0;
+		JPG = 1;
+		PNG = 2;
+		MAX_1MB_GIF = 3;
+		MAX_5MB_GIF = 4;
+		WEBP = 5;
+		MOBILE_MP4 = 6;
+		MP4 = 7;
+		GIF_FORMAT = 8;
+		POSTER = 9;
+	}
+
+	SCCTPGfycat_FileFormat format = 1;
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 2;
+	uint32 width = 3;
+	uint32 height = 4;
+	uint64 size = 5;
+}

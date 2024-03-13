@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPhoneNotificationStatus {
+	bool connectedToBondedPeer = 1;
+	bool active = 2;
+	bool enabled = 3;
+}

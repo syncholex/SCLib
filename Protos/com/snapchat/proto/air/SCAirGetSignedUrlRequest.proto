@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.proto.air;
+
+message SCAirGetSignedUrlRequest {
+	string reportId = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSetSardoCalibrationActionResponse {
+
+	enum HRMPBSetSardoCalibrationActionResponse_CalibrationError {
+		UNKNOWN = 0;
+		MARKER_UNSUPPORTED = 1;
+	}
+
+	HRMPBSetSardoCalibrationActionResponse_CalibrationError calibrationError = 1;
+}

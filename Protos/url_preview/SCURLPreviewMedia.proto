@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package url_preview;
+
+import "url_preview/SCURLPreviewEmbeddedMedia.proto";
+
+message SCURLPreviewMedia {
+
+	oneof content {
+		string URL = 1;
+		url_preview.SCURLPreviewEmbeddedMedia embeddedMedia = 2;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMPlaceMetadata {
+	snapchat.core.SCCOREUUID taggedPlaceId = 1;
+}

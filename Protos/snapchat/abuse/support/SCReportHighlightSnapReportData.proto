@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportHighlightSnapReportData {
+	string profileId = 1;
+	string highlightId = 2;
+	string highlightVersion = 3;
+	string snapId = 4;
+}

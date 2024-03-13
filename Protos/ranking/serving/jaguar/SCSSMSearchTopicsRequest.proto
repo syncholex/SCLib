@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMClientInfo.proto";
+import "ranking/core/SCSCORETweaks.proto";
+
+message SCSSMSearchTopicsRequest {
+	string requestId = 1;
+	string query = 2;
+	int64 requestTimestampMs = 3;
+	ranking.serving.jaguar.SCSSMClientInfo clientInfo = 4;
+	ranking.core.SCSCORETweaks tweaks = 5;
+
+	enum SCSSMDebugOption_Enum {
+		OFF = 0;
+		HTML = 2;
+		PB = 3;
+		HTML_AND_PB = 4;
+		REPLAY = 5;
+	}
+
+	SCSSMDebugOption_Enum debug = 6;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.store;
+
+message StorePolicy {
+	string returnPolicyURL = 1;
+	string returnPolicyURLLabel = 2;
+	string termsOfServicePolicyURL = 3;
+	string termsOfServicePolicyLabel = 4;
+	string privacyPolicyURL = 5;
+	string privacyPolicyLabel = 6;
+}

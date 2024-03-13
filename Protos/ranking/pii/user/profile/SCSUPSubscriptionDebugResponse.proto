@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPSubscriptionDebugResponse {
+	string subscribedUsers = 1;
+	string subscribedPublishers = 2;
+	string subscribedStories = 3;
+	string subscribedLives = 4;
+}

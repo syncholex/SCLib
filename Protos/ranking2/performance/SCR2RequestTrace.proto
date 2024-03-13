@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2.performance;
+
+import "ranking2/performance/SCR2TimedScope.proto";
+
+message SCR2RequestTrace {
+	int32 totalElapsedMs = 1;
+	int32 totalProcessCpuMs = 2;
+	ranking2.performance.SCR2TimedScope rootScope = 3;
+}

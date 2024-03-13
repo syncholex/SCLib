@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_TemplateInfo {
+	bytes templateId = 1;
+}

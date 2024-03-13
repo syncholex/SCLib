@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/ml/centralkitchen/SCSCKFriendStoryPosterFeatures.proto";
+
+message SCSUPGetFriendInteractionsHistoryResponse_PosterInfo {
+	ranking.ml.centralkitchen.SCSCKFriendStoryPosterFeatures posterFeatures = 1;
+	int64 posterAggregationTimestampSecs = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.store;
+
+import "com/snapchat/commerce/wire/store/GetStoreProductsResponse_ProductList.proto";
+import "com/snapchat/commerce/wire/error/CommerceApiServiceError.proto";
+
+message GetStoreProductsResponse {
+
+	oneof response {
+		com.snapchat.commerce.wire.store.GetStoreProductsResponse_ProductList productList = 1;
+		com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+	}
+
+	string requestId = 3;
+}

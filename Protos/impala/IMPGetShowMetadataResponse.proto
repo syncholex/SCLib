@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPShowMetadata.proto";
+
+message IMPGetShowMetadataResponse {
+	impala.IMPShowMetadata showMetadata = 1;
+}

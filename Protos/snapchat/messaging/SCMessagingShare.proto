@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingMapShare.proto";
+import "snapchat/messaging/SCMessagingShazamShare.proto";
+import "snapchat/messaging/SCMessagingSearchShare.proto";
+import "snapchat/messaging/SCMessagingDiscoverShare.proto";
+import "snapchat/messaging/SCMessagingStoryShare.proto";
+import "snapchat/messaging/SCMessagingSearchShareSnap.proto";
+import "snapchat/messaging/SCMessagingUserShare.proto";
+import "snapchat/messaging/SCMessagingLegacyDiscoverShare.proto";
+import "snapchat/messaging/SCMessagingLegacyShazamShare.proto";
+import "snapchat/messaging/SCMessagingMapShareStory.proto";
+import "snapchat/messaging/SCMessagingMemoriesStory.proto";
+import "snapchat/messaging/SCMessagingGameScoreShare.proto";
+import "snapchat/messaging/SCMessagingSnapProProfileShare.proto";
+import "snapchat/messaging/SCMessagingSnapProSnapShare.proto";
+import "snapchat/messaging/SCMessagingLegacyAdShare.proto";
+import "snapchat/messaging/SCMessagingSpotlightStoryShare.proto";
+import "snapchat/messaging/SCMessagingBitmojiOutfitShare.proto";
+import "snapchat/messaging/SCMessagingMapDrop.proto";
+import "snapchat/messaging/SCMessagingSnapKitInviteShare.proto";
+import "snapchat/messaging/SCMessagingPlaceShare.proto";
+import "snapchat/messaging/SCMessagingSnapProSavedStoryShare.proto";
+import "snapchat/messaging/SCMessagingBloopsStoryShare.proto";
+import "snapchat/messaging/SCMessagingTextAdShare.proto";
+import "snapchat/messaging/SCMessagingSavedStory.proto";
+import "snapchat/messaging/SCMessagingSpotlightComment.proto";
+import "snapchat/messaging/SCMessagingAdShare.proto";
+import "snapchat/messaging/SCMessagingPremiumStoryShare.proto";
+
+message SCMessagingShare {
+
+	oneof share {
+		snapchat.messaging.SCMessagingMapShare map = 1;
+		snapchat.messaging.SCMessagingShazamShare shazam = 2;
+		snapchat.messaging.SCMessagingSearchShare search = 3;
+		snapchat.messaging.SCMessagingDiscoverShare discover = 4;
+		snapchat.messaging.SCMessagingStoryShare story = 5;
+		snapchat.messaging.SCMessagingSearchShareSnap searchSnap = 6;
+		snapchat.messaging.SCMessagingUserShare user = 7;
+		snapchat.messaging.SCMessagingLegacyDiscoverShare legacyDiscover = 8;
+		snapchat.messaging.SCMessagingLegacyShazamShare legacyShazam = 9;
+		snapchat.messaging.SCMessagingMapShareStory mapStory = 10;
+		snapchat.messaging.SCMessagingMemoriesStory memoriesStory = 11;
+		snapchat.messaging.SCMessagingGameScoreShare gameScore = 12;
+		snapchat.messaging.SCMessagingSnapProProfileShare snapProProfile = 13;
+		snapchat.messaging.SCMessagingSnapProSnapShare snapProSnap = 14;
+		snapchat.messaging.SCMessagingLegacyAdShare legacyAd = 15;
+		snapchat.messaging.SCMessagingSpotlightStoryShare spotlightStoryShare = 16;
+		snapchat.messaging.SCMessagingBitmojiOutfitShare bitmojiOutfitShare = 17;
+		snapchat.messaging.SCMessagingMapDrop mapDropShare = 18;
+		snapchat.messaging.SCMessagingSnapKitInviteShare snapKitInviteShare = 19;
+		snapchat.messaging.SCMessagingPlaceShare placeShare = 20;
+		snapchat.messaging.SCMessagingSnapProSavedStoryShare snapProSavedStory = 21;
+		snapchat.messaging.SCMessagingBloopsStoryShare bloopsStoryShare = 22;
+		snapchat.messaging.SCMessagingTextAdShare textAdShare = 23;
+		snapchat.messaging.SCMessagingSavedStory savedStory = 24;
+		snapchat.messaging.SCMessagingSpotlightComment spotlightComment = 25;
+		snapchat.messaging.SCMessagingAdShare adShare = 26;
+		snapchat.messaging.SCMessagingPremiumStoryShare premiumStoryShare = 27;
+	}
+
+}

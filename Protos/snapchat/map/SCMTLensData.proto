@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLensCreator.proto";
+
+message SCMTLensData {
+	string lensId = 1;
+	string title = 2;
+	string artist = 3;
+	string address = 4;
+	string description_p = 5;
+	string URL = 6;
+	snapchat.map.SCMTLensCreator lensCreator = 7;
+	string secondaryLensId = 8;
+	snapchat.map.SCMTLensCreator secondaryLensCreator = 9;
+	string thumbnailURL = 10;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMSponsor {
+	snapchat.core.SCCOREUUID profileId = 1;
+	string displayName = 2;
+
+	enum SDMSponsor_SponsorStatus {
+		STATUS_UNSET = 0;
+		PENDING = 1;
+		APPROVED = 2;
+		REJECTED = 3;
+		NOT_SPECIFIED = 4;
+		AUTO_APPROVED = 5;
+	}
+
+	SDMSponsor_SponsorStatus sponsorStatus = 3;
+}

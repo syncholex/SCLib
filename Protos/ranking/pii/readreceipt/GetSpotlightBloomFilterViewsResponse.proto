@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/BloomFilter.proto";
+
+message GetSpotlightBloomFilterViewsResponse {
+	string requestId = 1;
+	repeated ranking.pii.readreceipt.BloomFilter bloomFiltersArray = 2;
+}

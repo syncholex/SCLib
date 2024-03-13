@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMUserCorpusInteractionFeatures {
+
+	enum SCFEEDStoryCorpus_Corpus {
+		UNSET = 0;
+		TOPICS = 1;
+		EVENTS = 2;
+		PLACES = 3;
+		LOCATIONS = 4;
+		BREAKING_NEWS = 5;
+		TRENDING_TOPICS = 6;
+		REGIONAL_TOPICS = 7;
+		POLYGON = 8;
+		TOPSHARED = 9;
+		SNAPCASTS = 10;
+		SPOTTED = 11;
+		MANUAL_STORYBUILDER = 12;
+		SOLO = 13;
+		MAPS_STORY = 14;
+		MAPS_CALLOUT = 15;
+		PUBLISHER = 16;
+		PUBLIC_USER = 17;
+		RECOMMENDED_USER = 18;
+		PROMOTED_STORY = 19;
+		GROUP_STORY = 20;
+		LIVE_STREAM = 21;
+		FEATURED = 22;
+		COGNAC = 23;
+		LENS_OBJECT = 24;
+		LENS_CHALLENGE = 27;
+		LENS_CHALLENGE_STORY = 28;
+		SELECTION = 25;
+		FRIEND_STORY = 26;
+		CHANNEL_PIVOT = 29;
+		CUSTOM_STORY = 30;
+		OUR_STORY = 31;
+		LENS_CATEGORY = 32;
+		BADGE = 33;
+		TOPIC_RECENT_SNAPS = 34;
+		SINGLE_SNAP = 35;
+		HERO_STORY = 36;
+		PUBLISHER_SEGMENT = 37;
+		LENS_CREATOR = 38;
+		TOPIC_HUMAN_MODERATED_SNAPS = 39;
+		TOPIC_POPULAR_HUMAN_MODERATED_SNAPS = 40;
+		TOPIC_POPULAR_AUTO_MODERATED_SNAPS = 41;
+		LENS_COLLECTION = 42;
+		SAVED_STORY = 43;
+		AGGREGATED_FRIENDS_STORY = 44;
+		UNUSED_45 = 45;
+		UNUSED_46 = 46;
+		UNUSED_47 = 47;
+		UNUSED_48 = 48;
+		UNUSED_49 = 49;
+		UNUSED_50 = 50;
+		UNUSED_51 = 51;
+		UNUSED_52 = 52;
+		PUBLIC_USER_SNAP = 1000;
+		BUNDLE_SNAP = 1001;
+		MY_STORY_SNAP = 1002;
+		CUSTOM_STORY_SNAP = 1003;
+		PUBLIC_USER_TILE = 2000;
+		BUNDLE_TILE = 2001;
+	}
+
+	SCFEEDStoryCorpus_Corpus corpus = 1;
+	float longImpressionsScore = 2;
+	float shortImpressionScore = 3;
+	float shortViewsScore = 4;
+	float longViewsScore = 5;
+	int32 numHides = 6;
+	int32 numSubscribes = 7;
+	float numSnapsViewed = 8;
+	float watchTime = 9;
+	float impressionsTime = 10;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.itemdetailpage;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message ShopOnStoreWidget {
+	string storeId = 1;
+	string storeName = 2;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo icon = 3;
+}

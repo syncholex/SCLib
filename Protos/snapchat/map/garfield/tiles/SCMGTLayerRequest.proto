@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles;
+
+import "snapchat/map/garfield/tiles/SCMGTKeyValue.proto";
+
+message SCMGTLayerRequest {
+	uint64 id_p = 1;
+	uint64 version = 2;
+	uint64 cacheChecksum = 3;
+	string flavor = 4;
+
+	oneof zoomOption {
+		bool overzoom = 5;
+		uint32 hyperzoomLevel = 6;
+	}
+
+	repeated snapchat.map.garfield.tiles.SCMGTKeyValue abParamsArray = 7;
+}

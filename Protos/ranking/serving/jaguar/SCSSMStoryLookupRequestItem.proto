@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/SCSSMStoryLookupRequestItem_DeltaFetchInfo.proto";
+import "ranking/serving/jaguar/SCSSMStoryLookupRequestItem_EnvironmentInfo.proto";
+import "ranking/serving/jaguar/SCSSMStoryLookupRequestItem_SnapSelectInfo.proto";
+import "ranking/serving/jaguar/SCSSMSingleSnapStoryLookupRequestConfig.proto";
+
+message SCSSMStoryLookupRequestItem {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	ranking.serving.jaguar.SCSSMStoryLookupRequestItem_DeltaFetchInfo deltaFetchInfo = 2;
+	ranking.serving.jaguar.SCSSMStoryLookupRequestItem_EnvironmentInfo environmentInfo = 3;
+	ranking.serving.jaguar.SCSSMStoryLookupRequestItem_SnapSelectInfo snapSelectInfo = 4;
+	fixed64 storyIdFp = 5;
+
+	oneof typedRequestConfig {
+		ranking.serving.jaguar.SCSSMSingleSnapStoryLookupRequestConfig singleSnapStory = 6;
+	}
+
+	bool isDisplayOrder = 7;
+	string storyIdLookup = 8;
+}

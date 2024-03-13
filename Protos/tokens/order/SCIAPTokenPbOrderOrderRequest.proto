@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.order;
+
+message SCIAPTokenPbOrderOrderRequest {
+	string id_p = 1;
+	string itemId = 2;
+	bool syncEntitlement = 3;
+}

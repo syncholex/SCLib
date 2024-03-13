@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusRegisterWithUsernamePasswordRequest.proto";
+
+message SCJanusRegisterWithGoogleRequest {
+	bytes idToken = 1;
+
+	oneof baseRequest {
+		snapchat.janus.api.SCJanusRegisterWithUsernamePasswordRequest usernamePasswordRequest = 2;
+	}
+
+	bytes nonce = 3;
+}

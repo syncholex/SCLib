@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2StoryCard.proto";
+import "ranking2/SCR2UserCard.proto";
+import "ranking2/SCR2SuggestionCard.proto";
+import "ranking2/SCR2PopUpCard.proto";
+import "ranking2/SCR2CardAttachment.proto";
+import "ranking2/SCR2SportsCard.proto";
+import "ranking2/SCR2HtmlCard.proto";
+import "ranking2/SCR2DiscoverCard.proto";
+import "ranking2/SCR2LocationPromptCard.proto";
+import "ranking2/SCR2PublisherCard.proto";
+import "ranking2/SCR2CandidateStoryCard.proto";
+import "ranking2/SCR2SnapToStoryCard.proto";
+import "ranking2/SCR2SpellCorrectionCard.proto";
+import "ranking2/SCR2ErrorMessageCard.proto";
+import "ranking2/SCR2WebCard.proto";
+import "ranking2/SCR2BusinessInfoCard.proto";
+import "ranking2/SCR2BusinessReviewCard.proto";
+import "ranking2/SCR2AdsCard.proto";
+import "ranking2/SCR2LiveStreamingCard.proto";
+import "ranking2/SCR2SearchCard_UserInfo.proto";
+import "ranking2/SCR2LensCard.proto";
+import "ranking2/SCR2BrandProfileCard.proto";
+import "ranking2/SCR2SnapStoreCard.proto";
+import "ranking2/SCR2GameCard.proto";
+
+message SCR2SearchCard {
+
+	oneof card {
+		ranking2.SCR2StoryCard storyCard = 1;
+		ranking2.SCR2UserCard userCard = 2;
+		ranking2.SCR2SuggestionCard suggestionCard = 3;
+		ranking2.SCR2PopUpCard popUpCard = 4;
+		ranking2.SCR2SportsCard sportsCard = 6;
+		ranking2.SCR2HtmlCard htmlCard = 7;
+		ranking2.SCR2DiscoverCard discoverCard = 8;
+		ranking2.SCR2LocationPromptCard locationPromptCard = 9;
+		ranking2.SCR2PublisherCard publisherCard = 10;
+		ranking2.SCR2CandidateStoryCard candidateStoryCard = 11;
+		ranking2.SCR2SnapToStoryCard snapToStoryCard = 12;
+		ranking2.SCR2SpellCorrectionCard spellCorrectionCard = 13;
+		ranking2.SCR2ErrorMessageCard errorMessageCard = 14;
+		ranking2.SCR2WebCard webCard = 15;
+		ranking2.SCR2BusinessInfoCard businessInfoCard = 16;
+		ranking2.SCR2BusinessReviewCard businessReviewCard = 17;
+		ranking2.SCR2AdsCard adsCard = 18;
+		ranking2.SCR2LiveStreamingCard liveStreamingCard = 19;
+		ranking2.SCR2LensCard lensCard = 21;
+		ranking2.SCR2BrandProfileCard brandProfileCard = 22;
+		ranking2.SCR2SnapStoreCard snapStoreCard = 23;
+		ranking2.SCR2GameCard gameCard = 24;
+	}
+
+	ranking2.SCR2CardAttachment attachment = 5;
+	ranking2.SCR2SearchCard_UserInfo userInfo = 20;
+}

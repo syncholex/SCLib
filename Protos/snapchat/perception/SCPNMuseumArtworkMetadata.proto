@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+message SCPNMuseumArtworkMetadata {
+	string mediaURL = 1;
+	string museum = 2;
+	string title = 3;
+	string placardText = 4;
+	string sourceURL = 5;
+	string properties = 6;
+}

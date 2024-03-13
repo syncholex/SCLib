@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+import "google/type/GTPDate.proto";
+
+message SCUpdateBirthdatePbUpdateBirthdateRequest {
+	google.type.GTPDate birthdate = 1;
+	int32 minuteOffsetFromUtc = 2;
+	bool hasConfirmedLastBirthdateChange = 3;
+}

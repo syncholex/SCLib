@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMSpectacles {
+
+	enum SDMSpectacles_SpectaclesVersion {
+		UNKNOWN_VERSION = 0;
+		V1 = 1;
+		V2 = 2;
+		V3 = 3;
+		V4 = 4;
+		V5 = 5;
+	}
+
+	SDMSpectacles_SpectaclesVersion version = 1;
+	bool rotationLocked = 2;
+	string deviceId = 3;
+	string deviceFirmwareInfo = 4;
+
+	enum SDMSpectacles_CameraMode {
+		UNKNOWN = 0;
+		MONO = 1;
+		STEREO_TOP_BOTTOM = 2;
+	}
+
+	SDMSpectacles_CameraMode cameraMode = 5;
+}

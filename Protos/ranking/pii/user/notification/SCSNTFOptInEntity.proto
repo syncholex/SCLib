@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFNotificationEntityId.proto";
+
+message SCSNTFOptInEntity {
+	ranking.pii.user.notification.SCSNTFNotificationEntityId id_p = 1;
+
+	enum SCSNTFOptInType_Enum {
+		UNKNOWN = 0;
+		USER_STORY = 1;
+		PUBLISHER_STORY = 2;
+		OUR_STORY = 3;
+		LIVE_STREAM = 4;
+		HN_NEWS_SECTION = 5;
+	}
+
+	SCSNTFOptInType_Enum type = 2;
+	string displayName = 3;
+
+	enum SCSNTFOptInState_Enum {
+		UNKNOWN = 0;
+		OPT_IN = 1;
+		OPT_OUT = 2;
+	}
+
+	SCSNTFOptInState_Enum state = 4;
+}

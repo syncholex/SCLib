@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/map/garfield/tray/SCMGTYTicketmasterItems.proto";
+import "snapchat/map/garfield/tray/SCMGTYInfatuationItems.proto";
+
+message SCMGTYGetItemsResponse {
+
+	oneof items {
+		snapchat.map.garfield.tray.SCMGTYTicketmasterItems ticketmasterItems = 1;
+		snapchat.map.garfield.tray.SCMGTYInfatuationItems infatuationItems = 2;
+	}
+
+	bool paginationHasMoreItems = 3;
+}

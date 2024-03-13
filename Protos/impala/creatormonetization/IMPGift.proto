@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPGift {
+	string id_p = 1;
+	string name = 2;
+	string thumbnailContentURL = 3;
+	string openAnimationContentURL = 4;
+	string sendAnimationContentURL = 5;
+	string gradientStartColor = 6;
+	string gradientStopColor = 7;
+	string openAudioContentURL = 8;
+	string sendAudioContentURL = 9;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPBoltUploadObject.proto";
+import "impala/highlights/IMPSpotlightSnapObject.proto";
+import "impala/highlights/IMPMemoriesSnapObject.proto";
+
+message IMPHighlightSnap {
+
+	oneof snapContent {
+		string highlightSnapId = 1;
+		string profileStorySnapId = 2;
+		impala.highlights.IMPBoltUploadObject boltUploadObject = 3;
+		impala.highlights.IMPSpotlightSnapObject spotlightSnapObject = 4;
+		impala.highlights.IMPMemoriesSnapObject memoriesSnapObject = 5;
+	}
+
+}

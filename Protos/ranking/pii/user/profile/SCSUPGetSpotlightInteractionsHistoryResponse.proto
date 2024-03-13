@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo.proto";
+
+message SCSUPGetSpotlightInteractionsHistoryResponse {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo actionInfosArray = 2;
+}

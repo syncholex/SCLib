@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+import "Bitmoji/Proto/ViewBox.proto";
+import "Bitmoji/Proto/S3AssetPath.proto";
+import "Bitmoji/Proto/MultiPanelS3AssetPath.proto";
+import "Bitmoji/Proto/Transform2D.proto";
+
+message LayerData {
+
+	enum LayerType {
+		LAYER_TYPE_NONE = 0;
+		IMAGE = 1;
+		SCENE = 2;
+		MASK = 3;
+	}
+
+	LayerType type = 1;
+	int32 index = 2;
+	Bitmoji.Proto.ViewBox crop = 3;
+
+	oneof layerView {
+		Bitmoji.Proto.ViewBox view = 4;
+		Bitmoji.Proto.Transform2D transform = 9;
+	}
+
+	string comicAssetPath = 5;
+
+	enum CharacterMaskData_MaskType_Enum {
+		CIRCLE = 0;
+		CIRCULAR_GRADIENT = 1;
+		RECTANGLE = 2;
+		TRIANGLE_UP = 3;
+		TRIANGLE_DOWN = 4;
+		MARQUEE_1 = 5;
+		RECTANGULAR_GRADIENT_1 = 6;
+		RECTANGULAR_GRADIENT_2 = 7;
+		RECTANGULAR_GRADIENT_3 = 8;
+		MARQUEE_2 = 9;
+		MARQUEE_3 = 10;
+		RECTANGLE_2 = 11;
+		MARQUEE_4 = 12;
+		INVERTED_TEARDROP = 13;
+		ROUNDED_SQUARE = 14;
+		MIND_BLOWN = 15;
+		OVAL = 16;
+	}
+
+
+	oneof metadata {
+		CharacterMaskData_MaskType_Enum maskType = 6;
+		Bitmoji.Proto.S3AssetPath assetPath = 7;
+		Bitmoji.Proto.MultiPanelS3AssetPath multiPanelAssetPaths = 8;
+	}
+
+}

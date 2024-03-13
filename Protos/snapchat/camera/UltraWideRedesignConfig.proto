@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message UltraWideRedesignConfig {
+	bool enableZoomIndicatorView = 1;
+	bool shouldChangeLabelOnToggle = 2;
+
+	enum UltraWideRedesignConfig_ZoomIndicatorType {
+		ALL_MODES_UNSET = 0;
+		POINT_FIVE_LABEL_ONLY = 1;
+		POINT_FIVE_LABEL_WHEN_DISABLED = 2;
+		POINT_FIVE_LABEL_WHEN_ENABLED = 3;
+	}
+
+	UltraWideRedesignConfig_ZoomIndicatorType zoomIndicatorType = 3;
+}

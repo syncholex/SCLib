@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPTrailer.proto";
+
+message IMPExtraMetadata {
+	string showId = 1;
+	string seasonId = 2;
+}

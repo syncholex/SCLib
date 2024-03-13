@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensLinkedResource.proto";
+
+message SCLensPerformApiCallResponse {
+
+	enum SCLensResponseCode {
+		RESPONSE_CODE_UNSET = 0;
+		SUCCESS = 1;
+		REDIRECTED = 2;
+		BAD_REQUEST = 3;
+		ACCESS_DENIED = 4;
+		NOT_FOUND = 5;
+		TIMEOUT = 6;
+		REQUEST_TOO_LARGE = 7;
+		SERVER_ERROR = 8;
+		CANCELLED = 9;
+		PROXY_ERROR = 10;
+	}
+
+	SCLensResponseCode responseCode = 1;
+	string metadata = 2;
+	bytes body = 3;
+	bool userLocationUsed = 4;
+	repeated snapchat.lenses.SCLensLinkedResource linkedResourcesArray = 5;
+}

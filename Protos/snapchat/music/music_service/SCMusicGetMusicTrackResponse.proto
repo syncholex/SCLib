@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+import "snapchat/music/music_service/SCMusicMusicTrackAvailability.proto";
+import "snapchat/mediaengine/smart_template/SCMESelectedMusicMetadata.proto";
+
+message SCMusicGetMusicTrackResponse {
+	snapchat.creativetools.common.SCCTPMusicTrack musicTrackInfo = 1;
+	repeated snapchat.creativetools.common.SCCTPMusicArtist artistsArray = 2;
+	snapchat.music.music_service.SCMusicMusicTrackAvailability availability = 3;
+	snapchat.mediaengine.smart_template.SCMESelectedMusicMetadata musicBeatSyncData = 4;
+}

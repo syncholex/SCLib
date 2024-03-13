@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingProductAdItemInstallmentInfo {
+	string installmentDescription = 1;
+	string installmentPayment = 2;
+	string downPayment = 3;
+}

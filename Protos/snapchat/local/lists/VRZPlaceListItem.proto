@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/geo/SPCGRect.proto";
+import "snapchat/local/verrazano/VRZPlaceStats.proto";
+
+message VRZPlaceListItem {
+	string placeId = 1;
+	string name = 2;
+	snapchat.geo.SPCGPoint location = 3;
+	string iconURL = 4;
+	int64 addTs = 5;
+	string localizedDisplayAddress = 6;
+	string kindName = 7;
+	string localizedCategoryName = 8;
+	snapchat.geo.SPCGRect bounds = 9;
+	snapchat.local.verrazano.VRZPlaceStats placeStats = 10;
+}

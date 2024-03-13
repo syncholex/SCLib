@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.ct_item_client;
+
+message SCCTPGetRequest {
+	repeated bytes ctidsArray = 1;
+
+	enum SCCTPTakedownStatus {
+		STATUS_UNSET = 0;
+		DELETED = 1;
+		TAKEN_DOWN = 2;
+		OFFENSIVE = 3;
+		COPYRIGHT = 4;
+		RESTRICTED = 5;
+	}
+
+	repeated SCCTPTakedownStatus includeTakenDownStatusesArray = 2 [packed=true];
+}

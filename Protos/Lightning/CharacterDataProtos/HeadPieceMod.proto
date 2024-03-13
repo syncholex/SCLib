@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+import "Lightning/CharacterDataProtos/PositionScaleTransform.proto";
+
+message HeadPieceMod {
+	Lightning.CharacterDataProtos.PositionScaleTransform nonRotatedMod = 1;
+	Lightning.CharacterDataProtos.PositionScaleTransform rotatedMod = 2;
+}

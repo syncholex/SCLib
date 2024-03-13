@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.user_sessions;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "com/snapchat/auth/proto/user_sessions/AddressExternal.proto";
+
+message SessionExternal {
+
+	enum SurfaceExternal {
+		SURFACE_UNSET = 0;
+		SNAPCHAT_APP = 1;
+		SNAPCHAT_WEB = 2;
+	}
+
+	SurfaceExternal surface = 1;
+	string sessionId = 2;
+	google.protobuf.GPBTimestamp lastActiveTimestamp = 3;
+	string lastSeenIpAddress = 4;
+	string deviceName = 5;
+	com.snapchat.auth.proto.user_sessions.AddressExternal lastSeenAddress = 6;
+}

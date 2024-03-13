@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMTrack.proto";
+
+message SDMLayerComposition {
+	repeated snapchat.snapdoc.SDMTrack tracksArray = 1;
+	uint32 trackIndexCounter = 4;
+	uint32 trackSegmentIndexCounter = 5;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbCampaignSupEntry {
+	string campaignCofName = 1;
+	int32 supStorageId = 2;
+}

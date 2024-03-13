@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPWindowedEngagementSignals {
+	uint32 numRequestDedupedImpressions = 1;
+	float impressionTotalTimeSecs = 2;
+	uint32 numRequestDedupedWatches = 3;
+	float totalWatchTimeSecs = 4;
+	uint32 numRawWatches = 5;
+	uint32 numCompleteWatches = 6;
+	uint32 numRequestDedupedBoosts = 7;
+	uint64 numWatchesBelow1P5Secs = 8;
+	uint64 numWatchesAbove20Secs = 9;
+	float normalizedWatchTimeSecs = 10;
+	float normalizedWatchTimeSecsPercentile = 11;
+	uint32 numHides = 12;
+	float testOnlyField = 13;
+	float weightedImpressionTotalTimeSecs = 15;
+	float weightedNumRequestDedupedWatches = 16;
+	float weightedTotalWatchTimeSecs = 17;
+	float weightedNumRawWatches = 18;
+	float weightedNumCompleteWatches = 19;
+	float weightedNumHides = 20;
+	float weightedNumRequestDedupedBoosts = 21;
+	float weightedNumWatchesBelow1P5Secs = 22;
+	float weightedNumWatchesAbove20Secs = 23;
+	float weightedNormalizedWatchTimeSecs = 24;
+	float weightedNormalizedWatchTimeSecsPercentile = 25;
+	float weightedNumRequestDedupedImpressions = 26;
+	float weightedNumReports = 27;
+	float numDismisses = 28;
+	uint32 numSends = 29;
+	uint32 numOpenProfiles = 30;
+	uint32 numFavorites = 31;
+	uint64 numWatchesBelow3Secs = 32;
+	uint64 numWatchesAbove5Secs = 33;
+	uint64 numWatches = 34;
+	uint64 numSkips = 35;
+	uint64 numScreenshot = 36;
+	uint64 numReplay = 37;
+	uint64 numLooped = 38;
+	uint64 numShareSend = 39;
+	float timeViewed = 40;
+}

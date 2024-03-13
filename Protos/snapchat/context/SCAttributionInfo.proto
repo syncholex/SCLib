@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCAttributionInfo {
+	string userId = 1;
+	string displayName = 2;
+	string username = 3;
+}

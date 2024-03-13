@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbCreateCommunityGroupChatRequest {
+	repeated ranking.core.SCSCOREUUID participantUserIdsArray = 1;
+	ranking.core.SCSCOREUUID communityId = 2;
+	string name = 3;
+}

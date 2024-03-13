@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/lenses/SCLensLensIdentifier.proto";
+
+message SCLensLensesByIdsRequest {
+	repeated string lensesIdsArray = 1;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+	repeated snapchat.lenses.SCLensLensIdentifier lensIdentifiersArray = 3;
+}

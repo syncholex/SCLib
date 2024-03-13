@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/ImageGenerationVendorOpenAI.proto";
+import "merlin/toolbox/ImageGenerationVendorGoogle.proto";
+import "merlin/toolbox/ImageGenerationVendorBento.proto";
+
+message ImageGenerationConfig {
+
+	oneof vendor {
+		merlin.toolbox.ImageGenerationVendorOpenAI openai = 1;
+		merlin.toolbox.ImageGenerationVendorGoogle google = 2;
+		merlin.toolbox.ImageGenerationVendorBento bento = 3;
+	}
+
+}

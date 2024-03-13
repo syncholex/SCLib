@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+message SCPNLookalikeRequestMetadata {
+	string indexVersion = 1;
+}

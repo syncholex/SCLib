@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPTimeZone {
+	int32 offsetMinutes = 1;
+}

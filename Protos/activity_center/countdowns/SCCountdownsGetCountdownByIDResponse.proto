@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "activity_center/countdowns/Countdown.proto";
+
+message SCCountdownsGetCountdownByIDResponse {
+	activity_center.countdowns.Countdown countdown = 1;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbDistribution {
+	string destinationId = 1;
+
+	enum SCLensCentralCommonPbDestinationType {
+		DESTINATION_TYPE_UNSET = 0;
+		DESTINATION_TYPE_COMMUNITY = 1;
+		DESTINATION_TYPE_AD_ACCOUNT = 2;
+		DESTINATION_TYPE_CAMERA_KIT = 3;
+		DESTINATION_TYPE_SHOPPING_KIT = 4;
+	}
+
+	SCLensCentralCommonPbDestinationType destinationType = 2;
+
+	enum SCLensCentralCommonPbLensStatus {
+		LENS_STATUS_UNSET = 0;
+		LENS_STATUS_IN_REVIEW = 1;
+		LENS_STATUS_INVALID = 2;
+		LENS_STATUS_READY = 3;
+		LENS_STATUS_FINALIZED = 4;
+		LENS_STATUS_REJECTED = 5;
+		LENS_STATUS_FINALIZING = 6;
+		LENS_STATUS_LIVE = 7;
+		LENS_STATUS_OFFLINE = 8;
+		LENS_STATUS_HIDDEN = 9;
+		LENS_STATUS_AWAITING_PRODUCT_TAGGING = 10;
+		LENS_STATUS_NOT_PUBLISHED_TO_SNAPCHAT = 11;
+		LENS_STATUS_PROCESSING = 12;
+		LENS_STATUS_AVAILABLE = 13;
+	}
+
+	SCLensCentralCommonPbLensStatus status = 3;
+}

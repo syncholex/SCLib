@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsStories {
+
+	enum SCAppInsightsStories_Subfeature {
+		UNSET = 0;
+		ADS = 1;
+		FRIENDS = 2;
+		CUSTOM_STORIES = 3;
+		STORY_MANAGEMENT = 4;
+		PUBLISHERS = 5;
+		ENSEMBLE = 6;
+		CONTENT_UNDERSTANDING = 7;
+		PERSONALIZATION = 8;
+		FRIENDS_STORIES = 9;
+		DISCOVER = 10;
+		POSTING_FRIENDS_STORIES = 11;
+		CONTENT_MODERATION = 12;
+		POSTING_PUBLIC_STORIES = 13;
+		MEDIA_QUALITY = 14;
+		PLAYBACK = 15;
+	}
+
+	SCAppInsightsStories_Subfeature subfeature = 1;
+}

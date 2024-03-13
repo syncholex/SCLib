@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPHighlightV2 {
+	bytes story = 1;
+	string version = 2;
+	string compositeId = 3;
+}

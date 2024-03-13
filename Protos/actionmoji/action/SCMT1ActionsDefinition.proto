@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1ActionDefinition.proto";
+
+message SCMT1ActionsDefinition {
+	repeated actionmoji.action.SCMT1ActionDefinition actionDefinitionArray = 1;
+}

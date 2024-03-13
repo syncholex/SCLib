@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileModerationResult.proto";
+
+message IMPInternalListAllProfileModerationResultsResponse {
+	repeated impala.IMPProfileModerationResult moderationResultsArray = 1;
+	string nextPageId = 2;
+}

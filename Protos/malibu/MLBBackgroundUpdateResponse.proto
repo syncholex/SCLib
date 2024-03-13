@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBackgroundUpdateResponse {
+	bool isBackgroundStateValid = 1;
+	string targetHash = 2;
+	string targetVersionTag = 3;
+	uint32 timeUntilWindowMillis = 4;
+	uint32 windowLengthMillis = 5;
+
+	enum MLBBackgroundUpdateResponse_BackgroundUpdateFailureReason {
+		NO_FAILURE = 0;
+		BEFORE_WINDOW = 1;
+		AFTER_WINDOW = 2;
+		TAG_MATCHES = 3;
+		ACTIVITY = 4;
+		GET_HASH_TIMED_OUT = 5;
+		MISMATCHED_DIGEST = 6;
+		GET_HASH_FAILED = 7;
+		NOT_ENOUGH_CHARGE = 8;
+		FAILED_TO_BOOT_AMBA = 9;
+	}
+
+	MLBBackgroundUpdateResponse_BackgroundUpdateFailureReason lastFailureReason = 6;
+	uint64 elapsedTimeMillis = 7;
+}

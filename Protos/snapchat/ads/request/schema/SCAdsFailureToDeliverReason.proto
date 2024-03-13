@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsFailureToDeliverReason {
+
+	enum SCAdsFailureToDeliverReason_Reason {
+		UNKNOWN_REASON = 0;
+		AD_METADATA_EXPIRED = 1;
+		AD_RENDER_DATA_IMCOMPLETE = 2;
+		AD_MEDIA_FAIL_TO_FETCH = 3;
+	}
+
+	SCAdsFailureToDeliverReason_Reason reason = 1;
+	google.protobuf.GPBStringValue additionalInfo = 2;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanAffordance.proto";
+
+message SCPCNV3UtilityServiceCell {
+	string serviceId = 1;
+	string title = 2;
+	string subtitle = 3;
+	string iconURL = 4;
+	string scanningText = 5;
+	string scanningSubtext = 6;
+	snapchat.perception.scan.v3.SCPCNV3ScanAffordance scanAffordance = 8;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPipelineCluster {
+	string id_p = 1;
+	string source = 2;
+	double startTime = 3;
+	double endTime = 4;
+	double score = 5;
+	int32 thumbSize = 6;
+	repeated string snapIdsArray = 99;
+}

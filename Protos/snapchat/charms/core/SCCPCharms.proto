@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/core/SCCPCharmsOwner.proto";
+import "snapchat/charms/core/SCCPCharm.proto";
+import "snapchat/charms/core/SCCPHiddenCharm.proto";
+
+message SCCPCharms {
+	snapchat.charms.core.SCCPCharmsOwner owner = 1;
+	repeated snapchat.charms.core.SCCPCharm charmsArray = 2;
+	repeated snapchat.charms.core.SCCPHiddenCharm hiddenCharmsArray = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message ScenePropData {
+	string id_p = 1;
+	string animationId = 2;
+}

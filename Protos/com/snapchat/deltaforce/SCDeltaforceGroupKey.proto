@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+message SCDeltaforceGroupKey {
+	string kind = 1;
+
+	oneof keyType {
+		string name = 2;
+		uint64 id_p = 3;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCActivationPbPhoneNumberDynamicLengthRestrictionConfig {
+	string country = 1;
+	uint32 minLength = 2;
+	uint32 maxLength = 3;
+}

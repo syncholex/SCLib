@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+import "snapchat/payments/commerce/order/SCPaymentsOrder.proto";
+
+message SCPaymentsUpdateOrderRequest {
+
+	enum SCPaymentsRequestSource {
+		REQUEST_SOURCE_UNSET = 0;
+		USER = 1;
+		MERCHANT = 2;
+		SNAP = 3;
+	}
+
+	SCPaymentsRequestSource requestSource = 1;
+	string requester = 2;
+	snapchat.payments.commerce.order.SCPaymentsOrder order = 3;
+	string requestId = 4;
+}

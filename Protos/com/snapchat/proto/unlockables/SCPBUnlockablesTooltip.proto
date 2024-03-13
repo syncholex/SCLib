@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesTooltip {
+	string message = 1;
+	int32 coolDownPeriodMinutes = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetEpisodeRequest {
+	string id_p = 1;
+
+	enum StoryDoc_ID_Namespace {
+		UNSET = 0;
+		DISCOVER_SERVICE = 1;
+		STORY_CREATION_SERVICE = 2;
+		STORY_CREATION_SERVICE_COMPAT = 3;
+		HIGHLIGHTS_SERVICE = 4;
+	}
+
+	StoryDoc_ID_Namespace namespace_p = 2;
+}

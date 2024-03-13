@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context2.camera;
+
+message SCCTXDualCamera {
+
+	enum SCCTXDualCamera_LayoutType {
+		LAYOUT_TYPE_VERTICAL_AS_UNSET = 0;
+		LAYOUT_TYPE_HORIZONTAL = 1;
+		LAYOUT_TYPE_PICTURE_IN_PICTURE = 2;
+		LAYOUT_TYPE_CUTOUT = 3;
+		LAYOUT_TYPE_FACE_INSETS = 4;
+	}
+
+	SCCTXDualCamera_LayoutType layoutType = 1;
+}

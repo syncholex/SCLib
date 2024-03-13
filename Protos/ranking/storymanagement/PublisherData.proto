@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+message PublisherData {
+	string userId = 1;
+	string userName = 2;
+	string displayName = 3;
+	string description_p = 4;
+	int64 publishTimestamp = 5;
+	string bitmojiAvatarId = 6;
+	string bitmojiSelfieId = 7;
+}

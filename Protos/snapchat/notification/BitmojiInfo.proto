@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message BitmojiInfo {
+	string bitmojiDownloadURL = 1;
+	string avatarId = 2;
+	string selfieId = 3;
+}

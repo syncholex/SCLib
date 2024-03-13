@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+message SCUnlockableMetaGetUnlockableRequest {
+	string id_p = 1;
+}

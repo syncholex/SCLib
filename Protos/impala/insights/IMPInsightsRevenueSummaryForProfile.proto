@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsRevenueSummary.proto";
+import "impala/insights/IMPInsightsTimeSeriesRevenueSummaryDatum.proto";
+
+message IMPInsightsRevenueSummaryForProfile {
+	impala.insights.IMPInsightsRevenueSummary aggregateRevenueSummary = 1;
+	repeated impala.insights.IMPInsightsTimeSeriesRevenueSummaryDatum timeSeriesRevenueSummaryArray = 2;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message BlockedStoryIdWithRejectionReason {
+	ranking.core.SCCORECompositeStoryId storyId = 1;
+
+	enum BlockedStoryIdWithRejectionReason_RejectionReason {
+		UNKNOWN = 0;
+		INACCURATE_LABELING = 1;
+		SNAP_REDUNDANCY = 2;
+		CREATOR_REDUNDANCY = 3;
+		POLICY_GUIDELINES = 4;
+		EDITORIAL_JUDGEMENT = 5;
+		REPOST = 6;
+		LETTERBOXED = 7;
+		LANGUAGE = 8;
+		HASHTAGSPAM = 9;
+	}
+
+	BlockedStoryIdWithRejectionReason_RejectionReason rejectionReason = 2;
+}

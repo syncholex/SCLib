@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBAlsReading {
+	float lux = 1;
+	float lux1 = 2;
+	float rawLux = 3;
+	float rawLux1 = 4;
+}

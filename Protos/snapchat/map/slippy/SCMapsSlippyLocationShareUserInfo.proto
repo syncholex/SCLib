@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+message SCMapsSlippyLocationShareUserInfo {
+	bool ghostMode = 1;
+	int64 updatedTimestamp = 2;
+	int32 friendsWithBitmojiCount = 3;
+	bool hasBitmoji = 4;
+	int32 mapFriendsCount = 5;
+	string timezone = 6;
+}

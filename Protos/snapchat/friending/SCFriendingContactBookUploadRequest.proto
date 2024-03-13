@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingContactFromClient.proto";
+import "snapchat/friending/SCFriendingLegacyContactBookUploadRequestParams.proto";
+
+message SCFriendingContactBookUploadRequest {
+	string countryCode = 1;
+	repeated snapchat.friending.SCFriendingContactFromClient contactsArray = 2;
+	snapchat.friending.SCFriendingLegacyContactBookUploadRequestParams legacyParams = 3;
+	int32 rawContactCount = 4;
+}

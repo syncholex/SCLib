@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSeasonMetadataPage.proto";
+
+message IMPGetSeasonListForShowResponse {
+	impala.IMPSeasonMetadataPage seasonsPage = 1;
+	string nextPageId = 2;
+
+	enum IMPShowType {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	IMPShowType showType = 3;
+}

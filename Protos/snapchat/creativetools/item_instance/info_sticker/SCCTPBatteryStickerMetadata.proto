@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPBatteryStickerMetadata {
+
+	enum SCCTPBatteryStickerMetadata_Level {
+		LEVEL_UNSPECIFIED = 0;
+		EMPTY = 1;
+		FULL = 2;
+	}
+
+	SCCTPBatteryStickerMetadata_Level level = 1;
+}

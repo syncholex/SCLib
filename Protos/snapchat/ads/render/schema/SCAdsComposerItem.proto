@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsComposerMedia.proto";
+
+message SCAdsComposerItem {
+	repeated snapchat.ads.render.schema.SCAdsComposerMedia mediaArray = 1;
+	string title = 2;
+	string subtitle = 3;
+	string price = 4;
+	string salePrice = 5;
+	int32 percentOff = 6;
+	string color = 7;
+	string productId = 8;
+}

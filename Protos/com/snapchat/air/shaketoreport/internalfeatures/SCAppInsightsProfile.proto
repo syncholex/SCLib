@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsProfile {
+
+	enum SCAppInsightsProfile_Subfeature {
+		UNSET = 0;
+		THREE_D_BITMOJI = 1;
+		STORIES = 2;
+		CHARMS = 3;
+		FRIENDS = 4;
+		ONBOARDING = 5;
+		SNAPSHOTS = 6;
+		COMMUNITY = 7;
+	}
+
+	SCAppInsightsProfile_Subfeature subfeature = 1;
+}

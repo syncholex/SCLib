@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbUserCommunityGroupChatMetadata.proto";
+
+message SCCommunityOrgPbListCommunityGroupChatsResponse {
+	repeated ranking.communityorg.SCCommunityOrgPbUserCommunityGroupChatMetadata userCommunityGroupChatMetadataArray = 1;
+	bytes nextPageToken = 2;
+}

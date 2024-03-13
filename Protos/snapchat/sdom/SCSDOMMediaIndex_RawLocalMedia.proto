@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+message SCSDOMMediaIndex_RawLocalMedia {
+
+	oneof localMedia {
+		string filePath = 1;
+		bytes blob = 2;
+	}
+
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl.proto";
+
+message SDMMediaMetadata_LegacyMediaSource {
+	string sourceMediaId = 1;
+	snapchat.snapdoc.SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl directDownloadURL = 2;
+}

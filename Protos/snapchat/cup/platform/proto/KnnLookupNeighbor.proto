@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message KnnLookupNeighbor {
+	string id_p = 1;
+	float similarityScore = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2PopUpCard {
+
+	enum SCR2PopUpCard_PopUpMessageType {
+		UNKNOWN = 0;
+		WHITELIST_WARNING = 1;
+		QUERY_LOGGING_REQUEST = 2;
+	}
+
+	SCR2PopUpCard_PopUpMessageType type = 1;
+	string title = 2;
+	string displayText = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPassportPreferences {
+
+	enum SCMTPassportOnOffStatus {
+		UNKNOWN_ON_OFF_STATUS = 0;
+		ON = 1;
+		OFF = 2;
+	}
+
+	SCMTPassportOnOffStatus onOffStatus = 1;
+}

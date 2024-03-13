@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMECondition.proto";
+
+message SCMEMediaSyncPointRule {
+	snapchat.mediaengine.smart_template.SCMECondition condition = 1;
+	uint64 minDurationMs = 2;
+	uint64 maxDurationMs = 3;
+	uint64 maxNewSyncPointsAllowed = 4;
+}

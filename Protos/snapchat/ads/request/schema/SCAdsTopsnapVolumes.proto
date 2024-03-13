@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsTopsnapVolumes {
+	google.protobuf.GPBFloatValue maxVolumeAtStart = 1;
+	google.protobuf.GPBFloatValue maxVolumeAt25PercentMediaDuration = 2;
+	google.protobuf.GPBFloatValue maxVolumeAt50PercentMediaDuration = 3;
+	google.protobuf.GPBFloatValue maxVolumeAt75PercentMediaDuration = 4;
+	google.protobuf.GPBFloatValue maxVolumeAt97PercentMediaDuration = 5;
+	google.protobuf.GPBFloatValue maxVolumeAt100PercentMediaDuration = 6;
+}

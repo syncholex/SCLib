@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCaptionStyle_Color.proto";
+import "snapchat/creativetools/common/SCCTPCaptionStyle_Shadow.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCCTPCaptionStyle_BackgroundStyle {
+	snapchat.creativetools.common.SCCTPCaptionStyle_Color color = 1;
+	snapchat.creativetools.common.SCCTPCaptionStyle_Shadow boxShadow = 2;
+	google.protobuf.GPBFloatValue borderRadius = 3;
+	string backgroundImageURL = 4;
+	bool isStretchable = 5;
+}

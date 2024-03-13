@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCPushNotificationAckNotificationRequest {
+	string notificationId = 10;
+	string senderUserName = 20;
+	int64 sentTimestamp = 30;
+	int64 ackTimestamp = 40;
+	google.protobuf.GPBBoolValue inBackground = 50;
+	string pushType = 60;
+	string trackingData = 70;
+	string userAgent = 80;
+	google.protobuf.GPBBoolValue systemNotificationEnabled = 90;
+	google.protobuf.GPBBoolValue fromExtension = 100;
+
+	enum SCPushNotificationAckNotificationRequest_AckEvent {
+		RECEIVED = 0;
+		DISPLAYED = 1;
+	}
+
+	SCPushNotificationAckNotificationRequest_AckEvent ackEventName = 110;
+	int64 displayDelayLatencyMillis = 120;
+	string displayDelayReason = 130;
+	google.protobuf.GPBBoolValue loggedOutDisplayed = 140;
+	google.protobuf.GPBBoolValue fromLocationExtension = 150;
+	google.protobuf.GPBBoolValue fromRecovery = 160;
+	string sessionId = 170;
+	string deviceId = 180;
+	string deviceToken = 190;
+}

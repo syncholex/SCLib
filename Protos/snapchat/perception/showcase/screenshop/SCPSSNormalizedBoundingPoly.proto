@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSNormalizedVertex.proto";
+
+message SCPSSNormalizedBoundingPoly {
+	repeated snapchat.perception.showcase.screenshop.SCPSSNormalizedVertex normalizedVerticesArray = 2;
+}

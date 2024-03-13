@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacInvitesInviteFriendsRequest {
+	string appInstanceId = 1;
+	repeated string invitedUserIdsArray = 2;
+}

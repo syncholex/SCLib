@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonRequestData.proto";
+import "snapchat/ads/request/schema/SCAdsSingleTrack.proto";
+
+message SCAdsBatchTrackRequest {
+	snapchat.ads.request.schema.SCAdsCommonRequestData commonRequestData = 1;
+	repeated snapchat.ads.request.schema.SCAdsSingleTrack tracksArray = 2;
+}

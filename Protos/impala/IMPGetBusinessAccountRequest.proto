@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetBusinessAccountRequest {
+	string id_p = 1;
+}

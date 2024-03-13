@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message SCAppInsightsVideoFormat {
+	string mimeType = 1;
+	sint32 width = 2;
+	sint32 height = 3;
+	sint32 profile = 4;
+}

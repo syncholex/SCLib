@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Face_Detection_BoundingBox {
+	double height = 1;
+	double width = 2;
+	double x = 3;
+	double y = 4;
+	double t = 5;
+}

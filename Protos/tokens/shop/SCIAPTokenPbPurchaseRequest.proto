@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+import "tokens/shop/SCIAPTokenPbShopInAppReceipt.proto";
+import "tokens/shop/SCIAPTokenPbShopPrice.proto";
+import "tokens/shop/SCIAPTokenPbShopCountry.proto";
+
+message SCIAPTokenPbPurchaseRequest {
+	tokens.shop.SCIAPTokenPbShopInAppReceipt receipt = 2;
+	tokens.shop.SCIAPTokenPbShopPrice price = 3;
+	tokens.shop.SCIAPTokenPbShopCountry country = 4;
+}

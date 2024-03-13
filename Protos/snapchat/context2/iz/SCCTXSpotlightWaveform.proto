@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXAnimation.proto";
+
+message SCCTXSpotlightWaveform {
+	snapchat.context2.iz.SCCTXAnimation animation = 1;
+}

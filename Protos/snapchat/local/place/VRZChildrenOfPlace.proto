@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZChildPlace.proto";
+
+message VRZChildrenOfPlace {
+	string parentPlaceId = 1;
+	repeated snapchat.local.place.VRZChildPlace childrenArray = 2;
+}

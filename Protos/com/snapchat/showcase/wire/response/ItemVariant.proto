@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/response/ItemVariantDimensionValue.proto";
+
+message ItemVariant {
+	uint64 snapItemId = 1;
+
+	enum ProductAvailability {
+		UNKNOWN_AVAILABILITY = 0;
+		IN_STOCK = 1;
+		OUT_OF_STOCK = 2;
+		PREORDER = 3;
+		DISCONTINUED = 4;
+		AVAILABLE_FOR_ORDER = 5;
+	}
+
+	ProductAvailability availability = 2;
+	repeated com.snapchat.showcase.wire.response.ItemVariantDimensionValue itemVariantDimensionValuesArray = 3;
+}

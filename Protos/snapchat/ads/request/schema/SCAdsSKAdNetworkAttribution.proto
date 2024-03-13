@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsSKAdNetworkAttribution {
+	string skAdNetworkVersion = 3;
+	google.protobuf.GPBInt32Value skAdNetworkCampaignIdentifier = 4;
+	google.protobuf.GPBInt64Value skAdNetworkTimestampMs = 5;
+	bytes skAdNetworkNonce = 6;
+	bytes skAdNetworkAttributionSignature = 7;
+
+	enum SCAdsSKAdNetworkAttribution_SKAdNetworkAttributionSignatureContentTransformation {
+		UNSET = 0;
+		UTF8_DECODE = 1;
+		BASE64_ENCODE = 2;
+	}
+
+	SCAdsSKAdNetworkAttribution_SKAdNetworkAttributionSignatureContentTransformation signatureContentTransformation = 8;
+	string skAdNetworkViewThroughVersion = 9;
+	bytes skAdNetworkViewThroughNonce = 10;
+	bytes skAdNetworkViewThroughAttributionSignature = 11;
+	google.protobuf.GPBInt32Value skAdNetworkSourceIdentifier = 12;
+}

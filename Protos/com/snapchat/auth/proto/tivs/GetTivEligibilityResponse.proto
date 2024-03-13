@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "com/snapchat/auth/proto/tivs/PushEligibility.proto";
+import "com/snapchat/auth/proto/tivs/EmailEligibility.proto";
+import "com/snapchat/auth/proto/tivs/SmsEligibility.proto";
+
+message GetTivEligibilityResponse {
+	com.snapchat.auth.proto.tivs.PushEligibility pushEligibility = 1;
+	com.snapchat.auth.proto.tivs.EmailEligibility emailEligibility = 2;
+	com.snapchat.auth.proto.tivs.SmsEligibility smsEligibility = 3;
+
+	enum GetTivEligibilityError_Enum {
+		UNSET = 0;
+		USER_NOT_FOUND = 1;
+	}
+
+	GetTivEligibilityError_Enum error = 4;
+}

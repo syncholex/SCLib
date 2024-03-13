@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetBusinessProfilesRequest {
+	repeated string profileIdsArray = 1;
+	repeated string publisherIdsArray = 2;
+	bool includeGatedProfiles = 3;
+	bool includeAudienceGateSettings = 4;
+}

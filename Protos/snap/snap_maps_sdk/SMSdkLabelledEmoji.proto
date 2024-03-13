@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "google/protobuf/GPBStringValue.proto";
+
+message SMSdkLabelledEmoji {
+	google.protobuf.GPBStringValue label = 1;
+	google.protobuf.GPBStringValue emoji = 2;
+}

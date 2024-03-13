@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package iap.shop;
+
+import "iap/shop/SCIapShopPbInAppReceipt.proto";
+
+message SCIapShopPbVerifyReceiptRequest {
+	string userId = 1;
+	iap.shop.SCIapShopPbInAppReceipt receipt = 2;
+
+	enum SCIapShopPbVerifyReceiptRequest_Domain {
+		DOMAIN_UNSET = 0;
+		DOMAIN_CAMEOS = 1;
+		DOMAIN_BITMOJI = 2;
+	}
+
+	SCIapShopPbVerifyReceiptRequest_Domain domain = 3;
+	string appAccountToken = 4;
+}

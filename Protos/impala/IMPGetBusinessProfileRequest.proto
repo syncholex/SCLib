@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetBusinessProfileRequest {
+	string id_p = 1;
+	string publisherId = 2;
+	bool includeGatedProfiles = 3;
+}

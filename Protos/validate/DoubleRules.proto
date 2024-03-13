@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message DoubleRules {
+	double const_p = 1;
+	double lt = 2;
+	double lte = 3;
+	double gt = 4;
+	double gte = 5;
+	repeated double inArray = 6;
+	repeated double notInArray = 7;
+	bool ignoreEmpty = 8;
+}

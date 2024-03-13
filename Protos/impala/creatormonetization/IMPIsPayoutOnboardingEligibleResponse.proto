@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPIsPayoutOnboardingEligibleResponse {
+	bool isEligible = 1;
+	int64 totalEarnings = 2;
+	bool securityCheckPasses = 3;
+	int64 totalCrystals = 4;
+	int64 lastPaidOutTimestamp = 5;
+	bool needForceUpgrade = 6;
+	string lastPaidOutDate = 7;
+	int64 totalEarningsWithPending = 8;
+	int64 totalCrystalsWithPending = 9;
+}

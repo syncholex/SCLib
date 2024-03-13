@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCStoryElement_HtmlInfo {
+	string html = 1;
+}

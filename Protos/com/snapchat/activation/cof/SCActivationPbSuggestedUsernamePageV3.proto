@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.activation.cof;
+
+message SCActivationPbSuggestedUsernamePageV3 {
+	bool hideBackButton = 1;
+	bool showChangeUsernameLaterLabel = 2;
+	bool showUsernameSuggestions = 3;
+}

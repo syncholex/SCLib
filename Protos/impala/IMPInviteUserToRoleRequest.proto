@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInviteUserToRoleRequest {
+	string businessId = 1;
+	string receivingUserId = 2;
+	string invitingUserId = 5;
+	string roleType = 6;
+	string receivingUserName = 7;
+}

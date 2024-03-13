@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPlusCampaign.proto";
+
+message SCSubscriptionShopPbPlusFeedHeaderPromptConfig_BillboardCampaign {
+	string billboardCampaignId = 1;
+	string billboardCampaignName = 2;
+	repeated subscription.shop.SCSubscriptionShopPbPlusCampaign campaignsArray = 3;
+}

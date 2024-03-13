@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREExplorationIndexingMetadata {
+	int64 startTimeSecs = 1;
+	int64 endTimeSecs = 2;
+	int32 backlogStoriesPerCountry = 3;
+	int32 indexedStoriesPerCountry = 4;
+	int32 finishedExploringStoriesPerCountry = 5;
+	int32 newStorySinceLastRunPerCountry = 6;
+	int32 expectedPoolSizePerCountry = 7;
+	int32 numViewsPerCountry = 8;
+}

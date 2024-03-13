@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+import "VLKLogFileTransferRequest.proto";
+
+message VLKLogRequest {
+
+	enum VLKLogRequest_LogRequestType {
+		LOG_FILE_LIST = 1;
+		GET_LOG_FILE = 2;
+	}
+
+	VLKLogRequest_LogRequestType type = 1;
+	VLKLogFileTransferRequest logFileTransferRequest = 2;
+}

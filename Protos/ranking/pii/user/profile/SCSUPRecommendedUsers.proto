@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPRecommendedUsers_User.proto";
+
+message SCSUPRecommendedUsers {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPRecommendedUsers_User recommendedUsersArray = 2;
+}

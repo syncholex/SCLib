@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendIgnoreParam.proto";
+
+message SCFriendingFriendsIgnoreRequest {
+	repeated snapchat.friending.SCFriendingFriendIgnoreParam paramsArray = 1;
+}

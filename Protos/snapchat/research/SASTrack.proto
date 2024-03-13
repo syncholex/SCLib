@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_AudioFingerprint.proto";
+
+message SASTrack {
+	string trackId = 1;
+	snapchat.research.SnapBrainResponse_Results_AudioFingerprint audioFingerprint = 2;
+}

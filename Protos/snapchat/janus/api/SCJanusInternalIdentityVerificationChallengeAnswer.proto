@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusInternalIdentityVerificationChallengeAnswer {
+	string identity = 1;
+	string encodedToken = 2;
+}

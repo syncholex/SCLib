@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthApprovalRequest {
+	string approvalToken = 1;
+	repeated string scopesApprovedArray = 2;
+}

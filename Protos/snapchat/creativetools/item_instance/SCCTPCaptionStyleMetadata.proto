@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/creativetools/item_instance/SCCTPMention.proto";
+import "snapchat/creativetools/item_instance/SCCTPColorRange.proto";
+import "snapchat/creativetools/item_instance/SCCTPStyleRange.proto";
+import "snapchat/creativetools/item_instance/SCCTPMagicCaptionMetadata.proto";
+
+message SCCTPCaptionStyleMetadata {
+	string text = 1;
+	int32 displayFontSize = 2;
+	repeated snapchat.core.SCCOREUUID placeIdsArray = 3;
+
+	enum SCCTPCaptionStyleMetadata_TextAlignment {
+		UNSET = 0;
+		CENTER = 1;
+		LEFT = 2;
+		RIGHT = 3;
+	}
+
+	SCCTPCaptionStyleMetadata_TextAlignment textAlignment = 4;
+	string color = 5;
+	string appliedStyleName = 6;
+	repeated snapchat.creativetools.item_instance.SCCTPMention mentionsArray = 7;
+	repeated snapchat.creativetools.item_instance.SCCTPColorRange colorRangesArray = 8;
+	repeated snapchat.creativetools.item_instance.SCCTPStyleRange styleRangesArray = 9;
+	int32 editingFontSize = 10;
+	bool isMagicCaption = 11;
+	string generatedMagicCaptionText = 12;
+	snapchat.creativetools.item_instance.SCCTPMagicCaptionMetadata magicCaptionMetadata = 13;
+}

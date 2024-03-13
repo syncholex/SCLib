@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXAstrologyProfileAction_FriendCompatibilityProfile {
+	snapchat.core.SCCOREUUID friendUserId = 1;
+}

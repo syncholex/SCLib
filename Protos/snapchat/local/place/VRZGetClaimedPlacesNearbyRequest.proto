@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message VRZGetClaimedPlacesNearbyRequest {
+	snapchat.geo.SPCGPoint location = 1;
+	int32 limit = 2;
+	double maxDistanceKm = 3;
+	string asProfileId = 4;
+}

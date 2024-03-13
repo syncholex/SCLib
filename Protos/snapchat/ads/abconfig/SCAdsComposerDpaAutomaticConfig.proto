@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsComposerDpaAutomaticConfig {
+	uint32 supportedVersion = 1;
+	bool imageFitCover = 2;
+	bool imageFitContain = 3;
+	bool imageFitNone = 4;
+	bool overrideFillWidth = 5;
+	bool overrideFillHeight = 6;
+	bool overrideFit = 7;
+	bool enableAutomatic = 8;
+	bool enableAutomaticAnimations = 9;
+}

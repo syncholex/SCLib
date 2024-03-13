@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+message SCCrystalHubGetTotalCrystalsBySourceRequest {
+
+	enum SCCrystalHubPayoutType {
+		UNKNOWN_UNSET = 0;
+		SPOTLIGHT = 1;
+		GIFT = 2;
+		SPOTLIGHT_CHALLENGE = 3;
+		STORY = 4;
+		PLUS_REFERRAL = 5;
+		LENS_CREATOR_FUND = 6;
+		LENS_ILDG = 7;
+	}
+
+	SCCrystalHubPayoutType payoutType = 1;
+}

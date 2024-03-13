@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_Sound_Note.proto";
+import "snapchat/research/SnapBrainResponse_Results_Sound_Peak.proto";
+
+message SnapBrainResponse_Results_Sound_Formant {
+	float centroid = 1;
+	float f1 = 2;
+	float f2 = 3;
+	float f3 = 4;
+	float f1DivF2 = 5;
+	float f1DivF3 = 6;
+	float f2SubF1 = 7;
+	float f1F0DbDiff = 8;
+	float f2F0DbDiff = 9;
+	float f3F0DbDiff = 10;
+	float flatness = 11;
+	float fundamentalDb = 12;
+	snapchat.research.SnapBrainResponse_Results_Sound_Note fundamentalNote = 13;
+	float onsetDuration = 14;
+	float onsetEnd = 15;
+	float onsetStart = 16;
+	repeated snapchat.research.SnapBrainResponse_Results_Sound_Peak peaksArray = 17;
+	repeated snapchat.research.SnapBrainResponse_Results_Sound_Peak maxPeaksArray = 18;
+}

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message SCAppInsightsSharingInfo {
+
+	enum SCAppInsightsOffPlatformShareLinkType {
+		UNSET = 0;
+		ADD_FRIEND = 1;
+		COGNAC = 2;
+		DISCOVER_EDITION_BLOOPS = 3;
+		DISCOVER = 4;
+		GROUP_INVITE = 5;
+		LENSES = 6;
+		MAP_PLACE = 7;
+		MAP_SNAP = 8;
+		OUR_STORY = 9;
+		PROFILE = 10;
+		PUBLIC_STORY = 11;
+		SNAP_PRO = 12;
+		MEMORIES_LINK = 13;
+	}
+
+	SCAppInsightsOffPlatformShareLinkType offPlatformShareLinkType = 1;
+}

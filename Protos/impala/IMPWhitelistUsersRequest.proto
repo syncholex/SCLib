@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPWhitelistUsersRequest {
+	repeated string userIdsArray = 1;
+	bool includeStat = 2;
+}

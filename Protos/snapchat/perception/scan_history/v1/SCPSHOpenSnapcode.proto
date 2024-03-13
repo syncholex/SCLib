@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/snapcodes/SCSnapcodeSnapcode.proto";
+
+message SCPSHOpenSnapcode {
+	snapchat.perception.snapcodes.SCSnapcodeSnapcode snapcode = 1;
+}

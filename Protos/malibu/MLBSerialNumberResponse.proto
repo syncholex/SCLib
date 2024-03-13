@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSerialNumberResponse {
+	bytes serialNumber = 1;
+	string factorySerialNumber = 2;
+}

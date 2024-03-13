@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/ProcessingTypeConfig.proto";
+
+message MinervaImageProcessingClientConfig {
+	string endPoint = 1;
+	snapchat.cameos.minerva.ProcessingTypeConfig requestTypeConfigs = 2;
+}

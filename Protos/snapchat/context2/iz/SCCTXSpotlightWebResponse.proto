@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXSpotlightCard.proto";
+import "snapchat/context2/iz/SCCTXHashtag.proto";
+import "snapchat/context2/iz/SCCTXSpotlightPrimaryAction.proto";
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfo.proto";
+
+message SCCTXSpotlightWebResponse {
+	repeated snapchat.context2.iz.SCCTXSpotlightCard spotlightCardsArray = 1;
+	repeated snapchat.context2.iz.SCCTXHashtag hashtagsArray = 2;
+	snapchat.context2.iz.SCCTXSpotlightPrimaryAction primaryAction = 3;
+	snapchat.context2.iz.SCCTXSpotlightAttributionInfo attributionInfo = 4;
+	string snapId = 5;
+}

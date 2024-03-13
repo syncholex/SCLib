@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPReviewResult.proto";
+
+message IMPProfileModerationResult {
+	string profileId = 1;
+
+	enum IMPReviewStatus {
+		UNSET = 0;
+		PENDING = 1;
+		APPROVED = 2;
+		RESTRICTED_DISTRIBUTION = 3;
+		REJECTED = 4;
+	}
+
+	IMPReviewStatus reviewStatus = 2;
+	repeated impala.IMPReviewResult resultsArray = 3;
+	int64 profileFetchedTimestampMs = 4;
+	int64 updateTimestampMs = 5;
+}

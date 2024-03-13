@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPEpisodeLaunchInfo {
+	int32 episodeNumber = 1;
+	int32 seasonNumber = 2;
+	string episodeId = 3;
+}

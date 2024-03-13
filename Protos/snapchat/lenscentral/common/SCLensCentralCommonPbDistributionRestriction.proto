@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbDistributionRestriction {
+
+	enum SCLensCentralCommonPbRestrictionType {
+		RESTRICTION_TYPE_UNSET = 0;
+		RESTRICTION_TYPE_AGE = 2;
+		RESTRICTION_TYPE_COUNTRY = 3;
+		RESTRICTION_TYPE_APP_SURFACE = 4;
+	}
+
+	SCLensCentralCommonPbRestrictionType restrictionType = 1;
+	repeated string messagesArray = 2;
+}

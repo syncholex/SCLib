@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBWifiParams {
+
+	enum CHRPBWifiParams_WifiSetting {
+		DISABLED_UNSET = 0;
+		AP = 1;
+		STA = 2;
+		P2P = 3;
+		SCAN = 4;
+	}
+
+	CHRPBWifiParams_WifiSetting type = 1;
+	string ssid = 2;
+	string password = 3;
+	uint32 frequency = 4;
+	string country = 5;
+
+	enum CHRPBWifiParams_WifiFrequencyStrategy {
+		USE_BEST_AVAILABLE_UNSET = 0;
+		USE_2_4GHZ_ONLY = 1;
+	}
+
+	CHRPBWifiParams_WifiFrequencyStrategy frequencyStrategy = 6;
+}

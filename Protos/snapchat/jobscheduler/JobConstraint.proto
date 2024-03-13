@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+message JobConstraint {
+
+	enum NetworkConnectivity {
+		ANY_CONNECTIVITY = 0;
+		CONNECTED = 1;
+		CONNECTED_WITH_UNMETERED = 2;
+	}
+
+	NetworkConnectivity networkConnectivity = 1;
+
+	enum BatteryState {
+		ANY_BATTERY_STATE = 0;
+		CHARGING = 1;
+		NOT_LOW = 3;
+		HIGH = 4;
+	}
+
+	BatteryState batteryState = 2;
+
+	enum Storage {
+		ANY_STORAGE = 0;
+		STORAGE_NOT_LOW = 1;
+	}
+
+	Storage storage = 3;
+
+	enum BandwidthState {
+		ANY_BANDWIDTH_STATE = 0;
+		HIGHER_THAN_400KBITPS = 1;
+		HIGHER_THAN_800KBITPS = 2;
+		HIGHER_THAN_2MBITPS = 3;
+		HIGHER_THAN_4MBITPS = 4;
+	}
+
+	BandwidthState bandwidthState = 4;
+
+	enum AppState {
+		ANY_APP_STATE = 0;
+		FOREGROUND = 1;
+		BACKGROUND = 2;
+		BACKGROUND_WITH_SYSTEM_WAKEUP = 3;
+		SYSTEM_BACKGROUND_WAKEUP = 4;
+		REMOTE_NOTIFICATION_WAKEUP = 5;
+		BG_PROCESSING_WAKEUP = 6;
+		BG_APP_REFRESH_WAKEUP = 7;
+	}
+
+	repeated AppState appStateArray = 5 [packed=true];
+
+	enum AppIdleState {
+		IDLE = 0;
+		ANY = 1;
+	}
+
+	AppIdleState appIdleState = 6;
+	string preferredBgtaskIdentifier = 7;
+}

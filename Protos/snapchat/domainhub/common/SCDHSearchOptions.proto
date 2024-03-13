@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHSearchOptions_SortField.proto";
+
+message SCDHSearchOptions {
+	int32 limit = 1;
+	string nextPageToken = 2;
+	repeated snapchat.domainhub.common.SCDHSearchOptions_SortField sortFieldsArray = 3;
+}

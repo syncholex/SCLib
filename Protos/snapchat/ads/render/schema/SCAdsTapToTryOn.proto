@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsTapToTryOn {
+
+	enum SCAdsTryOnButtonLocation {
+		TRY_ON_BUTTON_UNSET = 0;
+		BOTTOM_LEFT_CTA_BUTTON = 1;
+	}
+
+	SCAdsTryOnButtonLocation location = 1;
+}

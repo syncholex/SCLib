@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCOFConfig.proto";
+
+message SCPCNV3ScanCOFConfigs {
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanCOFConfig configsArray = 1;
+}

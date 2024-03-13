@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAppLoginContext.proto";
+import "snapchat/janus/api/SCJanusAppLoginBootstrapParams.proto";
+import "snapchat/janus/api/SCJanusLoginIdentifier.proto";
+import "snapchat/janus/api/SCJanusDeviceToken.proto";
+
+message SCJanusAppLoginRequest {
+	snapchat.janus.api.SCJanusAppLoginContext loginContext = 1;
+	snapchat.janus.api.SCJanusAppLoginBootstrapParams bootstrapParams = 2;
+	snapchat.janus.api.SCJanusLoginIdentifier loginIdentifier = 3;
+	bytes authenticationSessionPayload = 4;
+	bytes clientAttestationPayload = 5;
+	repeated bytes vendorAttestationPayloadsArray = 6;
+	snapchat.janus.api.SCJanusDeviceToken deviceToken = 7;
+	string iosDeviceCheckToken = 8;
+}

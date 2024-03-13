@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+
+message SCPBUserOwnedUnlockablesResponse {
+	repeated com.snapchat.proto.SCPBGeofilterResponse userOwnedUnlockablesArray = 1;
+	repeated com.snapchat.proto.SCPBGeofilterResponse personalFiltersArray = 2;
+	repeated com.snapchat.proto.SCPBGeofilterResponse userUnlockedFiltersArray = 3;
+	string lensListSignature = 4;
+	repeated com.snapchat.proto.SCPBGeofilterResponse userUnlockedStickerPacksArray = 5;
+	repeated com.snapchat.proto.SCPBGeofilterResponse userPinnedLensesArray = 6;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse userUnlockedFiltersChecksumsArray = 7;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse userPinnedLensesChecksumsArray = 8;
+}

@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package impala.portfolio;
+
+import "impala/portfolio/IMPPortfolioInfo.proto";
+import "impala/portfolio/IMPLens.proto";
+import "impala/portfolio/IMPLensPack.proto";
+
+message IMPLensPortfolio {
+	impala.portfolio.IMPPortfolioInfo info = 1;
+	string portfolioId = 2;
+
+	enum IMPCreatorType {
+		CREATOR_UNSET = 0;
+		CREATOR_LENS_CREATOR = 1;
+		CREATOR_LENS_AGENCY = 2;
+		CREATOR_STORY_TELLER = 3;
+	}
+
+	IMPCreatorType creatorType = 3;
+
+	enum IMPCreatorSpeciality {
+		CREATOR_SPECIALITY_UNSET = 0;
+		MACHINE_LEARNING = 1;
+		TECHNICAL_ART = 2;
+		INTERACTIVE_PROGRAMMING = 3;
+		THREE_D_MODELING_ANIMATION = 4;
+		PHOTOGRAPHY_FILM = 5;
+		FILTER_ART_ILLUSTRATION = 6;
+		GRAPHIC_DESIGN = 7;
+		POLITICS = 8;
+		COMEDY = 9;
+		SPORTS = 10;
+		DANCE_CHALLENGES = 11;
+		HEALTH_AND_FITNESS = 12;
+		COSMETICS_AND_BEAUTY = 13;
+		TUTORIALS_ARTS_AND_CRAFTS = 14;
+		SATISFYING_ASMR = 15;
+		FOOD = 16;
+		COMEDY_PRANKS_FAILS_MEMES = 17;
+	}
+
+	repeated IMPCreatorSpeciality specialtiesArray = 4 [packed=true];
+
+	enum IMPPortfolioStatus {
+		STATUS_UNSET = 0;
+		STATUS_ACTIVE = 1;
+		STATUS_INACTIVE = 2;
+	}
+
+	IMPPortfolioStatus status = 5;
+
+	enum IMPProductionFee {
+		PRODUCTION_FEE_UNSET = 0;
+		ALL = 1;
+		LESS_THAN_ONE_THOUSAND = 2;
+		ONE_THOUSAND_TO_TWO_THOUSAND = 3;
+		TWO_THOUSAND_TO_FIVE_THOUSAND = 4;
+		FIVE_THOUSAND_TO_TEN_THOUSAND = 5;
+		TEN_THOUSAND_TO_FIFTEEN_THOUSAND = 6;
+		MORE_THAN_FIFTEEN_THOUSAND = 7;
+	}
+
+	repeated IMPProductionFee productionFeeArray = 6 [packed=true];
+	repeated string lensCategoriesArray = 7;
+	repeated impala.portfolio.IMPLens lensesArray = 8;
+	repeated impala.portfolio.IMPLensPack lensPacksArray = 9;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPManagedProfileCallouts.proto";
+
+message IMPGetManagedProfileCalloutsResponse {
+	repeated impala.IMPManagedProfileCallouts calloutsArray = 1;
+}

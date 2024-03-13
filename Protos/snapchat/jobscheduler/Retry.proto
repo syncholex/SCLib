@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.jobscheduler;
+
+message Retry {
+
+	enum Retry_RetryType {
+		NO_RETRY = 0;
+		RETRY_WITH_EXPONENTIAL_BACKOFF = 1;
+		RETRY_WITH_LINEAR_BACKOFF = 2;
+		RETRY_IMMEDIATELY = 3;
+	}
+
+	Retry_RetryType retryType = 1;
+	uint32 retryIntervalSec = 2;
+	uint32 maxBackoffExponent = 3;
+	uint32 maxRetryCount = 4;
+}

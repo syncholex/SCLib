@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1TypeDef.proto";
+import "actionmoji/action/SCMT1AssetWithProbability.proto";
+
+message SCMT1ResolvedTypeDef {
+	actionmoji.action.SCMT1TypeDef typeDef = 1;
+	repeated actionmoji.action.SCMT1AssetWithProbability assetProbabilitiesArray = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.core.schema;
+
+message SCAdsSwipeSensitivityConfig_SwipeAngle {
+	double leftThreshold = 1;
+	double rightThreshold = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSetProfileFrozenStatusRequest {
+	string profileId = 1;
+	bool setFrozen = 2;
+}

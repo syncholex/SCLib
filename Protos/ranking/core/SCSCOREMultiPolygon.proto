@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoPolygon.proto";
+
+message SCSCOREMultiPolygon {
+	repeated ranking.core.SCSCOREGeoPolygon polygonsArray = 1;
+}

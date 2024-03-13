@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocality.proto";
+
+message SCMEMarkerModel {
+	string id_p = 1;
+	double lat = 2;
+	double lng = 3;
+	double radiusMeters = 4;
+	int64 timestampMs = 5;
+	string venueName = 9;
+	repeated snapchat.map.SCMTLocality localitiesArray = 10;
+	repeated string friendUserIdsArray = 11;
+	string creatorUserId = 12;
+}

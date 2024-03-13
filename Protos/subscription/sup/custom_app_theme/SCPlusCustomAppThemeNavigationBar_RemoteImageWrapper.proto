@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeRemoteImage.proto";
+
+message SCPlusCustomAppThemeNavigationBar_RemoteImageWrapper {
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeRemoteImage remoteImage = 1;
+	bool isDark = 2;
+}

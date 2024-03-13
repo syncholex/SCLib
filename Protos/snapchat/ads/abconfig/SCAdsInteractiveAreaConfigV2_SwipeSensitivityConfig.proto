@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsInteractiveAreaConfigV2_Insets.proto";
+import "snapchat/ads/abconfig/SCAdsInteractiveAreaConfigV2_SwipeAngle.proto";
+
+message SCAdsInteractiveAreaConfigV2_SwipeSensitivityConfig {
+	double distanceThreshold = 1;
+	double velocityThreshold = 2;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_Insets edgeInsets = 3;
+
+	enum SCAdsInteractiveAreaConfigV2_InteractiveAreaType {
+		MEDIA_FRAME_UNSET = 0;
+		FULL_SCREEN = 1;
+		CTA_FRAME = 2;
+	}
+
+	SCAdsInteractiveAreaConfigV2_InteractiveAreaType interactiveAreaType = 4;
+
+	enum SCAdsInteractiveAreaConfigV2_SwipeAngleType {
+		DEFAULT_UNSET = 0;
+		CUSTOM = 1;
+	}
+
+	SCAdsInteractiveAreaConfigV2_SwipeAngleType swipeAngleType = 5;
+	snapchat.ads.abconfig.SCAdsInteractiveAreaConfigV2_SwipeAngle swipeAngle = 6;
+}

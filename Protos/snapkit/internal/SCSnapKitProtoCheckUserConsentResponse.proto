@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCSnapKitProtoCheckUserConsentResponse {
+	bool hasConsented = 1;
+	google.protobuf.GPBTimestamp lastConsentedTimestamp = 2;
+}

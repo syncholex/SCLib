@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/core/SCSCOREConnectionInfo.proto";
+
+message MFCDevice {
+	bool soundIsOn = 1;
+	ranking.core.SCSCOREConnectionInfo connectionInfo = 2;
+}

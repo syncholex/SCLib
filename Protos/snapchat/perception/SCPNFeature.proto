@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/common/SCPCNBytesList.proto";
+import "snapchat/perception/common/SCPCNFloatList.proto";
+import "snapchat/perception/common/SCPCNInt64List.proto";
+
+message SCPNFeature {
+
+	oneof kind {
+		snapchat.perception.common.SCPCNBytesList bytesList = 1;
+		snapchat.perception.common.SCPCNFloatList floatList = 2;
+		snapchat.perception.common.SCPCNInt64List int64List = 3;
+	}
+
+}

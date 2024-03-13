@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message VLKNrfEventLogData {
+	uint32 millisSinceLastEntry = 1;
+	bytes logTimeDeltas = 2;
+	bytes eventIds = 3;
+}

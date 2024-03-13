@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.music.tts;
+
+message SCMusicSynthesizeRequest {
+
+	enum SCMusicUseCase {
+		LENS_UNSET = 0;
+		STUDIO = 1;
+		VOICE_NOTES_TRANSCRIPTION = 2;
+		CREATIVE_TOOLS_TTS = 3;
+		CREATIVE_TOOLS_ASR = 4;
+	}
+
+	SCMusicUseCase useCase = 1;
+	string locale = 2;
+	string languageCode = 3;
+	string voiceName = 4;
+	string text = 5;
+
+	enum SCMusicOutputType {
+		WAV_44KHZ_16K = 0;
+	}
+
+	SCMusicOutputType outputType = 6;
+	uint32 voiceStyle = 7;
+	float voicePace = 8;
+}

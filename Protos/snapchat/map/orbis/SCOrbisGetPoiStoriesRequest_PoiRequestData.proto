@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+message SCOrbisGetPoiStoriesRequest_PoiRequestData {
+	string verrazanoId = 1;
+	int64 startTimeMs = 2;
+	int64 endTimeMs = 3;
+}

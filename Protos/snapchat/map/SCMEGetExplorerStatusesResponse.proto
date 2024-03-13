@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerStatus.proto";
+
+message SCMEGetExplorerStatusesResponse {
+	repeated snapchat.map.SCMEExplorerStatus statusesArray = 1;
+	double pollingIntervalSeconds = 2;
+}

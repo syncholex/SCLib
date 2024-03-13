@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/LocationHistoryMetaData.proto";
+
+message GetLocationHistoryMetaDataResponse {
+	actionmoji.LocationHistoryMetaData userData = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCPbGenAIDreamDeleteGenerationResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}

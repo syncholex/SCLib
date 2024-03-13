@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_NER.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_NewsKeyword.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_SensitiveLanguage.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_Language.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_Sentiment.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_POSTag.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_ReviewSentiment.proto";
+import "snapchat/research/SnapBrainResponse_Results_SnapLang_SentimentV2.proto";
+
+message SnapBrainResponse_Results_SnapLang {
+	snapchat.research.SnapBrainResponse_Results_SnapLang_NER ner = 1;
+	repeated snapchat.research.SnapBrainResponse_Results_SnapLang_NewsKeyword newsKeywordsArray = 2;
+	snapchat.research.SnapBrainResponse_Results_SnapLang_SensitiveLanguage sensitiveLanguage = 3;
+	repeated string brandsArray = 4;
+	snapchat.research.SnapBrainResponse_Results_SnapLang_Language language = 5;
+	snapchat.research.SnapBrainResponse_Results_SnapLang_Sentiment sentiment = 6;
+	repeated string emojisArray = 7;
+	string normalizer = 8;
+	double emotion = 9;
+	repeated snapchat.research.SnapBrainResponse_Results_SnapLang_POSTag posArray = 10;
+	snapchat.research.SnapBrainResponse_Results_SnapLang_ReviewSentiment reviewSentiment = 11;
+	snapchat.research.SnapBrainResponse_Results_SnapLang_SentimentV2 sentimentV2 = 12;
+}

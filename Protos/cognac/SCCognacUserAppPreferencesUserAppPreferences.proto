@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package cognac;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCCognacUserAppPreferencesUserAppPreferences {
+	string appId = 1;
+	int64 updateTimestampMillis = 2;
+	google.protobuf.GPBBoolValue acceptedContentAlert = 3;
+	google.protobuf.GPBBoolValue acceptedLeaderboardAlert = 4;
+	google.protobuf.GPBBoolValue acceptedLeaderboardGameAlert = 5;
+	google.protobuf.GPBBoolValue isShortcutApp = 6;
+}

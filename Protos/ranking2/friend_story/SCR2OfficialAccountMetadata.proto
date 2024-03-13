@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+message SCR2OfficialAccountMetadata {
+	repeated string queriesArray = 1;
+
+	enum SCR2OfficialAccountMetadata_Category {
+		OTHERS = 0;
+		MUSIC = 1;
+		FOOD_AND_DRINK = 2;
+		POLITICS = 3;
+		SPORTS = 4;
+		SPORTS_BASKETBALL = 5;
+		SPORTS_FOOTBALL = 6;
+		SPORTS_SOCCER = 7;
+		SPORTS_BASEBALL = 8;
+		SPORTS_TENNIS = 9;
+		SPORTS_NFL = 10;
+		SPORTS_MLB = 11;
+		SPORTS_NBA = 12;
+	}
+
+	repeated SCR2OfficialAccountMetadata_Category categoriesArray = 2 [packed=true];
+}

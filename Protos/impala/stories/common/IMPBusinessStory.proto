@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala.stories.common;
+
+import "impala/stories/common/IMPTimeRange.proto";
+import "impala/stories/common/IMPBusinessStoryMetrics.proto";
+import "impala/common/IMPEncryptedThumbnailInfo.proto";
+
+message IMPBusinessStory {
+	string businessId = 1;
+	int32 numSnaps = 2;
+	impala.stories.common.IMPTimeRange timeRange = 3;
+	string thumbnailURL = 4;
+	string lastSnapId = 5;
+	impala.stories.common.IMPTimeRange displayTimeRange = 6;
+	impala.stories.common.IMPBusinessStoryMetrics metrics = 7;
+	string storyId = 8;
+	impala.common.IMPEncryptedThumbnailInfo encryptedThumbnailInfo = 9;
+}

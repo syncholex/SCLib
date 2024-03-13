@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSystemState {
+	int32 batterySoc = 1;
+	bool charging = 2;
+	bool bleConnected = 3;
+	int32 ambaTemperature = 4;
+	int32 wifiTemperature = 5;
+	float nordicTemperature = 6;
+	int32 bleRssi = 7;
+}

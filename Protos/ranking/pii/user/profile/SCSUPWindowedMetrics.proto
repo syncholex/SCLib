@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPWindowedMetrics {
+	float valueSinceLastWeek = 1;
+	float valueSinceLastMonth = 2;
+	float valueSinceLastYear = 3;
+	float valueSinceCreation = 4;
+}

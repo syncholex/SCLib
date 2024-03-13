@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBLostModeBeginEvent.proto";
+import "cheerios/CHRPBLostModeEndEvent.proto";
+
+message CHRPBLostModeEvent {
+
+	oneof event {
+		cheerios.CHRPBLostModeBeginEvent beginEvent = 1;
+		cheerios.CHRPBLostModeEndEvent endEvent = 2;
+	}
+
+}

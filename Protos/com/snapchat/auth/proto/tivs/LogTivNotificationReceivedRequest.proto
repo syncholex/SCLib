@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message LogTivNotificationReceivedRequest {
+	string transactionId = 1;
+	string broadcastId = 2;
+
+	enum Channel {
+		CHANNEL_UNSET = 0;
+		NUB = 1;
+		PUSH_NOTIFICATION = 2;
+	}
+
+	Channel channel = 3;
+}

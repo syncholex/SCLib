@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+import "snapchat/payments/Locale.proto";
+
+message GetPaymentLocaleResponse {
+	string requestId = 1;
+	snapchat.payments.Locale locale = 2;
+}

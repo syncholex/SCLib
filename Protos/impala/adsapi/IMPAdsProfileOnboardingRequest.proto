@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsProfileOnboardingParams.proto";
+
+message IMPAdsProfileOnboardingRequest {
+	string id_p = 1;
+	string name = 2;
+	string type = 3;
+	impala.adsapi.IMPAdsProfileOnboardingParams onboardingParams = 4;
+	string country = 5;
+	string postalCode = 6;
+	string streetAddress = 7;
+}

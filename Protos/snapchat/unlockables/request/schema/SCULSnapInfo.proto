@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULUnlockablesSnapInfo.proto";
+
+message SCULSnapInfo {
+
+	oneof data {
+		bytes unlockablesSnapInfoBytes = 1;
+		snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo unlockablesSnapInfo = 2;
+	}
+
+}

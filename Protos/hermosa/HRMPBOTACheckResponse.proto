@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBEmpty.proto";
+
+message HRMPBOTACheckResponse {
+	string currentOsVersion = 1;
+
+	oneof response {
+		hermosa.HRMPBEmpty noUpdateAvailable = 2;
+		string updateAvailableVersion = 3;
+		HRMPBOTAError error = 4;
+	}
+
+
+	enum HRMPBOTAError {
+		UNSET = 0;
+		NO_INTERNET = 1;
+		NO_OAUTH2_TOKEN = 2;
+		LOW_DISK_SPACE = 3;
+		NETWORK_TIMEOUT = 4;
+		UNKNOWN_ERROR = 5;
+		BATTERY_BELOW_THRESHOLD = 6;
+		DEVICE_TOO_COLD = 7;
+		DEVICE_TOO_HOT = 8;
+		DEVICE_NOT_CONNECTED_TO_POWER = 9;
+		DEVICE_DM_VERITY_DISABLED = 10;
+	}
+
+	bool isRequiredUpdate = 5;
+}

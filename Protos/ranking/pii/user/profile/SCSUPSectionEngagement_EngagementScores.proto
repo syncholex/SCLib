@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPSectionEngagement_EngagementScores {
+	float totalEngagementScore = 1;
+	float totalEngagementScorePercentile = 2;
+	float sectionContentRawScores = 3;
+	float sectionContentNormalizedScores = 4;
+	float sectionContentPercentileScores = 5;
+}

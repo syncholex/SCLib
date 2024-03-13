@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+message SCLensCentralCommonPbGcsLink {
+	string bucket = 1;
+	string fileName = 2;
+}

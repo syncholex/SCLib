@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensRemoteApiGetOAuth2StatusResponse {
+
+	enum SCLensRemoteApiOAuth2Status {
+		STATUS_UNSET = 0;
+		NOT_SUPPORTED = 1;
+		TOKEN_NOT_AVAILABLE = 2;
+		TOKEN_READY = 3;
+		TOKEN_ERROR = 4;
+	}
+
+	SCLensRemoteApiOAuth2Status oauth2Status = 1;
+	string errorMessage = 2;
+}

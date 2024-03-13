@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/VisualTag.proto";
+
+message SnapInfo {
+	repeated snapchat.spectrum.streaming.schema.snap_feed_ranking.VisualTag visualTagsArray = 1;
+
+	enum SCCOMMONMediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND_DEPRECATED = 3;
+		BLOB = 4;
+		LAGUNA_SOUND = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO_SOUND = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+		WEB = 27;
+	}
+
+	SCCOMMONMediaType mediaType = 2;
+	int64 snapCreationTimeMs = 3;
+	string lensId = 4;
+	string snapId = 5;
+	bool hasFace = 6;
+}

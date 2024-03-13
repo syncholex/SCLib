@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSnapBoltInfo {
+	bytes mediaContentObject = 1;
+	bytes overlayContentObject = 2;
+	bytes rawContentObject = 3;
+	bytes zippedContentObject = 4;
+}

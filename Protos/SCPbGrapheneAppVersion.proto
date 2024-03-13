@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "SCPbGrapheneAppVersion_VersionNumber.proto";
+
+message SCPbGrapheneAppVersion {
+	SCPbGrapheneAppVersion_VersionNumber versionNumber = 1;
+	string flavor = 2;
+	string variant = 3;
+}

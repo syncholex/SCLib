@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.customoji;
+
+message BMRenderCustomojiImageResponse {
+
+	enum BMRejectType {
+		UNSET = 0;
+		TEXT_FIT = 1;
+		SPAM_ABUSE = 2;
+	}
+
+
+	oneof result {
+		bytes imageBytes = 1;
+		BMRejectType rejectReason = 2;
+	}
+
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/lenses/lensgator/SCGProxyToGtqParams.proto";
+
+message SCGMixerRequestParams {
+	snapchat.ads.request.schema.SCAdsAdRequest adRequest = 1;
+	bool includeNearbyGeoLocations = 2;
+	repeated bytes debugFilterIdsArray = 3;
+	snapchat.lenses.lensgator.SCGProxyToGtqParams rolloutParams = 4;
+	bool includePrefetchRules = 5;
+	bool includeCtItems = 6;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportReportedBlob {
+	string blobId = 1;
+	string boltContentURL = 2;
+	bytes encryptionKey = 3;
+	bytes encryptionIv = 4;
+	string mimeType = 5;
+}

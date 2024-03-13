@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFriendingFriendDisplayNameParam {
+	snapchat.core.SCCOREUUID friendId = 1;
+	string displayName = 2;
+}

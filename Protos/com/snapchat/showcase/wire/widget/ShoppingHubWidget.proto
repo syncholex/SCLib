@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+message ShoppingHubWidget {
+
+	enum CommercePageType {
+		PAGE_TYPE_UNSET = 0;
+		SHOPPING_HUB = 1;
+		RECENTLY_VIEWED = 2;
+		SHOPPING_PREFERENCES = 3;
+		DYNAMIC = 4;
+		LOOK_BUILDER = 5;
+	}
+
+	CommercePageType pageType = 1;
+}

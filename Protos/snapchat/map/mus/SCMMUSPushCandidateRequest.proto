@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.mus;
+
+import "snapchat/map/mus/SCMMUSCandidate.proto";
+
+message SCMMUSPushCandidateRequest {
+	repeated snapchat.map.mus.SCMMUSCandidate candidatesArray = 1;
+}

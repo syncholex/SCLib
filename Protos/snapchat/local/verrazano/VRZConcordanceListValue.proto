@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+
+message VRZConcordanceListValue {
+	repeated snapchat.local.verrazano.VRZConcordance valueArray = 1;
+}

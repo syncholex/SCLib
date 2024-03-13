@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetEpisodesForSeasonRequest {
+	string seasonId = 1;
+	string pageId = 2;
+	string userId = 3;
+	bool consistent = 4;
+}

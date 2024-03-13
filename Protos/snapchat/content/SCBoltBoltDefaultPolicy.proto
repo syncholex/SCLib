@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+message SCBoltBoltDefaultPolicy {
+	uint32 numberOfReplicas = 1;
+}

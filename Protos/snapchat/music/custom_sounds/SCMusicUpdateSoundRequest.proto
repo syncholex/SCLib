@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.music.custom_sounds;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMusicUpdateSoundRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	uint64 trackId = 2;
+	string title = 3;
+	bool isPublic = 4;
+	string artistName = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbRegistrationAgeVerificationV2 {
+	bool beginWithToday = 1;
+	bool enableCooldown = 2;
+	uint64 coolDownMillis = 3;
+}

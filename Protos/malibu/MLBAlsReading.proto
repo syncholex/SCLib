@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAlsReading {
+	float lux = 1;
+	float lux1 = 2;
+	float rawLux = 3;
+	float rawLux1 = 4;
+}

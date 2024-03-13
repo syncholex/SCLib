@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsPredictionStudy {
+	string experimentId = 1;
+	int64 studyVersion = 2;
+	string modelId = 3;
+}

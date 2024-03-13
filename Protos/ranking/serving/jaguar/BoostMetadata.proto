@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/MyBoost.proto";
+import "ranking/serving/jaguar/FriendBoost.proto";
+
+message BoostMetadata {
+	repeated ranking.serving.jaguar.MyBoost myBoostsArray = 1;
+	repeated ranking.serving.jaguar.FriendBoost friendBoostsArray = 2;
+}

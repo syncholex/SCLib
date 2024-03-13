@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/LensStats_Context.proto";
+import "ranking/indexing/LensStats_AggregatedStats.proto";
+
+message LensStats {
+	ranking.indexing.LensStats_Context context = 1;
+	uint64 shareCount = 2;
+	uint64 uniqueShareCount = 3;
+	uint64 storyViewCount = 4;
+	uint64 uniqueStoryViewCount = 5;
+	uint64 snapViewCount = 6;
+	uint64 uniqueSnapViewCount = 7;
+	uint64 unlockCount = 8;
+	uint64 uniqueUnlockCount = 9;
+	uint64 storyPostCount = 10;
+	uint64 uniqueStoryPostCount = 11;
+	uint64 snapSendCount = 12;
+	uint64 uniqueSnapSendCount = 13;
+	uint64 scanCount = 14;
+	uint64 uniqueScanCount = 15;
+	ranking.indexing.LensStats_AggregatedStats aggregatedStatsPerVersion = 16;
+	ranking.indexing.LensStats_AggregatedStats aggregatedStatsMap = 17;
+	uint64 carouselSwipeCount = 18;
+	uint64 carouselUniqueSwipeCount = 19;
+	uint64 carouselSnapSaveCount = 20;
+	uint64 carouselUniqueSnapSaveCount = 21;
+	uint64 carouselSnapSendCount = 22;
+	uint64 carouselStoryPostCount = 23;
+	ranking.indexing.LensStats_AggregatedStats aggregatedStats = 24;
+	uint64 leSendCount = 25;
+	uint64 lePostCount = 26;
+	uint64 leSaveCount = 27;
+	uint64 leSwipeCount = 28;
+	uint64 appwideLensPostCount = 29;
+	uint64 appwideLensSendCount = 30;
+	uint64 appwideLensSaveCount = 31;
+	uint64 appwideLensSwipeCount = 32;
+}

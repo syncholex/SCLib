@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingPlaceShare {
+	snapchat.messaging.SCMessagingUUID placeId = 1;
+}

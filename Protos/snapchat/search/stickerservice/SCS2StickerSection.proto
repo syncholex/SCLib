@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/stickerservice/SCS2StickerResult.proto";
+
+message SCS2StickerSection {
+
+	enum SCS2StickerSection_SectionType {
+		SECTION_TYPE_UNKNOWN = 0;
+		SECTION_TYPE_SNAPCHAT_STICKERS = 1;
+		SECTION_TYPE_EMOJIS = 2;
+		SECTION_TYPE_BITMOJI_STICKERS = 3;
+		SECTION_TYPE_CAMEOS = 4;
+		SECTION_TYPE_GIPHY = 5;
+		SECTION_TYPE_TOP_RESULTS = 6;
+		SECTION_FOR_YOU = 7;
+		SECTION_TYPE_GFYCAT = 8;
+		SECTION_TYPE_COMBINED = 9;
+		SECTION_TYPE_SHOPPABLE_STICKERS = 10;
+	}
+
+	SCS2StickerSection_SectionType sectionType = 1;
+	repeated snapchat.search.stickerservice.SCS2StickerResult resultsArray = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMDeviceInfo {
+	bytes idfa = 1;
+	string deviceModel = 2;
+}

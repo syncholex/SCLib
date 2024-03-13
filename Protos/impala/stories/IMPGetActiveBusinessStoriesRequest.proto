@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPGetActiveBusinessStoriesRequest {
+	repeated string businessIdsArray = 1;
+	bool includeMetrics = 2;
+
+	enum IMPPublicStoryViewSource {
+		SOURCE_ADMIN = 0;
+		SOURCE_VIEWER = 1;
+	}
+
+	IMPPublicStoryViewSource viewSource = 3;
+}

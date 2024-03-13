@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SpotlightChallengeMetadata.proto";
+
+message TopicPageSectionMetadata {
+	int64 submissionCount = 4;
+	ranking.serving.jaguar.SpotlightChallengeMetadata spotlightChallengeMetadata = 5;
+}

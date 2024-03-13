@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusDeviceTokenResponse.proto";
+
+message SCJanusSecurityData {
+	snapchat.janus.api.SCJanusDeviceTokenResponse deviceToken = 1;
+	bool twoFaSmsEnabled = 2;
+	bool twoFaOtpEnabled = 3;
+
+	enum SCJanusSecurityData_AccountSafetyAction {
+		ACCOUNT_SAFETY_ACTION_UNSET = 0;
+		ACCOUNT_SAFETY_ACTION_CHANGE_PASSWORD_TAKEOVER = 1;
+	}
+
+	SCJanusSecurityData_AccountSafetyAction accountSafetyAction = 4;
+}

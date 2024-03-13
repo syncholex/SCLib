@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3WalletProviderMetadata.proto";
+
+message SCPBWeb3WalletMetadata {
+
+	enum SCPBWeb3WalletProvider {
+		UNKNOWN_UNSET = 0;
+		PHANTOM = 1;
+		FTX = 2;
+	}
+
+	SCPBWeb3WalletProvider walletProvider = 1;
+	int64 registrationTimestamp = 2;
+	snapchat.web3.SCPBWeb3WalletProviderMetadata walletProviderMetadata = 3;
+}

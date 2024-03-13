@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerSubCategory {
+	string displayName = 1;
+	string subcategoryName = 2;
+
+	enum SCLELensExplorerSubCategory_LensExplorerSubCategoryType {
+		UNSET = 0;
+		FAVORITES = 1;
+		SUBSCRIPTIONS = 2;
+		GLASSES = 3;
+		SHOES = 4;
+		ILDG_SUB_1 = 5;
+		ILDG_SUB_2 = 6;
+		ILDG_SUB_3 = 7;
+	}
+
+	SCLELensExplorerSubCategory_LensExplorerSubCategoryType type = 3;
+	string feedId = 4;
+}

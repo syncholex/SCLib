@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message MyBoost {
+	int64 progressMs = 1;
+
+	enum BoostType_Enum {
+		UNKNOWN = 0;
+		BOOST_ONLY = 1;
+		RECOMMEND = 2;
+	}
+
+	BoostType_Enum boostType = 2;
+	int64 timestampMsec = 3;
+	string snapId = 4;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZChangeset {
+	string id_p = 1;
+
+	enum VRZChangeset_Status {
+		STATUS_UNKNOWN = 0;
+		OPEN = 1;
+		CLOSED = 2;
+	}
+
+	VRZChangeset_Status status = 2;
+	string user = 3;
+	string clientId = 4;
+	string description_p = 10;
+}

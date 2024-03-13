@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMLayoutDescription.proto";
+
+message SCSSMMetaStreamToken {
+	int32 firstServedTsSecs = 1;
+	ranking.serving.jaguar.SCSSMLayoutDescription layoutDescription = 2;
+	int64 lastBadgeRequestedTsMsecs = 3;
+}

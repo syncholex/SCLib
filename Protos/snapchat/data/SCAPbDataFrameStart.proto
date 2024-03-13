@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+message SCAPbDataFrameStart {
+	bytes sessionId = 1;
+	int64 clientReferenceTs = 2;
+	fixed32 appVersion = 3;
+	fixed32 osVersion = 4;
+
+	enum SCAPbDataLocale {
+		EN = 0;
+		EN_US = 1;
+	}
+
+	SCAPbDataLocale locale = 5;
+
+	enum SCAPbDataOperatingSystem {
+		ANDROID = 0;
+		IOS = 1;
+		OPERATING_SYSTEM_OTHER = 2;
+		OPERATING_SYSTEM_WINDOWS = 3;
+		OPERATING_SYSTEM_OSX = 4;
+		OPERATING_SYSTEM_CHROMIUM_OS = 5;
+	}
+
+	SCAPbDataOperatingSystem osType = 6;
+
+	enum SCAPbDataDeviceModel {
+		UNKNOWN = 0;
+	}
+
+	SCAPbDataDeviceModel deviceModel = 7;
+
+	enum SCAPbDataAppVariant {
+		MUSHROOM = 0;
+		OG = 1;
+		HMS = 2;
+		LOCKSCREEN = 3;
+	}
+
+	SCAPbDataAppVariant appVariant = 8;
+	string userId = 9;
+	bytes clientId = 11;
+	bytes telemetrySessionId = 12;
+	int32 priority = 13;
+	int32 sequenceIdStart = 31;
+	int32 osMinorVersion = 32;
+	int32 connectionDownloadBandwidthKbytesPerSecond = 34;
+	string deviceModelFallback = 35;
+	string localeFallback = 36;
+	bytes userAgent = 38;
+	bytes appBuildFallback = 39;
+	bytes osMinorVersionFallback = 40;
+	bool appDataSaverMode = 41;
+	bytes appStartupTypeFallback = 42;
+	bytes userGuid = 43;
+	bytes logQueueName = 44;
+	string appVersionString = 45;
+	string osVersionString = 46;
+	string blizzardSchemaVersion = 47;
+	bool appMultiWindowMode = 48;
+
+	enum SCAPbDataAppType {
+		APP_TYPE_UNKNOWN = 0;
+		APP_TYPE_WEB_DESKTOP = 1;
+		APP_TYPE_WEB_MOBILE = 2;
+	}
+
+	SCAPbDataAppType appType = 49;
+	string browser = 50;
+	string browserVersion = 51;
+	string domain = 52;
+	string referrer = 53;
+	string blizzardWebSessionId = 54;
+}

@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsAdKitAdDismissAffordance.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/ads/request/schema/SCAdsAdKitVideoAssetOption.proto";
+import "google/protobuf/GPBUInt32Value.proto";
+
+message SCAdsAdKitFeatureFlags {
+	bool shouldDisableAds = 1;
+
+	enum SCAdsAdKitEndCardAffordance {
+		END_CARD_NONE = 0;
+		END_CARD_FULL_IMMEDIATE = 1;
+	}
+
+	SCAdsAdKitEndCardAffordance endCardAffordance = 2;
+	snapchat.ads.request.schema.SCAdsAdKitAdDismissAffordance adkitDismissAffordance = 3;
+	bool shouldEnableBolt = 4;
+	google.protobuf.GPBInt64Value boltStreamingThresholdMs = 5;
+	snapchat.ads.request.schema.SCAdsAdKitAdDismissAffordance adkitRewardedDismissAffordance = 6;
+	string skAdNetworkVersion = 7;
+
+	enum SCAdsAdKitEmbeddedAdStyle {
+		NOT_ELIGIBLE = 0;
+		DEFAULT = 1;
+		TRANSPARENT_CARD_PURPLE_BUTTON = 2;
+		GRAY_TOP_BAR_BLUE_BUTTON = 3;
+	}
+
+	SCAdsAdKitEmbeddedAdStyle embeddedAdStyle = 8;
+
+	enum SCAdsAdKitWebBrowserType {
+		WEB_BROWSER_V11 = 0;
+		SAFARI = 1;
+	}
+
+	SCAdsAdKitWebBrowserType webBrowserType = 9;
+	snapchat.ads.request.schema.SCAdsAdKitVideoAssetOption videoAssetOptions = 10;
+	bool shouldEnableGraphene = 11;
+	google.protobuf.GPBUInt32Value grapheneSamplingPercentage = 12;
+	bool shouldEnableHeaderBidding = 13;
+	bool smallFormatLocalization = 14;
+	bool shouldDisableCof = 15;
+	bool crashReportingDisabled = 16;
+	bool shouldDisableCofPersistence = 17;
+}

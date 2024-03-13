@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapkit.internal.user;
+
+import "snapkit/internal/user/SCSnapKitProtoConnection.proto";
+import "snapkit/common/SCSnapKitProtoExperiments.proto";
+
+message SCSnapKitProtoConnectionStatesResponse {
+	repeated snapkit.internal.user.SCSnapKitProtoConnection connectionsArray = 1;
+	snapkit.common.SCSnapKitProtoExperiments experiments = 2;
+}

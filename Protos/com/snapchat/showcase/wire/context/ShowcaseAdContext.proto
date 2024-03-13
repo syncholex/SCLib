@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message ShowcaseAdContext {
+	bytes showcaseContextToken = 1;
+}

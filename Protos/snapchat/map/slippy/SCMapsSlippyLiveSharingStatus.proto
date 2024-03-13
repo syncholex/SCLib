@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.slippy;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMapsSlippyLiveSharingStatus {
+	snapchat.core.SCCOREUUID friendId = 1;
+	bool isIndefinite = 2;
+}

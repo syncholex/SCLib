@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/SCMinervaMagicCaptionTone.proto";
+
+message SCMinervaMagicCaption {
+	snapchat.cameos.minerva.SCMinervaMagicCaptionTone tone = 1;
+	string caption = 2;
+	string captionId = 3;
+	int64 timestampMs = 4;
+}

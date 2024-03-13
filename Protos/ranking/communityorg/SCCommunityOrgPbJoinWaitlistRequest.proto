@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbCohort.proto";
+
+message SCCommunityOrgPbJoinWaitlistRequest {
+	string emailAddress = 1;
+	ranking.communityorg.SCCommunityOrgPbCohort cohort = 2;
+	string communityLongName = 3;
+	string communityShortName = 4;
+	string placeId = 5;
+
+	enum SCCommunityOrgPbOrganizationType {
+		TYPE_UNSET = 0;
+		UNIVERSITY = 1;
+		HIGH_SCHOOL = 2;
+	}
+
+	SCCommunityOrgPbOrganizationType organizationType = 6;
+}

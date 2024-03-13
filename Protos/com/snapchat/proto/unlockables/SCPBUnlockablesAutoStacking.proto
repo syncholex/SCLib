@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+message SCPBUnlockablesAutoStacking {
+	string autoStackType = 1;
+}

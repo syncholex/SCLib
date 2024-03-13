@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbGetVersionSetResponse {
+	string targetOsversion = 1;
+	string updateType = 2;
+	string binaryName = 3;
+	string downloadURL = 4;
+	string metadataName = 5;
+	string metadataURL = 6;
+	string createdDateTime = 7;
+	string lastUpdatedDateTime = 8;
+	string fullFlashBuildDownloadURL = 9;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.core;
+
+message SCCORELocation {
+	string country = 1;
+	string region = 2;
+	string city = 3;
+	double latitude = 4;
+	double longitude = 5;
+	int32 continent = 6;
+}

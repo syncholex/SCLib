@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPromotedStoryTileCtaConfig_CtaRemoteWebPageConfig {
+
+	enum SCAdsPromotedStoryTileCtaConfig_CtaRemoteWebPageConfig_BrowserType {
+		DEFAULT_UNSET = 0;
+		SNAP = 1;
+		CCT = 2;
+		EXB = 3;
+		SERVER = 4;
+	}
+
+	SCAdsPromotedStoryTileCtaConfig_CtaRemoteWebPageConfig_BrowserType browserType = 1;
+	int32 perfMetricsLoadWaitTimeSec = 2;
+}

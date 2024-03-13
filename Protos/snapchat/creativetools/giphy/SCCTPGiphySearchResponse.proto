@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.giphy;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPGiphySearchResponse {
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem giphysArray = 1;
+}

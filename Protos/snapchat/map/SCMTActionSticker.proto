@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTActionSticker {
+	string actionStickerId = 1;
+	string actionId = 2;
+	int64 actionStickerValidUntil = 3;
+	int64 actionStickerLockedUntil = 4;
+	double actionConfidence = 5;
+	int64 actionStickerEffectiveTime = 6;
+	string actionSubtype = 7;
+	bool allowedInCluster = 8;
+	string clusterableStickerId = 9;
+	string nonClusterableStickerId = 10;
+	string clusterableFacingLeftStickerId = 11;
+	string clusterableFacingRightStickerId = 12;
+	bool nonClusterableStickerIdSupportsShadow = 15;
+	bool devOnly = 16;
+	bool employeeOnly = 17;
+
+	enum SCMTClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMTClusteringPolicy clusteringPolicy = 18;
+	float actionLat = 19;
+	float actionLng = 20;
+	float actionRadiusMeters = 21;
+	bool isSpaceConstrained = 22;
+}

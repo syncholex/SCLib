@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message PBUFEmojiInfo {
+
+	enum PBUFEmojiInfo_EmojiInfoType {
+		UNICODE = 0;
+		RESERVED = 1;
+	}
+
+	PBUFEmojiInfo_EmojiInfoType type = 1;
+	string source = 2;
+	string title = 3;
+	string emojiDesc = 4;
+	string emojiPickerDesc = 5;
+
+	enum PBUFEmojiInfo_EmojiInfoType {
+		UNICODE = 0;
+		RESERVED = 1;
+	}
+
+	PBUFEmojiInfo_EmojiInfoType defaultType = 6;
+	string defaultVal = 7;
+	int32 emojiLegendRank = 8;
+}

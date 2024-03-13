@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SectionLayout.proto";
+import "ranking/serving/jaguar/SCSSMSectionConfig.proto";
+import "ranking/serving/jaguar/TrendingPageSectionMetadata.proto";
+import "ranking/serving/jaguar/TopicPageSectionMetadata.proto";
+import "ranking/serving/jaguar/SuperFeedSectionMetadata.proto";
+
+message FeedTypeMetadata {
+	int32 feedType = 1;
+	string displayName = 2;
+	string loggingKey = 3;
+	ranking.serving.jaguar.SectionLayout sectionLayout = 5;
+	ranking.serving.jaguar.SCSSMSectionConfig sectionConfig = 6;
+	string description_p = 7;
+	ranking.serving.jaguar.TrendingPageSectionMetadata trendPageSectionMetadata = 8;
+	bool shouldHideSection = 9;
+	ranking.serving.jaguar.TopicPageSectionMetadata topicPageSectionMetadata = 10;
+	ranking.serving.jaguar.SuperFeedSectionMetadata superFeedSectionMetadata = 11;
+}

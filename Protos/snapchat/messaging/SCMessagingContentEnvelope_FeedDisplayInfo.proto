@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingSnapDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusMessageDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingExternalMediaDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingShareDisplayInfo.proto";
+
+message SCMessagingContentEnvelope_FeedDisplayInfo {
+
+	oneof feedDisplayInfo {
+		snapchat.messaging.SCMessagingSnapDisplayInfo snapDisplayInfo = 1;
+		snapchat.messaging.SCMessagingStatusMessageDisplayInfo statusMessageDisplayInfo = 2;
+		snapchat.messaging.SCMessagingExternalMediaDisplayInfo externalMediaDisplayInfo = 3;
+		snapchat.messaging.SCMessagingShareDisplayInfo shareDisplayInfo = 4;
+	}
+
+}

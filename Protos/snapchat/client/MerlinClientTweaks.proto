@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.client;
+
+message MerlinClientTweaks {
+	uint64 model = 1;
+	uint64 prompt = 2;
+	uint64 temperature = 3;
+
+	enum TweakBoolean {
+		TWEAK_BOOLEAN_SERVER_DEFAULT = 0;
+		TWEAK_BOOLEAN_ENABLED = 1;
+		TWEAK_BOOLEAN_DISABLED = 2;
+	}
+
+	TweakBoolean helpText = 4;
+
+	enum TweakBoolean {
+		TWEAK_BOOLEAN_SERVER_DEFAULT = 0;
+		TWEAK_BOOLEAN_ENABLED = 1;
+		TWEAK_BOOLEAN_DISABLED = 2;
+	}
+
+	TweakBoolean debugData = 5;
+	uint64 experiment = 6;
+
+	enum TweakBoolean {
+		TWEAK_BOOLEAN_SERVER_DEFAULT = 0;
+		TWEAK_BOOLEAN_ENABLED = 1;
+		TWEAK_BOOLEAN_DISABLED = 2;
+	}
+
+	TweakBoolean placeRanking = 7;
+
+	enum TweakAdProvider {
+		TWEAK_AD_PROVIDER_SERVER_DEFAULT = 0;
+		TWEAK_AD_PROVIDER_MSFT = 1;
+		TWEAK_AD_PROVIDER_GOOG = 2;
+	}
+
+	TweakAdProvider adProvider = 8;
+}

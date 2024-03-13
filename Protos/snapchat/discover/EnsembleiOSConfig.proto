@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message EnsembleiOSConfig {
+	bool enableM1 = 1;
+	bool enableComposerJobScheduler = 2;
+	bool bypassPlayableViewModelSnapdocAssertion = 3;
+	bool enableTapHistoryIos = 4;
+	bool enableSpotlightPrefetchOnDiscoverOpen = 5;
+	bool moveSpotlightPrefetchToJobScheduler = 6;
+	bool loadFriendStoriesCarouselEagerly = 7;
+	bool backgroundPrefetchMedia = 8;
+	bool prefetchMediaOnCamera = 9;
+	bool enablePromotedWatchReplayOverlay = 10;
+	bool loadViewLoaderOnMainThreadSync = 11;
+	bool enableFriendStoriesMediaPrefetchOnStartup = 12;
+	bool disableDiscoverPageOpenSync = 13;
+	bool enableDiscoverPageExitSync = 14;
+}

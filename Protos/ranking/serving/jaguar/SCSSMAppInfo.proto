@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMAppInfo {
+	string appVersion = 1;
+
+	enum SCSCOREOsType_Type {
+		OS_UNKNOWN = 0;
+		OS_IOS = 1;
+		OS_ANDROID = 2;
+		OS_WEB = 3;
+	}
+
+	SCSCOREOsType_Type osType = 3;
+	string osVersion = 4;
+
+	enum SCSCOREAppBuild_Build {
+		APPBUILD_UNKNOWN = 0;
+		APPBUILD_PROD = 1;
+		APPBUILD_MASTER = 2;
+		APPBUILD_ALPHA = 3;
+		APPBUILD_DEBUG = 4;
+		APPBUILD_UI_AUTOMATION = 5;
+		APPBUILD_BETA = 6;
+		APPBUILD_WILDCARD = 7;
+		APPBUILD_PERF = 8;
+		APPBUILD_PROFILE = 9;
+		APPBUILD_UI_AUTOMATION_DEBUG = 10;
+		APPBUILD_NORTHSTAR = 11;
+	}
+
+	SCSCOREAppBuild_Build appBuild = 5;
+
+	enum SCSCOREAppVariant_Enum {
+		UNKNOWN = 0;
+		ANDROID_MUSHROOM = 1;
+		ANDROID_ORIGINAL = 2;
+		ANDROID_SNAPSHOT = 3;
+		ANDROID_HMS = 4;
+	}
+
+	SCSCOREAppVariant_Enum appVariant = 6;
+	string rawUserAgent = 7;
+}

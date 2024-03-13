@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message Tags {
+	repeated string sccTagsArray = 1;
+	repeated string wikiTagsArray = 2;
+	repeated string manualTagsArray = 3;
+}

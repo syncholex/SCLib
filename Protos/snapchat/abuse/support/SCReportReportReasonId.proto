@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportSafetyReasonId.proto";
+import "snapchat/abuse/support/SCReportStoreItemReasonId.proto";
+import "snapchat/abuse/support/SCReportCameosReasonId.proto";
+import "snapchat/abuse/support/SCReportGenerativeContentReasonId.proto";
+
+message SCReportReportReasonId {
+
+	oneof reasonId {
+		snapchat.abuse.support.SCReportSafetyReasonId safetyReasonId = 1;
+		snapchat.abuse.support.SCReportStoreItemReasonId storeItemReasonId = 2;
+		snapchat.abuse.support.SCReportCameosReasonId cameosReasonId = 3;
+		snapchat.abuse.support.SCReportGenerativeContentReasonId generativeContentReasonId = 4;
+	}
+
+}

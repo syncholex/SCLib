@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBUnlockablesScheduleInterval {
+	string startDateTime = 1;
+	string endDateTime = 2;
+	int64 startMillisSinceEpoch = 3;
+	int64 endMillisSinceEpoch = 4;
+}

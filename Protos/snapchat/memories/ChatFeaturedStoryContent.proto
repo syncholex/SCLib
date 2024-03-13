@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/ChatMessageReference.proto";
+
+message ChatFeaturedStoryContent {
+	bytes conversationId = 1;
+	repeated snapchat.memories.ChatMessageReference messagesArray = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstanceScope.proto";
+
+message SCCognacAppInstancesLaunchAppInstanceRequest {
+	cognac.SCCognacAppInstancesAppInstanceScope appInstanceScope = 1;
+	string appId = 2;
+
+	enum SCCognacAppInstancesAppInstance_AppInstancePrivacy {
+		UNKNOWN = 0;
+		PUBLIC = 1;
+		PRIVATE = 2;
+	}
+
+	SCCognacAppInstancesAppInstance_AppInstancePrivacy privacy = 3;
+}

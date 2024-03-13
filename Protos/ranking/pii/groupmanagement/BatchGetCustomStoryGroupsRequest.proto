@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/core/SCSCOREUUID.proto";
+
+message BatchGetCustomStoryGroupsRequest {
+	ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+	repeated ranking.core.SCSCOREUUID groupIdsArray = 2;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/ads/request/schema/SCAdsShowcaseProductInteraction.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsShowcaseImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBFloatValue totalCatalogViewTime = 2;
+	google.protobuf.GPBFloatValue totalShowcaseWebviewTime = 3;
+	google.protobuf.GPBInt32Value productsViewed = 4;
+	repeated snapchat.ads.request.schema.SCAdsShowcaseProductInteraction productInteractionsArray = 5;
+	google.protobuf.GPBBoolValue storeOpened = 6;
+	google.protobuf.GPBFloatValue totalStoreViewTime = 7;
+	google.protobuf.GPBInt32Value lastViewedIndex = 8;
+}

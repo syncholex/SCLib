@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCMAHidableLocation {
+	bool shouldHide = 1;
+	snapchat.geo.SPCGPoint point = 2;
+}

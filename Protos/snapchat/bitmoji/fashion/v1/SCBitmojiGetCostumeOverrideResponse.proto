@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiBitmojiCostumeData.proto";
+
+message SCBitmojiGetCostumeOverrideResponse {
+	snapchat.bitmoji.fashion.v1.SCBitmojiBitmojiCostumeData costumeData = 1;
+
+	enum SCBitmojiAvatarCostumeType {
+		COSTUME_TYPE_UNSET = 0;
+		OUTFIT = 1;
+		GARMENT = 2;
+	}
+
+	SCBitmojiAvatarCostumeType costumeType = 2;
+}

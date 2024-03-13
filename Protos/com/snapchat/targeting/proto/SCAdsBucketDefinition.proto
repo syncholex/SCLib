@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message SCAdsBucketDefinition {
+	int32 lowerBoundInclusive = 1;
+	int32 upperBoundExclusive = 2;
+	int32 bucket = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/SCSSMRTUSResponse.proto";
+
+message MFCUserSessionResponse {
+	ranking.serving.jaguar.SCSSMRTUSResponse rtusResponse = 3;
+}

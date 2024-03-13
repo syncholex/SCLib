@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetFollowersInRangeRequest {
+	string userId = 1;
+	int32 start = 2;
+	int32 end = 3;
+}

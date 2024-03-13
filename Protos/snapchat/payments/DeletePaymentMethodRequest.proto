@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message DeletePaymentMethodRequest {
+	string userId = 1;
+	string vaultId = 2;
+}

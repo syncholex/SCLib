@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message PastMember {
+	ranking.core.SCSCOREUUID userId = 1;
+	int64 leftTsMs = 11;
+}

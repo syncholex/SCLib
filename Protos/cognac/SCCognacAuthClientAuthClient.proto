@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAuthClientAuthScope.proto";
+
+message SCCognacAuthClientAuthClient {
+	string id_p = 1;
+	repeated cognac.SCCognacAuthClientAuthScope scopesArray = 2;
+	repeated string redirectUrisArray = 3;
+}

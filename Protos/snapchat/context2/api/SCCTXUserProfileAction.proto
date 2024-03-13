@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXUserProfileAction {
+	string userId = 1;
+	string username = 2;
+	string defaultDisplayName = 3;
+	string bitmojiAvatarId = 4;
+	string bitmojiSelfieId = 5;
+}

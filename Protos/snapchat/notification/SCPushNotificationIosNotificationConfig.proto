@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationVoIP.proto";
+import "snapchat/notification/SCPushNotificationCategory.proto";
+
+message SCPushNotificationIosNotificationConfig {
+	snapchat.notification.SCPushNotificationVoIP voip = 1;
+
+	enum SCPushNotificationLaunchImage {
+		UNSET_IMAGE = 0;
+		SPLASH_FEED = 1;
+		SPLASH_CHAT = 2;
+	}
+
+	SCPushNotificationLaunchImage launchImage = 2;
+
+	enum SCPushNotificationTargetScreen {
+		UNSET_TARGET_SCREEN = 0;
+		CURRENT = 1;
+		CHAT_FEED = 2;
+		CHAT_WINDOW = 3;
+		CAMERA = 4;
+		MY_FRIENDS = 5;
+		ADD_FRIENDS = 6;
+		QUICK_ADD = 7;
+		MEMORIES_LAGUNA = 8;
+		SNAP_ADS_PORTAL = 9;
+		ON_DEMAND_GEOFILTER = 10;
+		MEMORIES_BACKUP = 11;
+		LOCATION_SHARING_SETTINGS = 12;
+		MAP = 13;
+		MOMENTS = 14;
+		DF = 15;
+		MOMENTS_SUBSCRIBE = 16;
+		MEMORIES_SAVED_TAB = 17;
+		MEMORIES_ALL_TAB = 18;
+		STORY_MANAGEMENT_PAGE = 19;
+		PROFILE = 20;
+		SHARED_STORY_PROFILE = 21;
+		BITMOJI_CREATION_SCREEN = 22;
+		FIND_FRIENDS = 23;
+		FAMILY_CENTER = 24;
+		MAP_PLACE_PROFILE = 25;
+		DREAM_PACK_PAGE = 26;
+	}
+
+	SCPushNotificationTargetScreen targetScreen = 3;
+	snapchat.notification.SCPushNotificationCategory category = 4;
+
+	enum SCPushNotificationNotificationProvider {
+		UNSET = 0;
+		APNS_SIMPLE = 1;
+		APNS_SILENT = 2;
+		APNS_CONTENT_AVAILABLE = 3;
+		VOIP = 4;
+		SNS_VOIP = 5;
+		SNS_APNS = 6;
+		GCM = 7;
+		FCM = 8;
+		MOCK = 9;
+		SNS_FCM = 10;
+		HMS = 11;
+		WEB_PUSH = 12;
+	}
+
+	SCPushNotificationNotificationProvider notificationProvider = 5;
+}

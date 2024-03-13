@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message ClientGeneratedCollection {
+	int32 collectionCategory = 1;
+	int64 activationTimeUtc = 2;
+	snapchat.core.SCCOREUUID featuredStoryId = 3;
+}

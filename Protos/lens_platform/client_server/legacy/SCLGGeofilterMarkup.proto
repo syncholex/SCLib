@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterMarkup_GeofilterLayoutParameters.proto";
+import "lens_platform/client_server/legacy/SCLGGeofilterDisplayParameters.proto";
+import "lens_platform/client_server/legacy/SCLGGeofilterMarkup_LocalDateTimeInterval.proto";
+import "lens_platform/client_server/legacy/SCLGGeofilterMarkup_CompanionCreativeProperties.proto";
+
+message SCLGGeofilterMarkup {
+	int64 refreshRate = 1;
+	string type = 2;
+	string source = 3;
+	lens_platform.client_server.legacy.SCLGGeofilterMarkup_GeofilterLayoutParameters layoutParameters = 4;
+	lens_platform.client_server.legacy.SCLGGeofilterDisplayParameters displayParameters = 5;
+	lens_platform.client_server.legacy.SCLGGeofilterMarkup_LocalDateTimeInterval displaySchedule = 6;
+	lens_platform.client_server.legacy.SCLGGeofilterMarkup_CompanionCreativeProperties companionCreativeProperties = 7;
+}

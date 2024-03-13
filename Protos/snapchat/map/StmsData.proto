@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/snapmod/Audience.proto";
+import "snapchat/context/SCContextContextHint.proto";
+import "address/SCMapsAddressIds.proto";
+import "snapchat/context/SCAttributionInfo.proto";
+import "snapchat/map/BundleInfo.proto";
+
+message StmsData {
+	string originalStoryId = 1;
+	string venueId = 2;
+	string clientId = 3;
+	string lensId = 4;
+	string lensRankingId = 5;
+
+	enum SCStoryElement_SnapInfo_OurStoryDestination {
+		UNKNOWN_DESTINATION = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	repeated SCStoryElement_SnapInfo_OurStoryDestination destinationsArray = 6 [packed=true];
+	int64 timestampMs = 7;
+	int64 captureTimestampMs = 8;
+	double lat = 10;
+	double lng = 11;
+	bool isZipped = 12;
+	string mediaURL = 13;
+	string mediaId = 14;
+	string mediaIv = 15;
+	string mediaKey = 16;
+	string thumbnailIv = 17;
+	string thumbnailURL = 18;
+	double mediaLengthSecs = 19;
+	bool isInfiniteDuration = 20;
+	string attachmentURL = 21;
+	string captionText = 22;
+	repeated string mentionedUsernamesArray = 23;
+	repeated snapchat.core.SCCOREUUID mentionedUserIdsArray = 24;
+	string unlockablesSnapInfo = 25;
+	bool hasLensMetadata = 26;
+	snapchat.snapmod.Audience modAudience = 30;
+	snapchat.context.SCContextContextHint contextHint = 31;
+
+	enum SCSnapMediaType {
+		SNAP_MEDIA_TYPE_IMAGE = 0;
+		SNAP_MEDIA_TYPE_VIDEO = 1;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND = 2;
+		SNAP_MEDIA_TYPE_FRIEND = 3;
+		SNAP_MEDIA_TYPE_BLOB = 4;
+		SNAP_MEDIA_TYPE_LAGUNA = 5;
+		SNAP_MEDIA_TYPE_LAGUNA_NO_SOUND = 6;
+		SNAP_MEDIA_TYPE_AUDIO_STITCH = 9;
+		SNAP_MEDIA_TYPE_PSYCHOMANTIS = 10;
+		SNAP_MEDIA_TYPE_SCREAMINGMANTIS = 11;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_MALIBU = 12;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_MALIBU = 13;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_LAGUNA_HD = 14;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_LAGUNA_HD = 15;
+		SNAP_MEDIA_TYPE_GHOSTMANTIS = 16;
+		SNAP_MEDIA_TYPE_VIDEO_SOUND_NEWPORT = 17;
+		SNAP_MEDIA_TYPE_VIDEO_NO_SOUND_NEWPORT = 18;
+		SNAP_MEDIA_TYPE_AUDIO = 19;
+		SNAP_MEDIA_TYPE_BLOOP = 20;
+		SNAP_MEDIA_TYPE_SPECTACLES_IMAGE = 21;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO = 22;
+		SNAP_MEDIA_TYPE_SPECTACLES_VIDEO_NO_SOUND = 23;
+		SNAP_MEDIA_TYPE_CHEERIOS_IMAGE = 24;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_SOUND = 25;
+		SNAP_MEDIA_TYPE_CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSnapMediaType mediaType = 32;
+	address.SCMapsAddressIds addressIds = 33;
+	snapchat.context.SCAttributionInfo attributionInfo = 34;
+	snapchat.map.BundleInfo bundleInfo = 35;
+}

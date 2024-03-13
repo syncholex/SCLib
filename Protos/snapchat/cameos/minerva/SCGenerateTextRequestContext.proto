@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/cameos/minerva/SCMinervaMagicCaption.proto";
+import "snapchat/cameos/minerva/SCStoryReplyRequestContext.proto";
+
+message SCGenerateTextRequestContext {
+	snapchat.core.SCCOREUUID initialRequestId = 1;
+	repeated snapchat.cameos.minerva.SCMinervaMagicCaption pastTextArray = 2;
+	string imageDescription = 3;
+	bool userAbove18 = 4;
+}

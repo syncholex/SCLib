@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.ar.common.template;
+
+message RemoteAsset {
+	string URL = 1;
+	string checksum = 2;
+}

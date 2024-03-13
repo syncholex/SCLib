@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses.snappable;
+
+message SCLensSbSnappableMedia {
+	string sessionId = 1;
+	string playerId = 2;
+	string URL = 3;
+	string key = 4;
+	int64 createdTime = 5;
+}

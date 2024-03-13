@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXCssStyle.proto";
+
+message SCCTXCTA_Arrow {
+	snapchat.context2.iz.SCCTXCssStyle style = 1;
+}

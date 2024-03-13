@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2StudyInfo {
+	string id_p = 1;
+	string variableValues = 2;
+	int32 experimentId = 3;
+	string studyName = 4;
+	int32 segmentGuid = 5;
+}

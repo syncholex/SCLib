@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cdp.networkmanager;
+
+import "snapchat/cdp/networkmanager/PrewarmConfig_HostConfig.proto";
+
+message PrewarmConfig_HostConfigs {
+	repeated snapchat.cdp.networkmanager.PrewarmConfig_HostConfig hostConfigsArray = 1;
+	int32 throttleSec = 2;
+}

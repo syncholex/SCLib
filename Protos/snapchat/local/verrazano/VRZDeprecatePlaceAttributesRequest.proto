@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpMetadata.proto";
+
+message VRZDeprecatePlaceAttributesRequest {
+	snapchat.local.verrazano.VRZOpMetadata opMetadata = 1;
+	repeated string placeAttributesIdsArray = 2;
+}

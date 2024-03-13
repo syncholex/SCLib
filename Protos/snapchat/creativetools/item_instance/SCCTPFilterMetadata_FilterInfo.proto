@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPFilterMetadata_VenueInfo.proto";
+
+message SCCTPFilterMetadata_FilterInfo {
+}

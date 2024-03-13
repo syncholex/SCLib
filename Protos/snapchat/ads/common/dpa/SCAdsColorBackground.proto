@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.common.dpa;
+
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsColorBackground {
+	google.protobuf.GPBStringValue color = 1;
+}

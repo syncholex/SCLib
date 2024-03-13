@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.category;
+
+import "snapchat/category/HNCategoryID.proto";
+import "snapchat/tags/ContentTag.proto";
+
+message HNCategory {
+	snapchat.category.HNCategoryID id_p = 1;
+	string color = 2;
+	repeated snapchat.tags.ContentTag tagsArray = 3;
+}

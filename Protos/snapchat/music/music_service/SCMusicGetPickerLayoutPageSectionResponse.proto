@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection.proto";
+
+message SCMusicGetPickerLayoutPageSectionResponse {
+	snapchat.music.music_service.SCMusicPickerLayoutPageSection section = 1;
+	int64 cacheTtlMinutes = 2;
+}

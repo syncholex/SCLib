@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+message SCDHAuthority {
+
+	enum SCDHClientService {
+		SERVICE_UNSET = 0;
+		LENS_CENTRAL = 1;
+		LENS_CMS = 2;
+		MESSAGE_QUEUE = 3;
+		WEB_LENS_API = 4;
+		WEB_ATTACHMENTS = 5;
+		FSN = 6;
+		UNLOCKS = 7;
+		FEATURED_LENSES = 8;
+		LENS_DELIVERY = 9;
+		LENS_INFOCARD = 10;
+		LENS_NOTIFICATIONS = 11;
+		SHOPPING_LENS_SERVICE = 12;
+		DIRECT_SERVE = 13;
+		SNAP_INTERACTIONS = 14;
+		SNAP_INTERACTIONS_STAGING = 15;
+		LENS_WEB_BUILDER = 16;
+		TARGETING_SERVICE = 17;
+		BBG = 18;
+		BACKFILL_JOB = 19;
+		LENS_AUTOMATION = 20;
+		AR_CMS = 21;
+		LENS_GATOR = 22;
+		LE_SERVICE = 23;
+		DH_STORAGE_API = 24;
+	}
+
+	SCDHClientService service = 1;
+	string userEmail = 2;
+	string username = 3;
+	string userId = 4;
+}

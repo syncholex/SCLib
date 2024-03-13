@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.memories.v1;
+
+message PLMemoriesDreamsScreen {
+
+	oneof contentId {
+		string snapId = 1;
+		string dreamsPackId = 2;
+	}
+
+
+	enum PLGalleryOpenSource {
+		UNSET = 0;
+		SWIPE_FROM_CAMERA = 1;
+		BUTTON_FROM_CAMERA = 2;
+		SWIPE_FROM_POCKET = 3;
+		BUTTON_FROM_POCKET = 4;
+		DEEP_LINK = 5;
+		FIRST_SAVED_MEMORY_TOOLTIP = 6;
+		APP_FOREGROUND = 7;
+		FS_NOTIFICATION = 8;
+		SPECS_NOTIFICATION = 9;
+		HOMESCREEN_MEMORIES_WIDGET = 10;
+	}
+
+	PLGalleryOpenSource galleryOpenSource = 3;
+}

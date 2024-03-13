@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+import "snapchat/bitmoji/builder/v1/SCBitmojiColorOption.proto";
+
+message SCBitmojiColorSwatch {
+	repeated int32 iconColorsArray = 1 [packed=true];
+	repeated snapchat.bitmoji.builder.v1.SCBitmojiColorOption colorsArray = 2;
+}

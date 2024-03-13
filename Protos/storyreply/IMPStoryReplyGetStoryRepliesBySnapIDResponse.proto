@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyStoryReply.proto";
+
+message IMPStoryReplyGetStoryRepliesBySnapIDResponse {
+	repeated storyreply.IMPStoryReplyStoryReply repliesArray = 1;
+	string nextPageId = 2;
+}

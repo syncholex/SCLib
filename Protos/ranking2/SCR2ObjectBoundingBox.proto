@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2ObjectBoundingBox {
+	float xMin = 1;
+	float xMax = 2;
+	float yMin = 3;
+	float yMax = 4;
+}

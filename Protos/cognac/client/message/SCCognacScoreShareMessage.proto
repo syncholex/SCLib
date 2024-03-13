@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package cognac.client.message;
+
+message SCCognacScoreShareMessage {
+	string id_p = 1;
+	string appId = 2;
+	string appName = 3;
+	string appIconURL = 4;
+	string appDynamicMediaURL = 5;
+	int64 numericScore = 6;
+	string leaderboardName = 7;
+	string scoreIconURL = 8;
+}

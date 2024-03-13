@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.ads.ad_delivery_insights;
+
+message SCAdsWhyISeeThisAdResponse {
+	repeated string adTargetingRuleArray = 1;
+}

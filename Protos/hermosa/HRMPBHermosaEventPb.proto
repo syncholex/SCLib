@@ -1,0 +1,53 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBWearDetectorEvent.proto";
+import "hermosa/HRMPBMediaCountEvent.proto";
+import "hermosa/HRMPBWifiStatus.proto";
+import "hermosa/HRMPBLocationRequestEvent.proto";
+import "hermosa/HRMPBOTACheckResponse.proto";
+import "hermosa/HRMPBOTADownloadAndInstallResponse.proto";
+import "hermosa/HRMPBChargerEvent.proto";
+import "hermosa/HRMPBWifiConnectedClientCountChangeEvent.proto";
+import "hermosa/HRMPBEmpty.proto";
+import "hermosa/HRMPBBrightnessLevelChangeEvent.proto";
+import "hermosa/HRMPBSpectaclesLockedWaitingForUnlockEvent.proto";
+import "hermosa/HRMPBBackupStatusEvent.proto";
+import "hermosa/HRMPBQcomStateChangeEvent.proto";
+import "hermosa/HRMPBLensLaunchInfo.proto";
+import "hermosa/HRMPBLockedBootCompletedEvent.proto";
+import "hermosa/HRMPBUnlockedBootCompletedEvent.proto";
+import "hermosa/HRMPBSardoSpectaclesStatus.proto";
+import "hermosa/HRMPBWifiSubnetStateChangedEvent.proto";
+import "hermosa/HRMPBEnvelopeMessage.proto";
+import "hermosa/HRMPBAudioLevelChangeEvent.proto";
+import "hermosa/HRMPBScreenChangeEvent.proto";
+
+message HRMPBHermosaEventPb {
+
+	oneof event {
+		hermosa.HRMPBWearDetectorEvent wearDetectorEvent = 2;
+		hermosa.HRMPBMediaCountEvent mediaCountEvent = 6;
+		hermosa.HRMPBWifiStatus wifiStatusEvent = 8;
+		hermosa.HRMPBLocationRequestEvent locationRequestEvent = 21;
+		hermosa.HRMPBOTACheckResponse checkOsOtaUpdateResponseEvent = 23;
+		hermosa.HRMPBOTADownloadAndInstallResponse downloadInstallOsOtaUpdateResponseEvent = 24;
+		hermosa.HRMPBChargerEvent chargerEvent = 26;
+		hermosa.HRMPBWifiConnectedClientCountChangeEvent connectedClientCountChangeEvent = 29;
+		hermosa.HRMPBEmpty shakeToReportEvent = 30;
+		hermosa.HRMPBBrightnessLevelChangeEvent brightnessLevelChangeEvent = 32;
+		hermosa.HRMPBSpectaclesLockedWaitingForUnlockEvent spectaclesLockedWaitingForUnlockEvent = 34;
+		hermosa.HRMPBBackupStatusEvent backupStatusEvent = 35;
+		hermosa.HRMPBQcomStateChangeEvent qcomStateChangeEvent = 38;
+		hermosa.HRMPBLensLaunchInfo lensLaunchEvent = 39;
+		hermosa.HRMPBLockedBootCompletedEvent lockedBootCompletedEvent = 40;
+		hermosa.HRMPBUnlockedBootCompletedEvent unlockedBootCompletedEvent = 41;
+		hermosa.HRMPBSardoSpectaclesStatus sardoStatusEvent = 44;
+		hermosa.HRMPBWifiSubnetStateChangedEvent wifiSubnetStateChangedEvent = 45;
+		hermosa.HRMPBEnvelopeMessage genericEnvelopeMessageEvent = 46;
+		hermosa.HRMPBAudioLevelChangeEvent audioLevelChangeEvent = 47;
+		hermosa.HRMPBScreenChangeEvent screenStateChangeEvent = 48;
+	}
+
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message GtqServeFeaturedLensesRequest_CachedUnlockableItem {
+	int64 cachedUnlockableIds = 1;
+}

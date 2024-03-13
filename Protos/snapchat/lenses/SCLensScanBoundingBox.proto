@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensScanBoundingBox {
+	float left = 1;
+	float right = 2;
+	float bottom = 3;
+	float top = 4;
+}

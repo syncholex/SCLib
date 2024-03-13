@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+message MemoriesSearchConfidenceMapConfig {
+	repeated string conceptArray = 1;
+	repeated float thresholdArray = 2 [packed=true];
+}

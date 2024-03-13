@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.account;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message DeleteShippingAddressRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	bytes addressId = 2;
+}

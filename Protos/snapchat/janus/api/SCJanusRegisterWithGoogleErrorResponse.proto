@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusRegisterWithGoogleErrorResponse {
+
+	enum SCJanusRegisterWithGoogleErrorResponse_StatusCode {
+		UNSET = 0;
+		ERR_EMAIL_TAKEN = 1;
+	}
+
+	SCJanusRegisterWithGoogleErrorResponse_StatusCode statusCode = 1;
+}

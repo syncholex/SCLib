@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCSnapLogging {
+	bytes eventSignature = 1;
+	string videoId = 2;
+}

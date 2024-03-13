@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.camera.v1;
+
+message PLCameraScreen {
+
+	oneof lensIdentifier {
+		string lensId = 1;
+		string scancode = 2;
+	}
+
+}

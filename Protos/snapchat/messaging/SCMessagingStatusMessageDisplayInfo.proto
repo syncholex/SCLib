@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingStatusScreenCaptureDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusCallingStatusDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusParticipantAddDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusNameChangeDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusSaveToCameraRollDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusInMyContactsDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusGenericChat.proto";
+import "snapchat/messaging/SCMessagingStatusParticipantKickDisplayInfo.proto";
+import "snapchat/messaging/SCMessagingStatusGroupChatCreatedDisplayInfo.proto";
+
+message SCMessagingStatusMessageDisplayInfo {
+
+	oneof status {
+		snapchat.messaging.SCMessagingStatusScreenCaptureDisplayInfo screenCapture = 1;
+		snapchat.messaging.SCMessagingStatusCallingStatusDisplayInfo callingStatus = 2;
+		snapchat.messaging.SCMessagingStatusParticipantAddDisplayInfo changeParticipant = 3;
+		snapchat.messaging.SCMessagingStatusNameChangeDisplayInfo nameChange = 4;
+		snapchat.messaging.SCMessagingStatusSaveToCameraRollDisplayInfo saveToCameraRoll = 5;
+		snapchat.messaging.SCMessagingStatusInMyContactsDisplayInfo inMyContacts = 6;
+		snapchat.messaging.SCMessagingStatusGenericChat genericChat = 7;
+		snapchat.messaging.SCMessagingStatusParticipantKickDisplayInfo kickParticipant = 8;
+		snapchat.messaging.SCMessagingStatusGroupChatCreatedDisplayInfo groupCreated = 9;
+	}
+
+}

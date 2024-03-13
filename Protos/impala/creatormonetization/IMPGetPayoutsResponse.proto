@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPPayout.proto";
+
+message IMPGetPayoutsResponse {
+
+	enum IMPPayoutState {
+		ONBOARDING_NEEDED_UNSET = 0;
+		IN_PROCESS = 1;
+		SUCCESS_NO_PAYMENT_METHOD = 2;
+		PAY_IN_PROGRESS = 3;
+		REJECTED = 4;
+		REJECTED_NO_PAYMENT_METHOD = 5;
+		SUCCESS = 6;
+		BANNED = 7;
+		ON_HOLD = 8;
+	}
+
+	IMPPayoutState payoutState = 1;
+	int64 totalEarnings = 2;
+	repeated impala.creatormonetization.IMPPayout pendingPayoutsArray = 3;
+	repeated impala.creatormonetization.IMPPayout confirmedPayoutsArray = 4;
+	bool hasEarningV1 = 5;
+	string onboardingEmail = 6;
+	string accessCode = 7;
+
+	enum IMPOnboardingStateReason {
+		NO_REASON_PROVIDED_UNSET = 0;
+		UNDER_AGE = 1;
+		INVALID_COUNTRY = 2;
+		NO_EARNINGS = 3;
+	}
+
+	IMPOnboardingStateReason reasonCode = 8;
+}

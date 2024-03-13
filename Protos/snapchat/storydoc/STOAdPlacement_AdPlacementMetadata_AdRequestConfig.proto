@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOAdPlacement_AdPlacementMetadata_AdRequestConfig {
+	uint32 firstPosition = 1;
+	uint32 timeout = 2;
+	uint32 minimumRemaining = 3;
+}

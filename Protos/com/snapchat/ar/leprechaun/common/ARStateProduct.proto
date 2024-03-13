@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.ar.leprechaun.common;
+
+import "com/snapchat/ar/leprechaun/common/ARProductReference.proto";
+
+message ARStateProduct {
+	string stateKey = 1;
+	com.snapchat.ar.leprechaun.common.ARProductReference product = 2;
+
+	enum ARStateProduct_ProductTag {
+		PRODUCT_TAG_UNSET = 0;
+		DEFAULT = 1;
+	}
+
+	ARStateProduct_ProductTag productTag = 3;
+}

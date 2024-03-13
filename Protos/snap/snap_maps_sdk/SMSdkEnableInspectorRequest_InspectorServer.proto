@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkEnableInspectorRequest_InspectorServer {
+	uint32 port = 1;
+	bool useSecurityKey = 2;
+}

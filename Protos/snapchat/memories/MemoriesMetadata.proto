@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/MemoriesAssetList.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message MemoriesMetadata {
+
+	oneof metadata {
+		snapchat.memories.MemoriesAssetList assets = 1;
+		snapchat.snapdoc.SDMSnapDoc snapDoc = 2;
+	}
+
+}

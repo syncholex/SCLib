@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbPricePhase.proto";
+
+message SCSubscriptionShopPbPostSubscriptionPlanDetailsRequest {
+	string productId = 1;
+	string offerTag = 2;
+	repeated subscription.shop.SCSubscriptionShopPbPricePhase pricePhasesArray = 3;
+	string referralToken = 4;
+	string offerId = 5;
+}

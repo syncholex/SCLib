@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREABFeatureLoggingEntry_CustomFeatures_Feature {
+	string name = 1;
+
+	oneof value {
+		string stringVal = 2;
+		int64 intVal = 3;
+		double doubleVal = 4;
+		bool boolVal = 5;
+	}
+
+}

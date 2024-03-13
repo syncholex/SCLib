@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+message SCUserAdStatsGetUserAdStatsRequest {
+	bytes said = 1;
+	string userLocale = 2;
+}

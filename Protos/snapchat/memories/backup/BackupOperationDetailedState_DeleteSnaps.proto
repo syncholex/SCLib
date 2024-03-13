@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.memories.backup;
+
+message BackupOperationDetailedState_DeleteSnaps {
+	repeated string snapIdsArray = 1;
+}

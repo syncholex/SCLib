@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+import "snapchat/lens/SCLensExplorerImageSequence.proto";
+
+message SCLensExplorerLensExplorerItem {
+	string snapcodeURL = 1;
+	string userDisplayName = 2;
+	string lensName = 3;
+	string deeplink = 4;
+	string iconURL = 5;
+	string thumbnailMediaURL = 6;
+	string thumbnailMediaPosterURL = 7;
+	string standardMediaURL = 8;
+	string standardMediaPosterURL = 9;
+	int64 unlockableId = 10;
+	snapchat.lens.SCLensExplorerImageSequence imageSequence = 11;
+}

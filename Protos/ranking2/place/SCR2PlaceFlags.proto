@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+message SCR2PlaceFlags {
+	bool isWithinCollectionPlace = 1;
+	bool hasSimilarPlacesNearby = 2;
+	bool manyPlacesNearby = 3;
+	bool isUninteresting = 4;
+	bool isLowConfidence = 5;
+	bool isSensitive = 6;
+}

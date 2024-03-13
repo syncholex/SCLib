@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.network;
+
+message CdnClientConfig_RoutingRule {
+
+	enum NetworkConditionEnums_NetworkReachability {
+		UNKNOWN = 0;
+		WIFI = 1;
+		WWAN = 2;
+		NOT_REACHABLE = 3;
+	}
+
+	NetworkConditionEnums_NetworkReachability reachability = 1;
+
+	enum CdnClientConfig_CdnId {
+		UNSET = 0;
+		GOOGLE = 1;
+		AMAZON = 2;
+	}
+
+	CdnClientConfig_CdnId cdnId = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.ar.common.display_card;
+
+import "com/snapchat/ar/common/display_card/RenderingOption.proto";
+
+message TextRenderingGroup {
+
+	enum TextRenderingGroupType {
+		TEXT_FIELD_UNSET = 0;
+		PRIMARY = 1;
+		SECONDARY = 2;
+		TERTIARY = 3;
+	}
+
+	TextRenderingGroupType type = 1;
+	repeated com.snapchat.ar.common.display_card.RenderingOption renderingOptionsArray = 2;
+}

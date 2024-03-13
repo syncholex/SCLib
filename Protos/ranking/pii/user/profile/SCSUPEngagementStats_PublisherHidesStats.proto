@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPEngagementStats_PublisherHidesStats {
+	uint32 totalHides = 1;
+	uint32 totalUnhides = 2;
+	int64 lastHideStateUpdateMsecs = 3;
+}

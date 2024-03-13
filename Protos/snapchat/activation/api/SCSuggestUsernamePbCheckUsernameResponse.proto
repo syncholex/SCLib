@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCSuggestUsernamePbCheckUsernameResponse {
+
+	enum SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState {
+		STATE_UNSET = 0;
+		USERNAME_AVAILABLE = 1;
+		TOO_SHORT = 2;
+		TOO_LONG = 3;
+		INVALID_BEGIN = 4;
+		INVALID_END = 5;
+		INVALID_CHAR = 6;
+		INVALID_SEPARATED = 7;
+		TAKEN = 8;
+		DELETED = 9;
+		SAME_AS_PASSWORD = 10;
+		ERR_GENERIC_FAILURE = 11;
+		ERR_THROTTLED = 12;
+	}
+
+	SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState state = 1;
+	repeated string suggestionsArray = 2;
+	string errorMessage = 3;
+}

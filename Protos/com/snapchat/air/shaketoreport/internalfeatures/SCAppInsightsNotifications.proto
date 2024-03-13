@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsNotifications {
+
+	enum SCAppInsightsNotifications_Subfeature {
+		UNSET = 0;
+		APP_ICON_BADGE = 1;
+		CRASH = 2;
+		IN_APP = 3;
+		NAVIGATION = 4;
+		STORIES = 5;
+		OTHER = 6;
+	}
+
+	SCAppInsightsNotifications_Subfeature subfeature = 1;
+}

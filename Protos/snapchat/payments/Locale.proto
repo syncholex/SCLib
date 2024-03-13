@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+message Locale {
+	string country = 1;
+	string zip = 2;
+}

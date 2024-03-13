@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message AuxEntry {
+	int64 id_p = 1;
+	int64 startMs = 2;
+	int64 durMs = 3;
+	int64 startUs = 4;
+	int64 durUs = 5;
+}

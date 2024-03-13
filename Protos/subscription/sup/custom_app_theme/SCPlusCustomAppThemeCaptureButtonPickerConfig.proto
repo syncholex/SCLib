@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeCamera_CaptureButton.proto";
+
+message SCPlusCustomAppThemeCaptureButtonPickerConfig {
+	repeated subscription.sup.custom_app_theme.SCPlusCustomAppThemeCamera_CaptureButton optionsArray = 1;
+}

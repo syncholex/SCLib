@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPRegisterInterestsRequest_Request.proto";
+
+message SCSUPRegisterInterestsRequest {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPRegisterInterestsRequest_Request requestsArray = 2;
+	int64 requestTsMsecs = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/GradientColorStop.proto";
+
+message LinearGradient {
+	repeated snapchat.messaging.cof.GradientColorStop stopsArray = 1;
+	float angleDegrees = 2;
+}

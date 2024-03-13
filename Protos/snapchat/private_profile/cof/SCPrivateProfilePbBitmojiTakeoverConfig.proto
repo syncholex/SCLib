@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.private_profile.cof;
+
+message SCPrivateProfilePbBitmojiTakeoverConfig {
+	bool enabled = 1;
+	int32 coolDownSeconds = 2;
+
+	enum SCPrivateProfilePbBitmojiTakeoverConfig_BitmojiTakeoverTreatment {
+		UNSET = 0;
+		SUBTEXT1_CREATE_BUTTON = 1;
+		SUBTEXT2_CREATE_BUTTON = 2;
+		SUBTEXT1_CONTINUE_BUTTON = 3;
+		SUBTEXT2_CONTINUE_BUTTON = 4;
+		SUBTEXT1_CREATE_BUTTON_WITH_EXIT = 5;
+	}
+
+	SCPrivateProfilePbBitmojiTakeoverConfig_BitmojiTakeoverTreatment treatment = 3;
+	int32 initialCooldownImpressionCount = 4;
+	int32 increasedCoolDownSeconds = 5;
+}

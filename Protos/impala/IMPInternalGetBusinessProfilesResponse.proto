@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPInternalBusinessProfile.proto";
+
+message IMPInternalGetBusinessProfilesResponse {
+	repeated impala.IMPInternalBusinessProfile internalProfilesArray = 1;
+}

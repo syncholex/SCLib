@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.targeting;
+
+message SCCTPCTTargetedItem_Visibility_AllowList {
+	bool allowAllEmployees = 2;
+	bool allowAllTesters = 3;
+}

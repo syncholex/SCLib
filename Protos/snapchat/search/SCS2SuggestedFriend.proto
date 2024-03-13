@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2User.proto";
+import "snapchat/search/SCS2StorySummaryInfo.proto";
+
+message SCS2SuggestedFriend {
+	snapchat.search.SCS2User user = 1;
+	snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 2;
+
+	enum SCS2SuggestedFriend_SuggestionReason {
+		SUGGESTION_REASON_UNKNOWN = 0;
+		SUGGESTION_REASON_HAS_MUTUAL_FRIEND = 1;
+		SUGGESTION_REASON_USERNAME = 2;
+		SUGGESTION_REASON_IN_CONTACTS = 3;
+	}
+
+	SCS2SuggestedFriend_SuggestionReason suggestionReason = 3;
+}

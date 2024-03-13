@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+message SCPCNSettingsPromptHistory {
+	int64 lastPromptedEpochSec = 1;
+	int64 numPrompts = 2;
+}

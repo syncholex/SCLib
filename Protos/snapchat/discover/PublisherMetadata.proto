@@ -1,0 +1,206 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "snapchat/storydoc/STODiscoverChannelFilter.proto";
+import "snapchat/discover/HourMin.proto";
+import "snapchat/discover/Tags.proto";
+import "snapchat/discover/MediaLibraryMediaIds.proto";
+import "snapchat/storydoc/STOContentAccessLists.proto";
+
+message PublisherMetadata {
+	int64 publisherId = 1;
+	string name = 2;
+	bool adsEnabled = 11;
+	bool isComScoreIntegrationEnabled = 12;
+	bool isOurStories = 13;
+	bool isShow = 14;
+
+	enum Feature {
+		UNKNOWN = 0;
+		EVERGREEN = 1;
+		SUBSCRIBER_ONLY = 2;
+		EXCLUSIVE_SHOW = 3;
+		ORIGINAL_SHOW = 9;
+		FIXED_PAYMENTS = 4;
+		INTERNAL_CURATOR = 5;
+		PARTNER_CURATOR = 6;
+		TEAM_SNAPCHAT = 7;
+		TIMELY = 8;
+		FRIENDS_CAROUSEL = 10;
+		ONBOARDING_WIZARD = 11;
+		MADE_FOR_US = 12;
+		DISCOVER_CHANNEL = 13;
+		DISCOVER_CHANNEL_ELIGIBLE = 14;
+		USE_BUNDLE = 15;
+	}
+
+	repeated Feature publisherFeaturesArray = 15 [packed=true];
+	bool subscribable = 17;
+	string tier = 18;
+	int32 topsnapLimit = 19;
+
+	enum Type {
+		NORMAL = 0;
+		AD = 1;
+		TEST = 2;
+		TEST_AD = 3;
+	}
+
+	Type type = 20;
+	bool rollingNewsEnabled = 21;
+	bool videoModeEnabled = 22;
+
+	enum AdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	AdSetting adSetting = 23;
+
+	enum ModerationLevel {
+		STANDARD = 0;
+		NEWS = 1;
+	}
+
+	ModerationLevel moderationLevel = 24;
+	int32 targetSnapLengthMs = 25;
+
+	enum AudioClassification {
+		UNSET = 0;
+		NORMAL_DIALOGUE = 1;
+		DIALOGUE_SUBTITLE_BURN = 2;
+		DIALOGUE_IMPACT_BURN = 3;
+		DIALOGUE_HEAVY = 4;
+		NO_DIALOGUE = 5;
+	}
+
+	AudioClassification audioClassification = 26;
+	bool isAdsPreRollEnabled = 27;
+	int32 webviewLimit = 28;
+	bool isDynamicAdsEnabled = 29;
+	repeated snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 30;
+
+	enum TierLevel {
+		TIER_UNKNOWN = 0;
+		TIER_PREMIUM = 1;
+		TIER_SHOW = 2;
+		TIER_CURATION = 3;
+		TIER_HAPPENING_NOW = 4;
+		TIER_DYNAMIC_EDITIONS = 5;
+	}
+
+	TierLevel tierLevel = 31;
+	bool advancedAdsEnabled = 41;
+	int32 advancedAdsMinSlots = 42;
+	int32 advancedAdsMaxSlots = 43;
+	int32 advancedAdsMinSpacing = 44;
+	int32 advancedAdsLatestFirstSlot = 45;
+	int32 defaultNumSnaps = 46;
+
+	enum Flag {
+		NONE = 0;
+		ADDED_PUBLISHER_DETAILS = 1;
+		PROFILE_ONBOARDING = 2;
+		ORGANISATION_ONBOARDING = 3;
+		NOTIFICATION_PROFILE_COMPLETED = 4;
+		NOTIFICATION_EDITORIAL_APPROVAL = 5;
+		NOTIFICATION_PROFILE_ENABLED = 6;
+		NOTIFICATION_REVIEW_REQUESTED = 7;
+		NOTIFICATION_EDITORIAL_REJECTED = 8;
+		AUTO_ENABLED_PUBLISHING = 9;
+	}
+
+	repeated Flag publisherFlagsArray = 47 [packed=true];
+	repeated int32 defaultAdSlotsArray = 48 [packed=true];
+	string managerEmail = 50;
+	string homeCountry = 51;
+	bool permitAutoPublishFromFeed = 52;
+	int32 timeUntilAutoPublishFeedStory = 53;
+	string managerName = 54;
+	snapchat.discover.HourMin dynamicEditionAutoCreateStoryTimeUtc = 55;
+	repeated int32 defaultAdSlotsMillisArray = 56 [packed=true];
+	string articleCss = 71;
+	string primaryColor = 73;
+	string secondaryColor = 74;
+	string URLSafeFormalName = 76;
+	string mutablePublisherName = 77;
+	string horizontalIcon = 78;
+	snapchat.discover.Tags tags = 83;
+	repeated string nicknamesArray = 84;
+	repeated int64 deeplinksArray = 86 [packed=true];
+	string squareHeroImageURL = 89;
+
+	enum LogoDisplay {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	LogoDisplay profileLogoDisplay = 90;
+	string squareHeroImageBitmojiTemplateId = 91;
+	snapchat.discover.MediaLibraryMediaIds mediaIds = 92;
+	string primaryLanguage = 101;
+
+	enum ShareOption {
+		NO_SHARE = 0;
+		SHARE_LIVE = 1;
+		SHARE_LIVE_ARCHIVED = 2;
+	}
+
+	ShareOption defaultShareOption = 102;
+
+	enum DiscoverRegion {
+		ALL = 0;
+		DEV_TEST = 1;
+		INTERNATIONAL = 2;
+		US = 3;
+		UK = 4;
+		AU = 5;
+		CA = 6;
+		SUB = 7;
+		QA = 8;
+	}
+
+	repeated DiscoverRegion supportedRegionsArray = 103 [packed=true];
+	repeated int64 geofenceIdsArray = 104 [packed=true];
+
+	enum ContentAgeGateLevel {
+		UNRESTRICTED = 0;
+		EXPLICIT = 1;
+	}
+
+	ContentAgeGateLevel ageGate = 105;
+	bool publishingEnabled = 106;
+	int64 launchDateTimestamp = 107;
+	repeated string whitelistCountryArray = 108;
+	repeated string blacklistCountryArray = 109;
+	repeated string whitelistDistributionCountryArray = 110;
+	repeated string blacklistDistributionCountryArray = 111;
+	repeated string whitelistLanguageArray = 112;
+	repeated string blacklistLanguageArray = 113;
+	bool isHidden = 114;
+	bool isEmployeeOnly = 115;
+	bool isSearchable = 116;
+	repeated string localContentArray = 117;
+	snapchat.storydoc.STOContentAccessLists contentAccessLists = 119;
+
+	enum PublishingApproval {
+		SPM = 0;
+		PROGRAMMING = 1;
+		COMPLIANCE = 2;
+	}
+
+	repeated PublishingApproval publishingApprovalsArray = 120 [packed=true];
+
+	enum EditorialApproval {
+		TO_BE_REVIEWED = 0;
+		REJECTED = 1;
+		APPROVED = 2;
+		REQUESTED = 3;
+	}
+
+	EditorialApproval editorialApproval = 121;
+	string editorialRationale = 122;
+	int64 editorialApprovedTimestamp = 123;
+	int64 editorialReviewRequestedTimestamp = 124;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMImageMetadata {
+
+	enum SDMImageCodecFormat {
+		IMAGE_UNSET = 0;
+		JPEG = 1;
+		PNG = 2;
+		WEBP = 3;
+		HEIF = 4;
+		AWEBP = 5;
+		GIF = 6;
+	}
+
+	SDMImageCodecFormat codecFormat = 1;
+}

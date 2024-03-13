@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/IldgEligibilityBreakdown.proto";
+
+message SCLensesPbGetIldgEligibilityResponse {
+	repeated snapchat.lenscentral.common.IldgEligibilityBreakdown ildgEligibilityBreakdownsArray = 1;
+}

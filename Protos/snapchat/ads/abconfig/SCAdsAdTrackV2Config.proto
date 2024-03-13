@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAdTrackV2Config {
+	bool ssfEnabled = 1;
+
+	enum SCAdsAdBaseConfig_AdType {
+		UNKNOWN_AD_TYPE_UNSET = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		NO_FILL = 5;
+		STORY = 6;
+		DEEP_LINK_ATTACHMENT = 7;
+		AD_TO_LENS = 8;
+		COLLECTION = 9;
+		AD_TO_CALL = 10;
+		AD_TO_MESSAGE = 11;
+		AD_TO_PLACE = 12;
+		LEAD_GENERATION = 13;
+		SHOWCASE = 14;
+		PROMOTE_PUBLISHER_STORY = 15;
+		REMINDER = 16;
+		SURVEY = 17;
+	}
+
+	repeated SCAdsAdBaseConfig_AdType supportedAdTypesArray = 2 [packed=true];
+	string parserRegexes = 3;
+	bool allAdTypesEnabled = 4;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/pii/groupmanagement/PendingGroupMetadata.proto";
+
+message UserPendingGroupMetadata {
+	ranking.pii.groupmanagement.PendingGroupMetadata pendingGroupMetadata = 1;
+	int64 pendingMembershipExpiryTsMs = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SnapContextExperimentInfo {
+	string parameters = 1;
+}

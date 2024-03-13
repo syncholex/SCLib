@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusFideliusTentativeDeviceKey.proto";
+
+message SCJanusFideliusClientInit {
+	repeated bytes hashedPublicKeysArray = 1;
+	snapchat.janus.api.SCJanusFideliusTentativeDeviceKey tentativeDeviceKey = 2;
+}

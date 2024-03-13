@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.common;
+
+import "snapchat/bitmoji/builder/common/SCBitmojiBadge.proto";
+
+message SCBitmojiBrand {
+	int32 id_p = 1;
+	string name = 2;
+	string logoURL = 3;
+	string headerBackgroundURL = 4;
+	string previewBackgroundURL = 5;
+	snapchat.bitmoji.builder.common.SCBitmojiBadge badge = 6;
+	string squareLogoURL = 7;
+	string greyscaleLogoURL = 8;
+	string contentId = 9;
+}

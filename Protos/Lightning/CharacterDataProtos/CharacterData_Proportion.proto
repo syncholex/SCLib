@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+message CharacterData_Proportion {
+	int32 value = 1;
+}

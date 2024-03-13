@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SuperFeedSectionMetadata {
+	bool hasMoreFriendsStories = 1;
+	bool hasMoreNonFriendsStories = 2;
+}

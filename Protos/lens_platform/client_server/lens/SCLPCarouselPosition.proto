@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "snapchat/creativetools/common/CarouselGlobalScoreList.proto";
+
+message SCLPCarouselPosition {
+
+	enum SCLPCarouselPosition_CarouselSide {
+		SIDE_UNSET = 0;
+		LEFT = 1;
+		RIGHT = 2;
+	}
+
+	SCLPCarouselPosition_CarouselSide side = 1;
+	int32 priority = 2;
+	int32 absolutePosition = 4;
+	string carouselGroupName = 5;
+	float carouselScore = 6;
+	snapchat.creativetools.common.CarouselGlobalScoreList carouselGlobalScoreList = 7;
+}

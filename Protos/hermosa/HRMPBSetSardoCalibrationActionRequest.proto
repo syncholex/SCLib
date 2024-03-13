@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBPhoneScreenData.proto";
+import "hermosa/HRMPBMarkerData.proto";
+
+message HRMPBSetSardoCalibrationActionRequest {
+
+	enum HRMPBSetSardoCalibrationActionRequest_CalibrationAction {
+		UNKNOWN = 0;
+		ENTER = 1;
+		CANCEL = 2;
+		FORCE_NEEDS_CALIBRATION = 3;
+		CALIBRATED_IDLE = 4;
+		CALIBRATED_RESUME = 5;
+	}
+
+	HRMPBSetSardoCalibrationActionRequest_CalibrationAction calibrationAction = 1;
+	hermosa.HRMPBPhoneScreenData phoneScreenData = 2;
+	hermosa.HRMPBMarkerData markerData = 3;
+
+	enum HRMPBSetSardoCalibrationActionRequest_CalibrationUseCase {
+		MOBILE_CONTROLLER = 0;
+		SIDECAR = 1;
+	}
+
+	HRMPBSetSardoCalibrationActionRequest_CalibrationUseCase calibrationUseCase = 4;
+}

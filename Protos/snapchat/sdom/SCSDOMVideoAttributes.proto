@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/snapdoc/SDMVideoMetadata.proto";
+import "snapchat/snapdoc/SDMPlaybackSpeedMultiplier.proto";
+import "snapchat/snapdoc/SDMAudioMetadata.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCSDOMVideoAttributes {
+	google.protobuf.GPBEmpty videoClip = 1;
+	snapchat.snapdoc.SDMVideoMetadata videoMetadata = 2;
+	snapchat.snapdoc.SDMPlaybackSpeedMultiplier playbackSpeedMultiplier = 3;
+	snapchat.snapdoc.SDMAudioMetadata audioMetadata = 4;
+	google.protobuf.GPBFloatValue audioVolume = 5;
+}

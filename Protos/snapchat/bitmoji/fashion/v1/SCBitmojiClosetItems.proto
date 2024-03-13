@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiClosetItem.proto";
+
+message SCBitmojiClosetItems {
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiClosetItem itemsArray = 1;
+}

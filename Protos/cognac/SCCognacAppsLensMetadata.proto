@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsLensMetadata {
+	string lensId = 1;
+}

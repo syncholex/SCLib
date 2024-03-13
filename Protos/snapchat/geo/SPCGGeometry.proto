@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.geo;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/geo/SPCGLineString.proto";
+import "snapchat/geo/SPCGLinearRing.proto";
+import "snapchat/geo/SPCGPolygon.proto";
+import "snapchat/geo/SPCGMultiPolygon.proto";
+import "snapchat/geo/SPCGRect.proto";
+import "snapchat/geo/SPCGCircle.proto";
+
+message SPCGGeometry {
+
+	oneof geoValue {
+		snapchat.geo.SPCGPoint point = 1;
+		snapchat.geo.SPCGLineString lineString = 2;
+		snapchat.geo.SPCGLinearRing linearRing = 3;
+		snapchat.geo.SPCGPolygon polygon = 4;
+		snapchat.geo.SPCGMultiPolygon multipolygon = 5;
+		snapchat.geo.SPCGRect rect = 6;
+		snapchat.geo.SPCGCircle circle = 7;
+	}
+
+}

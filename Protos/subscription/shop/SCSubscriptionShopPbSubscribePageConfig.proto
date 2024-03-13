@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbSubscribePageConfig_PromoPaywall.proto";
+
+message SCSubscriptionShopPbSubscribePageConfig {
+	string preferredPlanRefId = 1;
+	string specialOfferBillboardKey = 2;
+	subscription.shop.SCSubscriptionShopPbSubscribePageConfig_PromoPaywall promoPaywall = 3;
+	string currentPlanRefId = 4;
+	int32 numInitialVisiblePlans = 5;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMEExplorerStatusModel_Location.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+import "actionmoji/action/SCMT1StickerID.proto";
+import "snapchat/map/SCMESnapMetadata.proto";
+
+message SCMEExplorerStatusModel {
+	string statusId = 1;
+	string clusteringId = 2;
+	string userId = 4;
+
+	enum SCMEStatusType {
+		STATUS_UNKNOWN = 0;
+		STATUS_TRAVEL = 1;
+		STATUS_FLIGHT = 2;
+		STATUS_DRIVE = 3;
+		STATUS_TRAIN = 4;
+		STATUS_NEW_USER = 5;
+		STATUS_APPEARED = 6;
+		STATUS_LEAD = 7;
+		STATUS_PLACE = 8;
+		STATUS_MOVED = 9;
+		STATUS_FLIGHT_PARTIAL = 10;
+		STATUS_DRIVE_LONG = 11;
+		STATUS_VENUE = 12;
+		STATUS_AIRPORT = 13;
+		STATUS_MOVED_SLOW = 14;
+		STATUS_CUSTOM = 15;
+	}
+
+	SCMEStatusType statusType = 5;
+	repeated snapchat.map.SCMEExplorerStatusModel_Location locationsArray = 6;
+	repeated string userIdBlacklistArray = 7;
+	int64 score = 8;
+	int64 timestampMs = 9;
+	int64 lifetimeMs = 10;
+	bool isDeleted = 11;
+	string viewerDedupeId = 12;
+	string posterDedupeId = 13;
+	snapchat.map.common.SCMCLocalizedStringSet text = 14;
+	actionmoji.action.SCMT1StickerID sticker = 15;
+	bool employeeOnly = 16;
+	string speechText = 17;
+	string placeId = 18;
+	snapchat.map.SCMESnapMetadata snapMetadata = 19;
+}

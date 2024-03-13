@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRDeliverableModelHandle.proto";
+
+message SCPMDRModelDeliveryConfig {
+	snapchat.perception.model_delivery_registry.SCPMDRDeliverableModelHandle modelHandles = 1;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPProfileHydrationOption.proto";
+
+message IMPListManagedPublicProfilesRequest {
+	string pageId = 1;
+	int32 limit = 2;
+	impala.IMPProfileHydrationOption hydrationOption = 3;
+
+	enum IMPAdsProfileType {
+		PROFILE_TYPE_UNSET = 0;
+		STORY_STUDIO_PUBLISHER = 1;
+		PUBLIC_PROFILE = 2;
+		PUBLIC_PROFILE_WITH_PUBLISHER_CONTENT = 3;
+		PUBLISHER_WITH_HOST_USER = 4;
+	}
+
+	repeated IMPAdsProfileType profileTypesArray = 4 [packed=true];
+}

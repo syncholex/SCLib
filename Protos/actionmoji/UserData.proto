@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/AnchorData.proto";
+import "snapchat/map/SCMTUserLocationRequest.proto";
+import "snapchat/map/SCMTLocationUpdate.proto";
+import "actionmoji/action/SCMT1Action.proto";
+import "snapchat/local/pelorus/SCMTPositionResponse.proto";
+
+message UserData {
+	actionmoji.AnchorData anchorData = 1;
+	snapchat.map.SCMTUserLocationRequest lastLocationRequest = 3;
+	int64 lastLocationRequestTimestamp = 4;
+	int64 lastForegroundUpdateTimestamp = 5;
+	snapchat.map.SCMTLocationUpdate lastSavedLocation = 9;
+	repeated actionmoji.action.SCMT1Action actionArray = 12;
+	snapchat.local.pelorus.SCMTPositionResponse cachedPelorusResponse = 13;
+	int64 cachedPelorusResponseTimestampMs = 14;
+	snapchat.local.pelorus.SCMTPositionResponse cachedPelorusVzResponse = 15;
+	int64 cachedPelorusVzResponseTimestampMs = 16;
+}

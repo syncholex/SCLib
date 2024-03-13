@@ -1,0 +1,5 @@
+syntax = "proto2";
+
+message VLKNrfDeviceRenameRequest {
+	string name = 1;
+}

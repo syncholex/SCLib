@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsAudienceInsights_LifestyleStats {
+	string lifestyle = 1;
+	double ratio = 2;
+}

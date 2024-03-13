@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message SCPbGrapheneMetric {
+	string partitionName = 1;
+	string metricName = 2;
+	string customDimensions = 3;
+	repeated int64 valuesArray = 4 [packed=true];
+}

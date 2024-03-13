@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+message SnapContextViewerCreatorInfo {
+
+	enum FriendshipType {
+		UNKNOWN_FRIENDSHIP = 0;
+		NO_FRIENDSHIP = 1;
+		FRIEND = 2;
+		PENDING = 3;
+		BLOCKED = 4;
+		DELETED = 5;
+		INVITE = 6;
+		LOCKED = 7;
+		FOLLOWING = 8;
+	}
+
+	FriendshipType friendshipType = 1;
+}

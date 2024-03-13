@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message AssetInfo {
+
+	enum AssetType {
+		ASSET_TYPE_UNSET = 0;
+		MAKEUP = 1;
+		GLASSES = 2;
+		SHOES = 3;
+		SURFACE = 4;
+		TWO_D = 5;
+		WRIST = 6;
+		SURFACE_VERTICAL = 7;
+		SURFACE_CEILING = 8;
+		UNSET_LOCAL_ASSET = 9;
+	}
+
+	AssetType assetType = 1;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message Badge {
+	int64 badgeId = 1;
+	ranking.core.SCSCOREUUID userId = 2;
+	int32 campaignId = 3;
+
+	enum BadgePlacement_Enum {
+		UNKNOWN = 0;
+		SPOTLIGHT_FEED = 1;
+		DISCOVER_FEED = 2;
+	}
+
+	BadgePlacement_Enum placement = 4;
+	int64 badgeEligibleTsMs = 5;
+	int64 badgeDurationMs = 6;
+	int64 badgeCreationTsMs = 7;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SpokenKeywords_Result_Keyword {
+	double start = 1;
+	double length = 2;
+	string word = 3;
+	double confidence = 4;
+	bool isBrand = 5;
+	bool isProfanity = 6;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBShakeToReportRequest {
+	string title = 1;
+	string description_p = 2;
+}

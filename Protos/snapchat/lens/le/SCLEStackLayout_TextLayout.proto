@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLEStackLayout_TextLayout {
+
+	enum SCLETextStyle {
+		BODY_UNSET = 0;
+		BODY_EMPHASIS = 1;
+		CAPTION = 2;
+		CAPTION_EMPHASIS = 3;
+		SUBHEADLINE = 4;
+		SUBHEADLINE_EMPHASIS = 5;
+	}
+
+	SCLETextStyle textStyle = 1;
+
+	enum SCLETextAlignment {
+		CENTER_UNSET = 0;
+		START = 1;
+	}
+
+	SCLETextAlignment textAlignment = 2;
+	int32 textMaxLines = 3;
+
+	enum SCLETextColor {
+		PRIMARY_UNSET = 0;
+		SECONDARY = 1;
+	}
+
+	SCLETextColor textColor = 4;
+}

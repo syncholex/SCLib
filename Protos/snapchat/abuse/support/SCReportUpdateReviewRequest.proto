@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportUpdateReviewRequest {
+	string taskId = 1;
+	bool isTaskEnforced = 2;
+
+	enum EnforcementOrigin {
+		UNSET = 0;
+		HUMAN = 1;
+		AUTOMATED = 2;
+	}
+
+	EnforcementOrigin enforcementOrigin = 3;
+}

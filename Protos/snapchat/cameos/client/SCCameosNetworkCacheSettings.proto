@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.client;
+
+message SCCameosNetworkCacheSettings {
+	uint32 ttlInSeconds = 1;
+}

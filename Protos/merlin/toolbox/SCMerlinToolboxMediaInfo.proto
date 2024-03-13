@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "merlin/toolbox/SCMerlinToolboxEncryptionInfo.proto";
+
+message SCMerlinToolboxMediaInfo {
+	string downloadURL = 1;
+	bytes contentObject = 2;
+	merlin.toolbox.SCMerlinToolboxEncryptionInfo encryptionInfo = 3;
+	uint32 height = 4;
+	uint32 width = 5;
+}

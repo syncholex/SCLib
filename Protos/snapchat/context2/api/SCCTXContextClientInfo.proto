@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_GroupInviteInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_SnapReplyRequestInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_PrivateStoryInviteInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TopicStickerInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_SnapProStoryReplyFeature.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_AppInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElementsInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CameoInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_MusicTrackInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CreativeToolsStickerInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_Hashtag.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_AstrologyProfileInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_RemixInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_SnapKitInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_RemixSettingsInfo.proto";
+import "snapchat/context2/camera/SCCTXTimeline.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CommerceInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_PollContextInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_QuestionStickerInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_CameraContextInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_ShoppingLensInfo.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_BitmojiOutfitInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_StoryMentionRepost.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_LensCollectionInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TemplateInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_DreamsInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_LensConfigInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_AICameraTextToImageInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_PostCaptureAIInfo.proto";
+
+message SCCTXContextClientInfo {
+	repeated string mentionedUsernamesArray = 1;
+	repeated snapchat.core.SCCOREUUID mentionedUserIdsArray = 2;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_GroupInviteInfo groupInvitesArray = 3;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_SnapReplyRequestInfo snapReplyRequestsArray = 4;
+	repeated snapchat.core.SCCOREUUID gameIdsArray = 5;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_PrivateStoryInviteInfo storyInvitesArray = 6;
+	int64 publisherId = 7;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_TopicStickerInfo attachedTopicStickersArray = 8;
+
+	enum SCCTXContextClientInfo_MentionSource {
+		CAPTION_TAG = 0;
+		MENTION_STICKER = 1;
+		SNAPCODE_STICKER = 2;
+	}
+
+	repeated SCCTXContextClientInfo_MentionSource mentionSourcesArray = 9 [packed=true];
+	repeated snapchat.context2.api.SCCTXContextClientInfo_TappableElement legacyTappableElementsArray = 10;
+	snapchat.context2.api.SCCTXContextClientInfo_SnapProStoryReplyFeature snapProStoryReplyFeature = 11;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_AppInfo appsArray = 12;
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElementsInfo tappableElements = 13;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_CameoInfo cameosArray = 14;
+	snapchat.context2.api.SCCTXContextClientInfo_MusicTrackInfo musicTrack = 15;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_CreativeToolsStickerInfo creativetoolsStickersArray = 16;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_Hashtag hashtagsArray = 17;
+	snapchat.context2.api.SCCTXContextClientInfo_AstrologyProfileInfo astrologyProfileInfo = 18;
+	snapchat.context2.api.SCCTXContextClientInfo_RemixInfo remixInfo = 19;
+	snapchat.context2.api.SCCTXContextClientInfo_SnapKitInfo snapKitInfo = 20;
+	snapchat.context2.api.SCCTXContextClientInfo_RemixSettingsInfo remixSettingsInfo = 21;
+	snapchat.context2.camera.SCCTXTimeline timeline = 22;
+	snapchat.context2.api.SCCTXContextClientInfo_CommerceInfo commerceInfo = 23;
+	repeated snapchat.context2.api.SCCTXContextClientInfo_PollContextInfo pollInfoArray = 24;
+	bool isCheeriosVideo = 25;
+	snapchat.context2.api.SCCTXContextClientInfo_QuestionStickerInfo questionInfo = 26;
+	snapchat.context2.api.SCCTXContextClientInfo_CameraContextInfo cameraContextInfo = 27;
+	snapchat.context2.api.SCCTXContextClientInfo_ShoppingLensInfo shoppingLensInfo = 31;
+	repeated snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemInstanceArray = 32;
+	snapchat.context2.api.SCCTXContextClientInfo_BitmojiOutfitInfo bitmojiOutfitInfo = 33;
+	snapchat.context2.api.SCCTXContextClientInfo_StoryMentionRepost storyMentionRepost = 34;
+	snapchat.context2.api.SCCTXContextClientInfo_LensCollectionInfo lensCollectionInfo = 35;
+	snapchat.context2.api.SCCTXContextClientInfo_TemplateInfo templateInfo = 36;
+	snapchat.context2.api.SCCTXContextClientInfo_DreamsInfo dreamsInfo = 37;
+	snapchat.context2.api.SCCTXContextClientInfo_LensConfigInfo lensConfigInfo = 38;
+	snapchat.context2.api.SCCTXContextClientInfo_AICameraTextToImageInfo aiCameraTextToImageInfo = 39;
+	snapchat.context2.api.SCCTXContextClientInfo_PostCaptureAIInfo postCaptureAiInfo = 40;
+}

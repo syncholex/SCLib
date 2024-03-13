@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles;
+
+import "google/protobuf/GPBStruct.proto";
+
+message SCMGTFeature {
+	google.protobuf.GPBStruct properties = 2;
+
+	enum SCMGTFeature_GeomType {
+		UNKNOWN = 0;
+		POINT = 1;
+		LINESTRING = 2;
+		POLYGON = 3;
+	}
+
+	SCMGTFeature_GeomType type = 3;
+	repeated uint32 geometryArray = 4 [packed=true];
+
+	oneof id {
+		string stringId = 5;
+		uint64 uintId = 6;
+	}
+
+	float minZoom = 7;
+	bytes extension = 15;
+}

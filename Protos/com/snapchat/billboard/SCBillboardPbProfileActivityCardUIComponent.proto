@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbProfileActivityCardTitle.proto";
+import "com/snapchat/billboard/SCBillboardPbProfileActivityCardSubtitle.proto";
+import "com/snapchat/billboard/SCBillboardPbProfileActivityCardIcon.proto";
+
+message SCBillboardPbProfileActivityCardUIComponent {
+
+	oneof component {
+		com.snapchat.billboard.SCBillboardPbProfileActivityCardTitle title = 1;
+		com.snapchat.billboard.SCBillboardPbProfileActivityCardSubtitle subtitle = 2;
+		com.snapchat.billboard.SCBillboardPbProfileActivityCardIcon icon = 3;
+	}
+
+}

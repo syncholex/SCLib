@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZOpeningHours_HourMinute {
+	int32 hour = 1;
+	int32 minute = 2;
+}

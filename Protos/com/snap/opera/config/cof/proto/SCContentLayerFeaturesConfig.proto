@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+message SCContentLayerFeaturesConfig {
+	bool basicImage = 1;
+	bool gifImage = 2;
+	bool scImage = 3;
+	bool basicVideo = 4;
+	bool scVideo = 5;
+	bool imageOverlay = 6;
+}

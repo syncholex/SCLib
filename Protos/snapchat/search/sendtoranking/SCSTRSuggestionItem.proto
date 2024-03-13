@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search.sendtoranking;
+
+import "snapchat/search/sendtoranking/SCSTRCompositeID.proto";
+
+message SCSTRSuggestionItem {
+	snapchat.search.sendtoranking.SCSTRCompositeID suggestion = 1;
+}

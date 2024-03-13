@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsInfluencerBasicProfile.proto";
+import "impala/insights/IMPInsightsSubscribeInsights.proto";
+import "impala/insights/IMPInsightsStoryViewInsights.proto";
+import "impala/insights/IMPInsightsAudienceInsights.proto";
+import "impala/insights/IMPInsightsDailyStoryView.proto";
+import "impala/insights/IMPInsightsLensCreatorInsights.proto";
+import "impala/insights/IMPInsightsDailyLensMetrics.proto";
+import "impala/insights/IMPInsightsSpotlightSummaryMetrics.proto";
+import "impala/insights/IMPInsightsDailySpotlightMetrics.proto";
+import "impala/insights/IMPInsightsSavedStorySummaryMetrics.proto";
+import "impala/insights/IMPInsightsDailySavedStoryMetrics.proto";
+
+message IMPInsightsInfluencerInsights {
+	string userId = 1;
+	impala.insights.IMPInsightsInfluencerBasicProfile basicProfile = 2;
+	impala.insights.IMPInsightsSubscribeInsights subscribeInsights = 3;
+	impala.insights.IMPInsightsStoryViewInsights storyViewInsights = 4;
+	impala.insights.IMPInsightsAudienceInsights subscriberAudienceInsights = 5;
+	repeated impala.insights.IMPInsightsDailyStoryView dailyStoryViewsArray = 7;
+	int64 aggregationTimestampMsecs = 8;
+	impala.insights.IMPInsightsLensCreatorInsights lensCreatorInsights = 10;
+	repeated impala.insights.IMPInsightsDailyLensMetrics dailyLensMetricsArray = 11;
+	impala.insights.IMPInsightsSpotlightSummaryMetrics spotlightSummaryMetrics = 13;
+	repeated impala.insights.IMPInsightsDailySpotlightMetrics dailySpotlightMetricsArray = 14;
+	impala.insights.IMPInsightsSavedStorySummaryMetrics savedStorySummaryMetrics = 15;
+	repeated impala.insights.IMPInsightsDailySavedStoryMetrics dailySavedStoryMetricsArray = 16;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMLocation {
+	double altitude = 1;
+	double horizontalAccuracy = 2;
+	double latitude = 3;
+	double longitude = 4;
+	double speed = 5;
+}

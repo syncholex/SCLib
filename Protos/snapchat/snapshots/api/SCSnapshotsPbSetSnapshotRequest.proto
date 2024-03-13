@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.snapshots.api;
+
+message SCSnapshotsPbSetSnapshotRequest {
+	bytes serializedSnapshotsSnaps = 1;
+}

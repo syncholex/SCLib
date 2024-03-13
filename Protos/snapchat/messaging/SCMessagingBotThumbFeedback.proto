@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingBotThumbFeedback {
+	uint64 promptId = 1;
+}

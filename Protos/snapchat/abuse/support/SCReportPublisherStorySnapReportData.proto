@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportPublisherStorySnapReportData {
+	string snapId = 1;
+	string editionId = 2;
+	string publisherId = 3;
+	string publisherName = 4;
+	string compositeStoryId = 5;
+	string chapterId = 6;
+}

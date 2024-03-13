@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPEncryptedMedia {
+	string contentURL = 1;
+	bytes encKey = 2;
+	bytes encIv = 3;
+	bool isPermanentContentURL = 4;
+
+	enum SCCTPEncryptionType {
+		ENCRYPTION_TYPE_UNSET = 0;
+		AES_GCM = 1;
+		AES_CBC = 2;
+	}
+
+	SCCTPEncryptionType encType = 5;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/UpdateThreadedRepliesCountRequest_Update.proto";
+
+message UpdateThreadedRepliesCountRequest {
+	repeated ranking.pii.replies.UpdateThreadedRepliesCountRequest_Update updatesArray = 1;
+}

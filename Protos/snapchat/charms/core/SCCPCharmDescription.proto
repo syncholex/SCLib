@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/core/SCCPCharmDescriptionVariable.proto";
+
+message SCCPCharmDescription {
+	string template_p = 1;
+	repeated snapchat.charms.core.SCCPCharmDescriptionVariable variablesArray = 2;
+}

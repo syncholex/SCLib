@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsStoryItem_SccTagWeightPair.proto";
+
+message SCAdsStoryItem {
+	bool isSubscribed = 2;
+	bool isPinned = 3;
+	bool isBrandSafeQualified = 4;
+	double finalScore = 5;
+	int32 corpus = 6;
+	uint64 fp = 7;
+	repeated snapchat.ads.request.schema.SCAdsStoryItem_SccTagWeightPair sccTagsArray = 8;
+	float userEngagementScore = 9;
+	repeated snapchat.ads.request.schema.SCAdsStoryItem_SccTagWeightPair sccV3TagsArray = 10;
+}

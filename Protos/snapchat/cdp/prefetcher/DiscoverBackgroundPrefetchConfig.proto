@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cdp.prefetcher;
+
+import "snapchat/cdp/prefetcher/BackgroundPrefetchConfig.proto";
+
+message DiscoverBackgroundPrefetchConfig {
+	int32 numOfStories = 1;
+	int32 numOfSnapsInAStory = 2;
+	int32 maxNumOfSnapsInAStory = 3;
+	bool discoverForYouSection = 4;
+	int32 prefetchIntervalInMinutes = 5;
+	snapchat.cdp.prefetcher.BackgroundPrefetchConfig prefetchConfig = 6;
+}

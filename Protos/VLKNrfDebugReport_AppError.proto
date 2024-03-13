@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message VLKNrfDebugReport_AppError {
+	string filename = 1;
+	uint32 errorCode = 2;
+	uint32 lineNumber = 3;
+}

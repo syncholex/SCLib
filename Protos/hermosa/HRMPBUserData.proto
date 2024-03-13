@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBUserData {
+	bytes gapAddress = 1;
+	string deviceName = 2;
+	bytes encryptionKey = 3;
+	string userIdentifier = 6;
+	bool uploadToCloudProvisioned = 7;
+	int32 timeZone = 8;
+	bool hevcEnabled = 9;
+}

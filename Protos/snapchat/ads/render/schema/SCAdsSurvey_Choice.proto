@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsSurvey_Choice {
+	string text = 1;
+
+	enum SCAdsSurvey_Choice_Placement {
+		PLACEMENT_UNSET = 0;
+		FIXED = 1;
+		RANDOMIZED = 2;
+	}
+
+	SCAdsSurvey_Choice_Placement placement = 2;
+
+	enum SCAdsSurvey_Choice_Restriction {
+		RESTRICTION_UNSET = 0;
+		UNRESTRICTED = 1;
+		EXCLUSIVE = 2;
+	}
+
+	SCAdsSurvey_Choice_Restriction restriction = 3;
+	bool isTerminal = 4;
+}

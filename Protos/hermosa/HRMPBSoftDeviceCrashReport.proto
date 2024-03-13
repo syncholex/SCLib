@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSoftDeviceCrashReport {
+	uint32 faultId = 1;
+	uint32 pc = 2;
+	uint32 errorInfo = 3;
+}

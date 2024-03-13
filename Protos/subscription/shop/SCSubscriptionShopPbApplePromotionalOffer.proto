@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbApplePromotionalOffer {
+	string offerId = 1;
+	string keyId = 2;
+	string signature = 3;
+	string nonce = 4;
+	int64 timestampMillis = 5;
+}

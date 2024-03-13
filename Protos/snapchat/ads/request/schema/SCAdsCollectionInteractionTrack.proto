@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBUInt32Value.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsCollectionInteractionTrack {
+
+	enum SCAdsCollectionInteractionTrack_CollectionInteractionSource {
+		UNSET = 0;
+		TILE = 1;
+		PILL = 2;
+		GRID = 3;
+	}
+
+	SCAdsCollectionInteractionTrack_CollectionInteractionSource source = 1;
+	google.protobuf.GPBInt64Value dpaProductId = 2;
+	google.protobuf.GPBUInt32Value tileIndex = 3;
+	google.protobuf.GPBFloatValue sourceRelativeLocationX = 4;
+	google.protobuf.GPBFloatValue sourceRelativeLocationY = 5;
+	google.protobuf.GPBFloatValue screenRelativeLocationX = 6;
+	google.protobuf.GPBFloatValue screenRelativeLocationY = 7;
+	google.protobuf.GPBInt64Value timestampMillis = 8;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+message SCCommunityOrgPbWaitlist {
+	string emailAddress = 1;
+	bool isVerified = 2;
+}

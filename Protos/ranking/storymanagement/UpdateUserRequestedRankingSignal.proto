@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/indexing/UserRequestedRankingSignals.proto";
+
+message UpdateUserRequestedRankingSignal {
+	ranking.core.SCSCOREUUID storyId = 1;
+	ranking.indexing.UserRequestedRankingSignals userRequestedRankingSignals = 2;
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 3;
+}

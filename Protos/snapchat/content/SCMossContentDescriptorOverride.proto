@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCBoltContentDescriptor.proto";
+import "google/protobuf/GPBEmpty.proto";
+
+message SCMossContentDescriptorOverride {
+	snapchat.content.SCBoltContentDescriptor contentDescriptor = 1;
+
+	oneof fileSuffix {
+		google.protobuf.GPBEmpty useVariantName = 2;
+		string useCustomSuffix = 3;
+	}
+
+
+	enum SCMossContentDescriptorOverride_StandardExtension {
+		UNKNOWN = 0;
+		WEBP = 1;
+		PNG = 2;
+		JPG = 3;
+		GIF = 4;
+		ICO = 5;
+		SVG = 6;
+		HEIF = 7;
+		HEIC = 8;
+		TIFF = 9;
+		BMP = 10;
+		MP4 = 20;
+		M3U8 = 21;
+		MPD = 22;
+		TS = 23;
+		GIFV = 24;
+		MOV = 25;
+		WEBM = 26;
+		FLV = 27;
+		AVI = 28;
+		MKV = 29;
+		ZIP = 40;
+		GZ = 41;
+		TAR = 42;
+		RAR = 43;
+		TAR_GZ = 44;
+		VTT = 60;
+		WEBVTT = 61;
+		SRT = 62;
+		SUB = 63;
+		SBV = 64;
+		MP3 = 80;
+		AAC = 81;
+		WAV = 82;
+		M4A = 83;
+		GLB = 100;
+		KTX = 101;
+		GLSL = 102;
+	}
+
+
+	oneof fileExtension {
+		SCMossContentDescriptorOverride_StandardExtension useStandardExtension = 4;
+		string useCustomExtension = 5;
+	}
+
+}

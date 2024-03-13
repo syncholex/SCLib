@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3AlertDialog {
+	string titleText = 1;
+	string bodyText = 2;
+	string primaryCtaText = 3;
+	string secondaryCtaText = 4;
+}

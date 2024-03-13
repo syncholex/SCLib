@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsCreatedAdsBusinessAccount.proto";
+
+message IMPAdsCreatedOrganization {
+	string id_p = 1;
+	repeated impala.adsapi.IMPAdsCreatedAdsBusinessAccount businessaccountsArray = 2;
+}

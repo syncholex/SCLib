@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingMapDrop {
+	double latitude = 1;
+	double longitude = 2;
+	uint64 createTimeMs = 3;
+	snapchat.messaging.SCMessagingUUID pinCreatorId = 4;
+	snapchat.messaging.SCMessagingUUID pinId = 5;
+	string pinTitle = 6;
+	bool doNotPersist = 7;
+}

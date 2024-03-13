@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBCoordinate {
+	double lat = 1;
+	double long_p = 2;
+}

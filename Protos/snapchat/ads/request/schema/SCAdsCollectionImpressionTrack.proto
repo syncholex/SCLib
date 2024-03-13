@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsCollectionItemImpressionTrack.proto";
+import "snapchat/ads/request/schema/SCAdsCollectionInteractionTrack.proto";
+
+message SCAdsCollectionImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack topsnapImpression = 1;
+	repeated snapchat.ads.request.schema.SCAdsCollectionItemImpressionTrack collectionItemsTrackArray = 2;
+	repeated snapchat.ads.request.schema.SCAdsCollectionInteractionTrack collectionInteractionsTrackArray = 3;
+}

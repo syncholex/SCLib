@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+message STOAdPlacement_TargetingParams {
+	string position = 1;
+	string edition = 2;
+	string inventory = 3;
+	string inventoryType = 4;
+	string inventoryFullyQualified = 5;
+	string productType = 6;
+	string channelTypeV2 = 7;
+	string channelType = 8;
+	string publisher = 9;
+}

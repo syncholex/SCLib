@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package games.lensmanagement;
+
+message SCGamesLensManagementDeleteLensesDataRequest {
+	repeated string lensIdsArray = 1;
+
+	enum SCGamesLensManagementPlatform {
+		UNSET = 0;
+		CAMKIT = 1;
+	}
+
+	SCGamesLensManagementPlatform platform = 2;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacLeaderboardsGetLeaderboardRequest {
+	string leaderboardId = 1;
+}

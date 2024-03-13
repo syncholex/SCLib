@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusFriendKeys.proto";
+
+message SCFideliusGetFriendKeysResponse {
+	repeated snapchat.fidelius.SCFideliusFriendKeys friendKeysArray = 1;
+}

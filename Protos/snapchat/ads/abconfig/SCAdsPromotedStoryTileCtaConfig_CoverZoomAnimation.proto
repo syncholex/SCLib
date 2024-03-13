@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPromotedStoryTileCtaConfig_CoverZoomAnimation {
+	double duration = 1;
+	double scale = 2;
+	double delaySec = 3;
+}

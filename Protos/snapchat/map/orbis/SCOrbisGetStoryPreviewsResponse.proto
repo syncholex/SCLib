@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/map/orbis/SCOrbisStoryPreview.proto";
+import "snapchat/map/common/KeyValue.proto";
+
+message SCOrbisGetStoryPreviewsResponse {
+	repeated snapchat.map.orbis.SCOrbisStoryPreview storyPreviewsArray = 1;
+	repeated snapchat.map.common.KeyValue debugMetadataArray = 2;
+}

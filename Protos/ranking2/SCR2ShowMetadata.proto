@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2ShowMetadata {
+	string showId = 1;
+	string showName = 2;
+	string showDescription = 3;
+	string showHeroImageURL = 4;
+
+	enum SCR2ShowMetadata_ShowType_Enum {
+		DEFAULT = 0;
+		NARRATIVE = 1;
+		RECENCY_BASED = 2;
+		SEASON_RECENCY_BASED = 3;
+	}
+
+	SCR2ShowMetadata_ShowType_Enum showType = 5;
+	int32 seasonNumber = 6;
+	int32 episodeNumber = 7;
+	string seasonId = 8;
+
+	enum SCR2LogoDisplay_Enum {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	SCR2LogoDisplay_Enum profileLogoDisplay = 9;
+}

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+message VLKFirmwareUpdateUploadRequest {
+
+	enum VLKFirmwareUpdateUploadRequest_FirmwareUpdateUploadRequestType {
+		DIFF = 1;
+		TAR = 2;
+	}
+
+	VLKFirmwareUpdateUploadRequest_FirmwareUpdateUploadRequestType type = 1;
+	bytes data_p = 2;
+	uint32 startPos = 3;
+	bool overwriteExistingFile = 4;
+}

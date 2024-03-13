@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbShopTokenPack {
+	string sku = 1;
+	uint32 quantity = 2;
+	string assetURL = 3;
+}

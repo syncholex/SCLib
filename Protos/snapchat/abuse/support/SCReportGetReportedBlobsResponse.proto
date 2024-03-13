@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportReportedBlob.proto";
+
+message SCReportGetReportedBlobsResponse {
+	repeated snapchat.abuse.support.SCReportReportedBlob reportedBlobsArray = 1;
+}

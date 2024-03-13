@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsDebugConfig {
+	bool isTestUser = 1;
+	bool isAutomationUser = 2;
+	bool skipInventoryCapping = 3;
+	repeated string testGroupsArray = 4;
+}

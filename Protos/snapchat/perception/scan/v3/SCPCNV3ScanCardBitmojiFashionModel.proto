@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/bitmoji/SCBitmojiUUID.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+
+message SCPCNV3ScanCardBitmojiFashionModel {
+	string header = 1;
+	string subtitle = 2;
+	repeated snapchat.bitmoji.SCBitmojiUUID costumeOverrideIdsArray = 3;
+	snapchat.bitmoji.avatar.BMCompactAvatarId bitmojiAvatarId = 4;
+}

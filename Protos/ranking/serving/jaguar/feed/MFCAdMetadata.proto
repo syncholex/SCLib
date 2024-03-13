@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "snapchat/ads/request/schema/SCAdsInventoryRequest.proto";
+import "ranking/serving/jaguar/feed/MFCAdMetadata_DebugConfig.proto";
+
+message MFCAdMetadata {
+	bytes encryptedUserData = 1;
+	bytes snapAdsAdvertisingId = 2;
+	bytes idfa = 3;
+	bool limitAdTracking = 4;
+	bool audienceMatchOptOut = 5;
+	bool externalActivityMatchOptOut = 6;
+	bool isAdsHoldOut = 7;
+	snapchat.ads.request.schema.SCAdsInventoryRequest inventoryRequest = 8;
+	int64 diskTotalSpaceKb = 9;
+	int64 diskFreeSpaceKb = 10;
+	ranking.serving.jaguar.feed.MFCAdMetadata_DebugConfig debugConfig = 11;
+}

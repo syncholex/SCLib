@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+message GetStoreMetadataRequest {
+	string storeId = 1;
+}

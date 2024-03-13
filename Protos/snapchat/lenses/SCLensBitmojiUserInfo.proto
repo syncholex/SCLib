@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensBitmojiUserInfo {
+	string avatarId = 1;
+	string selfieId = 2;
+}

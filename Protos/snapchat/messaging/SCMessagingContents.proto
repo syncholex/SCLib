@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingText.proto";
+import "snapchat/messaging/SCMessagingExternalMedia.proto";
+import "snapchat/messaging/SCMessagingSticker.proto";
+import "snapchat/messaging/SCMessagingShare.proto";
+import "snapchat/messaging/SCMessagingNote.proto";
+import "snapchat/messaging/SCMessagingSnapReply.proto";
+import "snapchat/messaging/SCMessagingStatusMessage.proto";
+import "snapchat/messaging/SCMessagingLocation.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/messaging/SCMessagingCanvasApp.proto";
+import "snapchat/messaging/SCMessagingLiveLocationShare.proto";
+import "snapchat/creativetools/item_instance/SCCTPCTItemInstance.proto";
+import "snapchat/messaging/SCMessagingFamilyCenterInvite.proto";
+import "snapchat/messaging/SCMessagingNonParticipantBotResponse.proto";
+import "snapchat/messaging/SCMessagingUpgradePrompt.proto";
+import "snapchat/messaging/SCMessagingPromptLensResponse.proto";
+import "snapchat/messaging/SCMessagingTinySnap.proto";
+import "snapchat/messaging/SCMessagingMapReaction.proto";
+import "snapchat/messaging/SCMessagingDecorators.proto";
+
+message SCMessagingContents {
+
+	oneof content {
+		snapchat.messaging.SCMessagingText text = 2;
+		snapchat.messaging.SCMessagingExternalMedia externalMedia = 3;
+		snapchat.messaging.SCMessagingSticker sticker = 4;
+		snapchat.messaging.SCMessagingShare share = 5;
+		snapchat.messaging.SCMessagingNote note = 6;
+		snapchat.messaging.SCMessagingSnapReply snapReply = 7;
+		snapchat.messaging.SCMessagingStatusMessage statusMessage = 8;
+		snapchat.messaging.SCMessagingLocation location = 9;
+		snapchat.snapdoc.SDMSnapDoc snapdoc = 11;
+		snapchat.messaging.SCMessagingCanvasApp canvasApp = 12;
+		snapchat.messaging.SCMessagingLiveLocationShare liveLocationShare = 13;
+		snapchat.creativetools.item_instance.SCCTPCTItemInstance creativeToolItem = 14;
+		snapchat.messaging.SCMessagingFamilyCenterInvite familyCenterInvite = 15;
+		snapchat.messaging.SCMessagingNonParticipantBotResponse nonParticipantBotResponse = 16;
+		snapchat.messaging.SCMessagingUpgradePrompt upgradePrompt = 17;
+		snapchat.messaging.SCMessagingPromptLensResponse promptLensResponse = 18;
+		snapchat.messaging.SCMessagingTinySnap tinySnap = 19;
+		snapchat.messaging.SCMessagingMapReaction mapReaction = 20;
+	}
+
+	snapchat.messaging.SCMessagingDecorators decorators = 99;
+}

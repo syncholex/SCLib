@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiTop.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiBottom.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiFootwear.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiSock.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiOuterwear.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiOnePiece.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiHat.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiLipstick.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiEyeshadow.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiBlush.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGlasses.proto";
+
+message SCBitmojiGarment {
+
+	oneof garment {
+		snapchat.bitmoji.fashion.v1.SCBitmojiTop top = 1;
+		snapchat.bitmoji.fashion.v1.SCBitmojiBottom bottom = 2;
+		snapchat.bitmoji.fashion.v1.SCBitmojiFootwear footwear = 3;
+		snapchat.bitmoji.fashion.v1.SCBitmojiSock sock = 4;
+		snapchat.bitmoji.fashion.v1.SCBitmojiOuterwear outerwear = 5;
+		snapchat.bitmoji.fashion.v1.SCBitmojiOnePiece onePiece = 6;
+		snapchat.bitmoji.fashion.v1.SCBitmojiHat hat = 7;
+		snapchat.bitmoji.fashion.v1.SCBitmojiLipstick lipstick = 8;
+		snapchat.bitmoji.fashion.v1.SCBitmojiEyeshadow eyeshadow = 9;
+		snapchat.bitmoji.fashion.v1.SCBitmojiBlush blush = 10;
+		snapchat.bitmoji.fashion.v1.SCBitmojiGlasses glasses = 11;
+	}
+
+}

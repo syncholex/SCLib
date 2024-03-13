@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package com.snapchat.deep_link_resolution.dynamic_resolution;
+
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionAstrologyProfileResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionFriendsFeedResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionAddFriendResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionAddFriendsResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionLensCarouselResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionLensCollectionResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionOurStoryResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionActivityFeedResult.proto";
+import "com/snapchat/deep_link_resolution/dynamic_resolution/SCDynamicResolutionCreatorMilestoneResult.proto";
+
+message SCDynamicResolutionDeeplinkResolutionResult {
+
+	enum SCDynamicResolutionDeeplinkResolutionTarget {
+		RESOLUTION_TARGET_UNSET = 0;
+		RESOLUTION_TARGET_ASTROLOGY_PROFILE = 1;
+		RESOLUTION_TARGET_FRIENDS_FEED = 2;
+		RESOLUTION_TARGET_ADD_FRIEND = 3;
+		RESOLUTION_TARGET_ADD_FRIENDS = 4;
+		RESOLUTION_TARGET_LENS_CAROUSEL = 5;
+		RESOLUTION_TARGET_LENS_COLLECTION = 6;
+		RESOLUTION_TARGET_OUR_STORY = 7;
+		RESOLUTION_TARGET_ACTIVITY_FEED = 8;
+		RESOLUTION_TARGET_CREATOR_MILESTONE = 9;
+	}
+
+	SCDynamicResolutionDeeplinkResolutionTarget target = 1;
+
+	oneof result {
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionAstrologyProfileResult astrologyProfileResult = 2;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionFriendsFeedResult friendsFeedResult = 3;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionAddFriendResult addFriendResult = 4;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionAddFriendsResult addFriendsResult = 5;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionLensCarouselResult lensCarouselResult = 6;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionLensCollectionResult lensCollectionResult = 7;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionOurStoryResult ourStoryResult = 8;
+		string transformedURL = 9;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionActivityFeedResult activityFeedResult = 10;
+		com.snapchat.deep_link_resolution.dynamic_resolution.SCDynamicResolutionCreatorMilestoneResult creatorMilestoneResult = 11;
+	}
+
+}

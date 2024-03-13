@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMAppInstall_AppInfo {
+	string appId = 1;
+	string storeParams = 2;
+	string appIcon = 3;
+	bytes contentObject = 4;
+}

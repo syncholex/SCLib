@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3TrayPillMetadata.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ClientCategoryMetadata.proto";
+
+message SCPCNV3ScanTrayMetadataResponse {
+	repeated snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata trayPillMetadatasArray = 1;
+	repeated snapchat.perception.scan.v3.SCPCNV3ClientCategoryMetadata clientCategoryMetadatasArray = 2;
+}

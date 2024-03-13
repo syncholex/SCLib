@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsViewedAdContext {
+
+	enum SCAdsExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		AUTO_ADVANCE = 1;
+		TAP_LEFT = 2;
+		TAP_RIGHT = 3;
+		SWIPE_LEFT = 4;
+		SWIPE_RIGHT = 5;
+		SWIPE_DOWN = 6;
+		SWIPE_UP = 7;
+		BACKGROUND = 8;
+		BACK_PRESSED = 9;
+		LONG_PRESSED = 10;
+		OTHER = 11;
+		TAP_SEARCH = 12;
+		TAP_USER_PROFILE = 13;
+		TAP_BRAND_PROFILE = 14;
+		TAP_TRENDING = 15;
+		TAP_SHARE = 16;
+		TAP_HOME = 17;
+		TAP_NAV_BAR = 18;
+	}
+
+	SCAdsExitEvent adExitEvent = 1;
+	google.protobuf.GPBInt32Value adLoadingSpinnerTimeMillis = 2;
+	google.protobuf.GPBInt32Value adViewTimeMillis = 3;
+	google.protobuf.GPBBoolValue adSwipeUp = 4;
+}

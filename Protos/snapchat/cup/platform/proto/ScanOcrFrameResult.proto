@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/ScanOcrTextLineResult.proto";
+
+message ScanOcrFrameResult {
+	repeated snapchat.cup.platform.proto.ScanOcrTextLineResult textLinesArray = 1;
+}

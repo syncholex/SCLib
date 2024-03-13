@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.ui_frameworks;
+
+message DeviceSafeAreaValue {
+	int32 topInsetValue = 1;
+	int32 bottomInsetValue = 2;
+	bool isNotchedDevice = 3;
+}

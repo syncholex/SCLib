@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message CountdownMetadata {
+	string name = 1;
+	google.protobuf.GPBTimestamp startTimestamp = 2;
+	string creatorId = 3;
+}

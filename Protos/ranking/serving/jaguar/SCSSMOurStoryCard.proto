@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMOurStoryMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+import "ranking/serving/jaguar/SCSSMStoryFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryPrefetchMetadata.proto";
+import "ranking/serving/jaguar/BoostMetadata.proto";
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+
+message SCSSMOurStoryCard {
+	ranking.serving.jaguar.SCSSMOurStoryMetadata metadata = 1;
+	repeated ranking.serving.jaguar.SCSSMStorySnap snapsArray = 2;
+	ranking.serving.jaguar.SCSSMStoryFragmentMetadata fragmentMetadata = 3;
+	ranking.serving.jaguar.SCSSMStoryPrefetchMetadata prefetchMetadata = 4;
+	ranking.serving.jaguar.BoostMetadata boostMetadata = 5;
+	ranking.serving.jaguar.SCSSMEngagementStats engagementStats = 6;
+	bool topCreatorBadge = 7;
+}

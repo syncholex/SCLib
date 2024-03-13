@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/lens/le/SCLELensExplorerLensTile.proto";
+
+message SCMusicPickerLayoutPageSection_LensesSection {
+	repeated snapchat.lens.le.SCLELensExplorerLensTile lensTilesArray = 1;
+}

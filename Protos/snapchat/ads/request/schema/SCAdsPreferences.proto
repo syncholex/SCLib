@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsPreferences {
+	bool limitAdTracking = 1;
+	bool audienceMatchOptOut = 2;
+	bool externalActivityMatchOptOut = 3;
+	bool thirdPartyAdNetworkOptOut = 4;
+	bool euDsaPersonalizedAdsOptOut = 5;
+}

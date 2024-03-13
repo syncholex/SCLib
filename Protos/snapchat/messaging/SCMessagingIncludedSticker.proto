@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingIncludedSticker {
+	string packId = 1;
+	string stickerId = 2;
+	bool animated = 3;
+	string giphySourceURL = 4;
+
+	enum SCMessagingIncludedSticker_IncludedStickerType {
+		SNAPCHAT = 0;
+		BITMOJI = 1;
+		GEOSTICKER = 2;
+		EMOJI = 3;
+		BITMOJI_LENS = 4;
+		UNLOCKABLE_STICKER = 5;
+		GIPHY = 6;
+		SNAP_CONNECT = 7;
+		GAME_SNIPPET = 8;
+		GFYCAT = 9;
+	}
+
+	SCMessagingIncludedSticker_IncludedStickerType stickerType = 5;
+	string highResUri = 6;
+	bool isReaction = 7;
+}

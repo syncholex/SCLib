@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.maps.v1;
+
+message PLLocationSharingSettingsScreen {
+
+	enum PLLocationSharingSettingsScreen_LaunchBehavior {
+		LAUNCH_BEHAVIOR_UNSET = 0;
+		LIVE_ALLOWLIST = 1;
+		LIVE_UPGRADE_LIST = 2;
+	}
+
+	PLLocationSharingSettingsScreen_LaunchBehavior launchBehavior = 1;
+}

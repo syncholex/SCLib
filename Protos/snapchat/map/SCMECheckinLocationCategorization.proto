@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMECheckinLocationCategorization {
+	string superCategory = 1;
+	string category = 2;
+	string subCategory = 3;
+	string place = 4;
+	string iconURL = 5;
+}

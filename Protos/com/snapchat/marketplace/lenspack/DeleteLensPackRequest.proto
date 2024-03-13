@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.marketplace.lenspack;
+
+message DeleteLensPackRequest {
+	string lensPackId = 1;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGarment.proto";
+
+message SCBitmojiMerchandisedGarment {
+	snapchat.bitmoji.fashion.v1.SCBitmojiGarment garment = 1;
+	string name = 2;
+	int32 merchandisedGarmentId = 3;
+	int32 tokenPrice = 4;
+}

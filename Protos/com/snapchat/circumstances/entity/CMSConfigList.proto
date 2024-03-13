@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSConfig.proto";
+
+message CMSConfigList {
+	repeated com.snapchat.circumstances.entity.CMSConfig configsArray = 1;
+}

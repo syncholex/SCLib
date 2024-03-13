@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBFirmwareUpdateUploadRequest {
+	bytes data_p = 1;
+	uint32 startPos = 2;
+	bool overwriteExistingFile = 3;
+}

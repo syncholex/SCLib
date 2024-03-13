@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsAdHidingData {
+	google.protobuf.GPBBoolValue adHidden = 1;
+
+	enum SCAdsAdHidingData_AdHidingReason {
+		AD_HIDING_REASON_UNSET = 0;
+		FREQUENCY_CAP_TOO_HIGH = 1;
+		IRRELEVANT_GENERAL = 2;
+		OFFENSIVE_GENERAL = 3;
+		ALREADY_BOUGHT_ITEM = 4;
+		ALREADY_INSTALLED_APP = 5;
+	}
+
+	SCAdsAdHidingData_AdHidingReason reason = 2;
+}

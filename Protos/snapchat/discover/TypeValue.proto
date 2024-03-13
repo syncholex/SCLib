@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message TypeValue {
+
+	enum Type {
+		NORMAL = 0;
+		AD = 1;
+		TEST = 2;
+		TEST_AD = 3;
+	}
+
+	Type value = 1;
+}

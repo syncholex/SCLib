@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package socialsms;
+
+message MediaLinkMedia {
+
+	enum MediaFormat {
+		FORMAT_UNSET = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+	}
+
+	MediaFormat format = 1;
+	string mainMediaURL = 2;
+	string thumbnailURL = 3;
+	string lensId = 4;
+}

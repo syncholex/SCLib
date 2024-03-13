@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo {
+	string key = 1;
+	int64 snapItemId = 2;
+	string storeId = 3;
+
+	enum SCCTXContextClientInfo_CommerceInfo_CommerceItemType {
+		UNKNOWN = 0;
+		ATTACHMENT_TOOL = 1;
+		SHOPPABLE_STICKER = 2;
+	}
+
+	SCCTXContextClientInfo_CommerceInfo_CommerceItemType itemType = 4;
+}

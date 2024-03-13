@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.response;
+
+import "snapchat/unlock/api/response/SCGetUnlocksResponse_GroupedUnlocks.proto";
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+import "lens_platform/client_server/legacy/SCLGGeofilterResponse.proto";
+
+message SCGetUnlocksResponse {
+	repeated snapchat.unlock.api.response.SCGetUnlocksResponse_GroupedUnlocks groupedUnlocksArray = 1;
+	repeated lens_platform.client_server.lens.SCLPLensSnapchat lensesArray = 2;
+	repeated lens_platform.client_server.legacy.SCLGGeofilterResponse geofiltersArray = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbInAppReceipt.proto";
+import "subscription/shop/SCSubscriptionShopPbAppleProductInfo.proto";
+
+message SCSubscriptionShopPbConsumeSubscriptionRequest {
+	subscription.shop.SCSubscriptionShopPbInAppReceipt receipt = 1;
+	subscription.shop.SCSubscriptionShopPbAppleProductInfo appleProductInfo = 2;
+}

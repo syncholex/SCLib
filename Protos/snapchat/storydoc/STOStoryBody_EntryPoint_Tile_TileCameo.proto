@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+
+message STOStoryBody_EntryPoint_Tile_TileCameo {
+	snapchat.cameos.stories.SCCameosCameoTile cameoTileResource = 1;
+}

@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMClientInfo.proto";
+import "ranking/core/SCSCOREABTestStudyInfo.proto";
+import "ranking/core/SCSCORETweaks.proto";
+import "ranking/serving/jaguar/SCSSMStoryLookupRequestItem.proto";
+
+message SCSSMBatchStoryLookupRequest {
+	string requestId = 1;
+	int64 requestTimestampMs = 2;
+
+	enum SCSSMStoriesRequest_Origin {
+		UNKNOWN_ORIGIN = 0;
+		ORIGIN_SNAPCHAT_APP = 1;
+		ORIGIN_SNAPWEB = 8;
+		ORIGIN_BIB_WEB = 16;
+		ORIGIN_VIRTUAL_CAMERA = 9;
+		ORIGIN_OPT_IN_STORY_NOTIF = 10;
+		ORIGIN_MESSAGING = 11;
+		ORIGIN_FSN = 12;
+		ORIGIN_FSN_MAP = 15;
+		ORIGIN_PUBLISHER_DEEPLINK_LONGFORM = 14;
+		ORIGIN_PERCEPTION_SCAN = 17;
+		ORIGIN_LENS_EXPLORER = 18;
+		ORIGIN_INTERNAL_SNAPGRAPH = 2;
+		ORIGIN_INTERNAL_EVAL = 3;
+		ORIGIN_INTERNAL_DEBUG_SERVER = 4;
+		ORIGIN_INTERNAL_TEST = 5;
+		ORIGIN_INTERNAL_AUTOMATION = 6;
+		ORIGIN_INTERNAL_LOADTEST = 7;
+		ORIGIN_INTERNAL_STORYTELLER = 13;
+		ORIGIN_SNAPCHAT_WEB = 19;
+	}
+
+	SCSSMStoriesRequest_Origin origin = 3;
+	ranking.serving.jaguar.SCSSMClientInfo clientInfo = 4;
+	repeated ranking.core.SCSCOREABTestStudyInfo studyInfoArray = 5;
+	ranking.core.SCSCORETweaks tweaks = 6;
+	repeated ranking.serving.jaguar.SCSSMStoryLookupRequestItem requestItemsArray = 7;
+	bool ignoreBlockerStories = 8;
+
+	enum SCSCOREABPriority_Enum {
+		AB_PRIORITY_UNKNOWN = 0;
+		AB_PRIORITY_ONLY_REQUEST = 1;
+		AB_PRIORITY_PREFER_REQUEST = 2;
+		AB_PRIORITY_ONLY_PROFILE = 3;
+		AB_PRIORITY_PREFER_PROFILE = 4;
+	}
+
+	SCSCOREABPriority_Enum studyPriority = 9;
+	bool ignoreUnviewableStories = 10;
+	bool enablePublicTierStories = 11;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message ReplyIdentifier {
+	string snapId = 1;
+	ranking.core.SCSCOREUUID replyId = 2;
+}

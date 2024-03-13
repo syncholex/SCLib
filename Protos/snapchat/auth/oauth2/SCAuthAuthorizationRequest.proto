@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+message SCAuthAuthorizationRequest {
+	string responseType = 1;
+	string clientId = 2;
+	string redirectUri = 3;
+	string scope = 4;
+	string state = 5;
+	string codeChallengeMethod = 6;
+	string codeChallenge = 7;
+}

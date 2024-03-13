@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWatchAndImpressionSessions.proto";
+import "ranking/pii/user/profile/SCSUPFavoriteAndUnfavoriteSessions.proto";
+import "ranking/pii/user/profile/SCSUPHideAndUnhideSessions.proto";
+import "ranking/pii/user/profile/SCSUPSendSessions.proto";
+import "ranking/pii/user/profile/SCSUPBoostAndUnboostSessions.proto";
+import "ranking/pii/user/profile/SCSUPReportSessions.proto";
+import "ranking/pii/user/profile/SCSUPOpenProfileSessions.proto";
+import "ranking/pii/user/profile/SCSUPOpenRepliesSessions.proto";
+import "ranking/pii/user/profile/SCSUPDismissRepliesSessions.proto";
+import "ranking/pii/user/profile/SCSUPCreateReplySessions.proto";
+import "ranking/pii/user/profile/SCSUPSendReplySessions.proto";
+import "ranking/pii/user/profile/SCSUPShareSessions.proto";
+import "ranking/pii/user/profile/SCSUPScreenshotSessions.proto";
+import "ranking/pii/user/profile/SCSUPSnapWatchSessions.proto";
+
+message SCSUPRecentEvents {
+	repeated ranking.pii.user.profile.SCSUPWatchAndImpressionSessions watchAndImpressionSessionsArray = 1;
+	repeated ranking.pii.user.profile.SCSUPFavoriteAndUnfavoriteSessions favoriteAndUnfavoriteSessionsArray = 2;
+	repeated ranking.pii.user.profile.SCSUPHideAndUnhideSessions hideAndUnhideSessionsArray = 3;
+	repeated ranking.pii.user.profile.SCSUPSendSessions sendSessionsArray = 4;
+	repeated ranking.pii.user.profile.SCSUPBoostAndUnboostSessions boostAndUnboostSessionsArray = 5;
+	repeated ranking.pii.user.profile.SCSUPReportSessions reportSessionsArray = 6;
+	repeated ranking.pii.user.profile.SCSUPOpenProfileSessions openProfileSessionsArray = 7;
+	repeated ranking.pii.user.profile.SCSUPOpenRepliesSessions openRepliesSessionsArray = 8;
+	repeated ranking.pii.user.profile.SCSUPDismissRepliesSessions dismissRepliesSessionsArray = 9;
+	repeated ranking.pii.user.profile.SCSUPCreateReplySessions createReplySessionsArray = 10;
+	repeated ranking.pii.user.profile.SCSUPSendReplySessions sendReplySessionsArray = 11;
+	repeated ranking.pii.user.profile.SCSUPShareSessions shareSessionsArray = 12;
+	repeated ranking.pii.user.profile.SCSUPScreenshotSessions screenshotSessionsArray = 13;
+	repeated ranking.pii.user.profile.SCSUPSnapWatchSessions snapWatchSessionsArray = 14;
+}

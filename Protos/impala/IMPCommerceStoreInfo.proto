@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPCommerceStoreInfo {
+	string storeId = 1;
+
+	enum IMPStoreType {
+		LEGACY_SHOPIFY_STORE = 0;
+		BUSINESS_STORE = 1;
+	}
+
+	IMPStoreType storeType = 2;
+	string businessStoreId = 3;
+
+	enum IMPStoreVisibilityStatus {
+		STORE_VISIBILITY_UNKNOWN = 0;
+		VISIBLE = 1;
+		HIDDEN = 2;
+	}
+
+	IMPStoreVisibilityStatus storeVisibilityStatus = 4;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.snapchat.deeplink.encoding;
+
+import "com/snapchat/deeplink/SCDeeplinkShortLinkPayload.proto";
+import "com/snapchat/deeplink/SCDeeplinkCreateNoncePayload.proto";
+import "com/snapchat/deeplink/encoding/SCDeeplinkShortLinkQrRequest.proto";
+
+message SCDeeplinkCreateShortLinkRequest {
+	com.snapchat.deeplink.SCDeeplinkShortLinkPayload shortLinkPayload = 1;
+
+	enum SCDeeplinkShortlinkFormat {
+		SHORTLINK_FORMAT_UNSET = 0;
+		TW_SUBDOMAIN = 1;
+		SNAP_DOT_COM_PATH_PARAM = 2;
+	}
+
+	SCDeeplinkShortlinkFormat shortlinkFormat = 2;
+	com.snapchat.deeplink.SCDeeplinkCreateNoncePayload createNoncePayload = 3;
+	int32 shortlinkIdLength = 4;
+	com.snapchat.deeplink.encoding.SCDeeplinkShortLinkQrRequest shortLinkQrRequest = 5;
+}

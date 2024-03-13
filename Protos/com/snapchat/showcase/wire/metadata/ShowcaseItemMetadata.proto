@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.metadata;
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseProductMetadata.proto";
+import "com/snapchat/showcase/wire/metadata/ShowcaseStoreMetadata.proto";
+
+message ShowcaseItemMetadata {
+	uint64 snapItemId = 1;
+
+	oneof metadata {
+		com.snapchat.showcase.wire.metadata.ShowcaseProductMetadata productMetadata = 2;
+	}
+
+	com.snapchat.showcase.wire.metadata.ShowcaseStoreMetadata store = 3;
+	string itemTrackingId = 4;
+}

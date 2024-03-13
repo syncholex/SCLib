@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbOsVersion.proto";
+
+message SCSpectaclesOtaPbListOsVersionResponse {
+	com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion latestOsVersion = 1;
+	repeated com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion osVersionArray = 2;
+}

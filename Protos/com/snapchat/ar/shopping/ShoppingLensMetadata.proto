@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+import "com/snapchat/ar/shopping/SLSLensProductMetadata.proto";
+import "com/snapchat/ar/shopping/DomainContext.proto";
+
+message ShoppingLensMetadata {
+	com.snapchat.ar.shopping.SLSLensProductMetadata lensProductMetadata = 1;
+	repeated com.snapchat.ar.shopping.DomainContext domainContextsArray = 2;
+}

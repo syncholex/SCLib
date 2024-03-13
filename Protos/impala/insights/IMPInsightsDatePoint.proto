@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDatePoint {
+	int64 timestampMs = 1;
+	double value = 2;
+}

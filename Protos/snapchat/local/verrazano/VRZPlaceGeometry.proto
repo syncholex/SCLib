@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/geo/SPCGGeometry.proto";
+import "snapchat/local/verrazano/VRZAttributeSource.proto";
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/geo/SPCGMultiPolygon.proto";
+import "snapchat/local/verrazano/VRZAttributeLock.proto";
+
+message VRZPlaceGeometry {
+	string id_p = 1;
+	string name = 2;
+
+	enum VRZPlaceGeometry_Purpose {
+		PURPOSE_UNKNOWN = 0;
+		DEFAULT_GEOMETRY = 1;
+		PIP_POINT = 2;
+		LABEL_POINT = 3;
+		DISPLAY_BOUNDING_BOX = 4;
+		NAV_POINT = 5;
+		FENCE = 6;
+		SERVING_FENCE = 7;
+		DISPLAY_POLYGON = 8;
+		LANDMARKER_SERVING_FENCE = 9;
+	}
+
+	VRZPlaceGeometry_Purpose purpose = 3;
+	snapchat.geo.SPCGGeometry geometry = 4;
+	snapchat.local.verrazano.VRZAttributeSource source = 5;
+	double areaSquareM = 6;
+	double areaSquareDeg = 7;
+	snapchat.geo.SPCGPoint centroid = 8;
+	snapchat.geo.SPCGMultiPolygon boundingBox = 9;
+	snapchat.local.verrazano.VRZAttributeLock lock = 10;
+}

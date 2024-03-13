@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapshots.core;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCSnapshotsPbSnap {
+	snapchat.core.SCCOREUUID identifier = 1;
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 2;
+	snapchat.snapdoc.SDMSnapDoc thumbnailSnapDoc = 3;
+}

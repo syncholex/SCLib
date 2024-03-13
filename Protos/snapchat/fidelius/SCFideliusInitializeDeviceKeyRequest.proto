@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/fidelius/SCFideliusFideliusTentativeDeviceKey.proto";
+
+message SCFideliusInitializeDeviceKeyRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	repeated bytes hashedPublicKeysArray = 2;
+	snapchat.fidelius.SCFideliusFideliusTentativeDeviceKey tentativeDeviceKey = 3;
+	string authSessionId = 4;
+}

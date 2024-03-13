@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensGeocircle.proto";
+
+message SCLensLures {
+	repeated snapchat.lenses.SCLensGeocircle locationsArray = 1;
+	snapchat.lenses.SCLensGeocircle activeLure = 2;
+	snapchat.lenses.SCLensGeocircle closestLure = 3;
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCMossDeviceInfo.proto";
+
+message SCMossMediaCaptureContext {
+
+	enum SCMossMediaInput {
+		UNKNOWN_MEDIA_INPUT = 0;
+		FRONT_FACING_CAMERA = 1;
+		REAR_FACING_CAMERA = 2;
+		CAMERA_ROLL = 3;
+		SPECTACLES_MEDIA = 4;
+		MEMORIES = 5;
+	}
+
+	SCMossMediaInput mediaInput = 1;
+
+	enum SCMossAnimatedSnapType {
+		UNKNOWN_ANIMATED_SNAP_TYPE = 0;
+		IMAGE_WITH_ANIMATED = 1;
+		IMAGE_WITHOUT_ANIMATED = 2;
+		VIDEO_WITH_ANIMATED = 3;
+		VIDEO_WITHOUT_ANIMATED = 4;
+	}
+
+	SCMossAnimatedSnapType animatedSnapType = 2;
+
+	enum SCMossMediaQualityLevel {
+		LEVEL_NONE = 0;
+		LEVEL_1 = 100;
+		LEVEL_2 = 200;
+		LEVEL_3 = 300;
+		LEVEL_4 = 400;
+		LEVEL_5 = 500;
+		LEVEL_6 = 600;
+		LEVEL_7 = 700;
+	}
+
+	SCMossMediaQualityLevel mediaQualityLevel = 10;
+	snapchat.content.SCMossDeviceInfo deviceInfo = 20;
+	string attribution = 21;
+}

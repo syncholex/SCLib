@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalUpdateProfileHostAccountRequest {
+	string profileId = 1;
+	string hostAccountUserId = 2;
+}

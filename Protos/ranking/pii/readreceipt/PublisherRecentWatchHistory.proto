@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PremiumReadReceipt.proto";
+
+message PublisherRecentWatchHistory {
+	string publisherId = 1;
+	repeated ranking.pii.readreceipt.PremiumReadReceipt lastWatchedEpisodesArray = 2;
+	ranking.pii.readreceipt.PremiumReadReceipt highestWatchedEpisode = 3;
+}

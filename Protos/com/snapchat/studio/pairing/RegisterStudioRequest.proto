@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message RegisterStudioRequest {
+	string registrationToken = 1;
+	string encryptedLensStudioSerialUuid = 2;
+	string lensStudioSerialUuid = 3;
+	bytes encryptionKey = 4;
+	bytes keySignature = 5;
+	string publicCert = 6;
+}

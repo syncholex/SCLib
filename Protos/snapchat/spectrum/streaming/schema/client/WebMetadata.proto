@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.client;
+
+message WebMetadata {
+	string browser = 1;
+	string browserVersion = 2;
+	string domain = 3;
+	string referrer = 4;
+}

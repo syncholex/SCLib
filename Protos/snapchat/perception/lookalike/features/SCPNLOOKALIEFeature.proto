@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEBytesList.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFloatList.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEInt64List.proto";
+
+message SCPNLOOKALIEFeature {
+
+	oneof kind {
+		snapchat.perception.lookalike.features.SCPNLOOKALIEBytesList bytesList = 1;
+		snapchat.perception.lookalike.features.SCPNLOOKALIEFloatList floatList = 2;
+		snapchat.perception.lookalike.features.SCPNLOOKALIEInt64List int64List = 3;
+	}
+
+	repeated int64 shapeArray = 4 [packed=true];
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.creativetools.stickers;
+
+message SmartReplyInStoriesConfiguration {
+
+	enum SmartReplyStoriesType {
+		UNSET = 0;
+		EXISTING_QUICK_STORY_REPLY = 1;
+		CONTEXT_QSI_WITH_SEARCH_TAB = 2;
+		CONTEXT_QSI_WITH_CONTEXT_CAROUSEL = 3;
+	}
+
+	SmartReplyStoriesType smartReplyStoriesType = 1;
+	bool isSmartReplyInRewatchEnabled = 2;
+	string smartReplyModelURL = 3;
+	bool isSmartReplyModelNormalized = 4;
+	bool isSmartReplyFallbackEnabled = 5;
+}

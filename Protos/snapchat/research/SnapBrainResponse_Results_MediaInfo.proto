@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_MediaInfo {
+	double aspectRatio = 1;
+	int32 resolutionHeight = 2;
+	int32 resolutionWidth = 3;
+	double videoDuration = 4;
+	double videoFps = 5;
+	int32 videoFrameCount = 6;
+}

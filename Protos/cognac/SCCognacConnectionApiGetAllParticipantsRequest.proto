@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacConnectionApiGetAllParticipantsRequest {
+	repeated string sessionIdsArray = 1;
+	string userId = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+
+message IMPListSubscribedBusinessProfilesResponse {
+	string pageId = 1;
+	string nextPageId = 2;
+	repeated impala.IMPBusinessProfileAndUserData profilesArray = 3;
+}

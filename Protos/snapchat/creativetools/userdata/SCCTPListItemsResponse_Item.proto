@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCCTPListItemsResponse_Item {
+	snapchat.creativetools.ct_item.SCCTPCTItem ctitem = 1;
+	google.protobuf.GPBTimestamp lastUpdated = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PublisherRecentWatchHistory.proto";
+
+message PublisherRecentWatchHistoryList {
+	repeated ranking.pii.readreceipt.PublisherRecentWatchHistory publisherHistoryListArray = 1;
+}

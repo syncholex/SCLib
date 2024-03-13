@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHDataset.proto";
+import "snapchat/domainhub/common/SCDHObjectMetadata.proto";
+
+message SCDHDomainObject {
+
+	enum SCDHKind {
+		KIND_UNSET = 0;
+		LENS = 1;
+		ASSET = 2;
+		TARGETING_CAMPAIGN = 3;
+	}
+
+	SCDHKind kind = 1;
+	string id_p = 2;
+	repeated snapchat.domainhub.common.SCDHDataset datasetsArray = 3;
+	snapchat.domainhub.common.SCDHObjectMetadata metadata = 4;
+}

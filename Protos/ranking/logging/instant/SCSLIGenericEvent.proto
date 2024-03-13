@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLIFieldValue.proto";
+
+message SCSLIGenericEvent {
+	string eventName = 1;
+	ranking.logging.instant.SCSLIFieldValue fields = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/common/SCMusicLyricsSticker.proto";
+
+message SCMusicGetLyricsStickersResponse {
+	repeated snapchat.music.common.SCMusicLyricsSticker lyricsStickersArray = 1;
+}

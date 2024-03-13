@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesLensCollectionCtaItems.proto";
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+
+message SCPBUnlockablesLensCollectionResponse {
+	int64 lensCollectionId = 1;
+	string name = 2;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesLensCollectionCtaItems lensCollectionCtaItemsArray = 3;
+	repeated com.snapchat.proto.SCPBGeofilterResponse lensesArray = 4;
+	string description_p = 5;
+	string tileImageURL = 6;
+}

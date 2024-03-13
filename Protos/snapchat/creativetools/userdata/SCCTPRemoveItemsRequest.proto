@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPUserDataItem.proto";
+
+message SCCTPRemoveItemsRequest {
+	repeated snapchat.creativetools.userdata.SCCTPUserDataItem itemsArray = 1;
+}

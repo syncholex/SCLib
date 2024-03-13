@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.store;
+
+message HeroImageInfo {
+	string URL = 1;
+
+	enum TargetType {
+		TARGET_UNSET = 0;
+		NO_TARGET = 1;
+		CATEGORY = 2;
+		PRODUCT_DEEPLINK = 3;
+	}
+
+	TargetType type = 2;
+	string productDeeplink = 3;
+	string categoryId = 4;
+}

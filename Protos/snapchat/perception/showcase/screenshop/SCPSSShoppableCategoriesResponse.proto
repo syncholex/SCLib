@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+message SCPSSShoppableCategoriesResponse {
+	bool isShoppable = 1;
+	repeated uint32 categoriesArray = 2 [packed=true];
+	repeated uint32 patternsArray = 3 [packed=true];
+	repeated uint32 colorsArray = 4 [packed=true];
+}

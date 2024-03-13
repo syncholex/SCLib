@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBrightnessLevelChangeEvent {
+	int32 brightnessLevel = 1;
+	bool isAutoModeOn = 2;
+}

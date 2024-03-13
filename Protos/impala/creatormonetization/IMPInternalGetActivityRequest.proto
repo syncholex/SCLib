@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPInternalGetActivityRequest {
+	string userId = 1;
+	string payoutEndDate = 2;
+	string cashoutEndDate = 3;
+	int64 pageSize = 4;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.custom_sounds;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMusicGetAllSoundsRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbTransaction.proto";
+
+message SCSubscriptionShopPbAppleReceiptMetadata {
+	subscription.shop.SCSubscriptionShopPbTransaction latestTransaction = 1;
+}

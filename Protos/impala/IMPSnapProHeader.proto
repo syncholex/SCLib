@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSnapProHeader_CofConfigResult.proto";
+
+message IMPSnapProHeader {
+	int32 sequenceId = 1;
+	repeated impala.IMPSnapProHeader_CofConfigResult cofConfigResultsArray = 2;
+}

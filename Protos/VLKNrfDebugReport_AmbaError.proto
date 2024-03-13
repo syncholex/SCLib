@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+import "VLKNrfDebugReport_AmbaError_AmbaKernelError.proto";
+import "VLKNrfDebugReport_AmbaError_AmbaAssertFailure.proto";
+
+message VLKNrfDebugReport_AmbaError {
+	uint32 bootSession = 1;
+
+	enum VLKNrfDebugReport_AmbaError_AmbaErrorType {
+		UNKNOWN = 1;
+		UNDEFINED_INSTRUCTION = 2;
+		PREFETCH = 3;
+		DATA_ABORT = 4;
+		KERNEL_ASSERT = 5;
+		APP_ASSERT = 7;
+	}
+
+	VLKNrfDebugReport_AmbaError_AmbaErrorType errorType = 2;
+	VLKNrfDebugReport_AmbaError_AmbaKernelError kernelError = 3;
+	VLKNrfDebugReport_AmbaError_AmbaAssertFailure assertFailed = 4;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/Topic.proto";
+import "ranking/indexing/LensTopicMetaData.proto";
+import "ranking/indexing/SoundsTopicMetaData.proto";
+import "ranking/indexing/HashTagTopicMetaData.proto";
+
+message TrendingTopic {
+	ranking.indexing.Topic topic = 1;
+
+	oneof topicMetadata {
+		ranking.indexing.LensTopicMetaData lensTopicMetadata = 2;
+		ranking.indexing.SoundsTopicMetaData soundsTopicMetadata = 3;
+		ranking.indexing.HashTagTopicMetaData hashtagTopicMetadata = 4;
+	}
+
+}

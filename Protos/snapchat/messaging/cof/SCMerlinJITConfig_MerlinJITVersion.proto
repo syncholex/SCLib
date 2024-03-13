@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message SCMerlinJITConfig_MerlinJITVersion {
+
+	enum SCMerlinJITConfig_MerlinJITVersion_MerlinJITVariant {
+		UNSET = 0;
+		GOOGLE = 1;
+	}
+
+	SCMerlinJITConfig_MerlinJITVersion_MerlinJITVariant variant = 1;
+	uint32 versionNumber = 2;
+}

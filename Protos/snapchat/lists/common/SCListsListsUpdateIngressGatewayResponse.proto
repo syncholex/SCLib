@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/lists/common/SCListsRecipientList.proto";
+
+message SCListsListsUpdateIngressGatewayResponse {
+	repeated snapchat.lists.common.SCListsRecipientList listsArray = 1;
+
+	enum SCListsListsErrorType {
+		LISTS_ERROR_TYPE_UNSET = 0;
+		LISTS_ERROR_TYPE_MAX_SAVED_LIST_COUNT = 1;
+		LISTS_ERROR_TYPE_MAX_RECIPIENT_COUNT = 2;
+		LISTS_ERROR_TYPE_NAME_IN_USE = 3;
+		LISTS_ERROR_TYPE_NOT_FOUND = 4;
+		LISTS_ERROR_TYPE_INTERNAL = 5;
+	}
+
+	SCListsListsErrorType errorType = 2;
+}

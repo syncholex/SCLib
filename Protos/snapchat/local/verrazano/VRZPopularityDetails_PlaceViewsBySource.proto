@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPopularityDetails_PlaceViewsBySource {
+
+	enum VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource {
+		UNKNOWN = 0;
+		MAP = 1;
+		SEARCH = 2;
+		CONTEXT = 3;
+		ADS_MANAGER = 4;
+		CHAT = 5;
+		PLACES_POI = 6;
+		PLACES_TRAY = 7;
+	}
+
+	VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource viewSource = 1;
+	int64 numViews = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbLookupCommunitiesByEmailDomain.proto";
+import "ranking/communityorg/SCCommunityOrgPbLookupCommunitiesByOrgID.proto";
+
+message SCCommunityOrgPbLookupCommunitiesRequest {
+
+	oneof lookupParam {
+		ranking.communityorg.SCCommunityOrgPbLookupCommunitiesByEmailDomain emailDomain = 1;
+		ranking.communityorg.SCCommunityOrgPbLookupCommunitiesByOrgID orgId = 2;
+	}
+
+	bool isWaitlistEnabled = 3;
+}

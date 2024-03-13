@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.snapchat.item_catalog.domain.store.settings;
+
+message OrganicMacrosSettings {
+
+	enum OrganicMacrosSettings_OptInStatus {
+		UNSET = 0;
+		ENABLED = 1;
+		DISABLED = 2;
+	}
+
+	OrganicMacrosSettings_OptInStatus sourceIdOptInStatus = 1;
+
+	enum OrganicMacrosSettings_OptInStatus {
+		UNSET = 0;
+		ENABLED = 1;
+		DISABLED = 2;
+	}
+
+	OrganicMacrosSettings_OptInStatus referrerSourceOptInStatus = 2;
+	string customParameters = 3;
+
+	enum OrganicMacrosSettings_OptInStatus {
+		UNSET = 0;
+		ENABLED = 1;
+		DISABLED = 2;
+	}
+
+	OrganicMacrosSettings_OptInStatus siteSourceNameOptInStatus = 4;
+}

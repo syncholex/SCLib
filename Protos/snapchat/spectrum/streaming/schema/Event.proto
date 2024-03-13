@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+import "snapchat/spectrum/streaming/schema/instalogger/InstaloggerEvent.proto";
+import "snapchat/spectrum/streaming/schema/trace/TraceEvent.proto";
+import "snapchat/spectrum/streaming/schema/air/AirEvent.proto";
+import "snapchat/spectrum/streaming/schema/ads/track/AdTrackEvent.proto";
+import "snapchat/spectrum/streaming/schema/cof/CofEvent.proto";
+import "snapchat/spectrum/streaming/schema/ads/track/AdTrackEventShadow.proto";
+import "snapchat/spectrum/streaming/schema/ads/asm/ASMParentEvent.proto";
+import "snapchat/spectrum/streaming/schema/snap_feed_ranking/RankingSignal.proto";
+
+message Event {
+
+	oneof event {
+		snapchat.spectrum.streaming.schema.instalogger.InstaloggerEvent instaloggerEvent = 1;
+		snapchat.spectrum.streaming.schema.trace.TraceEvent traceEvent = 2;
+		snapchat.spectrum.streaming.schema.air.AirEvent airEvent = 4;
+		snapchat.spectrum.streaming.schema.ads.track.AdTrackEvent adTrackEvent = 18;
+		snapchat.spectrum.streaming.schema.cof.CofEvent cofEvent = 19;
+		snapchat.spectrum.streaming.schema.ads.track.AdTrackEventShadow adTrackEventShadow = 21;
+		snapchat.spectrum.streaming.schema.ads.asm.ASMParentEvent asmParentEvent = 29;
+		snapchat.spectrum.streaming.schema.snap_feed_ranking.RankingSignal snapFeedRankingSignal = 35;
+	}
+
+	int64 eventCreationTimeMs = 8;
+}

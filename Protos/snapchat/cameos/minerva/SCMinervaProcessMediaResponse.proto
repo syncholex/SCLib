@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/common/SCCameosMediaInfo.proto";
+import "snapchat/cameos/minerva/SCMinervaRemoteLensResponseParameters.proto";
+
+message SCMinervaProcessMediaResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	snapchat.cameos.common.SCCameosMediaInfo mediaInfo = 2;
+	string requestId = 3;
+}

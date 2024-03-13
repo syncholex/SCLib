@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+message ChatCompletionOpenAI_Message {
+	string role = 1;
+	string content = 2;
+	string name = 3;
+}

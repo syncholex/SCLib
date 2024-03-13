@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+import "snapchat/lens/prompt/SCLensPromptFilter.proto";
+
+message SCLensPromptGetResponsesRequest {
+	snapchat.lens.prompt.SCLensPromptFilter queryFilter = 1;
+	string cursor = 2;
+	uint32 limit = 3;
+}

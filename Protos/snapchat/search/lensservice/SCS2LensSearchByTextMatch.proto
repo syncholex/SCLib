@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+message SCS2LensSearchByTextMatch {
+	string queryStr = 1;
+}

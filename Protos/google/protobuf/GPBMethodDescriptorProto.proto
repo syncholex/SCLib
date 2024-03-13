@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBMethodOptions.proto";
+
+message GPBMethodDescriptorProto {
+	string name = 1;
+	string inputType = 2;
+	string outputType = 3;
+	google.protobuf.GPBMethodOptions options = 4;
+	bool clientStreaming = 5;
+	bool serverStreaming = 6;
+}

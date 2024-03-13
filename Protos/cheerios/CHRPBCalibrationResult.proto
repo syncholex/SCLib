@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBCalibrationResult {
+
+	enum CHRPBCalibrationDirection {
+		DIR_UNSET = 0;
+		X_UP = 1;
+		X_DOWN = 2;
+		Y_UP = 3;
+		Y_DOWN = 4;
+		Z_UP = 5;
+		Z_DOWN = 6;
+	}
+
+	CHRPBCalibrationDirection direction = 1;
+	bool finished = 2;
+}

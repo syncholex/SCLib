@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSnapScanFrame {
+	uint32 yuvFrameBufAddr = 1;
+	uint32 yuvFrameLen = 2;
+	uint32 imagePitch = 3;
+	uint32 imageDim = 4;
+	uint32 throttleFreqUs = 5;
+	uint32 throttleDurUs = 6;
+	uint32 timeoutSec = 7;
+}

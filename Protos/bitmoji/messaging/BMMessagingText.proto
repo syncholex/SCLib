@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package bitmoji.messaging;
+
+message BMMessagingText {
+	string text = 1;
+}

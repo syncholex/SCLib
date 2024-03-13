@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message DeleteBoostAction {
+	string subRequestId = 1;
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 2;
+	string itemId = 3;
+	int64 progressMs = 4;
+	int64 clientTsMsec = 5;
+
+	enum BoostType_Enum {
+		UNKNOWN = 0;
+		BOOST_ONLY = 1;
+		RECOMMEND = 2;
+	}
+
+	BoostType_Enum boostType = 6;
+	bool isUgc = 7;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+message SCPCNEnqueueScanDataDeletionRequest {
+	string id_p = 1;
+
+	enum SCPCNEnqueueScanDataDeletionRequest_ScanDataType {
+		SCAN_DATA_UNSET = 0;
+		SCAN_DATA_VISUAL = 1;
+		SCAN_DATA_VOICE = 2;
+	}
+
+	SCPCNEnqueueScanDataDeletionRequest_ScanDataType type = 2;
+}

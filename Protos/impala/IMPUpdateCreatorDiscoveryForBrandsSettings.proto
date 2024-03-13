@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUpdateCreatorDiscoveryForBrandsSetting.proto";
+
+message IMPUpdateCreatorDiscoveryForBrandsSettings {
+	impala.IMPUpdateCreatorDiscoveryForBrandsSetting shareAuthorizedDataWithApiPartners = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+import "snapchat/unlockables/request/schema/SCULSnapInfo.proto";
+import "snapchat/ads/request/schema/SCAdsSingleTrack.proto";
+
+message SCULSingleUnlockableTrack {
+	snapchat.unlockables.request.schema.SCULSnapInfo snapInfo = 1;
+	snapchat.ads.request.schema.SCAdsSingleTrack track = 2;
+}

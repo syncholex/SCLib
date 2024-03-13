@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationLoggingInfo.proto";
+
+message SCPushNotificationAPNSPushToDeviceRequest {
+
+	enum SCPushNotificationNotificationProvider {
+		UNSET = 0;
+		APNS_SIMPLE = 1;
+		APNS_SILENT = 2;
+		APNS_CONTENT_AVAILABLE = 3;
+		VOIP = 4;
+		SNS_VOIP = 5;
+		SNS_APNS = 6;
+		GCM = 7;
+		FCM = 8;
+		MOCK = 9;
+		SNS_FCM = 10;
+		HMS = 11;
+		WEB_PUSH = 12;
+	}
+
+	SCPushNotificationNotificationProvider notificationProvider = 1;
+	string deviceToken = 2;
+	bytes payload = 3;
+	string header = 4;
+	string notificationId = 5;
+
+	enum SCNotificationReleaseType {
+		UNKNOWN_RELEASE = 0;
+		PRODUCTION = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		BETA = 4;
+		DEBUG = 5;
+		PROTOTYPING = 6;
+	}
+
+	SCNotificationReleaseType releaseType = 6;
+
+	enum SCPushNotificationAppId {
+		SNAPCHAT = 0;
+		BITMOJI = 1;
+		WEB = 2;
+		SNAPCHAT_FEATURE_APP = 3;
+	}
+
+	SCPushNotificationAppId appId = 7;
+	snapchat.notification.SCPushNotificationLoggingInfo loggingInfo = 8;
+}

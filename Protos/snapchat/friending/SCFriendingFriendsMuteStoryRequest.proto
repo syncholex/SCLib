@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendsMuteStoryParam.proto";
+
+message SCFriendingFriendsMuteStoryRequest {
+	repeated snapchat.friending.SCFriendingFriendsMuteStoryParam paramsArray = 1;
+}

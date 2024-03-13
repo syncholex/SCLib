@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2TrendingTopic_TopCountry.proto";
+import "ranking2/SCR2TrendingTopic_TopState.proto";
+
+message SCR2TrendingTopic {
+	string topic = 1;
+	float currentPopularity = 2;
+	repeated float past24HoursPopularitiesArray = 3 [packed=true];
+	repeated ranking2.SCR2TrendingTopic_TopCountry topCountriesArray = 13;
+	repeated ranking2.SCR2TrendingTopic_TopState topStatesArray = 14;
+
+	enum SCR2TrendingTopic_TrendingScope {
+		GLOBAL = 0;
+		COUNTRY = 1;
+		STATE = 2;
+	}
+
+	SCR2TrendingTopic_TrendingScope trendingScope = 15;
+	string country = 16;
+	string state = 17;
+}

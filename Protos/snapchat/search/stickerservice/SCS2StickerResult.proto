@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.search.stickerservice;
+
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "snapchat/search/stickerservice/SCS2StickerResultMetadata.proto";
+
+message SCS2StickerResult {
+	snapchat.search.SCS2CompositeId compId = 1;
+
+	enum SCS2StickerResult_ResultType {
+		RESULT_TYPE_UNKNOWN = 0;
+		RESULT_TYPE_SNAPCHAT_STICKER = 1;
+		RESULT_TYPE_EMOJI = 2;
+		RESULT_TYPE_BITMOJI_STICKER = 3;
+		RESULT_TYPE_CAMEO = 4;
+		RESULT_TYPE_GIPHY = 5;
+		RESULT_TYPE_GFYCAT = 6;
+		RESULT_TYPE_SHOPPABLE_STICKER = 7;
+		RESULT_TYPE_METADATA = 8;
+	}
+
+	SCS2StickerResult_ResultType resultType = 2;
+	snapchat.creativetools.ct_item.SCCTPCTItem ctItem = 3;
+	double finalScore = 4;
+	snapchat.search.stickerservice.SCS2StickerResultMetadata metadata = 5;
+}

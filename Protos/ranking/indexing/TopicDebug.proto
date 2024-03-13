@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/indexing/TopicDebug_DedupeDebug.proto";
+import "ranking/indexing/TopicDebug_ScoreDebug.proto";
+
+message TopicDebug {
+	repeated ranking.indexing.TopicDebug_DedupeDebug dedupeDebugArray = 1;
+	ranking.indexing.TopicDebug_ScoreDebug consumptionDebug = 2;
+	ranking.indexing.TopicDebug_ScoreDebug productionDebug = 3;
+	string freeformDebugString = 4;
+}

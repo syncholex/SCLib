@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPDynamicStoryEngagement.proto";
+import "ranking/pii/user/profile/SCSUPDiscoverEngagement.proto";
+import "ranking/pii/user/profile/SCSUPContentTypeScore.proto";
+import "ranking/pii/user/profile/SCSUPPublicUserEngagement.proto";
+import "ranking/pii/user/profile/SCSUPPublisherEngagement.proto";
+import "ranking/pii/user/profile/SCSUPEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPLensEngagement.proto";
+import "ranking/pii/user/profile/SCSUPMapStoryUserEngagement.proto";
+import "ranking/pii/user/profile/SCSUPSectionEngagement.proto";
+import "ranking/pii/user/profile/SCSUPCommunityStoryUserEngagement.proto";
+import "ranking/pii/user/profile/SCSUPBadgeEngagement.proto";
+import "ranking/pii/user/profile/SCSUPUserEmbedding.proto";
+import "ranking/pii/user/profile/SCSUPFeedSpecificContentEngagement.proto";
+
+message SCSUPContentEngagement {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPDynamicStoryEngagement dynamicStoryEngagementsInPastMonthArray = 2;
+	ranking.pii.user.profile.SCSUPDiscoverEngagement discoverEngagementsInPastMonth = 3;
+	repeated ranking.pii.user.profile.SCSUPContentTypeScore contentTypePreferenceArray = 4;
+	repeated ranking.pii.user.profile.SCSUPContentTypeScore contentTypePreferenceNormalizedArray = 5;
+	repeated ranking.pii.user.profile.SCSUPContentTypeScore storyCorpusStatsArray = 6;
+	int32 lastUpdatedTimestampInSecs = 7;
+	int64 lastUpdatedTimestampInMsecs = 8;
+	ranking.pii.user.profile.SCSUPPublicUserEngagement publicUserEngagement = 9;
+	ranking.pii.user.profile.SCSUPPublisherEngagement publisherEngagement = 10;
+	ranking.pii.user.profile.SCSUPEngagementStats categoryEngagement = 11;
+	ranking.pii.user.profile.SCSUPLensEngagement lensEngagement = 12;
+	ranking.pii.user.profile.SCSUPMapStoryUserEngagement mapStoryEngagement = 13;
+	ranking.pii.user.profile.SCSUPSectionEngagement sectionEngagement = 14;
+	ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement communityStoryEngagement = 16;
+	ranking.pii.user.profile.SCSUPBadgeEngagement badgeEngagement = 17;
+	ranking.pii.user.profile.SCSUPUserEmbedding spotlightRetrievalEmbedding = 18;
+	repeated ranking.pii.user.profile.SCSUPFeedSpecificContentEngagement feedSpecificContentEngagementsArray = 19;
+	bool updatedByUpsv2 = 20;
+}

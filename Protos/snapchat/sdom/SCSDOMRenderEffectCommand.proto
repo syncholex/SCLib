@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMAddRenderEffect.proto";
+import "snapchat/sdom/SCSDOMAddRenderEffectsWithSingleInput.proto";
+
+message SCSDOMRenderEffectCommand {
+
+	oneof command {
+		snapchat.sdom.SCSDOMAddRenderEffect addRenderEffect = 1;
+		snapchat.sdom.SCSDOMAddRenderEffectsWithSingleInput addRenderEffectsWithSingleInput = 2;
+	}
+
+}

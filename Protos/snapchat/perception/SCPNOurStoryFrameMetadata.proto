@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+message SCPNOurStoryFrameMetadata {
+	string mediaURL = 1;
+	string sharedStorySubmissionId = 2;
+
+	enum SCPNOurStoryFrameMetadata_StoryMediaType {
+		TYPE_UNSPECIFIED = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+	}
+
+	SCPNOurStoryFrameMetadata_StoryMediaType storyMediaType = 3;
+	string storyMediaURL = 4;
+	float secondsElapsed = 5;
+}

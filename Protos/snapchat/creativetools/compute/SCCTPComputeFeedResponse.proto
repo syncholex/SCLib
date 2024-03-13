@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.creativetools.compute;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "snapchat/creativetools/sectioned_results/SCCTPSectionedResults.proto";
+import "snapchat/creativetools/compute/SCCTPComputeFeedResponse_FlatResults.proto";
+import "snapchat/creativetools/compute/SCCTPFlags.proto";
+
+message SCCTPComputeFeedResponse {
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem itemsArray = 1;
+
+	oneof response {
+		snapchat.creativetools.sectioned_results.SCCTPSectionedResults sectionedResults = 2;
+		snapchat.creativetools.compute.SCCTPComputeFeedResponse_FlatResults flatResults = 3;
+	}
+
+	bytes requestId = 4;
+	snapchat.creativetools.compute.SCCTPFlags flags = 5;
+}

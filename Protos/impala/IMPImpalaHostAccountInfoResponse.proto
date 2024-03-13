@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPOfficialUserCollaborator.proto";
+import "impala/IMPHostAccountInfo.proto";
+
+message IMPImpalaHostAccountInfoResponse {
+	string username = 1;
+	string verifiedUserEmoji = 2;
+	string displayName = 3;
+	bool isVerified = 4;
+	repeated impala.IMPOfficialUserCollaborator collaboratorsArray = 5;
+	string bitmojiAvatarId = 6;
+	int64 userFollowerCount = 7;
+	string userId = 8;
+	repeated string blockedUserIdsArray = 9;
+	repeated impala.IMPHostAccountInfo infosArray = 10;
+}

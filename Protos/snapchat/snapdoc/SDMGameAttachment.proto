@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SDMGameAttachment {
+	snapchat.core.SCCOREUUID id_p = 1;
+	string displayName = 2;
+	string contentURL = 3;
+	string iconImageURL = 4;
+	string loadingPageImageURL = 5;
+	string logoURL = 6;
+}

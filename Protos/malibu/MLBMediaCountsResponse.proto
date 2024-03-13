@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBMediaCountsMessage.proto";
+
+message MLBMediaCountsResponse {
+	malibu.MLBMediaCountsMessage mediaCounts = 1;
+}

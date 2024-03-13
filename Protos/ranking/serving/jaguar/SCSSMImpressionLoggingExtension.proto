@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMUpNextLoggingExtension.proto";
+import "ranking/serving/jaguar/SCSSMLoggingContext.proto";
+
+message SCSSMImpressionLoggingExtension {
+	ranking.serving.jaguar.SCSSMUpNextLoggingExtension upNext = 1;
+	string variantLoggingKey = 2;
+	ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 3;
+	bool explorationStory = 4;
+	bool isFromBoostUpnextRetrieval = 5;
+	bool isFromBoostSameAccount = 6;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZSuggestedPlace {
+	string placeId = 1;
+	string placeName = 2;
+	string categoryId = 3;
+	float confidenceScore = 4;
+}

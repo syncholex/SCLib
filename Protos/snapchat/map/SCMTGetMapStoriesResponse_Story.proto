@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+import "snapchat/map/SCMTGeoBox.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+import "snapchat/context/SCStoryManifest.proto";
+
+message SCMTGetMapStoriesResponse_Story {
+	string id_p = 1;
+	snapchat.map.SCMTPoint latlng = 2;
+	double zoom = 3;
+	double timestampMs = 4;
+
+	enum SCMTGetMapStoriesResponse_StoryType {
+		UNKNOWN = 0;
+		NEARBY = 1;
+		FEATURED = 2;
+		PLACE = 3;
+	}
+
+	SCMTGetMapStoriesResponse_StoryType storyType = 5;
+	string titleFmt = 6;
+	string subtitleFmt = 7;
+	snapchat.map.SCMTGeoBox boundingBox = 8;
+	snapchat.map.SCMTThumbnail thumbnail = 9;
+	snapchat.context.SCStoryManifest manifest = 10;
+}

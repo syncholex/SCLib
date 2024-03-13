@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPGeoLocation.proto";
+import "snapchat/creativetools/common/SCCTPTimeZone.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPUserInfo {
+	int32 age = 1;
+	string countryCode = 2;
+	snapchat.creativetools.common.SCCTPGeoLocation location = 3;
+	string bitmojiAvatarId = 4;
+
+	enum SCCTPUserInfo_Gender {
+		UNSET = 0;
+		FEMALE = 1;
+		MALE = 2;
+	}
+
+	SCCTPUserInfo_Gender gender = 5;
+	bool hasBitmoji = 7;
+	bool hasCameo = 8;
+	string birthdate = 9;
+	snapchat.creativetools.common.SCCTPTimeZone timeZone = 10;
+	int64 accountCreationTimestampMs = 11;
+	int32 snapScore = 12;
+	snapchat.core.SCCOREUUID snapAdsId = 13;
+	float aspectRatio = 14;
+	bool isTestUser = 15;
+	string username = 16;
+}

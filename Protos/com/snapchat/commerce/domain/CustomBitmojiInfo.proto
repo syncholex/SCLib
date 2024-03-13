@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain;
+
+import "com/snapchat/commerce/domain/CustomBitmojiInfo_CustomImageInfo.proto";
+
+message CustomBitmojiInfo {
+	repeated com.snapchat.commerce.domain.CustomBitmojiInfo_CustomImageInfo bitmojiImageInfoListArray = 1;
+	bool isTintable = 2;
+	string colors = 3;
+	string defaultSolomojiComicId = 4;
+	string defaultAvatarId = 5;
+	string defaultFriendmojiComicId = 6;
+}

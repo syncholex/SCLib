@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingNameChangeStatusMessage {
+	snapchat.messaging.SCMessagingUUID initiatingUserId = 1;
+	string oldName = 2;
+	string newName = 3;
+}

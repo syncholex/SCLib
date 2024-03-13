@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/common/Value.proto";
+
+message SCAdsClientMajorAbTest {
+	string name = 1;
+	snapchat.common.Value value = 2;
+}

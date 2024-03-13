@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+message GPBUninterpretedOption_NamePart {
+	string namePart = 1;
+	bool isExtension = 2;
+}

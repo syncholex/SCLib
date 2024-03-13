@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+message SCPbGenAIDreamGetNewPacksRequest {
+
+	enum SCPbGenAIDreamPackType {
+		DREAM_PACK_TYPE_UNSET = 0;
+		DREAM_PACK_TYPE_ONE_PERSON = 1;
+		DREAM_PACK_TYPE_TWO_PERSON = 2;
+	}
+
+	repeated SCPbGenAIDreamPackType supportedFeaturesArray = 1 [packed=true];
+}

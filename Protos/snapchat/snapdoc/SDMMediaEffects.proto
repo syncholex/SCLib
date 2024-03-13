@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMLayerComposition.proto";
+import "snapchat/snapdoc/SDMRenderEffectScenes.proto";
+
+message SDMMediaEffects {
+	snapchat.snapdoc.SDMLayerComposition layerComposition = 1;
+	snapchat.snapdoc.SDMRenderEffectScenes renderEffectScenes = 2;
+	uint64 mediaEffectCapabilties = 3;
+}

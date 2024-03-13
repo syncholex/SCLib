@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBGpsStatistics {
+	bool gotLocation = 1;
+	uint32 fixTimeMs = 2;
+	uint32 numSv = 3;
+}

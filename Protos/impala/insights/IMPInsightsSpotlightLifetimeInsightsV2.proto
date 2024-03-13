@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSpotlightV2.proto";
+import "impala/insights/IMPInsightsMetrics.proto";
+
+message IMPInsightsSpotlightLifetimeInsightsV2 {
+	impala.insights.IMPInsightsSpotlightV2 spotlight = 1;
+	repeated impala.insights.IMPInsightsMetrics spotlightLifetimeInsightsArray = 2;
+}

@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPDynamicStoryEngagement {
+
+	enum SCCORETopic_TopicType {
+		UNKNOWN = 0;
+		CONCERT = 1;
+		SPORTS = 2;
+		PARTY = 3;
+		FASHION = 4;
+		MAKEUP = 5;
+		CAMPUS = 6;
+		COMEDY = 7;
+		FAIR = 8;
+		FITNESS = 9;
+		FOOD = 10;
+		NIGHTLIFE = 11;
+		POLITICAL = 12;
+		PROTEST = 13;
+		LECTURE = 14;
+		PRESS = 15;
+		PARADE = 16;
+		ATTRACTION = 17;
+		STREET_PERFORMANCE = 18;
+		THEATRE = 19;
+		CINEMA = 20;
+		AWARDS_CEREMONY = 21;
+		CONVENTION = 22;
+		OTHER_PERFORMANCE = 23;
+		EMERGENCY = 24;
+		OTHER = 25;
+		MARCH = 26;
+		ANIMAL = 27;
+		SASQUATCH = 28;
+		GOV_BALL = 29;
+		MUSIC_FESTIVAL = 30;
+		FIREWORKS = 31;
+		BARBEQUE = 32;
+		MAJOR_HOLIDAY = 33;
+		RODEO = 34;
+		FESTIVAL = 35;
+		FUNNY = 36;
+		RELIGION = 37;
+		TRANSPORTATION = 38;
+		HURRICANE_HARVEY = 39;
+		MAJOR_EVENT = 40;
+		NCAAF = 41;
+		NCAAB = 42;
+		NCAA = 43;
+		NFL = 44;
+		MLB = 45;
+		NBA = 46;
+		NHL = 47;
+		SOCCER = 48;
+		HURRICANE_IRMA = 49;
+		LENS = 50;
+		OUTDOOR_RECREATION = 51;
+		SPECTACLES = 52;
+		PGA = 53;
+		HURRICANE = 54;
+		TRAVEL = 55;
+		AWARDS = 56;
+		OUTDOORS = 57;
+		HOLIDAY = 58;
+		HALLOWEEN = 59;
+		WEATHER = 60;
+		THANKSGIVING = 61;
+		CHRISTMAS = 62;
+		OLYMPICS = 63;
+	}
+
+	SCCORETopic_TopicType storyType = 1;
+	int32 topicStoryView = 2;
+	int32 topicStoryFinished = 3;
+	float topicTotalStoryViewTimeInSecs = 4;
+	int32 topicStoryShare = 5;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.unlockables.response.schema;
+
+import "snapchat/unlockables/response/schema/SCULInfoCard_LensMetadata.proto";
+import "snapchat/unlockables/response/schema/SCULInfoCard_LensCreator.proto";
+
+message SCULInfoCard {
+	int64 unlockableId = 1;
+	snapchat.unlockables.response.schema.SCULInfoCard_LensMetadata lensMetadata = 2;
+	snapchat.unlockables.response.schema.SCULInfoCard_LensCreator lensCreator = 3;
+}

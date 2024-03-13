@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingGameClosedStatusMessage {
+	string appId = 1;
+	repeated snapchat.messaging.SCMessagingUUID participantsArray = 2;
+}

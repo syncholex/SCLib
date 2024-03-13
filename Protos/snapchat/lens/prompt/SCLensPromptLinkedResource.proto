@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lens.prompt;
+
+message SCLensPromptLinkedResource {
+	string boltURL = 1;
+	bytes encryptedEncryptionKey = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNMedia.proto";
+
+message SCPNMediaMap {
+	snapchat.perception.SCPNMedia map = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/common/SCLPSHA256.proto";
+
+message SCLPLensAssetStorageOption {
+
+	enum SCLPLensAssetStorageOption_AssetFormat {
+		UNSET = 0;
+		LNS = 1;
+	}
+
+	SCLPLensAssetStorageOption_AssetFormat format = 1;
+	string fileURL = 2;
+	lens_platform.client_server.common.SCLPSHA256 checksum = 3;
+}

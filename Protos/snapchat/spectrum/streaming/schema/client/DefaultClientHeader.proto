@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.client;
+
+import "snapchat/spectrum/streaming/schema/client/WebMetadata.proto";
+
+message DefaultClientHeader {
+	string sessionId = 1;
+	string userGuid = 2;
+	string appBuild = 3;
+	string appVersion = 4;
+	string osVersion = 5;
+
+	enum SpectrumOperatingSystem {
+		OS_UNSET = 0;
+		IOS = 1;
+		ANDROID = 2;
+		WEB = 3;
+	}
+
+	SpectrumOperatingSystem osType = 6;
+	string clientId = 7;
+	string locale = 8;
+	string deviceModel = 9;
+	int32 accountAgeDays = 10;
+
+	enum AppStartupType {
+		STARTUP_TYPE_UNSET = 0;
+		COLD = 1;
+		WARM = 2;
+	}
+
+	AppStartupType appStartupType = 11;
+
+	enum AndroidAppVariant {
+		APP_VARIANT_UNSET = 0;
+		MUSHROOM = 1;
+		HMS = 2;
+	}
+
+	AndroidAppVariant androidAppVariant = 12;
+	bool instalogDoubleLogged = 13;
+	string queueName = 14;
+
+	enum Region {
+		REGION_UNSET = 0;
+		REGION_US_CENTRAL_1 = 1;
+		REGION_EUROPE_WEST_1 = 2;
+		REGION_ASIA_SOUTHEAST_1 = 3;
+	}
+
+	Region region = 15;
+	snapchat.spectrum.streaming.schema.client.WebMetadata webMetadata = 16;
+}

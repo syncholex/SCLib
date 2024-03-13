@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBImuResponse {
+
+	enum MLBImuResponse_Type {
+		ACCEL_DATA = 0;
+		ACCEL_CALIB = 1;
+		GYRO_DATA = 2;
+		GYRO_CALIB = 3;
+	}
+
+	MLBImuResponse_Type responseType = 1;
+	int32 dataX = 2;
+	int32 dataY = 3;
+	int32 dataZ = 4;
+}

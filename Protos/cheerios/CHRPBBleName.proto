@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBBleName {
+	string name = 1;
+	string usbName = 2;
+}

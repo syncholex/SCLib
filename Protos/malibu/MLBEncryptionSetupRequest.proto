@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBEncryptionSetupNonceExchangeMessage.proto";
+
+message MLBEncryptionSetupRequest {
+
+	enum MLBEncryptionSetupRequest_EncryptionSetupRequestType {
+		NONCE = 0;
+	}
+
+	MLBEncryptionSetupRequest_EncryptionSetupRequestType type = 1;
+	malibu.MLBEncryptionSetupNonceExchangeMessage setupMessage = 2;
+}

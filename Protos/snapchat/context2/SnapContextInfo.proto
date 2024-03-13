@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/context2/SnapContextInfo_MapContextInfo.proto";
+import "snapchat/context2/SnapContextInfo_ImpalaContextInfo.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SnapContextInfo {
+	string username = 1;
+	repeated string mentionUsernamesArray = 2;
+	snapchat.geo.SPCGPoint geoLocation = 3;
+	repeated string venueIdsArray = 4;
+	repeated string lensIdsArray = 5;
+	repeated string filterIdsArray = 6;
+	repeated string attachmentUrlsArray = 7;
+	repeated string mentionUserIdsArray = 8;
+	string unlockablesSnapInfo = 9;
+	snapchat.context2.SnapContextInfo_MapContextInfo mapContextInfo = 10;
+	snapchat.context2.SnapContextInfo_ImpalaContextInfo impalaContextInfo = 11;
+	repeated string verifiedAttachmentUrlsArray = 12;
+	string userId = 13;
+	snapchat.context2.api.SCCTXContextClientInfo contextClientInfo = 14;
+	bool ourStoryAttributionEnabled = 15;
+	google.protobuf.GPBTimestamp snapPostTime = 16;
+	bool includeSelfMentionCard = 17;
+	bool snapProStoryReply = 18;
+
+	enum OurStoryDestination {
+		UNKNOWN_DESTINATION = 0;
+		OUR_STORY = 1;
+		SPOTLIGHT = 2;
+	}
+
+	repeated OurStoryDestination ourStoryDestinationsArray = 19 [packed=true];
+	int64 remixCount = 20;
+	bool scanOnPublicContentEnabled = 21;
+}

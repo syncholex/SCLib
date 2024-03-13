@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBField.proto";
+import "google/protobuf/GPBOption.proto";
+import "google/protobuf/GPBSourceContext.proto";
+
+message GPBType {
+	string name = 1;
+	repeated google.protobuf.GPBField fieldsArray = 2;
+	repeated string oneofsArray = 3;
+	repeated google.protobuf.GPBOption optionsArray = 4;
+	google.protobuf.GPBSourceContext sourceContext = 5;
+
+	enum GPBSyntax {
+		SYNTAX_PROTO2 = 0;
+		SYNTAX_PROTO3 = 1;
+		SYNTAX_EDITIONS = 2;
+	}
+
+	GPBSyntax syntax = 6;
+	string edition = 7;
+}

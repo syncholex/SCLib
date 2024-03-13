@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofilterMarkup_CompanionCreativeProperties_RatingStickerProperties.proto";
+
+message SCLGGeofilterMarkup_CompanionCreativeProperties {
+	string companionCreativeType = 1;
+	bool movable = 2;
+	bool modifiable = 3;
+	lens_platform.client_server.legacy.SCLGGeofilterMarkup_CompanionCreativeProperties_RatingStickerProperties ratingStickerProperties = 4;
+}

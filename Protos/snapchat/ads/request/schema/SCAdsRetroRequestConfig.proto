@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsRetroRequestConfig {
+	bool persistenceEnabled = 1;
+	bool retryEnabled = 2;
+	int32 maxFileAgeMillis = 3;
+	int32 maxFileSizeBytes = 4;
+	int32 maxPersistedRequests = 5;
+	int64 initialRetryDelayMillis = 6;
+	int32 maxNetworkRetriesPersistence = 7;
+	int32 maxNetworkRetries = 8;
+	int64 maxAgeMillis = 9;
+	int32 maxRetroRetries = 10;
+	int64 retryDelaySeconds = 11;
+}

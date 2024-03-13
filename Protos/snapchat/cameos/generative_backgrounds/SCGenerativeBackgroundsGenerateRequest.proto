@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+message SCGenerativeBackgroundsGenerateRequest {
+	string prompt = 1;
+
+	enum SCGenerativeBackgroundsGenerationOrigin {
+		UNSET = 0;
+		MY_PROFILE = 1;
+		CHAT_WALLPAPERS = 2;
+		LENS_DESIGN_PROTOTYPE = 3;
+		LENS_RFE_TEXT_TO_IMAGE = 4;
+		AI_CAMERA_MODE = 5;
+		EXTERNAL_PROTOTYPE_HIGH_RES = 6;
+		GARMENT_GENERATOR = 7;
+	}
+
+	SCGenerativeBackgroundsGenerationOrigin origin = 2;
+
+	enum SCGenerativeBackgroundsGeneratedOutputAspectRatio {
+		GENERATED_OUTPUT_ASPECT_RATIO_UNSET = 0;
+		SQUARE = 1;
+		VERTICAL_9_16 = 2;
+	}
+
+	SCGenerativeBackgroundsGeneratedOutputAspectRatio aspectRatio = 3;
+	int32 mediaOutputCount = 4;
+	bool isSuggestedPrompt = 5;
+}

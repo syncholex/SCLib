@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsGetProfileInsightsRequest {
+	string businessId = 1;
+}

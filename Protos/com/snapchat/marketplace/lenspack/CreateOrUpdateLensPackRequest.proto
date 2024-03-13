@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snapchat.marketplace.lenspack;
+
+message CreateOrUpdateLensPackRequest {
+	string profileId = 1;
+	string portfolioId = 2;
+	string lensPackId = 3;
+	string lensPackName = 4;
+	string description_p = 5;
+
+	enum LensPackCategory {
+		LENS_PACK_CATEGORY_UNSET = 0;
+		LENS_PACK_CATEGORY_BEAUTY = 1;
+		LENS_PACK_CATEGORY_FUN = 2;
+		LENS_PACK_CATEGORY_PROFESSIONAL = 3;
+		LENS_PACK_CATEGORY_FRAMES = 4;
+		LENS_PACK_CATEGORY_WORLD = 5;
+		LENS_PACK_CATEGORY_SEASONAL = 6;
+		LENS_PACK_CATEGORY_TOOLS_AND_UTILITIES = 7;
+		LENS_PACK_CATEGORY_FASHION = 8;
+		LENS_PACK_CATEGORY_SPORTS = 9;
+		LENS_PACK_CATEGORY_GAMES = 10;
+	}
+
+	repeated LensPackCategory categoriesArray = 6 [packed=true];
+	int64 priceMicroInUsd = 7;
+	repeated string lensIdsArray = 8;
+}

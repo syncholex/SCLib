@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZPlaceAttributes.proto";
+
+message VRZGetPlacesAttributesResponse {
+	repeated snapchat.local.place.VRZPlaceAttributes placesAttributesArray = 1;
+}

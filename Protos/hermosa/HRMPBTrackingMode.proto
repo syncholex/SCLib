@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package hermosa;
+
+message HRMPBTrackingMode {
+
+	enum HRMPBTrackingMode_TrackingModeEnum {
+		UNSET = 0;
+		TRACKING_3DOF = 1;
+		TRACKING_6DOF = 2;
+	}
+
+	HRMPBTrackingMode_TrackingModeEnum trackingMode = 1;
+}

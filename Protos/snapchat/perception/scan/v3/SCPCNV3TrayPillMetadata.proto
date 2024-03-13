@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3TrayPillMetadata_ShowAllResults.proto";
+import "snapchat/perception/scan/v3/SCPCNV3TrayPillMetadata_ShowOnlyResultsWithMatchingPillId.proto";
+
+message SCPCNV3TrayPillMetadata {
+	string name = 1;
+
+	oneof type {
+		snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata_ShowAllResults showAllResults = 2;
+		snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata_ShowOnlyResultsWithMatchingPillId showOnlyResultsWithMatchingPillId = 3;
+	}
+
+	string pillId = 4;
+}

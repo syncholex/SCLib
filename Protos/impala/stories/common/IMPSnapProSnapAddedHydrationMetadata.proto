@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories.common;
+
+message IMPSnapProSnapAddedHydrationMetadata {
+	string posterUserId = 1;
+	string snapId = 2;
+}

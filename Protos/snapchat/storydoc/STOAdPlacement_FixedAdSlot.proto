@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOAdPlacement_TargetingParams.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message STOAdPlacement_FixedAdSlot {
+	uint32 index = 1;
+	snapchat.storydoc.STOAdPlacement_TargetingParams targetingParams = 2;
+	google.protobuf.GPBFloatValue score = 3;
+}

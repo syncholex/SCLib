@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendInviteOrAddByPhoneParam.proto";
+
+message SCFriendingFriendsInviteOrAddByPhoneRequest {
+	string page = 1;
+	repeated snapchat.friending.SCFriendingFriendInviteOrAddByPhoneParam paramsArray = 2;
+
+	enum SCFriendingFriendsInviteOrAddByPhoneRequest_Source {
+		UNKNOWN = 0;
+		REGISTRATION = 1;
+		ALL_CONTACTS = 2;
+		FRIEND_FEED = 3;
+		ADD_FRIENDS = 4;
+		UNIVERSAL_SEARCH = 5;
+		INVITE_FRIENDS_PAGE = 6;
+		UNIVERSAL_SEARCH_PRETYPE = 7;
+	}
+
+	SCFriendingFriendsInviteOrAddByPhoneRequest_Source source = 3;
+}

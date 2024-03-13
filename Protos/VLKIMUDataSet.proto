@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+import "VLKIMUMetaData.proto";
+import "VLKIMUDataFrame.proto";
+
+message VLKIMUDataSet {
+	VLKIMUMetaData imuMetaData = 1;
+	repeated VLKIMUDataFrame imuFramesArray = 2;
+}

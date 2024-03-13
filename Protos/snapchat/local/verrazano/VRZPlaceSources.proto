@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeSource.proto";
+import "snapchat/local/verrazano/VRZPlaceSources_ContactInfoSource.proto";
+import "snapchat/local/verrazano/VRZPlaceSources_AddressSource.proto";
+
+message VRZPlaceSources {
+	repeated snapchat.local.verrazano.VRZAttributeSource coterminousWithArray = 1;
+	snapchat.local.verrazano.VRZAttributeSource isEnabled = 2;
+	snapchat.local.verrazano.VRZAttributeSource ceasedAtMs = 3;
+	snapchat.local.verrazano.VRZAttributeSource name = 20;
+	repeated snapchat.local.verrazano.VRZAttributeSource alternateNamesArray = 21;
+	snapchat.local.verrazano.VRZAttributeSource abbreviation = 22;
+	repeated snapchat.local.verrazano.VRZAttributeSource alternateAbbreviationsArray = 23;
+	snapchat.local.verrazano.VRZPlaceSources_ContactInfoSource contactInfo = 30;
+	repeated snapchat.local.verrazano.VRZAttributeSource openingHoursArray = 31;
+	snapchat.local.verrazano.VRZAttributeSource address = 32;
+	snapchat.local.verrazano.VRZAttributeSource categoryId = 33;
+	snapchat.local.verrazano.VRZAttributeSource isIncludedInHierarchyLabel = 34;
+	snapchat.local.verrazano.VRZAttributeSource hierarchyLabelMask = 35;
+	snapchat.local.verrazano.VRZAttributeSource population = 36;
+	repeated snapchat.local.verrazano.VRZAttributeSource alternateCategoryIdsArray = 37;
+	snapchat.local.verrazano.VRZPlaceSources_AddressSource addressDetails = 38;
+	repeated snapchat.local.verrazano.VRZAttributeSource placeAttributeDataArray = 39;
+	snapchat.local.verrazano.VRZAttributeSource brandId = 40;
+}

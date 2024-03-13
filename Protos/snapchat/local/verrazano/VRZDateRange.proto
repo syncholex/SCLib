@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBInt64Value.proto";
+
+message VRZDateRange {
+
+	enum VRZDateRange_DateRangeAttribute {
+		ATTRIBUTE_UNKNOWN = 0;
+		CREATED_AT = 1;
+		OHSNAP_TICKET_CREATED_AT = 2;
+		MODERATED_AT = 3;
+	}
+
+	VRZDateRange_DateRangeAttribute dateRangeAttribute = 1;
+	google.protobuf.GPBInt64Value startDateMs = 2;
+	google.protobuf.GPBInt64Value endDateMs = 3;
+}

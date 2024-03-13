@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNVertex.proto";
+import "snapchat/perception/SCPNNormalizedVertex.proto";
+
+message SCPNBoundingPoly {
+	repeated snapchat.perception.SCPNVertex verticesArray = 1;
+	repeated snapchat.perception.SCPNNormalizedVertex normalizedVerticesArray = 2;
+}

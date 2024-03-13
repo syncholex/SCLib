@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBMediaMetadata.proto";
+import "hermosa/HRMPBMediaData.proto";
+import "hermosa/HRMPBMediaFileMetadata.proto";
+
+message HRMPBMediaResponse {
+	repeated hermosa.HRMPBMediaMetadata availableMediaArray = 1;
+	hermosa.HRMPBMediaData mediaData = 2;
+	hermosa.HRMPBMediaFileMetadata metadata = 3;
+}

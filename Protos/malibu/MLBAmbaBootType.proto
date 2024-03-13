@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAmbaBootType {
+
+	enum MLBAmbaBootType_BootType {
+		UP = 0;
+		DOWN = 1;
+		USB = 2;
+	}
+
+	MLBAmbaBootType_BootType bootType = 1;
+}

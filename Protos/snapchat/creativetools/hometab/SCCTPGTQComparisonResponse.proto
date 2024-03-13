@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.hometab;
+
+message SCCTPGTQComparisonResponse {
+	bool geofiltersMatch = 1;
+}

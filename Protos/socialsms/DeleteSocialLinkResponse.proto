@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package socialsms;
+
+import "socialsms/ErrorResponse.proto";
+
+message DeleteSocialLinkResponse {
+	socialsms.ErrorResponse errorResponse = 1;
+}

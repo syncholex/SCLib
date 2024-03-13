@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.layers;
+
+import "snapchat/map/garfield/layers/SCMGLFlavor.proto";
+
+message SCMGLLayerDetails {
+	uint64 id_p = 1;
+	uint64 version = 2;
+	uint32 extent = 3;
+	repeated snapchat.map.garfield.layers.SCMGLFlavor flavorsArray = 4;
+	uint32 minZoom = 5;
+	uint32 maxZoom = 6;
+}

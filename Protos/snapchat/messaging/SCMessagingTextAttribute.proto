@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingRange.proto";
+import "snapchat/messaging/SCMessagingTextFormatAttribute.proto";
+import "snapchat/messaging/SCMessagingTextMediaAttribute.proto";
+import "snapchat/messaging/SCMessagingTextUrlAttribute.proto";
+import "snapchat/messaging/SCMessagingMentionAttribute.proto";
+import "snapchat/messaging/SCMessagingTextScaleAttribute.proto";
+import "snapchat/messaging/SCMessagingNonParticipantMentionAttribute.proto";
+
+message SCMessagingTextAttribute {
+	snapchat.messaging.SCMessagingRange range = 1;
+
+	oneof attribute {
+		snapchat.messaging.SCMessagingTextFormatAttribute formatAttribute = 2;
+		snapchat.messaging.SCMessagingTextMediaAttribute mediaAttribute = 3;
+		snapchat.messaging.SCMessagingTextUrlAttribute URLAttribute = 4;
+		snapchat.messaging.SCMessagingMentionAttribute mention = 5;
+		snapchat.messaging.SCMessagingTextScaleAttribute scaleAttribute = 6;
+		snapchat.messaging.SCMessagingNonParticipantMentionAttribute nonParticipantMentionAttribute = 7;
+	}
+
+}

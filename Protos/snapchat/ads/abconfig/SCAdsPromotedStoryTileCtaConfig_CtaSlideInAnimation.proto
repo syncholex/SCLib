@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsPromotedStoryTileCtaConfig_CtaSlideInAnimation {
+	double duration = 1;
+	double delaySec = 2;
+}

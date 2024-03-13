@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.order;
+
+message SCPaymentsGetOrderHistoryRequest {
+	string userId = 1;
+	uint32 limit = 2;
+	uint32 offset = 3;
+
+	enum SCPaymentsSortOrder {
+		SORT_ORDER_UNSET = 0;
+		CREATED_AT_ASC = 1;
+		CREATED_AT_DESC = 2;
+		UPDATED_AT_ASC = 3;
+		UPDATED_AT_DESC = 4;
+	}
+
+	SCPaymentsSortOrder sortOrder = 4;
+}

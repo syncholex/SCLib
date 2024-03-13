@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportMessageContents.proto";
+import "snapchat/abuse/support/SCReportRepliedToContents.proto";
+
+message SCReportChatMessage {
+	string content = 1;
+	int64 messageId = 2;
+	string senderUserId = 3;
+	int64 messageTimestampMs = 4;
+	snapchat.abuse.support.SCReportMessageContents contents = 5;
+	int64 quotedMessageId = 6;
+	snapchat.abuse.support.SCReportRepliedToContents repliedToContents = 7;
+}

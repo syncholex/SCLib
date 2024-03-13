@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapmod;
+
+message ContentQuality {
+	bool isSuggestive = 1;
+	bool isShockingImagery = 2;
+}

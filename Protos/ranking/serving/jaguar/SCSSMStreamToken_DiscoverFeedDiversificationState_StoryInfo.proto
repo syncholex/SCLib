@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_DiscoverFeedDiversificationState_StoryInfo {
+	bool isSuggestiveSensitive = 1;
+	string creatorAccountId = 2;
+	bool isSubscribed = 3;
+	float sccToScore = 4;
+	string storyType = 5;
+}

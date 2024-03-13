@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.snapcodes.payloads;
+
+message SCSnapcodePayloadAdCreativePreview {
+
+	enum SCSnapcodePayloadAdCreativePreview_EntityType {
+		UNSET = 0;
+		AD = 1;
+		CREATIVE = 2;
+	}
+
+	SCSnapcodePayloadAdCreativePreview_EntityType type = 1;
+	string entityId = 2;
+	int64 createdTimestampMs = 3;
+	bool isActionExpirable = 4;
+	int64 ttlMs = 5;
+}

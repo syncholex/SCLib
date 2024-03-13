@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2SnapMediaInfo.proto";
+import "ranking2/SCR2SnapPivotInfo.proto";
+import "ranking2/SCR2SnapCreatorInfo.proto";
+import "ranking2/SCR2MultiSnapExtension.proto";
+
+message SCR2StorySnap {
+	string rawSnapId = 1;
+	string sharedStorySubmissionId = 2;
+	ranking2.SCR2SnapMediaInfo mediaInfo = 3;
+	int64 creationTimestampMs = 4;
+	string title = 5;
+	repeated string subTitlesArray = 6;
+	string debugMap = 7;
+	int64 expirationTimestampMs = 8;
+	repeated string attachedStoryIdArray = 9;
+	ranking2.SCR2SnapPivotInfo pivotInfo = 10;
+	ranking2.SCR2SnapCreatorInfo creatorInfo = 11;
+	string attachmentURL = 12;
+	bool suppressContext = 13;
+	bytes audioStitchData = 14;
+	ranking2.SCR2MultiSnapExtension multiSnapExtension = 15;
+	bool hasLensFilter = 16;
+	string snapSource = 17;
+	string lensId = 18;
+	bool hasSnappablesMetadata = 19;
+	bytes serializedUnlockablesSnapInfo = 20;
+}

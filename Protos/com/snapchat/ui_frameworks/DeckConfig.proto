@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.ui_frameworks;
+
+message DeckConfig {
+	bool deckEnabled = 1;
+	bool gestureManagementEnabled = 2;
+	bool useEmptyImageViewAsDefaultViewInFooter = 3;
+	bool routeThroughNavigationRouterAlways = 4;
+}

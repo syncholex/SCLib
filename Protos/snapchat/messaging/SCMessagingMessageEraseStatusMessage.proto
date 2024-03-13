@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingMessageEraseStatusMessage {
+	snapchat.messaging.SCMessagingUUID userId = 1;
+
+	enum SCMessagingMessageEraseStatusMessage_MessageType {
+		UNSET = 0;
+		CHAT = 1;
+		SNAP = 2;
+	}
+
+	SCMessagingMessageEraseStatusMessage_MessageType messageType = 2;
+}

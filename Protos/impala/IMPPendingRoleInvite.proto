@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPendingRoleInvite {
+	string businessId = 1;
+	string invitingUserId = 2;
+	string invitingUsername = 3;
+	string invitingDisplayName = 4;
+	string roleType = 5;
+
+	enum IMPPendingRoleInvite_Status {
+		UNKNOWN = 0;
+		PENDING = 1;
+		ACCEPTED = 2;
+	}
+
+	IMPPendingRoleInvite_Status status = 6;
+	string invitedUserId = 7;
+	string invitedUsername = 8;
+	string invitedUserDisplayName = 9;
+}

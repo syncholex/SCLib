@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message VRZFriendCheckin {
+	int32 sanitizedCheckinCount = 1;
+	string placeId = 2;
+	google.protobuf.GPBFloatValue minZoom = 3;
+	repeated int64 checkinTimestampsMsArray = 4 [packed=true];
+}

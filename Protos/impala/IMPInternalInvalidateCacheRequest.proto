@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInternalInvalidateCacheRequest {
+	string cacheKey = 1;
+}

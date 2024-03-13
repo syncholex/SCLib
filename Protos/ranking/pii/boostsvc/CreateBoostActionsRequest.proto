@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+import "ranking/pii/boostsvc/BoostAction.proto";
+
+message CreateBoostActionsRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+	repeated ranking.pii.boostsvc.BoostAction boostActionsArray = 2;
+}

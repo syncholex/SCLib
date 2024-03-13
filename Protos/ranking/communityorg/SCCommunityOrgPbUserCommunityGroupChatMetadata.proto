@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbCommunityGroupChatMetadata.proto";
+import "ranking/communityorg/SCCommunityOrgPbUserMetadata.proto";
+
+message SCCommunityOrgPbUserCommunityGroupChatMetadata {
+	ranking.communityorg.SCCommunityOrgPbCommunityGroupChatMetadata groupChatMetadata = 1;
+	ranking.communityorg.SCCommunityOrgPbUserMetadata userMetadata = 2;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.creativetools.hometab;
+
+import "snapchat/creativetools/common/SCCTPCTRequestParams.proto";
+import "snapchat/creativetools/sectioned_results/SCCTPClientCachedCTItem.proto";
+
+message SCCTPHometabRequest {
+
+	enum SCCTPRequestOrigin {
+		UNSET = 0;
+		PREVIEW = 1;
+		CHAT = 2;
+		PREVIEW_PRETYPE = 3;
+	}
+
+	SCCTPRequestOrigin origin = 1;
+	snapchat.creativetools.common.SCCTPCTRequestParams common = 2;
+
+	enum SCCTPCTContext {
+		CONTEXT_UNSET = 0;
+		CHAT = 1;
+		MERCH = 2;
+		PREVIEW = 3;
+		STICKER_KIT = 4;
+		OTHER = 5;
+		TEMPLATE_EXPLORER = 6;
+		CAROUSEL = 7;
+	}
+
+	SCCTPCTContext context = 3;
+	repeated snapchat.creativetools.sectioned_results.SCCTPClientCachedCTItem cachedItemsArray = 4;
+}

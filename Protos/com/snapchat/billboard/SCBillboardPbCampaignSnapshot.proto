@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbCampaignSnapshot {
+	string campaignCofName = 1;
+
+	enum SCBillboardPbPreCheckSource {
+		UNSET = 0;
+		SNAP_PLUS = 1;
+		CHANGE_PASSWORD = 2;
+		IN_APP_WARNINGS = 3;
+		QUICK_TAP_ENROLLMENT = 4;
+		CONTACT_SYNC = 5;
+		LOCK_SCREEN_WIDGETS = 6;
+		CREATE_PUBLIC_PROFILE = 7;
+		ONE_TAP_LOGIN_OPT_IN = 8;
+		AFTER_DARK_STORY_PRE_ADD = 9;
+		AFTER_DARK_STORY_POST_ADD = 10;
+		POST_TO_COMMUNITY = 11;
+		COMMUNICATION_CHANNEL_ENROLLMENT = 12;
+		BIPA_DISCLAIMER = 13;
+		HAS_FRIEND_SUGGESTIONS = 14;
+		HAS_NEW_FRIEND_REQUESTS = 15;
+		FLEXIBLE_APP_UPDATE = 16;
+		SNAP_PLUS_DYNAMIC = 17;
+		AC_UPDATE = 18;
+		SNAP_PROMOTE_ONBOARDING_INCENTIVE = 19;
+	}
+
+	SCBillboardPbPreCheckSource preCheckSource = 2;
+	string recycleCofName = 3;
+}

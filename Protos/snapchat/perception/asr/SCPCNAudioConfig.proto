@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.perception.asr;
+
+message SCPCNAudioConfig {
+
+	enum SCPCNAudioConfig_SampleRate {
+		SAMPLE_RATE_UNSET = 0;
+		SAMPLE_RATE_8KHZ = 1;
+		SAMPLE_RATE_16KHZ = 2;
+	}
+
+	SCPCNAudioConfig_SampleRate sampleRate = 1;
+
+	enum SCPCNAudioConfig_Format {
+		FORMAT_UNSET = 0;
+		FORMAT_WAV = 1;
+		FORMAT_OPUS = 2;
+		FORMAT_SPEEX = 3;
+	}
+
+	SCPCNAudioConfig_Format format = 2;
+	repeated string preferredLanguagesArray = 3;
+}

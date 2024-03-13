@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsAdUAHConfig_DeepLinkAdConfig.proto";
+
+message SCAdsAdUAHConfig_CollectionAdConfig {
+
+	enum SCAdsAdUAHConfig_AttachmentType {
+		UNKNOWN_UNSET = 0;
+		WEB_VIEW = 1;
+		APP_INSTALL = 2;
+		DEEP_LINK = 3;
+		AD_TO_CALL = 4;
+		AD_TO_MESSAGE = 5;
+		AD_TO_LENS = 6;
+		AD_TO_PLACE = 7;
+		LEAD_GEN = 8;
+		SURVEY = 9;
+		COMMERCE_PDP = 10;
+		SHOWCASE = 11;
+		NO_AD_ATTACHMENT = 12;
+	}
+
+	repeated SCAdsAdUAHConfig_AttachmentType attachmentTypesArray = 1 [packed=true];
+
+	enum SCAdsAdUAHConfig_WebViewType {
+		INTERNAL_BROWSER_UNSET = 0;
+		EXTERNAL_BROWSER = 1;
+	}
+
+	repeated SCAdsAdUAHConfig_WebViewType supportedWebViewTypesArray = 2 [packed=true];
+	snapchat.ads.abconfig.SCAdsAdUAHConfig_DeepLinkAdConfig deepLinkConfig = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBSystemState {
+	int32 batterySocPct = 1;
+	bool charging = 2;
+	bool bleConnected = 3;
+	int32 mainSocTemperatureC = 4;
+	int32 wifiTemperatureC = 5;
+	float storageInUserPct = 6;
+	int32 bleRssi = 7;
+}

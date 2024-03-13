@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXGameAction {
+	string gameId = 1;
+	string thumbnail = 2;
+	string title = 3;
+	string loadingImage = 4;
+	string content = 5;
+	string shareInfo = 6;
+}

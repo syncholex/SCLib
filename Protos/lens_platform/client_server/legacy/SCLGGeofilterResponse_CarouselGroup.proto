@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGGeofilterResponse_CarouselGroup {
+	string groupName = 1;
+	float carouselScore = 2;
+}

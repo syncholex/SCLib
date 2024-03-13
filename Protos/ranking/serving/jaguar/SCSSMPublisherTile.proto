@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMTileBadge.proto";
+import "snapchat/cameos/stories/SCCameosCameoTile.proto";
+
+message SCSSMPublisherTile {
+	string headline = 1;
+	string imageRelativeURL = 2;
+	string logoRelativeURL = 3;
+	string videoThumbnailRelativeURL = 4;
+	string videoThumbnailFirstFrameRelativeURL = 5;
+
+	enum SCSCORELogoLocation {
+		LOGO_LOCATION_UNKNOWN = 0;
+		LOGO_LOCATION_TOP = 1;
+		LOGO_LOCATION_MIDDLE = 2;
+		LOGO_LOCATION_BOTTOM = 3;
+	}
+
+	SCSCORELogoLocation logoLocation = 6;
+	string logoReadStateOverlayColor = 7;
+	string tileId = 8;
+	ranking.serving.jaguar.SCSSMTileBadge tileBadge = 9;
+	int32 progress = 10;
+	string showSubtitle = 11;
+	string bitmojiThumbnailTemplateId = 12;
+	string imageURLSmall = 13;
+	bytes singleTileContentObject = 14;
+	snapchat.cameos.stories.SCCameosCameoTile cameoTile = 15;
+}

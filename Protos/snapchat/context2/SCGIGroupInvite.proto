@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/context2/SCGIGroupInvitePersonInfo.proto";
+import "snapchat/context2/SCGIGroupInviteBasicInfo.proto";
+import "snapchat/context2/SCGIGroupInviteEventInfo.proto";
+
+message SCGIGroupInvite {
+	string id_p = 1;
+	string groupId = 2;
+	string joinGroupDeeplink = 3;
+	string mischiefInviteId = 4;
+
+	enum SCGIGroupInviteType {
+		GROUP_INVITE_TYPE_BASIC = 0;
+		GROUP_INVITE_TYPE_EVENT = 1;
+	}
+
+	SCGIGroupInviteType type = 5;
+
+	enum SCGIGroupInviteReshareMode {
+		GROUP_INVITE_RESHARE_MODE_DISABLED = 0;
+		GROUP_INVITE_RESHARE_MODE_BIDIRECTIONAL_FRIENDS_OF_HOST = 1;
+		GROUP_INVITE_RESHARE_MODE_ANYONE = 2;
+	}
+
+	SCGIGroupInviteReshareMode reshareMode = 6;
+	snapchat.context2.SCGIGroupInvitePersonInfo creatorInfo = 7;
+
+	oneof info {
+		snapchat.context2.SCGIGroupInviteBasicInfo basicInfo = 8;
+		snapchat.context2.SCGIGroupInviteEventInfo eventInfo = 9;
+	}
+
+	int64 createdEpoch = 10;
+}

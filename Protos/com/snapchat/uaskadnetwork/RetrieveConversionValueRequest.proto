@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.uaskadnetwork;
+
+message RetrieveConversionValueRequest {
+	string idfv = 1;
+	int32 currentConversionValue = 2;
+	int64 updatedTime = 3;
+
+	enum CourseConversionValue {
+		VALUE_UNSET = 0;
+		LOW = 1;
+		MEDIUM = 2;
+		HIGH = 3;
+	}
+
+	CourseConversionValue currentCourseConversionValue = 4;
+}

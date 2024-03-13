@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkPrefetchResource.proto";
+
+message SMSdkPrefetchResourcesRequest {
+	repeated snap.snap_maps_sdk.SMSdkPrefetchResource prefetchResourcesArray = 1;
+	float devicePixelRatio = 2;
+}

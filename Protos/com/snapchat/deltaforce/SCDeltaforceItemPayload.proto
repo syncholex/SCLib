@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceValue.proto";
+
+message SCDeltaforceItemPayload {
+	repeated string keysArray = 1;
+	repeated com.snapchat.deltaforce.SCDeltaforceValue valuesArray = 2;
+	uint64 lastModifiedVersion = 3;
+	uint64 lastModifiedTime = 4;
+}

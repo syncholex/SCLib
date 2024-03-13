@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsSCTAd.proto";
+import "snapchat/ads/render/schema/SCAdsStoryAd.proto";
+import "snapchat/ads/render/schema/SCAdsAdSnap.proto";
+import "google/protobuf/GPBStringValue.proto";
+import "snapchat/ads/render/schema/SCAdsProfileInfo.proto";
+import "snapchat/ads/render/schema/SCAdsStoreContext.proto";
+
+message SCAdsAdRenderData {
+	bytes adId = 1;
+	bytes lineitemId = 2;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	SCAdsAdType adType = 3;
+
+	oneof adProductType {
+		snapchat.ads.render.schema.SCAdsSCTAd sctAd = 4;
+		snapchat.ads.render.schema.SCAdsStoryAd storyAd = 5;
+	}
+
+	repeated string thirdParty3VUrlsArray = 6;
+	repeated string thirdParty3ViUrlsArray = 7;
+	repeated snapchat.ads.render.schema.SCAdsAdSnap adSnapsArray = 8;
+	repeated google.protobuf.GPBStringValue thirdParty3ViEngagedViewUrlsArray = 9;
+	snapchat.ads.render.schema.SCAdsProfileInfo profileInfo = 10;
+	bool hideReportAdCommentBox = 11;
+	bool hideAdSlug = 12;
+	int32 nonFeedStoryAdVisibleSnapCount = 13;
+
+	oneof organicContext {
+		snapchat.ads.render.schema.SCAdsStoreContext storeContext = 14;
+	}
+
+	bool isDynamicProduct = 15;
+
+	enum SCAdsThirdPartyLoginSource {
+		THIRD_PARTY_LOGIN_SOURCE_UNSET = 0;
+		THIRD_PARTY_LOGIN_SOURCE_AMAZON = 1;
+	}
+
+	SCAdsThirdPartyLoginSource thirdPartyLoginSource = 16;
+}

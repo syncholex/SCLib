@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesChatDockEntry.proto";
+import "cognac/SCCognacAppInstancesChatDock.proto";
+
+message SCCognacAppInstancesNotificationPayload {
+	cognac.SCCognacAppInstancesChatDockEntry chatDockEntry = 1;
+	string appDisplayName = 2;
+	string appIconURL = 3;
+	cognac.SCCognacAppInstancesChatDock chatDock = 4;
+
+	enum SCCognacAppsApp_Type {
+		UNKNOWN = 0;
+		GAME = 1;
+		CYPRESS = 2;
+		LENS = 3;
+	}
+
+	SCCognacAppsApp_Type appType = 5;
+}

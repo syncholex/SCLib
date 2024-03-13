@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCCTPCaptionStyle_Color {
+	repeated string colorArray = 1;
+	repeated google.protobuf.GPBFloatValue colorStopArray = 2;
+
+	enum SCCTPCaptionStyle_Color_ColorTransform {
+		UNKNOWN_COLOR_TRANSFORM = 0;
+		EQUAL = 1;
+		UNCHANGEABLE = 2;
+		FOLLOW = 3;
+	}
+
+	SCCTPCaptionStyle_Color_ColorTransform colorTransform = 3;
+	google.protobuf.GPBFloatValue colorGradientAngleDegree = 4;
+	repeated google.protobuf.GPBFloatValue colorTransformParamsArray = 5;
+}

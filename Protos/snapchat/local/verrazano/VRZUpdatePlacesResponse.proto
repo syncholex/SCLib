@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace.proto";
+
+message VRZUpdatePlacesResponse {
+	repeated snapchat.local.verrazano.VRZPlace placesArray = 1;
+	repeated int32 errorIndicesArray = 2 [packed=true];
+}

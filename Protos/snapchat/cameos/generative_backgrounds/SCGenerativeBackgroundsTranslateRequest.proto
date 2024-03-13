@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+message SCGenerativeBackgroundsTranslateRequest {
+	string prompt = 1;
+}

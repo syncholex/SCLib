@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+message SCVSLocality {
+	string localizedLocality = 1;
+}

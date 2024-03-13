@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingLocationRequest.proto";
+import "snapchat/messaging/SCMessagingLocationCoordinates.proto";
+
+message SCMessagingLocation {
+
+	oneof location {
+		snapchat.messaging.SCMessagingLocationRequest request = 1;
+		snapchat.messaging.SCMessagingLocationCoordinates coordinates = 2;
+	}
+
+}

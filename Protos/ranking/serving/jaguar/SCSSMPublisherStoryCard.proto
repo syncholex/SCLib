@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMPublisher.proto";
+import "ranking/serving/jaguar/SCSSMPublisherSnaps.proto";
+import "ranking/serving/jaguar/SCSSMPublisherStoryWatchedState.proto";
+import "ranking/serving/jaguar/SCSSMPublisherShowMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryPrefetchMetadata.proto";
+import "ranking/serving/jaguar/SCSSMLongformVideoTracks.proto";
+import "ranking/serving/jaguar/SCSSMPublisherStoryAdPlacementMetadata.proto";
+import "ranking/serving/jaguar/BoostMetadata.proto";
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+import "snapchat/storydoc/STOAdPlacement_TimeBasedAdPlacements.proto";
+
+message SCSSMPublisherStoryCard {
+	ranking.serving.jaguar.SCSSMPublisher publisher = 1;
+	int64 editionId = 2;
+	int64 publishTimestampMsecs = 3;
+	ranking.serving.jaguar.SCSSMPublisherSnaps snaps = 4;
+	bool isLive = 5;
+	ranking.serving.jaguar.SCSSMPublisherStoryWatchedState watchedState = 6;
+	ranking.serving.jaguar.SCSSMPublisherShowMetadata showMetadata = 7;
+	bool hasCuratedSnaps = 8;
+	bool isShareable = 9;
+	ranking.serving.jaguar.SCSSMStoryFragmentMetadata fragmentMetadata = 10;
+	ranking.serving.jaguar.SCSSMStoryPrefetchMetadata prefetchMetadata = 11;
+	ranking.serving.jaguar.SCSSMLongformVideoTracks videoTracks = 12;
+	ranking.serving.jaguar.SCSSMPublisherStoryAdPlacementMetadata adPlacementMetadata = 13;
+	uint64 viewCount = 15;
+
+	enum SCSSMIndicatorType_Enum {
+		UNKNOWN = 0;
+		POPULARITY = 1;
+		TRENDING = 2;
+		NEW_PUBLISHER = 3;
+		SERIALIZED_BEYOND_ONE = 4;
+		NEW_STORY = 5;
+	}
+
+	SCSSMIndicatorType_Enum indicatorType = 16;
+	int64 segmentId = 17;
+	ranking.serving.jaguar.BoostMetadata boostMetadata = 18;
+	ranking.serving.jaguar.SCSSMEngagementStats engagementStats = 19;
+	ranking.serving.jaguar.SCSSMPublisher originalPublisher = 20;
+	snapchat.storydoc.STOAdPlacement_TimeBasedAdPlacements timedAdPlacements = 21;
+	int64 originalPublishTimestampMsecs = 22;
+}

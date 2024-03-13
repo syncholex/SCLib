@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkMapBrowsingContext_PlacesTrayBrowsingContext {
+	repeated string focusedPlaceIdsArray = 1;
+
+	enum SMSdkTrayState {
+		TRAY_STATE_UNKNOWN = 0;
+		TRAY_STATE_FULL_SCREEN = 1;
+		TRAY_STATE_HALF_SIZE = 2;
+		TRAY_STATE_COLLAPSED = 3;
+	}
+
+	SMSdkTrayState trayState = 2;
+}

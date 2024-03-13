@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3LensPreview.proto";
+
+message SCPCNV3ScanCardWithLensesModelV2_Lens {
+	string id_p = 1;
+	string name = 2;
+	string creatorName = 3;
+	string iconURL = 4;
+	snapchat.perception.scan.v3.SCPCNV3LensPreview preview = 6;
+}

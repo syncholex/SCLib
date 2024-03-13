@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+import "ranking/logging/search/SCSLSUserDemographics.proto";
+
+message SCSLSQueryInfo {
+
+	enum SCSLSQueryInfo_QueryContext_Enum {
+		CAMERA_SCREEN = 0;
+		CHATS_SCREEN = 1;
+		STORIES_SCREEN = 2;
+		MAPS_SCREEN = 3;
+		MEMORIES_SCREEN = 4;
+		ASSOCIATED_STORIES_SCREEN = 5;
+		PROFILE_SCREEN = 6;
+		LENS_DISCOVER_SCREEN = 7;
+		EAGLE_SEARCH = 9;
+		WEB = 8;
+	}
+
+	SCSLSQueryInfo_QueryContext_Enum searchQueryContext = 1;
+
+	enum SCSLSQueryInfo_QueryType_Enum {
+		PRETYPE = 0;
+		POSTTYPE = 1;
+		CATEGORICAL_SEARCH = 2;
+		SNAP_ATTACHMENT_TEXT = 3;
+		CONTEXT_CARD = 4;
+		SUB_STORY = 5;
+		EAGLE = 6;
+		STORY_BASED_UP_NEXT = 7;
+	}
+
+	SCSLSQueryInfo_QueryType_Enum searchQueryType = 2;
+	string searchQueryText = 3;
+	string s2CellId = 4;
+	repeated string userLanguagePreferencesArray = 5;
+	bool queryIsSuggestion = 6;
+	bool queryIsPrefetch = 7;
+	int64 clientTsHourForFirstQuery = 8;
+	int64 millisecondsSinceFirstQuery = 9;
+	string searchSessionId = 10;
+	int64 searchQueryId = 11;
+	string anonymizedUserIdentifier = 12;
+	string osType = 13;
+	string appVersion = 14;
+	string country = 15;
+	string city = 16;
+	string region = 17;
+	string hashedGhostId = 18;
+	ranking.logging.search.SCSLSUserDemographics userDemographics = 19;
+	string appBuild = 20;
+}

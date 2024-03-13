@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.request;
+
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+
+message GetItemVariantDataRequest {
+	com.snapchat.showcase.wire.context.DeviceContext deviceContext = 1;
+	bytes variantDimensionContext = 2;
+}

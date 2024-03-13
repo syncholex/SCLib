@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZConcordance.proto";
+import "snapchat/local/verrazano/VRZResponseMessageFlags.proto";
+
+message VRZGetPlacesByConcordancesRequest {
+	repeated snapchat.local.verrazano.VRZConcordance concordancesArray = 1;
+	snapchat.local.verrazano.VRZResponseMessageFlags responseFlags = 2;
+	bool allowPartialResults = 3;
+}

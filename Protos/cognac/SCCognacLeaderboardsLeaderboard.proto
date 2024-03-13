@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package cognac;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "cognac/SCCognacLeaderboardsLeaderboardMetadata.proto";
+
+message SCCognacLeaderboardsLeaderboard {
+	string id_p = 1;
+	string name = 2;
+	string logoURL = 3;
+
+	enum SCCognacLeaderboardsLeaderboard_ScoreType {
+		UNKNOWN_SCORE_TYPE = 0;
+		NUMERIC = 1;
+		TIME = 2;
+	}
+
+	SCCognacLeaderboardsLeaderboard_ScoreType scoreType = 4;
+	int64 scoreDecimalOffset = 5;
+
+	enum SCCognacLeaderboardsLeaderboard_OrderingType {
+		UNKNOWN_ORDERING_TYPE = 0;
+		DESCENDING = 1;
+		ASCENDING = 2;
+	}
+
+	SCCognacLeaderboardsLeaderboard_OrderingType orderingType = 6;
+	google.protobuf.GPBTimestamp lastUpdateTimestamp = 7;
+	string appId = 8;
+	string scoreIconURL = 9;
+	cognac.SCCognacLeaderboardsLeaderboardMetadata metadata = 10;
+}

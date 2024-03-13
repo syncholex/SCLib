@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2BitmojiUserInfo.proto";
+import "snapchat/search/SCS2StorySummaryInfo.proto";
+
+message SCS2User {
+	string id_p = 1;
+	string displayName = 2;
+	string username = 3;
+	bool isPopular = 5;
+	snapchat.search.SCS2BitmojiUserInfo bitmojiUserInfo = 6;
+	string emoji = 7;
+	string contextHint = 8;
+	snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 9;
+
+	enum SCS2User_RecommendationReason {
+		RECOMMENDATION_REASON_UNKNOWN = 0;
+		RECOMMENDATION_REASON_HAS_MUTUAL_FRIEND = 1;
+		RECOMMENDATION_REASON_USERNAME = 2;
+		RECOMMENDATION_REASON_IN_CONTACTS = 3;
+		RECOMMENDATION_REASON_IN_QUICK_ADDS = 4;
+		RECOMMENDATION_REASON_PRIVATE = 5;
+		RECOMMENDATION_REASON_HAS_3_PLUS_MUTUAL_FRIEND = 6;
+		RECOMMENDATION_REASON_HAS_10_PLUS_MUTUAL_FRIEND = 7;
+		RECOMMENDATION_REASON_HAS_20_PLUS_MUTUAL_FRIEND = 8;
+		RECOMMENDATION_REASON_DISPLAY_NAME = 9;
+		RECOMMENDATION_REASON_YOU_MAY_KNOW = 10;
+		RECOMMENDATION_REASON_HAS_2_PLUS_MUTUAL_FRIEND = 11;
+	}
+
+	SCS2User_RecommendationReason recommendationReason = 10;
+	bool isOfficial = 11;
+	string snapProId = 12;
+	string mutableUsername = 13;
+}

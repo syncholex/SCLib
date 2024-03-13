@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.labscv;
+
+message SCPbSpectaclesDepthQualityFrame {
+	double timestamp = 1;
+
+	enum SCPbSpectaclesDepthQualityFrame_DepthQuality {
+		Good = 0;
+		Degraded = 1;
+	}
+
+	SCPbSpectaclesDepthQualityFrame_DepthQuality quality = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXUserIdentity.proto";
+import "snapchat/context2/iz/SCCTXSpotlightAttributionInfo_UserAttributionInfo.proto";
+import "snapchat/context2/api/SCCTXAction.proto";
+
+message SCCTXSpotlightAttributionInfo {
+
+	oneof info {
+		snapchat.context2.iz.SCCTXUserIdentity user = 1;
+		snapchat.context2.iz.SCCTXSpotlightAttributionInfo_UserAttributionInfo userAttributionInfo = 2;
+	}
+
+	string title = 3;
+	snapchat.context2.api.SCCTXAction action = 4;
+}

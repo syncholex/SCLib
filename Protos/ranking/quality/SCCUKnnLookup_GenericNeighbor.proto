@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message SCCUKnnLookup_GenericNeighbor {
+	string id_p = 1;
+	string metadata = 2;
+	float score = 3;
+}

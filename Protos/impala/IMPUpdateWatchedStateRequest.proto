@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPWatchedStateUpdate.proto";
+
+message IMPUpdateWatchedStateRequest {
+	string userId = 1;
+	repeated impala.IMPWatchedStateUpdate watchedStateUpdatesArray = 2;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCBoltApplicationVersion.proto";
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/content/SCBoltUInt64Value.proto";
+
+message SCBoltContentDescriptor {
+	snapchat.content.SCBoltApplicationVersion minimumSupportedApplicationVersion = 1;
+	string contentId = 2;
+	repeated string contentPathPartsArray = 3;
+	google.protobuf.GPBTimestamp contentExpiryTime = 4;
+	google.protobuf.GPBTimestamp contentDescriptorExpiryTime = 5;
+	repeated uint64 readyLocationIdsArray = 6 [packed=true];
+	repeated uint64 futureLocationIdsArray = 7 [packed=true];
+	google.protobuf.GPBTimestamp futureLocationsReadyTime = 8;
+	uint32 claimId = 9;
+	uint32 useCase = 10;
+	snapchat.content.SCBoltUInt64Value contentLength = 11;
+	uint32 hostPatternVersion = 12;
+	uint32 boltCdnExperimentationId = 13;
+}

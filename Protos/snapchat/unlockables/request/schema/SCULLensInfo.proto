@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message SCULLensInfo {
+	int64 unlockableId = 1;
+	int64 optionId = 2;
+
+	enum SCULLensSource {
+		UNKNOWN = 0;
+		CAMERA = 1;
+		VIDEOCHAT = 2;
+		SNAPCODE = 3;
+		LOGIN_CAMERA = 4;
+		PREVIEW = 5;
+		MEMORIES = 6;
+		ON_DEMAND = 7;
+		DISCOVER = 8;
+		STORY = 9;
+	}
+
+	SCULLensSource source = 3;
+}

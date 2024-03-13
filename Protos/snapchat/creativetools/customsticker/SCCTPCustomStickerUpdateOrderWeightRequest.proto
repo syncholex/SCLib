@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerOrderWeightSpec.proto";
+
+message SCCTPCustomStickerUpdateOrderWeightRequest {
+	bytes packId = 1;
+	repeated snapchat.creativetools.customsticker.SCCTPCustomStickerOrderWeightSpec orderWeightSpecsArray = 2;
+}

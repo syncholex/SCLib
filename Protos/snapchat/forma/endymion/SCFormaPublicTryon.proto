@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.forma.endymion;
+
+import "snapchat/forma/endymion/messages/SCFormaEncryptedMedia.proto";
+
+message SCFormaPublicTryon {
+	bytes publicTryonId = 1;
+	bytes userId = 2;
+	snapchat.forma.endymion.messages.SCFormaEncryptedMedia media = 3;
+}

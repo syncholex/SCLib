@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingPromptLensResponse {
+	snapchat.messaging.SCMessagingUUID promptId = 1;
+	snapchat.messaging.SCMessagingUUID responseId = 2;
+	int64 lensId = 3;
+	bytes promptEncryptionKey = 4;
+	bytes responseEncryptionKey = 5;
+}

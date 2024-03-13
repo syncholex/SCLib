@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+message SCMediaPlayerBufferingConfig {
+	int32 minBufferMs = 1;
+	int32 maxBufferMs = 2;
+	int32 maxBufferBeforePlaybackMs = 3;
+	int32 minBufferForPlaybackMs = 4;
+	int32 minBufferForPlaybackAfterRebufferMs = 5;
+	int32 maxBackBufferMs = 6;
+	bool retainBackBufferFromKeyframe = 7;
+	int32 reevaluationIntervalBytes = 8;
+	int32 unboundRequestChunkSizeBytes = 9;
+}

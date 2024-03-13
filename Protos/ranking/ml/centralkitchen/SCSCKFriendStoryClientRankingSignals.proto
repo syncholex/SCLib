@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/ml/centralkitchen/SCSCKFriendStoryClientEngagementFeatures.proto";
+
+message SCSCKFriendStoryClientRankingSignals {
+	repeated ranking.ml.centralkitchen.SCSCKFriendStoryClientEngagementFeatures friendStoryClientSignalsArray = 1;
+}

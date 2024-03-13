@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPublicMapStyleRequest {
+
+	enum SCMTMapStyle {
+		DEFAULT = 0;
+		PROTOTYPE = 5;
+		LITE = 8;
+		PLACES = 10;
+		DARK_MODE = 11;
+		MANUAL = 12;
+	}
+
+	SCMTMapStyle desiredStyle = 1;
+}

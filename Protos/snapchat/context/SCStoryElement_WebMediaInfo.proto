@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCStoryElement_WebMediaInfo {
+	string contentURL = 1;
+	int32 durationMs = 2;
+}

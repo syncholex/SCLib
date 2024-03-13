@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.peliasproxy;
+
+message SCMPPPoint {
+	float lat = 1;
+	float lon = 2;
+}

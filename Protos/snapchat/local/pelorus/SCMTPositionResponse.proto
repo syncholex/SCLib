@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.local.pelorus;
+
+import "snapchat/local/pelorus/SCMTFeatureInfo.proto";
+
+message SCMTPositionResponse {
+
+	enum SCMTReturnStatus {
+		OK = 0;
+		ERROR = 1;
+	}
+
+	SCMTReturnStatus returnStatus = 1;
+	string errorMessage = 2;
+	repeated snapchat.local.pelorus.SCMTFeatureInfo featureInfoArray = 3;
+	double elevation = 4;
+	bool elevationAvailable = 5;
+}

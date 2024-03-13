@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+message InstaloggerClientHeader {
+	string userGuid = 1;
+
+	enum SCAPbDataOperatingSystem {
+		ANDROID = 0;
+		IOS = 1;
+		OPERATING_SYSTEM_OTHER = 2;
+		OPERATING_SYSTEM_WINDOWS = 3;
+		OPERATING_SYSTEM_OSX = 4;
+		OPERATING_SYSTEM_CHROMIUM_OS = 5;
+	}
+
+	SCAPbDataOperatingSystem osType = 2;
+	string appBuild = 3;
+	string appVersion = 4;
+	int32 accountAgeDays = 5;
+	bool doubleLogged = 6;
+}

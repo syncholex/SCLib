@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.proto.security;
+
+message SCPBSecurityGetUrlReputationRequest {
+	bytes URL = 1;
+	string URLStr = 2;
+	string canonicalURL = 3;
+	bool skipSafeBrowsing = 4;
+	bool skipURLResolving = 5;
+}

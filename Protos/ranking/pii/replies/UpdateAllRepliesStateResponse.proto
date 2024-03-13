@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+message UpdateAllRepliesStateResponse {
+	string requestId = 1;
+}

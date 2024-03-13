@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.lc;
+
+message SCLPCtaItem {
+	int64 lensId = 1;
+	string iconURL = 2;
+}

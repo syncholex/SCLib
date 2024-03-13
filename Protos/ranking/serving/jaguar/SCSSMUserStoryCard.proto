@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+import "ranking/serving/jaguar/SCSSMStoryFragmentMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryPrefetchMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryUserMetadata.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryPublicUserMetadata.proto";
+import "ranking/serving/jaguar/SCSSMImpalaStoryMetadata.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryCustomMetadata.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryOurStoryMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStoryDeltaForceMetadata.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryEdgeInteractionFeatures.proto";
+import "ranking/serving/jaguar/SCSSMUserStoryMyStoryMetadata.proto";
+
+message SCSSMUserStoryCard {
+	repeated ranking.serving.jaguar.SCSSMStorySnap snapsArray = 1;
+	ranking.serving.jaguar.SCSSMStoryFragmentMetadata fragmentMetadata = 2;
+	ranking.serving.jaguar.SCSSMStoryPrefetchMetadata prefetchMetadata = 3;
+	ranking.serving.jaguar.SCSSMStoryThumbnail thumbnail = 4;
+	ranking.serving.jaguar.SCSSMUserStoryUserMetadata userMetadata = 5;
+	ranking.serving.jaguar.SCSSMUserStoryPublicUserMetadata publicUserMetadata = 6;
+	ranking.serving.jaguar.SCSSMImpalaStoryMetadata impalaMetadata = 7;
+	ranking.serving.jaguar.SCSSMUserStoryCustomMetadata customMetadata = 8;
+	ranking.serving.jaguar.SCSSMUserStoryOurStoryMetadata ourStoryMetadata = 9;
+	ranking.serving.jaguar.SCSSMStoryDeltaForceMetadata deltaForceMetadata = 10;
+	ranking.serving.jaguar.SCSSMUserStoryEdgeInteractionFeatures edgeInteractionFeatures = 11;
+	ranking.serving.jaguar.SCSSMUserStoryMyStoryMetadata myStoryMetadata = 12;
+	float userPosterFriendshipAgeInYears = 13;
+}

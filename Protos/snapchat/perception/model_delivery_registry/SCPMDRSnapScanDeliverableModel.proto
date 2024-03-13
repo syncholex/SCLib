@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRSnapScanDeliverableModel_Identifier.proto";
+import "snapchat/perception/snapscan/SCPSSModel.proto";
+
+message SCPMDRSnapScanDeliverableModel {
+	snapchat.perception.model_delivery_registry.SCPMDRSnapScanDeliverableModel_Identifier identifier = 1;
+	snapchat.perception.snapscan.SCPSSModel model = 2;
+}

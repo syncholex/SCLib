@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+message VRZFriendListItem {
+	string userId = 1;
+}

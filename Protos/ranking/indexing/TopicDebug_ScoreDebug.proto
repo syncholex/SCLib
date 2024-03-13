@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message TopicDebug_ScoreDebug {
+	repeated double unexpectednessBucketsArray = 1 [packed=true];
+	int32 highestUnexpectedBucket = 2;
+	int32 bucketSpanInSecs = 3;
+}

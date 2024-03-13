@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+
+message SCCTPFilterRequest {
+	snapchat.ads.request.schema.SCAdsAdRequest adRequest = 1;
+	repeated uint64 debugFilterIdsArray = 2 [packed=true];
+}

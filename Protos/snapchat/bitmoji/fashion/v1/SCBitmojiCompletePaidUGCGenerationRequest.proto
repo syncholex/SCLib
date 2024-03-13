@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "iap/shop/SCIapShopPbInAppReceipt.proto";
+
+message SCBitmojiCompletePaidUGCGenerationRequest {
+	string requestId = 1;
+	iap.shop.SCIapShopPbInAppReceipt receipt = 2;
+}

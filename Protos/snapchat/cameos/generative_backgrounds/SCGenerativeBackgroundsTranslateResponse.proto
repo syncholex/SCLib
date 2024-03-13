@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCGenerativeBackgroundsTranslateResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	string translatedPrompt = 2;
+}

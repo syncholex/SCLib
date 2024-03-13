@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPGetFollowersInRangeRequest.proto";
+
+message IMPMigrateFollowersInRange {
+	string businessId = 1;
+	impala.IMPGetFollowersInRangeRequest rangeRequest = 2;
+	string userId = 3;
+}

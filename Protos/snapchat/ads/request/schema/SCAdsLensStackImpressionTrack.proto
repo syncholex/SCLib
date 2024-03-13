@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBStringValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsLensStackImpressionTrack {
+	repeated google.protobuf.GPBStringValue appliedLensIdsArray = 1;
+	google.protobuf.GPBInt64Value snapSendCount = 2;
+	google.protobuf.GPBInt64Value storyPostCount = 3;
+	google.protobuf.GPBInt64Value memoriesSaveCount = 4;
+}

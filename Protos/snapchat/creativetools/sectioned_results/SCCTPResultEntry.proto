@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.sectioned_results;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPResultEntry {
+
+	oneof entry {
+		snapchat.creativetools.ct_item.SCCTPCTItem ctItem = 2;
+		bytes cachedId = 3;
+	}
+
+	uint32 version = 4;
+	int64 clientCacheTtlMinutes = 5;
+	string sectionName = 6;
+}

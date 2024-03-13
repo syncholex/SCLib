@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/music/original_sounds/SCMusicOriginalSoundsOriginalSound.proto";
+
+message SCMusicOriginalSoundsGetSoundsResponse {
+	snapchat.music.original_sounds.SCMusicOriginalSoundsOriginalSound originalSounds = 1;
+}

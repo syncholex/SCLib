@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFideliusMessageIdentifier {
+	snapchat.core.SCCOREUUID conversationId = 1;
+	int64 messageId = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.creativetools.drawing;
+
+import "snapchat/creativetools/drawing/SCCTPStyleBrush.proto";
+import "snapchat/creativetools/drawing/SCCTPCharBrush.proto";
+
+message SCCTPBrush {
+
+	oneof brush {
+		snapchat.creativetools.drawing.SCCTPStyleBrush style = 1;
+		snapchat.creativetools.drawing.SCCTPCharBrush char_p = 2;
+	}
+
+	uint32 width = 3;
+	uint32 brushIndex = 4;
+}

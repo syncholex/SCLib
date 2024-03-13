@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_NormalizedBoundingBox.proto";
+
+message SnapBrainResponse_Results_LogoDetection_LogoBoundingBox {
+	int32 labelId = 1;
+	string labelName = 2;
+	int32 frameIdx = 3;
+	snapchat.research.SnapBrainResponse_Results_NormalizedBoundingBox normalizedBox = 4;
+	float score = 5;
+}

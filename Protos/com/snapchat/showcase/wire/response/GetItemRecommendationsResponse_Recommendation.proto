@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseItemMetadata.proto";
+
+message GetItemRecommendationsResponse_Recommendation {
+	repeated com.snapchat.showcase.wire.metadata.ShowcaseItemMetadata itemsArray = 1;
+	bytes paginationCursor = 2;
+	string moduleTrackingId = 3;
+}

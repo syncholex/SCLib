@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "actionmoji/action/SCMT1StickerID.proto";
+import "snapchat/map/SCMEMyExplorerStatus.proto";
+
+message SCMEAddCheckinResponse {
+	string statusId = 1;
+	string speechText = 2;
+	actionmoji.action.SCMT1StickerID sticker = 3;
+	bool showPassportNotification = 4;
+	snapchat.map.SCMEMyExplorerStatus myNewStatus = 5;
+}

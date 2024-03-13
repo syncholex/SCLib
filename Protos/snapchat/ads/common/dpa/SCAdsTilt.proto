@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.common.dpa;
+
+message SCAdsTilt {
+	string textColor = 1;
+	string titleBackgroundColor = 2;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPPayoutSource.proto";
+
+message IMPPayout {
+	int64 timestamp = 1;
+	int64 value = 2;
+
+	enum IMPPayoutType {
+		UNKNOWN_UNSET = 0;
+		SPOTLIGHT = 1;
+		SPOTLIGHT_REALLOCATION = 2;
+		GIFT = 3;
+		SPOTLIGHT_CHALLENGE = 4;
+		STORY = 5;
+		LENS_CREATOR_FUND = 6;
+		LENS_ILDG = 7;
+	}
+
+	IMPPayoutType payoutType = 3;
+	int64 earnedTimestamp = 4;
+	int64 crystalValue = 5;
+	repeated impala.creatormonetization.IMPPayoutSource payoutSourcesArray = 6;
+
+	enum IMPPayout_Status {
+		STATUS_UNSET = 0;
+		STATUS_PENDING = 1;
+		STATUS_COMPLETE = 2;
+		STATUS_FORFEITED = 3;
+	}
+
+	IMPPayout_Status status = 7;
+	string payoutDate = 8;
+}

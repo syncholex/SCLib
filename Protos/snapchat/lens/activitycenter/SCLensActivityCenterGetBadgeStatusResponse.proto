@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.activitycenter;
+
+message SCLensActivityCenterGetBadgeStatusResponse {
+	bool shouldBadge = 1;
+	string subtitle = 2;
+	bool shouldHideEntryPoint = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosResolution.proto";
+
+message SCCameosQuickIconResource {
+	string URL = 1;
+	snapchat.cameos.common.SCCameosResolution resolution = 2;
+}

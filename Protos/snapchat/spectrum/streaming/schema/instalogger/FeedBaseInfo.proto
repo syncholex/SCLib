@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.instalogger;
+
+message FeedBaseInfo {
+
+	enum FeedBaseInfo_PageType {
+		PAGE_UNKNOWN = 0;
+		PAGE_STORY_FEED = 1;
+		PAGE_FRIEND_FEED = 2;
+		PAGE_LENS_EXPLORER = 3;
+		PAGE_DISCOVER_MANAGEMENT = 4;
+		PAGE_PREMIUM_FEED = 5;
+		PAGE_SPOTLIGHT_FEED = 6;
+		PAGE_SUPER_FEED = 7;
+	}
+
+	FeedBaseInfo_PageType pageType = 1;
+	string pageTypeSpecific = 2;
+	string pageSessionId = 3;
+
+	enum FeedBaseInfo_FeedPageSection_Enum {
+		UNSPECIFIED = 0;
+		DF_FRIENDS = 1;
+		DF_SUBSCRIPTIONS = 2;
+		DF_QUICK_ADD = 3;
+		DF_FOR_YOU = 4;
+		DF_CATEGORICAL = 5;
+		DF_BLENDED = 31;
+		COMMUNITY_LENSES = 6;
+		LENS_STORIES = 7;
+		LENS_CHALLENGE_STORIES = 17;
+		INTEREST_ONBOARDING = 8;
+		INTEREST_SELECTION = 9;
+		DF_FOR_YOU_PIVOTS = 14;
+		DF_FLOATING_PIVOTS = 18;
+		SHOWS_KEEP_WATCHING = 15;
+		SHOWS_MORE_SHOWS = 16;
+		DFM_LAST_WATCHED = 10;
+		DFM_SUBSCRIPTIONS = 11;
+		DFM_INTERESTS = 12;
+		DFM_HIDDEN_ITEMS = 13;
+		DFM_BOOSTS = 26;
+		PREMIUM_FEED = 19;
+		PF_CONTINUE_WATCHING = 21;
+		PF_HAPPENING_NOW = 25;
+		PF_HERO_TILE = 20;
+		PF_MORE_SHOWS = 23;
+		PF_POPULAR = 24;
+		PF_SUBSCRIPTIONS = 22;
+		SF_SPOTLIGHT = 27;
+		SF_TRENDING_TOPIC = 28;
+		SF_TRENDING_LENS = 29;
+		SF_TRENDING_MUSIC = 30;
+		SF_TRENDING_THIRD_PARTY_APP = 32;
+		SUPER_FEED = 33;
+	}
+
+	FeedBaseInfo_FeedPageSection_Enum section = 4;
+	string sectionName = 5;
+	int32 sectionPos = 6;
+
+	enum FeedBaseInfo_FeedType_Enum {
+		UNKNOWN = 0;
+		SUBS = 2;
+		FOR_YOU = 3;
+		EXPT_BATCH = 221;
+		EXPT_MY_BOOSTED_STORIES = 239;
+		EXPT_SPOTLIGHT_ALL = 240;
+		EXPT_FOR_YOU_WITH_SUBS = 247;
+		EXPT_MADE_FOR_US = 251;
+		MIXED_FEED = 258;
+	}
+
+	FeedBaseInfo_FeedType_Enum feedType = 7;
+}

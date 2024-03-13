@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message StorySubscribeState {
+
+	enum StorySubscribeState_State {
+		STATE_UNKNOWN = 0;
+		STATE_SUBSCRIBED = 1;
+		STATE_UNSUBSCRIBED = 2;
+	}
+
+	StorySubscribeState_State state = 1;
+	int64 stateTimestampMsecs = 2;
+	int64 stateExpireTimestampMsecs = 3;
+
+	enum EvictionHint {
+		EVICTION_HINT_NONE = 0;
+		EVICTION_HINT_MUST_KEEP = 1;
+	}
+
+	EvictionHint evictionHint = 4;
+}

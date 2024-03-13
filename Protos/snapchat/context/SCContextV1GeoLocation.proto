@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCContextV1GeoLocation {
+	float lat = 1;
+	float lng = 2;
+	float altitude = 3;
+	float radius = 4;
+}

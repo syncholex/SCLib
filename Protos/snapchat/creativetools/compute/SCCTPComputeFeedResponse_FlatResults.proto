@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.compute;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+import "snapchat/creativetools/common/SCCTPPageToken.proto";
+import "snapchat/creativetools/sectioned_results/SCCTPResultEntry.proto";
+
+message SCCTPComputeFeedResponse_FlatResults {
+	repeated snapchat.creativetools.ct_item.SCCTPCTItem itemsArray = 1;
+	snapchat.creativetools.common.SCCTPPageToken pageToken = 2;
+	repeated snapchat.creativetools.sectioned_results.SCCTPResultEntry entriesArray = 3;
+}

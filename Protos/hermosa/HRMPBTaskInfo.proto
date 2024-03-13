@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBTaskInfo {
+	string name = 1;
+	uint32 runtimePercentage = 2;
+	uint32 remainingStack = 3;
+	float runtimePercentageF = 4;
+	uint32 priority = 5;
+}

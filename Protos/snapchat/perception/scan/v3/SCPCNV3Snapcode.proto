@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3Snapcode {
+	uint32 version = 1;
+	string decodeMessageUuid = 2;
+}

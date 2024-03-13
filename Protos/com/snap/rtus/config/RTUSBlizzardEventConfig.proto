@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snap.rtus.config;
+
+message RTUSBlizzardEventConfig {
+	repeated int32 fieldsArray = 1 [packed=true];
+	string filter = 2;
+}

@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBEnvelopeMessage {
+	uint32 session = 1;
+	uint32 serial = 2;
+
+	enum HRMPBEnvelopeMessage_PayloadType {
+		PAYLOAD_TYPE_UNSET = 0;
+		PAYLOAD_TYPE_JSON_REQUEST = 1;
+		PAYLOAD_TYPE_JSON_RESPONSE = 2;
+		PAYLOAD_TYPE_JSON_EVENT = 3;
+		PAYLOAD_TYPE_HERMOSA_REQUEST = 4;
+		PAYLOAD_TYPE_HERMOSA_RESPONSE = 5;
+		PAYLOAD_TYPE_HERMOSA_EVENT = 6;
+		PAYLOAD_TYPE_RAW_REQUEST = 7;
+		PAYLOAD_TYPE_RAW_RESPONSE = 8;
+		PAYLOAD_TYPE_RAW_EVENT = 9;
+	}
+
+	HRMPBEnvelopeMessage_PayloadType type = 3;
+	bytes payload = 4;
+}

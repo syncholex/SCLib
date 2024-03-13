@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+message SCMEMediaTimeRange {
+	uint64 durationMs = 1;
+
+	enum SCMEPosition {
+		START_UNSET = 0;
+		MID = 1;
+	}
+
+
+	oneof startPosition {
+		uint64 startOffsetMs = 2;
+		SCMEPosition position = 3;
+		uint64 intervalMsFromPreviousEnd = 4;
+	}
+
+}

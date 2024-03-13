@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+message SimCardMetadata {
+	bool hasPhoneNumber = 1;
+	int32 simSlotIndex = 2;
+	string carrier = 3;
+	string mcc = 4;
+	string mnc = 5;
+	bool isDualSim = 6;
+}

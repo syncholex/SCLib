@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPHighlightSnap.proto";
+import "impala/highlights/IMPBoltUploadObject.proto";
+import "impala/highlights/IMPThumbnailInfo.proto";
+
+message IMPInternalCreateHighlightRequest {
+	string profileId = 1;
+	string userId = 2;
+	repeated impala.highlights.IMPHighlightSnap snapsArray = 3;
+	int32 thumbnailSnapIndex = 4;
+	string title = 5;
+
+	oneof coverThumbnail {
+		impala.highlights.IMPBoltUploadObject coverThumbnailData = 6;
+		string coverThumbnailURL = 7;
+		impala.highlights.IMPThumbnailInfo thumbnailInfo = 8;
+	}
+
+	bool isSpotlight = 9;
+}

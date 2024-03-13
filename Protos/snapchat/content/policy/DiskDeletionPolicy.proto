@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+import "snapchat/content/policy/DirectoryDeletionPolicy.proto";
+import "snapchat/content/policy/FileDeletionPolicy.proto";
+import "snapchat/content/policy/FileDeletionGuard.proto";
+
+message DiskDeletionPolicy {
+	repeated snapchat.content.policy.DirectoryDeletionPolicy dirDeletionPoliciesArray = 1;
+	repeated snapchat.content.policy.FileDeletionPolicy fileDeletionPoliciesArray = 2;
+	repeated snapchat.content.policy.FileDeletionGuard fileDeletionGuardsArray = 3;
+}

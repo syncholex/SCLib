@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "snapchat/ads/render/schema/SCAdsReminderLocation.proto";
+import "snapchat/ads/render/schema/SCAdsReminderAttachment.proto";
+
+message SCAdsReminder {
+	string actionCta = 1;
+	google.protobuf.GPBInt64Value triggerTimestamp = 2;
+	snapchat.ads.render.schema.SCAdsReminderLocation triggerLocation = 3;
+	string eventName = 4;
+	string eventDescription = 5;
+	snapchat.ads.render.schema.SCAdsReminderAttachment reminderAttachment = 6;
+}

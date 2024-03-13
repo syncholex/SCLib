@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusWebBootstrapData.proto";
+import "snapchat/janus/api/SCJanusChallengeData.proto";
+import "snapchat/janus/api/SCJanusWebErrorData.proto";
+import "snapchat/janus/api/SCJanusWebBootstrapDataBrowser.proto";
+
+message SCJanusWebRegisterResponse {
+
+	enum SCJanusWebRegisterResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		CHALLENGED = 2;
+		ERR_THROTTLED = 10;
+		ERR_INVALID_PASSWORD = 11;
+		ERR_WEAK_PASSWORD = 12;
+		ERR_USERNAME_SAME_WITH_PASSWORD = 13;
+		ERR_INVALID_DISPLAY_NAME = 14;
+		ERR_INVALID_BIRTHDATE = 15;
+		ERR_INVALID_USERNAME = 16;
+		ERR_USERNAME_TAKEN = 17;
+		ERR_EMAIL_TAKEN = 18;
+		ERR_INVALID_EMAIL = 19;
+		ERR_SEND_EMAIL_FAIL = 20;
+		ERR_BLOCKED = 21;
+		ERR_INELIGIBLE_FOR_REGISTRATION = 22;
+	}
+
+	SCJanusWebRegisterResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusWebBootstrapData bootstrapData = 2;
+		snapchat.janus.api.SCJanusChallengeData challengeData = 3;
+		snapchat.janus.api.SCJanusWebErrorData errorData = 4;
+		snapchat.janus.api.SCJanusWebBootstrapDataBrowser bootstrapDataBrowser = 6;
+	}
+
+	bytes authenticationSessionPayload = 5;
+}

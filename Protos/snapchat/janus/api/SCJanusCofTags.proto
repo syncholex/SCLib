@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCofTags {
+	string routeTag = 1;
+	string eTag = 2;
+	int32 lenscoreVersion = 3;
+}

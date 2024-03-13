@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapLang_SensitiveLanguage {
+	string obfuscatedText = 1;
+	repeated string sensitiveWordsArray = 2;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.music.common;
+
+import "snapchat/music/common/SCMusicTrackLyricsLine.proto";
+
+message SCMusicTrackLyrics {
+	uint64 trackId = 1;
+	repeated snapchat.music.common.SCMusicTrackLyricsLine linesArray = 2;
+	float clipDuration = 3;
+
+	enum SCMusicTrackLyricsType {
+		TRACK_LYRICS_TYPE_UNSET = 0;
+		TRACK_LYRICS_TYPE_RICH_SYNC = 1;
+		TRACK_LYRICS_TYPE_LINE_SYNC = 2;
+	}
+
+	SCMusicTrackLyricsType lyricsType = 4;
+}

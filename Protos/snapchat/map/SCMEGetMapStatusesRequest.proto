@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEGetMapStatusesRequest {
+	string userId = 1;
+	repeated string friendIdsArray = 2;
+	string language = 3;
+	string countryCode = 4;
+	bool isEmployee = 5;
+}

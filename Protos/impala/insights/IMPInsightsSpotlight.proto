@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "snapchat/context/SCStoryManifest.proto";
+
+message IMPInsightsSpotlight {
+	string businessId = 1;
+	string spotlightId = 2;
+	string thumbnailURL = 3;
+	int64 creationTimestampMs = 4;
+	snapchat.context.SCStoryManifest manifest = 5;
+}

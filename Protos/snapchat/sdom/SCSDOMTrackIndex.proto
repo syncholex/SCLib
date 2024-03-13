@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBEmpty.proto";
+import "google/protobuf/GPBUInt32Value.proto";
+
+message SCSDOMTrackIndex {
+
+	oneof trackIndex {
+		google.protobuf.GPBEmpty globalEditsTrack = 1;
+		google.protobuf.GPBEmpty localTrack = 2;
+		google.protobuf.GPBUInt32Value trackId = 3;
+		google.protobuf.GPBUInt32Value clipTrackByOrder = 4;
+	}
+
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2StorySnapClientMetadata {
+	int64 clientEditTimeBeforeSend = 1;
+	bool savedToMemoriesBeforeSend = 2;
+	bool isLoadedFromCameraRoll = 3;
+	uint32 retakeTrials = 4;
+	repeated uint32 zoomLevelSamplesArray = 5 [packed=true];
+}

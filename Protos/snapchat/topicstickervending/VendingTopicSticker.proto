@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.topicstickervending;
+
+import "snapchat/topicsticker/TopicStickerId.proto";
+import "snapchat/topicsticker/TopicStickerStatus.proto";
+
+message VendingTopicSticker {
+	snapchat.topicsticker.TopicStickerId id_p = 1;
+	string text = 2;
+	uint64 createdAt = 3;
+	uint64 updatedAt = 4;
+	snapchat.topicsticker.TopicStickerStatus status = 5;
+	int32 stickerRank = 6;
+}

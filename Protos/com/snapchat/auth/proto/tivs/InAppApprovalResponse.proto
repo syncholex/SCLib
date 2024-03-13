@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "com/snapchat/auth/proto/tivs/TivResponse.proto";
+
+message InAppApprovalResponse {
+	com.snapchat.auth.proto.tivs.TivResponse response = 1;
+}

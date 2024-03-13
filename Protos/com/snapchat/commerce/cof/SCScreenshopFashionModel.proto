@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.cof;
+
+message SCScreenshopFashionModel {
+	string modelKey = 1;
+	float fashionThreshold = 2;
+}

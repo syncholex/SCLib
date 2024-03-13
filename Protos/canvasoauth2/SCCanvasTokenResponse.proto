@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package canvasoauth2;
+
+import "canvasoauth2/SCCanvasToken.proto";
+
+message SCCanvasTokenResponse {
+	int32 code = 1;
+	canvasoauth2.SCCanvasToken token = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package subscription.sup.custom_app_theme;
+
+import "subscription/sup/custom_app_theme/SCPlusCustomAppThemeLinearGradient.proto";
+
+message SCPlusCustomAppThemeNavigationBar_LinearGradientWrapper {
+	subscription.sup.custom_app_theme.SCPlusCustomAppThemeLinearGradient linearGradient = 1;
+	bool isDark = 2;
+}

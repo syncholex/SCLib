@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBImuVectorData.proto";
+import "hermosa/HRMPBImuVectorUncalibratedData.proto";
+import "hermosa/HRMPBImuPdrData.proto";
+import "hermosa/HRMPBImuActivityRecognitionData.proto";
+
+message HRMPBImuDataEvent {
+	uint32 sensorId = 1;
+	uint32 timestamp = 2;
+
+	oneof type {
+		hermosa.HRMPBImuVectorData vectorData = 3;
+		hermosa.HRMPBImuVectorUncalibratedData vectorUncalibratedData = 4;
+		hermosa.HRMPBImuPdrData pdrData = 5;
+		hermosa.HRMPBImuActivityRecognitionData activityRecognition = 6;
+	}
+
+}

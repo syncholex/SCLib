@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoPoint.proto";
+
+message SCSCOREGeoCircle {
+	ranking.core.SCSCOREGeoPoint center = 1;
+	double radiusInMeters = 2;
+}

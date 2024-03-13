@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbGetReferralTokenResponse {
+	bool isUserEligible = 1;
+	string referralToken = 2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package weather;
+
+import "weather/SCWAirQuality.proto";
+import "address/SCMapsAddress.proto";
+import "weather/SCWTimeZone.proto";
+
+message SCWCurrentAirQualityResponse {
+	weather.SCWAirQuality airQuality = 1;
+	address.SCMapsAddress address = 2;
+	weather.SCWTimeZone timeZone = 3;
+}

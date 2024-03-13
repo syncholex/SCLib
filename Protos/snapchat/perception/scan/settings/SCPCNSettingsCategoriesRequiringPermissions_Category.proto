@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.settings;
+
+message SCPCNSettingsCategoriesRequiringPermissions_Category {
+	string categoryId = 1;
+	string displayName = 2;
+}

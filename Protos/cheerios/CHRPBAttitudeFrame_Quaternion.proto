@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBAttitudeFrame_Quaternion {
+	float w = 1;
+	float x = 2;
+	float y = 3;
+	float z = 4;
+}

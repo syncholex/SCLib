@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message LargeGroupsSettings {
+	uint64 maxSize = 1;
+}

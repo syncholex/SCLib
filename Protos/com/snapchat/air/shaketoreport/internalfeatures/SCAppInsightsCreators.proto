@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.air.shaketoreport.internalfeatures;
+
+message SCAppInsightsCreators {
+
+	enum SCAppInsightsCreators_Subfeature {
+		UNSET = 0;
+		GENERAL = 1;
+		INSIGHTS = 2;
+		SHOWS = 3;
+	}
+
+	SCAppInsightsCreators_Subfeature subfeature = 1;
+}

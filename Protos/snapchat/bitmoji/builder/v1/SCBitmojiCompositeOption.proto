@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+import "snapchat/bitmoji/builder/v1/SCBitmojiAvatarBuilderOption.proto";
+
+message SCBitmojiCompositeOption {
+	int32 id_p = 1;
+	string name = 2;
+	repeated snapchat.bitmoji.builder.v1.SCBitmojiAvatarBuilderOption optionsArray = 3;
+}

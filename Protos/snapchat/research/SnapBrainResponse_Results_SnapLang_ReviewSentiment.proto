@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_SnapLang_ReviewSentiment {
+	double positiveScore = 1;
+	double negativeScore = 2;
+}

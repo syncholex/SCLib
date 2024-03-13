@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package feed.io;
+
+message TableOption {
+	string name = 1;
+}

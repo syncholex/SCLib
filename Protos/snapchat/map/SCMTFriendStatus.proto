@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTFriendStatus {
+	string statusId = 1;
+	string speechText = 2;
+}

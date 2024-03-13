@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkSticker {
+	string nonClusterableId = 1;
+	string clusterableLeftId = 2;
+	string clusterableRightId = 3;
+	bool shadow = 4;
+	string vzVenueId = 5;
+}

@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMTimeInstant.proto";
+import "snapchat/snapdoc/SDMPlaybackSpeedMultiplier.proto";
+import "snapchat/grid/SDMTransforms.proto";
+import "google/protobuf/GPBFloatValue.proto";
+import "snapchat/grid/SDMTimeframe.proto";
+import "google/protobuf/GPBUInt64Value.proto";
+
+message SDMLayerProperties {
+	float relativeWidth = 1;
+	float relativeHeight = 2;
+	float centerX = 3;
+	float centerY = 4;
+	float rotationInDegrees = 5;
+	snapchat.snapdoc.SDMTimeInstant startTimeMs = 6;
+	snapchat.snapdoc.SDMTimeInstant durationMs = 7;
+	float playbackRateMultiplier = 8;
+	float frameRate = 9;
+	snapchat.snapdoc.SDMPlaybackSpeedMultiplier playbackSpeedMultiplier = 10;
+	uint32 width = 11;
+	uint32 height = 12;
+	snapchat.grid.SDMTransforms transforms = 13;
+	google.protobuf.GPBFloatValue audioVolume = 14;
+	snapchat.grid.SDMTimeframe globalTimeframe = 15;
+	google.protobuf.GPBUInt64Value intrinsicDuration = 16;
+}

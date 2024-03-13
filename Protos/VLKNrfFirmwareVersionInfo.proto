@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+message VLKNrfFirmwareVersionInfo {
+	string bootloaderCommit = 1;
+	string bootloaderBranch = 2;
+	string bootloaderTag = 3;
+	string applicationCommit = 4;
+	string applicationBranch = 5;
+	string applicationTag = 6;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/core/SCCPCharmGraphic_Solomoji.proto";
+import "snapchat/charms/core/SCCPCharmGraphic_Friendmoji.proto";
+import "snapchat/charms/core/SCCPCharmGraphic_BitmojiSelfie.proto";
+
+message SCCPCharmGraphic {
+
+	oneof preview {
+		string previewStickerImageId = 1;
+		snapchat.charms.core.SCCPCharmGraphic_BitmojiSelfie previewBitmojiSelfie = 4;
+	}
+
+
+	oneof detail {
+		snapchat.charms.core.SCCPCharmGraphic_Solomoji detailSolomoji = 2;
+		snapchat.charms.core.SCCPCharmGraphic_Friendmoji detailFriendmoji = 3;
+	}
+
+}

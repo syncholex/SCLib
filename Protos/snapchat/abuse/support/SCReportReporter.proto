@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportReporter {
+
+	oneof reporterInfo {
+		string userId = 1;
+		string serviceAccount = 2;
+	}
+
+}

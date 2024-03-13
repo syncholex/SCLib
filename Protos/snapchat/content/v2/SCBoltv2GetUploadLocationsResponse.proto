@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "snapchat/content/v2/SCBoltv2UploadLocation.proto";
+
+message SCBoltv2GetUploadLocationsResponse {
+	repeated snapchat.content.v2.SCBoltv2UploadLocation uploadLocationsArray = 1;
+}

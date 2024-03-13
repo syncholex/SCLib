@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingProductAdItem.proto";
+import "snapchat/messaging/SCMessagingAdSharePostbackInfo.proto";
+
+message SCMessagingProductAdShare {
+	repeated snapchat.messaging.SCMessagingProductAdItem itemsArray = 1;
+
+	enum SCMessagingProductAdPartner {
+		PRODUCT_AD_PROVIDER_UNSET = 0;
+		MICROSOFT = 1;
+	}
+
+	SCMessagingProductAdPartner partner = 2;
+	string partnerRequestId = 3;
+	snapchat.messaging.SCMessagingAdSharePostbackInfo postbackInfo = 4;
+}

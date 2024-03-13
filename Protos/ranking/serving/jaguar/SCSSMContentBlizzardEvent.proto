@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "com/snap/prism/pipeline/rtus/SCBlizzardLiteStoryFeedItemActionCritical.proto";
+import "com/snap/prism/pipeline/rtus/SCBlizzardLiteStoryFeedItemViewSession.proto";
+import "com/snap/prism/pipeline/rtus/SCBlizzardLiteStoryFeedItemViewSessionCritical.proto";
+import "com/snap/prism/pipeline/rtus/SCBlizzardLiteStoryFeedItemLongImp.proto";
+
+message SCSSMContentBlizzardEvent {
+	int32 payloadId = 1;
+	int64 clientTs = 2;
+
+	oneof event {
+		com.snap.prism.pipeline.rtus.SCBlizzardLiteStoryFeedItemActionCritical actionCriticalEvent = 4;
+		com.snap.prism.pipeline.rtus.SCBlizzardLiteStoryFeedItemViewSession viewSessionEvent = 5;
+		com.snap.prism.pipeline.rtus.SCBlizzardLiteStoryFeedItemViewSessionCritical viewSessionCriticalEvent = 6;
+		com.snap.prism.pipeline.rtus.SCBlizzardLiteStoryFeedItemLongImp longImpEvent = 7;
+	}
+
+}

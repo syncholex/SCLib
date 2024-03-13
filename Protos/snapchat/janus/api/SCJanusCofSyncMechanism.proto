@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusCofSyncMechanism {
+
+	enum SCJanusCofSyncMechanism_TriggerType {
+		UNSET = 0;
+		REGISTER_PASSWORD_PAGE_SUCCESS = 1;
+	}
+
+	SCJanusCofSyncMechanism_TriggerType triggerType = 1;
+}

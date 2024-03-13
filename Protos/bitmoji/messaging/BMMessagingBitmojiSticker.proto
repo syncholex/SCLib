@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package bitmoji.messaging;
+
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+
+message BMMessagingBitmojiSticker {
+	snapchat.bitmoji.avatar.BMCompactAvatarId senderAvatarId = 1;
+	snapchat.bitmoji.avatar.BMCompactAvatarId recipientAvatarId = 2;
+	uint32 templateId = 3;
+}

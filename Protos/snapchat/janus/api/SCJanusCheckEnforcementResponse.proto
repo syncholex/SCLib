@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusChallengeData.proto";
+import "snapchat/janus/api/SCJanusDeniedData.proto";
+import "snapchat/janus/api/SCJanusChallengeOrchestrationErrorData.proto";
+
+message SCJanusCheckEnforcementResponse {
+
+	enum SCJanusCheckEnforcementResponse_StatusCode {
+		UNSET = 0;
+		ALLOWED = 1;
+		CHALLENGED = 2;
+		DENIED = 3;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_INVALID_COMMUNICATION_CHANNEL = 11;
+	}
+
+	SCJanusCheckEnforcementResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusChallengeData challengeData = 2;
+		snapchat.janus.api.SCJanusDeniedData deniedData = 3;
+		snapchat.janus.api.SCJanusChallengeOrchestrationErrorData errorData = 4;
+	}
+
+}

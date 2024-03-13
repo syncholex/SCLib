@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+import "ranking2/friend_story/SCR2FriendStoryHighlightScore_Friend.proto";
+
+message SCR2FriendStoryHighlightScore {
+	repeated ranking2.friend_story.SCR2FriendStoryHighlightScore_Friend friendsArray = 1;
+	int64 runTimestampInMsecs = 2;
+}

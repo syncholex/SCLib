@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSystemCounters {
+	uint32 nordicBootCount = 1;
+	uint32 ambaBootCount = 2;
+	uint32 localMediaCount = 3;
+}

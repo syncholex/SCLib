@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+import "snapchat/au/mmai/similarity_search_service/search/MMAISearchFilterGroup.proto";
+
+message MMAISearchFilterGroups {
+	repeated snapchat.au.mmai.similarity_search_service.search.MMAISearchFilterGroup filterGroupsArray = 1;
+
+	enum MMAISearchFilterOperator {
+		OPERATOR_UNSET = 0;
+		OPERATOR_OR = 1;
+		OPERATOR_AND = 2;
+	}
+
+	MMAISearchFilterOperator operator_p = 2;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.wire.store;
+
+message GetStoreProductsRequest {
+	bytes storeId = 1;
+	bytes categoryId = 2;
+	string queryString = 3;
+	uint32 limit = 4;
+	uint32 offset = 5;
+	uint32 productImageSizeList = 6;
+
+	enum SortOrder {
+		SORT_ORDER_UNSET = 0;
+		CREATED_AT_ASC = 1;
+		CREATED_AT_DESC = 2;
+		UPDATED_AT_ASC = 3;
+		UPDATED_AT_DESC = 4;
+	}
+
+	SortOrder sortOrder = 7;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.domainhub.common;
+
+import "snapchat/domainhub/common/SCDHTrackingData.proto";
+
+message SCDHDatasetMetadata {
+	int32 datasetVersion = 1;
+	int32 objectVersion = 2;
+	bool archived = 3;
+	snapchat.domainhub.common.SCDHTrackingData trackingData = 4;
+	string branchName = 5;
+	string mainBranchId = 6;
+	string objectId = 7;
+	string sourceObjectId = 8;
+	int32 sourceObjectVersion = 9;
+	string dbRevision = 10;
+	string checksum = 11;
+}

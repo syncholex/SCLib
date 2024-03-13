@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBWriteRequest {
+	uint32 addr = 1;
+	bytes data_p = 2;
+	bool reset = 3;
+}

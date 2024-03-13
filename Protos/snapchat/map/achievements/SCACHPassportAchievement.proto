@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.map.achievements;
+
+message SCACHPassportAchievement {
+	string title = 1;
+	string bitmojiStickerId = 2;
+	string description_p = 3;
+	int64 streakCount = 4;
+	bool isExpiring = 5;
+	bool isActive = 6;
+	int64 countAccumulated = 7;
+	int64 countNeeded = 8;
+
+	enum SCACHAchievementType {
+		UNKNOWN_ACHIEVEMENT = 0;
+		WORLD_TRAVELER = 1;
+		THE_CONNOISSEUR = 2;
+		READY_FOR_TAKEOFF = 3;
+		FREQUENT_FLYER = 4;
+		MILE_HIGH_CLUB = 5;
+		NO_PAIN_NO_GAIN = 6;
+		THE_SOCIAL_BUTTERFLY = 7;
+		THE_BOOKWORM = 8;
+		SHOP_TILL_YOU_DROP = 9;
+		PEDAL_TO_THE_METAL = 10;
+		THE_EXPLORER = 11;
+	}
+
+	SCACHAchievementType type = 9;
+
+	enum SCACHAchievementFamilyType {
+		UNKNOWN_FAMILY = 0;
+		FLYER = 1;
+	}
+
+	SCACHAchievementFamilyType familyType = 10;
+}

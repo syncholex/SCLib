@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMClientInfo.proto";
+
+message SCSSMUserWarmupRequest {
+	string requestId = 1;
+	ranking.serving.jaguar.SCSSMClientInfo clientInfo = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkActionType {
+	int32 id_p = 1;
+	string name = 2;
+	string description_p = 3;
+}

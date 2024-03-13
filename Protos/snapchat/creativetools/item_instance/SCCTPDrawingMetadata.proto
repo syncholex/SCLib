@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/grid/SDMPaths.proto";
+import "snapchat/creativetools/drawing/SCCTPBrush.proto";
+import "snapchat/grid/SDMGridProperties.proto";
+
+message SCCTPDrawingMetadata {
+
+	oneof brushSource {
+		uint32 brush = 1;
+		snapchat.creativetools.drawing.SCCTPBrush brushMetadata = 3;
+	}
+
+	snapchat.grid.SDMPaths paths = 2;
+	snapchat.grid.SDMGridProperties gridProperties = 4;
+}

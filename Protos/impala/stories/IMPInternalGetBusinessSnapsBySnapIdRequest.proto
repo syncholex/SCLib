@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPInternalGetBusinessSnapsBySnapIdRequest {
+	repeated string snapIdsArray = 1;
+	bool returnSourceMediaURL = 2;
+}

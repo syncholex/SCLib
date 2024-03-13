@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.notification.notificationdata;
+
+import "snapchat/notification/notificationdata/SCNotificationTokenDeletionInfo.proto";
+import "snapchat/notification/notificationdata/SCNotificationPushNotificationEncryptionData.proto";
+import "snapchat/notification/notificationdata/SCNotificationDeviceVersionInfo.proto";
+
+message SCNotificationTokenData {
+	string token = 1;
+	string voipToken = 2;
+	snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 3;
+	int64 creationTime = 4;
+	string locationToken = 5;
+	snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData pushNotificationEncryptionData = 6;
+
+	enum SCNotificationReleaseType {
+		UNKNOWN_RELEASE = 0;
+		PRODUCTION = 1;
+		MASTER = 2;
+		ALPHA = 3;
+		BETA = 4;
+		DEBUG = 5;
+		PROTOTYPING = 6;
+	}
+
+	SCNotificationReleaseType releaseType = 7;
+	int64 browser = 8;
+	string browserVersion = 9;
+	snapchat.notification.notificationdata.SCNotificationDeviceVersionInfo deviceVersionInfo = 10;
+}

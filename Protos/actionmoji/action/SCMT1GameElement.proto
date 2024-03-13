@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1GameElement {
+	int32 score = 1;
+}

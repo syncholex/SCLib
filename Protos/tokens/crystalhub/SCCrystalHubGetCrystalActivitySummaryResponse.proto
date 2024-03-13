@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package tokens.crystalhub;
+
+import "tokens/crystalhub/SCCrystalHubOnboardingInfo.proto";
+
+message SCCrystalHubGetCrystalActivitySummaryResponse {
+	tokens.crystalhub.SCCrystalHubOnboardingInfo onboardingInfo = 1;
+
+	enum SCCrystalHubPayoutState {
+		PAYOUT_UNSET = 0;
+		PAY_IN_PROGRESS = 1;
+		REJECTED = 2;
+		REJECTED_MISSING_PAYMENT_METHOD = 3;
+		SUCCESS = 4;
+		SUCCESS_MISSING_PAYMENT_METHOD = 5;
+	}
+
+	SCCrystalHubPayoutState payoutState = 2;
+	int64 availableCrystals = 3;
+	int64 availableEarningsCents = 4;
+	int64 pendingCrystals = 5;
+	bool canCashout = 6;
+	int64 cashoutThreshold = 7;
+}

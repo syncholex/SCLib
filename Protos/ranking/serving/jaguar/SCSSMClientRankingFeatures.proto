@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMClientRankingFeatures {
+	bool isSensitive = 1;
+	int32 hideAfterWatch = 2;
+	bool isBoostedStory = 3;
+	bool rankShouldBeFixed = 4;
+	bool requiredBrandSafeCover = 5;
+	bool qualifiedBrandSafeStory = 6;
+	bool explorationStory = 7;
+	bool petraBrandSafeStory = 8;
+	bool isSuggestive = 9;
+	bool isUnsafeForSpotlight = 10;
+	bool isTrending = 11;
+}

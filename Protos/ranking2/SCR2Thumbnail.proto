@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2Thumbnail {
+	string uri = 1;
+	int64 widthPx = 2;
+	int64 heightPx = 3;
+}

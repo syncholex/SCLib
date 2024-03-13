@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCUCOScheduleV3Config {
+	bool enabled = 1;
+	bool carouselScoreRangeOverrideEnabled = 2;
+	double carouselScoreRangeArGroupValue = 4;
+	double carouselScoreRangeColorGroupValue = 5;
+	bool prefetchEnabled = 6;
+	bool batchMetadataRequest = 7;
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREGeoHeader.proto";
+import "com/snapchat/auth/proto/tivs/SurfaceData.proto";
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/core/SCCOREIPAddress.proto";
+
+message TransactionData {
+	string transactionId = 1;
+	string sessionId = 2;
+
+	enum TransactionType_Enum {
+		UNSET = 0;
+		SIGN_IN = 1;
+		SIGN_UP = 2;
+		TRANSACTION_REVERT_PHONE_UPDATE = 3;
+		TRANSACTION_REVERT_EMAIL_UPDATE = 4;
+		NOTIFICATION_CAMPAIGN = 5;
+	}
+
+	TransactionType_Enum type = 3;
+	snapchat.core.SCCOREGeoHeader geoHeader = 4;
+	com.snapchat.auth.proto.tivs.SurfaceData surfaceData = 5;
+	google.protobuf.GPBTimestamp timestamp = 6;
+	snapchat.core.SCCOREIPAddress ip = 7;
+}

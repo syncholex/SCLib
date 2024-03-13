@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PublisherRecentWatchHistoryList.proto";
+import "ranking/pii/readreceipt/StoryRecentWatchHistoryList.proto";
+import "ranking/pii/readreceipt/RecentWatchHistoryList.proto";
+
+message GetPremiumUserRecentViewHistoryResponse {
+	string requestId = 1;
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	PremiumContentType_Enum contentType = 2;
+
+	oneof recentWatchHistoryList {
+		ranking.pii.readreceipt.PublisherRecentWatchHistoryList publisherHistory = 3;
+		ranking.pii.readreceipt.StoryRecentWatchHistoryList storyHistory = 4;
+	}
+
+	repeated ranking.pii.readreceipt.RecentWatchHistoryList historyListArray = 5;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/lists/common/SCListsRecipientList.proto";
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCListsListsUpdateIngressGatewayRequest {
+	repeated snapchat.lists.common.SCListsRecipientList listsArray = 1;
+	snapchat.core.SCCOREUUID userId = 2;
+}

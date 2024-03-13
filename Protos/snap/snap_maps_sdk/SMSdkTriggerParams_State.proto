@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkValue.proto";
+
+message SMSdkTriggerParams_State {
+	string key = 1;
+	snap.snap_maps_sdk.SMSdkValue typedValue = 2;
+}

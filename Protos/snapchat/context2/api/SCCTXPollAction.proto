@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/polls/SCPPollInfo.proto";
+
+message SCCTXPollAction {
+	string pollId = 1;
+	snapchat.polls.SCPPollInfo pollInfo = 2;
+}

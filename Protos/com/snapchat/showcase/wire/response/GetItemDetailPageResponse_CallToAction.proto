@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/common/Weblink.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/NativeCheckoutAction.proto";
+import "com/snapchat/showcase/wire/common/IosDeeplink.proto";
+import "com/snapchat/showcase/wire/common/AndroidDeeplink.proto";
+
+message GetItemDetailPageResponse_CallToAction {
+
+	oneof action {
+		com.snapchat.showcase.wire.common.Weblink webLink = 1;
+		com.snapchat.showcase.wire.itemdetailpage.NativeCheckoutAction nativeCheckout = 2;
+		com.snapchat.showcase.wire.common.IosDeeplink ios = 3;
+		com.snapchat.showcase.wire.common.AndroidDeeplink android = 4;
+	}
+
+}

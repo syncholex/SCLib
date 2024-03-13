@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPCashout.proto";
+import "impala/creatormonetization/IMPPayout.proto";
+
+message IMPActivity {
+	impala.creatormonetization.IMPCashout cashout = 1;
+	impala.creatormonetization.IMPPayout payout = 2;
+
+	enum IMPActivity_Type {
+		TYPE_UNSET = 0;
+		TYPE_PAYOUT = 1;
+		TYPE_CASHOUT = 2;
+		TYPE_PAYOUT_LEGACY = 3;
+	}
+
+	IMPActivity_Type activityType = 3;
+}

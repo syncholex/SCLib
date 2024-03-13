@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+import "snapchat/messaging/SCMessagingCanvasCustomUpdateInfo.proto";
+
+message SCMessagingCanvasCustomUpdateStatusMessage {
+	snapchat.messaging.SCMessagingUUID appId = 1;
+	repeated snapchat.messaging.SCMessagingUUID mediaUserIdsArray = 2;
+	string textContent = 3;
+	snapchat.messaging.SCMessagingCanvasCustomUpdateInfo updateInfo = 4;
+}

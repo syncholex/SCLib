@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPEventStoryFeatures.proto";
+import "ranking/pii/user/profile/SCSUPEventFeedContextFeatures.proto";
+
+message SCSUPImpressionEvent {
+	ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+	ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+	uint32 timestamp = 3;
+	uint32 impressionTimeMsecs = 4;
+}

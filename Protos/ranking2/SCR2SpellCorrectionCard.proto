@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2SpellCorrectionCard {
+	string spellCorrectedQueryText = 1;
+	string escapeHatchQueryText = 2;
+	string escapeHatchQueryDisplayText = 3;
+}

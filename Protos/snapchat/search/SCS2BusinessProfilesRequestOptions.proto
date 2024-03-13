@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2BusinessProfilesRequestOptions {
+
+	enum IMPTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	IMPTier tier = 1;
+
+	enum IMPInternalCategory {
+		CATEGORY_UNKNOWN = 0;
+		CATEGORY_PERSON = 1;
+		CATEGORY_BUSINESS = 2;
+		CATEGORY_PUBLISHER = 3;
+	}
+
+	IMPInternalCategory internalCategory = 2;
+}

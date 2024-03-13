@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/CallStateMachineIllegalStateMetadata.proto";
+import "snapchat/appinsights/metadata/WorkerListenerNotRegisteredMetadata.proto";
+import "snapchat/appinsights/metadata/NativeSessionMetricsCollectorWrapperIllegalNextCallStateMetadata.proto";
+import "snapchat/appinsights/metadata/NativeStreamerConnectionIllegalStateMetadata.proto";
+import "snapchat/appinsights/metadata/NativeStreamerConnectionStateMachineIllegalStateMetadata.proto";
+import "snapchat/appinsights/metadata/MissingSessionMetadata.proto";
+
+message CallingInfo {
+
+	oneof callingInfo {
+		snapchat.appinsights.metadata.CallStateMachineIllegalStateMetadata callStateMachineIllegalStateMetadata = 1;
+		snapchat.appinsights.metadata.WorkerListenerNotRegisteredMetadata workerListenerNotRegisteredMetadata = 2;
+		snapchat.appinsights.metadata.NativeSessionMetricsCollectorWrapperIllegalNextCallStateMetadata nativeSessionMetricsCollectorWrapperIllegalNextCallState = 3;
+		snapchat.appinsights.metadata.NativeStreamerConnectionIllegalStateMetadata nativeStreamerConnectionIllegalStateMetadata = 4;
+		snapchat.appinsights.metadata.NativeStreamerConnectionStateMachineIllegalStateMetadata nativeStreamerConnectionStateMachineIllegalStateMetadata = 5;
+		snapchat.appinsights.metadata.MissingSessionMetadata missingSessionMetadata = 6;
+	}
+
+}

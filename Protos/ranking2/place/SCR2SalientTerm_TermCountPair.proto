@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2.place;
+
+message SCR2SalientTerm_TermCountPair {
+	string term = 1;
+	uint32 count = 2;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "snapchat/snapdoc/SDMEmojiType.proto";
+import "snapchat/snapdoc/SDMExplanationPage.proto";
+
+message SDMPageProperties {
+	string backgroundColor = 1;
+	string notVotedHeadline = 2;
+	string votedHeadline = 3;
+	string closedHeadline = 4;
+	string headingTextColor = 5;
+	string publisherLogo = 6;
+
+	oneof publisherLogoMedia {
+		bytes publisherWideLogoContentObject = 7;
+		string publisherWideLogoURL = 20;
+	}
+
+	string layout = 8;
+	string font = 9;
+	string votesCountMessage = 10;
+	bool shouldShowLabels = 11;
+	bool shouldShowVotesCount = 12;
+	bool showExplanationScreen = 13;
+	string backgroundAssetId = 14;
+
+	oneof backgroundImageMedia {
+		bytes backgroundImageContentObject = 15;
+		string backgroundImageURL = 21;
+	}
+
+	google.protobuf.GPBInt32Value correctAnswer = 16;
+	snapchat.snapdoc.SDMEmojiType correctAnswerEmoji = 17;
+	snapchat.snapdoc.SDMEmojiType incorrectAnswerEmoji = 18;
+	snapchat.snapdoc.SDMExplanationPage explanationPage = 19;
+}

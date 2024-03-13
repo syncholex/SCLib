@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+import "snapchat/perception/showcase/screenshop/SCPSSShoppableCategoriesResponse.proto";
+
+message SCPSSShoppableResponse {
+	repeated bool isShoppableArray = 1 [packed=true];
+	repeated snapchat.perception.showcase.screenshop.SCPSSShoppableCategoriesResponse shoppableCategoriesResponsesArray = 2;
+}

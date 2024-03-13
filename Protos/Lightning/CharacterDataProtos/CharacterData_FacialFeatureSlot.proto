@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package Lightning.CharacterDataProtos;
+
+import "Lightning/CharacterDataProtos/CharacterData_FacialColors.proto";
+
+message CharacterData_FacialFeatureSlot {
+	string art = 1;
+	int32 colours = 2;
+	Lightning.CharacterDataProtos.CharacterData_FacialColors colors3D = 3;
+}

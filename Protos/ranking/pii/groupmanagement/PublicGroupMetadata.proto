@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package ranking.pii.groupmanagement;
+
+import "ranking/core/SCSCOREUUID.proto";
+import "ranking/pii/groupmanagement/CommunityProfileMetadata.proto";
+
+message PublicGroupMetadata {
+	ranking.core.SCSCOREUUID groupId = 1;
+
+	enum SCSCORECustomStoryType_Enum {
+		UNKNOWN = 0;
+		PRIVATE = 1;
+		CUSTOM = 2;
+		GEO = 3;
+		GROUP_CHAT = 4;
+		SNAP_REQUEST = 5;
+		SHARED = 6;
+		COMMUNITY = 7;
+	}
+
+	SCSCORECustomStoryType_Enum customStoryType = 2;
+	string displayName = 3;
+	int64 createdTsMs = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.music.common;
+
+import "snapchat/music/common/SCMusicTrackLyricsSync.proto";
+
+message SCMusicTrackLyricsLine {
+	repeated snapchat.music.common.SCMusicTrackLyricsSync syncsArray = 1;
+	float offset = 2;
+	float offsetEnd = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSServerUpdate.proto";
+
+message SCVSServerUpdateResponse {
+	repeated snapchat.valis.SCVSServerUpdate updatesArray = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map.actionmoji;
+
+import "snapchat/map/actionmoji/SCMAUserPickedLocations.proto";
+
+message SCMAGetUserPickedLocationsResponse {
+	snapchat.map.actionmoji.SCMAUserPickedLocations pickedLocations = 1;
+}

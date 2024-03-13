@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTLocationFuzzingInfo {
+	int32 s2CellLevel = 1;
+	int64 s2CellSnaps = 2;
+	double fuzzDistance = 3;
+	double initialZoom = 4;
+}

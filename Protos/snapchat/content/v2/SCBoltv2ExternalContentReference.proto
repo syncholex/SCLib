@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+message SCBoltv2ExternalContentReference {
+
+	enum SCBoltv2StorageProvider {
+		UNDEFINED = 0;
+		GCS = 1;
+		S3 = 2;
+	}
+
+	SCBoltv2StorageProvider storageProvider = 1;
+
+	enum SCBoltv2StorageRegion {
+		UNKNOWN = 0;
+		S3_US_WEST_2 = 1;
+		S3_US_WEST_1 = 2;
+		S3_US_EAST_2 = 3;
+		S3_US_EAST_1 = 4;
+		S3_SA_EAST_1 = 5;
+		S3_EU_WEST_3 = 6;
+		S3_EU_WEST_2 = 7;
+		S3_EU_WEST_1 = 8;
+		S3_EU_CENTRAL_1 = 9;
+		S3_CA_CENTRAL_1 = 12;
+		S3_AP_SOUTHEAST_2 = 13;
+		S3_AP_SOUTHEAST_1 = 14;
+		S3_AP_SOUTH_1 = 15;
+		S3_AP_NORTHEAST_2 = 17;
+		S3_AP_NORTHEAST_1 = 18;
+		GCS_US_WEST_1 = 127;
+		GCS_US_EAST_4 = 126;
+		GCS_US_EAST_1 = 125;
+		GCS_US_CENTRAL_1 = 124;
+		GCS_SA_EAST_1 = 123;
+		GCS_EU_WEST_3 = 121;
+		GCS_EU_WEST_2 = 120;
+		GCS_EU_WEST_1 = 119;
+		GCS_AU_SOUTHEAST_1 = 118;
+		GCS_AS_SOUTHEAST_1 = 117;
+		GCS_AS_SOUTH_1 = 116;
+		GCS_AS_NORTHEAST_1 = 115;
+		GCS_AS_EAST_1 = 114;
+		GCS_AS = 99;
+		GCS_EU = 98;
+		GCS_US = 97;
+		GCS_EU_4 = 96;
+		GCS_US_4 = 95;
+	}
+
+	SCBoltv2StorageRegion storageRegion = 2;
+	string bucketName = 3;
+	string objectPath = 4;
+}

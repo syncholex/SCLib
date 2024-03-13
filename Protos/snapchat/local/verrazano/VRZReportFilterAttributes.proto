@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/protobuf/SPCPStringListValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/local/verrazano/VRZDateRange.proto";
+import "snapchat/local/verrazano/VRZDistanceFilter.proto";
+
+message VRZReportFilterAttributes {
+	snapchat.protobuf.SPCPStringListValue reportIds = 1;
+	snapchat.protobuf.SPCPStringListValue placeIds = 2;
+
+	enum VRZModerationReportStatus {
+		REPORT_STATUS_UNKNOWN = 0;
+		ACK = 1;
+		WAITING = 2;
+		ACCEPTED = 3;
+		AUTO_ACCEPTED = 4;
+		REJECTED = 5;
+		PENDING = 6;
+		AUTO_REJECTED_SPAM = 7;
+		AUTO_REJECTED_SPAM_NON_VENUE = 8;
+		AUTO_REJECTED_DUPLICATE = 9;
+		AUTO_REJECTED_INVALID = 10;
+		AUTO_REJECTED_INVALID_CLOSED = 11;
+		AUTO_REJECTED_INVALID_INAPPROPRIATE = 12;
+		AUTO_REJECTED_DEDUPE = 13;
+		AUTO_REJECTED_DEDUPE_REPORT = 14;
+		AUTO_REJECTED_SERIALIZATION = 15;
+		AUTO_REJECTED_PROCESSING = 16;
+		AUTO_REJECTED_MAPMYINDIA = 17;
+		AUTO_REJECTED_LOW_QUALITY = 18;
+		AUTO_REJECTED_COALESCED = 19;
+	}
+
+	repeated VRZModerationReportStatus reportStatusArray = 3 [packed=true];
+	snapchat.protobuf.SPCPStringListValue ohsnapTicketIds = 4;
+	snapchat.protobuf.SPCPStringListValue ohsnapModerators = 5;
+	snapchat.protobuf.SPCPStringListValue ghostUserIds = 6;
+	google.protobuf.GPBBoolValue autoAcceptEligibility = 7;
+
+	enum VRZPlaceModeration_FeedbackType {
+		EDIT_NAME = 0;
+		IS_CLOSED = 1;
+		IS_INAPPROPRIATE = 2;
+		FTI_FENCE = 3;
+		SUGGEST_NEARBY = 4;
+		BUSINESS_ONBOARDING = 5;
+		SUGGEST_EDIT = 6;
+		EDIT_ADDRESS = 7;
+		EDIT_CATEGORY = 8;
+		EDIT_GEOMETRY = 9;
+		ADD_PLACE = 10;
+		BUSINESS_ONBOARDING_ADD_PLACE = 11;
+		REPORT_DUPLICATE = 12;
+	}
+
+	repeated VRZPlaceModeration_FeedbackType feedbackTypesArray = 8 [packed=true];
+
+	enum VRZPlaceModeration_ModerationSource {
+		UNKNOWN = 0;
+		FILTER = 1;
+		STICKER = 2;
+		PLACE_PROFILE = 3;
+		ADS_MANAGER = 4;
+		MAP = 5;
+		SETTINGS = 6;
+		ZENLY_UGC = 7;
+		SNAP_BPS = 8;
+		VZ_EXPLORER = 9;
+		INTERNAL_SCRIPTS = 10;
+		INFERRED_EDITS_CLOSED_VENUES = 11;
+		BASEMAP_BUILDING = 12;
+		INFERRED_EDITS_OPEN_HOURS = 13;
+		WEB_CRAWLER_OPEN_AI = 14;
+	}
+
+	repeated VRZPlaceModeration_ModerationSource moderationSourcesArray = 9 [packed=true];
+	repeated snapchat.local.verrazano.VRZDateRange dateRangeArray = 10;
+	snapchat.local.verrazano.VRZDistanceFilter distanceFilter = 11;
+	google.protobuf.GPBBoolValue autoAcceptReady = 12;
+}

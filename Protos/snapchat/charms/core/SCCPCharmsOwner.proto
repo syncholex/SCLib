@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmsOwner {
+
+	oneof owner {
+		snapchat.charms.common.SCCPUUID friendUserId = 1;
+		snapchat.charms.common.SCCPUUID groupMischiefId = 2;
+	}
+
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/ActionType.proto";
+
+message ActionmojiTypesResponse {
+	repeated actionmoji.ActionType typesArray = 1;
+}

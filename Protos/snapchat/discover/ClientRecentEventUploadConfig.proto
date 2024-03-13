@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message ClientRecentEventUploadConfig {
+	int32 impressionReUploadMinCount = 1;
+	int32 impressionReUploadMinTime = 2;
+	int32 impressionReUploadLimit = 3;
+	int32 impressionReUploadTtlSecs = 4;
+	int32 impressionReUploadMinCountPtr = 5;
+	int32 impressionReUploadMinTimePtr = 6;
+	int32 impressionReUploadLimitPtr = 7;
+	int32 impressionReUploadTtlSecsPtr = 8;
+}

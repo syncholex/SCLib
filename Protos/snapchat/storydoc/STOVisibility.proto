@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOVisibility_Geofence.proto";
+import "snapchat/storydoc/STOVisibility_ContentGeoAccess.proto";
+import "snapchat/storydoc/STOContentAccessLists.proto";
+
+message STOVisibility {
+	bool isAvailable = 1;
+	int64 startTime = 2;
+	repeated snapchat.storydoc.STOVisibility_Geofence geoViewabilityArray = 3;
+	int64 endTime = 4;
+
+	enum STOVisibility_ContentAgeGateLevel {
+		UNRESTRICTED = 0;
+		EXPLICIT_CONTENT = 1;
+	}
+
+	STOVisibility_ContentAgeGateLevel ageGate = 6;
+	repeated snapchat.storydoc.STOVisibility_Geofence broadcastGeoViewabilityArray = 7;
+	repeated string languageWhitelistArray = 8;
+	snapchat.storydoc.STOVisibility_ContentGeoAccess geoContentAccessWhitelist = 9;
+
+	enum STOVisibility_ClientsAllowed {
+		SNAPCHAT_APP_ONLY = 0;
+		WEB_ONLY = 1;
+		ALL_CLIENTS = 2;
+	}
+
+	STOVisibility_ClientsAllowed clientsAllowed = 10;
+	snapchat.storydoc.STOContentAccessLists geoContentAccessList = 11;
+	repeated string geofenceIdsArray = 12;
+	bool isEmployeeOnly = 13;
+	bool isTest = 14;
+}

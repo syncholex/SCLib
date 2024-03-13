@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSettingValue {
+
+	oneof value {
+		string stringValue = 1;
+		bool boolValue = 2;
+		int32 intValue = 3;
+		float floatValue = 4;
+	}
+
+}

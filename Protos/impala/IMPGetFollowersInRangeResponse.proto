@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPUserFollower.proto";
+
+message IMPGetFollowersInRangeResponse {
+	repeated impala.IMPUserFollower followersArray = 1;
+}

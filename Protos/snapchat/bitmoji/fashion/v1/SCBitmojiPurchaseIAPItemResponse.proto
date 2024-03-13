@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiPurchaseIAPItemResponse {
+}

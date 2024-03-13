@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPImpressionEvent.proto";
+
+message SCSCKNegativeImpressionEvent {
+	ranking.pii.user.profile.SCSUPImpressionEvent impressionEvent = 1;
+	bool positionLessThanDepth = 2;
+}

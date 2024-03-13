@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBOTAUpdateEventData {
+
+	enum CHRPBOTAUpdateEventType {
+		UPDATE_EVENT_STARTED = 1;
+		UPDATE_EVENT_FINISHED = 2;
+		UPDATE_EVENT_PROGRESS = 3;
+		UPDATE_EVENT_REBOOT = 4;
+	}
+
+	CHRPBOTAUpdateEventType updateEvent = 1;
+	int32 pct = 2;
+
+	enum CHRPBOTAUpdateEventData_OTAError {
+		UNSET = 0;
+		LOW_DISK_SPACE = 1;
+		LOW_BATTERY = 2;
+		APPLY_ERROR = 3;
+		GET_CHECKSUM_ERROR = 4;
+		UNZIP_ERROR = 5;
+		OS_VERSION_MISMATCH = 6;
+		SIGNATURE_NOT_VERIFIED = 7;
+	}
+
+	CHRPBOTAUpdateEventData_OTAError error = 3;
+}

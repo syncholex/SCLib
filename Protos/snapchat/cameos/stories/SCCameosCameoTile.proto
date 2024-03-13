@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.cameos.stories;
+
+import "snapchat/cameos/common/SCCameosListOfLenses.proto";
+
+message SCCameosCameoTile {
+	bytes cameoAssetsContentObject = 1;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender gendersArray = 2 [packed=true];
+	string onboardingImage = 3;
+	string staticImage = 4;
+	snapchat.cameos.common.SCCameosListOfLenses targetLenses = 5;
+	bytes fallbackImage = 6;
+}

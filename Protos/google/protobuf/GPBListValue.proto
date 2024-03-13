@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package google.protobuf;
+
+import "google/protobuf/GPBValue.proto";
+
+message GPBListValue {
+	repeated google.protobuf.GPBValue valuesArray = 1;
+}

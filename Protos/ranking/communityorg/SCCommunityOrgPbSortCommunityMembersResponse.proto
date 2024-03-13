@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/communityorg/SCCommunityOrgPbMemberRankingInfo.proto";
+
+message SCCommunityOrgPbSortCommunityMembersResponse {
+	repeated ranking.communityorg.SCCommunityOrgPbMemberRankingInfo membersRankingInfoArray = 1;
+}

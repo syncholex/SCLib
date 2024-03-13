@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbSupProperty {
+	int32 propertyId = 1;
+
+	enum SCBillboardPbSupProperty_Type {
+		UNSET = 0;
+		INT = 1;
+		LONG = 2;
+	}
+
+	SCBillboardPbSupProperty_Type type = 2;
+}

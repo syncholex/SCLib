@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/response/SizeRecommendation.proto";
+
+message SizeRecommendationList {
+	repeated com.snapchat.showcase.wire.response.SizeRecommendation recommendationsArray = 1;
+}

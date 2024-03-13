@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensCarouselCreativeOnboardingUserData {
+	bool newUserFlowEnabled = 1;
+	bool badgeAllowed = 2;
+	bool tooltipAllowed = 3;
+}

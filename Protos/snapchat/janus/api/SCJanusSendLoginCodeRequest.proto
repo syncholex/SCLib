@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusLoginHeader.proto";
+
+message SCJanusSendLoginCodeRequest {
+
+	oneof loginIdentifier {
+		string username = 1;
+		string email = 2;
+		string phoneNumber = 3;
+	}
+
+	bytes sessionToken = 4;
+
+	enum SCJanusLoginCodeType {
+		LOGIN_CODE_TYPE_UNSET = 0;
+		LOGIN_CODE_TYPE_SMS = 1;
+		LOGIN_CODE_TYPE_EMAIL = 2;
+	}
+
+	SCJanusLoginCodeType loginCodeType = 5;
+
+	enum SCJanusLoginCodeUseCase {
+		USE_CASE_UNSET = 0;
+		USE_CASE_MAGIC_CODE = 1;
+		USE_CASE_ACCOUNT_RECOVERY = 2;
+	}
+
+	SCJanusLoginCodeUseCase useCase = 6;
+	snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}

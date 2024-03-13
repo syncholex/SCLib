@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message WindowedIntMetricsWithoutLongWindow {
+	int32 value3D = 1;
+	int32 value7D = 2;
+	int32 value14D = 3;
+	int32 value28D = 4;
+}

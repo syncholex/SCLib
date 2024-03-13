@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCPbGenAIGeneratedDreams {
+	string dreamId = 1;
+	snapchat.snapdoc.SDMSnapDoc media = 2;
+}

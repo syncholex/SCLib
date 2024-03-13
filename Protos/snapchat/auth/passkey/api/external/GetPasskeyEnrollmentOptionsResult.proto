@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+message GetPasskeyEnrollmentOptionsResult {
+
+	enum GetPasskeyEnrollmentOptionsResult_Enum {
+		UNSET = 0;
+		SUCCESS = 1;
+	}
+
+	GetPasskeyEnrollmentOptionsResult_Enum statusCode = 1;
+	string humanReadableLocalizedMessage = 2;
+}

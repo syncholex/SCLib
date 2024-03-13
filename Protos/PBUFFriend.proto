@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+import "PBUFFriendmoji.proto";
+
+message PBUFFriend {
+	string name = 1;
+	string userId = 2;
+
+	enum PBUFFriend_Type {
+		FRIEND = 0;
+		PENDING = 1;
+		BLOCKED = 2;
+		DELETED = 3;
+		INVITE_PLACEHOLDER = 4;
+		LOCKED_PLACEHOLDER = 5;
+		FOLLOWING = 6;
+		UNKNOWN = 99;
+	}
+
+	PBUFFriend_Type type = 3;
+	string display = 4;
+	string birthday = 5;
+	int64 ts = 6;
+	int64 reverseTs = 7;
+
+	enum PBUFFriend_Direction {
+		INCOMING = 0;
+		OUTGOING = 1;
+	}
+
+	PBUFFriend_Direction direction = 8;
+
+	enum PBUFStoryPrivacy {
+		FRIENDS = 0;
+		EVERYONE = 1;
+		CUSTOM = 2;
+	}
+
+	PBUFStoryPrivacy storyPrivacy = 9;
+	bool canSeeCustomStories = 10;
+	int32 pendingSnapsCount = 11;
+	int64 expiration = 12;
+	bool isSharedStory = 13;
+	bool hasCustomDescription = 14;
+	string sharedStoryId = 15;
+	bool localStory = 16;
+	bool ignoredLink = 17;
+	bool hiddenLink = 18;
+	string addSource = 19;
+
+	enum PBUFAddSourceType {
+		ADDED_BY_PHONE = 0;
+		ADDED_BY_USERNAME = 1;
+		ADDED_BY_QR_CODE = 2;
+		ADDED_BY_ADDED_ME_BACK = 3;
+		ADDED_BY_NEARBY = 4;
+		ADDED_BY_SUGGESTED = 5;
+		ADDED_BY_OFFICIAL_STORY_SEARCH = 6;
+		ADDED_BY_DEEP_LINK = 7;
+		ADDED_BY_INVITE = 8;
+		ADDED_BY_STORY_CHROME = 9;
+		ADDED_BY_SHARED_USERNAME = 10;
+	}
+
+	PBUFAddSourceType addSourceType = 20;
+	string friendmojiString = 21;
+	bool needsLove = 22;
+	bool autoAdded = 23;
+	bool newLink = 24;
+	bool dontDecayThumbnail = 25;
+	string venue = 26;
+	repeated string friendmojiSymbolsArray = 27;
+	repeated PBUFFriendmoji friendmojisArray = 28;
+	int32 snapStreakCount = 29;
+	int64 snapStreakExpiration = 30;
+	string bitmojiAvatarId = 31;
+	int64 score = 32;
+}

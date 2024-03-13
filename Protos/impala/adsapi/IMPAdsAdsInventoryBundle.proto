@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsAdsInventoryBundle {
+	string id_p = 1;
+	string displayName = 2;
+
+	enum IMPAdsAdsInventoryBundle_Status {
+		STATUS_UNSET = 0;
+		ACTIVE = 1;
+		INACTIVE = 2;
+	}
+
+	IMPAdsAdsInventoryBundle_Status status = 3;
+
+	enum IMPAdsAdsInventoryBundle_TargetableBy {
+		UNRECOGNIZED_UNSET = 0;
+		ALL = 1;
+		AD_OPS_ONLY = 2;
+		SALES_ONLY = 3;
+		MPP_ONLY = 4;
+		DIRECT_SALES_ONLY = 5;
+		NONE = 6;
+	}
+
+	IMPAdsAdsInventoryBundle_TargetableBy targetableBy = 5;
+}

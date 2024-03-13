@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message VRZVerifyPlaceRequest {
+	string placeId = 1;
+	string snapproAccountId = 2;
+	int64 placeVersion = 3;
+	snapchat.geo.SPCGPoint centroid = 4;
+}

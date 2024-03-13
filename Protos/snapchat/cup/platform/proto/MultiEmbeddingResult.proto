@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+import "snapchat/cup/platform/proto/Embedding.proto";
+
+message MultiEmbeddingResult {
+	repeated snapchat.cup.platform.proto.Embedding embeddingArray = 1;
+}

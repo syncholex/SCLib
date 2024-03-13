@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/storydoc/STOContentAccessLists.proto";
+
+message IMPPublisherData {
+
+	enum IMPFeature {
+		UNKNOWN = 0;
+		EVERGREEN = 1;
+		TIMELY = 8;
+		SUBSCRIBER_ONLY = 2;
+		EXCLUSIVE_SHOW = 3;
+		ORIGINAL_SHOW = 9;
+		FIXED_PAYMENTS = 4;
+		TEAM_SNAPCHAT = 7;
+		FRIENDS_CAROUSEL = 10;
+		INTERNAL_CURATOR = 5;
+		PARTNER_CURATOR = 6;
+		ONBOARDING_WIZARD = 11;
+		MADE_FOR_US = 12;
+		DISCOVER_CHANNEL = 13;
+		DISCOVER_CHANNEL_ELIGIBLE = 14;
+		USE_BUNDLE = 15;
+	}
+
+	repeated IMPFeature publisherFeaturesArray = 1 [packed=true];
+
+	enum TierLevel {
+		TIER_UNKNOWN = 0;
+		TIER_PREMIUM = 1;
+		TIER_SHOW = 2;
+		TIER_CURATION = 3;
+		TIER_HAPPENING_NOW = 4;
+		TIER_DYNAMIC_EDITIONS = 5;
+	}
+
+	TierLevel publisherTierLevel = 2;
+
+	enum IMPAdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	IMPAdSetting adSetting = 3;
+	string primaryLanguage = 4;
+
+	enum IMPLogoDisplayV2 {
+		BOTTOM = 0;
+		OFF = 1;
+	}
+
+	IMPLogoDisplayV2 profileLogoDisplay = 5;
+	repeated string localContentArray = 6;
+	repeated int64 geofenceIdsArray = 7 [packed=true];
+	snapchat.storydoc.STOContentAccessLists contentAccessLists = 9;
+}

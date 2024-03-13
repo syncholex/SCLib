@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+import "snapchat/cameos/generative_backgrounds/SCGenerativeBackgroundsHistoryItem.proto";
+
+message SCGenerativeBackgroundsGetGeneratedImagesHistoryResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	repeated snapchat.cameos.generative_backgrounds.SCGenerativeBackgroundsHistoryItem historyItemsArray = 2;
+}

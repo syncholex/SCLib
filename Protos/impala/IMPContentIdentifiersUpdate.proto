@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPContentIdentifier.proto";
+
+message IMPContentIdentifiersUpdate {
+	repeated impala.IMPContentIdentifier contentIdsArray = 1;
+}

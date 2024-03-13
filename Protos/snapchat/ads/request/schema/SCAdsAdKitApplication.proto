@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsAdKitApplication {
+	string applicationIdentifier = 1;
+	bytes snapkitAppId = 2;
+	int64 adkitSdkVersionNumeric = 3;
+}

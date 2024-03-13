@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.model_delivery_registry;
+
+import "snapchat/perception/model_delivery_registry/SCPMDRBoltRegisteredModelReference.proto";
+
+message SCPMDRRegisteredModelReference {
+	string id_p = 1;
+
+	oneof reference {
+		snapchat.perception.model_delivery_registry.SCPMDRBoltRegisteredModelReference boltReference = 2;
+	}
+
+	int32 hash_p = 3;
+}

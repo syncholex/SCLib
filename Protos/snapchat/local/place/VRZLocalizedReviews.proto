@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZLocalizedReviews_Reviews.proto";
+
+message VRZLocalizedReviews {
+	snapchat.local.place.VRZLocalizedReviews_Reviews latestReviewsByLocale = 2;
+}

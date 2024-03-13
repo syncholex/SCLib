@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoriesRequest_NotificationCacheParams {
+	bool enableCache = 1;
+	int32 cacheTtl = 2;
+	bool enableCacheEmpty = 3;
+}

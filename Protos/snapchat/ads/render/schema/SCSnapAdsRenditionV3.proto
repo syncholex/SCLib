@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCSnapAdsRenditionV3 {
+	int32 heightPx = 1;
+	int32 widthPx = 2;
+	string URLPostfix = 3;
+	int32 fileSizeBytes = 4;
+
+	enum SCAdsRenditionType {
+		UNKNOWN_RENDITION_TYPE = 0;
+		STREAMING = 1;
+		BUNDLED = 2;
+	}
+
+	SCAdsRenditionType renditionType = 5;
+	bool isFullURL = 6;
+}

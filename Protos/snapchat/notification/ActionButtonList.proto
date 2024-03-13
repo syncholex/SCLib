@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/ActionButton.proto";
+import "snapchat/notification/DismissButton.proto";
+
+message ActionButtonList {
+	repeated snapchat.notification.ActionButton actionButtonsArray = 1;
+	snapchat.notification.DismissButton dismissButton = 2;
+}

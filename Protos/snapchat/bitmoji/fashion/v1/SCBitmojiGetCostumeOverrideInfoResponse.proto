@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiGetCostumeOverrideInfoResponse {
+
+	enum SCBitmojiAvatarCostumeType {
+		COSTUME_TYPE_UNSET = 0;
+		OUTFIT = 1;
+		GARMENT = 2;
+	}
+
+	SCBitmojiAvatarCostumeType costumeType = 1;
+	string title = 2;
+
+	enum SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus {
+		UNSET = 0;
+		UNLIMITED = 1;
+		AVAILABLE = 2;
+		UNAVAILABLE = 3;
+	}
+
+
+	oneof creator {
+		string creatorName = 3;
+	}
+
+	SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus inventoryStatus = 4;
+}

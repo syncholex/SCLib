@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package feed.io;
+
+message ColumnOption {
+	string familyName = 1;
+	string name = 2;
+}

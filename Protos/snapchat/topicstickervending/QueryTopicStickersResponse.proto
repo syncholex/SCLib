@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.topicstickervending;
+
+import "snapchat/topicstickervending/VendingTopicSticker.proto";
+
+message QueryTopicStickersResponse {
+	repeated snapchat.topicstickervending.VendingTopicSticker topicStickersArray = 1;
+	string cursor = 2;
+}

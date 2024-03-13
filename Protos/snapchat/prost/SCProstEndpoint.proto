@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.prost;
+
+message SCProstEndpoint {
+	string name = 1;
+	string URL = 2;
+	string audience = 3;
+}

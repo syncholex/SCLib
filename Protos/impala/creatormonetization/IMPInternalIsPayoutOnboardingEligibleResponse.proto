@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPIsPayoutOnboardingEligibleResponse.proto";
+
+message IMPInternalIsPayoutOnboardingEligibleResponse {
+	impala.creatormonetization.IMPIsPayoutOnboardingEligibleResponse response = 1;
+}

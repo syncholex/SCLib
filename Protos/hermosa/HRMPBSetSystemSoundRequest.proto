@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSetSystemSoundRequest {
+	bool systemSoundEnable = 1;
+	bool muteSystemSound = 2;
+}

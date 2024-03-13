@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/PremiumContentId.proto";
+import "ranking/pii/readreceipt/PremiumReadReceipt.proto";
+
+message PremiumContentWatchHistory {
+	ranking.pii.readreceipt.PremiumContentId contentId = 1;
+	repeated ranking.pii.readreceipt.PremiumReadReceipt lastWatchedStoriesArray = 2;
+}

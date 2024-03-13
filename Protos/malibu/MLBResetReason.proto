@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBResetReason {
+	bool resetpin = 1;
+	bool dog = 2;
+	bool sreq = 3;
+	bool lockup = 4;
+	bool off = 5;
+	bool lpcomp = 6;
+	bool dif = 7;
+	bool nfc = 8;
+	bool por = 9;
+}

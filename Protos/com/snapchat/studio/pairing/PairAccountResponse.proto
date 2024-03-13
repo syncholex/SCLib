@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.studio.pairing;
+
+message PairAccountResponse {
+
+	enum PairingStatus {
+		UNSET = 0;
+		PAIRED_SUCCESSFULLY = 1;
+		UNSUPPORTED_SNAPCHAT_VERSION = 2;
+	}
+
+	PairingStatus status = 1;
+}

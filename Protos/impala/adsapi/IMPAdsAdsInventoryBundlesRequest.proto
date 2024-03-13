@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+import "impala/adsapi/IMPAdsAdsInventoryBundle.proto";
+
+message IMPAdsAdsInventoryBundlesRequest {
+	repeated impala.adsapi.IMPAdsAdsInventoryBundle inventoryBundlesArray = 1;
+}

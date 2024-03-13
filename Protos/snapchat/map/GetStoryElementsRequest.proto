@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/GetStoryElementsRequest_StorySnapId.proto";
+
+message GetStoryElementsRequest {
+	repeated string snapIdsArray = 1;
+	repeated snapchat.map.GetStoryElementsRequest_StorySnapId storySnapIdsArray = 2;
+	string locale = 3;
+	bool includeTakedowns = 4;
+	string userId = 5;
+	bool includeEngagementData = 6;
+	bool useStms = 7;
+	bool isLegacyPlayback = 8;
+}

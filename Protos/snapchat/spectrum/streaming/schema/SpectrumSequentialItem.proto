@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+import "snapchat/spectrum/streaming/schema/HeaderEnvelope.proto";
+import "snapchat/spectrum/streaming/schema/EventEnvelope.proto";
+
+message SpectrumSequentialItem {
+
+	oneof item {
+		snapchat.spectrum.streaming.schema.HeaderEnvelope headerEnvelope = 1;
+		snapchat.spectrum.streaming.schema.EventEnvelope eventEnvelope = 2;
+	}
+
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.identity;
+
+message SCIDDeletePermissionSettingsResponse {
+	bool success = 1;
+}

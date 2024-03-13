@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCClientUsernameSuggestionConfigPbRandomChars {
+	int32 numberOfRandomChar = 1;
+
+	enum SCClientUsernameSuggestionConfigPbRandomCharStrategy {
+		UNSET = 0;
+		LOWERCASE_LETTERS_ONLY = 1;
+		DIGITS_ONLY = 2;
+		LOWERCASE_LETTERS_AND_DIGITS = 3;
+	}
+
+	SCClientUsernameSuggestionConfigPbRandomCharStrategy randomCharStrategy = 2;
+}

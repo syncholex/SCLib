@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXCommerceAction_CommerceItemDetailPageAction {
+	int64 snapItemId = 1;
+	string storeId = 2;
+}

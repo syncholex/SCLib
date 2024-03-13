@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPStoryPreferenceSettings.proto";
+
+message SCSUPDiscoverSettingsResponse {
+	ranking.pii.user.profile.SCSUPStoryPreferenceSettings storyPreferenceSettings = 1;
+	bool optedInHnNewsSectionNotification = 2;
+}

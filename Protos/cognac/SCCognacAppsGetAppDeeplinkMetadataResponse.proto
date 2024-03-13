@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsGetAppDeeplinkMetadataResponse {
+	string appId = 1;
+	string appTitle = 2;
+	string logoImageURL = 3;
+	string verticalImageURL = 4;
+	string snapcodeImageURL = 5;
+	string iconImageURL = 6;
+	string loadingImageURL = 7;
+	string horizontalImageURL = 8;
+	string squareImageURL = 9;
+
+	enum SCCognacAppsApp_Type {
+		UNKNOWN = 0;
+		GAME = 1;
+		CYPRESS = 2;
+		LENS = 3;
+	}
+
+	SCCognacAppsApp_Type type = 10;
+}

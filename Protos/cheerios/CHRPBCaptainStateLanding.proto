@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBCaptainStateLanding {
+
+	enum CHRPBCaptainStateLanding_Landing {
+		CAPTAIN_STATE_LANDING_NORMAL = 1;
+		CAPTAIN_STATE_LANDING_EMERGENCY = 2;
+		CAPTAIN_STATE_LANDING_PREPARING = 3;
+	}
+
+	CHRPBCaptainStateLanding_Landing landing = 1;
+}

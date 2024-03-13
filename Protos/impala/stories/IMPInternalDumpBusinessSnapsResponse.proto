@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "impala/stories/IMPBusinessSnapDump.proto";
+
+message IMPInternalDumpBusinessSnapsResponse {
+	repeated impala.stories.IMPBusinessSnapDump snapsArray = 1;
+	string nextPageId = 2;
+}

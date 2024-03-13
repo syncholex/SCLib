@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+message SCBitmojiFriendOutfitOption {
+	string userId = 1;
+}

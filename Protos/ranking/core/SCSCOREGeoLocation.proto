@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREGeoLocation {
+	double latitude = 1;
+	double longitude = 2;
+	double altitude = 3;
+	double radiusInMeters = 4;
+	double horizontalAccuracy = 5;
+	double speed = 6;
+}

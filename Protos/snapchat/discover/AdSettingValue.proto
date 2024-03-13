@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message AdSettingValue {
+
+	enum AdSetting {
+		SKIPPABLE = 0;
+		NON_SKIPPABLE = 1;
+	}
+
+	AdSetting value = 1;
+}

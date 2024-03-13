@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREGeoBoundingBox.proto";
+
+message SCSCOREGeoRegion {
+	string regionId = 1;
+	ranking.core.SCSCOREGeoBoundingBox boundingBox = 2;
+}

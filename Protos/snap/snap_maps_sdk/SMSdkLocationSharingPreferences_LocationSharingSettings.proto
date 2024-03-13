@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LocationSharingSettings_GhostMode.proto";
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LocationSharingSettings_Everyone.proto";
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LocationSharingSettings_BlockList.proto";
+import "snap/snap_maps_sdk/SMSdkLocationSharingPreferences_LocationSharingSettings_AllowList.proto";
+
+message SMSdkLocationSharingPreferences_LocationSharingSettings {
+
+	oneof shareMode {
+		snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LocationSharingSettings_GhostMode ghostMode = 1;
+		snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LocationSharingSettings_Everyone everyone = 2;
+		snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LocationSharingSettings_BlockList blockList = 3;
+		snap.snap_maps_sdk.SMSdkLocationSharingPreferences_LocationSharingSettings_AllowList allowList = 4;
+	}
+
+}

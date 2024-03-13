@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGIntegerPoint.proto";
+
+message SCLGGeofilterDisplayParameters_TextShadowParameters {
+	string color = 1;
+	lens_platform.client_server.legacy.SCLGIntegerPoint shadowOffset = 2;
+	float blurRadius = 3;
+}

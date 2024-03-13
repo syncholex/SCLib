@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbPromoteOsVersionRequest {
+	string productGeneration = 1;
+	string srcVersionSetName = 2;
+	string destVersionSetName = 3;
+	string releaseVersion = 4;
+	string patchVersion = 5;
+	string buildFlavor = 6;
+}

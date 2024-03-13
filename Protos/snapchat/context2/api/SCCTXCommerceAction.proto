@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXCommerceAction_CommerceItemDetailPageAction.proto";
+import "snapchat/context2/api/SCCTXCommerceAction_CommerceStoreAction.proto";
+
+message SCCTXCommerceAction {
+
+	oneof action {
+		snapchat.context2.api.SCCTXCommerceAction_CommerceItemDetailPageAction commerceItemDetailPageAction = 1;
+		snapchat.context2.api.SCCTXCommerceAction_CommerceStoreAction commerceStoreAction = 2;
+	}
+
+}

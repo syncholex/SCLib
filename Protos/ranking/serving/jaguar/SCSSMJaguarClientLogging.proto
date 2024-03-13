@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMJaguarClientLogging {
+	string tileLoggingKey = 1;
+	bool isBoostedStory = 2;
+	fixed64 tapStoryKey = 3;
+	bytes impressionLoggingExtension = 4;
+	bytes actionLoggingExtension = 5;
+	bytes viewSessionLoggingExtension = 6;
+	string variantLoggingKey = 7;
+	bytes commonLoggingExtension = 8;
+
+	enum SCSSMJaguarClientLogging_ExplorationSource_Enum {
+		UNKNOWN = 0;
+		SPOTLIGHT = 1;
+		PARTNER_CONTENT = 2;
+	}
+
+	SCSSMJaguarClientLogging_ExplorationSource_Enum explorationSource = 9;
+	string creatorId = 10;
+}

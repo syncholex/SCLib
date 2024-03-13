@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCTelephonyRequestHeader {
+	string clientRequestId = 1;
+	string blizzardClientId = 2;
+	string configDeviceId = 3;
+	repeated bytes vendorAttestationPayloadsArray = 4;
+
+	enum NonceFormat {
+		NONCE_FORMAT_UNKNOWN_UNSET = 0;
+		NONCE_FORMAT_USERNAME = 1;
+		NONCE_FORMAT_USERNAME_PASSWORD = 2;
+	}
+
+	NonceFormat nonceFormat = 5;
+	bytes clientAttestationPayload = 6;
+	string iosDeviceCheckToken = 7;
+}

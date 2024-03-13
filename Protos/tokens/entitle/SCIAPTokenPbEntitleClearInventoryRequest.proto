@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package tokens.entitle;
+
+message SCIAPTokenPbEntitleClearInventoryRequest {
+	string appId = 1;
+	string userId = 2;
+}

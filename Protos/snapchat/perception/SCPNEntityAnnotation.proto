@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNBoundingPoly.proto";
+import "snapchat/perception/SCPNPersonKeypoint.proto";
+import "snapchat/perception/SCPNFeature.proto";
+import "snapchat/perception/SCPNOurStoryFrameMetadata.proto";
+import "snapchat/perception/SCPNOurStoryContentFinderMetadata.proto";
+import "snapchat/perception/SCPNMuseumArtworkMetadata.proto";
+import "snapchat/perception/SCPNContentBasedRetrievalResult.proto";
+import "snapchat/perception/SCPNFeatureExtractionResult.proto";
+import "snapchat/perception/SCPNSimilaritySearchResult.proto";
+
+message SCPNEntityAnnotation {
+	string id_p = 1;
+	string label = 2;
+	float score = 3;
+	snapchat.perception.SCPNBoundingPoly boundingPolygon = 4;
+	bytes mask = 5;
+	repeated float featureVectorArray = 6 [packed=true];
+	repeated snapchat.perception.SCPNPersonKeypoint personKeypointsArray = 7;
+	snapchat.perception.SCPNFeature allFeatures = 8;
+	string attributes = 9;
+
+	oneof metadata {
+		snapchat.perception.SCPNOurStoryFrameMetadata ourStoryFrameMetadata = 103;
+		snapchat.perception.SCPNOurStoryContentFinderMetadata ourStoryContentFinderMetadata = 104;
+		snapchat.perception.SCPNMuseumArtworkMetadata museumArtworkMetadata = 111;
+		snapchat.perception.SCPNContentBasedRetrievalResult contentBasedRetrievalResult = 300;
+		snapchat.perception.SCPNFeatureExtractionResult featureExtractionResult = 301;
+		snapchat.perception.SCPNSimilaritySearchResult similaritySearchResult = 302;
+	}
+
+}

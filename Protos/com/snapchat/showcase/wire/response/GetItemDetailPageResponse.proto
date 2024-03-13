@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+import "com/snapchat/showcase/wire/response/GetItemDetailPageResponse_DetailsPage.proto";
+
+message GetItemDetailPageResponse {
+	string requestId = 1;
+
+	oneof response {
+		com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+		com.snapchat.showcase.wire.response.GetItemDetailPageResponse_DetailsPage detailsPage = 3;
+	}
+
+}

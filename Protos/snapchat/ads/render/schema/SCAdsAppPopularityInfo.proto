@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsAppPopularityInfo {
+	google.protobuf.GPBFloatValue appRating = 1;
+	google.protobuf.GPBInt64Value appDownloads = 2;
+}

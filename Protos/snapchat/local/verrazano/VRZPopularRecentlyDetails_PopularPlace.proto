@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "google/protobuf/GPBFloatValue.proto";
+
+message VRZPopularRecentlyDetails_PopularPlace {
+	string placeId = 1;
+	google.protobuf.GPBFloatValue minZoom = 2;
+	int64 expireTimestamp = 3;
+}

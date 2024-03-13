@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPMoveBusinessProfileRequest {
+
+	oneof businessProfileKey {
+		int64 publisherId = 1;
+		string businessProfileId = 2;
+	}
+
+
+	oneof organizationInfo {
+		string existingOrganizationId = 3;
+		string newOrganizationName = 4;
+	}
+
+}

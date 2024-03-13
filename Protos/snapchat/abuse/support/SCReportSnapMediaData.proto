@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCReportMediaData.proto";
+
+message SCReportSnapMediaData {
+	string snapId = 1;
+	snapchat.abuse.support.SCReportMediaData content = 2;
+	snapchat.abuse.support.SCReportMediaData overlay = 3;
+}

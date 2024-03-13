@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPBusinessSnap {
+	string businessId = 1;
+	bytes submittedStorySnapData = 2;
+	string posterUserId = 3;
+}

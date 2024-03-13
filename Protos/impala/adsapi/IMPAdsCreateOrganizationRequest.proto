@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsCreateOrganizationRequest {
+	string name = 1;
+	string type = 2;
+}

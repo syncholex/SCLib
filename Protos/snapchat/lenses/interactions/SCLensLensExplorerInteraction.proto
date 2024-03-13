@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package snapchat.lenses.interactions;
+
+message SCLensLensExplorerInteraction {
+
+	enum SCLensLensExplorerInteraction_ItemType {
+		ITEM_TYPE_UNSET = 0;
+		LENS = 1;
+		CREATOR = 2;
+		LENS_TOPIC = 3;
+		HERO_TILE = 4;
+		COLLECTION = 5;
+	}
+
+	SCLensLensExplorerInteraction_ItemType itemType = 1;
+	bytes pageName = 2;
+
+	enum SCLensLensExplorerInteraction_PageType {
+		PAGE_TYPE_UNSET = 0;
+		LE_DEFAULT = 1;
+		LE_POST_CAPTURE = 2;
+		LE_DIRECTOR_MODE = 3;
+		FEED = 4;
+		LE_AR_BAR = 5;
+		LE_HERMOSA_HOME = 6;
+		LE_AR_BAR_REPLY = 7;
+	}
+
+	SCLensLensExplorerInteraction_PageType pageType = 3;
+	bytes containerId = 4;
+	bytes sectionName = 5;
+
+	enum SCLensLensExplorerInteraction_InteractionType {
+		INTERACTION_TYPE_UNSET = 0;
+		LENS_EXPLORER_FEED_ITEM_IMP = 1;
+		LENS_EXPLORER_FEED_ITEM_LONG_IMP = 2;
+		LENS_EXPLORER_FEED_ITEM_ACTION_CRITICAL = 3;
+		LENS_EXPLORER_MRC_IMP = 4;
+		LENS_SEND = 5;
+		LENS_POST = 6;
+		LENS_SAVE = 7;
+		LENS_SWIPE = 8;
+	}
+
+	SCLensLensExplorerInteraction_InteractionType interactionType = 6;
+	int32 sectionPosition = 7;
+}

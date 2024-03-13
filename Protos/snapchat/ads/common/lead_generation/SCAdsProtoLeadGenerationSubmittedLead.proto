@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.ads.common.lead_generation;
+
+import "snapchat/ads/common/lead_generation/SCAdsProtoLeadGenerationSubmittedField.proto";
+
+message SCAdsProtoLeadGenerationSubmittedLead {
+	repeated snapchat.ads.common.lead_generation.SCAdsProtoLeadGenerationSubmittedField submittedFieldsArray = 1;
+	bool consentCheckboxes = 2;
+}

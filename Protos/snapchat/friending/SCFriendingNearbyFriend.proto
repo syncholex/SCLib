@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message SCFriendingNearbyFriend {
+	string userId = 1;
+	string userName = 2;
+	string displayName = 3;
+	string subtext = 4;
+	string bitmojiAvatarId = 5;
+	string bitmojiSelfieId = 6;
+	string bitmojiSceneId = 7;
+	string bitmojiBackgroundId = 8;
+}

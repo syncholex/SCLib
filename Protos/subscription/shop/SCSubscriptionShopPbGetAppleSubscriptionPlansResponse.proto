@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbAppleSubscriptionPlan.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCSubscriptionShopPbGetAppleSubscriptionPlansResponse {
+	repeated subscription.shop.SCSubscriptionShopPbAppleSubscriptionPlan plansArray = 1;
+	string referralToken = 3;
+	google.protobuf.GPBInt64Value preferredPlanIndex = 4;
+	string specialOfferBillboardKey = 5;
+}

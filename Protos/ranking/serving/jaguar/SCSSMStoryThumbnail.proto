@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStoryThumbnail {
+	string thumbnailURL = 1;
+	string thumbnailIv = 2;
+	string mediaKey = 3;
+	string videoThumbnailURL = 4;
+	string videoFirstFrameThumbnailURL = 5;
+	string thumbnailDominantColor = 6;
+
+	enum SCSCOREMediaInfo_ThumbnailVariant {
+		THUMBNAIL_VARIANT_UNKNOWN = 0;
+		THUMBNAIL_VARIANT_SMALL_FIRST_FRAME_IMAGE = 1;
+		THUMBNAIL_VARIANT_LARGE_FIRST_FRAME_IMAGE = 2;
+		THUMBNAIL_VARIANT_SMALL_BEST_FRAME_IMAGE = 3;
+		THUMBNAIL_VARIANT_LARGE_BEST_FRAME_IMAGE = 4;
+		THUMBNAIL_VARIANT_VIDEO = 5;
+		THUMBNAIL_VARIANT_STREAM = 6;
+	}
+
+	repeated SCSCOREMediaInfo_ThumbnailVariant thumbnailVariantsArray = 7 [packed=true];
+	bool isBrandSafe = 8;
+	float score = 9;
+	string mediaId = 10;
+	string snapId = 11;
+	string largeThumbnailURL = 12;
+	bytes thumbnailContentObject = 13;
+	string thumbnailCoKey = 14;
+	string thumbnailCoIv = 15;
+}

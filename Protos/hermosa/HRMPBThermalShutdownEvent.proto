@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBThermalEvent.proto";
+
+message HRMPBThermalShutdownEvent {
+	hermosa.HRMPBThermalEvent event = 1;
+	uint32 shutdownDelaySeconds = 2;
+	uint32 shutdownDelayMs = 3;
+}

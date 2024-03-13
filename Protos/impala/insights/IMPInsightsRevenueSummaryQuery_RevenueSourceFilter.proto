@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsRevenueSummaryQuery_RevenueSourceFilter {
+
+	enum IMPInsightsRevenueSummaryQuery_RevenueSourceFilter_RevenueSource {
+		REVENUE_SOURCE_UNSET = 0;
+		PAID = 1;
+		ORGANIC = 2;
+	}
+
+	IMPInsightsRevenueSummaryQuery_RevenueSourceFilter_RevenueSource revenueSource = 1;
+}

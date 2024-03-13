@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.stories;
+
+import "snapchat/context/SCStoryManifest.proto";
+
+message IMPInternalGetBusinessStoryManifestForStoryIdResponse {
+	snapchat.context.SCStoryManifest manifest = 1;
+	bytes storyCard = 2;
+}

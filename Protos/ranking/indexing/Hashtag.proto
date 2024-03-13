@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message Hashtag {
+	ranking.core.SCSCOREUUID id_p = 1;
+	string title = 2;
+	bool isServerSuggested = 3;
+
+	enum Hashtag_Source_Enum {
+		UNSET = 0;
+		CAPTION = 1;
+		STICKER = 2;
+		SEND_TO = 3;
+		TOPIC_PAGE = 4;
+		UNUSED_5 = 5;
+		UNUSED_6 = 6;
+		UNUSED_7 = 7;
+		UNUSED_8 = 8;
+		UNUSED_9 = 9;
+	}
+
+	Hashtag_Source_Enum source = 4;
+}

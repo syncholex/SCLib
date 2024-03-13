@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "snapchat/common/MapRecords.proto";
+
+message SCBillboardPbFullSceenTakeoverText {
+	string textKey = 1;
+
+	enum SCBillboardPbFullSceenTakeoverText_Type {
+		UNSET = 0;
+		SECONDARY = 1;
+		TERTIARY = 2;
+	}
+
+	SCBillboardPbFullSceenTakeoverText_Type type = 2;
+	snapchat.common.MapRecords tagToLink = 3;
+}

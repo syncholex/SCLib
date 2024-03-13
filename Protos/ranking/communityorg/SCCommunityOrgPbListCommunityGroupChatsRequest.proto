@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.communityorg;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCCommunityOrgPbListCommunityGroupChatsRequest {
+	ranking.core.SCSCOREUUID communityId = 1;
+
+	enum SCCommunityOrgPbListCommunityGroupChatsRequest_Order {
+		UNSET = 0;
+		GROUP_SIZE_DESC = 1;
+		CREATED_TIME_DESC = 2;
+		LAST_ACTIVE_TIME_DESC = 3;
+	}
+
+	SCCommunityOrgPbListCommunityGroupChatsRequest_Order order = 2;
+	bytes pageToken = 3;
+	int32 pageSize = 4;
+}

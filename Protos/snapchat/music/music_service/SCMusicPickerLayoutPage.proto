@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection.proto";
+
+message SCMusicPickerLayoutPage {
+	string pageId = 1;
+	repeated snapchat.music.music_service.SCMusicPickerLayoutPageSection sectionsArray = 2;
+}

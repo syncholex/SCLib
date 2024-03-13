@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/ShowcaseItem.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetItemsResponse {
+	string requestId = 1;
+	repeated com.snapchat.showcase.wire.ShowcaseItem itemsArray = 2;
+	string paginationCursor = 3;
+	com.snapchat.showcase.wire.response.ErrorInfo errorInfo = 4;
+}

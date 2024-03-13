@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message SCAdsAdFlagData {
+	google.protobuf.GPBBoolValue adFlagged = 1;
+
+	enum SCAdsAdFlagData_AdFlaggedReason {
+		UNKNOWN_AD_FLAG_REASON = 0;
+		FREQUENCY_CAP_TOO_HIGH = 1;
+		FREQUENCY_AD_LOAD = 2;
+		OFFENSIVE_SEXUAL = 3;
+		OFFENSIVE_VIOLENT = 4;
+		OFFENSIVE_SPEECH = 5;
+		OFFENSIVE_COPYRIGHT = 6;
+		OFFENSIVE_OTHER = 7;
+		IRRELEVANT_DEMO = 8;
+		IRRELEVANT_CONTEXT = 9;
+		IRRELEVANT_ANNOYING = 10;
+		IRRELEVANT_PRODUCT = 11;
+		IRRELEVANT_OTHER = 12;
+		FRAUD_SCAM = 13;
+		IP_COPYRIGHT = 14;
+		IP_TRADEMARK = 15;
+		IP_PUBLICITY = 16;
+		RELEVANT_FTW = 17;
+		RELEVANT_PRODUCT = 18;
+		RELEVANT_OTHER = 19;
+		ILLEGAL_CONTENT = 20;
+	}
+
+	SCAdsAdFlagData_AdFlaggedReason adFlaggedReason = 2;
+	google.protobuf.GPBStringValue adFlaggedNote = 3;
+}

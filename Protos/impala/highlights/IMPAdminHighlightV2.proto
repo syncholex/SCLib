@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/highlights/IMPModerationStatus.proto";
+
+message IMPAdminHighlightV2 {
+	bytes story = 1;
+	string version = 2;
+	bool isProcessing = 3;
+	string coverSnapId = 4;
+	bool failedProcessing = 5;
+
+	enum IMPHighlightCreationSource {
+		SOURCE_UNKNOWN = 0;
+		SOURCE_PROFILE_MANAGEMENT = 1;
+		SOURCE_SEND_TO = 2;
+	}
+
+	IMPHighlightCreationSource creationSource = 6;
+	string compositeId = 7;
+	impala.highlights.IMPModerationStatus moderationStatus = 8;
+}

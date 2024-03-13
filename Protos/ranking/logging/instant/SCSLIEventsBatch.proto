@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLIClientInfo.proto";
+import "ranking/logging/instant/SCSLIServerAttachedInfo.proto";
+import "ranking/logging/instant/SCSLIEvent.proto";
+
+message SCSLIEventsBatch {
+	ranking.logging.instant.SCSLIClientInfo clientInfo = 1;
+	ranking.logging.instant.SCSLIServerAttachedInfo attachedInfo = 2;
+	repeated ranking.logging.instant.SCSLIEvent eventsArray = 3;
+}

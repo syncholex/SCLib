@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message ClientTargetingExpression_PropertyMetadata {
+	int32 itemId = 1;
+
+	enum ClientTargetingExpression_PropertyMetadata_SignalToHash {
+		UNKNOWN_SIGNAL_TO_HASH = 0;
+		HASH_SEED_AND_USER_ID = 1;
+		HASH_USER_ID_AND_NAMESPACE = 2;
+	}
+
+	ClientTargetingExpression_PropertyMetadata_SignalToHash signalToHash = 2;
+	string abNamespaceForHashing = 3;
+	string abSeedForHashing = 4;
+
+	enum SCCOMMONRuid_Type {
+		UNSET = 0;
+		USER = 1;
+		DEVICE = 2;
+		WEB_CLIENT = 3;
+		AD_ACCOUNT = 4;
+		USERNAME = 5;
+		AD_MODERATION_AD = 6;
+		WEB_SNAPCHAT_USER = 7;
+		INTERNAL = 8;
+		AM_ORGANIZATION = 9;
+		AM_MEMBER = 10;
+		AM_SESSION = 11;
+		AM_PROFILE = 12;
+		AM_SNAPCHAT_USER = 13;
+		SNAPCHAT_ADVERTISING = 14;
+		AM_CLIENT = 15;
+		MISCHIEF = 16;
+		ARES_VISITOR = 17;
+		POD_NAME = 18;
+	}
+
+
+	oneof functionSignalInput {
+		SCCOMMONRuid_Type ruidType = 5;
+	}
+
+	string cofRolloutSeedForHashing = 6;
+}

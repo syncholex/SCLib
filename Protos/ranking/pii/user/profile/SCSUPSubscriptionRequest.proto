@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPSubscriptionRequest {
+	string userId = 1;
+}

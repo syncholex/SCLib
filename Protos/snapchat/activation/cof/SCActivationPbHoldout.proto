@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.activation.cof;
+
+message SCActivationPbHoldout {
+
+	enum SCActivationPbHoldout_State {
+		UNSET = 0;
+		ELIGIBLE_FOR_NEW_FEATURES = 1;
+		HOLDOUT = 2;
+	}
+
+	SCActivationPbHoldout_State holdoutState = 1;
+}

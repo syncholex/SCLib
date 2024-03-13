@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.unlock.api.schema;
+
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+
+message SCMetadataRequest {
+	int64 unlockableId = 1;
+	snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+
+	enum SCUnlockType {
+		UNLOCK_TYPE_UNSET = 0;
+		EXPIRABLE = 1;
+		NOT_EXPIRABLE = 2;
+		SOCIAL = 3;
+		INVERSE = 4;
+	}
+
+	SCUnlockType unlockType = 3;
+}

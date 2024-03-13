@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+import "snapchat/cdp/media/ImageCodec.proto";
+
+message ImageTranscodingConfiguration {
+	int32 resolutionWidth = 1;
+	int32 resolutionHeight = 2;
+	int32 qualityFactor = 3;
+	snapchat.cdp.media.ImageCodec imageCodec = 4;
+}

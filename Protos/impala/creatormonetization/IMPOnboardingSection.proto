@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPOnboardingStepStatus.proto";
+
+message IMPOnboardingSection {
+
+	enum IMPOnboardingSectionType {
+		DEFAULT_STEP_TYPE_UNSET = 0;
+		REQUIRED_SECTION = 1;
+		INCOMPLETE_PROGRAM_SECTION = 2;
+		COMPLETE_PROGRAM_SECTION = 3;
+	}
+
+	IMPOnboardingSectionType sectionType = 1;
+	repeated impala.creatormonetization.IMPOnboardingStepStatus stepStatusArray = 2;
+}

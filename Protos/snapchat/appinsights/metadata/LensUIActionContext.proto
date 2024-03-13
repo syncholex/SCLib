@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+message LensUIActionContext {
+	string camera = 1;
+	int64 lensId = 2;
+	string buttonName = 3;
+}

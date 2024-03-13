@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+message AvatarData {
+	int64 gender = 1;
+	int64 style = 2;
+	int64 optionIds = 3;
+}

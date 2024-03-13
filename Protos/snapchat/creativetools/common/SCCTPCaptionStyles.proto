@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCaptionStyle.proto";
+
+message SCCTPCaptionStyles {
+	repeated snapchat.creativetools.common.SCCTPCaptionStyle captionStylesArray = 1;
+	int64 captionStyleId = 2;
+}

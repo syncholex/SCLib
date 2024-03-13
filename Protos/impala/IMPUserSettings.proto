@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message IMPUserSettings {
+	google.protobuf.GPBInt32Value manageRolesNuxHintViewCount = 1;
+	google.protobuf.GPBBoolValue unifiedProfileNuxSeen = 2;
+	google.protobuf.GPBBoolValue highlightsNuxSeen = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.metadata;
+
+import "com/snapchat/item_catalog/domain/item/ar/properties/SCShoppingLensMakeupProperties.proto";
+import "com/snapchat/item_catalog/domain/item/ar/properties/SCShoppingLensGlassesProperties.proto";
+import "com/snapchat/ar/common/template/RenderingMetadata.proto";
+
+message ARMetadata {
+	string ifm = 1;
+	com.snapchat.item_catalog.domain.item.ar.properties.SCShoppingLensMakeupProperties makeupProperties = 7;
+	com.snapchat.item_catalog.domain.item.ar.properties.SCShoppingLensGlassesProperties glassesProperties = 8;
+	com.snapchat.ar.common.template.RenderingMetadata renderingMetadata = 9;
+}

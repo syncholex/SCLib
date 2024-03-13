@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSoftDeviceCrashReport {
+	uint32 faultId = 1;
+	uint32 pc = 2;
+	uint32 errorInfo = 3;
+}

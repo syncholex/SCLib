@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPInvalidateSnapCacheItemRequest {
+	string tableName = 1;
+	string cachePrefix = 2;
+	string key = 3;
+}

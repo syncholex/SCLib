@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRConditionalExpression {
+	snapchat.sendto.ranking.SCSTRAST if_p = 1;
+	snapchat.sendto.ranking.SCSTRAST then = 2;
+	snapchat.sendto.ranking.SCSTRAST else_p = 3;
+}

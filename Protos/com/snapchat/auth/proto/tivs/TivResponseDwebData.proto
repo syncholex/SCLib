@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message TivResponseDwebData {
+	bytes data_p = 1;
+}

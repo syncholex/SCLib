@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXCommentsAction {
+
+	enum SCCTXCommentsAction_CommentsIntent {
+		CommentsIntentView = 0;
+		CommentsIntentCompose = 1;
+	}
+
+	SCCTXCommentsAction_CommentsIntent intent = 1;
+}

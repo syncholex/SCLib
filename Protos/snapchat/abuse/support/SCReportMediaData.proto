@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+message SCReportMediaData {
+	string boltURL = 1;
+	bytes key = 2;
+	bytes iv = 3;
+	bytes contentObject = 4;
+}

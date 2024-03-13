@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.onetaplogin;
+
+message OneTapLoginTokenDescriptor {
+	int64 tokenCreateTime = 1;
+	string tokenDeviceName = 2;
+	string tokenDeviceId = 3;
+}

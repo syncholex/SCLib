@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+message MMAIMetadataValue {
+
+	oneof value {
+		int32 intValue = 1;
+		float floatValue = 2;
+		bool boolValue = 3;
+		string stringValue = 4;
+	}
+
+}

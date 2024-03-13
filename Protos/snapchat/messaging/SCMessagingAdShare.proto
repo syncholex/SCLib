@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingGoogleSDKAdShare.proto";
+import "snapchat/messaging/SCMessagingSuggestedSearchAdShare.proto";
+import "snapchat/messaging/SCMessagingProductAdShare.proto";
+
+message SCMessagingAdShare {
+
+	oneof adShare {
+		snapchat.messaging.SCMessagingGoogleSDKAdShare googleSdkAdShare = 1;
+		snapchat.messaging.SCMessagingSuggestedSearchAdShare suggestedSearchAdShare = 2;
+		snapchat.messaging.SCMessagingProductAdShare productAdShare = 4;
+	}
+
+
+	enum SCMessagingBrowserType {
+		BROWSER_TYPE_UNSET = 0;
+		BROWSER_TYPE_INTERNAL = 1;
+		BROWSER_TYPE_EXTERNAL = 2;
+	}
+
+	SCMessagingBrowserType browserType = 3;
+}

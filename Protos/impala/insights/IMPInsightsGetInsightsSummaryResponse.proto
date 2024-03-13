@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsInfluencerInsights.proto";
+
+message IMPInsightsGetInsightsSummaryResponse {
+	impala.insights.IMPInsightsInfluencerInsights popularUserInsights = 1;
+	bool isWhitelisted = 2;
+}

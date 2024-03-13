@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/ads/request/schema/SCAdsSKAdNetworkAttribution.proto";
+
+message SDMAdsTracking {
+	snapchat.ads.request.schema.SCAdsSKAdNetworkAttribution skAdNetworkAttribution = 1;
+	string iosAppId = 2;
+	string adId = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPBusinessProfileAndUserData.proto";
+import "impala/stories/common/IMPBusinessStory.proto";
+
+message IMPSearchBusinessProfileResult {
+	impala.IMPBusinessProfileAndUserData profile = 1;
+	impala.stories.common.IMPBusinessStory story = 2;
+}

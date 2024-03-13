@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceKeysById.proto";
+
+message SCDeltaforceKeysByKind {
+	string kind = 1;
+	repeated com.snapchat.deltaforce.SCDeltaforceKeysById keysArray = 2;
+}

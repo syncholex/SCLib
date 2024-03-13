@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/abuse/support/SCAppealPbAppealData.proto";
+
+message SCAppealPbSubmitAppealResponse {
+	snapchat.abuse.support.SCAppealPbAppealData appealData = 1;
+}

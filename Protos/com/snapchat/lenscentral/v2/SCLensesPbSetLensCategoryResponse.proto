@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLens.proto";
+
+message SCLensesPbSetLensCategoryResponse {
+	snapchat.lenscentral.common.SCLensCentralCommonPbLens lens = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+message VLKIMUMetaData {
+	int32 frameTagChangeIndex = 1;
+	int32 imuSampleFreq = 2;
+	uint32 imuVersion = 3;
+	uint32 firstFrameRawDataReadyTs = 4;
+	uint32 firstFrameEncodedReadyTs = 5;
+}

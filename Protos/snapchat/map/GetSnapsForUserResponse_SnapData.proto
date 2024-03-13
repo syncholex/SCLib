@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message GetSnapsForUserResponse_SnapData {
+	string snapId = 1;
+	bool isDeleted = 2;
+	bool isTakenDown = 3;
+}

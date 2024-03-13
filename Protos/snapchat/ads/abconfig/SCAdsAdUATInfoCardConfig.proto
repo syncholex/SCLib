@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsAdUATInfoCardConfig_AdUATInfoCardStyleConfig.proto";
+import "snapchat/ads/abconfig/SCAdsAdUATInfoCardConfig_AdTypeToConfigMap.proto";
+import "snapchat/ads/abconfig/SCAdsAdUATInfoCardConfig_AdProductToConfigMap.proto";
+
+message SCAdsAdUATInfoCardConfig {
+	snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_AdUATInfoCardStyleConfig defaultConfig = 1;
+	repeated snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_AdTypeToConfigMap adTypeToConfigArray = 2;
+
+	enum SCAdsAdBaseConfig_AdProductType {
+		UNKNOWN_PRODUCT_TYPE_UNSET = 0;
+		USER_STORIES = 1;
+		CONTENT_INTERSTITIAL = 2;
+		PUBLISHER = 3;
+		SHOWS = 4;
+		PUBLIC_USER_STORY = 5;
+		COGNAC = 6;
+		SPOTLIGHT_FEED = 7;
+		MAP = 8;
+		PROMOTED_STORIES = 9;
+		SHARE_IN_CHAT = 10;
+	}
+
+	repeated SCAdsAdBaseConfig_AdProductType excludedAdProductTypesArray = 3 [packed=true];
+	repeated snapchat.ads.abconfig.SCAdsAdUATInfoCardConfig_AdProductToConfigMap adProductToConfigArray = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPAcceptLanguagesEntry {
+	string langTag = 1;
+	int32 weight = 2;
+}

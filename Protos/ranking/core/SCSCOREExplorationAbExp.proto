@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREExplorationAbTreatment.proto";
+
+message SCSCOREExplorationAbExp {
+	string name = 1;
+	int64 latestVersionTs = 2;
+	repeated ranking.core.SCSCOREExplorationAbTreatment treatmentsArray = 3;
+}

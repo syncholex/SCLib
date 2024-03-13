@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBBluetoothUpdate {
+
+	enum MLBBluetoothUpdate_BluetoothUpdateType {
+		BluetoothStarted = 0;
+		BluetoothStopped = 1;
+		BluetoothStartFailure = 2;
+		BluetoothStopFailure = 3;
+	}
+
+	MLBBluetoothUpdate_BluetoothUpdateType updateType = 1;
+}

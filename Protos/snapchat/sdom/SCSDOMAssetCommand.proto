@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMUpdateMediaReference.proto";
+import "snapchat/sdom/SCSDOMAddPlainAsset.proto";
+import "snapchat/sdom/SCSDOMApplyAlternativeAsset.proto";
+
+message SCSDOMAssetCommand {
+
+	oneof command {
+		snapchat.sdom.SCSDOMUpdateMediaReference updateMediaReference = 2;
+		snapchat.sdom.SCSDOMAddPlainAsset addPlainAsset = 3;
+		snapchat.sdom.SCSDOMApplyAlternativeAsset applyAlternativeAsset = 4;
+	}
+
+}

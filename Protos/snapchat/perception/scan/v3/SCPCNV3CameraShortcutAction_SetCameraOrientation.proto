@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+message SCPCNV3CameraShortcutAction_SetCameraOrientation {
+
+	enum SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation {
+		ORIENTATION_UNSET = 0;
+		ORIENTATION_FRONT = 1;
+		ORIENTATION_REAR = 2;
+	}
+
+	SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation orientation = 1;
+}

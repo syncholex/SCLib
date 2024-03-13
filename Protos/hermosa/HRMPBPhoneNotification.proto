@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPhoneNotification {
+
+	enum HRMPBAncsCategory {
+		OTHER = 0;
+		INCOMING_CALL = 1;
+		MISSED_CALL = 2;
+		VOICE_MAIL = 3;
+		SOCIAL = 4;
+		SCHEDULE = 5;
+		EMAIL = 6;
+		NEWS = 7;
+		HEALTH_AND_FITNESS = 8;
+		BUSINESS_AND_FINANCE = 9;
+		LOCATION = 10;
+		ENTERTAINMENT = 11;
+	}
+
+	HRMPBAncsCategory notifCategory = 1;
+	string appIdentifier = 2;
+	string title = 3;
+	string subtitle = 4;
+	string messageContents = 5;
+	string messageSize = 6;
+	string date = 7;
+	string positiveActionLabel = 8;
+	string negativeActionLabel = 9;
+	uint32 notificationUid = 10;
+
+	enum HRMPBAncsEventType {
+		NOTIFICATION_ADDED = 0;
+		NOTIFICATION_MODIFIED = 1;
+		NOTIFICATION_REMOVED = 2;
+	}
+
+	HRMPBAncsEventType eventType = 11;
+	bool silent = 12;
+	bool important = 13;
+	bool preExisting = 14;
+	bool positiveAction = 15;
+	bool negativeAction = 16;
+	uint32 categoryCount = 17;
+}

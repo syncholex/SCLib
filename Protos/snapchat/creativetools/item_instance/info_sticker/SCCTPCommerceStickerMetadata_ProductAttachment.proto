@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance.info_sticker;
+
+message SCCTPCommerceStickerMetadata_ProductAttachment {
+	uint32 snapItemId = 1;
+
+	enum SCCTPCommerceStickerMetadata_ProductAttachment_ItemType {
+		TYPE_UNSPECIFIED = 0;
+		ATTACHMENT_TOOL = 1;
+		SHOPPABLE_STICKER = 2;
+	}
+
+	SCCTPCommerceStickerMetadata_ProductAttachment_ItemType itemType = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+import "com/snapchat/ar/leprechaun/common/ARProductReference.proto";
+
+message SLSStateProduct {
+	string stateKey = 1;
+	com.snapchat.ar.leprechaun.common.ARProductReference productReference = 2;
+}

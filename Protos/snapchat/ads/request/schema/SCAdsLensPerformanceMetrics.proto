@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCAdsLensPerformanceMetrics {
+	google.protobuf.GPBFloatValue avgFps = 1;
+	google.protobuf.GPBInt64Value lensApplyDelayMillis = 2;
+	google.protobuf.GPBInt64Value frameProcessingTimeAvgMillis = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.report;
+
+import "com/snapchat/useragent/SCUserAgentAgent.proto";
+
+message SCAppInsightsReport {
+	com.snapchat.useragent.SCUserAgentAgent agent = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTPMagicCaptionMetadata {
+	snapchat.core.SCCOREUUID generationRequestId = 1;
+	snapchat.core.SCCOREUUID captionId = 2;
+}

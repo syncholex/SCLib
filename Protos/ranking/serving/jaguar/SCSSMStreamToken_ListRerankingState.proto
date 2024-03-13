@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStreamToken_SCCState.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_Snap2InterestTags.proto";
+import "ranking/serving/jaguar/SCSSMStreamToken_Embedding.proto";
+
+message SCSSMStreamToken_ListRerankingState {
+	int32 sessionPosition = 1;
+	repeated ranking.serving.jaguar.SCSSMStreamToken_SCCState sccTagsArray = 2;
+	repeated ranking.serving.jaguar.SCSSMStreamToken_Snap2InterestTags snap2InterestTagsArray = 3;
+	repeated uint64 creatorIdsArray = 4 [packed=true];
+	repeated bool isSubscribedStatusArray = 5 [packed=true];
+	repeated ranking.serving.jaguar.SCSSMStreamToken_Embedding contentEmbeddingsArray = 6;
+	repeated ranking.serving.jaguar.SCSSMStreamToken_Embedding clipEmbeddingsArray = 7;
+}

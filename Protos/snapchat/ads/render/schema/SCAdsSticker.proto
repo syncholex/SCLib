@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsSurvey.proto";
+import "snapchat/ads/render/schema/SCAdsStickerImage.proto";
+
+message SCAdsSticker {
+
+	oneof stickerType {
+		snapchat.ads.render.schema.SCAdsSurvey survey = 1;
+		snapchat.ads.render.schema.SCAdsStickerImage bannerImage = 2;
+		snapchat.ads.render.schema.SCAdsStickerImage mpuImage = 3;
+		snapchat.ads.render.schema.SCAdsStickerImage squareImage = 4;
+	}
+
+}

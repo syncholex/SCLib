@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREMultiSnapExtension {
+	string multiSnapBundleId = 1;
+	int32 multiSnapSegmentCount = 2;
+	int32 multiSnapSegmentId = 3;
+}

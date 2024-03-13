@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerItemRenderStrategyOverride_Rule.proto";
+
+message SCLELensExplorerItemRenderStrategyOverride {
+	repeated snapchat.lens.le.SCLELensExplorerItemRenderStrategyOverride_Rule rulesArray = 1;
+}

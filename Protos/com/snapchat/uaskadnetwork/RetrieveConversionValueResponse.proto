@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.snapchat.uaskadnetwork;
+
+message RetrieveConversionValueResponse {
+	int32 conversionValue = 1;
+	bool isHighestConversionValue = 2;
+
+	enum CourseConversionValue {
+		VALUE_UNSET = 0;
+		LOW = 1;
+		MEDIUM = 2;
+		HIGH = 3;
+	}
+
+	CourseConversionValue courseConversionValue = 3;
+}

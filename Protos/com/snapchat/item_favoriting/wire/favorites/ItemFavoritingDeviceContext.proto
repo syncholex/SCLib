@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+message ItemFavoritingDeviceContext {
+
+	enum ItemFavoritingDeviceType {
+		IFS_DEVICE_TYPE_UNSET = 0;
+		ANDROID = 1;
+		IOS = 2;
+	}
+
+	ItemFavoritingDeviceType deviceType = 1;
+	string appVersion = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGAttachment_LongFormVideoAttachment {
+	string videoId = 1;
+	int32 videoPlatform = 2;
+	string videoURL = 3;
+}

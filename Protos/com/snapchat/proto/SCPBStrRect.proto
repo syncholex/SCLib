@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBStrRect {
+	string x = 1;
+	string y = 2;
+	string width = 3;
+	string height = 4;
+}

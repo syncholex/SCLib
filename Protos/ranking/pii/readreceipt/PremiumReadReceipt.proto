@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message PremiumReadReceipt {
+	string publisherId = 1;
+	string storyId = 2;
+	ranking.core.SCSCOREUUID viewerUserId = 3;
+	int64 viewTimeMs = 4;
+	string subItemId = 5;
+	int32 subItemProgressMs = 6;
+	int32 approximateProgress = 7;
+
+	enum PremiumContentType_Enum {
+		UNKNOWN = 0;
+		EDITION_PUBLISHER = 1;
+		NEWS = 2;
+		SHOW = 3;
+	}
+
+	PremiumContentType_Enum contentType = 8;
+	int64 version = 9;
+	int64 segmentId = 10;
+	int64 shareCount = 11;
+}

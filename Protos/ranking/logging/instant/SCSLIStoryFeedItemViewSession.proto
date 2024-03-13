@@ -1,0 +1,187 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+import "ranking/logging/instant/SCSLIStoryFeedBaseInfo.proto";
+
+message SCSLIStoryFeedItemViewSession {
+	ranking.logging.instant.SCSLIStoryFeedBaseInfo baseInfo = 1;
+	string subitemId = 2;
+	int32 subitemIndex = 3;
+
+	enum SCSLIEntryEvent_Type {
+		ENTRY_EVENT_UNKNOWN = 0;
+		ENTRY_EVENT_SWIPE_DOWN = 1;
+		ENTRY_EVENT_SWIPE_UP = 2;
+		ENTRY_EVENT_SWIPE_LEFT = 3;
+		ENTRY_EVENT_SWIPE_RIGHT = 4;
+		ENTRY_EVENT_AUTO_ADVANCE = 5;
+		ENTRY_EVENT_BACK_BUTTON = 6;
+		ENTRY_EVENT_LONG_PRESS = 7;
+		ENTRY_EVENT_TAP = 8;
+		ENTRY_EVENT_TAP_LEFT = 9;
+		ENTRY_EVENT_PINCH = 10;
+		ENTRY_EVENT_SHOW_ACTION_MENU_BUTTON = 11;
+		ENTRY_EVENT_ENTER_FOREGROUND = 12;
+		ENTRY_EVENT_TAP_INTERSTITIAL = 13;
+		ENTRY_EVENT_INTERSTITIAL_AA = 15;
+		ENTRY_EVENT_WEB_REPLAY = 14;
+		ENTRY_EVENT_CAROUSEL_NAV = 16;
+		ENTRY_EVENT_SWIPE_UP_FROM_CAMERA = 17;
+		ENTRY_EVENT_TAP_DISCOVER_TAB = 18;
+	}
+
+	SCSLIEntryEvent_Type entryEvent = 4;
+
+	enum SCSLIExitEvent_Type {
+		EXIT_EVENT_UNKNOWN = 0;
+		EXIT_EVENT_SWIPE_DOWN = 1;
+		EXIT_EVENT_SWIPE_BEGINNING = 2;
+		EXIT_EVENT_SWIPE_END = 3;
+		EXIT_EVENT_SWIPE_LEFT = 4;
+		EXIT_EVENT_SWIPE_RIGHT = 5;
+		EXIT_EVENT_SWIPE_UP = 6;
+		EXIT_EVENT_ENTER_BACKGROUND = 7;
+		EXIT_EVENT_AUTO_ADVANCE = 8;
+		EXIT_EVENT_BACK_PRESSED = 9;
+		EXIT_EVENT_ERROR = 10;
+		EXIT_EVENT_LONG_PRESS_END = 11;
+		EXIT_EVENT_LONG_PRESS_AND_TAP = 12;
+		EXIT_EVENT_TAP = 13;
+		EXIT_EVENT_TAP_LEFT = 14;
+		EXIT_EVENT_LOADING_SCREEN = 15;
+		EXIT_EVENT_TAP_THUMBNAIL = 16;
+		EXIT_EVENT_TAP_CARET = 17;
+		EXIT_EVENT_TAP_X = 18;
+		EXIT_EVENT_TAP_DOWN_ARROW = 24;
+		EXIT_EVENT_NOTIFICATION_IN_APP = 19;
+		EXIT_EVENT_NOTIFICATION_EXTERNAL = 20;
+		EXIT_EVENT_TAP_CAMERA_BUTTON = 21;
+		EXIT_EVENT_TAP_INTERACTIVE = 25;
+		EXIT_EVENT_TAP_HOME = 22;
+		EXIT_EVENT_TAP_NEXT = 23;
+		EXIT_EVENT_OPEN_BROWSER = 26;
+		EXIT_EVENT_MEMORY_CRASH = 27;
+		EXIT_EVENT_CAROUSEL_NAV = 28;
+	}
+
+	SCSLIExitEvent_Type exitEvent = 5;
+
+	enum SCSLIMediaType_Type {
+		MEDIA_TYPE_UNKNOWN = 0;
+		MEDIA_TYPE_VIDEO_NO_SOUND = 1;
+		MEDIA_TYPE_VIDEO = 2;
+		MEDIA_TYPE_IMAGE = 3;
+		MEDIA_TYPE_TEXT = 4;
+		MEDIA_TYPE_APP_INSTALL = 5;
+		MEDIA_TYPE_GIF = 6;
+		MEDIA_TYPE_URL = 7;
+		MEDIA_TYPE_LOCATION = 8;
+		MEDIA_TYPE_PHONE_NUMBER = 9;
+		MEDIA_TYPE_AUDIO = 10;
+		MEDIA_TYPE_WEB = 11;
+		MEDIA_TYPE_STORY = 12;
+		MEDIA_TYPE_SUBSCRIPTION = 13;
+		MEDIA_TYPE_DEEP_LINK_ATTACHMENT = 14;
+		MEDIA_TYPE_AUDIO_STITCH = 15;
+		MEDIA_TYPE_MAP_DOODLE = 16;
+		MEDIA_TYPE_CAMERA = 17;
+	}
+
+	SCSLIMediaType_Type mediaType = 6;
+	int64 viewSessionStartMsecs = 7;
+	float viewTimeSecs = 8;
+	float totalMediaDurationSecs = 9;
+	int32 numSubitemsAvailable = 10;
+	int32 numUniqueSubitemsViewed = 11;
+	string tileId = 12;
+
+	enum SCSLIStoryFeedItemViewSession_ViewSessionType {
+		VIEW_SESSION_TYPE_UNKNOWN = 0;
+		VIEW_SESSION_TYPE_ITEM = 1;
+		VIEW_SESSION_TYPE_SUBITEM = 2;
+		VIEW_SESSION_TYPE_LONGFORM = 3;
+		VIEW_SESSION_TYPE_MIDROLL_AD = 4;
+		VIEW_SESSION_TYPE_POSTROLL_AD = 5;
+	}
+
+	SCSLIStoryFeedItemViewSession_ViewSessionType viewSessionType = 13;
+	bytes attachedInfo = 14;
+	int32 maxSubitemViewIndex = 15;
+	string variantId = 16;
+	string triggeringItemId = 17;
+	int32 triggeringItemPlaylistOffset = 18;
+	bool withViewedState = 19;
+	float impressionFraction = 20;
+	bool isLongformPlayer = 21;
+	float totalViewTimeSecs = 22;
+
+	enum SCSLIStoryFeedInteractionContext_Enum {
+		DEFAULT = 0;
+		FEED_PAGE = 1;
+		ACTION_MENU = 2;
+		STORY_PLAYER = 3;
+		CONTEXT_MENU = 4;
+		DROP_DOWN_TOAST = 5;
+		PLAY_BUTTON = 6;
+		TILE_HEADER = 7;
+	}
+
+	SCSLIStoryFeedInteractionContext_Enum interactionContext = 23;
+
+	enum SCSLIEntryIntent_Type {
+		UNKNOWN = 0;
+		OPEN = 1;
+		OPEN_BY_BROWSING = 13;
+		OPEN_VIA_IN_APP_NOTIF = 14;
+		OPEN_VIA_SYSTEM_NOTIF = 15;
+		OPEN_VIA_INTERSTITIAL = 16;
+		NEXT_GROUP = 2;
+		NEXT_GROUP_UNINTENDED = 17;
+		NEXT_ITEM = 3;
+		PREV_GROUP = 4;
+		PREV_GROUP_UNINTENDED = 18;
+		PREV_ITEM = 5;
+		AUTO_ADVANCE = 6;
+		BACK_FROM_ATTACHMENT = 7;
+		BACK_FROM_PROFILE = 8;
+		BACK_FROM_SEND_TO = 9;
+		BACK_FROM_CONTEXT_CARDS = 10;
+		GENERIC_DISMISSAL = 11;
+		FOREGROUND_APP = 12;
+	}
+
+	SCSLIEntryIntent_Type entryIntent = 24;
+
+	enum SCSLIExitIntent_Type {
+		UNKNOWN = 0;
+		DISMISS = 1;
+		DISMISS_BY_NAV_PREV = 14;
+		DISMISS_BY_NAV_NEXT = 15;
+		NEXT_GROUP = 2;
+		NEXT_ITEM = 3;
+		PREV_GROUP = 4;
+		PREV_ITEM = 5;
+		AUTO_ADVANCE = 6;
+		OPEN_ATTACHMENT = 7;
+		OPEN_PROFILE = 8;
+		OPEN_SEND_TO = 9;
+		SHOW_CONTEXT_CARDS = 10;
+		GENERIC_STACKING = 16;
+		RESPOND_TO_IN_APP_NOTIF = 12;
+		RESPOND_TO_SYSTEM_NOTIF = 13;
+		BACKGROUND_APP = 11;
+	}
+
+	SCSLIExitIntent_Type exitIntent = 25;
+
+	enum SCSLIStoryFeedItemViewSession_OperaNavigationType_Enum {
+		HORIZONTAL = 0;
+		VERTICAL = 1;
+	}
+
+	SCSLIStoryFeedItemViewSession_OperaNavigationType_Enum operaNavigationType = 26;
+	bool isSpotlightRepliesEnabled = 27;
+	int32 spotlightRepliesLiveCount = 28;
+	string broccoliPageType = 29;
+}

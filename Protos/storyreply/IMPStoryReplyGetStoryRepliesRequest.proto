@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package storyreply;
+
+import "storyreply/IMPStoryReplyGetStoryReplyRequestItem.proto";
+
+message IMPStoryReplyGetStoryRepliesRequest {
+	repeated storyreply.IMPStoryReplyGetStoryReplyRequestItem replyRequestItemsArray = 1;
+}

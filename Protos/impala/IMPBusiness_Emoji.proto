@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPBusiness_Emoji {
+	string hostAccountVerifiedEmoji = 1;
+	string hostAccountVerifiedEmojiSafe = 2;
+	string hostAccountVerifiedEmojiWithoutModifiers = 3;
+}

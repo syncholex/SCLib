@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBImuPdrData {
+	sint32 posX = 1;
+	sint32 posY = 2;
+	sint32 posAccuracy = 3;
+	uint32 heading = 4;
+	uint32 headingAccuracy = 5;
+	uint32 steps = 6;
+	uint32 status = 7;
+}

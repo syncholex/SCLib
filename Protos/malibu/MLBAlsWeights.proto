@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAlsWeights {
+	float primary = 1;
+	float secondary = 2;
+}

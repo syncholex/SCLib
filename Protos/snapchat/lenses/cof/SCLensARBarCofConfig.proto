@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+import "snapchat/lenses/cof/SCLensARBarCofConfig_Unlock.proto";
+import "snapchat/lenses/cof/SCLensARBarCofConfig_Prefetch.proto";
+
+message SCLensARBarCofConfig {
+
+	enum SCLensARBarCofConfig_Version {
+		VERSION_UNSET = 0;
+		V_2_PLUS = 1;
+		V_3 = 2;
+	}
+
+	SCLensARBarCofConfig_Version version = 1;
+	snapchat.lenses.cof.SCLensARBarCofConfig_Unlock unlockConfig = 2;
+	snapchat.lenses.cof.SCLensARBarCofConfig_Prefetch prefetchConfig = 3;
+
+	enum SCLensARBarCofConfig_Warmup {
+		WARMUP_UNSET = 0;
+		NEXT_TAB = 1;
+		VISIBLE_TAB = 2;
+	}
+
+	SCLensARBarCofConfig_Warmup warmupConfig = 4;
+	string additionalFlags = 5;
+
+	enum SCLensARBarCofConfig_ActiveForegroundPrefetchMode {
+		VISIBLE_LENSES_UNSET = 0;
+		SELECTED_LENS_ONLY = 1;
+	}
+
+	SCLensARBarCofConfig_ActiveForegroundPrefetchMode activeForegroundPrefetchMode = 6;
+	bool increasedCloseButtonTapArea = 7;
+	bool carouselLeEntrypointEnabled = 8;
+	string realTimeCategories = 9;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "actionmoji/action/SCMT1Type.proto";
+import "actionmoji/action/SCMT1Sticker.proto";
+import "actionmoji/action/SCMT1Action.proto";
+
+message LoggedAction {
+	repeated string messageArray = 2;
+	repeated actionmoji.action.SCMT1Type actionTypeArray = 3;
+	actionmoji.action.SCMT1Sticker typeSticker = 4;
+	repeated actionmoji.action.SCMT1Action actionArray = 5;
+}

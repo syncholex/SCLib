@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusCommunicationChannelInputAnswer_PhoneInput.proto";
+
+message SCJanusCommunicationChannelInputAnswer {
+
+	oneof answer {
+		string email = 1;
+		string phone = 2;
+		snapchat.janus.api.SCJanusCommunicationChannelInputAnswer_PhoneInput phoneInput = 3;
+	}
+
+}

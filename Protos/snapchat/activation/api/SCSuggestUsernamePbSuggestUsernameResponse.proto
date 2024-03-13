@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCSuggestUsernamePbSuggestUsernameResponse {
+	repeated string suggestionsArray = 1;
+
+	enum SCSuggestUsernamePbSuggestUsernameResponse_StatusCode {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERR_GENERIC_FAILURE = 5;
+		ERR_THROTTLED = 6;
+	}
+
+	SCSuggestUsernamePbSuggestUsernameResponse_StatusCode statusCode = 2;
+}

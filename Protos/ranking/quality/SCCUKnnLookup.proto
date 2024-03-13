@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+import "ranking/quality/SCCUKnnLookup_GenericNeighbor.proto";
+
+message SCCUKnnLookup {
+
+	enum SCCUKnnLookup_LookupType {
+		UNKNOWN = 0;
+		PREMIUM_TILE_CLIP_IMAGE_ANN_LOOKUP = 1;
+	}
+
+	SCCUKnnLookup_LookupType type = 1;
+	repeated ranking.quality.SCCUKnnLookup_GenericNeighbor nearestNeighborsArray = 2;
+}

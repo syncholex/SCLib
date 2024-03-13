@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message FeatureProvidedSignals_SpectacleMetadata {
+	bool isSpectacle = 1;
+
+	enum FeatureProvidedSignals_SpectaclesVersion {
+		UNKNOWN_SPECTACLES_VERSION = 0;
+		V1 = 1;
+		V2 = 2;
+		V3 = 3;
+		V4 = 4;
+	}
+
+	FeatureProvidedSignals_SpectaclesVersion spectaclesVersion = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXContextClientInfo_PrivateStoryInviteInfo {
+	snapchat.core.SCCOREUUID storyId = 1;
+	string storyName = 2;
+	snapchat.core.SCCOREUUID inviteId = 3;
+
+	enum SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType {
+		PRIVATE = 0;
+		CUSTOM = 1;
+	}
+
+	SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType storyType = 4;
+}

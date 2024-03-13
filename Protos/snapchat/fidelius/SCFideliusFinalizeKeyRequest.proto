@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCFideliusFinalizeKeyRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+}

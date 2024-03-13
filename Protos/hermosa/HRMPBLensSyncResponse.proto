@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBLensSyncResponse {
+	bool success = 1;
+}

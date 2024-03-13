@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.userdata;
+
+import "snapchat/creativetools/userdata/SCCTPListItemsResponse_Item.proto";
+import "snapchat/creativetools/common/SCCTPPageToken.proto";
+
+message SCCTPListItemsResponse {
+	repeated snapchat.creativetools.userdata.SCCTPListItemsResponse_Item itemsArray = 1;
+	snapchat.creativetools.common.SCCTPPageToken pageToken = 3;
+}

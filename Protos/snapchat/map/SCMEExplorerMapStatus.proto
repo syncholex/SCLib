@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/map/SCMTThumbnail.proto";
+import "snapchat/map/common/SCMCRGBA.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+
+message SCMEExplorerMapStatus {
+	string statusId = 1;
+	int64 statusTimestampMs = 2;
+	snapchat.geo.SPCGPoint location = 3;
+	double zoom = 4;
+	string category = 5;
+	string title = 6;
+	string status = 7;
+	string emoji = 8;
+	string poiId = 9;
+	snapchat.map.SCMTThumbnail poiThumbnail = 10;
+	bool isOnboarding = 11;
+	snapchat.map.common.SCMCRGBA categoryColor = 12;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 13;
+	string deeplinkURL = 14;
+	string deeplinkDisplayText = 15;
+	snapchat.map.common.SCMCRGBA deeplinkColor = 16;
+	string headline = 17;
+	string localityName = 18;
+	string placeId = 19;
+	bool isMapActivityCard = 20;
+	string miniId = 21;
+	string bitmojiStickerId = 22;
+}

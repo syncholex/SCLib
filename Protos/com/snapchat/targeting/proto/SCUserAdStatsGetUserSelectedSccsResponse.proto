@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/SCUserAdStatsDisplayableScc.proto";
+
+message SCUserAdStatsGetUserSelectedSccsResponse {
+	repeated com.snapchat.targeting.proto.SCUserAdStatsDisplayableScc selectedSccsArray = 1;
+}

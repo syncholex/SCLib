@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkFeature_Property_Value_List.proto";
+import "snap/snap_maps_sdk/SMSdkFeature_Property_Value_NullValue.proto";
+import "snap/snap_maps_sdk/SMSdkFeature_Property_Value_ValueObject.proto";
+
+message SMSdkFeature_Property_Value {
+
+	oneof value {
+		bool boolValue = 1;
+		string stringValue = 2;
+		uint64 uint64Value = 3;
+		int64 int64Value = 4;
+		double doubleValue = 5;
+		snap.snap_maps_sdk.SMSdkFeature_Property_Value_List listValue = 6;
+		snap.snap_maps_sdk.SMSdkFeature_Property_Value_NullValue nullValue = 7;
+		snap.snap_maps_sdk.SMSdkFeature_Property_Value_ValueObject valueObject = 8;
+	}
+
+}

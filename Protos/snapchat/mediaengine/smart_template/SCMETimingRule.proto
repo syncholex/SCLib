@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/mediaengine/smart_template/SCMETimeRangeRule.proto";
+
+message SCMETimingRule {
+
+	oneof rule {
+		google.protobuf.GPBEmpty wholeDuration = 1;
+		snapchat.mediaengine.smart_template.SCMETimeRangeRule timeRangeRule = 2;
+	}
+
+}

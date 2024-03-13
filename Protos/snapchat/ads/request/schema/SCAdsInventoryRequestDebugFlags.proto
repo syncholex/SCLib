@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/adindex/dpa/protobuf/DpaStoryAdMetadata.proto";
+
+message SCAdsInventoryRequestDebugFlags {
+	bool dpaTopSnapDynamic = 1;
+
+	enum SCAdsCreativeElementInteractionType {
+		CREATIVE_ELEMENT_INTERACTION_TYPE_UNSET = 0;
+		WEB_VIEW = 1;
+		DEEP_LINK = 2;
+		APP_INSTALL = 3;
+		SHOWCASE = 4;
+	}
+
+	SCAdsCreativeElementInteractionType creativeElementInteractionType = 2;
+
+	enum SCAdsCreativeElementInteractionType {
+		CREATIVE_ELEMENT_INTERACTION_TYPE_UNSET = 0;
+		WEB_VIEW = 1;
+		DEEP_LINK = 2;
+		APP_INSTALL = 3;
+		SHOWCASE = 4;
+	}
+
+	SCAdsCreativeElementInteractionType collectionDefaultFallbackInteractionType = 3;
+	snapchat.adindex.dpa.protobuf.DpaStoryAdMetadata dpaStoryAdMetadata = 4;
+	repeated string debugProductIdsArray = 5;
+}

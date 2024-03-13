@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2StorySummaryInfo_ThumbnailInfo.proto";
+
+message SCS2StorySummaryInfo {
+	snapchat.search.SCS2StorySummaryInfo_ThumbnailInfo thumbnailInfo = 1;
+	bool hasUnviewedSnaps = 2;
+	bool hasActiveStory = 3;
+}

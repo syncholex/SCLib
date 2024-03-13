@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsCanOpenUrlExclusionConfig {
+	string appScheme = 1;
+	string onDeviceMatchKey = 2;
+	string appId = 3;
+}

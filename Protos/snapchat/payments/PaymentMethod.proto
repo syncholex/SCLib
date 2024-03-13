@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.payments;
+
+import "snapchat/payments/CreditCard.proto";
+
+message PaymentMethod {
+
+	enum PaymentMethod_Type {
+		UNSET = 0;
+		COUPON = 1;
+		CREDIT_CARD = 2;
+		DIRECT_DEBIT = 3;
+		IN_APP_PURCHASE = 4;
+		LINE_OF_CREDIT = 5;
+		PAYPAL = 6;
+	}
+
+	PaymentMethod_Type type = 1;
+}

@@ -1,0 +1,100 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/core/SCSCORESnapSource.proto";
+import "ranking/quality/SCCUDocumentContentSignals.proto";
+
+message SCSCKFriendStorySnapContentFeatures {
+
+	enum SCSCOREMediaInfo_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND = 3;
+		BLOB = 4;
+		LAGUNA = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSCOREMediaInfo_MediaType mediaType = 1;
+	float videoDuration = 2;
+	int32 numWordsInCaption = 3;
+	string filterId = 4;
+	bool hasSponsoredGeoFilter = 5;
+	string lensId = 6;
+	bool hasSponsoredLens = 7;
+	bool hasVenue = 8;
+	repeated string stickerIdsArray = 9;
+	bool hasBitmojiSticker = 10;
+	bool hasEmojiSticker = 11;
+	bool hasTopicSticker = 12;
+	bool hasSnapchatSticker = 13;
+	bool hasAttachmentURL = 14;
+	bool isFrontFacing = 15;
+
+	enum SCSCOREMediaInfo_Orientation {
+		VERTICAL = 0;
+		UPSIDE_DOWN = 1;
+		HORIZONTAL_LEFT = 2;
+		HORIZONTAL_RIGHT = 3;
+	}
+
+	SCSCOREMediaInfo_Orientation orientation = 16;
+	bool isInfiniteDuration = 17;
+	string venueId = 18;
+	ranking.core.SCSCORESnapSource snapSource = 19;
+	int64 clientEditTimeBeforeSend = 20;
+	bool savedToMemoriesBeforeSend = 21;
+	int32 retakeTrials = 22;
+	int32 lowestZoomLevel = 23;
+	int32 highestZoomLevel = 24;
+
+	enum SCSCOREConnectionInfo_ConnectionType {
+		CONNECTION_UNKNOWN = 0;
+		CONNECTION_WIFI = 1;
+		CONNECTION_CELL = 2;
+		CONNECTION_ETHERNET = 3;
+	}
+
+	SCSCOREConnectionInfo_ConnectionType connectionType = 25;
+	float mediaDuration = 26;
+	int32 numMentions = 27;
+	int32 numCaptionTagMentions = 28;
+	int32 numMentionStickerMentions = 29;
+	int32 numSnapcodeStickerMentions = 30;
+	bool hasMusic = 31;
+	bool hasUnsetMusic = 32;
+	bool hasLicensedMusic = 33;
+	bool hasCustomSoundMusic = 34;
+	bool hasSpotlightOrigMusic = 35;
+	int32 numCtStickers = 36;
+	int32 numCtBitmojiStickers = 37;
+	int32 numCtSnapchatStickers = 38;
+	repeated string lensRawTextTagsArray = 39;
+	string lensPrimaryCategoryId = 40;
+	string lensSecondaryCategoryId = 41;
+	repeated string lensContentTagIdsArray = 42;
+	repeated string lensIntegrityTagIdsArray = 43;
+	ranking.quality.SCCUDocumentContentSignals contentSignalScores = 44;
+}

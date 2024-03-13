@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingAdItemPostbackInfo.proto";
+
+message SCMessagingTextAdItem {
+	string title = 1;
+	string displayURL = 2;
+	string displayDomain = 3;
+	string abstract = 4;
+	string destinationURL = 5;
+	string adId = 6;
+	string impressionId = 7;
+	snapchat.messaging.SCMessagingAdItemPostbackInfo postbackInfo = 8;
+}

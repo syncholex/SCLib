@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message LensContentSignatureValidationParams {
+	bytes signature = 1;
+	string contentId = 2;
+}

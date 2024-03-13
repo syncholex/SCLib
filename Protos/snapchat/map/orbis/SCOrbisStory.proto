@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+import "snapchat/context/SCStoryManifest.proto";
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/local/verrazano/VRZLocalizedLabels.proto";
+
+message SCOrbisStory {
+	string verrazanoId = 1;
+	int64 createdAtMs = 2;
+	int64 updatedAtMs = 3;
+	snapchat.context.SCStoryManifest manifest = 4;
+	repeated string bannedSnapIdsArray = 5;
+	repeated string flaggedSnapIdsArray = 6;
+
+	enum SCOrbisStory_Audience {
+		EVERYONE = 0;
+		EMPLOYEES_ONLY = 1;
+	}
+
+	SCOrbisStory_Audience audience = 7;
+	int64 maxSnapAgeMins = 8;
+	snapchat.geo.SPCGPoint centroid = 9;
+	string placeName = 10;
+	repeated snapchat.local.verrazano.VRZLocalizedLabels alternatePlaceNamesArray = 11;
+	repeated int32 alternateRankingArray = 12 [packed=true];
+}

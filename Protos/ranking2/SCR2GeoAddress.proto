@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2GeoAddress {
+	string country = 1;
+	string state = 2;
+	string city = 3;
+	string streetName = 4;
+	string streetAddress = 5;
+	string neighborhood = 6;
+	string zipcode = 7;
+	string countryShortname = 8;
+	string stateShortname = 9;
+	string countryCode = 10;
+	string stateCode = 11;
+	string cityAdminId = 12;
+}

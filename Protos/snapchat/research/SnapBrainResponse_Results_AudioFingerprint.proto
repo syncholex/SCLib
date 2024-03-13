@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_AudioFingerprint {
+	repeated int32 fingerprintsArray = 1 [packed=true];
+	repeated int32 framesArray = 2 [packed=true];
+	int32 spectrogramLength = 3;
+	int32 wavLength = 4;
+}

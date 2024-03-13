@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPUnarchiveHighlightRequest {
+	string profileId = 1;
+	string highlightId = 2;
+}

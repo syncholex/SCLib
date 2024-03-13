@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+import "snapchat/sendto/ranking/SCSTRStandardLibrary_Arguments2.proto";
+
+message SCSTRStateUpdate {
+	string key = 1;
+
+	oneof value {
+		snapchat.sendto.ranking.SCSTRAST set = 2;
+		snapchat.sendto.ranking.SCSTRAST prepend = 3;
+		snapchat.sendto.ranking.SCSTRAST append = 4;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 insertAt = 5;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 setAt = 6;
+		snapchat.sendto.ranking.SCSTRAST removeAt = 7;
+	}
+
+}

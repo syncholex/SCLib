@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message AudioClassificationValue {
+
+	enum AudioClassification {
+		UNSET = 0;
+		NORMAL_DIALOGUE = 1;
+		DIALOGUE_SUBTITLE_BURN = 2;
+		DIALOGUE_IMPACT_BURN = 3;
+		DIALOGUE_HEAVY = 4;
+		NO_DIALOGUE = 5;
+	}
+
+	AudioClassification value = 1;
+}

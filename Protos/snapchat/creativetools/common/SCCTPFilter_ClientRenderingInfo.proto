@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ClientRenderingInfo {
+
+	enum SCCTPFilter_ClientRenderingInfo_Scale {
+		SCALE_UNSET = 0;
+		SCALE_TO_FILL = 1;
+		ASPECT_FIT = 2;
+		ASPECT_FILL = 3;
+	}
+
+	SCCTPFilter_ClientRenderingInfo_Scale scale = 1;
+
+	enum SCCTPFilter_ClientRenderingInfo_Position {
+		POSITION_UNSET = 0;
+		TOP = 1;
+		BOTTOM = 2;
+		LEFT = 3;
+		RIGHT = 4;
+		TOP_LEFT = 5;
+		TOP_RIGHT = 6;
+		BOTTOM_LEFT = 7;
+		BOTTOM_RIGHT = 8;
+		CENTER = 9;
+	}
+
+	SCCTPFilter_ClientRenderingInfo_Position position = 2;
+	bool belowDrawingLayer = 3;
+}

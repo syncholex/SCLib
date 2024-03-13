@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsFixedIntervalsConfig.proto";
+import "snapchat/ads/abconfig/SCAdsEvenlySpreadConfig.proto";
+import "snapchat/ads/abconfig/SCAdsCustomIntervalsConfig.proto";
+import "snapchat/ads/abconfig/SCAdsAdScoresConfig.proto";
+import "snapchat/ads/abconfig/SCAdsPerStoryConfig.proto";
+import "snapchat/ads/abconfig/SCAdsStoryDocConfig.proto";
+
+message SCAdsFixedAdsConfig {
+
+	oneof adPlacementType {
+		snapchat.ads.abconfig.SCAdsFixedIntervalsConfig fixedIntervalsConfig = 1;
+		snapchat.ads.abconfig.SCAdsEvenlySpreadConfig evenlySpreadConfig = 2;
+		snapchat.ads.abconfig.SCAdsCustomIntervalsConfig customIntervalsConfig = 3;
+		snapchat.ads.abconfig.SCAdsAdScoresConfig adScoresConfig = 4;
+		snapchat.ads.abconfig.SCAdsPerStoryConfig perStoryConfig = 5;
+		snapchat.ads.abconfig.SCAdsStoryDocConfig storyDocConfig = 6;
+	}
+
+
+	enum SCAdsAllowlistType {
+		ALLOWLIST_TYPE_UNSET = 0;
+		PUBLISHER_ID_ALLOWLIST = 1;
+		NO_ALLOWLIST = 2;
+	}
+
+	SCAdsAllowlistType allowlistType = 7;
+}

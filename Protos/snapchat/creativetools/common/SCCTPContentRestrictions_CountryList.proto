@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPContentRestrictions_CountryList {
+	repeated uint32 countryCodesArray = 1 [packed=true];
+}

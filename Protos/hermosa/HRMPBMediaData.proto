@@ -1,0 +1,25 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBRange.proto";
+
+message HRMPBMediaData {
+	string uuid = 1;
+
+	enum HRMPBMediaType {
+		METADATA = 0;
+		THUMBNAIL = 1;
+		HIGHLIGHT_THUMBNAIL = 2;
+		SD_VIDEO = 3;
+		HD_VIDEO = 4;
+		PICTURE = 5;
+		IMU_DATA = 6;
+		METADATA_NO_UTC = 7;
+	}
+
+	HRMPBMediaType type = 2;
+	hermosa.HRMPBRange requestedRange = 3;
+	hermosa.HRMPBRange actualRange = 4;
+	bytes data_p = 5;
+}

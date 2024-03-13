@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSCKUserFeatures_BucketizedSuggestiveWindowedEngagementStats {
+	int32 suggestiveBucket = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTLocationRequestFeedbackRequest {
+	string friendId = 1;
+
+	enum SCMTLocationRequestFeedback {
+		IGNORED = 0;
+		ACCEPTED = 1;
+	}
+
+	SCMTLocationRequestFeedback feedback = 2;
+}

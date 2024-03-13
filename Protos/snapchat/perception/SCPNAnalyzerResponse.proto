@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNEntityAnnotation.proto";
+import "snapchat/research/SnapBrainResponse_Results.proto";
+import "snapchat/perception/SCPNAnalyzerResponse_EntityAnnotations.proto";
+import "snapchat/perception/SCPNAnalyzerResponseMetadata.proto";
+
+message SCPNAnalyzerResponse {
+	repeated snapchat.perception.SCPNEntityAnnotation annotationsArray = 1;
+	string version = 2;
+
+	oneof response {
+		snapchat.research.SnapBrainResponse_Results snapEye = 3;
+		snapchat.perception.SCPNAnalyzerResponse_EntityAnnotations entityAnnotations = 4;
+	}
+
+	snapchat.perception.SCPNAnalyzerResponseMetadata metadata = 5;
+}

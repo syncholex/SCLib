@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFViewAfterDarkFriendStoryNotificationMetadata.proto";
+import "ranking/pii/user/notification/SCSNTFSpotlightThreadedRepliesNotificationMetadata.proto";
+
+message SCSNTFStoryNotification {
+
+	enum SCSNTFNotificationStoryType_Enum {
+		UNKNOWN = 0;
+		OPT_IN_STORY = 1;
+		OPT_IN_HN_NEWS = 2;
+		OPT_IN_HN_NEWS_SUMMARY = 3;
+		VIEW_AFTER_DARK_FRIEND_STORY = 4;
+		SPOTLIGHT_THREADED_REPLIES = 5;
+	}
+
+	SCSNTFNotificationStoryType_Enum notificationType = 1;
+
+	oneof notificationMetadata {
+		ranking.pii.user.notification.SCSNTFViewAfterDarkFriendStoryNotificationMetadata viewAfterDarkFriendStoryNotificationMetadata = 2;
+		ranking.pii.user.notification.SCSNTFSpotlightThreadedRepliesNotificationMetadata spotlightThreadedRepliesNotificationMetadata = 3;
+	}
+
+}

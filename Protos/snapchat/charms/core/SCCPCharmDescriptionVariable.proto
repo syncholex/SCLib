@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.charms.core;
+
+import "snapchat/charms/common/SCCPUUID.proto";
+
+message SCCPCharmDescriptionVariable {
+
+	enum SCCPCharmDescriptionVariable_Enum {
+		UNKNOWN = 0;
+		FRIEND_FIRST_NAME_OR_DISPLAY_NAME = 1;
+		GROUP_NAME = 2;
+		GROUP_PARTICIPANT_NAME = 3;
+		STREAK_COUNT = 4;
+	}
+
+	SCCPCharmDescriptionVariable_Enum value = 1;
+
+	oneof metadata {
+		snapchat.charms.common.SCCPUUID groupParticipantId = 2;
+		int64 streakValue = 3;
+	}
+
+}

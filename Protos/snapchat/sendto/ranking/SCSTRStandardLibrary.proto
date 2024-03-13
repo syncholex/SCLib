@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+import "snapchat/sendto/ranking/SCSTRStandardLibrary_Arguments2.proto";
+
+message SCSTRStandardLibrary {
+
+	oneof function {
+		snapchat.sendto.ranking.SCSTRAST floor = 1;
+		snapchat.sendto.ranking.SCSTRAST ceil = 2;
+		snapchat.sendto.ranking.SCSTRAST round = 3;
+		snapchat.sendto.ranking.SCSTRAST exp = 4;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 pow = 5;
+		snapchat.sendto.ranking.SCSTRAST sqrt = 6;
+		snapchat.sendto.ranking.SCSTRAST abs = 7;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 min = 8;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 max = 9;
+		snapchat.sendto.ranking.SCSTRAST count = 10;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 contains = 11;
+		snapchat.sendto.ranking.SCSTRStandardLibrary_Arguments2 codePoint = 12;
+		snapchat.sendto.ranking.SCSTRAST log = 13;
+		snapchat.sendto.ranking.SCSTRAST log10 = 14;
+	}
+
+}

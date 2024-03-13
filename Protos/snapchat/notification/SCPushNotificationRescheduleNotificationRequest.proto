@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCPushNotificationRescheduleNotificationRequest {
+	snapchat.notification.SCPushNotificationUUID requestId = 1;
+	google.protobuf.GPBTimestamp scheduledTime = 2;
+}

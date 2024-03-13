@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsProtoRenderLeadGeneration_LegalConsentCheckbox.proto";
+
+message SCAdsProtoRenderLeadGeneration_CustomLegalDisclaimer {
+	string title = 1;
+	string body = 2;
+	repeated snapchat.ads.render.schema.SCAdsProtoRenderLeadGeneration_LegalConsentCheckbox consentCheckboxesArray = 3;
+}

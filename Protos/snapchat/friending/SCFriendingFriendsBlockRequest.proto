@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingFriendBlockParam.proto";
+
+message SCFriendingFriendsBlockRequest {
+	repeated snapchat.friending.SCFriendingFriendBlockParam paramsArray = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.item_favoriting.wire.favorites;
+
+import "com/snapchat/item_favoriting/wire/favorites/ItemFavoritingDeviceContext.proto";
+import "com/snapchat/item_favoriting/wire/favorites/FavoriteItem.proto";
+
+message AddFavoriteRequest {
+	com.snapchat.item_favoriting.wire.favorites.ItemFavoritingDeviceContext deviceContext = 1;
+	com.snapchat.item_favoriting.wire.favorites.FavoriteItem favoriteItem = 2;
+}

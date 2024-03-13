@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.common;
+
+import "snapchat/common/MapRecord.proto";
+
+message MapRecords {
+	repeated snapchat.common.MapRecord recordsArray = 1;
+}

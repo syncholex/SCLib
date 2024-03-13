@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.perception.fastdnn;
+
+import "snapchat/perception/fastdnn/SCPFDModel_TensorDefinition.proto";
+import "snapchat/perception/fastdnn/SCPFDModel_Options.proto";
+
+message SCPFDModel {
+	bytes model = 1;
+
+	enum SCPFDBackend {
+		BACKEND_UNKNOWN = 0;
+		BACKEND_LIBDNN = 1;
+		BACKEND_COREML = 2;
+		BACKEND_SNPE = 4;
+		BACKEND_MACE = 8;
+		BACKEND_HEXAGON = 16;
+		BACKEND_ONNX = 32;
+	}
+
+	SCPFDBackend backend = 2;
+	snapchat.perception.fastdnn.SCPFDModel_TensorDefinition inputs = 3;
+	snapchat.perception.fastdnn.SCPFDModel_TensorDefinition outputs = 4;
+	snapchat.perception.fastdnn.SCPFDModel_Options options = 5;
+	bool trainable = 6;
+}

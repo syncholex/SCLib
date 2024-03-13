@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+message SCCTPCameraRollStickerMetadata {
+
+	enum SCCTPCameraRollStickerMetadata_Shape {
+		SHAPE_UNSPECIFIED = 0;
+		ROUNDED_RECT = 1;
+		CIRCLE = 2;
+		SQUARE = 3;
+		ORIGINAL_ASPECT_RATIO = 4;
+		FORCED_PORTRAIT = 5;
+		FORCED_LANDSCAPE = 6;
+	}
+
+	SCCTPCameraRollStickerMetadata_Shape shape = 1;
+}

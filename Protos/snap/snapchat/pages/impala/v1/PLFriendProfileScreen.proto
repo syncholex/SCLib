@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snap.snapchat.pages.impala.v1;
+
+message PLFriendProfileScreen {
+	string userId = 1;
+}

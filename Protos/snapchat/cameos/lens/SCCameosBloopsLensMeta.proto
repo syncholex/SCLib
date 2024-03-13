@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cameos.lens;
+
+message SCCameosBloopsLensMeta {
+	string id_p = 1;
+	string path = 2;
+	string checksum = 3;
+}

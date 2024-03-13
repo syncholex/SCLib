@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZLanguageDetails.proto";
+
+message VRZPlaceWriteData_LanguageDetailsWriteData {
+	snapchat.local.verrazano.VRZLanguageDetails value = 1;
+}

@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFTargetUserInfo.proto";
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/pii/user/notification/SCSNTFNotificationRenderingData.proto";
+
+message SCSNTFNotificationRequest {
+	string notificationId = 1;
+
+	enum SCSNTFNotificationType_Enum {
+		UNKNOWN = 0;
+		NOTIFY = 1;
+		REVOKE = 2;
+		PING = 3;
+		UNUSED_4 = 4;
+		UNUSED_5 = 5;
+		UNUSED_6 = 6;
+		UNUSED_7 = 7;
+		UNUSED_8 = 8;
+		UNUSED_9 = 9;
+	}
+
+	SCSNTFNotificationType_Enum notificationType = 2;
+	string userId = 3;
+	ranking.pii.user.notification.SCSNTFTargetUserInfo targetInfo = 4;
+	string title = 5;
+	string message = 6;
+	ranking.core.SCCORECompositeStoryId storyId = 7;
+	int64 displayDurationSecs = 8;
+	bool isDryRun = 9;
+	bool isEmployeesOnly = 10;
+	int64 scheduleTimestampMsecs = 11;
+	int64 lastCutoffTimestampMsecs = 12;
+	bool isCustomPoolOnly = 13;
+	string customPoolId = 14;
+	bool sendToAllEmployees = 15;
+	string userEmail = 16;
+	string notificationKey = 17;
+
+	enum SCSNTFNotificationReason_Enum {
+		UNKNOWN = 0;
+		OPT_IN = 1;
+		CAMPAGIN = 2;
+		UNUSED_3 = 3;
+		UNUSED_4 = 4;
+		UNUSED_5 = 5;
+		UNUSED_6 = 6;
+		UNUSED_7 = 7;
+		UNUSED_8 = 8;
+	}
+
+	SCSNTFNotificationReason_Enum notificationReason = 18;
+	int64 lastSuccessPushTimestampMsecs = 19;
+	bool isViewMyStoryCustom = 20;
+	bool isPrivateStory = 21;
+
+	enum SCSNTFNotificationStoryType_Enum {
+		UNKNOWN = 0;
+		OPT_IN_STORY = 1;
+		OPT_IN_HN_NEWS = 2;
+		OPT_IN_HN_NEWS_SUMMARY = 3;
+		VIEW_AFTER_DARK_FRIEND_STORY = 4;
+		SPOTLIGHT_THREADED_REPLIES = 5;
+	}
+
+	SCSNTFNotificationStoryType_Enum notificationStoryType = 22;
+	repeated ranking.core.SCCORECompositeStoryId storyIdsArray = 23;
+	ranking.pii.user.notification.SCSNTFNotificationRenderingData notificationRenderingData = 24;
+}

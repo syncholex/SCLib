@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPScoredInterest.proto";
+import "ranking/pii/user/profile/SCSUPScoredInterestGroup.proto";
+import "ranking/pii/user/profile/SCSUPWindowedScoredScc.proto";
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPSuggestiveContentEngagement.proto";
+import "ranking/pii/user/profile/SCSUPSpotlightRealtimeWindowedEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPFriendStoryWindowedEngagementStats.proto";
+
+message SCSUPInterests {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPScoredInterest scoredInterestsArray = 2;
+	int64 lastUpdatedTimestampInMsecs = 3;
+	repeated ranking.pii.user.profile.SCSUPScoredInterest interestTabCategoriesArray = 4;
+	repeated ranking.pii.user.profile.SCSUPScoredInterestGroup scoredInterestGroupsArray = 5;
+	repeated ranking.pii.user.profile.SCSUPScoredInterest scoredSccArray = 6;
+	ranking.pii.user.profile.SCSUPWindowedScoredScc scoredPublisherScc = 7;
+	ranking.pii.user.profile.SCSUPWindowedScoredScc scoredPublicUserTagScc = 8;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSccPublisherStory = 9;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSccPublicUserAccount = 10;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSccPublisherStorySpotlight = 11;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSccPublicUserAccountSpotlight = 12;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSccSingleSnapStory = 13;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSccSingleSnapStory = 14;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedYt8MSingleSnapStory = 15;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSccV3SingleSnapStory = 16;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSccPlusV1SingleSnapStory = 17;
+	repeated ranking.pii.user.profile.SCSUPSuggestiveContentEngagement suggestiveContentEngagementSingleSnapStoryArray = 18;
+	string userCohort = 19;
+	repeated ranking.pii.user.profile.SCSUPSuggestiveContentEngagement suggestiveContentEngagementPublicCreatorArray = 20;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSensitiveOrSuggestivePublisherStory = 21;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupContentClusterV1SingleSnapStory = 22;
+	ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedCupSccPlusV1SingleSnapStoryRealtime = 23;
+	ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedCupContentClusterV1SingleSnapStoryRealtime = 24;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSccPlusV3SingleSnapStory = 25;
+	ranking.pii.user.profile.SCSUPFriendStoryWindowedEngagementStats windowedCupSccPlusV1FriendStory = 26;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSnap2InterestV1SingleSnapStory = 27;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedCupSnap2InterestV2SingleSnapStory = 28;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package snapchat.sendto.api;
+
+message SCShareDestinationsList {
+
+	enum SCShareDestinationsList_ShareDestination {
+		UNSET = 0;
+		COPY_LINK = 1;
+		WHATSAPP = 2;
+		TIKTOK = 3;
+		INSTAGRAM = 4;
+		INSTAGRAM_STORY = 5;
+		SMS = 6;
+		TWITTER = 7;
+		MESSENGER = 8;
+		FACEBOOK = 9;
+		CAMERA_ROLL = 10;
+		SYSTEM_SHARE = 11;
+		LINE = 12;
+		TELEGRAM = 13;
+		DISCORD = 14;
+		VIBER = 15;
+		KAKAO_TALK = 16;
+		SIGNAL = 17;
+		IMO = 18;
+		JIO_CHAT = 19;
+		LINKTREE = 20;
+		INSTAGRAM_DIRECT = 21;
+	}
+
+	repeated SCShareDestinationsList_ShareDestination shareDestinationsArray = 1 [packed=true];
+}

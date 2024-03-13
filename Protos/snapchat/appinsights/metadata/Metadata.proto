@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/SCAppInsightsCameraInfo.proto";
+import "snapchat/appinsights/metadata/ComposerInfo.proto";
+import "snapchat/appinsights/metadata/CallingInfo.proto";
+import "snapchat/appinsights/metadata/LensesInfo.proto";
+import "snapchat/appinsights/metadata/MessagingInfo.proto";
+import "snapchat/appinsights/metadata/DiscoverInfo.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsCreatorInfo.proto";
+import "snapchat/appinsights/metadata/AdsClientInfo.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsSharingInfo.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsMediaInfo.proto";
+import "snapchat/appinsights/metadata/SCAppInsightsBlizzardInfo.proto";
+
+message Metadata {
+	snapchat.appinsights.metadata.SCAppInsightsCameraInfo cameraInfo = 1;
+	snapchat.appinsights.metadata.ComposerInfo composerInfo = 2;
+	snapchat.appinsights.metadata.CallingInfo callingInfo = 3;
+	snapchat.appinsights.metadata.LensesInfo lensesInfo = 4;
+	snapchat.appinsights.metadata.MessagingInfo messagingInfo = 5;
+	snapchat.appinsights.metadata.DiscoverInfo discoverInfo = 6;
+	snapchat.appinsights.metadata.SCAppInsightsCreatorInfo creatorInfo = 7;
+	snapchat.appinsights.metadata.AdsClientInfo adsClientInfo = 8;
+	snapchat.appinsights.metadata.SCAppInsightsSharingInfo sharingInfo = 9;
+	snapchat.appinsights.metadata.SCAppInsightsMediaInfo mediaInfo = 10;
+	snapchat.appinsights.metadata.SCAppInsightsBlizzardInfo blizzardInfo = 11;
+}

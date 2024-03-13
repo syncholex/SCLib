@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusAppLoginContext {
+	string blizzardClientId = 1;
+	string loginFlowSessionId = 2;
+	string clientNetworkRequestId = 3;
+	string loginAttemptId = 4;
+	string cofDeviceId = 5;
+	string clientAuthenticationSessionId = 6;
+	string persistentAttestationDeviceId = 7;
+}

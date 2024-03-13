@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensFasterCarouselConfig {
+	bool dragPreviewEnabled = 1;
+	bool deceleratePreviewEnabled = 2;
+	uint32 previewInteractionThresholdMs = 3;
+
+	enum SCLensFasterCarouselConfig_Haptics {
+		UNSET = 0;
+		ON_SCROLL = 1;
+		ON_PREVIEW = 2;
+	}
+
+	SCLensFasterCarouselConfig_Haptics haptics = 4;
+	bool logSwipeOnPreviewEnabled = 5;
+	bool fastSelectionEnabled = 6;
+	double decelerationSpeedFactor = 7;
+	bool decelerationCenterOnItem = 8;
+	uint32 dragPreviewDelayMs = 9;
+	bool applyPrioritizedLensesOnDraggingWithoutDelay = 10;
+	bool skipNonPrioritizedLensesOnDragging = 11;
+}

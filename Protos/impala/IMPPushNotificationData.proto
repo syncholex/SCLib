@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "serengeti/SGTILink.proto";
+
+message IMPPushNotificationData {
+	string businessId = 1;
+	serengeti.SGTILink serengetiLink = 2;
+	int64 timestampMs = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+message VLKNrfDiffUpdateRequest {
+
+	enum VLKNrfDiffUpdateRequestType {
+		GET_HASH = 1;
+		REVERT = 2;
+		XDELTA3_APPLY = 3;
+		UNTAR = 4;
+	}
+
+	VLKNrfDiffUpdateRequestType requestType = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.snapcodes.payloads;
+
+message SCSnapcodePayloadSponsoredLensPreview {
+	string lensId = 1;
+	string creativeId = 2;
+	bytes legacySojuUnlockablePayload = 3;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCMTMapStyleRequest {
+
+	enum SCMTMapStyle {
+		DEFAULT = 0;
+		PROTOTYPE = 5;
+		LITE = 8;
+		PLACES = 10;
+		DARK_MODE = 11;
+		MANUAL = 12;
+	}
+
+	SCMTMapStyle desiredStyle = 1;
+	string prototypeStyleId = 3;
+	string styleJsonEtag = 4;
+	bool serveNewMapStyles = 5;
+	string locale = 6;
+
+	enum SCMTMapColorScheme {
+		LIGHT = 0;
+		DARK = 1;
+	}
+
+	SCMTMapColorScheme colorScheme = 7;
+	string manualStyleName = 8;
+	snapchat.geo.SPCGPoint location = 9;
+}

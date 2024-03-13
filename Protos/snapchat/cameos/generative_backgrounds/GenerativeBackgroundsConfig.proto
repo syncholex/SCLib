@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.cameos.generative_backgrounds;
+
+import "snapchat/cameos/generative_backgrounds/PreGeneratedBackground.proto";
+
+message GenerativeBackgroundsConfig {
+	repeated string suggestionsArray = 1;
+	int32 previewsLoadersCount = 2;
+	int32 queryMaxLength = 3;
+	int32 randomSuggestionsCount = 4;
+	repeated snapchat.cameos.generative_backgrounds.PreGeneratedBackground preGeneratedBackgroundsArray = 5;
+	int32 promptCacheTtlInSec = 6;
+	bool languageHeaderEnabled = 7;
+	int32 historyCacheTtlInSec = 8;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "actionmoji/action/SCMT1StickerID.proto";
+
+message SCMECheckinStickerOption {
+	string id_p = 1;
+	actionmoji.action.SCMT1StickerID sticker = 2;
+	int32 rank = 3;
+}

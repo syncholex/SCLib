@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+import "snapchat/cdp/media/Codec.proto";
+
+message VideoTranscodingConfiguration {
+	int32 resolutionWidth = 1;
+	int32 resolutionHeight = 2;
+	int32 frameRate = 3;
+	int32 bitrate = 4;
+	snapchat.cdp.media.Codec codec = 5;
+}

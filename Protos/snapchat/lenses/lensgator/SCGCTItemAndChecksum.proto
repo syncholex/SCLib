@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCGCTItemAndChecksum {
+	snapchat.creativetools.ct_item.SCCTPCTItem ctItem = 1;
+	bytes checksum = 2;
+}

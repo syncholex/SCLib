@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement_Appearance.proto";
+import "snapchat/context2/api/SCCTXContextClientInfo_TappableElement_Action.proto";
+
+message SCCTXContextClientInfo_TappableElement {
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElement_Appearance appearance = 1;
+	snapchat.context2.api.SCCTXContextClientInfo_TappableElement_Action action = 2;
+
+	enum SCCTXContextClientInfo_TappableElement_TappableElementType {
+		TappableElementTypeUnknown = 0;
+		TappableElementTypeSticker = 1;
+		TappableElementTypeCaption = 2;
+		TappableElementTypePoll = 3;
+		TappableElementTypeDynamicPoll = 4;
+		TappableElementTypeQuestionSticker = 5;
+		TappableElementTypeFilter = 6;
+	}
+
+	SCCTXContextClientInfo_TappableElement_TappableElementType type = 3;
+}

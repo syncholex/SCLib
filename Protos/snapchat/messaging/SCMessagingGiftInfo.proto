@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingGiftInfo {
+	snapchat.messaging.SCMessagingUUID orderReferenceId = 1;
+	snapchat.messaging.SCMessagingUUID giftId = 2;
+}

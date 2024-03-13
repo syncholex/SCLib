@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_SponsoredSlug {
+	string text = 1;
+	uint32 timeBeforeFadeoutMs = 2;
+
+	enum SCCTPFilter_SponsoredSlug_Position {
+		POSITION_UNSET = 0;
+		TOP_LEFT = 1;
+		TOP_CENTER = 2;
+		TOP_RIGHT = 3;
+		BOTTOM_LEFT = 4;
+		BOTTOM_CENTER = 5;
+		BOTTOM_RIGHT = 6;
+		MIDDLE_LEFT = 7;
+		MIDDLE_CENTER = 8;
+		MIDDLE_RIGHT = 9;
+	}
+
+	SCCTPFilter_SponsoredSlug_Position position = 3;
+}

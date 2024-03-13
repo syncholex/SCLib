@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.snapchat.proto.unlockables;
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+import "com/snapchat/proto/SCPBLocationDeliveryPurpose.proto";
+import "com/snapchat/proto/ad/SCPBAdOpportunityRequestIds.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesLensSnapchat.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableNoFillAdResponse.proto";
+
+message SCPBUnlockablesGtqUnlockablesResponse {
+	repeated com.snapchat.proto.SCPBGeofilterResponse filtersArray = 1;
+	repeated string invalidFilterIdsArray = 2;
+	repeated com.snapchat.proto.SCPBGeofilterResponse bitmojiFiltersArray = 3;
+	repeated com.snapchat.proto.SCPBGeofilterResponse lensesArray = 4;
+	repeated com.snapchat.proto.SCPBGeofilterResponse prefetchLensesArray = 5;
+	repeated com.snapchat.proto.SCPBGeofilterResponse stickersArray = 6;
+	repeated com.snapchat.proto.SCPBLocationDeliveryPurpose purposesArray = 7;
+	com.snapchat.proto.ad.SCPBAdOpportunityRequestIds opportunityRequestIds = 8;
+	repeated com.snapchat.proto.SCPBGeofilterResponse assetPrecachedFiltersArray = 9;
+	repeated com.snapchat.proto.SCPBGeofilterResponse previewCaptionStylesArray = 10;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse checksumResponseListArray = 11;
+	bytes encryptedUserTrackData = 12;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesLensSnapchat newActiveLensesArray = 13;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesLensSnapchat newPrefetchLensesArray = 14;
+	repeated com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableNoFillAdResponse noFillAdResponseListArray = 15;
+	int64 cacheTtlMillis = 16;
+}

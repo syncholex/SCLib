@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppsRecentApp.proto";
+import "cognac/SCCognacAppsApp.proto";
+
+message SCCognacAppsListRecentAppsResponse {
+	repeated cognac.SCCognacAppsRecentApp recentAppsArray = 1;
+	repeated cognac.SCCognacAppsApp prepopulatedAppsArray = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerImageCover.proto";
+
+message SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBanner {
+	uint64 heroBannerId = 1;
+
+	enum SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerType {
+		HERO_BANNER_TYPE_UNSET = 0;
+		IMAGE_COVER = 1;
+	}
+
+	SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerType type = 2;
+}

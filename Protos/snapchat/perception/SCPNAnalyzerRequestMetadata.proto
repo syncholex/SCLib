@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/SCPNVisualSearchRequestMetadata.proto";
+import "snapchat/perception/SCPNBoundingPoly.proto";
+import "snapchat/perception/SCPNLookalikeRequestMetadata.proto";
+import "snapchat/perception/SCPNLookalikePurpleRequestMetadata.proto";
+import "snapchat/perception/SCPNSimilaritySearchRequestMetadata.proto";
+
+message SCPNAnalyzerRequestMetadata {
+	float validateVideoDurationLimit = 7;
+	string modelVersionLabel = 8;
+	snapchat.perception.SCPNVisualSearchRequestMetadata visualSearchRequestMetadata = 9;
+	repeated snapchat.perception.SCPNBoundingPoly normedBboxesArray = 10;
+	snapchat.perception.SCPNLookalikeRequestMetadata lookalikeRequestMetadata = 11;
+	snapchat.perception.SCPNLookalikePurpleRequestMetadata lookalikePurpleRequestMetadata = 12;
+	snapchat.perception.SCPNSimilaritySearchRequestMetadata similaritySearchRequestMetadata = 13;
+}

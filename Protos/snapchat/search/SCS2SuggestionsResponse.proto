@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Result.proto";
+
+message SCS2SuggestionsResponse {
+	repeated snapchat.search.SCS2Result resultsArray = 1;
+	string debugHtml = 2;
+}

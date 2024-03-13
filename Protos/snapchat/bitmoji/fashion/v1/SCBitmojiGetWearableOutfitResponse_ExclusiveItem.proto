@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiDrop.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiPurchasableItem.proto";
+
+message SCBitmojiGetWearableOutfitResponse_ExclusiveItem {
+
+	oneof exclusiveInfo {
+		snapchat.bitmoji.fashion.v1.SCBitmojiDrop drop = 1;
+		snapchat.bitmoji.fashion.v1.SCBitmojiPurchasableItem purchasableItem = 2;
+	}
+
+}

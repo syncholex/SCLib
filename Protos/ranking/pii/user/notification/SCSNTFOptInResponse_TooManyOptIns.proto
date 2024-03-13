@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+message SCSNTFOptInResponse_TooManyOptIns {
+	int32 limit = 1;
+
+	enum SCSNTFOptInType_Enum {
+		UNKNOWN = 0;
+		USER_STORY = 1;
+		PUBLISHER_STORY = 2;
+		OUR_STORY = 3;
+		LIVE_STREAM = 4;
+		HN_NEWS_SECTION = 5;
+	}
+
+	SCSNTFOptInType_Enum type = 2;
+}

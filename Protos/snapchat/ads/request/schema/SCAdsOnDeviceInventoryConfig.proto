@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsOnDeviceInventoryConfig {
+
+	enum SCAdsInventoryType {
+		UNKNOWN_INVENTORY_TYPE = 0;
+		DISCOVER = 1;
+		AUTO_ADVANCE = 2;
+		NONPARTNERED_STORY = 3;
+		PARTNERED_STORY = 4;
+		CAMPUS_STORY = 5;
+		LENS_CAROUSEL = 6;
+		FILTER_CAROUSEL = 7;
+		OFFICIAL_STORY = 8;
+		PROMOTED_STORY = 9;
+		SENSITIVE_NONPARTNERED_STORY = 10;
+		SENSITIVE_PARTNERED_STORY = 11;
+		SENSITIVE_CAMPUS_STORY = 12;
+		E2E_TEST = 13;
+		CHANNEL_DISALLOWING_ADS = 14;
+		GENERATED_STORY = 15;
+		SENSITIVE_GENERATED_STORY = 16;
+		CONTENT_INTERSTITIAL = 17;
+		GAMES = 18;
+		AD_NETWORK_RTB = 19;
+		AD_NETWORK_SDK = 20;
+		LENS_EXPLORER = 21;
+		EMBEDDED_WEBVIEW = 22;
+		INTERSTITIAL_SPOTLIGHT = 23;
+		INSTREAM_SPOTLIGHT = 24;
+		AD_NETWORK_HB = 25;
+		POST_CAPTURE_CAROUSEL = 26;
+	}
+
+	SCAdsInventoryType supportedInventoryType = 1;
+	int32 multiAuctionSize = 2;
+	bool onDeviceEnabled = 3;
+	bool canOpenURLEnabled = 4;
+}

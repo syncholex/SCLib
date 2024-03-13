@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPRoleSpecification.proto";
+
+message IMPAddOrgRoleByRoleTypeRequest {
+	string profileId = 1;
+	impala.IMPRoleSpecification role = 2;
+	string organizationId = 3;
+}

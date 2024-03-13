@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBMediaCountEvent {
+	uint32 videos = 1;
+	uint32 photos = 2;
+}

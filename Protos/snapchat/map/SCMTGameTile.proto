@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterest.proto";
+import "snapchat/map/SCMTGameTile_GameTileInput.proto";
+
+message SCMTGameTile {
+	repeated snapchat.map.SCMTPointOfInterest poisArray = 1;
+	repeated snapchat.map.SCMTGameTile_GameTileInput gameTileInputArray = 2;
+}

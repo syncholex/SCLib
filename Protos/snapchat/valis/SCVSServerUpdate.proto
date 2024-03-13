@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSFriendCluster.proto";
+import "snapchat/valis/SCVSHeaderUpdate.proto";
+import "snapchat/valis/SCVSBatchFriendClusters.proto";
+
+message SCVSServerUpdate {
+
+	oneof message {
+		snapchat.valis.SCVSFriendCluster friendCluster = 1;
+		snapchat.valis.SCVSHeaderUpdate headerUpdate = 2;
+		snapchat.valis.SCVSBatchFriendClusters batchFriendClusters = 3;
+	}
+
+	int64 sequenceNumber = 1000;
+}

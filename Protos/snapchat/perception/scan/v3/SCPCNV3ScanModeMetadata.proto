@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3ScanCategoryMetadata.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanAffordance.proto";
+
+message SCPCNV3ScanModeMetadata {
+	string categoryId = 1;
+	string header = 2;
+	string iconURL = 3;
+	snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata scanCategoryMetadatas = 4;
+	snapchat.perception.scan.v3.SCPCNV3ScanAffordance scanAffordance = 5;
+}

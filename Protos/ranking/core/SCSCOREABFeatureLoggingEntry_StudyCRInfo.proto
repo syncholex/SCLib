@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.core;
+
+import "ranking/core/SCSCOREABFeatureLoggingEntry_StudyCRInfo_PerFeedInfo.proto";
+import "ranking/core/SCSCOREABFeatureLoggingEntry_StudyCRInfo_TriggerReasons.proto";
+
+message SCSCOREABFeatureLoggingEntry_StudyCRInfo {
+	string crStudyId = 1;
+	repeated ranking.core.SCSCOREABFeatureLoggingEntry_StudyCRInfo_PerFeedInfo perFeedArray = 2;
+	ranking.core.SCSCOREABFeatureLoggingEntry_StudyCRInfo_TriggerReasons triggerReasons = 3;
+}

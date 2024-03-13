@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiOutfit.proto";
+import "snapchat/bitmoji/fashion/v1/SCBitmojiGetWearableOutfitResponse_ExclusiveItem.proto";
+
+message SCBitmojiGetWearableOutfitResponse {
+	snapchat.bitmoji.fashion.v1.SCBitmojiOutfit outfit = 1;
+
+	enum SCBitmojiGetWearableOutfitResponse_WearableOutfitStatus {
+		UNSET = 0;
+		WEARABLE = 1;
+		NOT_WEARABLE = 2;
+		GARMENTS_REMOVED = 3;
+	}
+
+	SCBitmojiGetWearableOutfitResponse_WearableOutfitStatus status = 2;
+	repeated snapchat.bitmoji.fashion.v1.SCBitmojiGetWearableOutfitResponse_ExclusiveItem availableExclusiveItemsArray = 3;
+}

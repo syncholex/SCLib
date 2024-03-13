@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1StickerPair {
+	string headingEastStickerId = 1;
+	string headingWestStickerId = 2;
+	bool shadow = 3;
+}

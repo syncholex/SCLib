@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/protobuf/SPCPStringListValue.proto";
+
+message VRZPlaceDeprecateData {
+	string placeId = 1;
+	snapchat.protobuf.SPCPStringListValue supersededBy = 2;
+	int64 placeVersion = 3;
+}

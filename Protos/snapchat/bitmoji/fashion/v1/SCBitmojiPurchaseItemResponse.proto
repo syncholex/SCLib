@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiCategory.proto";
+
+message SCBitmojiPurchaseItemResponse {
+	snapchat.bitmoji.fashion.v1.SCBitmojiCategory closetCategory = 1;
+}

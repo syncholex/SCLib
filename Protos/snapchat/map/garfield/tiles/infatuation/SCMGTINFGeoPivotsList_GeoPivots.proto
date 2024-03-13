@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles.infatuation;
+
+import "snapchat/geo/SPCGPolygon.proto";
+import "snapchat/map/garfield/tiles/infatuation/SCMGTINFGeoPivotsList_GeoPivots_PerfectForCount.proto";
+
+message SCMGTINFGeoPivotsList_GeoPivots {
+	snapchat.geo.SPCGPolygon polygon = 1;
+	repeated snapchat.map.garfield.tiles.infatuation.SCMGTINFGeoPivotsList_GeoPivots_PerfectForCount perfectForCountArray = 2;
+}

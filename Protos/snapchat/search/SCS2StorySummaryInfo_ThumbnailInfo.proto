@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2StorySummaryInfo_ThumbnailContentObjectInfo.proto";
+
+message SCS2StorySummaryInfo_ThumbnailInfo {
+	string key = 1;
+	string iv = 2;
+	string URL = 3;
+	snapchat.search.SCS2StorySummaryInfo_ThumbnailContentObjectInfo contentObjectInfo = 4;
+}

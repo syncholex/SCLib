@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "com/snapchat/lenscentral/v2/SCLensesPbSingleLensResponse.proto";
+
+message SCLensesPbGetLensesByLensIdsResponse {
+	repeated com.snapchat.lenscentral.v2.SCLensesPbSingleLensResponse lensesArray = 1;
+}

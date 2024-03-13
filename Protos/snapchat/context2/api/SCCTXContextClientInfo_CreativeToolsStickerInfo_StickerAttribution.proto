@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_AppInfo.proto";
+import "snapchat/creativetools/common/SCCTPShoppingSticker.proto";
+
+message SCCTXContextClientInfo_CreativeToolsStickerInfo_StickerAttribution {
+
+	oneof attribution {
+		snapchat.context2.api.SCCTXContextClientInfo_AppInfo appInfo = 1;
+		snapchat.creativetools.common.SCCTPShoppingSticker shoppingSticker = 2;
+	}
+
+}

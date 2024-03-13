@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.lenses.taxonomy;
+
+import "com/snapchat/lenses/taxonomy/CategoryLocalization.proto";
+
+message LensCategory {
+	string id_p = 1;
+	string parentId = 2;
+	string displayName = 3;
+	bool deprecated = 4;
+	repeated com.snapchat.lenses.taxonomy.CategoryLocalization localizationsArray = 5;
+	bool internal = 6;
+}

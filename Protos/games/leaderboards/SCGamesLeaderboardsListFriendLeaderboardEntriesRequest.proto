@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+message SCGamesLeaderboardsListFriendLeaderboardEntriesRequest {
+	string leaderboardId = 1;
+	int32 limit = 2;
+}

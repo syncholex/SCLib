@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/content/SCBoltReplicationPolicy.proto";
+import "snapchat/content/SCBoltStoragePolicy.proto";
+
+message SCBoltv2ClaimPolicy {
+	google.protobuf.GPBTimestamp expiration = 1;
+	snapchat.content.SCBoltReplicationPolicy replication = 2;
+	uint64 cdnTtlSeconds = 3;
+	snapchat.content.SCBoltStoragePolicy storagePolicy = 4;
+}

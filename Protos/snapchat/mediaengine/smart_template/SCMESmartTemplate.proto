@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMESmartTemplateMetadata.proto";
+import "snapchat/mediaengine/smart_template/SCMETemplateRules.proto";
+
+message SCMESmartTemplate {
+	snapchat.mediaengine.smart_template.SCMESmartTemplateMetadata templateMetadata = 1;
+}

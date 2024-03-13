@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.experiments.cof;
+
+message SCPCNCOFScanSnapcodesRolloutConfigParams {
+	bool adCreativePreview = 1;
+	bool addFriendEnabled = 2;
+	bool commerce = 3;
+	bool discover = 4;
+	bool games = 5;
+	bool message = 6;
+	bool scanToAuth = 7;
+	bool scanKit = 8;
+	bool URL = 9;
+	bool unlockableLens = 10;
+}

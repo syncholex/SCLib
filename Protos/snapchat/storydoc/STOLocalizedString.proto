@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOLocalizationId.proto";
+
+message STOLocalizedString {
+	snapchat.storydoc.STOLocalizationId localizationId = 2;
+	string value = 3;
+}

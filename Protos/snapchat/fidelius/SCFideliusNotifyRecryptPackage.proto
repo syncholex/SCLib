@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusFriendKeys.proto";
+import "snapchat/fidelius/SCFideliusMessageIdentifier.proto";
+import "snapchat/fidelius/SCFideliusArroyoAssistedRetryInfo.proto";
+
+message SCFideliusNotifyRecryptPackage {
+	snapchat.fidelius.SCFideliusFriendKeys initiator = 1;
+	bool recomputeSharedSecret = 2;
+	repeated snapchat.fidelius.SCFideliusMessageIdentifier messageIdArray = 3;
+	repeated snapchat.fidelius.SCFideliusArroyoAssistedRetryInfo assistedRetryInfosArray = 4;
+}

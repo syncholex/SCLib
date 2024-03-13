@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package socialsms;
+
+message Expiration {
+
+	oneof policy {
+		bool neverExpire = 1;
+		int64 ttlSeconds = 2;
+	}
+
+}

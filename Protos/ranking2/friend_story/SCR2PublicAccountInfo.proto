@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking2.friend_story;
+
+import "ranking2/friend_story/SCR2RelatedPublicAccounts.proto";
+
+message SCR2PublicAccountInfo {
+	string username = 1;
+	ranking2.friend_story.SCR2RelatedPublicAccounts relatedPublicAccounts = 2;
+}

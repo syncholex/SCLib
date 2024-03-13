@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "snapchat/perception/scan/v3/SCPCNV3CameraShortcutAction.proto";
+
+message SCPCNV3CameraShortcut {
+	string title = 1;
+	string subtitle = 2;
+	string openInCameraButtonIconURL = 3;
+	string openInCameraButtonText = 4;
+	repeated snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction actionsArray = 5;
+}

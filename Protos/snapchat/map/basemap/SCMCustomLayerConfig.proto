@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.basemap;
+
+message SCMCustomLayerConfig {
+	bool enableSmartBitmojiDiffing = 1;
+	float bitmojiDistanceThreshold = 2;
+	float minSecondsBetweenLabelUpdates = 3;
+	float viewportVisibilityBuffer = 4;
+	bool enableSymbolPlacementCache = 5;
+}

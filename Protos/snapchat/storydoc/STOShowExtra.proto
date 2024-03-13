@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/storydoc/STOTrailer.proto";
+
+message STOShowExtra {
+	snapchat.core.SCCOREUUID showId = 1;
+	snapchat.core.SCCOREUUID seasonId = 2;
+}

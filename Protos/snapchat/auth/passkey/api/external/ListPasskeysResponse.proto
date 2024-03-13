@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+import "snapchat/auth/passkey/api/external/ListPasskeysResult.proto";
+import "snapchat/auth/passkey/models/Passkey.proto";
+
+message ListPasskeysResponse {
+	snapchat.auth.passkey.api.external.ListPasskeysResult result = 1;
+	repeated snapchat.auth.passkey.models.Passkey passkeysArray = 2;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbOsVersion {
+	string branchName = 1;
+	string buildFlavor = 2;
+	string releaseVersion = 3;
+	string patchVersion = 4;
+	string commitSha = 5;
+	string binaryName = 6;
+	string downloadURL = 7;
+	string metadataName = 8;
+	string metadataURL = 9;
+	bool isGatewayBuild = 10;
+	string createdDateTime = 11;
+	string lastUpdatedDateTime = 12;
+	string osTargetFilesPackages = 13;
+	string osTargetFilesPackagesURL = 14;
+	string fullFlashBuildDownloadURL = 15;
+}

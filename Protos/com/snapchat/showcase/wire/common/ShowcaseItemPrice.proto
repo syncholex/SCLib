@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.common;
+
+import "com/snapchat/productcatalog/common/wire/FormattedProductPrice.proto";
+
+message ShowcaseItemPrice {
+	com.snapchat.productcatalog.common.wire.FormattedProductPrice formattedPrice = 1;
+}

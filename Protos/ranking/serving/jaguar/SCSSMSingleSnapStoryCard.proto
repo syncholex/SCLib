@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+import "ranking/serving/jaguar/SCSSMSingleSnapStoryMetadata.proto";
+import "ranking/serving/jaguar/BoostMetadata.proto";
+import "ranking/serving/jaguar/SCSSMEngagementStats.proto";
+import "ranking/serving/jaguar/SCSSMSingleSnapStoryCard_TopicBadgeMetadata.proto";
+import "ranking/serving/jaguar/SCSSMUITreatments.proto";
+import "ranking/serving/jaguar/SCSSMSingleSnapStoryCard_CalloutLabel.proto";
+
+message SCSSMSingleSnapStoryCard {
+	repeated ranking.serving.jaguar.SCSSMStorySnap snapsArray = 1;
+	ranking.serving.jaguar.SCSSMStoryThumbnail storyThumbnail = 2;
+	ranking.serving.jaguar.SCSSMSingleSnapStoryMetadata singleSnapStoryMetadata = 3;
+	ranking.serving.jaguar.BoostMetadata boostMetadata = 4;
+	ranking.serving.jaguar.SCSSMEngagementStats engagementStats = 5;
+	bool topCreatorBadge = 6;
+	ranking.serving.jaguar.SCSSMSingleSnapStoryCard_TopicBadgeMetadata trendingTopicBadgeMetadata = 7;
+	bool repliesEnabled = 8;
+	ranking.serving.jaguar.SCSSMUITreatments uiTreatments = 9;
+
+	enum SCSSMSingleSnapStoryCard_UILabel_Enum {
+		UNKNOWN = 0;
+		TRENDING_WITH_FRIENDS_V1 = 1;
+		TRENDING_WITH_FRIENDS_V2 = 2;
+		FRIENDS_V1 = 3;
+		FRIENDS_V2 = 12;
+		POPULAR_V1 = 4;
+		TRENDING_V1 = 5;
+		FRIENDS_FAVORITE_V1 = 6;
+		INLINE_TRENDING_WITH_FRIENDS = 7;
+		INLINE_FRIENDS_FAVORITE = 8;
+		INLINE_POPULAR_STORY = 9;
+		INLINE_TRENDING_STORY = 10;
+		INLINE_FRIENDS_STORY = 11;
+		INLINE_FRIENDS = 13;
+	}
+
+	SCSSMSingleSnapStoryCard_UILabel_Enum uiLabel = 10;
+	ranking.serving.jaguar.SCSSMEngagementStats nonFilteredEngagementStats = 11;
+	ranking.serving.jaguar.SCSSMSingleSnapStoryCard_CalloutLabel calloutLabel = 12;
+}

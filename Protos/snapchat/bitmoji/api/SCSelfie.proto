@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+message SCSelfie {
+	int32 selfie2DId = 1;
+	int32 selfie3DId = 2;
+}

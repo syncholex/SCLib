@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/common/Weblink.proto";
+
+message SizeRecommendation {
+	uint64 snapItemId = 1;
+	string size = 2;
+	uint32 score = 3;
+	com.snapchat.showcase.wire.common.Weblink webLink = 4;
+}

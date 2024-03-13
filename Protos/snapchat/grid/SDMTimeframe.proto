@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.grid;
+
+message SDMTimeframe {
+	uint64 startTime = 1;
+	uint64 duration = 2;
+}

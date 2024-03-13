@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.content_understanding;
+
+message Lens {
+	string id_p = 1;
+}

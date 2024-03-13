@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/place/VRZNearbyPlace.proto";
+
+message VRZGetNearbyPlacesResponse {
+	string suggestedPlaceId = 1;
+	repeated snapchat.local.place.VRZNearbyPlace nearbyPlacesArray = 2;
+}

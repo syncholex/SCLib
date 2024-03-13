@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snap.rtus.config;
+
+message RTUSAllowlistedClientConfigs {
+	repeated string allowlistedTeamNamesArray = 1;
+}

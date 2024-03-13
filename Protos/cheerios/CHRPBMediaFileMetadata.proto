@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBVideoData.proto";
+import "cheerios/CHRPBImageData.proto";
+import "cheerios/CHRPBSystemState.proto";
+import "cheerios/CHRPBCameraSensorData.proto";
+import "cheerios/CHRPBTimeData.proto";
+import "cheerios/CHRPBFirmwareVersion.proto";
+import "cheerios/CHRPBLocationData.proto";
+import "cheerios/CHRPBFlightData.proto";
+import "cheerios/CHRPBGenericAssetsMetadata.proto";
+
+message CHRPBMediaFileMetadata {
+	cheerios.CHRPBVideoData videoData = 1;
+	cheerios.CHRPBImageData imageData = 2;
+	cheerios.CHRPBSystemState systemStateData = 3;
+	cheerios.CHRPBCameraSensorData cameraSensorData = 4;
+	bytes randomBytes = 5;
+	cheerios.CHRPBTimeData time = 6;
+	cheerios.CHRPBFirmwareVersion fwVersion = 7;
+	cheerios.CHRPBLocationData location = 8;
+	cheerios.CHRPBFlightData flightData = 9;
+	repeated cheerios.CHRPBGenericAssetsMetadata genericAssetMetadataArray = 20;
+}

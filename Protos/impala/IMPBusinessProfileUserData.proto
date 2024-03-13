@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPendingRoleInvite.proto";
+import "impala/IMPRole.proto";
+import "impala/IMPBusinessUserSettings.proto";
+import "google/protobuf/GPBStringValue.proto";
+
+message IMPBusinessProfileUserData {
+	bool isSubscribed = 1;
+	repeated string allowedActionsArray = 2;
+	repeated impala.IMPPendingRoleInvite pendingRoleInvitesArray = 3;
+	repeated impala.IMPRole rolesArray = 4;
+	bool isHost = 5;
+	impala.IMPBusinessUserSettings userSettings = 6;
+	google.protobuf.GPBStringValue badgeDisplay = 7;
+
+	enum IMPAudienceGateStatus {
+		UNRESTRICTED = 0;
+		AGE_GATED = 1;
+	}
+
+	IMPAudienceGateStatus audienceGateStatus = 8;
+	string audienceGateReason = 9;
+}

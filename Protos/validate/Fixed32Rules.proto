@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message Fixed32Rules {
+	fixed32 const_p = 1;
+	fixed32 lt = 2;
+	fixed32 lte = 3;
+	fixed32 gt = 4;
+	fixed32 gte = 5;
+	repeated fixed32 inArray = 6;
+	repeated fixed32 notInArray = 7;
+	bool ignoreEmpty = 8;
+}

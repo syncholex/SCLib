@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package snapchat.data;
+
+import "snapchat/data/SCAPbDataContentResolve_VariantInfo.proto";
+
+message SCAPbDataContentResolve {
+	int64 contentResolveTimeMs = 1;
+
+	enum SCAPbDataContentResolve_ResolveType {
+		ContentObject = 0;
+		ContentUrl = 1;
+	}
+
+	SCAPbDataContentResolve_ResolveType resolveType = 2;
+	bytes contentId = 3;
+
+	enum SCAPbDataContentResolve_ResolveError {
+		None = 0;
+		FailedToParseCO = 1;
+		InvalidContentObject = 2;
+		InvalidMediaBundle = 3;
+		NoCompletedVariants = 4;
+		NoAllowedVariants = 5;
+		MissingBaseCD = 6;
+		UnknownVariant = 7;
+		UnknownExtension = 8;
+		InvalidMediaVariant = 9;
+		NoNetworkMapping = 10;
+		OutdatedNetworkMapping = 11;
+		NoDeliveryPaths = 12;
+		UnreplacedPathPlaceholder = 13;
+		UnreplacedUrlPlaceholder = 14;
+	}
+
+	SCAPbDataContentResolve_ResolveError resolveError = 4;
+	bytes mediaId = 5;
+	bytes networkRulesCofRuleId = 8;
+	uint64 networkMappingVersion = 9;
+	repeated int64 locationsGuaranteedAvailableArray = 10 [packed=true];
+	repeated int64 locationsInferredAvailableArray = 11 [packed=true];
+	int64 optimalLocation = 12;
+	int64 locationSelected = 13;
+	bool secondaryURLGenerated = 14;
+	bool avoidedFutureLocations = 15;
+	uint32 boltTenantUsecase = 16;
+	snapchat.data.SCAPbDataContentResolve_VariantInfo variantInfo = 17;
+	int64 networkRuleId = 18;
+	int64 contentResolveDurationMs = 19;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXBitmojiViewOutfitAction {
+	snapchat.core.SCCOREUUID costumeOverrideId = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.unlockables.meta.service;
+
+message SCUnlockableMetaGetLensesByCreatorRequest {
+	string creatorUserId = 1;
+	string countryCode = 2;
+
+	enum SCUnlockableMetaOrdering {
+		UNSET = 0;
+		POPULARITY = 1;
+		RECENCY = 2;
+	}
+
+	SCUnlockableMetaOrdering order = 3;
+	int32 maxCount = 4;
+	int32 resultStartIndex = 5;
+	repeated string allowedUsagesArray = 6;
+}

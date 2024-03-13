@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPNotification.proto";
+
+message SCSUPNotifications {
+	string userId = 1;
+	repeated ranking.pii.user.profile.SCSUPNotification notificationsArray = 2;
+	int64 lastUpdatedTimestampInMsecs = 3;
+}

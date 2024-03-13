@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+import "subscription/shop/SCSubscriptionShopPbApplePricingInfo.proto";
+import "subscription/shop/SCSubscriptionShopPbGooglePricingInfo.proto";
+
+message SCSubscriptionShopPbPricingDetails {
+
+	oneof platformPricing {
+		subscription.shop.SCSubscriptionShopPbApplePricingInfo applePricing = 1;
+		subscription.shop.SCSubscriptionShopPbGooglePricingInfo googlePricing = 2;
+	}
+
+}

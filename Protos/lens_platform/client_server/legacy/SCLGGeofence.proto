@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGGeofence_Coordinate.proto";
+
+message SCLGGeofence {
+	string id_p = 1;
+	repeated lens_platform.client_server.legacy.SCLGGeofence_Coordinate coordinatesArray = 2;
+}

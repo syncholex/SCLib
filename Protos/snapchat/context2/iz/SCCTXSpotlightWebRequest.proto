@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/SnapContextInfo.proto";
+
+message SCCTXSpotlightWebRequest {
+	string snapId = 1;
+	snapchat.context2.SnapContextInfo contextInfo = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/context2/SnapContextPlaceholderCards_Section.proto";
+
+message SnapContextPlaceholderCards {
+	repeated snapchat.context2.SnapContextPlaceholderCards_Section sectionsArray = 1;
+}

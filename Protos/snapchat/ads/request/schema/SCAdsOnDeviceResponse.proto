@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsOnDeviceAnonymizedId.proto";
+import "snapchat/ads/request/schema/SCAdsOnDeviceInventoryConfigs.proto";
+
+message SCAdsOnDeviceResponse {
+	repeated snapchat.ads.request.schema.SCAdsOnDeviceAnonymizedId onDeviceAnonymizedIdsArray = 1;
+	int64 serverLastFetchTsMs = 2;
+	snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfigs onDeviceInventoryConfigs = 3;
+	string appIdSlcMappingURL = 4;
+	float slcDpNoise = 5;
+	string slcExperimentName = 6;
+	float aicDpNoiseBWeekly = 7;
+	float aicDpNoiseT = 8;
+	bool enableCoInfoEvent = 9;
+}

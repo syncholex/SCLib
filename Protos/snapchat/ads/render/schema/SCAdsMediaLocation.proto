@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+message SCAdsMediaLocation {
+
+	enum SCAdsMediaLocationType {
+		MediaLocationType_NONE = 0;
+		MediaLocationType_ZIP = 1;
+		MediaLocationType_DISCOVER = 2;
+		MediaLocationType_URL = 3;
+		MediaLocationType_BOLT = 4;
+	}
+
+	SCAdsMediaLocationType mediaLocationType = 1;
+	bytes mediaInfo = 2;
+}

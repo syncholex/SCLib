@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message NetworkSpan {
+	int64 id_p = 1;
+	int64 endpoint = 2;
+	int64 networkRequestSeqnum = 3;
+	int64 tid = 4;
+	fixed64 queryFp = 5;
+	int64 startUs = 6;
+	int64 endUs = 7;
+	int64 queueLatencyUs = 8;
+	int64 firstByteLatencyUs = 9;
+	int64 networkLatencyUs = 10;
+	int64 uploadedBytes = 12;
+	int64 downloadedBytes = 13;
+	int64 receivedBytesPartial = 14;
+	int64 totalUncompressedBytesToUpload = 15;
+	int64 totalCompressedBytesToUpload = 16;
+	int64 totalUncompressedBytesToDownload = 17;
+	int64 totalCompressedBytesToDownload = 18;
+	int64 startEstUploadKbps = 19;
+	int64 startEstDownloadKbps = 20;
+	int64 endEstUploadKbps = 21;
+	int64 endEstDownloadKbps = 22;
+	bytes requestId = 23;
+	int64 tidSubmit = 24;
+	int64 tidStart = 25;
+	int64 tidComplete = 26;
+}

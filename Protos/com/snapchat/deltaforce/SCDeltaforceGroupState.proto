@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceGroupKey.proto";
+
+message SCDeltaforceGroupState {
+	uint64 groupVersion = 1;
+	com.snapchat.deltaforce.SCDeltaforceGroupKey group = 2;
+	uint64 operationTimestamp = 3;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package lens_platform.client_server.api.featured;
+
+import "lens_platform/client_server/api/SCLPChecksumEntry.proto";
+import "lens_platform/client_server/lens/SCLPLensSnapchat.proto";
+import "lens_platform/client_server/api/SCLPLensNoFillAdResponse.proto";
+
+message SCLPFeaturedLensNamespaceResponse {
+	string namespace_p = 1;
+	int64 cacheTtlMillis = 2;
+	bytes streamToken = 3;
+	repeated lens_platform.client_server.api.SCLPChecksumEntry activeListArray = 4;
+	repeated lens_platform.client_server.api.SCLPChecksumEntry precachedListArray = 5;
+	repeated lens_platform.client_server.lens.SCLPLensSnapchat lensesArray = 6;
+	repeated lens_platform.client_server.api.SCLPLensNoFillAdResponse lensNoFillAdResponseListArray = 7;
+	bool hasMoreLenses = 8;
+	bytes encryptedUserTrackData = 9;
+	string mixerRequestId = 10;
+}

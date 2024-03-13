@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacAppsLocalizedMajorUpdateDescription {
+
+	enum SCCognacAppsXTMLocale {
+		UNKNOWN_LOCALE = 0;
+		AR_AA = 1;
+		ZH_CN = 2;
+		ZH_TW = 3;
+		DA_DK = 4;
+		NL_NL = 5;
+		EN_US = 6;
+		EN_GB = 7;
+		FI_FI = 8;
+		FR_FR = 9;
+		DE_DE = 10;
+		EL_GR = 11;
+		ID_ID = 12;
+		IT_IT = 13;
+		JA_JP = 14;
+		KO_KR = 15;
+		NB_NO = 16;
+		PL_PL = 17;
+		PT_BR = 18;
+		PT_PT = 19;
+		RO_RO = 20;
+		RU_RU = 21;
+		ES_001 = 22;
+		SV_SE = 23;
+		TR_TR = 24;
+		FIL_PH = 25;
+		GU_IN = 26;
+		HI_IN = 27;
+		MS_MY = 28;
+		MR_IN = 29;
+		PA_IN = 30;
+		UR_PK = 31;
+		VI_VN = 32;
+		BN_BD = 33;
+		BN_IN = 34;
+		KN_IN = 35;
+		ML_IN = 36;
+		TA_IN = 37;
+		TE_IN = 38;
+		TH_TH = 39;
+		ES_AR = 40;
+		ES_MX = 41;
+		ES_ES = 42;
+	}
+
+	SCCognacAppsXTMLocale locale = 1;
+	string description_p = 2;
+}

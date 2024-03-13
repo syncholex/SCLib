@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMAppInstall.proto";
+import "snapchat/snapdoc/SDMAppDeepLink_WebFallback.proto";
+
+message SDMAppDeepLink {
+	string uri = 1;
+
+	oneof fallback {
+		snapchat.snapdoc.SDMAppInstall appInstall = 4;
+		snapchat.snapdoc.SDMAppDeepLink_WebFallback webFallback = 5;
+	}
+
+	string id_p = 6;
+}

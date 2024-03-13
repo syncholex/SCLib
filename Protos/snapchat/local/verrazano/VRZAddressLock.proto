@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeLock.proto";
+
+message VRZAddressLock {
+	snapchat.local.verrazano.VRZAttributeLock address1 = 1;
+	snapchat.local.verrazano.VRZAttributeLock address2 = 2;
+	snapchat.local.verrazano.VRZAttributeLock locality = 3;
+	snapchat.local.verrazano.VRZAttributeLock region = 4;
+	snapchat.local.verrazano.VRZAttributeLock postalCode = 5;
+	snapchat.local.verrazano.VRZAttributeLock country = 6;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+import "impala/common/IMPClientInfo.proto";
+
+message IMPAdminListManagedSpotlightHighlightsRequest {
+	string profileId = 1;
+	string pageId = 2;
+	int32 limit = 3;
+	impala.common.IMPClientInfo clientInfo = 4;
+}

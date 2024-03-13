@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.telephony.api;
+
+message SCTelephonyOTPChallenge {
+	string otpCode = 1;
+
+	enum SCTelephonyOTPChallenge_OTPChallengeOptions {
+		CHECK_STATUS_UNSET = 0;
+		CHECK_VERIFICATION_STATUS = 1;
+	}
+
+	SCTelephonyOTPChallenge_OTPChallengeOptions options = 2;
+}

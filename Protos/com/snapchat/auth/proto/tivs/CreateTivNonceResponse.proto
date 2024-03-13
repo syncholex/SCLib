@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message CreateTivNonceResponse {
+	string nonce = 1;
+
+	enum CreateTivNonceError_Enum {
+		UNSET = 0;
+		NO_ERROR = 1;
+		USER_NOT_FOUND = 2;
+	}
+
+	CreateTivNonceError_Enum error = 2;
+}

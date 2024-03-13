@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensScanBoundingBox.proto";
+
+message SCLensRealTimeScanEvent {
+	string className_p = 1;
+	snapchat.lenses.SCLensScanBoundingBox boundingBox = 2;
+}

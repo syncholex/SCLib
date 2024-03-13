@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsSurvey_Choice.proto";
+
+message SCAdsSurvey_Question {
+	string text = 1;
+
+	enum SCAdsSurvey_QuestionType {
+		QUESTION_TYPE_UNSET = 0;
+		SINGLE_CHOICE = 1;
+		MULTIPLE_CHOICE = 2;
+		OPEN_ENDED = 3;
+	}
+
+	SCAdsSurvey_QuestionType type = 2;
+	repeated snapchat.ads.render.schema.SCAdsSurvey_Choice choicesArray = 3;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2MultiSnapExtension {
+	string multiSnapBundleId = 1;
+	int32 multiSnapSegmentCount = 2;
+	int32 multiSnapSegmentId = 3;
+}

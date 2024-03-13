@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package merlin.toolbox;
+
+import "address/SCMapsLatLng.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message GenerateSnapFromMapClusterRequest {
+	address.SCMapsLatLng location = 3;
+	google.protobuf.GPBTimestamp requestTime = 4;
+	string timezone = 5;
+	string userAvatarId = 6;
+	repeated string friendAvatarIdsArray = 7;
+}

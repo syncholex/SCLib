@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_MusicItemPreviewSection_MusicPlaylist_PlaylistBitmojiItem {
+	string title = 1;
+	string bitmojiTemplateId = 2;
+	snapchat.creativetools.common.SCCTPEncryptedMedia fallbackImage = 3;
+	string backgroundColor = 4;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference pageReference = 5;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/local/verrazano/VRZOpeningHours.proto";
+import "snapchat/map/garfield/tray/SCMGTYInfatuationReview.proto";
+import "snapchat/geo/SPCGPoint.proto";
+
+message SCMGTYInfatuationVenue {
+	string name = 1;
+	snapchat.core.SCCOREUUID verrazanoId = 2;
+	uint32 price = 3;
+	snapchat.local.verrazano.VRZOpeningHours openingHours = 4;
+	snapchat.map.garfield.tray.SCMGTYInfatuationReview review = 5;
+	snapchat.geo.SPCGPoint location = 6;
+}

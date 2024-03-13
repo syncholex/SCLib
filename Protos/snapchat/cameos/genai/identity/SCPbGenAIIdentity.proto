@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.identity;
+
+import "snapchat/cameos/common/SCCameosEncryptedData.proto";
+import "google/protobuf/GPBTimestamp.proto";
+import "snapchat/cameos/genai/identity/SCPbGenAISelfie.proto";
+
+message SCPbGenAIIdentity {
+	string id_p = 1;
+	string name = 2;
+	snapchat.cameos.common.SCCameosEncryptedData thumbnail = 3;
+	repeated snapchat.cameos.common.SCCameosEncryptedData imagesArray = 4;
+	bool isPrimary = 5;
+	google.protobuf.GPBTimestamp createdAt = 6;
+	repeated snapchat.cameos.genai.identity.SCPbGenAISelfie selfiesArray = 7;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	SCCameosGender gender = 8;
+}

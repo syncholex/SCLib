@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacUserAppPreferencesBatchGetUserAppPreferencesRequest {
+	repeated string appIdsArray = 1;
+}

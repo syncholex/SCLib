@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+message SCSNTFOptInStatus {
+	string userId = 1;
+	bool isOptedIn = 2;
+	int64 updateTimestampMsecs = 3;
+	bool isCustomPopulated = 4;
+	string customPoolId = 5;
+	string userEmail = 6;
+}

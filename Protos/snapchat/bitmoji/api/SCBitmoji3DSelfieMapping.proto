@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+import "snapchat/bitmoji/api/SCSelfie.proto";
+
+message SCBitmoji3DSelfieMapping {
+	int32 version = 1;
+	repeated snapchat.bitmoji.api.SCSelfie selfiesArray = 2;
+}

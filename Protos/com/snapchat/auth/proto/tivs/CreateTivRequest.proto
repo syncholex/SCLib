@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "com/snapchat/auth/proto/tivs/TransactionData.proto";
+import "com/snapchat/auth/proto/tivs/PushData.proto";
+import "com/snapchat/auth/proto/tivs/EmailData.proto";
+import "com/snapchat/auth/proto/tivs/SmsData.proto";
+
+message CreateTivRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	snapchat.core.SCCOREUUID broadcastId = 2;
+	com.snapchat.auth.proto.tivs.TransactionData transaction = 3;
+	com.snapchat.auth.proto.tivs.PushData pushData = 4;
+	com.snapchat.auth.proto.tivs.EmailData emailData = 5;
+	com.snapchat.auth.proto.tivs.SmsData smsData = 6;
+}

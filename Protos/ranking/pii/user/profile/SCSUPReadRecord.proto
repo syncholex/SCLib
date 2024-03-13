@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPReadRecord {
+	ranking.core.SCCORECompositeStoryId id_p = 1;
+	uint32 maxReadPosition = 2;
+	int64 timestampMsec = 3;
+	int64 expTimestampMsec = 4;
+	uint32 completionPercent = 5;
+}

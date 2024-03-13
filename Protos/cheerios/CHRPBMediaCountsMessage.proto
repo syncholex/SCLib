@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBMediaCountsMessage {
+	uint32 videos = 1;
+	uint32 photos = 2;
+}

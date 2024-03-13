@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/messaging/SCMessagingConversationEnvelopeEncryptionV1.proto";
+import "snapchat/messaging/SCMessagingFideliusEncryption.proto";
+import "snapchat/messaging/SCMessagingClearTextMediaKeyEncryption.proto";
+import "snapchat/messaging/SCMessagingEelEncryption.proto";
+import "snapchat/messaging/SCMessagingClearTextEelKeyEncryption.proto";
+
+message SCMessagingEnvelopeEncryption {
+
+	oneof encryption {
+		google.protobuf.GPBEmpty none = 1;
+		snapchat.messaging.SCMessagingConversationEnvelopeEncryptionV1 conversationV1 = 2;
+		snapchat.messaging.SCMessagingFideliusEncryption fidelius = 3;
+		snapchat.messaging.SCMessagingClearTextMediaKeyEncryption clearTextMediaKey = 4;
+		snapchat.messaging.SCMessagingEelEncryption eel = 5;
+		snapchat.messaging.SCMessagingClearTextEelKeyEncryption clearTextEelKey = 6;
+	}
+
+}

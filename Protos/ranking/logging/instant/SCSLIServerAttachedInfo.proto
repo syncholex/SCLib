@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package ranking.logging.instant;
+
+message SCSLIServerAttachedInfo {
+	string userUuid = 1;
+	string userGhostId = 2;
+	int64 serverTimestampMsecs = 3;
+	string country = 4;
+	string city = 5;
+	string region = 6;
+
+	enum SCSCOREOsType_Type {
+		OS_UNKNOWN = 0;
+		OS_IOS = 1;
+		OS_ANDROID = 2;
+		OS_WEB = 3;
+	}
+
+	SCSCOREOsType_Type osType = 7;
+
+	enum SCSCOREAppBuild_Build {
+		APPBUILD_UNKNOWN = 0;
+		APPBUILD_PROD = 1;
+		APPBUILD_MASTER = 2;
+		APPBUILD_ALPHA = 3;
+		APPBUILD_DEBUG = 4;
+		APPBUILD_UI_AUTOMATION = 5;
+		APPBUILD_BETA = 6;
+		APPBUILD_WILDCARD = 7;
+		APPBUILD_PERF = 8;
+		APPBUILD_PROFILE = 9;
+		APPBUILD_UI_AUTOMATION_DEBUG = 10;
+		APPBUILD_NORTHSTAR = 11;
+	}
+
+	SCSCOREAppBuild_Build appBuild = 8;
+	string appVersion = 9;
+}

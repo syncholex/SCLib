@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbCampaignCategory.proto";
+
+message SCBillboardPbCampaignCategories {
+	repeated com.snapchat.billboard.SCBillboardPbCampaignCategory categoriesArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.achievements;
+
+import "snapchat/map/achievements/SCACHAchievementCountInfo.proto";
+
+message SCACHUserAchievementCountInfo {
+	string userId = 1;
+	repeated snapchat.map.achievements.SCACHAchievementCountInfo countsArray = 2;
+}

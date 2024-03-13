@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBMediaFileTransferRequest.proto";
+import "cheerios/CHRPBMediaFileDeletionRequest.proto";
+import "cheerios/CHRPBMediaFileMarkTransferredRequest.proto";
+
+message CHRPBMediaRequest {
+
+	enum CHRPBMediaRequest_MediaRequestType {
+		UNSET = 0;
+		LIST_AVAILABLE_MEDIA = 1;
+		GET_MEDIA_FILE = 2;
+		DELETE_MEDIA_FILE = 3;
+		START_AS_NEED_DELETION = 4;
+		MARK_TRANSFERRED = 5;
+	}
+
+	CHRPBMediaRequest_MediaRequestType type = 1;
+	cheerios.CHRPBMediaFileTransferRequest mediaFileTransferRequest = 2;
+	cheerios.CHRPBMediaFileDeletionRequest mediaFileDeletionRequest = 3;
+	cheerios.CHRPBMediaFileMarkTransferredRequest mediaFileMarkTransferredRequest = 4;
+}

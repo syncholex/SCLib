@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingDynamicConversationRetentionPolicy {
+	bool sendReadMessages = 1;
+	bool sendReleaseMessages = 2;
+	int64 unreadRetentionTimeSeconds = 3;
+	int64 readRetentionTimeSeconds = 4;
+	bool infiniteMode = 5;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message DeviceData {
+	string deviceId = 1;
+	string userAgent = 2;
+	string device = 3;
+	string os = 4;
+	string browser = 5;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.context2.iz;
+
+import "snapchat/context2/iz/SCCTXImage.proto";
+import "snapchat/context2/iz/SCCTXBitmoji.proto";
+import "snapchat/context2/iz/SCCTXEncryptedMedia.proto";
+import "snapchat/context2/iz/SCCTXSpotlightWaveform.proto";
+
+message SCCTXSpotlightCard_Thumbnail {
+
+	oneof contents {
+		snapchat.context2.iz.SCCTXImage image = 1;
+		snapchat.context2.iz.SCCTXBitmoji bitmoji = 2;
+		snapchat.context2.iz.SCCTXEncryptedMedia albumArt = 3;
+		snapchat.context2.iz.SCCTXSpotlightWaveform waveform = 4;
+	}
+
+}

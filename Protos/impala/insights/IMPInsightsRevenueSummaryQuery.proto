@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsTimeRange.proto";
+import "impala/insights/IMPInsightsRevenueSummaryQuery_RevenueTypeFilter.proto";
+import "impala/insights/IMPInsightsRevenueSummaryQuery_RevenueSourceFilter.proto";
+import "impala/insights/IMPInsightsRevenueSummaryQuery_CountriesFilter.proto";
+
+message IMPInsightsRevenueSummaryQuery {
+	string hostUserId = 1;
+	string cursor = 2;
+	int32 limit = 3;
+	impala.insights.IMPInsightsTimeRange timeRange = 4;
+
+	oneof filter {
+		impala.insights.IMPInsightsRevenueSummaryQuery_RevenueTypeFilter revenueType = 5;
+		impala.insights.IMPInsightsRevenueSummaryQuery_RevenueSourceFilter revenueSource = 6;
+		impala.insights.IMPInsightsRevenueSummaryQuery_CountriesFilter countries = 8;
+	}
+
+
+	enum Granularity {
+		GRANULARITY_UNSET = 0;
+		DAY = 1;
+		HOUR = 2;
+		TOTAL = 3;
+		LIFETIME = 4;
+		MONTH = 5;
+	}
+
+	Granularity granularity = 9;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusPasskeyAuthenticationPayload.proto";
+
+message SCJanusPasskeyAuthenticationChallengeAnswer {
+	snapchat.janus.api.SCJanusPasskeyAuthenticationPayload passkeyAuthenticationPayload = 1;
+}

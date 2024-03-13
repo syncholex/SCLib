@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+message SCAuthStatusPersistencePbIsEligibleForV2Request {
+	string persistentAttestationDeviceId = 1;
+}

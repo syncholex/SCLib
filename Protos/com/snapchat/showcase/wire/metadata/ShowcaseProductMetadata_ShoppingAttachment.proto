@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.metadata;
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseProductMetadata_OrganicAttachment.proto";
+
+message ShowcaseProductMetadata_ShoppingAttachment {
+
+	oneof attachment {
+		bytes adRenderData = 1;
+		com.snapchat.showcase.wire.metadata.ShowcaseProductMetadata_OrganicAttachment organicAttachment = 2;
+	}
+
+}

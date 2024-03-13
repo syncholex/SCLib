@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message GetTivStatusResponse {
+
+	enum TivStatus_Enum {
+		UNSET = 0;
+		APPROVED = 1;
+		DENIED = 2;
+		TIMED_OUT = 3;
+	}
+
+	TivStatus_Enum status = 1;
+
+	enum GetTivStatusError_Enum {
+		UNSET = 0;
+		NO_ERROR = 1;
+		TIV_NOT_FOUND = 2;
+	}
+
+	GetTivStatusError_Enum error = 2;
+
+	enum CommunicationChannel_Enum {
+		UNSET = 0;
+		EMAIL = 1;
+		IN_BAND = 2;
+		PUSH = 3;
+		SMS = 4;
+		TOTP = 5;
+		TOTP_OR_SMS = 6;
+		WHATSAPP = 7;
+	}
+
+	CommunicationChannel_Enum acknowledgedChannel = 3;
+}

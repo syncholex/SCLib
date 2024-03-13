@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceBetweenKeyCondition.proto";
+import "com/snapchat/deltaforce/SCDeltaforceItemKey.proto";
+import "com/snapchat/deltaforce/SCDeltaforcePropertyCondition.proto";
+import "com/snapchat/deltaforce/SCDeltaforceAlwaysCondition.proto";
+import "com/snapchat/deltaforce/SCDeltaforceItemAbsentCondition.proto";
+import "com/snapchat/deltaforce/SCDeltaforceCompositeCondition.proto";
+import "com/snapchat/deltaforce/SCDeltaforceIfLastModifiedOutsideWindowCondition.proto";
+
+message SCDeltaforceCondition {
+
+	oneof conditionType {
+		com.snapchat.deltaforce.SCDeltaforceBetweenKeyCondition keyBetween = 1;
+		com.snapchat.deltaforce.SCDeltaforceItemKey keyGreaterThan = 2;
+		com.snapchat.deltaforce.SCDeltaforceItemKey keyGreaterThanOrEq = 3;
+		com.snapchat.deltaforce.SCDeltaforceItemKey keyLessThan = 4;
+		com.snapchat.deltaforce.SCDeltaforceItemKey keyLessThanOrEq = 5;
+		com.snapchat.deltaforce.SCDeltaforcePropertyCondition propertyCondition = 6;
+		com.snapchat.deltaforce.SCDeltaforceAlwaysCondition alwaysCondition = 7;
+		com.snapchat.deltaforce.SCDeltaforceItemAbsentCondition itemAbsentCondition = 8;
+		com.snapchat.deltaforce.SCDeltaforceCompositeCondition compositeCondition = 9;
+		com.snapchat.deltaforce.SCDeltaforceIfLastModifiedOutsideWindowCondition ifLastModifiedOutsideWindowCondition = 10;
+	}
+
+}

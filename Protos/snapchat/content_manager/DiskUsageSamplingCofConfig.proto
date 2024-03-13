@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content_manager;
+
+message DiskUsageSamplingCofConfig {
+	uint32 samplingPercentage = 1;
+	uint32 measureFrequencyInHours = 2;
+	uint32 directoryDiskUsageSamplingPercentage = 3;
+}

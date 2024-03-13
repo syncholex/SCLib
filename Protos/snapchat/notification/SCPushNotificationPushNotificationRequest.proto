@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationPushNotificationHeader.proto";
+import "snapchat/notification/SCPushNotificationPushNotificationConfig.proto";
+import "snapchat/notification/SCPushNotificationAlert.proto";
+import "snapchat/notification/SCPushNotificationBinaryPayload.proto";
+import "snapchat/notification/SCPushNotificationDictionaryPayload.proto";
+import "snapchat/notification/SCPushNotificationContentPayload.proto";
+
+message SCPushNotificationPushNotificationRequest {
+	snapchat.notification.SCPushNotificationPushNotificationHeader header = 1;
+	uint32 ttlInSeconds = 2;
+	bytes payload = 3;
+	string deprecatedPayload = 4;
+	string sealedEnvelopeContent = 5;
+	bool isV2 = 20;
+	snapchat.notification.SCPushNotificationPushNotificationConfig pushNotificationConfigOverride = 25;
+	snapchat.notification.SCPushNotificationAlert systemAlert = 26;
+	snapchat.notification.SCPushNotificationAlert inAppAlert = 27;
+
+	oneof payloads {
+		snapchat.notification.SCPushNotificationBinaryPayload bytePayload = 28;
+		snapchat.notification.SCPushNotificationDictionaryPayload dictionaryPayload = 29;
+	}
+
+	snapchat.notification.SCPushNotificationContentPayload contentPayload = 31;
+}

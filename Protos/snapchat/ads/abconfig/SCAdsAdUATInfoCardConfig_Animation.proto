@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+message SCAdsAdUATInfoCardConfig_Animation {
+	double delay = 1;
+	double duration = 2;
+}

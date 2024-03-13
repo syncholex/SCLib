@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lens.activitycenter;
+
+message SCLensActivityCenterGetBadgeStatusRequest {
+	string localeCode = 1;
+}

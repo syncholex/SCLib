@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+message SCPushNotificationPendingResend {
+	string key = 1;
+	int64 timeToSend = 2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.core.schema;
+
+import "snapchat/ads/core/schema/SCAdsSwipeSensitivityConfig_SwipeAngle.proto";
+import "snapchat/ads/core/schema/SCAdsSwipeSensitivityConfig_Insets.proto";
+
+message SCAdsSwipeSensitivityConfig {
+	double distanceThreshold = 1;
+	double velocityThreshold = 2;
+	snapchat.ads.core.schema.SCAdsSwipeSensitivityConfig_SwipeAngle swipeAngle = 3;
+	snapchat.ads.core.schema.SCAdsSwipeSensitivityConfig_Insets edgeInsets = 4;
+}

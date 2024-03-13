@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.snapmod;
+
+message Audience {
+	bool anyoneCanView = 1;
+	bool nobodyUnder18CanView = 2;
+	bool nobodyCanView = 3;
+	bool nobodyInSensitiveCountryCanView = 4;
+	bool nobodyInModerateCountryCanView = 5;
+}

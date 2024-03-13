@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/ChatFeaturedStoryContent.proto";
+import "snapchat/memories/CameraRollFeaturedStoryContent.proto";
+
+message MemoriesFeaturedStory_ContentReference {
+
+	oneof content {
+		snapchat.memories.ChatFeaturedStoryContent chatContent = 1;
+		snapchat.memories.CameraRollFeaturedStoryContent cameraRollFeaturedStoryContent = 2;
+	}
+
+}

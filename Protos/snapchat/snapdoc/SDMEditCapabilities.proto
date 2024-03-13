@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMEditCapabilities {
+	bool cannotDelete = 1;
+	bool cannotReplace = 2;
+	bool cannotMove = 3;
+}

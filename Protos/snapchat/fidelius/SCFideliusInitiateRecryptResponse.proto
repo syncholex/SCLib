@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+message SCFideliusInitiateRecryptResponse {
+	bytes publicKey = 1;
+}

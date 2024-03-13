@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPCompositeId {
+	uint64 id_p = 1;
+
+	enum SCCTPCompositeId_Type {
+		UNSET = 0;
+		SNAP_STICKER = 1;
+		BITMOJI_STICKER = 2;
+		CUSTOM_STICKER = 3;
+		EMOJI = 4;
+		GIPHY = 5;
+		MUSIC_STICKER = 19;
+		CAMEO = 20;
+		MEMORIES = 21;
+		STICKER_PACK = 22;
+		TARGETED_ITEM = 23;
+		INFO_STICKER = 25;
+		CAPTION_STYLE = 26;
+		MUSIC_TRACK = 27;
+		CHAT_CAMEO = 28;
+		SERVER_CAMEO = 29;
+		GFYCAT = 30;
+		CUSTOM_STICKER_PACK = 31;
+		CHAT_REACTION = 32;
+		FILTER = 33;
+	}
+
+	SCCTPCompositeId_Type type = 2;
+}

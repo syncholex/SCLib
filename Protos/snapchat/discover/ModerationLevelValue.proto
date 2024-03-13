@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message ModerationLevelValue {
+
+	enum ModerationLevel {
+		STANDARD = 0;
+		NEWS = 1;
+	}
+
+	ModerationLevel value = 1;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimensionData.proto";
+import "com/snapchat/showcase/wire/response/ItemVariant.proto";
+
+message GetItemVariantDataResponse_ItemVariantData {
+	repeated com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimensionData itemVariantDimensionDataArray = 1;
+	repeated com.snapchat.showcase.wire.response.ItemVariant itemVariantsArray = 2;
+}

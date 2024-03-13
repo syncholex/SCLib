@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/pii/user/notification/SCSNTFUserStoryId.proto";
+import "ranking/pii/user/notification/SCSNTFPublisherStoryId.proto";
+import "ranking/pii/user/notification/SCSNTFOurStoryId.proto";
+
+message SCSNTFNotificationEntityId {
+
+	oneof id {
+		ranking.pii.user.notification.SCSNTFUserStoryId userStoryId = 1;
+		ranking.pii.user.notification.SCSNTFPublisherStoryId publisherStoryId = 2;
+		ranking.pii.user.notification.SCSNTFOurStoryId ourStoryId = 3;
+	}
+
+}

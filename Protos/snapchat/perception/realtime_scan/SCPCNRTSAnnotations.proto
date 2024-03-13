@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.realtime_scan;
+
+import "snapchat/perception/realtime_scan/SCPCNRTSAnnotation.proto";
+
+message SCPCNRTSAnnotations {
+	repeated snapchat.perception.realtime_scan.SCPCNRTSAnnotation annotationsArray = 1;
+}

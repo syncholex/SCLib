@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBNordicData {
+	int32 bootSession = 1;
+	string deviceId = 3;
+}

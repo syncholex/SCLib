@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.stories;
+
+message IMPGetBusinessStorySnapWasPersistedResponse {
+	bool persisted = 1;
+}

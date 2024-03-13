@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+import "snapchat/auth/passkey/api/external/RevokePasskeyResult.proto";
+
+message RevokePasskeyResponse {
+	snapchat.auth.passkey.api.external.RevokePasskeyResult result = 1;
+}

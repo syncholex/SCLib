@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBGpsStatistics {
+	bool gotLocation = 1;
+	uint32 fixTimeMs = 2;
+}

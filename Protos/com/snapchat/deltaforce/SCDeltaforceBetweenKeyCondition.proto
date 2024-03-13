@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceItemKey.proto";
+
+message SCDeltaforceBetweenKeyCondition {
+	com.snapchat.deltaforce.SCDeltaforceItemKey rangeStart = 1;
+	com.snapchat.deltaforce.SCDeltaforceItemKey rangeEnd = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/SCPNLOOKALIEMedia.proto";
+
+message ExtractFeaturesRequest {
+
+	enum ExtractFeaturesRequest_FeatureType {
+		TYPE_UNSET = 0;
+		RAW_EMBEDDING = 1;
+		PCA_EMBEDDING = 2;
+	}
+
+	ExtractFeaturesRequest_FeatureType featureRequestType = 1;
+	snapchat.perception.lookalike.SCPNLOOKALIEMedia media = 2;
+	string properties = 200;
+}

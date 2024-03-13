@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsStoryConfig.proto";
+
+message SCAdsFixedAdsPublisherConfig {
+	snapchat.ads.abconfig.SCAdsStoryConfig stories = 1;
+}

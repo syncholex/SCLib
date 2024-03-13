@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+message SCMESelectedMusicMetadata {
+	uint64 trackId = 1;
+	uint64 trackDurationSec = 2;
+	uint32 startOffsetMs = 3;
+	uint64 beatPeriodMs = 4;
+	repeated uint64 syncPointTimestampsMsArray = 5 [packed=true];
+	uint64 firstBeatMs = 6;
+	repeated uint64 downbeatsTimestampsMsArray = 7 [packed=true];
+	bool syncWithUpbeats = 8;
+}

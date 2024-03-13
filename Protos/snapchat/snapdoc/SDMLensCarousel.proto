@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMLensCarousel_LensScancode.proto";
+
+message SDMLensCarousel {
+	repeated snapchat.snapdoc.SDMLensCarousel_LensScancode lensesArray = 1;
+	string id_p = 2;
+}

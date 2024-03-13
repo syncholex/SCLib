@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPTermsAndConditions {
+
+	enum IMPTermsAndConditions_Type {
+		UNSET = 0;
+		GIFTING = 1;
+		MONETIZATION = 2;
+	}
+
+	IMPTermsAndConditions_Type type = 1;
+
+	enum IMPTermsAndConditions_Status {
+		UNSEEN_UNSET = 0;
+		ACCEPTED = 1;
+		REJECTED = 2;
+	}
+
+	IMPTermsAndConditions_Status status = 2;
+	string version = 3;
+	bool shouldShow = 4;
+	int64 acknowledgedTimestampMs = 5;
+}

@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXPlaceProfileAction {
+	string placeId = 1;
+}

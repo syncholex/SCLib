@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZCampusCandidate {
+	string placeId = 1;
+	double confidenceScore = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.context;
+
+message SCStoryElement_SnapInfo_TitleForZoom {
+	double maxZoom = 1;
+	string title = 2;
+}

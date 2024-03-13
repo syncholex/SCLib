@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+message SCMT1Constraints_TimeConstraint {
+	int64 startMs = 1;
+	int64 endMs = 2;
+}

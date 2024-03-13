@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.proto;
+
+message SCPBLensSnappablePlayButtonGradientColor {
+	int32 startColor = 1;
+	int32 endColor = 2;
+}

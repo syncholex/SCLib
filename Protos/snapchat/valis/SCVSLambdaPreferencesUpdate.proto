@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSLambdaPreferencesUpdate {
+	snapchat.core.SCCOREUUID userId = 1;
+	int64 version = 2;
+}

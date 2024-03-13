@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.customsticker;
+
+import "snapchat/creativetools/ct_item/SCCTPCTItem.proto";
+
+message SCCTPCustomStickerCreateRequest {
+	snapchat.creativetools.ct_item.SCCTPCTItem customSticker = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusSelectCommunicationChannel {
+	string promptTitleText = 1;
+	string promptSubtitleText = 2;
+	string obfuscatedPhone = 3;
+	string obfuscatedEmail = 4;
+}

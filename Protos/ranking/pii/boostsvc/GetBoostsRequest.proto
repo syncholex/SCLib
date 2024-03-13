@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/core/SCSCORERequestMetadata.proto";
+
+message GetBoostsRequest {
+	ranking.core.SCSCORERequestMetadata metadata = 1;
+
+	enum GetBoostsRequest_Type {
+		UNKNOWN = 0;
+		SELF = 1;
+		BIDIRECTIONAL_FRIENDS = 2;
+		SELF_AND_BIDIRECTIONAL_FRIENDS = 3;
+	}
+
+	GetBoostsRequest_Type requestType = 2;
+
+	enum BoostType_Enum {
+		UNKNOWN = 0;
+		BOOST_ONLY = 1;
+		RECOMMEND = 2;
+	}
+
+	BoostType_Enum boostType = 3;
+}

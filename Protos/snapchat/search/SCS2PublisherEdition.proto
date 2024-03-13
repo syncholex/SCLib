@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2Publisher.proto";
+import "snapchat/search/SCS2PublisherEdition_Thumbnail.proto";
+import "snapchat/storydoc/StoryDoc_ID.proto";
+
+message SCS2PublisherEdition {
+	int64 id_p = 1;
+	string title = 2;
+	int64 publishEpoch = 3;
+	string thumbnailURL = 5;
+	string deeplinkURL = 6;
+	snapchat.search.SCS2Publisher publisher = 7;
+	snapchat.search.SCS2PublisherEdition_Thumbnail thumbnail = 8;
+	snapchat.storydoc.StoryDoc_ID storyDocId = 9;
+}

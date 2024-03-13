@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+message LensInfo {
+	uint64 unlockableId = 1;
+	string domainKey = 2;
+}

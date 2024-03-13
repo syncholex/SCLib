@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPlaceDeleteData {
+	string placeId = 1;
+	int64 placeVersion = 2;
+}

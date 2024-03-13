@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingSearchShareSnap {
+	string dynamicStoryId = 1;
+	string mediaType = 2;
+	string snapId = 3;
+}

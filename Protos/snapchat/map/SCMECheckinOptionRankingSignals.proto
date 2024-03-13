@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMECheckinOptionRankingSignals_AvailableOption.proto";
+
+message SCMECheckinOptionRankingSignals {
+	string wifiSsid = 1;
+	bool isConnectedToWifi = 2;
+	repeated snapchat.map.SCMECheckinOptionRankingSignals_AvailableOption availableOptionsArray = 3;
+	int32 chosenOptionIndex = 4;
+	int32 optionTapCount = 5;
+	double speedMetersPerSecond = 6;
+	double altitudeMeters = 7;
+}

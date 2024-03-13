@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.ads.abconfig;
+
+import "snapchat/ads/abconfig/SCAdsColorExtractionConfig_AdvertiserColorConfig_CardConfig.proto";
+
+message SCAdsColorExtractionConfig_AdvertiserColorConfig {
+	repeated bytes adAccountIdsArray = 1;
+	string foregroundColor = 2;
+	string backgroundColor = 3;
+	snapchat.ads.abconfig.SCAdsColorExtractionConfig_AdvertiserColorConfig_CardConfig cardConfig = 4;
+}

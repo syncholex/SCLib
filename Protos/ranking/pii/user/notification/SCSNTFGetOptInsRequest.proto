@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+message SCSNTFGetOptInsRequest {
+
+	enum SCSNTFOptInType_Enum {
+		UNKNOWN = 0;
+		USER_STORY = 1;
+		PUBLISHER_STORY = 2;
+		OUR_STORY = 3;
+		LIVE_STREAM = 4;
+		HN_NEWS_SECTION = 5;
+	}
+
+	repeated SCSNTFOptInType_Enum optInTypesArray = 2 [packed=true];
+	bool includeOptInCandidates = 3;
+	string userId = 4;
+}

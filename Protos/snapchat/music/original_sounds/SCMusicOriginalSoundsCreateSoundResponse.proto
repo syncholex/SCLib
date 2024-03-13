@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.music.original_sounds;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_MusicTrackInfo.proto";
+
+message SCMusicOriginalSoundsCreateSoundResponse {
+	uint64 trackId = 2;
+	bool isCopyrightViolation = 3;
+	snapchat.context2.api.SCCTXContextClientInfo_MusicTrackInfo contextMusicTrack = 4;
+}

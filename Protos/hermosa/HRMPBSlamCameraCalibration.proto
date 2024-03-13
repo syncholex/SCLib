@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package hermosa;
+
+import "hermosa/HRMPBCameraIntrinsics.proto";
+import "hermosa/HRMPBSE3D.proto";
+
+message HRMPBSlamCameraCalibration {
+
+	enum HRMPBSlamCameraCalibration_CameraID {
+		UNSET = 0;
+		LEFT_FRONT_RECTIFIED = 1;
+		RIGHT_FRONT_RECTIFIED = 2;
+	}
+
+	HRMPBSlamCameraCalibration_CameraID cameraId = 1;
+	hermosa.HRMPBCameraIntrinsics intrinsics = 2;
+	hermosa.HRMPBSE3D cameraFromImuTransform = 3;
+	hermosa.HRMPBSE3D cameraFromRigTransform = 4;
+}

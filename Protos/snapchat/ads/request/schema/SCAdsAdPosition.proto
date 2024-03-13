@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsAdPosition {
+	uint32 index = 1;
+	uint32 numBrandSafeSlots = 2;
+	int32 feedType = 3;
+}

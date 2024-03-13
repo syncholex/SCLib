@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacInvitesInvitation.proto";
+
+message SCCognacInvitesListInvitationsResponse {
+	repeated cognac.SCCognacInvitesInvitation invitationsArray = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPHideEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnhideEvent.proto";
+
+message SCSUPHideAndUnhideSessions {
+
+	oneof pageSessionRef {
+		string pageSessionId = 1;
+		fixed32 pageSessionIdSaltedHash = 2;
+	}
+
+	uint32 sessionStartTimestamp = 3;
+	repeated ranking.pii.user.profile.SCSUPHideEvent hideEventsArray = 4;
+	repeated ranking.pii.user.profile.SCSUPUnhideEvent unhideEventsArray = 5;
+}

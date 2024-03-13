@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacConnectionApiSessionInfo.proto";
+
+message SCCognacConnectionApiGetValidSessionsResponse {
+	repeated cognac.SCCognacConnectionApiSessionInfo sessionInfosArray = 1;
+}

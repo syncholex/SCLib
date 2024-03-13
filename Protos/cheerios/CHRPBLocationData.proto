@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBLocationData {
+	float latitude = 1;
+	float longitude = 2;
+	uint32 speedMps = 3;
+	uint64 utcTime = 4;
+	int32 headingDeg = 5;
+	int32 heightMm = 6;
+	uint32 hAccMm = 7;
+	uint32 vAccMm = 8;
+}

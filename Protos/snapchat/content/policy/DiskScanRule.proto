@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.content.policy;
+
+message DiskScanRule {
+	string rootDir = 1;
+}

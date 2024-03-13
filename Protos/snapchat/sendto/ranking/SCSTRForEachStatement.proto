@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+import "snapchat/sendto/ranking/SCSTRCodeBlock.proto";
+
+message SCSTRForEachStatement {
+	string key = 1;
+	string value = 2;
+	snapchat.sendto.ranking.SCSTRAST iterable = 3;
+	snapchat.sendto.ranking.SCSTRCodeBlock body = 4;
+}

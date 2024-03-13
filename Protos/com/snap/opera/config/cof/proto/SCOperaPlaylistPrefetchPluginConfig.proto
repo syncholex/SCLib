@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.snap.opera.config.cof.proto;
+
+message SCOperaPlaylistPrefetchPluginConfig {
+	uint32 defaultPrefetchCount = 1;
+	uint32 playlistItemPrefetchCountMap = 2;
+	uint32 concurrencyLimit = 3;
+	bool cancelOnExit = 4;
+	uint32 debounceIntervalMs = 5;
+	repeated int32 allowlistedViewSourcesArray = 6 [packed=true];
+	uint32 defaultPrefetchDurationMs = 7;
+	uint32 playlistItemTypeToPrefetchDurationMsMap = 8;
+	bool enableReqPriorityMutation = 9;
+
+	enum SCOperaPlaylistPrefetchPluginConfig_PlaylistTraversalStrategy {
+		UNSET = 0;
+		GESTURE_DISTANCE_ASCENDING = 1;
+	}
+
+	SCOperaPlaylistPrefetchPluginConfig_PlaylistTraversalStrategy playlistTraversalStrategy = 10;
+	uint32 maxGestureDistance = 11;
+}

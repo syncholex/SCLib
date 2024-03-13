@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ranking.pii.replies;
+
+import "ranking/pii/replies/TextModerationV2Prediction.proto";
+
+message TextModerationAndUnderstanding {
+
+	enum ModerationFilterType_Enum {
+		UNKNOWN = 0;
+		ALD = 1;
+		TEXT_MODERATION = 2;
+		ALD_NORMALIZED = 3;
+		HUMAN = 4;
+		AGE_POLICY = 5;
+	}
+
+	repeated ModerationFilterType_Enum moderationFilterTypeArray = 1 [packed=true];
+	float textModerationV1PredictionScore = 2;
+	repeated ranking.pii.replies.TextModerationV2Prediction textModerationV2PredictionResultArray = 3;
+}

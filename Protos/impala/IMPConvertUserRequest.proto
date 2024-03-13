@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPConvertUserRequest {
+	string userId = 1;
+	string businessAccountId = 2;
+	string converterUserId = 3;
+}

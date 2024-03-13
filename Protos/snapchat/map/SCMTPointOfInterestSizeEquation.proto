@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTPointOfInterestSizeEquation {
+	repeated float orderArray = 1 [packed=true];
+	repeated float stretchArray = 2 [packed=true];
+	repeated float coefficientArray = 3 [packed=true];
+	float intercept = 4;
+}

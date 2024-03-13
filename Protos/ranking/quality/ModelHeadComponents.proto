@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package ranking.quality;
+
+message ModelHeadComponents {
+	string name = 1;
+	float weight = 2;
+	float threshold = 3;
+}

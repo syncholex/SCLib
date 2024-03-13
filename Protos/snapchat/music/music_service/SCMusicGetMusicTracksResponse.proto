@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+
+message SCMusicGetMusicTracksResponse {
+	snapchat.creativetools.common.SCCTPMusicTrack musicTrackInfoMap = 1;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsAdToLens.proto";
+import "snapchat/ads/render/schema/SCAdsLongformVideo.proto";
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+import "snapchat/ads/render/schema/SCAdsAppInstall.proto";
+import "snapchat/ads/render/schema/SCAdsWebViewAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsCollection.proto";
+import "snapchat/ads/render/schema/SCAdsAdToCall.proto";
+import "snapchat/ads/render/schema/SCAdsAdToMessage.proto";
+import "snapchat/ads/render/schema/SCAdsAdToPlace.proto";
+import "snapchat/ads/render/schema/SCAdsProtoRenderLeadGeneration.proto";
+import "snapchat/ads/render/schema/SCAdsShowcaseAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsReminder.proto";
+import "snapchat/ads/render/schema/SCAdsSurvey.proto";
+import "snapchat/ads/render/schema/SCAdsBottomSnap_CtaColorConfig.proto";
+
+message SCAdsBottomSnap {
+
+	oneof bottomSnapType {
+		snapchat.ads.render.schema.SCAdsAdToLens adToLens = 1;
+		snapchat.ads.render.schema.SCAdsLongformVideo longformVideo = 2;
+		snapchat.ads.render.schema.SCAdsDeeplink deepLink = 3;
+		snapchat.ads.render.schema.SCAdsAppInstall appInstall = 4;
+		snapchat.ads.render.schema.SCAdsWebViewAttachment webView = 5;
+		snapchat.ads.render.schema.SCAdsCollection collection = 6;
+		snapchat.ads.render.schema.SCAdsAdToCall adToCall = 7;
+		snapchat.ads.render.schema.SCAdsAdToMessage adToMessage = 8;
+		snapchat.ads.render.schema.SCAdsAdToPlace adToPlace = 9;
+		snapchat.ads.render.schema.SCAdsProtoRenderLeadGeneration leadGeneration = 10;
+		snapchat.ads.render.schema.SCAdsShowcaseAttachment showcase = 11;
+		snapchat.ads.render.schema.SCAdsReminder reminder = 12;
+		snapchat.ads.render.schema.SCAdsSurvey survey = 13;
+	}
+
+	snapchat.ads.render.schema.SCAdsBottomSnap_CtaColorConfig colorConfig = 14;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsTimeRange.proto";
+import "impala/common/IMPEncryptedThumbnailInfo.proto";
+
+message IMPInsightsStory {
+	string businessId = 1;
+	string storyId = 2;
+	int32 numSnaps = 3;
+	string thumbnailURL = 4;
+	impala.insights.IMPInsightsTimeRange timeRange = 5;
+	bool userContributedToStory = 6;
+	impala.common.IMPEncryptedThumbnailInfo encryptedThumbnailInfo = 7;
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZPlace.proto";
+import "snapchat/local/verrazano/VRZPlaceClaimModeration.proto";
+
+message VRZPlaceClaimResponse {
+
+	enum VRZPlaceClaimResponse_Status {
+		STATUS_UNSET = 0;
+		STATUS_ERROR = 1;
+		STATUS_PLACE_MATCH = 2;
+		STATUS_PLACE_BPS_UPDATE = 3;
+		STATUS_PLACE_VZ_UPDATE = 4;
+	}
+
+	VRZPlaceClaimResponse_Status status = 1;
+	string bpsPlaceId = 2;
+	snapchat.local.verrazano.VRZPlace vzPlace = 3;
+	snapchat.local.verrazano.VRZPlaceClaimModeration moderation = 4;
+	int64 requestTs = 5;
+}

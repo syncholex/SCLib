@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCTRequestOptions_Cameos.proto";
+import "snapchat/creativetools/common/SCCTPCTRequestOptions_Bitmoji.proto";
+
+message SCCTPCTRequestOptions {
+
+	oneof requestOptions {
+		snapchat.creativetools.common.SCCTPCTRequestOptions_Cameos cameos = 1;
+		snapchat.creativetools.common.SCCTPCTRequestOptions_Bitmoji bitmoji = 2;
+	}
+
+}

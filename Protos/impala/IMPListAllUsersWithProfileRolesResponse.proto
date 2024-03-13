@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPListAllUsersWithProfileRolesResponse {
+	repeated string userIdsArray = 1;
+	string nextPageId = 2;
+}

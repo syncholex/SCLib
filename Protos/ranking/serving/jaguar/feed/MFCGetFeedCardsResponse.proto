@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCFeedSessionResponse.proto";
+import "ranking/serving/jaguar/feed/MFCFeedCardEnvelope.proto";
+
+message MFCGetFeedCardsResponse {
+	string requestId = 1;
+	ranking.serving.jaguar.feed.MFCFeedSessionResponse session = 2;
+	repeated ranking.serving.jaguar.feed.MFCFeedCardEnvelope feedCardEnvelopesArray = 3;
+}

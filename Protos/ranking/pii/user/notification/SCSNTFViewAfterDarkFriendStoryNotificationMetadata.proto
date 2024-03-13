@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+import "ranking/core/SCSCOREUUID.proto";
+
+message SCSNTFViewAfterDarkFriendStoryNotificationMetadata {
+	ranking.core.SCSCOREUUID receiverUserId = 1;
+	bool isEmployee = 2;
+}

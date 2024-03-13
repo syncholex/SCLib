@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package subscription.shop;
+
+message SCSubscriptionShopPbWebRedeemGiftCardResponse {
+
+	enum SCSubscriptionShopPbWebRedeemGiftCardResponse_Error {
+		ERROR_NO_ERROR = 0;
+		ERROR_ALREADY_SUBSCRIBED = 1;
+		ERROR_REDEEM_LOCATION_INELIGIBLE = 2;
+		ERROR_VENDOR_CANT_PROCESS = 3;
+		ERROR_INVALID_CARD_NUM_OR_PIN = 4;
+	}
+
+	SCSubscriptionShopPbWebRedeemGiftCardResponse_Error error = 1;
+}

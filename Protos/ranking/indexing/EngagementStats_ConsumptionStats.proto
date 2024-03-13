@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message EngagementStats_ConsumptionStats {
+	float completeWatches = 1;
+	float watches = 2;
+	float sends = 3;
+	float favorites = 4;
+	float storyLimitedWatches = 5;
+	float lensUnlocksTopicsPage = 6;
+	float lensUnlocksSearch = 7;
+	float lensUnlocksLeSearch = 8;
+	float lensSwipes = 9;
+	float lensSaves = 10;
+	float lensSends = 11;
+	float lensPosts = 12;
+	float lensUnlockSearchTotal = 13;
+}

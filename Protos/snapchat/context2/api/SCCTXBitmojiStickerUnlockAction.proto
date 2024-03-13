@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+message SCCTXBitmojiStickerUnlockAction {
+	string comicId = 1;
+	string avatarId = 2;
+	bool isAnimated = 3;
+}

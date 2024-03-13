@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map.orbis;
+
+message SCOrbisGetVenueStoriesRequest {
+	uint64 createdAfterMillis = 1;
+	int32 limit = 2;
+}

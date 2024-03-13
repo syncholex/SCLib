@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.snap_feed_ranking;
+
+message VisualTag {
+	uint32 value = 1;
+	float confidenceScore = 2;
+}

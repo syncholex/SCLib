@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+message SCSTRInput {
+
+	oneof type {
+		string featureKey = 2;
+		string stateKey = 3;
+	}
+
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHMediaObjectV1.proto";
+
+message SCPSHImageDateTimeLocation {
+	string primaryText = 1;
+	string secondaryText = 2;
+	snapchat.perception.scan_history.v1.SCPSHMediaObjectV1 mediaObjectV1 = 3;
+}

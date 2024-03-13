@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.ar.shopping;
+
+message DomainContext {
+	string domainKey = 1;
+	bytes showcaseContext = 2;
+}

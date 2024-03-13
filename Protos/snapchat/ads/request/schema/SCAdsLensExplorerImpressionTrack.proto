@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/device/SCAdsDeviceInfo.proto";
+import "snapchat/ads/request/schema/SCAdsLensTileImpressionTrack.proto";
+
+message SCAdsLensExplorerImpressionTrack {
+	snapchat.ads.request.schema.device.SCAdsDeviceInfo deviceInfo = 1;
+	repeated snapchat.ads.request.schema.SCAdsLensTileImpressionTrack lensTileImpressionsArray = 2;
+}

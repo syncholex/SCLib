@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMSubscription_CustomSubscribe_Publisher {
+	string publisherId = 1;
+}

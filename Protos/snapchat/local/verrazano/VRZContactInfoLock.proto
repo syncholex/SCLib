@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZAttributeLock.proto";
+
+message VRZContactInfoLock {
+	snapchat.local.verrazano.VRZAttributeLock phoneNumber = 1;
+	snapchat.local.verrazano.VRZAttributeLock alternatePhoneNumbers = 2;
+	snapchat.local.verrazano.VRZAttributeLock emailAddress = 3;
+	snapchat.local.verrazano.VRZAttributeLock website = 4;
+	snapchat.local.verrazano.VRZAttributeLock menuURL = 5;
+}

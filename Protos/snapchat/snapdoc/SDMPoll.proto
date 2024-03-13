@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+import "snapchat/snapdoc/SDMPoll_PollPage.proto";
+import "snapchat/snapdoc/SDMUpdateInfo.proto";
+
+message SDMPoll {
+
+	enum SDMPoll_PollType {
+		UNKNOWN = 0;
+		OPINION_POLL = 1;
+		VOTE = 2;
+		OPEN_QUESTION = 3;
+		FACTUAL_QUESTION = 4;
+	}
+
+	SDMPoll_PollType pollType = 1;
+
+	enum SDMPoll_PollState {
+		UNSET = 0;
+		OPEN = 1;
+		CLOSED = 2;
+	}
+
+	SDMPoll_PollState pollState = 2;
+	repeated snapchat.snapdoc.SDMPoll_PollPage questionPagesArray = 3;
+	snapchat.snapdoc.SDMPoll_PollPage outcomePage = 4;
+	int64 firstLiveTimestampMs = 5;
+	uint32 durationInDays = 6;
+	string editorProperties = 7;
+	string id_p = 8;
+	snapchat.snapdoc.SDMUpdateInfo updateInfo = 9;
+}

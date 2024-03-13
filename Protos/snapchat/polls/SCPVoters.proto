@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.polls;
+
+import "snapchat/polls/SCPVoter.proto";
+
+message SCPVoters {
+	repeated snapchat.polls.SCPVoter votersArray = 1;
+}

@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBReleaseServiceAccessPointRequest {
+	uint32 id_p = 1;
+}

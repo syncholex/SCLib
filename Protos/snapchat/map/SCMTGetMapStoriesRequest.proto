@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+import "snapchat/map/SCMTPoint.proto";
+
+message SCMTGetMapStoriesRequest {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+	snapchat.map.SCMTPoint location = 2;
+	string experimentValue = 100;
+}

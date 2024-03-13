@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBSocketConnectionError {
+
+	enum HRMPBSocketConnectionError_ErrorCode {
+		UNSET = 0;
+		NO_NETWORK = 1;
+	}
+
+	HRMPBSocketConnectionError_ErrorCode errorCode = 1;
+}

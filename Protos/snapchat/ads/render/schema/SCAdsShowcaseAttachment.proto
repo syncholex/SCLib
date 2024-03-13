@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsWebViewAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+import "snapchat/ads/render/schema/SCAdsShowcaseCallout.proto";
+
+message SCAdsShowcaseAttachment {
+	snapchat.ads.render.schema.SCAdsWebViewAttachment webviewAttachment = 1;
+	snapchat.ads.render.schema.SCAdsDeeplink deeplink = 2;
+	snapchat.ads.render.schema.SCAdsShowcaseCallout showcaseCallout = 3;
+	bytes showcaseContextToken = 4;
+}

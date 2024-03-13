@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEGetFriendExplorerStatusesRequest {
+	string friendId = 1;
+	string language = 2;
+}

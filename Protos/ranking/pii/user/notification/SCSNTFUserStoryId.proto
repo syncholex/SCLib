@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.pii.user.notification;
+
+message SCSNTFUserStoryId {
+	string userId = 2;
+}

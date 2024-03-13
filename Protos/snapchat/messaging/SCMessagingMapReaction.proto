@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+
+message SCMessagingMapReaction {
+	string emoji = 1;
+	snapchat.snapdoc.SDMSnapDoc thumbnail = 2;
+}

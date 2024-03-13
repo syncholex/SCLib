@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingScreenCaptureStatusMessage.proto";
+import "snapchat/messaging/SCMessagingCallingStatusMessage.proto";
+import "snapchat/messaging/SCMessagingParticipantChangeStatusMessage.proto";
+import "snapchat/messaging/SCMessagingNameChangeStatusMessage.proto";
+import "snapchat/messaging/SCMessagingMessageEraseStatusMessage.proto";
+import "snapchat/messaging/SCMessagingGroupChatCreatedStatusMessage.proto";
+import "snapchat/messaging/SCMessagingSaveToCameraRollStatusMessage.proto";
+import "snapchat/messaging/SCMessagingChangeConversationRetentionPolicyStatusMessage.proto";
+import "snapchat/messaging/SCMessagingGameClosedStatusMessage.proto";
+import "snapchat/messaging/SCMessagingInviteLinkStatusMessage.proto";
+import "snapchat/messaging/SCMessagingGroupInviteStickerJoinTextPromptStatusMessage.proto";
+import "snapchat/messaging/SCMessagingCanvasCustomUpdateStatusMessage.proto";
+import "snapchat/messaging/SCMessagingLiveLocationShareTerminatedStatusMessage.proto";
+import "snapchat/messaging/SCMessagingInMyContactsStatusMessage.proto";
+import "snapchat/messaging/SCMessagingAcceptFamilyCenterInviteStatusMessage.proto";
+import "snapchat/messaging/SCMessagingLeaveFamilyCenterStatusMessage.proto";
+import "snapchat/messaging/SCMessagingDWebUpsellStatusMessage.proto";
+import "snapchat/messaging/SCMessagingQuoteReplyShareStatusMessage.proto";
+import "snapchat/messaging/SCMessagingUpdateChatWallpaperStatusMessage.proto";
+import "snapchat/messaging/SCMessagingPlusGiftStatusMessage.proto";
+import "snapchat/messaging/SCMessagingStreakStatusMessage.proto";
+import "snapchat/messaging/SCMessagingMerlinWelcomeStatusMessage.proto";
+import "snapchat/messaging/SCMessagingLiveLocationGroupShareStatusMessage.proto";
+import "snapchat/messaging/SCMessagingSnapPostOpenViewingPolicyStatusMessage.proto";
+import "snapchat/messaging/SCMessagingCountdownStatusMessage.proto";
+
+message SCMessagingStatusMessage {
+
+	oneof status {
+		snapchat.messaging.SCMessagingScreenCaptureStatusMessage screenCapture = 1;
+		snapchat.messaging.SCMessagingCallingStatusMessage callingStatus = 2;
+		snapchat.messaging.SCMessagingParticipantChangeStatusMessage participantChange = 3;
+		snapchat.messaging.SCMessagingNameChangeStatusMessage nameStatusChange = 4;
+		snapchat.messaging.SCMessagingMessageEraseStatusMessage messageErase = 5;
+		snapchat.messaging.SCMessagingGroupChatCreatedStatusMessage groupChatCreated = 6;
+		snapchat.messaging.SCMessagingSaveToCameraRollStatusMessage saveToCameraRoll = 7;
+		snapchat.messaging.SCMessagingChangeConversationRetentionPolicyStatusMessage changeConversationRetentionPolicy = 8;
+		snapchat.messaging.SCMessagingGameClosedStatusMessage gameClosed = 9;
+		snapchat.messaging.SCMessagingInviteLinkStatusMessage inviteLink = 10;
+		snapchat.messaging.SCMessagingGroupInviteStickerJoinTextPromptStatusMessage groupInviteStickerJoinTextPrompt = 11;
+		snapchat.messaging.SCMessagingCanvasCustomUpdateStatusMessage canvasUpdate = 12;
+		snapchat.messaging.SCMessagingLiveLocationShareTerminatedStatusMessage liveLocationTerminated = 13;
+		snapchat.messaging.SCMessagingInMyContactsStatusMessage inMyContacts = 14;
+		snapchat.messaging.SCMessagingAcceptFamilyCenterInviteStatusMessage acceptFamilyCenterInvite = 15;
+		snapchat.messaging.SCMessagingLeaveFamilyCenterStatusMessage leaveFamilyCenter = 16;
+		snapchat.messaging.SCMessagingDWebUpsellStatusMessage dwebUpsell = 17;
+		snapchat.messaging.SCMessagingQuoteReplyShareStatusMessage quoteReplyShare = 18;
+		snapchat.messaging.SCMessagingUpdateChatWallpaperStatusMessage updateChatWallpaperStatusMessage = 19;
+		snapchat.messaging.SCMessagingPlusGiftStatusMessage plusGift = 20;
+		snapchat.messaging.SCMessagingStreakStatusMessage streak = 21;
+		snapchat.messaging.SCMessagingMerlinWelcomeStatusMessage merlinWelcome = 22;
+		snapchat.messaging.SCMessagingLiveLocationGroupShareStatusMessage liveLocationGroupMessage = 23;
+		snapchat.messaging.SCMessagingSnapPostOpenViewingPolicyStatusMessage snapPostOpenViewingPolicyStatusMessage = 24;
+		snapchat.messaging.SCMessagingCountdownStatusMessage countdownStatusMessage = 25;
+	}
+
+}

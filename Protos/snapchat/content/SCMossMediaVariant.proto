@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.content;
+
+import "snapchat/content/SCMossMediaVariantMetadata.proto";
+import "snapchat/content/SCMossContentDescriptorOverride.proto";
+import "snapchat/content/SCBoltContentDescriptor.proto";
+import "snapchat/content/SCMossHlsVodStreaming.proto";
+
+message SCMossMediaVariant {
+	int32 variantName = 1;
+	snapchat.content.SCMossMediaVariantMetadata metadata = 2;
+
+	enum SCMossMediaVariant_MediaVariantStatus {
+		NOT_SET = 0;
+		MEDIA_CONVERSION_FINISHED = 1;
+		MEDIA_CONVERSION_FAILED = 2;
+		BOLT_CLAIM_FAILED = 3;
+		BOLT_INGESTION_PROCESSING = 4;
+		BOLT_INGESTION_FAILED = 5;
+		PROCESSING = 6;
+		FETCH_UPLOAD_LOCATION_FAILED = 7;
+		INTERNAL_ERROR = 8;
+		CANCELLED = 9;
+		COMPLETED = 10;
+		NOT_PRODUCED = 11;
+		DELETED = 99;
+	}
+
+	SCMossMediaVariant_MediaVariantStatus status = 3;
+
+	oneof variantContent {
+		snapchat.content.SCMossContentDescriptorOverride overrideContentDescriptor = 4;
+		snapchat.content.SCBoltContentDescriptor contentDescriptor = 10;
+		snapchat.content.SCMossHlsVodStreaming hlsVodStreaming = 11;
+	}
+
+}

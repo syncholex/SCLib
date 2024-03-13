@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSetContextAnimMessage {
+	uint32 solidDuration = 1;
+	uint32 blinkCount = 2;
+	uint32 blinkDurationOnInMs = 3;
+	uint32 blinkDurationOffInMs = 4;
+}

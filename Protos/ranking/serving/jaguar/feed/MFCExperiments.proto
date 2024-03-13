@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/core/SCSCOREABTestStudyInfo.proto";
+
+message MFCExperiments {
+	repeated ranking.core.SCSCOREABTestStudyInfo studyInfoArray = 1;
+
+	enum SCSCOREABPriority_Enum {
+		AB_PRIORITY_UNKNOWN = 0;
+		AB_PRIORITY_ONLY_REQUEST = 1;
+		AB_PRIORITY_PREFER_REQUEST = 2;
+		AB_PRIORITY_ONLY_PROFILE = 3;
+		AB_PRIORITY_PREFER_PROFILE = 4;
+	}
+
+	SCSCOREABPriority_Enum studyPriority = 2;
+}

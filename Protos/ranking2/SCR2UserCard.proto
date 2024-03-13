@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2StoryThumbnail.proto";
+
+message SCR2UserCard {
+	string userId = 1;
+	ranking2.SCR2StoryThumbnail storyThumbnail = 2;
+	string displayName = 3;
+	string username = 4;
+	string emoji = 5;
+	string debugMap = 6;
+	bool isOfficial = 7;
+	string bitmojiAvatarId = 8;
+	bool isPopular = 9;
+	string searchResultHelpString = 10;
+
+	enum SCR2UserCard_SearchResultReason {
+		UNKNOWN = 0;
+		USERNAME = 1;
+		MUTUAL_FRIENDS = 2;
+		DISPLAY_NAME = 3;
+		GROUP = 4;
+		STORY = 5;
+		QUICK_ADD = 6;
+		ADDED_ME = 7;
+		CONTACT_BOOK = 8;
+	}
+
+	SCR2UserCard_SearchResultReason searchResultReason = 11;
+}

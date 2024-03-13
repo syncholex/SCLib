@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+message StorySnapID {
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 1;
+	string snapId = 2;
+
+	enum SCSCOREMyStoryVariant_Enum {
+		UNSET = 0;
+		AFTER_DARK = 1;
+	}
+
+	SCSCOREMyStoryVariant_Enum myStoryVariant = 3;
+}

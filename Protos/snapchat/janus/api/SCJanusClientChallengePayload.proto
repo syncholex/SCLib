@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusClientChallengePayload {
+
+	enum SCJanusClientChallengePayload_ClientChallengeType {
+		CLIENT_CHALLENGE_TYPE_UNSET = 0;
+		CLIENT_CHALLENGE_TYPE_ARKOSE = 1;
+	}
+
+	SCJanusClientChallengePayload_ClientChallengeType type = 1;
+	string payload = 2;
+}

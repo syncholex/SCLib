@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.lens.inlenscreation;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCInLensCreationFilter {
+}

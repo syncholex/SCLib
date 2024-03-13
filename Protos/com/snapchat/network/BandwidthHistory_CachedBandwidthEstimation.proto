@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.snapchat.network;
+
+message BandwidthHistory_CachedBandwidthEstimation {
+	string ssid = 1;
+	int64 downloadBandwidthValue = 2;
+
+	enum NetworkConnectionClassType {
+		CONNECTIONCLASS_UNDER400KBITPS = 0;
+		CONNECTIONCLASS_400KBITPS_800KBITPS = 1;
+		CONNECTIONCLASS_800KBITPS_1600KBITPS = 2;
+		CONNECTIONCLASS_1600KBITPS_4MBITPS = 3;
+		CONNECTIONCLASS_4MBITPS_8MBITPS = 4;
+		CONNECTIONCLASS_8MBITPS_16MBITPS = 5;
+		CONNECTIONCLASS_ABOVE16MBITPS = 6;
+		UNRECOGNIZED_VALUE = 7;
+	}
+
+	NetworkConnectionClassType downloadBandwidthClass = 3;
+	int64 uploadBandwidthValue = 4;
+
+	enum NetworkConnectionClassType {
+		CONNECTIONCLASS_UNDER400KBITPS = 0;
+		CONNECTIONCLASS_400KBITPS_800KBITPS = 1;
+		CONNECTIONCLASS_800KBITPS_1600KBITPS = 2;
+		CONNECTIONCLASS_1600KBITPS_4MBITPS = 3;
+		CONNECTIONCLASS_4MBITPS_8MBITPS = 4;
+		CONNECTIONCLASS_8MBITPS_16MBITPS = 5;
+		CONNECTIONCLASS_ABOVE16MBITPS = 6;
+		UNRECOGNIZED_VALUE = 7;
+	}
+
+	NetworkConnectionClassType uploadBandwidthClass = 5;
+	int64 createdTimeStamp = 6;
+}

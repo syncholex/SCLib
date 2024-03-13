@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package activity_center.countdowns;
+
+import "activity_center/countdowns/SCCountdownsUpdateCountdownInfo.proto";
+
+message SCCountdownsUpdateCountdownRequest {
+	string creatorId = 1;
+	string countdownId = 2;
+	activity_center.countdowns.SCCountdownsUpdateCountdownInfo updateCountdownInfo = 3;
+}

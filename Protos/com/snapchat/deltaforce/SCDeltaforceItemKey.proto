@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.deltaforce;
+
+import "com/snapchat/deltaforce/SCDeltaforceGroupKey.proto";
+import "com/snapchat/deltaforce/SCDeltaforcePathComponent.proto";
+
+message SCDeltaforceItemKey {
+	com.snapchat.deltaforce.SCDeltaforceGroupKey group = 1;
+	repeated com.snapchat.deltaforce.SCDeltaforcePathComponent pathComponentsArray = 3;
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package lens_platform.client_server.common;
+
+message SCLPRichStoryDeepLinkAttachment {
+	string uri = 1;
+	bool inAppMode = 2;
+	string appTitle = 3;
+	string inAppBackground = 4;
+	string iosAppIcon = 5;
+	int64 iosAppId = 6;
+	string androidAppIcon = 7;
+	string androidPackageId = 8;
+
+	enum SCLPRichStoryDeepLinkAttachment_TapLinkActionText {
+		TAP_TO_LINK_UNSET = 0;
+		TAP_TO_OPEN = 1;
+		TAP_TO_UNLOCK = 2;
+	}
+
+	SCLPRichStoryDeepLinkAttachment_TapLinkActionText tapLinkActionText = 9;
+	string deepLinkWebFallbackURL = 10;
+
+	enum SCLPRichStoryDeepLinkAttachment_DeepLinkFallbackType {
+		DEEP_LINK_FALLBACK_UNSET = 0;
+		APP_INSTALL = 1;
+		WEB_SITE = 2;
+		EXTERNAL_BROWSER = 3;
+	}
+
+	SCLPRichStoryDeepLinkAttachment_DeepLinkFallbackType deepLinkFallbackType = 11;
+}

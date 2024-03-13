@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SASAudioStitch.proto";
+
+message SASGetTrackStitchResponse {
+	snapchat.research.SASAudioStitch audioStitch = 1;
+}

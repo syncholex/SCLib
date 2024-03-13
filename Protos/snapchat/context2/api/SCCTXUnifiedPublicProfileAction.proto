@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXUnifiedPublicProfileAction_PublisherRoute.proto";
+import "snapchat/context2/api/SCCTXUnifiedPublicProfileAction_UnifiedPublicProfileRoute.proto";
+
+message SCCTXUnifiedPublicProfileAction {
+
+	oneof route {
+		snapchat.context2.api.SCCTXUnifiedPublicProfileAction_PublisherRoute publisherRoute = 1;
+		snapchat.context2.api.SCCTXUnifiedPublicProfileAction_UnifiedPublicProfileRoute unifiedPublicProfileRoute = 2;
+	}
+
+}

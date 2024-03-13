@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMEGetExploreBadgeTimestampResponse {
+	int64 badgeTimestampMs = 1;
+}

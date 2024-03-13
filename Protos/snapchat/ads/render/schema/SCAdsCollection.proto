@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsCollectionItemAttachment.proto";
+import "snapchat/ads/render/schema/SCAdsCollectionItem.proto";
+
+message SCAdsCollection {
+	string headline = 1;
+	snapchat.ads.render.schema.SCAdsCollectionItemAttachment defaultAttachment = 2;
+	repeated snapchat.ads.render.schema.SCAdsCollectionItem itemsArray = 3;
+	bool enableDpaCollectionAsSnapAd = 4;
+}

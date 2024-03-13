@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package validate;
+
+message AnyRules {
+	bool required = 1;
+	repeated string inArray = 2;
+	repeated string notInArray = 3;
+}

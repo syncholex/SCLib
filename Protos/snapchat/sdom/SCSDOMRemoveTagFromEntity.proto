@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+
+message SCSDOMRemoveTagFromEntity {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+	snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 2;
+}

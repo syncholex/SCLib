@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/lists/common/SCListsRecipientList.proto";
+
+message SCListsListsUpdateRequest {
+	repeated snapchat.lists.common.SCListsRecipientList listsArray = 1;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTGeoPoint.proto";
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTGetPlaylistRequest {
+	snapchat.map.SCMTGeoPoint requestGeoPoint = 2;
+	double zoomLevel = 3;
+	snapchat.map.SCMTTileSetId tileSetId = 11;
+	double radiusMeters = 13;
+	double maximumFuzzRadius = 14;
+	string playlistStyle = 15;
+	bool wantThumbnail = 17;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.commerce.domain.bitmoji;
+
+message BitmojiAssetInfo {
+	string comicId = 1;
+	repeated string avatarIdsArray = 2;
+}

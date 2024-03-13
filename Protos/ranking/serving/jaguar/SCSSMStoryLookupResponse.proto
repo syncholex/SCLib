@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCSCOREResponseStatus.proto";
+import "ranking/serving/jaguar/SCSSMStoryCard.proto";
+import "ranking/serving/jaguar/SCSSMStoryLookupResponseItem.proto";
+
+message SCSSMStoryLookupResponse {
+	string requestId = 1;
+	ranking.core.SCSCOREResponseStatus status = 2;
+	ranking.serving.jaguar.SCSSMStoryCard storyCard = 3;
+	ranking.serving.jaguar.SCSSMStoryLookupResponseItem responseItem = 4;
+}

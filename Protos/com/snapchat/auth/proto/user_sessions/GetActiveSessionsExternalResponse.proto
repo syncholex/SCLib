@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.user_sessions;
+
+import "com/snapchat/auth/proto/user_sessions/SessionExternal.proto";
+
+message GetActiveSessionsExternalResponse {
+	com.snapchat.auth.proto.user_sessions.SessionExternal currentSession = 1;
+	repeated com.snapchat.auth.proto.user_sessions.SessionExternal otherSessionsArray = 2;
+}

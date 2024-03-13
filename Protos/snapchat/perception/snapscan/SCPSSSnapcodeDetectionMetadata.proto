@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.perception.snapscan;
+
+message SCPSSSnapcodeDetectionMetadata {
+
+	enum SCPSSSnapcodeDetectionMetadata_SnapcodeType {
+		SNAPCODE_TYPE_UNSET = 0;
+		SNAPCODE_TYPE_18X18 = 1;
+		SNAPCODE_TYPE_BITMOJI = 2;
+	}
+
+	repeated SCPSSSnapcodeDetectionMetadata_SnapcodeType snapcodeTypesArray = 1 [packed=true];
+	bool enableFalseAlarmCheck = 2;
+	bool enableContourEnhancement = 3;
+}

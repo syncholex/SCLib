@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPoint.proto";
+
+message SCMTPlacePoi {
+	string name = 1;
+	snapchat.map.SCMTPoint markerPoint = 2;
+	int32 numSnaps = 3;
+	repeated snapchat.map.SCMTPoint geoFenceArray = 4;
+	string thumbnailURL = 5;
+	bool geofilterOnly = 6;
+	repeated string geofilterIdsArray = 7;
+}

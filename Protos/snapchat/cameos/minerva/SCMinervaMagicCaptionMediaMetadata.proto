@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaMagicCaptionMediaMetadata {
+	int32 age = 1;
+	repeated string closeLocationsArray = 2;
+
+	enum SCCameosGender {
+		GENDER_UNKNOWN = 0;
+		MALE = 1;
+		FEMALE = 2;
+	}
+
+	repeated SCCameosGender genderArray = 3 [packed=true];
+	string appliedFilterName = 4;
+	int32 utcOffsetMinutes = 5;
+	int64 captureTimestampMs = 6;
+	bool isOver18 = 7;
+}

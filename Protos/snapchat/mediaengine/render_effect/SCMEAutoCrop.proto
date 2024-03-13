@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.render_effect;
+
+message SCMEAutoCrop {
+}

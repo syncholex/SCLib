@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.len.friends_feed_context_lens;
+
+import "snapchat/len/friends_feed_context_lens/SCLensFriendsFeedContextEvent.proto";
+
+message SCLensFriendsFeedContextConfig {
+	int32 simultaneouslyShownEventsCount = 1;
+	int32 trackedConversationNumber = 2;
+
+	enum SCLensFriendsFeedContextConfig_SecondarySortingMode {
+		UNSET = 0;
+		MOST_RECENT = 1;
+		RANDOM_IN_TOP_TEN = 2;
+		ALL = 3;
+	}
+
+	SCLensFriendsFeedContextConfig_SecondarySortingMode secondarySortingMode = 3;
+	int32 impressionCap = 4;
+	repeated snapchat.len.friends_feed_context_lens.SCLensFriendsFeedContextEvent eventsArray = 5;
+	string lensIconBase = 6;
+}

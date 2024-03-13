@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+import "tokens/shop/SCIAPTokenPbShopTokenPack.proto";
+
+message SCIAPTokenPbGetTokenPacksResponse {
+	repeated tokens.shop.SCIAPTokenPbShopTokenPack tokenPacksArray = 1;
+}

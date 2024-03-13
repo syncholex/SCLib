@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+import "snapchat/research/SnapBrainResponse_Results_Safety_SafetyDetection.proto";
+
+message SnapBrainResponse_Results_Safety {
+	repeated snapchat.research.SnapBrainResponse_Results_Safety_SafetyDetection detectionsArray = 1;
+}

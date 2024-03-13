@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPBoostEvent.proto";
+import "ranking/pii/user/profile/SCSUPUnboostEvent.proto";
+
+message SCSUPBoostAndUnboostSessions {
+
+	oneof pageSessionRef {
+		string pageSessionId = 1;
+		fixed32 pageSessionIdSaltedHash = 2;
+	}
+
+	uint32 sessionStartTimestamp = 3;
+	repeated ranking.pii.user.profile.SCSUPBoostEvent boostEventsArray = 4;
+	repeated ranking.pii.user.profile.SCSUPUnboostEvent unboostEventsArray = 5;
+}

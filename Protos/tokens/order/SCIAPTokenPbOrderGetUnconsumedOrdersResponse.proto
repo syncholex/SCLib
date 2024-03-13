@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.order;
+
+import "tokens/order/SCIAPTokenPbOrderOrderRecord.proto";
+
+message SCIAPTokenPbOrderGetUnconsumedOrdersResponse {
+	repeated tokens.order.SCIAPTokenPbOrderOrderRecord ordersArray = 1;
+}

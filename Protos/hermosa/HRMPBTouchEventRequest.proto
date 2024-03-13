@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBActionPointer.proto";
+
+message HRMPBTouchEventRequest {
+
+	enum HRMPBTouchEventRequest_TouchAction {
+		UNSET = 0;
+		START = 1;
+		END = 2;
+		MOVE = 3;
+		CANCEL = 4;
+	}
+
+	HRMPBTouchEventRequest_TouchAction action = 1;
+	repeated hermosa.HRMPBActionPointer pointersArray = 2;
+}

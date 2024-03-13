@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+message MediaSignals {
+	uint32 mediaDurationMs = 1;
+
+	enum MediaType {
+		MEDIA_TYPE_UNSET = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		GIF = 3;
+		AUDIO = 4;
+	}
+
+	MediaType mediaType = 2;
+}

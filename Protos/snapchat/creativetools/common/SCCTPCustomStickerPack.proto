@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCustomStickerPackEntry.proto";
+
+message SCCTPCustomStickerPack {
+	repeated snapchat.creativetools.common.SCCTPCustomStickerPackEntry entriesArray = 1;
+}

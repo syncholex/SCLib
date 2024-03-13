@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/pii/user/profile/WindowedIntMetrics.proto";
+
+message SCSSMUserStoryEdgeInteractionFeatures {
+	ranking.pii.user.profile.WindowedIntMetrics numChatViewsEdge = 1;
+	ranking.pii.user.profile.WindowedIntMetrics numChatsSentEdge = 2;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapViewsEdge = 3;
+	ranking.pii.user.profile.WindowedIntMetrics numSnapsSentEdge = 4;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryViewsEdge = 5;
+	ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesEdge = 6;
+}

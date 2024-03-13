@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_ClientTargetingInfo_Geofence.proto";
+
+message SCCTPFilter_ClientTargetingInfo {
+
+	enum SCCTPFilter_ClientTargetingInfo_CameraContext {
+		CAMERA_CONTEXT_UNSET = 0;
+		FRONT_FACING = 1;
+		REAR_FACING = 2;
+		MIXED_FACING = 3;
+	}
+
+	repeated SCCTPFilter_ClientTargetingInfo_CameraContext cameraContextsArray = 1 [packed=true];
+
+	enum SCCTPFilter_ClientTargetingInfo_MediaTypeContext {
+		MEDIA_TYPE_CONTEXT_UNSET = 0;
+		IMAGE = 1;
+		VIDEO = 2;
+		VIDEO_NO_SOUND = 3;
+		VIDEO_SOUND_LAGUNA = 4;
+		VIDEO_NO_SOUND_LAGUNA = 5;
+	}
+
+	repeated SCCTPFilter_ClientTargetingInfo_MediaTypeContext mediaTypeContextsArray = 2 [packed=true];
+	repeated int64 actionmojiContextsArray = 3 [packed=true];
+	repeated string visualContextsArray = 4;
+	snapchat.creativetools.common.SCCTPFilter_ClientTargetingInfo_Geofence geofence = 5;
+}

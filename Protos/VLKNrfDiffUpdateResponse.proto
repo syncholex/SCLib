@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+message VLKNrfDiffUpdateResponse {
+
+	enum VLKNrfDiffUpdateRequestType {
+		GET_HASH = 1;
+		REVERT = 2;
+		XDELTA3_APPLY = 3;
+		UNTAR = 4;
+	}
+
+	VLKNrfDiffUpdateRequestType origReqType = 1;
+
+	enum VLKNrfDiffUpdateErrorCode {
+		PATCH_ERROR = 1;
+		FILE_OPEN_ERROR = 2;
+		RECOVERY_READ_ERROR = 3;
+		MEMORY_ERROR = 4;
+		UNTAR_ERROR = 5;
+	}
+
+	VLKNrfDiffUpdateErrorCode errorCode = 3;
+	string digest = 4;
+	bool diffUpdatePatchApplied = 5;
+	bool untarComplete = 6;
+}

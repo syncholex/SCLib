@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBAdcReadRequest {
+	uint32 pinNum = 1;
+}

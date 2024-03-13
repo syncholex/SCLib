@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+message SCMessagingGoogleSDKAdShare {
+	string query = 1;
+	string lightStyleId = 2;
+	string darkStyleId = 3;
+	string channel = 4;
+
+	enum SCMessagingGoogleSDKAdShare_AdSafe {
+		UNSET = 0;
+		HIGH = 1;
+		MEDIUM = 2;
+		LOW = 3;
+	}
+
+	SCMessagingGoogleSDKAdShare_AdSafe adSafe = 5;
+	string googleAdRequestId = 6;
+
+	enum SCMessagingGoogleSDKAdShare_AdType {
+		AD_TYPE_UNSET = 0;
+		AD_TYPE_TEXT = 1;
+		AD_TYPE_PLAN_PACK = 2;
+	}
+
+	SCMessagingGoogleSDKAdShare_AdType adType = 7;
+}

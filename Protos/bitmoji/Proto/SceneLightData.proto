@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message SceneLightData {
+	string id_p = 1;
+}

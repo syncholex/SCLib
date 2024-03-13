@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMAdsUserData.proto";
+import "snapchat/ads/request/schema/SCAdsInventoryRequest.proto";
+import "google/protobuf/GPBInt64Value.proto";
+
+message SCSSMAdsClientInfo {
+	bytes encryptedUserData = 1;
+	bool limitAdTracking = 2;
+	bool audienceMatchOptOut = 3;
+	bool externalActivityMatchOptOut = 4;
+	ranking.serving.jaguar.SCSSMAdsUserData userData = 5;
+	string debugAdId = 6;
+	snapchat.ads.request.schema.SCAdsInventoryRequest inventoryRequest = 7;
+	bytes said = 8;
+	google.protobuf.GPBInt64Value diskTotalSpaceKb = 9;
+	google.protobuf.GPBInt64Value diskFreeSpaceKb = 10;
+}

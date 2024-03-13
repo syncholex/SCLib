@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBLEAddress {
+	uint32 session = 1;
+}

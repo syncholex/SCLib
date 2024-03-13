@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBDroppedFramesData.proto";
+
+message HRMPBVideoData {
+	int32 durationMs = 1;
+
+	enum HRMPBVideoCodec {
+		UNKNOWN = 0;
+		AVC = 1;
+		HEVC = 2;
+	}
+
+	HRMPBVideoCodec codec = 2;
+	int32 requestedVideoCount = 3;
+	bool lastRecordAborted = 4;
+	hermosa.HRMPBDroppedFramesData droppedFramesData = 5;
+}

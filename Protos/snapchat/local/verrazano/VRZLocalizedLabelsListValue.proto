@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZLocalizedLabels.proto";
+
+message VRZLocalizedLabelsListValue {
+	repeated snapchat.local.verrazano.VRZLocalizedLabels valueArray = 1;
+}

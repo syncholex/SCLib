@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SASSnapDeletionMessage {
+	int64 userTimestamp = 1;
+	int64 messageTimestamp = 2;
+	int64 captureTimestamp = 3;
+}

@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package activity_center.feed;
+
+import "google/protobuf/GPBTimestamp.proto";
+import "activity_center/feed/SCActivityCenterPbActionmoji.proto";
+import "activity_center/feed/SCActivityCenterPbFriendmoji.proto";
+import "activity_center/feed/SCActivityCenterPbLens.proto";
+import "activity_center/feed/SCActivityCenterPbTapAction.proto";
+import "activity_center/feed/SCActivityCenterPbItemThumbnail.proto";
+
+message SCActivityCenterPbItem {
+	string id_p = 1;
+	google.protobuf.GPBTimestamp timestamp = 2;
+	string title = 3;
+	string iconURL = 4;
+	string headline = 5;
+	string subtext = 6;
+
+	oneof thumbnailInfo {
+		activity_center.feed.SCActivityCenterPbActionmoji actionmoji = 7;
+		activity_center.feed.SCActivityCenterPbFriendmoji friendmoji = 8;
+		activity_center.feed.SCActivityCenterPbLens lens = 13;
+	}
+
+
+	enum SCActivityCenterPbType {
+		TYPE_UNSET = 0;
+		TYPE_MAP_RECENT_MOVE = 1;
+		TYPE_STORY_SCREENSHOT = 2;
+		TYPE_BITMOJI_FIT_CHECK = 3;
+		TYPE_FRIEND_TREND = 4;
+		TYPE_BIRTHDAY = 5;
+		TYPE_TRENDING_LENS = 6;
+		TYPE_BEST_FRIEND = 7;
+	}
+
+	SCActivityCenterPbType type = 9;
+	string viewedIconURL = 10;
+	string aboutUserId = 11;
+	bool isTapped = 12;
+	activity_center.feed.SCActivityCenterPbTapAction onTapIconAction = 14;
+	string actionableIconURL = 15;
+	activity_center.feed.SCActivityCenterPbItemThumbnail thumbnail = 16;
+	bool displayBadge = 17;
+	activity_center.feed.SCActivityCenterPbTapAction onTapItem = 18;
+}

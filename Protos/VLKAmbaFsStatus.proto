@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKAmbaFsStatus {
+	bool hasSpaceToRecord = 1;
+	uint32 storagePercentage = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbOrganization.proto";
+
+message SCLensesPbGetOrganizationsResponse {
+	repeated snapchat.lenscentral.common.SCLensCentralCommonPbOrganization organizationsArray = 1;
+	bool brandProfile = 2;
+	repeated string communityDistributableOrgIdsArray = 3;
+}

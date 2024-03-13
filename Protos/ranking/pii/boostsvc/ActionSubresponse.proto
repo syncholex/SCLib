@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+message ActionSubresponse {
+	string subRequestId = 1;
+
+	enum Status_Enum {
+		UNKNOWN = 0;
+		SUCCESS = 1;
+		RETRIABLE_ERROR = 2;
+		NON_RETRIABLE_ERROR = 3;
+	}
+
+	Status_Enum status = 2;
+}

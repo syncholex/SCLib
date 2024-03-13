@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tiles;
+
+import "snapchat/map/garfield/tiles/SCMGTCoordinate.proto";
+import "snapchat/map/garfield/tiles/SCMGTLayerRequest.proto";
+
+message SCMGTGetTileRequest {
+	snapchat.map.garfield.tiles.SCMGTCoordinate coordinate = 1;
+	repeated snapchat.map.garfield.tiles.SCMGTLayerRequest layersArray = 2;
+}

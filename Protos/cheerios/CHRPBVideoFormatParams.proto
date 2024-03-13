@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package cheerios;
+
+import "cheerios/CHRPBFlightModeConfig.proto";
+
+message CHRPBVideoFormatParams {
+	cheerios.CHRPBFlightModeConfig flightMode = 1;
+
+	enum CHRPBVideoFormatParams_VideoFormat {
+		UNSET = 0;
+		AVC = 1;
+		HEVC = 2;
+	}
+
+	CHRPBVideoFormatParams_VideoFormat format = 2;
+}

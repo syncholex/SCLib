@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/creativetools/common/SCCTPMiniAppMetadata.proto";
+
+message SCCTPSnapSticker {
+	string name = 2;
+	bool isAnimated = 3;
+	snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+	snapchat.creativetools.common.SCCTPMiniAppMetadata miniAppMetadata = 5;
+	string displayNameByLocale = 6;
+}

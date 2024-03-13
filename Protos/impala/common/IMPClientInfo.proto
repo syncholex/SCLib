@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.common;
+
+message IMPClientInfo {
+
+	enum IMPCameosFeatureStatus_Enum {
+		UNSET = 0;
+		RESTRICTED = 1;
+		ALLOWED = 2;
+	}
+
+	IMPCameosFeatureStatus_Enum cameosFeatureRestricted = 1;
+}

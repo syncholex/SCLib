@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.perception.scan.v3;
+
+import "google/type/GTPColor.proto";
+import "snapchat/perception/scan/v3/SCPCNV3ScanCardActionButton.proto";
+
+message SCPCNV3ScanCardModel {
+	string utilityServiceId = 1;
+	string category = 2;
+	string brandImageURL = 3;
+	string brandName = 4;
+	google.type.GTPColor brandNameColor = 5;
+	string itemImageURL = 6;
+	string itemName = 7;
+	string itemDescription = 8;
+	string html = 9;
+	repeated snapchat.perception.scan.v3.SCPCNV3ScanCardActionButton actionButtonsArray = 10;
+}

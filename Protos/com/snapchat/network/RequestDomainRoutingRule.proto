@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.network;
+
+message RequestDomainRoutingRule {
+	repeated string endpointsArray = 1;
+	string hostname = 2;
+}

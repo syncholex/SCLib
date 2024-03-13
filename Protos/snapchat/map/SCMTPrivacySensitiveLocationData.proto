@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTMotionData.proto";
+import "snapchat/map/SCMTLocality.proto";
+import "snapchat/map/SCMTLocationUpdate.proto";
+import "actionmoji/action/SCMT1Type.proto";
+import "actionmoji/action/SCMT1Sticker.proto";
+
+message SCMTPrivacySensitiveLocationData {
+	float lat = 1;
+	float lng = 2;
+	float altitude = 9;
+	float horizontalAccuracy = 10;
+	float verticalAccuracy = 11;
+	snapchat.map.SCMTMotionData motionData = 12;
+	repeated snapchat.map.SCMTLocality localityArray = 14;
+	bool backgroundUpdate = 20;
+	int64 lastForegroundUpdateTimestamp = 22;
+	repeated snapchat.map.SCMTLocationUpdate locationUpdateArray = 23;
+	bytes kalmanState = 24;
+	float kalmanLat = 25;
+	float kalmanLng = 26;
+	int64 kalmanTimestamp = 27;
+	repeated actionmoji.action.SCMT1Type actionTypeArray = 28;
+	actionmoji.action.SCMT1Sticker typeSticker = 29;
+	repeated string bleBeaconIdArray = 30;
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.search.lensservice;
+
+import "snapchat/search/lensservice/SCS2LensThumbnailSequence.proto";
+
+message SCS2LensLensMetadata {
+	string lensId = 1;
+	string creatorName = 2;
+	string userId = 3;
+	string businessProfileId = 4;
+	string name = 5;
+	int32 lastUpdatedEpoch = 6;
+	string thumbnailURL = 7;
+	snapchat.search.lensservice.SCS2LensThumbnailSequence thumbnailSequence = 8;
+	string iconURL = 9;
+	string deeplinkURL = 10;
+	string snapcodeURL = 11;
+	string previewVideoURL = 12;
+}

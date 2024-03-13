@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/SnapCreationPeriod.proto";
+
+message BloomFilterStoryTypeRequest {
+
+	enum SCSCOREPostingStoryType_Enum {
+		UNKNOWN = 0;
+		OUR = 1;
+		MY = 2;
+		CUSTOM = 3;
+		SNAPPRO = 4;
+		APP = 5;
+		SAVED = 6;
+		PUBLISHER = 7;
+	}
+
+	SCSCOREPostingStoryType_Enum storyType = 1;
+	repeated ranking.pii.readreceipt.SnapCreationPeriod creationDateShardArray = 2;
+}

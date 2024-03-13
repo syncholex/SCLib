@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.adindex.protobuf;
+
+message TextOverlayProperties {
+
+	enum OverlayShape {
+		UNKNOWN_OVERLAY_SHAPE = 0;
+		NONE = 1;
+		CIRCLE = 2;
+		PILL = 3;
+		RECTANGLE = 4;
+	}
+
+	OverlayShape shape = 1;
+	string shapeColor = 2;
+	string textColor = 3;
+}

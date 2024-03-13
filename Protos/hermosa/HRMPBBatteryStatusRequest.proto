@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBatteryStatusRequest {
+
+	enum HRMPBBatteryStatusRequest_Type {
+		NEW = 0;
+		CACHED = 1;
+	}
+
+	HRMPBBatteryStatusRequest_Type requestType = 1;
+
+	enum HRMPBBatteryStatusRequest_DataType {
+		USER_FACING = 0;
+		RAW_DATA = 1;
+	}
+
+	HRMPBBatteryStatusRequest_DataType dataType = 2;
+
+	enum HRMPBBatteryStatusRequest_BatteryTemples {
+		BATTERY_DEFAULT = 0;
+		BATTERY_LEFT = 1;
+		BATTERY_RIGHT = 2;
+	}
+
+	HRMPBBatteryStatusRequest_BatteryTemples side = 3;
+	bool resetPeakCurrent = 4;
+
+	enum HRMPBBatteryStatusRequest_BatteryTemples {
+		BATTERY_DEFAULT = 0;
+		BATTERY_LEFT = 1;
+		BATTERY_RIGHT = 2;
+	}
+
+	HRMPBBatteryStatusRequest_BatteryTemples resetPeakCurrentSide = 5;
+}

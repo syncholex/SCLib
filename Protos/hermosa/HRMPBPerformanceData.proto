@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBPerformanceData {
+	required uint32 eventMap = 1;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsLensViewSessionContext.proto";
+
+message SCAdsLensRankingContext {
+	repeated snapchat.ads.request.schema.SCAdsLensViewSessionContext lensViewSessionArray = 1;
+
+	enum SCAdsLensRankingContext_CameraDirection {
+		CAMERA_DIRECTION_UNSET = 0;
+		FRONT = 1;
+		BACK = 2;
+	}
+
+	SCAdsLensRankingContext_CameraDirection cameraDirection = 2;
+}

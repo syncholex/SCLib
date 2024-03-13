@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCGamesLeaderboardsClientLeaderboard {
+	string id_p = 1;
+	string name = 2;
+	string logoURL = 3;
+
+	enum SCGamesLeaderboardsClientLeaderboard_OrderingType {
+		ORDERING_TYPE_UNSET = 0;
+		DESCENDING = 1;
+		ASCENDING = 2;
+	}
+
+	SCGamesLeaderboardsClientLeaderboard_OrderingType orderingType = 4;
+	google.protobuf.GPBTimestamp lastUpdateTimestamp = 5;
+	string appId = 6;
+	string scoreIconURL = 7;
+}

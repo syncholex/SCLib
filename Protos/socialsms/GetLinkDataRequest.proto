@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package socialsms;
+
+message GetLinkDataRequest {
+	string linkId = 1;
+}

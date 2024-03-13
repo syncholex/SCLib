@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZOpMetadata.proto";
+import "snapchat/local/verrazano/VRZPlaceDeleteData.proto";
+
+message VRZDeletePlacesRequest {
+	snapchat.local.verrazano.VRZOpMetadata opMetadata = 1;
+	repeated snapchat.local.verrazano.VRZPlaceDeleteData deleteDataArray = 2;
+}

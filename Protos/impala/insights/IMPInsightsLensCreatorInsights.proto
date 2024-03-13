@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsLensCreatorInsights {
+	int64 lensReachSinceLastWeek = 1;
+	int64 lensReachSinceLastMonth = 2;
+	int64 lensViewsSinceCreation = 3;
+	int64 lensViewsSinceLastWeek = 4;
+	int64 lensViewsSinceLastMonth = 5;
+	int64 lensScansSinceCreation = 6;
+	int64 lensScansSinceLastWeek = 7;
+	int64 lensScansSinceLastMonth = 8;
+	int64 lensSharesSinceCreation = 9;
+	int64 lensSharesSinceLastWeek = 10;
+	int64 lensSharesSinceLastMonth = 11;
+	int64 lensCameraPlayTimeSecsSinceCreation = 12;
+	int64 lensCameraPlayTimeSecsSinceLastWeek = 13;
+	int64 lensCameraPlayTimeSecsSinceLastMonth = 14;
+	int64 lensCameraTotalViewTimeSecsSinceCreation = 15;
+	int64 lensCameraTotalViewTimeSecsSinceLastWeek = 16;
+	int64 lensCameraTotalViewTimeSecsSinceLastMonth = 17;
+	int64 lensCameraPlayTimeMinsSinceCreation = 18;
+	int64 lensCameraPlayTimeMinsSinceLastWeek = 19;
+	int64 lensCameraPlayTimeMinsSinceLastMonth = 20;
+	int64 lensCameraTotalViewTimeMinsSinceCreation = 21;
+	int64 lensCameraTotalViewTimeMinsSinceLastWeek = 22;
+	int64 lensCameraTotalViewTimeMinsSinceLastMonth = 23;
+	int64 lensPlaysSinceCreation = 24;
+	int64 lensPlaysSinceLastWeek = 25;
+	int64 lensPlaysSinceLastMonth = 26;
+	int64 lensReachSincePreviousWeek = 100;
+	int64 lensReachSincePreviousMonth = 101;
+	int64 lensViewsSincePreviousWeek = 102;
+	int64 lensViewsSincePreviousMonth = 103;
+	int64 lensScansSincePreviousWeek = 104;
+	int64 lensScansSincePreviousMonth = 105;
+	int64 lensSharesSincePreviousWeek = 106;
+	int64 lensSharesSincePreviousMonth = 107;
+	int64 lensCameraPlayTimeSecsSincePreviousWeek = 108;
+	int64 lensCameraPlayTimeSecsSincePreviousMonth = 109;
+	int64 lensCameraTotalViewTimeSecsSincePreviousWeek = 110;
+	int64 lensCameraTotalViewTimeSecsSincePreviousMonth = 111;
+	int64 lensCameraPlayTimeMinsSincePreviousWeek = 112;
+	int64 lensCameraPlayTimeMinsSincePreviousMonth = 113;
+	int64 lensCameraTotalViewTimeMinsSincePreviousWeek = 114;
+	int64 lensCameraTotalViewTimeMinsSincePreviousMonth = 115;
+	int64 lensPlaysSincePreviousWeek = 116;
+	int64 lensPlaysSincePreviousMonth = 117;
+}

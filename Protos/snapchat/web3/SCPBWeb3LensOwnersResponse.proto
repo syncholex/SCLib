@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.web3;
+
+import "snapchat/web3/SCPBWeb3OneOfOneMetadata.proto";
+import "snapchat/web3/SCPBWeb3OpenEditionMetadata.proto";
+
+message SCPBWeb3LensOwnersResponse {
+
+	oneof metadata {
+		snapchat.web3.SCPBWeb3OneOfOneMetadata oneOfOne = 3;
+		snapchat.web3.SCPBWeb3OpenEditionMetadata openEdition = 4;
+	}
+
+}

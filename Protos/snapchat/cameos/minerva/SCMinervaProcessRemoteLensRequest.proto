@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaProcessRemoteLensRequest {
+	string contentURL = 1;
+	bytes encryptionKey = 2;
+	string modelId = 3;
+	string userId = 4;
+	bool isProxiedRequest = 5;
+	string prompt = 6;
+	string requestId = 7;
+	string contentURLSupplementary = 8;
+	bytes encryptionKeySupplementary = 9;
+	string poseId = 10;
+	string negativePrompt = 11;
+	float customIpAdapterWeight = 12;
+	float customControlnetWeight = 13;
+	bool isDev = 14;
+	int32 customSeed = 15;
+	int32 customSamplingSteps = 16;
+	float customGuidanceScale = 17;
+	string lensId = 18;
+}

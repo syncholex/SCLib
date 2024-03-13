@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "snapchat/context/SCContextContextHint.proto";
+
+message SCSSMSnapPivotInfo {
+	snapchat.context.SCContextContextHint contextHint = 1;
+	string venueId = 2;
+	string attachmentURL = 3;
+}

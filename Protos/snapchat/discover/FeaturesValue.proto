@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message FeaturesValue {
+
+	enum Feature {
+		UNKNOWN = 0;
+		EVERGREEN = 1;
+		SUBSCRIBER_ONLY = 2;
+		EXCLUSIVE_SHOW = 3;
+		ORIGINAL_SHOW = 9;
+		FIXED_PAYMENTS = 4;
+		INTERNAL_CURATOR = 5;
+		PARTNER_CURATOR = 6;
+		TEAM_SNAPCHAT = 7;
+		TIMELY = 8;
+		FRIENDS_CAROUSEL = 10;
+		ONBOARDING_WIZARD = 11;
+		MADE_FOR_US = 12;
+		DISCOVER_CHANNEL = 13;
+		DISCOVER_CHANNEL_ELIGIBLE = 14;
+		USE_BUNDLE = 15;
+	}
+
+	repeated Feature valueArray = 1 [packed=true];
+}

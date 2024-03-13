@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_Audio {
+	string URL = 1;
+	bool isLooping = 2;
+}

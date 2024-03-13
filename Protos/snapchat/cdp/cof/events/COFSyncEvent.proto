@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof.events;
+
+message COFSyncEvent {
+	bool isPreLogin = 1;
+	bool isFullSync = 2;
+	bool isForeground = 3;
+	string previousEtag = 4;
+	string newEtag = 5;
+	int32 numConfigRules = 6;
+	int32 responseSizeKb = 7;
+	int64 networkResponseTimeMs = 8;
+	int64 clientProcessingTimeMs = 9;
+	int64 appOpenToEventDelayMs = 10;
+	int32 failureCode = 11;
+
+	enum COFSyncEventStatus {
+		SYNC_EVENT_UNSET = 0;
+		SYNC_CLIENT_ERROR = 1;
+		SYNC_SERVER_ERROR = 2;
+		SYNC_TRIGGER = 3;
+		SYNC_EXECUTE = 4;
+		SYNC_REQUEST_SENT = 5;
+		SYNC_RESPONSE_RECEIVED = 6;
+		SYNC_RESPONSE_WRITTEN = 7;
+	}
+
+	COFSyncEventStatus eventStatus = 12;
+	bool isColdStart = 13;
+	bool isDurableJob = 14;
+
+	enum COFSyncTriggerCallsite {
+		CALLSITE_UNSET = 0;
+		PLATFORM_DATA_SYNCER = 1;
+		COLD_START_INIT_WITHOUT_DELAY = 2;
+		COLD_START_INIT_WITH_DELAY = 3;
+		PLATFORM_DATA_SYNCER_SIGNUP = 4;
+		PLATFORM_DATA_SYNCER_LOGIN = 5;
+		JANUS = 6;
+	}
+
+	COFSyncTriggerCallsite syncTriggerCallsite = 15;
+}

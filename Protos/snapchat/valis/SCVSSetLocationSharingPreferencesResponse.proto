@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/valis/SCVSShareLocationPreferences.proto";
+
+message SCVSSetLocationSharingPreferencesResponse {
+	snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+	int64 serverTimestamp = 2;
+}

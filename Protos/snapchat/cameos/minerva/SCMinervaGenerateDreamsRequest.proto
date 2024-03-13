@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/genai/dreams/SCPbGenAIDream.proto";
+import "snapchat/cameos/genai/identity/SCPbGenAIIdentity.proto";
+
+message SCMinervaGenerateDreamsRequest {
+	repeated string identityIdsArray = 1;
+	repeated snapchat.cameos.genai.dreams.SCPbGenAIDream dreamsArray = 2;
+	repeated snapchat.cameos.genai.identity.SCPbGenAIIdentity identitiesArray = 3;
+	string userId = 4;
+	bool encryptResult = 5;
+}

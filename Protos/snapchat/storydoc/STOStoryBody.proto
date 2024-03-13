@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "snapchat/storydoc/STOStoryBody_EntryPoint.proto";
+
+message STOStoryBody {
+	repeated snapchat.snapdoc.SDMSnapDoc snapArray = 1;
+	repeated snapchat.storydoc.STOStoryBody_EntryPoint entryPointsArray = 2;
+}

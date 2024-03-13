@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPromotableContent {
+	string id_p = 1;
+
+	enum IMPPromotableContentType {
+		PROMOTE_TYPE_UNSET = 0;
+		PROMOTE_TYPE_PUBLIC_STORY = 1;
+		PROMOTE_TYPE_SAVED_STORY = 2;
+		PROMOTE_TYPE_SPOTLIGHT = 3;
+	}
+
+	IMPPromotableContentType type = 2;
+}

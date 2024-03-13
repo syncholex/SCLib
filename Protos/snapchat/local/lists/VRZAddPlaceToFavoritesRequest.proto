@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.local.lists;
+
+message VRZAddPlaceToFavoritesRequest {
+	string placeId = 1;
+}

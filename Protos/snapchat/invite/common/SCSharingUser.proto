@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/invite/common/SCSharingBitmoji.proto";
+
+message SCSharingUser {
+	snapchat.core.SCCOREUUID userId = 1;
+	string username = 2;
+	string displayName = 3;
+	snapchat.invite.common.SCSharingBitmoji bitmoji = 4;
+}

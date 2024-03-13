@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.widget;
+
+import "com/snapchat/showcase/wire/widget/CommerceAction.proto";
+import "com/snapchat/showcase/wire/widget/LensInfo.proto";
+
+message LookBuilderCategoryWidget {
+	com.snapchat.showcase.wire.widget.CommerceAction action = 1;
+
+	enum LookBuilderCategoryType {
+		CATEGORY_TYPE_UNSET = 0;
+		LENS_DOMAIN = 1;
+	}
+
+	LookBuilderCategoryType type = 2;
+	com.snapchat.showcase.wire.widget.LensInfo metainfo = 3;
+}

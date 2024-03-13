@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBIMUDataFrame {
+	uint32 timeStamp = 1;
+	sint32 gyroX = 2;
+	sint32 gyroY = 3;
+	sint32 gyroZ = 4;
+	sint32 accelX = 5;
+	sint32 accelY = 6;
+	sint32 accelZ = 7;
+}

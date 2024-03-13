@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseItemMetadata.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemDetailPageWidget.proto";
+import "com/snapchat/showcase/wire/response/GetItemDetailPageResponse_CallToAction.proto";
+
+message GetItemDetailPageResponse_DetailsPage {
+	com.snapchat.showcase.wire.metadata.ShowcaseItemMetadata item = 1;
+	repeated com.snapchat.showcase.wire.itemdetailpage.ItemDetailPageWidget widgetsArray = 2;
+	com.snapchat.showcase.wire.response.GetItemDetailPageResponse_CallToAction callToAction = 3;
+	string pageTitle = 4;
+}

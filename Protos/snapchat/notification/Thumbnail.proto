@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/MediaEncryptionInfo.proto";
+
+message Thumbnail {
+	string URL = 1;
+	snapchat.notification.MediaEncryptionInfo encryptionInfo = 2;
+}

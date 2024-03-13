@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsUser.proto";
+
+message IMPInsightsReadReceiptSection {
+
+	enum IMPInsightsReadReceiptSection_Type {
+		UNKNOWN = 0;
+		FRIENDS = 1;
+		SUBSCRIBERS = 2;
+		OTHER = 3;
+	}
+
+	IMPInsightsReadReceiptSection_Type type = 1;
+	repeated impala.insights.IMPInsightsUser usersArray = 2;
+}

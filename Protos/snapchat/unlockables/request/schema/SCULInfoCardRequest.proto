@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.unlockables.request.schema;
+
+message SCULInfoCardRequest {
+	repeated int64 unlockableIdsArray = 1 [packed=true];
+
+	enum SCULInfoCardRequest_LensSource {
+		UNSET = 0;
+		FEATURED = 1;
+		UNLOCKED = 2;
+		BUNDLED = 3;
+		TARGETED = 4;
+	}
+
+	SCULInfoCardRequest_LensSource lensSource = 2;
+
+	enum SCULInfoCardRequest_Context {
+		CONTEXT_UNSET = 0;
+		BASIC_DATA = 1;
+		FAVORITE_STATUS = 2;
+		DEEP_LINK = 3;
+		STATS = 4;
+	}
+
+	repeated SCULInfoCardRequest_Context contextsArray = 3 [packed=true];
+
+	enum SCLPCarouselLensSource {
+		CAROUSEL_LENS_SOURCE_UNSET = 0;
+		SCHEDULE = 1;
+		RANKING = 2;
+		PILOT = 3;
+		SCAN_UNLOCKS = 4;
+		SOCIAL_UNLOCKS = 5;
+		SPONSORED = 6;
+		GEO_TARGETING = 7;
+		COF_TARGETING = 8;
+		GLOBAL_TARGETING = 9;
+		COUNTRY_TARGETING = 10;
+		USER_TARGETING = 11;
+		TARGETING_ENGINE = 12;
+		FAVORITES = 13;
+		BUNDLED = 14;
+	}
+
+	SCLPCarouselLensSource carouselLensSource = 4;
+}

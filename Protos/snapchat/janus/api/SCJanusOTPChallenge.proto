@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusOTPChallenge {
+	string promptTitleText = 1;
+	string promptSubtitleText = 2;
+	uint32 numDigits = 3;
+
+	enum SCJanusCommunicationChannel {
+		COMMUNICATION_CHANNEL_UNSET = 0;
+		SMS = 1;
+		EMAIL = 2;
+		PUSH = 3;
+		TOTP = 4;
+		IN_BAND = 5;
+	}
+
+	repeated SCJanusCommunicationChannel sentCommunicationChannelsArray = 4 [packed=true];
+}

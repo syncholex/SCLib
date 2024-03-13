@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package stories;
+
+message SCHGBitmojiQuickReplyConfig {
+	repeated string predefinedPackIdsArray = 1;
+
+	enum SCHGBitmojiQuickReplyConfig_Type {
+		NONE = 0;
+		DIRECT_SNAP = 1;
+		STORY = 2;
+		ALL = 3;
+	}
+
+	SCHGBitmojiQuickReplyConfig_Type type = 2;
+}

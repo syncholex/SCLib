@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+message SCPbGenAIDreamGetByStatusRequest {
+
+	enum SCPbGenAIDreamGenerationStatus {
+		DREAM_GENERATION_STATUS_UNSET = 0;
+		DREAM_GENERATION_STATUS_IN_PROGRESS = 1;
+		DREAM_GENERATION_STATUS_SUCCEED = 2;
+		DREAM_GENERATION_STATUS_FAILED = 3;
+		DREAM_GENERATION_STATUS_CREATED = 4;
+		DREAM_GENERATION_STATUS_UNPACKED = 5;
+		DREAM_GENERATION_STATUS_NON_RETRYABLE_FAILED = 6;
+	}
+
+	repeated SCPbGenAIDreamGenerationStatus statusesArray = 1 [packed=true];
+}

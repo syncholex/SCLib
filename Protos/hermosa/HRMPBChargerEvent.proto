@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBChargerEvent {
+
+	enum HRMPBChargerEvent_ChargerEventEnum {
+		INVALID_CHARGER_EVENT = 0;
+		CHARGER_CONNECTED_EVENT = 1;
+		CHARGER_DISCONNECTED_EVENT = 2;
+		CHARGER_VBUS_GOOD = 3;
+		CHARGER_VBUS_NOT_GOOD = 4;
+	}
+
+	HRMPBChargerEvent_ChargerEventEnum chargerEvent = 1;
+}

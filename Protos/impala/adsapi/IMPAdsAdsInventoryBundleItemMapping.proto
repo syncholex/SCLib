@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsAdsInventoryBundleItemMapping {
+	string id_p = 1;
+	string parentBundleId = 2;
+
+	enum IMPAdsAdsInventoryBundleItemMapping_BundleElementType {
+		UNRECOGNIZED_UNSET = 0;
+		INVENTORY_BUNDLE = 1;
+		INVENTORY_ITEM = 2;
+	}
+
+	IMPAdsAdsInventoryBundleItemMapping_BundleElementType elementType = 3;
+	string elementId = 4;
+}

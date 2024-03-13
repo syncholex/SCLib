@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_Attachment_LongFormVideo {
+	string videoId = 1;
+
+	enum SCCTPFilter_Attachment_LongFormVideo_Platform {
+		UNSET = 0;
+		BRIGHTCOVE = 1;
+		SNAPCHAT = 2;
+	}
+
+	SCCTPFilter_Attachment_LongFormVideo_Platform platform = 2;
+}

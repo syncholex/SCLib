@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPSpotlightSnapObject {
+	string storyId = 1;
+	string snapId = 2;
+}

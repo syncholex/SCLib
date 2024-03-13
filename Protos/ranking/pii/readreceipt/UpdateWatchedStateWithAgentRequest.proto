@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "impala/IMPUpdateWatchedStateRequest.proto";
+
+message UpdateWatchedStateWithAgentRequest {
+	impala.IMPUpdateWatchedStateRequest request = 1;
+	string userAgent = 2;
+}

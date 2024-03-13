@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+message SCCognacLeaderboardsBatchGetLeaderboardEntriesRequest {
+	string leaderboardId = 1;
+	repeated string userIdsArray = 2;
+	string appId = 3;
+}

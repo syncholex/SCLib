@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/WindowedFloatMetrics.proto";
+
+message SCSCKFriendStoryDerivedPosterEngagementFeatures {
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpent = 1;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpentPerStoryView = 2;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryCompletions = 3;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryRepliesPerStoryView = 4;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryRepliesPerStoryCompletions = 5;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryViewPerLongImp = 6;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryCompletionsPerLongImp = 7;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryTapViewPerLongImp = 8;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapViews = 9;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStorySkips = 10;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapSkips = 11;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryLongImpPerSnapPost = 12;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapViewsPerSnapPost = 13;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryViewsPerInterstitialView = 14;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStorySkipsPerInterstitialView = 15;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioTotalChatAckTimePerChatView = 16;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioTotalSnapAckTimePerSnapView = 17;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpentPerSnapView = 18;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryRepliesPerStoryView = 19;
+	ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryRepliesPerStoryCompletions = 20;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsCreateAdsBusinessAccountRequest {
+	string organizationId = 1;
+	string snapUserId = 2;
+
+	enum IMPAdsProfileType {
+		PROFILE_TYPE_UNSET = 0;
+		STORY_STUDIO_PUBLISHER = 1;
+		PUBLIC_PROFILE = 2;
+		PUBLIC_PROFILE_WITH_PUBLISHER_CONTENT = 3;
+		PUBLISHER_WITH_HOST_USER = 4;
+	}
+
+	IMPAdsProfileType profileType = 3;
+}

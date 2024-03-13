@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsPreferences.proto";
+import "snapchat/ads/request/schema/SCAdsApplication.proto";
+import "snapchat/ads/request/schema/SCAdsDevice.proto";
+import "snapchat/ads/request/schema/SCAdsNetwork.proto";
+import "snapchat/ads/request/schema/SCAdsClientToTargetingFields.proto";
+
+message SCAdsInitRequest {
+	bytes idfa = 1;
+	bytes encryptedUserData = 3;
+	bool isRerouteRequest = 4;
+	bool isDebug = 5;
+	snapchat.ads.request.schema.SCAdsPreferences preferences = 6;
+	snapchat.ads.request.schema.SCAdsApplication application = 7;
+	snapchat.ads.request.schema.SCAdsDevice device = 8;
+	snapchat.ads.request.schema.SCAdsNetwork network = 9;
+	bytes said = 10;
+	bytes fsnEncryptedUserData = 11;
+	bytes cofToken = 12;
+	snapchat.ads.request.schema.SCAdsClientToTargetingFields clientToTargetingFields = 13;
+	bytes clientRequestId = 14;
+	bool isSnapchatPlusAdFreeTier = 15;
+}

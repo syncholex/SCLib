@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package validate;
+
+message FloatRules {
+	float const_p = 1;
+	float lt = 2;
+	float lte = 3;
+	float gt = 4;
+	float gte = 5;
+	repeated float inArray = 6;
+	repeated float notInArray = 7;
+	bool ignoreEmpty = 8;
+}

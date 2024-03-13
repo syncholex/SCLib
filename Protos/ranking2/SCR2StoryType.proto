@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2StoryType {
+
+	enum SCR2StoryType_Type {
+		UNSET = 0;
+		EVENT = 1;
+		TOPIC = 2;
+		TRENDING_TOPIC = 3;
+		REGIONAL_TOPIC = 4;
+		PLACE = 5;
+		LOCATION = 6;
+		BREAKING_NEWS = 7;
+		SPOTTED = 8;
+		TOPSHARED = 9;
+		SOLO = 10;
+		GEOFILTER = 11;
+	}
+
+	SCR2StoryType_Type type = 1;
+}

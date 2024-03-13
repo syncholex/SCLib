@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+import "snapchat/local/verrazano/VRZPlaceGeometry.proto";
+import "snapchat/local/verrazano/VRZAddress.proto";
+import "snapchat/geo/SPCGRect.proto";
+
+message VRZPlaceLocation {
+	snapchat.local.verrazano.VRZPlaceGeometry geometry = 1;
+	snapchat.local.verrazano.VRZAddress address = 2;
+	string addressDisplayText = 3;
+	string categoryIconURL = 4;
+	snapchat.geo.SPCGRect bounds = 5;
+	string kindName = 6;
+}

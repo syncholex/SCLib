@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package snapchat.abusedecision;
+
+message VendorAttestation {
+
+	enum VendorAttestationLibrary {
+		VENDOR_ATTESTATION_LIBRARY_UNKNOWN_UNSET = 0;
+		VENDOR_ATTESTATION_LIBRARY_SAFETY_NET = 1;
+		VENDOR_ATTESTATION_LIBRARY_PLAY_INTEGRITY = 2;
+		VENDOR_ATTESTATION_LIBRARY_SYSINTEGRITY = 3;
+		VENDOR_ATTESTATION_LIBRARY_APP_ATTEST = 4;
+		VENDOR_ATTESTATION_LIBRARY_KEY_ATTESTATION = 5;
+		VENDOR_ATTESTATION_LIBRARY_PLAY_INTEGRITY_AND_KEY_ATTESTATION = 6;
+		VENDOR_ATTESTATION_LIBRARY_SAFETY_NET_AND_KEY_ATTESTATION = 7;
+		VENDOR_ATTESTATION_LIBRARY_PLAY_INTEGRITY_STANDARD = 8;
+		VENDOR_ATTESTATION_LIBRARY_SNAPCHAT_CLIENT_ATTESTATION = 9;
+	}
+
+	VendorAttestationLibrary type = 1;
+	bytes payload = 2;
+	bool strictEnforcementRequired = 3;
+	string error = 4;
+	string androidPackageName = 5;
+	int32 standardErrorCode = 6;
+
+	enum AppAttestEnforcement {
+		APP_ATTEST_ENFORCEMENT_DEFAULT_UNSET = 0;
+		APP_ATTEST_ENFORCEMENT_KEY_ATTESTATION_ONLY = 1;
+		APP_ATTEST_ENFORCEMENT_KEY_ATTESTATION_AND_ASSERTION = 2;
+	}
+
+	AppAttestEnforcement appAttestEnforcement = 7;
+	string appAttestKeyId = 8;
+	string appAttestNonce = 9;
+	bytes appAttestAssertion = 10;
+	string keyAttestationKeyAlias = 11;
+	bytes keyAttestationNonce = 12;
+	repeated bytes keyAttestationCertChainArray = 13;
+	string keyAttestationError = 14;
+	int32 keyAttestationStandardErrorCode = 15;
+}

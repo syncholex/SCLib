@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.storymanagement;
+
+import "ranking/storymanagement/StoryDraftingSnap.proto";
+import "ranking/storymanagement/QueryCursor.proto";
+
+message GetStoryDraftingSnapsResponse {
+	repeated ranking.storymanagement.StoryDraftingSnap snapsArray = 1;
+	ranking.storymanagement.QueryCursor queryCursor = 2;
+}

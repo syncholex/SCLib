@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "actionmoji/action/SCMT1StickerID.proto";
+import "snapchat/map/SCMTLocality.proto";
+
+message SCMECheckinModel {
+	string id_p = 1;
+	double lat = 2;
+	double lng = 3;
+	double radiusMeters = 4;
+	int64 timestampMs = 5;
+	actionmoji.action.SCMT1StickerID sticker = 6;
+	string checkinLocationId = 7;
+	string checkinStickerId = 8;
+	string venueName = 9;
+	repeated snapchat.map.SCMTLocality localitiesArray = 10;
+	repeated string clusteredFriendUserIdsArray = 11;
+	string categoryId = 12;
+	string cityId = 13;
+	string countryId = 14;
+}

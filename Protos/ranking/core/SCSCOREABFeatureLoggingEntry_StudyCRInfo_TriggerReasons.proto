@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.core;
+
+message SCSCOREABFeatureLoggingEntry_StudyCRInfo_TriggerReasons {
+	bool impactSampled = 1;
+	bool experimentTriggered = 2;
+}

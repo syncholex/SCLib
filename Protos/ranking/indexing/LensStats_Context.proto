@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.indexing;
+
+message LensStats_Context {
+	string countryCode = 1;
+	int64 beginDateTimestampSecs = 2;
+
+	enum SCSCOREUserGender {
+		GENDER_UNKNOWN = 0;
+		GENDER_MALE = 1;
+		GENDER_FEMALE = 2;
+	}
+
+	SCSCOREUserGender gender = 3;
+}

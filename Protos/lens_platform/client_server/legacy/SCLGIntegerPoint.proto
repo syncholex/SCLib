@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGIntegerPoint {
+	int32 x = 1;
+	int32 y = 2;
+}

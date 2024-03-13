@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBShipmodeStatus {
+	bool inShipmode = 1;
+	int32 shipmodeTime = 2;
+	int32 socAtRequested = 3;
+	uint64 timeAtRequested = 4;
+	int32 socAtShipMode = 5;
+	uint64 timeAtShipMode = 6;
+	int32 socAtFirstBoot = 7;
+	uint64 timeAtFirstBoot = 8;
+}

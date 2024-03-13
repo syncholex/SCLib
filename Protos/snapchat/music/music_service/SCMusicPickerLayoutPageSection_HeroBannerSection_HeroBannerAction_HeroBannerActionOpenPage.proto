@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_HeroBannerSection_HeroBannerAction_HeroBannerActionOpenPage {
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference pageReference = 1;
+}

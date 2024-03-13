@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "snapchat/streaming/SCMTStreamingMediaInfo.proto";
+import "snapchat/streaming/SCMTPublicMediaInfo.proto";
+import "ranking/serving/jaguar/SCSSMSnapBoltInfo.proto";
+import "ranking/serving/jaguar/SCSSMMediaDimensions.proto";
+
+message SCSSMSnapMediaInfo {
+
+	enum SCSCOREMediaInfo_MediaType {
+		IMAGE = 0;
+		VIDEO = 1;
+		VIDEO_NO_SOUND = 2;
+		FRIEND = 3;
+		BLOB = 4;
+		LAGUNA = 5;
+		LAGUNA_NO_SOUND = 6;
+		GIF = 7;
+		FINGERPRINT_HEADER_SIZE = 8;
+		AUDIO_STITCH = 9;
+		PSYCHOMANTIS = 10;
+		SCREAMINGMANTIS = 11;
+		MALIBU_SOUND = 12;
+		MALIBU_NO_SOUND = 13;
+		LAGUNAHD_SOUND = 14;
+		LAGUNAHD_NO_SOUND = 15;
+		GHOSTMANTIS = 16;
+		NEWPORT_SOUND = 17;
+		NEWPORT_NO_SOUND = 18;
+		AUDIO = 19;
+		BLOOP = 20;
+		SPECTACLES_IMAGE = 21;
+		SPECTACLES_VIDEO = 22;
+		SPECTACLES_VIDEO_NO_SOUND = 23;
+		CHEERIOS_IMAGE = 24;
+		CHEERIOS_VIDEO = 25;
+		CHEERIOS_VIDEO_NO_SOUND = 26;
+	}
+
+	SCSCOREMediaInfo_MediaType mediaType = 1;
+	string mediaURL = 2;
+	string mediaId = 3;
+	string mediaIv = 4;
+	string mediaKey = 5;
+	bool isZipped = 6;
+	double duration = 7;
+	bool isInfiniteDuration = 8;
+	snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 9;
+	snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 10;
+	ranking.serving.jaguar.SCSSMSnapBoltInfo snapBoltInfo = 11;
+	string mediaD2SURL = 12;
+	bytes firstFrameContentObject = 13;
+	string boltWatermarkedVideoURL = 14;
+	ranking.serving.jaguar.SCSSMMediaDimensions boltWatermarkedVideoDimensions = 15;
+	ranking.serving.jaguar.SCSSMMediaDimensions mediaDimensions = 16;
+	string unencryptedFlatVideoURL = 17;
+	string unencryptedImageURL = 18;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+message SCMTHeatmapStyleRequest {
+
+	enum SCMTHeatmapStyle {
+		HEATMAP_LIGHT = 0;
+		HEATMAP_DARK = 1;
+	}
+
+	SCMTHeatmapStyle heatmapStyle = 1;
+	string styleEtag = 2;
+}

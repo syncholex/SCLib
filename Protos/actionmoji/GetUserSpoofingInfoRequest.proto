@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message GetUserSpoofingInfoRequest {
+	snapchat.core.SCCOREUUID userId = 1;
+	float lat = 2;
+	float lng = 3;
+	int64 timestampMs = 4;
+	float radiusKm = 5;
+	int32 recencyHrs = 6;
+	int64 startTimeMs = 7;
+	int32 minVisitDurationHrs = 8;
+	int32 minTransitionTimeHrs = 9;
+	bool rejectNoHistory = 10;
+}

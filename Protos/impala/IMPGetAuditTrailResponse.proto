@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPAuditRecord.proto";
+
+message IMPGetAuditTrailResponse {
+	repeated impala.IMPAuditRecord recordsArray = 1;
+	string pageToken = 2;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensActionBarConfig {
+	bool enabled = 1;
+	bool favoriteButtonEnabled = 2;
+	bool shareButtonEnabled = 3;
+	bool viewsButtonEnabled = 4;
+	uint32 hideInfoButtonAttributionDelayMs = 5;
+	uint32 hideActionBarDelayMs = 6;
+	bool collectionsModeEnabled = 7;
+	bool showActionBarWithNoDelayEnabled = 8;
+	bool deeplinkAutoCopyEnabled = 9;
+	bool animationsDisabled = 10;
+}

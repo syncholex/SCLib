@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.perception.showcase.screenshop;
+
+message SCPSSGenerateEmbeddingRequest {
+	string reqId = 1;
+
+	oneof imageType {
+		bytes imageBytes = 2;
+		string imageURL = 3;
+	}
+
+	string modelConfigVersion = 4;
+}

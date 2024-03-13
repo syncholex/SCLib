@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBUploadToCloudStatusInfo {
+
+	enum MLBUploadToCloudStatus {
+		INACTIVE = 0;
+		FULL_CONFIGURED = 1;
+		WIFI_AP_INVALID = 2;
+		REFRESH_TOKEN_INVALID = 3;
+		CLIENT_INVALID = 4;
+	}
+
+	MLBUploadToCloudStatus status = 1;
+}

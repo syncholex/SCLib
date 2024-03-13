@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+import "snapchat/messaging/cof/SCMerlinJITConfig_MerlinJITVersion.proto";
+
+message SCMerlinJITConfig {
+	snapchat.messaging.cof.SCMerlinJITConfig_MerlinJITVersion oneOnOneJitVersion = 1;
+	snapchat.messaging.cof.SCMerlinJITConfig_MerlinJITVersion mentionSenderJitVersion = 2;
+	snapchat.messaging.cof.SCMerlinJITConfig_MerlinJITVersion mentionReaderJitVersion = 3;
+}

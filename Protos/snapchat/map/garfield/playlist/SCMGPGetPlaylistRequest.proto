@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.playlist;
+
+import "snapchat/map/garfield/playlist/SCMGPHeatPlaylistQuery.proto";
+
+message SCMGPGetPlaylistRequest {
+	uint64 layerId = 1;
+	string flavor = 2;
+
+	enum SCMGPGetPlaylistRequest_ResponseType {
+		UNSET = 0;
+		LEGACY_MANIFEST = 1;
+	}
+
+
+	oneof playlistId {
+		string idString = 3;
+		snapchat.map.garfield.playlist.SCMGPHeatPlaylistQuery heatQuery = 5;
+	}
+
+	SCMGPGetPlaylistRequest_ResponseType responseType = 4;
+}

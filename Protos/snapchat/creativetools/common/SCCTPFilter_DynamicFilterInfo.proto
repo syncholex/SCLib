@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Content.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_ContentSettings.proto";
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Context.proto";
+
+message SCCTPFilter_DynamicFilterInfo {
+	repeated snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Content contentArray = 1;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_ContentSettings contentSettings = 2;
+	snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Context context = 3;
+}

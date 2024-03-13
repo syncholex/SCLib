@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala;
+
+import "snapchat/discover/PartialPublisherMetadata.proto";
+
+message IMPInternalCreatePublisherWithoutUserRequest {
+	snapchat.discover.PartialPublisherMetadata partialPublisherMetadata = 1;
+	string existingOrganizationId = 2;
+	string organizationDisplayName = 3;
+	string lastModifiedByUserId = 4;
+}

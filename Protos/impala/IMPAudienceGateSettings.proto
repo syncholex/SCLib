@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPAgeGateSettings.proto";
+
+message IMPAudienceGateSettings {
+	impala.IMPAgeGateSettings ageGateSettings = 1;
+}

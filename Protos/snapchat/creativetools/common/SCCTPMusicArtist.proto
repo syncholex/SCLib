@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message SCCTPMusicArtist {
+	uint64 artistId = 1;
+	string name = 2;
+	snapchat.creativetools.common.SCCTPEncryptedMedia encryptedArtistArt = 3;
+}

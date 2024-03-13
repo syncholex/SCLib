@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCCTXUnifiedPublicProfileAction_PublisherRoute {
+	snapchat.core.SCCOREUUID profileId = 1;
+	snapchat.core.SCCOREUUID hostAccountUserId = 2;
+	snapchat.core.SCCOREUUID showId = 3;
+}

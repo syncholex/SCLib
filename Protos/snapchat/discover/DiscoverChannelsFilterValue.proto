@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+import "snapchat/storydoc/STODiscoverChannelFilter.proto";
+
+message DiscoverChannelsFilterValue {
+	repeated snapchat.storydoc.STODiscoverChannelFilter valueArray = 1;
+}

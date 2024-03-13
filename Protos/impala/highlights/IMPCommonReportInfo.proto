@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.highlights;
+
+message IMPCommonReportInfo {
+	string profileId = 1;
+	string highlightId = 2;
+	string highlightVersion = 3;
+	string reasonId = 4;
+	string context = 5;
+	string reporterUsername = 6;
+}

@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+import "VLKNrfDebugReport_AppError.proto";
+import "VLKNrfDebugReport_HardfaultError.proto";
+import "VLKNrfDebugReport_WatchdogTimeoutError.proto";
+import "VLKNrfDebugReport_AmbaError.proto";
+
+message VLKNrfDebugReport {
+	VLKNrfDebugReport_AppError appError = 1;
+	VLKNrfDebugReport_HardfaultError hardfaultError = 2;
+	VLKNrfDebugReport_WatchdogTimeoutError watchdogTimeoutError = 3;
+	VLKNrfDebugReport_AmbaError ambaError = 4;
+	string metadata = 5;
+}

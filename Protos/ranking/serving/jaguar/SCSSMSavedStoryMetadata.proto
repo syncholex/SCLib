@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryThumbnail.proto";
+
+message SCSSMSavedStoryMetadata {
+	string title = 1;
+	string userDisplayName = 2;
+	ranking.serving.jaguar.SCSSMStoryThumbnail storyThumbnail = 3;
+	string businessProfileId = 4;
+
+	enum IMPTier {
+		TIER_UNKNOWN = 0;
+		TIER_STANDARD = 1;
+		TIER_PUBLIC = 2;
+		TIER_PUBLIC_OFFICIAL = 3;
+	}
+
+	IMPTier snapproTier = 5;
+
+	enum IMPInternalCategory {
+		CATEGORY_UNKNOWN = 0;
+		CATEGORY_PERSON = 1;
+		CATEGORY_BUSINESS = 2;
+		CATEGORY_PUBLISHER = 3;
+	}
+
+	IMPInternalCategory interCategory = 6;
+	string userId = 7;
+	string businessLogoURL = 8;
+	string bitmojiAvatarId = 9;
+	string emoji = 10;
+	int64 version = 11;
+	bool savedStoriesProfileMonetizedStatus = 12;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+import "hermosa/HRMPBBackupStatusData.proto";
+
+message HRMPBBackupStatusResponse {
+	repeated hermosa.HRMPBBackupStatusData backupStatusDataArray = 1;
+}

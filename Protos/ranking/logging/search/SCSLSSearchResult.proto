@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.logging.search;
+
+import "ranking/logging/search/SCSLSUserResultDetails.proto";
+import "ranking/logging/search/SCSLSSuggestionResultDetails.proto";
+
+message SCSLSSearchResult {
+	string resultRankingId = 1;
+	string resultIdentifier = 2;
+
+	oneof resultDetails {
+		ranking.logging.search.SCSLSUserResultDetails userResultDetails = 3;
+		ranking.logging.search.SCSLSSuggestionResultDetails suggestionResultDetails = 4;
+	}
+
+}

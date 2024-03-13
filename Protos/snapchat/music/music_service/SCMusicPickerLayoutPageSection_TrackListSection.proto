@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/music/music_service/SCMusicPickerLayoutPageReference.proto";
+
+message SCMusicPickerLayoutPageSection_TrackListSection {
+	repeated snapchat.creativetools.common.SCCTPMusicTrack tracksArray = 1;
+	snapchat.music.music_service.SCMusicPickerLayoutPageReference viewAllPage = 2;
+}

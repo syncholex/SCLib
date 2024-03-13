@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBStillCaptureFpsMessage {
+
+	enum MLBStillCaptureFpsEnum {
+		FPS30 = 0;
+		FPS60 = 1;
+		FPS48 = 2;
+		DEFAULT = 3;
+	}
+
+	MLBStillCaptureFpsEnum fps = 1;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.stories.cof;
+
+import "snapchat/stories/cof/SCRecurrentInterval.proto";
+
+message SCStoryRestrictionWindow {
+}

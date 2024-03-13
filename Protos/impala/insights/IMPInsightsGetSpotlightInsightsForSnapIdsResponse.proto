@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.insights;
+
+import "impala/insights/IMPInsightsSpotlightLifetimeInsights.proto";
+
+message IMPInsightsGetSpotlightInsightsForSnapIdsResponse {
+	repeated impala.insights.IMPInsightsSpotlightLifetimeInsights spotlightInsightsArray = 1;
+}

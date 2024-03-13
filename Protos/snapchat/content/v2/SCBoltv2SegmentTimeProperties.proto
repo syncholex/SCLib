@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+message SCBoltv2SegmentTimeProperties {
+	uint64 startMillis = 1;
+	uint64 endMillis = 2;
+}

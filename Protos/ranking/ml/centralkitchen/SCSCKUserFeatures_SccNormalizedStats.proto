@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.ml.centralkitchen;
+
+import "ranking/pii/user/profile/SCSUPNormalizedStats.proto";
+
+message SCSCKUserFeatures_SccNormalizedStats {
+	int32 scc = 1;
+	ranking.pii.user.profile.SCSUPNormalizedStats normalizedStats = 2;
+}

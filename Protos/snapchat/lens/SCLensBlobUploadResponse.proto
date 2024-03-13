@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensBlobUploadResponse {
+	string mediaId = 1;
+}

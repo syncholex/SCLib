@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsLocalWebpageImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	google.protobuf.GPBInt32Value pageHeight = 2;
+	google.protobuf.GPBInt32Value pageHeightSeen = 3;
+	google.protobuf.GPBInt32Value pageCurrentOffset = 4;
+}

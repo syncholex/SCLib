@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+import "snapchat/search/SCS2ActionHandler_OpenHashtagTopic.proto";
+import "snapchat/search/SCS2ActionHandler_OpenLensTopic.proto";
+import "snapchat/search/SCS2ActionHandler_OpenSoundTopic.proto";
+import "snapchat/search/SCS2ActionHandler_OpenLensBadge.proto";
+
+message SCS2ActionHandler {
+
+	oneof action {
+		snapchat.search.SCS2ActionHandler_OpenHashtagTopic openHashtagTopic = 1;
+		snapchat.search.SCS2ActionHandler_OpenLensTopic openLensTopic = 2;
+		snapchat.search.SCS2ActionHandler_OpenSoundTopic openSoundTopic = 3;
+		snapchat.search.SCS2ActionHandler_OpenLensBadge openLensBadge = 4;
+	}
+
+}

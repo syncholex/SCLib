@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMCardDebugInfo_LiteOverlayDebug_DebugRow {
+	string key = 1;
+
+	oneof value {
+		int32 intValue = 2;
+		float floatValue = 3;
+		double doubleValue = 4;
+		string stringValue = 5;
+	}
+
+}

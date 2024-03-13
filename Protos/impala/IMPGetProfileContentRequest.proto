@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetProfileContentRequest {
+
+	enum IMPProfileContentType {
+		PROFILE_CONTENT_UNSET = 0;
+		PROFILE_CONTENT_LIVE_STORY = 1;
+		PROFILE_CONTENT_STORY = 2;
+		PROFILE_CONTENT_SPOTLIGHT = 3;
+		PROFILE_CONTENT_LENS = 4;
+		PROFILE_CONTENT_STORE = 5;
+		PROFILE_CONTENT_EPISODE = 6;
+		PROFILE_CONTENT_SHOW = 7;
+		PROFILE_CONTENT_RELATED_ACCOUNT = 8;
+		PROFILE_CONTENT_PLACE_COLLECTION = 9;
+		PROFILE_CONTENT_PLACE = 10;
+		PROFILE_CONTENT_PROMOTION = 11;
+	}
+
+	IMPProfileContentType contentType = 1;
+	string order = 2;
+	string pageId = 3;
+	uint32 limit = 4;
+}

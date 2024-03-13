@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.camera;
+
+message VideoStabilizationInDirectorModeConfig {
+	bool enableVideoStabilizationInDmToolbar = 1;
+	bool enableShorterDmToolbar = 2;
+	int32 dmToolbarMarginPercentage = 3;
+	bool enableIndividualizedStates = 4;
+	bool frontStabilizationDefaultEnabled = 5;
+}

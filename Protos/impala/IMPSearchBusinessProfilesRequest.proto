@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSearchBusinessProfilesRequest {
+	string businessName = 1;
+	int32 limit = 2;
+}

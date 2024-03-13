@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusPasskeyCredentialDescriptor.proto";
+
+message SCJanusPasskeyAuthenticationPayload {
+	bytes clientDataJson = 1;
+	bytes signature = 2;
+	bytes authenticatorData = 3;
+	snapchat.janus.api.SCJanusPasskeyCredentialDescriptor selectedCredential = 4;
+}

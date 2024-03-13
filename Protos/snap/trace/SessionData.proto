@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message SessionData {
+	bytes sessionId = 1;
+	int64 sessionLength = 2;
+	int64 sessionOffset = 3;
+	int64 sessionLengthUs = 4;
+	int64 sessionOffsetUs = 5;
+	bytes appSessionId = 6;
+	int64 journalTimestampMs = 7;
+	bytes samplingPolicyHash = 8;
+	bytes traceConfigSdkHash = 9;
+	bytes username = 10;
+	fixed32 traits = 11;
+	int64 tokenConfigId = 12;
+	bytes tokenBucketName = 13;
+}

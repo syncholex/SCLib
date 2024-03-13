@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.au.mmai.similarity_search_service.search;
+
+import "snapchat/au/mmai/similarity_search_service/search/MMAISearchResult.proto";
+
+message MMAISearchResultList {
+	repeated snapchat.au.mmai.similarity_search_service.search.MMAISearchResult resultArray = 1;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/SCSSMUserRecentTapHistory.proto";
+import "ranking/serving/jaguar/SCSSMUserRecentInteractionsHistory.proto";
+import "ranking/serving/jaguar/SCSSMRTUSSignal.proto";
+
+message MFCRecentUserInteractions {
+	ranking.serving.jaguar.SCSSMUserRecentTapHistory tapHistory = 1;
+	ranking.serving.jaguar.SCSSMUserRecentInteractionsHistory interactionsHistory = 2;
+	repeated int64 lastInteractionTimestampsMsArray = 3 [packed=true];
+	ranking.serving.jaguar.SCSSMRTUSSignal realTimeUserSequence = 4;
+}

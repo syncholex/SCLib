@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensCameosSelfieData {
+	bytes image = 1;
+	repeated float landmarksArray = 2 [packed=true];
+	bytes iconImage = 3;
+	bytes faceZones = 4;
+	bytes targetSegmentationResult = 5;
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTLocationUpdate.proto";
+import "snapchat/map/SCMTDeviceData.proto";
+import "snapchat/map/SCMTKalmanData.proto";
+import "snapchat/map/SCMTSpectaclesInfo.proto";
+import "snapchat/map/SCMTGDPRSettings.proto";
+
+message SCMTBatchUserLocationRequest {
+	repeated snapchat.map.SCMTLocationUpdate locationUpdateArray = 1;
+	snapchat.map.SCMTDeviceData deviceData = 2;
+	repeated string bleBeaconIdArray = 3;
+	int64 sequenceNumber = 4;
+	bool ghostMode = 5;
+	snapchat.map.SCMTKalmanData locationKalmanData = 6;
+	bool isEmployee = 7;
+	bool hasBirthday = 8;
+	int64 birthday = 9;
+	bool isBirthday = 10;
+	string username = 11;
+	snapchat.map.SCMTSpectaclesInfo spectaclesInfo = 12;
+
+	enum SCMTRetention {
+		UNKNOWN_POLICY = 0;
+		DEFAULT_POLICY = 1;
+		GDPR_U16_POLICY = 2;
+		GDPR_POLICY = 3;
+	}
+
+	SCMTRetention retention = 15;
+	snapchat.map.SCMTGDPRSettings gdprSettings = 16;
+	string cognacAppId = 17;
+	int64 serverRequestTimestamp = 18;
+}

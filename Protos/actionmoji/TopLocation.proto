@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package actionmoji;
+
+message TopLocation {
+	int64 s2CellId = 1;
+	float score = 2;
+
+	enum SectionOfDay {
+		NONE = 0;
+		NIGHT = 1;
+		DAY = 2;
+		EVENING = 3;
+	}
+
+	SectionOfDay sectionOfDay = 3;
+	bool hasWifi = 4;
+	int32 differentDays = 5;
+}

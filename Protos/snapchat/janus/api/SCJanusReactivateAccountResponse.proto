@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusReactivateAccountData.proto";
+import "snapchat/janus/api/SCJanusErrorData.proto";
+
+message SCJanusReactivateAccountResponse {
+
+	enum SCJanusReactivateAccountResponse_StatusCode {
+		UNSET = 0;
+		REACTIVATE_ACCOUNT_STARTED = 1;
+		REACTIVATE_ACCOUNT_BLOCKED = 2;
+		ERR_GENERIC_FAILURE = 10;
+		ERR_THROTTLED = 11;
+		ERR_INVALID_TOKEN = 12;
+		ERR_APP_VERSION_UPGRADE = 13;
+		ERR_BLOCKED = 14;
+	}
+
+	SCJanusReactivateAccountResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusReactivateAccountData reactivateAccountData = 2;
+		snapchat.janus.api.SCJanusErrorData errorData = 10;
+	}
+
+}

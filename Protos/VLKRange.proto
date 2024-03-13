@@ -1,0 +1,6 @@
+syntax = "proto2";
+
+message VLKRange {
+	int32 start = 1;
+	int32 len = 2;
+}

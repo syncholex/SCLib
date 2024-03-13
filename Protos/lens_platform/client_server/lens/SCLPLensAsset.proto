@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/lens/SCLPLensAssetStorageOption.proto";
+
+message SCLPLensAsset {
+
+	enum SCLPLensAsset_AssetType {
+		TYPE_UNSET = 0;
+		ASSET = 1;
+		BITMOJI = 2;
+		BITMOJI_LIST = 3;
+		BITMOJI_3_D = 4;
+		AVATAR_ASSET = 5;
+		FRIENDMOJI_3_D = 6;
+		FRIENDMOJI_AVATAR_ASSET = 7;
+		DEVICE_DEPENDENT_ASSET = 8;
+	}
+
+	SCLPLensAsset_AssetType type = 1;
+
+	oneof id {
+		int64 intId = 2;
+		string stringId = 3;
+	}
+
+
+	enum SCLPLensAsset_RequestTiming {
+		UNSET = 0;
+		PRELOAD = 1;
+		ON_DEMAND = 2;
+		REQUIRED = 3;
+	}
+
+	SCLPLensAsset_RequestTiming requestTiming = 4;
+	repeated lens_platform.client_server.lens.SCLPLensAssetStorageOption storageOptionsArray = 5;
+
+	enum SCLPAssetDescriptor {
+		DESCRIPTOR_UNSET = 0;
+		ML = 1;
+		PRE_BUILD = 2;
+	}
+
+	repeated SCLPAssetDescriptor descriptorsArray = 6 [packed=true];
+}

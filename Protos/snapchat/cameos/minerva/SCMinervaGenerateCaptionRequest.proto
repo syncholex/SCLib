@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosMediaInfo.proto";
+import "snapchat/cameos/minerva/SCMinervaMagicCaptionMediaMetadata.proto";
+import "snapchat/cameos/minerva/SCMinervaMagicCaptionTone.proto";
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/cameos/minerva/SCGenerateTextRequestContext.proto";
+import "snapchat/cameos/minerva/SCGenerateTextRequestParams.proto";
+
+message SCMinervaGenerateCaptionRequest {
+	repeated snapchat.cameos.common.SCCameosMediaInfo mediaInfoArray = 1;
+	snapchat.cameos.minerva.SCMinervaMagicCaptionMediaMetadata mediaMetadata = 2;
+	snapchat.cameos.minerva.SCMinervaMagicCaptionTone tone = 3;
+	int32 batchSize = 4;
+
+	enum SCMinervaChatGptModelVersion {
+		UNSET = 0;
+		V_3_5 = 1;
+		V_4_1 = 2;
+	}
+
+	SCMinervaChatGptModelVersion chatGptVersion = 5;
+	string generationRequestId = 6;
+
+	enum SCGenerateTextRequestType {
+		GENERATE_TEXT_REQUEST_TYPE_UNSET = 0;
+		AI_CAPTION = 1;
+		AI_STORY_REPLY = 2;
+	}
+
+	SCGenerateTextRequestType requestType = 7;
+	string snapId = 8;
+	snapchat.core.SCCOREUUID requestId = 9;
+	snapchat.cameos.minerva.SCGenerateTextRequestContext requestContext = 10;
+	snapchat.cameos.minerva.SCGenerateTextRequestParams requestParams = 11;
+}

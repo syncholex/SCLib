@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire;
+
+import "com/snapchat/productcatalog/common/wire/ProductPrice.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "com/snapchat/productcatalog/common/wire/FormattedProductPrice.proto";
+import "com/snapchat/showcase/wire/metadata/ARMetadata.proto";
+
+message ProductMetadata {
+	string externalId = 1;
+	string title = 2;
+	string link = 3;
+
+	enum ProductAvailability {
+		UNKNOWN_AVAILABILITY = 0;
+		IN_STOCK = 1;
+		OUT_OF_STOCK = 2;
+		PREORDER = 3;
+		DISCONTINUED = 4;
+		AVAILABLE_FOR_ORDER = 5;
+	}
+
+	ProductAvailability availability = 4;
+	com.snapchat.productcatalog.common.wire.ProductPrice price = 5;
+	com.snapchat.productcatalog.common.wire.ProductPrice salePrice = 6;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo mainMedia = 7;
+	com.snapchat.productcatalog.common.wire.FormattedProductPrice formattedPrice = 8;
+	com.snapchat.productcatalog.common.wire.FormattedProductPrice formattedSalePrice = 9;
+	com.snapchat.showcase.wire.metadata.ARMetadata arMetadata = 10;
+}

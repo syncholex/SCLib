@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message SCMinervaImageEnhanceParameters {
+	int64 upscalingRate = 1;
+
+	enum SCMinervaImageEnhanceParameters_ImageEnhanceType {
+		IMAGE_ENHANCE_TYPE_UNSET = 0;
+		RESRGAN = 1;
+		FAST_IMAGE_RESTORE = 2;
+		COMBO_RESRGAN_FIR = 3;
+		SEQUENTIAL_RESRGAN_FIR = 4;
+	}
+
+	SCMinervaImageEnhanceParameters_ImageEnhanceType imageEnhanceType = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/achievements/SCACHAchievementInfo.proto";
+
+message SCMEAchievementModel {
+	string id_p = 1;
+	int64 timestampMs = 2;
+	snapchat.map.achievements.SCACHAchievementInfo achievement = 3;
+}

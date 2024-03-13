@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPSearchPublisherProfilesResponse_SearchRecord.proto";
+
+message IMPSearchPublisherProfilesResponse {
+	repeated impala.IMPSearchPublisherProfilesResponse_SearchRecord searchRecordsArray = 1;
+}

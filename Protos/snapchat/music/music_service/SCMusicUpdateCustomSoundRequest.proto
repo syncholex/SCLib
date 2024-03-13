@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+message SCMusicUpdateCustomSoundRequest {
+	uint64 trackId = 1;
+	string title = 2;
+	bool isPublic = 3;
+	string artistName = 4;
+}

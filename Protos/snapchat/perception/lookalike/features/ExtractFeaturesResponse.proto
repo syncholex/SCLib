@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatures.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatureLists.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIESequenceExample.proto";
+import "google/protobuf/GPBTimestamp.proto";
+
+message ExtractFeaturesResponse {
+
+	oneof extractedFeature {
+		snapchat.perception.lookalike.features.SCPNLOOKALIEFeatures features = 1;
+		snapchat.perception.lookalike.features.SCPNLOOKALIEFeatureLists featureLists = 2;
+		snapchat.perception.lookalike.features.SCPNLOOKALIESequenceExample sequenceExample = 3;
+	}
+
+	google.protobuf.GPBTimestamp requestTime = 100;
+	google.protobuf.GPBTimestamp responseTime = 101;
+	string properties = 200;
+}

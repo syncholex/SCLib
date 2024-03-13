@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package url_preview;
+
+import "url_preview/SCURLPreviewMedia.proto";
+
+message SCURLPreviewInAppDeepLink {
+	string text = 1;
+	url_preview.SCURLPreviewMedia icon = 2;
+	string deepLinkURL = 3;
+}

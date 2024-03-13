@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+import "snapchat/mediaengine/smart_template/SCMETemplateRule.proto";
+
+message SCMETemplateRules {
+	repeated snapchat.mediaengine.smart_template.SCMETemplateRule rulesArray = 1;
+}

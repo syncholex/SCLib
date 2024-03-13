@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snap.spectacles.ota;
+
+message SCSpectaclesOtaPbDeleteOsVersionRequest {
+	string productGeneration = 1;
+	string versionSetName = 2;
+	string releaseVersion = 3;
+	string patchVersion = 4;
+	string buildFlavor = 5;
+}

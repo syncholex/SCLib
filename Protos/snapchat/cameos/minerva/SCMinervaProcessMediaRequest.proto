@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/common/SCCameosMediaInfo.proto";
+import "snapchat/cameos/minerva/SCMinervaRemoteLensParameters.proto";
+import "snapchat/cameos/minerva/SCMinervaImageEnhanceParameters.proto";
+import "snapchat/cameos/minerva/SCMinervaImageExtendParameters.proto";
+import "snapchat/cameos/minerva/SCMinervaImageRetouchParameters.proto";
+import "snapchat/cameos/minerva/SCMinervaGenerateAICameraMediaParameters.proto";
+
+message SCMinervaProcessMediaRequest {
+	snapchat.cameos.common.SCCameosMediaInfo mediaInfo = 1;
+
+	oneof requestParameters {
+		snapchat.cameos.minerva.SCMinervaRemoteLensParameters remoteLensParameters = 2;
+		snapchat.cameos.minerva.SCMinervaImageEnhanceParameters imageEnhanceParameters = 4;
+		snapchat.cameos.minerva.SCMinervaImageExtendParameters imageExtendParameters = 5;
+		snapchat.cameos.minerva.SCMinervaImageRetouchParameters imageRetouchParameters = 6;
+		snapchat.cameos.minerva.SCMinervaGenerateAICameraMediaParameters aiCameraParameters = 9;
+	}
+
+	string requestId = 7;
+	bool isProxiedRequest = 8;
+	repeated snapchat.cameos.common.SCCameosMediaInfo mediaInfosArray = 10;
+	bool isDev = 11;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_DebugInfo {
+	int64 epoch = 1;
+	repeated string cohortIdsArray = 2;
+}

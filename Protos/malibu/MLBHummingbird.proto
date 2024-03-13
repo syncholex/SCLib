@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBHummingbird {
+	int32 sessionId = 1;
+}

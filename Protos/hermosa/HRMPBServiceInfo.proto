@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBServiceInfo {
+	string name = 1;
+
+	enum HRMPBTransportType {
+		TRANSPORT_TYPE_UNSET = 0;
+		TRANSPORT_TYPE_WIFI_SUBNET = 1;
+		TRANSPORT_TYPE_WIFI_P2P = 2;
+		TRANSPORT_TYPE_WIFI_AP = 3;
+		TRANSPORT_TYPE_BLE = 4;
+		TRANSPORT_TYPE_BTC = 5;
+		TRANSPORT_TYPE_USB = 6;
+		TRANSPORT_TYPE_INTERNET = 7;
+	}
+
+	repeated HRMPBTransportType transportsArray = 2;
+
+	enum HRMPBProtocolType {
+		PROTOCOL_TYPE_UNSET = 0;
+		PROTOCOL_TYPE_TCP = 1;
+		PROTOCOL_TYPE_UDP = 2;
+		PROTOCOL_TYPE_HTTP = 3;
+		PROTOCOL_TYPE_HERMOSA_RPC = 4;
+	}
+
+	HRMPBProtocolType protocol = 3;
+
+	enum HRMPBCipherType {
+		CIPHER_TYPE_UNSET = 0;
+		CIPHER_TYPE_AES = 1;
+		CIPHER_TYPE_LAGUNA = 2;
+		CIPHER_TYPE_NOOP = 3;
+	}
+
+	repeated HRMPBCipherType ciphersArray = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMSectionConfig {
+	bool shouldRefreshIfAllRead = 1;
+	uint64 cacheTtlMsecs = 2;
+}

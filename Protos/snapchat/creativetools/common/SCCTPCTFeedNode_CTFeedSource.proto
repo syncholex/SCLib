@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource_DeltaForce.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource_Compute.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource_Client.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource_NoSource.proto";
+import "snapchat/creativetools/common/SCCTPCTFeedNode_CTFeedSource_Stream.proto";
+
+message SCCTPCTFeedNode_CTFeedSource {
+
+	oneof source {
+		snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource_DeltaForce deltaForce = 1;
+		snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource_Compute compute = 2;
+		snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource_Client client = 3;
+		snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource_NoSource noSource = 4;
+		snapchat.creativetools.common.SCCTPCTFeedNode_CTFeedSource_Stream stream = 5;
+	}
+
+}

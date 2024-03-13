@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+import "snapchat/friending/SCFriendingContactsNotProcessed.proto";
+
+message SCFriendingEarlyContactBookUploadResponse {
+	snapchat.friending.SCFriendingContactsNotProcessed contactsNotProcessed = 1;
+}

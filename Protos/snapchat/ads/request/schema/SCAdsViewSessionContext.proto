@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/SCAdsViewedAdContext.proto";
+
+message SCAdsViewSessionContext {
+	int64 startTimestampMillis = 1;
+
+	enum SCAdsViewSource {
+		UNKNOWN_VIEW_SOURCE_UNSET = 0;
+		VIEW_SOURCE_DISCOVER = 1;
+		LIVE_STORIES = 2;
+		PLAYLIST = 3;
+		RECENT_UPDATE = 4;
+		OFFICIAL_STORIES = 5;
+		GENERATED_STORIES = 6;
+		FEED = 7;
+		CHAT_HEADER = 8;
+		PROMOTED_STORIES = 9;
+		DISCOVER_FEED_FRIENDS = 10;
+		COGNAC = 11;
+		VIEW_SOURCE_CONTENT_INTERSTITIAL = 12;
+		DF_CATEGORICAL = 13;
+		DF_FOR_YOU = 14;
+		DF_SUBSCRIPTIONS = 15;
+		PREMIUM_FEED = 16;
+		PF_CONTINUE_WATCHING = 17;
+		PF_HAPPENING_NOW = 18;
+		PF_HERO_TILE = 19;
+		PF_MORE_SHOWS = 20;
+		PF_SUBSCRIPTIONS = 21;
+		PROFILE_PUBLISHER_EDITIONS = 22;
+		PROFILE_SHOW_SEASON = 23;
+		PROFILE_UP_NEXT = 24;
+		SEARCH_DISCOVER = 25;
+		SEARCH_DISCOVER_ARCHIVED = 26;
+		SEARCH_SF = 27;
+		DF_SINGLE_TILE_FOR_YOU = 28;
+		DF_SPOTLIGHT_ALL = 29;
+		SPOTLIGHT_FEED = 30;
+		CHAT = 31;
+		MINI_PROFILE = 32;
+		FEED_DIRECT_SNAP = 33;
+		FEED_STORY_SNAP = 34;
+		SUPER_FEED = 35;
+		DEEPLINK = 36;
+		PROFILE_STORY = 37;
+		SPOTLIGHT_MIXED_FEED = 38;
+	}
+
+	SCAdsViewSource viewSource = 2;
+	google.protobuf.GPBInt64Value timeSinceSessionStartMillis = 3;
+	google.protobuf.GPBInt64Value totalAdSnapViewTimeMillis = 4;
+	google.protobuf.GPBInt32Value totalSnapViewCount = 5;
+	google.protobuf.GPBInt32Value totalAdSnapViewCount = 6;
+	google.protobuf.GPBInt32Value totalAdSwipeUpCount = 7;
+	google.protobuf.GPBInt32Value totalSwipeUpCount = 8;
+	google.protobuf.GPBInt64Value totalAdLongformViewTimeMillis = 9;
+	google.protobuf.GPBInt64Value totalLongformViewTimeMillis = 10;
+	google.protobuf.GPBInt32Value totalStoriesViewCount = 11;
+	google.protobuf.GPBInt32Value availableStoriesCount = 12;
+
+	enum SCAdsExitEvent {
+		UNKNOWN_EXIT_EVENT = 0;
+		AUTO_ADVANCE = 1;
+		TAP_LEFT = 2;
+		TAP_RIGHT = 3;
+		SWIPE_LEFT = 4;
+		SWIPE_RIGHT = 5;
+		SWIPE_DOWN = 6;
+		SWIPE_UP = 7;
+		BACKGROUND = 8;
+		BACK_PRESSED = 9;
+		LONG_PRESSED = 10;
+		OTHER = 11;
+		TAP_SEARCH = 12;
+		TAP_USER_PROFILE = 13;
+		TAP_BRAND_PROFILE = 14;
+		TAP_TRENDING = 15;
+		TAP_SHARE = 16;
+		TAP_HOME = 17;
+		TAP_NAV_BAR = 18;
+	}
+
+	SCAdsExitEvent exitEvent = 13;
+	google.protobuf.GPBBoolValue isLastSnapAd = 14;
+	repeated snapchat.ads.request.schema.SCAdsViewedAdContext viewedAdArray = 15;
+}

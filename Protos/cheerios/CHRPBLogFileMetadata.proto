@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBLogFileMetadata {
+	string name = 1;
+	uint32 size = 2;
+}

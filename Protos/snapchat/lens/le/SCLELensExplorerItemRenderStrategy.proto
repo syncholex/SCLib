@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLELensExplorerItemRenderStrategy {
+	int32 spanCount = 1;
+
+	enum SCLELensExplorerItemRenderStrategy_Orientation {
+		HORIZONTAL_UNSET = 0;
+		VERTICAL = 1;
+	}
+
+	SCLELensExplorerItemRenderStrategy_Orientation orientation = 2;
+
+	enum SCLELensExplorerItemRenderStrategy_Type {
+		TILE_UNSET = 0;
+		ICONS = 1;
+	}
+
+	SCLELensExplorerItemRenderStrategy_Type type = 3;
+	float itemsSpacingMultiplier = 4;
+	bool useItemsCardBackground = 5;
+	bool useItemsDivider = 6;
+}

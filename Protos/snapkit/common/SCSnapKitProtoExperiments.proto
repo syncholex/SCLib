@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.common;
+
+import "snapkit/common/SCSnapKitProtoClientSideExperiment.proto";
+
+message SCSnapKitProtoExperiments {
+	repeated snapkit.common.SCSnapKitProtoClientSideExperiment clientSideExperimentsArray = 1;
+}

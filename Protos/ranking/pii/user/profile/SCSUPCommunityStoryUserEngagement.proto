@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+import "ranking/pii/user/profile/SCSUPUserSCCAffinity.proto";
+import "ranking/pii/user/profile/SCSUPSpotlightRealtimeWindowedEngagementStats.proto";
+
+message SCSUPCommunityStoryUserEngagement {
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedSpotlightFeedStats = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTopHashtagStats = 2;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTopCreatorStats = 3;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedLensIdStats = 4;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedMusicIdStats = 5;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedLanguageStats = 6;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTopClusteredHashtagStats = 7;
+	ranking.pii.user.profile.SCSUPUserSCCAffinity cupSccV3Affinity = 8;
+	ranking.pii.user.profile.SCSUPUserSCCAffinity cupSccPlusV1Affinity = 9;
+	ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats aggregatedSpotlightFeedStatsRealtime = 10;
+}

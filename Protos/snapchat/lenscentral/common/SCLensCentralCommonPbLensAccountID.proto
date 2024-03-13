@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.lenscentral.common;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensAccountID_OrganizationAndAdAccountID.proto";
+
+message SCLensCentralCommonPbLensAccountID {
+
+	oneof accountId {
+		string userId = 1;
+		string organizationId = 2;
+		snapchat.lenscentral.common.SCLensCentralCommonPbLensAccountID_OrganizationAndAdAccountID organizationAndAdAccountId = 3;
+		string profileId = 4;
+		string lensSpaceId = 5;
+	}
+
+}

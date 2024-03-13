@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+message CMSAbStudyInfo {
+	string studyName = 1;
+	string targetingId = 2;
+	uint32 priority = 3;
+	uint32 version = 4;
+}

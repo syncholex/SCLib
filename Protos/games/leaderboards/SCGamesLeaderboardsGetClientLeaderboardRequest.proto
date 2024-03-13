@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package games.leaderboards;
+
+message SCGamesLeaderboardsGetClientLeaderboardRequest {
+	string leaderboardId = 1;
+}

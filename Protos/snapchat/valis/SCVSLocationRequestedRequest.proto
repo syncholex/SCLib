@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCVSLocationRequestedRequest {
+	snapchat.core.SCCOREUUID requesterId = 1;
+	snapchat.core.SCCOREUUID friendId = 2;
+}

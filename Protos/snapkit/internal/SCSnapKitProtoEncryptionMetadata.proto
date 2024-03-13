@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapkit.internal;
+
+message SCSnapKitProtoEncryptionMetadata {
+	string id_p = 1;
+	string wek = 2;
+	string wiv = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Bitmoji.Proto;
+
+message ViewBox {
+	float minX = 1;
+	float minY = 2;
+	float maxX = 3;
+	float maxY = 4;
+}

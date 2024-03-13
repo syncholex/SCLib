@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.valis;
+
+import "snapchat/core/SCCOREUUID.proto";
+import "snapchat/valis/SCVSImage.proto";
+import "snapchat/valis/SCVSClusterMember.proto";
+import "snapchat/map/SCMTWorldEffectSet.proto";
+
+message SCVSFriendCluster {
+	snapchat.core.SCCOREUUID id_p = 1;
+	snapchat.valis.SCVSImage prop = 2;
+	snapchat.valis.SCVSImage floor = 3;
+	float centerLat = 4;
+	float centerLng = 5;
+	fixed64 centerS2CellId = 6;
+	repeated snapchat.valis.SCVSClusterMember clusterMemberArray = 7;
+	snapchat.map.SCMTWorldEffectSet worldEffect = 8;
+	bool tombstone = 9;
+	string locality = 10;
+	repeated string localityPiecesArray = 11;
+}

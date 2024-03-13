@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.perception.lookalike.features;
+
+message SCPNLOOKALIEInt64List {
+	repeated int64 valueArray = 1 [packed=true];
+}

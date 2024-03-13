@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusRequestPhoneVerificationCodeResponse_SuccessData.proto";
+import "snapchat/janus/api/SCJanusLoginCodeData.proto";
+import "snapchat/janus/api/SCJanusRequestPhoneVerificationCodeResponse_ErrorData.proto";
+
+message SCJanusRequestPhoneVerificationCodeResponse {
+
+	enum SCJanusRequestPhoneVerificationCodeResponse_StatusCode {
+		UNSET = 0;
+		REQUEST_CODE_SUCCESS = 1;
+		LOGIN_CODE_SENT = 2;
+		ERR_GENERIC_FAILURE = 6;
+		ERR_CODE_SEND_FAILED = 7;
+		ERR_PHONE_NUMBER_INVALID = 8;
+		ERR_PHONE_NUMBER_BLOCKED = 9;
+		ERR_PHONE_NUMBER_UNAVAILABLE = 10;
+		ERR_THROTTLED = 11;
+		ERR_APP_VERSION_UPGRADE = 12;
+	}
+
+	SCJanusRequestPhoneVerificationCodeResponse_StatusCode statusCode = 1;
+
+	oneof payload {
+		snapchat.janus.api.SCJanusRequestPhoneVerificationCodeResponse_SuccessData successData = 2;
+		snapchat.janus.api.SCJanusLoginCodeData loginCodeData = 3;
+		snapchat.janus.api.SCJanusRequestPhoneVerificationCodeResponse_ErrorData errorData = 6;
+	}
+
+}

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+import "snapchat/map/SCMTRenderConfig.proto";
+import "snapchat/map/SCMTHeatTileSetInfo.proto";
+import "snapchat/map/SCMTPoiTileSetInfo.proto";
+import "snapchat/map/SCMTGameTileSetInfo.proto";
+import "snapchat/map/SCMTMarkerTileSetInfo.proto";
+
+message SCMTTileSetInfo {
+	snapchat.map.SCMTTileSetId id_p = 1;
+
+	enum SCMTTileSetInfo_State {
+		STARTED = 0;
+		TILE_GEN_DONE = 1;
+		LOADING = 2;
+		SERVING = 10;
+		EXPIRED = 11;
+		INVALIDATED = 100;
+		ERROR = 101;
+		DELETING = 102;
+	}
+
+	SCMTTileSetInfo_State state = 2;
+	double startTime = 3;
+	double lastUpdateTime = 4;
+	snapchat.map.SCMTRenderConfig renderConfig = 5;
+	snapchat.map.SCMTHeatTileSetInfo heatTileSetInfo = 20;
+	snapchat.map.SCMTPoiTileSetInfo poiTileSetInfo = 21;
+	snapchat.map.SCMTGameTileSetInfo gameTileSetInfo = 22;
+	snapchat.map.SCMTMarkerTileSetInfo markerTileSetInfo = 23;
+}

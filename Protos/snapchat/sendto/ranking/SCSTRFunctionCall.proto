@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRFunctionCall {
+	string name = 1;
+	repeated snapchat.sendto.ranking.SCSTRAST argumentsArray = 2;
+}

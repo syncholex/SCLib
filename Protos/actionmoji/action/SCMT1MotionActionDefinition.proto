@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package actionmoji.action;
+
+import "actionmoji/action/SCMT1StickerPair.proto";
+import "actionmoji/action/SCMT1ClusterableStickerDefinition.proto";
+import "actionmoji/action/SCMT1ActionTiming.proto";
+import "actionmoji/action/SCMT1ActionTypeID.proto";
+
+message SCMT1MotionActionDefinition {
+
+	enum SCMT1ActionID {
+		Unknown = 0;
+		Walking = 1;
+		Running = 2;
+		Biking = 3;
+		Driving = 4;
+		Train = 5;
+		Flying = 6;
+		Sleeping = 7;
+		Restaurant = 8;
+		Cafe = 9;
+		Bar = 10;
+		Event = 11;
+		Headphone = 12;
+		Work = 13;
+		Boat = 14;
+		WakeUp = 15;
+		Beach = 16;
+		Airport = 17;
+		Runway = 18;
+		Tennis = 19;
+		Shopping = 20;
+		GolfCourse = 21;
+		Birthday = 22;
+		NationalPark = 23;
+		Lead = 24;
+		Beacon = 25;
+		Misc = 26;
+		PhysicalProp = 27;
+		Campus = 28;
+		Trigger = 29;
+		Scooter = 30;
+		MovieTheater = 31;
+		Directive = 32;
+		Skiing = 33;
+		ChairLift = 34;
+		School = 35;
+		Gym = 36;
+		Spectacles = 37;
+	}
+
+	SCMT1ActionID actionId = 1;
+	repeated actionmoji.action.SCMT1StickerPair stickerPairArray = 2;
+	repeated actionmoji.action.SCMT1ClusterableStickerDefinition clusterableStickerArray = 3;
+	int64 duration = 4;
+	int64 lockDuration = 5;
+
+	enum SCMT1ClusteringPolicy {
+		DEFAULT_CLUSTERING = 0;
+		SAME_ACTION_ONLY = 1;
+		DIFFERENT_ACTION_ONLY = 2;
+		NEVER = 3;
+	}
+
+	SCMT1ClusteringPolicy clusteringPolicy = 6;
+	float spaceConstrainRadius = 7;
+	bool employeeOnly = 8;
+	bool devOnly = 9;
+	string description_p = 10;
+	string subtype = 11;
+	actionmoji.action.SCMT1ActionTiming timing = 12;
+	actionmoji.action.SCMT1ActionTypeID typeId = 15;
+}

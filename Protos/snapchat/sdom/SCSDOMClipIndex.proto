@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBUInt32Value.proto";
+import "snapchat/sdom/SCSDOMTrackIndex.proto";
+
+message SCSDOMClipIndex {
+
+	oneof index {
+		google.protobuf.GPBUInt32Value clipIndexInTrack = 1;
+		uint32 segmentIndex = 2;
+	}
+
+	snapchat.sdom.SCSDOMTrackIndex track = 3;
+}

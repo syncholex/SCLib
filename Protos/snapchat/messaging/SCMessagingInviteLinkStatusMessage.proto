@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingInviteLinkStatusMessage {
+	snapchat.messaging.SCMessagingUUID initiatingUserId = 1;
+
+	enum SCMessagingInviteLinkStatusMessage_InviteLinkStatus {
+		INVITE_LINK_STATUS_UNSET = 0;
+		INVITE_LINK_STATUS_CREATED = 1;
+		INVITE_LINK_STATUS_DELETED = 2;
+	}
+
+	SCMessagingInviteLinkStatusMessage_InviteLinkStatus inviteLinkStatus = 2;
+}

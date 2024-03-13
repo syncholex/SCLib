@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMSavedStoryMetadata.proto";
+import "ranking/serving/jaguar/SCSSMStorySnap.proto";
+
+message SCSSMSavedStoryCard {
+	ranking.serving.jaguar.SCSSMSavedStoryMetadata savedStoryMetadata = 1;
+	repeated ranking.serving.jaguar.SCSSMStorySnap snapsArray = 2;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package snapchat.invite.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCSharingInviteCreateRequest {
+	snapchat.core.SCCOREUUID inviteId = 1;
+	snapchat.core.SCCOREUUID resourceId = 2;
+	snapchat.core.SCCOREUUID creatorId = 3;
+
+	enum SCSharingInviteType {
+		INVITE_TYPE_UNSET = 0;
+		INVITE_TYPE_GROUP_CHAT_STICKER = 1;
+		INVITE_TYPE_GROUP_LINK = 2;
+		INVITE_TYPE_CUSTOM_STORY_STICKER = 3;
+		INVITE_TYPE_MEMORY_LINK = 4;
+		INVITE_TYPE_FRIEND_PROMPT = 5;
+	}
+
+	SCSharingInviteType inviteType = 4;
+
+	enum SCSharingCreatorType {
+		CREATOR_TYPE_UNSET = 0;
+		CREATOR_TYPE_USER_ID = 1;
+	}
+
+	SCSharingCreatorType creatorType = 5;
+	int64 ttlInSeconds = 6;
+	bytes payload = 7;
+
+	enum SCSharingInviteStatus {
+		INVITE_STATUS_UNSET = 0;
+		PENDING = 1;
+		ACTIVE = 2;
+	}
+
+	SCSharingInviteStatus status = 8;
+}

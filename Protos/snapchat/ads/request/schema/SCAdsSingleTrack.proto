@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsInventoryTrackRequest.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBInt32Value.proto";
+
+message SCAdsSingleTrack {
+	bytes encryptedUserTrackData = 1;
+	snapchat.ads.request.schema.SCAdsInventoryTrackRequest inventoryTrackRequest = 2;
+	google.protobuf.GPBInt64Value creationTimestampMs = 3;
+	google.protobuf.GPBInt32Value numberOfAttempts = 4;
+}

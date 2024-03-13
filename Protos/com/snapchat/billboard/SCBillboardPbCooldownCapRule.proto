@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbRecycleRule.proto";
+
+message SCBillboardPbCooldownCapRule {
+	string cooldownCapCofRule = 1;
+	int32 storageId = 2;
+	com.snapchat.billboard.SCBillboardPbRecycleRule recycleRule = 3;
+}

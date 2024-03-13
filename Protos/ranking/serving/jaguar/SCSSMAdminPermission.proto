@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMAdminPermission {
+	bool canDelete = 1;
+	bool canSave = 2;
+}

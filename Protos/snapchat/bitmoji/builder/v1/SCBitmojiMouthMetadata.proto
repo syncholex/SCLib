@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.builder.v1;
+
+message SCBitmojiMouthMetadata {
+
+	enum SCBitmojiMouthType {
+		MOUTH_TYPE_UNSET = 0;
+		LIPLESS = 1;
+	}
+
+	SCBitmojiMouthType mouthType = 1;
+}

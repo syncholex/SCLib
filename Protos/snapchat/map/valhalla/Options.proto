@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+import "snapchat/map/valhalla/Costing.proto";
+import "snapchat/map/valhalla/Location.proto";
+
+message Options {
+
+	enum Options_Units {
+		KILOMETERS = 0;
+		MILES = 1;
+	}
+
+	Options_Units units = 1;
+
+	enum Options_Format {
+		UNSET = 0;
+		PBF = 3;
+	}
+
+	Options_Format format = 4;
+
+	enum Costing_Type {
+		NONE = 0;
+		BICYCLE = 1;
+		BUS = 2;
+		MOTOR_SCOOTER = 3;
+		MULTIMODAL = 4;
+		PEDESTRIAN = 5;
+		TRUCK = 7;
+		MOTORCYCLE = 8;
+		TAXI = 9;
+		AUTOMOBILE = 10;
+		BIKESHARE = 11;
+	}
+
+	Costing_Type costingType = 12;
+	snapchat.map.valhalla.Costing costings = 13;
+	repeated snapchat.map.valhalla.Location locationsArray = 14;
+}

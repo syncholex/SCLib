@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTWorldEffectSet_EffectVariant.proto";
+
+message SCMTWorldEffectSet {
+	repeated snapchat.map.SCMTWorldEffectSet_EffectVariant variantsArray = 1;
+}

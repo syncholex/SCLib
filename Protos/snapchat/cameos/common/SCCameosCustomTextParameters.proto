@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.cameos.common;
+
+import "snapchat/cameos/common/SCCameosCustomTextParameters_FontResource.proto";
+import "snapchat/cameos/common/SCCameosCustomTextParameters_TextArea.proto";
+
+message SCCameosCustomTextParameters {
+	repeated snapchat.cameos.common.SCCameosCustomTextParameters_FontResource fontResourcesArray = 1;
+	bool capitalize = 2;
+	string defaultText = 3;
+	bool defaultTextOnly = 4;
+	bool isUniversal = 5;
+	repeated snapchat.cameos.common.SCCameosCustomTextParameters_TextArea textAreasArray = 6;
+}

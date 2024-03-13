@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package lens_platform.client_server.lens;
+
+import "lens_platform/client_server/lens/SCLPLens.proto";
+import "lens_platform/client_server/lens/SCLPHint.proto";
+import "lens_platform/client_server/lens/SCLPCarouselPosition.proto";
+import "lens_platform/client_server/lens/SCLPLensCreator.proto";
+import "lens_platform/client_server/lens/SCLPSponsoredInfo.proto";
+import "lens_platform/client_server/common/SCLPAttachment.proto";
+import "lens_platform/client_server/lens/SCLPConnectedLensInfo.proto";
+import "lens_platform/client_server/lens/SCLPMusicTrackMetadata.proto";
+import "lens_platform/client_server/lens/SCLPDebugInfo.proto";
+import "lens_platform/client_server/lens/SCLPTrackingInfo.proto";
+import "lens_platform/client_server/lens/SCLPRemoteApiInfo.proto";
+import "lens_platform/client_server/lens/SCLPTargetingInfo.proto";
+
+message SCLPLensSnapchat {
+	lens_platform.client_server.lens.SCLPLens lens = 1;
+	lens_platform.client_server.lens.SCLPHint hint = 2;
+	lens_platform.client_server.lens.SCLPCarouselPosition carouselPosition = 3;
+	lens_platform.client_server.lens.SCLPLensCreator creator = 4;
+	lens_platform.client_server.lens.SCLPSponsoredInfo sponsoredInfo = 5;
+	lens_platform.client_server.common.SCLPAttachment attachment = 6;
+	int64 lensCollectionId = 7;
+	lens_platform.client_server.lens.SCLPConnectedLensInfo connectedLensInfo = 8;
+	bytes shoppingLensMetadata = 9;
+	repeated lens_platform.client_server.lens.SCLPMusicTrackMetadata musicTrackMetadataArray = 10;
+	lens_platform.client_server.lens.SCLPDebugInfo debugInfo = 11;
+	lens_platform.client_server.lens.SCLPTrackingInfo trackingInfo = 12;
+	lens_platform.client_server.lens.SCLPRemoteApiInfo remoteApiInfo = 13;
+	bytes adRenderDataBytes = 14;
+	lens_platform.client_server.lens.SCLPTargetingInfo targetingInfo = 15;
+}

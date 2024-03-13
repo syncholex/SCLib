@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingStoryShareInfo {
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+	snapchat.messaging.SCMessagingUUID snapId = 2;
+}

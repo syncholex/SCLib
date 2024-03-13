@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+message VRZPopularityDetails_DistributionDetails_DayOfWeekParam {
+
+	enum VRZPopularityDetails_DistributionDetails_DayOfWeekParam_DayOfWeekMeasurement {
+		UNSET = 0;
+		WEEKDAY = 1;
+		WEEKEND = 2;
+	}
+
+	VRZPopularityDetails_DistributionDetails_DayOfWeekParam_DayOfWeekMeasurement dayOfWeek = 1;
+	float anomaly = 2;
+}

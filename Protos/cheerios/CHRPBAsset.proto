@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package cheerios;
+
+message CHRPBAsset {
+	string id_p = 1;
+
+	enum CHRPBAsset_AssetType {
+		UNSET = 0;
+		SIXDOF = 1;
+	}
+
+	CHRPBAsset_AssetType type = 2;
+}

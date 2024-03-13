@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown {
+	string targetDatetime = 1;
+
+	enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection {
+		TARGET_DATETIME_DIRECTION_UNSET = 0;
+		FUTURE = 1;
+		PAST = 2;
+	}
+
+	SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection targetDatetimeDirection = 2;
+}

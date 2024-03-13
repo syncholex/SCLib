@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/SCSSMStoryFragmentMetadata.proto";
+
+message SCSSMSingleStoryFragmentMetadata {
+	string storyId = 1;
+	ranking.core.SCCORECompositeStoryId compositeStoryId = 2;
+	ranking.serving.jaguar.SCSSMStoryFragmentMetadata storyFragmentMetadata = 3;
+}

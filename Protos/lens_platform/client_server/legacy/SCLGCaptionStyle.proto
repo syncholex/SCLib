@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+import "lens_platform/client_server/legacy/SCLGFontStyle.proto";
+import "lens_platform/client_server/legacy/SCLGBackgroundStyle.proto";
+
+message SCLGCaptionStyle {
+	string styleId = 1;
+	string displayName = 2;
+	lens_platform.client_server.legacy.SCLGFontStyle fontStyle = 3;
+	lens_platform.client_server.legacy.SCLGBackgroundStyle backgroundStyle = 4;
+	bool colorChangeable = 5;
+	string baseColor = 6;
+	bool isWifiOnly = 7;
+	string type = 8;
+}

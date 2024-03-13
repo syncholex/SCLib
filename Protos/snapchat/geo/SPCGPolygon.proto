@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.geo;
+
+import "snapchat/geo/SPCGLinearRing.proto";
+
+message SPCGPolygon {
+	repeated snapchat.geo.SPCGLinearRing ringsArray = 1;
+}

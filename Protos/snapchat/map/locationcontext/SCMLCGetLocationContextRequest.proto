@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.locationcontext;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCMLCGetLocationContextRequest {
+	repeated snapchat.core.SCCOREUUID friendIdsArray = 1;
+	bool includeWidgetContext = 2;
+}

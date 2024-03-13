@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsApplication.proto";
+import "snapchat/ads/request/schema/SCAdsPreferences.proto";
+import "snapchat/ads/request/schema/SCAdsDevice.proto";
+import "snapchat/ads/request/schema/SCAdsNetwork.proto";
+import "google/protobuf/GPBBoolValue.proto";
+
+message SCAdsCommonRequestData {
+	snapchat.ads.request.schema.SCAdsApplication application = 1;
+	snapchat.ads.request.schema.SCAdsPreferences preferences = 2;
+	snapchat.ads.request.schema.SCAdsDevice device = 3;
+	snapchat.ads.request.schema.SCAdsNetwork network = 4;
+	google.protobuf.GPBBoolValue isDebug = 5;
+}

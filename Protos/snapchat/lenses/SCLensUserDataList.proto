@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "snapchat/lenses/SCLensUserData.proto";
+
+message SCLensUserDataList {
+	repeated snapchat.lenses.SCLensUserData userDataArray = 1;
+}

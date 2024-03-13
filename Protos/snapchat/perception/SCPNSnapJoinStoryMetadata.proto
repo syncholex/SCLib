@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "google/protobuf/GPBAny.proto";
+
+message SCPNSnapJoinStoryMetadata {
+	string snapId = 1;
+	google.protobuf.GPBAny snapJoinMsg = 2;
+}

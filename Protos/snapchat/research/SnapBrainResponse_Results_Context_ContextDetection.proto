@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_Context_ContextDetection {
+	string name = 1;
+	float score = 2;
+	uint32 frameId = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPFilter_DynamicFilterInfo_Context_TimeComponent.proto";
+
+message SCCTPFilter_DynamicFilterInfo_Context {
+	string deeplinkProperties = 1;
+	repeated snapchat.creativetools.common.SCCTPFilter_DynamicFilterInfo_Context_TimeComponent relativeTimeComponentsArray = 2;
+}

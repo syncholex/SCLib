@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsTileCtaOverrides.proto";
+
+message SCAdsStoryAd {
+	string placementId = 1;
+	bytes compositeCreativeId = 2;
+	string tileBaseURL = 3;
+	string tileImageURLPostfix = 4;
+	string tileLogoURLPostfix = 5;
+	string tileHeadline = 6;
+	bool shouldLoop = 7;
+	snapchat.ads.render.schema.SCAdsTileCtaOverrides tileCtaOverrides = 8;
+
+	enum SCAdsTileCTADisplayMode {
+		UNSET = 0;
+		SHOW = 1;
+		HIDE = 2;
+	}
+
+	SCAdsTileCTADisplayMode tileCtaDisplayMode = 9;
+}

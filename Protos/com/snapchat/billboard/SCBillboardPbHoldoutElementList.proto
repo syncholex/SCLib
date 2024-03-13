@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+message SCBillboardPbHoldoutElementList {
+	repeated string categoriesArray = 1;
+	repeated string campaignsArray = 2;
+}

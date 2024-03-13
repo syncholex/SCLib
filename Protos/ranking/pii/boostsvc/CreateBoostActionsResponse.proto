@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.boostsvc;
+
+import "ranking/pii/boostsvc/ActionSubresponse.proto";
+
+message CreateBoostActionsResponse {
+	string requestId = 1;
+	repeated ranking.pii.boostsvc.ActionSubresponse actionSubresponseArray = 2;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.pii.readreceipt;
+
+import "ranking/pii/readreceipt/ViewStats.proto";
+import "ranking/pii/readreceipt/SectionStats.proto";
+
+message SingleSnapStatsResponse {
+	string snapId = 1;
+	ranking.pii.readreceipt.ViewStats globalStats = 2;
+	repeated ranking.pii.readreceipt.SectionStats sectionStatsArray = 3;
+}

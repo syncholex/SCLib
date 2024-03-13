@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package tokens.shop;
+
+message SCIAPTokenPbShopPromotion {
+	string id_p = 1;
+	uint32 tokenQuantity = 2;
+	string title = 3;
+	string description_p = 4;
+	string bitmojiTemplateId = 5;
+
+	enum SCIAPTokenPbShopShopContext {
+		SHOP_CONTEXT_UNSPECIFIED = 0;
+		TOKEN_SHOP = 1;
+		GIFT_SHOP = 2;
+		BITMOJI = 3;
+	}
+
+	SCIAPTokenPbShopShopContext shopContext = 6;
+}

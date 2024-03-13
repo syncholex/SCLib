@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainResponse_Results_NormalizedBoundingBox {
+	float xmin = 1;
+	float ymin = 2;
+	float xmax = 3;
+	float ymax = 4;
+}

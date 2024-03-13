@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacExternalUserProfilesUserInfo.proto";
+import "cognac/SCCognacExternalUserProfilesExternalUserProfile.proto";
+
+message SCCognacExternalUserProfilesFullUserProfile {
+	cognac.SCCognacExternalUserProfilesUserInfo userInfo = 1;
+	cognac.SCCognacExternalUserProfilesExternalUserProfile externalUserProfile = 2;
+}

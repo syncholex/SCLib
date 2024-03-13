@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPWindowedEngagementStats.proto";
+
+message SCSUPPremiumFeedEngagement {
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTotalPremiumFeedStats = 1;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedHeroTileStats = 2;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedMyShowsStats = 3;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedKeepWatchingStats = 4;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedMoreShowsStats = 5;
+	ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedHappeningNowStats = 6;
+	int32 selectionRank = 7;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception;
+
+import "snapchat/perception/lookalike/query/Hit.proto";
+
+message SCPNContentBasedRetrievalResult {
+	snapchat.perception.lookalike.query.Hit lookalikeHit = 1;
+}

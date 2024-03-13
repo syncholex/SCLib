@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.response;
+
+import "com/snapchat/showcase/wire/response/SizeRecommendationList.proto";
+
+message SizeRecommendationResponse {
+
+	oneof response {
+		bytes spsContextMissingProfileSections = 1;
+		com.snapchat.showcase.wire.response.SizeRecommendationList sizeRecommendationsList = 2;
+	}
+
+	bytes spsContextRelevantProfileSections = 3;
+}

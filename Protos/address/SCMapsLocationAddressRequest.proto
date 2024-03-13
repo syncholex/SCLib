@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package address;
+
+import "address/SCMapsLatLng.proto";
+import "address/SCMapsRequestOptions.proto";
+
+message SCMapsLocationAddressRequest {
+	repeated address.SCMapsLatLng locationsArray = 1;
+	bool idsOnly = 2;
+	address.SCMapsRequestOptions options = 1000;
+}

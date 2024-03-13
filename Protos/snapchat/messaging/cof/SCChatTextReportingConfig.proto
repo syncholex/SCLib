@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.messaging.cof;
+
+message SCChatTextReportingConfig {
+	bool isEnabled = 1;
+	int32 maxAge = 2;
+}

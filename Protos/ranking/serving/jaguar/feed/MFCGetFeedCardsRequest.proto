@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/serving/jaguar/feed/MFCClientRequestInfo.proto";
+import "ranking/serving/jaguar/feed/MFCFeedSessionRequest.proto";
+import "ranking/serving/jaguar/feed/MFCDevice.proto";
+import "ranking/serving/jaguar/feed/MFCLookupParams.proto";
+import "ranking/serving/jaguar/feed/MFCExperiments.proto";
+import "ranking/serving/jaguar/feed/MFCSnapClientInternal.proto";
+
+message MFCGetFeedCardsRequest {
+	ranking.serving.jaguar.feed.MFCClientRequestInfo clientRequestInfo = 1;
+	ranking.serving.jaguar.feed.MFCFeedSessionRequest session = 2;
+	ranking.serving.jaguar.feed.MFCDevice device = 3;
+	repeated ranking.serving.jaguar.feed.MFCLookupParams lookupParamsArray = 4;
+	ranking.serving.jaguar.feed.MFCExperiments experiments = 5;
+	ranking.serving.jaguar.feed.MFCSnapClientInternal snapClientInternal = 6;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPGetSeasonListForShowRequest {
+	string showId = 1;
+	string pageId = 2;
+	int32 episodeLimit = 3;
+}

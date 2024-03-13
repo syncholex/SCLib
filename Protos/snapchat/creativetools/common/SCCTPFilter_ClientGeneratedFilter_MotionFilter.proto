@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPFilter_ClientGeneratedFilter_MotionFilter {
+
+	enum SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type {
+		UNSET = 0;
+		SLOW = 1;
+		FAST = 2;
+		SUPERFAST = 3;
+		REVERSE = 4;
+	}
+
+	SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type type = 1;
+}

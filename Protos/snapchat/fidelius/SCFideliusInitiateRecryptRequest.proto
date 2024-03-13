@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.fidelius;
+
+import "snapchat/fidelius/SCFideliusInitiateRecryptPackage.proto";
+
+message SCFideliusInitiateRecryptRequest {
+	repeated snapchat.fidelius.SCFideliusInitiateRecryptPackage initRecryptPackagesArray = 1;
+	bytes hashedPublicKey = 2;
+}

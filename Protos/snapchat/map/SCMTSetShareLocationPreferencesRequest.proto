@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTShareLocationPreferences.proto";
+
+message SCMTSetShareLocationPreferencesRequest {
+	snapchat.map.SCMTShareLocationPreferences preferences = 1;
+	int64 locationUpdateSequenceNumber = 2;
+	int64 ghostModeDurationMillis = 3;
+	bool optOutMapOnboarding = 4;
+}

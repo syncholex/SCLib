@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.bitmoji;
+
+message SCBitmojiUUID {
+	bytes id_p = 1;
+}

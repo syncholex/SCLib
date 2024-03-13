@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.appinsights.metadata;
+
+import "snapchat/appinsights/metadata/GroupNilUserName.proto";
+import "snapchat/appinsights/metadata/ExcessiveLoginRecursion.proto";
+
+message MessagingInfo {
+
+	oneof messagingInfo {
+		snapchat.appinsights.metadata.GroupNilUserName groupNilUserName = 1;
+		snapchat.appinsights.metadata.ExcessiveLoginRecursion excessiveLoginRecursion = 2;
+	}
+
+	int64 clientShimsErrorCode = 3;
+}

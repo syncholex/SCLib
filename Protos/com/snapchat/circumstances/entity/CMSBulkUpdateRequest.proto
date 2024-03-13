@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.circumstances.entity;
+
+import "com/snapchat/circumstances/entity/CMSBulkUpdateItem.proto";
+
+message CMSBulkUpdateRequest {
+	repeated com.snapchat.circumstances.entity.CMSBulkUpdateItem itemsArray = 1;
+}

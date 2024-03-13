@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "com/snapchat/lenscentral/v2/SCLensesPbFinalizeBusinessLensRequest_Metadata.proto";
+
+message SCLensesPbFinalizeBusinessLensRequest {
+
+	oneof request {
+		com.snapchat.lenscentral.v2.SCLensesPbFinalizeBusinessLensRequest_Metadata metadata = 1;
+		bytes previewMedia = 2;
+	}
+
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package actionmoji;
+
+import "snapchat/map/SCMTUserLocationRequest.proto";
+import "snapchat/map/SCMTLocationUpdate.proto";
+import "snapchat/map/SCMTBatchUserLocationRequest.proto";
+import "address/SCMapsAddress.proto";
+import "snapchat/map/SCMTKalmanData.proto";
+import "actionmoji/weatherdata/SCMT1Weather.proto";
+import "actionmoji/SpectaclesInfo.proto";
+
+message CalculateActionStickerRequest {
+	int64 requestTimestamp = 2;
+	snapchat.map.SCMTUserLocationRequest request = 11;
+	string actionmojiId = 13;
+	int64 birthday = 14;
+	bool hasBirthday = 15;
+	snapchat.map.SCMTLocationUpdate lastSavedLocation = 17;
+	repeated string bleBeaconIdArray = 18;
+	snapchat.map.SCMTBatchUserLocationRequest batchRequest = 19;
+	bool isEmployee = 20;
+	address.SCMapsAddress lastSavedLocationAddress = 21;
+	snapchat.map.SCMTKalmanData locationKalmanData = 22;
+	bool isBirthday = 24;
+	string freeformData = 25;
+	actionmoji.weatherdata.SCMT1Weather weather = 27;
+	string countryCode = 28;
+	uint32 age = 29;
+	actionmoji.SpectaclesInfo spectaclesInfo = 30;
+}

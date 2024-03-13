@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.perception.scan_history.v1;
+
+import "snapchat/perception/scan_history/v1/SCPSHSessionsV1_Session.proto";
+
+message SCPSHSessionsV1 {
+	repeated snapchat.perception.scan_history.v1.SCPSHSessionsV1_Session sessionsArray = 1;
+}

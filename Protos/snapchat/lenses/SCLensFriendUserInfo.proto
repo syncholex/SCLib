@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCLensFriendUserInfo {
+	google.protobuf.GPBTimestamp friendshipStart = 1;
+	google.protobuf.GPBTimestamp lastInteraction = 2;
+	uint32 streak = 3;
+}

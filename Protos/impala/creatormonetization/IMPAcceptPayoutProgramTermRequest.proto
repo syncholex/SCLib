@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+message IMPAcceptPayoutProgramTermRequest {
+
+	enum IMPProgramTerm {
+		DEFAULT_TERM_UNSET = 0;
+		MIDROLL_TERM = 1;
+		GIFTING_TERM = 2;
+	}
+
+	IMPProgramTerm programTerm = 1;
+}

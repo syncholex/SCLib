@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.snapchat.proto.snaptoken;
+
+message SCPBSnaptokenSnapAccessTokensRequest {
+	string refreshToken = 1;
+	repeated string scopesArray = 2;
+	string deviceId = 3;
+
+	enum SCPBSnaptokenSnapTokenScope {
+		UNKNOWN = 0;
+		BLIZZARD = 1;
+		LOCATION_SPRINKLER = 2;
+		STORIES_MIXER = 3;
+		GTQ_UNLOCKABLES = 4;
+		BUSINESS_ACCOUNTS = 5;
+		SERIALIZED_SHOWS = 6;
+		MAP_GAMES = 7;
+		PUPPY = 8;
+		API_GATEWAY = 9;
+		SNAP_KIT = 10;
+		LOGIN_KIT = 11;
+		EAGLE = 12;
+		EXPLORE = 13;
+		IRIS = 14;
+		MULTI_SCOPE = 15;
+		IN_APP_APPEAL = 16;
+	}
+
+	repeated SCPBSnaptokenSnapTokenScope scopesAsEnumsArray = 4 [packed=true];
+}

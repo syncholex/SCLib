@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBImuCalibrationOffsets {
+	int32 accelX = 1;
+	int32 accelY = 2;
+	int32 accelZ = 3;
+	int32 accelRadius = 4;
+	int32 accelAccuracy = 5;
+	int32 gyroX = 6;
+	int32 gyroY = 7;
+	int32 gyroZ = 8;
+	int32 gyroRadius = 9;
+	int32 gyroAccuracy = 10;
+	int32 magX = 11;
+	int32 magY = 12;
+	int32 magZ = 13;
+	int32 magRadius = 14;
+	int32 magAccuracy = 15;
+}

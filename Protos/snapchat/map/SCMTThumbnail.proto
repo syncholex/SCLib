@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/streaming/SCMTThumbnailInfo.proto";
+
+message SCMTThumbnail {
+	string id_p = 1;
+	string key = 2;
+	string iv = 3;
+	string URL = 4;
+	string thumbnailData = 5;
+	string snapId = 6;
+	string publicFilename = 10;
+
+	enum SCMTThumbnail_DisplayType {
+		CIRCLE = 0;
+		DIRECT = 1;
+	}
+
+	SCMTThumbnail_DisplayType displayType = 11;
+	snapchat.streaming.SCMTThumbnailInfo streamingThumbnailInfo = 12;
+}

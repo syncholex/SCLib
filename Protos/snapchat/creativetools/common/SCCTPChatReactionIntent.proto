@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPChatReactionIntent_ReactionSticker.proto";
+
+message SCCTPChatReactionIntent {
+	repeated snapchat.creativetools.common.SCCTPChatReactionIntent_ReactionSticker reactionsArray = 1;
+
+	enum SCCTPChatReactionIntent_IntentType {
+		REACTION_UNSET = 0;
+		LOVE = 1;
+		LAUGH_CRY = 2;
+		FIRE = 3;
+		THUMBS_UP = 4;
+		THUMBS_DOWN = 5;
+		SAD_CRY = 6;
+		WOW = 7;
+		QUESTION_MARK = 8;
+	}
+
+	SCCTPChatReactionIntent_IntentType intentType = 2;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBRange {
+	uint32 start = 1;
+	uint32 len = 2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.fashion.v1;
+
+message SCBitmojiHat {
+	int32 hat = 1;
+	int32 hatTone1 = 2;
+	int32 hatTone2 = 3;
+	int32 hatTone3 = 4;
+	int32 hatTone4 = 5;
+	int32 hatTone5 = 6;
+	int32 hatTone6 = 7;
+	int32 hatTone7 = 8;
+	int32 hatTone8 = 9;
+	int32 hatTone9 = 10;
+	int32 hatTone10 = 11;
+}

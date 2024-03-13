@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+import "google/protobuf/GPBTimestamp.proto";
+
+message SCLensWeather {
+	float temperatureF = 1;
+	string weatherConditionEn = 2;
+	string weatherConditionLocalized = 3;
+	google.protobuf.GPBTimestamp timestamp = 4;
+}

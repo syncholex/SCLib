@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package snap.trace;
+
+message PerfLoggerEvent {
+	string eventName = 1;
+	required double metricValues = 2;
+	required string params = 3;
+	int64 timestampMs = 4;
+}

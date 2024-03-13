@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkSensorInfo {
+	int32 headingAngle = 1;
+}

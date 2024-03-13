@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lens/le/SCLELensExplorerHeroTile_LayoutElement_ImageElement.proto";
+import "snapchat/lens/le/SCLELensExplorerHeroTile_LayoutElement_TextElement.proto";
+
+message SCLELensExplorerHeroTile_LayoutElement {
+	int32 elementId = 1;
+
+	oneof content {
+		snapchat.lens.le.SCLELensExplorerHeroTile_LayoutElement_ImageElement imageElement = 2;
+		snapchat.lens.le.SCLELensExplorerHeroTile_LayoutElement_TextElement textElement = 3;
+	}
+
+}

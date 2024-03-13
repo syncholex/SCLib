@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBSingleLedConf {
+	uint32 ledNum = 1;
+	uint32 current = 2;
+	uint32 pwm = 3;
+
+	enum MLBSingleLedConf_LedSide {
+		LeftSide = 0;
+		RightSide = 1;
+		BothSides = 2;
+	}
+
+	MLBSingleLedConf_LedSide side = 4;
+}

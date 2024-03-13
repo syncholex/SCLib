@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+message SCCTPMediaContent {
+	string thumbnailURL = 1;
+	string contentURL = 2;
+	bytes thumbnailBoltObject = 3;
+	bytes contentBoltObject = 4;
+}

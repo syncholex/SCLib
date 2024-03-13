@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/serving/jaguar/feed/MFCDeltaPull.proto";
+import "ranking/serving/jaguar/feed/MFCSnapSelection.proto";
+
+message MFCLookupParams {
+	ranking.core.SCCORECompositeStoryId feedCardId = 1;
+	uint64 latestVersion = 2;
+
+	oneof snapFetchOption {
+		ranking.serving.jaguar.feed.MFCDeltaPull deltaPull = 3;
+		ranking.serving.jaguar.feed.MFCSnapSelection snapSelection = 4;
+	}
+
+}

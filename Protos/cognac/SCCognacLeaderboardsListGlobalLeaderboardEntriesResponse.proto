@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacLeaderboardsLeaderboardEntry.proto";
+
+message SCCognacLeaderboardsListGlobalLeaderboardEntriesResponse {
+	cognac.SCCognacLeaderboardsLeaderboardEntry myEntry = 1;
+	repeated cognac.SCCognacLeaderboardsLeaderboardEntry leaderboardEntriesArray = 2;
+	int64 totalEntries = 3;
+}

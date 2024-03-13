@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+message SCLECollectionLayout {
+
+	enum SCLECollectionLayout_ImageSize {
+		LARGE_TILE_UNSET = 0;
+		SMALL_TILE = 1;
+	}
+
+	SCLECollectionLayout_ImageSize size = 1;
+}

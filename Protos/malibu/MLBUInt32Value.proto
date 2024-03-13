@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBUInt32Value {
+	uint32 value = 1;
+}

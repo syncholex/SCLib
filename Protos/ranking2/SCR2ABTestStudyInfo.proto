@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package ranking2;
+
+message SCR2ABTestStudyInfo {
+	string studyId = 1;
+	string variableValues = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileSetId.proto";
+
+message SCMTInternalGetAllPoisRequest {
+	snapchat.map.SCMTTileSetId tileSetId = 1;
+}

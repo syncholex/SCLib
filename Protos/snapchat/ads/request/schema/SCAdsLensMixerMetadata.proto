@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsLensMixerMetadata {
+	int64 mediaUnlockableId = 1;
+	string brandName = 2;
+	bytes creatorUserId = 3;
+	bool isRegulatedContent = 4;
+	string callToAction = 5;
+
+	enum SCAdsSCTAttachmentType {
+		ATTACHMENT_UNSET = 0;
+		APP_INSTALL = 1;
+		LONG_FORM_VIDEO = 2;
+		WEB_VIEW = 3;
+		DEEP_LINK = 4;
+	}
+
+	SCAdsSCTAttachmentType attachmentType = 6;
+}

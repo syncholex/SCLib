@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package snapchat.abuse.support;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCReportStoryCommentReportData {
+	string snapId = 1;
+	snapchat.core.SCCOREUUID commentId = 2;
+
+	enum SCReportStoryCommentReportData_CommentType {
+		UNSET = 0;
+		SAVED_STORY = 1;
+		PUBLISHER_STORY = 2;
+		SPOTLIGHT_STORY = 3;
+		COMMUNITY_STORY = 4;
+	}
+
+	SCReportStoryCommentReportData_CommentType commentType = 3;
+}

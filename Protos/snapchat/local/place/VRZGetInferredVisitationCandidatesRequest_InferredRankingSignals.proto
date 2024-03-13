@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.local.place;
+
+message VRZGetInferredVisitationCandidatesRequest_InferredRankingSignals {
+	double gpsAccuracyM = 1;
+	double altitudeMeters = 2;
+	double speedMetersPerSecond = 3;
+	string wifiSsid = 4;
+}

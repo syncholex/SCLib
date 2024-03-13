@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTTileMetadata.proto";
+
+message SCMTGetMapTilesMetadataResponse {
+	repeated snapchat.map.SCMTTileMetadata metadataArray = 1;
+}

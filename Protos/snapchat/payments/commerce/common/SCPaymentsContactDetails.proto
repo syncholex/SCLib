@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.payments.commerce.common;
+
+message SCPaymentsContactDetails {
+	string email = 1;
+	string phone = 2;
+}

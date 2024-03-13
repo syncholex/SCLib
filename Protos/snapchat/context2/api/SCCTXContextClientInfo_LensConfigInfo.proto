@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_CustomizationInfo.proto";
+
+message SCCTXContextClientInfo_LensConfigInfo {
+	string promptId = 1;
+	bytes encryptionKey = 2;
+	snapchat.context2.api.SCCTXContextClientInfo_CustomizationInfo customizationInfo = 3;
+
+	enum SCCTXContextClientInfo_LensConfigInfo_QaFlowType {
+		QuestionAndAnswer = 0;
+		Question = 1;
+	}
+
+	SCCTXContextClientInfo_LensConfigInfo_QaFlowType qaFlowType = 4;
+}

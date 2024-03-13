@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/AdPreferences.proto";
+
+message TargetingProxyRequest {
+
+	enum RequestType {
+		TYPE_UNKNOWN = 0;
+		QUERY_AD_PREFERENCES = 1;
+		UPDATE_AD_PREFERENCES = 2;
+		QUERY_AD_OPT_OUTS = 3;
+		UPDATE_AD_OPT_OUTS = 4;
+	}
+
+	RequestType request = 1;
+
+	oneof user {
+		string userId = 2;
+		string userToken = 3;
+		bytes encryptedUserData = 6;
+	}
+
+
+	oneof requestBody {
+		com.snapchat.targeting.proto.AdPreferences adPreferences = 4;
+	}
+
+	string userLocale = 5;
+}

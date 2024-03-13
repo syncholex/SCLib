@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+message PredictionScore {
+	string name = 1;
+	float score = 2;
+}

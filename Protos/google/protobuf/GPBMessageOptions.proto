@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package google.protobuf;
+
+import "google/protobuf/GPBUninterpretedOption.proto";
+
+message GPBMessageOptions {
+	bool messageSetWireFormat = 1;
+	bool noStandardDescriptorAccessor = 2;
+	bool deprecated = 3;
+	bool mapEntry = 7;
+	repeated google.protobuf.GPBUninterpretedOption uninterpretedOptionArray = 999;
+}

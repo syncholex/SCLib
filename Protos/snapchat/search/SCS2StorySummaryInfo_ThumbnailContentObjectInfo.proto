@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.search;
+
+message SCS2StorySummaryInfo_ThumbnailContentObjectInfo {
+	string key = 1;
+	string iv = 2;
+	bytes contentObject = 3;
+}

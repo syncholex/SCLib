@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package ranking2;
+
+import "ranking2/SCR2GeoFence.proto";
+
+message SCR2GeoFilterDetail {
+	string id_p = 1;
+	string name = 2;
+	repeated string tagsArray = 3;
+	ranking2.SCR2GeoFence geofence = 4;
+	uint64 startTimeTsSecs = 5;
+	uint64 endTimeTsSecs = 6;
+	uint64 createdTimeTsSecs = 7;
+	repeated string targetingFenceIdsArray = 8;
+
+	enum SCR2GeoFilterDetail_GeoFilterSource {
+		COMMUNITY = 0;
+		ON_DEMAND = 1;
+		MANAGED = 2;
+		UNSPECIFIED = 3;
+		REMOTE_SCRIPT = 4;
+		UNKNOWN = 5;
+	}
+
+	SCR2GeoFilterDetail_GeoFilterSource origin = 9;
+	string imageLink = 10;
+}

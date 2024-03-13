@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPSearchPublisherProfilesResponse_SearchRecord {
+	string businessId = 1;
+	int64 publisherId = 2;
+	string businessName = 3;
+}

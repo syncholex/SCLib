@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacDiscoverRankingFeaturesDiscoverRankingFeatures_InteractionFeatures.proto";
+
+message SCCognacDiscoverRankingFeaturesDiscoverRankingFeatures {
+	cognac.SCCognacDiscoverRankingFeaturesDiscoverRankingFeatures_InteractionFeatures interactionFeatures = 1;
+}

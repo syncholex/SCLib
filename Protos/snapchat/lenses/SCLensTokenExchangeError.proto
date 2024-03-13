@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.lenses;
+
+message SCLensTokenExchangeError {
+
+	enum SCLensTokenExchangeError_TokenExchangeErrorType {
+		ERROR_TYPE_UNSET = 0;
+		INVALID_REQUEST = 1;
+		INVALID_CLIENT = 2;
+		INVALID_GRANT = 3;
+		UNAUTHORIZED_CLIENT = 4;
+		UNSUPPORTED_GRANT_TYPE = 5;
+		INVALID_SCOPE = 6;
+	}
+
+	SCLensTokenExchangeError_TokenExchangeErrorType error = 1;
+	string errorDescription = 2;
+}

@@ -1,0 +1,130 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsAdPosition.proto";
+import "snapchat/ads/request/schema/SCAdsThirdPartyAdNetworkTrackInfo.proto";
+import "snapchat/ads/request/schema/SCAdsSKAdNetworkAttribution.proto";
+import "snapchat/ads/request/schema/SCAdsAdInsertionConfig.proto";
+import "snapchat/ads/request/schema/SCAdsAdMetadataCacheConfig.proto";
+import "snapchat/ads/request/schema/SCAdsOnDeviceInfo.proto";
+import "snapchat/ads/request/schema/SCAdsLensPosition.proto";
+import "snapchat/ads/request/schema/SCAdsClientCrawlRequest.proto";
+import "snapchat/ads/request/schema/SCAdsLensMixerMetadata.proto";
+
+message SCAdsAdServeItem {
+	bytes adData = 1;
+	bytes encryptedAdTrackData = 2;
+	bytes adId = 3;
+	snapchat.ads.request.schema.SCAdsAdPosition adPosition = 4;
+	bytes serveItemId = 5;
+	bytes viewReceipt = 6;
+	bytes adRenderData = 7;
+
+	enum SCAdsAdType {
+		UNKNOWN_AD_TYPE = 0;
+		THREE_V = 1;
+		LONGFORM_VIDEO = 2;
+		APP_INSTALL = 3;
+		REMOTE_WEBPAGE = 4;
+		LOCAL_WEBPAGE = 5;
+		NO_FILL = 6;
+		STORY = 7;
+		LENS = 8;
+		LENS_SLOT = 9;
+		DEEP_LINK_ATTACHMENT = 10;
+		FILTER = 11;
+		FILTER_CAROUSEL = 12;
+		LENS_CAROUSEL = 13;
+		UNLOCKABLE_VIEW = 14;
+		AD_TO_LENS = 15;
+		COLLECTION = 16;
+		LENS_TILE = 17;
+		AD_TO_CALL = 18;
+		AD_TO_MESSAGE = 19;
+		AD_TO_PLACE = 20;
+		LEAD_GENERATION = 21;
+		SHOWCASE = 22;
+		PROMOTE_PUBLISHER_STORY = 23;
+		REMINDER = 24;
+		SURVEY = 25;
+	}
+
+	SCAdsAdType adType = 8;
+
+	enum SCAdsDemandSource {
+		DEMAND_SOURCE_SNAP = 0;
+		DEMAND_SOURCE_PETRA = 1;
+	}
+
+	SCAdsDemandSource demandSource = 10;
+	repeated snapchat.ads.request.schema.SCAdsThirdPartyAdNetworkTrackInfo eligibleThirdPartyAdNetworkTrackInfoArray = 11;
+	bytes pixelId = 12;
+	snapchat.ads.request.schema.SCAdsSKAdNetworkAttribution skAdNetworkAttribution = 13;
+	int64 adMetadataCacheTtlSecs = 14;
+	float organicValue = 15;
+	snapchat.ads.request.schema.SCAdsAdInsertionConfig adInsertionConfig = 16;
+	int64 serveTimestampMillis = 17;
+	snapchat.ads.request.schema.SCAdsAdMetadataCacheConfig adMetadataCacheConfig = 18;
+	bool adSwipeUpLikely = 19;
+	snapchat.ads.request.schema.SCAdsOnDeviceInfo onDeviceInfo = 20;
+	bool enableAppInstallTrackRevamp = 21;
+
+	enum SCULSponsoredUnlockableType {
+		UNKNOWN_SPONSORED_UNLOCKABLE_TYPE = 0;
+		AUDIENCE_FILTERS = 1;
+		ON_DEMAND_UNLOCKABLE = 2;
+		AUDIENCE_LENSES = 3;
+		NATIONAL_LENSES = 4;
+		MANAGED_FILTERS = 5;
+		SPONSORED_COMPANION_LENSES = 6;
+		REACH_AND_FREQUENCY_LENSES = 7;
+		AD_TO_LENS = 8;
+		PLACES_FILTERS = 9;
+		FIRST_LENSES = 10;
+	}
+
+	SCULSponsoredUnlockableType sponsoredUnlockableType = 22;
+	bytes adSquadId = 23;
+	bytes campaignId = 24;
+	bytes adAccountId = 25;
+	float swipeProbability = 26;
+	repeated snapchat.ads.request.schema.SCAdsLensPosition lensPositionsArray = 27;
+	repeated snapchat.ads.request.schema.SCAdsClientCrawlRequest clientCrawlRequestsArray = 28;
+
+	enum OptimizationGoal {
+		UNKNOWN_OPTIMIZATION_GOAL = 0;
+		APP_INSTALLS = 1;
+		DAILY_REACH = 2;
+		IMPRESSIONS = 3;
+		SWIPES = 4;
+		VIDEO_VIEWS = 5;
+		NONE = 6;
+		USES = 7;
+		LFV = 8;
+		WEB_VIEW = 9;
+		PIXEL_PURCHASE = 10;
+		PIXEL_SIGNUP = 11;
+		APP_PURCHASE = 12;
+		APP_SIGNUP = 13;
+		STORY_OPENS = 14;
+		PIXEL_ADD_TO_CART = 15;
+		PIXEL_PAGE_VIEW = 16;
+		APP_ADD_TO_CART = 17;
+		VIDEO_VIEWS_15_SEC = 18;
+		APP_REENGAGE_PURCHASE = 19;
+		APP_REENGAGE_ADD_TO_CART = 20;
+		APP_REENGAGE_OPEN = 21;
+		LEAD_FORM_SUBMISSIONS = 22;
+		APP_AD_VIEW = 23;
+		APP_ACHIEVEMENT_UNLOCKED = 24;
+		APP_LEVEL_COMPLETE = 25;
+		APP_PURCHASE_VO = 26;
+		PIXEL_PURCHASE_VO = 27;
+		LANDING_PAGE_VIEW = 28;
+		PIXEL_PURCHASE_1_0 = 29;
+	}
+
+	OptimizationGoal optimizationGoal = 29;
+	snapchat.ads.request.schema.SCAdsLensMixerMetadata lensMixerMetadata = 30;
+}

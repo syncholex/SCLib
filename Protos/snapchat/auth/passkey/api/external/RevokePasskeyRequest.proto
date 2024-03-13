@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+import "snapchat/auth/passkey/models/DeviceId.proto";
+
+message RevokePasskeyRequest {
+	string passkeyId = 1;
+	snapchat.auth.passkey.models.DeviceId deviceId = 2;
+}

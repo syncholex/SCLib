@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.storydoc;
+
+import "snapchat/storydoc/STOContentAccessList.proto";
+
+message STOContentAccessLists {
+	snapchat.storydoc.STOContentAccessList feedWhitelist = 1;
+	snapchat.storydoc.STOContentAccessList searchWhitelist = 2;
+	snapchat.storydoc.STOContentAccessList snapcodeWhitelist = 3;
+	snapchat.storydoc.STOContentAccessList shareWhitelist = 4;
+}

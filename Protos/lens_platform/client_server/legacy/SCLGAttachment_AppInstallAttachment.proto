@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package lens_platform.client_server.legacy;
+
+message SCLGAttachment_AppInstallAttachment {
+	string appName = 1;
+	string iosAppId = 2;
+	string androidAppURL = 3;
+	string appIconURL = 4;
+}

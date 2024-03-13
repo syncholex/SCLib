@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.lens;
+
+message SCLensBlobMedia {
+	string id_p = 1;
+	bytes data_p = 2;
+	int64 expirationTimeMs = 3;
+	int32 version = 4;
+	bool isClientEncrypted = 5;
+}

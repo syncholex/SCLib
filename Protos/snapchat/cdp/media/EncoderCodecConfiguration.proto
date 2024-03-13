@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.cdp.media;
+
+import "snapchat/cdp/media/ConfigurationCategory.proto";
+
+message EncoderCodecConfiguration {
+	snapchat.cdp.media.ConfigurationCategory configurationCategories = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/snapdoc/SDMSnapDoc.proto";
+import "google/protobuf/GPBEmpty.proto";
+import "snapchat/sdom/SCSDOMTimeRange.proto";
+
+message SCSDOMImportSnapDocClip {
+	snapchat.snapdoc.SDMSnapDoc snapDoc = 1;
+
+	oneof importRange {
+		google.protobuf.GPBEmpty firstClip = 2;
+	}
+
+	snapchat.sdom.SCSDOMTimeRange timeRange = 3;
+	bool replaceExistingClip = 4;
+	bool keepEditLayers = 5;
+}

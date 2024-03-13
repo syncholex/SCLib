@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+message SCSSMStreamToken_Embedding {
+	repeated float embeddingArray = 1 [packed=true];
+}

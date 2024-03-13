@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.discover;
+
+message TierLevelValue {
+
+	enum TierLevel {
+		TIER_UNKNOWN = 0;
+		TIER_PREMIUM = 1;
+		TIER_SHOW = 2;
+		TIER_CURATION = 3;
+		TIER_HAPPENING_NOW = 4;
+		TIER_DYNAMIC_EDITIONS = 5;
+	}
+
+	TierLevel value = 1;
+}

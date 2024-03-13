@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBPerformanceData {
+	required uint32 eventMap = 1;
+}

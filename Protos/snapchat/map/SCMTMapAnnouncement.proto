@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/geo/SPCGPoint.proto";
+import "snapchat/map/common/SCMCRGBA.proto";
+
+message SCMTMapAnnouncement {
+	string id_p = 1;
+	snapchat.geo.SPCGPoint destinationLocation = 2;
+	double destinationZoom = 3;
+	int64 displayDurationMs = 4;
+	string categoryDisplayString = 5;
+	snapchat.map.common.SCMCRGBA categoryStringColor = 6;
+	string title = 7;
+	string emojiIcon = 8;
+}

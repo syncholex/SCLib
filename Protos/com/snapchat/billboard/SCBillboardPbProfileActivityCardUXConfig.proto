@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbProfileActivityCardUIComponent.proto";
+import "com/snapchat/billboard/SCBillboardPbAction.proto";
+
+message SCBillboardPbProfileActivityCardUXConfig {
+	repeated com.snapchat.billboard.SCBillboardPbProfileActivityCardUIComponent uiComponentsArray = 1;
+	com.snapchat.billboard.SCBillboardPbAction action = 2;
+}

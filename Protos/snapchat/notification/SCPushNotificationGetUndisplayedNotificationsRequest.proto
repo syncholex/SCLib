@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.notification;
+
+import "snapchat/notification/SCPushNotificationUUID.proto";
+
+message SCPushNotificationGetUndisplayedNotificationsRequest {
+	snapchat.notification.SCPushNotificationUUID userId = 1;
+	repeated string notificationIdArray = 2;
+}

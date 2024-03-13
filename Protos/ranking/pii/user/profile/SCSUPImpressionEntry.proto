@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+message SCSUPImpressionEntry {
+	int64 numLongImpressions = 1;
+	int64 endTimestampMsec = 2;
+	float impTimeSecs = 3;
+	int64 startTimestampMsec = 4;
+}

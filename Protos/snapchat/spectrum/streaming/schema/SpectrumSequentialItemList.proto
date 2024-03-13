@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema;
+
+import "snapchat/spectrum/streaming/schema/SpectrumSequentialItem.proto";
+
+message SpectrumSequentialItemList {
+	repeated snapchat.spectrum.streaming.schema.SpectrumSequentialItem spectrumSequentialItemsArray = 1;
+}

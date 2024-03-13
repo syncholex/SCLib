@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package snapchat.context2;
+
+import "snapchat/context2/SCGIGroupInvitePersonInfo.proto";
+
+message SCGIGroupInviteEventInfo_JoinedPerson {
+	snapchat.context2.SCGIGroupInvitePersonInfo person = 1;
+
+	enum SCGIGroupInviteEventRSVPStatus {
+		GroupInviteEventRSVPStatus_UNSET = 0;
+		GroupInviteEventRSVPStatus_GOING = 1;
+		GroupInviteEventRSVPStatus_NOT_GOING = 2;
+		GroupInviteEventRSVPStatus_MAYBE = 3;
+	}
+
+	SCGIGroupInviteEventRSVPStatus status = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkRelativeDateTimeFormatOptions {
+	int64 timestamp = 1;
+	bool showAgo = 2;
+	bool capitalizeJustNow = 3;
+	uint32 justNowThreshold = 4;
+	bool abbreviateJustNow = 5;
+}

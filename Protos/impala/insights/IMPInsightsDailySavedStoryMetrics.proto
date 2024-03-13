@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsDailySavedStoryMetrics {
+	int64 timestampMsecs = 1;
+	int64 savedStoryViews = 2;
+	int64 savedStorySnapViews = 3;
+	int64 savedStoryUniqueViewers = 4;
+	int64 savedStoryAverageViewTimeMs = 5;
+	int64 savedStoryTotalViewTimeMs = 6;
+}

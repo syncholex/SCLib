@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMPublisherStoryAdPlacementMetadata_TargetingInfo.proto";
+import "ranking/serving/jaguar/SCSSMPublisherStoryAdPlacementMetadata_AdSlot.proto";
+import "ranking/serving/jaguar/SCSSMPublisherSnap.proto";
+
+message SCSSMPublisherStoryAdPlacementMetadata {
+	string adUnitId = 1;
+	ranking.serving.jaguar.SCSSMPublisherStoryAdPlacementMetadata_TargetingInfo targetingInfo = 2;
+	repeated ranking.serving.jaguar.SCSSMPublisherStoryAdPlacementMetadata_AdSlot adSlotsArray = 3;
+	ranking.serving.jaguar.SCSSMPublisherSnap optionalAdSnaps = 4;
+	bool interstitialAdBrandUnsafe = 5;
+	bool isAdsPreRollEnabled = 6;
+}

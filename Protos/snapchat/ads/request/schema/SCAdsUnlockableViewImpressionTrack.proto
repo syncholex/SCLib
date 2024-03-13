@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBFloatValue.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "snapchat/ads/request/schema/device/SCAdsDeviceInfo.proto";
+
+message SCAdsUnlockableViewImpressionTrack {
+	google.protobuf.GPBFloatValue timeViewedSeconds = 1;
+	google.protobuf.GPBFloatValue mediaDurationSeconds = 2;
+	bytes encGeoData = 3;
+	google.protobuf.GPBBoolValue isAudioOn = 4;
+
+	enum SCAdsUnlockableViewImpressionTrack_SnapViewType {
+		UNKNOWN_SNAP_VIEW_TYPE = 0;
+		DIRECT_SNAP = 1;
+		STORY = 2;
+		MEMORY_PREVIEW = 3;
+		MEMORY_EDIT = 4;
+		MEMORY_TILE = 5;
+		DIRECT_SNAP_WITH_MODULAR_CAMERA = 6;
+		STORY_WITH_MODULAR_CAMERA = 7;
+		LENS_CAROUSEL = 8;
+	}
+
+	SCAdsUnlockableViewImpressionTrack_SnapViewType snapViewType = 5;
+	snapchat.ads.request.schema.device.SCAdsDeviceInfo deviceInfo = 6;
+
+	enum SCAdsUnlockableViewImpressionTrack_SnappableInviteAction {
+		UNKNOWN_SNAPPABLE_INVITE_ACTION = 0;
+		JOIN = 1;
+		SKIP = 2;
+	}
+
+	SCAdsUnlockableViewImpressionTrack_SnappableInviteAction snappableInviteAction = 7;
+}

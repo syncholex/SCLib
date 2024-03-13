@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensProcessingWarmupConfig {
+	bool enabled = 1;
+
+	enum SCLensProcessingWarmupConfig_TargetLenses {
+		TARGET_LENSES_UNSET = 0;
+		ALL = 1;
+		SPONSORED = 2;
+	}
+
+	SCLensProcessingWarmupConfig_TargetLenses targetLenses = 2;
+	uint32 targetLensesCount = 3;
+	uint32 framesToProcess = 4;
+
+	enum SCLensProcessingWarmupConfig_StartMode {
+		START_MODE_UNSET = 0;
+		ONCE = 1;
+		ONCE_IF_FINISHED = 2;
+		ALWAYS = 3;
+	}
+
+	SCLensProcessingWarmupConfig_StartMode startMode = 5;
+	bool disposeLensCoreWhenFinished = 6;
+	bool waitForCriticalWorkDone = 7;
+	bool suspendLensesWhenFinished = 8;
+
+	enum SCLensProcessingWarmupConfig_CameraType {
+		CAMERA_TYPE_UNSET = 0;
+		LIVE_CAMERA = 1;
+		REPLY_CAMERA = 2;
+		VIDEO_CHAT = 3;
+		OTHER = 4;
+	}
+
+	repeated SCLensProcessingWarmupConfig_CameraType cameraTypesArray = 9 [packed=true];
+	uint32 minFreeMemoryToWarmup = 10;
+	bool clearWarmupLensOnLeavingCamera = 11;
+	uint32 minRamCapacityToWarmup = 12;
+	bool useTotalFreeMemory = 13;
+	bool skipOnNavigation = 14;
+	uint32 delayStartByMs = 15;
+	bool warmupEmptyPixelBuffer = 16;
+	bool warmupPossible = 17;
+}

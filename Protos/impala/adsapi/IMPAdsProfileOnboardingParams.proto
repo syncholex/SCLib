@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package impala.adsapi;
+
+message IMPAdsProfileOnboardingParams {
+	string adminDisplayName = 1;
+	string adminUserId = 2;
+	string businessAccountId = 3;
+	string adminEmail = 4;
+}

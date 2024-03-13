@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+import "impala/IMPPublisherOrganization.proto";
+
+message IMPGetPublisherOrganizationsResponse {
+	repeated impala.IMPPublisherOrganization publisherOrganizationsArray = 1;
+}

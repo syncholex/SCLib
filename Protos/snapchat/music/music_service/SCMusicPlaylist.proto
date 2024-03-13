@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.music.music_service;
+
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+
+message SCMusicPlaylist {
+	int64 playlistId = 1;
+	string name = 2;
+	repeated snapchat.creativetools.common.SCCTPMusicTrack tracksArray = 3;
+	string tabTitle = 4;
+}

@@ -1,0 +1,8 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBPeerVerificationMessage {
+	bytes tag = 1;
+	bytes ciphertext = 2;
+}

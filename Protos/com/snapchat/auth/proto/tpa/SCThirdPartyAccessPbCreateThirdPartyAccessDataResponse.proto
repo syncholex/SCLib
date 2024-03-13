@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tpa;
+
+import "com/snapchat/auth/proto/tpa/SCThirdPartyAccessPbAccessTokenData.proto";
+
+message SCThirdPartyAccessPbCreateThirdPartyAccessDataResponse {
+	com.snapchat.auth.proto.tpa.SCThirdPartyAccessPbAccessTokenData token = 1;
+}

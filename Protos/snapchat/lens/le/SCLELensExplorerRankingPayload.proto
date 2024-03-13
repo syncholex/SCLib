@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.lens.le;
+
+import "snapchat/lenses/interactions/SCLensHistoricalInteraction.proto";
+import "com/snap/rtus/proto/RTUSSignal.proto";
+
+message SCLELensExplorerRankingPayload {
+	repeated int64 categoryExcludedLensIdsArray = 6 [packed=true];
+	repeated snapchat.lenses.interactions.SCLensHistoricalInteraction historicalInteractionsArray = 7;
+	com.snap.rtus.proto.RTUSSignal realTimeUserInteractions = 8;
+}

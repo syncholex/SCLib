@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "lens_platform/client_server/lens/SCLPTrackingInfo.proto";
+import "lens_platform/client_server/lens/SCLPCarouselPosition.proto";
+
+message SCGMixerResult {
+	bytes id_p = 1;
+	bytes checksum = 2;
+	lens_platform.client_server.lens.SCLPTrackingInfo trackingInfo = 3;
+	lens_platform.client_server.lens.SCLPCarouselPosition carouselPosition = 4;
+
+	enum SCLPChecksumEntry_PrefetchContext {
+		PREFETCH_CONTEXT_UNSET = 0;
+		PASSIVE = 1;
+		BACKGROUND = 2;
+		ACTIVE = 3;
+	}
+
+	repeated SCLPChecksumEntry_PrefetchContext prefetchContextsArray = 5 [packed=true];
+}

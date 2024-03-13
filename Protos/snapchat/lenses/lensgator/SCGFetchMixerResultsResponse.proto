@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.lenses.lensgator;
+
+import "snapchat/lenses/lensgator/SCGMixerNamespaceResponse.proto";
+import "lens_platform/client_server/api/featured/SCLPFetchLocationsResponse.proto";
+import "snapchat/lenses/lensgator/SCGLensAndChecksum.proto";
+import "snapchat/lenses/lensgator/SCGCTItemAndChecksum.proto";
+
+message SCGFetchMixerResultsResponse {
+	repeated snapchat.lenses.lensgator.SCGMixerNamespaceResponse namespaceResponsesArray = 1;
+	lens_platform.client_server.api.featured.SCLPFetchLocationsResponse fetchLocationsResponse = 2;
+	repeated snapchat.lenses.lensgator.SCGLensAndChecksum lensesArray = 3;
+	repeated snapchat.lenses.lensgator.SCGCTItemAndChecksum ctItemsArray = 4;
+}

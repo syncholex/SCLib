@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacClientContextDevice.proto";
+
+message SCCognacClientContextDeviceBlacklist {
+	repeated cognac.SCCognacClientContextDevice deviceBlacklistArray = 1;
+}

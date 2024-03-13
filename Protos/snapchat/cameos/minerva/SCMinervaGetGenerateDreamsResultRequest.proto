@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.cameos.minerva;
+
+import "snapchat/cameos/minerva/SCMinervaGenerateDreamsRequestID.proto";
+
+message SCMinervaGetGenerateDreamsResultRequest {
+	snapchat.cameos.minerva.SCMinervaGenerateDreamsRequestID requestId = 1;
+	bool encryptContent = 2;
+}

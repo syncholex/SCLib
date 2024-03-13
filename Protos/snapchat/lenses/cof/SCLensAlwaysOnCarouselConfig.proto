@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.lenses.cof;
+
+message SCLensAlwaysOnCarouselConfig {
+	bool isFeatureEnabled = 1;
+
+	enum SCLensAlwaysOnCarouselConfig_MainCameraMode {
+		UNSET = 0;
+		MEMORIES_IN_LEFT_CAROUSEL = 1;
+		MEMORIES_ON_LEFT_EDGE = 2;
+		MEMORIES_ABOVE_CAROUSEL = 3;
+	}
+
+	SCLensAlwaysOnCarouselConfig_MainCameraMode mainCameraMode = 2;
+	bool isEnabledOnReplyCamera = 3;
+	bool isMemoriesSwipeUpEnabled = 4;
+	bool isCarouselOpenedWithAnimation = 5;
+	bool isCarouselOpenedWhileCameraHidden = 6;
+	bool isLensCoreSuspendedWhenLensNotSelected = 7;
+	bool carouselOptimizedPresentation = 8;
+	bool carouselPostponedUntilG2S = 9;
+	bool locationUsageOptimized = 10;
+	bool triggerLensPrefetchOnUserStatusChange = 11;
+	bool geolensWarmupUntilG2S = 12;
+	uint32 locationUpdateMinimalThresholdMs = 13;
+	uint32 lensDataProviderUpdateMinimalThresholdMs = 14;
+	bool fixedCameraPageAttribution = 15;
+	bool fixedLensCarouselRestoreState = 16;
+	bool lensDataProviderOptimizedCaching = 17;
+	bool lensDataProviderOptimizedReloading = 18;
+	bool lensesDeactivationOnCameraSwipeoutOptimized = 19;
+	bool isMetalRenderDisabledWhenLensApplied = 20;
+	bool lensDataProviderOptimizedPerformance = 21;
+	bool lensLoggingOffMainQueueOnDeactivation = 22;
+	bool sclensUseLightHash = 23;
+}

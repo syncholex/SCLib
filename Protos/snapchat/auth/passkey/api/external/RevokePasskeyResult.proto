@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.auth.passkey.api.external;
+
+message RevokePasskeyResult {
+
+	enum RevokePasskeyResult_Enum {
+		UNSET = 0;
+		SUCCESS = 1;
+		ERROR_CREDENTIAL_NOT_FOUND = 2;
+		ERROR_SECURITY_RESTRICTION = 3;
+	}
+
+	RevokePasskeyResult_Enum statusCode = 1;
+	string humanReadableLocalizedMessage = 2;
+}

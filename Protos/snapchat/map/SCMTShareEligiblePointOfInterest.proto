@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPointOfInterest.proto";
+
+message SCMTShareEligiblePointOfInterest {
+	snapchat.map.SCMTPointOfInterest poi = 1;
+	int64 mostRecentGeneration = 2;
+}

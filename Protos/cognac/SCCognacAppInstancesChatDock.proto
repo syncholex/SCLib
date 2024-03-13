@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cognac;
+
+import "cognac/SCCognacAppInstancesAppInstanceScope.proto";
+import "cognac/SCCognacAppInstancesChatDockEntry.proto";
+
+message SCCognacAppInstancesChatDock {
+	cognac.SCCognacAppInstancesAppInstanceScope appInstanceScope = 1;
+	repeated cognac.SCCognacAppInstancesChatDockEntry chatDockEntriesArray = 2;
+	int64 version = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package malibu;
+
+message MLBRpcError {
+	string errorCode = 1;
+	string description_p = 2;
+	uint32 line = 3;
+	string function = 4;
+	string file = 5;
+}

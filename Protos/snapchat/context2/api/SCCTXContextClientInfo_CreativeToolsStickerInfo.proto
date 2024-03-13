@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/context2/api/SCCTXContextClientInfo_CreativeToolsStickerInfo_StickerAttribution.proto";
+
+message SCCTXContextClientInfo_CreativeToolsStickerInfo {
+	string packId = 1;
+	string stickerId = 2;
+	string stickerType = 3;
+	snapchat.context2.api.SCCTXContextClientInfo_CreativeToolsStickerInfo_StickerAttribution stickerAttribution = 4;
+}

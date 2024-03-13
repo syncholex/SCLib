@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.auth.oauth2;
+
+import "snapchat/auth/oauth2/SCAuthScope.proto";
+
+message SCAuthClient {
+	string clientId = 1;
+	string name = 2;
+	string iconURL = 3;
+	repeated snapchat.auth.oauth2.SCAuthScope scopesArray = 4;
+	string description_p = 5;
+	repeated string redirectUrisArray = 6;
+
+	enum SCAuthClientType {
+		CLIENT_TYPE_UNSET = 0;
+		CLIENT_TYPE_CONFIDENTIAL = 1;
+		CLIENT_TYPE_PUBLIC = 2;
+	}
+
+	SCAuthClientType clientType = 7;
+}

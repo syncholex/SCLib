@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package snapchat.spectrum.streaming.schema.air;
+
+message AppExitInfo {
+	string description_p = 1;
+
+	enum Importance {
+		IMPORTANCE_UNSET = 0;
+		IMPORTANCE_FOREGROUND = 100;
+		IMPORTANCE_FOREGROUND_SERVICE = 125;
+		IMPORTANCE_VISIBLE = 200;
+		IMPORTANCE_PERCEPTIBLE = 230;
+		IMPORTANCE_SERVICE = 300;
+		IMPORTANCE_TOP_SLEEPING = 325;
+		IMPORTANCE_CANT_SAVE_STATE = 350;
+		IMPORTANCE_CACHED = 400;
+		IMPORTANCE_GONE = 1000;
+	}
+
+	Importance importance = 2;
+	bytes processStateSummary = 3;
+	int64 pss = 4;
+	int64 rss = 5;
+
+	enum Reason {
+		REASON_UNSET = 0;
+		REASON_EXIT_SELF = 1;
+		REASON_SIGNALED = 2;
+		REASON_LOW_MEMORY = 3;
+		REASON_CRASH = 4;
+		REASON_CRASH_NATIVE = 5;
+		REASON_ANR = 6;
+		REASON_INITIALIZATION_FAILURE = 7;
+		REASON_PERMISSION_CHANGE = 8;
+		REASON_EXCESSIVE_RESOURCE_USAGE = 9;
+		REASON_USER_REQUESTED = 10;
+		REASON_USER_STOPPED = 11;
+		REASON_DEPENDENCY_DIED = 12;
+		REASON_OTHER = 13;
+		REASON_FREEZER = 14;
+	}
+
+	Reason reason = 6;
+	int32 status = 7;
+	int64 timestamp = 8;
+	string traces = 9;
+	bytes tombstoneTraces = 10;
+}

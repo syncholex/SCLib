@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.creativetools.preview;
+
+message SCCTPFilterCarouselOrderingConfig {
+	repeated string filterGroupsOrderingArray = 1;
+	string cameraType = 2;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala.creatormonetization;
+
+import "impala/creatormonetization/IMPGetPayoutsResponse.proto";
+
+message IMPInternalGetPayoutsResponse {
+	impala.creatormonetization.IMPGetPayoutsResponse response = 1;
+}

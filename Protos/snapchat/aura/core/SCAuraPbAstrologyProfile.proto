@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.aura.core;
+
+import "snapchat/aura/core/SCAuraPbAstrologySnapADT.proto";
+
+message SCAuraPbAstrologyProfile {
+	repeated snapchat.aura.core.SCAuraPbAstrologySnapADT snapsArray = 2;
+}

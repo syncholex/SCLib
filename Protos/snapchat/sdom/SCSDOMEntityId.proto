@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "google/protobuf/GPBUInt32Value.proto";
+import "snapchat/sdom/SCSDOMClipIndex.proto";
+
+message SCSDOMEntityId {
+
+	oneof identifier {
+		google.protobuf.GPBUInt32Value layerId = 1;
+		google.protobuf.GPBUInt32Value renderEffectNodeId = 2;
+		snapchat.sdom.SCSDOMClipIndex clipIndex = 3;
+	}
+
+}

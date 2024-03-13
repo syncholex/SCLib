@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.local.verrazano;
+
+import "snapchat/local/verrazano/VRZCategory.proto";
+
+message VRZGetCategoriesResponse {
+	repeated snapchat.local.verrazano.VRZCategory categoriesArray = 1;
+}

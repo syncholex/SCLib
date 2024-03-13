@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.cameos.genai.dreams;
+
+import "snapchat/cameos/common/SCCameosServiceStatusResponse.proto";
+
+message SCPbGenAIDreamGetProductResponse {
+	snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+	string appleProductId = 2;
+	string googleProductId = 3;
+	string generationId = 4;
+}

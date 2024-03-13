@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.snapchat.targeting.proto;
+
+import "com/snapchat/targeting/proto/SCAdsEncryptedContentCategoryBucketMapping.proto";
+import "com/snapchat/targeting/proto/SCAdsEncryptedAppToSlcMapping.proto";
+import "com/snapchat/targeting/proto/SCAdsContentCategoryBucketMapping.proto";
+
+message SCAdsAudienceOnDeviceConfig {
+	com.snapchat.targeting.proto.SCAdsEncryptedContentCategoryBucketMapping encryptedAppCategoryBucketMapping = 1;
+	com.snapchat.targeting.proto.SCAdsEncryptedAppToSlcMapping encryptedAppToSlcMapping = 2;
+	com.snapchat.targeting.proto.SCAdsContentCategoryBucketMapping shopperCategoryAppBucketMapping = 3;
+	com.snapchat.targeting.proto.SCAdsContentCategoryBucketMapping shopperCategoryPixelBucketMapping = 4;
+}

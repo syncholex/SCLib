@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+import "snap/snap_maps_sdk/SMSdkFriendInfo.proto";
+
+message SMSdkPublicUserInfo {
+	string userId = 1;
+	string displayName = 2;
+	string bitmojiAvatarId = 3;
+	string bitmojiSelfieId = 4;
+	snap.snap_maps_sdk.SMSdkFriendInfo friendInfo = 5;
+}

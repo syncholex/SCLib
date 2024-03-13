@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingGroupInviteStickerJoinTextPromptStatusMessage {
+	snapchat.messaging.SCMessagingUUID inviteGroupId = 1;
+	string inviteGroupName = 2;
+	snapchat.messaging.SCMessagingUUID inviteId = 3;
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package com.snapchat.auth.proto.tivs;
+
+message EmailEligibility {
+	bool isEligible = 1;
+	string email = 2;
+}

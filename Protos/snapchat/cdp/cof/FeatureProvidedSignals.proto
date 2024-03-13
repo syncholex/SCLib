@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package snapchat.cdp.cof;
+
+import "snapchat/snapdoc/SDMMediaMetadata.proto";
+import "snapchat/cdp/cof/FeatureProvidedSignals_StoryMetadata.proto";
+import "snapchat/cdp/cof/CameraSignals.proto";
+import "snapchat/cdp/cof/ContentManagerSignals.proto";
+import "snapchat/cdp/cof/FeatureProvidedSignals_SpectacleMetadata.proto";
+import "snapchat/cdp/cof/BoltSignals.proto";
+import "snapchat/cdp/cof/LensesSignals.proto";
+import "snapchat/cdp/cof/CreativeToolsSignals.proto";
+import "snapchat/cdp/cof/RoutingSignals.proto";
+import "snapchat/cdp/cof/MdpMediaAttribution.proto";
+import "snapchat/cdp/cof/MediaSignals.proto";
+import "snapchat/cdp/cof/PerceptionSignals.proto";
+import "snapchat/cdp/cof/OperaSignals.proto";
+import "snapchat/cdp/cof/RecipientsSignals.proto";
+import "snapchat/cdp/cof/BillboardSignals.proto";
+import "snapchat/cdp/cof/CognacSignals.proto";
+import "snapchat/cdp/cof/FeatureProvidedSignals_HashSignals.proto";
+import "snapchat/common/Value.proto";
+import "snapchat/cdp/cof/SnapKitSignals.proto";
+import "snapchat/cdp/cof/UploadSignals.proto";
+import "snapchat/common/SCCOMMONRuid.proto";
+
+message FeatureProvidedSignals {
+	snapchat.snapdoc.SDMMediaMetadata mediaMetadata = 1;
+	snapchat.cdp.cof.FeatureProvidedSignals_StoryMetadata storyMetadata = 2;
+	snapchat.cdp.cof.CameraSignals cameraSignals = 3;
+
+	enum SnapSource {
+		UNKNOWN = 0;
+		FEED = 1;
+		FEED_SNAP_REPLY = 3;
+		IN_CHAT = 5;
+		CAMERA = 10;
+		CAMERA_ROLL = 13;
+		GALLERY = 14;
+		PROFILE = 33;
+		PALMTREE = 66;
+	}
+
+	SnapSource snapSource = 4;
+	snapchat.cdp.cof.ContentManagerSignals contentManagerProvidedSignals = 5;
+	snapchat.cdp.cof.FeatureProvidedSignals_SpectacleMetadata spectacleMetadata = 6;
+	snapchat.cdp.cof.BoltSignals boltSignals = 7;
+	snapchat.cdp.cof.LensesSignals lensesSignals = 8;
+	snapchat.cdp.cof.CreativeToolsSignals creativeToolsSignals = 9;
+	uint32 estimatedDurationForEventMs = 10;
+	snapchat.cdp.cof.RoutingSignals routingSignals = 11;
+	snapchat.cdp.cof.MdpMediaAttribution mdpMediaAttribution = 12;
+	uint32 size = 13;
+	snapchat.cdp.cof.MediaSignals mediaSignals = 14;
+	snapchat.cdp.cof.PerceptionSignals perceptionSignals = 15;
+	snapchat.cdp.cof.OperaSignals operaSignals = 16;
+	snapchat.cdp.cof.RecipientsSignals recipientsSignals = 17;
+	snapchat.cdp.cof.BillboardSignals billboardSignals = 18;
+	snapchat.cdp.cof.CognacSignals cognacSignals = 19;
+	snapchat.cdp.cof.FeatureProvidedSignals_HashSignals hashSignals = 20;
+	snapchat.common.Value edgeSignals = 21;
+	snapchat.cdp.cof.SnapKitSignals snapKitSignals = 22;
+	snapchat.cdp.cof.UploadSignals uploadSignals = 23;
+	repeated snapchat.common.SCCOMMONRuid ruidsArray = 24;
+}

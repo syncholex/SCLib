@@ -1,0 +1,122 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBatteryStatusResponse {
+	int32 soc = 1;
+	int32 voltage = 2;
+	int32 temp = 3;
+	int32 current = 4;
+
+	enum HRMPBBatteryStatusResponse_SocStatus {
+		SocStateAuto = 0;
+		SocStateCritical = 1;
+		SocStateLow = 2;
+		SocStateNormal = 3;
+	}
+
+	HRMPBBatteryStatusResponse_SocStatus socStatus = 5;
+
+	enum HRMPBBatteryStatusResponse_HardwareStatus {
+		NO_BATTERY_UP = 0;
+		SINGLE_BATTERY_UP = 1;
+		BATTERY_UP = 2;
+	}
+
+	HRMPBBatteryStatusResponse_HardwareStatus hardwareStatus = 6;
+	int32 lSoc = 7;
+	int32 rSoc = 8;
+	int32 lVoltage = 9;
+	int32 rVoltage = 10;
+	int32 lTemp = 11;
+	int32 rTemp = 12;
+	int32 lCurrent = 13;
+	int32 rCurrent = 14;
+	int32 lFullcap = 15;
+	int32 rFullcap = 16;
+
+	enum HRMPBBatteryStatusResponse_NtcStatus {
+		NORMAL = 0;
+		COLD = 1;
+		HOT = 2;
+	}
+
+	HRMPBBatteryStatusResponse_NtcStatus lNtcStatus = 17;
+
+	enum HRMPBBatteryStatusResponse_NtcStatus {
+		NORMAL = 0;
+		COLD = 1;
+		HOT = 2;
+	}
+
+	HRMPBBatteryStatusResponse_NtcStatus rNtcStatus = 18;
+	int32 lCurrentAvg = 19;
+	int32 rCurrentAvg = 20;
+	int32 lVoltageAvg = 21;
+	int32 rVoltageAvg = 22;
+	int32 lCyclesPercent = 23;
+	int32 rCyclesPercent = 24;
+	int32 lAgePercent = 25;
+	int32 rAgePercent = 26;
+	int32 chargerInputPowerMw = 27;
+	int32 vbusVoltageMv = 28;
+	int32 vbusCurrentMa = 29;
+	int32 lInternalResistance = 30;
+	int32 rInternalResistance = 31;
+
+	enum HRMPBBatteryPreservationModeRequest_Mode {
+		UNKNOWN = 0;
+		DISABLED = 1;
+		ALWAYS_ON = 2;
+		AUTO = 3;
+	}
+
+	HRMPBBatteryPreservationModeRequest_Mode batteryPreservationModeStatus = 32;
+
+	enum HRMPBBatteryStatusResponse_BatteryType {
+		REAL_BATTERY = 0;
+		FAKE_BATTERY = 1;
+		NO_BATTERY = 2;
+		UNKNOWN_BATTERY = 3;
+		WRONG_SIDE_BATTERY = 4;
+	}
+
+	HRMPBBatteryStatusResponse_BatteryType lBatteryType = 33;
+
+	enum HRMPBBatteryStatusResponse_BatteryType {
+		REAL_BATTERY = 0;
+		FAKE_BATTERY = 1;
+		NO_BATTERY = 2;
+		UNKNOWN_BATTERY = 3;
+		WRONG_SIDE_BATTERY = 4;
+	}
+
+	HRMPBBatteryStatusResponse_BatteryType rBatteryType = 34;
+	bool isBpmEnabled = 35;
+	int32 systemPowerConsumptionMw = 36;
+	int32 lCurrentMaxMA = 37;
+	int32 rCurrentMaxMA = 38;
+	int32 lCurrentMinMA = 39;
+	int32 rCurrentMinMA = 40;
+	uint64 lDurationMsMinMax = 41;
+	uint64 rDurationMsMinMax = 42;
+	float lBatteryIdVoltage = 43;
+	float rBatteryIdVoltage = 44;
+	int32 userSoc = 45;
+	int32 cvPmic8350CPowerMw = 46;
+	int32 cvPmic8350CVoltageMv = 47;
+	int32 cvPmic8350CCurrentMa = 48;
+	int32 batteryPowerMw = 49;
+	int32 lBatteryPowerMw = 50;
+	int32 rBatteryPowerMw = 51;
+	int32 batteryPowerAvgMw = 52;
+	int32 lBatteryPowerAvgMw = 53;
+	int32 rBatteryPowerAvgMw = 54;
+	int32 cvPmic8350PowerMw = 55;
+	int32 cvPmic8350VoltageMv = 56;
+	int32 cvPmic8350CurrentMa = 57;
+	bool lIsBatteryBad = 58;
+	bool rIsBatteryBad = 59;
+	bool lIsPreqRunning = 60;
+	bool rIsPreqRunning = 61;
+}

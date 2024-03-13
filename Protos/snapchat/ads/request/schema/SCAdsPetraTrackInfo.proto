@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+message SCAdsPetraTrackInfo {
+	string queryId = 1;
+
+	enum SCAdsPetraNativeTemplateType {
+		UNSET = 0;
+		APP_INSTALL = 1;
+		VIDEO_APP_INSTALL = 2;
+		CONTENT = 3;
+		VIDEO_CONTENT = 4;
+	}
+
+	SCAdsPetraNativeTemplateType nativeTemplateType = 2;
+}

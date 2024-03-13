@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBBackupStatusEvent {
+
+	enum HRMPBBackupStatusEvent_BackupStatus {
+		BACKUP_BEGIN = 0;
+		BACKUP_IN_PROGRESS = 1;
+		BACKUP_END = 2;
+	}
+
+	HRMPBBackupStatusEvent_BackupStatus backupStatus = 1;
+	string contentId = 2;
+	float backupProgress = 3;
+	uint32 thumbnailSize = 4;
+}

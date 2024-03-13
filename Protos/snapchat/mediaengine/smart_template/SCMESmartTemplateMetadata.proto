@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.mediaengine.smart_template;
+
+message SCMESmartTemplateMetadata {
+	uint32 templateId = 1;
+	string displayNameId = 2;
+	string thumbnailURL = 3;
+}

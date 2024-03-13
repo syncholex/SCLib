@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snap.snap_maps_sdk;
+
+message SMSdkMapSdkSessionInitializationParams_MapInstanceInfo {
+	string name = 1;
+
+	enum SMSdkMapSdkSessionInitializationParams_MapType {
+		MAP_TYPE_UNKNOWN = 0;
+		MAP_TYPE_FULL_SCREEN = 1;
+		MAP_TYPE_EMBEDDED = 2;
+	}
+
+	SMSdkMapSdkSessionInitializationParams_MapType type = 2;
+}

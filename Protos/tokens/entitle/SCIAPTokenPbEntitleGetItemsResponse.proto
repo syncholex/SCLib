@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package tokens.entitle;
+
+import "tokens/entitle/SCIAPTokenPbEntitleItem.proto";
+
+message SCIAPTokenPbEntitleGetItemsResponse {
+	repeated tokens.entitle.SCIAPTokenPbEntitleItem itemsArray = 1;
+}

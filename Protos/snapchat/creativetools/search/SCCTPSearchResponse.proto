@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.creativetools.search;
+
+import "snapchat/creativetools/search/SCCTPSection.proto";
+
+message SCCTPSearchResponse {
+	repeated snapchat.creativetools.search.SCCTPSection sectionsArray = 1;
+	string debugHtml = 2;
+}

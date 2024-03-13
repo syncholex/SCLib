@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+import "snapchat/storydoc/STOAdPlacement.proto";
+import "ranking/serving/jaguar/feed/MFCAdTargetingMetadata.proto";
+
+message MFCFeedCardCapabilities_ContentAds {
+	bool adsSkippable = 1;
+	snapchat.storydoc.STOAdPlacement adPlacement = 2;
+	ranking.serving.jaguar.feed.MFCAdTargetingMetadata adTargetingMetadata = 3;
+}

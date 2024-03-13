@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package snapchat.snapdoc;
+
+message SDMUpdateInfo {
+	string updateAppButton = 1;
+	string updateAppHeadline = 2;
+}

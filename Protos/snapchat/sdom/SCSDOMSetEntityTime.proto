@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.sdom;
+
+import "snapchat/sdom/SCSDOMEntityId.proto";
+import "snapchat/sdom/SCSDOMTimeRange.proto";
+
+message SCSDOMSetEntityTime {
+	snapchat.sdom.SCSDOMEntityId entityId = 1;
+	snapchat.sdom.SCSDOMTimeRange newTimeRange = 2;
+	bool createNewTrackBelow = 3;
+}

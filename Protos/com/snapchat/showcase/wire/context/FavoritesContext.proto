@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package com.snapchat.showcase.wire.context;
+
+message FavoritesContext {
+	repeated uint64 snapItemIdArray = 1 [packed=true];
+}

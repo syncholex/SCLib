@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+message SCJanusChallengeOrchestrationRequestHeader {
+	string blizzardClientId = 1;
+	string persistentAttestationDeviceId = 2;
+	string clientCookieId = 3;
+}

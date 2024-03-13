@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPImpressionEntry.proto";
+
+message SCSUPImpressionStats {
+	repeated ranking.pii.user.profile.SCSUPImpressionEntry last7DaysRecordsArray = 1;
+	int64 totalNumLongImps = 2;
+	int64 numLongImpressionsLastWeek = 3;
+	int64 lastTimestampMsec = 4;
+	ranking.pii.user.profile.SCSUPImpressionEntry aggregatedStats7Days = 5;
+}

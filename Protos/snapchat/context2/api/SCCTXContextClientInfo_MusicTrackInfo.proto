@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package snapchat.context2.api;
+
+import "snapchat/creativetools/common/SCCTPContentRestrictions.proto";
+
+message SCCTXContextClientInfo_MusicTrackInfo {
+	snapchat.creativetools.common.SCCTPContentRestrictions contentRestrictions = 1;
+	uint64 trackId = 2;
+
+	enum SCCTPMusicTrackType {
+		TRACK_TYPE_UNSET = 0;
+		LICENSED = 1;
+		CUSTOM_SOUND = 2;
+		SPOTLIGHT_ORIGINAL_SOUND = 3;
+	}
+
+	SCCTPMusicTrackType type = 3;
+	double startOffsetSeconds = 4;
+	bool isSoundSync = 6;
+	string musicStickerStyle = 7;
+}

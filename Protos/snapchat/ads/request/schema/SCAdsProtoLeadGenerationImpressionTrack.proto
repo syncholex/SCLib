@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "snapchat/ads/request/schema/SCAdsCommonSnapAdImpressionTrack.proto";
+import "snapchat/ads/common/lead_generation/SCAdsProtoLeadGenerationSubmittedLead.proto";
+
+message SCAdsProtoLeadGenerationImpressionTrack {
+	snapchat.ads.request.schema.SCAdsCommonSnapAdImpressionTrack commonSnapAdImpression = 1;
+	snapchat.ads.common.lead_generation.SCAdsProtoLeadGenerationSubmittedLead submittedLead = 2;
+}

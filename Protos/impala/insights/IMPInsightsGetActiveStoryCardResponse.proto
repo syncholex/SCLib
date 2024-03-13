@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package impala.insights;
+
+message IMPInsightsGetActiveStoryCardResponse {
+	bytes storyCard = 1;
+}

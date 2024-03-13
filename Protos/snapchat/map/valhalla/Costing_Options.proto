@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.map.valhalla;
+
+message Costing_Options {
+	float walkingSpeed = 17;
+}

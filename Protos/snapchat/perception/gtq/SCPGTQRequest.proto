@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package snapchat.perception.gtq;
+
+import "snapchat/perception/gtq/SCPGTQMockRequest.proto";
+import "snapchat/unlockables/request/schema/SCULGtqServeRequest.proto";
+
+message SCPGTQRequest {
+
+	oneof request {
+		snapchat.perception.gtq.SCPGTQMockRequest mockRequest = 1;
+		snapchat.unlockables.request.schema.SCULGtqServeRequest serveRequest = 2;
+	}
+
+}

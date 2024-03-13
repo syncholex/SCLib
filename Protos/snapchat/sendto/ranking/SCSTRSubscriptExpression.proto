@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.sendto.ranking;
+
+import "snapchat/sendto/ranking/SCSTRAST.proto";
+
+message SCSTRSubscriptExpression {
+	snapchat.sendto.ranking.SCSTRAST base = 1;
+	snapchat.sendto.ranking.SCSTRAST index = 2;
+}

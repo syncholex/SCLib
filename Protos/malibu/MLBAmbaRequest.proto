@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package malibu;
+
+import "malibu/MLBAuthRequest.proto";
+import "malibu/MLBFirmwareUpdateUploadRequest.proto";
+import "malibu/MLBMediaRequest.proto";
+import "malibu/MLBLogRequest.proto";
+import "malibu/MLBCancellationRequest.proto";
+import "malibu/MLBStereoCalibrationDataRequest.proto";
+import "malibu/MLBGpsRequest.proto";
+
+message MLBAmbaRequest {
+	uint64 requestId = 1;
+
+	enum MLBAmbaRequest_RequestType {
+		AUTH_REQUEST = 0;
+		FIRMWARE_UPDATE_REQUEST = 1;
+		MEDIA_REQUEST = 2;
+		LOG_REQUEST = 3;
+		CANCELLATION_REQUEST = 4;
+		WIFI_SHARING_REQUEST = 5;
+		WIFI_SHARING_REQUEST_STATUS = 6;
+		STEREO_CALIBRATION_DATA = 7;
+		GPS_REQUEST = 8;
+	}
+
+	MLBAmbaRequest_RequestType type = 2;
+	malibu.MLBAuthRequest authRequest = 3;
+	malibu.MLBFirmwareUpdateUploadRequest fwUpdateUploadRequest = 4;
+	repeated malibu.MLBMediaRequest mediaRequestArray = 5;
+	repeated malibu.MLBLogRequest logRequestArray = 6;
+	repeated malibu.MLBCancellationRequest cancellationRequestArray = 7;
+	bool wifiSharingRequest = 8;
+	malibu.MLBStereoCalibrationDataRequest stereoCalibrationDataRequest = 9;
+	malibu.MLBGpsRequest gpsRequest = 10;
+}

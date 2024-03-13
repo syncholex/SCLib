@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCPrefetch {
+
+	oneof mechanism {
+		bool allSnaps = 1;
+		int32 count = 2;
+	}
+
+}

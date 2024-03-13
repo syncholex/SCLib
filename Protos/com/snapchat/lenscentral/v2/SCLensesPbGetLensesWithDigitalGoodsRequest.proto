@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package com.snapchat.lenscentral.v2;
+
+import "snapchat/lenscentral/common/SCLensCentralCommonPbLensAccountID.proto";
+
+message SCLensesPbGetLensesWithDigitalGoodsRequest {
+	snapchat.lenscentral.common.SCLensCentralCommonPbLensAccountID owner = 1;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.lists.common;
+
+import "snapchat/core/SCCOREUUID.proto";
+
+message SCListsListsDeleteRequest {
+	repeated snapchat.core.SCCOREUUID listIdsArray = 1;
+}

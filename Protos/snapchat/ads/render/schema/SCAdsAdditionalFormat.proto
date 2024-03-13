@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package snapchat.ads.render.schema;
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsAdditionalFormat {
+
+	enum SCAdsAdditionalFormatType {
+		ADDITIONAL_FORMAT_TYPE_UNSET = 0;
+		BANNER = 1;
+		MEDIUM_RECTANGLE = 2;
+		NATIVE_SQUARE = 3;
+		NATIVE_WIDE = 4;
+		INTERSTITIAL = 5;
+		END_CARD = 6;
+		MEDIUM_RECTANGLE_BACKGROUND = 7;
+	}
+
+	SCAdsAdditionalFormatType additionalFormatType = 1;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo renderInfo = 2;
+	snapchat.ads.render.schema.SCAdsMediaRenderInfo thumbnailInfo = 3;
+}

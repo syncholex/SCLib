@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package snapchat.bitmoji.api;
+
+message CtaPromoData_CtaPromoItem {
+
+	oneof substitution {
+		bytes substitutionText = 1;
+		bytes substitutionKey = 2;
+	}
+
+	bytes deeplinkCategory = 3;
+	int32 deeplinkSectionId = 4;
+	int64 starts = 5;
+	int64 expires = 6;
+	string deeplinkCategoryCid = 7;
+	string deeplinkBrandCid = 8;
+
+	enum CtaPromoData_CategoryTabType {
+		UNSET = 0;
+		FACIAL_HAIR = 1;
+		FACIAL_HAIR_COLOR = 2;
+		EYEBROWS = 3;
+		EYEBROW_COLOR = 4;
+		CHEEK_LINES = 5;
+		EARS = 6;
+		EYE_SHAPE = 7;
+		EYE_SPACING = 8;
+		EYE_SIZE = 9;
+		EYELASHES = 10;
+		EYE_LINES = 11;
+		EYESHADOW = 12;
+		FOREHEAD_LINES = 13;
+		GLASSES = 14;
+		HAIRSTYLE = 15;
+		HAIR_COLOR = 16;
+		HAIR_TREATMENT = 17;
+		HEADWEAR = 18;
+		JAW = 19;
+		MOUTH = 20;
+		LIPSTICK = 21;
+		NOSE = 22;
+		EYE_COLOR = 24;
+		BLUSH = 25;
+		SKIN_TONE = 26;
+		BODY_TYPE = 27;
+		FACE_SHAPE = 28;
+		TOPS = 29;
+		BOTTOMS = 30;
+		FOOTWEAR = 31;
+		OUTERWEAR = 32;
+		SOCKS = 35;
+		DRESSES = 39;
+		OUTFITS = 40;
+		CHEST_SIZE = 41;
+		PAIRED_EARRINGS = 42;
+		RIGHT_EARRINGS = 43;
+		LEFT_EARRINGS = 44;
+		NOSE_PIERCINGS = 45;
+		RIGHT_BROW_PIERCINGS = 46;
+		LEFT_BROW_PIERCINGS = 47;
+		LIP_PIERCINGS = 48;
+		TONGUE_PIERCINGS = 49;
+		RIGHT_HEARING_DEVICE = 50;
+		LEFT_HEARING_DEVICE = 51;
+		LOOKING_GOOD = 52;
+		HOME_PAGE = 53;
+	}
+
+	CtaPromoData_CategoryTabType categoryTabType = 9;
+}

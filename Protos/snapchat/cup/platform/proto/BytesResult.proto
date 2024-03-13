@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package snapchat.cup.platform.proto;
+
+message BytesResult {
+	bytes result = 2;
+}

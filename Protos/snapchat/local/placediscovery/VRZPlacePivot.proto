@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package snapchat.local.placediscovery;
+
+message VRZPlacePivot {
+	string pivotName = 1;
+	string pivotIconURL = 2;
+
+	enum VRZPlacePivotType {
+		PIVOT_UNSET = 0;
+		PIVOT_CATEGORY = 1;
+		PIVOT_SORT = 2;
+		PIVOT_CATEGORY_SINGLE_SELECT = 3;
+		PIVOT_CATEGORY_MULTI_SELECT = 4;
+		PIVOT_ANNOTATION = 5;
+		PIVOT_ATTRIBUTE = 6;
+	}
+
+	VRZPlacePivotType placePivotType = 3;
+	repeated string pivotElementsArray = 4;
+	string localizedDisplayName = 5;
+	string pivotEmojiUnicode = 6;
+	string attributeId = 7;
+	string localizedResultsHeader = 8;
+}

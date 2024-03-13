@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.friending;
+
+message SCFriendingContactNonSnapchatter {
+	string contactId = 1;
+	string contactMethodId = 2;
+	float score = 3;
+	string hashedPhoneNumber = 4;
+}

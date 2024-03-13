@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.pii.user.profile;
+
+import "ranking/pii/user/profile/SCSUPUserSCCAffinityPerAnnotation.proto";
+
+message SCSUPUserSCCAffinity_VersionedAffinities {
+
+	enum SCSUPUserSCCAffinityVersion_Enum {
+		UNSET = 0;
+		V1 = 1;
+		V2 = 2;
+	}
+
+	SCSUPUserSCCAffinityVersion_Enum version = 1;
+	ranking.pii.user.profile.SCSUPUserSCCAffinityPerAnnotation affinities = 2;
+}

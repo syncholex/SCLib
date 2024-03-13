@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPPublisherOrganization {
+	string profileId = 1;
+	string organizationId = 2;
+	string organizationDisplayName = 3;
+}

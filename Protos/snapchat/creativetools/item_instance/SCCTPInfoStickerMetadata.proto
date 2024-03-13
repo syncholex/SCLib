@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package snapchat.creativetools.item_instance;
+
+import "snapchat/creativetools/item_instance/SCCTPPlaceStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/SCCTPQuestionStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPWeatherStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPDateTimeStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPAltitudeStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPMentionStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPSnapcodeStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPStoryInviteStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPPollStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPBatteryStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPMusicStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPCommerceStickerMetadata.proto";
+import "snapchat/creativetools/item_instance/info_sticker/SCCTPGenericImageStickerMetadata.proto";
+
+message SCCTPInfoStickerMetadata {
+
+	oneof infoStickerMetadataType {
+		snapchat.creativetools.item_instance.SCCTPPlaceStickerMetadata placeStickerMetadata = 1;
+		snapchat.creativetools.item_instance.SCCTPQuestionStickerMetadata questionStickerMetadata = 2;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata weatherStickerMetadata = 3;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPDateTimeStickerMetadata dateTimeStickerMetadata = 4;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPAltitudeStickerMetadata altitudeStickerMetadata = 5;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPMentionStickerMetadata mentionStickerMetadata = 6;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPSnapcodeStickerMetadata snapcodeStickerMetadata = 7;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPStoryInviteStickerMetadata storyInviteStickerMetadata = 8;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPPollStickerMetadata pollStickerMetadata = 9;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPBatteryStickerMetadata batteryStickerMetadata = 10;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPMusicStickerMetadata musicStickerMetadata = 11;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPCommerceStickerMetadata commerceStickerMetadata = 12;
+		snapchat.creativetools.item_instance.info_sticker.SCCTPGenericImageStickerMetadata genericImageStickerMetadata = 13;
+	}
+
+}

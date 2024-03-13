@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package snapchat.research;
+
+message SnapBrainRequest_Safety {
+
+	enum SnapBrainRequest_Safety_SnapType {
+		Discover = 0;
+		User = 1;
+	}
+
+	SnapBrainRequest_Safety_SnapType snapType = 1;
+}

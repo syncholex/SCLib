@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package snapchat.map;
+
+import "snapchat/map/SCMTPerFriendSharingMode.proto";
+import "snapchat/map/SCMTPassportPreferences.proto";
+
+message SCMTShareLocationPreferences {
+	bool ghostMode = 1;
+
+	enum SCMTLocationSharingMode {
+		GHOST = 0;
+		CITY = 1;
+		PRECISE = 2;
+	}
+
+	SCMTLocationSharingMode sharingMode = 2;
+
+	enum SCMTLocationSharingAudience {
+		BEST_FRIENDS = 0;
+		FRIENDS = 1;
+		EVERYONE = 2;
+		CUSTOM = 3;
+		BLACKLIST = 4;
+		NONE = 5;
+	}
+
+	SCMTLocationSharingAudience audience = 3;
+	repeated snapchat.map.SCMTPerFriendSharingMode perFriendModeArray = 4;
+	bool backgroundSharingEnabled = 5;
+	bool shareUsageData = 6;
+	int32 version = 7;
+	repeated snapchat.map.SCMTPerFriendSharingMode blacklistPerFriendModeArray = 8;
+	snapchat.map.SCMTPassportPreferences passportPreferences = 9;
+	int64 lastModifiedTime = 10;
+}

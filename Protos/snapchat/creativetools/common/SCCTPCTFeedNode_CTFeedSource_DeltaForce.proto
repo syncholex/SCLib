@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.creativetools.common;
+
+import "snapchat/creativetools/common/SCCTPDeltaForceGroupKey.proto";
+
+message SCCTPCTFeedNode_CTFeedSource_DeltaForce {
+	snapchat.creativetools.common.SCCTPDeltaForceGroupKey groupKey = 1;
+}

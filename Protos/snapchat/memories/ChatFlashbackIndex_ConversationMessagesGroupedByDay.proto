@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package snapchat.memories;
+
+import "snapchat/memories/ChatFlashbackIndex_ConversationMessagesGroupedByDay_MessagesGroupedByDay.proto";
+
+message ChatFlashbackIndex_ConversationMessagesGroupedByDay {
+	bytes conversationId = 1;
+	uint64 lastProcessedEndDateMs = 2;
+	uint64 lastProcessedMessageId = 3;
+	repeated snapchat.memories.ChatFlashbackIndex_ConversationMessagesGroupedByDay_MessagesGroupedByDay groupedMessagesArray = 4;
+}

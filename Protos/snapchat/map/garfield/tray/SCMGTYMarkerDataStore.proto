@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package snapchat.map.garfield.tray;
+
+import "snapchat/map/garfield/tray/SCMGTYMapMarkerCardInfo.proto";
+import "snapchat/map/garfield/tray/SCMGTYLensData.proto";
+
+message SCMGTYMarkerDataStore {
+	repeated snapchat.map.garfield.tray.SCMGTYMapMarkerCardInfo cardInfoArray = 1;
+}

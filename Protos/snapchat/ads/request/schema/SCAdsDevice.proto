@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package snapchat.ads.request.schema;
+
+import "google/protobuf/GPBInt32Value.proto";
+import "google/protobuf/GPBBoolValue.proto";
+import "google/protobuf/GPBInt64Value.proto";
+import "google/protobuf/GPBFloatValue.proto";
+
+message SCAdsDevice {
+	bytes idfa = 1;
+
+	enum SCAdsPlatformType {
+		UNKNOWN_PLATFORM_TYPE = 0;
+		IOS = 1;
+		ANDROID = 2;
+	}
+
+	SCAdsPlatformType platformType = 2;
+	string deviceModel = 3;
+	int64 osVersionNumeric = 4;
+	string deviceLanguage = 5;
+	bool soundIsOn = 6;
+	string buildNumber = 7;
+	google.protobuf.GPBInt32Value batteryPercent = 8;
+	google.protobuf.GPBBoolValue isBatteryCharging = 9;
+	google.protobuf.GPBInt64Value diskTotalSpaceKb = 10;
+	google.protobuf.GPBInt64Value diskFreeSpaceKb = 11;
+
+	enum SCAdsAndroidMobileServiceType {
+		UNKNOWN_ANDROID_MOBILE_SERVICE_TYPE = 0;
+		GMS = 1;
+		HMS = 2;
+	}
+
+	SCAdsAndroidMobileServiceType androidMobileServiceType = 12;
+	google.protobuf.GPBInt64Value systemUptimeMs = 13;
+	bytes idfv = 14;
+
+	enum SCAdsDevice_ATTAuthStatusType {
+		NOT_DETERMINED = 0;
+		RESTRICTED = 1;
+		DENIED = 2;
+		AUTHORIZED = 3;
+	}
+
+	SCAdsDevice_ATTAuthStatusType attAuthStatus = 15;
+	google.protobuf.GPBFloatValue audioPlaybackVolume = 16;
+	google.protobuf.GPBInt64Value screenWidth = 17;
+	google.protobuf.GPBInt64Value screenHeight = 18;
+}

@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package hermosa;
+
+message HRMPBActionPointer {
+	int32 id_p = 1;
+	sint32 x = 2;
+	sint32 y = 3;
+}

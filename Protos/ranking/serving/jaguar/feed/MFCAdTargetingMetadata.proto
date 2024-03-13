@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar.feed;
+
+message MFCAdTargetingMetadata {
+	string channelId = 1;
+	string inventory = 2;
+	string legacyPublisherName = 3;
+	string region = 4;
+	string channel = 5;
+	string productType = 6;
+	string inventoryType = 7;
+	string inventoryFullyQualified = 8;
+	string adUnitId = 9;
+	string editionId = 10;
+	string channelType = 11;
+}

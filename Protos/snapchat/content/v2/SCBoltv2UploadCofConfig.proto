@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package snapchat.content.v2;
+
+message SCBoltv2UploadCofConfig {
+	uint32 numUploadUrls = 1;
+	int64 storageRegionId = 2;
+	uint32 uploadURLExpirationHours = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ranking.serving.jaguar;
+
+import "ranking/serving/jaguar/SCSSMStoryLookupRequestItem.proto";
+
+message SCSSMStoriesRequest_DeltaFetchInfo {
+	bool enabled = 1;
+	bool enabledForCorpus = 2;
+	repeated ranking.serving.jaguar.SCSSMStoryLookupRequestItem deltaTokenArray = 3;
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package impala;
+
+message IMPUpdateAccessAdsStatus {
+
+	enum IMPAccessAdsStatus {
+		ACCESS_ADS_STATUS_UNKNOWN = 0;
+		ACCESS_ADS_STATUS_ENABLED = 1;
+		ACCESS_ADS_STATUS_DISABLED = 2;
+	}
+
+	IMPAccessAdsStatus val = 1;
+}

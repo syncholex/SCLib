@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package snapchat.janus.api;
+
+import "snapchat/janus/api/SCJanusAccountLockedData_AppealableLockData.proto";
+
+message SCJanusAccountLockedData {
+	string humanReadableMessage = 2;
+	bool isAppealable = 3;
+	snapchat.janus.api.SCJanusAccountLockedData_AppealableLockData appealableLockData = 4;
+}

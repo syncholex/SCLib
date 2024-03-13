@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.snapchat.billboard;
+
+import "com/snapchat/billboard/SCBillboardPbStorageMetadata.proto";
+
+message SCBillboardPbCooldownCapStorageUnit {
+	int32 impressionCount = 1;
+	int32 clickCount = 2;
+	int32 dismissCount = 3;
+	int64 firstImpressionTimestamp = 4;
+	int64 lastImpressionTimestamp = 5;
+	int64 firstClickTimestamp = 6;
+	int64 lastClickTimestamp = 7;
+	int64 firstDismissTimestamp = 8;
+	int64 lastDismissTimestamp = 9;
+	int32 continuousDismissCount = 10;
+	com.snapchat.billboard.SCBillboardPbStorageMetadata storageMetadata = 11;
+}

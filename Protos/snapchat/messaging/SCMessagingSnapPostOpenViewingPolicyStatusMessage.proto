@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package snapchat.messaging;
+
+import "snapchat/messaging/SCMessagingUUID.proto";
+
+message SCMessagingSnapPostOpenViewingPolicyStatusMessage {
+	snapchat.messaging.SCMessagingUUID initiatingUserId = 1;
+
+	enum SCMessagingSnapPostOpenViewingPolicy {
+		POLICY_UNSET_OR_ENVELOPE = 0;
+		POLICY_MEDIA = 1;
+	}
+
+	SCMessagingSnapPostOpenViewingPolicy snapPostOpenViewingPolicy = 2;
+
+	enum SCMessagingSnapPostOpenViewingPolicyStatusMessage_StatusType {
+		STATUS_TYPE_UNSET = 0;
+		STATUS_TYPE_USER_INITIATED = 1;
+		STATUS_TYPE_TOGGLEABLE = 2;
+	}
+
+	SCMessagingSnapPostOpenViewingPolicyStatusMessage_StatusType statusType = 3;
+}
