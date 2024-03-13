@@ -10,7 +10,7 @@ namespace SnapchatLib.Crypto
             NewOutBeta = fidelius.OutBeta;
             NewHashedOutBeta = fidelius.HashedOutBeta;
             NewIwek = fidelius.Iwek;
-            NewFideliusVersion = 9;
+            NewFideliusVersion = 9; // Sometimes this is 10
         }
 
         [JsonProperty("hashed_out_betas", Required = Required.Always)]
