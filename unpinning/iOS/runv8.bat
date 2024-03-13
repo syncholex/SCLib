@@ -1,1 +1,0 @@
-frida -U -f com.toyopagroup.picaboo -l _agent.js
