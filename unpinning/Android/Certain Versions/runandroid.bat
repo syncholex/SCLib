@@ -1,0 +1,1 @@
+frida -U -f com.snapchat.android -l unpin.js --no-pause

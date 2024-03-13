@@ -1,0 +1,1 @@
+sign bootloader with custom keys and re-lock it so u can keep root etc

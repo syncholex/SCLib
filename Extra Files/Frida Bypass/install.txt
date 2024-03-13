@@ -1,0 +1,11 @@
+pip install frida-tools==12.3.0
+pip install frida==16.1.10
+
+https://mitmproxy.org/ (Make sure to install on system as user and system)
+
+Rename hulda files to any other name
+
+$ adb root # might be required
+$ adb push frida-server /data/local/tmp/
+$ adb shell "chmod 755 /data/local/tmp/frida-server"
+$ adb shell "/data/local/tmp/frida-server &"
