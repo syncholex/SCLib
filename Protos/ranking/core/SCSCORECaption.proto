@@ -1,0 +1,20 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCORECaptionMetadata {
+    float fontSize = 1;
+    float centerX = 2;
+    float centerY = 3;
+    float rotation = 4;
+    bool tracking = 5;
+    .ranking.core.SCSCORECaptionMetadata.SCSCORECaptionMetadata_CaptionType type = 7;
+    enum SCSCORECaptionMetadata_CaptionType {
+        SCSCORECaptionMetadata_CaptionType_Default = 0;
+        SCSCORECaptionMetadata_CaptionType_BigtextLeft = 1;
+        SCSCORECaptionMetadata_CaptionType_BigtextCenter = 2;
+        SCSCORECaptionMetadata_CaptionType_BigtextRight = 3;
+    }
+}

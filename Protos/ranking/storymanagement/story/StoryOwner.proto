@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ranking.storymanagement.story;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Storymanagement.Story";
+
+import "ranking/core/SCSCOREUuid.proto";
+
+message Owner {
+    .ranking.core.SCSCOREUUID userId = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    .ranking.core.SCSCOREUUID profileId = 3;
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPCtItem.proto";
+
+message SCCTPClientCachedCTItem {
+    bytes id_p = 1;
+    uint32 version = 2;
+}
+
+message SCCTPResultEntry {
+    uint32 version = 4;
+    int64 clientCacheTtlMinutes = 5;
+    string sectionName = 6;
+    .snapchat.creativetools.common.SCCTPCTItem ctItem = 2;
+    bytes cachedId = 3;
+}
+
+message SCCTPResultSection {
+    .snapchat.creativetools.common.SCCTPResultSection.SCCTPResultSection_SectionType sectionType = 1;
+    repeated .snapchat.creativetools.common.SCCTPResultEntry resultsArray = 3;
+    .snapchat.creativetools.common.SCCTPResultSection.SCCTPResultSection_LayoutDirection layoutDirection = 4;
+    int32 displayCount = 5;
+    enum SCCTPResultSection_LayoutDirection {
+        SCCTPResultSection_LayoutDirection_FlowDirectionUnset = 0;
+        SCCTPResultSection_LayoutDirection_Horizontal = 1;
+        SCCTPResultSection_LayoutDirection_Vertical = 2;
+    }
+    enum SCCTPResultSection_SectionType {
+        SCCTPResultSection_SectionType_Unset = 0;
+        SCCTPResultSection_SectionType_Pinned = 1;
+        SCCTPResultSection_SectionType_Recommended = 2;
+        SCCTPResultSection_SectionType_Interactive = 3;
+    }
+}
+
+message SCCTPSectionedResults {
+    string debugHtml = 2;
+    repeated .snapchat.creativetools.common.SCCTPResultSection sectionsArray = 3;
+}

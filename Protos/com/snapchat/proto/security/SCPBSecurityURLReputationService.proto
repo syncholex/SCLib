@@ -1,0 +1,53 @@
+syntax = "proto3";
+package com.snapchat.proto.security;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBSecurity";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Security";
+
+message SCPBSecurityGetUrlReputationRequest {
+    bytes URL = 1;
+    string URLStr = 2;
+    string canonicalURL = 3;
+    bool skipSafeBrowsing = 4;
+    bool skipURLResolving = 5;
+}
+
+message SCPBSecurityGetUrlReputationResponse {
+    .com.snapchat.proto.security.SCPBSecurityGetUrlReputationResponse.SCPBSecurityUrlType URLType = 1;
+    int64 expirationTimestamp = 2;
+    enum SCPBSecurityUrlType {
+        SCPBSecurityUrlType_MalformedURLUnset = 0;
+        SCPBSecurityUrlType_Ok = 1;
+        SCPBSecurityUrlType_Malware = 2;
+        SCPBSecurityUrlType_Phishing = 3;
+        SCPBSecurityUrlType_Unwanted = 4;
+        SCPBSecurityUrlType_ScBlacklist = 5;
+        SCPBSecurityUrlType_Spam = 6;
+        SCPBSecurityUrlType_URLShortener = 7;
+        SCPBSecurityUrlType_SafeDomain = 8;
+    }
+}
+
+message SCPBSecuritySetUrlReputationRequest {
+    string URL = 1;
+    .com.snapchat.proto.security.SCPBSecuritySetUrlReputationRequest.SCPBSecurityUrlType type = 2;
+    .com.snapchat.proto.security.SCPBSecuritySetUrlReputationRequest.SCPBSecurityBlockType blockType = 3;
+    uint64 expiresAtMillis = 4;
+    enum SCPBSecurityBlockType {
+        SCPBSecurityBlockType_Unset = 0;
+        SCPBSecurityBlockType_URL = 1;
+        SCPBSecurityBlockType_Wildcard = 2;
+        SCPBSecurityBlockType_Domain = 3;
+    }
+    enum SCPBSecurityUrlType {
+        SCPBSecurityUrlType_MalformedURLUnset = 0;
+        SCPBSecurityUrlType_Ok = 1;
+        SCPBSecurityUrlType_Malware = 2;
+        SCPBSecurityUrlType_Phishing = 3;
+        SCPBSecurityUrlType_Unwanted = 4;
+        SCPBSecurityUrlType_ScBlacklist = 5;
+        SCPBSecurityUrlType_Spam = 6;
+        SCPBSecurityUrlType_URLShortener = 7;
+        SCPBSecurityUrlType_SafeDomain = 8;
+    }
+}

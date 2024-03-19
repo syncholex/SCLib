@@ -1,0 +1,189 @@
+syntax = "proto3";
+package com.snap.spectacles.ota;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSpectaclesOtaPb";
+option csharp_namespace = "SnapProto.Com.Snap.Spectacles.Ota";
+
+message SCSpectaclesOtaPbAppVersion {
+    string binaryName = 1;
+    string packageName = 2;
+    string branchName = 3;
+    string packageVersion = 4;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbAppVersion.SCSpectaclesOtaPbBuildFlavor buildFlavor = 5;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbAppVersion.SCSpectaclesOtaPbBinaryType binaryType = 6;
+    string downloadURL = 7;
+    string commitSha = 8;
+    string createdDateTime = 9;
+    string lastUpdatedDateTime = 10;
+    enum SCSpectaclesOtaPbBinaryType {
+        SCSpectaclesOtaPbBinaryType_ApkUnset = 0;
+        SCSpectaclesOtaPbBinaryType_Lib = 1;
+    }
+    enum SCSpectaclesOtaPbBuildFlavor {
+        SCSpectaclesOtaPbBuildFlavor_ReleaseUnset = 0;
+        SCSpectaclesOtaPbBuildFlavor_Debug = 1;
+        SCSpectaclesOtaPbBuildFlavor_Alpha = 2;
+    }
+}
+
+message SCSpectaclesOtaPbCreateVersionSetRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string versionSetType = 3;
+}
+
+message SCSpectaclesOtaPbDeleteOsVersionRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string releaseVersion = 3;
+    string patchVersion = 4;
+    string buildFlavor = 5;
+}
+
+message SCSpectaclesOtaPbDifferentialMapEntry {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion destOsVersion = 1;
+    repeated .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion srcOsVersionArray = 2;
+}
+
+message SCSpectaclesOtaPbEmpty {
+}
+
+message SCSpectaclesOtaPbGetOsTargetFilesPackagesRequest {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet destVersionSet = 1;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet srcVersionSet = 2;
+}
+
+message SCSpectaclesOtaPbGetOsTargetFilesPackagesResponse {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion destOsVersion = 1;
+    repeated .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion srcOsVersionsArray = 2;
+}
+
+message SCSpectaclesOtaPbGetVersionSetRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string currentOsVersion = 3;
+    string currentFullOsVersion = 4;
+    string buildFlavor = 5;
+    bool requireFullOta = 6;
+}
+
+message SCSpectaclesOtaPbGetVersionSetResponse {
+    string targetOsversion = 1;
+    string updateType = 2;
+    string binaryName = 3;
+    string downloadURL = 4;
+    string metadataName = 5;
+    string metadataURL = 6;
+    string createdDateTime = 7;
+    string lastUpdatedDateTime = 8;
+}
+
+message SCSpectaclesOtaPbListDifferentialBuildRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string buildFlavor = 3;
+}
+
+message SCSpectaclesOtaPbListDifferentialBuildResponse {
+    repeated .com.snap.spectacles.ota.SCSpectaclesOtaPbDifferentialMapEntry diffMapEntryArray = 1;
+}
+
+message SCSpectaclesOtaPbListOsVersionRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+}
+
+message SCSpectaclesOtaPbListOsVersionResponse {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion latestOsVersion = 1;
+    repeated .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion osVersionArray = 2;
+}
+
+message SCSpectaclesOtaPbListVersionSetRequest {
+    string productGeneration = 1;
+}
+
+message SCSpectaclesOtaPbListVersionSetResponse {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string buildFlavor = 3;
+    string branch = 4;
+}
+
+message SCSpectaclesOtaPbOsVersion {
+    string branchName = 1;
+    string buildFlavor = 2;
+    string releaseVersion = 3;
+    string patchVersion = 4;
+    string commitSha = 5;
+    string binaryName = 6;
+    string downloadURL = 7;
+    string metadataName = 8;
+    string metadataURL = 9;
+    bool isGatewayBuild = 10;
+    string createdDateTime = 11;
+    string lastUpdatedDateTime = 12;
+    string osTargetFilesPackages = 13;
+    string osTargetFilesPackagesURL = 14;
+    string fullFlashBuildDownloadURL = 15;
+}
+
+message SCSpectaclesOtaPbPromoteOsVersionRequest {
+    string productGeneration = 1;
+    string srcVersionSetName = 2;
+    string destVersionSetName = 3;
+    string releaseVersion = 4;
+    string patchVersion = 5;
+    string buildFlavor = 6;
+}
+
+message SCSpectaclesOtaPbPublishDifferentialBuildRequest {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet destVersionSet = 1;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet srcVersionSet = 2;
+    string osDiffBuildName = 3;
+    string osDiffBuildURL = 4;
+    string osDiffMetadataName = 5;
+    string osDiffMetadataURL = 6;
+}
+
+message SCSpectaclesOtaPbPublishVersionSetRequest {
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbVersionSet versionSet = 1;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbPublishVersionSetRequest.SCSpectaclesOtaPbPublishType publishType = 2;
+    enum SCSpectaclesOtaPbPublishType {
+        SCSpectaclesOtaPbPublishType_OtaAndTargetUnset = 0;
+        SCSpectaclesOtaPbPublishType_TargetOnly = 1;
+        SCSpectaclesOtaPbPublishType_OtaOnly = 2;
+    }
+}
+
+message SCSpectaclesOtaPbSetLatestOsVersionRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string releaseVersion = 3;
+    string patchVersion = 4;
+    string buildFlavor = 5;
+}
+
+message SCSpectaclesOtaPbUpdateVersionSetRequest {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    string branch = 3;
+    string buildFlavor = 4;
+    string releaseVersion = 5;
+    string patchVersion = 6;
+    string commitSha = 7;
+    string binaryName = 8;
+    string downloadURL = 9;
+    string metadataName = 10;
+    string metadataURL = 11;
+    bool isGatewayBuild = 12;
+}
+
+message SCSpectaclesOtaPbVersionSet {
+    string productGeneration = 1;
+    string versionSetName = 2;
+    .com.snap.spectacles.ota.SCSpectaclesOtaPbOsVersion osVersion = 3;
+    repeated .com.snap.spectacles.ota.SCSpectaclesOtaPbAppVersion appVersionArray = 4;
+    string createdDateTime = 5;
+    string lastUpdatedDateTime = 6;
+    string versionSetType = 7;
+}

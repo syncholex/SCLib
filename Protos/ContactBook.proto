@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.friending.server;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFriending";
+option csharp_namespace = "SnapProto.Services.Snapchat.Friending.Server";
+
+import "snapchat/friending/SCFriendingContactBookUpload.proto";
+
+service ContactBook{
+    rpc EarlyContactBookUpload(.snapchat.friending.SCFriendingContactBookUploadRequest) returns (.snapchat.friending.SCFriendingEarlyContactBookUploadResponse);
+    rpc FullSyncContactBookUpload(.snapchat.friending.SCFriendingContactBookUploadRequest) returns (.snapchat.friending.SCFriendingContactBookUploadResponse);
+    rpc IncrementalSyncContactBookUpload(.snapchat.friending.SCFriendingContactBookUploadRequest) returns (.snapchat.friending.SCFriendingContactBookUploadResponse);
+}

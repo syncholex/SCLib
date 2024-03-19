@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.map.garfield.tiles;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGT";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Garfield.Tiles";
+
+import "snapchat/map/garfield/tiles/SCMGTService.proto";
+
+service Tiles{
+    rpc GetTile(.snapchat.map.garfield.tiles.SCMGTGetTileRequest) returns (.snapchat.map.garfield.tiles.SCMGTGetTileResponse);
+}

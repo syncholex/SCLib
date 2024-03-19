@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.protobuf;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SPCP";
+option csharp_namespace = "SnapProto.Snapchat.Protobuf";
+
+message SPCPInt32ListValue {
+    repeated int32 valueArray = 1;
+}
+
+message SPCPInt64ListValue {
+    repeated int64 valueArray = 1;
+}
+
+message SPCPStringListValue {
+    repeated string valueArray = 1;
+}

@@ -1,0 +1,75 @@
+syntax = "proto3";
+package snapchat.map.gamedb;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map.Gamedb";
+
+import "snapchat/geo/SPCGGeo.proto";
+
+message SCMTAddGameMarkersRequest {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}
+
+message SCMTAddGameMarkersResponse {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}
+
+message SCMTGameMarkerEntry {
+    string id_p = 1;
+    float lat = 2;
+    float lng = 3;
+    float unlockableRadius = 4;
+    int32 typeId = 5;
+    .snapchat.map.gamedb.SCMTGameMarkerEntry.SCMTGameMarkerEntry_Status status = 6;
+    string reasonForRemoval = 7;
+    string source = 8;
+    string category = 9;
+    enum SCMTGameMarkerEntry_Status {
+        SCMTGameMarkerEntry_Status_Unset = 0;
+        SCMTGameMarkerEntry_Status_Active = 1;
+        SCMTGameMarkerEntry_Status_Removed = 2;
+    }
+}
+
+message SCMTGetAllGameMarkersRequest {
+}
+
+message SCMTGetAllGameMarkersResponse {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}
+
+message SCMTGetGameMarkersByBoundedBoxRequest {
+    .snapchat.geo.SPCGRect boundedBox = 1;
+}
+
+message SCMTGetGameMarkersByBoundedBoxResponse {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}
+
+message SCMTGetGameMarkersRequest {
+    repeated string idsArray = 1;
+}
+
+message SCMTGetGameMarkersResponse {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}
+
+message SCMTRemoveGameMarkerWithReasonRequest {
+    string id_p = 1;
+    string reason = 2;
+}
+
+message SCMTRemoveGameMarkerWithReasonResponse {
+    .snapchat.map.gamedb.SCMTGameMarkerEntry marker = 1;
+}
+
+message SCMTRemoveGameMarkersRequest {
+    repeated string idsArray = 1;
+    .snapchat.geo.SPCGRect boundedBox = 2;
+    string source = 3;
+    string category = 4;
+}
+
+message SCMTRemoveGameMarkersResponse {
+    repeated .snapchat.map.gamedb.SCMTGameMarkerEntry markersArray = 1;
+}

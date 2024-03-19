@@ -1,0 +1,216 @@
+syntax = "proto3";
+package ranking.storymanagement;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Storymanagement";
+
+import "ranking/core/SCSCORESomaRequestMetadata.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/indexing/StoryUserRequestedSignals.proto";
+import "ranking/serving/jaguar/SCSSMJaguar.proto";
+import "ranking/storymanagement/StoryManagementTypesCommon.proto";
+import "ranking/storymanagement/story/StoryOwner.proto";
+
+message AutoSaveToMemoriesSettings {
+    bool autoSaveToMemoriesEnabled = 1;
+}
+
+message DeleteStoryDraftingSnapsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    repeated string snapIdsArray = 2;
+    .ranking.storymanagement.story.Owner storyOwner = 3;
+}
+
+message DeleteStoryDraftingSnapsResponse {
+}
+
+message DeleteStorySnapRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.storymanagement.StorySnapID snapId = 2;
+    bool deleteMultisnaps = 3;
+}
+
+message DeleteStorySnapResponse {
+}
+
+message GetActiveStoryStatusRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    repeated .ranking.core.SCSCOREUUID userIdsArray = 2;
+}
+
+message GetActiveStoryStatusResponse {
+    repeated int64 latestPostTimestampsMsArray = 1;
+}
+
+message GetSnapElementRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    string snapId = 2;
+}
+
+message GetSnapElementResponse {
+    .ranking.serving.jaguar.SCSSMStorySnap snap = 1;
+    .ranking.storymanagement.GetSnapElementResponse.GetSnapElementResponse_Status status = 2;
+    .ranking.storymanagement.PublisherData publisherData = 3;
+    .ranking.storymanagement.GetSnapElementResponse.SCSCOREPostingStoryType_Enum storyType = 4;
+    .ranking.core.SCSCOREUUID storyId = 5;
+    .ranking.storymanagement.GetSnapElementResponse.SCSCORECustomStoryType_Enum customStoryType = 6;
+    enum SCSCORECustomStoryType_Enum {
+        SCSCORECustomStoryType_Enum_Unknown = 0;
+        SCSCORECustomStoryType_Enum_Private = 1;
+        SCSCORECustomStoryType_Enum_Custom = 2;
+        SCSCORECustomStoryType_Enum_Geo = 3;
+        SCSCORECustomStoryType_Enum_GroupChat = 4;
+        SCSCORECustomStoryType_Enum_SnapRequest = 5;
+        SCSCORECustomStoryType_Enum_Shared = 6;
+        SCSCORECustomStoryType_Enum_Community = 7;
+    }
+    enum GetSnapElementResponse_Status {
+        GetSnapElementResponse_Status_Unknown = 0;
+        GetSnapElementResponse_Status_Valid = 1;
+        GetSnapElementResponse_Status_Unviewable = 2;
+        GetSnapElementResponse_Status_PotentiallyViewable = 3;
+    }
+    enum SCSCOREPostingStoryType_Enum {
+        SCSCOREPostingStoryType_Enum_Unknown = 0;
+        SCSCOREPostingStoryType_Enum_Our = 1;
+        SCSCOREPostingStoryType_Enum_My = 2;
+        SCSCOREPostingStoryType_Enum_Custom = 3;
+        SCSCOREPostingStoryType_Enum_Snappro = 4;
+        SCSCOREPostingStoryType_Enum_App = 5;
+        SCSCOREPostingStoryType_Enum_Saved = 6;
+        SCSCOREPostingStoryType_Enum_Publisher = 7;
+    }
+}
+
+message GetStoryConfigsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    string storyId = 2;
+    .ranking.storymanagement.GetStoryConfigsRequest.SCSCOREPostingStoryType_Enum storyType = 3;
+    .ranking.storymanagement.GetStoryConfigsRequest.SCSCOREMyStoryVariant_Enum myStoryVariant = 4;
+    bool withStoryPrivacySettings = 5;
+    bool withAutoSaveToMemoriesSettings = 6;
+    enum SCSCOREMyStoryVariant_Enum {
+        SCSCOREMyStoryVariant_Enum_Unset = 0;
+        SCSCOREMyStoryVariant_Enum_AfterDark = 1;
+    }
+    enum SCSCOREPostingStoryType_Enum {
+        SCSCOREPostingStoryType_Enum_Unknown = 0;
+        SCSCOREPostingStoryType_Enum_Our = 1;
+        SCSCOREPostingStoryType_Enum_My = 2;
+        SCSCOREPostingStoryType_Enum_Custom = 3;
+        SCSCOREPostingStoryType_Enum_Snappro = 4;
+        SCSCOREPostingStoryType_Enum_App = 5;
+        SCSCOREPostingStoryType_Enum_Saved = 6;
+        SCSCOREPostingStoryType_Enum_Publisher = 7;
+    }
+}
+
+message GetStoryConfigsResponse {
+    .ranking.storymanagement.StoryPrivacySettings storyPrivacySettings = 2;
+    .ranking.storymanagement.AutoSaveToMemoriesSettings autoSaveToMemoriesSettings = 3;
+}
+
+message GetStoryDraftingSnapsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.storymanagement.StoryQuery query = 2;
+    .ranking.storymanagement.GetStoryDraftingSnapsRequest.StoryDraftingStatus_Enum storyStatusFilter = 3;
+    .ranking.storymanagement.story.Owner storyOwner = 4;
+    enum StoryDraftingStatus_Enum {
+        StoryDraftingStatus_Enum_Unknown = 0;
+        StoryDraftingStatus_Enum_Scheduled = 1;
+        StoryDraftingStatus_Enum_Error = 2;
+    }
+}
+
+message GetStoryDraftingSnapsResponse {
+    repeated .ranking.storymanagement.StoryDraftingSnap snapsArray = 1;
+    .ranking.storymanagement.QueryCursor queryCursor = 2;
+}
+
+message PublisherData {
+    string userId = 1;
+    string userName = 2;
+    string displayName = 3;
+    string description_p = 4;
+    int64 publishTimestamp = 5;
+    string bitmojiAvatarId = 6;
+    string bitmojiSelfieId = 7;
+}
+
+message StoryPrivacySettings {
+    repeated .ranking.core.SCSCOREUUID blockedUserIdsArray = 1;
+}
+
+message UpdateStoryConfigsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    string storyId = 2;
+    .ranking.storymanagement.UpdateStoryConfigsRequest.SCSCOREPostingStoryType_Enum storyType = 3;
+    .ranking.storymanagement.UpdateStoryConfigsRequest.SCSCOREMyStoryVariant_Enum myStoryVariant = 4;
+    .ranking.storymanagement.StoryPrivacySettings storyPrivacySettings = 5;
+    .ranking.storymanagement.AutoSaveToMemoriesSettings autoSaveToMemoriesSettings = 6;
+    enum SCSCOREMyStoryVariant_Enum {
+        SCSCOREMyStoryVariant_Enum_Unset = 0;
+        SCSCOREMyStoryVariant_Enum_AfterDark = 1;
+    }
+    enum SCSCOREPostingStoryType_Enum {
+        SCSCOREPostingStoryType_Enum_Unknown = 0;
+        SCSCOREPostingStoryType_Enum_Our = 1;
+        SCSCOREPostingStoryType_Enum_My = 2;
+        SCSCOREPostingStoryType_Enum_Custom = 3;
+        SCSCOREPostingStoryType_Enum_Snappro = 4;
+        SCSCOREPostingStoryType_Enum_App = 5;
+        SCSCOREPostingStoryType_Enum_Saved = 6;
+        SCSCOREPostingStoryType_Enum_Publisher = 7;
+    }
+}
+
+message UpdateStoryConfigsResponse {
+}
+
+message UpdateStoryDraftingSnapsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    repeated .ranking.storymanagement.UpdateStoryDraftingSnap updateStoryDraftingSnapsArray = 2;
+    .ranking.storymanagement.story.Owner storyOwner = 3;
+}
+
+message UpdateStoryDraftingSnapsResponse {
+    repeated .ranking.storymanagement.StoryDraftingSnap snapsArray = 1;
+}
+
+message UpdateStoryPrivacyRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.storymanagement.UpdateStoryPrivacyRequest.UpdateStoryPrivacyRequest_StoryPrivacy storyPrivacy = 2;
+    repeated .ranking.core.SCSCOREUUID blockedUserIdsArray = 3;
+    enum UpdateStoryPrivacyRequest_StoryPrivacy {
+        UpdateStoryPrivacyRequest_StoryPrivacy_Unknown = 0;
+        UpdateStoryPrivacyRequest_StoryPrivacy_Everyone = 1;
+        UpdateStoryPrivacyRequest_StoryPrivacy_Friends = 2;
+        UpdateStoryPrivacyRequest_StoryPrivacy_Custom = 3;
+    }
+}
+
+message UpdateStoryPrivacyResponse {
+}
+
+message UpdateUserRequestedRankingSignal {
+    .ranking.core.SCSCOREUUID storyId = 1;
+    .ranking.indexing.UserRequestedRankingSignals userRequestedRankingSignals = 2;
+    .ranking.storymanagement.UpdateUserRequestedRankingSignal.SCSCOREPostingStoryType_Enum storyType = 3;
+    enum SCSCOREPostingStoryType_Enum {
+        SCSCOREPostingStoryType_Enum_Unknown = 0;
+        SCSCOREPostingStoryType_Enum_Our = 1;
+        SCSCOREPostingStoryType_Enum_My = 2;
+        SCSCOREPostingStoryType_Enum_Custom = 3;
+        SCSCOREPostingStoryType_Enum_Snappro = 4;
+        SCSCOREPostingStoryType_Enum_App = 5;
+        SCSCOREPostingStoryType_Enum_Saved = 6;
+        SCSCOREPostingStoryType_Enum_Publisher = 7;
+    }
+}
+
+message UpdateUserRequestedRankingSignalRequest {
+    repeated .ranking.storymanagement.UpdateUserRequestedRankingSignal updateSignalArray = 1;
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 2;
+}
+
+message UpdateUserRequestedRankingSignalResponse {
+}

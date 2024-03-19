@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+import "snapchat/creativetools/item_instance/SCCTPCtItemInstance.proto";
+import "snapchat/messaging/SCMessagingMessages.proto";
+import "snapchat/messaging/SCMessagingStatus.proto";
+import "snapchat/snapdoc/SDMSnap.proto";
+
+message SCMessagingContents {
+    .snapchat.messaging.SCMessagingText text = 2;
+    .snapchat.messaging.SCMessagingExternalMedia externalMedia = 3;
+    .snapchat.messaging.SCMessagingSticker sticker = 4;
+    .snapchat.messaging.SCMessagingShare share = 5;
+    .snapchat.messaging.SCMessagingNote note = 6;
+    .snapchat.messaging.SCMessagingSnapReply snapReply = 7;
+    .snapchat.messaging.SCMessagingStatusMessage statusMessage = 8;
+    .snapchat.messaging.SCMessagingLocation location = 9;
+    .snapchat.snapdoc.SDMSnapDoc snapdoc = 11;
+    .snapchat.messaging.SCMessagingCanvasApp canvasApp = 12;
+    .snapchat.messaging.SCMessagingLiveLocationShare liveLocationShare = 13;
+    .snapchat.creativetools.item_instance.SCCTPCTItemInstance creativeToolItem = 14;
+    .snapchat.messaging.SCMessagingFamilyCenterInvite familyCenterInvite = 15;
+    .snapchat.messaging.SCMessagingNonParticipantBotResponse nonParticipantBotResponse = 16;
+}

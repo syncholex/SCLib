@@ -1,0 +1,122 @@
+syntax = "proto3";
+package ranking.quality;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Quality";
+
+message ClusterVersion {
+}
+
+message Cohort {
+    string id_p = 1;
+    string language = 2;
+    string country = 3;
+    .ranking.quality.Cohort.SCSCOREUserGender gender = 4;
+    .ranking.quality.Cohort.SCSCOREUserBucketedAge ageBucket = 5;
+    string region = 6;
+    string s2CellToken = 7;
+    string interestId = 8;
+    string experimentId = 9;
+    .ranking.quality.Cohort.CohortType_Enum cohortType = 10;
+    string sccId = 11;
+    int32 maxAgeHrs = 12;
+    string yt8MTag = 13;
+    string hashtagTitle = 14;
+    bool isEvergreen = 15;
+    bool fromSnapCamera = 16;
+    .ranking.quality.Cohort.StreamType_Enum streamType = 17;
+    string creatorUserId = 18;
+    .ranking.quality.Cohort.Cohort_ScoringFunction scoringFunction = 19;
+    bool isUniversal = 20;
+    repeated string recentEventSeedIdsArray = 21;
+    repeated float recentEventSeedScoresArray = 22;
+    repeated int64 recentEventSeedSaltedIdsArray = 23;
+    .ranking.quality.Cohort.SccVersion_Enum sccVersion = 24;
+    bool hasTrendingTopic = 25;
+    bool isSuggestive = 26;
+    string modelId = 27;
+    string challengeId = 28;
+    int32 sccPlusId = 29;
+    int32 inferredSccPlusId = 30;
+    int32 clusterId = 31;
+    .ranking.quality.Cohort.ClusterVersion_Enum clusterVersion = 32;
+    bool isSnappy = 33;
+    enum SCSCOREUserBucketedAge {
+        SCSCOREUserBucketedAge_AgeUnknown = 0;
+        SCSCOREUserBucketedAge_AgeLessThan13 = 1;
+        SCSCOREUserBucketedAge_Age13To17 = 2;
+        SCSCOREUserBucketedAge_Age18To24 = 3;
+        SCSCOREUserBucketedAge_Age25To34 = 4;
+        SCSCOREUserBucketedAge_Age35To54 = 5;
+        SCSCOREUserBucketedAge_AgeMoreThan54 = 6;
+    }
+    enum ClusterVersion_Enum {
+        ClusterVersion_Enum_Unknown = 0;
+        ClusterVersion_Enum_ContentClusterV1 = 1;
+    }
+    enum CohortType_Enum {
+        CohortType_Enum_Unset = 0;
+        CohortType_Enum_MainFeed = 1;
+        CohortType_Enum_LensStories = 2;
+        CohortType_Enum_LensObjects = 3;
+        CohortType_Enum_Solos = 4;
+        CohortType_Enum_LensChallenges = 5;
+        CohortType_Enum_LensChallengesStories = 6;
+        CohortType_Enum_HnNews = 7;
+        CohortType_Enum_LensWorldCategory = 8;
+        CohortType_Enum_LensMusicCategory = 9;
+    }
+    enum SCSCOREUserGender {
+        SCSCOREUserGender_GenderUnknown = 0;
+        SCSCOREUserGender_GenderMale = 1;
+        SCSCOREUserGender_GenderFemale = 2;
+    }
+    enum SccVersion_Enum {
+        SccVersion_Enum_Unknown = 0;
+        SccVersion_Enum_SccV3 = 1;
+        SccVersion_Enum_SccPlus = 2;
+        SccVersion_Enum_SccPlusV1 = 3;
+        SccVersion_Enum_SccPlusV2 = 4;
+        SccVersion_Enum_SccPlusV3 = 5;
+    }
+    enum Cohort_ScoringFunction {
+        Cohort_ScoringFunction_Default = 0;
+        Cohort_ScoringFunction_TopBoost = 1;
+        Cohort_ScoringFunction_TopSend = 2;
+        Cohort_ScoringFunction_TopLongWatch = 3;
+        Cohort_ScoringFunction_TopFresh = 4;
+        Cohort_ScoringFunction_CreatorEngagementFresh = 5;
+        Cohort_ScoringFunction_BestOfBest = 6;
+        Cohort_ScoringFunction_Coldstart = 7;
+    }
+    enum StreamType_Enum {
+        StreamType_Enum_Unknown = 0;
+        StreamType_Enum_TopCreator = 1;
+        StreamType_Enum_RecentEvent = 2;
+        StreamType_Enum_Scc = 3;
+        StreamType_Enum_RealCreator = 4;
+        StreamType_Enum_NewUser = 5;
+        StreamType_Enum_Embedding = 6;
+        StreamType_Enum_Coldstart = 7;
+        StreamType_Enum_Challenge = 8;
+        StreamType_Enum_Cheerios = 9;
+        StreamType_Enum_Ugc = 10;
+        StreamType_Enum_Cluster = 11;
+        StreamType_Enum_Promoted = 12;
+        StreamType_Enum_Exploration = 13;
+        StreamType_Enum_SimilarUsers = 14;
+        StreamType_Enum_UgcScc = 15;
+        StreamType_Enum_DfCreator = 16;
+        StreamType_Enum_RecentEventsContentEmbedding = 17;
+        StreamType_Enum_Saved = 18;
+        StreamType_Enum_DfPublisherAllowlist = 19;
+    }
+}
+
+message CohortType {
+}
+
+message SccVersion {
+}
+
+message StreamType {
+}

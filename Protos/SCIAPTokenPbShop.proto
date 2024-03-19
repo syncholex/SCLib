@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tokens.shop;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPb";
+option csharp_namespace = "SnapProto.Services.Tokens.Shop";
+
+import "tokens/shop/SCIAPTokenPbShop.proto";
+
+service Shop{
+    rpc AcceptPromotion(.tokens.shop.SCIAPTokenPbAcceptPromotionRequest) returns (.tokens.shop.SCIAPTokenPbAcceptPromotionResponse);
+    rpc GetBalance(.tokens.shop.SCIAPTokenPbGetBalanceRequest) returns (.tokens.shop.SCIAPTokenPbGetBalanceResponse);
+    rpc GetPromotions(.tokens.shop.SCIAPTokenPbGetPromotionsRequest) returns (.tokens.shop.SCIAPTokenPbGetPromotionsResponse);
+    rpc GetTokenPacks(.tokens.shop.SCIAPTokenPbGetTokenPacksRequest) returns (.tokens.shop.SCIAPTokenPbGetTokenPacksResponse);
+    rpc Purchase(.tokens.shop.SCIAPTokenPbPurchaseRequest) returns (.tokens.shop.SCIAPTokenPbPurchaseResponse);
+}

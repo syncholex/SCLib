@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMC";
+option csharp_namespace = "SnapProto.Snapchat.Map.Common";
+
+message SCMCRGBA {
+    float red = 1;
+    float green = 2;
+    float blue = 3;
+    float alpha = 4;
+}

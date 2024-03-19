@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.map.garfield.playlist;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Garfield.Playlist";
+
+import "snapchat/map/garfield/playlist/SCMGPService.proto";
+
+service Playlist{
+    rpc GetPlaylist(.snapchat.map.garfield.playlist.SCMGPGetPlaylistRequest) returns (.snapchat.map.garfield.playlist.SCMGPGetPlaylistResponse);
+}

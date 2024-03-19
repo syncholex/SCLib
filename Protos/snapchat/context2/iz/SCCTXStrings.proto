@@ -1,0 +1,32 @@
+syntax = "proto3";
+package snapchat.context2.iz;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Iz";
+
+message SCCTXLocalizedString {
+    string fallbackText = 5;
+    .snapchat.context2.iz.SCCTXSendChatString sendChat = 1;
+    .snapchat.context2.iz.SCCTXReplyToGroupString replyToGroup = 2;
+    .snapchat.context2.iz.SCCTXPlaySnappableString playSnappable = 3;
+    .snapchat.context2.iz.SCCTXReplyToRecipientString replyToRecipient = 4;
+    .snapchat.context2.iz.SCCTXReplyWithSnapString replyWithSnap = 6;
+}
+
+message SCCTXPlaySnappableString {
+    string snappableName = 1;
+}
+
+message SCCTXReplyToGroupString {
+    string name = 1;
+}
+
+message SCCTXReplyToRecipientString {
+    string name = 1;
+}
+
+message SCCTXReplyWithSnapString {
+}
+
+message SCCTXSendChatString {
+}

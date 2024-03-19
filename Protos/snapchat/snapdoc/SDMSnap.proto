@@ -1,0 +1,141 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/cameos/stories/SCCameosCameoStory.proto";
+import "snapchat/content/MediaReference.proto";
+import "snapchat/creativetools/drawing/SCCTPDrawings.proto";
+import "snapchat/grid/SDMGridProperties.proto";
+import "snapchat/snapdoc/SDMAdPlacement.proto";
+import "snapchat/snapdoc/SDMAdsTracking.proto";
+import "snapchat/snapdoc/SDMAttachments.proto";
+import "snapchat/snapdoc/SDMAttribution.proto";
+import "snapchat/snapdoc/SDMCameoMetadata.proto";
+import "snapchat/snapdoc/SDMCaptureCharacteristics.proto";
+import "snapchat/snapdoc/SDMCreativeKitSourceApp.proto";
+import "snapchat/snapdoc/SDMCreativeToolsAnalytics.proto";
+import "snapchat/snapdoc/SDMGeneratedCameo.proto";
+import "snapchat/snapdoc/SDMLegacyMultisnap.proto";
+import "snapchat/snapdoc/SDMLens.proto";
+import "snapchat/snapdoc/SDMLocation.proto";
+import "snapchat/snapdoc/SDMPackaging.proto";
+import "snapchat/snapdoc/SDMPermittedUserActions.proto";
+import "snapchat/snapdoc/SDMPlayback.proto";
+import "snapchat/snapdoc/SDMProvenance.proto";
+import "snapchat/snapdoc/SDMSpectacles.proto";
+import "snapchat/snapdoc/SDMStickerMetadata.proto";
+import "snapchat/snapdoc/SDMThumbnail.proto";
+import "snapchat/snapdoc/SDMTiming.proto";
+import "snapchat/snapdoc/SDMUnlockables.proto";
+import "snapchat/snapdoc/SDMVideoInterval.proto";
+
+message SDMSnapDoc {
+    repeated .snapchat.snapdoc.SDMSnapEnvelope envelopeArray = 2;
+    .snapchat.snapdoc.SDMSnapDoc.SDMSnapDoc_ID id_p = 3;
+    repeated .snapchat.content.MediaReference mediaReferencesArray = 4;
+    .snapchat.snapdoc.SDMPlayback playback = 5;
+    .snapchat.snapdoc.SDMThumbnail thumbnail = 7;
+    int64 mediaListIdCounter = 8;
+    .snapchat.snapdoc.SDMUnlockables unlockables = 9;
+    .snapchat.snapdoc.SDMSpectacles spectacles = 10;
+    .snapchat.snapdoc.SDMLens lens = 11;
+    .snapchat.snapdoc.SDMCreativeKitSourceApp creativeKitSourceApp = 12;
+    .snapchat.snapdoc.SDMAttachments attachments = 13;
+    .snapchat.snapdoc.SDMCreativeToolsAnalytics creativeToolsAnalytics = 14;
+    .snapchat.snapdoc.SDMLegacyMultisnap legacyMultisnap = 15;
+    .snapchat.snapdoc.SDMPermittedUserActions permittedUserActions = 16;
+    .snapchat.snapdoc.SDMTiming timing = 17;
+    .snapchat.snapdoc.SDMAttribution attribution = 18;
+    .snapchat.snapdoc.SDMCaptureCharacteristics captureCharacteristics = 19;
+    .snapchat.snapdoc.SDMPackaging packaging = 20;
+    .snapchat.snapdoc.SDMGeneratedCameo generatedCameo = 21;
+    .snapchat.snapdoc.SDMProvenance provenance = 22;
+    .snapchat.snapdoc.SDMVideoInterval videoInterval = 23;
+    .snapchat.snapdoc.SDMCameoMetadata cameo = 24;
+    .snapchat.snapdoc.SDMLocation location = 25;
+    repeated .snapchat.snapdoc.SDMStickerMetadata stickerMetadataArray = 26;
+    .snapchat.snapdoc.SDMAdsTracking adsTracking = 27;
+    .snapchat.grid.SDMGridProperties gridProperties = 28;
+    .snapchat.creativetools.drawing.SCCTPDrawings drawings = 29;
+    .snapchat.cameos.stories.SCCameosCameoTile cameoTile = 30;
+    .snapchat.snapdoc.SDMAdPlacement adPlacement = 31;
+    message SDMSnapDoc_ID {
+        .snapchat.snapdoc.SDMSnapDoc.SDMSnapDoc_ID.SDMSnapDoc_ID_Namespace namespace_p = 1;
+        string id_p = 2;
+        enum SDMSnapDoc_ID_Namespace {
+            SDMSnapDoc_ID_Namespace_Unset = 0;
+            SDMSnapDoc_ID_Namespace_RspDiscover = 1;
+            SDMSnapDoc_ID_Namespace_RspAds = 2;
+            SDMSnapDoc_ID_Namespace_OurStories = 3;
+            SDMSnapDoc_ID_Namespace_PopularStories = 4;
+            SDMSnapDoc_ID_Namespace_OfficialStories = 5;
+            SDMSnapDoc_ID_Namespace_StoryCreationService = 6;
+            SDMSnapDoc_ID_Namespace_StoryCreationServiceCompat = 7;
+        }
+    }
+}
+
+message SDMSnapEnvelope {
+    bytes componentBytes = 3;
+    bool encrypted = 4;
+    .snapchat.snapdoc.SDMSnapEnvelope.SDMSnapComponentType componentTypeId = 1;
+    string componentTypeName = 2;
+    enum SDMSnapComponentType {
+        SDMSnapComponentType_Unknown = 0;
+        SDMSnapComponentType_Media = 1;
+        SDMSnapComponentType_Duration = 2;
+        SDMSnapComponentType_Timing = 3;
+        SDMSnapComponentType_Unlockables = 4;
+        SDMSnapComponentType_Context = 5;
+        SDMSnapComponentType_Attachment = 6;
+        SDMSnapComponentType_Snappable = 7;
+        SDMSnapComponentType_StoryMetadata = 8;
+        SDMSnapComponentType_Attribution = 9;
+        SDMSnapComponentType_Thumbnail = 10;
+        SDMSnapComponentType_ContentAnalysis = 11;
+        SDMSnapComponentType_AppDeepLink = 12;
+        SDMSnapComponentType_AppInstall = 13;
+        SDMSnapComponentType_Commerce = 14;
+        SDMSnapComponentType_LensCarousel = 15;
+        SDMSnapComponentType_LongformVideo = 16;
+        SDMSnapComponentType_NotificationSettings = 17;
+        SDMSnapComponentType_Subscription = 18;
+        SDMSnapComponentType_WebPage = 19;
+        SDMSnapComponentType_Provenance = 22;
+        SDMSnapComponentType_GroupStory = 23;
+        SDMSnapComponentType_OurStory = 24;
+        SDMSnapComponentType_Packaging = 25;
+        SDMSnapComponentType_ContentTagging = 26;
+        SDMSnapComponentType_Article = 27;
+        SDMSnapComponentType_Poll = 28;
+        SDMSnapComponentType_CameraAttachment = 29;
+        SDMSnapComponentType_SnapModeration = 30;
+        SDMSnapComponentType_CreativeKitSourceApp = 31;
+        SDMSnapComponentType_ContentObjects = 32;
+        SDMSnapComponentType_LegacyMultisnap = 33;
+        SDMSnapComponentType_Spectacles = 34;
+        SDMSnapComponentType_Caption = 35;
+        SDMSnapComponentType_VideoTranscription = 36;
+        SDMSnapComponentType_Reply = 37;
+        SDMSnapComponentType_GameAttachment = 38;
+        SDMSnapComponentType_VideoInterval = 39;
+        SDMSnapComponentType_PermittedUserActions = 40;
+        SDMSnapComponentType_CreativeToolsAnalytics = 41;
+        SDMSnapComponentType_PlaybackCharacteristics = 42;
+        SDMSnapComponentType_CaptureCharacteristics = 43;
+        SDMSnapComponentType_StickerMetadata = 44;
+        SDMSnapComponentType_Lens = 45;
+        SDMSnapComponentType_PreviewFrame = 46;
+        SDMSnapComponentType_Attachments = 47;
+        SDMSnapComponentType_CallToAction = 48;
+        SDMSnapComponentType_GeneratedCameo = 49;
+        SDMSnapComponentType_SnapPublisherCreationMetadata = 50;
+        SDMSnapComponentType_Distribution = 51;
+        SDMSnapComponentType_Subtitles = 52;
+        SDMSnapComponentType_CameoSnapResource = 53;
+        SDMSnapComponentType_CameoMetadata = 54;
+        SDMSnapComponentType_Location = 55;
+    }
+}

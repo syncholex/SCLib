@@ -1,0 +1,20 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCORETweakParameter {
+    int32 intValue = 1;
+    float floatValue = 2;
+    bool boolValue = 3;
+    string stringValue = 4;
+}
+
+message SCSCORETweaks {
+    repeated .ranking.core.SCSCORETweaks.ParametersEntry parameters = 1;
+    message ParametersEntry {
+        string key = 1;
+        .ranking.core.SCSCORETweakParameter value = 2;
+    }
+}

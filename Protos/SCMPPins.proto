@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map.pins;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Pins";
+
+import "snapchat/map/pins/SCMPPins.proto";
+
+service Pins{
+    rpc GetPins(.snapchat.map.pins.SCMPGetPinsRequest) returns (.snapchat.map.pins.SCMPGetPinsResponse);
+    rpc SavePin(.snapchat.map.pins.SCMPSavePinRequest) returns (.snapchat.map.pins.SCMPSavePinResponse);
+}

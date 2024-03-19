@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.item_catalog.domain.item.ar.properties;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_catalog.Domain.Item.Ar.Properties";
+
+message Transforms {
+    .com.snapchat.item_catalog.domain.item.ar.properties.Vector scale = 1;
+    .com.snapchat.item_catalog.domain.item.ar.properties.Vector translation = 2;
+    .com.snapchat.item_catalog.domain.item.ar.properties.Vector rotation = 3;
+}
+
+message Vector {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}

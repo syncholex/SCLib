@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.studio.pairing;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Studio.Pairing";
+
+import "com/snapchat/studio/pairing/PairingService.proto";
+
+service PairingService{
+    rpc CanRegisterStudio(.com.snapchat.studio.pairing.CanRegisterStudioRequest) returns (.com.snapchat.studio.pairing.CanRegisterStudioResponse);
+    rpc CreatePairingAuthorizationToken(.com.snapchat.studio.pairing.CreatePairingAuthorizationTokenRequest) returns (.com.snapchat.studio.pairing.CreatePairingAuthorizationTokenResponse);
+    rpc Echo(.com.snapchat.studio.pairing.EchoRequest) returns (.com.snapchat.studio.pairing.EchoResponse);
+    rpc FSNProxyPairAccount(.com.snapchat.studio.pairing.FSNProxyPairAccountRequest) returns (.com.snapchat.studio.pairing.FSNProxyPairAccountResponse);
+    rpc FSNProxyUploadCert(.com.snapchat.studio.pairing.FSNProxyUploadCertRequest) returns (.com.snapchat.studio.pairing.FSNProxyUploadCertResponse);
+    rpc GetAllAccountsPairedToAssociatedStudio(.com.snapchat.studio.pairing.GetAllAccountsPairedToAssociatedStudioRequest) returns (.com.snapchat.studio.pairing.GetAllAccountsPairedToAssociatedStudioResponse);
+    rpc GetAllPairedAccounts(.com.snapchat.studio.pairing.GetAllPairedAccountsRequest) returns (.com.snapchat.studio.pairing.GetAllPairedAccountsResponse);
+    rpc GetCerts(.com.snapchat.studio.pairing.GetCertsRequest) returns (.com.snapchat.studio.pairing.GetCertsResponse);
+    rpc IsRegistered(.com.snapchat.studio.pairing.IsRegisteredRequest) returns (.com.snapchat.studio.pairing.IsRegisteredResponse);
+    rpc PairAccount(.com.snapchat.studio.pairing.PairAccountRequest) returns (.com.snapchat.studio.pairing.PairAccountResponse);
+    rpc RegisterStudio(.com.snapchat.studio.pairing.RegisterStudioRequest) returns (.com.snapchat.studio.pairing.RegisterStudioResponse);
+    rpc UnpairAllAccounts(.com.snapchat.studio.pairing.UnpairAllAccountsRequest) returns (.com.snapchat.studio.pairing.UnpairAllAccountsResponse);
+}

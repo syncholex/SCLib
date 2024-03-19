@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+option java_package = "com.snap.ranking.core.proto";
+option go_package = "proto";
+
+message UUID {
+    fixed64 high_bits = 1;
+    fixed64 low_bits = 2;
+}

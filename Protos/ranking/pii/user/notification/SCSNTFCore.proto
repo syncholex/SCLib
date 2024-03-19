@@ -1,0 +1,92 @@
+syntax = "proto3";
+package ranking.pii.user.notification;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSNTF";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Notification";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSNTFHNNewsSection {
+}
+
+message SCSNTFLiveStreamId {
+    string creatorId = 1;
+    string streamId = 2;
+}
+
+message SCSNTFNotificationEntityId {
+    .ranking.pii.user.notification.SCSNTFUserStoryId userStoryId = 1;
+    .ranking.pii.user.notification.SCSNTFPublisherStoryId publisherStoryId = 2;
+    .ranking.pii.user.notification.SCSNTFOurStoryId ourStoryId = 3;
+    .ranking.pii.user.notification.SCSNTFLiveStreamId liveStreamId = 4;
+    .ranking.pii.user.notification.SCSNTFHNNewsSection hnNewsSection = 5;
+}
+
+message SCSNTFNotificationRenderingData {
+    .ranking.pii.user.notification.SCSNTFPublisherStory publisherStory = 3;
+    .ranking.pii.user.notification.SCSNTFPublicUserStory publicUserStory = 4;
+}
+
+message SCSNTFOptInEntity {
+    .ranking.pii.user.notification.SCSNTFNotificationEntityId id_p = 1;
+    .ranking.pii.user.notification.SCSNTFOptInEntity.SCSNTFOptInType_Enum type = 2;
+    string displayName = 3;
+    .ranking.pii.user.notification.SCSNTFOptInEntity.SCSNTFOptInState_Enum state = 4;
+    enum SCSNTFOptInState_Enum {
+        SCSNTFOptInState_Enum_Unknown = 0;
+        SCSNTFOptInState_Enum_OptIn = 1;
+        SCSNTFOptInState_Enum_OptOut = 2;
+    }
+    enum SCSNTFOptInType_Enum {
+        SCSNTFOptInType_Enum_Unknown = 0;
+        SCSNTFOptInType_Enum_UserStory = 1;
+        SCSNTFOptInType_Enum_PublisherStory = 2;
+        SCSNTFOptInType_Enum_OurStory = 3;
+        SCSNTFOptInType_Enum_LiveStream = 4;
+        SCSNTFOptInType_Enum_HnNewsSection = 5;
+    }
+}
+
+message SCSNTFOptInState {
+}
+
+message SCSNTFOptInType {
+}
+
+message SCSNTFOurStoryId {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+}
+
+message SCSNTFPublicUserStory {
+    string iconURL = 1;
+    string displayName = 2;
+}
+
+message SCSNTFPublisherSnapMediaInfo {
+    string publisherSnapMediaURL = 1;
+    string publisherSnapHash = 2;
+    string publisherSnapId = 3;
+}
+
+message SCSNTFPublisherStory {
+    string iconURL = 1;
+    repeated .ranking.pii.user.notification.SCSNTFPublisherSnapMediaInfo mediaInfosArray = 2;
+    string headline = 3;
+    string formalName = 4;
+    .ranking.pii.user.notification.SCSNTFPublisherStory.SCSCOREPublisherType type = 5;
+    string altIconURL = 6;
+    enum SCSCOREPublisherType {
+        SCSCOREPublisherType_PublisherUnknown = 0;
+        SCSCOREPublisherType_PublisherDiscover = 1;
+        SCSCOREPublisherType_PublisherShows = 2;
+        SCSCOREPublisherType_PublisherHnNews = 3;
+    }
+}
+
+message SCSNTFPublisherStoryId {
+    int64 publisherId = 1;
+}
+
+message SCSNTFUserStoryId {
+    string userId = 2;
+}

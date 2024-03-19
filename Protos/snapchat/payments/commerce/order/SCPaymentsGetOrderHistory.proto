@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.payments.commerce.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Snapchat.Payments.Commerce.Order";
+
+import "snapchat/payments/commerce/common/SCPaymentsError.proto";
+import "snapchat/payments/commerce/order/SCPaymentsOrder.proto";
+
+message SCPaymentsGetOrderHistoryRequest {
+    string userId = 1;
+    uint32 limit = 2;
+    uint32 offset = 3;
+    .snapchat.payments.commerce.order.SCPaymentsGetOrderHistoryRequest.SCPaymentsSortOrder sortOrder = 4;
+    enum SCPaymentsSortOrder {
+        SCPaymentsSortOrder_SortOrderUnset = 0;
+        SCPaymentsSortOrder_CreatedAtAsc = 1;
+        SCPaymentsSortOrder_CreatedAtDesc = 2;
+        SCPaymentsSortOrder_UpdatedAtAsc = 3;
+        SCPaymentsSortOrder_UpdatedAtDesc = 4;
+    }
+}
+
+message SCPaymentsGetOrderHistoryResponse {
+    string requestId = 1;
+    .snapchat.payments.commerce.order.SCPaymentsOrderHistory orderHistory = 2;
+    .snapchat.payments.commerce.common.SCPaymentsCommerceServiceError error = 3;
+}
+
+message SCPaymentsOrderHistory {
+    repeated .snapchat.payments.commerce.order.SCPaymentsOrder ordersArray = 1;
+    uint32 cursor = 2;
+}

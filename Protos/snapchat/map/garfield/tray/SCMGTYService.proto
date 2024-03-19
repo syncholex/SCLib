@@ -1,0 +1,414 @@
+syntax = "proto3";
+package snapchat.map.garfield.tray;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGTY";
+option csharp_namespace = "SnapProto.Snapchat.Map.Garfield.Tray";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/local/verrazano/VRZVerrazano.proto";
+import "snapchat/map/garfield/image/SCMGIImageReference.proto";
+
+message SCMGTYGetItemsRequest {
+    .snapchat.geo.SPCGRect bbox = 1;
+    double zoom = 2;
+    uint64 layerId = 3;
+    uint64 version = 4;
+    string flavor = 5;
+    uint32 paginationStartIndex = 6;
+    uint32 paginationNumItems = 7;
+}
+
+message SCMGTYGetItemsResponse {
+    bool paginationHasMoreItems = 3;
+    .snapchat.map.garfield.tray.SCMGTYTicketmasterItems ticketmasterItems = 1;
+    .snapchat.map.garfield.tray.SCMGTYInfatuationItems infatuationItems = 2;
+}
+
+message SCMGTYGetMarkerDataRequest {
+    string poiId = 1;
+    .snapchat.map.garfield.tray.SCMGTYGetMarkerDataRequest.SCMGTYMarkerDataType markerDataType = 2;
+    enum SCMGTYMarkerDataType {
+        SCMGTYMarkerDataType_Unset = 0;
+        SCMGTYMarkerDataType_Lens = 1;
+    }
+}
+
+message SCMGTYGetMarkerDataResponse {
+    .snapchat.map.garfield.tray.SCMGTYLensData lensData = 1;
+}
+
+message SCMGTYInfatuationItems {
+    repeated .snapchat.map.garfield.tray.SCMGTYInfatuationItems.SCMGTINFPerfectForType_PerfectFor pivotsArray = 1;
+    repeated .snapchat.map.garfield.tray.SCMGTYInfatuationVenue venuesArray = 2;
+    enum SCMGTINFPerfectForType_PerfectFor {
+        SCMGTINFPerfectForType_PerfectFor_Unset = 0;
+        SCMGTINFPerfectForType_PerfectFor_AfternoonTea = 1;
+        SCMGTINFPerfectForType_PerfectFor_BigGroups = 2;
+        SCMGTINFPerfectForType_PerfectFor_Birthdays = 3;
+        SCMGTINFPerfectForType_PerfectFor_Breakfast = 4;
+        SCMGTINFPerfectForType_PerfectFor_Brunch = 5;
+        SCMGTINFPerfectForType_PerfectFor_BusinessMeals = 6;
+        SCMGTINFPerfectForType_PerfectFor_Byob = 7;
+        SCMGTINFPerfectForType_PerfectFor_CasualWeeknightDinner = 8;
+        SCMGTINFPerfectForType_PerfectFor_CatchingUpWithMates = 9;
+        SCMGTINFPerfectForType_PerfectFor_CelebritySighting = 10;
+        SCMGTINFPerfectForType_PerfectFor_CheapEats = 11;
+        SCMGTINFPerfectForType_PerfectFor_CheckingOutTheTalent = 12;
+        SCMGTINFPerfectForType_PerfectFor_ClassicEstablishment = 13;
+        SCMGTINFPerfectForType_PerfectFor_CoffeeAndALightBite = 14;
+        SCMGTINFPerfectForType_PerfectFor_CorporateCards = 15;
+        SCMGTINFPerfectForType_PerfectFor_Dancing = 16;
+        SCMGTINFPerfectForType_PerfectFor_DateNight = 17;
+        SCMGTINFPerfectForType_PerfectFor_DayDrinking = 18;
+        SCMGTINFPerfectForType_PerfectFor_Delivery = 19;
+        SCMGTINFPerfectForType_PerfectFor_DiningSolo = 20;
+        SCMGTINFPerfectForType_PerfectFor_DinnerWithTheParents = 21;
+        SCMGTINFPerfectForType_PerfectFor_Dogs = 22;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodBeer = 23;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodCocktails = 24;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodWine = 25;
+        SCMGTINFPerfectForType_PerfectFor_DrinksAndALightBite = 26;
+        SCMGTINFPerfectForType_PerfectFor_EatingAtTheBar = 27;
+        SCMGTINFPerfectForType_PerfectFor_FineDining = 28;
+        SCMGTINFPerfectForType_PerfectFor_FirstEarlyInTheGameDates = 29;
+        SCMGTINFPerfectForType_PerfectFor_GettingOutOfTown = 30;
+        SCMGTINFPerfectForType_PerfectFor_GettingWorkDone = 31;
+        SCMGTINFPerfectForType_PerfectFor_GlutenFreeOptions = 32;
+        SCMGTINFPerfectForType_PerfectFor_Halal = 33;
+        SCMGTINFPerfectForType_PerfectFor_HappyHour = 34;
+        SCMGTINFPerfectForType_PerfectFor_ImpressingOutOfTowners = 35;
+        SCMGTINFPerfectForType_PerfectFor_KeepingItKindOfHealthy = 36;
+        SCMGTINFPerfectForType_PerfectFor_Kids = 37;
+        SCMGTINFPerfectForType_PerfectFor_Kosher = 38;
+        SCMGTINFPerfectForType_PerfectFor_LadsNight = 39;
+        SCMGTINFPerfectForType_PerfectFor_LateNightEats = 40;
+        SCMGTINFPerfectForType_PerfectFor_LiterallyEveryone = 41;
+        SCMGTINFPerfectForType_PerfectFor_LiveMusic = 42;
+        SCMGTINFPerfectForType_PerfectFor_Lunch = 43;
+        SCMGTINFPerfectForType_PerfectFor_OutdoorPatioSituation = 44;
+        SCMGTINFPerfectForType_PerfectFor_OutdoorSeating = 45;
+        SCMGTINFPerfectForType_PerfectFor_PeopleWatching = 46;
+        SCMGTINFPerfectForType_PerfectFor_PreTheatreEats = 47;
+        SCMGTINFPerfectForType_PerfectFor_PrivateDining = 48;
+        SCMGTINFPerfectForType_PerfectFor_QuickEats = 49;
+        SCMGTINFPerfectForType_PerfectFor_QuietMeals = 50;
+        SCMGTINFPerfectForType_PerfectFor_SeeAndBeSeen = 51;
+        SCMGTINFPerfectForType_PerfectFor_SeriousTakeOutOperation = 52;
+        SCMGTINFPerfectForType_PerfectFor_SmallPlates = 53;
+        SCMGTINFPerfectForType_PerfectFor_SpecialOccasions = 54;
+        SCMGTINFPerfectForType_PerfectFor_Sports = 55;
+        SCMGTINFPerfectForType_PerfectFor_Strollers = 56;
+        SCMGTINFPerfectForType_PerfectFor_SundayRoast = 57;
+        SCMGTINFPerfectForType_PerfectFor_Takeaway = 58;
+        SCMGTINFPerfectForType_PerfectFor_UniqueDiningExperience = 59;
+        SCMGTINFPerfectForType_PerfectFor_Vegans = 60;
+        SCMGTINFPerfectForType_PerfectFor_Vegetarians = 61;
+        SCMGTINFPerfectForType_PerfectFor_WalkIns = 62;
+        SCMGTINFPerfectForType_PerfectFor_WastingYourTimeAndMoney = 63;
+    }
+}
+
+message SCMGTYInfatuationReview {
+    string intro = 1;
+    .snapchat.map.garfield.image.SCMGIImageReference image = 2;
+    repeated .snapchat.map.garfield.tray.SCMGTYInfatuationReview.SCMGTINFPerfectForType_PerfectFor perfectForsArray = 3;
+    repeated .snapchat.map.garfield.tray.SCMGTYInfatuationReview.SCMGTINFCuisineType_Cuisine cuisinesArray = 4;
+    string reviewURL = 5;
+    float rating = 6;
+    enum SCMGTINFCuisineType_Cuisine {
+        SCMGTINFCuisineType_Cuisine_Unset = 0;
+        SCMGTINFCuisineType_Cuisine_Afghan = 1;
+        SCMGTINFCuisineType_Cuisine_African = 2;
+        SCMGTINFCuisineType_Cuisine_American = 3;
+        SCMGTINFCuisineType_Cuisine_Argentinian = 4;
+        SCMGTINFCuisineType_Cuisine_Armenian = 5;
+        SCMGTINFCuisineType_Cuisine_Australian = 6;
+        SCMGTINFCuisineType_Cuisine_Austrian = 7;
+        SCMGTINFCuisineType_Cuisine_Bbq = 8;
+        SCMGTINFCuisineType_Cuisine_Bagels = 9;
+        SCMGTINFCuisineType_Cuisine_Bahraini = 10;
+        SCMGTINFCuisineType_Cuisine_BakeryCafe = 11;
+        SCMGTINFCuisineType_Cuisine_Bangladeshi = 12;
+        SCMGTINFCuisineType_Cuisine_Bar = 13;
+        SCMGTINFCuisineType_Cuisine_BarFood = 14;
+        SCMGTINFCuisineType_Cuisine_Belgian = 15;
+        SCMGTINFCuisineType_Cuisine_Belizean = 16;
+        SCMGTINFCuisineType_Cuisine_Brazilian = 17;
+        SCMGTINFCuisineType_Cuisine_Brewery = 18;
+        SCMGTINFCuisineType_Cuisine_British = 19;
+        SCMGTINFCuisineType_Cuisine_Brunch = 20;
+        SCMGTINFCuisineType_Cuisine_Burgers = 21;
+        SCMGTINFCuisineType_Cuisine_Burmese = 22;
+        SCMGTINFCuisineType_Cuisine_Burritos = 23;
+        SCMGTINFCuisineType_Cuisine_Cajun = 24;
+        SCMGTINFCuisineType_Cuisine_Cambodian = 25;
+        SCMGTINFCuisineType_Cuisine_Cameroonian = 26;
+        SCMGTINFCuisineType_Cuisine_Canadian = 27;
+        SCMGTINFCuisineType_Cuisine_CapeVerdean = 28;
+        SCMGTINFCuisineType_Cuisine_Caribbean = 29;
+        SCMGTINFCuisineType_Cuisine_Chamorro = 30;
+        SCMGTINFCuisineType_Cuisine_CheeseShop = 31;
+        SCMGTINFCuisineType_Cuisine_Chinese = 32;
+        SCMGTINFCuisineType_Cuisine_Club = 33;
+        SCMGTINFCuisineType_Cuisine_Colombian = 34;
+        SCMGTINFCuisineType_Cuisine_Creole = 35;
+        SCMGTINFCuisineType_Cuisine_Cuban = 36;
+        SCMGTINFCuisineType_Cuisine_Curry = 37;
+        SCMGTINFCuisineType_Cuisine_Deli = 38;
+        SCMGTINFCuisineType_Cuisine_Dessert = 39;
+        SCMGTINFCuisineType_Cuisine_DimSum = 40;
+        SCMGTINFCuisineType_Cuisine_Diner = 41;
+        SCMGTINFCuisineType_Cuisine_Dominican = 42;
+        SCMGTINFCuisineType_Cuisine_Dutch = 43;
+        SCMGTINFCuisineType_Cuisine_EasternEuropean = 44;
+        SCMGTINFCuisineType_Cuisine_Ecuadorian = 45;
+        SCMGTINFCuisineType_Cuisine_Egyptian = 46;
+        SCMGTINFCuisineType_Cuisine_Ethiopian = 47;
+        SCMGTINFCuisineType_Cuisine_European = 48;
+        SCMGTINFCuisineType_Cuisine_Experimental = 49;
+        SCMGTINFCuisineType_Cuisine_FastFood = 50;
+        SCMGTINFCuisineType_Cuisine_Filipino = 51;
+        SCMGTINFCuisineType_Cuisine_French = 52;
+        SCMGTINFCuisineType_Cuisine_FrenchFries = 53;
+        SCMGTINFCuisineType_Cuisine_FriedChicken = 54;
+        SCMGTINFCuisineType_Cuisine_Fusion = 55;
+        SCMGTINFCuisineType_Cuisine_Gastropub = 56;
+        SCMGTINFCuisineType_Cuisine_Georgian = 57;
+        SCMGTINFCuisineType_Cuisine_German = 58;
+        SCMGTINFCuisineType_Cuisine_Ghanaian = 59;
+        SCMGTINFCuisineType_Cuisine_Greek = 60;
+        SCMGTINFCuisineType_Cuisine_Guamanian = 61;
+        SCMGTINFCuisineType_Cuisine_Guyanese = 62;
+        SCMGTINFCuisineType_Cuisine_Haitian = 63;
+        SCMGTINFCuisineType_Cuisine_Hawaiian = 64;
+        SCMGTINFCuisineType_Cuisine_Honduran = 65;
+        SCMGTINFCuisineType_Cuisine_HotDogs = 66;
+        SCMGTINFCuisineType_Cuisine_HotPot = 67;
+        SCMGTINFCuisineType_Cuisine_IceCream = 68;
+        SCMGTINFCuisineType_Cuisine_Indian = 69;
+        SCMGTINFCuisineType_Cuisine_Indonesian = 70;
+        SCMGTINFCuisineType_Cuisine_Iranian = 71;
+        SCMGTINFCuisineType_Cuisine_Israeli = 72;
+        SCMGTINFCuisineType_Cuisine_Italian = 73;
+        SCMGTINFCuisineType_Cuisine_Jamaican = 74;
+        SCMGTINFCuisineType_Cuisine_Japanese = 75;
+        SCMGTINFCuisineType_Cuisine_Jewish = 76;
+        SCMGTINFCuisineType_Cuisine_Jordanian = 77;
+        SCMGTINFCuisineType_Cuisine_Kenyan = 78;
+        SCMGTINFCuisineType_Cuisine_Korean = 79;
+        SCMGTINFCuisineType_Cuisine_Kurdish = 80;
+        SCMGTINFCuisineType_Cuisine_Laotian = 81;
+        SCMGTINFCuisineType_Cuisine_Latin = 82;
+        SCMGTINFCuisineType_Cuisine_Lebanese = 83;
+        SCMGTINFCuisineType_Cuisine_Malaysian = 84;
+        SCMGTINFCuisineType_Cuisine_Market = 85;
+        SCMGTINFCuisineType_Cuisine_Mediterranean = 86;
+        SCMGTINFCuisineType_Cuisine_Mexican = 87;
+        SCMGTINFCuisineType_Cuisine_MiddleEastern = 88;
+        SCMGTINFCuisineType_Cuisine_ModernEuropean = 89;
+        SCMGTINFCuisineType_Cuisine_MolecularGastronomy = 90;
+        SCMGTINFCuisineType_Cuisine_Moroccan = 91;
+        SCMGTINFCuisineType_Cuisine_Nepali = 92;
+        SCMGTINFCuisineType_Cuisine_NewMexican = 93;
+        SCMGTINFCuisineType_Cuisine_Nicaraguan = 94;
+        SCMGTINFCuisineType_Cuisine_Nigerian = 95;
+        SCMGTINFCuisineType_Cuisine_NorthAfrican = 96;
+        SCMGTINFCuisineType_Cuisine_Pakistani = 97;
+        SCMGTINFCuisineType_Cuisine_Pasta = 98;
+        SCMGTINFCuisineType_Cuisine_Persian = 99;
+        SCMGTINFCuisineType_Cuisine_Peruvian = 100;
+        SCMGTINFCuisineType_Cuisine_Pizza = 101;
+        SCMGTINFCuisineType_Cuisine_Poke = 102;
+        SCMGTINFCuisineType_Cuisine_Polish = 103;
+        SCMGTINFCuisineType_Cuisine_Polynesian = 104;
+        SCMGTINFCuisineType_Cuisine_Portuguese = 105;
+        SCMGTINFCuisineType_Cuisine_Pub = 106;
+        SCMGTINFCuisineType_Cuisine_PuertoRican = 107;
+        SCMGTINFCuisineType_Cuisine_Punjabi = 108;
+        SCMGTINFCuisineType_Cuisine_Ramen = 109;
+        SCMGTINFCuisineType_Cuisine_RawBar = 110;
+        SCMGTINFCuisineType_Cuisine_Russian = 111;
+        SCMGTINFCuisineType_Cuisine_Salads = 112;
+        SCMGTINFCuisineType_Cuisine_Salvadoran = 113;
+        SCMGTINFCuisineType_Cuisine_Sandwiches = 114;
+        SCMGTINFCuisineType_Cuisine_Scandinavian = 115;
+        SCMGTINFCuisineType_Cuisine_Seafood = 116;
+        SCMGTINFCuisineType_Cuisine_Senegalese = 117;
+        SCMGTINFCuisineType_Cuisine_Serbian = 118;
+        SCMGTINFCuisineType_Cuisine_Sichuan = 119;
+        SCMGTINFCuisineType_Cuisine_Singaporean = 120;
+        SCMGTINFCuisineType_Cuisine_Somali = 121;
+        SCMGTINFCuisineType_Cuisine_SoulFood = 122;
+        SCMGTINFCuisineType_Cuisine_SouthAfrican = 123;
+        SCMGTINFCuisineType_Cuisine_SoutheastAsian = 124;
+        SCMGTINFCuisineType_Cuisine_Southern = 125;
+        SCMGTINFCuisineType_Cuisine_Southwestern = 126;
+        SCMGTINFCuisineType_Cuisine_Spanish = 127;
+        SCMGTINFCuisineType_Cuisine_SriLankan = 128;
+        SCMGTINFCuisineType_Cuisine_Steaks = 129;
+        SCMGTINFCuisineType_Cuisine_Sushi = 130;
+        SCMGTINFCuisineType_Cuisine_Syrian = 131;
+        SCMGTINFCuisineType_Cuisine_Tacos = 132;
+        SCMGTINFCuisineType_Cuisine_Taiwanese = 133;
+        SCMGTINFCuisineType_Cuisine_Takeaway = 134;
+        SCMGTINFCuisineType_Cuisine_Tamales = 135;
+        SCMGTINFCuisineType_Cuisine_Tapas = 136;
+        SCMGTINFCuisineType_Cuisine_Texmex = 137;
+        SCMGTINFCuisineType_Cuisine_Texan = 138;
+        SCMGTINFCuisineType_Cuisine_Thai = 139;
+        SCMGTINFCuisineType_Cuisine_Tibetan = 140;
+        SCMGTINFCuisineType_Cuisine_Trinidadian = 141;
+        SCMGTINFCuisineType_Cuisine_Turkish = 142;
+        SCMGTINFCuisineType_Cuisine_Uruguayan = 143;
+        SCMGTINFCuisineType_Cuisine_Uyghur = 144;
+        SCMGTINFCuisineType_Cuisine_Uzbek = 145;
+        SCMGTINFCuisineType_Cuisine_Vegan = 146;
+        SCMGTINFCuisineType_Cuisine_Vegetarian = 147;
+        SCMGTINFCuisineType_Cuisine_Venezuelan = 148;
+        SCMGTINFCuisineType_Cuisine_Vietnamese = 149;
+        SCMGTINFCuisineType_Cuisine_WestAfrican = 150;
+        SCMGTINFCuisineType_Cuisine_WineBar = 151;
+        SCMGTINFCuisineType_Cuisine_Winery = 152;
+    }
+    enum SCMGTINFPerfectForType_PerfectFor {
+        SCMGTINFPerfectForType_PerfectFor_Unset = 0;
+        SCMGTINFPerfectForType_PerfectFor_AfternoonTea = 1;
+        SCMGTINFPerfectForType_PerfectFor_BigGroups = 2;
+        SCMGTINFPerfectForType_PerfectFor_Birthdays = 3;
+        SCMGTINFPerfectForType_PerfectFor_Breakfast = 4;
+        SCMGTINFPerfectForType_PerfectFor_Brunch = 5;
+        SCMGTINFPerfectForType_PerfectFor_BusinessMeals = 6;
+        SCMGTINFPerfectForType_PerfectFor_Byob = 7;
+        SCMGTINFPerfectForType_PerfectFor_CasualWeeknightDinner = 8;
+        SCMGTINFPerfectForType_PerfectFor_CatchingUpWithMates = 9;
+        SCMGTINFPerfectForType_PerfectFor_CelebritySighting = 10;
+        SCMGTINFPerfectForType_PerfectFor_CheapEats = 11;
+        SCMGTINFPerfectForType_PerfectFor_CheckingOutTheTalent = 12;
+        SCMGTINFPerfectForType_PerfectFor_ClassicEstablishment = 13;
+        SCMGTINFPerfectForType_PerfectFor_CoffeeAndALightBite = 14;
+        SCMGTINFPerfectForType_PerfectFor_CorporateCards = 15;
+        SCMGTINFPerfectForType_PerfectFor_Dancing = 16;
+        SCMGTINFPerfectForType_PerfectFor_DateNight = 17;
+        SCMGTINFPerfectForType_PerfectFor_DayDrinking = 18;
+        SCMGTINFPerfectForType_PerfectFor_Delivery = 19;
+        SCMGTINFPerfectForType_PerfectFor_DiningSolo = 20;
+        SCMGTINFPerfectForType_PerfectFor_DinnerWithTheParents = 21;
+        SCMGTINFPerfectForType_PerfectFor_Dogs = 22;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodBeer = 23;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodCocktails = 24;
+        SCMGTINFPerfectForType_PerfectFor_DrinkingGoodWine = 25;
+        SCMGTINFPerfectForType_PerfectFor_DrinksAndALightBite = 26;
+        SCMGTINFPerfectForType_PerfectFor_EatingAtTheBar = 27;
+        SCMGTINFPerfectForType_PerfectFor_FineDining = 28;
+        SCMGTINFPerfectForType_PerfectFor_FirstEarlyInTheGameDates = 29;
+        SCMGTINFPerfectForType_PerfectFor_GettingOutOfTown = 30;
+        SCMGTINFPerfectForType_PerfectFor_GettingWorkDone = 31;
+        SCMGTINFPerfectForType_PerfectFor_GlutenFreeOptions = 32;
+        SCMGTINFPerfectForType_PerfectFor_Halal = 33;
+        SCMGTINFPerfectForType_PerfectFor_HappyHour = 34;
+        SCMGTINFPerfectForType_PerfectFor_ImpressingOutOfTowners = 35;
+        SCMGTINFPerfectForType_PerfectFor_KeepingItKindOfHealthy = 36;
+        SCMGTINFPerfectForType_PerfectFor_Kids = 37;
+        SCMGTINFPerfectForType_PerfectFor_Kosher = 38;
+        SCMGTINFPerfectForType_PerfectFor_LadsNight = 39;
+        SCMGTINFPerfectForType_PerfectFor_LateNightEats = 40;
+        SCMGTINFPerfectForType_PerfectFor_LiterallyEveryone = 41;
+        SCMGTINFPerfectForType_PerfectFor_LiveMusic = 42;
+        SCMGTINFPerfectForType_PerfectFor_Lunch = 43;
+        SCMGTINFPerfectForType_PerfectFor_OutdoorPatioSituation = 44;
+        SCMGTINFPerfectForType_PerfectFor_OutdoorSeating = 45;
+        SCMGTINFPerfectForType_PerfectFor_PeopleWatching = 46;
+        SCMGTINFPerfectForType_PerfectFor_PreTheatreEats = 47;
+        SCMGTINFPerfectForType_PerfectFor_PrivateDining = 48;
+        SCMGTINFPerfectForType_PerfectFor_QuickEats = 49;
+        SCMGTINFPerfectForType_PerfectFor_QuietMeals = 50;
+        SCMGTINFPerfectForType_PerfectFor_SeeAndBeSeen = 51;
+        SCMGTINFPerfectForType_PerfectFor_SeriousTakeOutOperation = 52;
+        SCMGTINFPerfectForType_PerfectFor_SmallPlates = 53;
+        SCMGTINFPerfectForType_PerfectFor_SpecialOccasions = 54;
+        SCMGTINFPerfectForType_PerfectFor_Sports = 55;
+        SCMGTINFPerfectForType_PerfectFor_Strollers = 56;
+        SCMGTINFPerfectForType_PerfectFor_SundayRoast = 57;
+        SCMGTINFPerfectForType_PerfectFor_Takeaway = 58;
+        SCMGTINFPerfectForType_PerfectFor_UniqueDiningExperience = 59;
+        SCMGTINFPerfectForType_PerfectFor_Vegans = 60;
+        SCMGTINFPerfectForType_PerfectFor_Vegetarians = 61;
+        SCMGTINFPerfectForType_PerfectFor_WalkIns = 62;
+        SCMGTINFPerfectForType_PerfectFor_WastingYourTimeAndMoney = 63;
+    }
+}
+
+message SCMGTYInfatuationVenue {
+    string name = 1;
+    .snapchat.core.SCCOREUUID verrazanoId = 2;
+    uint32 price = 3;
+    .snapchat.local.verrazano.VRZOpeningHours openingHours = 4;
+    .snapchat.map.garfield.tray.SCMGTYInfatuationReview review = 5;
+    .snapchat.geo.SPCGPoint location = 6;
+}
+
+message SCMGTYLensCreator {
+    string lensCreatorName = 1;
+    string profileId = 2;
+    bool isPro = 3;
+}
+
+message SCMGTYLensData {
+    string lensId = 1;
+    string title = 2;
+    string artist = 3;
+    string address = 4;
+    string description_p = 5;
+    string URL = 6;
+    .snapchat.map.garfield.tray.SCMGTYLensCreator lensCreator = 7;
+    string secondaryLensId = 8;
+    .snapchat.map.garfield.tray.SCMGTYLensCreator secondaryLensCreator = 9;
+    string thumbnailURL = 10;
+}
+
+message SCMGTYMapMarkerCardInfo {
+    string locale = 1;
+    string title = 2;
+    string description_p = 3;
+}
+
+message SCMGTYMarkerDataStore {
+    repeated .snapchat.map.garfield.tray.SCMGTYMapMarkerCardInfo cardInfoArray = 1;
+    .snapchat.map.garfield.tray.SCMGTYLensData lensData = 2;
+}
+
+message SCMGTYTicketmasterEvent {
+    string id_p = 1;
+    string venueId = 2;
+    string imageBoltURL = 3;
+    string name = 4;
+    uint64 startTimeSeconds = 5;
+    .snapchat.map.garfield.tray.SCMGTYTicketmasterEvent.SCMGLTMCategory category = 6;
+    string venueName = 7;
+    bool isPopular = 8;
+    string URL = 9;
+    enum SCMGLTMCategory {
+        SCMGLTMCategory_Unset = 0;
+        SCMGLTMCategory_Miscellaneous = 1;
+        SCMGLTMCategory_Sports = 2;
+        SCMGLTMCategory_Music = 3;
+        SCMGLTMCategory_ArtsAndTheatre = 4;
+        SCMGLTMCategory_Undefined = 5;
+        SCMGLTMCategory_Film = 6;
+    }
+}
+
+message SCMGTYTicketmasterItems {
+    repeated .snapchat.map.garfield.tray.SCMGTYTicketmasterEvent eventsArray = 1;
+    repeated .snapchat.map.garfield.tray.SCMGTYTicketmasterItems.SCMGLTMCategory pivotsArray = 2;
+    enum SCMGLTMCategory {
+        SCMGLTMCategory_Unset = 0;
+        SCMGLTMCategory_Miscellaneous = 1;
+        SCMGLTMCategory_Sports = 2;
+        SCMGLTMCategory_Music = 3;
+        SCMGLTMCategory_ArtsAndTheatre = 4;
+        SCMGLTMCategory_Undefined = 5;
+        SCMGLTMCategory_Film = 6;
+    }
+}

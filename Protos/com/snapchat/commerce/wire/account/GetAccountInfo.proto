@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.account;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Account";
+
+import "com/snapchat/commerce/domain/account/AccountInfo.proto";
+import "com/snapchat/commerce/wire/error/Error.proto";
+import "snapchat/core/SCCOREUuid.proto";
+
+message GetAccountInfoRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+}
+
+message GetAccountInfoResponse {
+    string requestId = 3;
+    .com.snapchat.commerce.domain.account.AccountInfo accountInfo = 1;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+}

@@ -1,0 +1,54 @@
+syntax = "proto3";
+package snapchat.geo;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SPCG";
+option csharp_namespace = "SnapProto.Snapchat.Geo";
+
+message SPCGCircle {
+    .snapchat.geo.SPCGPoint point = 1;
+    double radius = 2;
+    .snapchat.geo.SPCGCircle.SPCGUnit unit = 3;
+    enum SPCGUnit {
+        SPCGUnit_UnknownUnit = 0;
+        SPCGUnit_Meters = 1;
+        SPCGUnit_Kilometers = 2;
+        SPCGUnit_Feet = 3;
+        SPCGUnit_Miles = 4;
+    }
+}
+
+message SPCGGeometry {
+    .snapchat.geo.SPCGPoint point = 1;
+    .snapchat.geo.SPCGLineString lineString = 2;
+    .snapchat.geo.SPCGLinearRing linearRing = 3;
+    .snapchat.geo.SPCGPolygon polygon = 4;
+    .snapchat.geo.SPCGMultiPolygon multipolygon = 5;
+    .snapchat.geo.SPCGRect rect = 6;
+    .snapchat.geo.SPCGCircle circle = 7;
+}
+
+message SPCGLineString {
+    repeated .snapchat.geo.SPCGPoint pointsArray = 1;
+}
+
+message SPCGLinearRing {
+    repeated .snapchat.geo.SPCGPoint pointsArray = 1;
+}
+
+message SPCGMultiPolygon {
+    repeated .snapchat.geo.SPCGPolygon polygonsArray = 1;
+}
+
+message SPCGPoint {
+    double lat = 1;
+    double lng = 2;
+}
+
+message SPCGPolygon {
+    repeated .snapchat.geo.SPCGLinearRing ringsArray = 1;
+}
+
+message SPCGRect {
+    .snapchat.geo.SPCGPoint p1 = 1;
+    .snapchat.geo.SPCGPoint p2 = 2;
+}

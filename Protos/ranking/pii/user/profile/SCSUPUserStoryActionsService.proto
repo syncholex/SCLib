@@ -1,0 +1,182 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPActionableStoryKey {
+    .ranking.pii.user.profile.SCSUPPublicUserStoryKey publicUserStoryKey = 1;
+    .ranking.pii.user.profile.SCSUPPublisherStoryKey publisherStoryKey = 2;
+    .ranking.pii.user.profile.SCSUPOurStoryKey ourStoryKey = 3;
+    .ranking.pii.user.profile.SCSUPMapTileStoryKey mapTileStoryKey = 4;
+    .ranking.pii.user.profile.SCSUPLiveStreamingStoryKey liveStreamingStoryKey = 5;
+    .ranking.pii.user.profile.SCSUPLensObjectStoryKey lensObjectStoryKey = 6;
+    .ranking.pii.user.profile.SCSUPCategoryKey categoryKey = 7;
+    .ranking.pii.user.profile.SCSUPRegisteredInterestKey registeredInterestKey = 8;
+    .ranking.pii.user.profile.SCSUPHNNewsStoryKey hnNewsStoryKey = 9;
+    .ranking.pii.user.profile.SCSUPSingleSnapStoryKey singleSnapStoryKey = 10;
+}
+
+message SCSUPBatchSubscribeStoryRequest {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPBatchSubscribeStoryRequest.SCSUPBatchSubscribeStoryRequest_Request requestsArray = 2;
+    int64 requestTsMsecs = 3;
+    .ranking.pii.user.profile.SCSUPBatchSubscribeStoryRequest.SCSUPUserStoryActionSource source = 4;
+    message SCSUPBatchSubscribeStoryRequest_Request {
+        .ranking.pii.user.profile.SCSUPActionableStoryKey storyKey = 1;
+        .ranking.pii.user.profile.SCSUPBatchSubscribeStoryRequest.SCSUPBatchSubscribeStoryRequest_Request.SCSUPSubscribeStoryRequest_SubscribeState toState = 2;
+        enum SCSUPSubscribeStoryRequest_SubscribeState {
+            SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnknown = 0;
+            SCSUPSubscribeStoryRequest_SubscribeState_SubStateSubscribed = 1;
+            SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnsubscribed = 2;
+            SCSUPSubscribeStoryRequest_SubscribeState_SubStateHidden = 3;
+            SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnhidden = 4;
+        }
+    }
+    enum SCSUPUserStoryActionSource {
+        SCSUPUserStoryActionSource_StoryActionSourceUnknown = 0;
+        SCSUPUserStoryActionSource_StoryActionSourceFeed = 1;
+        SCSUPUserStoryActionSource_StoryActionSourceSearch = 2;
+        SCSUPUserStoryActionSource_StoryActionSourceOldDiscover = 3;
+        SCSUPUserStoryActionSource_StoryActionSourceLiveStreamOptIn = 4;
+        SCSUPUserStoryActionSource_StoryActionSourceLensExplorer = 5;
+        SCSUPUserStoryActionSource_StoryActionSourceOnBoarding = 6;
+        SCSUPUserStoryActionSource_StoryActionSourceRegistration = 7;
+        SCSUPUserStoryActionSource_StoryActionSourceMigration = 8;
+    }
+}
+
+message SCSUPBatchSubscribeStoryResponse {
+}
+
+message SCSUPCategoryKey {
+    int32 feedType = 1;
+}
+
+message SCSUPHNNewsStoryKey {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+}
+
+message SCSUPHideStoryRequest {
+    string userId = 1;
+    .ranking.pii.user.profile.SCSUPActionableStoryKey storyKey = 2;
+    int64 clientTsMsecs = 3;
+    .ranking.pii.user.profile.SCSUPHideStoryRequest.SCSUPHideStoryRequest_HideState toState = 4;
+    .ranking.pii.user.profile.SCSUPHideStoryRequest.SCSUPUserStoryActionSource source = 5;
+    .ranking.pii.user.profile.SCSUPHideStoryRequest.SCSUPHideStoryRequest_HideTarget hideTarget = 6;
+    enum SCSUPHideStoryRequest_HideTarget {
+        SCSUPHideStoryRequest_HideTarget_HideTargetUnknown = 0;
+        SCSUPHideStoryRequest_HideTarget_HideTargetStory = 1;
+        SCSUPHideStoryRequest_HideTarget_HideTargetCreator = 2;
+    }
+    enum SCSUPUserStoryActionSource {
+        SCSUPUserStoryActionSource_StoryActionSourceUnknown = 0;
+        SCSUPUserStoryActionSource_StoryActionSourceFeed = 1;
+        SCSUPUserStoryActionSource_StoryActionSourceSearch = 2;
+        SCSUPUserStoryActionSource_StoryActionSourceOldDiscover = 3;
+        SCSUPUserStoryActionSource_StoryActionSourceLiveStreamOptIn = 4;
+        SCSUPUserStoryActionSource_StoryActionSourceLensExplorer = 5;
+        SCSUPUserStoryActionSource_StoryActionSourceOnBoarding = 6;
+        SCSUPUserStoryActionSource_StoryActionSourceRegistration = 7;
+        SCSUPUserStoryActionSource_StoryActionSourceMigration = 8;
+    }
+    enum SCSUPHideStoryRequest_HideState {
+        SCSUPHideStoryRequest_HideState_HideStateUnknown = 0;
+        SCSUPHideStoryRequest_HideState_HideStateHidden = 1;
+        SCSUPHideStoryRequest_HideState_HideStateUnhidden = 2;
+    }
+}
+
+message SCSUPHideStoryResponse {
+}
+
+message SCSUPLensObjectStoryKey {
+    int64 lensId = 1;
+    string creatorUuid = 2;
+}
+
+message SCSUPLiveStreamingStoryKey {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+}
+
+message SCSUPMapTileStoryKey {
+    string storyId = 1;
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 2;
+}
+
+message SCSUPOurStoryKey {
+    string storyId = 1;
+    bool isCampusStory = 2;
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 3;
+}
+
+message SCSUPPublicUserStoryKey {
+    string userId = 1;
+}
+
+message SCSUPPublisherStoryKey {
+    int64 publisherId = 1;
+    int64 editionId = 2;
+    string publisherName = 3;
+}
+
+message SCSUPRegisterInterestsRequest {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPRegisterInterestsRequest.SCSUPRegisterInterestsRequest_Request requestsArray = 2;
+    int64 requestTsMsecs = 3;
+    message SCSUPRegisterInterestsRequest_Request {
+        int32 interestId = 1;
+        .ranking.pii.user.profile.SCSUPRegisterInterestsRequest.SCSUPRegisterInterestsRequest_Request.SCSUPRegisterState_Enum toState = 2;
+        enum SCSUPRegisterState_Enum {
+            SCSUPRegisterState_Enum_Unknown = 0;
+            SCSUPRegisterState_Enum_Registered = 1;
+            SCSUPRegisterState_Enum_Unregistered = 2;
+        }
+    }
+}
+
+message SCSUPRegisterInterestsResponse {
+}
+
+message SCSUPRegisterState {
+}
+
+message SCSUPRegisteredInterestKey {
+    int32 interestId = 1;
+}
+
+message SCSUPSingleSnapStoryKey {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    string creatorId = 2;
+}
+
+message SCSUPSubscribeStoryRequest {
+    string userId = 1;
+    .ranking.pii.user.profile.SCSUPActionableStoryKey storyKey = 2;
+    int64 clientTsMsecs = 3;
+    .ranking.pii.user.profile.SCSUPSubscribeStoryRequest.SCSUPSubscribeStoryRequest_SubscribeState toState = 4;
+    .ranking.pii.user.profile.SCSUPSubscribeStoryRequest.SCSUPUserStoryActionSource source = 5;
+    enum SCSUPUserStoryActionSource {
+        SCSUPUserStoryActionSource_StoryActionSourceUnknown = 0;
+        SCSUPUserStoryActionSource_StoryActionSourceFeed = 1;
+        SCSUPUserStoryActionSource_StoryActionSourceSearch = 2;
+        SCSUPUserStoryActionSource_StoryActionSourceOldDiscover = 3;
+        SCSUPUserStoryActionSource_StoryActionSourceLiveStreamOptIn = 4;
+        SCSUPUserStoryActionSource_StoryActionSourceLensExplorer = 5;
+        SCSUPUserStoryActionSource_StoryActionSourceOnBoarding = 6;
+        SCSUPUserStoryActionSource_StoryActionSourceRegistration = 7;
+        SCSUPUserStoryActionSource_StoryActionSourceMigration = 8;
+    }
+    enum SCSUPSubscribeStoryRequest_SubscribeState {
+        SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnknown = 0;
+        SCSUPSubscribeStoryRequest_SubscribeState_SubStateSubscribed = 1;
+        SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnsubscribed = 2;
+        SCSUPSubscribeStoryRequest_SubscribeState_SubStateHidden = 3;
+        SCSUPSubscribeStoryRequest_SubscribeState_SubStateUnhidden = 4;
+    }
+}
+
+message SCSUPSubscribeStoryResponse {
+}

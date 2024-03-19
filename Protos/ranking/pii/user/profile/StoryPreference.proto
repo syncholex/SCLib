@@ -1,0 +1,260 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+message CategoryHideDetail {
+    .ranking.pii.user.profile.CategoryHideDetail.CategoryHideDetail_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    enum CategoryHideDetail_State {
+        CategoryHideDetail_State_StateUnknown = 0;
+        CategoryHideDetail_State_StateHidden = 1;
+        CategoryHideDetail_State_StateUnhidden = 2;
+    }
+}
+
+message EditionHideDetail {
+    int64 publisherId = 1;
+    .ranking.pii.user.profile.EditionHideDetail.EditionHideDetail_State state = 3;
+    int64 stateTimestampMsecs = 4;
+    int64 stateExpireTimestampMsecs = 5;
+    enum EditionHideDetail_State {
+        EditionHideDetail_State_StateUnknown = 0;
+        EditionHideDetail_State_StateHidden = 1;
+        EditionHideDetail_State_StateUnhidden = 2;
+    }
+}
+
+message LensCreatorSubscribeState {
+    .ranking.pii.user.profile.LensCreatorSubscribeState.LensCreatorSubscribeState_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    enum LensCreatorSubscribeState_State {
+        LensCreatorSubscribeState_State_StateUnknown = 0;
+        LensCreatorSubscribeState_State_StateSubscribed = 1;
+        LensCreatorSubscribeState_State_StateUnsubscribed = 2;
+    }
+}
+
+message LensHideState {
+    .ranking.pii.user.profile.LensHideState.LensHideState_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    string creatorUuid = 4;
+    enum LensHideState_State {
+        LensHideState_State_StateUnknown = 0;
+        LensHideState_State_StateHidden = 1;
+        LensHideState_State_StateUnhidden = 2;
+    }
+}
+
+message LiveHideDetail {
+    string creatorId = 1;
+    .ranking.pii.user.profile.LiveHideDetail.LiveHideDetail_State state = 2;
+    int64 stateTimestampMsecs = 3;
+    int64 stateExpireTimestampMsecs = 4;
+    enum LiveHideDetail_State {
+        LiveHideDetail_State_StateUnknown = 0;
+        LiveHideDetail_State_StateHidden = 1;
+        LiveHideDetail_State_StateUnhidden = 2;
+    }
+}
+
+message LiveSubscribeDetail {
+    string streamId = 1;
+    .ranking.pii.user.profile.LiveSubscribeDetail.LiveSubscribeDetail_State state = 2;
+    int64 stateTimestampMsecs = 3;
+    int64 stateExpireTimestampMsecs = 4;
+    enum LiveSubscribeDetail_State {
+        LiveSubscribeDetail_State_StateUnknown = 0;
+        LiveSubscribeDetail_State_StateSubscribed = 1;
+        LiveSubscribeDetail_State_StateUnsubscribed = 2;
+    }
+}
+
+message OptInStatus {
+    bool isOptedIn = 1;
+    int64 updateTimestampMsecs = 2;
+}
+
+message PublisherSubscribeDetail {
+    .ranking.pii.user.profile.PublisherSubscribeDetail.PublisherSubscribeDetail_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    int64 editionId = 4;
+    enum PublisherSubscribeDetail_State {
+        PublisherSubscribeDetail_State_StateUnknown = 0;
+        PublisherSubscribeDetail_State_StateSubscribed = 1;
+        PublisherSubscribeDetail_State_StateUnsubscribed = 2;
+        PublisherSubscribeDetail_State_StateHidden = 3;
+        PublisherSubscribeDetail_State_StateUnhidden = 4;
+    }
+}
+
+message StoryHideState {
+    .ranking.pii.user.profile.StoryHideState.StoryHideState_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    .ranking.pii.user.profile.StoryHideState.EvictionHint evictionHint = 4;
+    string creatorId = 5;
+    .ranking.pii.user.profile.StoryHideState.StoryHideState_HideTarget hideTarget = 6;
+    enum EvictionHint {
+        EvictionHint_EvictionHintNone = 0;
+        EvictionHint_EvictionHintMustKeep = 1;
+    }
+    enum StoryHideState_HideTarget {
+        StoryHideState_HideTarget_HideTargetUnknown = 0;
+        StoryHideState_HideTarget_HideTargetStory = 1;
+        StoryHideState_HideTarget_HideTargetCreator = 2;
+    }
+    enum StoryHideState_State {
+        StoryHideState_State_StateUnknown = 0;
+        StoryHideState_State_StateHidden = 1;
+        StoryHideState_State_StateUnhidden = 2;
+    }
+}
+
+message StorySubscribeState {
+    .ranking.pii.user.profile.StorySubscribeState.StorySubscribeState_State state = 1;
+    int64 stateTimestampMsecs = 2;
+    int64 stateExpireTimestampMsecs = 3;
+    .ranking.pii.user.profile.StorySubscribeState.EvictionHint evictionHint = 4;
+    enum EvictionHint {
+        EvictionHint_EvictionHintNone = 0;
+        EvictionHint_EvictionHintMustKeep = 1;
+    }
+    enum StorySubscribeState_State {
+        StorySubscribeState_State_StateUnknown = 0;
+        StorySubscribeState_State_StateSubscribed = 1;
+        StorySubscribeState_State_StateUnsubscribed = 2;
+    }
+}
+
+message SubscribedPublisherScore {
+    int64 subTimestampMsecs = 1;
+}
+
+message SubscribedUserScore {
+    string userId = 1;
+    float friendScore = 2;
+    int64 relationshipTimestampMsecs = 3;
+}
+
+message Subscriptions {
+    bytes hiddenUsers = 2;
+    repeated int64 subscribedPublishersArray = 3;
+    repeated string subscribedStoriesArray = 5;
+    bytes hiddenStories = 6;
+    bytes unsubscribedUsers = 8;
+    repeated .ranking.pii.user.profile.SubscribedUserScore subscribedUserScoresArray = 9;
+    bytes softHiddenUsers = 10;
+    repeated string subscribedLiveStreamCreatorsArray = 11;
+    bytes hiddenLiveStreams = 12;
+    repeated .ranking.pii.user.profile.Subscriptions.HiddenLiveStreamCreatorsCountEntry hiddenLiveStreamCreatorsCount = 13;
+    repeated .ranking.pii.user.profile.Subscriptions.SubscribedParentEventCountsEntry subscribedParentEventCounts = 14;
+    repeated int64 hiddenLensesArray = 15;
+    repeated int32 hiddenCategoriesArray = 16;
+    bytes hiddenLensCreators = 17;
+    repeated .ranking.pii.user.profile.SubscribedUserScore subscribedLensCreatorsArray = 18;
+    repeated .ranking.pii.user.profile.Subscriptions.SubscribedPublisherScoresEntry subscribedPublisherScores = 19;
+    repeated int64 hiddenPublishersArray = 20;
+    repeated uint64 hiddenUsersFprintsArray = 21;
+    bytes spotlightHiddenUsersBf = 23;
+    repeated string spotlightHiddenUsersIdsArray = 24;
+    repeated uint64 spotlightHiddenStoriesFprintsArray = 26;
+    int32 spotlightHiddenUsersNum = 27;
+    message HiddenLiveStreamCreatorsCountEntry {
+        string key = 1;
+        uint32 value = 2;
+    }
+    message SubscribedParentEventCountsEntry {
+        string key = 1;
+        uint32 value = 2;
+    }
+    message SubscribedPublisherScoresEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SubscribedPublisherScore value = 2;
+    }
+}
+
+message UserHiddenCategories {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserHiddenCategories.HiddenDetailsEntry hiddenDetails = 2;
+    message HiddenDetailsEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.CategoryHideDetail value = 2;
+    }
+}
+
+message UserHiddenEditions {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserHiddenEditions.HiddenEditionsEntry hiddenEditions = 2;
+    message HiddenEditionsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.EditionHideDetail value = 2;
+    }
+}
+
+message UserHiddenLenses {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserHiddenLenses.HiddenLensesEntry hiddenLenses = 2;
+    message HiddenLensesEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.LensHideState value = 2;
+    }
+}
+
+message UserHiddenLives {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserHiddenLives.HiddenDetailsEntry hiddenDetails = 2;
+    message HiddenDetailsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.LiveHideDetail value = 2;
+    }
+}
+
+message UserHiddenStories {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserHiddenStories.HiddenStoriesEntry hiddenStories = 2;
+    message HiddenStoriesEntry {
+        string key = 1;
+        .ranking.pii.user.profile.StoryHideState value = 2;
+    }
+}
+
+message UserSubscribedLensCreators {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserSubscribedLensCreators.SubscribedLensCreatorsEntry subscribedLensCreators = 2;
+    message SubscribedLensCreatorsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.LensCreatorSubscribeState value = 2;
+    }
+}
+
+message UserSubscribedLives {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserSubscribedLives.SubscribedDetailsEntry subscribedDetails = 2;
+    message SubscribedDetailsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.LiveSubscribeDetail value = 2;
+    }
+}
+
+message UserSubscribedPublishers {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserSubscribedPublishers.SubscribedPublishersEntry subscribedPublishers = 2;
+    message SubscribedPublishersEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.PublisherSubscribeDetail value = 2;
+    }
+}
+
+message UserSubscribedStories {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.UserSubscribedStories.SubscribedStoriesEntry subscribedStories = 2;
+    message SubscribedStoriesEntry {
+        string key = 1;
+        .ranking.pii.user.profile.StorySubscribeState value = 2;
+    }
+}

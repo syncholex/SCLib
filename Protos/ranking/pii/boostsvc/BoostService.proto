@@ -1,0 +1,109 @@
+syntax = "proto3";
+package ranking.pii.boostsvc;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Boostsvc";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/core/SCSCORESomaRequestMetadata.proto";
+import "ranking/core/SCSCOREUuid.proto";
+
+message ActionSubresponse {
+    string subRequestId = 1;
+    .ranking.pii.boostsvc.ActionSubresponse.Status_Enum status = 2;
+    enum Status_Enum {
+        Status_Enum_Unknown = 0;
+        Status_Enum_Success = 1;
+        Status_Enum_RetriableError = 2;
+        Status_Enum_NonRetriableError = 3;
+    }
+}
+
+message BoostAction {
+    string subRequestId = 1;
+    .ranking.pii.boostsvc.BoostItem boostItem = 2;
+}
+
+message BoostItem {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    string itemId = 2;
+    int64 progressMs = 3;
+    int64 clientTsMsec = 4;
+    .ranking.pii.boostsvc.BoostItem.BoostType_Enum boostType = 5;
+    bool isUgc = 6;
+    enum BoostType_Enum {
+        BoostType_Enum_Unknown = 0;
+        BoostType_Enum_BoostOnly = 1;
+    }
+}
+
+message BoostStats {
+    bool isUgc = 1;
+    string storyId = 2;
+    string snapId = 3;
+    int64 boostCounts = 4;
+    int64 subCount = 5;
+    int64 pendingReplyCount = 6;
+    int64 liveReplyCount = 7;
+    bool clearUnseenPendingCount = 8;
+}
+
+message BoostType {
+}
+
+message BoosterProfile {
+    .ranking.core.SCSCOREUUID userId = 1;
+    repeated .ranking.pii.boostsvc.BoostItem boostItemsArray = 2;
+}
+
+message CreateBoostActionsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated .ranking.pii.boostsvc.BoostAction boostActionsArray = 2;
+}
+
+message CreateBoostActionsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.boostsvc.ActionSubresponse actionSubresponseArray = 2;
+}
+
+message DeleteBoostAction {
+    string subRequestId = 1;
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 2;
+    string itemId = 3;
+    int64 progressMs = 4;
+    int64 clientTsMsec = 5;
+    .ranking.pii.boostsvc.DeleteBoostAction.BoostType_Enum boostType = 6;
+    bool isUgc = 7;
+    enum BoostType_Enum {
+        BoostType_Enum_Unknown = 0;
+        BoostType_Enum_BoostOnly = 1;
+    }
+}
+
+message DeleteBoostActionsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated .ranking.pii.boostsvc.DeleteBoostAction deletedBoostActionsArray = 2;
+}
+
+message DeleteBoostActionsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.boostsvc.ActionSubresponse actionSubresponseArray = 2;
+}
+
+message GetBoostsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    .ranking.pii.boostsvc.GetBoostsRequest.GetBoostsRequest_Type requestType = 2;
+    enum GetBoostsRequest_Type {
+        GetBoostsRequest_Type_Unknown = 0;
+        GetBoostsRequest_Type_Self = 1;
+        GetBoostsRequest_Type_BidirectionalFriends = 2;
+        GetBoostsRequest_Type_SelfAndBidirectionalFriends = 3;
+    }
+}
+
+message GetBoostsResponse {
+    .ranking.pii.boostsvc.BoosterProfile myBoost = 1;
+    repeated .ranking.pii.boostsvc.BoosterProfile friendBoostsArray = 2;
+}
+
+message Status {
+}

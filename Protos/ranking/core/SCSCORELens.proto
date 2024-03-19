@@ -1,0 +1,65 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCOREAppVersionRange {
+    string maxVersion = 1;
+    string minVersion = 2;
+}
+
+message SCSCORELensCategory {
+}
+
+message SCSCORELensInfo {
+    string lensId = 1;
+    bool isSponsored = 2;
+    string lensName = 3;
+    string brandName = 4;
+    bool supportsSelfie = 5;
+    bool supportsBackCamera = 6;
+    .ranking.core.SCSCORELensSchedule schedule = 7;
+    bool isCommunity = 8;
+    bool allowedInDiscover = 9;
+    string iconURL = 10;
+    string deeplinkURL = 11;
+    string creatorName = 12;
+    .ranking.core.SCSCORELensThumbnail thumbnail = 13;
+    string creatorUuid = 14;
+    bool isOfficialCreator = 15;
+    string creatorBitmojiAvatarId = 16;
+    string creatorBitmojiAvatarSelfieId = 17;
+    int64 lensCreationTsSecs = 18;
+    int64 lensUpdateTsSecs = 19;
+    bool isPrivate = 20;
+    int64 lensApprovalTsSecs = 21;
+    .ranking.core.SCSCOREAppVersionRange iosVersion = 22;
+    .ranking.core.SCSCOREAppVersionRange androidVersion = 23;
+    repeated string whitelistedCountriesArray = 24;
+    repeated string blacklistedCountriesArray = 25;
+    bool isSnappable = 26;
+    .ranking.core.SCSCORELensInfo.SCSCORESponsoredLensType type = 27;
+    bool isMusic = 28;
+    string lensRankingId = 29;
+    enum SCSCORESponsoredLensType {
+        SCSCORESponsoredLensType_Unknown = 0;
+        SCSCORESponsoredLensType_National = 1;
+        SCSCORESponsoredLensType_SelfServed = 2;
+    }
+}
+
+message SCSCORELensSchedule {
+    int64 startDateTsSecs = 1;
+    int64 endDateTsSecs = 2;
+}
+
+message SCSCORELensThumbnail {
+    .ranking.core.SCSCORELensThumbnail.SCSCORELensThumbnail_ImageSequence imageSequence = 1;
+    string thumbnailMediaURL = 2;
+    message SCSCORELensThumbnail_ImageSequence {
+        string URLPattern = 1;
+        int32 numImages = 2;
+        int32 frameIntervalMs = 3;
+    }
+}

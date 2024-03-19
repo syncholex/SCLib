@@ -1,0 +1,28 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Snapchat.Janus.Api";
+
+import "snapchat/janus/api/SCJanusLoginCommon.proto";
+
+message SCJanusReactivateAccountRequest {
+    string reactivationToken = 1;
+    .snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}
+
+message SCJanusReactivateAccountResponse {
+    .snapchat.janus.api.SCJanusReactivateAccountResponse.SCJanusReactivateAccountResponse_StatusCode statusCode = 1;
+    .snapchat.janus.api.SCJanusReactivateAccountData reactivateAccountData = 2;
+    .snapchat.janus.api.SCJanusErrorData errorData = 10;
+    enum SCJanusReactivateAccountResponse_StatusCode {
+        SCJanusReactivateAccountResponse_StatusCode_Unset = 0;
+        SCJanusReactivateAccountResponse_StatusCode_ReactivateAccountStarted = 1;
+        SCJanusReactivateAccountResponse_StatusCode_ReactivateAccountBlocked = 2;
+        SCJanusReactivateAccountResponse_StatusCode_ErrGenericFailure = 10;
+        SCJanusReactivateAccountResponse_StatusCode_ErrThrottled = 11;
+        SCJanusReactivateAccountResponse_StatusCode_ErrInvalidToken = 12;
+        SCJanusReactivateAccountResponse_StatusCode_ErrAppVersionUpgrade = 13;
+        SCJanusReactivateAccountResponse_StatusCode_ErrBlocked = 14;
+    }
+}

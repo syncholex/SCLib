@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.forma.endymion.messages;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCForma";
+option csharp_namespace = "SnapProto.Snapchat.Forma.Endymion.Messages";
+
+message SCFormaEncryptedMedia {
+    string mediaURL = 1;
+    bytes key = 2;
+    bytes iv = 3;
+}

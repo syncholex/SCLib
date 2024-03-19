@@ -1,0 +1,205 @@
+syntax = "proto3";
+package socialsms;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Socialsms";
+
+message ActivateLinkRequest {
+    string linkId = 1;
+}
+
+message ActivateLinkResponse {
+    .socialsms.ErrorResponse errorResponse = 1;
+}
+
+message CreateSocialLinkRequest {
+    string userid = 1;
+    .socialsms.CreateSocialLinkRequest.SocialSmsFeature feature = 2;
+    repeated .socialsms.CreateSocialLinkRequest.TemplateValuesEntry templateValues = 3;
+    .socialsms.MediaLinkPayload mediaLinkPayload = 4;
+    string rawMediaURL = 5;
+    .socialsms.CreateSocialLinkRequest.LinkStatus linkStatus = 6;
+    message TemplateValuesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SocialSmsFeature {
+        SocialSmsFeature_FeatureUnset = 0;
+        SocialSmsFeature_RegistrationContacts = 1;
+        SocialSmsFeature_MemoriesLinkShare = 2;
+        SocialSmsFeature_FriendRequestNotification = 3;
+        SocialSmsFeature_PublicLink = 4;
+        SocialSmsFeature_PublicLinkSpotlightSnap = 5;
+        SocialSmsFeature_PublicLinkDiscoverProfile = 6;
+        SocialSmsFeature_PublicLinkLens = 7;
+        SocialSmsFeature_PublicLinkUserProfile = 8;
+        SocialSmsFeature_PublicLinkDiscoverEpisode = 9;
+        SocialSmsFeature_PublicLinkMapStory = 10;
+        SocialSmsFeature_PublicLinkPublicProfile = 11;
+        SocialSmsFeature_PublicLinkPublicProfileSnap = 12;
+        SocialSmsFeature_SnapAnyoneInvite = 13;
+        SocialSmsFeature_SnapAnyoneFriendRequest = 14;
+        SocialSmsFeature_SocialLinkAny = 15;
+        SocialSmsFeature_FriendInviteRegistration = 16;
+        SocialSmsFeature_FriendInviteAllContacts = 17;
+        SocialSmsFeature_FriendInviteFriendFeed = 18;
+        SocialSmsFeature_FriendInviteAddFriends = 19;
+        SocialSmsFeature_FriendInviteUniversalSearch = 20;
+        SocialSmsFeature_FriendInviteInviteFriendsPage = 21;
+        SocialSmsFeature_ClientMemoriesLinkShare = 22;
+        SocialSmsFeature_FriendInviteSendTo = 23;
+        SocialSmsFeature_ClientMainCameraLinkShare = 24;
+    }
+    enum LinkStatus {
+        LinkStatus_LinkStatusUnset = 0;
+        LinkStatus_Pending = 1;
+        LinkStatus_Active = 2;
+    }
+}
+
+message CreateSocialLinkResponse {
+    .socialsms.ErrorResponse errorResponse = 1;
+    string URL = 2;
+    string text = 3;
+    .socialsms.CreateSocialLinkResponse.LinkStatus linkStatus = 6;
+    enum LinkStatus {
+        LinkStatus_LinkStatusUnset = 0;
+        LinkStatus_Pending = 1;
+        LinkStatus_Active = 2;
+    }
+}
+
+message ErrorResponse {
+    .socialsms.ErrorResponse.ErrorType errorType = 1;
+    string errorMessage = 2;
+    enum ErrorType {
+        ErrorType_ErrorTypeUnset = 0;
+        ErrorType_RatelimitUser = 1;
+        ErrorType_BadRequestUserid = 2;
+        ErrorType_BadRequestPhoneNumbers = 3;
+        ErrorType_BadRequestUnverifiedPhoneNumber = 4;
+        ErrorType_BadRequestInvalidFeature = 5;
+        ErrorType_BadRequestContentURLNotFound = 6;
+        ErrorType_BadRequestMessageTooLong = 7;
+    }
+}
+
+message GetLinkDataRequest {
+    string linkId = 1;
+}
+
+message GetLinkDataResponse {
+    .socialsms.ErrorResponse errorResponse = 1;
+    string linkId = 2;
+    .socialsms.GetLinkDataResponse.SocialSmsFeature feature = 3;
+    string creatorUserId = 4;
+    .socialsms.MediaLinkPayload mediaLinkPayload = 5;
+    enum SocialSmsFeature {
+        SocialSmsFeature_FeatureUnset = 0;
+        SocialSmsFeature_RegistrationContacts = 1;
+        SocialSmsFeature_MemoriesLinkShare = 2;
+        SocialSmsFeature_FriendRequestNotification = 3;
+        SocialSmsFeature_PublicLink = 4;
+        SocialSmsFeature_PublicLinkSpotlightSnap = 5;
+        SocialSmsFeature_PublicLinkDiscoverProfile = 6;
+        SocialSmsFeature_PublicLinkLens = 7;
+        SocialSmsFeature_PublicLinkUserProfile = 8;
+        SocialSmsFeature_PublicLinkDiscoverEpisode = 9;
+        SocialSmsFeature_PublicLinkMapStory = 10;
+        SocialSmsFeature_PublicLinkPublicProfile = 11;
+        SocialSmsFeature_PublicLinkPublicProfileSnap = 12;
+        SocialSmsFeature_SnapAnyoneInvite = 13;
+        SocialSmsFeature_SnapAnyoneFriendRequest = 14;
+        SocialSmsFeature_SocialLinkAny = 15;
+        SocialSmsFeature_FriendInviteRegistration = 16;
+        SocialSmsFeature_FriendInviteAllContacts = 17;
+        SocialSmsFeature_FriendInviteFriendFeed = 18;
+        SocialSmsFeature_FriendInviteAddFriends = 19;
+        SocialSmsFeature_FriendInviteUniversalSearch = 20;
+        SocialSmsFeature_FriendInviteInviteFriendsPage = 21;
+        SocialSmsFeature_ClientMemoriesLinkShare = 22;
+        SocialSmsFeature_FriendInviteSendTo = 23;
+        SocialSmsFeature_ClientMainCameraLinkShare = 24;
+    }
+}
+
+message MediaLinkPayload {
+    string format = 1;
+    string downloadURL = 2;
+    string thumbnailDownloadURL = 3;
+    string lensId = 4;
+}
+
+message SendSocialSmsRequest {
+    string userid = 1;
+    repeated string phoneNumbersArray = 2;
+    .socialsms.SendSocialSmsRequest.SocialSmsFeature feature = 3;
+    repeated .socialsms.SendSocialSmsRequest.TemplateValuesEntry templateValues = 4;
+    .socialsms.MediaLinkPayload mediaLinkPayload = 5;
+    repeated .socialsms.SendSocialSmsRequest.PhoneNumberToLanguageEntry phoneNumberToLanguage = 6;
+    repeated .socialsms.SendSocialSmsRequest.PhoneNumberToUseridEntry phoneNumberToUserid = 7;
+    string rawMediaURL = 8;
+    message TemplateValuesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message PhoneNumberToLanguageEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message PhoneNumberToUseridEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SocialSmsFeature {
+        SocialSmsFeature_FeatureUnset = 0;
+        SocialSmsFeature_RegistrationContacts = 1;
+        SocialSmsFeature_MemoriesLinkShare = 2;
+        SocialSmsFeature_FriendRequestNotification = 3;
+        SocialSmsFeature_PublicLink = 4;
+        SocialSmsFeature_PublicLinkSpotlightSnap = 5;
+        SocialSmsFeature_PublicLinkDiscoverProfile = 6;
+        SocialSmsFeature_PublicLinkLens = 7;
+        SocialSmsFeature_PublicLinkUserProfile = 8;
+        SocialSmsFeature_PublicLinkDiscoverEpisode = 9;
+        SocialSmsFeature_PublicLinkMapStory = 10;
+        SocialSmsFeature_PublicLinkPublicProfile = 11;
+        SocialSmsFeature_PublicLinkPublicProfileSnap = 12;
+        SocialSmsFeature_SnapAnyoneInvite = 13;
+        SocialSmsFeature_SnapAnyoneFriendRequest = 14;
+        SocialSmsFeature_SocialLinkAny = 15;
+        SocialSmsFeature_FriendInviteRegistration = 16;
+        SocialSmsFeature_FriendInviteAllContacts = 17;
+        SocialSmsFeature_FriendInviteFriendFeed = 18;
+        SocialSmsFeature_FriendInviteAddFriends = 19;
+        SocialSmsFeature_FriendInviteUniversalSearch = 20;
+        SocialSmsFeature_FriendInviteInviteFriendsPage = 21;
+        SocialSmsFeature_ClientMemoriesLinkShare = 22;
+        SocialSmsFeature_FriendInviteSendTo = 23;
+        SocialSmsFeature_ClientMainCameraLinkShare = 24;
+    }
+}
+
+message SendSocialSmsResponse {
+    .socialsms.ErrorResponse errorResponse = 1;
+    repeated .socialsms.SendSocialSmsResponse.DeliveryStatus messageStatusesArray = 2;
+    enum DeliveryStatus {
+        DeliveryStatus_DeliveryStatusUnset = 0;
+        DeliveryStatus_Attempted = 1;
+        DeliveryStatus_NotAttempted = 2;
+        DeliveryStatus_InvalidNumber = 3;
+        DeliveryStatus_UnreachableNumber = 4;
+        DeliveryStatus_UnsubscribedNumber = 5;
+        DeliveryStatus_RateLimit = 6;
+        DeliveryStatus_BlockedCountryCode = 7;
+        DeliveryStatus_ScheduledSend = 8;
+        DeliveryStatus_MessageTooLong = 9;
+    }
+}
+
+message TakedownMediaRequest {
+    string linkId = 1;
+}
+
+message TakedownMediaResponse {
+    .socialsms.ErrorResponse errorResponse = 1;
+}

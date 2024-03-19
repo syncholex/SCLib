@@ -1,0 +1,30 @@
+syntax = "proto3";
+package impala.stories.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala.Stories.Common";
+
+import "impala/common/IMPThumbnailsInfo.proto";
+
+message IMPBusinessStory {
+    string businessId = 1;
+    int32 numSnaps = 2;
+    .impala.stories.common.IMPTimeRange timeRange = 3;
+    string thumbnailURL = 4;
+    string lastSnapId = 5;
+    .impala.stories.common.IMPTimeRange displayTimeRange = 6;
+    .impala.stories.common.IMPBusinessStoryMetrics metrics = 7;
+    string storyId = 8;
+    .impala.common.IMPEncryptedThumbnailInfo encryptedThumbnailInfo = 9;
+}
+
+message IMPBusinessStoryMetrics {
+    int32 reach = 1;
+    int32 screenshotCount = 2;
+    int32 storyReplies = 3;
+}
+
+message IMPTimeRange {
+    int64 startTimestamp = 1;
+    int64 endTimestamp = 2;
+}

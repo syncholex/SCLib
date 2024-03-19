@@ -1,0 +1,75 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Snapchat.Janus.Api";
+
+import "snapchat/janus/api/SCJanusLoginBootstrap.proto";
+import "snapchat/janus/api/SCJanusLoginCommon.proto";
+
+message SCJanusSendTwoFACodeData {
+}
+
+message SCJanusSendTwoFACodeRequest {
+    string twoFaToken = 1;
+    .snapchat.janus.api.SCJanusSendTwoFACodeRequest.SCJanusTwoFAType twoFaType = 2;
+    .snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+    enum SCJanusTwoFAType {
+        SCJanusTwoFAType_TwoFaTypeUnset = 0;
+        SCJanusTwoFAType_TwoFaTypeSms = 1;
+        SCJanusTwoFAType_TwoFaTypeOtp = 2;
+    }
+}
+
+message SCJanusSendTwoFACodeResponse {
+    .snapchat.janus.api.SCJanusSendTwoFACodeResponse.SCJanusSendTwoFACodeResponse_StatusCode statusCode = 1;
+    .snapchat.janus.api.SCJanusSendTwoFACodeData sendTwoFaData = 2;
+    .snapchat.janus.api.SCJanusAndroidSafetynetData androidSafetynetData = 3;
+    .snapchat.janus.api.SCJanusErrorData errorData = 10;
+    enum SCJanusSendTwoFACodeResponse_StatusCode {
+        SCJanusSendTwoFACodeResponse_StatusCode_Unset = 0;
+        SCJanusSendTwoFACodeResponse_StatusCode_SendSuccess = 1;
+        SCJanusSendTwoFACodeResponse_StatusCode_AndroidSafetynetRequested = 2;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrGenericFailure = 10;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrThrottled = 11;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrInvalidToken = 12;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrSendFailureRetryable = 13;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrSendFailureUnretryable = 14;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrAppVersionUpgrade = 15;
+        SCJanusSendTwoFACodeResponse_StatusCode_ErrBlocked = 16;
+    }
+}
+
+message SCJanusVerifyTwoFARequest {
+    string twoFaToken = 1;
+    .snapchat.janus.api.SCJanusVerifyTwoFARequest.SCJanusTwoFAType twoFaType = 2;
+    string twoFaCode = 3;
+    bool rememberDevice = 4;
+    .snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 5;
+    .snapchat.janus.api.SCJanusCofTags cofTags = 6;
+    .snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+    enum SCJanusTwoFAType {
+        SCJanusTwoFAType_TwoFaTypeUnset = 0;
+        SCJanusTwoFAType_TwoFaTypeSms = 1;
+        SCJanusTwoFAType_TwoFaTypeOtp = 2;
+    }
+}
+
+message SCJanusVerifyTwoFAResponse {
+    .snapchat.janus.api.SCJanusVerifyTwoFAResponse.SCJanusVerifyTwoFAResponse_StatusCode statusCode = 1;
+    bool recoveryCodeUsed = 11;
+    .snapchat.janus.api.SCJanusBootstrapData bootstrapData = 2;
+    .snapchat.janus.api.SCJanusAndroidSafetynetData androidSafetynetData = 3;
+    .snapchat.janus.api.SCJanusErrorData errorData = 10;
+    enum SCJanusVerifyTwoFAResponse_StatusCode {
+        SCJanusVerifyTwoFAResponse_StatusCode_Unset = 0;
+        SCJanusVerifyTwoFAResponse_StatusCode_VerifySuccess = 1;
+        SCJanusVerifyTwoFAResponse_StatusCode_AndroidSafetynetRequested = 2;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrGenericFailure = 10;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrThrottled = 11;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrInvalidToken = 12;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrCodeMismatch = 13;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrAppVersionUpgrade = 14;
+        SCJanusVerifyTwoFAResponse_StatusCode_ErrBlocked = 15;
+    }
+}

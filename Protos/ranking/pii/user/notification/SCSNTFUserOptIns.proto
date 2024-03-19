@@ -1,0 +1,28 @@
+syntax = "proto3";
+package ranking.pii.user.notification;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSNTF";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Notification";
+
+import "ranking/pii/user/notification/SCSNTFCore.proto";
+
+message SCSNTFOptInNotification {
+    .ranking.pii.user.notification.SCSNTFNotificationEntityId id_p = 1;
+    .ranking.pii.user.notification.SCSNTFOptInNotification.SCSNTFOptInState_Enum state = 2;
+    int64 stateTimestampMsecs = 3;
+    int64 stateExpireTimestampMsecs = 4;
+    enum SCSNTFOptInState_Enum {
+        SCSNTFOptInState_Enum_Unknown = 0;
+        SCSNTFOptInState_Enum_OptIn = 1;
+        SCSNTFOptInState_Enum_OptOut = 2;
+    }
+}
+
+message SCSNTFUserOptInNotifications {
+    repeated .ranking.pii.user.notification.SCSNTFOptInNotification userStoryOptInsArray = 2;
+    repeated .ranking.pii.user.notification.SCSNTFOptInNotification publisherStoryOptInsArray = 3;
+    repeated .ranking.pii.user.notification.SCSNTFOptInNotification ourStoryOptInsArray = 4;
+    repeated .ranking.pii.user.notification.SCSNTFOptInNotification liveStreamOptInsArray = 5;
+    string userId = 6;
+    .ranking.pii.user.notification.SCSNTFOptInNotification hnNewsSectionOptIn = 7;
+}

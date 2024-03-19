@@ -1,0 +1,119 @@
+syntax = "proto3";
+package snapchat.cameos.bloops;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Bloops";
+
+import "snapchat/cameos/common/SCCameosBloopsMetaConfig.proto";
+import "snapchat/cameos/common/SCCameosFriendBloopsData.proto";
+import "snapchat/cameos/common/SCCameosServiceResponse.proto";
+
+message SCCameosCameosAdsPolicyRequest {
+    .snapchat.cameos.bloops.SCCameosCameosAdsPolicyRequest.SCCameosCameosAdsPolicy cameosAdsPolicy = 1;
+    enum SCCameosCameosAdsPolicy {
+        SCCameosCameosAdsPolicy_AdsPolicyUnset = 0;
+        SCCameosCameosAdsPolicy_AdsPolicyNobody = 1;
+        SCCameosCameosAdsPolicy_AdsPolicyOnlyMe = 2;
+        SCCameosCameosAdsPolicy_AdsPolicyFriends = 3;
+    }
+}
+
+message SCCameosCameosAdsPolicyResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}
+
+message SCCameosDeleteFriendBloopsDataRequest {
+}
+
+message SCCameosDeleteFriendBloopsDataResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}
+
+message SCCameosFriendBloopsPolicyRequest {
+    .snapchat.cameos.bloops.SCCameosFriendBloopsPolicyRequest.SCCameosFriendBloopsPolicy friendBloopsPolicy = 1;
+    enum SCCameosFriendBloopsPolicy {
+        SCCameosFriendBloopsPolicy_OnlyMePolicy = 0;
+        SCCameosFriendBloopsPolicy_FriendsPolicy = 1;
+        SCCameosFriendBloopsPolicy_EveryonePolicy = 2;
+    }
+}
+
+message SCCameosFriendBloopsPolicyResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}
+
+message SCCameosGetFriendBloopsDataRequest {
+    repeated string userIdsArray = 1;
+    bool firstMatchReturnOnly = 2;
+    .snapchat.cameos.bloops.SCCameosGetFriendBloopsDataRequest.SCCameosFriendBloopsOrigin friendBloopsOrigin = 3;
+    enum SCCameosFriendBloopsOrigin {
+        SCCameosFriendBloopsOrigin_FriendBloopsOriginUnset = 0;
+        SCCameosFriendBloopsOrigin_Chat = 1;
+        SCCameosFriendBloopsOrigin_PreviewReply = 2;
+        SCCameosFriendBloopsOrigin_Preview = 3;
+        SCCameosFriendBloopsOrigin_Discover = 4;
+        SCCameosFriendBloopsOrigin_LensCarousel = 5;
+        SCCameosFriendBloopsOrigin_FriendStories = 6;
+    }
+}
+
+message SCCameosGetFriendBloopsDataResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+    repeated .snapchat.cameos.common.SCCameosFriendBloopsData bloopsDataArray = 2;
+}
+
+message SCCameosGetMyBloopsDataRequest {
+    string sdkVersion = 1;
+    .snapchat.cameos.bloops.SCCameosGetMyBloopsDataRequest.SCCameosMyBloopsDataUseCase useCase = 2;
+    enum SCCameosMyBloopsDataUseCase {
+        SCCameosMyBloopsDataUseCase_MyBloopsDataUnset = 0;
+        SCCameosMyBloopsDataUseCase_Default = 1;
+        SCCameosMyBloopsDataUseCase_FriendOnly = 2;
+    }
+}
+
+message SCCameosGetMyBloopsDataResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+    .snapchat.cameos.common.SCCameosBloopsConfig config = 2;
+    .snapchat.cameos.common.SCCameosFriendBloopsData bloopsData = 3;
+}
+
+message SCCameosInitTestUserRequest {
+    string userId = 1;
+}
+
+message SCCameosInitTestUserResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+    .snapchat.cameos.common.SCCameosFriendBloopsData bloopsData = 2;
+}
+
+message SCCameosSetGenderRequest {
+    .snapchat.cameos.bloops.SCCameosSetGenderRequest.SCCameosGender gender = 1;
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}
+
+message SCCameosSetGenderResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}
+
+message SCCameosSetHairStyleRequest {
+    string hairStyle = 1;
+}
+
+message SCCameosSetHairStyleResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+}
+
+message SCCameosUpdateFriendBloopsDataRequest {
+    .snapchat.cameos.common.SCCameosFriendBloopsData bloopsData = 1;
+}
+
+message SCCameosUpdateFriendBloopsDataResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse status = 1;
+    .snapchat.cameos.common.SCCameosBloopsConfig config = 2;
+    .snapchat.cameos.common.SCCameosFriendBloopsData bloopsData = 3;
+}

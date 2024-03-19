@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.notification.notificationdata;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCNotification";
+option csharp_namespace = "SnapProto.Services.Snapchat.Notification.Notificationdata";
+
+import "snapchat/notification/notificationdata/SCNotificationNotificationData.proto";
+
+service PushNotificationDataRegistryService{
+    rpc ClearDeviceToken(.snapchat.notification.notificationdata.SCNotificationClearDeviceTokenRequest) returns (.snapchat.notification.notificationdata.SCNotificationClearDeviceTokenResponse);
+    rpc GetNotificationSetting(.snapchat.notification.notificationdata.SCNotificationGetNotificationSettingRequest) returns (.snapchat.notification.notificationdata.SCNotificationGetNotificationSettingResponse);
+    rpc GetTokenState(.snapchat.notification.notificationdata.SCNotificationGetTokenStateRequest) returns (.snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse);
+    rpc RegisterDevice(.snapchat.notification.notificationdata.SCNotificationRegisterDeviceRequest) returns (.snapchat.notification.notificationdata.SCNotificationRegisterDeviceResponse);
+    rpc UpdateDeviceToken(.snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateRequest) returns (.snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateResponse);
+    rpc UpdateNotificationSetting(.snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest) returns (.snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateResponse);
+    rpc UpdateSnsArn(.snapchat.notification.notificationdata.SCNotificationSnsArnUpdateRequest) returns (.snapchat.notification.notificationdata.SCNotificationSnsArnUpdateResponse);
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.invite.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSharing";
+option csharp_namespace = "SnapProto.Snapchat.Invite.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCSharingDeeplinkWithInviteRequest {
+    .snapchat.core.SCCOREUUID senderUserId = 1;
+    string deeplinkURL = 2;
+    int64 ttlInSeconds = 3;
+}
+
+message SCSharingDeeplinkWithInviteResponse {
+    string shortURL = 1;
+    string rawURL = 2;
+}

@@ -1,0 +1,80 @@
+syntax = "proto3";
+package snapchat.search.lensservice;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCS2Lens";
+option csharp_namespace = "SnapProto.Snapchat.Search.Lensservice";
+
+message SCS2LensDocumentRequest {
+    repeated string idsArray = 1;
+}
+
+message SCS2LensDocumentResponse {
+    repeated .snapchat.search.lensservice.SCS2LensDocumentResponse.LensesEntry lenses = 1;
+    message LensesEntry {
+        string key = 1;
+        .snapchat.search.lensservice.SCS2LensLensMetadata value = 2;
+    }
+}
+
+message SCS2LensLensMetadata {
+    string lensId = 1;
+    string creatorName = 2;
+    string userId = 3;
+    string businessProfileId = 4;
+    string name = 5;
+    int32 lastUpdatedEpoch = 6;
+    string thumbnailURL = 7;
+    .snapchat.search.lensservice.SCS2LensThumbnailSequence thumbnailSequence = 8;
+    string iconURL = 9;
+    string deeplinkURL = 10;
+    string snapcodeURL = 11;
+    string previewVideoURL = 12;
+}
+
+message SCS2LensSearchByTextMatch {
+    string queryStr = 1;
+}
+
+message SCS2LensSearchByTopLenses {
+    bool topLenses = 1;
+}
+
+message SCS2LensSearchByUserQuery {
+    .snapchat.search.lensservice.SCS2LensSearchByUserQuery.SCS2LensOrdering order = 3;
+    string userId = 1;
+    string businessProfileId = 2;
+    enum SCS2LensOrdering {
+        SCS2LensOrdering_NotSpecified = 0;
+        SCS2LensOrdering_Popularity = 1;
+        SCS2LensOrdering_Recency = 2;
+    }
+}
+
+message SCS2LensSearchRequest {
+    .snapchat.search.lensservice.SCS2LensUserInfo userInfo = 4;
+    bool returnInactive = 5;
+    bool returnIncompatible = 6;
+    bool returnOrganic = 7;
+    int32 maxCount = 8;
+    int32 resultStartIndex = 9;
+    .snapchat.search.lensservice.SCS2LensSearchByUserQuery user = 1;
+    .snapchat.search.lensservice.SCS2LensSearchByTextMatch textMatch = 2;
+    .snapchat.search.lensservice.SCS2LensSearchByTopLenses topLenses = 3;
+}
+
+message SCS2LensSearchResponse {
+    repeated .snapchat.search.lensservice.SCS2LensLensMetadata lensesArray = 1;
+    bool hasMoreResults = 2;
+    int32 nextStartIndex = 3;
+}
+
+message SCS2LensThumbnailSequence {
+    string URLPattern = 1;
+    int32 numThumbnails = 2;
+    int32 animationIntervalMs = 3;
+}
+
+message SCS2LensUserInfo {
+    string countryCode = 1;
+    string forwardedUserAgent = 2;
+}

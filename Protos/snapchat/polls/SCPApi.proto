@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.polls;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCP";
+option csharp_namespace = "SnapProto.Snapchat.Polls";
+
+message SCPPollInfo {
+    string pollId = 1;
+    string title = 2;
+    uint64 votingEndTime = 4;
+    .snapchat.polls.SCPTextPollOptions textPollOptions = 3;
+}
+
+message SCPTextPollItem {
+    uint32 optionId = 1;
+    string label = 2;
+}
+
+message SCPTextPollOptions {
+    repeated .snapchat.polls.SCPTextPollItem itemsArray = 1;
+    bool isEmojiOnly = 2;
+}

@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.identity;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCID";
+option csharp_namespace = "SnapProto.Snapchat.Identity";
+
+message SCIDAndroidNotificationPermissionsRequest {
+    repeated .snapchat.identity.SCIDNotificationChannelGroup notificationChannelGroupsArray = 1;
+    repeated .snapchat.identity.SCIDNotificationChannel notificationChannelsArray = 2;
+}
+
+message SCIDNotificationChannel {
+    string channelId = 1;
+    int32 importance = 2;
+    bool bypassDnd = 3;
+    int32 lockscreenVisibility = 4;
+    string soundUri = 5;
+    bool vibrationEnabled = 6;
+    bool showBadge = 7;
+    bool showLights = 8;
+}
+
+message SCIDNotificationChannelGroup {
+    string channelGroupId = 1;
+    bool blocked = 2;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.perception;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCN";
+option csharp_namespace = "SnapProto.Snapchat.Perception";
+
+message SCPCNEnqueueScanDataDeletionRequest {
+    string id_p = 1;
+    .snapchat.perception.SCPCNEnqueueScanDataDeletionRequest.SCPCNEnqueueScanDataDeletionRequest_ScanDataType type = 2;
+    enum SCPCNEnqueueScanDataDeletionRequest_ScanDataType {
+        SCPCNEnqueueScanDataDeletionRequest_ScanDataType_ScanDataUnset = 0;
+        SCPCNEnqueueScanDataDeletionRequest_ScanDataType_ScanDataVisual = 1;
+        SCPCNEnqueueScanDataDeletionRequest_ScanDataType_ScanDataVoice = 2;
+    }
+}
+
+message SCPCNEnqueueScanDataDeletionResponse {
+}

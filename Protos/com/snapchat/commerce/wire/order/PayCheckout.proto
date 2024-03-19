@@ -1,0 +1,23 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Order";
+
+import "com/snapchat/commerce/domain/order/Order.proto";
+import "com/snapchat/commerce/wire/error/Error.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/payments/Payment.proto";
+
+message PayCheckoutRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    bytes checkoutId = 2;
+    repeated .snapchat.payments.PaymentMethod paymentMethodsArray = 3;
+    string requestId = 4;
+    string deviceId = 5;
+}
+
+message PayCheckoutResponse {
+    string requestId = 3;
+    .com.snapchat.commerce.domain.order.Order order = 1;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+}

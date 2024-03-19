@@ -1,0 +1,177 @@
+syntax = "proto3";
+package snapchat.valis;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCVS";
+option csharp_namespace = "SnapProto.Snapchat.Valis";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/valis/SCVSValis.proto";
+
+message SCVSFsnCanRequestLocationRequest {
+    .snapchat.core.SCCOREUUID friendId = 1;
+    .snapchat.core.SCCOREUUID requesterId = 2;
+}
+
+message SCVSFsnCanRequestLocationResponse {
+    bool canRequestLocation = 1;
+    bool hideRequestButton = 2;
+}
+
+message SCVSGetBatchLocSharingPreferencesRequest {
+    repeated .snapchat.core.SCCOREUUID userIdsArray = 1;
+}
+
+message SCVSGetBatchLocSharingPreferencesResponse {
+    repeated .snapchat.valis.SCVSShareLocationPreferences preferencesArray = 1;
+    int64 serverTimestamp = 2;
+}
+
+message SCVSGetChangeHistoryRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    int64 beginTimestamp = 2;
+    int64 endTimestamp = 3;
+    bool reverseChronologicalOrder = 4;
+    int32 numResultsPreceedingBeginTimestamp = 5;
+}
+
+message SCVSGetChangeHistoryResponse {
+    repeated .snapchat.valis.SCVSShareLocationPreferences preferencesArray = 1;
+    repeated .snapchat.valis.SCVSLocationPreferencesMetadata metadataArray = 2;
+}
+
+message SCVSGetLocationSharingPreferencesRequest {
+}
+
+message SCVSGetLocationSharingPreferencesResponse {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 serverTimestamp = 2;
+}
+
+message SCVSGetMutedFriendListRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+}
+
+message SCVSGetMutedFriendListResponse {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 version = 2;
+}
+
+message SCVSGetMutedFriendsRequest {
+}
+
+message SCVSGetMutedFriendsResponse {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 version = 2;
+}
+
+message SCVSIsSharingLocationWithUserRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    .snapchat.core.SCCOREUUID shareeId = 2;
+}
+
+message SCVSIsSharingLocationWithUserResponse {
+    bool isSharingLocation = 1;
+}
+
+message SCVSLambdaPreferencesUpdate {
+    .snapchat.core.SCCOREUUID userId = 1;
+    int64 version = 2;
+}
+
+message SCVSLocRequestFeedbackRequest {
+    .snapchat.core.SCCOREUUID requesterId = 1;
+    .snapchat.valis.SCVSLocRequestFeedbackRequest.SCVSLocationRequestFeedback feedback = 2;
+    enum SCVSLocationRequestFeedback {
+        SCVSLocationRequestFeedback_Unset = 0;
+        SCVSLocationRequestFeedback_Ignored = 1;
+        SCVSLocationRequestFeedback_Accepted = 2;
+    }
+}
+
+message SCVSLocRequestFeedbackResponse {
+}
+
+message SCVSLocationPreferencesMetadata {
+    .snapchat.valis.SCVSLocationPreferencesMetadata.SCVSChangeSource changeSource = 1;
+    enum SCVSChangeSource {
+        SCVSChangeSource_SourceUnset = 0;
+        SCVSChangeSource_BackendClient = 1;
+        SCVSChangeSource_UserActionInSettingsFromMap = 2;
+        SCVSChangeSource_UserActionInSettingsFromApp = 3;
+        SCVSChangeSource_LocationPermissionsOn = 4;
+        SCVSChangeSource_LocationPermissionsOff = 5;
+        SCVSChangeSource_OnboardedFromLegacy = 6;
+        SCVSChangeSource_GhostModeExpired = 7;
+        SCVSChangeSource_InternalDebug = 8;
+        SCVSChangeSource_LocationUpsellAlert = 9;
+        SCVSChangeSource_StartSharingWithFromChat = 10;
+        SCVSChangeSource_StartSharingWithFromProfile = 11;
+        SCVSChangeSource_StartSharingWithFromCarousel = 12;
+        SCVSChangeSource_StartSharingWithFromFocusView = 13;
+        SCVSChangeSource_StartSharingWithFromGroupFocusView = 14;
+        SCVSChangeSource_StartSharingWithMeTray = 15;
+        SCVSChangeSource_LiveLocationMapSettings = 20;
+        SCVSChangeSource_LiveLocationOwnProfile = 21;
+        SCVSChangeSource_LiveLocationFriendProfile = 22;
+        SCVSChangeSource_LiveLocationFocusView = 23;
+        SCVSChangeSource_LiveLocationChatCard = 24;
+        SCVSChangeSource_BackendVuln = 30;
+        SCVSChangeSource_BackendExternalServerLegacy = 31;
+        SCVSChangeSource_BackendMeshDependency = 32;
+    }
+}
+
+message SCVSLocationRequestedRequest {
+    .snapchat.core.SCCOREUUID requesterId = 1;
+    .snapchat.core.SCCOREUUID friendId = 2;
+}
+
+message SCVSLocationRequestedResponse {
+}
+
+message SCVSMuteFriendRequest {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 curVersion = 2;
+}
+
+message SCVSMuteFriendResponse {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 newVersion = 2;
+}
+
+message SCVSMutedFriends {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    .snapchat.core.SCCOREUUID userId = 2;
+}
+
+message SCVSSetLocSharingPreferencesRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 2;
+    int64 ghostModeDuration = 3;
+}
+
+message SCVSSetLocSharingPreferencesResponse {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 serverTimestamp = 2;
+}
+
+message SCVSSetLocationSharingPreferencesRequest {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 ghostModeDuration = 2;
+    .snapchat.valis.SCVSLocationPreferencesMetadata metadata = 3;
+}
+
+message SCVSSetLocationSharingPreferencesResponse {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 serverTimestamp = 2;
+}
+
+message SCVSUnmuteFriendRequest {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 curVersion = 2;
+}
+
+message SCVSUnmuteFriendResponse {
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 1;
+    int64 newVersion = 2;
+}

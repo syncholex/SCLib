@@ -1,0 +1,47 @@
+syntax = "proto3";
+package snapchat.perception.scan.settings;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCNSettings";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Scan.Settings";
+
+message SCPCNSettingsCategoriesRequiringPermissions {
+    repeated .snapchat.perception.scan.settings.SCPCNSettingsCategoriesRequiringPermissions.SCPCNSettingsCategoriesRequiringPermissions_Category categoriesArray = 1;
+    message SCPCNSettingsCategoriesRequiringPermissions_Category {
+        string categoryId = 1;
+        string displayName = 2;
+    }
+}
+
+message SCPCNSettingsCategoryPermissionSetting {
+    string categoryId = 1;
+    .snapchat.perception.scan.settings.SCPCNSettingsCategoryPermissionSetting.SCPCNSettingsCategoryPermissionSetting_PermissionType generalScanPermission = 4;
+    .snapchat.perception.scan.settings.SCPCNSettingsPromptHistory generalScanPermissionPromptsFromMscd = 6;
+    .snapchat.perception.scan.settings.SCPCNSettingsPromptHistory generalScanPermissionPromptsFromTray = 7;
+    enum SCPCNSettingsCategoryPermissionSetting_PermissionType {
+        SCPCNSettingsCategoryPermissionSetting_PermissionType_PermissionTypeUnset = 0;
+        SCPCNSettingsCategoryPermissionSetting_PermissionType_PermissionTypeEnabled = 1;
+        SCPCNSettingsCategoryPermissionSetting_PermissionType_PermissionTypeDisabled = 2;
+    }
+}
+
+message SCPCNSettingsCategoryPermissionSettings {
+    repeated .snapchat.perception.scan.settings.SCPCNSettingsCategoryPermissionSetting settingsArray = 1;
+}
+
+message SCPCNSettingsPromptHistory {
+    int64 lastPromptedEpochSec = 1;
+    int64 numPrompts = 2;
+}
+
+message SCPCNSettingsSettingsRequest {
+    string requestId = 1;
+}
+
+message SCPCNSettingsSettingsResponse {
+    repeated .snapchat.perception.scan.settings.SCPCNSettingsSettingsResponse.SCPCNSettingsSettingsResponse_Section sectionsArray = 1;
+    message SCPCNSettingsSettingsResponse_Section {
+        string title = 1;
+        string subtitle = 2;
+        .snapchat.perception.scan.settings.SCPCNSettingsCategoriesRequiringPermissions categoriesRequiringPermissions = 3;
+    }
+}

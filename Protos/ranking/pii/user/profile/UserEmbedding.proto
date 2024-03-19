@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/pii/user/profile/SCSUPContentEngagement.proto";
+
+message DiscoverUserEmbedding {
+    .ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbedding = 1;
+    .ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbeddingV2C = 2;
+    .ranking.pii.user.profile.SCSUPDFUserEmbedding dfUserEmbedding = 3;
+    .ranking.pii.user.profile.SCSUPSpotlightUserEmbedding spotlightTtUserEmbeddingV2V = 4;
+}

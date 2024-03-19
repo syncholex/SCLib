@@ -1,0 +1,23 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+import "schema/messages/messages.proto";
+
+message QueryMessagesRequest {
+    uint64 starting_message_id = 1;
+    .snapchat.messaging.UUID conversation_id = 2;
+    uint32 requested_page_size = 3;
+    .snapchat.messaging.UUID sending_user_id = 4;
+}
+
+message QueryMessagesResponse {
+    repeated .snapchat.messaging.ContentMessage messages = 1;
+    bool no_more = 2;
+}

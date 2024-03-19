@@ -1,0 +1,231 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+import "schema/common/errors.proto";
+import "schema/messages/destinations.proto";
+import "schema/common/retention.proto";
+import "schema/common/streaks.proto";
+import "schema/messages/envelopes.proto";
+import "schema/messages/incidental_attachment.proto";
+import "schema/common/legacy_message_id.proto";
+import "snapchat/content/MediaReference.proto";
+
+message CreateContentMessageRequest {
+    .snapchat.messaging.UUID sender_id = 1;
+    uint64 client_resolution_id = 2;
+    repeated .snapchat.messaging.DeliveryDestination destinations = 3;
+    .snapchat.messaging.ContentEnvelope contents = 4;
+    repeated uint64 dependent_client_resolution_ids = 5;
+    repeated .snapchat.messaging.IncidentalAttachment incidental_attachment = 6;
+    bool is_retry = 7;
+}
+
+message CreateContentMessageResponse {
+    uint64 client_resolution_id = 1;
+    repeated .snapchat.messaging.CreateContentMessageResult result = 2;
+}
+
+message CreateContentMessageResult {
+    bool success = 2;
+    .snapchat.messaging.FailureReason failure_reason = 3;
+    bool retryable = 4;
+    .snapchat.messaging.UUID destination_id = 1;
+    uint64 current_version = 5;
+    uint64 created_message_id = 6;
+    .snapchat.messaging.ContentReadReleasePolicy release_policy = 7;
+    .snapchat.messaging.MessageMetadata message_metadata = 8;
+    .snapchat.messaging.StreakMetadata streak_metadata = 9;
+    .snapchat.content.MediaReference snap_story_reference = 10;
+    .snapchat.messaging.LegacyMessageId analytics_message_id = 11;
+    .snapchat.messaging.ConversationDestinationResult conversation_destination_result = 12;
+    .snapchat.messaging.StoryDestinationResult story_destination_result = 13;
+}
+
+message StoryDestinationResult {
+    .snapchat.messaging.UUID story_destination_id = 1;
+    bytes story_id = 2;
+}
+
+message ConversationDestinationResult {
+    .snapchat.messaging.UUID conversation_destination_id = 1;
+    uint64 current_version = 2;
+    uint64 created_message_id = 3;
+    .snapchat.messaging.ContentReadReleasePolicy release_policy = 4;
+    .snapchat.messaging.MessageMetadata message_metadata = 5;
+    .snapchat.messaging.StreakMetadata streak_metadata = 6;
+    .snapchat.content.MediaReference snap_story_reference = 7;
+    .snapchat.messaging.LegacyMessageId analytics_message_id = 8;
+}
+
+message ContentMessage {
+    uint64 message_id = 1;
+    .snapchat.messaging.UUID sender_id = 2;
+    .snapchat.messaging.DeliveryDestination destination = 3;
+    .snapchat.messaging.ContentEnvelope contents = 4;
+    .snapchat.messaging.ContentReadReleasePolicy release_policy = 5;
+    .snapchat.messaging.MessageMetadata metadata = 6;
+    uint64 client_resolution_id = 7;
+    .snapchat.messaging.ContentSenderLeavePolicy leave_policy = 8;
+    .snapchat.messaging.LegacyMessageId analytics_message_id = 9;
+    .snapchat.messaging.StreakMetadata streak_metadata = 10;
+}
+
+message UpdateContentMessageRequest {
+    uint64 client_resolution_id = 1;
+    uint64 current_version = 2;
+    .snapchat.messaging.UpdateAction update = 3;
+    .snapchat.messaging.UUID sending_user_id = 4;
+}
+
+message UpdateContentMessageResponse {
+    uint64 client_resolution_id = 1;
+    uint64 current_version = 2;
+    bool success = 3;
+    bool retryable = 4;
+    .snapchat.messaging.ContentMessage status_message = 5;
+    .snapchat.messaging.FailureReason result = 99;
+    .snapchat.messaging.ReadResult read = 6;
+    .snapchat.messaging.SaveResult save = 7;
+    .snapchat.messaging.EraseResult erase = 8;
+}
+
+message UpdateMessage {
+    uint64 current_version = 1;
+    .snapchat.messaging.UpdateActionResult update = 2;
+    .snapchat.messaging.ContentMessage status_message = 3;
+}
+
+message UpdateActionResult {
+    .snapchat.messaging.UUID sender_id = 1;
+    uint64 message_id = 2;
+    .snapchat.messaging.UUID conversation_id = 3;
+    uint64 update_timestamp = 14;
+    .snapchat.messaging.ReadResult read = 4;
+    .snapchat.messaging.ReleaseResult release = 5;
+    .snapchat.messaging.SaveResult save = 6;
+    .snapchat.messaging.UnsaveResult unsave = 7;
+    .snapchat.messaging.EraseResult erase = 8;
+    .snapchat.messaging.TombstoneResult tombstone = 9;
+    .snapchat.messaging.SaveToCameraRollResult save_to_camera_roll = 10;
+    .snapchat.messaging.ScreenshotResult screenshot = 11;
+    .snapchat.messaging.ScreenRecordResult screen_record = 12;
+    .snapchat.messaging.ReplayResult replay = 13;
+    .snapchat.messaging.UpdateEncryptionResult encryption_update = 15;
+}
+
+message UpdateAction {
+    .snapchat.messaging.UUID sender_id = 1;
+    uint64 message_id = 2;
+    .snapchat.messaging.UUID conversation_id = 3;
+    uint64 update_timestamp = 14;
+    .snapchat.messaging.Read read = 4;
+    .snapchat.messaging.Release release = 5;
+    .snapchat.messaging.Save save = 6;
+    .snapchat.messaging.Unsave unsave = 7;
+    .snapchat.messaging.Erase erase = 8;
+    .snapchat.messaging.Tombstone tombstone = 9;
+    .snapchat.messaging.SaveToCameraRoll save_to_camera_roll = 10;
+    .snapchat.messaging.Screenshot screenshot = 11;
+    .snapchat.messaging.ScreenRecord screen_record = 12;
+    .snapchat.messaging.Replay replay = 13;
+    .snapchat.messaging.UpdateEncryption encryption_update = 15;
+}
+
+message Read {
+}
+
+message ReadResult {
+    uint64 read_timestamp = 1;
+}
+
+message Release {
+}
+
+message ReleaseResult {
+}
+
+message Save {
+    .snapchat.messaging.EnvelopeEncryption envelope_encryption = 1;
+}
+
+message SaveResult {
+    .snapchat.messaging.EnvelopeEncryption envelope_encryption = 1;
+    .snapchat.messaging.MediaReferences media_references = 2;
+    .snapchat.messaging.ContentEnvelope.Thumbnails thumbnails = 3;
+}
+
+message MediaReferences {
+    repeated .snapchat.messaging.ContentEnvelope.MediaReferenceList media_reference_lists = 1;
+}
+
+message Unsave {
+}
+
+message UnsaveResult {
+}
+
+message Erase {
+}
+
+message EraseResult {
+    .snapchat.messaging.ContentMessage updated_message = 1;
+}
+
+message Tombstone {
+}
+
+message TombstoneResult {
+}
+
+message SaveToCameraRoll {
+}
+
+message SaveToCameraRollResult {
+}
+
+message Screenshot {
+}
+
+message ScreenshotResult {
+}
+
+message ScreenRecord {
+}
+
+message ScreenRecordResult {
+}
+
+message Replay {
+}
+
+message ReplayResult {
+}
+
+message UpdateEncryption {
+    .snapchat.messaging.EnvelopeEncryption envelope_encryption = 1;
+}
+
+message UpdateEncryptionResult {
+    .snapchat.messaging.EnvelopeEncryption envelope_encryption = 1;
+}
+
+message MessageMetadata {
+    uint64 server_created_at = 1;
+    uint64 read_timestamp = 2;
+    bool tombstone = 3;
+    repeated .snapchat.messaging.UUID read_by = 4;
+    repeated .snapchat.messaging.UUID released_by = 5;
+    repeated .snapchat.messaging.UUID saved_by = 6;
+    repeated .snapchat.messaging.UUID mentioned_user_ids = 7;
+    repeated .snapchat.messaging.UUID screenshotted_by = 8;
+    repeated .snapchat.messaging.UUID screen_recorded_by = 9;
+    repeated .snapchat.messaging.UUID replayed_by = 10;
+    uint64 conversation_version = 11;
+}

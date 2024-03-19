@@ -1,0 +1,117 @@
+syntax = "proto3";
+package ranking2.ast;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCR2";
+option csharp_namespace = "SnapProto.Ranking2.Ast";
+
+import "ranking2/ast/SCR2AstSignals.proto";
+
+message SCR2Aggregator {
+    repeated .ranking2.ast.SCR2Node nodesArray = 1;
+}
+
+message SCR2Ast {
+    string versionId = 1;
+    .ranking2.ast.SCR2Node root = 2;
+    .ranking2.ast.SCR2Ast.SCR2Ast_TargetPage targetPage = 3;
+    bool isProd = 4;
+    .ranking2.ast.SCR2Ast.SCR2Ast_AppVersion minAppVersion = 5;
+    message SCR2Ast_AppVersion {
+        int32 major = 1;
+        int32 minor = 2;
+        int32 patch = 3;
+    }
+    enum SCR2Ast_TargetPage {
+        SCR2Ast_TargetPage_PageUnknown = 0;
+        SCR2Ast_TargetPage_PageFriendFeed = 1;
+        SCR2Ast_TargetPage_PageStoryFeed = 2;
+        SCR2Ast_TargetPage_PageSendTo = 3;
+    }
+}
+
+message SCR2BinaryOperator {
+    .ranking2.ast.SCR2Node left = 1;
+    .ranking2.ast.SCR2Node right = 2;
+}
+
+message SCR2BoundedSigmoid {
+    .ranking2.ast.SCR2Node variable = 1;
+    float midpoint = 2;
+    float endpoint = 3;
+    float slope = 4;
+}
+
+message SCR2Comparator {
+    .ranking2.ast.SCR2Node left = 1;
+    .ranking2.ast.SCR2Node right = 2;
+    .ranking2.ast.SCR2Node trueValue = 3;
+    .ranking2.ast.SCR2Node falseValue = 4;
+}
+
+message SCR2Constant {
+    float value = 1;
+}
+
+message SCR2Node {
+    string name = 1;
+    .ranking2.ast.SCR2Constant constant = 2;
+    .ranking2.ast.SCR2Signal signal = 3;
+    .ranking2.ast.SCR2BinaryOperator plus = 4;
+    .ranking2.ast.SCR2BinaryOperator minus = 5;
+    .ranking2.ast.SCR2BinaryOperator mult = 6;
+    .ranking2.ast.SCR2BinaryOperator div = 7;
+    .ranking2.ast.SCR2Comparator lessThan = 8;
+    .ranking2.ast.SCR2Comparator greaterThan = 9;
+    .ranking2.ast.SCR2BoundedSigmoid boundedSigmoid = 10;
+    .ranking2.ast.SCR2PieceWiseLinear pieceWiseLinear = 11;
+    .ranking2.ast.SCR2Aggregator maximum = 12;
+    .ranking2.ast.SCR2Aggregator minimum = 13;
+    .ranking2.ast.SCR2Squash squash = 14;
+    .ranking2.ast.SCR2Aggregator product = 15;
+    .ranking2.ast.SCR2Aggregator sum = 16;
+    .ranking2.ast.SCR2WeightedSum weightedSum = 17;
+    .ranking2.ast.SCR2Pow pow = 18;
+    .ranking2.ast.SCR2Aggregator geometricMean = 19;
+    .ranking2.ast.SCR2SquashHalf squashHalf = 20;
+}
+
+message SCR2PieceWiseLinear {
+    .ranking2.ast.SCR2Node variable = 1;
+    repeated .ranking2.ast.SCR2Point pointsArray = 2;
+}
+
+message SCR2Point {
+    float x = 1;
+    float y = 2;
+}
+
+message SCR2Pow {
+    .ranking2.ast.SCR2Node base = 1;
+    .ranking2.ast.SCR2Node power = 2;
+}
+
+message SCR2Signal {
+    string signalName = 1;
+    float defaultValue = 2;
+    .ranking2.ast.SCR2AstSignal astSignal = 3;
+}
+
+message SCR2Squash {
+    .ranking2.ast.SCR2Node variable = 1;
+    float linearRegion = 2;
+    float limit = 3;
+}
+
+message SCR2SquashHalf {
+    .ranking2.ast.SCR2Node variable = 1;
+    float midpoint = 2;
+    float slope = 3;
+}
+
+message SCR2WeightedSum {
+    repeated .ranking2.ast.SCR2WeightedSum.SCR2WeightedSum_WeightedNode nodesArray = 1;
+    message SCR2WeightedSum_WeightedNode {
+        .ranking2.ast.SCR2Node weight = 1;
+        .ranking2.ast.SCR2Node value = 2;
+    }
+}

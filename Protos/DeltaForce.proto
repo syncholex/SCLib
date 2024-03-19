@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.deltaforce.external;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Deltaforce.External";
+
+import "com/snapchat/deltaforce/DeltaSync.proto";
+
+service DeltaForce{
+    rpc DeltaSync(.com.snapchat.deltaforce.DeltaSyncRequest) returns (.com.snapchat.deltaforce.DeltaSyncResponse);
+    rpc ConditionalPut(.com.snapchat.deltaforce.ConditionalPutRequest) returns (.com.snapchat.deltaforce.ConditionalPutResponse);
+}

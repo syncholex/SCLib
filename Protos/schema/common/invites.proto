@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+enum ChangeOrigin {
+    CHANGE_ORIGIN_UNSET = 0;
+    CHANGE_ORIGIN_GROUP_INVITE_STICKER = 1;
+    CHANGE_ORIGIN_GROUP_INVITE_LINK = 2;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.context2.iz;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Iz";
+
+import "google/protobuf/wrappers.proto";
+
+message SCCTXCssStyle {
+    .snapchat.context2.iz.SCCTXCssStyle.SCCTXCssStyle_CssColor backgroundColor = 1;
+    .snapchat.context2.iz.SCCTXCssStyle.SCCTXCssStyle_CssColor foregroundColor = 2;
+    string border = 3;
+    string borderRadius = 4;
+    string shadow = 5;
+    .google.protobuf.DoubleValue opacity = 6;
+    bool outlined = 7;
+    .snapchat.context2.iz.SCCTXCssStyle.SCCTXCssStyle_BorderStyle borderStyle = 8;
+    bool hasShadow = 9;
+    message SCCTXCssStyle_CssColor {
+        int32 red = 1;
+        int32 green = 2;
+        int32 blue = 3;
+        float alpha = 4;
+    }
+    enum SCCTXCssStyle_BorderStyle {
+        SCCTXCssStyle_BorderStyle_None = 0;
+        SCCTXCssStyle_BorderStyle_RoundedRect = 1;
+        SCCTXCssStyle_BorderStyle_Circular = 2;
+    }
+}

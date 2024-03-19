@@ -1,0 +1,237 @@
+syntax = "proto3";
+package snapchat.local.pelorus;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Local.Pelorus";
+
+message SCMTFeatureInfo {
+    .snapchat.local.pelorus.SCMTFeatureInfo.SCMTFeatureType type = 1;
+    string name = 2;
+    repeated .snapchat.local.pelorus.SCMTFeatureInfo.CustomValueEntry customValue = 6;
+    .snapchat.local.pelorus.SCMTPointInfo pointInfo = 3;
+    .snapchat.local.pelorus.SCMTLineInfo lineInfo = 4;
+    .snapchat.local.pelorus.SCMTPolygonInfo polygonInfo = 5;
+    message CustomValueEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCMTFeatureType {
+        SCMTFeatureType_Unknown = 0;
+        SCMTFeatureType_Water = 1000;
+        SCMTFeatureType_AirportRunway = 2000;
+        SCMTFeatureType_AirportArea = 2001;
+        SCMTFeatureType_AirportTerminal = 2002;
+        SCMTFeatureType_Beach = 3000;
+        SCMTFeatureType_Retail = 4000;
+        SCMTFeatureType_Commercial = 4001;
+        SCMTFeatureType_Mall = 4002;
+        SCMTFeatureType_Road = 5000;
+        SCMTFeatureType_PedestrianRoad = 5001;
+        SCMTFeatureType_Highway = 5002;
+        SCMTFeatureType_Rail = 5003;
+        SCMTFeatureType_ServiceRoad = 5004;
+        SCMTFeatureType_TennisCourt = 6000;
+        SCMTFeatureType_GolfCourse = 6001;
+        SCMTFeatureType_NationalPark = 7000;
+        SCMTFeatureType_Pier = 8000;
+        SCMTFeatureType_GradeSchoolArea = 9000;
+        SCMTFeatureType_GradeSchoolBuilding = 9001;
+        SCMTFeatureType_UniversityArea = 9002;
+        SCMTFeatureType_SchoolBuildingGeneric = 9003;
+        SCMTFeatureType_Dormitory = 9004;
+        SCMTFeatureType_Library = 9005;
+        SCMTFeatureType_UniversityBuilding = 9006;
+        SCMTFeatureType_Building = 10000;
+        SCMTFeatureType_SkiingPiste = 11000;
+        SCMTFeatureType_SkiingChairLift = 11001;
+        SCMTFeatureType_MovieTheater = 12000;
+        SCMTFeatureType_FastFood = 13000;
+        SCMTFeatureType_Restaurant = 13001;
+        SCMTFeatureType_Cafe = 13002;
+        SCMTFeatureType_FastFoodBurger = 13003;
+        SCMTFeatureType_FastFoodTaco = 13004;
+        SCMTFeatureType_FastFoodSandwich = 13005;
+        SCMTFeatureType_FastFoodChicken = 13006;
+        SCMTFeatureType_Zipcode = 14000;
+        SCMTFeatureType_Event = 15000;
+        SCMTFeatureType_Venue = 16000;
+        SCMTFeatureType_VzBeach = 17000;
+        SCMTFeatureType_VzMall = 17001;
+        SCMTFeatureType_VzNationalPark = 17002;
+        SCMTFeatureType_VzGradeSchoolArea = 17003;
+        SCMTFeatureType_VzAirport = 17004;
+        SCMTFeatureType_VzSchoolCampus = 17005;
+        SCMTFeatureType_VzTennisCourt = 17006;
+        SCMTFeatureType_VzMovieTheater = 17007;
+        SCMTFeatureType_VzGolfCourse = 17008;
+        SCMTFeatureType_VzSkiArea = 17009;
+        SCMTFeatureType_VzGroceryStore = 17010;
+        SCMTFeatureType_VzRestaurant = 17011;
+        SCMTFeatureType_VzHospital = 17012;
+        SCMTFeatureType_VzHospitalWard = 17013;
+        SCMTFeatureType_VzCemetery = 17014;
+        SCMTFeatureType_VzMedicalCenter = 17015;
+        SCMTFeatureType_VzFuneralHome = 17016;
+        SCMTFeatureType_VzAll = 18000;
+        SCMTFeatureType_SnapzenAll = 20000;
+        SCMTFeatureType_Country = 21000;
+        SCMTFeatureType_County = 21001;
+        SCMTFeatureType_Borough = 21002;
+        SCMTFeatureType_Localadmin = 21003;
+        SCMTFeatureType_Locality = 21004;
+        SCMTFeatureType_Macrocounty = 21005;
+        SCMTFeatureType_Macrohood = 21006;
+        SCMTFeatureType_Macroregion = 21007;
+        SCMTFeatureType_Neighbourhood = 21008;
+        SCMTFeatureType_Region = 21009;
+        SCMTFeatureType_Disputed = 21010;
+        SCMTFeatureType_Dependency = 21011;
+        SCMTFeatureType_Continent = 21012;
+        SCMTFeatureType_MarineArea = 21013;
+        SCMTFeatureType_Ocean = 21014;
+        SCMTFeatureType_Campus = 21015;
+        SCMTFeatureType_MaskCountry = 22000;
+        SCMTFeatureType_MaskCounty = 22001;
+        SCMTFeatureType_MaskLocaladmin = 22003;
+        SCMTFeatureType_MaskLocality = 22004;
+        SCMTFeatureType_MaskMacrocounty = 22005;
+        SCMTFeatureType_MaskMacroregion = 22007;
+        SCMTFeatureType_MaskRegion = 22009;
+        SCMTFeatureType_MaskCampus = 22010;
+        SCMTFeatureType_RevgeoAll = 23000;
+        SCMTFeatureType_MemBlocklist = 24000;
+    }
+}
+
+message SCMTFeatureRequest {
+    .snapchat.local.pelorus.SCMTFeatureRequest.SCMTFeatureType featureType = 1;
+    double maxDistance = 2;
+    bool returnAll = 3;
+    uint32 maxFeatures = 4;
+    enum SCMTFeatureType {
+        SCMTFeatureType_Unknown = 0;
+        SCMTFeatureType_Water = 1000;
+        SCMTFeatureType_AirportRunway = 2000;
+        SCMTFeatureType_AirportArea = 2001;
+        SCMTFeatureType_AirportTerminal = 2002;
+        SCMTFeatureType_Beach = 3000;
+        SCMTFeatureType_Retail = 4000;
+        SCMTFeatureType_Commercial = 4001;
+        SCMTFeatureType_Mall = 4002;
+        SCMTFeatureType_Road = 5000;
+        SCMTFeatureType_PedestrianRoad = 5001;
+        SCMTFeatureType_Highway = 5002;
+        SCMTFeatureType_Rail = 5003;
+        SCMTFeatureType_ServiceRoad = 5004;
+        SCMTFeatureType_TennisCourt = 6000;
+        SCMTFeatureType_GolfCourse = 6001;
+        SCMTFeatureType_NationalPark = 7000;
+        SCMTFeatureType_Pier = 8000;
+        SCMTFeatureType_GradeSchoolArea = 9000;
+        SCMTFeatureType_GradeSchoolBuilding = 9001;
+        SCMTFeatureType_UniversityArea = 9002;
+        SCMTFeatureType_SchoolBuildingGeneric = 9003;
+        SCMTFeatureType_Dormitory = 9004;
+        SCMTFeatureType_Library = 9005;
+        SCMTFeatureType_UniversityBuilding = 9006;
+        SCMTFeatureType_Building = 10000;
+        SCMTFeatureType_SkiingPiste = 11000;
+        SCMTFeatureType_SkiingChairLift = 11001;
+        SCMTFeatureType_MovieTheater = 12000;
+        SCMTFeatureType_FastFood = 13000;
+        SCMTFeatureType_Restaurant = 13001;
+        SCMTFeatureType_Cafe = 13002;
+        SCMTFeatureType_FastFoodBurger = 13003;
+        SCMTFeatureType_FastFoodTaco = 13004;
+        SCMTFeatureType_FastFoodSandwich = 13005;
+        SCMTFeatureType_FastFoodChicken = 13006;
+        SCMTFeatureType_Zipcode = 14000;
+        SCMTFeatureType_Event = 15000;
+        SCMTFeatureType_Venue = 16000;
+        SCMTFeatureType_VzBeach = 17000;
+        SCMTFeatureType_VzMall = 17001;
+        SCMTFeatureType_VzNationalPark = 17002;
+        SCMTFeatureType_VzGradeSchoolArea = 17003;
+        SCMTFeatureType_VzAirport = 17004;
+        SCMTFeatureType_VzSchoolCampus = 17005;
+        SCMTFeatureType_VzTennisCourt = 17006;
+        SCMTFeatureType_VzMovieTheater = 17007;
+        SCMTFeatureType_VzGolfCourse = 17008;
+        SCMTFeatureType_VzSkiArea = 17009;
+        SCMTFeatureType_VzGroceryStore = 17010;
+        SCMTFeatureType_VzRestaurant = 17011;
+        SCMTFeatureType_VzHospital = 17012;
+        SCMTFeatureType_VzHospitalWard = 17013;
+        SCMTFeatureType_VzCemetery = 17014;
+        SCMTFeatureType_VzMedicalCenter = 17015;
+        SCMTFeatureType_VzFuneralHome = 17016;
+        SCMTFeatureType_VzAll = 18000;
+        SCMTFeatureType_SnapzenAll = 20000;
+        SCMTFeatureType_Country = 21000;
+        SCMTFeatureType_County = 21001;
+        SCMTFeatureType_Borough = 21002;
+        SCMTFeatureType_Localadmin = 21003;
+        SCMTFeatureType_Locality = 21004;
+        SCMTFeatureType_Macrocounty = 21005;
+        SCMTFeatureType_Macrohood = 21006;
+        SCMTFeatureType_Macroregion = 21007;
+        SCMTFeatureType_Neighbourhood = 21008;
+        SCMTFeatureType_Region = 21009;
+        SCMTFeatureType_Disputed = 21010;
+        SCMTFeatureType_Dependency = 21011;
+        SCMTFeatureType_Continent = 21012;
+        SCMTFeatureType_MarineArea = 21013;
+        SCMTFeatureType_Ocean = 21014;
+        SCMTFeatureType_Campus = 21015;
+        SCMTFeatureType_MaskCountry = 22000;
+        SCMTFeatureType_MaskCounty = 22001;
+        SCMTFeatureType_MaskLocaladmin = 22003;
+        SCMTFeatureType_MaskLocality = 22004;
+        SCMTFeatureType_MaskMacrocounty = 22005;
+        SCMTFeatureType_MaskMacroregion = 22007;
+        SCMTFeatureType_MaskRegion = 22009;
+        SCMTFeatureType_MaskCampus = 22010;
+        SCMTFeatureType_RevgeoAll = 23000;
+        SCMTFeatureType_MemBlocklist = 24000;
+    }
+}
+
+message SCMTLineInfo {
+    double distance = 1;
+    double bearing = 2;
+    double direction = 3;
+    double likelyDistance = 4;
+}
+
+message SCMTPointInfo {
+    double bearing = 1;
+    double distance = 2;
+    double likelyDistance = 3;
+}
+
+message SCMTPolygonInfo {
+    double inPolygonProbability = 1;
+    double borderDistance = 2;
+    double borderBearing = 3;
+    double borderDirection = 4;
+}
+
+message SCMTPositionRequest {
+    double lat = 1;
+    double lng = 2;
+    double horizontalAccuracy = 3;
+    repeated .snapchat.local.pelorus.SCMTFeatureRequest featureRequestArray = 4;
+    bool requestElevation = 5;
+}
+
+message SCMTPositionResponse {
+    .snapchat.local.pelorus.SCMTPositionResponse.SCMTReturnStatus returnStatus = 1;
+    string errorMessage = 2;
+    repeated .snapchat.local.pelorus.SCMTFeatureInfo featureInfoArray = 3;
+    double elevation = 4;
+    bool elevationAvailable = 5;
+    enum SCMTReturnStatus {
+        SCMTReturnStatus_Ok = 0;
+        SCMTReturnStatus_Error = 1;
+    }
+}

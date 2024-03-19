@@ -1,0 +1,60 @@
+syntax = "proto3";
+package tokens.shop;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPb";
+option csharp_namespace = "SnapProto.Tokens.Shop";
+
+import "tokens/shop/SCIAPTokenPbShopMessage.proto";
+
+message SCIAPTokenPbAcceptPromotionRequest {
+    string promotionId = 1;
+}
+
+message SCIAPTokenPbAcceptPromotionResponse {
+    .tokens.shop.SCIAPTokenPbShopBalance balance = 1;
+}
+
+message SCIAPTokenPbGetBalanceRequest {
+}
+
+message SCIAPTokenPbGetBalanceResponse {
+    .tokens.shop.SCIAPTokenPbShopBalance balance = 1;
+}
+
+message SCIAPTokenPbGetPromotionsRequest {
+    string locale = 1;
+    .tokens.shop.SCIAPTokenPbGetPromotionsRequest.SCIAPTokenPbShopShopContext shopContext = 2;
+    enum SCIAPTokenPbShopShopContext {
+        SCIAPTokenPbShopShopContext_ShopContextUnspecified = 0;
+        SCIAPTokenPbShopShopContext_TokenShop = 1;
+        SCIAPTokenPbShopShopContext_GiftShop = 2;
+    }
+}
+
+message SCIAPTokenPbGetPromotionsResponse {
+    repeated .tokens.shop.SCIAPTokenPbShopPromotion promotionsArray = 1;
+}
+
+message SCIAPTokenPbGetTokenPacksRequest {
+    .tokens.shop.SCIAPTokenPbGetTokenPacksRequest.SCIAPTokenPbShopShopContext shopContext = 1;
+    enum SCIAPTokenPbShopShopContext {
+        SCIAPTokenPbShopShopContext_ShopContextUnspecified = 0;
+        SCIAPTokenPbShopShopContext_TokenShop = 1;
+        SCIAPTokenPbShopShopContext_GiftShop = 2;
+    }
+}
+
+message SCIAPTokenPbGetTokenPacksResponse {
+    repeated .tokens.shop.SCIAPTokenPbShopTokenPack tokenPacksArray = 1;
+}
+
+message SCIAPTokenPbPurchaseRequest {
+    .tokens.shop.SCIAPTokenPbShopInAppReceipt receipt = 2;
+    .tokens.shop.SCIAPTokenPbShopPrice price = 3;
+    .tokens.shop.SCIAPTokenPbShopCountry country = 4;
+}
+
+message SCIAPTokenPbPurchaseResponse {
+    .tokens.shop.SCIAPTokenPbShopBalance balance = 1;
+    .tokens.shop.SCIAPTokenPbShopTokenPack tokenPack = 2;
+}

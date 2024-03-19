@@ -1,0 +1,200 @@
+syntax = "proto3";
+package snapchat.unlock.api.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SC";
+option csharp_namespace = "SnapProto.Snapchat.Unlock.Api.Schema";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlockables/request/schema/SCULUnlockablesSnapInfo.proto";
+
+message SCAddBasicUnlockRequest {
+    .snapchat.unlock.api.schema.SCBasicUnlock unlock = 1;
+    string userId = 2;
+    .snapchat.unlock.api.schema.SCAddBasicUnlockRequest.SCUnlocksNamespace unlocksNamespace = 3;
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCAddUnlockRequest {
+    int64 unlockableId = 1;
+    .snapchat.unlock.api.schema.SCAddUnlockRequest.SCUnlockType unlockType = 2;
+    bool geofilterResponseRequired = 3;
+    string deepLinkAppId = 4;
+    repeated .snapchat.unlock.api.schema.SCAddUnlockRequest.DeepLinkPropertiesEntry deepLinkProperties = 5;
+    .snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 6;
+    .snapchat.unlock.api.schema.SCUnlockMetadata unlockMetadata = 7;
+    .snapchat.unlock.api.schema.SCAddUnlockRequest.SCUnlocksNamespace unlocksNamespace = 8;
+    message DeepLinkPropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCUnlockType {
+        SCUnlockType_UnlockTypeUnset = 0;
+        SCUnlockType_Expirable = 1;
+        SCUnlockType_NotExpirable = 2;
+        SCUnlockType_Social = 3;
+        SCUnlockType_Inverse = 4;
+    }
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCBasicUnlock {
+    int64 unlockableId = 1;
+    .snapchat.unlock.api.schema.SCUnlockGroup unlockGroup = 2;
+    .google.protobuf.Timestamp unlockDate = 3;
+    .google.protobuf.Timestamp expirationDate = 4;
+    repeated .snapchat.unlock.api.schema.SCBasicUnlock.DeepLinkPropertiesEntry deepLinkProperties = 5;
+    message DeepLinkPropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCBasicUnlocksRequest {
+    string userId = 1;
+    repeated .snapchat.unlock.api.schema.SCUnlockGroup requiredGroupsArray = 2;
+    .snapchat.unlock.api.schema.SCBasicUnlocksRequest.SCUnlocksNamespace unlocksNamespace = 3;
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCBasicUnlocksResponse {
+    repeated .snapchat.unlock.api.schema.SCBasicUnlock unlocksArray = 1;
+}
+
+message SCCacheInvalidationRequest {
+    string userId = 1;
+    .snapchat.unlock.api.schema.SCCacheInvalidationRequest.SCUnlocksNamespace unlocksNamespace = 2;
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCGetUnlocksRequest {
+    .snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 1;
+    repeated .snapchat.unlock.api.schema.SCGetUnlocksRequest.ChecksumsEntry checksums = 2;
+    repeated .snapchat.unlock.api.schema.SCUnlockGroup requiredGroupsArray = 3;
+    .snapchat.unlock.api.schema.SCGetUnlocksRequest.SCUnlocksNamespace unlocksNamespace = 4;
+    repeated .snapchat.unlock.api.schema.SCUnlockGroupRequest requestedGroupsArray = 5;
+    message ChecksumsEntry {
+        int64 key = 1;
+        bytes value = 2;
+    }
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCMetadataRequest {
+    int64 unlockableId = 1;
+    .snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+    .snapchat.unlock.api.schema.SCMetadataRequest.SCUnlockType unlockType = 3;
+    enum SCUnlockType {
+        SCUnlockType_UnlockTypeUnset = 0;
+        SCUnlockType_Expirable = 1;
+        SCUnlockType_NotExpirable = 2;
+        SCUnlockType_Social = 3;
+        SCUnlockType_Inverse = 4;
+    }
+}
+
+message SCRemoveUnlockRequest {
+    int64 unlockableId = 1;
+    repeated .snapchat.unlock.api.schema.SCRemoveUnlockRequest.SCUnlockType unlockTypesArray = 4;
+    .snapchat.unlock.api.schema.SCRemoveUnlockRequest.SCUnlocksNamespace unlocksNamespace = 5;
+    enum SCUnlockType {
+        SCUnlockType_UnlockTypeUnset = 0;
+        SCUnlockType_Expirable = 1;
+        SCUnlockType_NotExpirable = 2;
+        SCUnlockType_Social = 3;
+        SCUnlockType_Inverse = 4;
+    }
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCUnlockCreationEvent {
+    int64 unlockableId = 1;
+    string userId = 2;
+    .snapchat.unlock.api.schema.SCUnlockCreationEvent.SCUnlockType unlockType = 3;
+    .snapchat.unlock.api.schema.SCUnlockCreationEvent.SCUnlocksNamespace unlocksNamespace = 4;
+    string userAgent = 5;
+    .snapchat.unlock.api.schema.SCUnlockMetadata unlockMetadata = 6;
+    enum SCUnlockType {
+        SCUnlockType_UnlockTypeUnset = 0;
+        SCUnlockType_Expirable = 1;
+        SCUnlockType_NotExpirable = 2;
+        SCUnlockType_Social = 3;
+        SCUnlockType_Inverse = 4;
+    }
+    enum SCUnlocksNamespace {
+        SCUnlocksNamespace_UnlocksNamespaceUnset = 0;
+        SCUnlocksNamespace_Default = 1;
+        SCUnlocksNamespace_Hermosa = 2;
+        SCUnlocksNamespace_Purchases = 3;
+    }
+}
+
+message SCUnlockGroup {
+    .snapchat.unlock.api.schema.SCUnlockGroup.SCUnlockType unlockType = 1;
+    .snapchat.unlock.api.schema.SCUnlockGroup.SCUnlockableType unlockableType = 2;
+    enum SCUnlockType {
+        SCUnlockType_UnlockTypeUnset = 0;
+        SCUnlockType_Expirable = 1;
+        SCUnlockType_NotExpirable = 2;
+        SCUnlockType_Social = 3;
+        SCUnlockType_Inverse = 4;
+    }
+    enum SCUnlockableType {
+        SCUnlockableType_UnlockableTypeUnset = 0;
+        SCUnlockableType_Lens = 1;
+        SCUnlockableType_Sticker = 2;
+        SCUnlockableType_Filter = 3;
+    }
+}
+
+message SCUnlockGroupRequest {
+    .snapchat.unlock.api.schema.SCUnlockGroup unlockGroup = 1;
+    int32 limit = 2;
+    .snapchat.unlock.api.schema.SCUnlockGroupRequest.SCSortingType sortingType = 3;
+    bool excludeMetadata = 4;
+    enum SCSortingType {
+        SCSortingType_SortingTypeUnset = 0;
+        SCSortingType_Ascending = 1;
+        SCSortingType_Descending = 2;
+    }
+}
+
+message SCUnlockMetadata {
+    string deepLinkAppId = 1;
+    repeated .snapchat.unlock.api.schema.SCUnlockMetadata.DeepLinkPropertiesEntry deepLinkProperties = 2;
+    .snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo snapInfo = 3;
+    message DeepLinkPropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.polls;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Polls";
+
+import "snapchat/polls/SCPNetwork.proto";
+
+service PollService{
+    rpc CreatePoll(.snapchat.polls.SCPCreatePollRequest) returns (.snapchat.polls.SCPCreatePollResponse);
+    rpc GetPoll(.snapchat.polls.SCPGetPollRequest) returns (.snapchat.polls.SCPGetPollResponse);
+    rpc Vote(.snapchat.polls.SCPVoteRequest) returns (.snapchat.polls.SCPVoteResponse);
+}

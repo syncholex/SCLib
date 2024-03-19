@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.deeplink.encoding;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCDeeplink";
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Deeplink.Encoding";
+
+import "com/snapchat/deeplink/encoding/SCDeeplinkDeeplinkEncodingService.proto";
+
+service DeeplinkEncoding{
+    rpc CreateShortLink(.com.snapchat.deeplink.encoding.SCDeeplinkCreateShortLinkRequest) returns (.com.snapchat.deeplink.encoding.SCDeeplinkCreateShortLinkResponse);
+}

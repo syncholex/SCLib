@@ -1,0 +1,12 @@
+syntax = "proto3";
+package url_reputation;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCURLReputation";
+option csharp_namespace = "SnapProto.Url_reputation";
+
+message SCURLReputationReportSenderRequest {
+    string senderUserId = 1;
+}
+
+message SCURLReputationReportSenderResponse {
+}

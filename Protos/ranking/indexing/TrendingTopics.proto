@@ -1,0 +1,161 @@
+syntax = "proto3";
+package ranking.indexing;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Indexing";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "snapchat/creativetools/common/SCCTPEncryptedMedia.proto";
+
+message BlockedStoryIdWithRejectionReason {
+    .ranking.core.SCCORECompositeStoryId storyId = 1;
+    .ranking.indexing.BlockedStoryIdWithRejectionReason.BlockedStoryIdWithRejectionReason_RejectionReason rejectionReason = 2;
+    enum BlockedStoryIdWithRejectionReason_RejectionReason {
+        BlockedStoryIdWithRejectionReason_RejectionReason_Unknown = 0;
+        BlockedStoryIdWithRejectionReason_RejectionReason_InaccurateLabeling = 1;
+        BlockedStoryIdWithRejectionReason_RejectionReason_SnapRedundancy = 2;
+        BlockedStoryIdWithRejectionReason_RejectionReason_CreatorRedundancy = 3;
+        BlockedStoryIdWithRejectionReason_RejectionReason_PolicyGuidelines = 4;
+        BlockedStoryIdWithRejectionReason_RejectionReason_EditorialJudgement = 5;
+        BlockedStoryIdWithRejectionReason_RejectionReason_Repost = 6;
+        BlockedStoryIdWithRejectionReason_RejectionReason_Letterboxed = 7;
+        BlockedStoryIdWithRejectionReason_RejectionReason_Language = 8;
+        BlockedStoryIdWithRejectionReason_RejectionReason_Hashtagspam = 9;
+    }
+}
+
+message EngagementStats {
+    .ranking.indexing.EngagementStats.EngagementStats_ProductionStats productionStats = 1;
+    .ranking.indexing.EngagementStats.EngagementStats_ConsumptionStats consumptionStats = 2;
+    message EngagementStats_ConsumptionStats {
+        float completeWatches = 1;
+        float watches = 2;
+        float sends = 3;
+        float favorites = 4;
+        float storyLimitedWatches = 5;
+        float lensUnlocksTopicsPage = 6;
+        float lensUnlocksSearch = 7;
+        float lensUnlocksLeSearch = 8;
+        float lensSwipes = 9;
+        float lensSaves = 10;
+        float lensSends = 11;
+        float lensPosts = 12;
+        float lensUnlockSearchTotal = 13;
+    }
+    message EngagementStats_ProductionStats {
+        int32 posts = 1;
+    }
+}
+
+message HashTagTopicMetaData {
+    string title = 1;
+}
+
+message LensTopicMetaData {
+    string lensId = 1;
+    string lensName = 2;
+    string iconURL = 3;
+    string creatorId = 4;
+    string creatorName = 5;
+    bool isOfficialCreator = 6;
+    bool isBusinessCategoryType = 7;
+}
+
+message SoundsTopicMetaData {
+    uint64 trackId = 1;
+    string title = 2;
+    string artistName = 3;
+    .snapchat.creativetools.common.SCCTPEncryptedMedia albumArtMedia = 4;
+    .ranking.indexing.SoundsTopicMetaData.SCCTPMusicTrackType trackType = 5;
+    enum SCCTPMusicTrackType {
+        SCCTPMusicTrackType_TrackTypeUnset = 0;
+        SCCTPMusicTrackType_Licensed = 1;
+        SCCTPMusicTrackType_CustomSound = 2;
+        SCCTPMusicTrackType_SpotlightOriginalSound = 3;
+    }
+}
+
+message TimeRangeBucket {
+    .ranking.indexing.EngagementStats count = 1;
+}
+
+message TimeRangeBuckets {
+    repeated .ranking.indexing.TimeRangeBucket bucketsArray = 1;
+    int32 bucketTimespanSecs = 2;
+}
+
+message Topic {
+    .ranking.indexing.TopicId topicId = 1;
+    string cohortId = 2;
+    .ranking.indexing.TimeRangeBuckets engagementCounts = 3;
+    float trendingScore = 4;
+    uint64 timeSinceTrendingSecs = 5;
+    .ranking.indexing.EngagementStats totalCounts = 6;
+    float averageMultiplicity = 7;
+    repeated .ranking.core.SCCORECompositeStoryId storyIdsArray = 8;
+    int64 numTotalStories = 9;
+    uint64 generatedTime = 10;
+    .ranking.indexing.TrendingScoreComponents prodScoringComponents = 11;
+    .ranking.indexing.TopicDebug debug = 12;
+    .ranking.indexing.TrendingScoreComponents engagementScoringComponents = 13;
+    string dedupeId = 14;
+    bool prioritizedInBib = 16;
+    repeated .ranking.indexing.BlockedStoryIdWithRejectionReason blockedStoryIdWithRejectionReasonListArray = 17;
+    .ranking.indexing.TrendingScoreComponents lensUnlocksTopicsPageComponents = 18;
+    .ranking.indexing.TrendingScoreComponents lensUnlocksSearchComponents = 19;
+    .ranking.indexing.TrendingScoreComponents lensUnlocksLeSearchComponents = 20;
+    .ranking.indexing.TrendingScoreComponents lensSwipesComponents = 21;
+    .ranking.indexing.TrendingScoreComponents lensSavesComponents = 22;
+    .ranking.indexing.TrendingScoreComponents lensSendsComponents = 23;
+    .ranking.indexing.TrendingScoreComponents lensPostsComponents = 24;
+}
+
+message TopicDebug {
+    repeated .ranking.indexing.TopicDebug.TopicDebug_DedupeDebug dedupeDebugArray = 1;
+    .ranking.indexing.TopicDebug.TopicDebug_ScoreDebug consumptionDebug = 2;
+    .ranking.indexing.TopicDebug.TopicDebug_ScoreDebug productionDebug = 3;
+    string freeformDebugString = 4;
+    message TopicDebug_DedupeDebug {
+        string topic = 1;
+        double similarity = 2;
+    }
+    message TopicDebug_ScoreDebug {
+        repeated double unexpectednessBucketsArray = 1;
+        int32 highestUnexpectedBucket = 2;
+        int32 bucketSpanInSecs = 3;
+    }
+}
+
+message TopicId {
+    .ranking.indexing.TopicId.SCCTTopicStory_Type type = 1;
+    string id_p = 2;
+    enum SCCTTopicStory_Type {
+        SCCTTopicStory_Type_Unset = 0;
+        SCCTTopicStory_Type_Hashtag = 1;
+        SCCTTopicStory_Type_Lens = 2;
+        SCCTTopicStory_Type_Music = 3;
+        SCCTTopicStory_Type_OriginalSound = 4;
+        SCCTTopicStory_Type_ThirdPartyApp = 5;
+        SCCTTopicStory_Type_Challenge = 6;
+        SCCTTopicStory_Type_Cheerios = 7;
+        SCCTTopicStory_Type_Remixes = 8;
+        SCCTTopicStory_Type_Unused9 = 9;
+    }
+}
+
+message TopicStream {
+    string streamId = 1;
+    repeated .ranking.indexing.TrendingTopic topicsArray = 2;
+}
+
+message TrendingScoreComponents {
+    double unexpectednessScore = 1;
+    double volumeScore = 2;
+    double hoursSinceTrending = 3;
+}
+
+message TrendingTopic {
+    .ranking.indexing.Topic topic = 1;
+    .ranking.indexing.LensTopicMetaData lensTopicMetadata = 2;
+    .ranking.indexing.SoundsTopicMetaData soundsTopicMetadata = 3;
+    .ranking.indexing.HashTagTopicMetaData hashtagTopicMetadata = 4;
+}

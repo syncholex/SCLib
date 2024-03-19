@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.aura.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuraPb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Aura.Api";
+
+import "snapchat/aura/api/SCAuraPbSync.proto";
+
+service AuraService{
+    rpc SyncFriendAstrology(.snapchat.aura.api.SCAuraPbAuraSyncFriendAstrologyRequest) returns (.snapchat.aura.api.SCAuraPbAuraSyncFriendAstrologyResponse);
+    rpc SyncMyAstrology(.snapchat.aura.api.SCAuraPbAuraSyncMyAstrologyRequest) returns (.snapchat.aura.api.SCAuraPbAuraSyncMyAstrologyResponse);
+}

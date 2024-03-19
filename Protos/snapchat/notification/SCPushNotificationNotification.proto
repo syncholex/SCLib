@@ -1,0 +1,472 @@
+syntax = "proto3";
+package snapchat.notification;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPushNotification";
+option csharp_namespace = "SnapProto.Snapchat.Notification";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/notification/SCPushNotificationUuid.proto";
+
+message SCPushNotificationAckNotificationRequest {
+    string notificationId = 10;
+    string senderUserName = 20;
+    int64 sentTimestamp = 30;
+    int64 ackTimestamp = 40;
+    .google.protobuf.BoolValue inBackground = 50;
+    string pushType = 60;
+    string trackingData = 70;
+    string userAgent = 80;
+    .google.protobuf.BoolValue systemNotificationEnabled = 90;
+    .google.protobuf.BoolValue fromExtension = 100;
+    .snapchat.notification.SCPushNotificationAckNotificationRequest.SCPushNotificationAckNotificationRequest_AckEvent ackEventName = 110;
+    int64 displayDelayLatencyMillis = 120;
+    string displayDelayReason = 130;
+    .google.protobuf.BoolValue loggedOutDisplayed = 140;
+    .google.protobuf.BoolValue fromLocationExtension = 150;
+    enum SCPushNotificationAckNotificationRequest_AckEvent {
+        SCPushNotificationAckNotificationRequest_AckEvent_Received = 0;
+        SCPushNotificationAckNotificationRequest_AckEvent_Displayed = 1;
+    }
+}
+
+message SCPushNotificationAckNotificationResponse {
+    .snapchat.notification.SCPushNotificationAckNotificationResponse.SCPushNotificationAckNotificationResponse_StatusCode statusCode = 1;
+    enum SCPushNotificationAckNotificationResponse_StatusCode {
+        SCPushNotificationAckNotificationResponse_StatusCode_Unknown = 0;
+        SCPushNotificationAckNotificationResponse_StatusCode_Ok = 1;
+        SCPushNotificationAckNotificationResponse_StatusCode_InvalidRequest = 2;
+        SCPushNotificationAckNotificationResponse_StatusCode_InternalFailure = 3;
+    }
+}
+
+message SCPushNotificationAddPendingResendsRequest {
+    repeated .snapchat.notification.SCPushNotificationPendingResend pendingResendsArray = 1;
+}
+
+message SCPushNotificationAddPendingResendsResponse {
+    .snapchat.notification.SCPushNotificationAddPendingResendsResponse.SCPushNotificationAddPendingResendsResponse_StatusCode statusCode = 1;
+    bool isRetryable = 2;
+    enum SCPushNotificationAddPendingResendsResponse_StatusCode {
+        SCPushNotificationAddPendingResendsResponse_StatusCode_Unknown = 0;
+        SCPushNotificationAddPendingResendsResponse_StatusCode_Ok = 1;
+        SCPushNotificationAddPendingResendsResponse_StatusCode_Throttled = 2;
+        SCPushNotificationAddPendingResendsResponse_StatusCode_InternalFailure = 3;
+        SCPushNotificationAddPendingResendsResponse_StatusCode_ServiceUnavailable = 4;
+    }
+}
+
+message SCPushNotificationAlert {
+    string title = 1;
+    string body = 2;
+}
+
+message SCPushNotificationAndroidNotificationConfig {
+    .snapchat.notification.SCPushNotificationDryRun dryRun = 1;
+    .snapchat.notification.SCPushNotificationAndroidNotificationConfig.SCPushNotificationNotificationProvider notificationProvider = 2;
+    enum SCPushNotificationNotificationProvider {
+        SCPushNotificationNotificationProvider_Unset = 0;
+        SCPushNotificationNotificationProvider_ApnsSimple = 1;
+        SCPushNotificationNotificationProvider_ApnsSilent = 2;
+        SCPushNotificationNotificationProvider_ApnsContentAvailable = 3;
+        SCPushNotificationNotificationProvider_Voip = 4;
+        SCPushNotificationNotificationProvider_SnsVoip = 5;
+        SCPushNotificationNotificationProvider_SnsApns = 6;
+        SCPushNotificationNotificationProvider_Gcm = 7;
+        SCPushNotificationNotificationProvider_Fcm = 8;
+        SCPushNotificationNotificationProvider_Mock = 9;
+        SCPushNotificationNotificationProvider_SnsFcm = 10;
+        SCPushNotificationNotificationProvider_Hms = 11;
+        SCPushNotificationNotificationProvider_WebPush = 12;
+    }
+}
+
+message SCPushNotificationBinaryPayload {
+    bytes data_p = 1;
+}
+
+message SCPushNotificationCategory {
+    string name = 1;
+}
+
+message SCPushNotificationDictionaryPayload {
+    repeated .snapchat.notification.SCPushNotificationDictionaryPayload.DataPEntry data_p = 1;
+    message DataPEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPushNotificationDryRun {
+    bool enabled = 1;
+}
+
+message SCPushNotificationGeneralNotificationConfig {
+    .snapchat.notification.SCPushNotificationNotificationTTL ttlInSec = 1;
+    .snapchat.notification.SCPushNotificationGeneralNotificationConfig.SCPushNotificationPushPriority pushPriority = 2;
+    .snapchat.notification.SCPushNotificationGeneralNotificationConfig.SCPushNotificationSound sound = 3;
+    .snapchat.notification.SCPushNotificationLegacyTypeName legacyTypeName = 4;
+    enum SCPushNotificationPushPriority {
+        SCPushNotificationPushPriority_UnsetPriority = 0;
+        SCPushNotificationPushPriority_Normal = 1;
+        SCPushNotificationPushPriority_High = 2;
+    }
+    enum SCPushNotificationSound {
+        SCPushNotificationSound_UnsetSound = 0;
+        SCPushNotificationSound_DefaultSound = 1;
+        SCPushNotificationSound_RingFull = 2;
+        SCPushNotificationSound_RingBff = 3;
+    }
+}
+
+message SCPushNotificationIosNotificationConfig {
+    .snapchat.notification.SCPushNotificationVoIP voip = 1;
+    .snapchat.notification.SCPushNotificationIosNotificationConfig.SCPushNotificationLaunchImage launchImage = 2;
+    .snapchat.notification.SCPushNotificationIosNotificationConfig.SCPushNotificationTargetScreen targetScreen = 3;
+    .snapchat.notification.SCPushNotificationCategory category = 4;
+    .snapchat.notification.SCPushNotificationIosNotificationConfig.SCPushNotificationNotificationProvider notificationProvider = 5;
+    enum SCPushNotificationLaunchImage {
+        SCPushNotificationLaunchImage_UnsetImage = 0;
+        SCPushNotificationLaunchImage_SplashFeed = 1;
+        SCPushNotificationLaunchImage_SplashChat = 2;
+    }
+    enum SCPushNotificationNotificationProvider {
+        SCPushNotificationNotificationProvider_Unset = 0;
+        SCPushNotificationNotificationProvider_ApnsSimple = 1;
+        SCPushNotificationNotificationProvider_ApnsSilent = 2;
+        SCPushNotificationNotificationProvider_ApnsContentAvailable = 3;
+        SCPushNotificationNotificationProvider_Voip = 4;
+        SCPushNotificationNotificationProvider_SnsVoip = 5;
+        SCPushNotificationNotificationProvider_SnsApns = 6;
+        SCPushNotificationNotificationProvider_Gcm = 7;
+        SCPushNotificationNotificationProvider_Fcm = 8;
+        SCPushNotificationNotificationProvider_Mock = 9;
+        SCPushNotificationNotificationProvider_SnsFcm = 10;
+        SCPushNotificationNotificationProvider_Hms = 11;
+        SCPushNotificationNotificationProvider_WebPush = 12;
+    }
+    enum SCPushNotificationTargetScreen {
+        SCPushNotificationTargetScreen_UnsetTargetScreen = 0;
+        SCPushNotificationTargetScreen_Current = 1;
+        SCPushNotificationTargetScreen_ChatFeed = 2;
+        SCPushNotificationTargetScreen_ChatWindow = 3;
+        SCPushNotificationTargetScreen_Camera = 4;
+        SCPushNotificationTargetScreen_MyFriends = 5;
+        SCPushNotificationTargetScreen_AddFriends = 6;
+        SCPushNotificationTargetScreen_QuickAdd = 7;
+        SCPushNotificationTargetScreen_MemoriesLaguna = 8;
+        SCPushNotificationTargetScreen_SnapAdsPortal = 9;
+        SCPushNotificationTargetScreen_OnDemandGeofilter = 10;
+        SCPushNotificationTargetScreen_MemoriesBackup = 11;
+        SCPushNotificationTargetScreen_LocationSharingSettings = 12;
+        SCPushNotificationTargetScreen_Map = 13;
+        SCPushNotificationTargetScreen_Moments = 14;
+        SCPushNotificationTargetScreen_Df = 15;
+        SCPushNotificationTargetScreen_MomentsSubscribe = 16;
+        SCPushNotificationTargetScreen_MemoriesSavedTab = 17;
+        SCPushNotificationTargetScreen_MemoriesAllTab = 18;
+        SCPushNotificationTargetScreen_StoryManagementPage = 19;
+        SCPushNotificationTargetScreen_Profile = 20;
+        SCPushNotificationTargetScreen_SharedStoryProfile = 21;
+        SCPushNotificationTargetScreen_BitmojiCreationScreen = 22;
+        SCPushNotificationTargetScreen_FindFriends = 23;
+        SCPushNotificationTargetScreen_FamilyCenter = 24;
+        SCPushNotificationTargetScreen_MapPlaceProfile = 25;
+    }
+}
+
+message SCPushNotificationLegacyTypeName {
+    string name = 1;
+}
+
+message SCPushNotificationNotificationTTL {
+    uint32 ttlInSec = 1;
+}
+
+message SCPushNotificationPendingResend {
+    string key = 1;
+    int64 timeToSend = 2;
+}
+
+message SCPushNotificationPushNotificationConfig {
+    .snapchat.notification.SCPushNotificationGeneralNotificationConfig generalNotificationConfig = 1;
+    .snapchat.notification.SCPushNotificationAndroidNotificationConfig androidNotificationConfig = 2;
+    .snapchat.notification.SCPushNotificationIosNotificationConfig iosNotificationConfig = 3;
+}
+
+message SCPushNotificationPushNotificationHeader {
+    .snapchat.notification.SCPushNotificationUUID recipientUserId = 1;
+    .snapchat.notification.SCPushNotificationPushNotificationHeader.SCPushNotificationPushNotificationType pushNotificationType = 2;
+    string notificationKey = 3;
+    string notificationRevokeKey = 4;
+    int64 sentTime = 5;
+    string deliveryTrackingToken = 6;
+    .snapchat.notification.SCPushNotificationPushNotificationHeader.SCPushNotificationNotificationProvider notificationProvider = 7;
+    string collapseId = 8;
+    .snapchat.notification.SCPushNotificationPushNotificationHeader.SCPushNotificationPushNotificationSenderOrigin senderOrigin = 9;
+    bool fromScheduler = 10;
+    .snapchat.notification.SCPushNotificationTrackingSetting trackingSetting = 11;
+    float loggingSampleRate = 12;
+    string contentIdentifier = 13;
+    bool enforceNotificationPrivacy = 14;
+    .snapchat.notification.SCPushNotificationSampleReasons sampleReasons = 15;
+    .snapchat.notification.SCPushNotificationPushNotificationHeader.SCPushNotificationAppId appId = 16;
+    enum SCPushNotificationAppId {
+        SCPushNotificationAppId_Snapchat = 0;
+        SCPushNotificationAppId_Bitmoji = 1;
+        SCPushNotificationAppId_Web = 2;
+        SCPushNotificationAppId_SnapchatFeatureApp = 3;
+    }
+    enum SCPushNotificationNotificationProvider {
+        SCPushNotificationNotificationProvider_Unset = 0;
+        SCPushNotificationNotificationProvider_ApnsSimple = 1;
+        SCPushNotificationNotificationProvider_ApnsSilent = 2;
+        SCPushNotificationNotificationProvider_ApnsContentAvailable = 3;
+        SCPushNotificationNotificationProvider_Voip = 4;
+        SCPushNotificationNotificationProvider_SnsVoip = 5;
+        SCPushNotificationNotificationProvider_SnsApns = 6;
+        SCPushNotificationNotificationProvider_Gcm = 7;
+        SCPushNotificationNotificationProvider_Fcm = 8;
+        SCPushNotificationNotificationProvider_Mock = 9;
+        SCPushNotificationNotificationProvider_SnsFcm = 10;
+        SCPushNotificationNotificationProvider_Hms = 11;
+        SCPushNotificationNotificationProvider_WebPush = 12;
+    }
+    enum SCPushNotificationPushNotificationType {
+        SCPushNotificationPushNotificationType_UnknownType = 0;
+        SCPushNotificationPushNotificationType_GenericConversationUpdate = 101;
+        SCPushNotificationPushNotificationType_Chat = 201;
+        SCPushNotificationPushNotificationType_ChatScreenshot = 202;
+        SCPushNotificationPushNotificationType_ChatScreenRecorded = 203;
+        SCPushNotificationPushNotificationType_ChatCameraRollSave = 204;
+        SCPushNotificationPushNotificationType_ChatMention = 205;
+        SCPushNotificationPushNotificationType_ChatReply = 206;
+        SCPushNotificationPushNotificationType_ChatReaction = 207;
+        SCPushNotificationPushNotificationType_StoryReply = 208;
+        SCPushNotificationPushNotificationType_Typing = 210;
+        SCPushNotificationPushNotificationType_GroupTyping = 211;
+        SCPushNotificationPushNotificationType_Snap = 220;
+        SCPushNotificationPushNotificationType_SnapScreenshot = 221;
+        SCPushNotificationPushNotificationType_SnapScreenRecorded = 222;
+        SCPushNotificationPushNotificationType_SnapReplay = 223;
+        SCPushNotificationPushNotificationType_SnapSave = 224;
+        SCPushNotificationPushNotificationType_GroupChat = 230;
+        SCPushNotificationPushNotificationType_GroupChatScreenshot = 231;
+        SCPushNotificationPushNotificationType_GroupChatScreenRecorded = 232;
+        SCPushNotificationPushNotificationType_GroupChatCameraRollSave = 233;
+        SCPushNotificationPushNotificationType_GroupChatMention = 234;
+        SCPushNotificationPushNotificationType_GroupChatReply = 235;
+        SCPushNotificationPushNotificationType_GroupYourChatReaction = 236;
+        SCPushNotificationPushNotificationType_GroupOtherChatReaction = 237;
+        SCPushNotificationPushNotificationType_GroupSnap = 240;
+        SCPushNotificationPushNotificationType_GroupSnapScreenshot = 241;
+        SCPushNotificationPushNotificationType_GroupSnapScreenRecorded = 242;
+        SCPushNotificationPushNotificationType_GroupSnapReplay = 243;
+        SCPushNotificationPushNotificationType_GroupSnapSave = 244;
+        SCPushNotificationPushNotificationType_GroupRename = 250;
+        SCPushNotificationPushNotificationType_GroupAddParticipant = 251;
+        SCPushNotificationPushNotificationType_GroupAddParticipantNonFriend = 252;
+        SCPushNotificationPushNotificationType_GroupAddedYou = 253;
+        SCPushNotificationPushNotificationType_GroupAddParticipantByInvite = 254;
+        SCPushNotificationPushNotificationType_GroupAddParticipantByInviteJoinerIsFollower = 255;
+        SCPushNotificationPushNotificationType_GroupAddParticipantByInviteInviterIsFollower = 256;
+        SCPushNotificationPushNotificationType_GroupAddParticipantByInviteInviterAndJoinerAreFollowers = 257;
+        SCPushNotificationPushNotificationType_GroupInviteAcceptedByRecipient = 258;
+        SCPushNotificationPushNotificationType_GroupInviteAcceptedByFollowerRecipient = 259;
+        SCPushNotificationPushNotificationType_FamilyCenterAccept = 280;
+        SCPushNotificationPushNotificationType_FamilyCenterLeave = 281;
+        SCPushNotificationPushNotificationType_FamilyCenterSetting = 282;
+        SCPushNotificationPushNotificationType_IosLockscreenPinnedMe = 290;
+        SCPushNotificationPushNotificationType_HappeningNowNews = 1200;
+        SCPushNotificationPushNotificationType_CreatorTrendingLenses = 1210;
+        SCPushNotificationPushNotificationType_OurStoryViewCount = 1220;
+        SCPushNotificationPushNotificationType_OurStoryReplyCount = 1221;
+        SCPushNotificationPushNotificationType_Feed = 1230;
+        SCPushNotificationPushNotificationType_TalkInitiatedAudio = 1250;
+        SCPushNotificationPushNotificationType_TalkAbandonedAudio = 1251;
+        SCPushNotificationPushNotificationType_TalkInitiatedVideo = 1252;
+        SCPushNotificationPushNotificationType_TalkAbandonedVideo = 1253;
+        SCPushNotificationPushNotificationType_TalkGroupInitiatedAudio = 1270;
+        SCPushNotificationPushNotificationType_TalkGroupAbandonedAudio = 1271;
+        SCPushNotificationPushNotificationType_TalkGroupInitiatedVideo = 1272;
+        SCPushNotificationPushNotificationType_TalkGroupAbandonedVideo = 1273;
+        SCPushNotificationPushNotificationType_TalkGroupCallUpdatedAudio = 1274;
+        SCPushNotificationPushNotificationType_TalkGroupCallUpdatedVideo = 1275;
+        SCPushNotificationPushNotificationType_MapLiveLocation = 1500;
+        SCPushNotificationPushNotificationType_MapLiveLocationLowBatteryAlert = 1501;
+        SCPushNotificationPushNotificationType_MapEditsPlaceAdded = 1502;
+        SCPushNotificationPushNotificationType_MapFriendTravelStatus = 1503;
+        SCPushNotificationPushNotificationType_StoryOptIn = 1510;
+        SCPushNotificationPushNotificationType_CanvasCustomUpdate = 1520;
+        SCPushNotificationPushNotificationType_SpotlightPayout = 1530;
+        SCPushNotificationPushNotificationType_CognacInitiateInvite = 1540;
+        SCPushNotificationPushNotificationType_CognacOpen = 1541;
+        SCPushNotificationPushNotificationType_CognacLaunch = 1542;
+        SCPushNotificationPushNotificationType_CognacTerminate = 1543;
+        SCPushNotificationPushNotificationType_CognacAbandonInvite = 1544;
+        SCPushNotificationPushNotificationType_PaymentsPayoutPayeeUpdate = 1560;
+        SCPushNotificationPushNotificationType_CrystalExpiration = 1561;
+        SCPushNotificationPushNotificationType_SharedStoryMemberAdded = 1570;
+        SCPushNotificationPushNotificationType_SharedStorySnapDeleted = 1571;
+        SCPushNotificationPushNotificationType_GiftingFanUpdate = 1580;
+        SCPushNotificationPushNotificationType_SnaptokensGiftshopRefund = 1590;
+        SCPushNotificationPushNotificationType_TivWebChat = 1600;
+        SCPushNotificationPushNotificationType_FideliusMeshRetry = 1700;
+        SCPushNotificationPushNotificationType_AddFriend = 2000;
+        SCPushNotificationPushNotificationType_AvailableFriendSuggestions = 2001;
+        SCPushNotificationPushNotificationType_BitmojiCreation = 2002;
+        SCPushNotificationPushNotificationType_ContactSyncReminder = 2003;
+        SCPushNotificationPushNotificationType_EmailVerified = 2004;
+        SCPushNotificationPushNotificationType_DiscoverStories = 2005;
+        SCPushNotificationPushNotificationType_FetchSuggestedFriends = 2006;
+        SCPushNotificationPushNotificationType_FriendBitmoji = 2007;
+        SCPushNotificationPushNotificationType_MemoriesFlashbackStory = 2009;
+        SCPushNotificationPushNotificationType_PendingFriendRequestReminder = 2010;
+        SCPushNotificationPushNotificationType_Ping = 2011;
+        SCPushNotificationPushNotificationType_RecentlyJoinedSuggestion = 2012;
+        SCPushNotificationPushNotificationType_Stories = 2013;
+        SCPushNotificationPushNotificationType_SubscriptionStories = 2014;
+        SCPushNotificationPushNotificationType_TryLenses = 2015;
+        SCPushNotificationPushNotificationType_NewContact = 2016;
+        SCPushNotificationPushNotificationType_CofCrashRecovery = 2017;
+        SCPushNotificationPushNotificationType_InAppPayToPromote = 2018;
+    }
+    enum SCPushNotificationPushNotificationSenderOrigin {
+        SCPushNotificationPushNotificationSenderOrigin_UnknownSenderOrigin = 0;
+        SCPushNotificationPushNotificationSenderOrigin_Fsn = 100;
+        SCPushNotificationPushNotificationSenderOrigin_FsnCampaign = 101;
+        SCPushNotificationPushNotificationSenderOrigin_Mcs = 200;
+        SCPushNotificationPushNotificationSenderOrigin_McsCampaign = 201;
+        SCPushNotificationPushNotificationSenderOrigin_Debugger = 300;
+        SCPushNotificationPushNotificationSenderOrigin_LensCentral = 400;
+        SCPushNotificationPushNotificationSenderOrigin_DiscoverStoriesNotificationIndexer = 500;
+        SCPushNotificationPushNotificationSenderOrigin_Valis = 600;
+        SCPushNotificationPushNotificationSenderOrigin_VerrazanoPlaces = 601;
+        SCPushNotificationPushNotificationSenderOrigin_MapsUpdates = 602;
+        SCPushNotificationPushNotificationSenderOrigin_CanvasUpdates = 700;
+        SCPushNotificationPushNotificationSenderOrigin_Pcs = 800;
+        SCPushNotificationPushNotificationSenderOrigin_Payout = 900;
+        SCPushNotificationPushNotificationSenderOrigin_Spooky = 1000;
+        SCPushNotificationPushNotificationSenderOrigin_Payment = 1100;
+        SCPushNotificationPushNotificationSenderOrigin_DiscoverStoriesGroupManagementService = 1200;
+        SCPushNotificationPushNotificationSenderOrigin_CreatorMonetization = 1300;
+        SCPushNotificationPushNotificationSenderOrigin_SnapTokens = 1400;
+        SCPushNotificationPushNotificationSenderOrigin_AuthTivs = 1500;
+        SCPushNotificationPushNotificationSenderOrigin_FideliusRecrypt = 1600;
+        SCPushNotificationPushNotificationSenderOrigin_FrndContactGrpc = 1700;
+        SCPushNotificationPushNotificationSenderOrigin_Cof = 1800;
+        SCPushNotificationPushNotificationSenderOrigin_AdsNotificationCenter = 1900;
+        SCPushNotificationPushNotificationSenderOrigin_FamilyCenterService = 2000;
+    }
+}
+
+message SCPushNotificationPushNotificationRequest {
+    .snapchat.notification.SCPushNotificationPushNotificationHeader header = 1;
+    uint32 ttlInSeconds = 2;
+    bytes payload = 3;
+    repeated .snapchat.notification.SCPushNotificationPushNotificationRequest.DeprecatedPayloadEntry deprecatedPayload = 4;
+    repeated .snapchat.notification.SCPushNotificationPushNotificationRequest.SealedEnvelopeContentEntry sealedEnvelopeContent = 5;
+    bool isV2 = 20;
+    .snapchat.notification.SCPushNotificationPushNotificationConfig pushNotificationConfigOverride = 25;
+    .snapchat.notification.SCPushNotificationAlert systemAlert = 26;
+    .snapchat.notification.SCPushNotificationAlert inAppAlert = 27;
+    .snapchat.notification.SCPushNotificationBinaryPayload bytePayload = 28;
+    .snapchat.notification.SCPushNotificationDictionaryPayload dictionaryPayload = 29;
+    message DeprecatedPayloadEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message SealedEnvelopeContentEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPushNotificationPushNotificationResult {
+    .snapchat.notification.SCPushNotificationUUID pushNotificationId = 1;
+    .snapchat.notification.SCPushNotificationPushNotificationResult.SCPushNotificationPushNotificationResult_StatusCode status = 2;
+    .snapchat.notification.SCPushNotificationPushNotificationResult.SCPushNotificationNotificationProvider notificationProvider = 3;
+    bool isRetryable = 4;
+    enum SCPushNotificationNotificationProvider {
+        SCPushNotificationNotificationProvider_Unset = 0;
+        SCPushNotificationNotificationProvider_ApnsSimple = 1;
+        SCPushNotificationNotificationProvider_ApnsSilent = 2;
+        SCPushNotificationNotificationProvider_ApnsContentAvailable = 3;
+        SCPushNotificationNotificationProvider_Voip = 4;
+        SCPushNotificationNotificationProvider_SnsVoip = 5;
+        SCPushNotificationNotificationProvider_SnsApns = 6;
+        SCPushNotificationNotificationProvider_Gcm = 7;
+        SCPushNotificationNotificationProvider_Fcm = 8;
+        SCPushNotificationNotificationProvider_Mock = 9;
+        SCPushNotificationNotificationProvider_SnsFcm = 10;
+        SCPushNotificationNotificationProvider_Hms = 11;
+        SCPushNotificationNotificationProvider_WebPush = 12;
+    }
+    enum SCPushNotificationPushNotificationResult_StatusCode {
+        SCPushNotificationPushNotificationResult_StatusCode_Unknown = 0;
+        SCPushNotificationPushNotificationResult_StatusCode_Ok = 1;
+        SCPushNotificationPushNotificationResult_StatusCode_InvalidPayload = 2;
+        SCPushNotificationPushNotificationResult_StatusCode_DeviceTokenUnavailable = 3;
+        SCPushNotificationPushNotificationResult_StatusCode_Unregistered = 4;
+        SCPushNotificationPushNotificationResult_StatusCode_UserNotificationDisabled = 5;
+        SCPushNotificationPushNotificationResult_StatusCode_ServiceRateLimited = 6;
+        SCPushNotificationPushNotificationResult_StatusCode_RecipientRateLimited = 7;
+        SCPushNotificationPushNotificationResult_StatusCode_ProviderTransientError = 8;
+        SCPushNotificationPushNotificationResult_StatusCode_InternalFailure = 9;
+        SCPushNotificationPushNotificationResult_StatusCode_InvalidRequest = 10;
+        SCPushNotificationPushNotificationResult_StatusCode_PrivacySettingRejected = 11;
+        SCPushNotificationPushNotificationResult_StatusCode_BadDeviceToken = 12;
+        SCPushNotificationPushNotificationResult_StatusCode_RejectedByProvider = 13;
+    }
+}
+
+message SCPushNotificationSampleReasons {
+    bool sender = 1;
+}
+
+message SCPushNotificationSendPushAsyncResponse {
+    .snapchat.notification.SCPushNotificationUUID pushNotificationId = 1;
+    .snapchat.notification.SCPushNotificationSendPushAsyncResponse.SCPushNotificationSendPushAsyncResponse_StatusCode status = 2;
+    bool isRetryable = 3;
+    enum SCPushNotificationSendPushAsyncResponse_StatusCode {
+        SCPushNotificationSendPushAsyncResponse_StatusCode_Unknown = 0;
+        SCPushNotificationSendPushAsyncResponse_StatusCode_Received = 1;
+        SCPushNotificationSendPushAsyncResponse_StatusCode_InvalidRequest = 2;
+        SCPushNotificationSendPushAsyncResponse_StatusCode_Throttled = 3;
+        SCPushNotificationSendPushAsyncResponse_StatusCode_ServiceUnavailable = 4;
+        SCPushNotificationSendPushAsyncResponse_StatusCode_InternalError = 5;
+    }
+}
+
+message SCPushNotificationSendPushResponse {
+    .snapchat.notification.SCPushNotificationUUID pushNotificationId = 1;
+    .snapchat.notification.SCPushNotificationSendPushResponse.SCPushNotificationSendPushResponse_StatusCode status = 2;
+    string errorCode = 3;
+    bool isRetryable = 4;
+    enum SCPushNotificationSendPushResponse_StatusCode {
+        SCPushNotificationSendPushResponse_StatusCode_Unknown = 0;
+        SCPushNotificationSendPushResponse_StatusCode_Ok = 1;
+        SCPushNotificationSendPushResponse_StatusCode_OkUserNotReachable = 2;
+        SCPushNotificationSendPushResponse_StatusCode_OkPrivacySettingRejected = 3;
+        SCPushNotificationSendPushResponse_StatusCode_InvalidRequest = 101;
+        SCPushNotificationSendPushResponse_StatusCode_InternalError = 102;
+        SCPushNotificationSendPushResponse_StatusCode_ProviderThrottled = 201;
+        SCPushNotificationSendPushResponse_StatusCode_ProviderRejected = 202;
+        SCPushNotificationSendPushResponse_StatusCode_ProviderUnavailable = 203;
+    }
+}
+
+message SCPushNotificationTrackingSetting {
+    bool trackingDisplay = 1;
+    bool trackingDelivery = 2;
+    repeated .snapchat.notification.SCPushNotificationTrackingSetting.TrackingDataEntry trackingData = 10;
+    string displayToken = 11;
+    string deliveryToken = 12;
+    message TrackingDataEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPushNotificationVoIP {
+    bool enabled = 1;
+}

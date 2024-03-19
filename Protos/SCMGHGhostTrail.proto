@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map.ghost_trail;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGH";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Ghost_trail";
+
+import "snapchat/map/ghost_trail/SCMGHService.proto";
+
+service GhostTrail{
+    rpc ClearOwnGhostTrail(.snapchat.map.ghost_trail.SCMGHClearOwnGhostTrailRequest) returns (.snapchat.map.ghost_trail.SCMGHClearOwnGhostTrailResponse);
+    rpc GetGhostTrail(.snapchat.map.ghost_trail.SCMGHGetGhostTrailRequest) returns (.snapchat.map.ghost_trail.SCMGHGetGhostTrailResponse);
+}

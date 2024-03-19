@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCChangeUsernamePb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Activation.Api";
+
+import "snapchat/activation/api/SCChangeUsernamePbChangeUsername.proto";
+
+service ChangeUsernameService{
+    rpc ChangeUsername(.snapchat.activation.api.SCChangeUsernamePbChangeUsernameRequest) returns (.snapchat.activation.api.SCChangeUsernamePbChangeUsernameResponse);
+    rpc GetLatestUsernameChangeDate(.snapchat.activation.api.SCChangeUsernamePbGetLatestUsernameChangeDateRequest) returns (.snapchat.activation.api.SCChangeUsernamePbGetLatestUsernameChangeDateResponse);
+}

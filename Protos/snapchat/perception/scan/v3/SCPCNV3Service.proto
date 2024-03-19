@@ -1,0 +1,653 @@
+syntax = "proto3";
+package snapchat.perception.scan.v3;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCNV3";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Scan.V3";
+
+import "google/type/GTPColor.proto";
+import "snapchat/bitmoji/SCBitmojiUuid.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+import "snapchat/common/Value.proto";
+import "snapchat/perception/SCPNIris.proto";
+import "snapchat/perception/common/SCPCNCommon.proto";
+import "snapchat/perception/content_understanding/Content.proto";
+import "snapchat/perception/realtime_scan/SCPCNRTSAnnotations.proto";
+import "snapchat/perception/scan/experiments/cof/SCPCNCOFScanImageResolution.proto";
+import "snapchat/perception/scan/settings/SCPCNSettingsSettings.proto";
+import "snapchat/unlockables/request/schema/SCULGtqServeRequest.proto";
+import "snapchat/unlockables/response/schema/SCULGtqUnlockablesByIdResponse.proto";
+
+message SCPCNV3AlertDialog {
+    string titleText = 1;
+    string bodyText = 2;
+    string primaryCtaText = 3;
+    string secondaryCtaText = 4;
+}
+
+message SCPCNV3AllUtilityLensMetadataResponseV1 {
+    repeated .snapchat.perception.scan.v3.SCPCNV3UtilityLensMetadata metadataArray = 1;
+}
+
+message SCPCNV3AllUtilityLensMetadataSubscriptionRequestV1 {
+}
+
+message SCPCNV3Barcode {
+    .snapchat.perception.scan.v3.SCPCNV3Barcode.SCPCNV3Barcode_Format format = 1;
+    string value = 2;
+    enum SCPCNV3Barcode_Format {
+        SCPCNV3Barcode_Format_FormatUnset = 0;
+        SCPCNV3Barcode_Format_FormatEan8 = 1;
+        SCPCNV3Barcode_Format_FormatEan13 = 2;
+        SCPCNV3Barcode_Format_FormatUpcA = 3;
+        SCPCNV3Barcode_Format_FormatUpcC = 4;
+        SCPCNV3Barcode_Format_FormatCode128 = 5;
+        SCPCNV3Barcode_Format_FormatCode39 = 6;
+        SCPCNV3Barcode_Format_FormatCode93 = 7;
+    }
+}
+
+message SCPCNV3CameraShortcut {
+    string title = 1;
+    string subtitle = 2;
+    string openInCameraButtonIconURL = 3;
+    string openInCameraButtonText = 4;
+    repeated .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction actionsArray = 5;
+}
+
+message SCPCNV3CameraShortcutAction {
+    .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_ShowLenses showLenses = 1;
+    .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_AddMusic addMusic = 2;
+    .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_SetCameraOrientation setCameraOrientation = 3;
+    .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_SetCameraMode setCameraMode = 4;
+    message SCPCNV3CameraShortcutAction_AddMusic {
+        string trackId = 1;
+        string iconURL = 2;
+    }
+    message SCPCNV3CameraShortcutAction_SetCameraMode {
+        .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_SetCameraMode.SCPCNV3CameraShortcutAction_SetCameraMode_Mode mode = 1;
+        string iconURL = 2;
+        enum SCPCNV3CameraShortcutAction_SetCameraMode_Mode {
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeUnset = 0;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeTimeline = 1;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeMultisnap = 2;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeGrid = 3;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeTimer = 4;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeFocus = 5;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_Mode3D = 6;
+            SCPCNV3CameraShortcutAction_SetCameraMode_Mode_ModeNight = 7;
+        }
+    }
+    message SCPCNV3CameraShortcutAction_SetCameraOrientation {
+        .snapchat.perception.scan.v3.SCPCNV3CameraShortcutAction.SCPCNV3CameraShortcutAction_SetCameraOrientation.SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation orientation = 1;
+        enum SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation {
+            SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation_OrientationUnset = 0;
+            SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation_OrientationFront = 1;
+            SCPCNV3CameraShortcutAction_SetCameraOrientation_Orientation_OrientationRear = 2;
+        }
+    }
+    message SCPCNV3CameraShortcutAction_ShowLenses {
+        bytes gtqServeResponse = 1;
+    }
+}
+
+message SCPCNV3CategoryResponseV1 {
+    repeated .snapchat.perception.scan.v3.SCPCNV3CategoryResponseV1.SCPCNV3CategoryResponseV1_Result resultsArray = 1;
+    string categoryId = 2;
+    message SCPCNV3CategoryResponseV1_Result {
+        string id_p = 3;
+        string requestId = 5;
+        int64 timestampMs = 6;
+        int32 trayRank = 7;
+        repeated string trayPillIdsArray = 8;
+        .snapchat.perception.scan.v3.SCPCNV3ScanCard scanCard = 1;
+        .snapchat.perception.scan.v3.SCPCNV3CameraShortcut cameraShortcut = 2;
+        .snapchat.perception.scan.v3.SCPCNV3Snapcode snapcode = 4;
+        .snapchat.perception.scan.v3.SCPCNV3ScanToLensResult scanToLensResult = 12;
+    }
+}
+
+message SCPCNV3CategorySubscriptionRequestV1 {
+    repeated string categoryIdsArray = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3CategorySubscriptionRequestV1.SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest additionalRequestsArray = 2;
+    enum SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest {
+        SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest_Unset = 0;
+        SCPCNV3CategorySubscriptionRequestV1_AdditionalRequest_Snapcode = 1;
+    }
+}
+
+message SCPCNV3ClientCategoryMetadata {
+    string categoryId = 1;
+    repeated string trayPillIdsArray = 2;
+}
+
+message SCPCNV3CreativeLensResponseV1 {
+    .snapchat.unlockables.response.schema.SCULLensResponse lenses = 1;
+    bytes gtqServeResponse = 2;
+}
+
+message SCPCNV3CreativeLensSubscriptionRequestV1 {
+    .snapchat.perception.scan.v3.SCPCNV3GTQRequest gtqRequest = 1;
+}
+
+message SCPCNV3DecodeSnapcodeRequest {
+    string reqId = 1;
+    .snapchat.perception.scan.v3.SCPCNV3Image image = 2;
+}
+
+message SCPCNV3DecodeSnapcodeResponse {
+    repeated .snapchat.perception.scan.v3.SCPCNV3Snapcode snapcodesArray = 1;
+}
+
+message SCPCNV3FoodCell {
+    string name = 1;
+    string imageURL = 2;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardKnowledgeModel scanCardKnowledgeModel = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardRecipeModel scanCardRecipeModel = 4;
+    string id_p = 5;
+}
+
+message SCPCNV3GTQMockRequest {
+    int32 latencyMs = 1;
+}
+
+message SCPCNV3GTQRequest {
+    .snapchat.perception.scan.v3.SCPCNV3GTQMockRequest mockRequest = 1;
+    .snapchat.unlockables.request.schema.SCULGtqServeRequest serveRequest = 2;
+}
+
+message SCPCNV3Image {
+    bytes imageBytes = 1;
+    .snapchat.perception.scan.v3.SCPCNV3Image.SCPCNV3Image_CameraOrientation cameraOrientation = 2;
+    .snapchat.perception.scan.v3.SCPCNV3Point relativeTouchPoint = 3;
+    .snapchat.perception.scan.experiments.cof.SCPCNCOFScanImageResolution imageResolution = 4;
+    repeated .snapchat.perception.scan.v3.SCPCNV3Image.AnnotationsEntry annotations = 5;
+    message AnnotationsEntry {
+        int32 key = 1;
+        .snapchat.perception.realtime_scan.SCPCNRTSAnnotations value = 2;
+    }
+    enum SCPCNV3Image_CameraOrientation {
+        SCPCNV3Image_CameraOrientation_Unset = 0;
+        SCPCNV3Image_CameraOrientation_Front = 1;
+        SCPCNV3Image_CameraOrientation_Back = 2;
+    }
+}
+
+message SCPCNV3LearnMoreAction {
+    string title = 1;
+    string html = 2;
+    string URL = 3;
+}
+
+message SCPCNV3LensPreview {
+    string URLTemplate = 1;
+    int32 sequenceSize = 2;
+}
+
+message SCPCNV3MoreScanCanDoCell {
+    .snapchat.perception.scan.v3.SCPCNV3UtilityServiceCell utilityServiceCell = 1;
+}
+
+message SCPCNV3Notification {
+    string text = 1;
+    string iconURL = 2;
+}
+
+message SCPCNV3OpenAppAction {
+    string title = 1;
+    string link = 2;
+}
+
+message SCPCNV3OpenProfileAction {
+    string profileId = 1;
+    string title = 2;
+    bool isPublicProfile = 3;
+}
+
+message SCPCNV3OpenShowcaseAction {
+    string title = 1;
+    bytes bytes = 2;
+}
+
+message SCPCNV3OpenSnapchatDeeplinkAction {
+    string URL = 1;
+    string title = 2;
+}
+
+message SCPCNV3Point {
+    double x = 1;
+    double y = 2;
+}
+
+message SCPCNV3RecipeCell {
+    string title = 1;
+    string author = 2;
+    string imageURL = 3;
+    double rating = 4;
+    string cookTime = 5;
+    string actionURL = 6;
+    string recipeId = 7;
+}
+
+message SCPCNV3RectRatio {
+    double widthRatio = 1;
+    double heightRatio = 2;
+}
+
+message SCPCNV3ScanAffordance {
+    string iconURL = 1;
+    string title = 2;
+    string subtitle = 6;
+    .snapchat.perception.scan.v3.SCPCNV3ScanAffordance.SCPCNV3ScanAffordance_ViewfinderAffordance viewfinderAffordance = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ScanAffordance.SCPCNV3ScanAffordance_ShazamAffordance shazamAffordance = 4;
+    message SCPCNV3ScanAffordance_ShazamAffordance {
+        string affordanceImageURL = 1;
+    }
+    message SCPCNV3ScanAffordance_ViewfinderAffordance {
+        .snapchat.perception.scan.v3.SCPCNV3RectRatio rectRatio = 6;
+        string utilityOverlayURL = 7;
+        string viewfinderURL = 8;
+    }
+}
+
+message SCPCNV3ScanCOFConfig {
+    string name = 1;
+    .snapchat.common.Value valueV2 = 4;
+}
+
+message SCPCNV3ScanCOFConfigs {
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCOFConfig configsArray = 1;
+}
+
+message SCPCNV3ScanCard {
+    .snapchat.perception.scan.v3.SCPCNV3ScanCard.SCPCNV3ScanCardCodeSource codeSource = 16;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardModel scanCardModel = 1;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModel scanCardWithLensesModel = 2;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardMoreScanCanDoModel scanCardMoreScanCanDoModel = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardTipsModel scanCardTipsModel = 4;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardFoodModel scanCardFoodModel = 7;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardBitmojiFashionModel scanCardBitmojiFashionModel = 9;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardWebResultModel scanCardWebResultModel = 10;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardSpotlightTopicModel scanCardSpotlightTopicModel = 11;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModelV2 scanCardWithLensesModelV2 = 12;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardProfileModel scanCardProfileModel = 13;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardGenericInfoModel scanCardGenericInfoModel = 14;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardImageWebResultModel scanCardImageWebResultModel = 15;
+    enum SCPCNV3ScanCardCodeSource {
+        SCPCNV3ScanCardCodeSource_CodeSourceUnset = 0;
+        SCPCNV3ScanCardCodeSource_CodeSourceImagecode = 1;
+        SCPCNV3ScanCardCodeSource_CodeSourceBarcode = 2;
+    }
+}
+
+message SCPCNV3ScanCardActionButton {
+    .snapchat.perception.scan.v3.SCPCNV3LearnMoreAction learnMoreAction = 1;
+    .snapchat.perception.scan.v3.SCPCNV3OpenAppAction openAppAction = 2;
+    .snapchat.perception.scan.v3.SCPCNV3OpenShowcaseAction openShowcaseAction = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ShareResultAction shareResultAction = 4;
+    .snapchat.perception.scan.v3.SCPCNV3OpenSnapchatDeeplinkAction openSnapchatDeeplinkAction = 5;
+    .snapchat.perception.scan.v3.SCPCNV3OpenProfileAction openProfileAction = 6;
+}
+
+message SCPCNV3ScanCardBitmojiFashionModel {
+    string header = 1;
+    string subtitle = 2;
+    repeated .snapchat.bitmoji.SCBitmojiUUID costumeOverrideIdsArray = 3;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId bitmojiAvatarId = 4;
+}
+
+message SCPCNV3ScanCardCategoryPermissionsPromptModel {
+    string categoryId = 1;
+    string headerText = 2;
+    string headerIconURL = 3;
+    string bodyText = 4;
+    string ctaText = 5;
+    .snapchat.perception.scan.v3.SCPCNV3Notification enabledPermissionsNotification = 6;
+    .snapchat.perception.scan.v3.SCPCNV3AlertDialog dismissAlertDialog = 7;
+}
+
+message SCPCNV3ScanCardFoodModel {
+    string header = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3FoodCell cellsArray = 2;
+}
+
+message SCPCNV3ScanCardGenericInfoModel {
+    string title = 1;
+    string subtitle = 2;
+    string iconURL = 3;
+}
+
+message SCPCNV3ScanCardImageWebResultModel {
+    string header = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3WebResultCell cellsArray = 2;
+}
+
+message SCPCNV3ScanCardKnowledgeModel {
+    string header = 1;
+    string headerIconURL = 2;
+    string title = 3;
+    string imageURL = 4;
+    string knowledgeSource = 5;
+    string bodyText = 6;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardActionButton actionButtonsArray = 7;
+}
+
+message SCPCNV3ScanCardModel {
+    string utilityServiceId = 1;
+    string category = 2;
+    string brandImageURL = 3;
+    string brandName = 4;
+    .google.type.GTPColor brandNameColor = 5;
+    string itemImageURL = 6;
+    string itemName = 7;
+    string itemDescription = 8;
+    string html = 9;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardActionButton actionButtonsArray = 10;
+}
+
+message SCPCNV3ScanCardMoreScanCanDoModel {
+    repeated .snapchat.perception.scan.v3.SCPCNV3MoreScanCanDoCell cellsArray = 1;
+    string header = 2;
+    string subtitle = 3;
+}
+
+message SCPCNV3ScanCardProfileModel {
+    string profileName = 1;
+    string profileImageURL = 2;
+    string profileDescription = 3;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardActionButton actionButtonsArray = 5;
+    string profileBadgeIconURL = 6;
+}
+
+message SCPCNV3ScanCardRecipeModel {
+    string header = 1;
+    string headerIconURL = 2;
+    repeated .snapchat.perception.scan.v3.SCPCNV3RecipeCell cellsArray = 3;
+}
+
+message SCPCNV3ScanCardResponseV1 {
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardModel scanCardArray = 1;
+}
+
+message SCPCNV3ScanCardSpotlightTopicModel {
+    string header = 1;
+    string headerIconURL = 2;
+    string topicId = 3;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardSpotlightVideo videosArray = 4;
+}
+
+message SCPCNV3ScanCardSpotlightVideo {
+    string thumbnailURL = 1;
+    .snapchat.perception.common.SCPCNDecryptionKeyIv decryptionKeyIv = 2;
+    int64 viewCount = 3;
+    string snapId = 4;
+}
+
+message SCPCNV3ScanCardSubscriptionRequestV1 {
+    bool allUtilities = 1;
+    string utilityServiceId = 2;
+}
+
+message SCPCNV3ScanCardTipsModel {
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardTipsModel.SCPCNV3ScanCardTipsModel_Tip tipsArray = 1;
+    bool autoscrollEnabled = 2;
+    message SCPCNV3ScanCardTipsModel_Tip {
+        string title = 1;
+        string subtitle = 2;
+        string iconURL = 3;
+    }
+}
+
+message SCPCNV3ScanCardWebResultModel {
+    string header = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3WebResultCell cellsArray = 2;
+}
+
+message SCPCNV3ScanCardWithLensesModel {
+    bytes gtqServeResponse = 1;
+    string header = 2;
+    string overlayIconURL = 3;
+    string openToLensId = 4;
+    string subtitle = 5;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModel.PreviewsEntry previews = 6;
+    message PreviewsEntry {
+        string key = 1;
+        .snapchat.perception.scan.v3.SCPCNV3LensPreview value = 2;
+    }
+}
+
+message SCPCNV3ScanCardWithLensesModelV2 {
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCardWithLensesModelV2.SCPCNV3ScanCardWithLensesModelV2_Lens lensesArray = 1;
+    string header = 2;
+    string subtitle = 3;
+    string overlayIconURL = 4;
+    string openToLensId = 5;
+    message SCPCNV3ScanCardWithLensesModelV2_Lens {
+        string id_p = 1;
+        string name = 2;
+        string creatorName = 3;
+        string iconURL = 4;
+        .snapchat.perception.scan.v3.SCPCNV3LensPreview preview = 6;
+    }
+}
+
+message SCPCNV3ScanCategoryMetadata {
+    string categoryId = 1;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata.SCPCNV3ScanDataType requestedDataType = 2;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata.SCPCNV3CameraOrientation supportedCameraOrientationsArray = 3;
+    string scanningText = 4;
+    string scanningSubtext = 5;
+    string preScanText = 6;
+    string preScanSubtext = 7;
+    string preScanIconURL = 8;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata.SCPCNV3ScanDataType requestedDataTypesArray = 10;
+    enum SCPCNV3ScanDataType {
+        SCPCNV3ScanDataType_DataTypeUnset = 0;
+        SCPCNV3ScanDataType_DataTypeImage = 1;
+        SCPCNV3ScanDataType_DataTypeBarcode = 2;
+        SCPCNV3ScanDataType_DataTypeAudio = 3;
+        SCPCNV3ScanDataType_DataTypeNone = 4;
+        SCPCNV3ScanDataType_DataTypeText = 5;
+    }
+    enum SCPCNV3CameraOrientation {
+        SCPCNV3CameraOrientation_OrientationUnset = 0;
+        SCPCNV3CameraOrientation_OrientationFront = 1;
+        SCPCNV3CameraOrientation_OrientationRear = 2;
+    }
+}
+
+message SCPCNV3ScanConfigurationRequest {
+    .snapchat.perception.scan.v3.SCPCNV3ScanContext context = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanSubscriptionRequest subscriptionRequestsArray = 2;
+}
+
+message SCPCNV3ScanContext {
+    .snapchat.perception.common.SCPCNGeoCoordinate location = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanExperiment experimentsArray = 4;
+    string freeformTweak = 5;
+    .snapchat.perception.scan.v3.SCPCNV3GTQRequest gtqRequest = 6;
+    bool shouldIntrospectRequest = 7;
+    .snapchat.perception.scan.settings.SCPCNSettingsCategoryPermissionSettings categoryPermissionSettings = 8;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId bitmojiCompactAvatarId = 9;
+    string clientSessionId = 10;
+    string queryId = 11;
+    .snapchat.perception.scan.v3.SCPCNV3ScanContext.SCPCNV3ScanContext_IntrospectionRequest introspectionRequest = 12;
+    .snapchat.perception.scan.v3.SCPCNV3ScanContext.SCPCNV3ScanSource scanSource = 13;
+    message SCPCNV3ScanContext_IntrospectionRequest {
+        bool introspectAnalyzers = 1;
+    }
+    enum SCPCNV3ScanSource {
+        SCPCNV3ScanSource_ScanSourceUnset = 0;
+        SCPCNV3ScanSource_ScanSourceMainCamera = 1;
+        SCPCNV3ScanSource_ScanSourceContext = 2;
+        SCPCNV3ScanSource_ScanSourcePostCaptureSnapcode = 3;
+        SCPCNV3ScanSource_ScanSourceRts = 4;
+        SCPCNV3ScanSource_ScanSourceContextMemories = 5;
+        SCPCNV3ScanSource_ScanSourceContextSpotlight = 6;
+        SCPCNV3ScanSource_ScanSourceContextStories = 7;
+    }
+}
+
+message SCPCNV3ScanDataRequest {
+    .snapchat.perception.scan.v3.SCPCNV3Image image = 1;
+    .snapchat.perception.scan.v3.SCPCNV3Barcode barcode = 2;
+    .snapchat.perception.common.SCPCNAudio audio = 3;
+    .snapchat.perception.scan.v3.SCPCNV3Text text = 4;
+}
+
+message SCPCNV3ScanExperiment {
+    string name = 1;
+    string treatmentName = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCOFConfigs configs = 5;
+}
+
+message SCPCNV3ScanMetadataRequest {
+    string requestId = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanExperiment experimentsArray = 2;
+}
+
+message SCPCNV3ScanMetadataResponse {
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanMetadataResponse.SCPCNV3ScanMetadataResponse_Metadata metadataArray = 1;
+    message SCPCNV3ScanMetadataResponse_Metadata {
+        .snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata scanCategoryMetadata = 1;
+    }
+}
+
+message SCPCNV3ScanModeMetadata {
+    string categoryId = 1;
+    string header = 2;
+    string iconURL = 3;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCategoryMetadata scanCategoryMetadatas = 4;
+}
+
+message SCPCNV3ScanModesMetadataRequest {
+    string requestId = 1;
+}
+
+message SCPCNV3ScanModesMetadataResponse {
+    string drawerHeader = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanModeMetadata scanModeMetadatasArray = 2;
+}
+
+message SCPCNV3ScanStreamRequest {
+    string sessionId = 1;
+    int64 timestampMs = 2;
+    int64 timezoneOffsetSec = 3;
+    string requestId = 6;
+    .snapchat.perception.scan.v3.SCPCNV3ScanConfigurationRequest configurationRequest = 4;
+    .snapchat.perception.scan.v3.SCPCNV3ScanDataRequest dataRequest = 5;
+}
+
+message SCPCNV3ScanStreamResponse {
+    string subscriptionId = 1;
+    int64 timestampMs = 2;
+    repeated bytes introspectionDataArray = 8;
+    .snapchat.perception.scan.v3.SCPCNV3ScanStreamResponse.SCPCNV3ScanStreamResponse_IntrospectionData introspectionDataV2 = 10;
+    .snapchat.perception.scan.v3.SCPCNV3CreativeLensResponseV1 creativeLensResponseV1 = 3;
+    .snapchat.perception.scan.v3.SCPCNV3AllUtilityLensMetadataResponseV1 allUtilityLensMetadataResponseV1 = 4;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardResponseV1 scanCardResponseV1 = 5;
+    .snapchat.perception.scan.v3.SCPCNV3CategoryResponseV1 categoryResponseV1 = 7;
+    message SCPCNV3ScanStreamResponse_IntrospectionData {
+        repeated .snapchat.perception.scan.v3.SCPCNV3ScanStreamResponse.SCPCNV3ScanStreamResponse_IntrospectionData.AnalyzerOutputEntry analyzerOutput = 1;
+        message AnalyzerOutputEntry {
+            int32 key = 1;
+            .snapchat.perception.SCPNAnalyzerResponse value = 2;
+        }
+    }
+}
+
+message SCPCNV3ScanSubscriptionRequest {
+    string subscriptionId = 1;
+    bool closeAfterFirstResponse = 2;
+    .snapchat.perception.scan.v3.SCPCNV3CreativeLensSubscriptionRequestV1 creativeLensSubscriptionRequestV1 = 3;
+    .snapchat.perception.scan.v3.SCPCNV3AllUtilityLensMetadataSubscriptionRequestV1 allUtilityLensMetadataRequestV1 = 4;
+    .snapchat.perception.scan.v3.SCPCNV3ScanCardSubscriptionRequestV1 scanCardSubscriptionRequestV1 = 5;
+    .snapchat.perception.scan.v3.SCPCNV3CategorySubscriptionRequestV1 categorySubscriptionRequestV1 = 6;
+}
+
+message SCPCNV3ScanToLensResult {
+    repeated string lensIdsArray = 1;
+    bytes scanFromLensResponseJson = 2;
+}
+
+message SCPCNV3ScanTrayMetadataRequest {
+    string requestId = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ScanExperiment experimentsArray = 2;
+}
+
+message SCPCNV3ScanTrayMetadataResponse {
+    repeated .snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata trayPillMetadatasArray = 1;
+    repeated .snapchat.perception.scan.v3.SCPCNV3ClientCategoryMetadata clientCategoryMetadatasArray = 2;
+}
+
+message SCPCNV3ShareResultAction {
+    string iconURL = 1;
+}
+
+message SCPCNV3Snapcode {
+    uint32 version = 1;
+    string decodeMessageUuid = 2;
+}
+
+message SCPCNV3Text {
+    string text = 1;
+}
+
+message SCPCNV3TrayPillMetadata {
+    string name = 1;
+    .snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata.SCPCNV3TrayPillMetadata_ShowAllResults showAllResults = 2;
+    .snapchat.perception.scan.v3.SCPCNV3TrayPillMetadata.SCPCNV3TrayPillMetadata_ShowOnlyResultsWithMatchingPillId showOnlyResultsWithMatchingPillId = 3;
+    message SCPCNV3TrayPillMetadata_ShowAllResults {
+    }
+    message SCPCNV3TrayPillMetadata_ShowOnlyResultsWithMatchingPillId {
+        string pillId = 1;
+    }
+}
+
+message SCPCNV3UtilityLensMetadata {
+    string lensId = 1;
+    string name = 2;
+    string iconURL = 3;
+    .snapchat.perception.scan.v3.SCPCNV3UtilityLensViewModel frontFacingViewModel = 4;
+    .snapchat.perception.scan.v3.SCPCNV3UtilityLensViewModel backFacingViewModel = 5;
+    bool cameraPickerEnabled = 6;
+    bool barcodeRequired = 7;
+}
+
+message SCPCNV3UtilityLensUnsupportedAffordanceViewModel {
+    string instructionLabel = 1;
+}
+
+message SCPCNV3UtilityLensViewFinderAffordanceViewModel {
+    .snapchat.perception.scan.v3.SCPCNV3RectRatio viewFinderRatio = 1;
+    string instructionTitle = 2;
+    string instructionSubtitle = 3;
+    string failureTitle = 4;
+    string failureSubtitle = 5;
+}
+
+message SCPCNV3UtilityLensViewModel {
+    .snapchat.perception.scan.v3.SCPCNV3UtilityLensUnsupportedAffordanceViewModel utilityLensUnsupportedAffordanceViewModel = 1;
+    .snapchat.perception.scan.v3.SCPCNV3UtilityLensViewFinderAffordanceViewModel utilityLensViewFinderAffordanceViewModel = 2;
+    .snapchat.perception.scan.v3.SCPCNV3UtilityLensWaveAffordanceViewModel utilityLensWaveAffordanceViewModel = 3;
+}
+
+message SCPCNV3UtilityLensWaveAffordanceViewModel {
+    string instructionTitle = 1;
+    string instructionSubtitle = 2;
+    string failureTitle = 3;
+    string failureSubtitle = 4;
+}
+
+message SCPCNV3UtilityServiceCell {
+    string serviceId = 1;
+    string title = 2;
+    string subtitle = 3;
+    string iconURL = 4;
+    string scanningText = 5;
+    string scanningSubtext = 6;
+    .snapchat.perception.scan.v3.SCPCNV3ScanAffordance scanAffordance = 8;
+}
+
+message SCPCNV3WebResultCell {
+    .snapchat.perception.content_understanding.WebResult webResult = 1;
+}

@@ -1,0 +1,203 @@
+syntax = "proto3";
+package ranking.ml.centralkitchen;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCK";
+option csharp_namespace = "SnapProto.Ranking.Ml.Centralkitchen";
+
+import "feed/quality/snavboost/SCSQNSectionStats.proto";
+import "ranking/indexing/Lens.proto";
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKRecentEventFeatures.proto";
+import "ranking/pii/user/profile/SCSUPBasicAttributes.proto";
+import "ranking/pii/user/profile/SCSUPContentEngagement.proto";
+import "ranking/pii/user/profile/SCSUPInterests.proto";
+import "ranking/pii/user/profile/SCSUPSalientTerms.proto";
+
+message SCSCKCentralKitchenUserData {
+    repeated .ranking.ml.centralkitchen.SCSCKCentralKitchenUserData.UserEmbeddingEntry userEmbedding = 1;
+    string userId = 2;
+    message UserEmbeddingEntry {
+        string key = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding value = 2;
+    }
+}
+
+message SCSCKClientInfo {
+    .ranking.ml.centralkitchen.SCSCKClientInfo.SCSSMConnectionInfo_ConnectionType connectionType = 1;
+    uint32 bandwidthKbps = 2;
+    .ranking.ml.centralkitchen.SCSCKClientInfo.SCSCKClientInfo_Weekday weekday = 3;
+    uint32 hour = 4;
+    repeated string languagePrefsArray = 5;
+    string country = 6;
+    bool isSoundOn = 7;
+    enum SCSSMConnectionInfo_ConnectionType {
+        SCSSMConnectionInfo_ConnectionType_ConnectionUnknown = 0;
+        SCSSMConnectionInfo_ConnectionType_ConnectionWifi = 1;
+        SCSSMConnectionInfo_ConnectionType_ConnectionCell = 2;
+        SCSSMConnectionInfo_ConnectionType_ConnectionEthernet = 3;
+    }
+    enum SCSCKClientInfo_Weekday {
+        SCSCKClientInfo_Weekday_Sunday = 0;
+        SCSCKClientInfo_Weekday_Monday = 1;
+        SCSCKClientInfo_Weekday_Tuesday = 2;
+        SCSCKClientInfo_Weekday_Wednesday = 3;
+        SCSCKClientInfo_Weekday_Thursday = 4;
+        SCSCKClientInfo_Weekday_Friday = 5;
+        SCSCKClientInfo_Weekday_Saturday = 6;
+    }
+}
+
+message SCSCKContentEngagementScores {
+    float showEngagementScore = 1;
+    float showFanScore = 2;
+    .ranking.pii.user.profile.SCSUPEngagementStats officialPublicStats = 3;
+    .ranking.pii.user.profile.SCSUPEngagementStats nonOfficialPublicStats = 4;
+    .ranking.pii.user.profile.SCSUPEngagementStats publisherStats = 5;
+    float publicUserSubscriptionCtr = 6;
+    float maxPublicUserCtr = 7;
+    float minPublicUserCtr = 8;
+    float publicUserRecommendedCtr = 9;
+    int64 totalLongWatches = 10;
+    .ranking.pii.user.profile.SCSUPEngagementStats ourStoryStats = 11;
+    .ranking.pii.user.profile.SCSUPEngagementStats showStats = 12;
+    .ranking.pii.user.profile.SCSUPEngagementStats originalShowStats = 13;
+    .ranking.pii.user.profile.SCSUPLensEngagementStats lensStats = 14;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSpotlightPublisherStats = 15;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSpotlightPublicUserStats = 16;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSingleSnapStoryStats = 17;
+    .ranking.pii.user.profile.SCSUPEngagementStats savedStoryStats = 18;
+    .ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedSingleSnapStoryStatsRealtime = 19;
+}
+
+message SCSCKFeedEngagementStatus {
+    bool isForYouLeu = 1;
+}
+
+message SCSCKUsedLenses {
+    repeated int64 history3DArray = 1;
+    repeated int64 history40DArray = 2;
+}
+
+message SCSCKUserFeatures {
+    .ranking.pii.user.profile.SCSUPBasicAttributes basicAttributes = 1;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.UserEmbeddingsEntry userEmbeddings = 2;
+    repeated fixed64 subscriptionsArray = 3;
+    repeated fixed64 recentWatchesArray = 4;
+    int64 requestTimestampSecs = 5;
+    repeated .ranking.pii.user.profile.SCSUPSalientTermScore scoredSalientTermsArray = 6;
+    repeated .ranking.pii.user.profile.SCSUPScoredInterest scoredInterestsArray = 7;
+    .ranking.ml.centralkitchen.SCSCKClientInfo clientInfo = 8;
+    .ranking.ml.centralkitchen.SCSCKContentEngagementScores contentEngagementScores = 9;
+    repeated float interestTabVecArray = 10;
+    repeated fixed64 recentWatchesNoEditionArray = 11;
+    repeated bool registeredInterestVecArray = 12;
+    repeated float userDiEmbeddingArray = 13;
+    string userDiEmbeddingVersion = 14;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryViewerEngagementFeatures friendStoryViewerEngagementFeatures = 15;
+    bool isNewUser = 16;
+    .feed.quality.snavboost.SCSQNSectionStats targetSectionStats = 17;
+    repeated fixed64 topKRecencyOrderedLensCreatorSubsFpArray = 18;
+    .ranking.ml.centralkitchen.SCSCKUsedLenses usedLenses = 19;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_UserStoryEngagementStats publicUserStoryEngagementStatsArray = 20;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_UserStoryEngagementStats publisherStoryEngagementStatsArray = 21;
+    .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_FlattenedUserStoryInteractions userStoryInteractions = 22;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedSccPublisherStoryArray = 23;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedSccPublicUserAccountArray = 24;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedSccPublisherStorySpotlightArray = 25;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedSccPublicUserAccountSpotlightArray = 26;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedSectionEngagementStats = 27;
+    repeated .ranking.indexing.CreatorInfo topKRecencyOrderedLensCreatorInfoArray = 28;
+    .ranking.ml.centralkitchen.SCSCKRecentEventFeatures recentEvents = 29;
+    fixed64 hashedUserId = 30;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedCupSccSingleSnapStoryArray = 31;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedYt8MSingleSnapStoryArray = 32;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_HashtagWindowedEngagementStats windowedHashtagSingleSnapStoryArray = 33;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_LensWindowedEngagementStats windowedLensSingleSnapStoryArray = 34;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_MusicWindowedEngagementStats windowedMusicSingleSnapStoryArray = 35;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedSccSingleSnapStoryArray = 36;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedCupSccV3SingleSnapStoryArray = 37;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals suggestiveSignalsFourWeeks = 38;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedCupSccPlusV1SingleSnapStoryArray = 39;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccNormalizedStats sccNormalizedStatsArray = 40;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccNormalizedStats cupSccV3NormalizedStatsArray = 41;
+    .ranking.ml.centralkitchen.SCSCKFeedEngagementStatus feedEngagementStatus = 42;
+    .ranking.ml.centralkitchen.SCSCKRecentEventFeatures clientInferredRecentEvents = 43;
+    .ranking.ml.centralkitchen.SCSCKRecentEventFeatures spotlightRobustaRecentEvents = 44;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals suggestivePublisherSignalsThreeMonth = 45;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals sensitivePublisherSignalsThreeMonth = 46;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals hbiPublisherSignalsThreeMonth = 47;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccWindowedEngagementStats windowedCupClusterV1SingleSnapStoryArray = 48;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_LanguageWindowedEngagementStats windowedLanguageSingleSnapStoryArray = 50;
+    .ranking.ml.centralkitchen.SCSCKRecentEventFeatures spotlightLastSessionRecentEvents = 51;
+    .ranking.ml.centralkitchen.SCSCKRecentEventFeatures discoverRobustaRecentEvents = 52;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccRealtimeWindowedEngagementStats windowedCupSccPlusV1SingleSnapStoryRealtimeArray = 53;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_SccRealtimeWindowedEngagementStats windowedCupClusterV1SingleSnapStoryRealtimeArray = 54;
+    bool isLeUser = 55;
+    repeated .ranking.ml.centralkitchen.SCSCKUserFeatures.SCSCKUserFeatures_BucketizedSuggestiveWindowedEngagementStats windowedSuggestiveV1SingleSnapStoryArray = 56;
+    int32 totalUgcSubscriptions = 57;
+    int32 totalPremiumSubscriptions = 58;
+    int32 totalCappedSubscriptionCount = 59;
+    int32 totalUncappedSubscriptionCount = 60;
+    message UserEmbeddingsEntry {
+        string key = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding value = 2;
+    }
+    message SCSCKUserFeatures_BucketizedSuggestiveWindowedEngagementStats {
+        int32 suggestiveBucket = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_FlattenedUserStoryInteractions {
+        repeated fixed64 storyKeyArray = 1;
+        repeated bool hiddenArray = 2;
+        repeated uint32 snapCompletionPercentArray = 3;
+        repeated uint32 storyLengthSecondsArray = 4;
+        repeated uint32 watchTimePercentArray = 5;
+        repeated uint32 numWatchesArray = 6;
+        repeated uint32 totalImpressionTimeArray = 7;
+        repeated uint32 storyExitArray = 8;
+        repeated uint32 storyEntranceArray = 9;
+        repeated bool subscribedArray = 10;
+        repeated uint32 storyEntranceIntentArray = 11;
+        repeated uint32 storyExitIntentArray = 12;
+        repeated uint32 numBoostsArray = 13;
+        repeated uint32 numSnapsInStoryArray = 14;
+        repeated uint32 totalWatchTimeMsecsArray = 15;
+    }
+    message SCSCKUserFeatures_HashtagWindowedEngagementStats {
+        string hashtag = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_LanguageWindowedEngagementStats {
+        string language = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_LensWindowedEngagementStats {
+        string lensId = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_MusicWindowedEngagementStats {
+        uint64 musicId = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_SccNormalizedStats {
+        int32 scc = 1;
+        .ranking.pii.user.profile.SCSUPNormalizedStats normalizedStats = 2;
+    }
+    message SCSCKUserFeatures_SccRealtimeWindowedEngagementStats {
+        int32 scc = 1;
+        .ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_SccWindowedEngagementStats {
+        int32 scc = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedEngagementStats = 2;
+    }
+    message SCSCKUserFeatures_UserStoryEngagementStats {
+        fixed64 storyKey = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats engagementStats = 2;
+    }
+}
+
+message SCSCKUserIngredient {
+    repeated .ranking.pii.user.profile.SCSUPSalientTermScore salientTermScoreArray = 1;
+}

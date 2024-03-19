@@ -1,0 +1,51 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSuggestUsernamePb";
+option csharp_namespace = "SnapProto.Snapchat.Activation.Api";
+
+message SCSuggestUsernamePbBirthdateInfo {
+    uint32 year = 1;
+    uint32 month = 2;
+    uint32 day = 3;
+}
+
+message SCSuggestUsernamePbCheckUsernameRequest {
+    string requestedUsername = 1;
+    .snapchat.activation.api.SCSuggestUsernamePbNameAndBirthdate nameAndBirthdate = 2;
+    uint32 versionNumber = 3;
+}
+
+message SCSuggestUsernamePbCheckUsernameResponse {
+    .snapchat.activation.api.SCSuggestUsernamePbCheckUsernameResponse.SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState state = 1;
+    repeated string suggestionsArray = 2;
+    string errorMessage = 3;
+    enum SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState {
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_StateUnset = 0;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_UsernameAvailable = 1;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_TooShort = 2;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_TooLong = 3;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_InvalidBegin = 4;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_InvalidEnd = 5;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_InvalidChar = 6;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_InvalidSeparated = 7;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_Taken = 8;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_Deleted = 9;
+        SCSuggestUsernamePbCheckUsernameResponse_RequestedUsernameState_SameAsPassword = 10;
+    }
+}
+
+message SCSuggestUsernamePbNameAndBirthdate {
+    string firstName = 1;
+    string lastName = 2;
+    .snapchat.activation.api.SCSuggestUsernamePbBirthdateInfo birthdateInfo = 3;
+}
+
+message SCSuggestUsernamePbSuggestUsernameRequest {
+    .snapchat.activation.api.SCSuggestUsernamePbNameAndBirthdate nameAndBirthdate = 1;
+    uint32 versionNumber = 2;
+}
+
+message SCSuggestUsernamePbSuggestUsernameResponse {
+    repeated string suggestionsArray = 1;
+}

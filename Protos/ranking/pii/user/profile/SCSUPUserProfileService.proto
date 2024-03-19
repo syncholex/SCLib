@@ -1,0 +1,426 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "google/protobuf/any.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/ml/centralkitchen/SCSCKFriendStoryFeatures.proto";
+import "ranking/ml/centralkitchen/SCSCKUser.proto";
+import "ranking/pii/user/notification/SCSNTFUserOptIns.proto";
+import "ranking/pii/user/profile/FriendEngagementFeatures.proto";
+import "ranking/pii/user/profile/FriendMetadataFeatures.proto";
+import "ranking/pii/user/profile/SCSUPAbExperiments.proto";
+import "ranking/pii/user/profile/SCSUPBasicAttributes.proto";
+import "ranking/pii/user/profile/SCSUPContentEngagement.proto";
+import "ranking/pii/user/profile/SCSUPDiscoverSettings.proto";
+import "ranking/pii/user/profile/SCSUPDynamicChannel.proto";
+import "ranking/pii/user/profile/SCSUPFeedsImpressions.proto";
+import "ranking/pii/user/profile/SCSUPFriendFeatures.proto";
+import "ranking/pii/user/profile/SCSUPGeographics.proto";
+import "ranking/pii/user/profile/SCSUPInterests.proto";
+import "ranking/pii/user/profile/SCSUPNotifications.proto";
+import "ranking/pii/user/profile/SCSUPReadReceipt.proto";
+import "ranking/pii/user/profile/SCSUPRecentEvents.proto";
+import "ranking/pii/user/profile/SCSUPRecommendedPosters.proto";
+import "ranking/pii/user/profile/SCSUPRecommendedUsers.proto";
+import "ranking/pii/user/profile/SCSUPRegisteredInterests.proto";
+import "ranking/pii/user/profile/SCSUPSalientTerms.proto";
+import "ranking/pii/user/profile/StoryPreference.proto";
+import "ranking/pii/user/profile/UserEmbedding.proto";
+
+message SCSUPDeleteSearchHistoryRequest {
+    string userId = 1;
+    int64 requestTimestampSecs = 2;
+}
+
+message SCSUPDeleteSearchHistoryResponse {
+}
+
+message SCSUPDiscoverSettingsRequest {
+    .ranking.core.SCSCOREUUID userId = 1;
+}
+
+message SCSUPDiscoverSettingsResponse {
+    .ranking.pii.user.profile.SCSUPStoryPreferenceSettings storyPreferenceSettings = 1;
+    bool optedInHnNewsSectionNotification = 2;
+}
+
+message SCSUPFriendFeedInteractionType {
+}
+
+message SCSUPGetFriendInteractionsHistoryRequest {
+    string userId = 1;
+    int64 startTimestamp = 2;
+    int32 limit = 3;
+}
+
+message SCSUPGetFriendInteractionsHistoryResponse {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse.SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo interactionInfosArray = 2;
+    repeated .ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse.SCSUPGetFriendInteractionsHistoryResponse_PosterInfo posterInfosArray = 3;
+    int64 nextStartTimestamp = 4;
+    message SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo {
+        string correspondentId = 1;
+        .ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse.SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo.SCSUPFriendFeedInteractionType_Enum interactionType = 2;
+        .ranking.pii.user.profile.SCSUPGetFriendInteractionsHistoryResponse.SCSUPGetFriendInteractionsHistoryResponse_InteractionInfo.SCSCOREMediaInfo_MediaType mediaType = 3;
+        int64 interactionTimestampSecs = 4;
+        enum SCSUPFriendFeedInteractionType_Enum {
+            SCSUPFriendFeedInteractionType_Enum_Unknown = 0;
+            SCSUPFriendFeedInteractionType_Enum_ChatSent = 1;
+            SCSUPFriendFeedInteractionType_Enum_ChatViewed = 2;
+            SCSUPFriendFeedInteractionType_Enum_GroupChatSent = 3;
+            SCSUPFriendFeedInteractionType_Enum_GroupChatViewed = 4;
+            SCSUPFriendFeedInteractionType_Enum_SnapSent = 5;
+            SCSUPFriendFeedInteractionType_Enum_SnapViewed = 6;
+            SCSUPFriendFeedInteractionType_Enum_GroupSnapSent = 7;
+            SCSUPFriendFeedInteractionType_Enum_GroupSnapViewed = 8;
+            SCSUPFriendFeedInteractionType_Enum_StoryStoryViewed = 9;
+            SCSUPFriendFeedInteractionType_Enum_StorySnapViewed = 10;
+            SCSUPFriendFeedInteractionType_Enum_GroupStoryStoryViewed = 11;
+            SCSUPFriendFeedInteractionType_Enum_GroupStorySnapViewed = 12;
+        }
+        enum SCSCOREMediaInfo_MediaType {
+            SCSCOREMediaInfo_MediaType_Image = 0;
+            SCSCOREMediaInfo_MediaType_Video = 1;
+            SCSCOREMediaInfo_MediaType_VideoNoSound = 2;
+            SCSCOREMediaInfo_MediaType_Friend = 3;
+            SCSCOREMediaInfo_MediaType_Blob = 4;
+            SCSCOREMediaInfo_MediaType_Laguna = 5;
+            SCSCOREMediaInfo_MediaType_LagunaNoSound = 6;
+            SCSCOREMediaInfo_MediaType_Gif = 7;
+            SCSCOREMediaInfo_MediaType_FingerprintHeaderSize = 8;
+            SCSCOREMediaInfo_MediaType_AudioStitch = 9;
+            SCSCOREMediaInfo_MediaType_Psychomantis = 10;
+            SCSCOREMediaInfo_MediaType_Screamingmantis = 11;
+            SCSCOREMediaInfo_MediaType_MalibuSound = 12;
+            SCSCOREMediaInfo_MediaType_MalibuNoSound = 13;
+            SCSCOREMediaInfo_MediaType_LagunahdSound = 14;
+            SCSCOREMediaInfo_MediaType_LagunahdNoSound = 15;
+            SCSCOREMediaInfo_MediaType_Ghostmantis = 16;
+            SCSCOREMediaInfo_MediaType_NewportSound = 17;
+            SCSCOREMediaInfo_MediaType_NewportNoSound = 18;
+            SCSCOREMediaInfo_MediaType_Audio = 19;
+            SCSCOREMediaInfo_MediaType_Bloop = 20;
+            SCSCOREMediaInfo_MediaType_SpectaclesImage = 21;
+            SCSCOREMediaInfo_MediaType_SpectaclesVideo = 22;
+            SCSCOREMediaInfo_MediaType_SpectaclesVideoNoSound = 23;
+            SCSCOREMediaInfo_MediaType_CheeriosImage = 24;
+            SCSCOREMediaInfo_MediaType_CheeriosVideo = 25;
+            SCSCOREMediaInfo_MediaType_CheeriosVideoNoSound = 26;
+        }
+    }
+    message SCSUPGetFriendInteractionsHistoryResponse_PosterInfo {
+        .ranking.ml.centralkitchen.SCSCKFriendStoryPosterFeatures posterFeatures = 1;
+        int64 posterAggregationTimestampSecs = 2;
+    }
+}
+
+message SCSUPGetSearchHistoryRequest {
+    string userId = 1;
+}
+
+message SCSUPGetSearchHistoryResponse {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPGetSearchHistoryResponse.SCSUPGetSearchHistoryResponse_QueryInfo queryInfosArray = 2;
+    message SCSUPGetSearchHistoryResponse_QueryInfo {
+        string searchQueryText = 1;
+        string s2CellId = 2;
+        int64 queryTimeSecs = 4;
+    }
+}
+
+message SCSUPGetSpotlightInteractionsHistoryRequest {
+    string userId = 1;
+}
+
+message SCSUPGetSpotlightInteractionsHistoryResponse {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPGetSpotlightInteractionsHistoryResponse.SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo actionInfosArray = 2;
+    message SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo {
+        string storySnapURL = 1;
+        int64 timestampSecs = 2;
+        .ranking.pii.user.profile.SCSUPGetSpotlightInteractionsHistoryResponse.SCSUPGetSpotlightInteractionsHistoryResponse_ActionInfo.SCSUPSpotlightFeedInteractionType_Action type = 3;
+        string value = 4;
+        enum SCSUPSpotlightFeedInteractionType_Action {
+            SCSUPSpotlightFeedInteractionType_Action_Unknown = 0;
+            SCSUPSpotlightFeedInteractionType_Action_View = 1;
+            SCSUPSpotlightFeedInteractionType_Action_Share = 2;
+            SCSUPSpotlightFeedInteractionType_Action_Favorite = 3;
+            SCSUPSpotlightFeedInteractionType_Action_Unfavorite = 4;
+            SCSUPSpotlightFeedInteractionType_Action_Boost = 5;
+            SCSUPSpotlightFeedInteractionType_Action_Unboost = 6;
+        }
+    }
+}
+
+message SCSUPSpotlightFeedInteractionType {
+}
+
+message SCSUPSubscriptionDebugResponse {
+    repeated .ranking.pii.user.profile.SCSUPSubscriptionDebugResponse.SubscribedUsersEntry subscribedUsers = 1;
+    repeated .ranking.pii.user.profile.SCSUPSubscriptionDebugResponse.SubscribedPublishersEntry subscribedPublishers = 2;
+    repeated .ranking.pii.user.profile.SCSUPSubscriptionDebugResponse.SubscribedStoriesEntry subscribedStories = 3;
+    repeated .ranking.pii.user.profile.SCSUPSubscriptionDebugResponse.SubscribedLivesEntry subscribedLives = 4;
+    message SubscribedUsersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message SubscribedPublishersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message SubscribedStoriesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    message SubscribedLivesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCSUPSubscriptionRequest {
+    string userId = 1;
+}
+
+message SCSUPSubscriptionResponse {
+    repeated string subscribedUsersArray = 1;
+    repeated string hiddenUsersArray = 2;
+    repeated int64 subscribedPublishersArray = 3;
+    repeated string subscribedStoriesArray = 5;
+    repeated string hiddenStoriesArray = 6;
+    repeated string subscribedLivesArray = 7;
+    repeated string hiddenLivesArray = 8;
+    bool hasLiveSubscriptionState = 9;
+    repeated int64 hiddenLensesArray = 10;
+    repeated int32 hiddenCategoriesArray = 11;
+    repeated string hiddenLensCreatorsArray = 12;
+    repeated string subscribedLensCreatorsArray = 13;
+    repeated int64 hiddenPublishersArray = 14;
+}
+
+message SCSUPUpdateUserProfileRequest {
+    string userId = 1;
+    .ranking.pii.user.profile.SCSUPUserUpdateProfileAction userUpdateProfileAction = 2;
+}
+
+message SCSUPUpdateUserProfileResponse {
+}
+
+message SCSUPUserClearProfileAction {
+    repeated .ranking.pii.user.profile.SCSUPUserClearProfileAction.SCSUPUserProfileRequest_UserProfileField userProfileFieldsArray = 1;
+    int64 clientTimestampMsecs = 2;
+    int64 serverTimestampMsecs = 3;
+    enum SCSUPUserProfileRequest_UserProfileField {
+        SCSUPUserProfileRequest_UserProfileField_FieldUnknown = 0;
+        SCSUPUserProfileRequest_UserProfileField_FieldAll = 1;
+        SCSUPUserProfileRequest_UserProfileField_FieldBasicAttributes = 2;
+        SCSUPUserProfileRequest_UserProfileField_FieldGeographics = 3;
+        SCSUPUserProfileRequest_UserProfileField_FieldContentEngagement = 4;
+        SCSUPUserProfileRequest_UserProfileField_FieldSalientTerms = 5;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedUsers = 6;
+        SCSUPUserProfileRequest_UserProfileField_FieldInterests = 7;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendScore = 8;
+        SCSUPUserProfileRequest_UserProfileField_FieldSubscriptions = 10;
+        SCSUPUserProfileRequest_UserProfileField_FieldCentralKitchenUserData = 11;
+        SCSUPUserProfileRequest_UserProfileField_FieldReadReceipt = 12;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotifications = 13;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedPosters = 14;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotificationOptIns = 15;
+        SCSUPUserProfileRequest_UserProfileField_FieldDynamicChannel = 16;
+        SCSUPUserProfileRequest_UserProfileField_FieldRegisteredInterests = 17;
+        SCSUPUserProfileRequest_UserProfileField_FieldFeedsImpressions = 18;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendEngagement = 19;
+        SCSUPUserProfileRequest_UserProfileField_FieldAbExperiments = 20;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendMetadata = 21;
+        SCSUPUserProfileRequest_UserProfileField_FieldDeprecated = 22;
+        SCSUPUserProfileRequest_UserProfileField_FieldIntraDayContentEngagement = 23;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecentEvents = 24;
+        SCSUPUserProfileRequest_UserProfileField_FieldFakeAtlas = 25;
+    }
+}
+
+message SCSUPUserProfileBatchRequest {
+    repeated string userIdsArray = 1;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileBatchRequest.SCSUPUserProfileRequest_UserProfileField userProfileFieldsArray = 2;
+    int64 subscribedCap = 3;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldOverride userProfileFieldOverridesArray = 4;
+    string locale = 5;
+    bool isClientSettingRequest = 6;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileBatchRequest.SCSUPUserProfileRequest_UserProfileField localizeFieldsArray = 7;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldRequest fieldRequestsArray = 8;
+    enum SCSUPUserProfileRequest_UserProfileField {
+        SCSUPUserProfileRequest_UserProfileField_FieldUnknown = 0;
+        SCSUPUserProfileRequest_UserProfileField_FieldAll = 1;
+        SCSUPUserProfileRequest_UserProfileField_FieldBasicAttributes = 2;
+        SCSUPUserProfileRequest_UserProfileField_FieldGeographics = 3;
+        SCSUPUserProfileRequest_UserProfileField_FieldContentEngagement = 4;
+        SCSUPUserProfileRequest_UserProfileField_FieldSalientTerms = 5;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedUsers = 6;
+        SCSUPUserProfileRequest_UserProfileField_FieldInterests = 7;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendScore = 8;
+        SCSUPUserProfileRequest_UserProfileField_FieldSubscriptions = 10;
+        SCSUPUserProfileRequest_UserProfileField_FieldCentralKitchenUserData = 11;
+        SCSUPUserProfileRequest_UserProfileField_FieldReadReceipt = 12;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotifications = 13;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedPosters = 14;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotificationOptIns = 15;
+        SCSUPUserProfileRequest_UserProfileField_FieldDynamicChannel = 16;
+        SCSUPUserProfileRequest_UserProfileField_FieldRegisteredInterests = 17;
+        SCSUPUserProfileRequest_UserProfileField_FieldFeedsImpressions = 18;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendEngagement = 19;
+        SCSUPUserProfileRequest_UserProfileField_FieldAbExperiments = 20;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendMetadata = 21;
+        SCSUPUserProfileRequest_UserProfileField_FieldDeprecated = 22;
+        SCSUPUserProfileRequest_UserProfileField_FieldIntraDayContentEngagement = 23;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecentEvents = 24;
+        SCSUPUserProfileRequest_UserProfileField_FieldFakeAtlas = 25;
+    }
+}
+
+message SCSUPUserProfileBatchResponse {
+    repeated .ranking.pii.user.profile.SCSUPUserProfileBatchResponse.SCSUPUserProfileBatchResponse_BatchResponseItem responseArray = 1;
+    message SCSUPUserProfileBatchResponse_BatchResponseItem {
+        int32 statusCode = 1;
+        string userId = 2;
+        .ranking.pii.user.profile.SCSUPUserProfileResponse userProfileResponse = 3;
+    }
+}
+
+message SCSUPUserProfileDebugResponse {
+    string debugHtml = 8;
+}
+
+message SCSUPUserProfileRequest {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_UserProfileField userProfileFieldsArray = 2;
+    int64 subscribedCap = 3;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldOverride userProfileFieldOverridesArray = 4;
+    string locale = 5;
+    bool isClientSettingRequest = 6;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_UserProfileField localizeFieldsArray = 7;
+    repeated .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldRequest fieldRequestsArray = 8;
+    message SCSUPUserProfileRequest_FieldOverride {
+        .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldOverride.SCSUPUserProfileRequest_UserProfileField field = 1;
+        string dataSetOverride = 2;
+        enum SCSUPUserProfileRequest_UserProfileField {
+            SCSUPUserProfileRequest_UserProfileField_FieldUnknown = 0;
+            SCSUPUserProfileRequest_UserProfileField_FieldAll = 1;
+            SCSUPUserProfileRequest_UserProfileField_FieldBasicAttributes = 2;
+            SCSUPUserProfileRequest_UserProfileField_FieldGeographics = 3;
+            SCSUPUserProfileRequest_UserProfileField_FieldContentEngagement = 4;
+            SCSUPUserProfileRequest_UserProfileField_FieldSalientTerms = 5;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecommendedUsers = 6;
+            SCSUPUserProfileRequest_UserProfileField_FieldInterests = 7;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendScore = 8;
+            SCSUPUserProfileRequest_UserProfileField_FieldSubscriptions = 10;
+            SCSUPUserProfileRequest_UserProfileField_FieldCentralKitchenUserData = 11;
+            SCSUPUserProfileRequest_UserProfileField_FieldReadReceipt = 12;
+            SCSUPUserProfileRequest_UserProfileField_FieldNotifications = 13;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecommendedPosters = 14;
+            SCSUPUserProfileRequest_UserProfileField_FieldNotificationOptIns = 15;
+            SCSUPUserProfileRequest_UserProfileField_FieldDynamicChannel = 16;
+            SCSUPUserProfileRequest_UserProfileField_FieldRegisteredInterests = 17;
+            SCSUPUserProfileRequest_UserProfileField_FieldFeedsImpressions = 18;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendEngagement = 19;
+            SCSUPUserProfileRequest_UserProfileField_FieldAbExperiments = 20;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendMetadata = 21;
+            SCSUPUserProfileRequest_UserProfileField_FieldDeprecated = 22;
+            SCSUPUserProfileRequest_UserProfileField_FieldIntraDayContentEngagement = 23;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecentEvents = 24;
+            SCSUPUserProfileRequest_UserProfileField_FieldFakeAtlas = 25;
+        }
+    }
+    message SCSUPUserProfileRequest_FieldRequest {
+        .ranking.pii.user.profile.SCSUPUserProfileRequest.SCSUPUserProfileRequest_FieldRequest.SCSUPUserProfileRequest_UserProfileField field = 1;
+        .google.protobuf.Any fieldRequest = 2;
+        enum SCSUPUserProfileRequest_UserProfileField {
+            SCSUPUserProfileRequest_UserProfileField_FieldUnknown = 0;
+            SCSUPUserProfileRequest_UserProfileField_FieldAll = 1;
+            SCSUPUserProfileRequest_UserProfileField_FieldBasicAttributes = 2;
+            SCSUPUserProfileRequest_UserProfileField_FieldGeographics = 3;
+            SCSUPUserProfileRequest_UserProfileField_FieldContentEngagement = 4;
+            SCSUPUserProfileRequest_UserProfileField_FieldSalientTerms = 5;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecommendedUsers = 6;
+            SCSUPUserProfileRequest_UserProfileField_FieldInterests = 7;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendScore = 8;
+            SCSUPUserProfileRequest_UserProfileField_FieldSubscriptions = 10;
+            SCSUPUserProfileRequest_UserProfileField_FieldCentralKitchenUserData = 11;
+            SCSUPUserProfileRequest_UserProfileField_FieldReadReceipt = 12;
+            SCSUPUserProfileRequest_UserProfileField_FieldNotifications = 13;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecommendedPosters = 14;
+            SCSUPUserProfileRequest_UserProfileField_FieldNotificationOptIns = 15;
+            SCSUPUserProfileRequest_UserProfileField_FieldDynamicChannel = 16;
+            SCSUPUserProfileRequest_UserProfileField_FieldRegisteredInterests = 17;
+            SCSUPUserProfileRequest_UserProfileField_FieldFeedsImpressions = 18;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendEngagement = 19;
+            SCSUPUserProfileRequest_UserProfileField_FieldAbExperiments = 20;
+            SCSUPUserProfileRequest_UserProfileField_FieldFriendMetadata = 21;
+            SCSUPUserProfileRequest_UserProfileField_FieldDeprecated = 22;
+            SCSUPUserProfileRequest_UserProfileField_FieldIntraDayContentEngagement = 23;
+            SCSUPUserProfileRequest_UserProfileField_FieldRecentEvents = 24;
+            SCSUPUserProfileRequest_UserProfileField_FieldFakeAtlas = 25;
+        }
+    }
+    enum SCSUPUserProfileRequest_UserProfileField {
+        SCSUPUserProfileRequest_UserProfileField_FieldUnknown = 0;
+        SCSUPUserProfileRequest_UserProfileField_FieldAll = 1;
+        SCSUPUserProfileRequest_UserProfileField_FieldBasicAttributes = 2;
+        SCSUPUserProfileRequest_UserProfileField_FieldGeographics = 3;
+        SCSUPUserProfileRequest_UserProfileField_FieldContentEngagement = 4;
+        SCSUPUserProfileRequest_UserProfileField_FieldSalientTerms = 5;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedUsers = 6;
+        SCSUPUserProfileRequest_UserProfileField_FieldInterests = 7;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendScore = 8;
+        SCSUPUserProfileRequest_UserProfileField_FieldSubscriptions = 10;
+        SCSUPUserProfileRequest_UserProfileField_FieldCentralKitchenUserData = 11;
+        SCSUPUserProfileRequest_UserProfileField_FieldReadReceipt = 12;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotifications = 13;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecommendedPosters = 14;
+        SCSUPUserProfileRequest_UserProfileField_FieldNotificationOptIns = 15;
+        SCSUPUserProfileRequest_UserProfileField_FieldDynamicChannel = 16;
+        SCSUPUserProfileRequest_UserProfileField_FieldRegisteredInterests = 17;
+        SCSUPUserProfileRequest_UserProfileField_FieldFeedsImpressions = 18;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendEngagement = 19;
+        SCSUPUserProfileRequest_UserProfileField_FieldAbExperiments = 20;
+        SCSUPUserProfileRequest_UserProfileField_FieldFriendMetadata = 21;
+        SCSUPUserProfileRequest_UserProfileField_FieldDeprecated = 22;
+        SCSUPUserProfileRequest_UserProfileField_FieldIntraDayContentEngagement = 23;
+        SCSUPUserProfileRequest_UserProfileField_FieldRecentEvents = 24;
+        SCSUPUserProfileRequest_UserProfileField_FieldFakeAtlas = 25;
+    }
+}
+
+message SCSUPUserProfileResponse {
+    .ranking.pii.user.profile.SCSUPBasicAttributes basicAttributes = 1;
+    .ranking.pii.user.profile.SCSUPGeographics geographics = 2;
+    .ranking.pii.user.profile.SCSUPContentEngagement contentEngagement = 3;
+    .ranking.pii.user.profile.SCSUPSalientTerms salientTerms = 4;
+    .ranking.pii.user.profile.SCSUPRecommendedUsers recommendedUsers = 5;
+    .ranking.pii.user.profile.SCSUPInterests interests = 6;
+    .ranking.pii.user.profile.SCSUPFriendScores friendScores = 7;
+    .ranking.pii.user.profile.Subscriptions subscriptions = 9;
+    .ranking.ml.centralkitchen.SCSCKCentralKitchenUserData centralKitchenUserData = 10;
+    .ranking.pii.user.profile.SCSUPReadReceipt readReceipt = 11;
+    .ranking.pii.user.profile.SCSUPInterests negativeInterests = 12;
+    .ranking.pii.user.profile.SCSUPNotifications notifications = 13;
+    .ranking.pii.user.profile.SCSUPRecommendedPosters recommendedPosters = 14;
+    .ranking.pii.user.notification.SCSNTFUserOptInNotifications userOptInNotifications = 15;
+    .ranking.pii.user.profile.SCSUPDynamicChannelSet dynamicChannelSet = 16;
+    .ranking.pii.user.profile.SCSUPRegisteredInterests registeredInterests = 17;
+    .ranking.pii.user.profile.SCSUPFeedsImpressions feedsImpressions = 18;
+    .ranking.pii.user.profile.UserEngagementFeatures friendEngagement = 19;
+    .ranking.pii.user.profile.SCSUPABExperiments abExperiments = 20;
+    .ranking.pii.user.profile.UserMetadataFeatures friendMetadata = 21;
+    .ranking.pii.user.profile.SCSUPContentEngagement intraDayContentEngagement = 23;
+    .ranking.pii.user.profile.SCSUPUserRecentEvents recentEvents = 24;
+    .google.protobuf.Any fakeAtlas = 25;
+    .ranking.pii.user.profile.UserEngagementFeatures longWindowFriendEngagement = 26;
+    .ranking.pii.user.profile.DiscoverUserEmbedding userEmbedding = 27;
+}
+
+message SCSUPUserUpdateProfileAction {
+    .ranking.pii.user.profile.SCSUPUserClearProfileAction userClearProfileAction = 1;
+}

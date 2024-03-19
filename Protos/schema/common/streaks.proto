@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+message StreakMetadata {
+    uint32 streak_count = 1;
+    uint64 streak_expiration_timestamp_ms = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.proto.security;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBSecurity";
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Proto.Security";
+
+import "com/snapchat/proto/security/SCPBSecurityURLReputationService.proto";
+
+service UrlReputationService{
+    rpc GetUrlReputation(.com.snapchat.proto.security.SCPBSecurityGetUrlReputationRequest) returns (.com.snapchat.proto.security.SCPBSecurityGetUrlReputationResponse);
+}

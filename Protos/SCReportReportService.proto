@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Services.Snapchat.Abuse.Support";
+
+import "snapchat/abuse/support/SCReportReport.proto";
+
+service ReportService{
+    rpc SendReport(.snapchat.abuse.support.SCReportSendReportRequest) returns (.snapchat.abuse.support.SCReportSendReportResponse);
+}

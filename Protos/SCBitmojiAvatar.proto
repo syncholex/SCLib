@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.bitmoji.avatar.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Services.Snapchat.Bitmoji.Avatar.V1";
+
+import "snapchat/bitmoji/avatar/v1/SCBitmojiAvatarService.proto";
+
+service Avatar{
+    rpc ChangeStyle(.snapchat.bitmoji.avatar.v1.SCBitmojiChangeStyleRequest) returns (.snapchat.bitmoji.avatar.v1.SCBitmojiChangeStyleResponse);
+    rpc GetStyles(.snapchat.bitmoji.avatar.v1.SCBitmojiGetStylesRequest) returns (.snapchat.bitmoji.avatar.v1.SCBitmojiGetStylesResponse);
+}

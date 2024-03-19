@@ -1,0 +1,81 @@
+syntax = "proto3";
+package snapchat.friending;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFriending";
+option csharp_namespace = "SnapProto.Snapchat.Friending";
+
+message SCFriendingContactBookUploadRequest {
+    string countryCode = 1;
+    repeated .snapchat.friending.SCFriendingContactFromClient contactsArray = 2;
+    .snapchat.friending.SCFriendingLegacyContactBookUploadRequestParams legacyParams = 3;
+    int32 rawContactCount = 4;
+}
+
+message SCFriendingContactBookUploadResponse {
+    repeated .snapchat.friending.SCFriendingContactSnapchatter snapchattersArray = 1;
+    .snapchat.friending.SCFriendingContactsNotProcessed contactsNotProcessed = 2;
+    repeated .snapchat.friending.SCFriendingContactNonSnapchatter nonSnapchattersArray = 3;
+}
+
+message SCFriendingContactFromClient {
+    string contactId = 1;
+    string displayName = 2;
+    string countryCode = 3;
+    repeated .snapchat.friending.SCFriendingContactMethod contactMethodsArray = 4;
+    bool isStarred = 20;
+    bool hasPhoto = 21;
+    bool hasSavedDate = 22;
+    uint64 lastUpdateTs = 23;
+}
+
+message SCFriendingContactIdInfo {
+    string contactId = 1;
+    repeated string contactMethodIdArray = 2;
+}
+
+message SCFriendingContactMethod {
+    string contactMethodId = 1;
+    string phoneNumber = 10;
+    string emailAddress = 11;
+}
+
+message SCFriendingContactNonSnapchatter {
+    string contactId = 1;
+    string contactMethodId = 2;
+    float score = 3;
+}
+
+message SCFriendingContactSnapchatter {
+    string userId = 1;
+    string username = 2;
+    string displayName = 3;
+    string contactId = 4;
+    string contactMethodId = 5;
+    string bitmojiAvatarId = 10;
+    string bitmojiSelfieId = 11;
+    string bitmojiSceneId = 12;
+    string bitmojiBackgroundId = 13;
+    bool isNewContact = 14;
+    bytes snapshotMetadata = 21;
+    float score = 22;
+}
+
+message SCFriendingContactsNotProcessed {
+    int64 retryAfter = 1;
+    repeated .snapchat.friending.SCFriendingContactIdInfo contactIdInfosArray = 2;
+}
+
+message SCFriendingEarlyContactBookUploadResponse {
+    .snapchat.friending.SCFriendingContactsNotProcessed contactsNotProcessed = 1;
+}
+
+message SCFriendingLegacyContactBookUploadRequestParams {
+    string userId = 1;
+    string userAgent = 2;
+    string osType = 3;
+    repeated .snapchat.friending.SCFriendingLegacyContactBookUploadRequestParams.DroppedContactsEntry droppedContacts = 4;
+    message DroppedContactsEntry {
+        string key = 1;
+        int32 value = 2;
+    }
+}

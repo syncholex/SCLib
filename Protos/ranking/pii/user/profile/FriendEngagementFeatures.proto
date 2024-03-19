@@ -1,0 +1,228 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message EdgeFeatureKey {
+    string viewerId = 1;
+    string posterId = 2;
+}
+
+message EngagementFeatures {
+    .ranking.pii.user.profile.WindowedFloatMetrics chatTimeSpent = 1;
+    .ranking.pii.user.profile.WindowedIntMetrics normalizedNumChatsSentViaGroup = 2;
+    .ranking.pii.user.profile.WindowedIntMetrics normalizedNumSnapsSentViaGroup = 3;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1To1ChatsSent = 4;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1To1SnapsSent = 5;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1ToManyChatsSent = 6;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1ToManySnapsSent = 7;
+    .ranking.pii.user.profile.WindowedIntMetrics numBitmojiStickersSent = 8;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatsSent = 9;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatSaved = 10;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatScreenshots = 11;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatView = 12;
+    .ranking.pii.user.profile.WindowedIntMetrics numCustomStickersSent = 13;
+    .ranking.pii.user.profile.WindowedIntMetrics numHoursWithStoryStoryView = 14;
+    .ranking.pii.user.profile.WindowedIntMetrics numMemoriesShared = 15;
+    .ranking.pii.user.profile.WindowedIntMetrics numScreenshots = 16;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsSent = 17;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapReplays = 18;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapScreenshots = 19;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapView = 20;
+    .ranking.pii.user.profile.WindowedIntMetrics numStickersSent = 21;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryInterstitialView = 22;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryInterstitialViewSkips = 23;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExits = 24;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsScreenshots = 25;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewed = 26;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedRaw = 27;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapCompletions = 28;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapPosts = 29;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplays = 30;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplies = 31;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapSkips = 32;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryCompletions = 33;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImp = 34;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySkips = 35;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryView = 36;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaInterstitialTap = 37;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTap = 38;
+    .ranking.pii.user.profile.WindowedFloatMetrics snapTimeSpent = 39;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpent = 40;
+    .ranking.pii.user.profile.WindowedFloatMetrics storyStoryLongImpTime = 41;
+    .ranking.pii.user.profile.WindowedFloatMetrics totalChatAckTime = 42;
+    .ranking.pii.user.profile.WindowedFloatMetrics totalSnapAckTime = 43;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPos0 = 44;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPos1To3 = 45;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPos4To10 = 46;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPosBeyond11 = 47;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExitsPos0 = 48;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExitsPos1To3 = 49;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExitsPos4To10 = 50;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExitsPosBeyond11 = 51;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedPos0 = 52;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedPos1To3 = 53;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedPos4To10 = 54;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedPosBeyond11 = 55;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPos0To4 = 56;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPosBeyond5 = 57;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpentPos0 = 58;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpentPos1To3 = 59;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpentPos4To10 = 60;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpentPosBeyond11 = 61;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPos0 = 62;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPos1To3 = 63;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPos4To10 = 64;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImpPosBeyond11 = 65;
+    int32 numPrivateStoryRecipientOwner = 66;
+    int32 numPrivateStoryOwnerRecipient = 67;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapReceived = 68;
+    .ranking.pii.user.profile.WindowedIntMetrics numHoursWithPrivateStoryStoryView = 69;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapsViewed = 70;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapsViewedRaw = 71;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapCompletions = 72;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapPosts = 73;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapReplays = 74;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStorySnapSkips = 75;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStoryStoryCompletions = 76;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStoryStoryLongImp = 77;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStoryStorySkips = 78;
+    .ranking.pii.user.profile.WindowedIntMetrics numPrivateStoryStoryView = 79;
+    .ranking.pii.user.profile.WindowedFloatMetrics privateStorySnapTimeSpent = 80;
+    .ranking.pii.user.profile.WindowedFloatMetrics privateStoryStoryLongImpTime = 81;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryReplies = 82;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPos0 = 83;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPos1To3 = 84;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPos4To10 = 85;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPosBeyond11 = 86;
+    .ranking.pii.user.profile.WindowedIntMetrics storySnapReplyCharCount = 87;
+    .ranking.pii.user.profile.WindowedIntMetrics chatsSentCharCount = 88;
+    .ranking.pii.user.profile.WindowedIntMetrics numAudioChatsSent = 89;
+    .ranking.pii.user.profile.WindowedFloatMetrics audioChatsSentDuration = 90;
+    .ranking.pii.user.profile.WindowedIntMetrics numMediaChatsSent = 91;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapShares = 92;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapSharesSent = 93;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapSharesView = 94;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryShares = 95;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySharesPos0 = 96;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySharesPos1To3 = 97;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySharesPos4To10 = 98;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySharesPosBeyond11 = 99;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryViewViaTap = 100;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryViewViaTapPos0 = 101;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryViewViaTapPos1To3 = 102;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryViewViaTapPos4To10 = 103;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryViewViaTapPosBeyond11 = 104;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryLongImp = 105;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryLongImpPos0 = 106;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryLongImpPos1To3 = 107;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryLongImpPos4To10 = 108;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryLongImpPosBeyond11 = 109;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryPlaylistExit = 110;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryPlaylistExitPos0 = 111;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryPlaylistExitPos1To3 = 112;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryPlaylistExitPos4To10 = 113;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryPlaylistExitPosBeyond11 = 114;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryReply = 115;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryReplyPos0 = 116;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryReplyPos1To3 = 117;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryReplyPos4To10 = 118;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryReplyPosBeyond11 = 119;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapReply = 120;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapSkip = 121;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapSkipPos0 = 122;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapSkipPos1To3 = 123;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapSkipPos4To10 = 124;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapSkipPosBeyond11 = 125;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryCompletion = 126;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryCompletionPos0 = 127;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryCompletionPos1To3 = 128;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryCompletionPos4To10 = 129;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStoryStoryCompletionPosBeyond11 = 130;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapCompletion = 131;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapCompletionPos0 = 132;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapCompletionPos1To3 = 133;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapCompletionPos4To10 = 134;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapCompletionPosBeyond11 = 135;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapView = 136;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapViewPos0 = 137;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapViewPos1To3 = 138;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapViewPos4To10 = 139;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithStorySnapViewPosBeyond11 = 140;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numHoursWithPrivateStorySnapReceived = 141;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapSkipsPos0 = 142;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapSkipsPos1To3 = 143;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapSkipsPos4To10 = 144;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapSkipsPosBeyond11 = 145;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStoryStoryCompletionsPos0 = 146;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStoryStoryCompletionsPos1To3 = 147;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStoryStoryCompletionsPos4To10 = 148;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStoryStoryCompletionsPosBeyond11 = 149;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapCompletionsPos0 = 150;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapCompletionsPos1To3 = 151;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapCompletionsPos4To10 = 152;
+    .ranking.pii.user.profile.WindowedIntMetricsWithoutLongWindow numStorySnapCompletionsPosBeyond11 = 153;
+}
+
+message StoryEngagementFeatures {
+    string storyId = 1;
+    .ranking.pii.user.profile.EngagementFeatures engagementFeatures = 2;
+}
+
+message UserEngagementFeatures {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.StoryEngagementFeatures friendEngagementFeaturesArray = 2;
+    repeated .ranking.pii.user.profile.StoryEngagementFeatures groupEngagementFeaturesArray = 3;
+    repeated .ranking.pii.user.profile.UserEngagementFeatures.ViewerEmbeddingsEntry viewerEmbeddings = 4;
+    message ViewerEmbeddingsEntry {
+        string key = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding value = 2;
+    }
+}
+
+message WindowedFloatMetrics {
+    float value3D = 1;
+    float value7D = 2;
+    float value14D = 3;
+    float value28D = 4;
+    float value24H = 5;
+    float value18H = 6;
+    float value12H = 7;
+    float value6H = 8;
+    float value3H = 9;
+    float value1H = 10;
+    float value56D = 11;
+    float value84D = 12;
+    float value168D = 13;
+    float value224D = 14;
+    float value280D = 15;
+    float value336D = 16;
+}
+
+message WindowedIntMetrics {
+    int32 value3D = 1;
+    int32 value7D = 2;
+    int32 value14D = 3;
+    int32 value28D = 4;
+    int32 value24H = 5;
+    int32 value18H = 6;
+    int32 value12H = 7;
+    int32 value6H = 8;
+    int32 value3H = 9;
+    int32 value1H = 10;
+    int32 value56D = 11;
+    int32 value84D = 12;
+    int32 value168D = 13;
+    int32 value224D = 14;
+    int32 value280D = 15;
+    int32 value336D = 16;
+}
+
+message WindowedIntMetricsWithoutLongWindow {
+    int32 value3D = 1;
+    int32 value7D = 2;
+    int32 value14D = 3;
+    int32 value28D = 4;
+}

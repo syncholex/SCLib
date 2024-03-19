@@ -1,0 +1,86 @@
+syntax = "proto3";
+package cognac;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognacClientContext";
+option csharp_namespace = "SnapProto.Cognac";
+
+message SCCognacClientContextDevice {
+    .cognac.SCCognacClientContextDevice.SCCognacClientContextPlatform platform = 1;
+    string model = 2;
+    .cognac.SCCognacClientContextGpuInfo gpuInfo = 3;
+    bool noGyroscope = 4;
+    enum SCCognacClientContextPlatform {
+        SCCognacClientContextPlatform_UnknownPlatform = 0;
+        SCCognacClientContextPlatform_Ios = 1;
+        SCCognacClientContextPlatform_Android = 2;
+    }
+}
+
+message SCCognacClientContextDeviceBlacklist {
+    repeated .cognac.SCCognacClientContextDevice deviceBlacklistArray = 1;
+}
+
+message SCCognacClientContextGpuInfo {
+    string rendererName = 1;
+    string venderName = 2;
+    string version = 3;
+}
+
+message SCCognacClientContextUserContext {
+    string userId = 1;
+    string countryCode = 2;
+    string localeCode = 3;
+    .cognac.SCCognacClientContextDevice device = 4;
+    .cognac.SCCognacClientContextUserContext.SCCognacAppsXTMLocale xtmlLocaleCode = 5;
+    .cognac.SCCognacClientContextUserContext.SCCognacClientContextUserContext_AppBuildFlavor appBuildFlavor = 6;
+    enum SCCognacClientContextUserContext_AppBuildFlavor {
+        SCCognacClientContextUserContext_AppBuildFlavor_Unknown = 0;
+        SCCognacClientContextUserContext_AppBuildFlavor_DevBeta = 1;
+        SCCognacClientContextUserContext_AppBuildFlavor_Internal = 2;
+    }
+    enum SCCognacAppsXTMLocale {
+        SCCognacAppsXTMLocale_UnknownLocale = 0;
+        SCCognacAppsXTMLocale_ArAa = 1;
+        SCCognacAppsXTMLocale_ZhCn = 2;
+        SCCognacAppsXTMLocale_ZhTw = 3;
+        SCCognacAppsXTMLocale_DaDk = 4;
+        SCCognacAppsXTMLocale_NlNl = 5;
+        SCCognacAppsXTMLocale_EnUs = 6;
+        SCCognacAppsXTMLocale_EnGb = 7;
+        SCCognacAppsXTMLocale_FiFi = 8;
+        SCCognacAppsXTMLocale_FrFr = 9;
+        SCCognacAppsXTMLocale_DeDe = 10;
+        SCCognacAppsXTMLocale_ElGr = 11;
+        SCCognacAppsXTMLocale_IdId = 12;
+        SCCognacAppsXTMLocale_ItIt = 13;
+        SCCognacAppsXTMLocale_JaJp = 14;
+        SCCognacAppsXTMLocale_KoKr = 15;
+        SCCognacAppsXTMLocale_NbNo = 16;
+        SCCognacAppsXTMLocale_PlPl = 17;
+        SCCognacAppsXTMLocale_PtBr = 18;
+        SCCognacAppsXTMLocale_PtPt = 19;
+        SCCognacAppsXTMLocale_RoRo = 20;
+        SCCognacAppsXTMLocale_RuRu = 21;
+        SCCognacAppsXTMLocale_Es001 = 22;
+        SCCognacAppsXTMLocale_SvSe = 23;
+        SCCognacAppsXTMLocale_TrTr = 24;
+        SCCognacAppsXTMLocale_FilPh = 25;
+        SCCognacAppsXTMLocale_GuIn = 26;
+        SCCognacAppsXTMLocale_HiIn = 27;
+        SCCognacAppsXTMLocale_MsMy = 28;
+        SCCognacAppsXTMLocale_MrIn = 29;
+        SCCognacAppsXTMLocale_PaIn = 30;
+        SCCognacAppsXTMLocale_UrPk = 31;
+        SCCognacAppsXTMLocale_ViVn = 32;
+        SCCognacAppsXTMLocale_BnBd = 33;
+        SCCognacAppsXTMLocale_BnIn = 34;
+        SCCognacAppsXTMLocale_KnIn = 35;
+        SCCognacAppsXTMLocale_MlIn = 36;
+        SCCognacAppsXTMLocale_TaIn = 37;
+        SCCognacAppsXTMLocale_TeIn = 38;
+        SCCognacAppsXTMLocale_ThTh = 39;
+        SCCognacAppsXTMLocale_EsAr = 40;
+        SCCognacAppsXTMLocale_EsMx = 41;
+        SCCognacAppsXTMLocale_EsEs = 42;
+    }
+}

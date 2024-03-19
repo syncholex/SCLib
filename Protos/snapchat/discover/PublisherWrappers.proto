@@ -1,0 +1,156 @@
+syntax = "proto3";
+package snapchat.discover;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Discover";
+
+import "snapchat/storydoc/STODiscoverChannelMetadata.proto";
+
+message AdSettingValue {
+    .snapchat.discover.AdSettingValue.AdSetting value = 1;
+    enum AdSetting {
+        AdSetting_Skippable = 0;
+        AdSetting_NonSkippable = 1;
+    }
+}
+
+message AudioClassificationValue {
+    .snapchat.discover.AudioClassificationValue.AudioClassification value = 1;
+    enum AudioClassification {
+        AudioClassification_Unset = 0;
+        AudioClassification_NormalDialogue = 1;
+        AudioClassification_DialogueSubtitleBurn = 2;
+        AudioClassification_DialogueImpactBurn = 3;
+        AudioClassification_DialogueHeavy = 4;
+        AudioClassification_NoDialogue = 5;
+    }
+}
+
+message ContentAgeGateLevelValue {
+    .snapchat.discover.ContentAgeGateLevelValue.ContentAgeGateLevel value = 1;
+    enum ContentAgeGateLevel {
+        ContentAgeGateLevel_Unrestricted = 0;
+        ContentAgeGateLevel_Explicit = 1;
+    }
+}
+
+message DiscoverChannelsFilterValue {
+    repeated .snapchat.storydoc.STODiscoverChannelFilter valueArray = 1;
+}
+
+message DiscoverRegionsValue {
+    repeated .snapchat.discover.DiscoverRegionsValue.DiscoverRegion valueArray = 1;
+    enum DiscoverRegion {
+        DiscoverRegion_All = 0;
+        DiscoverRegion_DevTest = 1;
+        DiscoverRegion_International = 2;
+        DiscoverRegion_Us = 3;
+        DiscoverRegion_Uk = 4;
+        DiscoverRegion_Au = 5;
+        DiscoverRegion_Ca = 6;
+        DiscoverRegion_Sub = 7;
+        DiscoverRegion_Qa = 8;
+    }
+}
+
+message EditorialApprovalValue {
+    .snapchat.discover.EditorialApprovalValue.EditorialApproval value = 1;
+    enum EditorialApproval {
+        EditorialApproval_ToBeReviewed = 0;
+        EditorialApproval_Rejected = 1;
+        EditorialApproval_Approved = 2;
+        EditorialApproval_Requested = 3;
+    }
+}
+
+message FeaturesValue {
+    repeated .snapchat.discover.FeaturesValue.Feature valueArray = 1;
+    enum Feature {
+        Feature_Unknown = 0;
+        Feature_Evergreen = 1;
+        Feature_SubscriberOnly = 2;
+        Feature_ExclusiveShow = 3;
+        Feature_FixedPayments = 4;
+        Feature_InternalCurator = 5;
+        Feature_PartnerCurator = 6;
+        Feature_TeamSnapchat = 7;
+        Feature_Timely = 8;
+        Feature_OriginalShow = 9;
+        Feature_FriendsCarousel = 10;
+        Feature_OnboardingWizard = 11;
+        Feature_MadeForUs = 12;
+        Feature_DiscoverChannel = 13;
+        Feature_DiscoverChannelEligible = 14;
+    }
+}
+
+message FlagsValue {
+    repeated .snapchat.discover.FlagsValue.Flag valueArray = 1;
+    enum Flag {
+        Flag_None = 0;
+        Flag_AddedPublisherDetails = 1;
+        Flag_ProfileOnboarding = 2;
+        Flag_OrganisationOnboarding = 3;
+        Flag_NotificationProfileCompleted = 4;
+        Flag_NotificationEditorialApproval = 5;
+        Flag_NotificationProfileEnabled = 6;
+        Flag_NotificationReviewRequested = 7;
+        Flag_NotificationEditorialRejected = 8;
+        Flag_AutoEnabledPublishing = 9;
+    }
+}
+
+message LogoDisplayValue {
+    .snapchat.discover.LogoDisplayValue.LogoDisplay value = 1;
+    enum LogoDisplay {
+        LogoDisplay_Bottom = 0;
+        LogoDisplay_Off = 1;
+    }
+}
+
+message ModerationLevelValue {
+    .snapchat.discover.ModerationLevelValue.ModerationLevel value = 1;
+    enum ModerationLevel {
+        ModerationLevel_Standard = 0;
+        ModerationLevel_News = 1;
+    }
+}
+
+message PublishingApprovalsValue {
+    repeated .snapchat.discover.PublishingApprovalsValue.PublishingApproval valueArray = 1;
+    enum PublishingApproval {
+        PublishingApproval_Spm = 0;
+        PublishingApproval_Programming = 1;
+        PublishingApproval_Compliance = 2;
+    }
+}
+
+message ShareOptionValue {
+    .snapchat.discover.ShareOptionValue.ShareOption value = 1;
+    enum ShareOption {
+        ShareOption_NoShare = 0;
+        ShareOption_ShareLive = 1;
+        ShareOption_ShareLiveArchived = 2;
+    }
+}
+
+message TierLevelValue {
+    .snapchat.discover.TierLevelValue.TierLevel value = 1;
+    enum TierLevel {
+        TierLevel_TierUnknown = 0;
+        TierLevel_TierPremium = 1;
+        TierLevel_TierShow = 2;
+        TierLevel_TierCuration = 3;
+        TierLevel_TierHappeningNow = 4;
+        TierLevel_TierDynamicEditions = 5;
+    }
+}
+
+message TypeValue {
+    .snapchat.discover.TypeValue.Type value = 1;
+    enum Type {
+        Type_Normal = 0;
+        Type_Ad = 1;
+        Type_Test = 2;
+        Type_TestAd = 3;
+    }
+}

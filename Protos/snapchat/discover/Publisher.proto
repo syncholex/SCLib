@@ -1,0 +1,199 @@
+syntax = "proto3";
+package snapchat.discover;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Discover";
+
+import "snapchat/storydoc/STODiscoverChannelMetadata.proto";
+import "snapchat/storydoc/STOVisibility.proto";
+
+message HourMin {
+    int32 hour = 1;
+    int32 minute = 2;
+}
+
+message MediaInfo {
+    string mediaId = 1;
+    string color = 2;
+}
+
+message MediaLibraryMediaIds {
+    repeated .snapchat.discover.MediaInfo tileLogosArray = 1;
+    .snapchat.discover.MediaInfo horizontalIcon = 2;
+    .snapchat.discover.MediaInfo squareHeroImage = 3;
+}
+
+message PublisherMetadata {
+    int64 publisherId = 1;
+    string name = 2;
+    bool adsEnabled = 11;
+    bool isComScoreIntegrationEnabled = 12;
+    bool isOurStories = 13;
+    bool isShow = 14;
+    repeated .snapchat.discover.PublisherMetadata.Feature publisherFeaturesArray = 15;
+    bool subscribable = 17;
+    string tier = 18;
+    int32 topsnapLimit = 19;
+    .snapchat.discover.PublisherMetadata.Type type = 20;
+    bool rollingNewsEnabled = 21;
+    bool videoModeEnabled = 22;
+    .snapchat.discover.PublisherMetadata.AdSetting adSetting = 23;
+    .snapchat.discover.PublisherMetadata.ModerationLevel moderationLevel = 24;
+    int32 targetSnapLengthMs = 25;
+    .snapchat.discover.PublisherMetadata.AudioClassification audioClassification = 26;
+    bool isAdsPreRollEnabled = 27;
+    int32 webviewLimit = 28;
+    bool isDynamicAdsEnabled = 29;
+    repeated .snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 30;
+    .snapchat.discover.PublisherMetadata.TierLevel tierLevel = 31;
+    bool advancedAdsEnabled = 41;
+    int32 advancedAdsMinSlots = 42;
+    int32 advancedAdsMaxSlots = 43;
+    int32 advancedAdsMinSpacing = 44;
+    int32 advancedAdsLatestFirstSlot = 45;
+    int32 defaultNumSnaps = 46;
+    repeated .snapchat.discover.PublisherMetadata.Flag publisherFlagsArray = 47;
+    repeated int32 defaultAdSlotsArray = 48;
+    string managerEmail = 50;
+    string homeCountry = 51;
+    bool permitAutoPublishFromFeed = 52;
+    int32 timeUntilAutoPublishFeedStory = 53;
+    string managerName = 54;
+    .snapchat.discover.HourMin dynamicEditionAutoCreateStoryTimeUtc = 55;
+    repeated int32 defaultAdSlotsMillisArray = 56;
+    string articleCss = 71;
+    string primaryColor = 73;
+    string secondaryColor = 74;
+    string URLSafeFormalName = 76;
+    string mutablePublisherName = 77;
+    string horizontalIcon = 78;
+    .snapchat.discover.Tags tags = 83;
+    repeated string nicknamesArray = 84;
+    repeated int64 deeplinksArray = 86;
+    string squareHeroImageURL = 89;
+    .snapchat.discover.PublisherMetadata.LogoDisplay profileLogoDisplay = 90;
+    string squareHeroImageBitmojiTemplateId = 91;
+    .snapchat.discover.MediaLibraryMediaIds mediaIds = 92;
+    string primaryLanguage = 101;
+    .snapchat.discover.PublisherMetadata.ShareOption defaultShareOption = 102;
+    repeated .snapchat.discover.PublisherMetadata.DiscoverRegion supportedRegionsArray = 103;
+    repeated int64 geofenceIdsArray = 104;
+    .snapchat.discover.PublisherMetadata.ContentAgeGateLevel ageGate = 105;
+    bool publishingEnabled = 106;
+    int64 launchDateTimestamp = 107;
+    repeated string whitelistCountryArray = 108;
+    repeated string blacklistCountryArray = 109;
+    repeated string whitelistDistributionCountryArray = 110;
+    repeated string blacklistDistributionCountryArray = 111;
+    repeated string whitelistLanguageArray = 112;
+    repeated string blacklistLanguageArray = 113;
+    bool isHidden = 114;
+    bool isEmployeeOnly = 115;
+    bool isSearchable = 116;
+    repeated string localContentArray = 117;
+    .snapchat.storydoc.STOContentAccessLists contentAccessLists = 119;
+    repeated .snapchat.discover.PublisherMetadata.PublishingApproval publishingApprovalsArray = 120;
+    .snapchat.discover.PublisherMetadata.EditorialApproval editorialApproval = 121;
+    string editorialRationale = 122;
+    int64 editorialApprovedTimestamp = 123;
+    int64 editorialReviewRequestedTimestamp = 124;
+    enum AdSetting {
+        AdSetting_Skippable = 0;
+        AdSetting_NonSkippable = 1;
+    }
+    enum ContentAgeGateLevel {
+        ContentAgeGateLevel_Unrestricted = 0;
+        ContentAgeGateLevel_Explicit = 1;
+    }
+    enum AudioClassification {
+        AudioClassification_Unset = 0;
+        AudioClassification_NormalDialogue = 1;
+        AudioClassification_DialogueSubtitleBurn = 2;
+        AudioClassification_DialogueImpactBurn = 3;
+        AudioClassification_DialogueHeavy = 4;
+        AudioClassification_NoDialogue = 5;
+    }
+    enum ShareOption {
+        ShareOption_NoShare = 0;
+        ShareOption_ShareLive = 1;
+        ShareOption_ShareLiveArchived = 2;
+    }
+    enum EditorialApproval {
+        EditorialApproval_ToBeReviewed = 0;
+        EditorialApproval_Rejected = 1;
+        EditorialApproval_Approved = 2;
+        EditorialApproval_Requested = 3;
+    }
+    enum ModerationLevel {
+        ModerationLevel_Standard = 0;
+        ModerationLevel_News = 1;
+    }
+    enum LogoDisplay {
+        LogoDisplay_Bottom = 0;
+        LogoDisplay_Off = 1;
+    }
+    enum Feature {
+        Feature_Unknown = 0;
+        Feature_Evergreen = 1;
+        Feature_SubscriberOnly = 2;
+        Feature_ExclusiveShow = 3;
+        Feature_FixedPayments = 4;
+        Feature_InternalCurator = 5;
+        Feature_PartnerCurator = 6;
+        Feature_TeamSnapchat = 7;
+        Feature_Timely = 8;
+        Feature_OriginalShow = 9;
+        Feature_FriendsCarousel = 10;
+        Feature_OnboardingWizard = 11;
+        Feature_MadeForUs = 12;
+        Feature_DiscoverChannel = 13;
+        Feature_DiscoverChannelEligible = 14;
+    }
+    enum Flag {
+        Flag_None = 0;
+        Flag_AddedPublisherDetails = 1;
+        Flag_ProfileOnboarding = 2;
+        Flag_OrganisationOnboarding = 3;
+        Flag_NotificationProfileCompleted = 4;
+        Flag_NotificationEditorialApproval = 5;
+        Flag_NotificationProfileEnabled = 6;
+        Flag_NotificationReviewRequested = 7;
+        Flag_NotificationEditorialRejected = 8;
+        Flag_AutoEnabledPublishing = 9;
+    }
+    enum PublishingApproval {
+        PublishingApproval_Spm = 0;
+        PublishingApproval_Programming = 1;
+        PublishingApproval_Compliance = 2;
+    }
+    enum DiscoverRegion {
+        DiscoverRegion_All = 0;
+        DiscoverRegion_DevTest = 1;
+        DiscoverRegion_International = 2;
+        DiscoverRegion_Us = 3;
+        DiscoverRegion_Uk = 4;
+        DiscoverRegion_Au = 5;
+        DiscoverRegion_Ca = 6;
+        DiscoverRegion_Sub = 7;
+        DiscoverRegion_Qa = 8;
+    }
+    enum TierLevel {
+        TierLevel_TierUnknown = 0;
+        TierLevel_TierPremium = 1;
+        TierLevel_TierShow = 2;
+        TierLevel_TierCuration = 3;
+        TierLevel_TierHappeningNow = 4;
+        TierLevel_TierDynamicEditions = 5;
+    }
+    enum Type {
+        Type_Normal = 0;
+        Type_Ad = 1;
+        Type_Test = 2;
+        Type_TestAd = 3;
+    }
+}
+
+message Tags {
+    repeated string sccTagsArray = 1;
+    repeated string wikiTagsArray = 2;
+    repeated string manualTagsArray = 3;
+}

@@ -1,0 +1,53 @@
+syntax = "proto3";
+package com.snapchat.deeplink;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCDeeplink";
+option csharp_namespace = "SnapProto.Com.Snapchat.Deeplink";
+
+message SCDeeplinkShortLinkPayload {
+    string rawURL = 1;
+    string desktopFallback = 2;
+    string mobileFallback = 3;
+    int32 ttl = 4;
+    string destination = 5;
+    .com.snapchat.deeplink.SCDeeplinkShortLinkPayload.SCDeeplinkFeature feature = 6;
+    .com.snapchat.deeplink.SCDeeplinkShortLinkPayload.SCDeeplinkTeam team = 7;
+    .com.snapchat.deeplink.SCDeeplinkShortLinkPayload.SCDeeplinkLinkType linkType = 8;
+    .com.snapchat.deeplink.SCDeeplinkShortLinkPayload.SCDeeplinkChannelType channelType = 9;
+    enum SCDeeplinkChannelType {
+        SCDeeplinkChannelType_ChannelTypeUnset = 0;
+        SCDeeplinkChannelType_Paid = 1;
+        SCDeeplinkChannelType_Preload = 2;
+        SCDeeplinkChannelType_OrganicUserInitiated = 3;
+        SCDeeplinkChannelType_OwnedMedia = 4;
+    }
+    enum SCDeeplinkFeature {
+        SCDeeplinkFeature_FeatureUnset = 0;
+        SCDeeplinkFeature_GroupInvite = 1;
+        SCDeeplinkFeature_ShareSheet = 2;
+        SCDeeplinkFeature_Dispatching = 3;
+        SCDeeplinkFeature_SmsSubscription = 4;
+        SCDeeplinkFeature_SocialSms = 5;
+        SCDeeplinkFeature_AccountSanitization = 6;
+        SCDeeplinkFeature_MarketingCampaign = 7;
+        SCDeeplinkFeature_GrowthSmsCampaign = 8;
+        SCDeeplinkFeature_LensInfoCard = 9;
+        SCDeeplinkFeature_FriendInvite = 10;
+        SCDeeplinkFeature_SmsInvite = 11;
+        SCDeeplinkFeature_NativeSmsInvite = 12;
+    }
+    enum SCDeeplinkLinkType {
+        SCDeeplinkLinkType_LinkTypeUnset = 0;
+        SCDeeplinkLinkType_DirectLink = 1;
+        SCDeeplinkLinkType_WebOnly = 2;
+    }
+    enum SCDeeplinkTeam {
+        SCDeeplinkTeam_TeamUnset = 0;
+        SCDeeplinkTeam_Sharing = 1;
+        SCDeeplinkTeam_Platform = 2;
+        SCDeeplinkTeam_Telephony = 3;
+        SCDeeplinkTeam_Auth = 4;
+        SCDeeplinkTeam_Marketing = 5;
+        SCDeeplinkTeam_GrowthNotification = 6;
+    }
+}

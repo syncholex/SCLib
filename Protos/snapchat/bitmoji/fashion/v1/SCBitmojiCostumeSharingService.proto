@@ -1,0 +1,105 @@
+syntax = "proto3";
+package snapchat.bitmoji.fashion.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Fashion.V1";
+
+import "snapchat/bitmoji/SCBitmojiUuid.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+
+message SCBitmojiAvatarOption {
+    string optionKey = 1;
+    int32 optionValue = 2;
+}
+
+message SCBitmojiAvatarOptions {
+    repeated .snapchat.bitmoji.fashion.v1.SCBitmojiAvatarOption optionsArray = 1;
+}
+
+message SCBitmojiBitmojiCostumeData {
+    repeated .snapchat.bitmoji.fashion.v1.SCBitmojiAvatarOption optionsArray = 1;
+}
+
+message SCBitmojiConsumeCostumeOverrideRequest {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+}
+
+message SCBitmojiConsumeCostumeOverrideResponse {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiConsumeCostumeOverrideResponse.SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus status = 1;
+    enum SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus {
+        SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus_Unset = 0;
+        SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus_Success = 1;
+        SCBitmojiConsumeCostumeOverrideResponse_ConsumeCostumeOverrideStatus_InventoryUnavailable = 2;
+    }
+}
+
+message SCBitmojiCreateCostumeOverrideRequest {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiCreateCostumeOverrideRequest.SCBitmojiAvatarCostumeType costumeType = 3;
+    string title = 4;
+    uint64 inventory = 6;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiAvatarOptions avatarOptions = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiBitmojiCostumeData costumeData = 2;
+    string creatorName = 5;
+    enum SCBitmojiAvatarCostumeType {
+        SCBitmojiAvatarCostumeType_CostumeTypeUnset = 0;
+        SCBitmojiAvatarCostumeType_Outfit = 1;
+        SCBitmojiAvatarCostumeType_Garment = 2;
+    }
+}
+
+message SCBitmojiCreateCostumeOverrideResponse {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiCreateCostumeOverrideResponse.SCBitmojiCreateCostumeOverrideResponse_Status status = 2;
+    string shareURL = 3;
+    enum SCBitmojiCreateCostumeOverrideResponse_Status {
+        SCBitmojiCreateCostumeOverrideResponse_Status_Unset = 0;
+        SCBitmojiCreateCostumeOverrideResponse_Status_Ok = 1;
+        SCBitmojiCreateCostumeOverrideResponse_Status_Deprecated = 2;
+        SCBitmojiCreateCostumeOverrideResponse_Status_Unshareable = 3;
+    }
+}
+
+message SCBitmojiGetCostumeOverrideInfoRequest {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+}
+
+message SCBitmojiGetCostumeOverrideInfoResponse {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiGetCostumeOverrideInfoResponse.SCBitmojiAvatarCostumeType costumeType = 1;
+    string title = 2;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiGetCostumeOverrideInfoResponse.SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus inventoryStatus = 4;
+    string creatorName = 3;
+    enum SCBitmojiAvatarCostumeType {
+        SCBitmojiAvatarCostumeType_CostumeTypeUnset = 0;
+        SCBitmojiAvatarCostumeType_Outfit = 1;
+        SCBitmojiAvatarCostumeType_Garment = 2;
+    }
+    enum SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus {
+        SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus_Unset = 0;
+        SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus_Unlimited = 1;
+        SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus_Available = 2;
+        SCBitmojiGetCostumeOverrideInfoResponse_InventoryStatus_Unavailable = 3;
+    }
+}
+
+message SCBitmojiGetCostumeOverrideRequest {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+}
+
+message SCBitmojiGetCostumeOverrideResponse {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiBitmojiCostumeData costumeData = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiGetCostumeOverrideResponse.SCBitmojiAvatarCostumeType costumeType = 2;
+    enum SCBitmojiAvatarCostumeType {
+        SCBitmojiAvatarCostumeType_CostumeTypeUnset = 0;
+        SCBitmojiAvatarCostumeType_Outfit = 1;
+        SCBitmojiAvatarCostumeType_Garment = 2;
+    }
+}
+
+message SCBitmojiIsCostumeCompatibleRequest {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 2;
+}
+
+message SCBitmojiIsCostumeCompatibleResponse {
+    bool isCostumeCompatible = 1;
+}

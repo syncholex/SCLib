@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.snapshots.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapshotsPb";
+option csharp_namespace = "SnapProto.Snapchat.Snapshots.Api";
+
+message SCSnapshotsPbSetSnapshotRequest {
+    bytes serializedSnapshotsSnaps = 1;
+}
+
+message SCSnapshotsPbSetSnapshotResponse {
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+package snapchat.aura.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuraPb";
+option csharp_namespace = "SnapProto.Snapchat.Aura.Api";
+
+import "google/protobuf/empty.proto";
+import "snapchat/aura/common/SCAuraPbUuid.proto";
+import "snapchat/aura/core/SCAuraPbProfile.proto";
+import "snapchat/aura/core/SCAuraPbUtil.proto";
+
+message SCAuraPbAuraSyncFriendAstrologyRequest {
+    .snapchat.aura.common.SCAuraPbUUID requestId = 1;
+    bytes syncToken = 2;
+    string acceptLanguage = 3;
+    .snapchat.aura.common.SCAuraPbUUID friendId = 4;
+    .snapchat.aura.core.SCAuraPbBirthInfo birthInfo = 5;
+    float displayPixelDensity = 6;
+    string myDisplayName = 7;
+    string friendDisplayName = 8;
+    bool myBirthdayPartyEnabled = 9;
+}
+
+message SCAuraPbAuraSyncFriendAstrologyResponse {
+    .snapchat.aura.common.SCAuraPbUUID requestId = 1;
+    bytes nextSyncToken = 2;
+    uint64 nextSyncEpochSec = 3;
+    .snapchat.aura.core.SCAuraPbAstrologyProfile friendPersonalityProfile = 4;
+    .google.protobuf.Empty friendPersonalityProfileNotModified = 5;
+    .snapchat.aura.core.SCAuraPbAstrologyProfile friendCompatibilityProfile = 6;
+    .google.protobuf.Empty friendCompatibilityProfileNotModified = 7;
+}
+
+message SCAuraPbAuraSyncMyAstrologyRequest {
+    .snapchat.aura.common.SCAuraPbUUID requestId = 1;
+    bytes syncToken = 2;
+    string acceptLanguage = 3;
+    .snapchat.aura.core.SCAuraPbBirthInfo birthInfo = 4;
+    float displayPixelDensity = 5;
+    string myDisplayName = 6;
+}
+
+message SCAuraPbAuraSyncMyAstrologyResponse {
+    .snapchat.aura.common.SCAuraPbUUID requestId = 1;
+    bytes nextSyncToken = 2;
+    uint64 nextSyncEpochSec = 3;
+    .snapchat.aura.core.SCAuraPbAstrologyProfile myPersonalityProfile = 4;
+    .google.protobuf.Empty myPersonalityProfileNotModified = 5;
+}

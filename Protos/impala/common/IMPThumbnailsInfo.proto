@@ -1,0 +1,11 @@
+syntax = "proto3";
+package impala.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala.Common";
+
+message IMPEncryptedThumbnailInfo {
+    string encryptedThumbnailURL = 1;
+    string thumbnailKey = 2;
+    string thumbnailIv = 3;
+}

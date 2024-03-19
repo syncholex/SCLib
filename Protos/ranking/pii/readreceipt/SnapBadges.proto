@@ -1,0 +1,24 @@
+syntax = "proto3";
+package ranking.pii.readreceipt;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Readreceipt";
+
+import "ranking/core/SCSCOREUuid.proto";
+
+message Badge {
+    int64 badgeId = 1;
+    .ranking.core.SCSCOREUUID userId = 2;
+    int32 campaignId = 3;
+    .ranking.pii.readreceipt.Badge.BadgePlacement_Enum placement = 4;
+    int64 badgeEligibleTsMs = 5;
+    int64 badgeDurationMs = 6;
+    int64 badgeCreationTsMs = 7;
+    enum BadgePlacement_Enum {
+        BadgePlacement_Enum_Unknown = 0;
+        BadgePlacement_Enum_SpotlightFeed = 1;
+        BadgePlacement_Enum_DiscoverFeed = 2;
+    }
+}
+
+message BadgePlacement {
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ranking2.ast;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCR2";
+option csharp_namespace = "SnapProto.Ranking2.Ast";
+
+import "ranking2/ast/SCR2Ast.proto";
+
+message SCR2AstRequest {
+    repeated string versionIdsArray = 1;
+}
+
+message SCR2AstResponse {
+    repeated .ranking2.ast.SCR2AstResponse.VersionIdToAstEntry versionIdToAst = 1;
+    message VersionIdToAstEntry {
+        string key = 1;
+        .ranking2.ast.SCR2Ast value = 2;
+    }
+}

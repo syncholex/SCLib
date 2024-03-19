@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map.peliasproxy;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMPP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Peliasproxy";
+
+import "snapchat/map/peliasproxy/SCMPPService.proto";
+
+service PeliasProxy{
+    rpc PlaceSearch(.snapchat.map.peliasproxy.SCMPPPlaceSearchRequest) returns (.snapchat.map.peliasproxy.SCMPPPlaceSearchResponse);
+    rpc ReverseGeocode(.snapchat.map.peliasproxy.SCMPPReverseGeocodeRequest) returns (.snapchat.map.peliasproxy.SCMPPReverseGeocodeResponse);
+}

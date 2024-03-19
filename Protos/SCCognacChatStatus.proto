@@ -1,0 +1,11 @@
+syntax = "proto3";
+package games.updates;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognac";
+option csharp_namespace = "SnapProto.Services.Games.Updates";
+
+import "games/updates/SCCognacChatStatus.proto";
+
+service ChatStatus{
+    rpc SendChatStatusMessage(.games.updates.SCCognacSendChatStatusMessageRequest) returns (.games.updates.SCCognacSendChatStatusMessageResponse);
+}

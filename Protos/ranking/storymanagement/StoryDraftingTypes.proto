@@ -1,0 +1,37 @@
+syntax = "proto3";
+package ranking.storymanagement;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Storymanagement";
+
+import "ranking/storymanagement/story/StoryOwner.proto";
+
+message ScheduleMetadata {
+    .ranking.storymanagement.ScheduleMetadata.SCSCOREPostingStoryType_Enum storyType = 3;
+    uint64 expirationTsMs = 4;
+    .ranking.storymanagement.story.Owner owner = 5;
+    bytes messagingDestinationId = 6;
+    string postScheduleId = 7;
+    .ranking.storymanagement.StatusScheduled statusScheduled = 1;
+    .ranking.storymanagement.StatusError statusError = 2;
+    enum SCSCOREPostingStoryType_Enum {
+        SCSCOREPostingStoryType_Enum_Unknown = 0;
+        SCSCOREPostingStoryType_Enum_Our = 1;
+        SCSCOREPostingStoryType_Enum_My = 2;
+        SCSCOREPostingStoryType_Enum_Custom = 3;
+        SCSCOREPostingStoryType_Enum_Snappro = 4;
+        SCSCOREPostingStoryType_Enum_App = 5;
+        SCSCOREPostingStoryType_Enum_Saved = 6;
+        SCSCOREPostingStoryType_Enum_Publisher = 7;
+    }
+}
+
+message StatusError {
+    int64 errorTsMs = 1;
+}
+
+message StatusScheduled {
+    int64 goLiveTsMs = 1;
+}
+
+message StoryDraftingStatus {
+}

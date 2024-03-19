@@ -1,0 +1,11 @@
+syntax = "proto3";
+package url_preview;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCURLPreview";
+option csharp_namespace = "SnapProto.Services.Url_preview";
+
+import "url_preview/SCURLPreviewGetPreview.proto";
+
+service UrlPreviewService{
+    rpc GetPreview(.url_preview.SCURLPreviewGetPreviewRequest) returns (.url_preview.SCURLPreviewGetPreviewResponse);
+}

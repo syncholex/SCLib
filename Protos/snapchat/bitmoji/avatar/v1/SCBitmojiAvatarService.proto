@@ -1,0 +1,114 @@
+syntax = "proto3";
+package snapchat.bitmoji.avatar.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Avatar.V1";
+
+import "snapchat/bitmoji/SCBitmojiUuid.proto";
+import "snapchat/bitmoji/api/AvatarData.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+
+message SCBitmojiChangeStyleRequest {
+    .snapchat.bitmoji.avatar.v1.SCBitmojiChangeStyleRequest.BMAvatarStyle style = 1;
+    enum BMAvatarStyle {
+        BMAvatarStyle_StyleUnset = 0;
+        BMAvatarStyle_Bitstrips = 1;
+        BMAvatarStyle_BitmojiClassic = 4;
+        BMAvatarStyle_BitmojiDeluxe = 5;
+    }
+}
+
+message SCBitmojiChangeStyleResponse {
+    .snapchat.bitmoji.avatar.v1.SCBitmojiChangeStyleResponse.SCBitmojiChangeStyleResponse_Result result = 1;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 2;
+    enum SCBitmojiChangeStyleResponse_Result {
+        SCBitmojiChangeStyleResponse_Result_Unset = 0;
+        SCBitmojiChangeStyleResponse_Result_Ok = 1;
+        SCBitmojiChangeStyleResponse_Result_NoStyle = 3;
+    }
+}
+
+message SCBitmojiCreateAvatarRequest {
+    .snapchat.bitmoji.api.AvatarData avatarData = 1;
+    .snapchat.bitmoji.avatar.v1.SCBitmojiCreateAvatarRequest.SCBitmojiCreateAvatarRequest_TouVersion touVersion = 2;
+    message SCBitmojiCreateAvatarRequest_TouVersion {
+        uint64 touVersion = 1;
+    }
+}
+
+message SCBitmojiCreateAvatarResponse {
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 1;
+}
+
+message SCBitmojiGetAvatarRequest {
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 1;
+}
+
+message SCBitmojiGetAvatarResponse {
+    .snapchat.bitmoji.api.AvatarData avatarData = 1;
+}
+
+message SCBitmojiGetSecondaryAvatarRequest {
+    .snapchat.bitmoji.avatar.v1.SCBitmojiGetSecondaryAvatarRequest.SCBitmojiSecondaryAvatarType avatarType = 1;
+    enum SCBitmojiSecondaryAvatarType {
+        SCBitmojiSecondaryAvatarType_AvatarTypeUnset = 0;
+        SCBitmojiSecondaryAvatarType_MyAi = 1;
+    }
+}
+
+message SCBitmojiGetSecondaryAvatarResponse {
+    .snapchat.bitmoji.api.AvatarData avatarData = 1;
+}
+
+message SCBitmojiGetSecondaryAvatarWithGendersRequest {
+    .snapchat.bitmoji.avatar.v1.SCBitmojiGetSecondaryAvatarWithGendersRequest.SCBitmojiSecondaryAvatarType avatarType = 1;
+    repeated .snapchat.bitmoji.avatar.v1.SCBitmojiGetSecondaryAvatarWithGendersRequest.SCBitmojiAvatarGender gendersArray = 2;
+    enum SCBitmojiSecondaryAvatarType {
+        SCBitmojiSecondaryAvatarType_AvatarTypeUnset = 0;
+        SCBitmojiSecondaryAvatarType_MyAi = 1;
+    }
+    enum SCBitmojiAvatarGender {
+        SCBitmojiAvatarGender_Unset = 0;
+        SCBitmojiAvatarGender_Male = 1;
+        SCBitmojiAvatarGender_Female = 2;
+    }
+}
+
+message SCBitmojiGetSecondaryAvatarWithGendersResponse {
+    repeated .snapchat.bitmoji.api.AvatarData avatarDataForGendersArray = 1;
+    .snapchat.bitmoji.avatar.v1.SCBitmojiGetSecondaryAvatarWithGendersResponse.SCBitmojiAvatarGender currentGender = 2;
+    enum SCBitmojiAvatarGender {
+        SCBitmojiAvatarGender_Unset = 0;
+        SCBitmojiAvatarGender_Male = 1;
+        SCBitmojiAvatarGender_Female = 2;
+    }
+}
+
+message SCBitmojiGetStylesRequest {
+}
+
+message SCBitmojiGetStylesResponse {
+    repeated .snapchat.bitmoji.avatar.BMCompactAvatarId savedStylesArray = 1;
+}
+
+message SCBitmojiSaveSecondaryAvatarRequest {
+    .snapchat.bitmoji.avatar.v1.SCBitmojiSaveSecondaryAvatarRequest.SCBitmojiSecondaryAvatarType type = 1;
+    .snapchat.bitmoji.api.AvatarData avatarData = 2;
+    enum SCBitmojiSecondaryAvatarType {
+        SCBitmojiSecondaryAvatarType_AvatarTypeUnset = 0;
+        SCBitmojiSecondaryAvatarType_MyAi = 1;
+    }
+}
+
+message SCBitmojiSaveSecondaryAvatarResponse {
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 1;
+}
+
+message SCBitmojiUpdateAvatarRequest {
+    .snapchat.bitmoji.api.AvatarData avatarData = 1;
+    .snapchat.bitmoji.SCBitmojiUUID costumeOverrideId = 2;
+}
+
+message SCBitmojiUpdateAvatarResponse {
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "google/protobuf/empty.proto";
+
+message EncryptionInfo {
+    .google.protobuf.Empty no_op = 1;
+    .snapchat.messaging.ConversationEncryptionV1 conversation_v1 = 2;
+    .google.protobuf.Empty fidelius = 3;
+    .google.protobuf.Empty clear_text_media_key = 4;
+}
+
+message ConversationEncryptionV1 {
+    repeated .snapchat.messaging.ConversationEncryptionV1.WrappedKeysByIdEntry wrapped_keys_by_id = 1;
+    uint64 senderKeyId = 2;
+    message WrappedKeysByIdEntry {
+        uint64 key = 1;
+        .snapchat.messaging.ConversationEncryptionV1.KeyInfo value = 2;
+    }
+    message KeyInfo {
+        bytes wrappedKey = 1;
+        uint32 version = 2;
+    }
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.context2.iz;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Iz";
+
+message SCCTXSnapProIdentity {
+    string id_p = 1;
+    .snapchat.context2.iz.SCCTXSnapProIdentity.SCCTXSnapProIdentity_Logo logo = 2;
+    message SCCTXSnapProIdentity_Logo {
+        string logoURL = 1;
+        bool isDefault = 2;
+    }
+}

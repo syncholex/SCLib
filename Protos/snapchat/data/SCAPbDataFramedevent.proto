@@ -1,0 +1,105 @@
+syntax = "proto3";
+package snapchat.data;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAPbData";
+option csharp_namespace = "SnapProto.Snapchat.Data";
+
+message SCAPbDataEvent {
+    int64 eventName = 1;
+    int32 offsetTsStart = 2;
+    int32 payloadIdentifier = 4;
+    bytes payloadBytes = 5;
+    int32 sequenceNumber = 6;
+    .snapchat.data.SCAPbDataEvent.SCAPbDataConnectivityType deviceConnectivity = 8;
+    int64 connectionDownloadBandwidthBps = 9;
+    bytes payloadProto = 11;
+    bytes payloadJson = 12;
+    double eventSamplingRate = 13;
+    double userSamplingRate = 14;
+    int64 pageViewId = 15;
+    bool isInCall = 16;
+    .snapchat.data.SCAPbDataEvent.SCAPbDataPageTabType pageTabType = 17;
+    enum SCAPbDataConnectivityType {
+        SCAPbDataConnectivityType_UnknownConnectivityType = 0;
+        SCAPbDataConnectivityType_Wifi = 1;
+        SCAPbDataConnectivityType_Mobile = 2;
+        SCAPbDataConnectivityType_Unreachable = 3;
+        SCAPbDataConnectivityType_Bluetooth = 4;
+    }
+    enum SCAPbDataPageTabType {
+        SCAPbDataPageTabType_UnknownPageTabType = 0;
+        SCAPbDataPageTabType_Maps = 1;
+        SCAPbDataPageTabType_Chat = 2;
+        SCAPbDataPageTabType_Camera = 3;
+        SCAPbDataPageTabType_Discover = 4;
+        SCAPbDataPageTabType_Spotlight = 5;
+    }
+}
+
+message SCAPbDataFrameEnd {
+    int32 lastSequenceNumber = 1;
+}
+
+message SCAPbDataFrameStart {
+    bytes sessionId = 1;
+    int64 clientReferenceTs = 2;
+    fixed32 appVersion = 3;
+    fixed32 osVersion = 4;
+    .snapchat.data.SCAPbDataFrameStart.SCAPbDataLocale locale = 5;
+    .snapchat.data.SCAPbDataFrameStart.SCAPbDataOperatingSystem osType = 6;
+    .snapchat.data.SCAPbDataFrameStart.SCAPbDataDeviceModel deviceModel = 7;
+    .snapchat.data.SCAPbDataFrameStart.SCAPbDataAppVariant appVariant = 8;
+    string userId = 9;
+    bytes clientId = 11;
+    bytes telemetrySessionId = 12;
+    int32 priority = 13;
+    int32 sequenceIdStart = 31;
+    int32 osMinorVersion = 32;
+    int32 connectionDownloadBandwidthKbytesPerSecond = 34;
+    string deviceModelFallback = 35;
+    string localeFallback = 36;
+    bytes userAgent = 38;
+    bytes appBuildFallback = 39;
+    bytes osMinorVersionFallback = 40;
+    bool appDataSaverMode = 41;
+    bytes appStartupTypeFallback = 42;
+    bytes userGuid = 43;
+    bytes logQueueName = 44;
+    string appVersionString = 45;
+    string osVersionString = 46;
+    string blizzardSchemaVersion = 47;
+    bool appMultiWindowMode = 48;
+    enum SCAPbDataAppVariant {
+        SCAPbDataAppVariant_Mushroom = 0;
+        SCAPbDataAppVariant_Og = 1;
+        SCAPbDataAppVariant_Hms = 2;
+        SCAPbDataAppVariant_Lockscreen = 3;
+    }
+    enum SCAPbDataDeviceModel {
+        SCAPbDataDeviceModel_Unknown = 0;
+    }
+    enum SCAPbDataLocale {
+        SCAPbDataLocale_En = 0;
+        SCAPbDataLocale_EnUs = 1;
+    }
+    enum SCAPbDataOperatingSystem {
+        SCAPbDataOperatingSystem_Android = 0;
+        SCAPbDataOperatingSystem_Ios = 1;
+    }
+}
+
+message SCAPbDataLoggedEvent {
+    .snapchat.data.SCAPbDataFrameStart startFrame = 1;
+    repeated .snapchat.data.SCAPbDataEvent eventsArray = 2;
+    .snapchat.data.SCAPbDataFrameEnd endFrame = 3;
+}
+
+message SCAPbDataLoggedEventList {
+    repeated .snapchat.data.SCAPbDataLoggedEvent eventsArray = 1;
+    repeated .snapchat.data.SCAPbDataSequentialItem sequentialItemsArray = 2;
+}
+
+message SCAPbDataSequentialItem {
+    .snapchat.data.SCAPbDataFrameStart frameStart = 1;
+    .snapchat.data.SCAPbDataEvent event = 2;
+}

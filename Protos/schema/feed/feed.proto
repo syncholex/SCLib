@@ -1,0 +1,187 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.feed";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+import "schema/common/conversation.proto";
+import "schema/common/streaks.proto";
+
+message SyncConversationsRequest {
+    .snapchat.messaging.UUID sending_user_id = 1;
+    bytes sync_token = 2;
+    repeated .snapchat.messaging.SyncConversationsRequest.Conversation conversations = 3;
+    message Conversation {
+        .snapchat.messaging.UUID user_id = 1;
+        uint64 conversation_version = 2;
+    }
+}
+
+message SyncConversationsResponse {
+    repeated .snapchat.messaging.ConversationEntry conversations = 1;
+    bytes current_sync_token = 2;
+    bool reset_feed = 3;
+    uint64 current_server_time = 4;
+    bool incomplete = 5;
+}
+
+message QueryConversationsRequest {
+    .snapchat.messaging.UUID sending_user_id = 1;
+    uint64 starting_timestamp = 2;
+    uint32 requested_page_size = 3;
+    .snapchat.messaging.QueryConversationsRequest.PaginationInfo pagination_info = 4;
+    bytes sync_token = 5;
+    message PaginationInfo {
+        uint64 oldest_conversation_order_timestamp = 1;
+        .snapchat.messaging.UUID oldest_conversation_id = 2;
+    }
+}
+
+message QueryConversationsResponse {
+    repeated .snapchat.messaging.ConversationEntry conversations = 1;
+    bool no_more = 2;
+    bytes sync_token = 3;
+}
+
+message ConversationEntry {
+    .snapchat.messaging.ConversationInfo conversation_info = 1;
+    .snapchat.messaging.LegacyConversationInfo legacy_conversation_info = 2;
+    uint64 last_event_timestamp = 3;
+    bool is_deleted = 4;
+    bool needs_sync = 5;
+    .snapchat.messaging.UpdateDisplayInfo last_feed_update_info = 6;
+    repeated .snapchat.messaging.UUID participants = 7;
+    .snapchat.messaging.ConversationType conversation_type = 8;
+    string conversation_title = 9;
+    .snapchat.messaging.MigrationInfo migration_info = 10;
+    .snapchat.messaging.StreakMetadata streak_metadata = 11;
+}
+
+message ConversationInfo {
+    .snapchat.messaging.UUID conversation_id = 1;
+    uint64 conversation_version = 2;
+}
+
+message LegacyConversationInfo {
+    .snapchat.messaging.LegacyOneOnOneConversationInfo one_on_one_info = 1;
+    .snapchat.messaging.LegacyGroupConversationInfo group_info = 2;
+}
+
+message LegacyOneOnOneConversationInfo {
+    .snapchat.messaging.LegacyOneOnOneSequenceNumbers sequence_numbers = 2;
+    repeated .snapchat.messaging.LegacyOneOnOneConversationInfo.UnviewedReceivedSnap unviewed_received_snaps = 3;
+    repeated .snapchat.messaging.LegacyOneOnOneConversationInfo.UnexpiredSentSnap unexpired_sent_snaps = 4;
+    message UnviewedReceivedSnap {
+        int64 snap_id = 1;
+    }
+    message UnexpiredSentSnap {
+        int64 snap_id = 1;
+        bool has_been_viewed = 2;
+        bool has_been_replayed = 3;
+        bool has_been_screenshotted = 4;
+        bool has_been_recorded = 5;
+    }
+}
+
+message LegacyGroupConversationInfo {
+    .snapchat.messaging.UUID conversation_id = 1;
+    .snapchat.messaging.LegacyGroupSequenceNumbers sequence_numbers = 2;
+    int64 group_version = 3;
+}
+
+message LegacyGroupSequenceNumbers {
+    repeated .snapchat.messaging.LegacyGroupSequenceNumbers.SequencePair sequence_pairs = 3;
+    message SequencePair {
+        .snapchat.messaging.UUID user_id = 1;
+        int64 sequence_number = 2;
+    }
+}
+
+message LegacyOneOnOneSequenceNumbers {
+    .snapchat.messaging.LegacyOneOnOneSequenceNumbers.SequenceNumber requester_sequence_number = 1;
+    .snapchat.messaging.LegacyOneOnOneSequenceNumbers.SequenceNumber other_participant_sequence_number = 2;
+    message SequenceNumber {
+        int64 message_sequence_number = 1;
+        int64 update_sequence_number = 2;
+        uint64 snap_timestamp = 3;
+    }
+}
+
+message UpdateDisplayInfo {
+    uint64 display_timestamp = 2;
+    repeated .snapchat.messaging.UUID last_update_actor_user_id = 3;
+    .snapchat.messaging.UUID feed_item_creator_user_id = 4;
+    .snapchat.messaging.SnapItem snap = 10;
+    .snapchat.messaging.ChatItem chat = 11;
+    .snapchat.messaging.CallItem call = 12;
+    .snapchat.messaging.ConversationItem conversation = 13;
+}
+
+message ConversationItem {
+    .snapchat.messaging.ConversationItem.State state = 1;
+    enum State {
+        UNKNOWN = 0;
+        CREATED_VIEWED = 1;
+        CREATED_UNVIEWED = 2;
+        MEMBER_ADDED_VIEWED = 3;
+        MEMBER_ADDED_UNVIEWED = 4;
+        NAME_CHANGED_VIEWED = 5;
+        NAME_CHANGED_UNVIEWED = 6;
+    }
+}
+
+message CallItem {
+    .snapchat.messaging.CallItem.State state = 1;
+    bool is_video = 2;
+    enum State {
+        UNKNOWN = 0;
+        MISSED_VIEWED = 1;
+        MISSED_UNVIEWED = 2;
+        CALLED_VIEWED = 3;
+        CALLED_UNVIEWED = 4;
+    }
+}
+
+message SnapItem {
+    .snapchat.messaging.SnapItem.State state = 1;
+    bool has_audio = 2;
+    enum State {
+        UNKNOWN = 0;
+        VIEWED = 1;
+        UNVIEWED = 2;
+        SCREENSHOTTED = 3;
+        RECORDED = 4;
+        REPLAYED = 5;
+    }
+}
+
+message ChatItem {
+    .snapchat.messaging.ChatItem.State state = 1;
+    enum State {
+        UNKNOWN = 0;
+        VIEWED = 1;
+        UNVIEWED = 2;
+        SCREENSHOTTED_VIEWED = 3;
+        SCREENSHOTTED_UNVIEWED = 4;
+        RECORDED_VIEWED = 5;
+        RECORDED_UNVIEWED = 6;
+        SAVED_VIEWED = 7;
+        SAVED_UNVIEWED = 8;
+        ERASED = 9;
+        SAVED_TO_CAMERA_ROLL_VIEWED = 10;
+        SAVED_TO_CAMERA_ROLL_UNVIEWED = 11;
+    }
+}
+
+message MigrationInfo {
+    .snapchat.messaging.MigrationInfo.MigrationState migration_state = 1;
+    enum MigrationState {
+        LEGACY = 0;
+        ARROYO_DEPRECATED = 1;
+        ARROYO = 2;
+    }
+}

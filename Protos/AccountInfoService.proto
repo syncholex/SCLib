@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.snapchat.commerce;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Commerce";
+
+import "com/snapchat/commerce/wire/account/AddNewShippingAddress.proto";
+import "com/snapchat/commerce/wire/account/DeleteShippingAddress.proto";
+import "com/snapchat/commerce/wire/account/GetAccountInfo.proto";
+import "com/snapchat/commerce/wire/account/UpdateContactDetails.proto";
+import "com/snapchat/commerce/wire/account/UpdateShippingAddress.proto";
+
+service AccountInfoService{
+    rpc AddNewShippingAddress(.com.snapchat.commerce.wire.account.AddNewShippingAddressRequest) returns (.com.snapchat.commerce.wire.account.AddNewShippingAddressResponse);
+    rpc DeleteShippingAddress(.com.snapchat.commerce.wire.account.DeleteShippingAddressRequest) returns (.com.snapchat.commerce.wire.account.DeleteShippingAddressResponse);
+    rpc GetAccountInfo(.com.snapchat.commerce.wire.account.GetAccountInfoRequest) returns (.com.snapchat.commerce.wire.account.GetAccountInfoResponse);
+    rpc UpdateContactDetails(.com.snapchat.commerce.wire.account.UpdateContactDetailsRequest) returns (.com.snapchat.commerce.wire.account.UpdateContactDetailsResponse);
+    rpc UpdateShippingAddress(.com.snapchat.commerce.wire.account.UpdateShippingAddressRequest) returns (.com.snapchat.commerce.wire.account.UpdateShippingAddressResponse);
+}

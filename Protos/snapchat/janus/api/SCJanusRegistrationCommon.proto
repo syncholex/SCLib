@@ -1,0 +1,40 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Snapchat.Janus.Api";
+
+import "snapchat/cdp/cof/PartialToken.proto";
+import "snapchat/janus/api/SCJanusLoginCommon.proto";
+
+message SCJanusClientChallengePayload {
+    .snapchat.janus.api.SCJanusClientChallengePayload.SCJanusClientChallengePayload_ClientChallengeType type = 1;
+    string payload = 2;
+    enum SCJanusClientChallengePayload_ClientChallengeType {
+        SCJanusClientChallengePayload_ClientChallengeType_ClientChallengeTypeUnset = 0;
+        SCJanusClientChallengePayload_ClientChallengeType_ClientChallengeTypeArkose = 1;
+    }
+}
+
+message SCJanusClientChallengeRequested {
+    string boltURL = 1;
+}
+
+message SCJanusRegistrationHeader {
+    string blizzardClientId = 1;
+    string registrationFlowSessionId = 2;
+    string networkRequestId = 3;
+    string authenticationSessionId = 4;
+    string iosDeviceCheckToken = 5;
+    string androidSafetynetAttestation = 6;
+    .snapchat.janus.api.SCJanusCofTags cofTags = 7;
+    string cofDeviceId = 8;
+    .snapchat.cdp.cof.PartialToken cofConfigData = 9;
+    .snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 10;
+    .snapchat.janus.api.SCJanusDeviceToken deviceToken = 11;
+    bytes clientAttestationPayload = 12;
+    string clientChallengePayload = 13;
+    bytes vendorAttestationPayload = 14;
+    uint32 attemptNumber = 15;
+    repeated bytes vendorAttestationPayloadsArray = 16;
+}

@@ -1,0 +1,355 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "snapchat/bitmoji/avatar/BMCompactAvatarId.proto";
+import "snapchat/messaging/SCMessagingGifts.proto";
+import "snapchat/messaging/SCMessagingLegacyMessages.proto";
+import "snapchat/messaging/SCMessagingMedia.proto";
+import "snapchat/messaging/SCMessagingSnapStoryId.proto";
+import "snapchat/messaging/SCMessagingUuid.proto";
+import "snapchat/snapdoc/SDMSnap.proto";
+
+message SCMessagingAudioNote {
+    .snapchat.messaging.SCMessagingMediaMetadata note = 1;
+    string userLocale = 3;
+}
+
+message SCMessagingBitmojiOutfitShare {
+    .snapchat.messaging.SCMessagingUUID costumeOverrideId = 1;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId avatarId = 2;
+    .snapchat.snapdoc.SDMSnapDoc snapdoc = 3;
+}
+
+message SCMessagingBloopsStoryShare {
+    .snapchat.messaging.SCMessagingStoryShareInfo story = 1;
+    .snapchat.messaging.SCMessagingStoryShareMediaInfo preview = 2;
+    .snapchat.messaging.SCMessagingBloopsStoryShare.SCMessagingBloopsStoryShare_BloopsSelfiePosition recipientBloopsSelfiePosition = 3;
+    enum SCMessagingBloopsStoryShare_BloopsSelfiePosition {
+        SCMessagingBloopsStoryShare_BloopsSelfiePosition_PositionUnset = 0;
+        SCMessagingBloopsStoryShare_BloopsSelfiePosition_First = 1;
+        SCMessagingBloopsStoryShare_BloopsSelfiePosition_Second = 2;
+    }
+}
+
+message SCMessagingCanvasApp {
+    .snapchat.messaging.SCMessagingUUID appId = 1;
+    string deeplinkPayload = 2;
+    .snapchat.messaging.SCMessagingCanvasAppShareCard defaultCard = 3;
+    .snapchat.messaging.SCMessagingCanvasAppShareImageCard imageCard = 4;
+}
+
+message SCMessagingCanvasAppShareCard {
+    string primaryImageURL = 1;
+    string headline = 2;
+    string description_p = 3;
+    string actionCta = 4;
+    .snapchat.messaging.SCMessagingMediaMetadata primaryImageMetadata = 5;
+}
+
+message SCMessagingCanvasAppShareImageCard {
+    string primaryImageURL = 1;
+    .snapchat.messaging.SCMessagingMediaMetadata primaryImageMetadata = 2;
+    string actionCta = 3;
+}
+
+message SCMessagingCustomSticker {
+    .snapchat.messaging.SCMessagingMediaMetadata sticker = 1;
+}
+
+message SCMessagingDiscoverShare {
+    string articleId = 1;
+    string editionId = 2;
+}
+
+message SCMessagingExternalMedia {
+    repeated .snapchat.snapdoc.SDMSnapDoc snapdocArray = 3;
+}
+
+message SCMessagingFamilyCenterInvite {
+}
+
+message SCMessagingGameScoreShare {
+    .snapchat.messaging.SCMessagingUUID appId = 1;
+    .snapchat.messaging.SCMessagingUUID leaderboardId = 2;
+    int64 numericScore = 3;
+}
+
+message SCMessagingIncludedSticker {
+    string packId = 1;
+    string stickerId = 2;
+    bool animated = 3;
+    string giphySourceURL = 4;
+    .snapchat.messaging.SCMessagingIncludedSticker.SCMessagingIncludedSticker_IncludedStickerType stickerType = 5;
+    string highResUri = 6;
+    enum SCMessagingIncludedSticker_IncludedStickerType {
+        SCMessagingIncludedSticker_IncludedStickerType_Snapchat = 0;
+        SCMessagingIncludedSticker_IncludedStickerType_Bitmoji = 1;
+        SCMessagingIncludedSticker_IncludedStickerType_Geosticker = 2;
+        SCMessagingIncludedSticker_IncludedStickerType_Emoji = 3;
+        SCMessagingIncludedSticker_IncludedStickerType_BitmojiLens = 4;
+        SCMessagingIncludedSticker_IncludedStickerType_UnlockableSticker = 5;
+        SCMessagingIncludedSticker_IncludedStickerType_Giphy = 6;
+        SCMessagingIncludedSticker_IncludedStickerType_SnapConnect = 7;
+        SCMessagingIncludedSticker_IncludedStickerType_GameSnippet = 8;
+        SCMessagingIncludedSticker_IncludedStickerType_Gfycat = 9;
+    }
+}
+
+message SCMessagingLegacyAdShare {
+    .snapchat.messaging.SCMessagingMediaMetadata media = 1;
+}
+
+message SCMessagingLiveLocationShare {
+    .snapchat.messaging.SCMessagingUUID sessionId = 1;
+    double latitude = 2;
+    double longitude = 3;
+    uint64 expireTimeMs = 4;
+    uint64 initialDurationMs = 5;
+    bool isLiveSessionIndefinite = 6;
+}
+
+message SCMessagingLocation {
+    .snapchat.messaging.SCMessagingLocationRequest request = 1;
+    .snapchat.messaging.SCMessagingLocationCoordinates coordinates = 2;
+}
+
+message SCMessagingLocationCoordinates {
+    double latitude = 1;
+    double longitude = 2;
+}
+
+message SCMessagingLocationRequest {
+}
+
+message SCMessagingMapDrop {
+    double latitude = 1;
+    double longitude = 2;
+    uint64 createTimeMs = 3;
+    .snapchat.messaging.SCMessagingUUID pinCreatorId = 4;
+    .snapchat.messaging.SCMessagingUUID pinId = 5;
+    string pinTitle = 6;
+    bool doNotPersist = 7;
+}
+
+message SCMessagingMapShare {
+    string storyId = 1;
+    string mediaType = 2;
+    string poiId = 3;
+}
+
+message SCMessagingMapShareStory {
+    string poiId = 1;
+}
+
+message SCMessagingMemoriesStory {
+    string storyTitle = 2;
+    repeated .snapchat.snapdoc.SDMSnapDoc snapdocArray = 3;
+}
+
+message SCMessagingMentionAttribute {
+    .snapchat.messaging.SCMessagingUUID userId = 2;
+}
+
+message SCMessagingNonParticipantBotResponse {
+    bytes contentEnvelope = 1;
+}
+
+message SCMessagingNote {
+    .snapchat.messaging.SCMessagingAudioNote audio = 1;
+    .snapchat.messaging.SCMessagingVideoNote video = 2;
+}
+
+message SCMessagingPlaceShare {
+    .snapchat.messaging.SCMessagingUUID placeId = 1;
+}
+
+message SCMessagingRange {
+    uint32 location = 1;
+    uint32 length = 2;
+}
+
+message SCMessagingSavedStory {
+    .snapchat.messaging.SCMessagingUUID storyCreatorId = 1;
+    .snapchat.snapdoc.SDMSnapDoc storySnapdoc = 2;
+    .snapchat.messaging.SCMessagingSnapStoryId snapStoryId = 3;
+}
+
+message SCMessagingSearchShare {
+    string dynamicStoryId = 1;
+}
+
+message SCMessagingSearchShareSnap {
+    string dynamicStoryId = 1;
+    string mediaType = 2;
+    string snapId = 3;
+}
+
+message SCMessagingShare {
+    .snapchat.messaging.SCMessagingMapShare map = 1;
+    .snapchat.messaging.SCMessagingShazamShare shazam = 2;
+    .snapchat.messaging.SCMessagingSearchShare search = 3;
+    .snapchat.messaging.SCMessagingDiscoverShare discover = 4;
+    .snapchat.messaging.SCMessagingStoryShare story = 5;
+    .snapchat.messaging.SCMessagingSearchShareSnap searchSnap = 6;
+    .snapchat.messaging.SCMessagingUserShare user = 7;
+    .snapchat.messaging.SCMessagingLegacyDiscoverShare legacyDiscover = 8;
+    .snapchat.messaging.SCMessagingLegacyShazamShare legacyShazam = 9;
+    .snapchat.messaging.SCMessagingMapShareStory mapStory = 10;
+    .snapchat.messaging.SCMessagingMemoriesStory memoriesStory = 11;
+    .snapchat.messaging.SCMessagingGameScoreShare gameScore = 12;
+    .snapchat.messaging.SCMessagingSnapProProfileShare snapProProfile = 13;
+    .snapchat.messaging.SCMessagingSnapProSnapShare snapProSnap = 14;
+    .snapchat.messaging.SCMessagingLegacyAdShare legacyAd = 15;
+    .snapchat.messaging.SCMessagingSpotlightStoryShare spotlightStoryShare = 16;
+    .snapchat.messaging.SCMessagingBitmojiOutfitShare bitmojiOutfitShare = 17;
+    .snapchat.messaging.SCMessagingMapDrop mapDropShare = 18;
+    .snapchat.messaging.SCMessagingSnapKitInviteShare snapKitInviteShare = 19;
+    .snapchat.messaging.SCMessagingPlaceShare placeShare = 20;
+    .snapchat.messaging.SCMessagingSnapProSavedStoryShare snapProSavedStory = 21;
+    .snapchat.messaging.SCMessagingBloopsStoryShare bloopsStoryShare = 22;
+    .snapchat.messaging.SCMessagingTextAdShare textAdShare = 23;
+    .snapchat.messaging.SCMessagingSavedStory savedStory = 24;
+}
+
+message SCMessagingShazamShare {
+    string attachedURL = 1;
+    string artistArtURL = 2;
+    string title = 3;
+    string artist = 4;
+}
+
+message SCMessagingSnapKitInviteShare {
+    .snapchat.messaging.SCMessagingUUID appId = 1;
+    .snapchat.messaging.SCMessagingMediaMetadata stickerMediaMetadata = 2;
+    string inviteUri = 3;
+}
+
+message SCMessagingSnapProProfileShare {
+    .snapchat.messaging.SCMessagingUUID profileId = 1;
+}
+
+message SCMessagingSnapProSavedStoryShare {
+    .snapchat.messaging.SCMessagingStoryShareInfo story = 1;
+    .snapchat.messaging.SCMessagingUUID profileId = 2;
+}
+
+message SCMessagingSnapProSnapReplyInfo {
+    bool replyDisclaimerSeen = 1;
+}
+
+message SCMessagingSnapProSnapShare {
+    .snapchat.messaging.SCMessagingUUID profileId = 1;
+    string snapId = 2;
+    bool isUserQuoted = 3;
+}
+
+message SCMessagingSnapReply {
+    .snapchat.messaging.SCMessagingSnapProSnapReplyInfo snapProSnapReplyInfo = 18;
+    .snapchat.messaging.SCMessagingSnapStoryId snapStoryId = 19;
+    .snapchat.messaging.SCMessagingGiftInfo giftInfo = 20;
+    .snapchat.snapdoc.SDMSnapDoc originalSnapdoc = 3;
+    .snapchat.messaging.SCMessagingText replyText = 11;
+    .snapchat.messaging.SCMessagingExternalMedia replyExternalMedia = 12;
+    .snapchat.messaging.SCMessagingSticker replySticker = 13;
+    .snapchat.messaging.SCMessagingShare replyShare = 14;
+    .snapchat.messaging.SCMessagingNote replyNote = 15;
+    .snapchat.snapdoc.SDMSnapDoc replySnapdoc = 17;
+}
+
+message SCMessagingSpotlightStoryShare {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    .snapchat.messaging.SCMessagingSpotlightStoryShare.SCMessagingSpotlightStoryShare_Source source = 2;
+    enum SCMessagingSpotlightStoryShare_Source {
+        SCMessagingSpotlightStoryShare_Source_Unset = 0;
+        SCMessagingSpotlightStoryShare_Source_SpotlightFeed = 1;
+        SCMessagingSpotlightStoryShare_Source_TopicPage = 2;
+        SCMessagingSpotlightStoryShare_Source_StoryManagementSpotlight = 3;
+        SCMessagingSpotlightStoryShare_Source_StoryManagementSnapMap = 4;
+    }
+}
+
+message SCMessagingSticker {
+    .snapchat.messaging.SCMessagingIncludedSticker included = 1;
+    .snapchat.messaging.SCMessagingCustomSticker custom = 2;
+    string emoji = 3;
+}
+
+message SCMessagingStoryShare {
+    string storyId = 1;
+    string mediaType = 2;
+    bool isUserTagged = 3;
+}
+
+message SCMessagingStoryShareInfo {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    .snapchat.messaging.SCMessagingUUID snapId = 2;
+}
+
+message SCMessagingStoryShareMediaInfo {
+    .snapchat.messaging.SCMessagingMediaMetadata media = 1;
+}
+
+message SCMessagingText {
+    string text = 1;
+    repeated .snapchat.messaging.SCMessagingTextAttribute attributesArray = 2;
+}
+
+message SCMessagingTextAdItem {
+    string title = 1;
+    string displayURL = 2;
+    string displayDomain = 3;
+    string abstract = 4;
+    string destinationURL = 5;
+    string adId = 6;
+    string impressionId = 7;
+}
+
+message SCMessagingTextAdShare {
+    repeated .snapchat.messaging.SCMessagingTextAdItem itemsArray = 1;
+    string displayQuery = 2;
+    string partner = 3;
+    string partnerRequestId = 4;
+}
+
+message SCMessagingTextAttribute {
+    .snapchat.messaging.SCMessagingRange range = 1;
+    .snapchat.messaging.SCMessagingTextFormatAttribute formatAttribute = 2;
+    .snapchat.messaging.SCMessagingTextMediaAttribute mediaAttribute = 3;
+    .snapchat.messaging.SCMessagingTextUrlAttribute URLAttribute = 4;
+    .snapchat.messaging.SCMessagingMentionAttribute mention = 5;
+}
+
+message SCMessagingTextFormatAttribute {
+    .snapchat.messaging.SCMessagingTextFormatAttribute.SCMessagingTextFormatAttribute_TextFormatAttributeType textFormatAttributeType = 2;
+    enum SCMessagingTextFormatAttribute_TextFormatAttributeType {
+        SCMessagingTextFormatAttribute_TextFormatAttributeType_Bold = 0;
+        SCMessagingTextFormatAttribute_TextFormatAttributeType_Italics = 1;
+        SCMessagingTextFormatAttribute_TextFormatAttributeType_Underline = 2;
+    }
+}
+
+message SCMessagingTextMediaAttribute {
+    .snapchat.messaging.SCMessagingTextMediaAttribute.SCMessagingTextMediaAttribute_TextMediaAttributeType textMediaAttributeType = 2;
+    enum SCMessagingTextMediaAttribute_TextMediaAttributeType {
+        SCMessagingTextMediaAttribute_TextMediaAttributeType_Address = 0;
+        SCMessagingTextMediaAttribute_TextMediaAttributeType_Phone = 1;
+        SCMessagingTextMediaAttribute_TextMediaAttributeType_Email = 2;
+        SCMessagingTextMediaAttribute_TextMediaAttributeType_Mention = 3;
+    }
+}
+
+message SCMessagingTextUrlAttribute {
+    string URL = 2;
+}
+
+message SCMessagingUserShare {
+    .snapchat.messaging.SCMessagingUUID userId = 1;
+}
+
+message SCMessagingVideoNote {
+    .snapchat.messaging.SCMessagingMediaMetadata note = 1;
+}

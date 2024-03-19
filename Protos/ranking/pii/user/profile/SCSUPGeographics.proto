@@ -1,0 +1,96 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/core/SCSCOREGeo.proto";
+
+message SCSUPGeographics {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPTopLocation homeLocationsArray = 2;
+    repeated .ranking.pii.user.profile.SCSUPTopLocation workLocationsArray = 3;
+    repeated .ranking.pii.user.profile.SCSUPTopLocation topPlacesArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPPlaceCategoryScore topPlaceCategoriesArray = 5;
+    repeated .ranking.pii.user.profile.SCSUPTopLocation topLocationsArray = 6;
+}
+
+message SCSUPPlaceCategoryScore {
+    .ranking.pii.user.profile.SCSUPPlaceCategoryScore.SCSUPPlaceCategory category = 1;
+    float score = 2;
+    enum SCSUPPlaceCategory {
+        SCSUPPlaceCategory_CategoryUnknown = 0;
+        SCSUPPlaceCategory_CategoryAirport = 1;
+        SCSUPPlaceCategory_CategoryAmusementPark = 2;
+        SCSUPPlaceCategory_CategoryAquarium = 3;
+        SCSUPPlaceCategory_CategoryArtGallery = 4;
+        SCSUPPlaceCategory_CategoryAttraction = 5;
+        SCSUPPlaceCategory_CategoryBank = 6;
+        SCSUPPlaceCategory_CategoryBar = 7;
+        SCSUPPlaceCategory_CategoryBay = 8;
+        SCSUPPlaceCategory_CategoryBeach = 9;
+        SCSUPPlaceCategory_CategoryBorder = 10;
+        SCSUPPlaceCategory_CategoryBridge = 11;
+        SCSUPPlaceCategory_CategoryBusiness = 12;
+        SCSUPPlaceCategory_CategoryCafe = 13;
+        SCSUPPlaceCategory_CategoryCampground = 14;
+        SCSUPPlaceCategory_CategoryCasino = 15;
+        SCSUPPlaceCategory_CategoryCastle = 16;
+        SCSUPPlaceCategory_CategoryCityWalk = 17;
+        SCSUPPlaceCategory_CategoryCommonlyKnownArea = 18;
+        SCSUPPlaceCategory_CategoryCommunityCenter = 19;
+        SCSUPPlaceCategory_CategoryCruise = 20;
+        SCSUPPlaceCategory_CategoryEntertainment = 21;
+        SCSUPPlaceCategory_CategoryEvent = 22;
+        SCSUPPlaceCategory_CategoryFarm = 23;
+        SCSUPPlaceCategory_CategoryGovernment = 24;
+        SCSUPPlaceCategory_CategoryGym = 25;
+        SCSUPPlaceCategory_CategoryHighway = 26;
+        SCSUPPlaceCategory_CategoryHikingTrail = 27;
+        SCSUPPlaceCategory_CategoryHotel = 28;
+        SCSUPPlaceCategory_CategoryIntersection = 29;
+        SCSUPPlaceCategory_CategoryIsland = 30;
+        SCSUPPlaceCategory_CategoryLake = 31;
+        SCSUPPlaceCategory_CategoryLandmark = 32;
+        SCSUPPlaceCategory_CategoryLibrary = 33;
+        SCSUPPlaceCategory_CategoryMall = 34;
+        SCSUPPlaceCategory_CategoryMilitary = 35;
+        SCSUPPlaceCategory_CategoryMountain = 36;
+        SCSUPPlaceCategory_CategoryMuseum = 37;
+        SCSUPPlaceCategory_CategoryNationalPark = 38;
+        SCSUPPlaceCategory_CategoryNatural = 39;
+        SCSUPPlaceCategory_CategoryNeighborhood = 40;
+        SCSUPPlaceCategory_CategoryNightClub = 41;
+        SCSUPPlaceCategory_CategoryPark = 42;
+        SCSUPPlaceCategory_CategoryParking = 43;
+        SCSUPPlaceCategory_CategoryPoi = 44;
+        SCSUPPlaceCategory_CategoryRestaurant = 45;
+        SCSUPPlaceCategory_CategoryRiver = 46;
+        SCSUPPlaceCategory_CategorySchool = 47;
+        SCSUPPlaceCategory_CategoryStadium = 48;
+        SCSUPPlaceCategory_CategoryStore = 49;
+        SCSUPPlaceCategory_CategoryStripClub = 50;
+        SCSUPPlaceCategory_CategoryTheathre = 51;
+        SCSUPPlaceCategory_CategoryTheatre = 52;
+        SCSUPPlaceCategory_CategoryTransportation = 53;
+        SCSUPPlaceCategory_CategoryUniversity = 54;
+        SCSUPPlaceCategory_CategoryUniversityAuditorium = 55;
+        SCSUPPlaceCategory_CategoryUniversityBuilding = 56;
+        SCSUPPlaceCategory_CategoryUniversityClassroom = 57;
+        SCSUPPlaceCategory_CategoryUniversityDorm = 58;
+        SCSUPPlaceCategory_CategoryUniversityField = 59;
+        SCSUPPlaceCategory_CategoryUniversityLab = 60;
+        SCSUPPlaceCategory_CategoryVenue = 61;
+        SCSUPPlaceCategory_CategoryWinery = 62;
+        SCSUPPlaceCategory_CategoryZoo = 63;
+    }
+}
+
+message SCSUPTopLocation {
+    string s2CellToken = 1;
+    .ranking.core.SCSCOREGeoPoint geoPoint = 2;
+    .ranking.core.SCSCOREGeoAddress geoAddress = 3;
+    string placeId = 4;
+    string placeName = 5;
+    float score = 6;
+}

@@ -1,0 +1,42 @@
+syntax = "proto3";
+package snapchat.lists.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLists";
+option csharp_namespace = "SnapProto.Snapchat.Lists.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCListsListsDeleteIngressGatewayRequest {
+    repeated .snapchat.core.SCCOREUUID listIdsArray = 1;
+    .snapchat.core.SCCOREUUID userId = 2;
+}
+
+message SCListsListsDeleteIngressGatewayResponse {
+    repeated .snapchat.core.SCCOREUUID listIdsArray = 1;
+    .snapchat.lists.common.SCListsListsDeleteIngressGatewayResponse.SCListsListsErrorType errorType = 2;
+    enum SCListsListsErrorType {
+        SCListsListsErrorType_ListsErrorTypeUnset = 0;
+        SCListsListsErrorType_ListsErrorTypeMaxSavedListCount = 1;
+        SCListsListsErrorType_ListsErrorTypeMaxRecipientCount = 2;
+        SCListsListsErrorType_ListsErrorTypeNameInUse = 3;
+        SCListsListsErrorType_ListsErrorTypeNotFound = 4;
+        SCListsListsErrorType_ListsErrorTypeInternal = 5;
+    }
+}
+
+message SCListsListsDeleteRequest {
+    repeated .snapchat.core.SCCOREUUID listIdsArray = 1;
+}
+
+message SCListsListsDeleteResponse {
+    repeated .snapchat.core.SCCOREUUID listIdsArray = 1;
+    .snapchat.lists.common.SCListsListsDeleteResponse.SCListsListsErrorType errorType = 2;
+    enum SCListsListsErrorType {
+        SCListsListsErrorType_ListsErrorTypeUnset = 0;
+        SCListsListsErrorType_ListsErrorTypeMaxSavedListCount = 1;
+        SCListsListsErrorType_ListsErrorTypeMaxRecipientCount = 2;
+        SCListsListsErrorType_ListsErrorTypeNameInUse = 3;
+        SCListsListsErrorType_ListsErrorTypeNotFound = 4;
+        SCListsListsErrorType_ListsErrorTypeInternal = 5;
+    }
+}

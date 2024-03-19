@@ -1,0 +1,74 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/lens_ranking/context/SCLensRankingPredictedContext.proto";
+import "snapchat/unlockables/request/schema/SCULGeoCircle.proto";
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlockables/request/schema/SCULSyncInfo.proto";
+
+message GtqServeFeaturedLensesRequest {
+    repeated .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest namespacesArray = 1;
+    .snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 2;
+    bytes encryptedUnlockablesDirectPayload = 3;
+    string snapadsId = 4;
+    repeated .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_CachedUnlockableItem cachedUnlockableIdsArray = 5;
+    .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_NetworkProfile networkProfile = 6;
+    repeated .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_LensFeature lensFeaturesArray = 7;
+    bytes streamToken = 8;
+    .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_SponsoredLensRequestInfo sponsoredLensRequestInfo = 9;
+    bool enableUnlocks = 10;
+    bool enableTargeting = 11;
+    .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_GeoLensRequestInfo geoLensRequestInfo = 12;
+    string requestId = 13;
+    .snapchat.lens_ranking.context.SCLensRankingPredictedContext predictedContext = 14;
+    message GtqServeFeaturedLensesRequest_CachedUnlockableItem {
+        int64 cachedUnlockableIds = 1;
+    }
+    message GtqServeFeaturedLensesRequest_GeoLensRequestInfo {
+        bool enableGeoLens = 1;
+        .snapchat.unlockables.request.schema.SCULGeoCircle userLocationWithAccuracy = 2;
+        bool includeNearbyFetchLocations = 3;
+    }
+    message GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest {
+        string namespaceId = 1;
+        repeated .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_GtqServeFeaturedLensesNamespaceRequest.ChecksumsEntry checksums = 3;
+        bytes namespaceStreamToken = 4;
+        message ChecksumsEntry {
+            int64 key = 1;
+            bytes value = 2;
+        }
+    }
+    message GtqServeFeaturedLensesRequest_NetworkProfile {
+        .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_NetworkProfile.GtqServeFeaturedLensesRequest_NetworkProfile_Reachability reachability = 1;
+        .snapchat.unlockables.request.schema.GtqServeFeaturedLensesRequest.GtqServeFeaturedLensesRequest_NetworkProfile.NetworkConnectionClassType downloadBandwidthClass = 2;
+        int64 downloadBandwidthEstimation = 3;
+        enum NetworkConnectionClassType {
+            NetworkConnectionClassType_ConnectionclassUnder400Kbitps = 0;
+            NetworkConnectionClassType_Connectionclass400Kbitps800Kbitps = 1;
+            NetworkConnectionClassType_Connectionclass800Kbitps1600Kbitps = 2;
+            NetworkConnectionClassType_Connectionclass1600Kbitps4Mbitps = 3;
+            NetworkConnectionClassType_Connectionclass4Mbitps8Mbitps = 4;
+            NetworkConnectionClassType_Connectionclass8Mbitps16Mbitps = 5;
+            NetworkConnectionClassType_ConnectionclassAbove16Mbitps = 6;
+            NetworkConnectionClassType_UnrecognizedValue = 7;
+        }
+        enum GtqServeFeaturedLensesRequest_NetworkProfile_Reachability {
+            GtqServeFeaturedLensesRequest_NetworkProfile_Reachability_ReachabilityUnset = 0;
+            GtqServeFeaturedLensesRequest_NetworkProfile_Reachability_Wwan = 1;
+            GtqServeFeaturedLensesRequest_NetworkProfile_Reachability_Wifi = 2;
+        }
+    }
+    message GtqServeFeaturedLensesRequest_SponsoredLensRequestInfo {
+        .snapchat.ads.request.schema.SCAdsAdRequest adRequest = 1;
+        .snapchat.unlockables.request.schema.SCULSyncInfo syncInfo = 2;
+        uint32 snapScore = 3;
+        bool enableSponsoredLens = 10;
+    }
+    enum GtqServeFeaturedLensesRequest_LensFeature {
+        GtqServeFeaturedLensesRequest_LensFeature_LensFeatureUnset = 0;
+        GtqServeFeaturedLensesRequest_LensFeature_Cameos = 1;
+    }
+}

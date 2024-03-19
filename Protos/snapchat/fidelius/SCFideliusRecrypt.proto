@@ -1,0 +1,95 @@
+syntax = "proto3";
+package snapchat.fidelius;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFidelius";
+option csharp_namespace = "SnapProto.Snapchat.Fidelius";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/fidelius/SCFideliusKeys.proto";
+
+message SCFideliusAcknowledgeRecryptPackage {
+    .snapchat.fidelius.SCFideliusAcknowledgeRecryptPackage.SCFideliusAcknowledgeRecryptPackage_RetrySource retrySource = 1;
+    .snapchat.fidelius.SCFideliusAcknowledgeRecryptPackage.SCFideliusAcknowledgeRecryptPackage_RetryType retryType = 2;
+    .snapchat.fidelius.SCFideliusMessageIdentifier messageId = 3;
+    repeated .snapchat.fidelius.SCFideliusRecipientDeviceInfo deviceInfosArray = 4;
+    enum SCFideliusAcknowledgeRecryptPackage_RetrySource {
+        SCFideliusAcknowledgeRecryptPackage_RetrySource_RetrySourceUnset = 0;
+        SCFideliusAcknowledgeRecryptPackage_RetrySource_FsnPull = 1;
+        SCFideliusAcknowledgeRecryptPackage_RetrySource_FsnPush = 2;
+        SCFideliusAcknowledgeRecryptPackage_RetrySource_Pull = 3;
+        SCFideliusAcknowledgeRecryptPackage_RetrySource_Push = 4;
+    }
+    enum SCFideliusAcknowledgeRecryptPackage_RetryType {
+        SCFideliusAcknowledgeRecryptPackage_RetryType_RetryTypeUnset = 0;
+        SCFideliusAcknowledgeRecryptPackage_RetryType_RecipientKeyDefault = 1;
+        SCFideliusAcknowledgeRecryptPackage_RetryType_SharedSecretDefault = 2;
+        SCFideliusAcknowledgeRecryptPackage_RetryType_RecipientKeyMissingMediaKey = 3;
+        SCFideliusAcknowledgeRecryptPackage_RetryType_SharedSecretMissingMediaKey = 4;
+    }
+}
+
+message SCFideliusAcknowledgeRecryptRequest {
+    uint64 fideliusVersion = 1;
+    bytes publicKey = 2;
+    repeated .snapchat.fidelius.SCFideliusAcknowledgeRecryptPackage ackRecryptPackagesArray = 3;
+}
+
+message SCFideliusAcknowledgeRecryptResponse {
+}
+
+message SCFideliusArroyoAssistedRetryInfo {
+    .snapchat.fidelius.SCFideliusMessageIdentifier messageId = 1;
+    bytes publicKey = 2;
+    uint64 keyVersion = 3;
+    bytes salt = 4;
+    bytes phi = 5;
+    bytes validationTag = 6;
+}
+
+message SCFideliusInitiateRecryptPackage {
+    .snapchat.fidelius.SCFideliusMessageIdentifier messageId = 1;
+    bool recomputeSharedSecret = 2;
+}
+
+message SCFideliusInitiateRecryptRequest {
+    repeated .snapchat.fidelius.SCFideliusInitiateRecryptPackage initRecryptPackagesArray = 1;
+}
+
+message SCFideliusInitiateRecryptResponse {
+    bytes publicKey = 1;
+}
+
+message SCFideliusMessageIdentifier {
+    .snapchat.core.SCCOREUUID conversationId = 1;
+    int64 messageId = 2;
+}
+
+message SCFideliusNotifyRecryptPackage {
+    .snapchat.fidelius.SCFideliusFriendKeys initiator = 1;
+    bool recomputeSharedSecret = 2;
+    repeated .snapchat.fidelius.SCFideliusMessageIdentifier messageIdArray = 3;
+    repeated .snapchat.fidelius.SCFideliusArroyoAssistedRetryInfo assistedRetryInfosArray = 4;
+}
+
+message SCFideliusPollRecryptRequest {
+    bytes publicKey = 1;
+}
+
+message SCFideliusPollRecryptResponse {
+    repeated .snapchat.fidelius.SCFideliusNotifyRecryptPackage notifyRecryptPackagesArray = 1;
+}
+
+message SCFideliusRecipientDeviceInfo {
+    bytes publicKey = 1;
+    uint64 keyVersion = 2;
+    bytes wrappedMediaKey = 3;
+    bytes salt = 4;
+    bytes validationTag = 5;
+}
+
+message SCFideliusRecryptAssistanceRequest {
+    repeated .snapchat.fidelius.SCFideliusMessageIdentifier messageIdsArray = 1;
+}
+
+message SCFideliusRecryptAssistanceResponse {
+}

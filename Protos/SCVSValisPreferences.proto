@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.valis;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCVS";
+option csharp_namespace = "SnapProto.Services.Snapchat.Valis";
+
+import "snapchat/map/SCMTLocationRequest.proto";
+import "snapchat/valis/SCVSPreferences.proto";
+
+service ValisPreferences{
+    rpc CanRequestLocation(.snapchat.map.SCMTCanRequestLocationRequest) returns (.snapchat.map.SCMTCanRequestLocationResponse);
+    rpc GetLocationSharingPreferences(.snapchat.valis.SCVSGetLocationSharingPreferencesRequest) returns (.snapchat.valis.SCVSGetLocationSharingPreferencesResponse);
+    rpc GetMutedFriends(.snapchat.valis.SCVSGetMutedFriendsRequest) returns (.snapchat.valis.SCVSGetMutedFriendsResponse);
+    rpc LocRequestFeedback(.snapchat.valis.SCVSLocRequestFeedbackRequest) returns (.snapchat.valis.SCVSLocRequestFeedbackResponse);
+    rpc MuteFriend(.snapchat.valis.SCVSMuteFriendRequest) returns (.snapchat.valis.SCVSMuteFriendResponse);
+    rpc SetLocationSharingPreferences(.snapchat.valis.SCVSSetLocationSharingPreferencesRequest) returns (.snapchat.valis.SCVSSetLocationSharingPreferencesResponse);
+    rpc UnmuteFriend(.snapchat.valis.SCVSUnmuteFriendRequest) returns (.snapchat.valis.SCVSUnmuteFriendResponse);
+}

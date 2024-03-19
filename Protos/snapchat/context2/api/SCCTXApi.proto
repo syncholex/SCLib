@@ -1,0 +1,807 @@
+syntax = "proto3";
+package snapchat.context2.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Api";
+
+import "snapchat/context2/camera/SCCTXTools.proto";
+import "snapchat/context2/iz/SCCTXMedia.proto";
+import "snapchat/core/SCCOREDevice.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/creativetools/common/SCCTPContentRestrictions.proto";
+import "snapchat/creativetools/common/SCCTPShoppingSticker.proto";
+import "snapchat/creativetools/item_instance/SCCTPCtItemInstance.proto";
+import "snapchat/perception/showcase/screenshop/SCPSSScreenshop.proto";
+import "snapchat/polls/SCPApi.proto";
+import "snapchat/topics/SCCTTopicStickers.proto";
+
+message SCCTXAction {
+    .snapchat.context2.api.SCCTXActionMetric metric = 1;
+    .snapchat.context2.api.SCCTXUrlAction URLAction = 2;
+    .snapchat.context2.api.SCCTXChatAction chatAction = 3;
+    .snapchat.context2.api.SCCTXCameraAction cameraAction = 4;
+    .snapchat.context2.api.SCCTXCardsAction cardsAction = 5;
+    .snapchat.context2.api.SCCTXGroupInviteAction groupInviteAction = 6;
+    .snapchat.context2.api.SCCTXStoryReplyAction storyReplyAction = 8;
+    .snapchat.context2.api.SCCTXStoryInviteAction storyInviteAction = 9;
+    .snapchat.context2.api.SCCTXGameAction gameAction = 10;
+    .snapchat.context2.api.SCCTXUserProfileAction userProfileAction = 11;
+    .snapchat.context2.api.SCCTXPublicProfileAction publicProfileAction = 12;
+    .snapchat.context2.api.SCCTXSnappableAction snappableAction = 13;
+    .snapchat.context2.api.SCCTXLensAction lensAction = 14;
+    .snapchat.context2.api.SCCTXCameoOnboardingAction cameoOnboardingAction = 15;
+    .snapchat.context2.api.SCCTXBoostAction boostAction = 16;
+    .snapchat.context2.api.SCCTXPlaceProfileAction placeProfileAction = 17;
+    .snapchat.context2.api.SCCTXShareAction shareAction = 18;
+    .snapchat.context2.api.SCCTXEditAction editAction = 19;
+    .snapchat.context2.api.SCCTXCameraV2Action cameraV2Action = 20;
+    .snapchat.context2.api.SCCTXDiscoverPremiumAction discoverPremiumAction = 21;
+    .snapchat.context2.api.SCCTXReadAction readAction = 22;
+    .snapchat.context2.api.SCCTXCreativeToolsStickerAction creativetoolsStickerAction = 23;
+    .snapchat.context2.api.SCCTXAstrologyProfileAction astrologyProfileAction = 24;
+    .snapchat.context2.api.SCCTXTopicAction topicAction = 25;
+    .snapchat.context2.api.SCCTXWatchSpotlightAction watchSpotlightAction = 26;
+    .snapchat.context2.api.SCCTXShowInfoAction showInfoAction = 27;
+    .snapchat.context2.api.SCCTXSoundProfileAction soundProfileAction = 28;
+    .snapchat.context2.api.SCCTXAdCollectionItemAction adCollectionItemAction = 29;
+    .snapchat.context2.api.SCCTXMemoriesFavoriteAction memoriesFavoriteAction = 30;
+    .snapchat.context2.api.SCCTXSnapProSelfServeAction snapProSelfServeAction = 31;
+    .snapchat.context2.api.SCCTXPostStoryAction postStoryAction = 32;
+    .snapchat.context2.api.SCCTXLensProfileAction lensProfileAction = 33;
+    .snapchat.context2.api.SCCTXAppProfileAction appProfileAction = 34;
+    .snapchat.context2.api.SCCTXCreateAvatarAction createAvatarAction = 35;
+    .snapchat.context2.api.SCCTXBitmojiStickerUnlockAction bitmojiStickerAction = 36;
+    .snapchat.context2.api.SCCTXCommerceAction commerceAction = 37;
+    .snapchat.context2.api.SCCTXPollAction pollAction = 38;
+    .snapchat.context2.api.SCCTXRemixAction remixAction = 39;
+    .snapchat.context2.api.SCCTXTrendingTopicsAction trendingTopicsAction = 40;
+    .snapchat.context2.api.SCCTXCommentsAction commentsAction = 41;
+    .snapchat.context2.api.SCCTXUnifiedPublicProfileAction unifiedPublicProfileAction = 42;
+    .snapchat.context2.api.SCCTXCheeriosAction cheeriosAction = 43;
+    .snapchat.context2.api.SCCTXCameraShortcutAction cameraShortcutAction = 44;
+    .snapchat.context2.api.SCCTXSnapKitIdentityWebViewAction snapKitIdentityWebViewAction = 45;
+    .snapchat.context2.api.SCCTXDiscoverSubscriptionAction discoverSubscriptionAction = 46;
+    .snapchat.context2.api.SCCTXManualFriendSelectionAction manualFriendSelectionAction = 47;
+    .snapchat.context2.api.SCCTXSnapKitInviteOpenAction snapKitInviteOpenAction = 48;
+    .snapchat.context2.api.SCCTXQuestionStickerAction questionStickerAction = 49;
+    .snapchat.context2.api.SCCTXScreenshopAction screenshopAction = 50;
+    .snapchat.context2.api.SCCTXSaveAction saveAction = 51;
+    .snapchat.context2.api.SCCTXContextQSIAction contextQsiAction = 52;
+    .snapchat.context2.api.SCCTXOpenSearchChatTab openSearchTab = 53;
+    .snapchat.context2.api.SCCTXCommerceMultiMerchantAction commerceMultiMerchantAction = 54;
+    .snapchat.context2.api.SCCTXOpenCameraRoll openCameraRoll = 55;
+    .snapchat.context2.api.SCCTXDwebUpsellAction dwebUpsellAction = 56;
+    .snapchat.context2.api.SCCTXCTItemAction ctItemAction = 57;
+    .snapchat.context2.api.SCCTXDeeplinkStickerAction deeplinkStickerAction = 58;
+    .snapchat.context2.api.SCCTXScanAction scanAction = 59;
+    .snapchat.context2.api.SCCTXBitmojiViewOutfitAction bitmojiViewOutfitAction = 60;
+    .snapchat.context2.api.SCCTXShowSnapAction showSnapAction = 61;
+    .snapchat.context2.api.SCCTXRemixesTopicAction remixesTopicAction = 62;
+}
+
+message SCCTXActionMetric {
+    string actionType = 1;
+    string actionId = 2;
+    .snapchat.context2.api.SCCTXActionMetric.SCCTXCardDataType cardDataType = 3;
+    enum SCCTXCardDataType {
+        SCCTXCardDataType_CardDataTypeUnknown = 0;
+        SCCTXCardDataType_CardDataTypeAttachment = 1;
+        SCCTXCardDataType_CardDataTypePlace = 2;
+        SCCTXCardDataType_CardDataTypeEditorial = 3;
+        SCCTXCardDataType_CardDataTypeReviews = 4;
+        SCCTXCardDataType_CardDataTypeMention = 5;
+        SCCTXCardDataType_CardDataTypeCommerceProduct = 6;
+        SCCTXCardDataType_CardDataTypeCommerceStore = 7;
+        SCCTXCardDataType_CardDataTypeFilter = 8;
+        SCCTXCardDataType_CardDataTypeLens = 9;
+        SCCTXCardDataType_CardDataTypeLensChallenge = 10;
+        SCCTXCardDataType_CardDataTypeSnappable = 11;
+        SCCTXCardDataType_CardDataTypeMapMarker = 12;
+        SCCTXCardDataType_CardDataTypeAppInstall = 13;
+        SCCTXCardDataType_CardDataTypeGroupInvite = 14;
+        SCCTXCardDataType_CardDataTypeCognac = 15;
+        SCCTXCardDataType_CardDataTypeSnapReplyRequest = 16;
+        SCCTXCardDataType_CardDataTypeGenericSnapReplyPlaceholder = 17;
+        SCCTXCardDataType_CardDataTypeRelatedStory = 18;
+        SCCTXCardDataType_CardDataTypeStoryInvite = 19;
+        SCCTXCardDataType_CardDataTypePublisher = 20;
+        SCCTXCardDataType_CardDataTypeOurStoryCreator = 21;
+        SCCTXCardDataType_CardDataTypeTopic = 22;
+        SCCTXCardDataType_CardDataTypeQuickAddCreator = 23;
+        SCCTXCardDataType_CardDataTypeMiniProgram = 24;
+        SCCTXCardDataType_CardDataTypeCameoOnboarding = 25;
+        SCCTXCardDataType_CardDataTypeMusic = 26;
+        SCCTXCardDataType_CardDataTypeCreativeToolsSticker = 27;
+        SCCTXCardDataType_CardDataTypeAstrologyProfile = 28;
+        SCCTXCardDataType_CardDataTypeRemixUserAttribution = 29;
+        SCCTXCardDataType_CardDataTypeSnapKitAppAttribution = 30;
+        SCCTXCardDataType_CardDataTypeCreateAvatar = 31;
+        SCCTXCardDataType_CardDataTypeBitmojiUnlockSticker = 32;
+        SCCTXCardDataType_CardDataTypeCommerceItem = 33;
+        SCCTXCardDataType_CardDataTypeCommerceStoreV2 = 34;
+        SCCTXCardDataType_CardDataTypePoll = 35;
+        SCCTXCardDataType_CardDataTypeTimeline = 36;
+        SCCTXCardDataType_CardDataTypeCheerios = 37;
+        SCCTXCardDataType_CardDataTypeIdentityWebViewAttachment = 38;
+        SCCTXCardDataType_CardDataTypeSnapKitInvite = 39;
+        SCCTXCardDataType_CardDataTypeQuestionSticker = 40;
+        SCCTXCardDataType_CardDataTypeScreenshop = 41;
+        SCCTXCardDataType_CardDataTypeDirectorMode = 42;
+        SCCTXCardDataType_CardDataTypeDualCamera = 43;
+        SCCTXCardDataType_CardDataTypeGreenScreen = 44;
+        SCCTXCardDataType_CardDataTypeSpeedMode = 45;
+        SCCTXCardDataType_CardDataTypeShoppingSticker = 46;
+        SCCTXCardDataType_CardDataTypeMultiMerchantTopic = 47;
+        SCCTXCardDataType_CardDataTypeShoppingStickerCommerceItem = 48;
+        SCCTXCardDataType_CardDataTypeCtitem = 49;
+        SCCTXCardDataType_CardDataTypeDiscoverDeeplinkSticker = 50;
+        SCCTXCardDataType_CardDataTypeBitmojiOutfit = 51;
+        SCCTXCardDataType_CardDataTypeViewRemixes = 52;
+    }
+}
+
+message SCCTXAdCollectionItemAction {
+    int64 itemIndex = 1;
+    .snapchat.context2.api.SCCTXAdCollectionItemAction.SCCTXAdCollectionItemAction_Point tapLocation = 2;
+    message SCCTXAdCollectionItemAction_Point {
+        double x = 1;
+        double y = 2;
+    }
+}
+
+message SCCTXAppProfileAction {
+    string appId = 1;
+    string oauthClientId = 2;
+    string name = 3;
+    string iconURL = 4;
+    string androidPackageName = 5;
+    string itunesAppId = 6;
+}
+
+message SCCTXAstrologyProfileAction {
+    .snapchat.context2.api.SCCTXAstrologyProfileAction.SCCTXAstrologyProfileAction_MyPersonalityProfile myPersonalityProfile = 1;
+    .snapchat.context2.api.SCCTXAstrologyProfileAction.SCCTXAstrologyProfileAction_FriendPersonalityProfile friendPersonalityProfile = 2;
+    .snapchat.context2.api.SCCTXAstrologyProfileAction.SCCTXAstrologyProfileAction_FriendCompatibilityProfile friendCompatibilityProfile = 3;
+    message SCCTXAstrologyProfileAction_FriendCompatibilityProfile {
+        .snapchat.core.SCCOREUUID friendUserId = 1;
+    }
+    message SCCTXAstrologyProfileAction_FriendPersonalityProfile {
+        .snapchat.core.SCCOREUUID friendUserId = 1;
+    }
+    message SCCTXAstrologyProfileAction_MyPersonalityProfile {
+    }
+}
+
+message SCCTXBitmojiStickerUnlockAction {
+    string comicId = 1;
+    string avatarId = 2;
+    bool isAnimated = 3;
+}
+
+message SCCTXBitmojiViewOutfitAction {
+    .snapchat.core.SCCOREUUID costumeOverrideId = 1;
+}
+
+message SCCTXBoostAction {
+}
+
+message SCCTXCTItemAction {
+    repeated .snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemInstanceArray = 1;
+}
+
+message SCCTXCameoOnboardingAction {
+    repeated string cameoIdsArray = 1;
+}
+
+message SCCTXCameraAction {
+}
+
+message SCCTXCameraShortcutAction {
+    uint64 trackId = 1;
+    repeated string lensIdsArray = 2;
+    .snapchat.context2.camera.SCCTXDualCamera dualCamera = 3;
+    .snapchat.context2.camera.SCCTXGreenScreen greenScreen = 4;
+    .snapchat.context2.camera.SCCTXSpeedMode speedMode = 5;
+}
+
+message SCCTXCameraV2Action {
+    .snapchat.context2.camera.SCCTXTimeline timeline = 2;
+    .snapchat.context2.camera.SCCTXDirectorMode directorMode = 3;
+    .snapchat.context2.camera.SCCTXDualCamera dualCamera = 4;
+    .snapchat.context2.camera.SCCTXGreenScreen greenScreen = 5;
+    .snapchat.context2.camera.SCCTXSpeedMode speedMode = 6;
+    .snapchat.context2.api.SCCTXCameraV2Action.SCCTXCameraV2Action_Music music = 1;
+    message SCCTXCameraV2Action_Music {
+        uint64 trackId = 1;
+    }
+}
+
+message SCCTXCardsAction {
+}
+
+message SCCTXChatAction {
+}
+
+message SCCTXCheeriosAction {
+}
+
+message SCCTXCommentsAction {
+    .snapchat.context2.api.SCCTXCommentsAction.SCCTXCommentsAction_CommentsIntent intent = 1;
+    enum SCCTXCommentsAction_CommentsIntent {
+        SCCTXCommentsAction_CommentsIntent_CommentsIntentView = 0;
+        SCCTXCommentsAction_CommentsIntent_CommentsIntentCompose = 1;
+    }
+}
+
+message SCCTXCommerceAction {
+    .snapchat.context2.api.SCCTXCommerceAction.SCCTXCommerceAction_CommerceItemDetailPageAction commerceItemDetailPageAction = 1;
+    .snapchat.context2.api.SCCTXCommerceAction.SCCTXCommerceAction_CommerceStoreAction commerceStoreAction = 2;
+    message SCCTXCommerceAction_CommerceItemDetailPageAction {
+        int64 snapItemId = 1;
+        string storeId = 2;
+    }
+    message SCCTXCommerceAction_CommerceStoreAction {
+        string storeId = 1;
+        string categoryId = 2;
+    }
+}
+
+message SCCTXCommerceMultiMerchantAction {
+    string topicName = 1;
+    bytes viewingContextInternal = 2;
+}
+
+message SCCTXContextClientInfo {
+    repeated string mentionedUsernamesArray = 1;
+    repeated .snapchat.core.SCCOREUUID mentionedUserIdsArray = 2;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_GroupInviteInfo groupInvitesArray = 3;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_SnapReplyRequestInfo snapReplyRequestsArray = 4;
+    repeated .snapchat.core.SCCOREUUID gameIdsArray = 5;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_PrivateStoryInviteInfo storyInvitesArray = 6;
+    int64 publisherId = 7;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TopicStickerInfo attachedTopicStickersArray = 8;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_MentionSource mentionSourcesArray = 9;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement legacyTappableElementsArray = 10;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_SnapProStoryReplyFeature snapProStoryReplyFeature = 11;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_AppInfo appsArray = 12;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElementsInfo tappableElements = 13;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CameoInfo cameosArray = 14;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_MusicTrackInfo musicTrack = 15;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CreativeToolsStickerInfo creativetoolsStickersArray = 16;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_Hashtag hashtagsArray = 17;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_AstrologyProfileInfo astrologyProfileInfo = 18;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_RemixInfo remixInfo = 19;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_SnapKitInfo snapKitInfo = 20;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_RemixSettingsInfo remixSettingsInfo = 21;
+    .snapchat.context2.camera.SCCTXTimeline timeline = 22;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo commerceInfo = 23;
+    repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_PollContextInfo pollInfoArray = 24;
+    bool isCheeriosVideo = 25;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_QuestionStickerInfo questionInfo = 26;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CameraContextInfo cameraContextInfo = 27;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_ShoppingLensInfo shoppingLensInfo = 31;
+    repeated .snapchat.creativetools.item_instance.SCCTPCTItemInstance ctItemInstanceArray = 32;
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_BitmojiOutfitInfo bitmojiOutfitInfo = 33;
+    message SCCTXContextClientInfo_AppInfo {
+        .snapchat.core.SCCOREUUID id_p = 1;
+        string shareInfo = 2;
+    }
+    message SCCTXContextClientInfo_AstrologyProfileInfo {
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_AstrologyProfileInfo.SCCTXContextClientInfo_AstrologyProfileInfo_PersonalityProfile personalityProfile = 1;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_AstrologyProfileInfo.SCCTXContextClientInfo_AstrologyProfileInfo_CompatibilityProfile compatibilityProfile = 2;
+        message SCCTXContextClientInfo_AstrologyProfileInfo_CompatibilityProfile {
+            .snapchat.core.SCCOREUUID sharingUserId = 1;
+        }
+        message SCCTXContextClientInfo_AstrologyProfileInfo_PersonalityProfile {
+            .snapchat.core.SCCOREUUID ownerUserId = 1;
+        }
+    }
+    message SCCTXContextClientInfo_BitmojiOutfitInfo {
+        .snapchat.core.SCCOREUUID costumeOverrideId = 1;
+    }
+    message SCCTXContextClientInfo_CameoInfo {
+        string id_p = 1;
+    }
+    message SCCTXContextClientInfo_CameraContextInfo {
+        .snapchat.context2.camera.SCCTXDirectorMode directorMode = 1;
+        .snapchat.context2.camera.SCCTXDualCamera dualCamera = 2;
+        .snapchat.context2.camera.SCCTXGreenScreen greenScreen = 3;
+        .snapchat.context2.camera.SCCTXSpeedMode speedMode = 4;
+    }
+    message SCCTXContextClientInfo_CommerceInfo {
+        repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo.SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo commerceItemInfoArray = 1;
+        repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo.SCCTXContextClientInfo_CommerceInfo_CommerceStoreInfo commerceStoreInfoArray = 2;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo.SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility screenshopSnapEligibility = 3;
+        message SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo {
+            string key = 1;
+            int64 snapItemId = 2;
+            string storeId = 3;
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo.SCCTXContextClientInfo_CommerceInfo_CommerceItemInfo.SCCTXContextClientInfo_CommerceInfo_CommerceItemType itemType = 4;
+            enum SCCTXContextClientInfo_CommerceInfo_CommerceItemType {
+                SCCTXContextClientInfo_CommerceInfo_CommerceItemType_Unknown = 0;
+                SCCTXContextClientInfo_CommerceInfo_CommerceItemType_AttachmentTool = 1;
+                SCCTXContextClientInfo_CommerceInfo_CommerceItemType_ShoppableSticker = 2;
+            }
+        }
+        message SCCTXContextClientInfo_CommerceInfo_CommerceStoreInfo {
+            string key = 1;
+            string storeId = 2;
+            string categoryId = 3;
+        }
+        message SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility {
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CommerceInfo.SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility.SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus processingStatus = 1;
+            .snapchat.perception.showcase.screenshop.SCPSSShoppabilityIndicator shoppabilityIndicator = 2;
+            enum SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus {
+                SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus_Unknown = 0;
+                SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus_Success = 1;
+                SCCTXContextClientInfo_CommerceInfo_ScreenShopSnapEligibility_ProcessingStatus_Fail = 2;
+            }
+        }
+    }
+    message SCCTXContextClientInfo_CreativeToolsStickerInfo {
+        string packId = 1;
+        string stickerId = 2;
+        string stickerType = 3;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CreativeToolsStickerInfo.SCCTXContextClientInfo_CreativeToolsStickerInfo_StickerAttribution stickerAttribution = 4;
+        message SCCTXContextClientInfo_CreativeToolsStickerInfo_StickerAttribution {
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_AppInfo appInfo = 1;
+            .snapchat.creativetools.common.SCCTPShoppingSticker shoppingSticker = 2;
+        }
+    }
+    message SCCTXContextClientInfo_GroupInviteInfo {
+        .snapchat.core.SCCOREUUID groupId = 1;
+        .snapchat.core.SCCOREUUID groupInviteId = 2;
+        string encryptedGroupInviteId = 3;
+    }
+    message SCCTXContextClientInfo_Hashtag {
+        string title = 1;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_Hashtag.SCCTXContextClientInfo_Hashtag_Source source = 2;
+        bool isServerSuggested = 3;
+        enum SCCTXContextClientInfo_Hashtag_Source {
+            SCCTXContextClientInfo_Hashtag_Source_Unset = 0;
+            SCCTXContextClientInfo_Hashtag_Source_Caption = 1;
+            SCCTXContextClientInfo_Hashtag_Source_SendTo = 2;
+            SCCTXContextClientInfo_Hashtag_Source_TopicPage = 3;
+            SCCTXContextClientInfo_Hashtag_Source_Sticker = 4;
+            SCCTXContextClientInfo_Hashtag_Source_CreativeKitSendTo = 5;
+            SCCTXContextClientInfo_Hashtag_Source_WebUploader = 6;
+        }
+    }
+    message SCCTXContextClientInfo_MusicTrackInfo {
+        .snapchat.creativetools.common.SCCTPContentRestrictions contentRestrictions = 1;
+        uint64 trackId = 2;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_MusicTrackInfo.SCCTPMusicTrackType type = 3;
+        double startOffsetSeconds = 4;
+        bool isSoundSync = 5;
+        enum SCCTPMusicTrackType {
+            SCCTPMusicTrackType_TrackTypeUnset = 0;
+            SCCTPMusicTrackType_Licensed = 1;
+            SCCTPMusicTrackType_CustomSound = 2;
+            SCCTPMusicTrackType_SpotlightOriginalSound = 3;
+        }
+    }
+    message SCCTXContextClientInfo_PollContextInfo {
+        string pollId = 1;
+        string title = 2;
+        .snapchat.polls.SCPPollInfo pollInfo = 3;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_PollContextInfo.SCCTXContextClientInfo_PollContextInfo_PollType pollType = 4;
+        enum SCCTXContextClientInfo_PollContextInfo_PollType {
+            SCCTXContextClientInfo_PollContextInfo_PollType_Unset = 0;
+            SCCTXContextClientInfo_PollContextInfo_PollType_TwodTryOn = 1;
+        }
+    }
+    message SCCTXContextClientInfo_PrivateStoryInviteInfo {
+        .snapchat.core.SCCOREUUID storyId = 1;
+        string storyName = 2;
+        .snapchat.core.SCCOREUUID inviteId = 3;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_PrivateStoryInviteInfo.SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType storyType = 4;
+        enum SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType {
+            SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType_Private = 0;
+            SCCTXContextClientInfo_PrivateStoryInviteInfo_StoryType_Custom = 1;
+        }
+    }
+    message SCCTXContextClientInfo_QuestionStickerInfo {
+        string question = 1;
+        uint64 questionCreationTimestamp = 2;
+    }
+    message SCCTXContextClientInfo_RemixInfo {
+        string sourceSnapId = 1;
+        .snapchat.core.SCCOREUUID sourceUserId = 2;
+        bool userDisabledMentionRemixing = 3;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_RemixInfo.SCCTXContextClientInfo_RemixInfo_UserStorySource userStorySource = 4;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_RemixInfo.SCCTXContextClientInfo_RemixInfo_SpotlightSource spotlightSource = 5;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_RemixInfo.SCCTXContextClientInfo_RemixInfo_MemoriesSource memoriesSource = 6;
+        message SCCTXContextClientInfo_RemixInfo_MemoriesSource {
+        }
+        message SCCTXContextClientInfo_RemixInfo_SpotlightSource {
+            .snapchat.core.SCCOREUUID userId = 1;
+            string snapId = 2;
+        }
+        message SCCTXContextClientInfo_RemixInfo_UserStorySource {
+            .snapchat.core.SCCOREUUID userId = 1;
+            string snapId = 2;
+        }
+    }
+    message SCCTXContextClientInfo_RemixSettingsInfo {
+        bool userDisabledMentionRemixing = 1;
+        bool userDisabledRemixing = 2;
+    }
+    message SCCTXContextClientInfo_ShoppingLensInfo {
+        repeated string productIdsArray = 1;
+    }
+    message SCCTXContextClientInfo_SnapKitInfo {
+        string oauthClientId = 1;
+        string providedAppName = 2;
+        string attachmentURL = 3;
+    }
+    message SCCTXContextClientInfo_SnapProStoryReplyFeature {
+        bool storyReplyEnabled = 1;
+        bool giftingEnabled = 2;
+    }
+    message SCCTXContextClientInfo_SnapReplyRequestInfo {
+        string requestText = 1;
+        .snapchat.core.SCCOREUUID requestId = 2;
+        .snapchat.core.SCCOREUUID storyId = 3;
+    }
+    message SCCTXContextClientInfo_TappableElement {
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_Appearance appearance = 1;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_Action action = 2;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_TappableElementType type = 3;
+        message SCCTXContextClientInfo_TappableElement_Action {
+            string key = 1;
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_Action.SCCTXCardDataType cardDataType = 2;
+            enum SCCTXCardDataType {
+                SCCTXCardDataType_CardDataTypeUnknown = 0;
+                SCCTXCardDataType_CardDataTypeAttachment = 1;
+                SCCTXCardDataType_CardDataTypePlace = 2;
+                SCCTXCardDataType_CardDataTypeEditorial = 3;
+                SCCTXCardDataType_CardDataTypeReviews = 4;
+                SCCTXCardDataType_CardDataTypeMention = 5;
+                SCCTXCardDataType_CardDataTypeCommerceProduct = 6;
+                SCCTXCardDataType_CardDataTypeCommerceStore = 7;
+                SCCTXCardDataType_CardDataTypeFilter = 8;
+                SCCTXCardDataType_CardDataTypeLens = 9;
+                SCCTXCardDataType_CardDataTypeLensChallenge = 10;
+                SCCTXCardDataType_CardDataTypeSnappable = 11;
+                SCCTXCardDataType_CardDataTypeMapMarker = 12;
+                SCCTXCardDataType_CardDataTypeAppInstall = 13;
+                SCCTXCardDataType_CardDataTypeGroupInvite = 14;
+                SCCTXCardDataType_CardDataTypeCognac = 15;
+                SCCTXCardDataType_CardDataTypeSnapReplyRequest = 16;
+                SCCTXCardDataType_CardDataTypeGenericSnapReplyPlaceholder = 17;
+                SCCTXCardDataType_CardDataTypeRelatedStory = 18;
+                SCCTXCardDataType_CardDataTypeStoryInvite = 19;
+                SCCTXCardDataType_CardDataTypePublisher = 20;
+                SCCTXCardDataType_CardDataTypeOurStoryCreator = 21;
+                SCCTXCardDataType_CardDataTypeTopic = 22;
+                SCCTXCardDataType_CardDataTypeQuickAddCreator = 23;
+                SCCTXCardDataType_CardDataTypeMiniProgram = 24;
+                SCCTXCardDataType_CardDataTypeCameoOnboarding = 25;
+                SCCTXCardDataType_CardDataTypeMusic = 26;
+                SCCTXCardDataType_CardDataTypeCreativeToolsSticker = 27;
+                SCCTXCardDataType_CardDataTypeAstrologyProfile = 28;
+                SCCTXCardDataType_CardDataTypeRemixUserAttribution = 29;
+                SCCTXCardDataType_CardDataTypeSnapKitAppAttribution = 30;
+                SCCTXCardDataType_CardDataTypeCreateAvatar = 31;
+                SCCTXCardDataType_CardDataTypeBitmojiUnlockSticker = 32;
+                SCCTXCardDataType_CardDataTypeCommerceItem = 33;
+                SCCTXCardDataType_CardDataTypeCommerceStoreV2 = 34;
+                SCCTXCardDataType_CardDataTypePoll = 35;
+                SCCTXCardDataType_CardDataTypeTimeline = 36;
+                SCCTXCardDataType_CardDataTypeCheerios = 37;
+                SCCTXCardDataType_CardDataTypeIdentityWebViewAttachment = 38;
+                SCCTXCardDataType_CardDataTypeSnapKitInvite = 39;
+                SCCTXCardDataType_CardDataTypeQuestionSticker = 40;
+                SCCTXCardDataType_CardDataTypeScreenshop = 41;
+                SCCTXCardDataType_CardDataTypeDirectorMode = 42;
+                SCCTXCardDataType_CardDataTypeDualCamera = 43;
+                SCCTXCardDataType_CardDataTypeGreenScreen = 44;
+                SCCTXCardDataType_CardDataTypeSpeedMode = 45;
+                SCCTXCardDataType_CardDataTypeShoppingSticker = 46;
+                SCCTXCardDataType_CardDataTypeMultiMerchantTopic = 47;
+                SCCTXCardDataType_CardDataTypeShoppingStickerCommerceItem = 48;
+                SCCTXCardDataType_CardDataTypeCtitem = 49;
+                SCCTXCardDataType_CardDataTypeDiscoverDeeplinkSticker = 50;
+                SCCTXCardDataType_CardDataTypeBitmojiOutfit = 51;
+                SCCTXCardDataType_CardDataTypeViewRemixes = 52;
+            }
+        }
+        message SCCTXContextClientInfo_TappableElement_Appearance {
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_Point center = 1;
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement.SCCTXContextClientInfo_TappableElement_Size size = 2;
+            double rotation = 3;
+            double cornerRadius = 4;
+        }
+        message SCCTXContextClientInfo_TappableElement_Point {
+            double x = 1;
+            double y = 2;
+        }
+        message SCCTXContextClientInfo_TappableElement_Size {
+            double width = 1;
+            double height = 2;
+        }
+        enum SCCTXContextClientInfo_TappableElement_TappableElementType {
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypeUnknown = 0;
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypeSticker = 1;
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypeCaption = 2;
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypePoll = 3;
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypeDynamicPoll = 4;
+            SCCTXContextClientInfo_TappableElement_TappableElementType_TappableElementTypeQuestionSticker = 5;
+        }
+    }
+    message SCCTXContextClientInfo_TappableElementsInfo {
+        repeated .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElement elementsArray = 1;
+        .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElementsInfo.SCCTXContextClientInfo_TappableElementsInfo_SourceClient sourceClient = 2;
+        message SCCTXContextClientInfo_TappableElementsInfo_SourceClient {
+            .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_TappableElementsInfo.SCCTXContextClientInfo_TappableElementsInfo_SourceClient.SCCOREOsType os = 1;
+            .snapchat.core.SCCOREAppVersion appVersion = 2;
+            enum SCCOREOsType {
+                SCCOREOsType_UnknownOsType = 0;
+                SCCOREOsType_OsIos = 1;
+                SCCOREOsType_OsAndroid = 2;
+                SCCOREOsType_OsWeb = 3;
+            }
+        }
+    }
+    message SCCTXContextClientInfo_TopicStickerInfo {
+        .snapchat.topics.SCCTTopicSticker topicSticker = 1;
+    }
+    enum SCCTXContextClientInfo_MentionSource {
+        SCCTXContextClientInfo_MentionSource_CaptionTag = 0;
+        SCCTXContextClientInfo_MentionSource_MentionSticker = 1;
+        SCCTXContextClientInfo_MentionSource_SnapcodeSticker = 2;
+    }
+}
+
+message SCCTXContextQSIAction {
+    .snapchat.context2.api.SCCTXContextQSIAction.SCCTXContextQSIAction_ContextQSIActionType contextQsiActionType = 1;
+    enum SCCTXContextQSIAction_ContextQSIActionType {
+        SCCTXContextQSIAction_ContextQSIActionType_ShowStickerCarousel = 0;
+        SCCTXContextQSIAction_ContextQSIActionType_HideStickerCarousel = 1;
+    }
+}
+
+message SCCTXCreateAvatarAction {
+}
+
+message SCCTXCreativeToolsStickerAction {
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_CreativeToolsStickerInfo stickerInfo = 1;
+}
+
+message SCCTXDeeplinkStickerAction {
+    string deeplinkURL = 1;
+}
+
+message SCCTXDiscoverPremiumAction {
+}
+
+message SCCTXDiscoverSubscriptionAction {
+    int64 publisherId = 1;
+    .snapchat.core.SCCOREUUID userId = 2;
+}
+
+message SCCTXDwebUpsellAction {
+}
+
+message SCCTXEditAction {
+}
+
+message SCCTXGameAction {
+    string gameId = 1;
+    string thumbnail = 2;
+    string title = 3;
+    string loadingImage = 4;
+    string content = 5;
+    string shareInfo = 6;
+}
+
+message SCCTXGroupInviteAction {
+    string deeplink = 1;
+    string groupId = 2;
+    string inviteId = 3;
+}
+
+message SCCTXLensAction {
+    string lensId = 1;
+    string deeplink = 2;
+    repeated string shoppingLensProductIdsArray = 3;
+    .snapchat.context2.api.SCCTXLensAction.SCCTXLensAction_CameraMode cameraMode = 4;
+    enum SCCTXLensAction_CameraMode {
+        SCCTXLensAction_CameraMode_CameraModeLensOnly = 0;
+        SCCTXLensAction_CameraMode_CameraModeReplyEnabled = 1;
+    }
+}
+
+message SCCTXLensProfileAction {
+    string lensId = 1;
+    string title = 2;
+    string iconURL = 3;
+    string creatorId = 4;
+    string creatorName = 5;
+    bool isOfficialCreator = 6;
+    bool isBusinessProfile = 8;
+}
+
+message SCCTXManualFriendSelectionAction {
+}
+
+message SCCTXMemoriesFavoriteAction {
+}
+
+message SCCTXOpenCameraRoll {
+}
+
+message SCCTXOpenSearchChatTab {
+}
+
+message SCCTXPlaceProfileAction {
+    string placeId = 1;
+}
+
+message SCCTXPollAction {
+    string pollId = 1;
+    .snapchat.polls.SCPPollInfo pollInfo = 2;
+}
+
+message SCCTXPostStoryAction {
+}
+
+message SCCTXPublicProfileAction {
+    string profileId = 1;
+    string hostAccountUserId = 2;
+}
+
+message SCCTXQuestionStickerAction {
+}
+
+message SCCTXReadAction {
+    .snapchat.context2.api.SCCTXReadAction.SCCTXReadAction_ReadType readType = 1;
+    enum SCCTXReadAction_ReadType {
+        SCCTXReadAction_ReadType_ReadTypeUnknown = 0;
+        SCCTXReadAction_ReadType_ReadTypeMore = 1;
+        SCCTXReadAction_ReadType_ReadTypeLess = 2;
+    }
+}
+
+message SCCTXRemixAction {
+    bool selectMyStory = 1;
+}
+
+message SCCTXRemixesTopicAction {
+    string sourceSnapId = 1;
+}
+
+message SCCTXSaveAction {
+}
+
+message SCCTXScanAction {
+}
+
+message SCCTXScreenshopAction {
+    string snapId = 1;
+    string heroImageBoltContentURL = 2;
+    string key = 3;
+    string iv = 4;
+}
+
+message SCCTXShareAction {
+}
+
+message SCCTXShowInfoAction {
+}
+
+message SCCTXShowSnapAction {
+    string snapId = 1;
+}
+
+message SCCTXSnapKitActionInfo {
+    string snapKitApplicationId = 1;
+    string oauthClientId = 2;
+    string attachmentURL = 3;
+    string appName = 4;
+    string iconURL = 5;
+}
+
+message SCCTXSnapKitIdentityWebViewAction {
+    string snapKitApplicationId = 1;
+    string oauthClientId = 2;
+    string attachmentURL = 3;
+    string appName = 4;
+    string iconURL = 5;
+    string privacyPolicyURL = 6;
+}
+
+message SCCTXSnapKitInviteOpenAction {
+    .snapchat.context2.api.SCCTXSnapKitActionInfo snapKitActionInfo = 1;
+    string androidPackageName = 2;
+    string appStoreListingURL = 3;
+}
+
+message SCCTXSnapProSelfServeAction {
+}
+
+message SCCTXSnappableAction {
+    string lensId = 1;
+    string lensMetadata = 2;
+}
+
+message SCCTXSoundProfileAction {
+    uint64 soundId = 1;
+    string title = 2;
+    string artistName = 3;
+    .snapchat.context2.iz.SCCTXEncryptedMedia albumArtMedia = 4;
+    .snapchat.context2.api.SCCTXSoundProfileAction.SCCTPMusicTrackType trackType = 5;
+    string publicProfileId = 6;
+    enum SCCTPMusicTrackType {
+        SCCTPMusicTrackType_TrackTypeUnset = 0;
+        SCCTPMusicTrackType_Licensed = 1;
+        SCCTPMusicTrackType_CustomSound = 2;
+        SCCTPMusicTrackType_SpotlightOriginalSound = 3;
+    }
+}
+
+message SCCTXStoryInviteAction {
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_PrivateStoryInviteInfo invite = 1;
+}
+
+message SCCTXStoryReplyAction {
+    .snapchat.context2.api.SCCTXContextClientInfo.SCCTXContextClientInfo_SnapReplyRequestInfo request = 1;
+}
+
+message SCCTXTopicAction {
+    string topic = 1;
+    string displayName = 2;
+    .snapchat.context2.api.SCCTXTopicAction.SCCTTopicStory_Type topicStoryType = 3;
+    enum SCCTTopicStory_Type {
+        SCCTTopicStory_Type_Unset = 0;
+        SCCTTopicStory_Type_Hashtag = 1;
+        SCCTTopicStory_Type_Lens = 2;
+        SCCTTopicStory_Type_Music = 3;
+        SCCTTopicStory_Type_OriginalSound = 4;
+        SCCTTopicStory_Type_ThirdPartyApp = 5;
+        SCCTTopicStory_Type_Challenge = 6;
+        SCCTTopicStory_Type_Cheerios = 7;
+        SCCTTopicStory_Type_Remixes = 8;
+        SCCTTopicStory_Type_Unused9 = 9;
+    }
+}
+
+message SCCTXTrendingTopicsAction {
+    .snapchat.context2.api.SCCTXTrendingTopicsAction.SCCTXTrendingTopicsAction_BadgeType badgeType = 1;
+    enum SCCTXTrendingTopicsAction_BadgeType {
+        SCCTXTrendingTopicsAction_BadgeType_BadgeTypeHashtag = 0;
+        SCCTXTrendingTopicsAction_BadgeType_BadgeTypeLens = 1;
+        SCCTXTrendingTopicsAction_BadgeType_BadgeTypeMusic = 2;
+        SCCTXTrendingTopicsAction_BadgeType_BadgeTypeChallenge = 3;
+    }
+}
+
+message SCCTXUnifiedPublicProfileAction {
+    .snapchat.context2.api.SCCTXUnifiedPublicProfileAction.SCCTXUnifiedPublicProfileAction_PublisherRoute publisherRoute = 1;
+    .snapchat.context2.api.SCCTXUnifiedPublicProfileAction.SCCTXUnifiedPublicProfileAction_UnifiedPublicProfileRoute unifiedPublicProfileRoute = 2;
+    message SCCTXUnifiedPublicProfileAction_PublisherRoute {
+        .snapchat.core.SCCOREUUID profileId = 1;
+        .snapchat.core.SCCOREUUID hostAccountUserId = 2;
+        .snapchat.core.SCCOREUUID showId = 3;
+    }
+    message SCCTXUnifiedPublicProfileAction_UnifiedPublicProfileRoute {
+        .snapchat.core.SCCOREUUID profileId = 1;
+        .snapchat.core.SCCOREUUID hostAccountUserId = 2;
+    }
+}
+
+message SCCTXUrlAction {
+    repeated string urlsArray = 1;
+    bool prefersOsHandler = 2;
+}
+
+message SCCTXUserProfileAction {
+    string userId = 1;
+    string username = 2;
+    string defaultDisplayName = 3;
+    string bitmojiAvatarId = 4;
+    string bitmojiSelfieId = 5;
+}
+
+message SCCTXWatchSpotlightAction {
+}

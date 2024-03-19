@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.map.garfield.playlist;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGP";
+option csharp_namespace = "SnapProto.Snapchat.Map.Garfield.Playlist";
+
+message SCMGPGetPlaylistRequest {
+    uint64 layerId = 1;
+    string flavor = 2;
+    .snapchat.map.garfield.playlist.SCMGPGetPlaylistRequest.SCMGPGetPlaylistRequest_ResponseType responseType = 4;
+    string idString = 3;
+    enum SCMGPGetPlaylistRequest_ResponseType {
+        SCMGPGetPlaylistRequest_ResponseType_Unset = 0;
+        SCMGPGetPlaylistRequest_ResponseType_LegacyManifest = 1;
+    }
+}
+
+message SCMGPGetPlaylistResponse {
+    bytes playlist = 1;
+}

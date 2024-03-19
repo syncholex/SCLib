@@ -1,0 +1,41 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+message SCReportChatMedia {
+    repeated .snapchat.abuse.support.SCReportSnapMediaData contentsArray = 1;
+}
+
+message SCReportMediaData {
+    string boltURL = 1;
+    bytes key = 2;
+    bytes iv = 3;
+    bytes contentObject = 4;
+}
+
+message SCReportMessageContents {
+    .snapchat.abuse.support.SCReportUnknown unknown = 1;
+    .snapchat.abuse.support.SCReportText text = 2;
+    .snapchat.abuse.support.SCReportChatMedia chatMedia = 3;
+    .snapchat.abuse.support.SCReportSnap snap = 4;
+}
+
+message SCReportSnap {
+    .snapchat.abuse.support.SCReportSnapMediaData content = 1;
+}
+
+message SCReportSnapMediaData {
+    string snapId = 1;
+    .snapchat.abuse.support.SCReportMediaData content = 2;
+    .snapchat.abuse.support.SCReportMediaData overlay = 3;
+}
+
+message SCReportText {
+    string content = 1;
+}
+
+message SCReportUnknown {
+    string unsupportedContentType = 1;
+}

@@ -1,0 +1,19 @@
+syntax = "proto3";
+package snapchat.payments.commerce.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Snapchat.Payments.Commerce.Order";
+
+import "snapchat/payments/commerce/common/SCPaymentsError.proto";
+import "snapchat/payments/commerce/order/SCPaymentsOrder.proto";
+
+message SCPaymentsGetSingleOrderRequest {
+    string userId = 1;
+    string orderId = 2;
+}
+
+message SCPaymentsGetSingleOrderResponse {
+    string requestId = 1;
+    .snapchat.payments.commerce.order.SCPaymentsOrder order = 2;
+    .snapchat.payments.commerce.common.SCPaymentsCommerceServiceError error = 3;
+}

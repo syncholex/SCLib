@@ -1,0 +1,60 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+import "google/protobuf/empty.proto";
+
+message SCMessagingDuration {
+    .google.protobuf.Empty infinite = 1;
+    .google.protobuf.Empty playOnce = 2;
+    uint32 durationSeconds = 3;
+}
+
+message SCMessagingMediaMetadata {
+    .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_MediaType type = 2;
+    .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_Orientation orientation = 3;
+    .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_MediaEncryptionInfo encryptionInfo = 4;
+    .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_MediaDimensions dimensions = 5;
+    bool hasSound = 8;
+    bool zipped = 9;
+    bool frontFacing = 10;
+    .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_LegacyDirectDownloadUrl legacyDirectDownloadURL = 11;
+    .snapchat.messaging.SCMessagingDuration duration = 12;
+    uint32 mediaDurationMs = 13;
+    bool containsAnimatedStickers = 14;
+    string sourceMediaId = 6;
+    uint32 contentObjectIndex = 7;
+    message SCMessagingMediaMetadata_LegacyDirectDownloadUrl {
+        string URL = 1;
+        uint64 expirySeconds = 2;
+        .snapchat.messaging.SCMessagingMediaMetadata.SCMessagingMediaMetadata_LegacyDirectDownloadUrl.SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType type = 3;
+        string region = 4;
+        enum SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType {
+            SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType_Gcs = 0;
+            SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType_S3 = 1;
+            SCMessagingMediaMetadata_LegacyDirectDownloadUrl_MediaUrlType_UnrecognizedValue = 2;
+        }
+    }
+    message SCMessagingMediaMetadata_MediaDimensions {
+        uint32 width = 1;
+        uint32 height = 2;
+    }
+    message SCMessagingMediaMetadata_MediaEncryptionInfo {
+        bytes key = 1;
+        bytes iv = 2;
+    }
+    enum SCMessagingMediaMetadata_Orientation {
+        SCMessagingMediaMetadata_Orientation_Vertical = 0;
+        SCMessagingMediaMetadata_Orientation_Horizontal = 1;
+    }
+    enum SCMessagingMediaMetadata_MediaType {
+        SCMessagingMediaMetadata_MediaType_Image = 0;
+        SCMessagingMediaMetadata_MediaType_Video = 1;
+        SCMessagingMediaMetadata_MediaType_SpectaclesVideo = 2;
+        SCMessagingMediaMetadata_MediaType_Gif = 3;
+        SCMessagingMediaMetadata_MediaType_Audio = 4;
+        SCMessagingMediaMetadata_MediaType_SpectaclesImage = 5;
+    }
+}

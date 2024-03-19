@@ -1,0 +1,222 @@
+syntax = "proto3";
+package impala.portfolio;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala.Portfolio";
+
+message IMPCreatePortfolioRequest {
+    string profileId = 1;
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 2;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 3;
+}
+
+message IMPCreatePortfolioResponse {
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 1;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 2;
+}
+
+message IMPGetPortfolioRequest {
+    string profileId = 1;
+    .impala.portfolio.IMPGetPortfolioRequest.IMPPortfolioType portfolioType = 2;
+    enum IMPPortfolioType {
+        IMPPortfolioType_PortfolioUnset = 0;
+        IMPPortfolioType_PortfolioLens = 1;
+        IMPPortfolioType_PortfolioStory = 2;
+    }
+}
+
+message IMPGetPortfolioResponse {
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 1;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 2;
+}
+
+message IMPLens {
+    string lensId = 1;
+}
+
+message IMPLensPack {
+    string lensPackId = 1;
+    repeated .impala.portfolio.IMPLensPack.LensPackCategory categoriesArray = 2;
+    enum LensPackCategory {
+        LensPackCategory_LensPackCategoryUnset = 0;
+        LensPackCategory_LensPackCategoryBeauty = 1;
+        LensPackCategory_LensPackCategoryFun = 2;
+        LensPackCategory_LensPackCategoryProfessional = 3;
+        LensPackCategory_LensPackCategoryFrames = 4;
+        LensPackCategory_LensPackCategoryWorld = 5;
+        LensPackCategory_LensPackCategorySeasonal = 6;
+        LensPackCategory_LensPackCategoryToolsAndUtilities = 7;
+        LensPackCategory_LensPackCategoryFashion = 8;
+        LensPackCategory_LensPackCategorySports = 9;
+        LensPackCategory_LensPackCategoryGames = 10;
+    }
+}
+
+message IMPLensPortfolio {
+    .impala.portfolio.IMPPortfolioInfo info = 1;
+    string portfolioId = 2;
+    .impala.portfolio.IMPLensPortfolio.IMPCreatorType creatorType = 3;
+    repeated .impala.portfolio.IMPLensPortfolio.IMPCreatorSpeciality specialtiesArray = 4;
+    .impala.portfolio.IMPLensPortfolio.IMPPortfolioStatus status = 5;
+    repeated .impala.portfolio.IMPLensPortfolio.IMPProductionFee productionFeeArray = 6;
+    repeated string lensCategoriesArray = 7;
+    repeated .impala.portfolio.IMPLens lensesArray = 8;
+    repeated .impala.portfolio.IMPLensPack lensPacksArray = 9;
+    enum IMPCreatorType {
+        IMPCreatorType_CreatorUnset = 0;
+        IMPCreatorType_CreatorLensCreator = 1;
+        IMPCreatorType_CreatorLensAgency = 2;
+        IMPCreatorType_CreatorStoryTeller = 3;
+    }
+    enum IMPProductionFee {
+        IMPProductionFee_ProductionFeeUnset = 0;
+        IMPProductionFee_All = 1;
+        IMPProductionFee_LessThanOneThousand = 2;
+        IMPProductionFee_OneThousandToTwoThousand = 3;
+        IMPProductionFee_TwoThousandToFiveThousand = 4;
+        IMPProductionFee_FiveThousandToTenThousand = 5;
+        IMPProductionFee_TenThousandToFifteenThousand = 6;
+        IMPProductionFee_MoreThanFifteenThousand = 7;
+    }
+    enum IMPCreatorSpeciality {
+        IMPCreatorSpeciality_CreatorSpecialityUnset = 0;
+        IMPCreatorSpeciality_MachineLearning = 1;
+        IMPCreatorSpeciality_TechnicalArt = 2;
+        IMPCreatorSpeciality_InteractiveProgramming = 3;
+        IMPCreatorSpeciality_ThreeDModelingAnimation = 4;
+        IMPCreatorSpeciality_PhotographyFilm = 5;
+        IMPCreatorSpeciality_FilterArtIllustration = 6;
+        IMPCreatorSpeciality_GraphicDesign = 7;
+        IMPCreatorSpeciality_Politics = 8;
+        IMPCreatorSpeciality_Comedy = 9;
+        IMPCreatorSpeciality_Sports = 10;
+        IMPCreatorSpeciality_DanceChallenges = 11;
+        IMPCreatorSpeciality_HealthAndFitness = 12;
+        IMPCreatorSpeciality_CosmeticsAndBeauty = 13;
+        IMPCreatorSpeciality_TutorialsArtsAndCrafts = 14;
+        IMPCreatorSpeciality_SatisfyingAsmr = 15;
+        IMPCreatorSpeciality_Food = 16;
+        IMPCreatorSpeciality_ComedyPranksFailsMemes = 17;
+    }
+    enum IMPPortfolioStatus {
+        IMPPortfolioStatus_StatusUnset = 0;
+        IMPPortfolioStatus_StatusActive = 1;
+        IMPPortfolioStatus_StatusInactive = 2;
+    }
+}
+
+message IMPListAllPortfoliosRequest {
+    string pageId = 1;
+    .impala.portfolio.IMPListAllPortfoliosRequest.IMPPortfolioType portfolioType = 2;
+    enum IMPPortfolioType {
+        IMPPortfolioType_PortfolioUnset = 0;
+        IMPPortfolioType_PortfolioLens = 1;
+        IMPPortfolioType_PortfolioStory = 2;
+    }
+}
+
+message IMPListAllPortfoliosResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.portfolio.IMPPortfolios portfoliosArray = 3;
+}
+
+message IMPPortfolioInfo {
+    string businessBio = 1;
+    string businessEmail = 2;
+    repeated string languageCodesArray = 3;
+}
+
+message IMPPortfolioSnap {
+    string snapId = 1;
+}
+
+message IMPPortfolios {
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 1;
+    string profileId = 2;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 3;
+}
+
+message IMPStoryPortfolio {
+    string portfolioId = 1;
+    .impala.portfolio.IMPPortfolioInfo info = 2;
+    .impala.portfolio.IMPStoryPortfolio.IMPCreatorType creatorType = 3;
+    repeated .impala.portfolio.IMPStoryPortfolio.IMPCreatorSpeciality specialtiesArray = 4;
+    .impala.portfolio.IMPStoryPortfolio.IMPPortfolioStatus status = 5;
+    repeated .impala.portfolio.IMPStoryPortfolio.IMPProductionFee productionFeeArray = 6;
+    repeated .impala.portfolio.IMPStoryPortfolio.IMPStoryTellerDealCategory dealCategoriesArray = 7;
+    repeated .impala.portfolio.IMPPortfolioSnap snapsArray = 8;
+    .impala.portfolio.IMPStoryPortfolio.IMPCreatorAgeRange creatorAgeRange = 9;
+    bool showInsightsPublicly = 10;
+    enum IMPCreatorAgeRange {
+        IMPCreatorAgeRange_CreatorAgeUnset = 0;
+        IMPCreatorAgeRange_EighteenToTwenty = 2;
+        IMPCreatorAgeRange_TwentyOneToTwentyFour = 3;
+        IMPCreatorAgeRange_TwentyFiveToThirtyFour = 4;
+        IMPCreatorAgeRange_ThirtyFiveAndUp = 5;
+    }
+    enum IMPCreatorType {
+        IMPCreatorType_CreatorUnset = 0;
+        IMPCreatorType_CreatorLensCreator = 1;
+        IMPCreatorType_CreatorLensAgency = 2;
+        IMPCreatorType_CreatorStoryTeller = 3;
+    }
+    enum IMPStoryTellerDealCategory {
+        IMPStoryTellerDealCategory_DealCategoryUnset = 0;
+        IMPStoryTellerDealCategory_FreeContent = 1;
+        IMPStoryTellerDealCategory_OneTimeCampaigns = 2;
+        IMPStoryTellerDealCategory_LongTermDeals = 3;
+    }
+    enum IMPProductionFee {
+        IMPProductionFee_ProductionFeeUnset = 0;
+        IMPProductionFee_All = 1;
+        IMPProductionFee_LessThanOneThousand = 2;
+        IMPProductionFee_OneThousandToTwoThousand = 3;
+        IMPProductionFee_TwoThousandToFiveThousand = 4;
+        IMPProductionFee_FiveThousandToTenThousand = 5;
+        IMPProductionFee_TenThousandToFifteenThousand = 6;
+        IMPProductionFee_MoreThanFifteenThousand = 7;
+    }
+    enum IMPCreatorSpeciality {
+        IMPCreatorSpeciality_CreatorSpecialityUnset = 0;
+        IMPCreatorSpeciality_MachineLearning = 1;
+        IMPCreatorSpeciality_TechnicalArt = 2;
+        IMPCreatorSpeciality_InteractiveProgramming = 3;
+        IMPCreatorSpeciality_ThreeDModelingAnimation = 4;
+        IMPCreatorSpeciality_PhotographyFilm = 5;
+        IMPCreatorSpeciality_FilterArtIllustration = 6;
+        IMPCreatorSpeciality_GraphicDesign = 7;
+        IMPCreatorSpeciality_Politics = 8;
+        IMPCreatorSpeciality_Comedy = 9;
+        IMPCreatorSpeciality_Sports = 10;
+        IMPCreatorSpeciality_DanceChallenges = 11;
+        IMPCreatorSpeciality_HealthAndFitness = 12;
+        IMPCreatorSpeciality_CosmeticsAndBeauty = 13;
+        IMPCreatorSpeciality_TutorialsArtsAndCrafts = 14;
+        IMPCreatorSpeciality_SatisfyingAsmr = 15;
+        IMPCreatorSpeciality_Food = 16;
+        IMPCreatorSpeciality_ComedyPranksFailsMemes = 17;
+    }
+    enum IMPPortfolioStatus {
+        IMPPortfolioStatus_StatusUnset = 0;
+        IMPPortfolioStatus_StatusActive = 1;
+        IMPPortfolioStatus_StatusInactive = 2;
+    }
+}
+
+message IMPUpdatePortfolioRequest {
+    string profileId = 1;
+    .impala.portfolio.IMPUpdatePortfolioRequest.IMPPortfolioType portfolioType = 2;
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 3;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 4;
+    enum IMPPortfolioType {
+        IMPPortfolioType_PortfolioUnset = 0;
+        IMPPortfolioType_PortfolioLens = 1;
+        IMPPortfolioType_PortfolioStory = 2;
+    }
+}
+
+message IMPUpdatePortfolioResponse {
+    .impala.portfolio.IMPLensPortfolio lensPortfolio = 1;
+    .impala.portfolio.IMPStoryPortfolio storyPortfolio = 2;
+}

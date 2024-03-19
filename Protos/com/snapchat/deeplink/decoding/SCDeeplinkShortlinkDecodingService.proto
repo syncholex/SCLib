@@ -1,0 +1,41 @@
+syntax = "proto3";
+package com.snapchat.deeplink.decoding;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCDeeplink";
+option csharp_namespace = "SnapProto.Com.Snapchat.Deeplink.Decoding";
+
+import "com/snapchat/deeplink/SCDeeplinkDeeplinkModels.proto";
+
+message SCDeeplinkDecodeShortLinkRequest {
+    string shortLink = 1;
+    .com.snapchat.deeplink.decoding.SCDeeplinkDecodeShortLinkRequest.SCDeeplinkFeature feature = 2;
+    .com.snapchat.deeplink.decoding.SCDeeplinkDecodeShortLinkRequest.SCDeeplinkTeam team = 3;
+    enum SCDeeplinkFeature {
+        SCDeeplinkFeature_FeatureUnset = 0;
+        SCDeeplinkFeature_GroupInvite = 1;
+        SCDeeplinkFeature_ShareSheet = 2;
+        SCDeeplinkFeature_Dispatching = 3;
+        SCDeeplinkFeature_SmsSubscription = 4;
+        SCDeeplinkFeature_SocialSms = 5;
+        SCDeeplinkFeature_AccountSanitization = 6;
+        SCDeeplinkFeature_MarketingCampaign = 7;
+        SCDeeplinkFeature_GrowthSmsCampaign = 8;
+        SCDeeplinkFeature_LensInfoCard = 9;
+        SCDeeplinkFeature_FriendInvite = 10;
+        SCDeeplinkFeature_SmsInvite = 11;
+        SCDeeplinkFeature_NativeSmsInvite = 12;
+    }
+    enum SCDeeplinkTeam {
+        SCDeeplinkTeam_TeamUnset = 0;
+        SCDeeplinkTeam_Sharing = 1;
+        SCDeeplinkTeam_Platform = 2;
+        SCDeeplinkTeam_Telephony = 3;
+        SCDeeplinkTeam_Auth = 4;
+        SCDeeplinkTeam_Marketing = 5;
+        SCDeeplinkTeam_GrowthNotification = 6;
+    }
+}
+
+message SCDeeplinkDecodeShortLinkResponse {
+    .com.snapchat.deeplink.SCDeeplinkShortLinkPayload shortLinkPayload = 1;
+}

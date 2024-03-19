@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.lists.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLists";
+option csharp_namespace = "SnapProto.Services.Snapchat.Lists.Api";
+
+import "snapchat/lists/common/SCListsListsCreate.proto";
+import "snapchat/lists/common/SCListsListsDelete.proto";
+import "snapchat/lists/common/SCListsListsFetch.proto";
+import "snapchat/lists/common/SCListsListsUpdate.proto";
+
+service Lists{
+    rpc CreateLists(.snapchat.lists.common.SCListsListsCreateRequest) returns (.snapchat.lists.common.SCListsListsCreateResponse);
+    rpc CreateListsIngressGateway(.snapchat.lists.common.SCListsListsCreateIngressGatewayRequest) returns (.snapchat.lists.common.SCListsListsCreateIngressGatewayResponse);
+    rpc DeleteLists(.snapchat.lists.common.SCListsListsDeleteRequest) returns (.snapchat.lists.common.SCListsListsDeleteResponse);
+    rpc DeleteListsIngressGateway(.snapchat.lists.common.SCListsListsDeleteIngressGatewayRequest) returns (.snapchat.lists.common.SCListsListsDeleteIngressGatewayResponse);
+    rpc FetchLists(.snapchat.lists.common.SCListsListsFetchRequest) returns (.snapchat.lists.common.SCListsListsFetchResponse);
+    rpc FetchListsIngressGateway(.snapchat.lists.common.SCListsListsFetchIngressGatewayRequest) returns (.snapchat.lists.common.SCListsListsFetchIngressGatewayResponse);
+    rpc UpdateLists(.snapchat.lists.common.SCListsListsUpdateRequest) returns (.snapchat.lists.common.SCListsListsUpdateResponse);
+}

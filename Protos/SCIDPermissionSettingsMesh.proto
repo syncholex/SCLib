@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.identity;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCID";
+option csharp_namespace = "SnapProto.Services.Snapchat.Identity";
+
+import "snapchat/identity/SCIDPermissionSettings.proto";
+
+service PermissionSettingsMesh{
+    rpc UpdatePermissionSettings(.snapchat.identity.SCIDUpdatePermissionSettingsRequest) returns (.snapchat.identity.SCIDUpdatePermissionSettingsResponse);
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.map.pins;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMP";
+option csharp_namespace = "SnapProto.Snapchat.Map.Pins";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCMPGetPinsRequest {
+}
+
+message SCMPGetPinsResponse {
+    repeated .snapchat.map.pins.SCMPPin pinsArray = 1;
+}
+
+message SCMPPin {
+    .snapchat.core.SCCOREUUID pinId = 1;
+    .snapchat.core.SCCOREUUID ownerId = 2;
+    float lat = 3;
+    float lng = 4;
+    string title = 5;
+}
+
+message SCMPSavePinRequest {
+    .snapchat.map.pins.SCMPPin pin = 1;
+}
+
+message SCMPSavePinResponse {
+    bool isSaved = 1;
+}

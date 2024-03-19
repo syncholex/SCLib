@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.inviteservice;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapKitProto";
+option csharp_namespace = "SnapProto.Services.Snapchat.Inviteservice";
+
+import "snapchat/inviteservice/SCSnapKitProtoInviteservice.proto";
+
+service InviteService{
+    rpc BeginGameInvite(.snapchat.inviteservice.SCSnapKitProtoBeginGameInviteRequest) returns (.snapchat.inviteservice.SCSnapKitProtoBeginGameInviteResponse);
+    rpc BeginProfileShare(.snapchat.inviteservice.SCSnapKitProtoBeginProfileShareRequest) returns (.snapchat.inviteservice.SCSnapKitProtoBeginProfileShareResponse);
+    rpc FetchAppMeta(.snapchat.inviteservice.SCSnapKitProtoFetchAppMetaRequest) returns (.snapchat.inviteservice.SCSnapKitProtoFetchAppMetaResponse);
+    rpc Profile(.snapchat.inviteservice.SCSnapKitProtoProfileRequest) returns (.snapchat.inviteservice.SCSnapKitProtoProfileResponse);
+    rpc ValidateInvite(.snapchat.inviteservice.SCSnapKitProtoValidateInviteRequest) returns (.snapchat.inviteservice.SCSnapKitProtoValidateInviteResponse);
+    rpc ValidateProfile(.snapchat.inviteservice.SCSnapKitProtoValidateProfileRequest) returns (.snapchat.inviteservice.SCSnapKitProtoValidateProfileResponse);
+}

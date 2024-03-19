@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.perception.scan.v3;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCNV3";
+option csharp_namespace = "SnapProto.Services.Snapchat.Perception.Scan.V3";
+
+import "snapchat/perception/scan/v3/SCPCNV3Service.proto";
+
+service ScanService{
+    rpc ScanMetadata(.snapchat.perception.scan.v3.SCPCNV3ScanMetadataRequest) returns (.snapchat.perception.scan.v3.SCPCNV3ScanMetadataResponse);
+}

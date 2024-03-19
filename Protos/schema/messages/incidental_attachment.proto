@@ -1,0 +1,36 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/snap_story_id.proto";
+import "schema/common/uuid.proto";
+import "ranking/core/proto/story_destination.proto";
+
+message IncidentalAttachment {
+    .snapchat.messaging.FSNEndpoint FSNEndpoint = 1;
+    .snapchat.messaging.SnapStoryId snap_story_content = 2;
+    .snapchat.messaging.StoryMentionInfo share_info = 3;
+    .snapchat.messaging.StoryPostInfo story_post_info = 4;
+    .snapchat.messaging.MentionInfo mention_info = 5;
+}
+
+message FSNEndpoint {
+    string fsn_endpoint = 1;
+}
+
+message StoryMentionInfo {
+    bool is_user_tagged = 1;
+}
+
+message StoryPostInfo {
+    .ranking.core.StoryMetadata story_metadata = 1;
+}
+
+message MentionInfo {
+    repeated .snapchat.messaging.UUID mentioned_user_ids = 1;
+}

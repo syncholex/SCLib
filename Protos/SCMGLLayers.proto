@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.map.garfield.layers;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGL";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Garfield.Layers";
+
+import "snapchat/map/garfield/layers/SCMGLService.proto";
+
+service Layers{
+    rpc GetLayers(.snapchat.map.garfield.layers.SCMGLGetLayersRequest) returns (.snapchat.map.garfield.layers.SCMGLGetLayersResponse);
+}

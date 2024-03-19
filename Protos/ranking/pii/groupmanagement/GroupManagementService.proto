@@ -1,0 +1,225 @@
+syntax = "proto3";
+package ranking.pii.groupmanagement;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Groupmanagement";
+
+import "ranking/core/SCSCORESomaRequestMetadata.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/pii/groupmanagement/CustomStoryGroup.proto";
+
+message AddBlockedParticipantExceptionsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    repeated .ranking.pii.groupmanagement.AddBlockedParticipantExceptions addBlockedParticipantExceptionsArray = 2;
+}
+
+message AddBlockedParticipantExceptionsResponse {
+}
+
+message BatchGetCustomStoryGroupsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    repeated .ranking.core.SCSCOREUUID groupIdsArray = 2;
+}
+
+message BatchGetCustomStoryGroupsResponse {
+    repeated .ranking.pii.groupmanagement.GroupMetadata groupMetadatasArray = 1;
+}
+
+message BoltMediaClientInfo {
+    string mediaKey = 1;
+    string mediaIv = 2;
+    string rawImageURL = 3;
+}
+
+message CreateCustomStoryGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.pii.groupmanagement.GroupMetadata groupMetadata = 2;
+}
+
+message CreateCustomStoryGroupResponse {
+    .ranking.core.SCSCOREUUID groupId = 1;
+    uint64 groupVersion = 2;
+    int64 createdTsMs = 3;
+}
+
+message DeleteCustomStoryGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+}
+
+message DeleteCustomStoryGroupResponse {
+}
+
+message FanoutUserCustomStoryGroupMetadata {
+    .ranking.core.SCSCOREUUID groupId = 1;
+    repeated .ranking.core.SCSCOREUUID userIdsArray = 2;
+}
+
+message GetCustomStoryGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    bool excludeBlockedMembers = 3;
+}
+
+message GetCustomStoryGroupResponse {
+    .ranking.pii.groupmanagement.GroupMetadata groupMetadata = 1;
+}
+
+message JoinCommunityGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    .ranking.core.SCSCOREUUID userId = 3;
+    .ranking.pii.groupmanagement.EmailCredential emailCredential = 4;
+}
+
+message JoinCommunityGroupResponse {
+}
+
+message JoinCustomStoryGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    .ranking.pii.groupmanagement.EmailCredential emailCredential = 3;
+}
+
+message JoinCustomStoryGroupResponse {
+    .ranking.pii.groupmanagement.UserGroupMetadata userGroupMetadata = 1;
+    .ranking.pii.groupmanagement.UserPendingGroupMetadata userPendingGroupMetadata = 2;
+}
+
+message ListCustomStoryGroupsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    bool includeBlocked = 2;
+}
+
+message ListCustomStoryGroupsResponse {
+    repeated .ranking.pii.groupmanagement.CustomStoryGroup customStoryGroupsArray = 1;
+}
+
+message ListUserCustomStoryGroupsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID requestedUserId = 2;
+}
+
+message ListUserCustomStoryGroupsResponse {
+    repeated .ranking.pii.groupmanagement.PublicGroupMetadata customStoryGroupsArray = 1;
+}
+
+message ResponseStatus {
+    .ranking.pii.groupmanagement.ResponseStatus.ResponseStatus_Code code = 1;
+    enum ResponseStatus_Code {
+        ResponseStatus_Code_Unknown = 0;
+        ResponseStatus_Code_DataStale = 1;
+        ResponseStatus_Code_ReachedMaxGroups = 2;
+        ResponseStatus_Code_MemberNotFound = 3;
+        ResponseStatus_Code_DisplayNameEmpty = 4;
+        ResponseStatus_Code_DisplayNameTooLong = 5;
+        ResponseStatus_Code_ReachedMaxMembers = 6;
+        ResponseStatus_Code_NotEnoughMembers = 7;
+        ResponseStatus_Code_DisplayNameInvalid = 8;
+        ResponseStatus_Code_DescriptionTooLong = 9;
+        ResponseStatus_Code_DescriptionOnCreation = 10;
+        ResponseStatus_Code_ImageOnCreation = 11;
+        ResponseStatus_Code_DatetimeConfigurableGroupsReachedMax = 12;
+        ResponseStatus_Code_DescriptionInvalid = 13;
+        ResponseStatus_Code_ReachedMaxBannedMembers = 14;
+        ResponseStatus_Code_ReachedMaxModerators = 15;
+        ResponseStatus_Code_DescriptionEmpty = 16;
+        ResponseStatus_Code_ShortDisplayNameEmpty = 17;
+        ResponseStatus_Code_ShortDisplayNameTooLong = 18;
+        ResponseStatus_Code_ReachedMaxPendingMembers = 19;
+        ResponseStatus_Code_PendingMembershipExists = 20;
+        ResponseStatus_Code_CredentialVerificationFailure = 21;
+        ResponseStatus_Code_PendingMembershipNotExists = 22;
+        ResponseStatus_Code_MemberExists = 23;
+        ResponseStatus_Code_EmailDomainNotAllowed = 24;
+        ResponseStatus_Code_GroupIdInvalid = 25;
+        ResponseStatus_Code_UserIdInvalid = 26;
+        ResponseStatus_Code_EmailInvalid = 27;
+        ResponseStatus_Code_EmailOwnedByOthers = 28;
+    }
+}
+
+message SyncCustomStoryGroupsRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    bytes syncToken = 2;
+}
+
+message SyncCustomStoryGroupsResponse {
+    bytes nextSyncToken = 1;
+    repeated .ranking.pii.groupmanagement.UserGroupMetadata userGroupMetadataArray = 2;
+    bool isFullSync = 3;
+    repeated .ranking.pii.groupmanagement.UserPendingGroupMetadata userPendingGroupMetadataArray = 4;
+}
+
+message UpdateCustomStoryGroupLegacyRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    string displayName = 3;
+    repeated .ranking.pii.groupmanagement.UserMembership membersArray = 6;
+    int64 updateTsMs = 7;
+    bool enableAutoSaveToMemories = 4;
+    bool disableAutoSaveToMemories = 5;
+}
+
+message UpdateCustomStoryGroupLegacyResponse {
+    .ranking.pii.groupmanagement.GroupMetadata groupMetadata = 1;
+    repeated .ranking.core.SCSCOREUUID addedMembersArray = 2;
+    repeated .ranking.core.SCSCOREUUID removedMembersArray = 3;
+}
+
+message UpdateCustomStoryGroupMembershipRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    .ranking.pii.groupmanagement.UpdateCustomStoryGroupMembershipRequest.UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType updateMembershipType = 3;
+    bool enableAutoSaveToMemories = 4;
+    bool disableAutoSaveToMemories = 5;
+    bool enableShowOnFriendshipProfile = 6;
+    bool disableShowOnFriendshipProfile = 7;
+    .ranking.pii.groupmanagement.EmailCredential emailCredential = 8;
+    enum UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType {
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_Unknown = 0;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_Block = 1;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_Unblock = 2;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_Leave = 3;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_AutoSaveToMemories = 4;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_ShowOnFriendshipProfile = 5;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_UserVerifyCredential = 6;
+        UpdateCustomStoryGroupMembershipRequest_UpdateMembershipType_UserWithdrawPendingMembership = 7;
+    }
+}
+
+message UpdateCustomStoryGroupMembershipResponse {
+}
+
+message UpdateCustomStoryGroupRequest {
+    .ranking.core.SCSCORERequestMetadata requestMetadata = 1;
+    .ranking.core.SCSCOREUUID groupId = 2;
+    uint64 groupVersion = 3;
+    string displayName = 4;
+    repeated .ranking.pii.groupmanagement.UserMembership addedMembersArray = 7;
+    repeated .ranking.pii.groupmanagement.UserMembership modifiedMembersArray = 8;
+    repeated .ranking.core.SCSCOREUUID removedMembersArray = 9;
+    string description_p = 10;
+    .ranking.pii.groupmanagement.BoltMediaClientInfo boltMediaClientInfo = 11;
+    repeated .ranking.core.SCSCOREUUID bannedMembersArray = 12;
+    repeated .ranking.core.SCSCOREUUID unbannedMembersArray = 13;
+    .ranking.pii.groupmanagement.CommunityProfileMetadata communityProfileMetadata = 14;
+    bool enableAutoSaveToMemories = 5;
+    bool disableAutoSaveToMemories = 6;
+}
+
+message UpdateCustomStoryGroupResponse {
+    uint64 groupVersion = 1;
+}
+
+message UserGroupMetadata {
+    .ranking.pii.groupmanagement.UserGroupMetadata.SCSCORECustomStoryMembership_Enum membership = 1;
+    .ranking.pii.groupmanagement.GroupMetadata metadata = 2;
+    .ranking.pii.groupmanagement.UserGroupBlockedParticipantsExceptions userGroupBlockedParticipantsExceptions = 3;
+    enum SCSCORECustomStoryMembership_Enum {
+        SCSCORECustomStoryMembership_Enum_Unknown = 0;
+        SCSCORECustomStoryMembership_Enum_Viewer = 1;
+        SCSCORECustomStoryMembership_Enum_Poster = 2;
+        SCSCORECustomStoryMembership_Enum_Owner = 3;
+        SCSCORECustomStoryMembership_Enum_Moderator = 4;
+    }
+}

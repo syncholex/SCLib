@@ -1,0 +1,11 @@
+syntax = "proto3";
+package games.tray.hint;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Games.Tray.Hint";
+
+import "games/tray/hint/CameraHint.proto";
+
+service CameraHint{
+    rpc GetCameraHints(.games.tray.hint.GetCameraHintsRequest) returns (.games.tray.hint.GetCameraHintsResponse);
+    rpc RevokeCameraHints(.games.tray.hint.RevokeCameraHintsRequest) returns (.games.tray.hint.RevokeCameraHintsResponse);
+}

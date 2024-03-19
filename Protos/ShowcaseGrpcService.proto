@@ -1,0 +1,32 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.service;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Showcase.Wire.Service";
+
+import "com/snapchat/showcase/wire/request/GetCommercePageRequest.proto";
+import "com/snapchat/showcase/wire/request/GetItemDetailPageRequest.proto";
+import "com/snapchat/showcase/wire/request/GetItemRecommendationsRequest.proto";
+import "com/snapchat/showcase/wire/request/GetItemVariantDataRequest.proto";
+import "com/snapchat/showcase/wire/request/GetShowcaseRequest.proto";
+import "com/snapchat/showcase/wire/request/GetSizeRecommendationsRequest.proto";
+import "com/snapchat/showcase/wire/request/GetStoreMetadataRequest.proto";
+import "com/snapchat/showcase/wire/request/GetStoresForUserRequest.proto";
+import "com/snapchat/showcase/wire/response/GetCommercePageResponse.proto";
+import "com/snapchat/showcase/wire/response/GetItemDetailPageResponse.proto";
+import "com/snapchat/showcase/wire/response/GetItemRecommendationsResponse.proto";
+import "com/snapchat/showcase/wire/response/GetItemVariantDataResponse.proto";
+import "com/snapchat/showcase/wire/response/GetShowcaseResponse.proto";
+import "com/snapchat/showcase/wire/response/GetSizeRecommendationsResponse.proto";
+import "com/snapchat/showcase/wire/response/GetStoreMetadataResponse.proto";
+import "com/snapchat/showcase/wire/response/GetStoresForUserResponse.proto";
+
+service ShowcaseGrpcService{
+    rpc GetCommercePage(.com.snapchat.showcase.wire.request.GetCommercePageRequest) returns (.com.snapchat.showcase.wire.response.GetCommercePageResponse);
+    rpc GetItemDetailPage(.com.snapchat.showcase.wire.request.GetItemDetailPageRequest) returns (.com.snapchat.showcase.wire.response.GetItemDetailPageResponse);
+    rpc GetItemRecommendations(.com.snapchat.showcase.wire.request.GetItemRecommendationsRequest) returns (.com.snapchat.showcase.wire.response.GetItemRecommendationsResponse);
+    rpc GetItemVariantData(.com.snapchat.showcase.wire.request.GetItemVariantDataRequest) returns (.com.snapchat.showcase.wire.response.GetItemVariantDataResponse);
+    rpc GetShowcase(.com.snapchat.showcase.wire.request.GetShowcaseRequest) returns (.com.snapchat.showcase.wire.response.GetShowcaseResponse);
+    rpc GetSizeRecommendations(.com.snapchat.showcase.wire.request.GetSizeRecommendationsRequest) returns (.com.snapchat.showcase.wire.response.GetSizeRecommendationsResponse);
+    rpc GetStoreMetadata(.com.snapchat.showcase.wire.request.GetStoreMetadataRequest) returns (.com.snapchat.showcase.wire.response.GetStoreMetadataResponse);
+    rpc GetStoresForUser(.com.snapchat.showcase.wire.request.GetStoresForUserRequest) returns (.com.snapchat.showcase.wire.response.GetStoresForUserResponse);
+}

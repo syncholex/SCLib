@@ -1,0 +1,50 @@
+syntax = "proto3";
+package tokens.shop;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPbShop";
+option csharp_namespace = "SnapProto.Tokens.Shop";
+
+message SCIAPTokenPbShopBalance {
+    int64 total = 1;
+}
+
+message SCIAPTokenPbShopCountry {
+    string code = 1;
+}
+
+message SCIAPTokenPbShopInAppReceipt {
+    .tokens.shop.SCIAPTokenPbShopInAppReceipt.SCIAPTokenPbShopInAppReceipt_Provider provider = 1;
+    string sku = 2;
+    string transactionId = 3;
+    string receipt = 4;
+    enum SCIAPTokenPbShopInAppReceipt_Provider {
+        SCIAPTokenPbShopInAppReceipt_Provider_ProviderUnspecified = 0;
+        SCIAPTokenPbShopInAppReceipt_Provider_ProviderGoogle = 1;
+        SCIAPTokenPbShopInAppReceipt_Provider_ProviderApple = 2;
+    }
+}
+
+message SCIAPTokenPbShopPrice {
+    int64 millis = 1;
+    string currency = 2;
+}
+
+message SCIAPTokenPbShopPromotion {
+    string id_p = 1;
+    uint32 tokenQuantity = 2;
+    string title = 3;
+    string description_p = 4;
+    string bitmojiTemplateId = 5;
+    .tokens.shop.SCIAPTokenPbShopPromotion.SCIAPTokenPbShopShopContext shopContext = 6;
+    enum SCIAPTokenPbShopShopContext {
+        SCIAPTokenPbShopShopContext_ShopContextUnspecified = 0;
+        SCIAPTokenPbShopShopContext_TokenShop = 1;
+        SCIAPTokenPbShopShopContext_GiftShop = 2;
+    }
+}
+
+message SCIAPTokenPbShopTokenPack {
+    string sku = 1;
+    uint32 quantity = 2;
+    string assetURL = 3;
+}

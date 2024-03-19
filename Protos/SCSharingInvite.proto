@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.invite.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSharing";
+option csharp_namespace = "SnapProto.Services.Snapchat.Invite.Api";
+
+import "snapchat/invite/common/SCSharingInviteCreate.proto";
+import "snapchat/invite/common/SCSharingInviteDeeplink.proto";
+import "snapchat/invite/common/SCSharingInviteDeleteForResource.proto";
+import "snapchat/invite/common/SCSharingInviteFetch.proto";
+import "snapchat/invite/common/SCSharingInviteJoin.proto";
+import "snapchat/invite/common/SCSharingInviteUpdate.proto";
+
+service Invite{
+    rpc CreateDeeplinkWithInvite(.snapchat.invite.common.SCSharingDeeplinkWithInviteRequest) returns (.snapchat.invite.common.SCSharingDeeplinkWithInviteResponse);
+    rpc CreateInvite(.snapchat.invite.common.SCSharingInviteCreateRequest) returns (.snapchat.invite.common.SCSharingInviteCreateResponse);
+    rpc DeleteInvitesForResource(.snapchat.invite.common.SCSharingInviteDeleteForResourceRequest) returns (.snapchat.invite.common.SCSharingInviteDeleteForResourceResponse);
+    rpc FetchInvite(.snapchat.invite.common.SCSharingInviteFetchRequest) returns (.snapchat.invite.common.SCSharingInviteFetchResponse);
+    rpc JoinInvite(.snapchat.invite.common.SCSharingInviteJoinRequest) returns (.snapchat.invite.common.SCSharingInviteJoinResponse);
+    rpc UpdateInvite(.snapchat.invite.common.SCSharingInviteUpdateRequest) returns (.snapchat.invite.common.SCSharingInviteUpdateResponse);
+}

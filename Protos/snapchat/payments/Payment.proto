@@ -1,0 +1,119 @@
+syntax = "proto3";
+package snapchat.payments;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Payments";
+
+message BillingAddress {
+    string firstName = 1;
+    string lastName = 2;
+    string addressLine1 = 3;
+    string addressLine2 = 4;
+    string city = 5;
+    string state = 6;
+    string postalCode = 7;
+    string countryCode = 8;
+}
+
+message BraintreeClientTokenRequest {
+}
+
+message BraintreeClientTokenResponse {
+    string braintreeClientToken = 1;
+}
+
+message CreditCard {
+    string id_p = 1;
+    .snapchat.payments.CreditCard.CreditCard_CardType cardType = 2;
+    string expirationMonth = 3;
+    string expirationYear = 4;
+    string last4 = 5;
+    .snapchat.payments.BillingAddress billingAddress = 6;
+    enum CreditCard_CardType {
+        CreditCard_CardType_Unset = 0;
+        CreditCard_CardType_Amex = 1;
+        CreditCard_CardType_CarteBancaire = 2;
+        CreditCard_CardType_DinersClub = 3;
+        CreditCard_CardType_Discover = 4;
+        CreditCard_CardType_Jcb = 5;
+        CreditCard_CardType_Maestro = 6;
+        CreditCard_CardType_Mastercard = 7;
+        CreditCard_CardType_Visa = 8;
+    }
+}
+
+message CreditCardRequest {
+    string userId = 1;
+    .snapchat.payments.CreditCardRequest.CreditCardRequest_Provider provider = 2;
+    string paymentMethodNonce = 3;
+    string deviceId = 4;
+    string paymentMethodId = 5;
+    enum CreditCardRequest_Provider {
+        CreditCardRequest_Provider_Unset = 0;
+        CreditCardRequest_Provider_Braintree = 1;
+    }
+}
+
+message CreditCardResponse {
+    .snapchat.payments.CreditCard creditCard = 1;
+}
+
+message GetPaymentMethodsRequest {
+    string userId = 1;
+}
+
+message GetPaymentMethodsResponse {
+    repeated .snapchat.payments.PaymentMethod paymentMethodsArray = 1;
+}
+
+message PaymentMethod {
+    .snapchat.payments.PaymentMethod.PaymentMethod_Type type = 1;
+    .snapchat.payments.CreditCard creditCard = 2;
+    enum PaymentMethod_Type {
+        PaymentMethod_Type_Unset = 0;
+        PaymentMethod_Type_Coupon = 1;
+        PaymentMethod_Type_CreditCard = 2;
+        PaymentMethod_Type_DirectDebit = 3;
+        PaymentMethod_Type_InAppPurchase = 4;
+        PaymentMethod_Type_LineOfCredit = 5;
+        PaymentMethod_Type_Paypal = 6;
+    }
+}
+
+message RevokeSharedPaymentMethodRequest {
+    string userId = 1;
+    string miniProgramId = 2;
+    string partnerPaymentMethodNonce = 3;
+}
+
+message RevokeSharedPaymentMethodResponse {
+    .snapchat.payments.RevokeSharedPaymentMethodResponse.RevokeSharedPaymentMethodResponse_RevokeStatus status = 1;
+    enum RevokeSharedPaymentMethodResponse_RevokeStatus {
+        RevokeSharedPaymentMethodResponse_RevokeStatus_Unset = 0;
+        RevokeSharedPaymentMethodResponse_RevokeStatus_Revoked = 1;
+        RevokeSharedPaymentMethodResponse_RevokeStatus_Unrevocable = 2;
+        RevokeSharedPaymentMethodResponse_RevokeStatus_Error = 3;
+    }
+}
+
+message SharePaymentMethodRequest {
+    string userId = 1;
+    string paymentMethodId = 2;
+    string miniProgramId = 3;
+    string partnerCustomerId = 4;
+    .snapchat.payments.SharePaymentMethodRequest.SharePaymentMethodRequest_DestinationVault destinationVault = 5;
+    string destinationURL = 6;
+    string authToken = 7;
+    string amount = 8;
+    enum SharePaymentMethodRequest_DestinationVault {
+        SharePaymentMethodRequest_DestinationVault_Unset = 0;
+        SharePaymentMethodRequest_DestinationVault_Braintree = 1;
+        SharePaymentMethodRequest_DestinationVault_Shopify = 2;
+        SharePaymentMethodRequest_DestinationVault_Salesforce = 3;
+        SharePaymentMethodRequest_DestinationVault_BigCommerce = 4;
+    }
+}
+
+message SharePaymentMethodResponse {
+    string partnerPaymentMethodNonce = 1;
+    string partnerResponseJson = 2;
+}

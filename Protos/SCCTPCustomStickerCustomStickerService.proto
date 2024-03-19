@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.customsticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTPCustomSticker";
+option csharp_namespace = "SnapProto.Services.Snapchat.Creativetools.Customsticker";
+
+import "snapchat/creativetools/customsticker/SCCTPCustomStickerCustomStickerService.proto";
+
+service CustomStickerService{
+    rpc AddRef(.snapchat.creativetools.customsticker.SCCTPCustomStickerAddRefRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerAddRefResponse);
+    rpc BatchOps(.snapchat.creativetools.customsticker.SCCTPCustomStickerBatchOpsRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerBatchOpsResponse);
+    rpc Create(.snapchat.creativetools.customsticker.SCCTPCustomStickerCreateRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerCreateResponse);
+    rpc Delete(.snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteResponse);
+    rpc Get(.snapchat.creativetools.customsticker.SCCTPCustomStickerGetRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerGetResponse);
+    rpc ListPack(.snapchat.creativetools.customsticker.SCCTPCustomStickerListPackRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerListPackResponse);
+    rpc RemoveRef(.snapchat.creativetools.customsticker.SCCTPCustomStickerRemoveRefRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerRemoveRefResponse);
+    rpc UpdateOrderWeight(.snapchat.creativetools.customsticker.SCCTPCustomStickerUpdateOrderWeightRequest) returns (.snapchat.creativetools.customsticker.SCCTPCustomStickerUpdateOrderWeightResponse);
+}

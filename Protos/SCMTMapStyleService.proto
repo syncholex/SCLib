@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map";
+
+import "snapchat/map/SCMTMapConfiguration.proto";
+
+service MapStyleService{
+    rpc GetHeatmapStyle(.snapchat.map.SCMTHeatmapStyleRequest) returns (.snapchat.map.SCMTHeatmapStyleResponse);
+    rpc GetMapStyle(.snapchat.map.SCMTMapStyleRequest) returns (.snapchat.map.SCMTMapStyleResponse);
+}

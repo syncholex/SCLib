@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.perception.gtq;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPGTQ";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Gtq";
+
+import "snapchat/unlockables/request/schema/SCULGtqServeRequest.proto";
+
+message SCPGTQMockRequest {
+    int32 latencyMs = 1;
+}
+
+message SCPGTQRequest {
+    .snapchat.perception.gtq.SCPGTQMockRequest mockRequest = 1;
+    .snapchat.unlockables.request.schema.SCULGtqServeRequest serveRequest = 2;
+}

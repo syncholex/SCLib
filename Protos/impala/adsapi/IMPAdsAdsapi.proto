@@ -1,0 +1,321 @@
+syntax = "proto3";
+package impala.adsapi;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMPAds";
+option csharp_namespace = "SnapProto.Impala.Adsapi";
+
+message IMPAdsAddRolesRequest {
+    repeated .impala.adsapi.IMPAdsRole rolesArray = 1;
+}
+
+message IMPAdsAdsBusinessAccount {
+    string id_p = 1;
+    string organizationId = 2;
+    repeated string secureActionsArray = 3;
+}
+
+message IMPAdsAdsBusinessAccountSubResponse {
+    .impala.adsapi.IMPAdsAdsBusinessAccount businessaccount = 1;
+}
+
+message IMPAdsAdsBusinessAccountsResponse {
+    repeated .impala.adsapi.IMPAdsAdsBusinessAccountSubResponse businessaccountsArray = 1;
+}
+
+message IMPAdsAdsInventoryBundle {
+    string id_p = 1;
+    string displayName = 2;
+    .impala.adsapi.IMPAdsAdsInventoryBundle.IMPAdsAdsInventoryBundle_Status status = 3;
+    .impala.adsapi.IMPAdsAdsInventoryBundle.IMPAdsAdsInventoryBundle_TargetableBy targetableBy = 5;
+    enum IMPAdsAdsInventoryBundle_Status {
+        IMPAdsAdsInventoryBundle_Status_StatusUnset = 0;
+        IMPAdsAdsInventoryBundle_Status_Active = 1;
+        IMPAdsAdsInventoryBundle_Status_Inactive = 2;
+    }
+    enum IMPAdsAdsInventoryBundle_TargetableBy {
+        IMPAdsAdsInventoryBundle_TargetableBy_UnrecognizedUnset = 0;
+        IMPAdsAdsInventoryBundle_TargetableBy_All = 1;
+        IMPAdsAdsInventoryBundle_TargetableBy_AdOpsOnly = 2;
+        IMPAdsAdsInventoryBundle_TargetableBy_SalesOnly = 3;
+        IMPAdsAdsInventoryBundle_TargetableBy_MppOnly = 4;
+        IMPAdsAdsInventoryBundle_TargetableBy_DirectSalesOnly = 5;
+        IMPAdsAdsInventoryBundle_TargetableBy_None = 6;
+    }
+}
+
+message IMPAdsAdsInventoryBundleItemMapping {
+    string id_p = 1;
+    string parentBundleId = 2;
+    .impala.adsapi.IMPAdsAdsInventoryBundleItemMapping.IMPAdsAdsInventoryBundleItemMapping_BundleElementType elementType = 3;
+    string elementId = 4;
+    enum IMPAdsAdsInventoryBundleItemMapping_BundleElementType {
+        IMPAdsAdsInventoryBundleItemMapping_BundleElementType_UnrecognizedUnset = 0;
+        IMPAdsAdsInventoryBundleItemMapping_BundleElementType_InventoryBundle = 1;
+        IMPAdsAdsInventoryBundleItemMapping_BundleElementType_InventoryItem = 2;
+    }
+}
+
+message IMPAdsAdsInventoryBundleItemMappingRequest {
+    repeated .impala.adsapi.IMPAdsAdsInventoryBundleItemMapping inventoryBundleItemMappingsArray = 1;
+}
+
+message IMPAdsAdsInventoryBundleItemMappingResponse {
+    repeated .impala.adsapi.IMPAdsAdsInventoryBundleItemMappingSubResponse inventoryBundleItemMappingsArray = 1;
+}
+
+message IMPAdsAdsInventoryBundleItemMappingSubResponse {
+    .impala.adsapi.IMPAdsAdsInventoryBundleItemMapping inventoryBundleItemMapping = 1;
+}
+
+message IMPAdsAdsInventoryBundleSubResponse {
+    .impala.adsapi.IMPAdsAdsInventoryBundle inventoryBundle = 1;
+}
+
+message IMPAdsAdsInventoryBundlesRequest {
+    repeated .impala.adsapi.IMPAdsAdsInventoryBundle inventoryBundlesArray = 1;
+}
+
+message IMPAdsAdsInventoryBundlesResponse {
+    repeated .impala.adsapi.IMPAdsAdsInventoryBundleSubResponse inventoryBundlesArray = 1;
+}
+
+message IMPAdsAdsInventoryItem {
+    string id_p = 1;
+    .impala.adsapi.IMPAdsAdsInventoryItem.SCAdsInventoryType inventoryType = 2;
+    string displayName = 3;
+    string targetingValue = 4;
+    .impala.adsapi.IMPAdsAdsInventoryItem.IMPAdsInventoryItemStatus status = 5;
+    .impala.adsapi.IMPAdsDiscoverStoryMetadata discoverStoryMetadata = 6;
+    enum SCAdsInventoryType {
+        SCAdsInventoryType_UnknownInventoryType = 0;
+        SCAdsInventoryType_Discover = 1;
+        SCAdsInventoryType_AutoAdvance = 2;
+        SCAdsInventoryType_NonpartneredStory = 3;
+        SCAdsInventoryType_PartneredStory = 4;
+        SCAdsInventoryType_CampusStory = 5;
+        SCAdsInventoryType_LensCarousel = 6;
+        SCAdsInventoryType_FilterCarousel = 7;
+        SCAdsInventoryType_OfficialStory = 8;
+        SCAdsInventoryType_PromotedStory = 9;
+        SCAdsInventoryType_SensitiveNonpartneredStory = 10;
+        SCAdsInventoryType_SensitivePartneredStory = 11;
+        SCAdsInventoryType_SensitiveCampusStory = 12;
+        SCAdsInventoryType_E2ETest = 13;
+        SCAdsInventoryType_ChannelDisallowingAds = 14;
+        SCAdsInventoryType_GeneratedStory = 15;
+        SCAdsInventoryType_SensitiveGeneratedStory = 16;
+        SCAdsInventoryType_ContentInterstitial = 17;
+        SCAdsInventoryType_Games = 18;
+        SCAdsInventoryType_AdNetworkRtb = 19;
+        SCAdsInventoryType_AdNetworkSdk = 20;
+        SCAdsInventoryType_LensExplorer = 21;
+        SCAdsInventoryType_EmbeddedWebview = 22;
+        SCAdsInventoryType_InterstitialSpotlight = 23;
+        SCAdsInventoryType_InstreamSpotlight = 24;
+        SCAdsInventoryType_AdNetworkHb = 25;
+    }
+    enum IMPAdsInventoryItemStatus {
+        IMPAdsInventoryItemStatus_Unset = 0;
+        IMPAdsInventoryItemStatus_Active = 1;
+        IMPAdsInventoryItemStatus_Inactive = 2;
+    }
+}
+
+message IMPAdsAdsInventoryItemSubResponse {
+    .impala.adsapi.IMPAdsAdsInventoryItem inventoryItem = 1;
+}
+
+message IMPAdsAdsInventoryItemsRequest {
+    repeated .impala.adsapi.IMPAdsAdsInventoryItem inventoryItemsArray = 1;
+}
+
+message IMPAdsAdsInventoryItemsResponse {
+    repeated .impala.adsapi.IMPAdsAdsInventoryItemSubResponse inventoryItemsArray = 1;
+}
+
+message IMPAdsAuthorizeActionsResponse {
+    string requestStatus = 1;
+    repeated string authorizedInternalActionsArray = 2;
+}
+
+message IMPAdsCreateAdsBusinessAccountRequest {
+    string organizationId = 1;
+    string snapUserId = 2;
+    .impala.adsapi.IMPAdsCreateAdsBusinessAccountRequest.IMPAdsProfileType profileType = 3;
+    enum IMPAdsProfileType {
+        IMPAdsProfileType_ProfileTypeUnset = 0;
+        IMPAdsProfileType_StoryStudioPublisher = 1;
+        IMPAdsProfileType_PublicProfile = 2;
+        IMPAdsProfileType_PublicProfileWithPublisherContent = 3;
+        IMPAdsProfileType_PublisherWithHostUser = 4;
+    }
+}
+
+message IMPAdsCreateAdsBusinessAccountSubResponse {
+    .impala.adsapi.IMPAdsCreatedAdsBusinessAccount businessaccount = 1;
+}
+
+message IMPAdsCreateAdsBusinessAccountsRequest {
+    repeated .impala.adsapi.IMPAdsCreateAdsBusinessAccountRequest businessaccountsArray = 1;
+}
+
+message IMPAdsCreateAdsBusinessAccountsResponse {
+    repeated .impala.adsapi.IMPAdsCreateAdsBusinessAccountSubResponse businessaccountsArray = 1;
+}
+
+message IMPAdsCreateMemberRequest {
+    repeated .impala.adsapi.IMPAdsMember membersArray = 1;
+}
+
+message IMPAdsCreateOrganizationRequest {
+    string name = 1;
+    string type = 2;
+}
+
+message IMPAdsCreateOrganizationsRequest {
+    repeated .impala.adsapi.IMPAdsCreateOrganizationRequest organizationsArray = 1;
+}
+
+message IMPAdsCreateOrganizationsResponse {
+    repeated .impala.adsapi.IMPAdsCreateOrganizationsSubResponse organizationsArray = 1;
+}
+
+message IMPAdsCreateOrganizationsSubResponse {
+    .impala.adsapi.IMPAdsCreatedOrganization organization = 1;
+}
+
+message IMPAdsCreatedAdsBusinessAccount {
+    string id_p = 1;
+    string organizationId = 2;
+}
+
+message IMPAdsCreatedOrganization {
+    string id_p = 1;
+    repeated .impala.adsapi.IMPAdsCreatedAdsBusinessAccount businessaccountsArray = 2;
+}
+
+message IMPAdsDeleteAdsInventoryBundleItemMappingRequest {
+    repeated string mappingIdsArray = 1;
+}
+
+message IMPAdsDeleteAdsInventoryBundleItemMappingResponse {
+}
+
+message IMPAdsDiscoverStoryMetadata {
+    string businessProfileId = 1;
+    string publisherId = 2;
+}
+
+message IMPAdsListAdsInventoryBundleItemMappingsRequest {
+    string elementItemId = 1;
+}
+
+message IMPAdsListAdsInventoryBundleItemMappingsResponse {
+    repeated .impala.adsapi.IMPAdsAdsInventoryBundleItemMappingSubResponse inventoryBundleItemMappingsArray = 1;
+}
+
+message IMPAdsMember {
+    string id_p = 1;
+    string organizationId = 2;
+    string snapchatUserId = 3;
+    string displayName = 4;
+    string snapchatUsername = 5;
+    string email = 6;
+}
+
+message IMPAdsMemberSubResponse {
+    .impala.adsapi.IMPAdsMember member = 1;
+}
+
+message IMPAdsMembersResponse {
+    repeated .impala.adsapi.IMPAdsMemberSubResponse membersArray = 1;
+}
+
+message IMPAdsMyBusinessAccount {
+    string id_p = 1;
+    string organizationId = 2;
+    repeated string secureActionsArray = 3;
+    repeated .impala.adsapi.IMPAdsRoleInfo roleObjectsArray = 4;
+}
+
+message IMPAdsMyOrganization {
+    string id_p = 1;
+    repeated string secureActionsArray = 2;
+    repeated .impala.adsapi.IMPAdsMyBusinessAccount businessaccountsArray = 3;
+    string myMemberId = 4;
+    repeated string rolesArray = 5;
+}
+
+message IMPAdsMyOrganizationSubResponse {
+    .impala.adsapi.IMPAdsMyOrganization organization = 1;
+}
+
+message IMPAdsMyOrganizationsListResponse {
+    repeated .impala.adsapi.IMPAdsMyOrganizationSubResponse organizationsArray = 1;
+    .impala.adsapi.IMPAdsPagination paging = 2;
+}
+
+message IMPAdsOrganization {
+    string id_p = 1;
+    string name = 2;
+}
+
+message IMPAdsOrganizationSubResponse {
+    .impala.adsapi.IMPAdsOrganization organization = 1;
+}
+
+message IMPAdsOrganizationsResponse {
+    repeated .impala.adsapi.IMPAdsOrganizationSubResponse organizationsArray = 1;
+}
+
+message IMPAdsPagination {
+    string nextLink = 1;
+}
+
+message IMPAdsPaging {
+    string nextLink = 1;
+}
+
+message IMPAdsProfileOnboardingParams {
+    string adminDisplayName = 1;
+    string adminUserId = 2;
+    string businessAccountId = 3;
+    string adminEmail = 4;
+}
+
+message IMPAdsProfileOnboardingRequest {
+    string id_p = 1;
+    string name = 2;
+    string type = 3;
+    .impala.adsapi.IMPAdsProfileOnboardingParams onboardingParams = 4;
+    string country = 5;
+    string postalCode = 6;
+    string streetAddress = 7;
+}
+
+message IMPAdsProfilesOnboardingRequest {
+    repeated .impala.adsapi.IMPAdsProfileOnboardingRequest organizationsArray = 1;
+}
+
+message IMPAdsRole {
+    string id_p = 1;
+    string memberId = 2;
+    string businessAccountId = 3;
+    string organizationId = 4;
+    string type = 5;
+    string createdAt = 6;
+}
+
+message IMPAdsRoleInfo {
+    string id_p = 1;
+    string type = 2;
+}
+
+message IMPAdsRoleSubResponse {
+    .impala.adsapi.IMPAdsRole role = 1;
+}
+
+message IMPAdsRolesResponse {
+    repeated .impala.adsapi.IMPAdsRoleSubResponse rolesArray = 1;
+    .impala.adsapi.IMPAdsPaging paging = 2;
+}

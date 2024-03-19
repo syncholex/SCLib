@@ -1,0 +1,10 @@
+syntax = "proto3";
+package com.snapchat.uaskadnetwork;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Uaskadnetwork";
+
+import "com/snapchat/uaskadnetwork/UaSkadnetworkService.proto";
+
+service ConversionValue{
+    rpc RetrieveConversionValue(.com.snapchat.uaskadnetwork.RetrieveConversionValueRequest) returns (.com.snapchat.uaskadnetwork.RetrieveConversionValueResponse);
+}

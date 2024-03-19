@@ -1,0 +1,14 @@
+syntax = "proto3";
+package tokens.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPbOrder";
+option csharp_namespace = "SnapProto.Services.Tokens.Order";
+
+import "tokens/order/SCIAPTokenPbOrderOrder.proto";
+
+service Order{
+    rpc ConsumeOrder(.tokens.order.SCIAPTokenPbOrderConsumeOrderRequest) returns (.tokens.order.SCIAPTokenPbOrderConsumeOrderResponse);
+    rpc GetUnconsumedOrders(.tokens.order.SCIAPTokenPbOrderGetUnconsumedOrdersRequest) returns (.tokens.order.SCIAPTokenPbOrderGetUnconsumedOrdersResponse);
+    rpc ListItems(.tokens.order.SCIAPTokenPbOrderListItemsRequest) returns (.tokens.order.SCIAPTokenPbOrderListItemsResponse);
+    rpc Order(.tokens.order.SCIAPTokenPbOrderOrderRequest) returns (.tokens.order.SCIAPTokenPbOrderOrderResponse);
+}

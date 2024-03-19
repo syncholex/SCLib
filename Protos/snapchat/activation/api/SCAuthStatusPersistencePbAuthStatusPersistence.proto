@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuthStatusPersistencePb";
+option csharp_namespace = "SnapProto.Snapchat.Activation.Api";
+
+message SCAuthStatusPersistencePbIsEligibleForV2Request {
+    string persistentDeviceId = 1;
+}
+
+message SCAuthStatusPersistencePbIsEligibleForV2Response {
+    bool isEligible = 1;
+}

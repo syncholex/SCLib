@@ -1,0 +1,37 @@
+syntax = "proto3";
+package snapchat.abusedecision;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Abusedecision";
+
+message VendorAttestation {
+    .snapchat.abusedecision.VendorAttestation.VendorAttestationLibrary type = 1;
+    bytes payload = 2;
+    bool strictEnforcementRequired = 3;
+    string error = 4;
+    string androidPackageName = 5;
+    int32 standardErrorCode = 6;
+    .snapchat.abusedecision.VendorAttestation.AppAttestEnforcement appAttestEnforcement = 7;
+    string appAttestKeyId = 8;
+    string appAttestNonce = 9;
+    bytes appAttestAssertion = 10;
+    string keyAttestationKeyAlias = 11;
+    bytes keyAttestationNonce = 12;
+    repeated bytes keyAttestationCertChainArray = 13;
+    string keyAttestationError = 14;
+    int32 keyAttestationStandardErrorCode = 15;
+    enum AppAttestEnforcement {
+        AppAttestEnforcement_AppAttestEnforcementDefaultUnset = 0;
+        AppAttestEnforcement_AppAttestEnforcementKeyAttestationOnly = 1;
+        AppAttestEnforcement_AppAttestEnforcementKeyAttestationAndAssertion = 2;
+    }
+    enum VendorAttestationLibrary {
+        VendorAttestationLibrary_VendorAttestationLibraryUnknownUnset = 0;
+        VendorAttestationLibrary_VendorAttestationLibrarySafetyNet = 1;
+        VendorAttestationLibrary_VendorAttestationLibraryPlayIntegrity = 2;
+        VendorAttestationLibrary_VendorAttestationLibrarySysintegrity = 3;
+        VendorAttestationLibrary_VendorAttestationLibraryAppAttest = 4;
+        VendorAttestationLibrary_VendorAttestationLibraryKeyAttestation = 5;
+        VendorAttestationLibrary_VendorAttestationLibraryPlayIntegrityAndKeyAttestation = 6;
+        VendorAttestationLibrary_VendorAttestationLibrarySafetyNetAndKeyAttestation = 7;
+    }
+}

@@ -1,0 +1,36 @@
+syntax = "proto3";
+package ranking.quality;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Quality";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message FriendStoryAdjustments {
+    float conversationBoost = 1;
+    float storyTypeBoost = 2;
+    float expireBoost = 3;
+    float teamSnapchatBoost = 4;
+    float optInNotifBoost = 5;
+    float impDemotion = 6;
+    float scpBoost = 7;
+    float impDemotionSigmoid = 8;
+}
+
+message FriendStoryModelHeadScore {
+    string name = 1;
+    float score = 2;
+}
+
+message FriendStoryScoringResults {
+    .ranking.core.SCCORECompositeStoryId storyId = 1;
+    repeated .ranking.quality.FriendStoryModelHeadScore friendStoryModelHeadScoresArray = 2;
+    .ranking.quality.FriendStoryAdjustments friendStoryAdjustments = 3;
+    float finalScore = 4;
+    .ranking.quality.RarePosterBoostAdjustment rarePosterAdjustment = 5;
+}
+
+message RarePosterBoostAdjustment {
+    int32 originalPosition = 1;
+    int32 boostPosition = 2;
+    int32 numPostDays28D = 3;
+}

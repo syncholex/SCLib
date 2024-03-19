@@ -1,0 +1,54 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+import "schema/common/errors.proto";
+import "schema/messages/messages.proto";
+import "schema/messages/conversations.proto";
+import "schema/feed/feed.proto";
+
+message DeltaSyncRequest {
+    uint64 starting_version = 1;
+    .snapchat.messaging.UUID conversation_id = 2;
+    .snapchat.messaging.UUID sending_user_id = 4;
+    .snapchat.messaging.UUID other_participant_user_id = 6;
+}
+
+message DeltaSyncResponse {
+    uint64 current_version = 1;
+    uint64 current_server_time = 2;
+    .snapchat.messaging.ConversationMetadata conversation_metadata = 3;
+    repeated .snapchat.messaging.ContentMessage messages = 4;
+    bool reset_conversation = 5;
+    .snapchat.messaging.ConversationEntry feed_entry = 6;
+}
+
+message BatchDeltaSyncRequest {
+    repeated .snapchat.messaging.DeltaSyncRequest requests = 1;
+}
+
+message BatchDeltaSyncResponse {
+    repeated .snapchat.messaging.DeltaSyncResponseWrapper responses = 1;
+}
+
+message DeltaSyncResponseWrapper {
+    .snapchat.messaging.DeltaSyncResponse success_response = 1;
+    .snapchat.messaging.DeltaSyncFailureResponse failure_response = 2;
+    .snapchat.messaging.DeltaSyncUpToDateResponse up_to_date_response = 3;
+}
+
+message DeltaSyncFailureResponse {
+    .snapchat.messaging.UUID conversation_id = 1;
+    .snapchat.messaging.FailureReason failure_reason = 2;
+    bool retryable = 3;
+}
+
+message DeltaSyncUpToDateResponse {
+    .snapchat.messaging.UUID conversation_id = 1;
+}

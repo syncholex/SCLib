@@ -1,0 +1,46 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+import "snapchat/creativetools/common/SCCTPAcceptLanguages.proto";
+import "snapchat/creativetools/common/SCCTPFilter.proto";
+import "snapchat/creativetools/common/SCCTPUserInfo.proto";
+
+message SCCTPCTRequestOptions {
+    .snapchat.creativetools.common.SCCTPCTRequestOptions.SCCTPCTRequestOptions_Cameos cameos = 1;
+    .snapchat.creativetools.common.SCCTPCTRequestOptions.SCCTPCTRequestOptions_Bitmoji bitmoji = 2;
+    message SCCTPCTRequestOptions_Bitmoji {
+        string timezoneId = 2;
+    }
+    message SCCTPCTRequestOptions_Cameos {
+        repeated .snapchat.creativetools.common.SCCTPCTRequestOptions.SCCTPCTRequestOptions_Cameos.SCCameosGender gendersArray = 1;
+        .snapchat.cameos.common.SCCameosApiVersion apiVersion = 2;
+        int32 maxCustomCameos = 3;
+        int32 maxInfoCameos = 4;
+        bool onePersonFriendCameoContext = 5;
+        enum SCCameosGender {
+            SCCameosGender_GenderUnknown = 0;
+            SCCameosGender_Male = 1;
+            SCCameosGender_Female = 2;
+        }
+    }
+}
+
+message SCCTPCTRequestParams {
+    repeated .snapchat.creativetools.common.SCCTPAcceptLanguagesEntry acceptLanguagesArray = 1;
+    repeated .snapchat.creativetools.common.SCCTPCTRequestOptions optionsArray = 4;
+    .snapchat.creativetools.common.SCCTPUserInfo userInfo = 5;
+    .snapchat.creativetools.common.SCCTPCTRequestOptions.SCCTPCTRequestOptions_Cameos cameosOptions = 8;
+    repeated .snapchat.creativetools.common.SCCTPCTRequestParams.SCCTPSyncSensitivity syncSensitivitiesArray = 9;
+    int64 lastLowSensitivityTimestampMs = 10;
+    .snapchat.creativetools.common.SCCTPFilterRequest filterRequest = 11;
+    int64 numItems = 12;
+    enum SCCTPSyncSensitivity {
+        SCCTPSyncSensitivity_SyncSensitivityUnset = 0;
+        SCCTPSyncSensitivity_High = 1;
+        SCCTPSyncSensitivity_Low = 2;
+    }
+}

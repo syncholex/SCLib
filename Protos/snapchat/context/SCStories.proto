@@ -1,0 +1,294 @@
+syntax = "proto3";
+package snapchat.context;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SC";
+option csharp_namespace = "SnapProto.Snapchat.Context";
+
+import "address/SCMapsLocation.proto";
+import "google/protobuf/wrappers.proto";
+import "serengeti/SGTIService.proto";
+import "snapchat/cameos/stories/SCCameosCameoStory.proto";
+import "snapchat/context/SCContextHint.proto";
+import "snapchat/research/SASAudioStitch.proto";
+import "snapchat/snapdoc/SDMCameoMetadata.proto";
+import "snapchat/snapdoc/SDMSponsor.proto";
+import "snapchat/streaming/SCMTMedia.proto";
+
+message SCAdInfo {
+}
+
+message SCAttributionInfo {
+    string userId = 1;
+    string displayName = 2;
+    string username = 3;
+}
+
+message SCLocalizedStringSet {
+    string fallback = 1;
+    repeated .snapchat.context.SCLocalizedStringSet.SCLocalizedStringSet_String stringsArray = 2;
+    message SCLocalizedStringSet_String {
+        string locale = 1;
+        string text = 2;
+    }
+}
+
+message SCSnapBoltInfo {
+    bytes mediaContentObject = 1;
+    bytes overlayContentObject = 2;
+    bytes rawContentObject = 3;
+    bytes zippedContentObject = 4;
+}
+
+message SCSnapBoltMediaInfo {
+    .snapchat.context.SCSnapBoltMediaInfo.SCSnapMediaType mediaType = 1;
+    string mediaURL = 2;
+    string mediaId = 3;
+    string mediaIv = 4;
+    string mediaKey = 5;
+    bool isZipped = 6;
+    double duration = 7;
+    bool isInfiniteDuration = 8;
+    .snapchat.context.SCSnapBoltInfo snapBoltInfo = 9;
+    enum SCSnapMediaType {
+        SCSnapMediaType_SnapMediaTypeImage = 0;
+        SCSnapMediaType_SnapMediaTypeVideo = 1;
+        SCSnapMediaType_SnapMediaTypeVideoNoSound = 2;
+        SCSnapMediaType_SnapMediaTypeFriend = 3;
+        SCSnapMediaType_SnapMediaTypeBlob = 4;
+        SCSnapMediaType_SnapMediaTypeLaguna = 5;
+        SCSnapMediaType_SnapMediaTypeLagunaNoSound = 6;
+        SCSnapMediaType_SnapMediaTypeAudioStitch = 9;
+        SCSnapMediaType_SnapMediaTypePsychomantis = 10;
+        SCSnapMediaType_SnapMediaTypeScreamingmantis = 11;
+        SCSnapMediaType_SnapMediaTypeVideoSoundMalibu = 12;
+        SCSnapMediaType_SnapMediaTypeVideoNoSoundMalibu = 13;
+        SCSnapMediaType_SnapMediaTypeVideoSoundLagunaHd = 14;
+        SCSnapMediaType_SnapMediaTypeVideoNoSoundLagunaHd = 15;
+        SCSnapMediaType_SnapMediaTypeGhostmantis = 16;
+        SCSnapMediaType_SnapMediaTypeVideoSoundNewport = 17;
+        SCSnapMediaType_SnapMediaTypeVideoNoSoundNewport = 18;
+        SCSnapMediaType_SnapMediaTypeAudio = 19;
+        SCSnapMediaType_SnapMediaTypeBloop = 20;
+        SCSnapMediaType_SnapMediaTypeSpectaclesImage = 21;
+        SCSnapMediaType_SnapMediaTypeSpectaclesVideo = 22;
+        SCSnapMediaType_SnapMediaTypeSpectaclesVideoNoSound = 23;
+        SCSnapMediaType_SnapMediaTypeCheeriosImage = 24;
+        SCSnapMediaType_SnapMediaTypeCheeriosVideoSound = 25;
+        SCSnapMediaType_SnapMediaTypeCheeriosVideoNoSound = 26;
+    }
+}
+
+message SCStoryElement {
+    string id_p = 1;
+    int32 version = 2;
+    .snapchat.context.SCStoryElement.SCContentType contentType = 3;
+    int64 sunriseTimestamp = 4;
+    int64 sunsetTimestamp = 5;
+    double duration = 10;
+    int64 timestamp = 11;
+    string sssId = 12;
+    int64 captureTimestamp = 13;
+    string bundleId = 31;
+    .snapchat.snapdoc.SDMCameoMetadata cameo = 32;
+    .snapchat.cameos.stories.SCCameosCameoTile cameoTile = 33;
+    bool isImportantRanking = 34;
+    string lensRankingId = 35;
+    bool loop = 40;
+    .snapchat.context.SCAttributionInfo attributionInfo = 41;
+    string previewURL = 42;
+    bool isDeletable = 43;
+    bool isSaveable = 44;
+    bool isReportable = 45;
+    bool needsModeration = 46;
+    .snapchat.context.SCStoryElement.SCDeleteAction deleteAction = 47;
+    bool blockSharing = 48;
+    .snapchat.context.SCStoryElement.SCStoryElement_ThumbnailInfo thumbnailInfo = 49;
+    bool isBoosted = 50;
+    int32 minimumDurationMs = 100;
+    .snapchat.context.SCUserAction tapAction = 101;
+    .snapchat.context.SCUserAction swipeUpAction = 102;
+    .snapchat.context.SCUserAction swipeLeftAction = 103;
+    .snapchat.context.SCUserAction pressAndHoldAction = 104;
+    .snapchat.context.SCUserAction swipeRightAction = 105;
+    .snapchat.context.SCUserAction swipeDownAction = 106;
+    bool shouldPrefetch = 200;
+    int32 prefetchTtlMs = 201;
+    .snapchat.context.SCAdInfo adInfo = 300;
+    .snapchat.context.SCStoryElementMetrics metrics = 400;
+    .snapchat.context.SCStoryElementDebug debugInfo = 500;
+    .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo snapInfo = 6;
+    .snapchat.context.SCStoryElement.SCStoryElement_WebMediaInfo webMediaInfo = 7;
+    .snapchat.context.SCStoryElement.SCStoryElement_HtmlInfo htmlInfo = 8;
+    message SCStoryElement_HtmlInfo {
+        string html = 1;
+    }
+    message SCStoryElement_SnapInfo {
+        string snapMediaId = 1;
+        .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo.SCSnapMediaType snapMediaType = 2;
+        string creatorId = 3;
+        string mediaKey = 4;
+        string mediaIv = 5;
+        string mediaURL = 6;
+        bool isZipped = 7;
+        string deprecatedTitle = 8;
+        repeated .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo.LocalizedAddressesEntry localizedAddresses = 9;
+        repeated .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo.SCStoryElement_SnapInfo_TitleForZoom titlesForMaxZoomArray = 10;
+        .snapchat.context.SCLocalizedStringSet title = 11;
+        string venueId = 12;
+        .snapchat.research.SASAudioStitch audioStitch = 13;
+        .snapchat.context.SCLocalizedStringSet localitySubtitle = 14;
+        .snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 15;
+        bool suppressContext = 16;
+        .snapchat.context.SCContextContextHint contextHint = 17;
+        .snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 18;
+        string attachmentURL = 19;
+        .snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 20;
+        string overlayText = 21;
+        string unlockablesSnapInfo = 22;
+        .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo.SCStoryElement_SnapInfo_Source source = 23;
+        .snapchat.streaming.SCMTThumbnailInfo streamingThumbnailInfo = 24;
+        bool hasLensMetadata = 25;
+        .snapchat.context.SCStoryElement.SCStoryElement_SnapInfo.SCDynamicSnapSource dynamicSnapSource = 26;
+        bytes boltContentObject = 27;
+        string decryptedBurntInContentURL = 28;
+        .address.SCMapsAddressIds addressIds = 29;
+        .snapchat.context.SCSnapBoltMediaInfo snapBoltMediaInfo = 30;
+        .snapchat.snapdoc.SDMSponsor sponsor = 31;
+        string sourceContentURL = 32;
+        message LocalizedAddressesEntry {
+            string key = 1;
+            .address.SCMapsAddress value = 2;
+        }
+        message SCStoryElement_SnapInfo_TitleForZoom {
+            double maxZoom = 1;
+            string title = 2;
+        }
+        enum SCDynamicSnapSource {
+            SCDynamicSnapSource_PublicUser = 0;
+            SCDynamicSnapSource_OurStory = 1;
+            SCDynamicSnapSource_SingleSnapStory = 2;
+            SCDynamicSnapSource_VenueProfile = 3;
+        }
+        enum SCSnapMediaType {
+            SCSnapMediaType_SnapMediaTypeImage = 0;
+            SCSnapMediaType_SnapMediaTypeVideo = 1;
+            SCSnapMediaType_SnapMediaTypeVideoNoSound = 2;
+            SCSnapMediaType_SnapMediaTypeFriend = 3;
+            SCSnapMediaType_SnapMediaTypeBlob = 4;
+            SCSnapMediaType_SnapMediaTypeLaguna = 5;
+            SCSnapMediaType_SnapMediaTypeLagunaNoSound = 6;
+            SCSnapMediaType_SnapMediaTypeAudioStitch = 9;
+            SCSnapMediaType_SnapMediaTypePsychomantis = 10;
+            SCSnapMediaType_SnapMediaTypeScreamingmantis = 11;
+            SCSnapMediaType_SnapMediaTypeVideoSoundMalibu = 12;
+            SCSnapMediaType_SnapMediaTypeVideoNoSoundMalibu = 13;
+            SCSnapMediaType_SnapMediaTypeVideoSoundLagunaHd = 14;
+            SCSnapMediaType_SnapMediaTypeVideoNoSoundLagunaHd = 15;
+            SCSnapMediaType_SnapMediaTypeGhostmantis = 16;
+            SCSnapMediaType_SnapMediaTypeVideoSoundNewport = 17;
+            SCSnapMediaType_SnapMediaTypeVideoNoSoundNewport = 18;
+            SCSnapMediaType_SnapMediaTypeAudio = 19;
+            SCSnapMediaType_SnapMediaTypeBloop = 20;
+            SCSnapMediaType_SnapMediaTypeSpectaclesImage = 21;
+            SCSnapMediaType_SnapMediaTypeSpectaclesVideo = 22;
+            SCSnapMediaType_SnapMediaTypeSpectaclesVideoNoSound = 23;
+            SCSnapMediaType_SnapMediaTypeCheeriosImage = 24;
+            SCSnapMediaType_SnapMediaTypeCheeriosVideoSound = 25;
+            SCSnapMediaType_SnapMediaTypeCheeriosVideoNoSound = 26;
+        }
+        enum SCStoryElement_SnapInfo_Source {
+            SCStoryElement_SnapInfo_Source_Unknown = 0;
+            SCStoryElement_SnapInfo_Source_CameraRoll = 1;
+            SCStoryElement_SnapInfo_Source_Memories = 2;
+        }
+    }
+    message SCStoryElement_ThumbnailInfo {
+        string thumbnailURL = 1;
+        string thumbnailIv = 2;
+        string mediaKey = 3;
+        string mediaId = 4;
+        bytes thumbnailContentObject = 5;
+        string thumbnailCoKey = 6;
+        string thumbnailCoIv = 7;
+        string encryptedThumbnailURL = 8;
+    }
+    message SCStoryElement_WebMediaInfo {
+        string contentURL = 1;
+        int32 durationMs = 2;
+    }
+    enum SCContentType {
+        SCContentType_ContentTypeSnap = 0;
+        SCContentType_ContentTypeVideo = 1;
+        SCContentType_ContentTypeImage = 2;
+        SCContentType_ContentTypeWebURL = 3;
+        SCContentType_ContentTypeHtml = 4;
+        SCContentType_ContentTypeExplorer = 5;
+        SCContentType_ContentTypeSearch = 6;
+        SCContentType_ContentTypeThreeVi = 7;
+    }
+    enum SCDeleteAction {
+        SCDeleteAction_None = 0;
+        SCDeleteAction_Delete = 1;
+        SCDeleteAction_Archive = 2;
+    }
+}
+
+message SCStoryElementDebug {
+    repeated .snapchat.context.SCStoryElementDebug.AttributesEntry attributes = 1;
+    message AttributesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCStoryElementMetrics {
+    int64 lastUpdateTimestampMs = 1;
+    int32 viewCount = 2;
+    int32 screenshotCount = 3;
+    .google.protobuf.Int32Value reach = 4;
+    .google.protobuf.Int32Value screenshots = 5;
+    .google.protobuf.Int32Value storyReplies = 6;
+    .google.protobuf.Int32Value uniqueViewersSubscribers = 7;
+    .google.protobuf.Int32Value uniqueViewersNonSubscribers = 8;
+    .google.protobuf.Int32Value snapViews = 9;
+    .google.protobuf.Int32Value swipeUps = 10;
+    .google.protobuf.Int32Value tapForward = 11;
+    .google.protobuf.Int32Value tapBackward = 12;
+    .google.protobuf.Int32Value swipeAways = 13;
+    .google.protobuf.Int32Value boosts = 14;
+    .google.protobuf.Int32Value shares = 15;
+    .google.protobuf.Int32Value subscribes = 16;
+    int32 views = 17;
+    string additionalDetailsURL = 100;
+    .serengeti.SGTILink additionalDetailsLink = 101;
+}
+
+message SCStoryManifest {
+    string id_p = 1;
+    string version = 2;
+    string displayName = 3;
+    string unviewedThumbnailURL = 4;
+    string viewedThumbnailURL = 5;
+    repeated string tileUrlsArray = 6;
+    int64 sunriseTimestamp = 7;
+    int64 sunsetTimestamp = 8;
+    double totalDuration = 9;
+    int32 totalCount = 10;
+    .snapchat.context.SCLocalizedStringSet title = 11;
+    repeated .snapchat.context.SCStoryElement elementsArray = 100;
+    .snapchat.context.SCUserAction defaultPressAndHoldAction = 200;
+    repeated .snapchat.context.SCStoryElement ineligibleResultsArray = 300;
+}
+
+message SCUserAction {
+    string elementId = 1;
+    string displayText = 2;
+    .snapchat.context.SCUserAction.SCActionType actionType = 3;
+    bool shouldPrefetchOnPrev = 10;
+    bool allowAd = 20;
+    enum SCActionType {
+        SCActionType_ActionTypeElement = 0;
+        SCActionType_ActionTypeDismiss = 1;
+        SCActionType_ActionTypeBack = 2;
+    }
+}

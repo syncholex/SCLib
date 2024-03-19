@@ -1,0 +1,31 @@
+syntax = "proto3";
+package com.snapchat.measurement.surveys.inclusionpanel;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Measurement.Surveys.Inclusionpanel";
+
+message GetSurveyDataRequest {
+}
+
+message GetSurveyDataResponse {
+    .com.snapchat.measurement.surveys.inclusionpanel.SurveyResponse data_p = 1;
+    bool isOptedIn = 2;
+}
+
+message QuestionResponse {
+    int32 questionId = 1;
+    repeated int32 choiceArray = 2;
+}
+
+message SurveyResponse {
+    int32 version = 1;
+    repeated .com.snapchat.measurement.surveys.inclusionpanel.QuestionResponse responsesArray = 2;
+}
+
+message UpdateSurveyDataRequest {
+    .com.snapchat.measurement.surveys.inclusionpanel.SurveyResponse data_p = 1;
+    bool requestedOptIn = 2;
+    bool requestedOptOut = 3;
+}
+
+message UpdateSurveyDataResponse {
+}

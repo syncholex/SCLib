@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.lenses;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLens";
+option csharp_namespace = "SnapProto.Services.Snapchat.Lenses";
+
+import "snapchat/lenses/SCLensRemoteApiService.proto";
+
+service RemoteApiService{
+    rpc GetOAuth2Info(.snapchat.lenses.SCLensGetOAuth2InfoRequest) returns (.snapchat.lenses.SCLensGetOAuth2InfoResponse);
+    rpc PerformApiCall(.snapchat.lenses.SCLensPerformApiCallRequest) returns (.snapchat.lenses.SCLensPerformApiCallResponse);
+    rpc PerformHttpCall(.snapchat.lenses.SCLensPerformHttpCallRequest) returns (.snapchat.lenses.SCLensPerformHttpCallResponse);
+    rpc PerformTokenExchange(.snapchat.lenses.SCLensPerformTokenExchangeRequest) returns (.snapchat.lenses.SCLensPerformTokenExchangeResponse);
+    rpc RefreshToken(.snapchat.lenses.SCLensRefreshTokenRequest) returns (.snapchat.lenses.SCLensRefreshTokenResponse);
+}

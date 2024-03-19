@@ -1,0 +1,28 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+message SCMessagingConversationRetentionPolicy {
+    .snapchat.messaging.SCMessagingDynamicConversationRetentionPolicy dynamic = 1;
+}
+
+message SCMessagingDynamicConversationRetentionPolicy {
+    bool sendReadMessages = 1;
+    bool sendReleaseMessages = 2;
+    int64 unreadRetentionTimeSeconds = 3;
+    int64 readRetentionTimeSeconds = 4;
+}
+
+message SCMessagingHighWatermark {
+    .snapchat.messaging.SCMessagingHighWatermark.SCMessagingHighWatermark_HighWatermarkType highWatermarkType = 1;
+    uint64 messageId = 2;
+    uint64 conversationVersion = 3;
+    enum SCMessagingHighWatermark_HighWatermarkType {
+        SCMessagingHighWatermark_HighWatermarkType_Read = 0;
+        SCMessagingHighWatermark_HighWatermarkType_Release = 1;
+        SCMessagingHighWatermark_HighWatermarkType_SnapRelease = 2;
+        SCMessagingHighWatermark_HighWatermarkType_Reaction = 3;
+    }
+}

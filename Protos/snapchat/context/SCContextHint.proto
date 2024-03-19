@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.context;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCContext";
+option csharp_namespace = "SnapProto.Snapchat.Context";
+
+import "snapchat/context/SCContextV1Common.proto";
+import "snapchat/context2/api/SCCTXApi.proto";
+
+message SCContextAffordance {
+    sint32 textKey = 11;
+}
+
+message SCContextContentMetadata {
+    repeated string taggedUserIdsArray = 21;
+    repeated string taggedNamesArray = 22;
+}
+
+message SCContextContextHint {
+    .snapchat.context.SCContextContextHint.SCContextContextHint_Hint hint = 1;
+    int64 timestamp = 2;
+    .snapchat.context.SCContextAffordance affordance = 3;
+    .snapchat.context.SCContextContentMetadata contentMetadata = 4;
+    repeated .snapchat.context.SCContextV1ContextField moreContextArray = 10;
+    .snapchat.context2.api.SCCTXContextClientInfo contextClientInfo = 11;
+    .snapchat.context2.api.SCCTXContextClientInfo unencryptedClientInfo = 12;
+    bytes encryptedClientInfo = 13;
+    enum SCContextContextHint_Hint {
+        SCContextContextHint_Hint_Auto = 0;
+        SCContextContextHint_Hint_On = 1;
+        SCContextContextHint_Hint_Off = 2;
+    }
+}

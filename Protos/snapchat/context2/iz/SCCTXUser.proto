@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.context2.iz;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Iz";
+
+import "snapchat/context2/iz/SCCTXImage.proto";
+import "snapchat/context2/iz/SCCTXSnapPro.proto";
+
+message SCCTXUserIdentity {
+    string id_p = 1;
+    string username = 2;
+    string displayName = 3;
+    string businessProfileId = 4;
+    bool isOfficial = 5;
+    .snapchat.context2.iz.SCCTXBitmoji bitmoji = 6;
+    .snapchat.context2.iz.SCCTXSnapProIdentity snapProIdentity = 7;
+}
