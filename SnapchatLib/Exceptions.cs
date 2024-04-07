@@ -8,23 +8,16 @@ public class AndroidIDNotSet: Exception
     }
 }
 
-public abstract class ContactJustinException : Exception
+public abstract class OpenIssueException : Exception
 {
-    protected ContactJustinException(string error, Exception exception = null) : base($"${error}. Contact Justxn to report a bug.{exception?.Message}", exception)
+    protected OpenIssueException(string error, Exception exception = null) : base($"${error}. Open Issue to report a bug.{exception?.Message}", exception)
     {
     }
 }
 
-public class SignerException : ContactJustinException
+public class SignerException : OpenIssueException
 {
     public SignerException(string error): base(error)
-    {
-    }
-}
-
-public class AuthTokenNotSetException : Exception
-{
-    public AuthTokenNotSetException(): base("AuthToken is not defined. Use SnapchatLib.Login first")
     {
     }
 }
@@ -36,28 +29,28 @@ public class FailedToInitClient : Exception
     }
 }
 
-public class DeserializationException : ContactJustinException
+public class DeserializationException : OpenIssueException
 {
     public DeserializationException(string typeName) : base($"Unable to deserialize data into type \"{typeName}\"")
     {
     }
 }
 
-public class SerializationException : ContactJustinException
+public class SerializationException : OpenIssueException
 {
     public SerializationException(string typeName, Exception innerException) : base($"Unable to deserialize data into type \"{typeName}\"", innerException)
     {
     }
 }
 
-public class FailedToPredictGenderException : ContactJustinException
+public class FailedToPredictGenderException : OpenIssueException
 {
     public FailedToPredictGenderException() : base($"Failed to predict gender")
     {
     }
 }
 
-public class EmptyIEnumerableException : ContactJustinException
+public class EmptyIEnumerableException : OpenIssueException
 {
     public EmptyIEnumerableException() : base($"The code was expecting elements in side a collection but it was empty")
     {

@@ -14,7 +14,7 @@ using static SnapProto.Snapchat.Snapdoc.SDMAttachments.Types;
 
 namespace SnapchatLib.Exceptions
 {
-    public class NoUploadUrlReceivedException : ContactJustinException
+    public class NoUploadUrlReceivedException : OpenIssueException
     {
         public NoUploadUrlReceivedException() : base("Received an empty UploadURL")
         {
