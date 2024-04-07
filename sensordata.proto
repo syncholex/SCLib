@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+message Motion {
+  fixed64 event_time = 1;
+  int32 event_period = 2;
+  float event_pressure = 3;
+  float event_size = 4;
+  int32 event_device_id = 5;
+  float event_x = 6;
+  float event_y = 7;
+}
+
+message Device {
+  int32 device_id = 1;
+  string device_name = 2;
+  string device_descriptor = 3;
+  int32 keyboard_type = 4;
+  int32 device_sources = 5;
+}
+
+message Sensor {
+  float speed_x = 1;
+  float speed_y = 2;
+  float speed_z = 3;
+}
+
+message SensorType {
+  string name = 1;
+  int64 vendor_hashCode = 2;
+  int32 type = 3;
+}
+
+message SnapSensorData {
+  repeated Motion motions = 1;
+  repeated Device devices = 2;
+  repeated Sensor sensors = 3;
+  repeated SensorType sensor_types = 4;
+}
