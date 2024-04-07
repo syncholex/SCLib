@@ -19,3 +19,8 @@
                  IPAPIPROKEY = "https://members.ip-api.com/ get a key here",
              });
 ```
+# How to sign?
+- https://github.com/piombilubicsr/Signers (NOT FREE)
+
+# Why'd You Release Such a Smexy Lib
+- Blame Cleo / Jenildo using my stuff without permission so who knows how many people have access may aswell make it open source so community can use
