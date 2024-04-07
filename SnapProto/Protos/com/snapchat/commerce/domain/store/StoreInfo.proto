@@ -1,0 +1,30 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.store;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Store";
+
+import "com/snapchat/commerce/domain/SnapCodeInfo.proto";
+import "com/snapchat/commerce/domain/store/SnapCommercePolicy.proto";
+import "com/snapchat/commerce/domain/store/StoreCategory.proto";
+import "com/snapchat/commerce/domain/store/StorePixelInfo.proto";
+import "com/snapchat/commerce/domain/store/StorePolicy.proto";
+
+message StoreInfo {
+    bytes id_p = 1;
+    string name = 2;
+    string owner = 3;
+    string email = 4;
+    string phone = 5;
+    string iconURL = 6;
+    repeated .com.snapchat.commerce.domain.store.StoreCategory storeCategoriesArray = 7;
+    .com.snapchat.commerce.domain.store.StorePolicy storePolicy = 8;
+    string supportURL = 9;
+    bool doesShipToUserLocation = 10;
+    bool shouldUseWebview = 11;
+    string soldBy = 12;
+    .com.snapchat.commerce.domain.store.SnapCommercePolicy snapCommercePolicy = 13;
+    bool isThirdPartyStore = 14;
+    string description_p = 15;
+    .com.snapchat.commerce.domain.SnapCodeInfo snapCodeInfo = 16;
+    .com.snapchat.commerce.domain.store.StorePixelInfo storePixelInfo = 17;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+message SCAdsCookieInfo {
+    string cookieName = 1;
+    bytes cookieContent = 2;
+    .snapchat.ads.render.schema.SCAdsCookieInfo.SCAdsCookieInfo_CookieContentTransformation cookieContentTransformation = 3;
+    .snapchat.ads.render.schema.SCAdsCookieInfo.SCAdsCookieInfo_CookieType cookieType = 4;
+    enum SCAdsCookieInfo_CookieContentTransformation {
+        SCAdsCookieInfo_CookieContentTransformation_Utf8Decode = 0;
+        SCAdsCookieInfo_CookieContentTransformation_Base64Encode = 1;
+    }
+    enum SCAdsCookieInfo_CookieType {
+        SCAdsCookieInfo_CookieType_Unknown = 0;
+        SCAdsCookieInfo_CookieType_Product = 1;
+        SCAdsCookieInfo_CookieType_Ad = 2;
+    }
+}

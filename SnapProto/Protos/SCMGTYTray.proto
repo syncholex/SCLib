@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.map.garfield.tray;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGTY";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Garfield.Tray";
+
+import "snapchat/map/garfield/tray/SCMGTYService.proto";
+
+service Tray{
+    rpc GetItems(.snapchat.map.garfield.tray.SCMGTYGetItemsRequest) returns (.snapchat.map.garfield.tray.SCMGTYGetItemsResponse);
+    rpc GetMarkerData(.snapchat.map.garfield.tray.SCMGTYGetMarkerDataRequest) returns (.snapchat.map.garfield.tray.SCMGTYGetMarkerDataResponse);
+}

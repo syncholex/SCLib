@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.response;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Response";
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseStoreMetadata.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetStoresForUserResponse {
+    string requestId = 1;
+    .com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+    .com.snapchat.showcase.wire.response.GetStoresForUserResponse.GetStoresForUserResponse_StoreData data_p = 3;
+    message GetStoresForUserResponse_StoreData {
+        repeated .com.snapchat.showcase.wire.metadata.ShowcaseStoreMetadata storesArray = 1;
+    }
+}

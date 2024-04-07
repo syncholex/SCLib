@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Order";
+
+import "com/snapchat/commerce/domain/PrintingMetadata.proto";
+import "com/snapchat/commerce/domain/bitmoji/BitmojiAssetInfo.proto";
+import "com/snapchat/commerce/domain/order/ItemInfo.proto";
+
+message CheckoutLineItem {
+    .com.snapchat.commerce.domain.order.ItemInfo itemInfo = 1;
+    .com.snapchat.commerce.domain.bitmoji.BitmojiAssetInfo bitmojiAssetInfo = 2;
+    bytes bitmojiProductAssetId = 3;
+    .com.snapchat.commerce.domain.PrintingMetadata printingMetadata = 4;
+}

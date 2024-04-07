@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPCustomSticker.proto";
+
+message SCCTPCustomStickerPack {
+    repeated .snapchat.creativetools.common.SCCTPCustomStickerPackEntry entriesArray = 1;
+}
+
+message SCCTPCustomStickerPackEntry {
+    bytes stickerId = 1;
+    int64 orderWeight = 2;
+    .snapchat.creativetools.common.SCCTPCustomSticker customSticker = 3;
+}

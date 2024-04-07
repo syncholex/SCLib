@@ -1,0 +1,48 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMoss";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+message SCMossImageMetadata {
+    uint64 sizeBytes = 1;
+    uint32 width = 2;
+    uint32 height = 3;
+    .snapchat.content.SCMossImageMetadata.SCMossImageMetadata_ImageFormat imageFormat = 4;
+    enum SCMossImageMetadata_ImageFormat {
+        SCMossImageMetadata_ImageFormat_Unknown = 0;
+        SCMossImageMetadata_ImageFormat_Jpeg = 1;
+        SCMossImageMetadata_ImageFormat_Webp = 2;
+        SCMossImageMetadata_ImageFormat_Png = 3;
+        SCMossImageMetadata_ImageFormat_Gif = 4;
+    }
+}
+
+message SCMossMediaVariantMetadata {
+    .snapchat.content.SCMossVideoMetadata videoMetadata = 1;
+    .snapchat.content.SCMossImageMetadata imageMetadata = 2;
+}
+
+message SCMossVideoMetadata {
+    uint64 sizeBytes = 1;
+    float ssim = 2;
+    float psnr = 3;
+    bool faststart = 4;
+    float vmaf = 5;
+    uint32 width = 6;
+    uint32 height = 7;
+    .snapchat.content.SCMossVideoMetadata.SCMossVideoMetadata_VideoFormat videoFormat = 8;
+    .snapchat.content.SCMossVideoMetadata.SCMossVideoMetadata_PrefetchHint prefetchHint = 9;
+    uint32 lengthMs = 10;
+    message SCMossVideoMetadata_PrefetchHint {
+        repeated uint32 kbPerTimeWindowArray = 1;
+        uint32 timeWindowMs = 2;
+    }
+    enum SCMossVideoMetadata_VideoFormat {
+        SCMossVideoMetadata_VideoFormat_Unknown = 0;
+        SCMossVideoMetadata_VideoFormat_Avc = 1;
+        SCMossVideoMetadata_VideoFormat_Hevc = 2;
+        SCMossVideoMetadata_VideoFormat_Vp9 = 3;
+        SCMossVideoMetadata_VideoFormat_Av1 = 4;
+    }
+}

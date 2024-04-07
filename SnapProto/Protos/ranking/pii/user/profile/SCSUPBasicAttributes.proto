@@ -1,0 +1,102 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/pii/user/profile/SCSUPAppVersion.proto";
+import "ranking/pii/user/profile/SCSUPStats.proto";
+
+message SCSUPBasicAttributes {
+    string userId = 1;
+    float userScore = 2;
+    bool isOfficialUser = 3;
+    bool hasProfilePicture = 4;
+    bool hasBitmoji = 5;
+    int64 friendCount = 6;
+    int64 followerCount = 7;
+    int64 followingCount = 8;
+    string userDisplayName = 9;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSUPBasicAttributes_DisplayNameStatus displayNameStatus = 10;
+    int64 accountCreationTimestampSecs = 11;
+    string accountCreationCountry = 12;
+    bool isPhoneVerified = 13;
+    bool isEmailVerified = 14;
+    bool isLocked = 15;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSUPBasicAttributes_LockReason lockReason = 16;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSUPBasicAttributes_StoryPrivacy storyPrivacy = 17;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSCOREUserGender inferredGender = 18;
+    string devicePlatform = 19;
+    string deviceModel = 20;
+    string deviceVersion = 21;
+    string deviceCarrier = 22;
+    int32 age = 23;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics snapsReceivedMetrics = 24;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics snapsSentMetrics = 25;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics chatsReceivedMetrics = 26;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics chatsSentMetrics = 27;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics myStoryPostedMetrics = 28;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics myStoryViewMetrics = 29;
+    .ranking.pii.user.profile.SCSUPWindowedMetrics myStoryViewTimeSecMetrics = 30;
+    string locale = 31;
+    bool isTestUser = 33;
+    int64 lastUpdatedTimestampInMsecs = 34;
+    bool isEligibleForDiscoverFeed = 35;
+    .ranking.pii.user.profile.SCSUPAppVersion appVersion = 36;
+    string lastActiveCountry = 37;
+    int32 appOpenL7 = 38;
+    int32 communicationL7 = 39;
+    int32 publisherStoryViewL7 = 40;
+    int32 storyViewL7 = 41;
+    string lastActiveRegion = 42;
+    string lastActiveTimezone = 43;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSCOREUserBucketedAge inferredBucketedAge = 44;
+    bool isSnapProUser = 45;
+    int32 inferredAge = 46;
+    string userTier = 47;
+    string internalCategory = 48;
+    string lastActiveCity = 49;
+    .ranking.pii.user.profile.SCSUPBasicAttributes.SCSUPBasicAttributes_SpotlightEngagementStatus spotlightEngagementStatus = 50;
+    string hashedUserId = 51;
+    enum SCSUPBasicAttributes_DisplayNameStatus {
+        SCSUPBasicAttributes_DisplayNameStatus_DisplayNameStatusUnknown = 0;
+        SCSUPBasicAttributes_DisplayNameStatus_DisplayNameStatusOk = 1;
+        SCSUPBasicAttributes_DisplayNameStatus_DisplayNameStatusWhitelisted = 2;
+        SCSUPBasicAttributes_DisplayNameStatus_DisplayNameStatusTempBlocked = 3;
+    }
+    enum SCSCOREUserBucketedAge {
+        SCSCOREUserBucketedAge_AgeUnknown = 0;
+        SCSCOREUserBucketedAge_AgeLessThan13 = 1;
+        SCSCOREUserBucketedAge_Age13To17 = 2;
+        SCSCOREUserBucketedAge_Age18To24 = 3;
+        SCSCOREUserBucketedAge_Age25To34 = 4;
+        SCSCOREUserBucketedAge_Age35To54 = 5;
+        SCSCOREUserBucketedAge_AgeMoreThan54 = 6;
+    }
+    enum SCSCOREUserGender {
+        SCSCOREUserGender_GenderUnknown = 0;
+        SCSCOREUserGender_GenderMale = 1;
+        SCSCOREUserGender_GenderFemale = 2;
+    }
+    enum SCSUPBasicAttributes_LockReason {
+        SCSUPBasicAttributes_LockReason_LockReasonUnknown = 0;
+        SCSUPBasicAttributes_LockReason_LockReasonAbuseMitigated = 1;
+        SCSUPBasicAttributes_LockReason_LockReasonUserReport = 2;
+        SCSUPBasicAttributes_LockReason_LockReasonNsfw = 3;
+    }
+    enum SCSUPBasicAttributes_SpotlightEngagementStatus {
+        SCSUPBasicAttributes_SpotlightEngagementStatus_Unknown = 0;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_NonUser = 1;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_AccidentalUser = 2;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_CasualUser = 3;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_RegularUser = 4;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_PowerUser = 5;
+        SCSUPBasicAttributes_SpotlightEngagementStatus_OutlierUser = 6;
+    }
+    enum SCSUPBasicAttributes_StoryPrivacy {
+        SCSUPBasicAttributes_StoryPrivacy_StoryPrivacyUnknown = 0;
+        SCSUPBasicAttributes_StoryPrivacy_StoryPrivacyFriends = 1;
+        SCSUPBasicAttributes_StoryPrivacy_StoryPrivacyCustom = 2;
+        SCSUPBasicAttributes_StoryPrivacy_StoryPrivacyEveryone = 3;
+    }
+}

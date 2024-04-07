@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.snapchat.proto.rich_story;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBRichStory";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Rich_story";
+
+message SCPBRichStoryRichStoryDeepLinkAttachment {
+    string uri = 1;
+    bool inAppMode = 2;
+    string appTitle = 3;
+    string inAppBackground = 4;
+    string iosAppIcon = 5;
+    int64 iosAppId = 6;
+    string androidAppIcon = 7;
+    string androidPackageId = 8;
+    string tapLinkActionText = 9;
+    string deepLinkWebFallbackURL = 10;
+    string deepLinkFallbackType = 11;
+}

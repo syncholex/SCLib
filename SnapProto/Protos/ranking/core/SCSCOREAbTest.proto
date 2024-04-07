@@ -1,0 +1,63 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCOREABFeatureLoggingEntry {
+    string clientDfSessionId = 1;
+    string requestId = 2;
+    string crStudyId = 3;
+    string userName = 4;
+    string ghostId = 5;
+    repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_ExperimentCr serverCrPerTypeArray = 6;
+    repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_ExperimentFirstChangedPosition firstChangedPositionPerTypeArray = 7;
+    repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_CustomFeatures customFeaturesArray = 8;
+    repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_StudyCRInfo studyCrsArray = 9;
+    message SCSCOREABFeatureLoggingEntry_CustomFeatures {
+        string studyId = 1;
+        repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_CustomFeatures.SCSCOREABFeatureLoggingEntry_CustomFeatures_Feature featuresArray = 2;
+        message SCSCOREABFeatureLoggingEntry_CustomFeatures_Feature {
+            string name = 1;
+            string stringVal = 2;
+            int64 intVal = 3;
+            double doubleVal = 4;
+            bool boolVal = 5;
+        }
+    }
+    message SCSCOREABFeatureLoggingEntry_ExperimentCr {
+        int32 feedType = 1;
+        float serverCr = 2;
+    }
+    message SCSCOREABFeatureLoggingEntry_ExperimentFirstChangedPosition {
+        int32 feedType = 1;
+        int32 firstChangedPosition = 2;
+    }
+    message SCSCOREABFeatureLoggingEntry_StudyCRInfo {
+        string crStudyId = 1;
+        repeated .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_StudyCRInfo.SCSCOREABFeatureLoggingEntry_StudyCRInfo_PerFeedInfo perFeedArray = 2;
+        .ranking.core.SCSCOREABFeatureLoggingEntry.SCSCOREABFeatureLoggingEntry_StudyCRInfo.SCSCOREABFeatureLoggingEntry_StudyCRInfo_TriggerReasons triggerReasons = 3;
+        message SCSCOREABFeatureLoggingEntry_StudyCRInfo_PerFeedInfo {
+            int32 feedType = 1;
+            float serverCr = 2;
+            int32 firstChangedPosition = 3;
+        }
+        message SCSCOREABFeatureLoggingEntry_StudyCRInfo_TriggerReasons {
+            bool impactSampled = 1;
+            bool experimentTriggered = 2;
+        }
+    }
+}
+
+message SCSCOREABPriority {
+}
+
+message SCSCOREABTestStudyInfo {
+    string studyId = 1;
+    repeated .ranking.core.SCSCOREABTestStudyInfo.VariableValuesEntry variableValues = 2;
+    string experimentId = 3;
+    message VariableValuesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

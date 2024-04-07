@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPCTConfig {
+    repeated .snapchat.creativetools.common.SCCTPCTConfig.SCCTPCTConfig_Target targetsArray = 1;
+    repeated string languagesArray = 2;
+    enum SCCTPCTConfig_Target {
+        SCCTPCTConfig_Target_Chat = 0;
+        SCCTPCTConfig_Target_Preview = 1;
+    }
+}

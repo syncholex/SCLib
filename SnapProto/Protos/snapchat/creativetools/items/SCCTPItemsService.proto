@@ -1,0 +1,36 @@
+syntax = "proto3";
+package snapchat.creativetools.items;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Items";
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+import "snapchat/creativetools/common/SCCTPAcceptLanguages.proto";
+import "snapchat/creativetools/common/SCCTPCtItem.proto";
+
+message SCCTPCTItemsRequest {
+}
+
+message SCCTPCTItemsResponse {
+    repeated .snapchat.creativetools.common.SCCTPCTItem itemsArray = 1;
+}
+
+message SCCTPCameoCTItemsOptions {
+    repeated .snapchat.creativetools.items.SCCTPCameoCTItemsOptions.SCCameosGender gendersArray = 1;
+    .snapchat.cameos.common.SCCameosApiVersion apiVersion = 2;
+    repeated .snapchat.creativetools.common.SCCTPAcceptLanguagesEntry acceptLanguagesArray = 3;
+    int32 maxCustomCameos = 4;
+    int32 maxInfoCameos = 5;
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}
+
+message SCCTPCameoCTItemsRequest {
+    .snapchat.creativetools.items.SCCTPCameoCTItemsOptions cameoOptions = 1;
+}
+
+message SCCTPMusicTrackCTItemsRequest {
+}

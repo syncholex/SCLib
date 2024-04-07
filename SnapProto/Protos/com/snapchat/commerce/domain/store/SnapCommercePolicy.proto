@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.store;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Store";
+
+message SnapCommercePolicy {
+    string snapCommercePolicyURL = 1;
+    string snapCommercePolicyLabel = 2;
+}

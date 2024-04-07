@@ -1,0 +1,28 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Services.Snapchat.Janus.Api";
+
+import "snapchat/janus/api/SCJanusLogin1Tl.proto";
+import "snapchat/janus/api/SCJanusLoginChannelVerification.proto";
+import "snapchat/janus/api/SCJanusLoginCode.proto";
+import "snapchat/janus/api/SCJanusLoginOdlv.proto";
+import "snapchat/janus/api/SCJanusLoginPassword.proto";
+import "snapchat/janus/api/SCJanusLoginReactivate.proto";
+import "snapchat/janus/api/SCJanusLoginTwoFa.proto";
+
+service LoginService{
+    rpc LoginWith1TLv1(.snapchat.janus.api.SCJanusLoginWith1TLv1Request) returns (.snapchat.janus.api.SCJanusLoginWith1TLv1Response);
+    rpc LoginWith1TLv3(.snapchat.janus.api.SCJanusLoginWith1TLv3Request) returns (.snapchat.janus.api.SCJanusLoginWith1TLv3Response);
+    rpc LoginWithPassword(.snapchat.janus.api.SCJanusLoginWithPasswordRequest) returns (.snapchat.janus.api.SCJanusLoginWithPasswordResponse);
+    rpc ReactivateAccount(.snapchat.janus.api.SCJanusReactivateAccountRequest) returns (.snapchat.janus.api.SCJanusReactivateAccountResponse);
+    rpc SendChannelVerificationCode(.snapchat.janus.api.SCJanusSendChannelVerificationCodeRequest) returns (.snapchat.janus.api.SCJanusSendChannelVerificationCodeResponse);
+    rpc SendLoginCode(.snapchat.janus.api.SCJanusSendLoginCodeRequest) returns (.snapchat.janus.api.SCJanusSendLoginCodeResponse);
+    rpc SendODLVCode(.snapchat.janus.api.SCJanusSendODLVCodeRequest) returns (.snapchat.janus.api.SCJanusSendODLVCodeResponse);
+    rpc SendTwoFACode(.snapchat.janus.api.SCJanusSendTwoFACodeRequest) returns (.snapchat.janus.api.SCJanusSendTwoFACodeResponse);
+    rpc VerifyChannel(.snapchat.janus.api.SCJanusVerifyChannelRequest) returns (.snapchat.janus.api.SCJanusVerifyChannelResponse);
+    rpc VerifyLoginCode(.snapchat.janus.api.SCJanusVerifyLoginCodeRequest) returns (.snapchat.janus.api.SCJanusVerifyLoginCodeResponse);
+    rpc VerifyODLV(.snapchat.janus.api.SCJanusVerifyODLVRequest) returns (.snapchat.janus.api.SCJanusVerifyODLVResponse);
+    rpc VerifyTwoFA(.snapchat.janus.api.SCJanusVerifyTwoFARequest) returns (.snapchat.janus.api.SCJanusVerifyTwoFAResponse);
+}

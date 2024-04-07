@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPEncryptedMedia {
+    string contentURL = 1;
+    bytes encKey = 2;
+    bytes encIv = 3;
+    bool isPermanentContentURL = 4;
+    .snapchat.creativetools.common.SCCTPEncryptedMedia.SCCTPEncryptionType encType = 5;
+    enum SCCTPEncryptionType {
+        SCCTPEncryptionType_EncryptionTypeUnset = 0;
+        SCCTPEncryptionType_AesGcm = 1;
+        SCCTPEncryptionType_AesCbc = 2;
+    }
+}

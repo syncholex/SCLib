@@ -1,0 +1,50 @@
+syntax = "proto3";
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPbGraphene";
+option csharp_namespace = "SnapProto";
+
+message SCPbGrapheneAppVersion {
+    .SCPbGrapheneAppVersion.SCPbGrapheneAppVersion_VersionNumber versionNumber = 1;
+    string flavor = 2;
+    string variant = 3;
+    message SCPbGrapheneAppVersion_VersionNumber {
+        int32 major = 1;
+        int32 minor = 2;
+        int32 patch = 3;
+        int32 build = 4;
+    }
+}
+
+message SCPbGrapheneMetric {
+    string partitionName = 1;
+    string metricName = 2;
+    repeated .SCPbGrapheneMetric.CustomDimensionsEntry customDimensions = 3;
+    repeated int64 valuesArray = 4;
+    message CustomDimensionsEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPbGrapheneMetricFrame {
+    repeated .SCPbGrapheneMetric timersArray = 1;
+    repeated .SCPbGrapheneMetric countersArray = 2;
+    repeated .SCPbGrapheneMetric levelsArray = 3;
+    uint32 protocolVersion = 4;
+    uint64 bufferStartTimestampMillis = 5;
+    uint64 bufferEndTimestampMillis = 6;
+    .SCPbGrapheneAppVersion appVersion = 7;
+    .SCPbGrapheneMetricFrame.SCPbGrapheneOsType clientOsType = 8;
+    string userName = 9;
+    fixed32 samplingId = 10;
+    string userGuid = 11;
+    bytes abC4Token = 12;
+    enum SCPbGrapheneOsType {
+        SCPbGrapheneOsType_UnknownOsType = 0;
+        SCPbGrapheneOsType_OsIos = 1;
+        SCPbGrapheneOsType_OsAndroid = 2;
+        SCPbGrapheneOsType_OsWeb = 3;
+        SCPbGrapheneOsType_OsSdkIos = 4;
+        SCPbGrapheneOsType_OsSdkAndroid = 5;
+    }
+}

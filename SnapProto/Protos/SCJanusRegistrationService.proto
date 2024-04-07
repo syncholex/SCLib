@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Services.Snapchat.Janus.Api";
+
+import "snapchat/janus/api/SCJanusRegistrationUsernamePassword.proto";
+
+service RegistrationService{
+    rpc RegisterWithUsernamePassword(.snapchat.janus.api.SCJanusRegisterWithUsernamePasswordRequest) returns (.snapchat.janus.api.SCJanusRegisterWithUsernamePasswordResponse);
+}

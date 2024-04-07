@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+import "snapchat/ads/render/schema/SCAdsAppPopularityInfo.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsAppInstall {
+    string androidPackageId = 1;
+    string iosAppId = 2;
+    string appTitle = 3;
+    .snapchat.ads.render.schema.SCAdsMediaRenderInfo iconRenderInfo = 4;
+    string iosAppTitle = 5;
+    string androidAppTitle = 6;
+    .snapchat.ads.render.schema.SCAdsAppPopularityInfo iosPopularityInfo = 7;
+    .snapchat.ads.render.schema.SCAdsAppPopularityInfo androidPopularityInfo = 8;
+    repeated .snapchat.ads.render.schema.SCAdsAppInstall.PlayStoreParamsEntry playStoreParams = 9;
+    string productPageId = 10;
+    bool enableSkoverlay = 11;
+    message PlayStoreParamsEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

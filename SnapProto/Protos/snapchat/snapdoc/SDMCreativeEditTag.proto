@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMCreativeEditTag {
+    repeated .snapchat.snapdoc.SDMCreativeEditTag.SDMCreativeEditTag_CreativeToolFeature creativeToolFeaturesArray = 1;
+    uint32 uniqueId = 2;
+    repeated .snapchat.snapdoc.SDMFeatureTag featureTagsArray = 3;
+    enum SDMCreativeEditTag_CreativeToolFeature {
+        SDMCreativeEditTag_CreativeToolFeature_Unset = 0;
+        SDMCreativeEditTag_CreativeToolFeature_Music = 1;
+        SDMCreativeEditTag_CreativeToolFeature_Voiceover = 2;
+    }
+}
+
+message SDMFeatureTag {
+    uint32 tagId = 1;
+    .snapchat.snapdoc.SDMFeatureTag.SDMFeatureTag_CreativeToolFeature creativeToolFeature = 2;
+    enum SDMFeatureTag_CreativeToolFeature {
+        SDMFeatureTag_CreativeToolFeature_Unset = 0;
+        SDMFeatureTag_CreativeToolFeature_Music = 1;
+        SDMFeatureTag_CreativeToolFeature_Voiceover = 2;
+        SDMFeatureTag_CreativeToolFeature_MediaTemplate = 3;
+    }
+}

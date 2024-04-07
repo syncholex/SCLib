@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.item_favoriting.wire.favorites;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_favoriting.Wire.Favorites";
+
+import "com/snapchat/item_favoriting/wire/favorites/FavoriteItem.proto";
+import "com/snapchat/item_favoriting/wire/favorites/ItemFavoritingDeviceContext.proto";
+
+message RemoveFavoriteRequest {
+    .com.snapchat.item_favoriting.wire.favorites.ItemFavoritingDeviceContext deviceContext = 1;
+    .com.snapchat.item_favoriting.wire.favorites.FavoriteItem favoriteItem = 2;
+}
+
+message RemoveFavoriteResponse {
+}

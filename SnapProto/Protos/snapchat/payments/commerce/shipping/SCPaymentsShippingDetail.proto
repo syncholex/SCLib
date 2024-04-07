@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.payments.commerce.shipping;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Snapchat.Payments.Commerce.Shipping";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/payments/commerce/common/SCPaymentsShippingAddress.proto";
+import "snapchat/payments/commerce/shipping/SCPaymentsShippingOption.proto";
+
+message SCPaymentsShippingDetail {
+    .google.protobuf.Timestamp shipByDate = 1;
+    .google.protobuf.Timestamp receivedByDate = 2;
+    repeated .snapchat.payments.commerce.shipping.SCPaymentsShippingOption shippingOptionsArray = 3;
+    uint32 estimatedShippingDays = 4;
+    .snapchat.payments.commerce.common.SCPaymentsShippingAddress shippingAddress = 5;
+    repeated string trackingNumbersArray = 6;
+    string deliveryNote = 7;
+    string chosenShippingOptionHandle = 8;
+}

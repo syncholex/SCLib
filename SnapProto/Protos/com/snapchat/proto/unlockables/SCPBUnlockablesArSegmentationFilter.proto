@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/SCPBContextFilterSkyItem.proto";
+import "com/snapchat/proto/SCPBPurikuraPatternItem.proto";
+
+message SCPBUnlockablesArSegmentationFilter {
+    .com.snapchat.proto.SCPBContextFilterSkyItem sky = 1;
+    .com.snapchat.proto.SCPBPurikuraPatternItem portrait = 2;
+    bool shouldStillDisplayWithoutSegmentationMatch = 3;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.itemdetailpage;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Itemdetailpage";
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimension.proto";
+
+message VariantDimensionContext {
+    uint64 snapItemGroupId = 1;
+}
+
+message VariantWidget {
+    repeated .com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimension itemVariantDimensionsArray = 1;
+    bytes variantContext = 2;
+}

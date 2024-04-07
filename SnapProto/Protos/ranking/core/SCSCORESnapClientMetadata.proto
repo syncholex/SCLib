@@ -1,0 +1,20 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCORESnapClientMetadata {
+    int64 clientEditTimeBeforeSend = 1;
+    bool savedToMemoriesBeforeSend = 2;
+    bool isLoadedFromCameraRoll = 3;
+    uint32 retakeTrials = 4;
+    repeated uint32 zoomLevelSamplesArray = 5;
+    .ranking.core.SCSCORESnapClientMetadata.SCSCOREConnectionInfo_ConnectionType connectionType = 6;
+    enum SCSCOREConnectionInfo_ConnectionType {
+        SCSCOREConnectionInfo_ConnectionType_ConnectionUnknown = 0;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionWifi = 1;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionCell = 2;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionEthernet = 3;
+    }
+}

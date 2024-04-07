@@ -1,0 +1,136 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/content/MediaReference.proto";
+import "snapchat/snapdoc/SDMCaptureCharacteristics.proto";
+import "snapchat/snapdoc/SDMMediaId.proto";
+
+message SDMAudioMetadata {
+    .snapchat.snapdoc.SDMAudioMetadata.SDMAudioCodecFormat codecFormat = 1;
+    enum SDMAudioCodecFormat {
+        SDMAudioCodecFormat_AudioUnset = 0;
+        SDMAudioCodecFormat_Aac = 1;
+        SDMAudioCodecFormat_Heaac = 2;
+        SDMAudioCodecFormat_Opus = 3;
+    }
+}
+
+message SDMImageMetadata {
+    .snapchat.snapdoc.SDMImageMetadata.SDMImageCodecFormat codecFormat = 1;
+    enum SDMImageCodecFormat {
+        SDMImageCodecFormat_ImageUnset = 0;
+        SDMImageCodecFormat_Jpeg = 1;
+        SDMImageCodecFormat_Png = 2;
+        SDMImageCodecFormat_Webp = 3;
+        SDMImageCodecFormat_Heif = 4;
+        SDMImageCodecFormat_Awebp = 5;
+        SDMImageCodecFormat_Gif = 6;
+    }
+}
+
+message SDMMediaMetadata {
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_MediaType type = 2;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_Orientation orientation = 3;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_MediaEncryptionInfo encryptionInfoV1 = 4;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_MediaDimensions dimensions = 5;
+    string mediaURL = 9;
+    bool hasSound = 12;
+    bool zipped = 13;
+    bool frontFacing = 14;
+    uint32 mediaDurationMs = 15;
+    .snapchat.content.MediaReference mediaReference = 17;
+    .snapchat.snapdoc.SDMMediaId mediaId = 18;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_MediaEncryptionInfo encryptionInfoV2 = 19;
+    .snapchat.snapdoc.SDMMediaMetadata.Asset_AssetType assetType = 20;
+    .snapchat.snapdoc.SDMCaptureCharacteristics captureCharacteristics = 21;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_DisplayOrientation displayOrientation = 22;
+    .snapchat.snapdoc.SDMAudioMetadata audio = 23;
+    .snapchat.snapdoc.SDMImageMetadata image = 24;
+    .snapchat.snapdoc.SDMVideoMetadata video = 25;
+    .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_LegacyMediaSource legacyMediaSource = 6;
+    bytes contentDescriptor = 7;
+    message SDMMediaMetadata_LegacyMediaSource {
+        string sourceMediaId = 1;
+        .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_LegacyMediaSource.SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl directDownloadURL = 2;
+        message SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl {
+            string URL = 1;
+            uint64 expirySeconds = 2;
+            .snapchat.snapdoc.SDMMediaMetadata.SDMMediaMetadata_LegacyMediaSource.SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl.SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType type = 3;
+            string region = 4;
+            enum SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType {
+                SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType_Gcs = 0;
+                SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType_S3 = 1;
+                SDMMediaMetadata_LegacyMediaSource_LegacyDirectDownloadUrl_MediaUrlType_UnrecognizedValue = 2;
+            }
+        }
+    }
+    message SDMMediaMetadata_MediaDimensions {
+        uint32 width = 1;
+        uint32 height = 2;
+    }
+    message SDMMediaMetadata_MediaEncryptionInfo {
+        bytes key = 1;
+        bytes iv = 2;
+    }
+    enum Asset_AssetType {
+        Asset_AssetType_Unset = 0;
+        Asset_AssetType_BloopsSticker = 1;
+        Asset_AssetType_Music = 2;
+        Asset_AssetType_RawMedia = 3;
+        Asset_AssetType_CanvasSticker = 4;
+        Asset_AssetType_BaseMedia = 5;
+        Asset_AssetType_Overlay = 6;
+        Asset_AssetType_Edits = 7;
+        Asset_AssetType_FirstFrame = 8;
+        Asset_AssetType_Thumbnail = 9;
+        Asset_AssetType_Cameo = 10;
+        Asset_AssetType_WebThumbnail = 11;
+        Asset_AssetType_WebMedia = 12;
+        Asset_AssetType_LensAsset = 13;
+        Asset_AssetType_Voiceover = 14;
+        Asset_AssetType_AvatarImage = 15;
+        Asset_AssetType_SpectaclesSixdof = 16;
+    }
+    enum SDMMediaMetadata_DisplayOrientation {
+        SDMMediaMetadata_DisplayOrientation_Unset = 0;
+        SDMMediaMetadata_DisplayOrientation_Up = 1;
+        SDMMediaMetadata_DisplayOrientation_Down = 2;
+        SDMMediaMetadata_DisplayOrientation_Left = 3;
+        SDMMediaMetadata_DisplayOrientation_Right = 4;
+        SDMMediaMetadata_DisplayOrientation_UpMirrored = 5;
+        SDMMediaMetadata_DisplayOrientation_DownMirrored = 6;
+        SDMMediaMetadata_DisplayOrientation_LeftMirrored = 7;
+        SDMMediaMetadata_DisplayOrientation_RightMirrored = 8;
+    }
+    enum SDMMediaMetadata_Orientation {
+        SDMMediaMetadata_Orientation_Vertical = 0;
+        SDMMediaMetadata_Orientation_Horizontal = 1;
+    }
+    enum SDMMediaMetadata_MediaType {
+        SDMMediaMetadata_MediaType_Image = 0;
+        SDMMediaMetadata_MediaType_Video = 1;
+        SDMMediaMetadata_MediaType_Gif = 2;
+        SDMMediaMetadata_MediaType_Audio = 3;
+        SDMMediaMetadata_MediaType_Unknown = 4;
+    }
+}
+
+message SDMVideoMetadata {
+    .snapchat.snapdoc.SDMVideoMetadata.SDMVideoCodecFormat codecFormat = 1;
+    .snapchat.snapdoc.SDMVideoMetadata.SDMVideoFileFormat containerFormat = 2;
+    enum SDMVideoCodecFormat {
+        SDMVideoCodecFormat_VideoUnset = 0;
+        SDMVideoCodecFormat_H264 = 1;
+        SDMVideoCodecFormat_Hevc = 2;
+        SDMVideoCodecFormat_Av1 = 3;
+        SDMVideoCodecFormat_Vp9 = 4;
+    }
+    enum SDMVideoFileFormat {
+        SDMVideoFileFormat_VideoFileFormatUnset = 0;
+        SDMVideoFileFormat_Mp4 = 1;
+        SDMVideoFileFormat_Fmp4 = 2;
+    }
+}

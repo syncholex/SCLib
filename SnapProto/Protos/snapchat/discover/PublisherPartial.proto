@@ -1,0 +1,100 @@
+syntax = "proto3";
+package snapchat.discover;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Discover";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/discover/Publisher.proto";
+import "snapchat/discover/PublisherWrappers.proto";
+import "snapchat/protobuf/SPCPListWrappers.proto";
+import "snapchat/storydoc/STOVisibility.proto";
+
+message PartialPublisherMetadata {
+    .google.protobuf.StringValue businessProfileId = 1;
+    .google.protobuf.Int64Value publisherId = 2;
+    .snapchat.discover.PartialPublisherMetadata.PartialPublisherMetadata_BehaviouralMetadata behaviouralMetadata = 4;
+    .snapchat.discover.PartialPublisherMetadata.PartialPublisherMetadata_CreationMetadata creationMetadata = 5;
+    .snapchat.discover.PartialPublisherMetadata.PartialPublisherMetadata_BrandingMetadata brandingMetadata = 6;
+    .snapchat.discover.PartialPublisherMetadata.PartialPublisherMetadata_VisibilityMetadata visibilityMetadata = 7;
+    message PartialPublisherMetadata_BehaviouralMetadata {
+        .google.protobuf.BoolValue adsEnabled = 1;
+        .google.protobuf.BoolValue isComScoreIntegrationEnabled = 2;
+        .google.protobuf.BoolValue isOurStories = 3;
+        .google.protobuf.BoolValue isShow = 4;
+        .snapchat.discover.FeaturesValue publisherFeatures = 5;
+        .google.protobuf.BoolValue subscribable = 6;
+        .google.protobuf.StringValue tier = 7;
+        .google.protobuf.Int32Value topsnapLimit = 8;
+        .snapchat.discover.TypeValue type = 9;
+        .google.protobuf.BoolValue rollingNewsEnabled = 10;
+        .google.protobuf.BoolValue videoModeEnabled = 11;
+        .snapchat.discover.AdSettingValue adSetting = 12;
+        .snapchat.discover.ModerationLevelValue moderationLevel = 13;
+        .google.protobuf.Int32Value targetSnapLengthMs = 14;
+        .snapchat.discover.AudioClassificationValue audioClassification = 15;
+        .google.protobuf.BoolValue isAdsPreRollEnabled = 16;
+        .google.protobuf.Int32Value webviewLimit = 17;
+        .google.protobuf.BoolValue isDynamicAdsEnabled = 18;
+        .snapchat.discover.DiscoverChannelsFilterValue discoverChannelFilterSet = 19;
+        .snapchat.discover.TierLevelValue tierLevel = 20;
+    }
+    message PartialPublisherMetadata_BrandingMetadata {
+        .google.protobuf.StringValue articleCss = 1;
+        .google.protobuf.StringValue primaryColor = 3;
+        .google.protobuf.StringValue secondaryColor = 4;
+        .google.protobuf.StringValue URLSafeFormalName = 5;
+        .google.protobuf.StringValue mutablePublisherName = 6;
+        .snapchat.discover.Tags tags = 7;
+        .snapchat.protobuf.SPCPStringListValue nicknames = 8;
+        .snapchat.protobuf.SPCPInt64ListValue deeplinks = 10;
+        .snapchat.discover.LogoDisplayValue profileLogoDisplay = 11;
+        .google.protobuf.StringValue squareHeroImageBitmojiTemplateId = 12;
+        .google.protobuf.StringValue horizontalIcon = 13;
+        .google.protobuf.StringValue squareHeroImageURL = 14;
+        .google.protobuf.StringValue publisherIconURL = 19;
+        .google.protobuf.StringValue publisherIconId = 20;
+        .snapchat.discover.MediaLibraryMediaIds mediaIds = 21;
+        .google.protobuf.StringValue formalName = 22;
+        .google.protobuf.StringValue description_p = 23;
+        .google.protobuf.StringValue websiteURL = 24;
+    }
+    message PartialPublisherMetadata_CreationMetadata {
+        .google.protobuf.BoolValue advancedAdsEnabled = 1;
+        .google.protobuf.Int32Value advancedAdsMinSlots = 2;
+        .google.protobuf.Int32Value advancedAdsMaxSlots = 3;
+        .google.protobuf.Int32Value advancedAdsMinSpacing = 4;
+        .google.protobuf.Int32Value advancedAdsLatestFirstSlot = 5;
+        .google.protobuf.Int32Value defaultNumSnaps = 6;
+        .snapchat.discover.FlagsValue publisherFlags = 7;
+        .snapchat.protobuf.SPCPInt32ListValue defaultAdSlots = 8;
+        .google.protobuf.StringValue managerEmail = 10;
+        .google.protobuf.BoolValue permitAutoPublishFromFeed = 12;
+        .google.protobuf.Int32Value timeUntilAutoPublishFeedStory = 13;
+        .google.protobuf.StringValue managerName = 14;
+        .snapchat.discover.HourMin dynamicEditionAutoCreateStoryTimeUtc = 15;
+        .snapchat.protobuf.SPCPInt32ListValue defaultAdSlotsMillis = 16;
+    }
+    message PartialPublisherMetadata_VisibilityMetadata {
+        .google.protobuf.StringValue primaryLanguage = 1;
+        .google.protobuf.StringValue homeCountry = 2;
+        .snapchat.discover.ShareOptionValue defaultShareOption = 3;
+        .snapchat.protobuf.SPCPInt64ListValue geofenceIds = 5;
+        .snapchat.discover.ContentAgeGateLevelValue ageGate = 6;
+        .google.protobuf.BoolValue publishingEnabled = 7;
+        .google.protobuf.Int64Value launchDateTimestamp = 8;
+        .snapchat.protobuf.SPCPStringListValue enabledCountry = 9;
+        .snapchat.protobuf.SPCPStringListValue disabledCountry = 10;
+        .snapchat.protobuf.SPCPStringListValue enabledDistributionCountry = 11;
+        .snapchat.protobuf.SPCPStringListValue disabledDistributionCountry = 12;
+        .snapchat.protobuf.SPCPStringListValue enabledLanguage = 13;
+        .snapchat.protobuf.SPCPStringListValue disabledLanguage = 14;
+        .google.protobuf.BoolValue isEmployeeOnly = 16;
+        .google.protobuf.BoolValue isSearchable = 17;
+        .snapchat.protobuf.SPCPStringListValue localContent = 18;
+        .snapchat.storydoc.STOContentAccessLists contentAccessLists = 20;
+        .snapchat.discover.PublishingApprovalsValue publishingApprovals = 21;
+        .snapchat.discover.EditorialApprovalValue editorialApproval = 22;
+        .google.protobuf.StringValue editorialRationale = 23;
+        .google.protobuf.Int64Value editorialApprovedTimestamp = 24;
+    }
+}

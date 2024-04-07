@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.category;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "HN";
+option csharp_namespace = "SnapProto.Snapchat.Category";
+
+import "snapchat/tags/ContentTag.proto";
+
+message HNCategory {
+    .snapchat.category.HNCategoryID id_p = 1;
+    string color = 2;
+    repeated .snapchat.tags.ContentTag tagsArray = 3;
+}
+
+message HNCategoryID {
+    string value = 1;
+}

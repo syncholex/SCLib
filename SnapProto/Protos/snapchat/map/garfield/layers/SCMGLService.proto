@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.map.garfield.layers;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGL";
+option csharp_namespace = "SnapProto.Snapchat.Map.Garfield.Layers";
+
+message SCMGLFlavor {
+    string name = 1;
+    uint64 version = 2;
+}
+
+message SCMGLGetLayersRequest {
+}
+
+message SCMGLGetLayersResponse {
+    repeated .snapchat.map.garfield.layers.SCMGLLayerDetails layersArray = 1;
+    uint32 refreshInSecs = 2;
+}
+
+message SCMGLLayerDetails {
+    uint64 id_p = 1;
+    uint64 version = 2;
+    uint32 extent = 3;
+    repeated .snapchat.map.garfield.layers.SCMGLFlavor flavorsArray = 4;
+    uint32 minZoom = 5;
+    uint32 maxZoom = 6;
+}

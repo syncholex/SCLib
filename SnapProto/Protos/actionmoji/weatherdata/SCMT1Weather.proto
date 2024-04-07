@@ -1,0 +1,26 @@
+syntax = "proto3";
+package actionmoji.weatherdata;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT1";
+option csharp_namespace = "SnapProto.Actionmoji.Weatherdata";
+
+message SCMT1Weather {
+    .actionmoji.weatherdata.SCMT1Weather.SCWWeather_Condition condition = 1;
+    float temperatureF = 2;
+    enum SCWWeather_Condition {
+        SCWWeather_Condition_Unknown = 0;
+        SCWWeather_Condition_ClearNight = 1;
+        SCWWeather_Condition_Cloudy = 2;
+        SCWWeather_Condition_Hail = 3;
+        SCWWeather_Condition_Lightning = 4;
+        SCWWeather_Condition_LowVisibility = 5;
+        SCWWeather_Condition_PartialCloudy = 6;
+        SCWWeather_Condition_PartialCloudyNight = 7;
+        SCWWeather_Condition_Rainy = 8;
+        SCWWeather_Condition_Snow = 9;
+        SCWWeather_Condition_Sunny = 10;
+        SCWWeather_Condition_Windy = 11;
+        SCWWeather_Condition_Hot = 12;
+        SCWWeather_Condition_Cold = 13;
+    }
+}

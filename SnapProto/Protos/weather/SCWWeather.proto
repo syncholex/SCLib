@@ -1,0 +1,240 @@
+syntax = "proto3";
+package weather;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCW";
+option csharp_namespace = "SnapProto.Weather";
+
+import "address/SCMapsLocation.proto";
+
+message SCWAirQuality {
+    int64 epochMs = 1;
+    float overallIndex = 2;
+    float overallPlumeLabsIndex = 3;
+    .weather.SCWAirQuality.SCWAirQuality_Pollutant dominantPollutant = 4;
+    .weather.SCWAirQuality.SCWAirQuality_Category category = 5;
+    uint32 categoryColor = 6;
+    enum SCWAirQuality_Category {
+        SCWAirQuality_Category_CategoryUnknown = 0;
+        SCWAirQuality_Category_Excellent = 1;
+        SCWAirQuality_Category_Fair = 2;
+        SCWAirQuality_Category_Poor = 3;
+        SCWAirQuality_Category_Unhealthy = 4;
+        SCWAirQuality_Category_VeryUnhealthy = 5;
+        SCWAirQuality_Category_Dangerous = 6;
+    }
+    enum SCWAirQuality_Pollutant {
+        SCWAirQuality_Pollutant_PollutantUnknown = 0;
+        SCWAirQuality_Pollutant_Pm25 = 1;
+        SCWAirQuality_Pollutant_Pm10 = 2;
+        SCWAirQuality_Pollutant_No2 = 3;
+        SCWAirQuality_Pollutant_So2 = 4;
+        SCWAirQuality_Pollutant_O3 = 5;
+        SCWAirQuality_Pollutant_Co = 6;
+    }
+}
+
+message SCWCurrentAirQualityRequest {
+    double lat = 1;
+    double lng = 2;
+    .weather.SCWCurrentAirQualityRequest.SCWReferer referer = 3;
+    enum SCWReferer {
+        SCWReferer_Unknown = 0;
+        SCWReferer_Maps = 1;
+        SCWReferer_Stickers = 2;
+        SCWReferer_Lenses = 3;
+        SCWReferer_LocationIngest = 4;
+        SCWReferer_LocData = 5;
+        SCWReferer_HnBitmojiWeatherStory = 6;
+        SCWReferer_Zenly = 7;
+        SCWReferer_SpectaclesHub = 8;
+    }
+}
+
+message SCWCurrentAirQualityResponse {
+    .weather.SCWAirQuality airQuality = 1;
+    .address.SCMapsAddress address = 2;
+    .weather.SCWTimeZone timeZone = 3;
+}
+
+message SCWCurrentConditionAndForecastRequest {
+    double lat = 1;
+    double lng = 2;
+    .weather.SCWCurrentConditionAndForecastRequest.SCWReferer referer = 3;
+    uint32 hourlyForecastHours = 4;
+    uint32 dailyForecastDays = 5;
+    enum SCWReferer {
+        SCWReferer_Unknown = 0;
+        SCWReferer_Maps = 1;
+        SCWReferer_Stickers = 2;
+        SCWReferer_Lenses = 3;
+        SCWReferer_LocationIngest = 4;
+        SCWReferer_LocData = 5;
+        SCWReferer_HnBitmojiWeatherStory = 6;
+        SCWReferer_Zenly = 7;
+        SCWReferer_SpectaclesHub = 8;
+    }
+}
+
+message SCWCurrentConditionAndForecastResponse {
+    .weather.SCWWeather currentCondition = 1;
+    repeated .weather.SCWDailyForecast dailyForecastArray = 2;
+    repeated .weather.SCWWeather hourlyForecastArray = 3;
+    .address.SCMapsAddress address = 4;
+    .weather.SCWTimeZone timeZone = 5;
+}
+
+message SCWCurrentConditionRequest {
+    double lat = 1;
+    double lng = 2;
+    .weather.SCWCurrentConditionRequest.SCWReferer referer = 3;
+    enum SCWReferer {
+        SCWReferer_Unknown = 0;
+        SCWReferer_Maps = 1;
+        SCWReferer_Stickers = 2;
+        SCWReferer_Lenses = 3;
+        SCWReferer_LocationIngest = 4;
+        SCWReferer_LocData = 5;
+        SCWReferer_HnBitmojiWeatherStory = 6;
+        SCWReferer_Zenly = 7;
+        SCWReferer_SpectaclesHub = 8;
+    }
+}
+
+message SCWCurrentConditionResponse {
+    .weather.SCWWeather currentCondition = 1;
+    .address.SCMapsAddress address = 2;
+    .weather.SCWTimeZone timeZone = 3;
+}
+
+message SCWDailyForecast {
+    .weather.SCWWeather day = 2;
+    .weather.SCWWeather night = 3;
+}
+
+message SCWDailyForecastRequest {
+    double lat = 1;
+    double lng = 2;
+    .weather.SCWDailyForecastRequest.SCWReferer referer = 3;
+    uint32 days = 4;
+    enum SCWReferer {
+        SCWReferer_Unknown = 0;
+        SCWReferer_Maps = 1;
+        SCWReferer_Stickers = 2;
+        SCWReferer_Lenses = 3;
+        SCWReferer_LocationIngest = 4;
+        SCWReferer_LocData = 5;
+        SCWReferer_HnBitmojiWeatherStory = 6;
+        SCWReferer_Zenly = 7;
+        SCWReferer_SpectaclesHub = 8;
+    }
+}
+
+message SCWDailyForecastResponse {
+    repeated .weather.SCWDailyForecast dailyForecastArray = 1;
+    .address.SCMapsAddress address = 2;
+    .weather.SCWTimeZone timeZone = 3;
+}
+
+message SCWDetailedCondition {
+}
+
+message SCWHourlyForecastRequest {
+    double lat = 1;
+    double lng = 2;
+    .weather.SCWHourlyForecastRequest.SCWReferer referer = 3;
+    uint32 hours = 4;
+    enum SCWReferer {
+        SCWReferer_Unknown = 0;
+        SCWReferer_Maps = 1;
+        SCWReferer_Stickers = 2;
+        SCWReferer_Lenses = 3;
+        SCWReferer_LocationIngest = 4;
+        SCWReferer_LocData = 5;
+        SCWReferer_HnBitmojiWeatherStory = 6;
+        SCWReferer_Zenly = 7;
+        SCWReferer_SpectaclesHub = 8;
+    }
+}
+
+message SCWHourlyForecastResponse {
+    repeated .weather.SCWWeather hourlyForecastArray = 1;
+    .address.SCMapsAddress address = 2;
+    .weather.SCWTimeZone timeZone = 3;
+}
+
+message SCWTimeZone {
+    string id_p = 1;
+    int32 offsetS = 2;
+}
+
+message SCWWeather {
+    .weather.SCWWeather.SCWWeather_Condition condition = 1;
+    float temperatureF = 2;
+    int64 epochMs = 3;
+    int64 relativeHumidityPerc = 6;
+    float pressureMb = 7;
+    float windSpeed = 8;
+    int32 precipitationProbability = 9;
+    .weather.SCWWeather.SCWDetailedCondition_Enum detailedCondition = 10;
+    uint64 sunriseEpochSec = 11;
+    uint64 sunsetEpochSec = 12;
+    enum SCWWeather_Condition {
+        SCWWeather_Condition_Unknown = 0;
+        SCWWeather_Condition_ClearNight = 1;
+        SCWWeather_Condition_Cloudy = 2;
+        SCWWeather_Condition_Hail = 3;
+        SCWWeather_Condition_Lightning = 4;
+        SCWWeather_Condition_LowVisibility = 5;
+        SCWWeather_Condition_PartialCloudy = 6;
+        SCWWeather_Condition_PartialCloudyNight = 7;
+        SCWWeather_Condition_Rainy = 8;
+        SCWWeather_Condition_Snow = 9;
+        SCWWeather_Condition_Sunny = 10;
+        SCWWeather_Condition_Windy = 11;
+        SCWWeather_Condition_Hot = 12;
+        SCWWeather_Condition_Cold = 13;
+    }
+    enum SCWDetailedCondition_Enum {
+        SCWDetailedCondition_Enum_Unknown = 0;
+        SCWDetailedCondition_Enum_Sunny = 1;
+        SCWDetailedCondition_Enum_Cloudy = 2;
+        SCWDetailedCondition_Enum_Rainy = 3;
+        SCWDetailedCondition_Enum_MostlyCloudyDay = 4;
+        SCWDetailedCondition_Enum_MostlyCloudyNight = 5;
+        SCWDetailedCondition_Enum_Snow = 6;
+        SCWDetailedCondition_Enum_Hot = 7;
+        SCWDetailedCondition_Enum_Cold = 8;
+        SCWDetailedCondition_Enum_Windy = 9;
+        SCWDetailedCondition_Enum_Clear = 10;
+        SCWDetailedCondition_Enum_MostlyClear = 11;
+        SCWDetailedCondition_Enum_PartlyCloudy = 12;
+        SCWDetailedCondition_Enum_IntermittentCloudsDay = 13;
+        SCWDetailedCondition_Enum_IntermittentCloudsNight = 14;
+        SCWDetailedCondition_Enum_MostlySunny = 15;
+        SCWDetailedCondition_Enum_PartlySunny = 16;
+        SCWDetailedCondition_Enum_RainShowers = 17;
+        SCWDetailedCondition_Enum_HazySunshine = 18;
+        SCWDetailedCondition_Enum_Overcast = 19;
+        SCWDetailedCondition_Enum_Foggy = 20;
+        SCWDetailedCondition_Enum_MostlyCloudyWithShowersDay = 21;
+        SCWDetailedCondition_Enum_MostlyCloudyWithShowersNight = 22;
+        SCWDetailedCondition_Enum_PartlySunnyWithShowers = 23;
+        SCWDetailedCondition_Enum_Thunderstorms = 24;
+        SCWDetailedCondition_Enum_MostlyCloudyWithTStormsDay = 25;
+        SCWDetailedCondition_Enum_MostlyCloudyWithTStormsNight = 26;
+        SCWDetailedCondition_Enum_PartlySunnyWithTStorms = 27;
+        SCWDetailedCondition_Enum_Flurries = 28;
+        SCWDetailedCondition_Enum_MostlyCloudyWithFlurriesDay = 29;
+        SCWDetailedCondition_Enum_MostlyCloudyWithFlurriesNight = 30;
+        SCWDetailedCondition_Enum_PartlySunnyWithFlurries = 31;
+        SCWDetailedCondition_Enum_MostlyCloudyWithSnowDay = 32;
+        SCWDetailedCondition_Enum_MostlyCloudyWithSnowNight = 33;
+        SCWDetailedCondition_Enum_Hail = 34;
+        SCWDetailedCondition_Enum_Sleet = 35;
+        SCWDetailedCondition_Enum_FreezingRaining = 36;
+        SCWDetailedCondition_Enum_RainAndSnow = 37;
+        SCWDetailedCondition_Enum_HazyMoonlight = 38;
+        SCWDetailedCondition_Enum_PartlyCloudyWithShowers = 39;
+        SCWDetailedCondition_Enum_PartlyCloudyWithTStorms = 40;
+    }
+}

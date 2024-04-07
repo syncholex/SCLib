@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.widget;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Widget";
+
+import "com/snapchat/showcase/wire/widget/CommerceAction.proto";
+
+message CommerceTab {
+    string title = 1;
+    .com.snapchat.showcase.wire.widget.CommerceAction action = 2;
+}
+
+message CommerceTabWidget {
+    repeated .com.snapchat.showcase.wire.widget.CommerceTab tabsArray = 1;
+}

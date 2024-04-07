@@ -1,0 +1,13 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesTextColor {
+    repeated string colorArray = 1;
+    repeated double colorStopArray = 2;
+    string colorTransform = 3;
+    double colorGradientAngleDegree = 4;
+    repeated double colorTransformParamsArray = 5;
+}

@@ -1,0 +1,108 @@
+syntax = "proto3";
+package impala;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala";
+
+import "google/protobuf/wrappers.proto";
+
+message IMPGetAllWatchedStateForUserRequest {
+    string userId = 1;
+    string pageId = 2;
+}
+
+message IMPGetAllWatchedStateForUserResponse {
+    repeated .impala.IMPWatchedState watchedStatesArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPGetRecentWatchedStatesForUserRequest {
+    string userId = 1;
+    int32 maxHistoryPerShow = 2;
+    int64 afterTimestampMs = 3;
+}
+
+message IMPGetRecentWatchedStatesForUserResponse {
+    repeated .impala.IMPShowWatchedState showWatchedStateArray = 1;
+}
+
+message IMPGetWatchedStateForSeasonRequest {
+    string seasonId = 1;
+    string pageId = 2;
+}
+
+message IMPGetWatchedStateForSeasonResponse {
+    repeated .impala.IMPWatchedState watchedStatesArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPGetWatchedStateForShowRequest {
+    string userId = 1;
+    string showId = 2;
+}
+
+message IMPGetWatchedStateForShowResponse {
+    .impala.IMPShowWatchedState showWatchedState = 1;
+}
+
+message IMPGetWatchedStateRequest {
+    string userId = 1;
+    repeated string itemIdsArray = 2;
+}
+
+message IMPGetWatchedStateResponse {
+    repeated .impala.IMPWatchedState watchedStatesArray = 2;
+}
+
+message IMPMarkCollectionProfileAsSeenRequest {
+    string userId = 1;
+    string owningCollectionId = 2;
+    int64 clientTimestampMs = 3;
+}
+
+message IMPMarkCollectionProfileAsSeenResponse {
+}
+
+message IMPResetWatchedStateForUserRequest {
+    string userId = 1;
+}
+
+message IMPResetWatchedStateForUserResponse {
+}
+
+message IMPShowWatchedState {
+    string showId = 1;
+    .impala.IMPWatchedState lastWatchedEpisode = 2;
+    .impala.IMPWatchedState highestWatchedEpisode = 3;
+    bool showProfileViewed = 4;
+    repeated .impala.IMPWatchedState lastWatchedEpisodesArray = 5;
+}
+
+message IMPUpdateWatchedStateRequest {
+    string userId = 1;
+    repeated .impala.IMPWatchedStateUpdate watchedStateUpdatesArray = 2;
+}
+
+message IMPUpdateWatchedStateResponse {
+    int64 nextUpdateIntervalMs = 1;
+}
+
+message IMPWatchedState {
+    string itemId = 1;
+    string showId = 2;
+    bool fullyWatched = 3;
+    .google.protobuf.StringValue subItemId = 4;
+    .google.protobuf.Int32Value subItemProgressMs = 5;
+    .google.protobuf.Int32Value approximateProgress = 6;
+    int64 clientTimestampMs = 7;
+}
+
+message IMPWatchedStateUpdate {
+    string itemId = 1;
+    string showId = 2;
+    bool fullyWatched = 3;
+    .google.protobuf.StringValue subItemId = 4;
+    .google.protobuf.Int32Value subItemProgressMs = 5;
+    .google.protobuf.Int32Value approximateProgress = 6;
+    int64 clientTimestampMs = 7;
+}

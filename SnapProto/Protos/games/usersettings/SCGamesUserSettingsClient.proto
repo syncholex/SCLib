@@ -1,0 +1,43 @@
+syntax = "proto3";
+package games.usersettings;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesUserSettings";
+option csharp_namespace = "SnapProto.Games.Usersettings";
+
+message SCGamesUserSettingsGetUserGlobalSettingsRequest {
+}
+
+message SCGamesUserSettingsGetUserGlobalSettingsResponse {
+    .games.usersettings.SCGamesUserSettingsUserGlobalSetting setting = 1;
+}
+
+message SCGamesUserSettingsSetUserGlobalSettingRequest {
+    .games.usersettings.SCGamesUserSettingsSetUserGlobalSettingRequest.SCGamesUserSettingsVisibility globalActivityVisibility = 1;
+    .games.usersettings.SCGamesUserSettingsSetUserGlobalSettingRequest.SCGamesUserSettingsVisibility globalScoreVisibility = 2;
+    enum SCGamesUserSettingsVisibility {
+        SCGamesUserSettingsVisibility_Unset = 0;
+        SCGamesUserSettingsVisibility_Private = 1;
+        SCGamesUserSettingsVisibility_Public = 2;
+    }
+}
+
+message SCGamesUserSettingsSetUserGlobalSettingResponse {
+}
+
+message SCGamesUserSettingsSetUserGlobalSettingsRequest {
+    .games.usersettings.SCGamesUserSettingsUserGlobalSetting setting = 1;
+}
+
+message SCGamesUserSettingsSetUserGlobalSettingsResponse {
+}
+
+message SCGamesUserSettingsUserGlobalSetting {
+    .games.usersettings.SCGamesUserSettingsUserGlobalSetting.SCGamesUserSettingsVisibility globalScoreVisibility = 1;
+    .games.usersettings.SCGamesUserSettingsUserGlobalSetting.SCGamesUserSettingsVisibility globalActivityVisibility = 2;
+    bool privacyPolicyAccepted = 3;
+    enum SCGamesUserSettingsVisibility {
+        SCGamesUserSettingsVisibility_Unset = 0;
+        SCGamesUserSettingsVisibility_Private = 1;
+        SCGamesUserSettingsVisibility_Public = 2;
+    }
+}

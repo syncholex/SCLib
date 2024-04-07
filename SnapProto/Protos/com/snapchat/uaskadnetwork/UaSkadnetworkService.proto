@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.uaskadnetwork;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Uaskadnetwork";
+
+message RetrieveConversionValueRequest {
+    string idfv = 1;
+    int32 currentConversionValue = 2;
+    int64 updatedTime = 3;
+}
+
+message RetrieveConversionValueResponse {
+    int32 conversionValue = 1;
+    bool isHighestConversionValue = 2;
+}

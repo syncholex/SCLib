@@ -1,0 +1,13 @@
+syntax = "proto3";
+package com.snapchat.item_catalog.domain.item.ar.properties;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCShoppingLens";
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_catalog.Domain.Item.Ar.Properties";
+
+import "com/snapchat/item_catalog/domain/item/ar/properties/SCShoppingLensGlbData.proto";
+import "com/snapchat/item_catalog/domain/item/ar/properties/Transformations.proto";
+
+message SCShoppingLensGlassesProperties {
+    .com.snapchat.item_catalog.domain.item.ar.properties.SCShoppingLensGlbData glbData = 1;
+    .com.snapchat.item_catalog.domain.item.ar.properties.Transforms transforms = 2;
+}

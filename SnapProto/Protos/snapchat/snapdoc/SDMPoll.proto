@@ -1,0 +1,86 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "google/protobuf/wrappers.proto";
+
+message SDMEmojiType {
+    string id_p = 1;
+}
+
+message SDMExplanationPage {
+    string description_p = 1;
+    string imageAssetId = 2;
+    bytes contentObject = 3;
+    string URL = 4;
+}
+
+message SDMPageProperties {
+    string backgroundColor = 1;
+    string notVotedHeadline = 2;
+    string votedHeadline = 3;
+    string closedHeadline = 4;
+    string headingTextColor = 5;
+    string publisherLogo = 6;
+    string layout = 8;
+    string font = 9;
+    string votesCountMessage = 10;
+    bool shouldShowLabels = 11;
+    bool shouldShowVotesCount = 12;
+    bool showExplanationScreen = 13;
+    string backgroundAssetId = 14;
+    .google.protobuf.Int32Value correctAnswer = 16;
+    .snapchat.snapdoc.SDMEmojiType correctAnswerEmoji = 17;
+    .snapchat.snapdoc.SDMEmojiType incorrectAnswerEmoji = 18;
+    .snapchat.snapdoc.SDMExplanationPage explanationPage = 19;
+    bytes publisherWideLogoContentObject = 7;
+    string publisherWideLogoURL = 20;
+    bytes backgroundImageContentObject = 15;
+    string backgroundImageURL = 21;
+}
+
+message SDMPoll {
+    .snapchat.snapdoc.SDMPoll.SDMPoll_PollType pollType = 1;
+    .snapchat.snapdoc.SDMPoll.SDMPoll_PollState pollState = 2;
+    repeated .snapchat.snapdoc.SDMPoll.SDMPoll_PollPage questionPagesArray = 3;
+    .snapchat.snapdoc.SDMPoll.SDMPoll_PollPage outcomePage = 4;
+    int64 firstLiveTimestampMs = 5;
+    uint32 durationInDays = 6;
+    string editorProperties = 7;
+    string id_p = 8;
+    .snapchat.snapdoc.SDMUpdateInfo updateInfo = 9;
+    message SDMPoll_PollPage {
+        string id_p = 1;
+        repeated .snapchat.snapdoc.SDMPoll.SDMPoll_PollPage.SDMPoll_PollPage_PollItem itemsArray = 2;
+        string editorProperties = 3;
+        bool hideLabels = 4;
+        .snapchat.snapdoc.SDMPageProperties pageProperties = 5;
+        message SDMPoll_PollPage_PollItem {
+            string id_p = 1;
+            string description_p = 2;
+            uint32 outcomeIndex = 3;
+            string rspMediaId = 99;
+            bytes contentObject = 4;
+            string URL = 5;
+        }
+    }
+    enum SDMPoll_PollState {
+        SDMPoll_PollState_Unset = 0;
+        SDMPoll_PollState_Open = 1;
+        SDMPoll_PollState_Closed = 2;
+    }
+    enum SDMPoll_PollType {
+        SDMPoll_PollType_Unknown = 0;
+        SDMPoll_PollType_OpinionPoll = 1;
+        SDMPoll_PollType_Vote = 2;
+        SDMPoll_PollType_OpenQuestion = 3;
+        SDMPoll_PollType_FactualQuestion = 4;
+    }
+}
+
+message SDMUpdateInfo {
+    string updateAppButton = 1;
+    string updateAppHeadline = 2;
+}

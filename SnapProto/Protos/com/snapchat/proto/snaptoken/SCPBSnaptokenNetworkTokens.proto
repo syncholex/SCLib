@@ -1,0 +1,99 @@
+syntax = "proto3";
+package com.snapchat.proto.snaptoken;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBSnaptoken";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Snaptoken";
+
+message SCPBSnaptokenSnapAccessToken {
+    string accessToken = 1;
+    string scope = 2;
+    int64 expiresInSeconds = 3;
+}
+
+message SCPBSnaptokenSnapAccessTokenPrefetchHint {
+    int64 earlyInvalidSecs = 1;
+    int64 earlyPrefetchSecs = 2;
+}
+
+message SCPBSnaptokenSnapAccessTokenRequest {
+    string refreshToken = 1;
+    string scope = 2;
+}
+
+message SCPBSnaptokenSnapAccessTokensRequest {
+    string refreshToken = 1;
+    repeated string scopesArray = 2;
+    string deviceId = 3;
+    repeated .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessTokensRequest.SCPBSnaptokenSnapTokenScope scopesAsEnumsArray = 4;
+    enum SCPBSnaptokenSnapTokenScope {
+        SCPBSnaptokenSnapTokenScope_Unknown = 0;
+        SCPBSnaptokenSnapTokenScope_Blizzard = 1;
+        SCPBSnaptokenSnapTokenScope_LocationSprinkler = 2;
+        SCPBSnaptokenSnapTokenScope_StoriesMixer = 3;
+        SCPBSnaptokenSnapTokenScope_GtqUnlockables = 4;
+        SCPBSnaptokenSnapTokenScope_BusinessAccounts = 5;
+        SCPBSnaptokenSnapTokenScope_SerializedShows = 6;
+        SCPBSnaptokenSnapTokenScope_MapGames = 7;
+        SCPBSnaptokenSnapTokenScope_Puppy = 8;
+        SCPBSnaptokenSnapTokenScope_ApiGateway = 9;
+        SCPBSnaptokenSnapTokenScope_SnapKit = 10;
+        SCPBSnaptokenSnapTokenScope_LoginKit = 11;
+        SCPBSnaptokenSnapTokenScope_Eagle = 12;
+        SCPBSnaptokenSnapTokenScope_Explore = 13;
+        SCPBSnaptokenSnapTokenScope_Iris = 14;
+        SCPBSnaptokenSnapTokenScope_MultiScope = 15;
+    }
+}
+
+message SCPBSnaptokenSnapAccessTokensResponse {
+    repeated .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessToken snapAccessTokensArray = 1;
+    .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessTokensResponse.SCPBSnaptokenSnapAccessTokensResponse_Status status = 2;
+    .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessTokenPrefetchHint prefetchHint = 3;
+    enum SCPBSnaptokenSnapAccessTokensResponse_Status {
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusUnknown = 0;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusSuccess = 1;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusDecodingError = 2;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusClientIdMismatch = 3;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusNoRefreshToken = 4;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusUnauthorizedScope = 5;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusServerError = 6;
+        SCPBSnaptokenSnapAccessTokensResponse_Status_StatusGenericError = 7;
+    }
+}
+
+message SCPBSnaptokenSnapSessionRequest {
+    repeated string scopesArray = 2;
+    string deviceId = 3;
+    repeated .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapSessionRequest.SCPBSnaptokenSnapTokenScope scopesAsEnumsArray = 4;
+    enum SCPBSnaptokenSnapTokenScope {
+        SCPBSnaptokenSnapTokenScope_Unknown = 0;
+        SCPBSnaptokenSnapTokenScope_Blizzard = 1;
+        SCPBSnaptokenSnapTokenScope_LocationSprinkler = 2;
+        SCPBSnaptokenSnapTokenScope_StoriesMixer = 3;
+        SCPBSnaptokenSnapTokenScope_GtqUnlockables = 4;
+        SCPBSnaptokenSnapTokenScope_BusinessAccounts = 5;
+        SCPBSnaptokenSnapTokenScope_SerializedShows = 6;
+        SCPBSnaptokenSnapTokenScope_MapGames = 7;
+        SCPBSnaptokenSnapTokenScope_Puppy = 8;
+        SCPBSnaptokenSnapTokenScope_ApiGateway = 9;
+        SCPBSnaptokenSnapTokenScope_SnapKit = 10;
+        SCPBSnaptokenSnapTokenScope_LoginKit = 11;
+        SCPBSnaptokenSnapTokenScope_Eagle = 12;
+        SCPBSnaptokenSnapTokenScope_Explore = 13;
+        SCPBSnaptokenSnapTokenScope_Iris = 14;
+        SCPBSnaptokenSnapTokenScope_MultiScope = 15;
+    }
+}
+
+message SCPBSnaptokenSnapSessionResponse {
+    string refreshToken = 1;
+    repeated .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessToken snapAccessTokensArray = 2;
+    .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapSessionResponse.SCPBSnaptokenSnapSessionResponse_Status status = 3;
+    .com.snapchat.proto.snaptoken.SCPBSnaptokenSnapAccessTokenPrefetchHint prefetchHint = 4;
+    enum SCPBSnaptokenSnapSessionResponse_Status {
+        SCPBSnaptokenSnapSessionResponse_Status_StatusUnknown = 0;
+        SCPBSnaptokenSnapSessionResponse_Status_StatusSuccess = 1;
+        SCPBSnaptokenSnapSessionResponse_Status_StatusServerError = 2;
+        SCPBSnaptokenSnapSessionResponse_Status_StatusGenericError = 3;
+    }
+}

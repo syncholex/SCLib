@@ -1,0 +1,70 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPCTFeedNode {
+    .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedType type = 1;
+    string name = 2;
+    .snapchat.creativetools.common.SCCTPMediaContent media = 3;
+    repeated .snapchat.creativetools.common.SCCTPCTFeedNode nodesArray = 4;
+    .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource source = 5;
+    uint64 id_p = 6;
+    uint32 spanCount = 7;
+    bool isContextIndependent = 8;
+    message SCCTPCTFeedNode_CTFeedSource {
+        .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource.SCCTPCTFeedNode_CTFeedSource_DeltaForce deltaForce = 1;
+        .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource.SCCTPCTFeedNode_CTFeedSource_Compute compute = 2;
+        .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource.SCCTPCTFeedNode_CTFeedSource_Client client = 3;
+        .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource.SCCTPCTFeedNode_CTFeedSource_NoSource noSource = 4;
+        .snapchat.creativetools.common.SCCTPCTFeedNode.SCCTPCTFeedNode_CTFeedSource.SCCTPCTFeedNode_CTFeedSource_Stream stream = 5;
+        message SCCTPCTFeedNode_CTFeedSource_Client {
+        }
+        message SCCTPCTFeedNode_CTFeedSource_Compute {
+            string path = 1;
+            repeated bytes backendPrivateDataArray = 2;
+            string cofKeyForTtl = 3;
+        }
+        message SCCTPCTFeedNode_CTFeedSource_DeltaForce {
+            .snapchat.creativetools.common.SCCTPDeltaForceGroupKey groupKey = 1;
+        }
+        message SCCTPCTFeedNode_CTFeedSource_NoSource {
+        }
+        message SCCTPCTFeedNode_CTFeedSource_Stream {
+            string cofKeyForTtl = 1;
+        }
+    }
+    enum SCCTPCTFeedType {
+        SCCTPCTFeedType_Search = 0;
+        SCCTPCTFeedType_Recent = 1;
+        SCCTPCTFeedType_Hometab = 2;
+        SCCTPCTFeedType_CustomSticker = 4;
+        SCCTPCTFeedType_Bitmoji = 5;
+        SCCTPCTFeedType_Snapchat = 7;
+        SCCTPCTFeedType_Emoji = 8;
+        SCCTPCTFeedType_Unlocked = 9;
+        SCCTPCTFeedType_Bloop = 10;
+        SCCTPCTFeedType_Root = 11;
+        SCCTPCTFeedType_StickerPicker = 12;
+        SCCTPCTFeedType_CaptionStyle = 13;
+        SCCTPCTFeedType_Favorites = 14;
+        SCCTPCTFeedType_ForYou = 15;
+        SCCTPCTFeedType_SoundFavorites = 16;
+        SCCTPCTFeedType_ChatReactions = 17;
+        SCCTPCTFeedType_Filter = 18;
+        SCCTPCTFeedType_Gfycat = 19;
+        SCCTPCTFeedType_RemoteChatSearch = 20;
+        SCCTPCTFeedType_SoundRecents = 21;
+        SCCTPCTFeedType_QuickReply = 22;
+        SCCTPCTFeedType_Shopping = 23;
+    }
+}
+
+message SCCTPDeltaForceGroupKey {
+    string kind = 1;
+    string name = 2;
+    uint64 id_p = 3;
+}

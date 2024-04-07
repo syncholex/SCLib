@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "google/protobuf/wrappers.proto";
+
+message SCCTPInternalPageToken {
+    .google.protobuf.Int64Value unixSeconds = 1;
+}
+
+message SCCTPPageToken {
+    bytes pageToken = 1;
+}
+
+message SCCTPPagination {
+    uint32 pageSize = 1;
+    .snapchat.creativetools.common.SCCTPPageToken pageToken = 2;
+}

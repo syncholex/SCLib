@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.context;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Context";
+
+message DeviceContext {
+    .com.snapchat.showcase.wire.context.DeviceContext.DeviceType deviceType = 1;
+    string appVersion = 2;
+    enum DeviceType {
+        DeviceType_DeviceTypeUnset = 0;
+        DeviceType_Android = 1;
+        DeviceType_Ios = 2;
+        DeviceType_Web = 3;
+    }
+}

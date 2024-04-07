@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+import "snapchat/messaging/SCMessagingUuid.proto";
+
+message SCMessagingPinMyFriendNotificationRequest {
+    .snapchat.messaging.SCMessagingUUID targetUserId = 1;
+}
+
+message SCMessagingPinMyFriendNotificationResponse {
+}

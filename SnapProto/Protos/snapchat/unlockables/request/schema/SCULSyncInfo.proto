@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+import "google/protobuf/timestamp.proto";
+
+message SCULSyncInfo {
+    .google.protobuf.Timestamp lastLowSensitivityResponseTime = 1;
+    repeated .snapchat.unlockables.request.schema.SCULSyncInfo.SCULSyncInfo_PurposeType purposeTypesArray = 2;
+    enum SCULSyncInfo_PurposeType {
+        SCULSyncInfo_PurposeType_UnlockableHighSensitivity = 0;
+        SCULSyncInfo_PurposeType_UnlockableLowSensitivity = 1;
+    }
+}

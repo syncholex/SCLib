@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPContentRestrictions {
+    .snapchat.creativetools.common.SCCTPContentRestrictions.SCCTPContentRestrictions_CountryList countryBlocklist = 1;
+    .snapchat.creativetools.common.SCCTPContentRestrictions.SCCTPContentRestrictions_CountryList countryAllowlist = 2;
+    message SCCTPContentRestrictions_CountryList {
+        repeated uint32 countryCodesArray = 1;
+    }
+}

@@ -1,0 +1,407 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/ads/render/schema/SCAdsAppInstall.proto";
+import "snapchat/ads/render/schema/SCAdsDeeplink.proto";
+import "snapchat/ads/render/schema/SCAdsWebviewAttachment.proto";
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/common/media/SCMEDIAImage.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/geo/SPCGGeo.proto";
+
+message SCCTPFilter {
+    uint64 filterId = 1;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Media media = 2;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientTargetingInfo clientTargetingInfo = 3;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_FriendFilterInfo friendFilterInfo = 4;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_FrameFilterInfo frameFilterInfo = 5;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_BitmojiFilterInfo bitmojiFilterInfo = 6;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo dynamicFilterInfo = 7;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredFilterInfo sponsoredFilterInfo = 8;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Audio audio = 9;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Attachment attachment = 10;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientOrderingInfo clientOrderingInfo = 11;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientRenderingInfo clientRenderingInfo = 12;
+    int64 clientCacheTtlMinutes = 13;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_AutoStackFilterType autoStackFilterType = 14;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ArSegmentationInfo arSegmentationInfo = 15;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Tooltip tooltip = 16;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ToastMessage toastMessage = 17;
+    bool isSponsored = 18;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredSlug sponsoredSlug = 19;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredTrackInfo sponsoredTrackInfo = 20;
+    bytes encGeoData = 21;
+    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientGeneratedFilter clientGenFilter = 22;
+    message SCCTPFilter_ArSegmentationInfo {
+        bool shouldDisplayWithoutSegmentationMatch = 1;
+        bool isBasic = 2;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ArSegmentationInfo.SCCTPFilter_ArSegmentationInfo_SkyFilter skyFilter = 3;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ArSegmentationInfo.SCCTPFilter_ArSegmentationInfo_PortraitFilter portraitFilter = 4;
+        message SCCTPFilter_ArSegmentationInfo_PortraitFilter {
+            string URL = 1;
+            bool bokeh = 2;
+        }
+        message SCCTPFilter_ArSegmentationInfo_SkyFilter {
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ArSegmentationInfo.SCCTPFilter_ArSegmentationInfo_SkyFilter.SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType skyType = 1;
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ArSegmentationInfo.SCCTPFilter_ArSegmentationInfo_SkyFilter.SCCTPFilter_ArSegmentationInfo_SkyFilter_Style style = 2;
+            string replacementSkyURL = 3;
+            string blimpURL = 4;
+            enum SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType {
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType_SkyTypeUnset = 0;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType_Daytime = 1;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType_Sunset = 2;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_SkyType_Nighttime = 3;
+            }
+            enum SCCTPFilter_ArSegmentationInfo_SkyFilter_Style {
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_Style_StyleUnset = 0;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_Style_Regular = 1;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_Style_Cartoon = 2;
+                SCCTPFilter_ArSegmentationInfo_SkyFilter_Style_Augmented = 3;
+            }
+        }
+    }
+    message SCCTPFilter_Attachment {
+        string ctaText = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Attachment.SCCTPFilter_Attachment_LongFormVideo longFormVideo = 2;
+        .snapchat.ads.render.schema.SCAdsWebViewAttachment webView = 3;
+        .snapchat.ads.render.schema.SCAdsAppInstall appInstall = 4;
+        .snapchat.ads.render.schema.SCAdsDeeplink deepLink = 5;
+        message SCCTPFilter_Attachment_LongFormVideo {
+            string videoId = 1;
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Attachment.SCCTPFilter_Attachment_LongFormVideo.SCCTPFilter_Attachment_LongFormVideo_Platform platform = 2;
+            enum SCCTPFilter_Attachment_LongFormVideo_Platform {
+                SCCTPFilter_Attachment_LongFormVideo_Platform_Unset = 0;
+                SCCTPFilter_Attachment_LongFormVideo_Platform_Brightcove = 1;
+                SCCTPFilter_Attachment_LongFormVideo_Platform_Snapchat = 2;
+            }
+        }
+    }
+    message SCCTPFilter_Audio {
+        string URL = 1;
+        bool isLooping = 2;
+    }
+    message SCCTPFilter_BitmojiFilterInfo {
+        string comicId = 1;
+    }
+    message SCCTPFilter_ClientGeneratedFilter {
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientGeneratedFilter.SCCTPFilter_ClientGeneratedFilter_ColorFilter colorFilter = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientGeneratedFilter.SCCTPFilter_ClientGeneratedFilter_MotionFilter motionFilter = 2;
+        message SCCTPFilter_ClientGeneratedFilter_ColorFilter {
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientGeneratedFilter.SCCTPFilter_ClientGeneratedFilter_ColorFilter.SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type type = 1;
+            enum SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type {
+                SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type_Unset = 0;
+                SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type_Smoothing = 1;
+                SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type_Instasnap = 2;
+                SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type_MissEtikate = 3;
+                SCCTPFilter_ClientGeneratedFilter_ColorFilter_Type_Greyscale = 4;
+            }
+        }
+        message SCCTPFilter_ClientGeneratedFilter_MotionFilter {
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientGeneratedFilter.SCCTPFilter_ClientGeneratedFilter_MotionFilter.SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type type = 1;
+            enum SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type {
+                SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type_Unset = 0;
+                SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type_Slow = 1;
+                SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type_Fast = 2;
+                SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type_Superfast = 3;
+                SCCTPFilter_ClientGeneratedFilter_MotionFilter_Type_Reverse = 4;
+            }
+        }
+    }
+    message SCCTPFilter_ClientOrderingInfo {
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientOrderingInfo.SCCTPFilter_ClientOrderingInfo_CarouselGroupInfo carouselGroupInfo = 1;
+        bool guaranteeDelivery = 2;
+        int32 priority = 3;
+        message SCCTPFilter_ClientOrderingInfo_CarouselGroupInfo {
+            string groupName = 1;
+            float carouselScore = 2;
+        }
+    }
+    message SCCTPFilter_ClientRenderingInfo {
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientRenderingInfo.SCCTPFilter_ClientRenderingInfo_Scale scale = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientRenderingInfo.SCCTPFilter_ClientRenderingInfo_Position position = 2;
+        bool belowDrawingLayer = 3;
+        enum SCCTPFilter_ClientRenderingInfo_Position {
+            SCCTPFilter_ClientRenderingInfo_Position_PositionUnset = 0;
+            SCCTPFilter_ClientRenderingInfo_Position_Top = 1;
+            SCCTPFilter_ClientRenderingInfo_Position_Bottom = 2;
+            SCCTPFilter_ClientRenderingInfo_Position_Left = 3;
+            SCCTPFilter_ClientRenderingInfo_Position_Right = 4;
+            SCCTPFilter_ClientRenderingInfo_Position_TopLeft = 5;
+            SCCTPFilter_ClientRenderingInfo_Position_TopRight = 6;
+            SCCTPFilter_ClientRenderingInfo_Position_BottomLeft = 7;
+            SCCTPFilter_ClientRenderingInfo_Position_BottomRight = 8;
+            SCCTPFilter_ClientRenderingInfo_Position_Center = 9;
+        }
+        enum SCCTPFilter_ClientRenderingInfo_Scale {
+            SCCTPFilter_ClientRenderingInfo_Scale_ScaleUnset = 0;
+            SCCTPFilter_ClientRenderingInfo_Scale_ScaleToFill = 1;
+            SCCTPFilter_ClientRenderingInfo_Scale_AspectFit = 2;
+            SCCTPFilter_ClientRenderingInfo_Scale_AspectFill = 3;
+        }
+    }
+    message SCCTPFilter_ClientTargetingInfo {
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientTargetingInfo.SCCTPFilter_ClientTargetingInfo_CameraContext cameraContextsArray = 1;
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientTargetingInfo.SCCTPFilter_ClientTargetingInfo_MediaTypeContext mediaTypeContextsArray = 2;
+        repeated int64 actionmojiContextsArray = 3;
+        repeated string visualContextsArray = 4;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ClientTargetingInfo.SCCTPFilter_ClientTargetingInfo_Geofence geofence = 5;
+        message SCCTPFilter_ClientTargetingInfo_Geofence {
+            string id_p = 1;
+            repeated .snapchat.geo.SPCGGeometry geometryArray = 2;
+        }
+        enum SCCTPFilter_ClientTargetingInfo_CameraContext {
+            SCCTPFilter_ClientTargetingInfo_CameraContext_CameraContextUnset = 0;
+            SCCTPFilter_ClientTargetingInfo_CameraContext_FrontFacing = 1;
+            SCCTPFilter_ClientTargetingInfo_CameraContext_RearFacing = 2;
+            SCCTPFilter_ClientTargetingInfo_CameraContext_MixedFacing = 3;
+        }
+        enum SCCTPFilter_ClientTargetingInfo_MediaTypeContext {
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_MediaTypeContextUnset = 0;
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_Image = 1;
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_Video = 2;
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_VideoNoSound = 3;
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_VideoSoundLaguna = 4;
+            SCCTPFilter_ClientTargetingInfo_MediaTypeContext_VideoNoSoundLaguna = 5;
+        }
+    }
+    message SCCTPFilter_DynamicFilterInfo {
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content contentArray = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_ContentSettings contentSettings = 2;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Context context = 3;
+        message SCCTPFilter_DynamicFilterInfo_Content {
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_Type type = 1;
+            string source = 2;
+            uint32 refreshIntervalSec = 3;
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_LayoutParameters layoutParameters = 4;
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters displayParameters = 5;
+            .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo companionCreativeInfo = 6;
+            message SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo {
+                bool movable = 1;
+                bool modifiable = 2;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo.SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo_RatingSticker ratingSticker = 3;
+                message SCCTPFilter_DynamicFilterInfo_Content_CompanionCreativeInfo_RatingSticker {
+                    string unselectedStateAssetURL = 1;
+                    string selectedStateAssetURL = 2;
+                    int32 initialRating = 3;
+                    int32 maxRating = 4;
+                }
+            }
+            message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters {
+                string font = 1;
+                int32 fontSize = 2;
+                int32 maxResizableFontSize = 3;
+                string textColor = 4;
+                float textAlpha = 5;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment textAlignment = 6;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextShadow textShadow = 7;
+                string fallbackText = 10;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown dynamicCountdown = 11;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod fallbackMethod = 12;
+                string staticText = 8;
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText dynamicText = 9;
+                message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown {
+                    string targetDatetime = 1;
+                    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection targetDatetimeDirection = 2;
+                    enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection {
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection_TargetDatetimeDirectionUnset = 0;
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection_Future = 1;
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicCountdown_TargetDatetimeDirection_Past = 2;
+                    }
+                }
+                message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText {
+                    string text = 1;
+                    .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Content.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText.SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization capitalization = 2;
+                    enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization {
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization_CapitalizationUnset = 0;
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization_Upper = 1;
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization_Lower = 2;
+                        SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_DynamicText_Capitalization_Mixed = 3;
+                    }
+                }
+                message SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextShadow {
+                    string color = 1;
+                    int32 shadowOffsetX = 2;
+                    int32 shadowOffsetY = 3;
+                    float blurRadius = 4;
+                }
+                enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod {
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod_FallbackMethodUnset = 0;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod_FallbackText = 1;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod_Truncation = 2;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_FallbackMethod_CarouselRemoval = 3;
+                }
+                enum SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment {
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment_TextAlignmentUnset = 0;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment_Left = 1;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment_Center = 2;
+                    SCCTPFilter_DynamicFilterInfo_Content_DisplayParameters_TextAlignment_Right = 3;
+                }
+            }
+            message SCCTPFilter_DynamicFilterInfo_Content_LayoutParameters {
+                float xOffset = 1;
+                float yOffset = 2;
+                float width = 3;
+                float height = 4;
+                float rotation = 5;
+                int32 zIndex = 6;
+            }
+            enum SCCTPFilter_DynamicFilterInfo_Content_Type {
+                SCCTPFilter_DynamicFilterInfo_Content_Type_Unset = 0;
+                SCCTPFilter_DynamicFilterInfo_Content_Type_Text = 1;
+                SCCTPFilter_DynamicFilterInfo_Content_Type_Image = 2;
+                SCCTPFilter_DynamicFilterInfo_Content_Type_SmartFilter = 3;
+                SCCTPFilter_DynamicFilterInfo_Content_Type_CompanionCreative = 4;
+            }
+        }
+        message SCCTPFilter_DynamicFilterInfo_ContentSettings {
+            bool refreshable = 1;
+            float refreshMessageXPortrait = 2;
+            float refreshMessageYPortrait = 3;
+            float refreshMessageXLandscape = 4;
+            float refreshMessageYLandscape = 5;
+            string refreshHint = 6;
+            string updatingMessage = 7;
+        }
+        message SCCTPFilter_DynamicFilterInfo_Context {
+            repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Context.DeeplinkPropertiesEntry deeplinkProperties = 1;
+            repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Context.SCCTPFilter_DynamicFilterInfo_Context_TimeComponent relativeTimeComponentsArray = 2;
+            message DeeplinkPropertiesEntry {
+                string key = 1;
+                string value = 2;
+            }
+            message SCCTPFilter_DynamicFilterInfo_Context_TimeComponent {
+                .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_DynamicFilterInfo.SCCTPFilter_DynamicFilterInfo_Context.SCCTPFilter_DynamicFilterInfo_Context_TimeComponent.SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit timeUnit = 1;
+                string singularName = 2;
+                string pluralName = 3;
+                enum SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit {
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Unset = 0;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Year = 1;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Month = 2;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Day = 3;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Hour = 4;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Minute = 5;
+                    SCCTPFilter_DynamicFilterInfo_Context_TimeComponent_TimeUnit_Second = 6;
+                }
+            }
+        }
+    }
+    message SCCTPFilter_FrameFilterInfo {
+    }
+    message SCCTPFilter_FriendFilterInfo {
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_FriendFilterInfo.SCCTPFilter_FriendFilterInfo_FriendContext friendContextsArray = 1;
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_FriendFilterInfo.SCCTPFilter_FriendFilterInfo_TriggerContext triggerContextsArray = 2;
+        bool usesFriendmoji = 3;
+        enum SCCTPFilter_FriendFilterInfo_FriendContext {
+            SCCTPFilter_FriendFilterInfo_FriendContext_FriendContextUnset = 0;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Birthday = 1;
+            SCCTPFilter_FriendFilterInfo_FriendContext_NewFriend = 2;
+            SCCTPFilter_FriendFilterInfo_FriendContext_BecomeBff = 3;
+            SCCTPFilter_FriendFilterInfo_FriendContext_BecomeSbff = 4;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Bff = 5;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Sbff = 6;
+            SCCTPFilter_FriendFilterInfo_FriendContext_AnyFriend = 7;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Smirk = 8;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Besties = 9;
+            SCCTPFilter_FriendFilterInfo_FriendContext_MutualBesties = 10;
+            SCCTPFilter_FriendFilterInfo_FriendContext_Bf = 11;
+            SCCTPFilter_FriendFilterInfo_FriendContext_MutualBf = 12;
+            SCCTPFilter_FriendFilterInfo_FriendContext_SnapStreak = 13;
+            SCCTPFilter_FriendFilterInfo_FriendContext_StreakHourglass = 14;
+        }
+        enum SCCTPFilter_FriendFilterInfo_TriggerContext {
+            SCCTPFilter_FriendFilterInfo_TriggerContext_TriggerContextUnset = 0;
+            SCCTPFilter_FriendFilterInfo_TriggerContext_OpenCamera = 1;
+            SCCTPFilter_FriendFilterInfo_TriggerContext_OneToOneChat = 2;
+            SCCTPFilter_FriendFilterInfo_TriggerContext_GroupChat = 3;
+        }
+    }
+    message SCCTPFilter_Media {
+        .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 1;
+        .snapchat.common.media.SCMEDIAImageSize size = 2;
+        repeated .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_Media.URLParamsEntry URLParams = 3;
+        bool isAnimated = 4;
+        message URLParamsEntry {
+            string key = 1;
+            string value = 2;
+        }
+    }
+    message SCCTPFilter_SponsoredFilterInfo {
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredSlug sponsoredSlug = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredFilterInfo.SCCTPFilter_SponsoredFilterInfo_TrackInfo trackInfo = 2;
+        message SCCTPFilter_SponsoredFilterInfo_TrackInfo {
+            string adServeRequestId = 1;
+            bytes rawAdData = 2;
+            bool skipTracking = 3;
+            bytes encryptedSponsoredUnlockableTargetingInfoData = 4;
+            string rankingId = 5;
+            bytes rankingData = 6;
+            bytes encryptedUserTrackData = 7;
+            bytes skAdNetworkAttribution = 8;
+            bytes adId = 9;
+        }
+    }
+    message SCCTPFilter_SponsoredSlug {
+        string text = 1;
+        uint32 timeBeforeFadeoutMs = 2;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_SponsoredSlug.SCCTPFilter_SponsoredSlug_Position position = 3;
+        enum SCCTPFilter_SponsoredSlug_Position {
+            SCCTPFilter_SponsoredSlug_Position_PositionUnset = 0;
+            SCCTPFilter_SponsoredSlug_Position_TopLeft = 1;
+            SCCTPFilter_SponsoredSlug_Position_TopCenter = 2;
+            SCCTPFilter_SponsoredSlug_Position_TopRight = 3;
+            SCCTPFilter_SponsoredSlug_Position_BottomLeft = 4;
+            SCCTPFilter_SponsoredSlug_Position_BottomCenter = 5;
+            SCCTPFilter_SponsoredSlug_Position_BottomRight = 6;
+            SCCTPFilter_SponsoredSlug_Position_MiddleLeft = 7;
+            SCCTPFilter_SponsoredSlug_Position_MiddleCenter = 8;
+            SCCTPFilter_SponsoredSlug_Position_MiddleRight = 9;
+        }
+    }
+    message SCCTPFilter_SponsoredTrackInfo {
+        string adServeRequestId = 1;
+        bytes rawAdData = 2;
+        bool skipTracking = 3;
+        bytes encryptedSponsoredUnlockableTargetingInfoData = 4;
+        string rankingId = 5;
+        bytes rankingData = 6;
+        bytes encryptedUserTrackData = 7;
+        bytes skAdNetworkAttribution = 8;
+        bytes adId = 9;
+    }
+    message SCCTPFilter_ToastMessage {
+        string message = 1;
+        .snapchat.creativetools.common.SCCTPFilter.SCCTPFilter_ToastMessage.SCCTPFilter_ToastMessage_Position position = 2;
+        int32 fadeInTimeMs = 3;
+        int32 onScreenTimeMs = 4;
+        int32 fadeOutTimeMs = 5;
+        enum SCCTPFilter_ToastMessage_Position {
+            SCCTPFilter_ToastMessage_Position_PositionUnset = 0;
+            SCCTPFilter_ToastMessage_Position_Top = 1;
+            SCCTPFilter_ToastMessage_Position_Middle = 2;
+            SCCTPFilter_ToastMessage_Position_Bottom = 3;
+        }
+    }
+    message SCCTPFilter_Tooltip {
+        string localizedMessage = 1;
+        int32 coolDownPeriodMinutes = 2;
+    }
+    enum SCCTPFilter_AutoStackFilterType {
+        SCCTPFilter_AutoStackFilterType_AutoStackUnset = 0;
+        SCCTPFilter_AutoStackFilterType_Unfiltered = 1;
+        SCCTPFilter_AutoStackFilterType_Instasnap = 2;
+        SCCTPFilter_AutoStackFilterType_MissEtikate = 3;
+        SCCTPFilter_AutoStackFilterType_Greyscale = 4;
+        SCCTPFilter_AutoStackFilterType_Smoothing = 5;
+        SCCTPFilter_AutoStackFilterType_SkyDaylight = 6;
+        SCCTPFilter_AutoStackFilterType_SkySunset = 7;
+        SCCTPFilter_AutoStackFilterType_SkyNight = 8;
+    }
+}
+
+message SCCTPFilterRequest {
+    .snapchat.ads.request.schema.SCAdsAdRequest adRequest = 1;
+    repeated uint64 debugFilterIdsArray = 2;
+}

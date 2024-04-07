@@ -1,0 +1,196 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "google/protobuf/empty.proto";
+import "schema/common/uuid.proto";
+import "schema/content/status.proto";
+import "snapdoc/media_id.proto";
+import "snapchat/content/MediaReference.proto";
+
+message ContentEnvelope {
+    repeated .snapchat.messaging.ContentEnvelope.RemoteMediaInfo media_info = 1;
+    .snapchat.messaging.ContentEnvelope.ContentType content_type = 2;
+    .snapchat.messaging.EnvelopeEncryption encryption = 3;
+    bytes contents = 4;
+    repeated .snapchat.messaging.ContentEnvelope.MediaReferenceList media_reference_lists = 5;
+    .snapchat.messaging.ContentEnvelope.DisplayInfo display_info = 6;
+    .snapchat.messaging.ContentEnvelope.SavePolicy save_policy = 7;
+    .snapchat.messaging.ContentEnvelope.Thumbnails thumbnails = 8;
+    .snapchat.messaging.ContentEnvelope.FeedDisplayInfo feed_display_info = 9;
+    .snapchat.messaging.ContentEnvelope.EmptyObject unknown_11 = 11;
+    message RemoteMediaInfo {
+        .snapchat.messaging.ContentEnvelope.RemoteMediaInfo.MediaType media_type = 3;
+        bool has_audio = 4;
+        bytes content_object = 1;
+        string legacy_media_id = 2;
+        string content_url = 5;
+        enum MediaType {
+            UNKNOWN = 0;
+            IMAGE = 1;
+            VIDEO = 2;
+            GIF = 3;
+        }
+    }
+    message MediaReferenceList {
+        repeated .snapchat.content.MediaReference media_reference = 1;
+    }
+    message DisplayInfo {
+        bool has_audio = 1;
+    }
+    message Thumbnails {
+        repeated .snapchat.messaging.ThumbnailInfo thumbnails = 1;
+    }
+    message FeedDisplayInfo {
+        .snapchat.messaging.SnapDisplayInfo snap_display_info = 1;
+        .snapchat.messaging.StatusMessageDisplayInfo status_message_display_info = 2;
+    }
+    message EmptyObject {
+    }
+    enum ContentType {
+        SNAP = 0;
+        CHAT = 1;
+        EXTERNAL_MEDIA = 2;
+        SHARE = 3;
+        NOTE = 4;
+        STICKER = 5;
+        STATUS = 6;
+        LOCATION = 8;
+        STATUS_SAVE_TO_CAMERA_ROLL = 9;
+        STATUS_CONVERSATION_CAPTURE_SCREENSHOT = 10;
+        STATUS_CONVERSATION_CAPTURE_RECORD = 11;
+        STATUS_CALL_MISSED_VIDEO = 12;
+        STATUS_CALL_MISSED_AUDIO = 13;
+        STATUS_INVITE_LINK_CHANGE = 14;
+        CANVAS_APP = 15;
+    }
+    enum SavePolicy {
+        UNSET = 0;
+        PROHIBITED = 1;
+        LIFETIME = 2;
+        VIEW_SESSION = 3;
+    }
+}
+
+message ThumbnailInfo {
+    .snapchat.snapdoc.MediaId media_id = 1;
+    uint32 media_reference_list_index = 2;
+}
+
+message EnvelopeEncryption {
+    .google.protobuf.Empty no_enc = 1;
+    .snapchat.messaging.ConversationEnvelopeEncryptionV1 conversation_v1 = 2;
+    .snapchat.messaging.FideliusEncryption fidelius = 3;
+    .snapchat.messaging.ClearTextMediaKeyEncryption clearTextMediaKey = 4;
+    .snapchat.messaging.EelEncryption eelEncryption = 5;
+    .snapchat.messaging.ClearTextEelKeyEncryption clearTextEelKeyEncryption = 6;
+}
+
+message ClearTextEelKeyEncryption {
+    bytes cekIv = 1;
+    bytes cek = 2;
+}
+
+message EelReEncryptionInit {
+    .snapchat.messaging.UUID userId = 1;
+    repeated bytes publicKeyIdentifiers = 2;
+}
+
+message EelDeviceEncryption {
+    bytes recipientPublicKeyIdentifier = 1;
+    int32 recipientVersion = 2;
+    bytes cekCiphertext = 3;
+}
+
+message EelEncryption {
+    bytes cekIv = 1;
+    bytes nonce = 2;
+    bytes senderPublicKey = 3;
+    int32 senderVersion = 4;
+    bytes cek = 16;
+}
+
+message OverrideEncryptorInfo {
+    bytes encryptorPublicKey = 1;
+    int32 encryptorVersion = 2;
+    repeated .snapchat.messaging.EelDeviceEncryption eelDeviceEncryption = 3;
+    .snapchat.messaging.UUID encryptorUserId = 4;
+}
+
+message EelDestinationEncryption {
+    repeated .snapchat.messaging.EelDeviceEncryption eelDeviceEncryptions = 1;
+    repeated .snapchat.messaging.OverrideEncryptorInfo overrideEncryptorInfos = 2;
+}
+
+message AddEelReEncryptionInit {
+    bytes publicKeyIdentifier = 1;
+}
+
+message AppendEelReEncryptionDestination {
+    repeated .snapchat.messaging.EelReEncryptionInit acknowledgedRequests = 1;
+    .snapchat.messaging.EelDestinationEncryption newEelDestinationEncryption = 2;
+}
+
+message ConversationEnvelopeEncryptionV1 {
+    bytes iv = 1;
+    bytes nonce = 2;
+}
+
+message FideliusEncryption {
+    bytes snap_key = 1;
+    bytes snap_iv = 2;
+    bool retried = 3;
+    uint32 version = 4;
+    bytes sender_out_beta = 5;
+    repeated .snapchat.messaging.FideliusRecipientInfo fidelius_recipient_info = 6;
+}
+
+message FideliusRecipientInfo {
+    bytes recipient_key = 1;
+    bytes na = 2;
+    bytes phi = 3;
+    bytes tag = 4;
+    .snapchat.messaging.UUID sender_user_id = 5;
+    .snapchat.messaging.UUID recipient_user_id = 6;
+    uint32 recipient_version = 7;
+}
+
+message ClearTextMediaKeyEncryption {
+    bytes media_key = 1;
+    bytes media_iv = 2;
+}
+
+message SnapDisplayInfo {
+    bool has_audio = 1;
+}
+
+message StatusMessageDisplayInfo {
+    .snapchat.messaging.StatusScreenCaptureDisplayInfo screenCapture = 1;
+    .snapchat.messaging.StatusCallingStatusDisplayInfo callingStatus = 2;
+    .snapchat.messaging.StatusParticipantAddDisplayInfo changeParticipant = 3;
+    .snapchat.messaging.StatusNameChangeDisplayInfo nameChange = 4;
+    .snapchat.messaging.StatusSaveToCameraRollDisplayInfo saveToCameraRoll = 5;
+}
+
+message StatusScreenCaptureDisplayInfo {
+    .snapchat.messaging.ScreenCaptureStatusMessage.CaptureType capture_type = 1;
+}
+
+message StatusCallingStatusDisplayInfo {
+    .snapchat.messaging.CallingStatusMessage.CallStatus call_status = 1;
+    .snapchat.messaging.CallingStatusMessage.CallType call_type = 2;
+}
+
+message StatusParticipantAddDisplayInfo {
+}
+
+message StatusNameChangeDisplayInfo {
+}
+
+message StatusSaveToCameraRollDisplayInfo {
+}

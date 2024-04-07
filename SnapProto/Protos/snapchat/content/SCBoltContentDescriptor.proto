@@ -1,0 +1,32 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBolt";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+import "google/protobuf/timestamp.proto";
+
+message SCBoltApplicationVersion {
+    int32 applicableVersionMajor = 1;
+    int32 applicableVersionMinor = 2;
+}
+
+message SCBoltContentDescriptor {
+    .snapchat.content.SCBoltApplicationVersion minimumSupportedApplicationVersion = 1;
+    string contentId = 2;
+    repeated string contentPathPartsArray = 3;
+    .google.protobuf.Timestamp contentExpiryTime = 4;
+    .google.protobuf.Timestamp contentDescriptorExpiryTime = 5;
+    repeated uint64 readyLocationIdsArray = 6;
+    repeated uint64 futureLocationIdsArray = 7;
+    .google.protobuf.Timestamp futureLocationsReadyTime = 8;
+    uint32 claimId = 9;
+    uint32 useCase = 10;
+    .snapchat.content.SCBoltUInt64Value contentLength = 11;
+    uint32 hostPatternVersion = 12;
+    uint32 boltCdnExperimentationId = 13;
+}
+
+message SCBoltUInt64Value {
+    uint64 value = 1;
+}

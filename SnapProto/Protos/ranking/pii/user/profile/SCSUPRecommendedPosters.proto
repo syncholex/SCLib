@@ -1,0 +1,66 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPRecommendedPosters {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_Poster postersArray = 2;
+    string version = 3;
+    message SCSUPRecommendedPosters_OurStory {
+        .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    }
+    message SCSUPRecommendedPosters_Poster {
+        .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_ScoringInfo scoringInfo = 4;
+        repeated .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_ScoringInfo allScoringInfoArray = 5;
+        .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_PublicUserStory publicUserStory = 1;
+        .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_PublisherStory publisherStory = 2;
+        .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_OurStory ourStory = 3;
+    }
+    message SCSUPRecommendedPosters_PublicUserStory {
+        string userId = 1;
+    }
+    message SCSUPRecommendedPosters_PublisherStory {
+        int64 publisherId = 1;
+    }
+    message SCSUPRecommendedPosters_ScoringInfo {
+        float score = 1;
+        .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_ScoringInfo.SCSUPRecommendedPosters_Source_Enum source = 2;
+        repeated .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_ScoringInfo.SCSUPRecommendedPosters_ScoringInfo_SourceScore sourceScoresArray = 3;
+        message SCSUPRecommendedPosters_ScoringInfo_SourceScore {
+            .ranking.pii.user.profile.SCSUPRecommendedPosters.SCSUPRecommendedPosters_ScoringInfo.SCSUPRecommendedPosters_ScoringInfo_SourceScore.SCSUPRecommendedPosters_Source_Enum source = 1;
+            float score = 2;
+            int32 clusterSize = 3;
+            int64 numWatchesInCluster = 4;
+            int32 numWatchUsersInCluster = 5;
+            int32 numNeighbors = 6;
+            int32 totalNumWatchesFromNeighbors = 7;
+            float smoothedNumWatchesFromNeighbors = 8;
+            int32 numNeighborsWithWatch = 9;
+            enum SCSUPRecommendedPosters_Source_Enum {
+                SCSUPRecommendedPosters_Source_Enum_Unknown = 0;
+                SCSUPRecommendedPosters_Source_Enum_MatrixScore = 1;
+                SCSUPRecommendedPosters_Source_Enum_Neighbors = 2;
+                SCSUPRecommendedPosters_Source_Enum_Cluster = 3;
+            }
+        }
+        enum SCSUPRecommendedPosters_Source_Enum {
+            SCSUPRecommendedPosters_Source_Enum_Unknown = 0;
+            SCSUPRecommendedPosters_Source_Enum_MatrixScore = 1;
+            SCSUPRecommendedPosters_Source_Enum_Neighbors = 2;
+            SCSUPRecommendedPosters_Source_Enum_Cluster = 3;
+        }
+    }
+}
+
+message SCSUPUserStoryLocales {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPUserStoryLocales.TopLocalesEntry topLocales = 2;
+    message TopLocalesEntry {
+        string key = 1;
+        float value = 2;
+    }
+}

@@ -1,0 +1,136 @@
+syntax = "proto3";
+package cognac;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognacAppInstances";
+option csharp_namespace = "SnapProto.Cognac";
+
+import "google/protobuf/timestamp.proto";
+
+message SCCognacAppInstancesAppInstance {
+    string id_p = 1;
+    .cognac.SCCognacAppInstancesAppInstanceScope scope = 2;
+    string appId = 3;
+    .cognac.SCCognacAppInstancesAppInstance.SCCognacAppInstancesAppInstance_AppInstancePrivacy privacy = 4;
+    string creatorId = 5;
+    enum SCCognacAppInstancesAppInstance_AppInstancePrivacy {
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Unknown = 0;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Public = 1;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Private = 2;
+    }
+}
+
+message SCCognacAppInstancesAppInstanceScope {
+    string userId = 1;
+    string conversationId = 2;
+    string sharedId = 3;
+}
+
+message SCCognacAppInstancesBatchGetAppInstanceRequest {
+    repeated string appInstanceIdsArray = 1;
+}
+
+message SCCognacAppInstancesBatchGetAppInstanceResponse {
+    repeated .cognac.SCCognacAppInstancesAppInstance appInstancesArray = 1;
+}
+
+message SCCognacAppInstancesBatchGetChatDockRequest {
+    repeated .cognac.SCCognacAppInstancesAppInstanceScope appInstanceScopesArray = 1;
+    int64 chatDockDurationSeconds = 2;
+}
+
+message SCCognacAppInstancesBatchGetChatDockResponse {
+    repeated .cognac.SCCognacAppInstancesChatDock chatDocksArray = 1;
+}
+
+message SCCognacAppInstancesChatDock {
+    .cognac.SCCognacAppInstancesAppInstanceScope appInstanceScope = 1;
+    repeated .cognac.SCCognacAppInstancesChatDockEntry chatDockEntriesArray = 2;
+    int64 version = 3;
+}
+
+message SCCognacAppInstancesChatDockEntry {
+    .cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+    .google.protobuf.Timestamp expirationTimestamp = 2;
+    int64 expirationDurationSeconds = 3;
+    bool terminated = 4;
+    int64 version = 5;
+}
+
+message SCCognacAppInstancesGetAppInstanceAuthTokenRequest {
+    string appInstanceId = 1;
+}
+
+message SCCognacAppInstancesGetAppInstanceAuthTokenResponse {
+    string authToken = 1;
+    int64 expirationTimestampMsecs = 2;
+}
+
+message SCCognacAppInstancesGetAppInstanceRequest {
+    string appInstanceId = 1;
+}
+
+message SCCognacAppInstancesGetAppInstanceResponse {
+    .cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+}
+
+message SCCognacAppInstancesGetChatDockRequest {
+    .cognac.SCCognacAppInstancesAppInstanceScope appInstanceScope = 1;
+    int64 chatDockDurationSeconds = 2;
+}
+
+message SCCognacAppInstancesGetChatDockResponse {
+    .cognac.SCCognacAppInstancesChatDock chatDock = 1;
+}
+
+message SCCognacAppInstancesLaunchAppInstanceRequest {
+    .cognac.SCCognacAppInstancesAppInstanceScope appInstanceScope = 1;
+    string appId = 2;
+    .cognac.SCCognacAppInstancesLaunchAppInstanceRequest.SCCognacAppInstancesAppInstance_AppInstancePrivacy privacy = 3;
+    enum SCCognacAppInstancesAppInstance_AppInstancePrivacy {
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Unknown = 0;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Public = 1;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Private = 2;
+    }
+}
+
+message SCCognacAppInstancesLaunchAppInstanceResponse {
+    .cognac.SCCognacAppInstancesChatDockEntry launchedChatDockEntry = 1;
+    .cognac.SCCognacAppInstancesChatDock chatDock = 2;
+}
+
+message SCCognacAppInstancesNotificationPayload {
+    .cognac.SCCognacAppInstancesChatDockEntry chatDockEntry = 1;
+    string appDisplayName = 2;
+    string appIconURL = 3;
+    .cognac.SCCognacAppInstancesChatDock chatDock = 4;
+    .cognac.SCCognacAppInstancesNotificationPayload.SCCognacAppsApp_Type appType = 5;
+    enum SCCognacAppsApp_Type {
+        SCCognacAppsApp_Type_Unknown = 0;
+        SCCognacAppsApp_Type_Game = 1;
+        SCCognacAppsApp_Type_Cypress = 2;
+        SCCognacAppsApp_Type_Lens = 3;
+    }
+}
+
+message SCCognacAppInstancesTerminateAppInstanceRequest {
+    string appInstanceId = 1;
+}
+
+message SCCognacAppInstancesTerminateAppInstanceResponse {
+    .cognac.SCCognacAppInstancesChatDockEntry terminatedChatDockEntry = 1;
+    .cognac.SCCognacAppInstancesChatDock chatDock = 2;
+}
+
+message SCCognacAppInstancesUpdateAppInstancePrivacyRequest {
+    string appInstanceId = 1;
+    .cognac.SCCognacAppInstancesUpdateAppInstancePrivacyRequest.SCCognacAppInstancesAppInstance_AppInstancePrivacy newPrivacy = 2;
+    enum SCCognacAppInstancesAppInstance_AppInstancePrivacy {
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Unknown = 0;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Public = 1;
+        SCCognacAppInstancesAppInstance_AppInstancePrivacy_Private = 2;
+    }
+}
+
+message SCCognacAppInstancesUpdateAppInstancePrivacyResponse {
+    .cognac.SCCognacAppInstancesAppInstance appInstance = 1;
+}

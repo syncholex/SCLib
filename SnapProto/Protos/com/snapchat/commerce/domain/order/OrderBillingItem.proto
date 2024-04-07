@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Order";
+
+import "com/snapchat/commerce/domain/PrintingMetadata.proto";
+import "com/snapchat/commerce/domain/order/ItemInfo.proto";
+
+message OrderBillingItem {
+    .com.snapchat.commerce.domain.order.ItemInfo itemInfo = 1;
+    .com.snapchat.commerce.domain.order.OrderBillingItem.CommercePartner commercePartner = 2;
+    string variantDescription = 3;
+    string productImageURL = 4;
+    .com.snapchat.commerce.domain.PrintingMetadata printingMetadata = 5;
+    enum CommercePartner {
+        CommercePartner_Unset = 0;
+        CommercePartner_Shopify = 1;
+        CommercePartner_Miniprogram = 2;
+    }
+}

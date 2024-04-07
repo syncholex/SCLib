@@ -1,0 +1,11 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+message SCSUPAppVersion {
+    int64 major = 1;
+    int64 minor = 2;
+    int64 patch = 3;
+}

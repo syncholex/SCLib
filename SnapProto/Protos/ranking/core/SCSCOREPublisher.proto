@@ -1,0 +1,26 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCOREHNNewsCategory {
+    string id_p = 1;
+    string localizedDisplayName = 2;
+    string color = 3;
+}
+
+message SCSCORELogoDisplay {
+}
+
+message SCSCOREPublisherAdSetting {
+}
+
+message SCSCOREPublisherPostFrequency {
+}
+
+message SCSCOREPublisherSnapMediaType {
+}
+
+message SCSCOREPublisherTierLevel {
+}

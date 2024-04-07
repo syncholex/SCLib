@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.webview;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCWebView";
+option csharp_namespace = "SnapProto.Snapchat.Webview";
+
+message SCWebViewResourceInfo {
+    string resourceURL = 1;
+    string attribute = 2;
+}

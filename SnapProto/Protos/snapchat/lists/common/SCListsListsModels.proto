@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.lists.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLists";
+option csharp_namespace = "SnapProto.Snapchat.Lists.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCListsRecipientList {
+    .snapchat.core.SCCOREUUID listId = 1;
+    repeated .snapchat.lists.common.SCListsRecipientListItem listItemsArray = 2;
+    string name = 3;
+    int64 creationTime = 4;
+    int32 rank = 5;
+    string descriptiveTitle = 6;
+    .snapchat.core.SCCOREUUID groupStoryId = 7;
+}
+
+message SCListsRecipientListItem {
+    .snapchat.core.SCCOREUUID recipientId = 1;
+    .snapchat.lists.common.SCListsRecipientListItem.SCListsRecipientListItem_RecipientType recipientType = 2;
+    enum SCListsRecipientListItem_RecipientType {
+        SCListsRecipientListItem_RecipientType_RecipientTypeUnset = 0;
+        SCListsRecipientListItem_RecipientType_RecipientTypeSnapchatter = 1;
+        SCListsRecipientListItem_RecipientType_RecipientTypeGroup = 2;
+    }
+}

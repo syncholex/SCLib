@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPBitmojiSticker.proto";
+import "snapchat/creativetools/common/SCCTPCameo.proto";
+import "snapchat/creativetools/common/SCCTPCustomSticker.proto";
+import "snapchat/creativetools/common/SCCTPEmoji.proto";
+import "snapchat/creativetools/common/SCCTPSnapSticker.proto";
+
+message SCCTPChatReactionIntent {
+    repeated .snapchat.creativetools.common.SCCTPChatReactionIntent.SCCTPChatReactionIntent_ReactionSticker reactionsArray = 1;
+    .snapchat.creativetools.common.SCCTPChatReactionIntent.SCCTPChatReactionIntent_IntentType intentType = 2;
+    message SCCTPChatReactionIntent_ReactionSticker {
+        .snapchat.creativetools.common.SCCTPBitmojiSticker bitmoji = 1;
+        .snapchat.creativetools.common.SCCTPEmoji emoji = 2;
+        .snapchat.creativetools.common.SCCTPSnapSticker snapSticker = 3;
+        .snapchat.creativetools.common.SCCTPCameo cameo = 4;
+        .snapchat.creativetools.common.SCCTPCustomSticker customSticker = 5;
+    }
+    enum SCCTPChatReactionIntent_IntentType {
+        SCCTPChatReactionIntent_IntentType_ReactionUnset = 0;
+        SCCTPChatReactionIntent_IntentType_Love = 1;
+        SCCTPChatReactionIntent_IntentType_LaughCry = 2;
+        SCCTPChatReactionIntent_IntentType_Fire = 3;
+        SCCTPChatReactionIntent_IntentType_ThumbsUp = 4;
+        SCCTPChatReactionIntent_IntentType_ThumbsDown = 5;
+        SCCTPChatReactionIntent_IntentType_SadCry = 6;
+        SCCTPChatReactionIntent_IntentType_Wow = 7;
+    }
+}

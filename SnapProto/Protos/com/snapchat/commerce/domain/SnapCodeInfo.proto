@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain";
+
+message SnapCodeInfo {
+    string unlockURL = 1;
+    string imageURL = 2;
+    string id_p = 3;
+    string data_p = 4;
+}

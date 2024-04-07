@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.fidelius;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFidelius";
+option csharp_namespace = "SnapProto.Services.Snapchat.Fidelius";
+
+import "snapchat/fidelius/SCFideliusRequest.proto";
+
+service FideliusIdentityService{
+    rpc GetFriendKeys(.snapchat.fidelius.SCFideliusGetFriendKeysRequest) returns (.snapchat.fidelius.SCFideliusGetFriendKeysResponse);
+    rpc GetUserKey(.snapchat.fidelius.SCFideliusGetUserKeyRequest) returns (.snapchat.fidelius.SCFideliusGetUserKeyResponse);
+    rpc InitializeDeviceKey(.snapchat.fidelius.SCFideliusInitializeDeviceKeyRequest) returns (.snapchat.fidelius.SCFideliusInitializeDeviceKeyResponse);
+    rpc InitializeWebKey(.snapchat.fidelius.SCFideliusInitializeWebKeyRequest) returns (.snapchat.fidelius.SCFideliusInitializeWebKeyResponse);
+}

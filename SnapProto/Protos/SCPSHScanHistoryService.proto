@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.perception.scan_history.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPSH";
+option csharp_namespace = "SnapProto.Services.Snapchat.Perception.Scan_history.V1";
+
+import "snapchat/perception/scan_history/v1/SCPSHService.proto";
+
+service ScanHistoryService{
+    rpc DeleteScanHistory(.snapchat.perception.scan_history.v1.SCPSHDeleteScanHistoryRequest) returns (.snapchat.perception.scan_history.v1.SCPSHDeleteScanHistoryResponse);
+    rpc ReadScanHistory(.snapchat.perception.scan_history.v1.SCPSHReadScanHistoryRequest) returns (.snapchat.perception.scan_history.v1.SCPSHReadScanHistoryResponse);
+    rpc ScanHistoryMetadata(.snapchat.perception.scan_history.v1.SCPSHScanHistoryMetadataRequest) returns (.snapchat.perception.scan_history.v1.SCPSHScanHistoryMetadataResponse);
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.minispermissions;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMinisPermissions";
+option csharp_namespace = "SnapProto.Services.Snapchat.Minispermissions";
+
+import "snapchat/minispermissions/SCMinisPermissionsMinispermissions.proto";
+
+service MinisPermissionsInternal{
+    rpc GetPermissions(.snapchat.minispermissions.SCMinisPermissionsGetPermissionsRequest) returns (.snapchat.minispermissions.SCMinisPermissionsGetPermissionsResponse);
+}

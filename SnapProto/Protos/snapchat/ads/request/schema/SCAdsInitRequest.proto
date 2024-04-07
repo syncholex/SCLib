@@ -1,0 +1,24 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/ads/request/schema/SCAdsInitToTargetingFields.proto";
+
+message SCAdsInitRequest {
+    bytes idfa = 1;
+    bytes encryptedUserData = 3;
+    bool isRerouteRequest = 4;
+    bool isDebug = 5;
+    .snapchat.ads.request.schema.SCAdsPreferences preferences = 6;
+    .snapchat.ads.request.schema.SCAdsApplication application = 7;
+    .snapchat.ads.request.schema.SCAdsDevice device = 8;
+    .snapchat.ads.request.schema.SCAdsNetwork network = 9;
+    bytes said = 10;
+    bytes fsnEncryptedUserData = 11;
+    bytes cofToken = 12;
+    .snapchat.ads.request.schema.SCAdsClientToTargetingFields clientToTargetingFields = 13;
+    bytes clientRequestId = 14;
+}

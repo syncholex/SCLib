@@ -1,0 +1,259 @@
+syntax = "proto3";
+package impala;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala";
+
+import "google/protobuf/wrappers.proto";
+import "impala/business/IMPBusinessAddress.proto";
+import "impala/profile/IMPContentIdentifier.proto";
+import "snapchat/storydoc/STODiscoverChannelMetadata.proto";
+import "snapchat/storydoc/STOVisibility.proto";
+import "snapchat/tags/ContentTag.proto";
+
+message IMPBusiness {
+    .impala.IMPBusiness.IMPBusiness_Identifiers identifiers = 1;
+    .impala.IMPBusiness.IMPBusiness_Branding branding = 2;
+    .impala.IMPBusiness.IMPBusiness_Behaviour behaviour = 3;
+    .impala.IMPBusiness.IMPBusiness_Visibility visibility = 4;
+    .impala.IMPBusiness.IMPBusiness_Stats stats = 5;
+    message IMPBusiness_Behaviour {
+        bool isPublisher = 1;
+        bool isShow = 2;
+        bool isOfficialAccount = 3;
+        bool isNews = 4;
+        repeated .impala.IMPBusiness.IMPBusiness_Behaviour.IMPFeature featuresArray = 5;
+        bool isSubscribable = 6;
+        .impala.IMPBusiness.IMPBusiness_Behaviour.IMPAdSetting adSetting = 7;
+        repeated .impala.profile.IMPContentIdentifierV2 contentsArray = 8;
+        bool isCuratedPublisher = 9;
+        bool adsEnabled = 10;
+        bool isDeleted = 11;
+        bool isHappeningNowPublisher = 12;
+        .impala.IMPBusiness.IMPBusiness_Behaviour.IMPAudioClassification audioClassification = 13;
+        bool isAdsPreRollEnabled = 14;
+        .impala.IMPBusiness.IMPBusiness_Behaviour.IMPModerationLevel moderationLevel = 15;
+        bool isDynamicAdsEnabled = 16;
+        repeated .snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 17;
+        .impala.IMPBusiness.IMPBusiness_Behaviour.TierLevel tierLevel = 18;
+        enum IMPAdSetting {
+            IMPAdSetting_Skippable = 0;
+            IMPAdSetting_NonSkippable = 1;
+        }
+        enum IMPAudioClassification {
+            IMPAudioClassification_Unset = 0;
+            IMPAudioClassification_NormalDialogue = 1;
+            IMPAudioClassification_DialogueSubtitleBurn = 2;
+            IMPAudioClassification_DialogueImpactBurn = 3;
+            IMPAudioClassification_DialogueHeavy = 4;
+            IMPAudioClassification_NoDialogue = 5;
+        }
+        enum IMPFeature {
+            IMPFeature_Unknown = 0;
+            IMPFeature_Evergreen = 1;
+            IMPFeature_SubscriberOnly = 2;
+            IMPFeature_ExclusiveShow = 3;
+            IMPFeature_FixedPayments = 4;
+            IMPFeature_InternalCurator = 5;
+            IMPFeature_PartnerCurator = 6;
+            IMPFeature_TeamSnapchat = 7;
+            IMPFeature_Timely = 8;
+            IMPFeature_OriginalShow = 9;
+            IMPFeature_FriendsCarousel = 10;
+            IMPFeature_OnboardingWizard = 11;
+            IMPFeature_MadeForUs = 12;
+            IMPFeature_DiscoverChannel = 13;
+            IMPFeature_DiscoverChannelEligible = 14;
+        }
+        enum IMPModerationLevel {
+            IMPModerationLevel_ModerationLevelUnset = 0;
+            IMPModerationLevel_ModerationLevelStandard = 1;
+            IMPModerationLevel_ModerationLevelNews = 2;
+        }
+        enum TierLevel {
+            TierLevel_TierUnknown = 0;
+            TierLevel_TierPremium = 1;
+            TierLevel_TierShow = 2;
+            TierLevel_TierCuration = 3;
+            TierLevel_TierHappeningNow = 4;
+            TierLevel_TierDynamicEditions = 5;
+        }
+    }
+    message IMPBusiness_BoltMedia {
+        bytes contentObject = 1;
+        string URL = 2;
+    }
+    message IMPBusiness_Branding {
+        string formalDisplayName = 1;
+        string description_p = 2;
+        string deeplinkURL = 3;
+        .impala.IMPBusiness.IMPBusiness_Logos logos = 4;
+        .impala.IMPBusiness.IMPBusiness_Branding.IMPLogoDisplayV2 profileLogoDisplay = 5;
+        string websiteURL = 6;
+        repeated string nicknamesArray = 7;
+        string primaryColor = 8;
+        string secondaryColor = 9;
+        .impala.IMPBusiness.IMPBusiness_Emoji emoji = 10;
+        string bitmojiAvatarId = 11;
+        string category = 12;
+        string subcategory = 13;
+        string phoneNumber = 14;
+        string emailAddress = 15;
+        .impala.business.IMPAddressV2 address = 16;
+        string URLSafeFormalName = 17;
+        repeated string keywordsArray = 18;
+        string mutableName = 19;
+        .impala.IMPBusiness.IMPBusiness_Branding.IMPTier tier = 20;
+        .impala.IMPBusiness.IMPBusiness_Branding.IMPInternalCategory internalCategory = 21;
+        bool isLensCreator = 22;
+        .impala.IMPBusiness.IMPBusiness_Branding.IMPBusinessCategoryV3 categoryEnum = 23;
+        .impala.IMPBusiness.IMPBusiness_Branding.IMPBusinessSubcategoryV3 subcategoryEnum = 24;
+        enum IMPBusinessCategoryV3 {
+            IMPBusinessCategoryV3_CategoryV3Unknown = 0;
+            IMPBusinessCategoryV3_CategoryV3BusinessGroup = 1;
+            IMPBusinessCategoryV3_CategoryV3People = 2;
+            IMPBusinessCategoryV3_CategoryV3ProductBrand = 3;
+        }
+        enum IMPInternalCategory {
+            IMPInternalCategory_CategoryUnknown = 0;
+            IMPInternalCategory_CategoryPerson = 1;
+            IMPInternalCategory_CategoryBusiness = 2;
+            IMPInternalCategory_CategoryPublisher = 3;
+        }
+        enum IMPLogoDisplayV2 {
+            IMPLogoDisplayV2_Bottom = 0;
+            IMPLogoDisplayV2_Off = 1;
+        }
+        enum IMPBusinessSubcategoryV3 {
+            IMPBusinessSubcategoryV3_SubcategoryV3Unknown = 0;
+            IMPBusinessSubcategoryV3_SubcategoryV3CharityCause = 100;
+            IMPBusinessSubcategoryV3_SubcategoryV3CollegeUniversity = 101;
+            IMPBusinessSubcategoryV3_SubcategoryV3CommunityOrg = 102;
+            IMPBusinessSubcategoryV3_SubcategoryV3CompanyEnterprise = 103;
+            IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOrg = 104;
+            IMPBusinessSubcategoryV3_SubcategoryV3InternetCompany = 105;
+            IMPBusinessSubcategoryV3_SubcategoryV3MediaNewsCompany = 106;
+            IMPBusinessSubcategoryV3_SubcategoryV3NonprofitOrg = 107;
+            IMPBusinessSubcategoryV3_SubcategoryV3PoliticalOrg = 108;
+            IMPBusinessSubcategoryV3_SubcategoryV3ReligiousOrg = 109;
+            IMPBusinessSubcategoryV3_SubcategoryV3RestaurantChain = 110;
+            IMPBusinessSubcategoryV3_SubcategoryV3RetailCompany = 111;
+            IMPBusinessSubcategoryV3_SubcategoryV3SportsLeague = 112;
+            IMPBusinessSubcategoryV3_SubcategoryV3SportsTeam = 113;
+            IMPBusinessSubcategoryV3_SubcategoryV3Business = 114;
+            IMPBusinessSubcategoryV3_SubcategoryV3Group = 115;
+            IMPBusinessSubcategoryV3_SubcategoryV3Actor = 200;
+            IMPBusinessSubcategoryV3_SubcategoryV3Artist = 201;
+            IMPBusinessSubcategoryV3_SubcategoryV3Athlete = 202;
+            IMPBusinessSubcategoryV3_SubcategoryV3Coach = 203;
+            IMPBusinessSubcategoryV3_SubcategoryV3Comedian = 204;
+            IMPBusinessSubcategoryV3_SubcategoryV3Dancer = 205;
+            IMPBusinessSubcategoryV3_SubcategoryV3Entrepreneur = 206;
+            IMPBusinessSubcategoryV3_SubcategoryV3FashionModel = 207;
+            IMPBusinessSubcategoryV3_SubcategoryV3FilmDirector = 208;
+            IMPBusinessSubcategoryV3_SubcategoryV3FilmTvPersonality = 209;
+            IMPBusinessSubcategoryV3_SubcategoryV3FitnessPro = 210;
+            IMPBusinessSubcategoryV3_SubcategoryV3FoodPro = 211;
+            IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOfficial = 212;
+            IMPBusinessSubcategoryV3_SubcategoryV3Journalist = 213;
+            IMPBusinessSubcategoryV3_SubcategoryV3LifestyleInfluencer = 214;
+            IMPBusinessSubcategoryV3_SubcategoryV3MotivationalSpeaker = 215;
+            IMPBusinessSubcategoryV3_SubcategoryV3MovieCharacter = 216;
+            IMPBusinessSubcategoryV3_SubcategoryV3MusicianBand = 217;
+            IMPBusinessSubcategoryV3_SubcategoryV3NewsPersonality = 218;
+            IMPBusinessSubcategoryV3_SubcategoryV3Photographer = 219;
+            IMPBusinessSubcategoryV3_SubcategoryV3PoliticalCandidate = 220;
+            IMPBusinessSubcategoryV3_SubcategoryV3Politician = 221;
+            IMPBusinessSubcategoryV3_SubcategoryV3Producer = 222;
+            IMPBusinessSubcategoryV3_SubcategoryV3ProfessionalGamer = 223;
+            IMPBusinessSubcategoryV3_SubcategoryV3PublicFigure = 224;
+            IMPBusinessSubcategoryV3_SubcategoryV3Scientist = 225;
+            IMPBusinessSubcategoryV3_SubcategoryV3SportsPersonality = 226;
+            IMPBusinessSubcategoryV3_SubcategoryV3Traveler = 227;
+            IMPBusinessSubcategoryV3_SubcategoryV3VideoGameCreator = 228;
+            IMPBusinessSubcategoryV3_SubcategoryV3VloggerBlogger = 229;
+            IMPBusinessSubcategoryV3_SubcategoryV3Writer = 230;
+            IMPBusinessSubcategoryV3_SubcategoryV3Creator = 231;
+            IMPBusinessSubcategoryV3_SubcategoryV3Person = 232;
+            IMPBusinessSubcategoryV3_SubcategoryV3LensCreator = 233;
+            IMPBusinessSubcategoryV3_SubcategoryV3ApparelFashion = 300;
+            IMPBusinessSubcategoryV3_SubcategoryV3Brand = 301;
+            IMPBusinessSubcategoryV3_SubcategoryV3Product = 302;
+            IMPBusinessSubcategoryV3_SubcategoryV3FilmTv = 303;
+            IMPBusinessSubcategoryV3_SubcategoryV3HealthBeauty = 304;
+            IMPBusinessSubcategoryV3_SubcategoryV3Publisher = 305;
+            IMPBusinessSubcategoryV3_SubcategoryV3Service = 306;
+            IMPBusinessSubcategoryV3_SubcategoryV3Show = 307;
+            IMPBusinessSubcategoryV3_SubcategoryV3VideoGame = 308;
+        }
+        enum IMPTier {
+            IMPTier_TierUnknown = 0;
+            IMPTier_TierStandard = 1;
+            IMPTier_TierPublic = 2;
+            IMPTier_TierPublicOfficial = 3;
+        }
+    }
+    message IMPBusiness_Emoji {
+        string hostAccountVerifiedEmoji = 1;
+        string hostAccountVerifiedEmojiSafe = 2;
+        string hostAccountVerifiedEmojiWithoutModifiers = 3;
+    }
+    message IMPBusiness_Identifiers {
+        string businessProfileId = 1;
+        int64 publisherId = 2;
+        string name = 3;
+        string organizationId = 4;
+        string hostAccountUsername = 5;
+        string hostAccountUserId = 6;
+        int64 versionNumber = 7;
+        string storeId = 8;
+        string hostAccountMutableUsername = 9;
+    }
+    message IMPBusiness_Logos {
+        string squareFilledIconURL = 1;
+        string squareHeroImageURL = 2;
+        string squareHeroImageBitmojiTemplateId = 3;
+        string horizontalIconURL = 4;
+        .impala.IMPBusiness.IMPBusiness_BoltMedia squareFilledIcon = 5;
+        .impala.IMPBusiness.IMPBusiness_BoltMedia squareHeroImage = 6;
+        .impala.IMPBusiness.IMPBusiness_BoltMedia horizontalIcon = 7;
+        string discoverFeedLogoURL = 20;
+        string megaProfileLogoURL = 21;
+        string manageProfileLogoURL = 22;
+        string originalLogoURL = 100;
+    }
+    message IMPBusiness_Stats {
+        .google.protobuf.Int64Value subscriberCount = 1;
+    }
+    message IMPBusiness_Visibility {
+        bool isEnabled = 1;
+        bool isSearchable = 2;
+        bool isEmployeeOnly = 3;
+        bool isTest = 4;
+        repeated int64 geofenceIdsArray = 5;
+        string primaryLanguage = 6;
+        repeated string whitelistLanguageArray = 7;
+        repeated string blacklistLanguageArray = 8;
+        .snapchat.storydoc.STOContentAccessLists contentAccessLists = 9;
+        repeated string localContentArray = 10;
+        repeated .impala.IMPBusiness.IMPBusiness_Visibility.IMPDiscoverRegion regionsArray = 11;
+        repeated .snapchat.tags.ContentTag tagsArray = 12;
+        .impala.IMPBusiness.IMPBusiness_Visibility.IMPAgeGateLevel ageGate = 13;
+        string homeCountry = 14;
+        enum IMPAgeGateLevel {
+            IMPAgeGateLevel_Unrestricted = 0;
+            IMPAgeGateLevel_Explicit = 1;
+        }
+        enum IMPDiscoverRegion {
+            IMPDiscoverRegion_All = 0;
+            IMPDiscoverRegion_DevTest = 1;
+            IMPDiscoverRegion_International = 2;
+            IMPDiscoverRegion_Us = 3;
+            IMPDiscoverRegion_Uk = 4;
+            IMPDiscoverRegion_Au = 5;
+            IMPDiscoverRegion_Ca = 6;
+            IMPDiscoverRegion_Sub = 7;
+            IMPDiscoverRegion_Qa = 8;
+        }
+    }
+}

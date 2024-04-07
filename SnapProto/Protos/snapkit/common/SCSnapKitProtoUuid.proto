@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapkit.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapKitProto";
+option csharp_namespace = "SnapProto.Snapkit.Common";
+
+message SCSnapKitProtoUUID {
+    fixed64 highBits = 1;
+    fixed64 lowBits = 2;
+}

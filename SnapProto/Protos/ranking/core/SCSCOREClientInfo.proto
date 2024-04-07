@@ -1,0 +1,59 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCOREAppInfo {
+    string appVersion = 1;
+    .ranking.core.SCSCOREAppInfo.SCSCOREOsType_Type osType = 3;
+    string osVersion = 4;
+    .ranking.core.SCSCOREAppInfo.SCSCOREAppBuild_Build appBuild = 5;
+    .ranking.core.SCSCOREAppInfo.SCSCOREAppVariant_Enum appVariant = 6;
+    string rawUserAgent = 7;
+    enum SCSCOREAppBuild_Build {
+        SCSCOREAppBuild_Build_AppbuildUnknown = 0;
+        SCSCOREAppBuild_Build_AppbuildProd = 1;
+        SCSCOREAppBuild_Build_AppbuildMaster = 2;
+        SCSCOREAppBuild_Build_AppbuildAlpha = 3;
+        SCSCOREAppBuild_Build_AppbuildDebug = 4;
+        SCSCOREAppBuild_Build_AppbuildUiAutomation = 5;
+        SCSCOREAppBuild_Build_AppbuildBeta = 6;
+        SCSCOREAppBuild_Build_AppbuildWildcard = 7;
+        SCSCOREAppBuild_Build_AppbuildPerf = 8;
+        SCSCOREAppBuild_Build_AppbuildProfile = 9;
+        SCSCOREAppBuild_Build_AppbuildUiAutomationDebug = 10;
+        SCSCOREAppBuild_Build_AppbuildNorthstar = 11;
+    }
+    enum SCSCOREAppVariant_Enum {
+        SCSCOREAppVariant_Enum_Unknown = 0;
+        SCSCOREAppVariant_Enum_AndroidMushroom = 1;
+        SCSCOREAppVariant_Enum_AndroidOriginal = 2;
+        SCSCOREAppVariant_Enum_AndroidSnapshot = 3;
+        SCSCOREAppVariant_Enum_AndroidHms = 4;
+    }
+    enum SCSCOREOsType_Type {
+        SCSCOREOsType_Type_OsUnknown = 0;
+        SCSCOREOsType_Type_OsIos = 1;
+        SCSCOREOsType_Type_OsAndroid = 2;
+        SCSCOREOsType_Type_OsWeb = 3;
+    }
+}
+
+message SCSCOREConnectionInfo {
+    string carrier = 1;
+    string carrierMccMnc = 2;
+    .ranking.core.SCSCOREConnectionInfo.SCSCOREConnectionInfo_ConnectionType connectionType = 3;
+    string clientIp = 4;
+    enum SCSCOREConnectionInfo_ConnectionType {
+        SCSCOREConnectionInfo_ConnectionType_ConnectionUnknown = 0;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionWifi = 1;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionCell = 2;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionEthernet = 3;
+    }
+}
+
+message SCSCOREDeviceInfo {
+    bytes idfa = 1;
+    string deviceModel = 2;
+}

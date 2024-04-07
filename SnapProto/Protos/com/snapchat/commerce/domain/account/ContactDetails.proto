@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.account;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Account";
+
+message ContactDetails {
+    string email = 1;
+    string phone = 2;
+}

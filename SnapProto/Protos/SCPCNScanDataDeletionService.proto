@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.perception;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCN";
+option csharp_namespace = "SnapProto.Services.Snapchat.Perception";
+
+import "snapchat/perception/SCPCNDeleteScanDataService.proto";
+
+service ScanDataDeletionService{
+    rpc EnqueueScanDataDeletion(.snapchat.perception.SCPCNEnqueueScanDataDeletionRequest) returns (.snapchat.perception.SCPCNEnqueueScanDataDeletionResponse);
+}

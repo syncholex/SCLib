@@ -1,0 +1,82 @@
+syntax = "proto3";
+package ranking.serving.jaguar;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Serving.Jaguar";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+import "ranking/indexing/TrendingTopics.proto";
+import "ranking/serving/jaguar/SCSSMSectionConfig.proto";
+import "ranking/serving/jaguar/SectionLayout.proto";
+
+message FeedType {
+}
+
+message FeedTypeMetadata {
+    int32 feedType = 1;
+    string displayName = 2;
+    string loggingKey = 3;
+    .ranking.serving.jaguar.SectionLayout sectionLayout = 5;
+    .ranking.serving.jaguar.SCSSMSectionConfig sectionConfig = 6;
+    string description_p = 7;
+    .ranking.serving.jaguar.TrendingPageSectionMetadata trendPageSectionMetadata = 8;
+    bool shouldHideSection = 9;
+    .ranking.serving.jaguar.TopicPageSectionMetadata topicPageSectionMetadata = 10;
+}
+
+message SpotlightChallengeMetadata {
+    string title = 2;
+    string imageURL = 3;
+    string details = 5;
+    string termsAndConditionsURL = 6;
+    int64 submissionStartTsMs = 7;
+    int64 submissionEndTsMs = 8;
+    string bitmojiThumbnailTemplateId = 9;
+    .ranking.serving.jaguar.SpotlightChallengeMetadata.SpotlightChallengeMetadata_ChallengeAmountDetails amountDetails = 10;
+    string topicId = 12;
+    .ranking.serving.jaguar.SpotlightChallengeMetadata.SCCTTopicStory_Type topicStoryType = 13;
+    string legalText = 14;
+    string stringId = 15;
+    message SpotlightChallengeMetadata_ChallengeAmountDetails {
+        int64 totalAmount = 1;
+        repeated int64 amountsForEachPlaceArray = 2;
+    }
+    enum SCCTTopicStory_Type {
+        SCCTTopicStory_Type_Unset = 0;
+        SCCTTopicStory_Type_Hashtag = 1;
+        SCCTTopicStory_Type_Lens = 2;
+        SCCTTopicStory_Type_Music = 3;
+        SCCTTopicStory_Type_OriginalSound = 4;
+        SCCTTopicStory_Type_ThirdPartyApp = 5;
+        SCCTTopicStory_Type_Challenge = 6;
+        SCCTTopicStory_Type_Cheerios = 7;
+        SCCTTopicStory_Type_Remixes = 8;
+        SCCTTopicStory_Type_Unused9 = 9;
+    }
+}
+
+message TopicPageSectionMetadata {
+    int64 submissionCount = 4;
+    .ranking.serving.jaguar.SpotlightChallengeMetadata spotlightChallengeMetadata = 5;
+}
+
+message TrendingPageSectionMetadata {
+    string topicId = 1;
+    .ranking.serving.jaguar.TrendingPageSectionMetadata.SCCTTopicStory_Type topicStoryType = 2;
+    string topicName = 3;
+    repeated .ranking.core.SCCORECompositeStoryId pinnedStoryIdsArray = 8;
+    .ranking.indexing.LensTopicMetaData lensTopicMetadata = 5;
+    .ranking.indexing.SoundsTopicMetaData soundsTopicMetadata = 6;
+    .ranking.indexing.HashTagTopicMetaData hashtagTopicMetadata = 7;
+    enum SCCTTopicStory_Type {
+        SCCTTopicStory_Type_Unset = 0;
+        SCCTTopicStory_Type_Hashtag = 1;
+        SCCTTopicStory_Type_Lens = 2;
+        SCCTTopicStory_Type_Music = 3;
+        SCCTTopicStory_Type_OriginalSound = 4;
+        SCCTTopicStory_Type_ThirdPartyApp = 5;
+        SCCTTopicStory_Type_Challenge = 6;
+        SCCTTopicStory_Type_Cheerios = 7;
+        SCCTTopicStory_Type_Remixes = 8;
+        SCCTTopicStory_Type_Unused9 = 9;
+    }
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.widget;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Widget";
+
+import "com/snapchat/showcase/wire/widget/CommerceAction.proto";
+
+message CommerceItemWidget {
+    .com.snapchat.showcase.wire.widget.CommerceItemWidgetHeader header = 1;
+    uint64 limit = 2;
+    .com.snapchat.showcase.wire.widget.CommerceItemWidget.CommerceItemDescriptionType descriptionType = 3;
+    .com.snapchat.showcase.wire.widget.CommerceAction actionForSection = 4;
+    enum CommerceItemDescriptionType {
+        CommerceItemDescriptionType_DescriptionTypeUnset = 0;
+        CommerceItemDescriptionType_SingleMerchant = 1;
+        CommerceItemDescriptionType_MultiMerchant = 2;
+    }
+}
+
+message CommerceItemWidgetHeader {
+    string title = 1;
+    string showMoreTitle = 2;
+    .com.snapchat.showcase.wire.widget.CommerceAction onClickShowMore = 3;
+}

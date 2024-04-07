@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+import "snapchat/cameos/common/SCCameosResolution.proto";
+
+message SCCameosQuickIconResource {
+    string URL = 1;
+    .snapchat.cameos.common.SCCameosResolution resolution = 2;
+}

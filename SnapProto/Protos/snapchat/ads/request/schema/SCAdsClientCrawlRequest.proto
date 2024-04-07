@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsClientCrawlRequest {
+    string crawlURL = 1;
+    string creativeId = 2;
+}

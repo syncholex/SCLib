@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGallery";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery";
+
+import "com/snapchat/proto/SCPBSnapCreatorAttribution.proto";
+
+message SCPBGallerySnapSource {
+    int32 type = 1;
+    repeated string attributionArray = 2;
+    string cameraRollId = 3;
+    string externalId = 4;
+    string saverUserId = 5;
+    .com.snapchat.proto.SCPBSnapCreatorAttribution creatorAttribution = 6;
+}

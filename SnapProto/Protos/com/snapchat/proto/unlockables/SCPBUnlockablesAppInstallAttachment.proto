@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesAppInstallAttachment {
+    string appName = 1;
+    string iosAppId = 2;
+    string androidAppURL = 3;
+    string appIconURL = 4;
+}

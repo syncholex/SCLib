@@ -1,0 +1,109 @@
+syntax = "proto3";
+package com.snapchat.auth.proto;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Auth.Proto";
+
+message DisableOtpTfaRequest {
+}
+
+message DisableOtpTfaResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message DisableSmsTfaRequest {
+}
+
+message DisableSmsTfaResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message EnableOtpTfaRequest {
+    string otpSecret = 1;
+    string otpCode = 2;
+    string deviceId = 3;
+}
+
+message EnableOtpTfaResponse {
+    string error = 1;
+    .com.snapchat.auth.proto.TfaVerifiedDevice tfaVerifiedDevice = 2;
+    string recoveryCode = 3;
+    string metricSafeErrorMessage = 4;
+}
+
+message EnableSmsTfaRequest {
+    string smsCode = 1;
+    string deviceId = 2;
+}
+
+message EnableSmsTfaResponse {
+    string error = 1;
+    .com.snapchat.auth.proto.TfaVerifiedDevice tfaVerifiedDevice = 2;
+    string recoveryCode = 3;
+    string metricSafeErrorMessage = 4;
+}
+
+message EnableSmsTfaSendCodeRequest {
+}
+
+message EnableSmsTfaSendCodeResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message ForgetAllTfaVerifiedDevicesRequest {
+}
+
+message ForgetAllTfaVerifiedDevicesResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message ForgetOneTfaVerifiedDeviceRequest {
+    string deviceId = 1;
+}
+
+message ForgetOneTfaVerifiedDeviceResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message GenerateTfaRecoveryCodeRequest {
+}
+
+message GenerateTfaRecoveryCodeResponse {
+    string error = 1;
+    string code = 2;
+    string metricSafeErrorMessage = 3;
+}
+
+message GetTfaSettingsRequest {
+}
+
+message GetTfaSettingsResponse {
+    bool smsEnabled = 1;
+    bool otpEnabled = 2;
+}
+
+message GetTfaVerifiedDevicesRequest {
+}
+
+message GetTfaVerifiedDevicesResponse {
+    repeated .com.snapchat.auth.proto.TfaVerifiedDevice verifiedDevicesArray = 1;
+}
+
+message ResendSmsTfaCodeRequest {
+    string tfaToken = 1;
+}
+
+message ResendSmsTfaCodeResponse {
+    string error = 1;
+    string metricSafeErrorMessage = 2;
+}
+
+message TfaVerifiedDevice {
+    string deviceId = 1;
+    string deviceName = 2;
+    int64 lastLoginMilliseconds = 3;
+}

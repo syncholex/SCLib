@@ -1,0 +1,8 @@
+syntax = "proto3";
+package snapchat.cdp.cof;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Cdp.Cof";
+
+message ConfigList {
+    repeated string configNamesArray = 1;
+}

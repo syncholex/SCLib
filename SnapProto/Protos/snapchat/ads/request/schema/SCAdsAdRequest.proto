@@ -1,0 +1,669 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/ads/request/schema/SCAdsAdRankingContext.proto";
+import "snapchat/ads/request/schema/SCAdsBudgetAbStudy.proto";
+import "snapchat/ads/request/schema/SCAdsClientRankingStudy.proto";
+import "snapchat/ads/request/schema/SCAdsFeatureContext.proto";
+import "snapchat/ads/request/schema/SCAdsInitResponse.proto";
+import "snapchat/ads/request/schema/SCAdsInventoryRequest.proto";
+import "snapchat/ads/request/schema/SCAdsLensRankingContext.proto";
+import "snapchat/ads/request/schema/SCAdsPredictionStudy.proto";
+import "snapchat/ads/request/schema/SCAdsWebviewPrefetchStudy.proto";
+import "snapchat/common/Value.proto";
+
+message SCAdsABTest {
+    string adLoadTestExperimentGroup = 1;
+    .snapchat.ads.request.schema.SCAdsBudgetAbStudy budgetAbStudy = 2;
+    .snapchat.ads.request.schema.SCAdsPredictionStudy skipPrediction = 3;
+    .snapchat.ads.request.schema.SCAdsPredictionStudy swipePrediction = 4;
+    .snapchat.ads.request.schema.SCAdsPredictionStudy installPrediction = 5;
+    .snapchat.ads.request.schema.SCAdsClientRankingStudy clientRankingAbStudy = 6;
+    .snapchat.ads.request.schema.SCAdsWebviewPrefetchStudy webviewPrefetchStudy = 7;
+    string abTestUserSegment = 8;
+    string abTestUserSegment20 = 9;
+    bool storyAdsDisabled = 10;
+    bool discoverFeedCarouselAdsEnabled = 11;
+    int32 discoverFeedCarouselAdsNumOrganicTilesBetweenAds = 12;
+    int32 discoverFeedCarouselAdsMinFeedAdPositionIndex = 13;
+    bool userInAdsHoldout = 14;
+    .google.protobuf.BoolValue adserverOgRouteToApiGw = 15;
+    bool isAcquiredUser = 16;
+    uint32 latencyDelayMs = 17;
+    .google.protobuf.Int32Value newUserGracePeriodDaysSinceCreation = 18;
+    .google.protobuf.Int32Value discoverFeedStoryAdsNumOrganicTilesBetweenAds = 19;
+    .google.protobuf.Int32Value discoverFeedStoryAdsMinFeedAdPositionIndex = 20;
+    bool arShoppingEnabled = 21;
+    float webviewPrefetchThreshold = 22;
+    .snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfigs onDeviceInventoryConfigs = 23;
+    bool webviewPrefetchDisableOverride = 24;
+    bool arShoppingRemoteLensEnabled = 25;
+    int32 voperaVariantIdentifier = 26;
+    string lookserySponsoredGeoBackStudyGroup = 27;
+    bool disableBlockWebviewPreloading = 28;
+    bool isForcedExternalBrowser = 29;
+    bool shouldWebviewURLAddClickId = 30;
+    bool webviewLightningModeSafeguardEnabled = 31;
+    bool webviewClientCrawlSafeguardEnabled = 32;
+    bool storiesRemoveInterstitial = 33;
+    bool storiesEnableThinProgressBar = 34;
+    bool storiesEnableProgressBar = 35;
+    bool shouldDeeplinkURLAddClickId = 36;
+    bool webviewLightningModeServerRedirectURLEnable = 37;
+    bool webviewExtendedLifecycleServerControlEnabled = 38;
+    float lightningModeServerAppraisalScoreThreshold = 39;
+    bool webviewLightningModeNonDoubleclickServerRedirectURLEnable = 40;
+    bool webviewLightningModeJavascriptRedirectURLEnable = 41;
+    bool forceExtBrowserAndroidNonPixelStar = 42;
+    repeated .snapchat.ads.request.schema.SCAdsAbConsoleStudyTreatmentData treatmentDataForAllowlistedAbConsoleStudiesArray = 43;
+    repeated .snapchat.ads.request.schema.SCAdsABTest.DynamicConfigsEntry dynamicConfigs = 44;
+    bool storyAdMapExcluded = 45;
+    int32 storyAdSeeMore = 46;
+    message DynamicConfigsEntry {
+        string key = 1;
+        .snapchat.common.Value value = 2;
+    }
+}
+
+message SCAdsAbConsoleStudyTreatmentData {
+    int32 segmentId = 1;
+    int32 experimentId = 2;
+    string cofStudyName = 3;
+}
+
+message SCAdsAdKitApplication {
+    string applicationIdentifier = 1;
+    bytes snapkitAppId = 2;
+    int64 adkitSdkVersionNumeric = 3;
+}
+
+message SCAdsAdRequest {
+    .snapchat.ads.request.schema.SCAdsUser user = 1;
+    .snapchat.ads.request.schema.SCAdsApplication application = 2;
+    .snapchat.ads.request.schema.SCAdsPreferences preferences = 3;
+    .snapchat.ads.request.schema.SCAdsDevice device = 4;
+    .snapchat.ads.request.schema.SCAdsNetwork network = 5;
+    repeated .snapchat.ads.request.schema.SCAdsInventoryRequest inventoryRequestsArray = 6;
+    bool isDebug = 7;
+    .snapchat.ads.request.schema.SCAdsMixerInfo mixerInfo = 8;
+    repeated .snapchat.ads.request.schema.SCAdsStoryItem storiesArray = 9;
+    int64 timestamp = 10;
+    repeated bytes recentViewReceiptsArray = 11;
+    .snapchat.ads.request.schema.SCAdsDiscoverPage discoverPage = 12;
+    bytes clientRequestId = 13;
+    .snapchat.ads.request.schema.SCAdsLocation location = 14;
+    repeated .snapchat.ads.request.schema.SCAdsThirdPartyAdNetworkInfo thirdPartyAdNetworkInfosArray = 15;
+    .snapchat.ads.request.schema.SCAdsAdRankingContext adRankingContext = 16;
+    .snapchat.ads.request.schema.SCAdsLensRankingContext lensRankingContext = 17;
+    .snapchat.ads.request.schema.SCAdsFeatureContext featureContext = 18;
+}
+
+message SCAdsApplication {
+    string appName = 1;
+    int64 appVersionNumeric = 2;
+    string appVariant = 3;
+    .snapchat.ads.request.schema.SCAdsApplication.SCAdsAppVariant appVariantEnum = 4;
+    .snapchat.ads.request.schema.SCAdsApplication.SCAdsAppType appType = 5;
+    .snapchat.ads.request.schema.SCAdsAdKitApplication adKitApplication = 7;
+    .google.protobuf.Int64Value appUptimeMs = 8;
+    string sourceAppId = 9;
+    bool isNativeClient = 10;
+    enum SCAdsAppType {
+        SCAdsAppType_AppTypeUnknown = 0;
+        SCAdsAppType_AppTypeProd = 1;
+        SCAdsAppType_AppTypeBeta = 2;
+        SCAdsAppType_AppTypeAlpha = 3;
+        SCAdsAppType_AppTypeMaster = 4;
+        SCAdsAppType_AppTypeDebug = 5;
+    }
+    enum SCAdsAppVariant {
+        SCAdsAppVariant_UnknownAppVariant = 0;
+        SCAdsAppVariant_Mushroom = 1;
+        SCAdsAppVariant_Og = 2;
+    }
+}
+
+message SCAdsDebugConfig {
+    bool isTestUser = 1;
+    bool isAutomationUser = 2;
+    bool skipInventoryCapping = 3;
+    repeated string testGroupsArray = 4;
+}
+
+message SCAdsDevice {
+    bytes idfa = 1;
+    .snapchat.ads.request.schema.SCAdsDevice.SCAdsPlatformType platformType = 2;
+    string deviceModel = 3;
+    int64 osVersionNumeric = 4;
+    string deviceLanguage = 5;
+    bool soundIsOn = 6;
+    string buildNumber = 7;
+    .google.protobuf.Int32Value batteryPercent = 8;
+    .google.protobuf.BoolValue isBatteryCharging = 9;
+    .google.protobuf.Int64Value diskTotalSpaceKb = 10;
+    .google.protobuf.Int64Value diskFreeSpaceKb = 11;
+    .snapchat.ads.request.schema.SCAdsDevice.SCAdsAndroidMobileServiceType androidMobileServiceType = 12;
+    .google.protobuf.Int64Value systemUptimeMs = 13;
+    bytes idfv = 14;
+    .snapchat.ads.request.schema.SCAdsDevice.SCAdsDevice_ATTAuthStatusType attAuthStatus = 15;
+    .google.protobuf.FloatValue audioPlaybackVolume = 16;
+    .google.protobuf.Int64Value screenWidth = 17;
+    .google.protobuf.Int64Value screenHeight = 18;
+    enum SCAdsAndroidMobileServiceType {
+        SCAdsAndroidMobileServiceType_UnknownAndroidMobileServiceType = 0;
+        SCAdsAndroidMobileServiceType_Gms = 1;
+        SCAdsAndroidMobileServiceType_Hms = 2;
+    }
+    enum SCAdsDevice_ATTAuthStatusType {
+        SCAdsDevice_ATTAuthStatusType_NotDetermined = 0;
+        SCAdsDevice_ATTAuthStatusType_Restricted = 1;
+        SCAdsDevice_ATTAuthStatusType_Denied = 2;
+        SCAdsDevice_ATTAuthStatusType_Authorized = 3;
+    }
+    enum SCAdsPlatformType {
+        SCAdsPlatformType_UnknownPlatformType = 0;
+        SCAdsPlatformType_Ios = 1;
+        SCAdsPlatformType_Android = 2;
+    }
+}
+
+message SCAdsDiscoverPage {
+    string mixerVersion = 1;
+    .snapchat.ads.request.schema.SCAdsSubsBrandSafety subsBrandSafety = 2;
+    repeated .snapchat.ads.request.schema.SCAdsDiscoverPage.SCAdsDiscoverPage_Feed feedsArray = 3;
+    message SCAdsDiscoverPage_Feed {
+        uint32 storyOffset = 1;
+        int32 feedType = 2;
+        repeated .snapchat.ads.request.schema.SCAdsStoryItem storiesArray = 3;
+        .snapchat.ads.request.schema.SCAdsDiscoverPage.SCAdsDiscoverPage_Feed.SCAdsDiscoverPage_FeedStyle_Enum feedStyle = 4;
+        bool adsDisabled = 5;
+        uint32 minAdsPos = 6;
+        repeated string sccTagsArray = 7;
+        enum SCAdsDiscoverPage_FeedStyle_Enum {
+            SCAdsDiscoverPage_FeedStyle_Enum_Unknown = 0;
+            SCAdsDiscoverPage_FeedStyle_Enum_Horizontal = 1;
+            SCAdsDiscoverPage_FeedStyle_Enum_Vertical = 2;
+        }
+    }
+}
+
+message SCAdsLocation {
+    .google.protobuf.DoubleValue latitude = 1;
+    .google.protobuf.DoubleValue longitude = 2;
+    .google.protobuf.Int32Value accuracyInMeters = 3;
+    .google.protobuf.Int64Value locationCapturedTimestampMillis = 4;
+}
+
+message SCAdsMixerInfo {
+    uint32 storyOffset = 1;
+    string version = 2;
+    uint32 minAdsPos = 3;
+    int32 feedType = 4;
+    .snapchat.ads.request.schema.SCAdsSubsBrandSafety subsBrandSafety = 5;
+}
+
+message SCAdsNetwork {
+    .snapchat.ads.request.schema.SCAdsNetwork.SCAdsConnectionType connectionType = 1;
+    string mccMnc = 2;
+    bytes clientIp = 3;
+    string carrier = 4;
+    int64 kiloBytesPerSecond = 5;
+    .snapchat.ads.request.schema.SCAdsNetwork.SCAdsCellularNetworkType cellularNetworkType = 6;
+    enum SCAdsCellularNetworkType {
+        SCAdsCellularNetworkType_CellularUnset = 0;
+        SCAdsCellularNetworkType_CellularUnknown = 1;
+        SCAdsCellularNetworkType_Cellular2G = 2;
+        SCAdsCellularNetworkType_Cellular3G = 3;
+        SCAdsCellularNetworkType_Cellular4G = 4;
+        SCAdsCellularNetworkType_Cellular5G = 5;
+    }
+    enum SCAdsConnectionType {
+        SCAdsConnectionType_UnknownConnectionType = 0;
+        SCAdsConnectionType_Wifi = 1;
+        SCAdsConnectionType_Cell = 2;
+        SCAdsConnectionType_Ethernet = 3;
+    }
+}
+
+message SCAdsPreferences {
+    bool limitAdTracking = 1;
+    bool audienceMatchOptOut = 2;
+    bool externalActivityMatchOptOut = 3;
+    bool thirdPartyAdNetworkOptOut = 4;
+}
+
+message SCAdsStoryItem {
+    bool isSubscribed = 2;
+    bool isPinned = 3;
+    bool isBrandSafeQualified = 4;
+    double finalScore = 5;
+    int32 corpus = 6;
+    uint64 fp = 7;
+    repeated .snapchat.ads.request.schema.SCAdsStoryItem.SCAdsStoryItem_SccTagWeightPair sccTagsArray = 8;
+    float userEngagementScore = 9;
+    message SCAdsStoryItem_SccTagWeightPair {
+        .snapchat.ads.request.schema.SCAdsStoryItem.SCAdsStoryItem_SccTagWeightPair.Scc sccTag = 1;
+        float weight = 2;
+        enum Scc {
+            Scc_UnknownScc = 0;
+            Scc_Scc001 = 1;
+            Scc_Scc002 = 2;
+            Scc_Scc003 = 3;
+            Scc_Scc100 = 100;
+            Scc_Scc101 = 101;
+            Scc_Scc102 = 102;
+            Scc_Scc103 = 103;
+            Scc_Scc104 = 104;
+            Scc_Scc105 = 105;
+            Scc_Scc200 = 200;
+            Scc_Scc201 = 201;
+            Scc_Scc202 = 202;
+            Scc_Scc203 = 203;
+            Scc_Scc204 = 204;
+            Scc_Scc205 = 205;
+            Scc_Scc206 = 206;
+            Scc_Scc207 = 207;
+            Scc_Scc208 = 208;
+            Scc_Scc300 = 300;
+            Scc_Scc301 = 301;
+            Scc_Scc302 = 302;
+            Scc_Scc400 = 400;
+            Scc_Scc401 = 401;
+            Scc_Scc402 = 402;
+            Scc_Scc403 = 403;
+            Scc_Scc404 = 404;
+            Scc_Scc405 = 405;
+            Scc_Scc500 = 500;
+            Scc_Scc501 = 501;
+            Scc_Scc502 = 502;
+            Scc_Scc503 = 503;
+            Scc_Scc504 = 504;
+            Scc_Scc600 = 600;
+            Scc_Scc601 = 601;
+            Scc_Scc602 = 602;
+            Scc_Scc603 = 603;
+            Scc_Scc604 = 604;
+            Scc_Scc605 = 605;
+            Scc_Scc606 = 606;
+            Scc_Scc607 = 607;
+            Scc_Scc608 = 608;
+            Scc_Scc609 = 609;
+            Scc_Scc610 = 610;
+            Scc_Scc611 = 611;
+            Scc_Scc612 = 612;
+            Scc_Scc613 = 613;
+            Scc_Scc614 = 614;
+            Scc_Scc615 = 615;
+            Scc_Scc616 = 616;
+            Scc_Scc700 = 700;
+            Scc_Scc701 = 701;
+            Scc_Scc702 = 702;
+            Scc_Scc703 = 703;
+            Scc_Scc704 = 704;
+            Scc_Scc705 = 705;
+            Scc_Scc706 = 706;
+            Scc_Scc707 = 707;
+            Scc_Scc708 = 708;
+            Scc_Scc709 = 709;
+            Scc_Scc710 = 710;
+            Scc_Scc711 = 711;
+            Scc_Scc712 = 712;
+            Scc_Scc713 = 713;
+            Scc_Scc714 = 714;
+            Scc_Scc715 = 715;
+            Scc_Scc716 = 716;
+            Scc_Scc717 = 717;
+            Scc_Scc718 = 718;
+            Scc_Scc719 = 719;
+            Scc_Scc720 = 720;
+            Scc_Scc721 = 721;
+            Scc_Scc722 = 722;
+            Scc_Scc723 = 723;
+            Scc_Scc724 = 724;
+            Scc_Scc725 = 725;
+            Scc_Scc726 = 726;
+            Scc_Scc800 = 800;
+            Scc_Scc801 = 801;
+            Scc_Scc802 = 802;
+            Scc_Scc803 = 803;
+            Scc_Scc804 = 804;
+            Scc_Scc805 = 805;
+            Scc_Scc806 = 806;
+            Scc_Scc900 = 900;
+            Scc_Scc901 = 901;
+            Scc_Scc902 = 902;
+            Scc_Scc903 = 903;
+            Scc_Scc904 = 904;
+            Scc_Scc905 = 905;
+            Scc_Scc906 = 906;
+            Scc_Scc907 = 907;
+            Scc_Scc908 = 908;
+            Scc_Scc909 = 909;
+            Scc_Scc910 = 910;
+            Scc_Scc911 = 911;
+            Scc_Scc1000 = 1000;
+            Scc_Scc1001 = 1001;
+            Scc_Scc1002 = 1002;
+            Scc_Scc1003 = 1003;
+            Scc_Scc1004 = 1004;
+            Scc_Scc1005 = 1005;
+            Scc_Scc1006 = 1006;
+            Scc_Scc1007 = 1007;
+            Scc_Scc1008 = 1008;
+            Scc_Scc1009 = 1009;
+            Scc_Scc1010 = 1010;
+            Scc_Scc1011 = 1011;
+            Scc_Scc1012 = 1012;
+            Scc_Scc1100 = 1100;
+            Scc_Scc1101 = 1101;
+            Scc_Scc1102 = 1102;
+            Scc_Scc1103 = 1103;
+            Scc_Scc1104 = 1104;
+            Scc_Scc1200 = 1200;
+            Scc_Scc1201 = 1201;
+            Scc_Scc1202 = 1202;
+            Scc_Scc1203 = 1203;
+            Scc_Scc1204 = 1204;
+            Scc_Scc1205 = 1205;
+            Scc_Scc1300 = 1300;
+            Scc_Scc1301 = 1301;
+            Scc_Scc1302 = 1302;
+            Scc_Scc1303 = 1303;
+            Scc_Scc1304 = 1304;
+            Scc_Scc1305 = 1305;
+            Scc_Scc1306 = 1306;
+            Scc_Scc1307 = 1307;
+            Scc_Scc1308 = 1308;
+            Scc_Scc1400 = 1400;
+            Scc_Scc1401 = 1401;
+            Scc_Scc1402 = 1402;
+            Scc_Scc1403 = 1403;
+            Scc_Scc1404 = 1404;
+            Scc_Scc1405 = 1405;
+            Scc_Scc1406 = 1406;
+            Scc_Scc1407 = 1407;
+            Scc_Scc1500 = 1500;
+            Scc_Scc1501 = 1501;
+            Scc_Scc1502 = 1502;
+            Scc_Scc1503 = 1503;
+            Scc_Scc1504 = 1504;
+            Scc_Scc1505 = 1505;
+            Scc_Scc1506 = 1506;
+            Scc_Scc1600 = 1600;
+            Scc_Scc1601 = 1601;
+            Scc_Scc1602 = 1602;
+            Scc_Scc1700 = 1700;
+            Scc_Scc1800 = 1800;
+            Scc_Scc1801 = 1801;
+            Scc_Scc1802 = 1802;
+            Scc_Scc1803 = 1803;
+            Scc_Scc1804 = 1804;
+            Scc_Scc1805 = 1805;
+            Scc_Scc1806 = 1806;
+            Scc_Scc1807 = 1807;
+            Scc_Scc1808 = 1808;
+            Scc_Scc1809 = 1809;
+            Scc_Scc1810 = 1810;
+            Scc_Scc1811 = 1811;
+            Scc_Scc1812 = 1812;
+            Scc_Scc1813 = 1813;
+            Scc_Scc1814 = 1814;
+            Scc_Scc1815 = 1815;
+            Scc_Scc1816 = 1816;
+            Scc_Scc1900 = 1900;
+            Scc_Scc1901 = 1901;
+            Scc_Scc1902 = 1902;
+            Scc_Scc1903 = 1903;
+            Scc_Scc1904 = 1904;
+            Scc_Scc1905 = 1905;
+            Scc_Scc1906 = 1906;
+            Scc_Scc1907 = 1907;
+            Scc_Scc1908 = 1908;
+            Scc_Scc2000 = 2000;
+            Scc_Scc2001 = 2001;
+            Scc_Scc2002 = 2002;
+            Scc_Scc2003 = 2003;
+            Scc_Scc2004 = 2004;
+            Scc_Scc2005 = 2005;
+            Scc_Scc2006 = 2006;
+            Scc_Scc2100 = 2100;
+            Scc_Scc2101 = 2101;
+            Scc_Scc2102 = 2102;
+            Scc_Scc2103 = 2103;
+            Scc_Scc2104 = 2104;
+            Scc_Scc2200 = 2200;
+            Scc_Scc2201 = 2201;
+            Scc_Scc2202 = 2202;
+            Scc_Scc2203 = 2203;
+            Scc_Scc2204 = 2204;
+            Scc_Scc2205 = 2205;
+            Scc_Scc2206 = 2206;
+            Scc_Scc2300 = 2300;
+            Scc_Scc2301 = 2301;
+            Scc_Scc2302 = 2302;
+            Scc_Scc2303 = 2303;
+            Scc_Scc2304 = 2304;
+            Scc_Scc2305 = 2305;
+            Scc_Scc2306 = 2306;
+            Scc_Scc2307 = 2307;
+            Scc_Scc2308 = 2308;
+            Scc_Scc2309 = 2309;
+            Scc_Scc2310 = 2310;
+            Scc_Scc2311 = 2311;
+            Scc_Scc2312 = 2312;
+            Scc_Scc2313 = 2313;
+            Scc_Scc2314 = 2314;
+            Scc_Scc2315 = 2315;
+            Scc_Scc2316 = 2316;
+            Scc_Scc2317 = 2317;
+            Scc_Scc2318 = 2318;
+            Scc_Scc2319 = 2319;
+            Scc_Scc2320 = 2320;
+            Scc_Scc2321 = 2321;
+            Scc_Scc2400 = 2400;
+            Scc_Scc2401 = 2401;
+            Scc_Scc2402 = 2402;
+            Scc_Scc2403 = 2403;
+            Scc_Scc2404 = 2404;
+            Scc_Scc2405 = 2405;
+            Scc_Scc2406 = 2406;
+            Scc_Scc2407 = 2407;
+            Scc_Scc2500 = 2500;
+            Scc_Scc2501 = 2501;
+            Scc_Scc2502 = 2502;
+            Scc_Scc2503 = 2503;
+            Scc_Scc2504 = 2504;
+            Scc_Scc2505 = 2505;
+            Scc_Scc2506 = 2506;
+            Scc_Scc2507 = 2507;
+            Scc_Scc2508 = 2508;
+            Scc_Scc2600 = 2600;
+            Scc_Scc2601 = 2601;
+            Scc_Scc2602 = 2602;
+            Scc_Scc2603 = 2603;
+            Scc_Scc2604 = 2604;
+            Scc_Scc2605 = 2605;
+            Scc_Scc2606 = 2606;
+            Scc_Scc2607 = 2607;
+            Scc_Scc2608 = 2608;
+            Scc_Scc2609 = 2609;
+            Scc_Scc2610 = 2610;
+            Scc_Scc2611 = 2611;
+            Scc_Scc2612 = 2612;
+            Scc_Scc2613 = 2613;
+            Scc_Scc2614 = 2614;
+            Scc_Scc2615 = 2615;
+            Scc_Scc2616 = 2616;
+            Scc_Scc2617 = 2617;
+            Scc_Scc2618 = 2618;
+            Scc_Scc2619 = 2619;
+            Scc_Scc2620 = 2620;
+            Scc_Scc2621 = 2621;
+            Scc_Scc2622 = 2622;
+            Scc_Scc2623 = 2623;
+            Scc_Scc2624 = 2624;
+            Scc_Scc2625 = 2625;
+            Scc_Scc2626 = 2626;
+            Scc_Scc2627 = 2627;
+            Scc_Scc2628 = 2628;
+            Scc_Scc2629 = 2629;
+            Scc_Scc2630 = 2630;
+            Scc_Scc2631 = 2631;
+            Scc_Scc2700 = 2700;
+            Scc_Scc2701 = 2701;
+            Scc_Scc2702 = 2702;
+            Scc_Scc2703 = 2703;
+            Scc_Scc2704 = 2704;
+            Scc_Scc2705 = 2705;
+            Scc_Scc2800 = 2800;
+            Scc_Scc2900 = 2900;
+            Scc_Scc2901 = 2901;
+            Scc_Scc2902 = 2902;
+            Scc_Scc2903 = 2903;
+            Scc_Scc2904 = 2904;
+            Scc_Scc2905 = 2905;
+            Scc_Scc2906 = 2906;
+            Scc_Scc3000 = 3000;
+            Scc_Scc3100 = 3100;
+            Scc_Scc3200 = 3200;
+            Scc_Scc3300 = 3300;
+            Scc_Scc3301 = 3301;
+            Scc_Scc3302 = 3302;
+            Scc_Scc3303 = 3303;
+            Scc_Scc3304 = 3304;
+            Scc_Scc3306 = 3306;
+            Scc_Scc4000 = 4000;
+            Scc_Scc4001 = 4001;
+            Scc_Scc4002 = 4002;
+            Scc_Scc4003 = 4003;
+            Scc_Scc4004 = 4004;
+            Scc_Scc4005 = 4005;
+            Scc_Scc4006 = 4006;
+            Scc_Scc5000 = 5000;
+            Scc_Scc20301 = 20301;
+            Scc_Scc20303 = 20303;
+            Scc_Scc20304 = 20304;
+            Scc_Scc20401 = 20401;
+            Scc_Scc20702 = 20702;
+            Scc_Scc20901 = 20901;
+            Scc_Scc20902 = 20902;
+            Scc_Scc21000 = 21000;
+            Scc_Scc21005 = 21005;
+            Scc_Scc21006 = 21006;
+            Scc_Scc21007 = 21007;
+            Scc_Scc21008 = 21008;
+            Scc_Scc21303 = 21303;
+            Scc_Scc21400 = 21400;
+            Scc_Scc21401 = 21401;
+            Scc_Scc21801 = 21801;
+            Scc_Scc21802 = 21802;
+            Scc_Scc21803 = 21803;
+            Scc_Scc22001 = 22001;
+            Scc_Scc22501 = 22501;
+            Scc_Scc22603 = 22603;
+            Scc_Scc22604 = 22604;
+            Scc_Scc22605 = 22605;
+            Scc_Scc23002 = 23002;
+            Scc_Scc23004 = 23004;
+            Scc_Scc23005 = 23005;
+            Scc_Scc23304 = 23304;
+            Scc_Scc23305 = 23305;
+            Scc_Scc23309 = 23309;
+            Scc_Scc23310 = 23310;
+            Scc_Scc23311 = 23311;
+            Scc_Scc23312 = 23312;
+            Scc_Scc23313 = 23313;
+            Scc_Scc23314 = 23314;
+            Scc_Scc25100 = 25100;
+            Scc_Scc25101 = 25101;
+            Scc_Scc25102 = 25102;
+            Scc_Scc25107 = 25107;
+            Scc_Scc25108 = 25108;
+            Scc_Scc25109 = 25109;
+            Scc_Scc25200 = 25200;
+            Scc_Scc25201 = 25201;
+            Scc_Scc25202 = 25202;
+        }
+    }
+}
+
+message SCAdsSubsBrandSafety {
+    .snapchat.ads.request.schema.SCAdsSubsBrandSafety.SCAdsSubsBrandSafety_Mode mode = 1;
+    bool isBrandSafe = 2;
+    enum SCAdsSubsBrandSafety_Mode {
+        SCAdsSubsBrandSafety_Mode_Unknown = 0;
+        SCAdsSubsBrandSafety_Mode_CompleteCheck = 1;
+        SCAdsSubsBrandSafety_Mode_PartialCheck = 2;
+    }
+}
+
+message SCAdsThirdPartyAdNetworkInfo {
+    bytes requestSignals = 2;
+    .snapchat.ads.request.schema.SCAdsThirdPartyAdNetworkInfo.SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation contentTransformation = 3;
+    .snapchat.ads.request.schema.SCAdsThirdPartyAdNetworkInfo.SCAdsThirdPartyAdNetworkType adNetworkType = 4;
+    enum SCAdsThirdPartyAdNetworkType {
+        SCAdsThirdPartyAdNetworkType_AdNetworkTypeUnknown = 0;
+        SCAdsThirdPartyAdNetworkType_AdNetworkTypePetra = 1;
+    }
+    enum SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation {
+        SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation_Utf8Decode = 0;
+        SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation_Base64Encode = 1;
+        SCAdsThirdPartyAdNetworkInfo_ThirdPartySignalContentTransformation_Proto = 2;
+    }
+}
+
+message SCAdsUser {
+    bool isTestGroupQa = 3;
+    bytes fsnEncryptedUserData = 4;
+    bytes said = 5;
+    .snapchat.ads.request.schema.SCAdsUser.SCAdsBudgetSegmentID budgetSegmentId = 6;
+    .snapchat.ads.request.schema.SCAdsUserData userData = 1;
+    bytes encryptedUserData = 2;
+    enum SCAdsBudgetSegmentID {
+        SCAdsBudgetSegmentID_UnknownBsid = 0;
+        SCAdsBudgetSegmentID_Bsid1 = 1;
+        SCAdsBudgetSegmentID_Bsid2 = 2;
+        SCAdsBudgetSegmentID_Bsid3 = 3;
+        SCAdsBudgetSegmentID_Bsid4 = 4;
+        SCAdsBudgetSegmentID_Bsid5 = 5;
+        SCAdsBudgetSegmentID_Bsid6 = 6;
+        SCAdsBudgetSegmentID_Bsid7 = 7;
+        SCAdsBudgetSegmentID_Bsid8 = 8;
+        SCAdsBudgetSegmentID_Bsid9 = 9;
+        SCAdsBudgetSegmentID_Bsid10 = 10;
+        SCAdsBudgetSegmentID_BsidAll = 11;
+    }
+}
+
+message SCAdsUserData {
+    bytes said = 1;
+    bool isAdsHoldout = 2;
+    .snapchat.ads.request.schema.SCAdsDebugConfig debugConfig = 3;
+    .snapchat.ads.request.schema.SCAdsABTest abTest = 4;
+    bool isEmployee = 5;
+    bool isNewUser = 6;
+    string targetingToken = 7;
+    .google.protobuf.Int64Value createdTimestampMillis = 8;
+    .google.protobuf.Int32Value age = 9;
+    .snapchat.ads.request.schema.SCAdsUserData.SCAdsGender_Enum gender = 10;
+    .snapchat.ads.request.schema.SCAdsUserData.SnapUserStatus snapUserStatus = 11;
+    bool storyAdsInUserStoriesEnabled = 12;
+    bool isPartiallyFilled = 13;
+    bytes userId = 14;
+    bytes clientIp = 15;
+    enum SCAdsGender_Enum {
+        SCAdsGender_Enum_GenderUnknown = 0;
+        SCAdsGender_Enum_Male = 1;
+        SCAdsGender_Enum_Female = 2;
+        SCAdsGender_Enum_Other = 3;
+    }
+    enum SnapUserStatus {
+        SnapUserStatus_Unk = 0;
+        SnapUserStatus_Sc = 1;
+        SnapUserStatus_Nsc = 2;
+    }
+}

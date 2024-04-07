@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+message SCPBLensCategoryDatum {
+    string id_p = 1;
+    string name = 2;
+    string activator = 3;
+    string config = 4;
+    string configChecksum = 5;
+    repeated string additionalCarouselCategoriesArray = 6;
+    int32 additionalCarouselLensesLimit = 7;
+}

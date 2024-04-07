@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain";
+
+message PrintingMetadata {
+    bytes snapId = 1;
+    string encryptionKey = 2;
+    string encryptionIv = 3;
+    string URL = 4;
+    string requestId = 5;
+}

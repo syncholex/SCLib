@@ -1,0 +1,776 @@
+syntax = "proto3";
+package snapchat.search;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCS2";
+option csharp_namespace = "SnapProto.Snapchat.Search";
+
+import "activity_center/feed/SCActivityCenterPbItem.proto";
+import "feed/core/SCFEEDCompositeStoryId.proto";
+import "impala/IMPBusinesses.proto";
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/map/orbis/SCOrbisStories.proto";
+import "snapchat/search/SCS2BitmojiUserInfo.proto";
+import "snapchat/search/SCS2CompositeId.proto";
+import "snapchat/search/SCS2StorySummaryInfo.proto";
+import "snapchat/search/lensservice/SCS2LensLensservice.proto";
+import "snapchat/storydoc/StoryDoc.proto";
+
+message SCS2BatchResultLookupRequest {
+    repeated .snapchat.search.SCS2CompositeId compIdsArray = 1;
+    .snapchat.search.SCS2UserInfo userInfo = 2;
+    .snapchat.search.SCS2CognacClientInfo cognacClientInfo = 3;
+    .snapchat.search.SCS2RequestOptions requestOptions = 4;
+}
+
+message SCS2BatchResultLookupResponse {
+    repeated .snapchat.search.SCS2Result resultsArray = 1;
+}
+
+message SCS2Birthday {
+    string title = 1;
+    string subtitle = 2;
+    string thumbnailURL = 3;
+}
+
+message SCS2BitmojiThumbnail {
+    string tileTemplateId = 1;
+    string fallbackThumbnailURL = 2;
+}
+
+message SCS2CognacClientInfo {
+    string userContextToken = 1;
+}
+
+message SCS2FamilyCenter {
+    string title = 1;
+    string subtitle = 2;
+    string thumbnailURL = 3;
+}
+
+message SCS2FeaturedStory {
+    string id_p = 1;
+    string title = 2;
+    string thumbnailURL = 3;
+    .snapchat.search.SCS2FeaturedStory.SCS2FeaturedStory_JaguarCompositeId jaguarCompositeId = 4;
+    string locality = 5;
+    string label = 6;
+    int64 updatedAtMs = 7;
+    message SCS2FeaturedStory_JaguarCompositeId {
+        int32 corpus = 1;
+        string id_p = 2;
+    }
+}
+
+message SCS2Friend {
+    .snapchat.search.SCS2User user = 1;
+    .snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 2;
+}
+
+message SCS2Game {
+    string id_p = 1;
+    string displayName = 2;
+    string loadingPageImageURL = 3;
+    string iconImageURL = 4;
+    string logoURL = 5;
+    string contentURL = 6;
+    string description_p = 7;
+    .snapchat.search.SCS2Game.SCS2Game_NumSupportedPlayers numSupportedPlayers = 8;
+    .snapchat.search.SCS2Game.SCS2Game_GameType type = 9;
+    message SCS2Game_NumSupportedPlayers {
+        int32 min = 1;
+        int32 max = 2;
+    }
+    enum SCS2Game_GameType {
+        SCS2Game_GameType_GameTypeUnknown = 0;
+        SCS2Game_GameType_GameTypeGame = 1;
+        SCS2Game_GameType_GameTypeMini = 2;
+    }
+}
+
+message SCS2GeoLocation {
+    double latitude = 1;
+    double longitude = 2;
+    double horizontalAccuracyMeters = 3;
+    double timestampMsecs = 4;
+}
+
+message SCS2Group {
+    string id_p = 1;
+    string name = 2;
+    repeated .snapchat.search.SCS2Group.SCS2Group_Participant participantsArray = 3;
+    .snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 4;
+    message SCS2Group_Participant {
+        string userId = 1;
+        string username = 2;
+        string displayName = 3;
+        .snapchat.search.SCS2BitmojiUserInfo bitmojiUserInfo = 4;
+        string mutableUsername = 5;
+    }
+}
+
+message SCS2HappeningNow {
+    .feed.core.SCFEEDCompositeStoryId compStoryId = 1;
+    string title = 2;
+    string publisherName = 3;
+    double timestampMs = 5;
+    string thumbnailURL = 6;
+    .snapchat.search.SCS2Publisher publisher = 7;
+    int64 editionId = 8;
+    string category = 9;
+    bool isBreaking = 10;
+    string horizontalPublisherIconURL = 11;
+    bool isOptInNotificationStory = 12;
+}
+
+message SCS2HappeningNowSectionContext {
+    .snapchat.search.SCS2HappeningNowSectionContext.SCS2HappeningNowSectionContext_Weather weather = 1;
+    .snapchat.search.SCS2Publisher publisher = 2;
+    message SCS2HappeningNowSectionContext_Weather {
+        bytes json = 1;
+        float temperatureF = 2;
+        string iconURL = 3;
+        int64 editionId = 4;
+    }
+}
+
+message SCS2HeroCard {
+    string title = 1;
+    string description_p = 2;
+    string backgroundImageURL = 3;
+    .snapchat.search.SCS2LinkedSearch linkedSearch = 4;
+}
+
+message SCS2Lens {
+    string lensId = 1;
+    string name = 2;
+    string iconURL = 3;
+    string deeplinkURL = 4;
+    string creatorName = 5;
+    string thumbnailURL = 6;
+    .snapchat.search.lensservice.SCS2LensThumbnailSequence thumbnailSequence = 7;
+    string creatorUserId = 8;
+    string creatorProfileId = 9;
+    bool creatorIsOffical = 10;
+}
+
+message SCS2LinkedSearch {
+    string linkedSearchQuery = 1;
+}
+
+message SCS2Place {
+    string id_p = 1;
+    string displayName = 2;
+    string locality = 3;
+    .snapchat.search.SCS2Place.SCS2Place_MapOpenParams mapOpenParams = 4;
+    .snapchat.map.orbis.SCOrbisStoryPreview storyPreview = 5;
+    string categoryIconURL = 9;
+    message SCS2Place_MapOpenParams {
+        .snapchat.geo.SPCGRect boundingBox = 1;
+    }
+}
+
+message SCS2PopularUser {
+    .snapchat.search.SCS2User user = 1;
+    .snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 2;
+}
+
+message SCS2Publisher {
+    int64 id_p = 1;
+    string displayName = 3;
+    string description_p = 4;
+    string iconURL = 5;
+    string deeplinkURL = 6;
+    string businessProfileId = 7;
+    string primaryColor = 8;
+    bool isShow = 9;
+    string showId = 10;
+    .snapchat.search.SCS2Publisher.IMPAdSetting adSetting = 11;
+    int64 latestEditionId = 12;
+    int64 approxSubscriptionCount = 13;
+    enum IMPAdSetting {
+        IMPAdSetting_Skippable = 0;
+        IMPAdSetting_NonSkippable = 1;
+    }
+}
+
+message SCS2PublisherEdition {
+    int64 id_p = 1;
+    string title = 2;
+    int64 publishEpoch = 3;
+    string thumbnailURL = 5;
+    string deeplinkURL = 6;
+    .snapchat.search.SCS2Publisher publisher = 7;
+    .snapchat.search.SCS2PublisherEdition.SCS2PublisherEdition_Thumbnail thumbnail = 8;
+    .snapchat.storydoc.StoryDoc.StoryDoc_ID storyDocId = 9;
+    message SCS2PublisherEdition_Thumbnail {
+        string URL = 1;
+        .snapchat.search.SCS2BitmojiThumbnail bitmojiThumbnail = 2;
+    }
+}
+
+message SCS2QuerySuggestion {
+    string queryText = 1;
+}
+
+message SCS2RequestOptions {
+    bool enableDebug = 1;
+    repeated .snapchat.search.SCS2Tweak tweaksArray = 2;
+    repeated .snapchat.search.SCS2RequestOptions.SCS2Section_SectionType sectionsToReturnArray = 5;
+    repeated .snapchat.search.SCS2RequestOptions.SectionToSectionPageTokenEntry sectionToSectionPageToken = 6;
+    int32 numToReturn = 7;
+    bool isSnapchatPlusEligible = 8;
+    .snapchat.search.SCS2SectionRequest sectionRequest = 3;
+    string pageToken = 4;
+    message SectionToSectionPageTokenEntry {
+        int32 key = 1;
+        bytes value = 2;
+    }
+    enum SCS2Section_SectionType {
+        SCS2Section_SectionType_SectionTypeUnknown = 0;
+        SCS2Section_SectionType_SectionTypeFriends = 1;
+        SCS2Section_SectionType_SectionTypeAddFriends = 2;
+        SCS2Section_SectionType_SectionTypeSubscribe = 3;
+        SCS2Section_SectionType_SectionTypeGroups = 4;
+        SCS2Section_SectionType_SectionTypePublishers = 5;
+        SCS2Section_SectionType_SectionTypeLenses = 6;
+        SCS2Section_SectionType_SectionTypePublisherEditions = 7;
+        SCS2Section_SectionType_SectionTypeShows = 8;
+        SCS2Section_SectionType_SectionTypeStores = 9;
+        SCS2Section_SectionType_SectionTypeFeaturedStories = 10;
+        SCS2Section_SectionType_SectionTypeGames = 11;
+        SCS2Section_SectionType_SectionTypeEpisodes = 12;
+        SCS2Section_SectionType_SectionTypeRecents = 13;
+        SCS2Section_SectionType_SectionTypeBestFriends = 14;
+        SCS2Section_SectionType_SectionTypeQuickAdd = 15;
+        SCS2Section_SectionType_SectionTypePlaces = 16;
+        SCS2Section_SectionType_SectionTypeFriendsAndGroups = 17;
+        SCS2Section_SectionType_SectionTypeTopResults = 18;
+        SCS2Section_SectionType_SectionTypeHereForYou = 19;
+        SCS2Section_SectionType_SectionTypeFriendsOnTheMap = 20;
+        SCS2Section_SectionType_SectionTypeShowsAndPublishers = 21;
+        SCS2Section_SectionType_SectionTypeEditionsAndEpisodes = 22;
+        SCS2Section_SectionType_SectionTypeTopics = 23;
+        SCS2Section_SectionType_SectionTypeAddedMe = 24;
+        SCS2Section_SectionType_SectionTypeProgrammatic = 25;
+        SCS2Section_SectionType_SectionTypeHappeningNow = 26;
+        SCS2Section_SectionType_SectionTypeTrending = 27;
+        SCS2Section_SectionType_SectionTypeLocalGamesAndMinis = 29;
+        SCS2Section_SectionType_SectionTypeSuggested = 30;
+        SCS2Section_SectionType_SectionTypeNearbyMemories = 31;
+        SCS2Section_SectionType_SectionTypeMusic = 32;
+        SCS2Section_SectionType_SectionTypeHowToPretype = 33;
+        SCS2Section_SectionType_SectionTypeLensPretype = 34;
+        SCS2Section_SectionType_SectionTypeGamesPretype = 35;
+        SCS2Section_SectionType_SectionTypeStarsPretype = 36;
+        SCS2Section_SectionType_SectionTypePlacesPretype = 37;
+        SCS2Section_SectionType_SectionTypeContacts = 38;
+        SCS2Section_SectionType_SectionTypeSettings = 39;
+        SCS2Section_SectionType_SectionTypePublishersPretype = 40;
+        SCS2Section_SectionType_SectionTypeQuerySuggestions = 41;
+        SCS2Section_SectionType_SectionTypeActivityCenterPretype = 42;
+    }
+}
+
+message SCS2Result {
+    .snapchat.search.SCS2Result.SCS2Result_ResultType resultType = 1;
+    .snapchat.search.SCS2CompositeId compId = 13;
+    .snapchat.search.SCS2User user = 2;
+    .snapchat.search.SCS2SnapProEntity snapProEntity = 3;
+    .snapchat.search.SCS2Group group = 4;
+    .snapchat.search.SCS2Friend friend_p = 5;
+    .snapchat.search.SCS2Publisher publisher = 6;
+    .snapchat.search.SCS2Lens lens = 7;
+    .snapchat.search.SCS2SuggestedFriend suggestedFriend = 8;
+    .snapchat.search.SCS2PopularUser popularUser = 9;
+    .snapchat.search.SCS2PublisherEdition publisherEdition = 10;
+    .snapchat.search.SCS2Store store = 11;
+    .snapchat.search.SCS2FeaturedStory featuredStory = 12;
+    .snapchat.search.SCS2Game game = 14;
+    .snapchat.search.SCS2Place place = 15;
+    .snapchat.search.SCS2Topic topic = 16;
+    .snapchat.search.SCS2HeroCard heroCard = 17;
+    .snapchat.search.SCS2HappeningNow happeningNow = 18;
+    .snapchat.creativetools.common.SCCTPMusicTrack musicTrack = 19;
+    .snapchat.creativetools.common.SCCTPMusicArtist musicArtist = 20;
+    .snapchat.search.SCS2FamilyCenter familyCenter = 21;
+    .snapchat.search.SCS2SnapchatPlus snapchatPlus = 22;
+    .snapchat.search.SCS2QuerySuggestion querySuggestion = 23;
+    .activity_center.feed.SCActivityCenterPbItem activityCenterFeed = 24;
+    .snapchat.search.SCS2Birthday birthday = 25;
+    enum SCS2Result_ResultType {
+        SCS2Result_ResultType_ResultTypeUnknown = 0;
+        SCS2Result_ResultType_ResultTypeUser = 1;
+        SCS2Result_ResultType_ResultTypeSnapPro = 2;
+        SCS2Result_ResultType_ResultTypeGroup = 3;
+        SCS2Result_ResultType_ResultTypeFriend = 4;
+        SCS2Result_ResultType_ResultTypePublisher = 5;
+        SCS2Result_ResultType_ResultTypeLens = 6;
+        SCS2Result_ResultType_ResultTypeSuggestedFriend = 7;
+        SCS2Result_ResultType_ResultTypePopularUser = 8;
+        SCS2Result_ResultType_ResultTypePublisherEdition = 9;
+        SCS2Result_ResultType_ResultTypeStore = 10;
+        SCS2Result_ResultType_ResultTypeFeaturedStory = 11;
+        SCS2Result_ResultType_ResultTypeGame = 12;
+        SCS2Result_ResultType_ResultTypePlace = 13;
+        SCS2Result_ResultType_ResultTypeTopic = 14;
+        SCS2Result_ResultType_ResultTypeHeroCard = 15;
+        SCS2Result_ResultType_ResultTypeHappeningNow = 16;
+        SCS2Result_ResultType_ResultTypeMusicTrack = 17;
+        SCS2Result_ResultType_ResultTypeMusicArtist = 18;
+        SCS2Result_ResultType_ResultTypeFamilyCenter = 19;
+        SCS2Result_ResultType_ResultTypeSnapchatPlus = 20;
+        SCS2Result_ResultType_ResultTypeQuerySuggestion = 21;
+        SCS2Result_ResultType_ResultTypeActivityCenterFeed = 22;
+        SCS2Result_ResultType_ResultTypeBirthday = 23;
+    }
+}
+
+message SCS2SearchRequest {
+    string queryString = 1;
+    .snapchat.search.SCS2SearchRequest.SCS2Origin origin = 2;
+    .snapchat.search.SCS2RequestOptions requestOptions = 3;
+    repeated .snapchat.search.SCS2StudyInfo studyInfoArray = 4;
+    string sessionId = 6;
+    string sessionQueryId = 7;
+    .snapchat.search.SCS2UserInfo userInfo = 8;
+    .snapchat.search.SCS2CognacClientInfo cognacClientInfo = 9;
+    enum SCS2Origin {
+        SCS2Origin_OriginUnknown = 0;
+        SCS2Origin_OriginCamera = 1;
+        SCS2Origin_OriginDiscover = 2;
+        SCS2Origin_OriginFriendFeed = 3;
+        SCS2Origin_OriginMap = 4;
+        SCS2Origin_OriginTab = 5;
+        SCS2Origin_OriginLe = 6;
+        SCS2Origin_OriginGameTray = 7;
+        SCS2Origin_OriginCameraPulldown = 8;
+        SCS2Origin_OriginAddFriends = 9;
+        SCS2Origin_OriginNotifCampHandler = 10;
+        SCS2Origin_OriginPlaceDiscovery = 11;
+        SCS2Origin_OriginMapFriendFinder = 12;
+        SCS2Origin_OriginLockScreen = 13;
+        SCS2Origin_OriginSnapCamera = 14;
+        SCS2Origin_OriginSendTo = 15;
+        SCS2Origin_OriginScan = 16;
+        SCS2Origin_OriginNewChat = 17;
+        SCS2Origin_OriginWeb = 18;
+        SCS2Origin_OriginMyai = 19;
+    }
+}
+
+message SCS2SearchResponse {
+    repeated .snapchat.search.SCS2Section sectionsArray = 1;
+    string debugHtml = 2;
+    .snapchat.search.SCS2ServiceDebug serviceDebug = 3;
+    repeated .snapchat.search.SCS2SearchResponse.SectionToSectionPageTokenEntry sectionToSectionPageToken = 4;
+    message SectionToSectionPageTokenEntry {
+        int32 key = 1;
+        bytes value = 2;
+    }
+}
+
+message SCS2Section {
+    string title = 1;
+    .snapchat.search.SCS2Section.SCS2Section_SectionType sectionType = 2;
+    repeated .snapchat.search.SCS2Result resultsArray = 3;
+    .snapchat.search.SCS2Section.SCS2Section_SectionLayout sectionLayout = 5;
+    int32 numToShow = 7;
+    bool endOfResults = 8;
+    bytes sectionPageToken = 9;
+    .snapchat.search.SCS2HappeningNowSectionContext happeningNow = 6;
+    enum SCS2Section_SectionLayout {
+        SCS2Section_SectionLayout_SectionLayoutUnknown = 0;
+        SCS2Section_SectionLayout_SectionLayoutList = 1;
+        SCS2Section_SectionLayout_SectionLayoutCarousel = 2;
+    }
+    enum SCS2Section_SectionType {
+        SCS2Section_SectionType_SectionTypeUnknown = 0;
+        SCS2Section_SectionType_SectionTypeFriends = 1;
+        SCS2Section_SectionType_SectionTypeAddFriends = 2;
+        SCS2Section_SectionType_SectionTypeSubscribe = 3;
+        SCS2Section_SectionType_SectionTypeGroups = 4;
+        SCS2Section_SectionType_SectionTypePublishers = 5;
+        SCS2Section_SectionType_SectionTypeLenses = 6;
+        SCS2Section_SectionType_SectionTypePublisherEditions = 7;
+        SCS2Section_SectionType_SectionTypeShows = 8;
+        SCS2Section_SectionType_SectionTypeStores = 9;
+        SCS2Section_SectionType_SectionTypeFeaturedStories = 10;
+        SCS2Section_SectionType_SectionTypeGames = 11;
+        SCS2Section_SectionType_SectionTypeEpisodes = 12;
+        SCS2Section_SectionType_SectionTypeRecents = 13;
+        SCS2Section_SectionType_SectionTypeBestFriends = 14;
+        SCS2Section_SectionType_SectionTypeQuickAdd = 15;
+        SCS2Section_SectionType_SectionTypePlaces = 16;
+        SCS2Section_SectionType_SectionTypeFriendsAndGroups = 17;
+        SCS2Section_SectionType_SectionTypeTopResults = 18;
+        SCS2Section_SectionType_SectionTypeHereForYou = 19;
+        SCS2Section_SectionType_SectionTypeFriendsOnTheMap = 20;
+        SCS2Section_SectionType_SectionTypeShowsAndPublishers = 21;
+        SCS2Section_SectionType_SectionTypeEditionsAndEpisodes = 22;
+        SCS2Section_SectionType_SectionTypeTopics = 23;
+        SCS2Section_SectionType_SectionTypeAddedMe = 24;
+        SCS2Section_SectionType_SectionTypeProgrammatic = 25;
+        SCS2Section_SectionType_SectionTypeHappeningNow = 26;
+        SCS2Section_SectionType_SectionTypeTrending = 27;
+        SCS2Section_SectionType_SectionTypeLocalGamesAndMinis = 29;
+        SCS2Section_SectionType_SectionTypeSuggested = 30;
+        SCS2Section_SectionType_SectionTypeNearbyMemories = 31;
+        SCS2Section_SectionType_SectionTypeMusic = 32;
+        SCS2Section_SectionType_SectionTypeHowToPretype = 33;
+        SCS2Section_SectionType_SectionTypeLensPretype = 34;
+        SCS2Section_SectionType_SectionTypeGamesPretype = 35;
+        SCS2Section_SectionType_SectionTypeStarsPretype = 36;
+        SCS2Section_SectionType_SectionTypePlacesPretype = 37;
+        SCS2Section_SectionType_SectionTypeContacts = 38;
+        SCS2Section_SectionType_SectionTypeSettings = 39;
+        SCS2Section_SectionType_SectionTypePublishersPretype = 40;
+        SCS2Section_SectionType_SectionTypeQuerySuggestions = 41;
+        SCS2Section_SectionType_SectionTypeActivityCenterPretype = 42;
+    }
+}
+
+message SCS2SectionRequest {
+    repeated .snapchat.search.SCS2SectionRequest.SCS2Section_SectionType sectionTypesArray = 1;
+    enum SCS2Section_SectionType {
+        SCS2Section_SectionType_SectionTypeUnknown = 0;
+        SCS2Section_SectionType_SectionTypeFriends = 1;
+        SCS2Section_SectionType_SectionTypeAddFriends = 2;
+        SCS2Section_SectionType_SectionTypeSubscribe = 3;
+        SCS2Section_SectionType_SectionTypeGroups = 4;
+        SCS2Section_SectionType_SectionTypePublishers = 5;
+        SCS2Section_SectionType_SectionTypeLenses = 6;
+        SCS2Section_SectionType_SectionTypePublisherEditions = 7;
+        SCS2Section_SectionType_SectionTypeShows = 8;
+        SCS2Section_SectionType_SectionTypeStores = 9;
+        SCS2Section_SectionType_SectionTypeFeaturedStories = 10;
+        SCS2Section_SectionType_SectionTypeGames = 11;
+        SCS2Section_SectionType_SectionTypeEpisodes = 12;
+        SCS2Section_SectionType_SectionTypeRecents = 13;
+        SCS2Section_SectionType_SectionTypeBestFriends = 14;
+        SCS2Section_SectionType_SectionTypeQuickAdd = 15;
+        SCS2Section_SectionType_SectionTypePlaces = 16;
+        SCS2Section_SectionType_SectionTypeFriendsAndGroups = 17;
+        SCS2Section_SectionType_SectionTypeTopResults = 18;
+        SCS2Section_SectionType_SectionTypeHereForYou = 19;
+        SCS2Section_SectionType_SectionTypeFriendsOnTheMap = 20;
+        SCS2Section_SectionType_SectionTypeShowsAndPublishers = 21;
+        SCS2Section_SectionType_SectionTypeEditionsAndEpisodes = 22;
+        SCS2Section_SectionType_SectionTypeTopics = 23;
+        SCS2Section_SectionType_SectionTypeAddedMe = 24;
+        SCS2Section_SectionType_SectionTypeProgrammatic = 25;
+        SCS2Section_SectionType_SectionTypeHappeningNow = 26;
+        SCS2Section_SectionType_SectionTypeTrending = 27;
+        SCS2Section_SectionType_SectionTypeLocalGamesAndMinis = 29;
+        SCS2Section_SectionType_SectionTypeSuggested = 30;
+        SCS2Section_SectionType_SectionTypeNearbyMemories = 31;
+        SCS2Section_SectionType_SectionTypeMusic = 32;
+        SCS2Section_SectionType_SectionTypeHowToPretype = 33;
+        SCS2Section_SectionType_SectionTypeLensPretype = 34;
+        SCS2Section_SectionType_SectionTypeGamesPretype = 35;
+        SCS2Section_SectionType_SectionTypeStarsPretype = 36;
+        SCS2Section_SectionType_SectionTypePlacesPretype = 37;
+        SCS2Section_SectionType_SectionTypeContacts = 38;
+        SCS2Section_SectionType_SectionTypeSettings = 39;
+        SCS2Section_SectionType_SectionTypePublishersPretype = 40;
+        SCS2Section_SectionType_SectionTypeQuerySuggestions = 41;
+        SCS2Section_SectionType_SectionTypeActivityCenterPretype = 42;
+    }
+}
+
+message SCS2SectionToken {
+    int32 nextScoringOffset = 1;
+    bytes previousResultsBloomFilter = 2;
+}
+
+message SCS2ServiceDebug {
+    .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_RequestDebug requestDebug = 1;
+    repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug sectionDebugArray = 2;
+    string rawDebug = 3;
+    repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_PlaceServiceItemDebug itemsArray = 4;
+    message SCS2ServiceDebug_PlaceServiceItemDebug {
+        string name = 1;
+        string id_p = 2;
+        string category = 3;
+        string address = 4;
+        uint32 retrievalRank = 5;
+        float retrievalScore = 6;
+        float finalScore = 7;
+        string itemFeatures = 8;
+        uint32 totalCheckins = 9;
+        float distance = 10;
+        uint32 globalQueryRetrievalRank = 11;
+        float esScore = 12;
+        float globalQueryEsScore = 13;
+    }
+    message SCS2ServiceDebug_RequestDebug {
+        string requestId = 1;
+        string countryCode = 2;
+        string locale = 3;
+        repeated string languagePreferencesArray = 4;
+        .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_RequestDebug.SCS2Origin origin = 5;
+        repeated .snapchat.search.SCS2StudyInfo activeStudiesArray = 6;
+        string serviceName = 7;
+        repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_RequestDebug.QplExpansionsEntry qplExpansions = 8;
+        string query = 9;
+        message QplExpansionsEntry {
+            string key = 1;
+            float value = 2;
+        }
+        enum SCS2Origin {
+            SCS2Origin_OriginUnknown = 0;
+            SCS2Origin_OriginCamera = 1;
+            SCS2Origin_OriginDiscover = 2;
+            SCS2Origin_OriginFriendFeed = 3;
+            SCS2Origin_OriginMap = 4;
+            SCS2Origin_OriginTab = 5;
+            SCS2Origin_OriginLe = 6;
+            SCS2Origin_OriginGameTray = 7;
+            SCS2Origin_OriginCameraPulldown = 8;
+            SCS2Origin_OriginAddFriends = 9;
+            SCS2Origin_OriginNotifCampHandler = 10;
+            SCS2Origin_OriginPlaceDiscovery = 11;
+            SCS2Origin_OriginMapFriendFinder = 12;
+            SCS2Origin_OriginLockScreen = 13;
+            SCS2Origin_OriginSnapCamera = 14;
+            SCS2Origin_OriginSendTo = 15;
+            SCS2Origin_OriginScan = 16;
+            SCS2Origin_OriginNewChat = 17;
+            SCS2Origin_OriginWeb = 18;
+            SCS2Origin_OriginMyai = 19;
+        }
+    }
+    message SCS2ServiceDebug_SectionDebug {
+        string sectionName = 1;
+        repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_LiteItemDebug liteItemDebugArray = 2;
+        repeated string retrievalQueryArray = 3;
+        .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_ScoringDebug scoringDebug = 4;
+        message SCS2ServiceDebug_SectionDebug_Explanation {
+            float value = 1;
+            string description_p = 2;
+            repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_Explanation detailsArray = 3;
+        }
+        message SCS2ServiceDebug_SectionDebug_LiteItemDebug {
+            .snapchat.search.SCS2CompositeId compositeId = 1;
+            .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_LiteItemDebug.SCS2Corpus corpus = 2;
+            string itemType = 3;
+            string displayName = 4;
+            uint32 retrievalRank = 5;
+            float retrievalScore = 6;
+            float finalScore = 7;
+            uint32 finalRank = 8;
+            string itemFeatures = 9;
+            .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_Explanation explanation = 10;
+            string itemDebug = 11;
+            float l1Score = 12;
+            float l2Score = 13;
+            float l3Score = 14;
+            enum SCS2Corpus {
+                SCS2Corpus_CorpusUnset = 0;
+                SCS2Corpus_CorpusStore = 1;
+                SCS2Corpus_CorpusProfiles = 2;
+                SCS2Corpus_CorpusLenses = 3;
+                SCS2Corpus_CorpusPopularUsers = 4;
+                SCS2Corpus_CorpusPublishers = 5;
+                SCS2Corpus_CorpusShows = 6;
+                SCS2Corpus_CorpusEditions = 7;
+                SCS2Corpus_CorpusUsers = 8;
+                SCS2Corpus_CorpusFeaturedStories = 9;
+                SCS2Corpus_CorpusGroups = 10;
+                SCS2Corpus_CorpusGames = 11;
+                SCS2Corpus_CorpusPlaces = 12;
+                SCS2Corpus_CorpusCreativeTools = 13;
+                SCS2Corpus_CorpusTopics = 14;
+                SCS2Corpus_CorpusMetalinks = 15;
+                SCS2Corpus_CorpusHappeningNow = 16;
+                SCS2Corpus_CorpusMusic = 17;
+                SCS2Corpus_CorpusBitmoji = 18;
+                SCS2Corpus_CorpusCameos = 19;
+                SCS2Corpus_CorpusEmoji = 20;
+                SCS2Corpus_CorpusSnapStickers = 21;
+                SCS2Corpus_CorpusMemories = 22;
+                SCS2Corpus_CorpusGfycat = 23;
+                SCS2Corpus_CorpusMusicTracks = 24;
+                SCS2Corpus_CorpusMusicArtists = 25;
+                SCS2Corpus_CorpusShoppableStickers = 26;
+                SCS2Corpus_CorpusContacts = 27;
+                SCS2Corpus_CorpusQuerySuggestions = 28;
+                SCS2Corpus_CorpusActivityCenter = 29;
+                SCS2Corpus_Unused30 = 30;
+                SCS2Corpus_Unused31 = 31;
+                SCS2Corpus_Unused32 = 32;
+                SCS2Corpus_Unused33 = 33;
+                SCS2Corpus_Unused34 = 34;
+                SCS2Corpus_Unused35 = 35;
+                SCS2Corpus_Unused36 = 36;
+                SCS2Corpus_Unused37 = 37;
+                SCS2Corpus_Unused38 = 38;
+                SCS2Corpus_Unused39 = 39;
+                SCS2Corpus_Unused40 = 40;
+            }
+        }
+        message SCS2ServiceDebug_SectionDebug_ScoringDebug {
+            string bentoModelId = 1;
+            string bentoModelHeads = 2;
+            int32 numToScore = 3;
+            int32 latencyMsecs = 4;
+            repeated .snapchat.search.SCS2ServiceDebug.SCS2ServiceDebug_SectionDebug.SCS2ServiceDebug_SectionDebug_ScoringDebug.DebugEntry debug = 5;
+            message DebugEntry {
+                string key = 1;
+                string value = 2;
+            }
+        }
+    }
+}
+
+message SCS2SnapProEntity {
+    .impala.IMPBusinessProfileAndUserData profile = 1;
+}
+
+message SCS2SnapchatPlus {
+    string title = 1;
+    string subtitle = 2;
+}
+
+message SCS2Store {
+    string name = 1;
+    string description_p = 2;
+    string thumbnailURL = 3;
+    string deeplinkURL = 4;
+}
+
+message SCS2StudyInfo {
+    string id_p = 1;
+    repeated .snapchat.search.SCS2StudyInfo.VariableValuesEntry variableValues = 2;
+    int32 experimentId = 3;
+    string studyName = 4;
+    message VariableValuesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCS2SuggestedFriend {
+    .snapchat.search.SCS2User user = 1;
+    .snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 2;
+    .snapchat.search.SCS2SuggestedFriend.SCS2SuggestedFriend_SuggestionReason suggestionReason = 3;
+    enum SCS2SuggestedFriend_SuggestionReason {
+        SCS2SuggestedFriend_SuggestionReason_SuggestionReasonUnknown = 0;
+        SCS2SuggestedFriend_SuggestionReason_SuggestionReasonHasMutualFriend = 1;
+        SCS2SuggestedFriend_SuggestionReason_SuggestionReasonUsername = 2;
+        SCS2SuggestedFriend_SuggestionReason_SuggestionReasonInContacts = 3;
+    }
+}
+
+message SCS2SuggestionsRequest {
+    repeated .snapchat.search.SCS2CompositeId compIdsArray = 1;
+    .snapchat.search.SCS2UserInfo userInfo = 2;
+    bool enableDebug = 3;
+    repeated .snapchat.search.SCS2Tweak tweaksArray = 4;
+    .snapchat.search.SCS2SuggestionsRequest.SCS2SuggestionsRequest_SearchContext searchContext = 5;
+    message SCS2SuggestionsRequest_SearchContext {
+        string queryString = 1;
+        .snapchat.search.SCS2SuggestionsRequest.SCS2SuggestionsRequest_SearchContext.SCS2Origin origin = 2;
+        enum SCS2Origin {
+            SCS2Origin_OriginUnknown = 0;
+            SCS2Origin_OriginCamera = 1;
+            SCS2Origin_OriginDiscover = 2;
+            SCS2Origin_OriginFriendFeed = 3;
+            SCS2Origin_OriginMap = 4;
+            SCS2Origin_OriginTab = 5;
+            SCS2Origin_OriginLe = 6;
+            SCS2Origin_OriginGameTray = 7;
+            SCS2Origin_OriginCameraPulldown = 8;
+            SCS2Origin_OriginAddFriends = 9;
+            SCS2Origin_OriginNotifCampHandler = 10;
+            SCS2Origin_OriginPlaceDiscovery = 11;
+            SCS2Origin_OriginMapFriendFinder = 12;
+            SCS2Origin_OriginLockScreen = 13;
+            SCS2Origin_OriginSnapCamera = 14;
+            SCS2Origin_OriginSendTo = 15;
+            SCS2Origin_OriginScan = 16;
+            SCS2Origin_OriginNewChat = 17;
+            SCS2Origin_OriginWeb = 18;
+            SCS2Origin_OriginMyai = 19;
+        }
+    }
+}
+
+message SCS2SuggestionsResponse {
+    repeated .snapchat.search.SCS2Result resultsArray = 1;
+    string debugHtml = 2;
+}
+
+message SCS2Topic {
+    string text = 1;
+    int64 numSnaps = 2;
+}
+
+message SCS2Tweak {
+    string id_p = 1;
+    int32 intValue = 2;
+    float floatValue = 3;
+    bool boolValue = 4;
+    string stringValue = 5;
+}
+
+message SCS2User {
+    string id_p = 1;
+    string displayName = 2;
+    string username = 3;
+    bool isPopular = 5;
+    .snapchat.search.SCS2BitmojiUserInfo bitmojiUserInfo = 6;
+    string emoji = 7;
+    string contextHint = 8;
+    .snapchat.search.SCS2StorySummaryInfo storySummaryInfo = 9;
+    .snapchat.search.SCS2User.SCS2User_RecommendationReason recommendationReason = 10;
+    bool isOfficial = 11;
+    string snapProId = 12;
+    string mutableUsername = 13;
+    enum SCS2User_RecommendationReason {
+        SCS2User_RecommendationReason_RecommendationReasonUnknown = 0;
+        SCS2User_RecommendationReason_RecommendationReasonHasMutualFriend = 1;
+        SCS2User_RecommendationReason_RecommendationReasonUsername = 2;
+        SCS2User_RecommendationReason_RecommendationReasonInContacts = 3;
+        SCS2User_RecommendationReason_RecommendationReasonInQuickAdds = 4;
+        SCS2User_RecommendationReason_RecommendationReasonPrivate = 5;
+        SCS2User_RecommendationReason_RecommendationReasonHas3PlusMutualFriend = 6;
+        SCS2User_RecommendationReason_RecommendationReasonHas10PlusMutualFriend = 7;
+        SCS2User_RecommendationReason_RecommendationReasonHas20PlusMutualFriend = 8;
+        SCS2User_RecommendationReason_RecommendationReasonDisplayName = 9;
+        SCS2User_RecommendationReason_RecommendationReasonYouMayKnow = 10;
+        SCS2User_RecommendationReason_RecommendationReasonHas2PlusMutualFriend = 11;
+    }
+}
+
+message SCS2UserInfo {
+    int32 age = 1;
+    string countryCode = 2;
+    .snapchat.search.SCS2GeoLocation location = 3;
+    string bitmojiAvatarId = 4;
+    .snapchat.search.SCS2UserInfo.SCS2UserInfo_Gender gender = 5;
+    bool cameosFeatureRestricted = 6;
+    .snapchat.search.SCS2UserInfo.HappeningNowHoroscope_AstrologicalSign astrologicalSign = 7;
+    string timezone = 8;
+    enum HappeningNowHoroscope_AstrologicalSign {
+        HappeningNowHoroscope_AstrologicalSign_Unset = 0;
+        HappeningNowHoroscope_AstrologicalSign_Aries = 1;
+        HappeningNowHoroscope_AstrologicalSign_Taurus = 2;
+        HappeningNowHoroscope_AstrologicalSign_Gemini = 3;
+        HappeningNowHoroscope_AstrologicalSign_Cancer = 4;
+        HappeningNowHoroscope_AstrologicalSign_Leo = 5;
+        HappeningNowHoroscope_AstrologicalSign_Virgo = 6;
+        HappeningNowHoroscope_AstrologicalSign_Libra = 7;
+        HappeningNowHoroscope_AstrologicalSign_Scorpio = 8;
+        HappeningNowHoroscope_AstrologicalSign_Sagittarius = 9;
+        HappeningNowHoroscope_AstrologicalSign_Capricorn = 10;
+        HappeningNowHoroscope_AstrologicalSign_Aquarius = 11;
+        HappeningNowHoroscope_AstrologicalSign_Pisces = 12;
+    }
+    enum SCS2UserInfo_Gender {
+        SCS2UserInfo_Gender_GenderUnknown = 0;
+        SCS2UserInfo_Gender_GenderMale = 1;
+        SCS2UserInfo_Gender_GenderFemale = 2;
+    }
+}

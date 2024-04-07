@@ -1,0 +1,35 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPSnapSticker.proto";
+
+message SCCTPStickerPack {
+    string name = 1;
+    int64 version = 2;
+    int64 priority = 3;
+    bool isTestPack = 4;
+    repeated uint64 ctIdsArray = 5;
+    repeated .snapchat.creativetools.common.SCCTPStickerPack.SCCTPStickerPack_StickerEntity stickersArray = 6;
+    bool isSearchable = 7;
+    bool isActive = 8;
+    .snapchat.creativetools.common.SCCTPStickerPack.SCCTPStickerPack_Type type = 9;
+    repeated bytes ctpIdsArray = 10;
+    uint64 displayCount = 11;
+    string localizedName = 12;
+    int64 color = 13;
+    message SCCTPStickerPack_StickerEntity {
+        .snapchat.creativetools.common.SCCTPSnapSticker snapStickerEntity = 1;
+    }
+    enum SCCTPStickerPack_Type {
+        SCCTPStickerPack_Type_Unset = 0;
+        SCCTPStickerPack_Type_SnapSticker = 1;
+        SCCTPStickerPack_Type_BitmojiSticker = 2;
+        SCCTPStickerPack_Type_CameoSticker = 3;
+        SCCTPStickerPack_Type_GeoSticker = 4;
+        SCCTPStickerPack_Type_GfycatSticker = 5;
+        SCCTPStickerPack_Type_ShoppingSticker = 6;
+    }
+}

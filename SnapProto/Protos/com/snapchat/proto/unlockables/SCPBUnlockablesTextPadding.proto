@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesTextPadding {
+    double top = 1;
+    double left = 2;
+    double right = 3;
+    double bottom = 4;
+}

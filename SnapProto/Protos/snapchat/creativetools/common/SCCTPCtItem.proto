@@ -1,0 +1,141 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPAutoCaptions.proto";
+import "snapchat/creativetools/common/SCCTPBitmojiSticker.proto";
+import "snapchat/creativetools/common/SCCTPCameo.proto";
+import "snapchat/creativetools/common/SCCTPCameraRollSticker.proto";
+import "snapchat/creativetools/common/SCCTPCaptionStyle.proto";
+import "snapchat/creativetools/common/SCCTPChatCameo.proto";
+import "snapchat/creativetools/common/SCCTPChatReaction.proto";
+import "snapchat/creativetools/common/SCCTPCompositeId.proto";
+import "snapchat/creativetools/common/SCCTPCtConfig.proto";
+import "snapchat/creativetools/common/SCCTPCustomSticker.proto";
+import "snapchat/creativetools/common/SCCTPCustomStickerPack.proto";
+import "snapchat/creativetools/common/SCCTPDrawing.proto";
+import "snapchat/creativetools/common/SCCTPEmoji.proto";
+import "snapchat/creativetools/common/SCCTPFilter.proto";
+import "snapchat/creativetools/common/SCCTPGfycat.proto";
+import "snapchat/creativetools/common/SCCTPGiphy.proto";
+import "snapchat/creativetools/common/SCCTPInfoStickers.proto";
+import "snapchat/creativetools/common/SCCTPLens.proto";
+import "snapchat/creativetools/common/SCCTPLottie.proto";
+import "snapchat/creativetools/common/SCCTPMusicArtist.proto";
+import "snapchat/creativetools/common/SCCTPMusicTrack.proto";
+import "snapchat/creativetools/common/SCCTPProxyitem.proto";
+import "snapchat/creativetools/common/SCCTPServerCameo.proto";
+import "snapchat/creativetools/common/SCCTPShoppingSticker.proto";
+import "snapchat/creativetools/common/SCCTPSnapSticker.proto";
+import "snapchat/creativetools/common/SCCTPStickerPack.proto";
+
+message SCCTPCTItem {
+    .snapchat.creativetools.common.SCCTPCompositeId legacyCompositeId = 1;
+    .snapchat.creativetools.common.SCCTPCTItem.SCCTPCTItem_Entity entity = 2;
+    .snapchat.creativetools.common.SCCTPCTConfig config = 3;
+    uint64 ctId = 4;
+    repeated .snapchat.creativetools.common.SCCTPCTItem.SCCTPCTItem_AssociatedId associatedIdsArray = 5;
+    bytes id_p = 6;
+    .snapchat.creativetools.common.SCCTPCTItem.SCCTPSyncSensitivity syncSensitivity = 7;
+    message SCCTPCTItem_AssociatedId {
+        .snapchat.creativetools.common.SCCTPCTItem.SCCTPCTItem_AssociatedId.SCCTPCTItem_AssociatedId_Corpus corpus = 1;
+        string id_p = 2;
+        enum SCCTPCTItem_AssociatedId_Corpus {
+            SCCTPCTItem_AssociatedId_Corpus_CorpusUnset = 0;
+            SCCTPCTItem_AssociatedId_Corpus_URL = 1;
+        }
+    }
+    message SCCTPCTItem_Entity {
+        .snapchat.creativetools.common.SCCTPSnapSticker snapSticker = 1;
+        .snapchat.creativetools.common.SCCTPBitmojiSticker bitmojiSticker = 2;
+        .snapchat.creativetools.common.SCCTPCustomSticker customSticker = 3;
+        .snapchat.creativetools.common.SCCTPEmoji emoji = 4;
+        .snapchat.creativetools.common.SCCTPGiphy giphy = 5;
+        .snapchat.creativetools.common.SCCTPCameo cameo = 6;
+        .snapchat.creativetools.common.SCCTPMusicTrack musicTrack = 7;
+        .snapchat.creativetools.common.SCCTPStickerPack stickerPack = 8;
+        .snapchat.creativetools.common.SCCTPInfoSticker infoSticker = 9;
+        .snapchat.creativetools.common.SCCTPCaptionStyles captionStyles = 11;
+        .snapchat.creativetools.common.SCCTPChatCameo chatCameo = 12;
+        .snapchat.creativetools.common.SCCTPGfycat gfycat = 13;
+        .snapchat.creativetools.common.SCCTPServerCameo serverCameo = 14;
+        .snapchat.creativetools.common.SCCTPChatReactionIntent chatReaction = 15;
+        .snapchat.creativetools.common.SCCTPFilter filter = 16;
+        .snapchat.creativetools.common.SCCTPCustomStickerPack customStickerPack = 17;
+        .snapchat.creativetools.common.SCCTPShoppingSticker shoppingSticker = 18;
+        .snapchat.creativetools.common.SCCTPMusicArtist musicArtist = 19;
+        .snapchat.creativetools.common.SCCTPDrawing drawing = 20;
+        .snapchat.creativetools.common.SCCTPLottie lottie = 21;
+        .snapchat.creativetools.common.SCCTPAutoCaptions autoCaptions = 22;
+        .snapchat.creativetools.common.SCCTPProxyItem proxyItem = 23;
+        .snapchat.creativetools.common.SCCTPCameraRollSticker cameraRollSticker = 24;
+        .snapchat.creativetools.common.SCCTPLens lens = 25;
+    }
+    enum SCCTPSyncSensitivity {
+        SCCTPSyncSensitivity_SyncSensitivityUnset = 0;
+        SCCTPSyncSensitivity_High = 1;
+        SCCTPSyncSensitivity_Low = 2;
+    }
+}
+
+message SCCTPCTItemExternalID {
+    string bitmojiComicId = 1;
+    string stickerName = 2;
+    string customStickerId = 3;
+    string emojiUnicode = 4;
+    string giphyId = 5;
+    int64 cameoId = 6;
+    string stickerPackName = 7;
+    string cameoExternalId = 8;
+    string emojiHex = 9;
+    string infoStickerId = 10;
+    string targetedItemId = 11;
+    int64 captionStyleId = 12;
+    uint64 musicTrackId = 13;
+    string emojiEscapedId = 14;
+    string chatCameoExternalId = 15;
+    int64 chatCameoId = 16;
+    string gfycatId = 17;
+    int64 serverCameoId = 18;
+    string chatReactionId = 19;
+    uint64 filterId = 20;
+    string proxyId = 21;
+    string cameraRollStickerId = 22;
+}
+
+message SCCTPExternalKey {
+    .snapchat.creativetools.common.SCCTPExternalKey.SCCTPCTItem_Type itemType = 1;
+    string id_p = 2;
+    enum SCCTPCTItem_Type {
+        SCCTPCTItem_Type_Unset = 0;
+        SCCTPCTItem_Type_SnapSticker = 1;
+        SCCTPCTItem_Type_BitmojiSticker = 2;
+        SCCTPCTItem_Type_CustomSticker = 3;
+        SCCTPCTItem_Type_Emoji = 4;
+        SCCTPCTItem_Type_Giphy = 5;
+        SCCTPCTItem_Type_MusicSticker = 19;
+        SCCTPCTItem_Type_Cameo = 20;
+        SCCTPCTItem_Type_Memories = 21;
+        SCCTPCTItem_Type_StickerPack = 22;
+        SCCTPCTItem_Type_TargetedItem = 23;
+        SCCTPCTItem_Type_InfoSticker = 25;
+        SCCTPCTItem_Type_CaptionStyle = 26;
+        SCCTPCTItem_Type_MusicTrack = 27;
+        SCCTPCTItem_Type_ChatCameo = 28;
+        SCCTPCTItem_Type_ServerCameo = 29;
+        SCCTPCTItem_Type_Gfycat = 30;
+        SCCTPCTItem_Type_CustomStickerPack = 31;
+        SCCTPCTItem_Type_ChatReaction = 32;
+        SCCTPCTItem_Type_Filter = 33;
+        SCCTPCTItem_Type_ShoppingSticker = 34;
+        SCCTPCTItem_Type_MusicArtist = 35;
+        SCCTPCTItem_Type_Drawing = 36;
+        SCCTPCTItem_Type_Lottie = 37;
+        SCCTPCTItem_Type_AutoCaptions = 38;
+        SCCTPCTItem_Type_ProxyItem = 39;
+        SCCTPCTItem_Type_CameraRollSticker = 40;
+        SCCTPCTItem_Type_Lens = 41;
+    }
+}

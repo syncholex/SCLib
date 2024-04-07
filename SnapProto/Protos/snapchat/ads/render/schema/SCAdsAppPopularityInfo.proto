@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+import "google/protobuf/wrappers.proto";
+
+message SCAdsAppPopularityInfo {
+    .google.protobuf.FloatValue appRating = 1;
+    .google.protobuf.Int64Value appDownloads = 2;
+}

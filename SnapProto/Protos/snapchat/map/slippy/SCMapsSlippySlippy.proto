@@ -1,0 +1,117 @@
+syntax = "proto3";
+package snapchat.map.slippy;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMapsSlippy";
+option csharp_namespace = "SnapProto.Snapchat.Map.Slippy";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCMapsSlippyActionConfig {
+    .snapchat.map.slippy.SCMapsSlippyActionConfig.SCMapsSlippyLocationShareUpsellStyle locationShareUpsellStyle = 1;
+    .snapchat.map.slippy.SCMapsSlippyLiveLocationUpsellConfig liveLocationUpsellConfig = 2;
+    enum SCMapsSlippyLocationShareUpsellStyle {
+        SCMapsSlippyLocationShareUpsellStyle_StyleUnknown = 0;
+        SCMapsSlippyLocationShareUpsellStyle_StyleOneButtonGenericHeader = 1;
+        SCMapsSlippyLocationShareUpsellStyle_StyleOneButtonShareBackHeader = 2;
+        SCMapsSlippyLocationShareUpsellStyle_StyleTwoButtonsGenericHeader = 3;
+        SCMapsSlippyLocationShareUpsellStyle_StyleTwoButtonsShareBackHeader = 4;
+    }
+}
+
+message SCMapsSlippyGetLocationPreferencesReminderRequest {
+    string timezone = 1;
+    .snapchat.map.slippy.SCMapsSlippyGetLocationPreferencesReminderRequest.SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource source = 2;
+    enum SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource {
+        SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource_SourceUnknown = 0;
+        SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource_SourceCamera = 1;
+        SCMapsSlippyGetLocationPreferencesReminderRequest_PrivacyReminderSource_SourceMap = 2;
+    }
+}
+
+message SCMapsSlippyGetLocationPreferencesReminderResponse {
+    bool showReminder = 1;
+    string title = 2;
+    string subtitle = 3;
+    int64 nextRequestsAfterSeconds = 4;
+}
+
+message SCMapsSlippyGetShouldPerformActionRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    .snapchat.map.slippy.SCMapsSlippyGetShouldPerformActionRequest.SCMapsSlippyActionName actionName = 2;
+    string actionConfigType = 3;
+    .snapchat.map.slippy.SCMapsSlippyUserInfo userInfo = 4;
+    bool isEmployee = 5;
+    enum SCMapsSlippyActionName {
+        SCMapsSlippyActionName_AnUnknown = 0;
+        SCMapsSlippyActionName_AnLocationShare = 1;
+        SCMapsSlippyActionName_AnLiveLocationUpsell = 2;
+    }
+}
+
+message SCMapsSlippyGetShouldPerformActionResponse {
+    bool shouldPerformAction = 1;
+    .snapchat.map.slippy.SCMapsSlippyActionConfig actionConfig = 2;
+}
+
+message SCMapsSlippyLiveLocationUpsellConfig {
+    string title = 1;
+    string subtitle = 2;
+    string buttonText = 3;
+    .snapchat.core.SCCOREUUID friendId = 4;
+    int64 nextRequestAfterMs = 5;
+}
+
+message SCMapsSlippyLiveLocationUpsellInfo {
+    repeated .snapchat.map.slippy.SCMapsSlippyLiveSharingStatus liveFriendsOnMapArray = 1;
+    repeated .snapchat.map.slippy.SCMapsSlippyLiveSharingStatus sharingLiveWithFriendsArray = 2;
+    bool isLiveLocationPaused = 3;
+}
+
+message SCMapsSlippyLiveSharingStatus {
+    .snapchat.core.SCCOREUUID friendId = 1;
+    bool isIndefinite = 2;
+}
+
+message SCMapsSlippyLocationPreferencesSnapshot {
+    .snapchat.map.slippy.SCMapsSlippyLocationPreferencesSnapshot.SCVSLocationSharingAudience audience = 1;
+    int64 locationSharingFriendCount = 2;
+    int64 friendCount = 3;
+    enum SCVSLocationSharingAudience {
+        SCVSLocationSharingAudience_LsaNone = 0;
+        SCVSLocationSharingAudience_LsaFriends = 1;
+        SCVSLocationSharingAudience_LsaCustom = 2;
+        SCVSLocationSharingAudience_LsaBlacklist = 3;
+    }
+}
+
+message SCMapsSlippyLocationShareUserInfo {
+    bool ghostMode = 1;
+    int64 updatedTimestamp = 2;
+    int32 friendsWithBitmojiCount = 3;
+    bool hasBitmoji = 4;
+    int32 mapFriendsCount = 5;
+    string timezone = 6;
+}
+
+message SCMapsSlippyReaction {
+    bool acceptLocationShare = 1;
+}
+
+message SCMapsSlippyUpdateReactionRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    .snapchat.map.slippy.SCMapsSlippyUpdateReactionRequest.SCMapsSlippyActionName actionName = 2;
+    .snapchat.map.slippy.SCMapsSlippyReaction reaction = 3;
+    enum SCMapsSlippyActionName {
+        SCMapsSlippyActionName_AnUnknown = 0;
+        SCMapsSlippyActionName_AnLocationShare = 1;
+        SCMapsSlippyActionName_AnLiveLocationUpsell = 2;
+    }
+}
+
+message SCMapsSlippyUpdateReactionResponse {
+}
+
+message SCMapsSlippyUserInfo {
+    .snapchat.map.slippy.SCMapsSlippyLocationShareUserInfo locationShareUserInfo = 1;
+    .snapchat.map.slippy.SCMapsSlippyLiveLocationUpsellInfo liveLocationUpsellInfo = 2;
+}

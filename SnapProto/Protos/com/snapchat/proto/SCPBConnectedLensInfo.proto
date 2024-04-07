@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+message SCPBConnectedLensInfo {
+    string appId = 1;
+}

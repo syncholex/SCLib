@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.notification;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Snapchat.Notification";
+
+import "snapchat/notification/SCPushNotificationNotification.proto";
+
+service PushNotificationService{
+    rpc AckNotification(.snapchat.notification.SCPushNotificationAckNotificationRequest) returns (.snapchat.notification.SCPushNotificationAckNotificationResponse);
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.bitmoji;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Bitmoji";
+
+message BitmojiAssetInfo {
+    string comicId = 1;
+    repeated string avatarIdsArray = 2;
+}

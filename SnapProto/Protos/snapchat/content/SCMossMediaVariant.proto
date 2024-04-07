@@ -1,0 +1,85 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMoss";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+import "google/protobuf/empty.proto";
+import "snapchat/content/SCBoltContentDescriptor.proto";
+import "snapchat/content/SCMossMediaVariantMetadata.proto";
+
+message SCMossContentDescriptorOverride {
+    .snapchat.content.SCBoltContentDescriptor contentDescriptor = 1;
+    .google.protobuf.Empty useVariantName = 2;
+    string useCustomSuffix = 3;
+    .snapchat.content.SCMossContentDescriptorOverride.SCMossContentDescriptorOverride_StandardExtension useStandardExtension = 4;
+    string useCustomExtension = 5;
+    enum SCMossContentDescriptorOverride_StandardExtension {
+        SCMossContentDescriptorOverride_StandardExtension_Unknown = 0;
+        SCMossContentDescriptorOverride_StandardExtension_Webp = 1;
+        SCMossContentDescriptorOverride_StandardExtension_Png = 2;
+        SCMossContentDescriptorOverride_StandardExtension_Jpg = 3;
+        SCMossContentDescriptorOverride_StandardExtension_Gif = 4;
+        SCMossContentDescriptorOverride_StandardExtension_Ico = 5;
+        SCMossContentDescriptorOverride_StandardExtension_Svg = 6;
+        SCMossContentDescriptorOverride_StandardExtension_Heif = 7;
+        SCMossContentDescriptorOverride_StandardExtension_Heic = 8;
+        SCMossContentDescriptorOverride_StandardExtension_Tiff = 9;
+        SCMossContentDescriptorOverride_StandardExtension_Bmp = 10;
+        SCMossContentDescriptorOverride_StandardExtension_Mp4 = 20;
+        SCMossContentDescriptorOverride_StandardExtension_M3U8 = 21;
+        SCMossContentDescriptorOverride_StandardExtension_Mpd = 22;
+        SCMossContentDescriptorOverride_StandardExtension_Ts = 23;
+        SCMossContentDescriptorOverride_StandardExtension_Gifv = 24;
+        SCMossContentDescriptorOverride_StandardExtension_Mov = 25;
+        SCMossContentDescriptorOverride_StandardExtension_Webm = 26;
+        SCMossContentDescriptorOverride_StandardExtension_Flv = 27;
+        SCMossContentDescriptorOverride_StandardExtension_Avi = 28;
+        SCMossContentDescriptorOverride_StandardExtension_Mkv = 29;
+        SCMossContentDescriptorOverride_StandardExtension_Zip = 40;
+        SCMossContentDescriptorOverride_StandardExtension_Gz = 41;
+        SCMossContentDescriptorOverride_StandardExtension_Tar = 42;
+        SCMossContentDescriptorOverride_StandardExtension_Rar = 43;
+        SCMossContentDescriptorOverride_StandardExtension_TarGz = 44;
+        SCMossContentDescriptorOverride_StandardExtension_Vtt = 60;
+        SCMossContentDescriptorOverride_StandardExtension_Webvtt = 61;
+        SCMossContentDescriptorOverride_StandardExtension_Srt = 62;
+        SCMossContentDescriptorOverride_StandardExtension_Sub = 63;
+        SCMossContentDescriptorOverride_StandardExtension_Sbv = 64;
+        SCMossContentDescriptorOverride_StandardExtension_Mp3 = 80;
+        SCMossContentDescriptorOverride_StandardExtension_Aac = 81;
+        SCMossContentDescriptorOverride_StandardExtension_Wav = 82;
+        SCMossContentDescriptorOverride_StandardExtension_M4A = 83;
+        SCMossContentDescriptorOverride_StandardExtension_Glb = 100;
+        SCMossContentDescriptorOverride_StandardExtension_Ktx = 101;
+        SCMossContentDescriptorOverride_StandardExtension_Glsl = 102;
+    }
+}
+
+message SCMossHlsVodStreaming {
+    .snapchat.content.SCBoltContentDescriptor masterManifest = 1;
+}
+
+message SCMossMediaVariant {
+    int32 variantName = 1;
+    .snapchat.content.SCMossMediaVariantMetadata metadata = 2;
+    .snapchat.content.SCMossMediaVariant.SCMossMediaVariant_MediaVariantStatus status = 3;
+    .snapchat.content.SCMossContentDescriptorOverride overrideContentDescriptor = 4;
+    .snapchat.content.SCBoltContentDescriptor contentDescriptor = 10;
+    .snapchat.content.SCMossHlsVodStreaming hlsVodStreaming = 11;
+    enum SCMossMediaVariant_MediaVariantStatus {
+        SCMossMediaVariant_MediaVariantStatus_NotSet = 0;
+        SCMossMediaVariant_MediaVariantStatus_MediaConversionFinished = 1;
+        SCMossMediaVariant_MediaVariantStatus_MediaConversionFailed = 2;
+        SCMossMediaVariant_MediaVariantStatus_BoltClaimFailed = 3;
+        SCMossMediaVariant_MediaVariantStatus_BoltIngestionProcessing = 4;
+        SCMossMediaVariant_MediaVariantStatus_BoltIngestionFailed = 5;
+        SCMossMediaVariant_MediaVariantStatus_Processing = 6;
+        SCMossMediaVariant_MediaVariantStatus_FetchUploadLocationFailed = 7;
+        SCMossMediaVariant_MediaVariantStatus_InternalError = 8;
+        SCMossMediaVariant_MediaVariantStatus_Cancelled = 9;
+        SCMossMediaVariant_MediaVariantStatus_Completed = 10;
+        SCMossMediaVariant_MediaVariantStatus_NotProduced = 11;
+        SCMossMediaVariant_MediaVariantStatus_Deleted = 99;
+    }
+}

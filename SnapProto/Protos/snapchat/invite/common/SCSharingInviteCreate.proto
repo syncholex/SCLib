@@ -1,0 +1,40 @@
+syntax = "proto3";
+package snapchat.invite.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSharing";
+option csharp_namespace = "SnapProto.Snapchat.Invite.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/invite/common/SCSharingInviteModels.proto";
+
+message SCSharingInviteCreateRequest {
+    .snapchat.core.SCCOREUUID inviteId = 1;
+    .snapchat.core.SCCOREUUID resourceId = 2;
+    .snapchat.core.SCCOREUUID creatorId = 3;
+    .snapchat.invite.common.SCSharingInviteCreateRequest.SCSharingInviteType inviteType = 4;
+    .snapchat.invite.common.SCSharingInviteCreateRequest.SCSharingCreatorType creatorType = 5;
+    int64 ttlInSeconds = 6;
+    bytes payload = 7;
+    .snapchat.invite.common.SCSharingInviteCreateRequest.SCSharingInviteStatus status = 8;
+    enum SCSharingCreatorType {
+        SCSharingCreatorType_CreatorTypeUnset = 0;
+        SCSharingCreatorType_CreatorTypeUserId = 1;
+    }
+    enum SCSharingInviteType {
+        SCSharingInviteType_InviteTypeUnset = 0;
+        SCSharingInviteType_InviteTypeGroupChatSticker = 1;
+        SCSharingInviteType_InviteTypeGroupLink = 2;
+        SCSharingInviteType_InviteTypeCustomStorySticker = 3;
+        SCSharingInviteType_InviteTypeMemoryLink = 4;
+        SCSharingInviteType_InviteTypeFriendPrompt = 5;
+    }
+    enum SCSharingInviteStatus {
+        SCSharingInviteStatus_InviteStatusUnset = 0;
+        SCSharingInviteStatus_Pending = 1;
+        SCSharingInviteStatus_Active = 2;
+    }
+}
+
+message SCSharingInviteCreateResponse {
+    .snapchat.invite.common.SCSharingInvite invite = 1;
+}

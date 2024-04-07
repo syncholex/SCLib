@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.search;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCS2";
+option csharp_namespace = "SnapProto.Snapchat.Search";
+
+message SCS2BitmojiUserInfo {
+    string avatarId = 1;
+    string selfieId = 2;
+    string sceneId = 3;
+    string backgroundId = 4;
+}

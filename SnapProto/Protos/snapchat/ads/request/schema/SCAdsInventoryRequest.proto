@@ -1,0 +1,250 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/adindex/dpa/protobuf/DpaAdMetadata.proto";
+import "snapchat/ads/request/schema/engagement/SCAdsRequestEngagementEngagement.proto";
+
+message SCAdsDiscoverChannelMetadata {
+    string inventoryFullyQualified = 1;
+    string channel = 2;
+    string channelId = 3;
+    string productType = 4;
+    string publisher = 5;
+}
+
+message SCAdsDisplayedPreRollAdInfo {
+    bytes adId = 1;
+    bytes requestId = 2;
+}
+
+message SCAdsFeatureFlags {
+    bool isPetraCapable = 1;
+    bool isDpaCapable = 2;
+    repeated .snapchat.ads.request.schema.SCAdsFeatureFlags.SCAdsAdType protoCapableAdTypesArray = 3;
+    bool canSupportCognacSkippableAds = 4;
+    bool canSupportExtendedPlayAds = 5;
+    repeated .snapchat.ads.request.schema.SCAdsFeatureFlags.SCAdsAdType dpaCapableAdTypesArray = 6;
+    bool storyAdsInUserStoriesEnabled = 7;
+    .snapchat.ads.request.schema.SCAdsPetraFeatureFlags petraFeatureFlags = 8;
+    bool canSupportShowsSkippableAds = 9;
+    repeated .snapchat.ads.request.schema.SCAdsFeatureFlags.SCAdsAdType supportedAdTypesArray = 10;
+    .snapchat.ads.request.schema.SCAdsFeatureFlags.SCAdsAdditionalFormatType additionalFormatType = 11;
+    bool storyAdsInContentInterstitialEnabled = 12;
+    bool canSupportCollectionV2 = 13;
+    string maxSupportedSkAdNetworkVersion = 14;
+    bool canSupportCollectionAppInstall = 15;
+    bool topsnapProductsInShowcaseAttachment = 16;
+    bool canSupportCollectionShowcaseAttachment = 17;
+    bool canSupportLeadGenV15 = 18;
+    string maxSupportedSkAdNetworkViewThroughVersion = 19;
+    bool canSupportDpaStoryAds = 20;
+    .google.protobuf.Int32Value supportedLeadGenVersion = 21;
+    bool canSupportDefaultBrowserDeeplinkFallback = 22;
+    repeated .snapchat.ads.request.schema.SCAdsFeatureFlags.ItemType composerSupportedItemTypesArray = 23;
+    .google.protobuf.Int32Value supportedDpaComposerTemplateVersion = 24;
+    bool supportsOrganicStore = 25;
+    bool multiAdPodRequestEnabled = 26;
+    bool offerDisclaimerEnabled = 27;
+    bool canSupportMultiImageComposerTemplates = 28;
+    bool canSupportSkanAdsets = 29;
+    enum SCAdsAdditionalFormatType {
+        SCAdsAdditionalFormatType_AdditionalFormatTypeUnset = 0;
+        SCAdsAdditionalFormatType_Banner = 1;
+        SCAdsAdditionalFormatType_MediumRectangle = 2;
+        SCAdsAdditionalFormatType_NativeSquare = 3;
+        SCAdsAdditionalFormatType_NativeWide = 4;
+        SCAdsAdditionalFormatType_Interstitial = 5;
+        SCAdsAdditionalFormatType_EndCard = 6;
+        SCAdsAdditionalFormatType_MediumRectangleBackground = 7;
+    }
+    enum ItemType {
+        ItemType_ItemTypeUnset = 0;
+        ItemType_Product = 1;
+        ItemType_Hotel = 2;
+        ItemType_Place = 3;
+        ItemType_Flight = 4;
+    }
+    enum SCAdsAdType {
+        SCAdsAdType_UnknownAdType = 0;
+        SCAdsAdType_ThreeV = 1;
+        SCAdsAdType_LongformVideo = 2;
+        SCAdsAdType_AppInstall = 3;
+        SCAdsAdType_RemoteWebpage = 4;
+        SCAdsAdType_LocalWebpage = 5;
+        SCAdsAdType_NoFill = 6;
+        SCAdsAdType_Story = 7;
+        SCAdsAdType_Lens = 8;
+        SCAdsAdType_LensSlot = 9;
+        SCAdsAdType_DeepLinkAttachment = 10;
+        SCAdsAdType_Filter = 11;
+        SCAdsAdType_FilterCarousel = 12;
+        SCAdsAdType_LensCarousel = 13;
+        SCAdsAdType_UnlockableView = 14;
+        SCAdsAdType_AdToLens = 15;
+        SCAdsAdType_Collection = 16;
+        SCAdsAdType_LensTile = 17;
+        SCAdsAdType_AdToCall = 18;
+        SCAdsAdType_AdToMessage = 19;
+        SCAdsAdType_AdToPlace = 20;
+        SCAdsAdType_LeadGeneration = 21;
+        SCAdsAdType_Showcase = 22;
+        SCAdsAdType_PromotePublisherStory = 23;
+        SCAdsAdType_Reminder = 24;
+    }
+}
+
+message SCAdsInventoryRequest {
+    .snapchat.ads.request.schema.SCAdsInventoryRequest.SCAdsInventoryType inventoryType = 1;
+    string inventoryId = 2;
+    string debugAdId = 4;
+    .google.protobuf.Int32Value positionId = 5;
+    int32 numAdsRequested = 6;
+    bool isUnskippableAdSlot = 7;
+    .snapchat.ads.request.schema.SCAdsInventoryRequest.SCAdsResponseDataType_Enum responseDataType = 8;
+    .snapchat.ads.request.schema.SCAdsDiscoverChannelMetadata discoverChannelMetadata = 9;
+    .snapchat.ads.request.schema.SCAdsFeatureFlags featureFlags = 10;
+    bytes clientInventoryRequestId = 11;
+    bytes publisherSlotId = 12;
+    .snapchat.ads.request.schema.engagement.SCAdsRequestEngagementSignals clientEngagementSignal = 13;
+    int64 debugProductId = 16;
+    bool shouldSkipStoryAdRequest = 17;
+    bool isPrefetchRequest = 18;
+    bytes mockAdRequestParams = 19;
+    .snapchat.ads.request.schema.SCAdsInventoryRequest.SCAdsInventorySubType inventorySubType = 20;
+    repeated int64 debugProductIdsArray = 21;
+    .snapchat.ads.request.schema.SCAdsInventoryRequestDebugFlags inventoryRequestDebugFlags = 22;
+    int32 numberOfSubCreatives = 23;
+    .snapchat.ads.request.schema.SCAdsDisplayedPreRollAdInfo displayedPreRollAdInfo = 24;
+    repeated bytes clientRequestIdsArray = 25;
+    enum SCAdsInventorySubType {
+        SCAdsInventorySubType_UnknownInventorySubType = 0;
+        SCAdsInventorySubType_NoSubtype = 1;
+        SCAdsInventorySubType_Shows = 2;
+        SCAdsInventorySubType_Originals = 3;
+        SCAdsInventorySubType_CuratedOurStories = 4;
+        SCAdsInventorySubType_CuratedOurStoriesPartnered = 5;
+        SCAdsInventorySubType_PublisherCurated = 6;
+        SCAdsInventorySubType_Publisher = 7;
+        SCAdsInventorySubType_Popular = 8;
+        SCAdsInventorySubType_Official = 9;
+        SCAdsInventorySubType_Public = 10;
+        SCAdsInventorySubType_LiveStream = 11;
+        SCAdsInventorySubType_PayToPromote = 12;
+    }
+    enum SCAdsInventoryType {
+        SCAdsInventoryType_UnknownInventoryType = 0;
+        SCAdsInventoryType_Discover = 1;
+        SCAdsInventoryType_AutoAdvance = 2;
+        SCAdsInventoryType_NonpartneredStory = 3;
+        SCAdsInventoryType_PartneredStory = 4;
+        SCAdsInventoryType_CampusStory = 5;
+        SCAdsInventoryType_LensCarousel = 6;
+        SCAdsInventoryType_FilterCarousel = 7;
+        SCAdsInventoryType_OfficialStory = 8;
+        SCAdsInventoryType_PromotedStory = 9;
+        SCAdsInventoryType_SensitiveNonpartneredStory = 10;
+        SCAdsInventoryType_SensitivePartneredStory = 11;
+        SCAdsInventoryType_SensitiveCampusStory = 12;
+        SCAdsInventoryType_E2ETest = 13;
+        SCAdsInventoryType_ChannelDisallowingAds = 14;
+        SCAdsInventoryType_GeneratedStory = 15;
+        SCAdsInventoryType_SensitiveGeneratedStory = 16;
+        SCAdsInventoryType_ContentInterstitial = 17;
+        SCAdsInventoryType_Games = 18;
+        SCAdsInventoryType_AdNetworkRtb = 19;
+        SCAdsInventoryType_AdNetworkSdk = 20;
+        SCAdsInventoryType_LensExplorer = 21;
+        SCAdsInventoryType_EmbeddedWebview = 22;
+        SCAdsInventoryType_InterstitialSpotlight = 23;
+        SCAdsInventoryType_InstreamSpotlight = 24;
+        SCAdsInventoryType_AdNetworkHb = 25;
+    }
+    enum SCAdsResponseDataType_Enum {
+        SCAdsResponseDataType_Enum_Json = 0;
+        SCAdsResponseDataType_Enum_Proto = 1;
+    }
+}
+
+message SCAdsInventoryRequestDebugFlags {
+    bool dpaTopSnapDynamic = 1;
+    .snapchat.ads.request.schema.SCAdsInventoryRequestDebugFlags.SCAdsCreativeElementInteractionType creativeElementInteractionType = 2;
+    .snapchat.ads.request.schema.SCAdsInventoryRequestDebugFlags.SCAdsCreativeElementInteractionType collectionDefaultFallbackInteractionType = 3;
+    .snapchat.adindex.dpa.protobuf.DpaStoryAdMetadata dpaStoryAdMetadata = 4;
+    repeated string debugProductIdsArray = 5;
+    enum SCAdsCreativeElementInteractionType {
+        SCAdsCreativeElementInteractionType_CreativeElementInteractionTypeUnset = 0;
+        SCAdsCreativeElementInteractionType_WebView = 1;
+        SCAdsCreativeElementInteractionType_DeepLink = 2;
+        SCAdsCreativeElementInteractionType_AppInstall = 3;
+        SCAdsCreativeElementInteractionType_Showcase = 4;
+    }
+}
+
+message SCAdsPetraFeatureFlags {
+    repeated .snapchat.ads.request.schema.SCAdsPetraFeatureFlags.SCAdsAdType capableAdTypesArray = 1;
+    repeated .snapchat.ads.request.schema.SCAdsPetraFeatureFlags.SCAdsMediaType capableTopsnapMediaTypesArray = 2;
+    repeated .snapchat.ads.request.schema.SCAdsPetraFeatureFlags.SCAdsPetraNativeTemplateType capableNativeTemplateTypesArray = 3;
+    enum SCAdsAdType {
+        SCAdsAdType_UnknownAdType = 0;
+        SCAdsAdType_ThreeV = 1;
+        SCAdsAdType_LongformVideo = 2;
+        SCAdsAdType_AppInstall = 3;
+        SCAdsAdType_RemoteWebpage = 4;
+        SCAdsAdType_LocalWebpage = 5;
+        SCAdsAdType_NoFill = 6;
+        SCAdsAdType_Story = 7;
+        SCAdsAdType_Lens = 8;
+        SCAdsAdType_LensSlot = 9;
+        SCAdsAdType_DeepLinkAttachment = 10;
+        SCAdsAdType_Filter = 11;
+        SCAdsAdType_FilterCarousel = 12;
+        SCAdsAdType_LensCarousel = 13;
+        SCAdsAdType_UnlockableView = 14;
+        SCAdsAdType_AdToLens = 15;
+        SCAdsAdType_Collection = 16;
+        SCAdsAdType_LensTile = 17;
+        SCAdsAdType_AdToCall = 18;
+        SCAdsAdType_AdToMessage = 19;
+        SCAdsAdType_AdToPlace = 20;
+        SCAdsAdType_LeadGeneration = 21;
+        SCAdsAdType_Showcase = 22;
+        SCAdsAdType_PromotePublisherStory = 23;
+        SCAdsAdType_Reminder = 24;
+    }
+    enum SCAdsPetraNativeTemplateType {
+        SCAdsPetraNativeTemplateType_Unset = 0;
+        SCAdsPetraNativeTemplateType_AppInstall = 1;
+        SCAdsPetraNativeTemplateType_VideoAppInstall = 2;
+        SCAdsPetraNativeTemplateType_Content = 3;
+        SCAdsPetraNativeTemplateType_VideoContent = 4;
+    }
+    enum SCAdsMediaType {
+        SCAdsMediaType_UnknownMediaType = 0;
+        SCAdsMediaType_Video = 1;
+        SCAdsMediaType_VideoNoSound = 2;
+        SCAdsMediaType_VideoSoundLaguna = 3;
+        SCAdsMediaType_VideoNoSoundLaguna = 4;
+        SCAdsMediaType_LagunahdSound = 5;
+        SCAdsMediaType_LagunahdNoSound = 6;
+        SCAdsMediaType_MalibuSound = 7;
+        SCAdsMediaType_MalibuNoSound = 8;
+        SCAdsMediaType_NewportSound = 9;
+        SCAdsMediaType_NewportNoSound = 10;
+        SCAdsMediaType_Gif = 11;
+        SCAdsMediaType_Discover = 12;
+        SCAdsMediaType_AudioStitch = 13;
+        SCAdsMediaType_Psychomantis = 14;
+        SCAdsMediaType_Screamingmantis = 15;
+        SCAdsMediaType_Ghostmantis = 16;
+        SCAdsMediaType_Image = 17;
+        SCAdsMediaType_NativeImage = 18;
+        SCAdsMediaType_Html = 19;
+    }
+}
+
+message SCAdsResponseDataType {
+}

@@ -1,0 +1,32 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPCompositeId {
+    uint64 id_p = 1;
+    .snapchat.creativetools.common.SCCTPCompositeId.SCCTPCompositeId_Type type = 2;
+    enum SCCTPCompositeId_Type {
+        SCCTPCompositeId_Type_Unset = 0;
+        SCCTPCompositeId_Type_SnapSticker = 1;
+        SCCTPCompositeId_Type_BitmojiSticker = 2;
+        SCCTPCompositeId_Type_CustomSticker = 3;
+        SCCTPCompositeId_Type_Emoji = 4;
+        SCCTPCompositeId_Type_Giphy = 5;
+        SCCTPCompositeId_Type_MusicSticker = 19;
+        SCCTPCompositeId_Type_Cameo = 20;
+        SCCTPCompositeId_Type_Memories = 21;
+        SCCTPCompositeId_Type_StickerPack = 22;
+        SCCTPCompositeId_Type_TargetedItem = 23;
+        SCCTPCompositeId_Type_InfoSticker = 25;
+        SCCTPCompositeId_Type_CaptionStyle = 26;
+        SCCTPCompositeId_Type_MusicTrack = 27;
+        SCCTPCompositeId_Type_ChatCameo = 28;
+        SCCTPCompositeId_Type_ServerCameo = 29;
+        SCCTPCompositeId_Type_Gfycat = 30;
+        SCCTPCompositeId_Type_CustomStickerPack = 31;
+        SCCTPCompositeId_Type_ChatReaction = 32;
+        SCCTPCompositeId_Type_Filter = 33;
+    }
+}

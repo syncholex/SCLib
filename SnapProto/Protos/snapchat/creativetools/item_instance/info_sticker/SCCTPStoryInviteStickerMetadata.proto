@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance.info_sticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance.Info_sticker";
+
+message SCCTPStoryInviteStickerMetadata {
+    .snapchat.creativetools.item_instance.info_sticker.SCCTPStoryInviteStickerMetadata.SCCTPStoryInviteStickerMetadata_Type type = 1;
+    string inviteId = 2;
+    string storyName = 3;
+    string storyId = 4;
+    enum SCCTPStoryInviteStickerMetadata_Type {
+        SCCTPStoryInviteStickerMetadata_Type_TypeUnspecified = 0;
+        SCCTPStoryInviteStickerMetadata_Type_Custom = 1;
+        SCCTPStoryInviteStickerMetadata_Type_Private = 2;
+    }
+}

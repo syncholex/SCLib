@@ -1,0 +1,80 @@
+syntax = "proto3";
+package ranking.pii.readreceipt;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Readreceipt";
+
+import "ranking/core/SCSCOREUuid.proto";
+
+message PremiumContentId {
+    .ranking.pii.readreceipt.PremiumContentId.PremiumContentType_Enum contentType = 1;
+    string contentGroupId = 2;
+    string seasonId = 3;
+    string storyId = 4;
+    enum PremiumContentType_Enum {
+        PremiumContentType_Enum_Unknown = 0;
+        PremiumContentType_Enum_EditionPublisher = 1;
+        PremiumContentType_Enum_News = 2;
+        PremiumContentType_Enum_Show = 3;
+    }
+}
+
+message PremiumContentStats {
+    .ranking.pii.readreceipt.PremiumContentId contentId = 1;
+    int64 watchCount = 2;
+    int64 boostCount = 3;
+    int64 shareCount = 4;
+}
+
+message PremiumContentType {
+}
+
+message PremiumContentWatchHistory {
+    .ranking.pii.readreceipt.PremiumContentId contentId = 1;
+    repeated .ranking.pii.readreceipt.PremiumReadReceipt lastWatchedStoriesArray = 2;
+}
+
+message PremiumReadReceipt {
+    string publisherId = 1;
+    string storyId = 2;
+    .ranking.core.SCSCOREUUID viewerUserId = 3;
+    int64 viewTimeMs = 4;
+    string subItemId = 5;
+    int32 subItemProgressMs = 6;
+    int32 approximateProgress = 7;
+    .ranking.pii.readreceipt.PremiumReadReceipt.PremiumContentType_Enum contentType = 8;
+    int64 version = 9;
+    int64 segmentId = 10;
+    int64 shareCount = 11;
+    enum PremiumContentType_Enum {
+        PremiumContentType_Enum_Unknown = 0;
+        PremiumContentType_Enum_EditionPublisher = 1;
+        PremiumContentType_Enum_News = 2;
+        PremiumContentType_Enum_Show = 3;
+    }
+}
+
+message PublisherRecentWatchHistory {
+    string publisherId = 1;
+    repeated .ranking.pii.readreceipt.PremiumReadReceipt lastWatchedEpisodesArray = 2;
+    .ranking.pii.readreceipt.PremiumReadReceipt highestWatchedEpisode = 3;
+}
+
+message PublisherRecentWatchHistoryList {
+    repeated .ranking.pii.readreceipt.PublisherRecentWatchHistory publisherHistoryListArray = 1;
+}
+
+message RecentWatchHistoryList {
+    .ranking.pii.readreceipt.RecentWatchHistoryList.PremiumContentType_Enum contentType = 1;
+    .ranking.pii.readreceipt.PublisherRecentWatchHistoryList publisherHistory = 2;
+    .ranking.pii.readreceipt.StoryRecentWatchHistoryList storyHistory = 3;
+    enum PremiumContentType_Enum {
+        PremiumContentType_Enum_Unknown = 0;
+        PremiumContentType_Enum_EditionPublisher = 1;
+        PremiumContentType_Enum_News = 2;
+        PremiumContentType_Enum_Show = 3;
+    }
+}
+
+message StoryRecentWatchHistoryList {
+    repeated .ranking.pii.readreceipt.PremiumReadReceipt readReceiptListArray = 1;
+}

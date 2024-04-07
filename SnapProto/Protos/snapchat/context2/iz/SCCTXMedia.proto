@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.context2.iz;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Iz";
+
+message SCCTXEncryptedMedia {
+    string contentURL = 1;
+    bytes encKey = 2;
+    bytes encIv = 3;
+}

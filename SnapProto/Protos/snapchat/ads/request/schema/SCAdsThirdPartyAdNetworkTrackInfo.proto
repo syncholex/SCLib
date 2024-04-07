@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsPetraTrackInfo {
+    string queryId = 1;
+    .snapchat.ads.request.schema.SCAdsPetraTrackInfo.SCAdsPetraNativeTemplateType nativeTemplateType = 2;
+    enum SCAdsPetraNativeTemplateType {
+        SCAdsPetraNativeTemplateType_Unset = 0;
+        SCAdsPetraNativeTemplateType_AppInstall = 1;
+        SCAdsPetraNativeTemplateType_VideoAppInstall = 2;
+        SCAdsPetraNativeTemplateType_Content = 3;
+        SCAdsPetraNativeTemplateType_VideoContent = 4;
+    }
+}
+
+message SCAdsThirdPartyAdNetworkTrackInfo {
+    .snapchat.ads.request.schema.SCAdsPetraTrackInfo petraTrackInfo = 1;
+}

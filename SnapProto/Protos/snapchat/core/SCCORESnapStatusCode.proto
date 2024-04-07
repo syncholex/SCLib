@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCORE";
+option csharp_namespace = "SnapProto.Snapchat.Core";
+
+message SCCORECodeProperties {
+    uint32 errorCode = 1;
+    string errorDescription = 2;
+    bool isRetryable = 3;
+    string source = 4;
+}

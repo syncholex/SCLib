@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Order";
+
+import "com/snapchat/commerce/domain/order/Order.proto";
+import "com/snapchat/commerce/wire/error/Error.proto";
+
+message UploadSingleOrderRequest {
+    .com.snapchat.commerce.domain.order.Order order = 1;
+}
+
+message UploadSingleOrderResponse {
+    string requestId = 2;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError error = 1;
+}

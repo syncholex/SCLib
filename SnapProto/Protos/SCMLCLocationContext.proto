@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.map.locationcontext;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMLC";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Locationcontext";
+
+import "snapchat/map/locationcontext/SCMLCLocationContext.proto";
+
+service LocationContext{
+    rpc GetLocationContext(.snapchat.map.locationcontext.SCMLCGetLocationContextRequest) returns (.snapchat.map.locationcontext.SCMLCGetLocationContextResponse);
+}

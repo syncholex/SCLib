@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/lenses/snappable/SCLensSbSnappable.proto";
+
+message SDMLens {
+    int64 id_p = 1;
+    .snapchat.lenses.snappable.SCLensSbSnappableMessage snappable = 2;
+    string rankingId = 3;
+}

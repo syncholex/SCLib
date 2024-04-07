@@ -1,0 +1,86 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+
+message SCAdsInitResponse {
+    bytes sessionId = 1;
+    .google.protobuf.Int32Value timeToLiveSeconds = 2;
+    string initHostAndPath = 3;
+    string serveHostAndPath = 4;
+    string trackHostAndPath = 5;
+    string trackAndGetHostAndPath = 6;
+    string serveHostAndPathBatch = 7;
+    string initHostAndPathV2 = 8;
+    string trackHostAndPathV2 = 9;
+    string batchTrackHostAndPathV2 = 10;
+    bool shouldInitializePetra = 11;
+    bytes sceid = 12;
+    bytes pixelToken = 13;
+    bytes encryptedUserData = 14;
+    string initGatewayHostAndPathV1 = 15;
+    bool shouldDisableServeRequest = 16;
+    .snapchat.ads.request.schema.SCAdsOnDeviceResponse onDeviceResponse = 17;
+    string conversionProfileHostAndPathV1 = 18;
+    bool shouldSendGeoLocation = 19;
+    string appIdObfuscationHostAndPathV1 = 20;
+}
+
+message SCAdsOnDeviceAnonymizedId {
+    bytes encryptedAnonymizedId = 1;
+    int64 batchedConversionEventsDateTsMs = 2;
+    int64 generationNumber = 3;
+}
+
+message SCAdsOnDeviceInventoryConfig {
+    .snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfig.SCAdsInventoryType supportedInventoryType = 1;
+    int32 multiAuctionSize = 2;
+    bool onDeviceEnabled = 3;
+    bool canOpenURLEnabled = 4;
+    enum SCAdsInventoryType {
+        SCAdsInventoryType_UnknownInventoryType = 0;
+        SCAdsInventoryType_Discover = 1;
+        SCAdsInventoryType_AutoAdvance = 2;
+        SCAdsInventoryType_NonpartneredStory = 3;
+        SCAdsInventoryType_PartneredStory = 4;
+        SCAdsInventoryType_CampusStory = 5;
+        SCAdsInventoryType_LensCarousel = 6;
+        SCAdsInventoryType_FilterCarousel = 7;
+        SCAdsInventoryType_OfficialStory = 8;
+        SCAdsInventoryType_PromotedStory = 9;
+        SCAdsInventoryType_SensitiveNonpartneredStory = 10;
+        SCAdsInventoryType_SensitivePartneredStory = 11;
+        SCAdsInventoryType_SensitiveCampusStory = 12;
+        SCAdsInventoryType_E2ETest = 13;
+        SCAdsInventoryType_ChannelDisallowingAds = 14;
+        SCAdsInventoryType_GeneratedStory = 15;
+        SCAdsInventoryType_SensitiveGeneratedStory = 16;
+        SCAdsInventoryType_ContentInterstitial = 17;
+        SCAdsInventoryType_Games = 18;
+        SCAdsInventoryType_AdNetworkRtb = 19;
+        SCAdsInventoryType_AdNetworkSdk = 20;
+        SCAdsInventoryType_LensExplorer = 21;
+        SCAdsInventoryType_EmbeddedWebview = 22;
+        SCAdsInventoryType_InterstitialSpotlight = 23;
+        SCAdsInventoryType_InstreamSpotlight = 24;
+        SCAdsInventoryType_AdNetworkHb = 25;
+    }
+}
+
+message SCAdsOnDeviceInventoryConfigs {
+    repeated .snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfig onDeviceInventoryConfigsArray = 1;
+}
+
+message SCAdsOnDeviceResponse {
+    repeated .snapchat.ads.request.schema.SCAdsOnDeviceAnonymizedId onDeviceAnonymizedIdsArray = 1;
+    int64 serverLastFetchTsMs = 2;
+    .snapchat.ads.request.schema.SCAdsOnDeviceInventoryConfigs onDeviceInventoryConfigs = 3;
+    string appIdSlcMappingURL = 4;
+    float slcDpNoise = 5;
+    string slcExperimentName = 6;
+    float aicDpNoiseBWeekly = 7;
+    float aicDpNoiseT = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package targetregistration;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognacTargetRegistrationCommon";
+option csharp_namespace = "SnapProto.Targetregistration";
+
+import "google/protobuf/wrappers.proto";
+
+message SCCognacTargetRegistrationCommonShareInfo {
+    string path = 1;
+    .google.protobuf.StringValue payload = 2;
+}

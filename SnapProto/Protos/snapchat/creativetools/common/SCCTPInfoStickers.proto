@@ -1,0 +1,32 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPInfoSticker {
+    .snapchat.creativetools.common.SCCTPInfoSticker.SCCTPInfoSticker_Type type = 1;
+    enum SCCTPInfoSticker_Type {
+        SCCTPInfoSticker_Type_Unset = 0;
+        SCCTPInfoSticker_Type_Altitude = 1;
+        SCCTPInfoSticker_Type_Battery = 2;
+        SCCTPInfoSticker_Type_DateTime = 3;
+        SCCTPInfoSticker_Type_Event = 4;
+        SCCTPInfoSticker_Type_Gif = 5;
+        SCCTPInfoSticker_Type_GroupInvite = 6;
+        SCCTPInfoSticker_Type_Venue = 7;
+        SCCTPInfoSticker_Type_Mention = 8;
+        SCCTPInfoSticker_Type_Snapcode = 9;
+        SCCTPInfoSticker_Type_SnapRequest = 10;
+        SCCTPInfoSticker_Type_Speed = 11;
+        SCCTPInfoSticker_Type_Story = 12;
+        SCCTPInfoSticker_Type_Topic = 13;
+        SCCTPInfoSticker_Type_Weather = 14;
+        SCCTPInfoSticker_Type_Poll = 15;
+        SCCTPInfoSticker_Type_Commerce = 16;
+        SCCTPInfoSticker_Type_CameraRoll = 17;
+        SCCTPInfoSticker_Type_Question = 18;
+        SCCTPInfoSticker_Type_Sounds = 19;
+        SCCTPInfoSticker_Type_DiscoverDeeplink = 20;
+    }
+}

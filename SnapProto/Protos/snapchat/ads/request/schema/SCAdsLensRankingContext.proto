@@ -1,0 +1,34 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+
+message SCAdsLensRankingContext {
+    repeated .snapchat.ads.request.schema.SCAdsLensViewSessionContext lensViewSessionArray = 1;
+    .snapchat.ads.request.schema.SCAdsLensRankingContext.SCAdsLensRankingContext_CameraDirection cameraDirection = 2;
+    enum SCAdsLensRankingContext_CameraDirection {
+        SCAdsLensRankingContext_CameraDirection_CameraDirectionUnset = 0;
+        SCAdsLensRankingContext_CameraDirection_Front = 1;
+        SCAdsLensRankingContext_CameraDirection_Back = 2;
+    }
+}
+
+message SCAdsLensViewSessionContext {
+    .google.protobuf.Int64Value startTimestampMillis = 1;
+    .google.protobuf.Int64Value totalLensViewTimeMillis = 2;
+    .google.protobuf.Int64Value totalLensAdViewTimeMillis = 3;
+    .google.protobuf.Int32Value totalLensViewCount = 4;
+    .google.protobuf.Int32Value totalLensAdViewCount = 5;
+    .google.protobuf.Int32Value totalLensAdSwipeUpCount = 6;
+    .google.protobuf.Int32Value totalLensSwipeUpCount = 7;
+    .google.protobuf.Int64Value totalLensAdLongformViewTimeMillis = 8;
+    .google.protobuf.Int32Value totalLensSnapTakenCount = 9;
+    .google.protobuf.Int32Value totalAdLensSnapTakenCount = 10;
+    .google.protobuf.Int32Value totalLensShareCount = 11;
+    .google.protobuf.Int32Value totalAdLensShareCount = 12;
+    .google.protobuf.Int32Value totalLensSnapSendCount = 13;
+    .google.protobuf.Int32Value totalAdLensSnapSendCount = 14;
+}

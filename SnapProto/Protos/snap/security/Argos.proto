@@ -1,0 +1,19 @@
+syntax = "proto3";
+package snap.security;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snap.Security";
+
+message ArgosToken {
+    bytes token = 1;
+    int32 expiry_seconds = 2;
+    int32 uk4 = 4;
+}
+
+message ArgosGetTokensRequest {
+    bytes attestation_token = 1;
+}
+
+message ArgosGetTokensResponse {
+    .snap.security.ArgosToken token_a = 1;
+    .snap.security.ArgosToken token_b = 2;
+}

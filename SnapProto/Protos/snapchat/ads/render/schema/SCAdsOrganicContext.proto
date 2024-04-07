@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+message SCAdsOrganicAdToken {
+    repeated int64 productIdsArray = 1;
+    .snapchat.ads.render.schema.SCAdsStoreContext storeContext = 2;
+}
+
+message SCAdsPdpContext {
+    int64 productId = 1;
+    bytes organicAdToken = 2;
+}
+
+message SCAdsStoreContext {
+    bytes storeId = 1;
+    bytes categoryId = 2;
+}

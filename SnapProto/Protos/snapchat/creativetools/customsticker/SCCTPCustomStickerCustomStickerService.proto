@@ -1,0 +1,96 @@
+syntax = "proto3";
+package snapchat.creativetools.customsticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTPCustomSticker";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Customsticker";
+
+import "snapchat/creativetools/common/SCCTPCtItem.proto";
+
+message SCCTPCustomStickerAddRefRequest {
+    bytes id_p = 1;
+    string externalId = 2;
+}
+
+message SCCTPCustomStickerAddRefResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+}
+
+message SCCTPCustomStickerBatchOpsRequest {
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerCreateRequest createRequestsArray = 1;
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteRequest deleteRequestsArray = 2;
+}
+
+message SCCTPCustomStickerBatchOpsResponse {
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerCreateResponse createResponsesArray = 1;
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerDeleteResponse deleteResponsesArray = 2;
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 3;
+}
+
+message SCCTPCustomStickerCreateRequest {
+    .snapchat.creativetools.common.SCCTPCTItem customSticker = 1;
+}
+
+message SCCTPCustomStickerCreateResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerResult result = 1;
+}
+
+message SCCTPCustomStickerDeleteRequest {
+    bytes id_p = 1;
+    bool shouldDeletePack = 2;
+}
+
+message SCCTPCustomStickerDeleteResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+}
+
+message SCCTPCustomStickerGetRequest {
+    repeated bytes idsArray = 1;
+}
+
+message SCCTPCustomStickerGetResponse {
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerResult resultsArray = 1;
+}
+
+message SCCTPCustomStickerListPackRequest {
+    bytes packId = 1;
+    bool includeItems = 2;
+}
+
+message SCCTPCustomStickerListPackResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+    .snapchat.creativetools.common.SCCTPCTItem customStickerPack = 2;
+}
+
+message SCCTPCustomStickerOrderWeightSpec {
+    bytes stickerId = 1;
+    int64 orderWeight = 2;
+}
+
+message SCCTPCustomStickerRemoveRefRequest {
+    bytes id_p = 1;
+    string externalId = 2;
+}
+
+message SCCTPCustomStickerRemoveRefResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+}
+
+message SCCTPCustomStickerResult {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+    .snapchat.creativetools.common.SCCTPCTItem customSticker = 2;
+}
+
+message SCCTPCustomStickerStatus {
+    bytes id_p = 1;
+    bool isSuccess = 2;
+    string errorMessage = 3;
+}
+
+message SCCTPCustomStickerUpdateOrderWeightRequest {
+    bytes packId = 1;
+    repeated .snapchat.creativetools.customsticker.SCCTPCustomStickerOrderWeightSpec orderWeightSpecsArray = 2;
+}
+
+message SCCTPCustomStickerUpdateOrderWeightResponse {
+    .snapchat.creativetools.customsticker.SCCTPCustomStickerStatus status = 1;
+}

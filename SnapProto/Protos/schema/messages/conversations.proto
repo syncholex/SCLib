@@ -1,0 +1,244 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+import "schema/common/errors.proto";
+import "schema/common/conversation.proto";
+import "schema/common/streaks.proto";
+import "schema/messages/messages.proto";
+import "schema/common/retention.proto";
+import "schema/common/visibility.proto";
+
+message ConversationCreateRequest {
+    .snapchat.messaging.UUID sending_user_id = 1;
+    uint64 client_resolution_id = 2;
+    repeated .snapchat.messaging.UUID participant_user_ids = 3;
+    string conversation_title = 4;
+    .snapchat.messaging.ConversationRetentionPolicy retention_policy = 5;
+    .snapchat.messaging.ConversationType conversation_type = 6;
+    .snapchat.messaging.UUID conversation_id = 7;
+    uint32 bitmoji_scene_id = 8;
+    .snapchat.messaging.AllowedJoinMethods allowed_join_methods = 9;
+}
+
+message ConversationCreateResponse {
+    uint64 client_resolution_id = 1;
+    .snapchat.messaging.ConversationCreateResult result = 2;
+}
+
+message ConversationCreateResult {
+    bool success = 1;
+    .snapchat.messaging.FailureReason failure_reason = 2;
+    bool retryable = 3;
+    .snapchat.messaging.ConversationMetadata metadata = 4;
+    .snapchat.messaging.ContentMessage status_message = 5;
+}
+
+message ConversationCreate {
+    .snapchat.messaging.ConversationMetadata created_conversation = 1;
+    .snapchat.messaging.ContentMessage status_message = 2;
+}
+
+message ConversationMetadata {
+    .snapchat.messaging.UUID conversation_id = 1;
+    string conversation_title = 2;
+    repeated .snapchat.messaging.Participant participants = 3;
+    .snapchat.messaging.ConversationRetentionPolicy retention_policy = 4;
+    uint64 version = 5;
+    .snapchat.messaging.ConversationType type = 6;
+    .snapchat.messaging.UUID creator_user_id = 7;
+    uint64 creation_time_ms = 8;
+    .snapchat.messaging.RequesterInfo requester_info = 9;
+    .snapchat.messaging.StreakMetadata streak_metadata = 10;
+    uint32 bitmoji_scene_id = 11;
+    .snapchat.messaging.AllowedJoinMethods allowed_join_methods = 16;
+}
+
+message ConversationUpdateRequest {
+    .snapchat.messaging.UUID conversation_id = 1;
+    uint64 client_resolution_id = 2;
+    uint64 current_version = 3;
+    .snapchat.messaging.ChangeConversationName change_conversation_name = 4;
+    .snapchat.messaging.AddParticipants add_participants = 5;
+    .snapchat.messaging.RemoveParticipant remove_participant = 6;
+    .snapchat.messaging.ChangeConversationRetentionPolicy change_conversation_retention_policy = 7;
+    .snapchat.messaging.UpdateParticipantNotificationSettings update_notification_settings = 8;
+    .snapchat.messaging.UpdateWatermark update_watermark = 10;
+    .snapchat.messaging.ClearConversation clear_conversation = 11;
+    .snapchat.messaging.AddBlockedParticipantExceptions add_blocked_participant_exceptions = 12;
+    .snapchat.messaging.RestoreStreak restore_streak = 13;
+    .snapchat.messaging.ChangeConversationBitmojiScene change_bitmoji_scene = 14;
+}
+
+message ConversationUpdate {
+    .snapchat.messaging.UUID conversation_id = 1;
+    uint64 current_version = 2;
+    .snapchat.messaging.ContentMessage status_message = 8;
+    .snapchat.messaging.ChangeConversationName change_conversation_name = 3;
+    .snapchat.messaging.AddedParticipants added_participants = 4;
+    .snapchat.messaging.RemovedParticipant removed_participant = 5;
+    .snapchat.messaging.ChangeConversationRetentionPolicy change_conversation_retention_policy = 6;
+    .snapchat.messaging.UpdateWatermarkResult updated_watermark = 7;
+    .snapchat.messaging.GenericUpdate generic_update = 9;
+    .snapchat.messaging.ChangeConversationBitmojiScene change_bitmoji_scene = 10;
+}
+
+message ConversationUpdateResponse {
+    .snapchat.messaging.UUID conversation_id = 1;
+    uint64 client_resolution_id = 2;
+    .snapchat.messaging.ConversationUpdateResult result = 3;
+}
+
+message ConversationUpdateResult {
+    uint64 current_version = 1;
+    bool success = 2;
+    bool retryable = 3;
+    .snapchat.messaging.ConversationUpdate conversation_update = 4;
+    .snapchat.messaging.FailureReason failure_reason = 99;
+}
+
+message Participant {
+    .snapchat.messaging.UUID user_id = 1;
+    uint32 color = 2;
+    bool notifications_enabled = 3;
+    uint64 read_high_watermark = 4;
+    uint64 release_high_watermark = 5;
+    int64 video_chat_user_id = 6;
+    uint64 joined_conversation_latest_message_id = 7;
+    uint64 snap_release_high_watermark = 8;
+}
+
+message RequesterInfo {
+    .snapchat.messaging.NotificationPreference game_notifications_preference = 1;
+    repeated .snapchat.messaging.UUID blocked_participant_exceptions = 2;
+    .snapchat.messaging.NotificationPreference chat_notifications_preference = 3;
+    uint64 join_timestamp_ms = 4;
+    uint64 pending_watermark = 5;
+    .snapchat.messaging.FriendFeedVisibility friend_feed_visibility = 6;
+}
+
+message ChangeConversationName {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    string old_name = 2;
+    string new_name = 3;
+}
+
+message ChangeConversationBitmojiScene {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    uint32 old_scene_id = 2;
+    uint32 new_scene_id = 3;
+}
+
+message UpdateWatermark {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.HighWatermark watermark = 2;
+}
+
+message UpdateWatermarkResult {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.HighWatermark watermark = 2;
+    .snapchat.messaging.UpdateWatermarkResult.ReadUpdate read_update_info = 4;
+    uint64 read_timestamp = 3;
+    message ReadUpdate {
+        uint64 read_timestamp = 1;
+        uint64 read_timestamp_message_id = 2;
+    }
+}
+
+message GenericUpdate {
+}
+
+message ClearConversation {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    uint64 client_latest_known_server_order_timestamp = 2;
+}
+
+message AddBlockedParticipantExceptions {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    repeated .snapchat.messaging.UUID new_blocked_participant_exceptions = 2;
+}
+
+message RestoreStreak {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+}
+
+message ChangeConversationRetentionPolicy {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.ConversationRetentionPolicy new_retention_policy = 2;
+}
+
+message AddParticipants {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    repeated .snapchat.messaging.UUID to_add_user_ids = 2;
+}
+
+message AddedParticipants {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    repeated .snapchat.messaging.Participant added_participants = 2;
+}
+
+message RemoveParticipant {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.UUID to_remove_user_id = 2;
+}
+
+message RemovedParticipant {
+    .snapchat.messaging.UUID removed_user_id = 1;
+}
+
+message UpdateParticipantNotificationSettings {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    bool notifications_enabled = 2;
+    .snapchat.messaging.UpdateParticipantNotificationSettings.NotificationType notification_type = 3;
+    .snapchat.messaging.NotificationPreference notification_preference = 4;
+    enum NotificationType {
+        NOTIFICATION_TYPE_UNKNOWN = 0;
+        NOTIFICATION_TYPE_CHAT_NOTIFICATION = 1;
+        NOTIFICATION_TYPE_GAME_NOTIFICATION = 2;
+    }
+}
+
+message DeleteConversationsForUserRequest {
+    uint64 client_resolution_id = 1;
+    .snapchat.messaging.UUID initiating_user_id = 2;
+}
+
+message DeleteConversationsForUserResponse {
+    uint64 client_resolution_id = 1;
+    repeated .snapchat.messaging.DeleteConversationResult result = 2;
+}
+
+message DeleteConversationsByIDRequest {
+    uint64 client_resolution_id = 1;
+    repeated .snapchat.messaging.UUID conversation_ids = 2;
+    .snapchat.messaging.UUID sending_user_id = 3;
+}
+
+message DeleteConversationsByIDResponse {
+    uint64 client_resolution_id = 1;
+    repeated .snapchat.messaging.DeleteConversationResult result = 2;
+}
+
+message DeleteConversationResult {
+    bool success = 1;
+    bool retryable = 2;
+    .snapchat.messaging.FailureReason failure_reason = 3;
+    .snapchat.messaging.UUID deleted_conversation_id = 4;
+    uint64 current_version = 5;
+}
+
+enum AllowedJoinMethods {
+    ALLOWED_JOIN_METHODS_UNSET = 0;
+    ALLOWED_JOIN_METHODS_GROUP_INVITE_STICKER = 1;
+}
+enum NotificationPreference {
+    ALL_MESSAGES = 0;
+    SILENT = 1;
+    MENTION_ONLY = 2;
+}

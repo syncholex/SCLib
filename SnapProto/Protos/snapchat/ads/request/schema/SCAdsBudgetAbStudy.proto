@@ -1,0 +1,25 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsBudgetAbStudy {
+    string experimentId = 1;
+    int64 studyVersion = 2;
+    .snapchat.ads.request.schema.SCAdsBudgetAbStudy.SCAdsBudgetSegmentID budgetSegmentId = 3;
+    enum SCAdsBudgetSegmentID {
+        SCAdsBudgetSegmentID_UnknownBsid = 0;
+        SCAdsBudgetSegmentID_Bsid1 = 1;
+        SCAdsBudgetSegmentID_Bsid2 = 2;
+        SCAdsBudgetSegmentID_Bsid3 = 3;
+        SCAdsBudgetSegmentID_Bsid4 = 4;
+        SCAdsBudgetSegmentID_Bsid5 = 5;
+        SCAdsBudgetSegmentID_Bsid6 = 6;
+        SCAdsBudgetSegmentID_Bsid7 = 7;
+        SCAdsBudgetSegmentID_Bsid8 = 8;
+        SCAdsBudgetSegmentID_Bsid9 = 9;
+        SCAdsBudgetSegmentID_Bsid10 = 10;
+        SCAdsBudgetSegmentID_BsidAll = 11;
+    }
+}

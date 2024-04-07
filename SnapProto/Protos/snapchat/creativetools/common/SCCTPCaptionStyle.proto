@@ -1,0 +1,102 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPCaptionStyle {
+    string styleName = 1;
+    string displayName = 2;
+    .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_FontStyle fontStyle = 3;
+    .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_BackgroundStyle backgroundStyle = 4;
+    bool colorChangeable = 5;
+    string baseColor = 6;
+    bool isWifiOnly = 7;
+    .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_StyleType styleType = 8;
+    message SCCTPCaptionStyle_BackgroundStyle {
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Color color = 1;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Shadow boxShadow = 2;
+        .google.protobuf.FloatValue borderRadius = 3;
+        string backgroundImageURL = 4;
+        bool isStretchable = 5;
+    }
+    message SCCTPCaptionStyle_Color {
+        repeated string colorArray = 1;
+        repeated .google.protobuf.FloatValue colorStopArray = 2;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Color.SCCTPCaptionStyle_Color_ColorTransform colorTransform = 3;
+        .google.protobuf.FloatValue colorGradientAngleDegree = 4;
+        repeated .google.protobuf.FloatValue colorTransformParamsArray = 5;
+        enum SCCTPCaptionStyle_Color_ColorTransform {
+            SCCTPCaptionStyle_Color_ColorTransform_UnknownColorTransform = 0;
+            SCCTPCaptionStyle_Color_ColorTransform_Equal = 1;
+            SCCTPCaptionStyle_Color_ColorTransform_Unchangeable = 2;
+            SCCTPCaptionStyle_Color_ColorTransform_Follow = 3;
+        }
+    }
+    message SCCTPCaptionStyle_FontStyle {
+        string fontName = 1;
+        string fontURL = 2;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Color fontColor = 3;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Color borderColor = 4;
+        .google.protobuf.FloatValue letterSpacing = 5;
+        .google.protobuf.FloatValue lineHeight = 6;
+        .google.protobuf.FloatValue fontSize = 7;
+        .google.protobuf.FloatValue fontBorderWidth = 8;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_FontStyle.SCCTPCaptionStyle_TextTransform textTransform = 9;
+        repeated .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Shadow textShadowArray = 10;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_FontStyle.SCCTPCaptionStyle_TextDecoration textDecoration = 11;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_FontStyle.SCCTPCaptionStyle_TextAlign textAlign = 12;
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_TextPadding padding = 13;
+        .google.protobuf.FloatValue minFontSize = 14;
+        .google.protobuf.FloatValue maxFontSize = 15;
+        .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 16;
+        enum SCCTPCaptionStyle_TextAlign {
+            SCCTPCaptionStyle_TextAlign_UnknownTextAlignment = 0;
+            SCCTPCaptionStyle_TextAlign_Left = 1;
+            SCCTPCaptionStyle_TextAlign_Center = 2;
+            SCCTPCaptionStyle_TextAlign_Right = 3;
+        }
+        enum SCCTPCaptionStyle_TextDecoration {
+            SCCTPCaptionStyle_TextDecoration_UnknownTextDecoration = 0;
+            SCCTPCaptionStyle_TextDecoration_Overline = 1;
+            SCCTPCaptionStyle_TextDecoration_LineThrough = 2;
+            SCCTPCaptionStyle_TextDecoration_Underline = 3;
+            SCCTPCaptionStyle_TextDecoration_UnderlineOverline = 4;
+        }
+        enum SCCTPCaptionStyle_TextTransform {
+            SCCTPCaptionStyle_TextTransform_UnknownTextTransform = 0;
+            SCCTPCaptionStyle_TextTransform_Capital = 1;
+            SCCTPCaptionStyle_TextTransform_Upper = 2;
+            SCCTPCaptionStyle_TextTransform_Lower = 3;
+        }
+    }
+    message SCCTPCaptionStyle_Shadow {
+        .snapchat.creativetools.common.SCCTPCaptionStyle.SCCTPCaptionStyle_Color color = 1;
+        .google.protobuf.FloatValue x = 2;
+        .google.protobuf.FloatValue y = 3;
+        .google.protobuf.FloatValue radius = 4;
+    }
+    message SCCTPCaptionStyle_TextPadding {
+        .google.protobuf.FloatValue top = 1;
+        .google.protobuf.FloatValue left = 2;
+        .google.protobuf.FloatValue right = 3;
+        .google.protobuf.FloatValue bottom = 4;
+    }
+    enum SCCTPCaptionStyle_StyleType {
+        SCCTPCaptionStyle_StyleType_UnknownStyleType = 0;
+        SCCTPCaptionStyle_StyleType_Original = 1;
+        SCCTPCaptionStyle_StyleType_BackgroundWord = 2;
+        SCCTPCaptionStyle_StyleType_BackgroundLine = 3;
+        SCCTPCaptionStyle_StyleType_BackgroundEntire = 4;
+        SCCTPCaptionStyle_StyleType_BackgroundCustom = 5;
+        SCCTPCaptionStyle_StyleType_NoBackground = 6;
+    }
+}
+
+message SCCTPCaptionStyles {
+    repeated .snapchat.creativetools.common.SCCTPCaptionStyle captionStylesArray = 1;
+    int64 captionStyleId = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.payments.commerce.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Snapchat.Payments.Commerce.Common";
+
+message SCPaymentsContactDetails {
+    string email = 1;
+    string phone = 2;
+}

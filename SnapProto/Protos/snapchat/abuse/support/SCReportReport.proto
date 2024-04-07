@@ -1,0 +1,375 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+import "google/protobuf/struct.proto";
+import "snapchat/abuse/support/SCReportReportContent.proto";
+import "snapchat/abuse/support/SCReportReportReason.proto";
+import "snapchat/bitmoji/profile/v1/SCBitmojiBackgroundURL.proto";
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCReportCameosReportData {
+    string publisherId = 1;
+    string publisherName = 2;
+    string storyId = 3;
+    string id_p = 4;
+    .snapchat.abuse.support.SCReportMediaData encryptionInfo = 5;
+    repeated string additionalUserIdsArray = 6;
+}
+
+message SCReportChatMediaReportData {
+    string snapId = 1;
+    bytes mediaContent = 2;
+    bytes mediaOverlay = 3;
+    string attachmentURL = 4;
+    int64 mediaSentTimestamp = 5;
+    string conversationId = 6;
+    int64 messageId = 7;
+    string reportedUserId = 8;
+}
+
+message SCReportChatMessage {
+    string content = 1;
+    int64 messageId = 2;
+    string senderUserId = 3;
+    int64 messageTimestampMs = 4;
+    .snapchat.abuse.support.SCReportMessageContents contents = 5;
+    int64 quotedMessageId = 6;
+}
+
+message SCReportChatMessageReportData {
+    string conversationId = 1;
+    repeated .snapchat.abuse.support.SCReportChatMessage chatMessageArray = 2;
+    int64 reportedMessageId = 3;
+}
+
+message SCReportChatWallpaperReportData {
+    string setterUserId = 1;
+    string conversationId = 2;
+    int64 wallpaperCreationTimestampMs = 3;
+    .snapchat.abuse.support.SCReportMediaData mediaData = 4;
+    bool isGenerative = 5;
+}
+
+message SCReportCustomStorySnapReportData {
+    string snapId = 1;
+    bool usesCameraRollPickerLens = 2;
+}
+
+message SCReportForwardedRequestInfo {
+    string ip = 1;
+    string country = 2;
+    string region = 3;
+    string city = 4;
+    string userAgent = 5;
+    string principal = 6;
+}
+
+message SCReportGetReportedBlobsRequest {
+    repeated string blobIdsArray = 1;
+}
+
+message SCReportGetReportedBlobsResponse {
+    repeated .snapchat.abuse.support.SCReportReportedBlob reportedBlobsArray = 1;
+}
+
+message SCReportGetReportsRequest {
+    string referenceId = 1;
+    .snapchat.abuse.support.SCReportGetReportsRequest.SCReportReported_Type type = 2;
+    string reporterId = 3;
+    string reportedUserId = 4;
+    int64 resultLimit = 5;
+    string cursor = 6;
+    int64 fromTimestampMs = 7;
+    enum SCReportReported_Type {
+        SCReportReported_Type_Unset = 0;
+        SCReportReported_Type_User = 1;
+        SCReportReported_Type_ProfilePicture = 2;
+        SCReportReported_Type_Lens = 3;
+        SCReportReported_Type_Snap = 4;
+        SCReportReported_Type_SpotlightSnap = 5;
+        SCReportReported_Type_CustomStorySnap = 6;
+        SCReportReported_Type_MyStorySnap = 7;
+        SCReportReported_Type_PublicUserStorySnap = 8;
+        SCReportReported_Type_PublisherStory = 9;
+        SCReportReported_Type_MapStorySnap = 10;
+        SCReportReported_Type_HighlightSnap = 11;
+        SCReportReported_Type_TopicStorySnap = 12;
+        SCReportReported_Type_PublisherStoryTile = 13;
+        SCReportReported_Type_OfficialUserStoryTile = 14;
+        SCReportReported_Type_NonPartnerStoryTile = 15;
+        SCReportReported_Type_HighlightTile = 16;
+        SCReportReported_Type_ChatMedia = 17;
+        SCReportReported_Type_MediaShare = 19;
+        SCReportReported_Type_SpotlightReply = 20;
+        SCReportReported_Type_StoreItem = 21;
+        SCReportReported_Type_SavedStorySnap = 22;
+        SCReportReported_Type_SavedStoryTile = 23;
+        SCReportReported_Type_ChatMessage = 24;
+        SCReportReported_Type_ChatWallpaper = 25;
+        SCReportReported_Type_Cameos = 26;
+        SCReportReported_Type_Sextortion = 27;
+        SCReportReported_Type_ProfileBackground = 28;
+        SCReportReported_Type_TestOnly = 99;
+    }
+}
+
+message SCReportGetReportsResponse {
+    repeated .snapchat.abuse.support.SCReportReport reportsArray = 1;
+    repeated .snapchat.abuse.support.SCReportReportMetadata reportMetadataArray = 2;
+    string cursor = 3;
+    int64 totalReportCount = 4;
+    .google.protobuf.Struct reportCountByReason = 5;
+}
+
+message SCReportHighlightSnapReportData {
+    string profileId = 1;
+    string highlightId = 2;
+    string highlightVersion = 3;
+    string snapId = 4;
+}
+
+message SCReportHighlightTileReportData {
+    string profileId = 1;
+    string highlightId = 2;
+    string highlightVersion = 3;
+}
+
+message SCReportLensReportData {
+    string lensId = 1;
+    string attribution = 2;
+}
+
+message SCReportMapStorySnapReportData {
+    string snapId = 1;
+    string storyName = 2;
+}
+
+message SCReportMediaShareReportData {
+    string linkId = 1;
+    string linkURL = 2;
+}
+
+message SCReportMyStorySnapReportData {
+    string snapId = 1;
+    bool usesCameraRollPickerLens = 2;
+}
+
+message SCReportNonPartnerStoryTileReportData {
+    string snapId = 1;
+}
+
+message SCReportOfficialUserStoryTileReportData {
+    string snapId = 1;
+}
+
+message SCReportPrivateSnapReportData {
+    string snapId = 1;
+    bytes mediaContent = 2;
+    bytes mediaOverlay = 3;
+    string attachmentURL = 4;
+    int64 mediaSentTimestamp = 5;
+    string conversationId = 6;
+    int64 messageId = 7;
+    string reportedUserId = 8;
+    bool usesCameraRollPickerLens = 9;
+}
+
+message SCReportProfileBackgroundReportData {
+    string reportedUserId = 1;
+    .snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL bitmojiBackgroundURL = 2;
+}
+
+message SCReportProfilePictureReportData {
+    string reportedUserId = 1;
+}
+
+message SCReportPublicUserStorySnapReportData {
+    string snapId = 1;
+    bool usesCameraRollPickerLens = 2;
+}
+
+message SCReportPublisherStorySnapReportData {
+    string snapId = 1;
+    string editionId = 2;
+    string publisherId = 3;
+    string publisherName = 4;
+}
+
+message SCReportPublisherStoryTileReportData {
+    string tileId = 1;
+    string mediaURL = 2;
+    string publisherId = 3;
+    string publisherName = 4;
+}
+
+message SCReportReport {
+    .snapchat.abuse.support.SCReportReporter reporter = 1;
+    .snapchat.abuse.support.SCReportReported reported = 2;
+    string comment = 3;
+    .snapchat.abuse.support.SCReportReport.SCReportReportReason reason = 4;
+    int64 serverReceivedAtMs = 5;
+    .snapchat.abuse.support.SCReportReportEntryPoint entrypoint = 6;
+    .snapchat.abuse.support.SCReportReportReasonId reasonId = 7;
+    enum SCReportReportReason {
+        SCReportReportReason_ReasonUnset = 0;
+        SCReportReportReason_DontLikeWantToSee = 1;
+        SCReportReportReason_ImpersonationFirstPerson = 2;
+        SCReportReportReason_ImpersonationGeneral = 3;
+        SCReportReportReason_SpamFirstPerson = 4;
+        SCReportReportReason_SpamGeneral = 5;
+        SCReportReportReason_HateSpeechGeneral = 7;
+        SCReportReportReason_ViolentDisturbingGeneral = 9;
+        SCReportReportReason_ThreatThreateningFirstPerson = 10;
+        SCReportReportReason_ThreatThreateningGeneral = 11;
+        SCReportReportReason_InappropriateFirstPerson = 12;
+        SCReportReportReason_InappropriateGeneral = 13;
+        SCReportReportReason_InappropriateLens = 14;
+        SCReportReportReason_InappropriateAttachment = 15;
+        SCReportReportReason_BullyingHarassmentFirstPerson = 16;
+        SCReportReportReason_BullyingHarassmentGeneral = 17;
+        SCReportReportReason_PrivacyInvasionFirstPerson = 18;
+        SCReportReportReason_SelfHarmSuicide = 20;
+        SCReportReportReason_TerrorismExtremism = 21;
+        SCReportReportReason_FraudulentInformation = 22;
+        SCReportReportReason_DrugSaleUse = 23;
+        SCReportReportReason_WeaponSaleUse = 24;
+        SCReportReportReason_InappropriatePromotion = 25;
+        SCReportReportReason_UnderThirteen = 26;
+        SCReportReportReason_FraudulentInformationPolitics = 27;
+        SCReportReportReason_FraudulentInformationHealth = 28;
+        SCReportReportReason_FraudulentInformationSocialIssues = 29;
+        SCReportReportReason_InappropriateChild = 30;
+        SCReportReportReason_SelfHarmSuicidePromote = 31;
+        SCReportReportReason_CounterfeitGoods = 32;
+        SCReportReportReason_FeatureBroken = 33;
+        SCReportReportReason_BullyingHarassmentSexual = 34;
+        SCReportReportReason_SpamFriendRequest = 35;
+        SCReportReportReason_SpamCreepy = 36;
+        SCReportReportReason_ThreatSextortion = 37;
+    }
+}
+
+message SCReportReportEntryPoint {
+    string feature = 1;
+    string subfeature = 2;
+}
+
+message SCReportReportMetadata {
+    .snapchat.abuse.support.SCReportReport report = 1;
+    .google.protobuf.Struct review = 2;
+    int64 reportProcessedTimestampMs = 3;
+}
+
+message SCReportReported {
+    .snapchat.abuse.support.SCReportUserReportData userReportData = 101;
+    .snapchat.abuse.support.SCReportProfilePictureReportData profilePictureReportData = 102;
+    .snapchat.abuse.support.SCReportLensReportData lensReportData = 103;
+    .snapchat.abuse.support.SCReportPrivateSnapReportData privateSnapReportData = 104;
+    .snapchat.abuse.support.SCReportSpotlightStorySnapReportData spotlightSnapReportData = 105;
+    .snapchat.abuse.support.SCReportCustomStorySnapReportData customStorySnapReportData = 106;
+    .snapchat.abuse.support.SCReportMyStorySnapReportData myStorySnapReportData = 107;
+    .snapchat.abuse.support.SCReportPublicUserStorySnapReportData publicUserStorySnapReportData = 108;
+    .snapchat.abuse.support.SCReportPublisherStorySnapReportData publisherStorySnapReportData = 109;
+    .snapchat.abuse.support.SCReportMapStorySnapReportData mapStorySnapReportData = 110;
+    .snapchat.abuse.support.SCReportHighlightSnapReportData highlightSnapReportData = 111;
+    .snapchat.abuse.support.SCReportTopicStorySnapReportData topicStorySnapReportData = 112;
+    .snapchat.abuse.support.SCReportPublisherStoryTileReportData publisherStoryTileReportData = 113;
+    .snapchat.abuse.support.SCReportOfficialUserStoryTileReportData officialUserStoryTileReportData = 114;
+    .snapchat.abuse.support.SCReportNonPartnerStoryTileReportData nonPartnerStoryTileReportData = 115;
+    .snapchat.abuse.support.SCReportHighlightTileReportData highlightTileReportData = 116;
+    .snapchat.abuse.support.SCReportChatMediaReportData chatMediaReportData = 117;
+    .snapchat.abuse.support.SCReportMediaShareReportData mediaShareReportData = 119;
+    .snapchat.abuse.support.SCReportSpotlightReplyReportData spotlightReplyReportData = 120;
+    .snapchat.abuse.support.SCReportStoreItemReportData storeItemReportData = 121;
+    .snapchat.abuse.support.SCReportSavedStorySnapReportData savedStorySnapReportData = 122;
+    .snapchat.abuse.support.SCReportSavedStoryTileReportData savedStoryTileReportData = 123;
+    .snapchat.abuse.support.SCReportChatMessageReportData chatMessageReportData = 124;
+    .snapchat.abuse.support.SCReportChatWallpaperReportData chatWallpaperReportData = 125;
+    .snapchat.abuse.support.SCReportCameosReportData cameosReportData = 126;
+    .snapchat.abuse.support.SCReportSextortionReportData sextortionReportData = 127;
+    .snapchat.abuse.support.SCReportProfileBackgroundReportData profileBackgroundReportData = 128;
+    .snapchat.abuse.support.SCReportTestReportData testReportData = 199;
+}
+
+message SCReportReportedBlob {
+    string blobId = 1;
+    string boltContentURL = 2;
+    bytes encryptionKey = 3;
+    bytes encryptionIv = 4;
+    string mimeType = 5;
+}
+
+message SCReportReporter {
+    string userId = 1;
+    string serviceAccount = 2;
+}
+
+message SCReportSavedStorySnapReportData {
+    string profileId = 1;
+    string highlightId = 2;
+    string highlightVersion = 3;
+    string snapId = 4;
+}
+
+message SCReportSavedStoryTileReportData {
+    string profileId = 1;
+    string highlightId = 2;
+    string highlightVersion = 3;
+}
+
+message SCReportSendReportRequest {
+    .snapchat.abuse.support.SCReportReport report = 1;
+    .snapchat.abuse.support.SCReportForwardedRequestInfo forwardedRequestInfo = 2;
+}
+
+message SCReportSendReportResponse {
+}
+
+message SCReportSextortionReportData {
+    string referenceId = 1;
+    string originalReportType = 2;
+}
+
+message SCReportSpotlightReplyReportData {
+    string snapId = 1;
+    .snapchat.core.SCCOREUUID replyId = 2;
+}
+
+message SCReportSpotlightStorySnapReportData {
+    string snapId = 1;
+    bool usesCameraRollPickerLens = 2;
+}
+
+message SCReportStoreItemReportData {
+    int64 snapItemId = 1;
+    string storeId = 2;
+    string categoryId = 3;
+    string catalogId = 4;
+    .snapchat.abuse.support.SCReportStoreItemReportData.SCReportStoreItemReportData_Unlockable unlockable = 5;
+    message SCReportStoreItemReportData_Unlockable {
+        uint64 unlockableId = 1;
+        .snapchat.abuse.support.SCReportStoreItemReportData.SCReportStoreItemReportData_Unlockable.SCReportStoreItemReportData_Unlockable_UnlockableType unlockableType = 2;
+        enum SCReportStoreItemReportData_Unlockable_UnlockableType {
+            SCReportStoreItemReportData_Unlockable_UnlockableType_Unset = 0;
+            SCReportStoreItemReportData_Unlockable_UnlockableType_Lens = 1;
+            SCReportStoreItemReportData_Unlockable_UnlockableType_Sticker = 2;
+        }
+    }
+}
+
+message SCReportTestReportData {
+}
+
+message SCReportTopicStorySnapReportData {
+    string snapId = 1;
+    string topicId = 2;
+}
+
+message SCReportUserReportData {
+    string reportedUserId = 1;
+    bool isUserContentsReport = 2;
+    bool isFamilyCenterReport = 3;
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+package games.lensmanagement;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesLensManagement";
+option csharp_namespace = "SnapProto.Games.Lensmanagement";
+
+message SCGamesLensManagementDeleteAllLensesDataRequest {
+}
+
+message SCGamesLensManagementDeleteAllLensesDataResponse {
+}
+
+message SCGamesLensManagementDeleteLensesDataRequest {
+    repeated string lensIdsArray = 1;
+}
+
+message SCGamesLensManagementDeleteLensesDataResponse {
+}
+
+message SCGamesLensManagementGetLensUsageRequest {
+    string lensId = 1;
+}
+
+message SCGamesLensManagementGetLensUsageResponse {
+    bool isUsed = 1;
+}
+
+message SCGamesLensManagementListLensesUsedRequest {
+    int32 limit = 1;
+    string cursor = 2;
+}
+
+message SCGamesLensManagementListLensesUsedResponse {
+    string cursor = 1;
+    repeated string lensIdsArray = 2;
+}
+
+message SCGamesLensManagementRecordLensUsageRequest {
+    string lensId = 1;
+    string appId = 2;
+}
+
+message SCGamesLensManagementRecordLensUsageResponse {
+}

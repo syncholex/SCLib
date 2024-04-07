@@ -1,0 +1,16 @@
+syntax = "proto3";
+package games.leaderboards;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesLeaderboards";
+option csharp_namespace = "SnapProto.Services.Games.Leaderboards";
+
+import "games/leaderboards/SCGamesLeaderboardsClient.proto";
+
+service ClientLeaderboards{
+    rpc BatchGetLeaderboardEntries(.games.leaderboards.SCGamesLeaderboardsBatchGetLeaderboardEntriesRequest) returns (.games.leaderboards.SCGamesLeaderboardsBatchGetLeaderboardEntriesResponse);
+    rpc ClientSubmitScore(.games.leaderboards.SCGamesLeaderboardsClientSubmitScoreRequest) returns (.games.leaderboards.SCGamesLeaderboardsClientSubmitScoreResponse);
+    rpc GetClientLeaderboard(.games.leaderboards.SCGamesLeaderboardsGetClientLeaderboardRequest) returns (.games.leaderboards.SCGamesLeaderboardsGetClientLeaderboardResponse);
+    rpc GetScoreVisibilities(.games.leaderboards.SCGamesLeaderboardsGetScoreVisibilitiesRequest) returns (.games.leaderboards.SCGamesLeaderboardsGetScoreVisibilitiesResponse);
+    rpc ListFriendLeaderboardEntries(.games.leaderboards.SCGamesLeaderboardsListFriendLeaderboardEntriesRequest) returns (.games.leaderboards.SCGamesLeaderboardsListFriendLeaderboardEntriesResponse);
+    rpc SetScoreVisibility(.games.leaderboards.SCGamesLeaderboardsSetScoreVisibilityRequest) returns (.games.leaderboards.SCGamesLeaderboardsSetScoreVisibilityResponse);
+}

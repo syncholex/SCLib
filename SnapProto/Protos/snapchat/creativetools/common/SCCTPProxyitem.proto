@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPProxyItem {
+    .snapchat.creativetools.common.SCCTPProxySource source = 1;
+}
+
+message SCCTPProxySource {
+    .snapchat.creativetools.common.SCCTPProxySource.SCCTPProxySourceEnum enum_p = 1;
+    enum SCCTPProxySourceEnum {
+        SCCTPProxySourceEnum_ProxySourceUnset = 0;
+        SCCTPProxySourceEnum_ProxySourceColor = 1;
+        SCCTPProxySourceEnum_ProxySourceMotion = 2;
+        SCCTPProxySourceEnum_ProxySourceUcoColor = 3;
+        SCCTPProxySourceEnum_ProxySourceUcoAr = 4;
+        SCCTPProxySourceEnum_ProxySourceVenue = 5;
+    }
+}

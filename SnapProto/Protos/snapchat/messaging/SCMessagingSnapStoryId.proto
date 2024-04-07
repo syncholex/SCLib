@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCMessagingSnapStoryId {
+    .ranking.core.SCCORECompositeStoryId compositeStoryId = 1;
+    string legacyStoryId = 2;
+    string posterOwnerId = 3;
+}

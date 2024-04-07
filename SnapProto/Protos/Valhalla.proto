@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.map.valhalla;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Valhalla";
+
+import "snapchat/map/valhalla/Valhalla.proto";
+
+service Valhalla{
+    rpc GetRoute(.snapchat.map.valhalla.GetRouteRequest) returns (.snapchat.map.valhalla.GetRouteResponse);
+}

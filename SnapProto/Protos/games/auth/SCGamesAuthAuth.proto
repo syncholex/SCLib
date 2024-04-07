@@ -1,0 +1,33 @@
+syntax = "proto3";
+package games.auth;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesAuth";
+option csharp_namespace = "SnapProto.Games.Auth";
+
+message SCGamesAuthGetCanvasTokenRequest {
+    string externalUserId = 1;
+    string appId = 2;
+    bool isDev = 5;
+    string appinstanceId = 3;
+    string scopeId = 4;
+}
+
+message SCGamesAuthGetCanvasTokenResponse {
+    string token = 1;
+    int64 ttl = 2;
+    string externalUserId = 3;
+    string sessionId = 4;
+}
+
+message SCGamesAuthGetOIDCTokenRequest {
+    string externalUserId = 1;
+    string oauth2ClientId = 2;
+    string sessionId = 3;
+    string appId = 4;
+    string displayName = 5;
+}
+
+message SCGamesAuthGetOIDCTokenResponse {
+    string token = 1;
+    int64 expirationTimestampMsecs = 2;
+}

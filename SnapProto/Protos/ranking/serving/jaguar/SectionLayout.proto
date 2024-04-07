@@ -1,0 +1,38 @@
+syntax = "proto3";
+package ranking.serving.jaguar;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Serving.Jaguar";
+
+message HorizontalSection {
+    .ranking.serving.jaguar.HorizontalSection.HorizontalSection_ItemStyle_Enum itemStyle = 1;
+    enum HorizontalSection_ItemStyle_Enum {
+        HorizontalSection_ItemStyle_Enum_Unknown = 0;
+        HorizontalSection_ItemStyle_Enum_Medium = 1;
+        HorizontalSection_ItemStyle_Enum_Large = 2;
+        HorizontalSection_ItemStyle_Enum_HeroTileTall = 3;
+        HorizontalSection_ItemStyle_Enum_HeroTileShort = 4;
+    }
+}
+
+message SectionLayout {
+    .ranking.serving.jaguar.SectionLayout.SectionLayout_Padding padding = 1;
+    bool shouldShowHeader = 2;
+    bool largeTiles = 3;
+    bool shouldSupportHide = 6;
+    .ranking.serving.jaguar.VerticalSection verticalSection = 4;
+    .ranking.serving.jaguar.HorizontalSection horizontalSection = 5;
+    message SectionLayout_Padding {
+        float topRatio = 1;
+        float bottomRatio = 2;
+    }
+}
+
+message VerticalSection {
+    .ranking.serving.jaguar.VerticalSection.VerticalSection_GridStyle_Enum gridStyle = 1;
+    enum VerticalSection_GridStyle_Enum {
+        VerticalSection_GridStyle_Enum_Unknown = 0;
+        VerticalSection_GridStyle_Enum_TwoColumnFullScreen = 1;
+        VerticalSection_GridStyle_Enum_OneColumnFullScreen = 2;
+        VerticalSection_GridStyle_Enum_SingleTileFullScreen = 3;
+    }
+}

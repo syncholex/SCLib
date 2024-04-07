@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.bitmoji.customoji;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "BM";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Customoji";
+
+message BMRenderCustomojiImageResponse {
+    bytes imageBytes = 1;
+    .snapchat.bitmoji.customoji.BMRenderCustomojiImageResponse.BMRejectType rejectReason = 2;
+    enum BMRejectType {
+        BMRejectType_Unset = 0;
+        BMRejectType_TextFit = 1;
+        BMRejectType_SpamAbuse = 2;
+    }
+}

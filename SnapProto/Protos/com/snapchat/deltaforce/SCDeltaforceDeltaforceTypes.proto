@@ -1,0 +1,178 @@
+syntax = "proto3";
+package com.snapchat.deltaforce;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCDeltaforce";
+option csharp_namespace = "SnapProto.Com.Snapchat.Deltaforce";
+
+message SCDeltaforceAlwaysCondition {
+}
+
+message SCDeltaforceBetweenKeyCondition {
+    .com.snapchat.deltaforce.SCDeltaforceItemKey rangeStart = 1;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey rangeEnd = 2;
+}
+
+message SCDeltaforceChange {
+    .com.snapchat.deltaforce.SCDeltaforceItemPayload write = 1;
+    .com.snapchat.deltaforce.SCDeltaforceTombstone deletedRow = 2;
+}
+
+message SCDeltaforceCompositeCondition {
+    .com.snapchat.deltaforce.SCDeltaforceCompositeCondition.SCDeltaforceCompositeCondition_Operator operator_p = 2;
+    repeated .com.snapchat.deltaforce.SCDeltaforceCondition conditionArray = 3;
+    enum SCDeltaforceCompositeCondition_Operator {
+        SCDeltaforceCompositeCondition_Operator_And = 0;
+        SCDeltaforceCompositeCondition_Operator_Or = 1;
+    }
+}
+
+message SCDeltaforceCondition {
+    .com.snapchat.deltaforce.SCDeltaforceBetweenKeyCondition keyBetween = 1;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey keyGreaterThan = 2;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey keyGreaterThanOrEq = 3;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey keyLessThan = 4;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey keyLessThanOrEq = 5;
+    .com.snapchat.deltaforce.SCDeltaforcePropertyCondition propertyCondition = 6;
+    .com.snapchat.deltaforce.SCDeltaforceAlwaysCondition alwaysCondition = 7;
+    .com.snapchat.deltaforce.SCDeltaforceItemAbsentCondition itemAbsentCondition = 8;
+    .com.snapchat.deltaforce.SCDeltaforceCompositeCondition compositeCondition = 9;
+    .com.snapchat.deltaforce.SCDeltaforceIfLastModifiedOutsideWindowCondition ifLastModifiedOutsideWindowCondition = 10;
+}
+
+message SCDeltaforceGroupKey {
+    string kind = 1;
+    string name = 2;
+    uint64 id_p = 3;
+}
+
+message SCDeltaforceGroupState {
+    uint64 groupVersion = 1;
+    .com.snapchat.deltaforce.SCDeltaforceGroupKey group = 2;
+    uint64 operationTimestamp = 3;
+}
+
+message SCDeltaforceIfLastModifiedOutsideWindowCondition {
+}
+
+message SCDeltaforceItem {
+    .com.snapchat.deltaforce.SCDeltaforceItemKey key = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforceItem.PropertyEntry property = 2;
+    uint64 lastModified = 3;
+    uint64 lastModifiedVersion = 4;
+    uint64 lastModifiedTime = 5;
+    message PropertyEntry {
+        string key = 1;
+        .com.snapchat.deltaforce.SCDeltaforceValue value = 2;
+    }
+}
+
+message SCDeltaforceItemAbsentCondition {
+}
+
+message SCDeltaforceItemKey {
+    .com.snapchat.deltaforce.SCDeltaforceGroupKey group = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforcePathComponent pathComponentsArray = 3;
+}
+
+message SCDeltaforceItemPayload {
+    repeated string keysArray = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforceValue valuesArray = 2;
+    uint64 lastModifiedVersion = 3;
+    uint64 lastModifiedTime = 4;
+}
+
+message SCDeltaforceKeysById {
+    .com.snapchat.deltaforce.SCDeltaforceKeysById.SCDeltaforceKeysById_NodeData data_p = 3;
+    repeated .com.snapchat.deltaforce.SCDeltaforceKeysByKind childKeysArray = 4;
+    string stringId = 1;
+    uint64 longId = 2;
+    message SCDeltaforceKeysById_NodeData {
+        .com.snapchat.deltaforce.SCDeltaforceChange change = 1;
+    }
+}
+
+message SCDeltaforceKeysByKind {
+    string kind = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforceKeysById keysArray = 2;
+}
+
+message SCDeltaforcePathComponent {
+    string kind = 1;
+    string name = 2;
+    uint64 id_p = 3;
+}
+
+message SCDeltaforceProjectedItem {
+    .com.snapchat.deltaforce.SCDeltaforceItemKey key = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforceProjectedItem.PropertyEntry property = 2;
+    uint64 lastModified = 3;
+    message PropertyEntry {
+        string key = 1;
+        .com.snapchat.deltaforce.SCDeltaforceValue value = 2;
+    }
+}
+
+message SCDeltaforceProperty {
+    string propName = 1;
+    .com.snapchat.deltaforce.SCDeltaforceValue value = 2;
+}
+
+message SCDeltaforcePropertyCondition {
+    .com.snapchat.deltaforce.SCDeltaforceProperty eq = 1;
+    .com.snapchat.deltaforce.SCDeltaforceProperty notEq = 2;
+    .com.snapchat.deltaforce.SCDeltaforceProperty lessThan = 3;
+    .com.snapchat.deltaforce.SCDeltaforceProperty lessThanOrEq = 4;
+    .com.snapchat.deltaforce.SCDeltaforceProperty greaterThan = 5;
+    .com.snapchat.deltaforce.SCDeltaforceProperty greaterThanOrEq = 6;
+    .com.snapchat.deltaforce.SCDeltaforceProperty notSet = 7;
+}
+
+message SCDeltaforcePropertyMutation {
+    .com.snapchat.deltaforce.SCDeltaforcePropertyPath propPath = 1;
+    .com.snapchat.deltaforce.SCDeltaforceValue replaceWith = 2;
+    bool deleteProperty = 3;
+}
+
+message SCDeltaforcePropertyPath {
+    string propertyName = 1;
+    repeated .com.snapchat.deltaforce.SCDeltaforcePropertyPath.SCDeltaforcePropertyPath_PathComponent pathComponentsArray = 2;
+    message SCDeltaforcePropertyPath_PathComponent {
+        string mapIndex = 1;
+        uint64 listIndex = 2;
+    }
+}
+
+message SCDeltaforceQueryItemData {
+    .com.snapchat.deltaforce.SCDeltaforceProjectedItem projectedItem = 1;
+    .com.snapchat.deltaforce.SCDeltaforceItem item = 2;
+}
+
+message SCDeltaforceTombstone {
+    uint64 lastModifiedVersion = 1;
+    uint64 lastModifiedTime = 2;
+}
+
+message SCDeltaforceValue {
+    string string = 1;
+    sint64 long_p = 2;
+    bytes bytes = 3;
+    bool bool_p = 4;
+    double double_p = 5;
+    .com.snapchat.deltaforce.SCDeltaforceValueMap map = 6;
+    .com.snapchat.deltaforce.SCDeltaforceValueList list = 7;
+    .com.snapchat.deltaforce.SCDeltaforceItemKey key = 9;
+    bool nullVal = 10;
+    uint64 epochTimeMillis = 11;
+}
+
+message SCDeltaforceValueList {
+    repeated .com.snapchat.deltaforce.SCDeltaforceValue valuesArray = 1;
+}
+
+message SCDeltaforceValueMap {
+    repeated .com.snapchat.deltaforce.SCDeltaforceValueMap.ValueMapEntry valueMap = 1;
+    message ValueMapEntry {
+        string key = 1;
+        .com.snapchat.deltaforce.SCDeltaforceValue value = 2;
+    }
+}

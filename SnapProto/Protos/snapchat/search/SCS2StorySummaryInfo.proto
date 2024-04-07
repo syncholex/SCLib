@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.search;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCS2";
+option csharp_namespace = "SnapProto.Snapchat.Search";
+
+message SCS2StorySummaryInfo {
+    .snapchat.search.SCS2StorySummaryInfo.SCS2StorySummaryInfo_ThumbnailInfo thumbnailInfo = 1;
+    bool hasUnviewedSnaps = 2;
+    bool hasActiveStory = 3;
+    message SCS2StorySummaryInfo_ThumbnailContentObjectInfo {
+        string key = 1;
+        string iv = 2;
+        bytes contentObject = 3;
+    }
+    message SCS2StorySummaryInfo_ThumbnailInfo {
+        string key = 1;
+        string iv = 2;
+        string URL = 3;
+        .snapchat.search.SCS2StorySummaryInfo.SCS2StorySummaryInfo_ThumbnailContentObjectInfo contentObjectInfo = 4;
+    }
+}

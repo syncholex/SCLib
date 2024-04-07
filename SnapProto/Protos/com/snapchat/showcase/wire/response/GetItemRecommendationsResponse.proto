@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.response;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Response";
+
+import "com/snapchat/showcase/wire/metadata/ShowcaseItemMetadata.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetItemRecommendationsResponse {
+    string requestId = 1;
+    .com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+    .com.snapchat.showcase.wire.response.GetItemRecommendationsResponse.GetItemRecommendationsResponse_Recommendation recommendations = 3;
+    message GetItemRecommendationsResponse_Recommendation {
+        repeated .com.snapchat.showcase.wire.metadata.ShowcaseItemMetadata itemsArray = 1;
+        bytes paginationCursor = 2;
+        string moduleTrackingId = 3;
+    }
+}

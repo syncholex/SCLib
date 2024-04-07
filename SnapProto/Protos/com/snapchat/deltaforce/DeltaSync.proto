@@ -1,0 +1,36 @@
+syntax = "proto3";
+package com.snapchat.deltaforce;
+option csharp_namespace = "SnapProto.Com.Snapchat.Deltaforce";
+
+import "com/snapchat/deltaforce/SCDeltaforceDeltaforceTypes.proto";
+
+message DeltaSyncRequest {
+    .com.snapchat.deltaforce.SCDeltaforceGroupKey groupKey = 1;
+    bytes unknown_2 = 2;
+    bool unknown_4 = 4;
+    bool unknown_5 = 5;
+}
+
+message DeltaSyncResponse {
+    .com.snapchat.deltaforce.DeltaSyncResponse.Page page = 1;
+    .com.snapchat.deltaforce.DeltaSyncResponse.EndOfSync endOfSync = 2;
+    .com.snapchat.deltaforce.DeltaSyncResponse.ClearState clearState = 3;
+    message Page {
+        .com.snapchat.deltaforce.SCDeltaforceKeysByKind keysByKind = 3;
+    }
+    message EndOfSync {
+    }
+    message ClearState {
+    }
+    message ItemChange {
+    }
+}
+
+message ConditionalPutRequest {
+    .com.snapchat.deltaforce.SCDeltaforceItem item = 1;
+    bool returnGroupState = 3;
+}
+
+message ConditionalPutResponse {
+    .com.snapchat.deltaforce.SCDeltaforceGroupState groupState = 1;
+}

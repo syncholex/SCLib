@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.topics;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCT";
+option csharp_namespace = "SnapProto.Snapchat.Topics";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCCTTopicSticker {
+    .snapchat.core.SCCOREUUID topicId = 1;
+    string stickerText = 2;
+}
+
+message SCCTTopicStickerMemoriesModel {
+    .snapchat.core.SCCOREUUID topicId = 1;
+    string stickerText = 2;
+}

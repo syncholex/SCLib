@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/snapdoc/SDMAppInstall.proto";
+
+message SDMAppDeepLink {
+    string uri = 1;
+    string id_p = 6;
+    .snapchat.snapdoc.SDMAppInstall appInstall = 4;
+    .snapchat.snapdoc.SDMAppDeepLink.SDMAppDeepLink_WebFallback webFallback = 5;
+    message SDMAppDeepLink_WebFallback {
+        string URL = 1;
+    }
+}

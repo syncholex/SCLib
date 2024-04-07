@@ -1,0 +1,34 @@
+syntax = "proto3";
+package games.tray.hint;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Games.Tray.Hint";
+
+message CameraHintContent {
+    string hintId = 1;
+    string iconURL = 2;
+    .games.tray.hint.CameraHintContent.HintType hintType = 3;
+    string itemId = 4;
+    enum HintType {
+        HintType_HintTypeUnset = 0;
+        HintType_HnMiniUpdate = 1;
+        HintType_HnBreakingNews = 2;
+        HintType_HnStoryScreenshot = 3;
+        HintType_HnBitmojiFitCheck = 4;
+        HintType_HnFriendTrend = 5;
+        HintType_HnAddToMyMini = 6;
+    }
+}
+
+message GetCameraHintsRequest {
+}
+
+message GetCameraHintsResponse {
+    repeated .games.tray.hint.CameraHintContent cameraHintsArray = 1;
+}
+
+message RevokeCameraHintsRequest {
+    repeated string hintIdsArray = 1;
+}
+
+message RevokeCameraHintsResponse {
+}

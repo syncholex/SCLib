@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.fidelius;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFidelius";
+option csharp_namespace = "SnapProto.Services.Snapchat.Fidelius";
+
+import "snapchat/fidelius/SCFideliusRecrypt.proto";
+
+service FideliusRecryptService{
+    rpc AcknowledgeRecrypt(.snapchat.fidelius.SCFideliusAcknowledgeRecryptRequest) returns (.snapchat.fidelius.SCFideliusAcknowledgeRecryptResponse);
+    rpc InitiateRecrypt(.snapchat.fidelius.SCFideliusInitiateRecryptRequest) returns (.snapchat.fidelius.SCFideliusInitiateRecryptResponse);
+    rpc PollRecrypt(.snapchat.fidelius.SCFideliusPollRecryptRequest) returns (.snapchat.fidelius.SCFideliusPollRecryptResponse);
+    rpc RecryptAssistance(.snapchat.fidelius.SCFideliusRecryptAssistanceRequest) returns (.snapchat.fidelius.SCFideliusRecryptAssistanceResponse);
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging.messages";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+message FailureReason {
+    .snapchat.messaging.FailureReason.FailureType failure_type = 1;
+    string failure_description = 2;
+    enum FailureType {
+        UNKNOWN = 0;
+        MALFORMED_REQUEST = 1;
+        PERSISTENCE = 2;
+        NOT_AUTHORIZED = 3;
+        DUPLICATE_MESSAGE = 4;
+        UPDATE_NOT_APPLICABLE = 5;
+        NOT_FRIENDS = 6;
+        DUPLICATE_REQUEST = 7;
+        DEPENDENCY_NOT_SATISFIED = 8;
+        OUT_OF_SYNC = 9;
+        NOT_FOUND = 10;
+        MESSAGE_ALREADY_EXPIRED = 11;
+    }
+}

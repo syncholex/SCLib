@@ -1,0 +1,15 @@
+syntax = "proto3";
+package games.lensmanagement;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesLensManagement";
+option csharp_namespace = "SnapProto.Services.Games.Lensmanagement";
+
+import "games/lensmanagement/SCGamesLensManagementManagement.proto";
+
+service LensDataManagement{
+    rpc DeleteAllLensesData(.games.lensmanagement.SCGamesLensManagementDeleteAllLensesDataRequest) returns (.games.lensmanagement.SCGamesLensManagementDeleteAllLensesDataResponse);
+    rpc DeleteLensesData(.games.lensmanagement.SCGamesLensManagementDeleteLensesDataRequest) returns (.games.lensmanagement.SCGamesLensManagementDeleteLensesDataResponse);
+    rpc GetLensUsage(.games.lensmanagement.SCGamesLensManagementGetLensUsageRequest) returns (.games.lensmanagement.SCGamesLensManagementGetLensUsageResponse);
+    rpc ListLensesUsed(.games.lensmanagement.SCGamesLensManagementListLensesUsedRequest) returns (.games.lensmanagement.SCGamesLensManagementListLensesUsedResponse);
+    rpc RecordLensUsage(.games.lensmanagement.SCGamesLensManagementRecordLensUsageRequest) returns (.games.lensmanagement.SCGamesLensManagementRecordLensUsageResponse);
+}

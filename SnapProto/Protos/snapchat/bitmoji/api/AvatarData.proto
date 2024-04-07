@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.bitmoji.api;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Api";
+
+message AvatarData {
+    int64 gender = 1;
+    int64 style = 2;
+    map<string, int64> optionIds = 3;
+//    repeated .snapchat.bitmoji.api.AvatarData.OptionIdsEntry optionIds = 3;
+//    message OptionIdsEntry {
+//        string key = 1;
+//        int64 value = 2;
+//    }
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance.info_sticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance.Info_sticker";
+
+message SCCTPAltitudeStickerMetadata {
+    .snapchat.creativetools.item_instance.info_sticker.SCCTPAltitudeStickerMetadata.SCCTPAltitudeStickerMetadata_Type type = 1;
+    .snapchat.creativetools.item_instance.info_sticker.SCCTPAltitudeStickerMetadata.SCCTPAltitudeStickerMetadata_MeasurementUnit measurementUnit = 2;
+    sint32 altitude = 3;
+    enum SCCTPAltitudeStickerMetadata_MeasurementUnit {
+        SCCTPAltitudeStickerMetadata_MeasurementUnit_MeasurementUnitUnspecified = 0;
+        SCCTPAltitudeStickerMetadata_MeasurementUnit_Meters = 1;
+        SCCTPAltitudeStickerMetadata_MeasurementUnit_Feet = 2;
+    }
+    enum SCCTPAltitudeStickerMetadata_Type {
+        SCCTPAltitudeStickerMetadata_Type_TypeUnspecified = 0;
+        SCCTPAltitudeStickerMetadata_Type_Text = 1;
+        SCCTPAltitudeStickerMetadata_Type_Gauge = 2;
+    }
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.perception.snapcodes;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapcode";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Snapcodes";
+
+message SCSnapcodeSnapcode {
+    uint32 version = 1;
+    string decodeMessageUuid = 2;
+}

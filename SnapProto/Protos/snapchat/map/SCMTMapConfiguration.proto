@@ -1,0 +1,116 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/map/SCMTTiles.proto";
+import "snapchat/map/SCMTWorldEffects.proto";
+
+message SCMTHeatmapConfig {
+    .snapchat.map.SCMTHeatmapGradient heatmapGradient = 1;
+    float heatNormalizationPeak = 2;
+    float fuzzNormalizationPeak = 3;
+    float heatPointBaseRadius = 4;
+}
+
+message SCMTHeatmapStyleRequest {
+    .snapchat.map.SCMTHeatmapStyleRequest.SCMTHeatmapStyle heatmapStyle = 1;
+    string styleEtag = 2;
+    enum SCMTHeatmapStyle {
+        SCMTHeatmapStyle_HeatmapLight = 0;
+        SCMTHeatmapStyle_HeatmapDark = 1;
+    }
+}
+
+message SCMTHeatmapStyleResponse {
+    .snapchat.map.SCMTHeatmapConfig heatmapConfig = 1;
+    string styleEtag = 2;
+    bool styleNotModified = 3;
+}
+
+message SCMTMapStyleData {
+    string styleJson = 1;
+    .snapchat.map.SCMTMapStyleData.SCMTMapColorScheme colorScheme = 2;
+    string name = 3;
+    string id_p = 4;
+    .snapchat.map.SCMTMapStyleData.SCMTSource source = 5;
+    enum SCMTMapColorScheme {
+        SCMTMapColorScheme_Light = 0;
+        SCMTMapColorScheme_Dark = 1;
+    }
+    enum SCMTSource {
+        SCMTSource_UnknownDataSource = 0;
+        SCMTSource_Mapbox = 1;
+        SCMTSource_Snapzen = 2;
+    }
+}
+
+message SCMTMapStyleRequest {
+    .snapchat.map.SCMTMapStyleRequest.SCMTMapStyle desiredStyle = 1;
+    string prototypeStyleId = 3;
+    string styleJsonEtag = 4;
+    bool serveNewMapStyles = 5;
+    string locale = 6;
+    .snapchat.map.SCMTMapStyleRequest.SCMTMapColorScheme colorScheme = 7;
+    string manualStyleName = 8;
+    .snapchat.geo.SPCGPoint location = 9;
+    enum SCMTMapColorScheme {
+        SCMTMapColorScheme_Light = 0;
+        SCMTMapColorScheme_Dark = 1;
+    }
+    enum SCMTMapStyle {
+        SCMTMapStyle_Default = 0;
+        SCMTMapStyle_Prototype = 5;
+        SCMTMapStyle_Lite = 8;
+        SCMTMapStyle_Places = 10;
+        SCMTMapStyle_DarkMode = 11;
+        SCMTMapStyle_Manual = 12;
+    }
+}
+
+message SCMTMapStyleResponse {
+    string accessToken = 1;
+    string styleJson = 2;
+    bool blockUse = 10;
+    string blockUseText = 11;
+    string styleJsonEtag = 12;
+    bool styleJsonNotModified = 13;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 14;
+    string staticMapAccessToken = 15;
+    string mapboxUsername = 16;
+    string mapboxStyleId = 17;
+    .snapchat.map.SCMTMapStyleResponse.SCMTMapColorScheme colorScheme = 18;
+    repeated .snapchat.map.SCMTPrefetchSpecification prefetchResourcesArray = 19;
+    enum SCMTMapColorScheme {
+        SCMTMapColorScheme_Light = 0;
+        SCMTMapColorScheme_Dark = 1;
+    }
+}
+
+message SCMTPrefetchSpecification {
+    .snapchat.map.SCMTPrefetchSpecification.SCMTPrefetchSpecification_Method method = 1;
+    string URL = 2;
+    enum SCMTPrefetchSpecification_Method {
+        SCMTPrefetchSpecification_Method_Unknown = 0;
+        SCMTPrefetchSpecification_Method_HTTPGet = 1;
+        SCMTPrefetchSpecification_Method_HTTPPost = 2;
+    }
+}
+
+message SCMTPublicMapStyleRequest {
+    .snapchat.map.SCMTPublicMapStyleRequest.SCMTMapStyle desiredStyle = 1;
+    enum SCMTMapStyle {
+        SCMTMapStyle_Default = 0;
+        SCMTMapStyle_Prototype = 5;
+        SCMTMapStyle_Lite = 8;
+        SCMTMapStyle_Places = 10;
+        SCMTMapStyle_DarkMode = 11;
+        SCMTMapStyle_Manual = 12;
+    }
+}
+
+message SCMTPublicMapStyleResponse {
+    string styleJson = 1;
+}

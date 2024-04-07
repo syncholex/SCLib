@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance.info_sticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance.Info_sticker";
+
+import "snapchat/polls/SCPApi.proto";
+
+message SCCTPPollStickerMetadata {
+    bool isDynamic = 1;
+    .snapchat.polls.SCPPollInfo pollInfo = 2;
+}

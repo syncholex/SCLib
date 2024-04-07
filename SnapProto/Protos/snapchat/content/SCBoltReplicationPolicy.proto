@@ -1,0 +1,35 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBolt";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+message SCBoltAllProvidersReplicationPolicy {
+}
+
+message SCBoltBoltDefaultPolicy {
+    uint32 numberOfReplicas = 1;
+}
+
+message SCBoltCountriesPolicy {
+    repeated .snapchat.content.SCBoltCountriesPolicy.CountryExpectedDownloadsEntry countryExpectedDownloads = 1;
+    message CountryExpectedDownloadsEntry {
+        string key = 1;
+        uint64 value = 2;
+    }
+}
+
+message SCBoltNoReplicationPolicy {
+}
+
+message SCBoltReplicationPolicy {
+    .snapchat.content.SCBoltCountriesPolicy countriesPolicy = 1;
+    .snapchat.content.SCBoltBoltDefaultPolicy boltDefaultPolicy = 2;
+    .snapchat.content.SCBoltNoReplicationPolicy noReplicationPolicy = 3;
+    .snapchat.content.SCBoltAllProvidersReplicationPolicy allProvidersReplicationPolicy = 4;
+    .snapchat.content.SCBoltStringRegionsPolicy stringRegionsPolicy = 99;
+}
+
+message SCBoltStringRegionsPolicy {
+    repeated string stringRegionArray = 2;
+}

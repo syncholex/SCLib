@@ -1,0 +1,13 @@
+syntax = "proto3";
+package games.usersettings;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesUserSettings";
+option csharp_namespace = "SnapProto.Services.Games.Usersettings";
+
+import "games/usersettings/SCGamesUserSettingsClient.proto";
+
+service UserSettings{
+    rpc GetUserGlobalSettings(.games.usersettings.SCGamesUserSettingsGetUserGlobalSettingsRequest) returns (.games.usersettings.SCGamesUserSettingsGetUserGlobalSettingsResponse);
+    rpc SetUserGlobalSetting(.games.usersettings.SCGamesUserSettingsSetUserGlobalSettingRequest) returns (.games.usersettings.SCGamesUserSettingsSetUserGlobalSettingResponse);
+    rpc SetUserGlobalSettings(.games.usersettings.SCGamesUserSettingsSetUserGlobalSettingsRequest) returns (.games.usersettings.SCGamesUserSettingsSetUserGlobalSettingsResponse);
+}

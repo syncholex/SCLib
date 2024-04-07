@@ -1,0 +1,47 @@
+syntax = "proto3";
+package activity_center.feed;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCActivityCenterPb";
+option csharp_namespace = "SnapProto.Activity_center.Feed";
+
+import "google/protobuf/timestamp.proto";
+
+message SCActivityCenterPbActionmoji {
+    string avatarId = 1;
+    string templateId = 2;
+    .activity_center.feed.SCActivityCenterPbActionmoji.SCActivityCenterPbActionmoji_ActionmojiType actionmojiType = 3;
+    enum SCActivityCenterPbActionmoji_ActionmojiType {
+        SCActivityCenterPbActionmoji_ActionmojiType_Unset = 0;
+        SCActivityCenterPbActionmoji_ActionmojiType_Standing = 1;
+        SCActivityCenterPbActionmoji_ActionmojiType_Vehicle = 2;
+    }
+}
+
+message SCActivityCenterPbFriendmoji {
+    string userAvatarId = 1;
+    string friendAvatarId = 2;
+    string templateId = 3;
+}
+
+message SCActivityCenterPbItem {
+    string id_p = 1;
+    .google.protobuf.Timestamp timestamp = 2;
+    string title = 3;
+    string iconURL = 4;
+    string headline = 5;
+    string subtext = 6;
+    .activity_center.feed.SCActivityCenterPbItem.SCActivityCenterPbType type = 9;
+    string viewedIconURL = 10;
+    string aboutUserId = 11;
+    bool isTapped = 12;
+    .activity_center.feed.SCActivityCenterPbActionmoji actionmoji = 7;
+    .activity_center.feed.SCActivityCenterPbFriendmoji friendmoji = 8;
+    enum SCActivityCenterPbType {
+        SCActivityCenterPbType_TypeUnset = 0;
+        SCActivityCenterPbType_TypeMapRecentMove = 1;
+        SCActivityCenterPbType_TypeStoryScreenshot = 2;
+        SCActivityCenterPbType_TypeBitmojiFitCheck = 3;
+        SCActivityCenterPbType_TypeFriendTrend = 4;
+        SCActivityCenterPbType_TypeBirthday = 5;
+    }
+}

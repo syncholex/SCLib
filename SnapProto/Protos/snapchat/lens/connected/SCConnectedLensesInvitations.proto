@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.lens.connected;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCConnectedLenses";
+option csharp_namespace = "SnapProto.Snapchat.Lens.Connected";
+
+message SCConnectedLensesInviteFriendsRequest {
+    string conversationId = 1;
+    string lensId = 6;
+}
+
+message SCConnectedLensesInviteFriendsResponse {
+}
+
+message SCConnectedLensesRingFriendsRequest {
+    string conversationId = 1;
+    repeated string invitedUserIdsArray = 6;
+    string lensId = 7;
+}
+
+message SCConnectedLensesRingFriendsResponse {
+}

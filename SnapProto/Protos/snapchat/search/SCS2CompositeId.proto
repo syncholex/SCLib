@@ -1,0 +1,54 @@
+syntax = "proto3";
+package snapchat.search;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCS2";
+option csharp_namespace = "SnapProto.Snapchat.Search";
+
+message SCS2CompositeId {
+    .snapchat.search.SCS2CompositeId.SCS2Corpus corpus = 1;
+    string id_p = 2;
+    int64 version = 3;
+    enum SCS2Corpus {
+        SCS2Corpus_CorpusUnset = 0;
+        SCS2Corpus_CorpusStore = 1;
+        SCS2Corpus_CorpusProfiles = 2;
+        SCS2Corpus_CorpusLenses = 3;
+        SCS2Corpus_CorpusPopularUsers = 4;
+        SCS2Corpus_CorpusPublishers = 5;
+        SCS2Corpus_CorpusShows = 6;
+        SCS2Corpus_CorpusEditions = 7;
+        SCS2Corpus_CorpusUsers = 8;
+        SCS2Corpus_CorpusFeaturedStories = 9;
+        SCS2Corpus_CorpusGroups = 10;
+        SCS2Corpus_CorpusGames = 11;
+        SCS2Corpus_CorpusPlaces = 12;
+        SCS2Corpus_CorpusCreativeTools = 13;
+        SCS2Corpus_CorpusTopics = 14;
+        SCS2Corpus_CorpusMetalinks = 15;
+        SCS2Corpus_CorpusHappeningNow = 16;
+        SCS2Corpus_CorpusMusic = 17;
+        SCS2Corpus_CorpusBitmoji = 18;
+        SCS2Corpus_CorpusCameos = 19;
+        SCS2Corpus_CorpusEmoji = 20;
+        SCS2Corpus_CorpusSnapStickers = 21;
+        SCS2Corpus_CorpusMemories = 22;
+        SCS2Corpus_CorpusGfycat = 23;
+        SCS2Corpus_CorpusMusicTracks = 24;
+        SCS2Corpus_CorpusMusicArtists = 25;
+        SCS2Corpus_CorpusShoppableStickers = 26;
+        SCS2Corpus_CorpusContacts = 27;
+        SCS2Corpus_CorpusQuerySuggestions = 28;
+        SCS2Corpus_CorpusActivityCenter = 29;
+        SCS2Corpus_Unused30 = 30;
+        SCS2Corpus_Unused31 = 31;
+        SCS2Corpus_Unused32 = 32;
+        SCS2Corpus_Unused33 = 33;
+        SCS2Corpus_Unused34 = 34;
+        SCS2Corpus_Unused35 = 35;
+        SCS2Corpus_Unused36 = 36;
+        SCS2Corpus_Unused37 = 37;
+        SCS2Corpus_Unused38 = 38;
+        SCS2Corpus_Unused39 = 39;
+        SCS2Corpus_Unused40 = 40;
+    }
+}

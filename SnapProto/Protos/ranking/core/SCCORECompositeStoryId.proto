@@ -1,0 +1,66 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCCORECompositeStoryId {
+    .ranking.core.SCCORECompositeStoryId.SCFEEDStoryCorpus_Corpus corpus = 1;
+    string id_p = 2;
+    int64 version = 3;
+    enum SCFEEDStoryCorpus_Corpus {
+        SCFEEDStoryCorpus_Corpus_Unset = 0;
+        SCFEEDStoryCorpus_Corpus_Topics = 1;
+        SCFEEDStoryCorpus_Corpus_Events = 2;
+        SCFEEDStoryCorpus_Corpus_Places = 3;
+        SCFEEDStoryCorpus_Corpus_Locations = 4;
+        SCFEEDStoryCorpus_Corpus_BreakingNews = 5;
+        SCFEEDStoryCorpus_Corpus_TrendingTopics = 6;
+        SCFEEDStoryCorpus_Corpus_RegionalTopics = 7;
+        SCFEEDStoryCorpus_Corpus_Polygon = 8;
+        SCFEEDStoryCorpus_Corpus_Topshared = 9;
+        SCFEEDStoryCorpus_Corpus_Snapcasts = 10;
+        SCFEEDStoryCorpus_Corpus_Spotted = 11;
+        SCFEEDStoryCorpus_Corpus_ManualStorybuilder = 12;
+        SCFEEDStoryCorpus_Corpus_Solo = 13;
+        SCFEEDStoryCorpus_Corpus_MapsStory = 14;
+        SCFEEDStoryCorpus_Corpus_MapsCallout = 15;
+        SCFEEDStoryCorpus_Corpus_Publisher = 16;
+        SCFEEDStoryCorpus_Corpus_PublicUser = 17;
+        SCFEEDStoryCorpus_Corpus_RecommendedUser = 18;
+        SCFEEDStoryCorpus_Corpus_PromotedStory = 19;
+        SCFEEDStoryCorpus_Corpus_GroupStory = 20;
+        SCFEEDStoryCorpus_Corpus_LiveStream = 21;
+        SCFEEDStoryCorpus_Corpus_Featured = 22;
+        SCFEEDStoryCorpus_Corpus_Cognac = 23;
+        SCFEEDStoryCorpus_Corpus_LensObject = 24;
+        SCFEEDStoryCorpus_Corpus_Selection = 25;
+        SCFEEDStoryCorpus_Corpus_FriendStory = 26;
+        SCFEEDStoryCorpus_Corpus_LensChallenge = 27;
+        SCFEEDStoryCorpus_Corpus_LensChallengeStory = 28;
+        SCFEEDStoryCorpus_Corpus_ChannelPivot = 29;
+        SCFEEDStoryCorpus_Corpus_CustomStory = 30;
+        SCFEEDStoryCorpus_Corpus_OurStory = 31;
+        SCFEEDStoryCorpus_Corpus_LensCategory = 32;
+        SCFEEDStoryCorpus_Corpus_Badge = 33;
+        SCFEEDStoryCorpus_Corpus_TopicRecentSnaps = 34;
+        SCFEEDStoryCorpus_Corpus_SingleSnap = 35;
+        SCFEEDStoryCorpus_Corpus_HeroStory = 36;
+        SCFEEDStoryCorpus_Corpus_PublisherSegment = 37;
+        SCFEEDStoryCorpus_Corpus_LensCreator = 38;
+        SCFEEDStoryCorpus_Corpus_TopicHumanModeratedSnaps = 39;
+        SCFEEDStoryCorpus_Corpus_TopicPopularHumanModeratedSnaps = 40;
+        SCFEEDStoryCorpus_Corpus_TopicPopularAutoModeratedSnaps = 41;
+        SCFEEDStoryCorpus_Corpus_LensCollection = 42;
+        SCFEEDStoryCorpus_Corpus_SavedStory = 43;
+        SCFEEDStoryCorpus_Corpus_AggregatedFriendsStory = 44;
+        SCFEEDStoryCorpus_Corpus_Unused45 = 45;
+        SCFEEDStoryCorpus_Corpus_Unused46 = 46;
+        SCFEEDStoryCorpus_Corpus_Unused47 = 47;
+        SCFEEDStoryCorpus_Corpus_Unused48 = 48;
+        SCFEEDStoryCorpus_Corpus_Unused49 = 49;
+        SCFEEDStoryCorpus_Corpus_Unused50 = 50;
+        SCFEEDStoryCorpus_Corpus_Unused51 = 51;
+        SCFEEDStoryCorpus_Corpus_Unused52 = 52;
+    }
+}

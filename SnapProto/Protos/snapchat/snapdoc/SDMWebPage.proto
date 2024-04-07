@@ -1,0 +1,71 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMWebPage {
+    string URL = 1;
+    bool blockExternalSharing = 2;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_PreloadMode preloadMode = 3;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_ViewMode viewMode = 4;
+    repeated .snapchat.snapdoc.SDMWebPage.SDMWebPage_BridgeCapability bridgeCapabilitiesArray = 5;
+    repeated string allowedWebviewMacrosArray = 6;
+    bool allowWebStorage = 7;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_SharingMethod sharingMethod = 8;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_SharingAudience sharingAudience = 9;
+    bool controlVolume = 10;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_SubscriptionMethod subscriptionMethod = 11;
+    string id_p = 12;
+    .snapchat.snapdoc.SDMWebPage.SDMDynamicUrlType dynamicURLType = 13;
+    string backgroundColor = 14;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_FillMode fillMode = 15;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_UrlType URLType = 16;
+    .snapchat.snapdoc.SDMWebPage.SDMWebPage_WebviewTarget webviewTarget = 17;
+    enum SDMWebPage_UrlType {
+        SDMWebPage_UrlType_Standard = 0;
+        SDMWebPage_UrlType_Affiliate = 1;
+    }
+    enum SDMWebPage_BridgeCapability {
+        SDMWebPage_BridgeCapability_DefaultBridgeCapability = 0;
+        SDMWebPage_BridgeCapability_PageVisibility = 1;
+        SDMWebPage_BridgeCapability_InlineVideos = 2;
+        SDMWebPage_BridgeCapability_Autofill = 3;
+        SDMWebPage_BridgeCapability_Subscription = 4;
+    }
+    enum SDMDynamicUrlType {
+        SDMDynamicUrlType_None = 0;
+        SDMDynamicUrlType_Bitmoji = 1;
+    }
+    enum SDMWebPage_FillMode {
+        SDMWebPage_FillMode_FullScreen = 0;
+        SDMWebPage_FillMode_Snap = 1;
+    }
+    enum SDMWebPage_PreloadMode {
+        SDMWebPage_PreloadMode_DefaultPreloadMode = 0;
+        SDMWebPage_PreloadMode_PreloadAnytime = 1;
+        SDMWebPage_PreloadMode_PreloadOnSnapLoad = 2;
+        SDMWebPage_PreloadMode_NeverPreload = 3;
+    }
+    enum SDMWebPage_SharingAudience {
+        SDMWebPage_SharingAudience_DefaultSharingAudience = 0;
+        SDMWebPage_SharingAudience_ShareToSnapchatOnly = 1;
+    }
+    enum SDMWebPage_SharingMethod {
+        SDMWebPage_SharingMethod_DefaultSharingMethod = 0;
+        SDMWebPage_SharingMethod_ShareDeepLink = 1;
+        SDMWebPage_SharingMethod_ShareDeepLinkTopSnap = 2;
+    }
+    enum SDMWebPage_SubscriptionMethod {
+        SDMWebPage_SubscriptionMethod_UnsetSubscriptionMethod = 0;
+        SDMWebPage_SubscriptionMethod_SubscriptionFooter = 1;
+    }
+    enum SDMWebPage_ViewMode {
+        SDMWebPage_ViewMode_DefaultViewMode = 0;
+        SDMWebPage_ViewMode_Immersive = 1;
+    }
+    enum SDMWebPage_WebviewTarget {
+        SDMWebPage_WebviewTarget_UnsetWebviewTarget = 0;
+        SDMWebPage_WebviewTarget_WebviewV2 = 1;
+    }
+}

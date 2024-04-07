@@ -1,0 +1,36 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance.info_sticker;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance.Info_sticker";
+
+message SCCTPWeatherStickerMetadata {
+    .snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata.SCCTPWeatherStickerMetadata_Type type = 1;
+    sint32 celsius = 3;
+    .snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata.SCCTPWeatherStickerMetadata_MeasurementSystem measurementSystem = 4;
+    string locationName = 5;
+    repeated .snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata.SCCTPWeatherStickerMetadata_HourlyForecast hourlyForecastArray = 6;
+    repeated .snapchat.creativetools.item_instance.info_sticker.SCCTPWeatherStickerMetadata.SCCTPWeatherStickerMetadata_DailyForecast dailyForecastArray = 7;
+    message SCCTPWeatherStickerMetadata_DailyForecast {
+        sint32 minTemperatureInCelsius = 3;
+        sint32 maxTemperatureInCelsius = 4;
+        string weatherCondition = 5;
+        string displayTime = 6;
+    }
+    message SCCTPWeatherStickerMetadata_HourlyForecast {
+        sint32 celsius = 2;
+        string weatherCondition = 3;
+        string displayTime = 4;
+    }
+    enum SCCTPWeatherStickerMetadata_MeasurementSystem {
+        SCCTPWeatherStickerMetadata_MeasurementSystem_MeasurementSystemUnspecified = 0;
+        SCCTPWeatherStickerMetadata_MeasurementSystem_Metric = 1;
+        SCCTPWeatherStickerMetadata_MeasurementSystem_Imperial = 2;
+    }
+    enum SCCTPWeatherStickerMetadata_Type {
+        SCCTPWeatherStickerMetadata_Type_TypeUnspecified = 0;
+        SCCTPWeatherStickerMetadata_Type_CurrentWeather = 1;
+        SCCTPWeatherStickerMetadata_Type_DailyForecast = 2;
+        SCCTPWeatherStickerMetadata_Type_HourlyForecast = 3;
+    }
+}

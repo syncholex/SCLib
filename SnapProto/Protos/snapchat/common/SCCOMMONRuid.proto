@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCOMMON";
+option csharp_namespace = "SnapProto.Snapchat.Common";
+
+message SCCOMMONRuid {
+    .snapchat.common.SCCOMMONRuid.SCCOMMONRuid_Type type = 1;
+    string stringValue = 2;
+    string loggingIdValue = 3;
+    enum SCCOMMONRuid_Type {
+        SCCOMMONRuid_Type_Unset = 0;
+        SCCOMMONRuid_Type_User = 1;
+        SCCOMMONRuid_Type_Device = 2;
+        SCCOMMONRuid_Type_WebClient = 3;
+        SCCOMMONRuid_Type_AdAccount = 4;
+        SCCOMMONRuid_Type_Username = 5;
+        SCCOMMONRuid_Type_AdModerationAd = 6;
+        SCCOMMONRuid_Type_WebSnapchatUser = 7;
+        SCCOMMONRuid_Type_Internal = 8;
+        SCCOMMONRuid_Type_AmOrganization = 9;
+        SCCOMMONRuid_Type_AmMember = 10;
+        SCCOMMONRuid_Type_AmSession = 11;
+        SCCOMMONRuid_Type_AmProfile = 12;
+        SCCOMMONRuid_Type_AmSnapchatUser = 13;
+        SCCOMMONRuid_Type_SnapchatAdvertising = 14;
+        SCCOMMONRuid_Type_AmClient = 15;
+        SCCOMMONRuid_Type_Mischief = 16;
+    }
+}

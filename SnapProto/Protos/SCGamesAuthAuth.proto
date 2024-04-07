@@ -1,0 +1,12 @@
+syntax = "proto3";
+package games.auth;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesAuth";
+option csharp_namespace = "SnapProto.Services.Games.Auth";
+
+import "games/auth/SCGamesAuthAuth.proto";
+
+service Auth{
+    rpc GetCanvasToken(.games.auth.SCGamesAuthGetCanvasTokenRequest) returns (.games.auth.SCGamesAuthGetCanvasTokenResponse);
+    rpc GetOIDCToken(.games.auth.SCGamesAuthGetOIDCTokenRequest) returns (.games.auth.SCGamesAuthGetOIDCTokenResponse);
+}

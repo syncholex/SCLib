@@ -1,0 +1,205 @@
+syntax = "proto3";
+package snapchat.context2;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Context2";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/context2/api/SCCTXApi.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/geo/SPCGGeo.proto";
+
+message SnapContextCardsRequest {
+    string snapId = 1;
+    .snapchat.context2.SnapContextInfo additionalInfo = 2;
+    .snapchat.context2.SnapContextCardsRequest.SnapContextCardsRequest_InternalDebugOptions internalDebugOptions = 3;
+    .snapchat.context2.SnapContextUserInfo userInfo = 4;
+    .snapchat.context2.SnapContextSnapIdentity snapIdentity = 5;
+    .snapchat.context2.SnapContextViewerContentInfo viewerContentInfo = 6;
+    repeated .snapchat.context2.SnapContextCardsRequest.SCCTXCardDataType excludedCardTypesArray = 7;
+    message SnapContextCardsRequest_InternalDebugOptions {
+        bool bypassCache = 1;
+    }
+    enum SCCTXCardDataType {
+        SCCTXCardDataType_CardDataTypeUnknown = 0;
+        SCCTXCardDataType_CardDataTypeAttachment = 1;
+        SCCTXCardDataType_CardDataTypePlace = 2;
+        SCCTXCardDataType_CardDataTypeEditorial = 3;
+        SCCTXCardDataType_CardDataTypeReviews = 4;
+        SCCTXCardDataType_CardDataTypeMention = 5;
+        SCCTXCardDataType_CardDataTypeCommerceProduct = 6;
+        SCCTXCardDataType_CardDataTypeCommerceStore = 7;
+        SCCTXCardDataType_CardDataTypeFilter = 8;
+        SCCTXCardDataType_CardDataTypeLens = 9;
+        SCCTXCardDataType_CardDataTypeLensChallenge = 10;
+        SCCTXCardDataType_CardDataTypeSnappable = 11;
+        SCCTXCardDataType_CardDataTypeMapMarker = 12;
+        SCCTXCardDataType_CardDataTypeAppInstall = 13;
+        SCCTXCardDataType_CardDataTypeGroupInvite = 14;
+        SCCTXCardDataType_CardDataTypeCognac = 15;
+        SCCTXCardDataType_CardDataTypeSnapReplyRequest = 16;
+        SCCTXCardDataType_CardDataTypeGenericSnapReplyPlaceholder = 17;
+        SCCTXCardDataType_CardDataTypeRelatedStory = 18;
+        SCCTXCardDataType_CardDataTypeStoryInvite = 19;
+        SCCTXCardDataType_CardDataTypePublisher = 20;
+        SCCTXCardDataType_CardDataTypeOurStoryCreator = 21;
+        SCCTXCardDataType_CardDataTypeTopic = 22;
+        SCCTXCardDataType_CardDataTypeQuickAddCreator = 23;
+        SCCTXCardDataType_CardDataTypeMiniProgram = 24;
+        SCCTXCardDataType_CardDataTypeCameoOnboarding = 25;
+        SCCTXCardDataType_CardDataTypeMusic = 26;
+        SCCTXCardDataType_CardDataTypeCreativeToolsSticker = 27;
+        SCCTXCardDataType_CardDataTypeAstrologyProfile = 28;
+        SCCTXCardDataType_CardDataTypeRemixUserAttribution = 29;
+        SCCTXCardDataType_CardDataTypeSnapKitAppAttribution = 30;
+        SCCTXCardDataType_CardDataTypeCreateAvatar = 31;
+        SCCTXCardDataType_CardDataTypeBitmojiUnlockSticker = 32;
+        SCCTXCardDataType_CardDataTypeCommerceItem = 33;
+        SCCTXCardDataType_CardDataTypeCommerceStoreV2 = 34;
+        SCCTXCardDataType_CardDataTypePoll = 35;
+        SCCTXCardDataType_CardDataTypeTimeline = 36;
+        SCCTXCardDataType_CardDataTypeCheerios = 37;
+        SCCTXCardDataType_CardDataTypeIdentityWebViewAttachment = 38;
+        SCCTXCardDataType_CardDataTypeSnapKitInvite = 39;
+        SCCTXCardDataType_CardDataTypeQuestionSticker = 40;
+        SCCTXCardDataType_CardDataTypeScreenshop = 41;
+        SCCTXCardDataType_CardDataTypeDirectorMode = 42;
+        SCCTXCardDataType_CardDataTypeDualCamera = 43;
+        SCCTXCardDataType_CardDataTypeGreenScreen = 44;
+        SCCTXCardDataType_CardDataTypeSpeedMode = 45;
+        SCCTXCardDataType_CardDataTypeShoppingSticker = 46;
+        SCCTXCardDataType_CardDataTypeMultiMerchantTopic = 47;
+        SCCTXCardDataType_CardDataTypeShoppingStickerCommerceItem = 48;
+        SCCTXCardDataType_CardDataTypeCtitem = 49;
+        SCCTXCardDataType_CardDataTypeDiscoverDeeplinkSticker = 50;
+        SCCTXCardDataType_CardDataTypeBitmojiOutfit = 51;
+        SCCTXCardDataType_CardDataTypeViewRemixes = 52;
+    }
+}
+
+message SnapContextCardsResponse {
+    .snapchat.context2.SnapContextComposerContent content = 1;
+    string error = 2;
+    string debugHtml = 3;
+}
+
+message SnapContextComposerContent {
+    bytes composerViewModelJson = 1;
+    string composerDocId = 2;
+    string composerBundleName = 3;
+    int32 composerBundleMinVersion = 4;
+}
+
+message SnapContextExperimentInfo {
+    repeated .snapchat.context2.SnapContextExperimentInfo.ParametersEntry parameters = 1;
+    message ParametersEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SnapContextInfo {
+    string username = 1;
+    repeated string mentionUsernamesArray = 2;
+    .snapchat.geo.SPCGPoint geoLocation = 3;
+    repeated string venueIdsArray = 4;
+    repeated string lensIdsArray = 5;
+    repeated string filterIdsArray = 6;
+    repeated string attachmentUrlsArray = 7;
+    repeated string mentionUserIdsArray = 8;
+    string unlockablesSnapInfo = 9;
+    .snapchat.context2.SnapContextInfo.SnapContextInfo_MapContextInfo mapContextInfo = 10;
+    .snapchat.context2.SnapContextInfo.SnapContextInfo_ImpalaContextInfo impalaContextInfo = 11;
+    repeated string verifiedAttachmentUrlsArray = 12;
+    string userId = 13;
+    .snapchat.context2.api.SCCTXContextClientInfo contextClientInfo = 14;
+    bool ourStoryAttributionEnabled = 15;
+    .google.protobuf.Timestamp snapPostTime = 16;
+    bool includeSelfMentionCard = 17;
+    bool snapProStoryReply = 18;
+    repeated .snapchat.context2.SnapContextInfo.OurStoryDestination ourStoryDestinationsArray = 19;
+    int64 remixCount = 20;
+    message SnapContextInfo_ImpalaContextInfo {
+        repeated string businessIdsArray = 1;
+    }
+    message SnapContextInfo_MapContextInfo {
+        repeated string poiIdsArray = 1;
+    }
+    enum OurStoryDestination {
+        OurStoryDestination_UnknownDestination = 0;
+        OurStoryDestination_OurStory = 1;
+        OurStoryDestination_Spotlight = 2;
+    }
+}
+
+message SnapContextPlaceholderCards {
+    repeated .snapchat.context2.SnapContextPlaceholderCards.SnapContextPlaceholderCards_Section sectionsArray = 1;
+    message SnapContextPlaceholderCards_Section {
+        string title = 1;
+        repeated float cardHeightsArray = 2;
+        repeated bool excludedFromCardsAboveKeyboardArray = 3;
+    }
+}
+
+message SnapContextSnapIdentity {
+    string clientId = 1;
+    string storySnapId = 2;
+    string storyId = 3;
+    string chatMessageId = 4;
+    .snapchat.context2.SnapContextSnapIdentity.SnapViewingContext snapViewingContext = 6;
+    enum SnapViewingContext {
+        SnapViewingContext_ViewingContextUnknown = 0;
+        SnapViewingContext_Direct = 1;
+        SnapViewingContext_FriendStory = 2;
+        SnapViewingContext_DiscoverOurStory = 3;
+        SnapViewingContext_MapOurStory = 4;
+        SnapViewingContext_MiscOurStory = 5;
+        SnapViewingContext_GroupStory = 6;
+        SnapViewingContext_GroupDirect = 7;
+        SnapViewingContext_Business = 8;
+        SnapViewingContext_LensExplorer = 9;
+        SnapViewingContext_MapMarkerCarousel = 10;
+        SnapViewingContext_MapExploreCarousel = 11;
+        SnapViewingContext_MapPeopleCarousel = 12;
+        SnapViewingContext_ImpalaBusinessProfile = 13;
+        SnapViewingContext_MapPlaceProfile = 14;
+        SnapViewingContext_Memories = 15;
+        SnapViewingContext_SpotlightFeed = 16;
+        SnapViewingContext_StoryManagement = 17;
+    }
+}
+
+message SnapContextUserInfo {
+    int32 age = 1;
+    .snapchat.geo.SPCGPoint geoLocation = 2;
+    float horizontalAccuracyMeters = 3;
+    string countryCode = 4;
+    repeated .snapchat.context2.SnapContextUserInfo.ExperimentsEntry experiments = 5;
+    int32 friendCount = 6;
+    string bitmojiAvatarId = 7;
+    repeated int32 cofSequenceIdsArray = 8;
+    message ExperimentsEntry {
+        string key = 1;
+        .snapchat.context2.SnapContextExperimentInfo value = 2;
+    }
+}
+
+message SnapContextViewerContentInfo {
+    repeated .snapchat.core.SCCOREUUID mentionedFriendUserIdsArray = 1;
+    string gameUserToken = 2;
+    bool areMutualFriendsWithUserInAstrologyProfileInfo = 3;
+}
+
+message SnapContextViewerCreatorInfo {
+    .snapchat.context2.SnapContextViewerCreatorInfo.FriendshipType friendshipType = 1;
+    enum FriendshipType {
+        FriendshipType_UnknownFriendship = 0;
+        FriendshipType_NoFriendship = 1;
+        FriendshipType_Friend = 2;
+        FriendshipType_Pending = 3;
+        FriendshipType_Blocked = 4;
+        FriendshipType_Deleted = 5;
+        FriendshipType_Invite = 6;
+        FriendshipType_Locked = 7;
+        FriendshipType_Following = 8;
+    }
+}

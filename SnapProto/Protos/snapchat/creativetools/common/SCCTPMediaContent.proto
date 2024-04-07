@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPMediaContent {
+    string thumbnailURL = 1;
+    string contentURL = 2;
+    bytes thumbnailBoltObject = 3;
+    bytes contentBoltObject = 4;
+}

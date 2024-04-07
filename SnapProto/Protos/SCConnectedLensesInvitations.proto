@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.lens.connected;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCConnectedLenses";
+option csharp_namespace = "SnapProto.Services.Snapchat.Lens.Connected";
+
+import "snapchat/lens/connected/SCConnectedLensesInvitations.proto";
+
+service Invitations{
+    rpc InviteFriends(.snapchat.lens.connected.SCConnectedLensesInviteFriendsRequest) returns (.snapchat.lens.connected.SCConnectedLensesInviteFriendsResponse);
+    rpc RingFriends(.snapchat.lens.connected.SCConnectedLensesRingFriendsRequest) returns (.snapchat.lens.connected.SCConnectedLensesRingFriendsResponse);
+}

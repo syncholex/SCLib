@@ -1,0 +1,51 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/snapdoc/SDMOwner.proto";
+
+message SDMProvenance {
+    .snapchat.snapdoc.SDMProvenance.SDMProvenance_SnapSourceSystem sourceSystem = 1;
+    string sourceId = 2;
+    string sourceVersion = 3;
+    .snapchat.snapdoc.SDMProvenance.SDMProvenance_AppSource appSource = 4;
+    .snapchat.snapdoc.SDMOwner.SDMOwner_ID ownerId = 5;
+    .snapchat.snapdoc.SDMSnapKitAttributes snapKitSource = 6;
+    .snapchat.core.SCCOREUUID hostId = 7;
+    .snapchat.snapdoc.SDMSnapAlias snapAlias = 8;
+    enum SDMProvenance_AppSource {
+        SDMProvenance_AppSource_AppSourceUnset = 0;
+        SDMProvenance_AppSource_AppSourceCameraRoll = 1;
+        SDMProvenance_AppSource_AppSourceMemories = 2;
+        SDMProvenance_AppSource_AppSourceChat = 3;
+        SDMProvenance_AppSource_AppSourceProfileSavedChatMedia = 4;
+        SDMProvenance_AppSource_AppSourceCamera = 5;
+        SDMProvenance_AppSource_AppSourceSnapKit = 6;
+    }
+    enum SDMProvenance_SnapSourceSystem {
+        SDMProvenance_SnapSourceSystem_Unset = 0;
+        SDMProvenance_SnapSourceSystem_RichSnapPlatformAds = 1;
+        SDMProvenance_SnapSourceSystem_RichSnapPlatformDiscover = 2;
+        SDMProvenance_SnapSourceSystem_StoryCreationService = 3;
+        SDMProvenance_SnapSourceSystem_SpotlightWebUploader = 4;
+        SDMProvenance_SnapSourceSystem_SnapchatAppCreativeTools = 5;
+        SDMProvenance_SnapSourceSystem_UserGenerator = 6;
+        SDMProvenance_SnapSourceSystem_SnapchatWebApp = 7;
+        SDMProvenance_SnapSourceSystem_StoryStudioUgc = 8;
+    }
+}
+
+message SDMSnapAlias {
+    .snapchat.snapdoc.SDMOwner.SDMOwner_ID originalOwner = 1;
+    string originalStoryId = 2;
+    string originalSnapId = 3;
+    .snapchat.core.SCCOREUUID originalHostId = 7;
+}
+
+message SDMSnapKitAttributes {
+    string sourceAppDisplayName = 1;
+    .snapchat.core.SCCOREUUID sourceAppOauthClientId = 2;
+}

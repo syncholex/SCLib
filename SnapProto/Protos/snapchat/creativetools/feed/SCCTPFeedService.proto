@@ -1,0 +1,215 @@
+syntax = "proto3";
+package snapchat.creativetools.feed;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Feed";
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/creativetools/common/SCCTPCtFeed.proto";
+import "snapchat/creativetools/common/SCCTPCtReqParams.proto";
+import "snapchat/creativetools/common/SCCTPSectionedResults.proto";
+import "snapchat/creativetools/compute/SCCTPComputeService.proto";
+
+message SCCTPCTBidiFeedRequest {
+    .snapchat.creativetools.common.SCCTPCTRequestParams params = 1;
+    repeated .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_FeedTreeRequest feedTreeRequestsArray = 2;
+    repeated .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_ComputeRequest computeRequestsArray = 3;
+    .snapchat.ads.request.schema.SCAdsAdRequest adRequest = 4;
+    message SCCTPCTBidiFeedRequest_ComputeRequest {
+        .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_ComputeRequest.SCCTPCTContext requestContext = 1;
+        repeated .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_ComputeRequest.SCCTPCTFeedType requestedFeedsArray = 2;
+        repeated .snapchat.creativetools.common.SCCTPClientCachedCTItem cachedItemsArray = 3;
+        enum SCCTPCTContext {
+            SCCTPCTContext_ContextUnset = 0;
+            SCCTPCTContext_Chat = 1;
+            SCCTPCTContext_Merch = 2;
+            SCCTPCTContext_Preview = 3;
+            SCCTPCTContext_StickerKit = 4;
+            SCCTPCTContext_Other = 5;
+        }
+        enum SCCTPCTFeedType {
+            SCCTPCTFeedType_Search = 0;
+            SCCTPCTFeedType_Recent = 1;
+            SCCTPCTFeedType_Hometab = 2;
+            SCCTPCTFeedType_CustomSticker = 4;
+            SCCTPCTFeedType_Bitmoji = 5;
+            SCCTPCTFeedType_Snapchat = 7;
+            SCCTPCTFeedType_Emoji = 8;
+            SCCTPCTFeedType_Unlocked = 9;
+            SCCTPCTFeedType_Bloop = 10;
+            SCCTPCTFeedType_Root = 11;
+            SCCTPCTFeedType_StickerPicker = 12;
+            SCCTPCTFeedType_CaptionStyle = 13;
+            SCCTPCTFeedType_Favorites = 14;
+            SCCTPCTFeedType_ForYou = 15;
+            SCCTPCTFeedType_SoundFavorites = 16;
+            SCCTPCTFeedType_ChatReactions = 17;
+            SCCTPCTFeedType_Filter = 18;
+            SCCTPCTFeedType_Gfycat = 19;
+            SCCTPCTFeedType_RemoteChatSearch = 20;
+            SCCTPCTFeedType_SoundRecents = 21;
+            SCCTPCTFeedType_QuickReply = 22;
+            SCCTPCTFeedType_Shopping = 23;
+        }
+    }
+    message SCCTPCTBidiFeedRequest_FeedTreeRequest {
+        .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_FeedTreeRequest.SCCTPCTContext requestContext = 1;
+        repeated .snapchat.creativetools.feed.SCCTPCTBidiFeedRequest.SCCTPCTBidiFeedRequest_FeedTreeRequest.SCCTPCTFeedType supportedFeedsArray = 2;
+        enum SCCTPCTContext {
+            SCCTPCTContext_ContextUnset = 0;
+            SCCTPCTContext_Chat = 1;
+            SCCTPCTContext_Merch = 2;
+            SCCTPCTContext_Preview = 3;
+            SCCTPCTContext_StickerKit = 4;
+            SCCTPCTContext_Other = 5;
+        }
+        enum SCCTPCTFeedType {
+            SCCTPCTFeedType_Search = 0;
+            SCCTPCTFeedType_Recent = 1;
+            SCCTPCTFeedType_Hometab = 2;
+            SCCTPCTFeedType_CustomSticker = 4;
+            SCCTPCTFeedType_Bitmoji = 5;
+            SCCTPCTFeedType_Snapchat = 7;
+            SCCTPCTFeedType_Emoji = 8;
+            SCCTPCTFeedType_Unlocked = 9;
+            SCCTPCTFeedType_Bloop = 10;
+            SCCTPCTFeedType_Root = 11;
+            SCCTPCTFeedType_StickerPicker = 12;
+            SCCTPCTFeedType_CaptionStyle = 13;
+            SCCTPCTFeedType_Favorites = 14;
+            SCCTPCTFeedType_ForYou = 15;
+            SCCTPCTFeedType_SoundFavorites = 16;
+            SCCTPCTFeedType_ChatReactions = 17;
+            SCCTPCTFeedType_Filter = 18;
+            SCCTPCTFeedType_Gfycat = 19;
+            SCCTPCTFeedType_RemoteChatSearch = 20;
+            SCCTPCTFeedType_SoundRecents = 21;
+            SCCTPCTFeedType_QuickReply = 22;
+            SCCTPCTFeedType_Shopping = 23;
+        }
+    }
+}
+
+message SCCTPCTBidiFeedResponse {
+    .snapchat.creativetools.feed.SCCTPCTBidiFeedResponse.SCCTPCTBidiFeedResponse_FeedTreeResponse feedTreeResponse = 1;
+    .snapchat.creativetools.feed.SCCTPCTBidiFeedResponse.SCCTPCTBidiFeedResponse_ComputeResponse computeResponse = 2;
+    message SCCTPCTBidiFeedResponse_ComputeResponse {
+        .snapchat.creativetools.feed.SCCTPCTBidiFeedResponse.SCCTPCTBidiFeedResponse_ComputeResponse.SCCTPCTContext requestContext = 1;
+        .snapchat.creativetools.feed.SCCTPCTBidiFeedResponse.SCCTPCTBidiFeedResponse_ComputeResponse.SCCTPCTFeedType feedType = 2;
+        .snapchat.creativetools.compute.SCCTPComputeFeedResponse computeFeed = 3;
+        enum SCCTPCTFeedType {
+            SCCTPCTFeedType_Search = 0;
+            SCCTPCTFeedType_Recent = 1;
+            SCCTPCTFeedType_Hometab = 2;
+            SCCTPCTFeedType_CustomSticker = 4;
+            SCCTPCTFeedType_Bitmoji = 5;
+            SCCTPCTFeedType_Snapchat = 7;
+            SCCTPCTFeedType_Emoji = 8;
+            SCCTPCTFeedType_Unlocked = 9;
+            SCCTPCTFeedType_Bloop = 10;
+            SCCTPCTFeedType_Root = 11;
+            SCCTPCTFeedType_StickerPicker = 12;
+            SCCTPCTFeedType_CaptionStyle = 13;
+            SCCTPCTFeedType_Favorites = 14;
+            SCCTPCTFeedType_ForYou = 15;
+            SCCTPCTFeedType_SoundFavorites = 16;
+            SCCTPCTFeedType_ChatReactions = 17;
+            SCCTPCTFeedType_Filter = 18;
+            SCCTPCTFeedType_Gfycat = 19;
+            SCCTPCTFeedType_RemoteChatSearch = 20;
+            SCCTPCTFeedType_SoundRecents = 21;
+            SCCTPCTFeedType_QuickReply = 22;
+            SCCTPCTFeedType_Shopping = 23;
+        }
+        enum SCCTPCTContext {
+            SCCTPCTContext_ContextUnset = 0;
+            SCCTPCTContext_Chat = 1;
+            SCCTPCTContext_Merch = 2;
+            SCCTPCTContext_Preview = 3;
+            SCCTPCTContext_StickerKit = 4;
+            SCCTPCTContext_Other = 5;
+        }
+    }
+    message SCCTPCTBidiFeedResponse_FeedTreeResponse {
+        .snapchat.creativetools.feed.SCCTPCTBidiFeedResponse.SCCTPCTBidiFeedResponse_FeedTreeResponse.SCCTPCTContext requestContext = 1;
+        .snapchat.creativetools.common.SCCTPCTFeedNode rootNode = 2;
+        enum SCCTPCTContext {
+            SCCTPCTContext_ContextUnset = 0;
+            SCCTPCTContext_Chat = 1;
+            SCCTPCTContext_Merch = 2;
+            SCCTPCTContext_Preview = 3;
+            SCCTPCTContext_StickerKit = 4;
+            SCCTPCTContext_Other = 5;
+        }
+    }
+}
+
+message SCCTPCTFeedRequest {
+    .snapchat.creativetools.feed.SCCTPCTFeedRequest.SCCTPCTContext requestContext = 1;
+    .snapchat.creativetools.feed.SCCTPCTFeedRequest.SCCTPCTFeedRequest_ClientFeatures clientFeatures = 2;
+    .snapchat.creativetools.common.SCCTPCTRequestParams requestParams = 3;
+    repeated .snapchat.creativetools.feed.SCCTPCTFeedRequest.SCCTPCTFeedType feedTypesArray = 4;
+    message SCCTPCTFeedRequest_ClientFeatures {
+        repeated .snapchat.creativetools.feed.SCCTPCTFeedRequest.SCCTPCTFeedRequest_ClientFeatures.SCCTPCTFeedType feedsArray = 1;
+        enum SCCTPCTFeedType {
+            SCCTPCTFeedType_Search = 0;
+            SCCTPCTFeedType_Recent = 1;
+            SCCTPCTFeedType_Hometab = 2;
+            SCCTPCTFeedType_CustomSticker = 4;
+            SCCTPCTFeedType_Bitmoji = 5;
+            SCCTPCTFeedType_Snapchat = 7;
+            SCCTPCTFeedType_Emoji = 8;
+            SCCTPCTFeedType_Unlocked = 9;
+            SCCTPCTFeedType_Bloop = 10;
+            SCCTPCTFeedType_Root = 11;
+            SCCTPCTFeedType_StickerPicker = 12;
+            SCCTPCTFeedType_CaptionStyle = 13;
+            SCCTPCTFeedType_Favorites = 14;
+            SCCTPCTFeedType_ForYou = 15;
+            SCCTPCTFeedType_SoundFavorites = 16;
+            SCCTPCTFeedType_ChatReactions = 17;
+            SCCTPCTFeedType_Filter = 18;
+            SCCTPCTFeedType_Gfycat = 19;
+            SCCTPCTFeedType_RemoteChatSearch = 20;
+            SCCTPCTFeedType_SoundRecents = 21;
+            SCCTPCTFeedType_QuickReply = 22;
+            SCCTPCTFeedType_Shopping = 23;
+        }
+    }
+    enum SCCTPCTFeedType {
+        SCCTPCTFeedType_Search = 0;
+        SCCTPCTFeedType_Recent = 1;
+        SCCTPCTFeedType_Hometab = 2;
+        SCCTPCTFeedType_CustomSticker = 4;
+        SCCTPCTFeedType_Bitmoji = 5;
+        SCCTPCTFeedType_Snapchat = 7;
+        SCCTPCTFeedType_Emoji = 8;
+        SCCTPCTFeedType_Unlocked = 9;
+        SCCTPCTFeedType_Bloop = 10;
+        SCCTPCTFeedType_Root = 11;
+        SCCTPCTFeedType_StickerPicker = 12;
+        SCCTPCTFeedType_CaptionStyle = 13;
+        SCCTPCTFeedType_Favorites = 14;
+        SCCTPCTFeedType_ForYou = 15;
+        SCCTPCTFeedType_SoundFavorites = 16;
+        SCCTPCTFeedType_ChatReactions = 17;
+        SCCTPCTFeedType_Filter = 18;
+        SCCTPCTFeedType_Gfycat = 19;
+        SCCTPCTFeedType_RemoteChatSearch = 20;
+        SCCTPCTFeedType_SoundRecents = 21;
+        SCCTPCTFeedType_QuickReply = 22;
+        SCCTPCTFeedType_Shopping = 23;
+    }
+    enum SCCTPCTContext {
+        SCCTPCTContext_ContextUnset = 0;
+        SCCTPCTContext_Chat = 1;
+        SCCTPCTContext_Merch = 2;
+        SCCTPCTContext_Preview = 3;
+        SCCTPCTContext_StickerKit = 4;
+        SCCTPCTContext_Other = 5;
+    }
+}
+
+message SCCTPCTFeedResponse {
+    .snapchat.creativetools.common.SCCTPCTFeedNode root = 1;
+}

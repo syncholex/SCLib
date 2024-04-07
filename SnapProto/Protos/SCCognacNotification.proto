@@ -1,0 +1,11 @@
+syntax = "proto3";
+package games.updates;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognac";
+option csharp_namespace = "SnapProto.Services.Games.Updates";
+
+import "games/updates/SCCognacNotification.proto";
+
+service Notification{
+    rpc SendNotification(.games.updates.SCCognacSendNotificationRequest) returns (.games.updates.SCCognacSendNotificationResponse);
+}

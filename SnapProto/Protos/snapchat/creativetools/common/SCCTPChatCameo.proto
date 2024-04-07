@@ -1,0 +1,39 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+import "snapchat/cameos/common/SCCameosChatCameoResourceCollection.proto";
+import "snapchat/cameos/common/SCCameosLens.proto";
+import "snapchat/protobuf/SPCPListWrappers.proto";
+
+message SCCTPChatCameo {
+    int64 cameoId = 1;
+    string cameoExternalId = 2;
+    .snapchat.cameos.common.SCCameosApiVersion minimumApiVersion = 3;
+    repeated .snapchat.creativetools.common.SCCTPChatCameo.SCCameosGender gendersArray = 4;
+    .snapchat.cameos.common.SCCameosChatCameoResourceCollection resources = 5;
+    repeated .snapchat.creativetools.common.SCCTPChatCameo.TestResourcesEntry testResources = 6;
+    .snapchat.protobuf.SPCPStringListValue globalCategories = 7;
+    repeated .snapchat.creativetools.common.SCCTPChatCameo.LocalizedCategoriesEntry localizedCategories = 8;
+    repeated .snapchat.creativetools.common.SCCTPChatCameo.TargetLensesEntry targetLenses = 9;
+    message TestResourcesEntry {
+        string key = 1;
+        .snapchat.cameos.common.SCCameosChatCameoResourceCollection value = 2;
+    }
+    message LocalizedCategoriesEntry {
+        string key = 1;
+        .snapchat.protobuf.SPCPStringListValue value = 2;
+    }
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}

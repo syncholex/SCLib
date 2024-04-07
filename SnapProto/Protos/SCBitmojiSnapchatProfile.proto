@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.bitmoji.profile.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Services.Snapchat.Bitmoji.Profile.V1";
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiSnapchatProfileService.proto";
+
+service SnapchatProfile{
+    rpc Update2dSelfie(.snapchat.bitmoji.profile.v1.SCBitmojiUpdate2dSelfieRequest) returns (.snapchat.bitmoji.profile.v1.SCBitmojiUpdate2dSelfieResponse);
+    rpc Update3dProfile(.snapchat.bitmoji.profile.v1.SCBitmojiUpdate3dProfileRequest) returns (.snapchat.bitmoji.profile.v1.SCBitmojiUpdate3dProfileResponse);
+}

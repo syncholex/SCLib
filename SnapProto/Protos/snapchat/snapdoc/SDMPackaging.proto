@@ -1,0 +1,56 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMPackaging {
+    .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackageFormat packageFormat = 1;
+    string packageURL = 2;
+    .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackagedImage packagedImage = 3;
+    .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackagedVideo packagedVideo = 4;
+    .snapchat.snapdoc.SDMPackaging.SDMPackaging_Overlay overlay = 5;
+    string latestPackageId = 6;
+    repeated string latestPackageVariantsArray = 7;
+    string latestHash = 8;
+    message SDMPackaging_Overlay {
+        string filename = 1;
+        .snapchat.snapdoc.SDMPackaging.SDMPackaging_Overlay.SDMPackaging_Docking docking = 2;
+        int32 zIndex = 3;
+        enum SDMPackaging_Docking {
+            SDMPackaging_Docking_DockingCenter = 0;
+            SDMPackaging_Docking_DockingTop = 1;
+            SDMPackaging_Docking_DockingBottom = 2;
+        }
+    }
+    message SDMPackaging_PackagedImage {
+        string filename = 1;
+        .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackagedImage.SDMPackaging_Docking docking = 2;
+        enum SDMPackaging_Docking {
+            SDMPackaging_Docking_DockingCenter = 0;
+            SDMPackaging_Docking_DockingTop = 1;
+            SDMPackaging_Docking_DockingBottom = 2;
+        }
+    }
+    message SDMPackaging_PackagedVideo {
+        string filename = 1;
+        .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackagedVideo.SDMPackaging_PackagedVideo_VideoMode videoMode = 2;
+        string videoFirstFrameFilename = 3;
+        bool videoRotationEnabled = 4;
+        .snapchat.snapdoc.SDMPackaging.SDMPackaging_PackagedVideo.SDMPackaging_Docking docking = 5;
+        enum SDMPackaging_Docking {
+            SDMPackaging_Docking_DockingCenter = 0;
+            SDMPackaging_Docking_DockingTop = 1;
+            SDMPackaging_Docking_DockingBottom = 2;
+        }
+        enum SDMPackaging_PackagedVideo_VideoMode {
+            SDMPackaging_PackagedVideo_VideoMode_VideoModeUnset = 0;
+            SDMPackaging_PackagedVideo_VideoMode_VideoModeLooping = 1;
+            SDMPackaging_PackagedVideo_VideoMode_VideoModeOnce = 2;
+        }
+    }
+    enum SDMPackaging_PackageFormat {
+        SDMPackaging_PackageFormat_Unknown = 0;
+        SDMPackaging_PackageFormat_RichSnapZip = 1;
+    }
+}

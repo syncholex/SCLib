@@ -1,0 +1,37 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.response;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Response";
+
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimension.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemVariantDimensionData.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetItemVariantDataResponse {
+    string requestId = 1;
+    .com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+    .com.snapchat.showcase.wire.response.GetItemVariantDataResponse.GetItemVariantDataResponse_ItemVariantData itemVariantData = 3;
+    message GetItemVariantDataResponse_ItemVariantData {
+        repeated .com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimensionData itemVariantDimensionDataArray = 1;
+        repeated .com.snapchat.showcase.wire.response.ItemVariant itemVariantsArray = 2;
+    }
+}
+
+message ItemVariant {
+    uint64 snapItemId = 1;
+    .com.snapchat.showcase.wire.response.ItemVariant.ProductAvailability availability = 2;
+    repeated .com.snapchat.showcase.wire.response.ItemVariantDimensionValue itemVariantDimensionValuesArray = 3;
+    enum ProductAvailability {
+        ProductAvailability_UnknownAvailability = 0;
+        ProductAvailability_InStock = 1;
+        ProductAvailability_OutOfStock = 2;
+        ProductAvailability_Preorder = 3;
+        ProductAvailability_Discontinued = 4;
+        ProductAvailability_AvailableForOrder = 5;
+    }
+}
+
+message ItemVariantDimensionValue {
+    .com.snapchat.showcase.wire.itemdetailpage.ItemVariantDimension itemVariantDimension = 1;
+    string dimensionValue = 2;
+}

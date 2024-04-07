@@ -1,0 +1,53 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.product;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Product";
+
+import "com/snapchat/commerce/domain/CustomBitmojiInfo.proto";
+import "com/snapchat/commerce/domain/ImageMap.proto";
+import "com/snapchat/commerce/domain/SnapCodeInfo.proto";
+import "com/snapchat/commerce/domain/product/ProductVariant.proto";
+import "com/snapchat/commerce/domain/store/StoreInfo.proto";
+
+message ProductInfo {
+    bytes id_p = 1;
+    string descriptionHtml = 2;
+    repeated .com.snapchat.commerce.domain.product.ProductVariant variantsArray = 3;
+    .com.snapchat.commerce.domain.product.ProductInfo.CommercePartner commercePartner = 4;
+    bytes storeId = 5;
+    string title = 6;
+    repeated .com.snapchat.commerce.domain.product.ProductVariant.ProductVariant_VariantCategoryPair productVariantCategoriesArray = 7;
+    .com.snapchat.commerce.domain.store.StoreInfo storeInfo = 8;
+    bool shouldUseWebview = 9;
+    uint32 checkoutItemLimit = 10;
+    .com.snapchat.commerce.domain.product.ProductInfo.ProductInfo_UnlockableInfo unlockableInfo = 11;
+    .com.snapchat.commerce.domain.SnapCodeInfo productScanCardInfo = 12;
+    bool isPdpShareable = 13;
+    .com.snapchat.commerce.domain.product.ProductInfo.ProductType type = 14;
+    .com.snapchat.commerce.domain.CustomBitmojiInfo customBitmojiInfo = 15;
+    repeated .com.snapchat.commerce.domain.product.ProductInfo.ProductInfo_ImageDetails imageDetailsListArray = 16;
+    string productURL = 17;
+    message ProductInfo_ImageDetails {
+        bytes externalImageId = 1;
+        string imageURL = 2;
+        uint32 height = 3;
+        uint32 width = 4;
+        .com.snapchat.commerce.domain.ImageMap imageMap = 5;
+    }
+    message ProductInfo_UnlockableInfo {
+        bytes unlockableId = 1;
+        bytes scannableId = 2;
+        string unlockableScanURL = 3;
+    }
+    enum CommercePartner {
+        CommercePartner_Unset = 0;
+        CommercePartner_Shopify = 1;
+        CommercePartner_Miniprogram = 2;
+    }
+    enum ProductType {
+        ProductType_Unset = 0;
+        ProductType_Bitmoji = 1;
+        ProductType_Regular = 2;
+        ProductType_MemoriesPrint = 3;
+    }
+}

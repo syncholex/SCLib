@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.unlockables.response.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Response.Schema";
+
+message SCULGtqUnlockablesByIdResponse {
+    .snapchat.unlockables.response.schema.SCULLensResponse lensResponse = 1;
+    bytes gtqServeResponse = 2;
+}
+
+message SCULLensResponse {
+    repeated .snapchat.unlockables.response.schema.SCULLensResponse.SCULLensResponse_Lens lensesArray = 1;
+    message SCULLensResponse_Lens {
+        string lensId = 1;
+        string iconURL = 2;
+        string lensName = 3;
+        string contentURL = 4;
+        string contentSignature = 5;
+    }
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package snapchat.notification;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPushNotification";
+option csharp_namespace = "SnapProto.Snapchat.Notification";
+
+message SCPushNotificationUUID {
+    bytes id_p = 1;
+}

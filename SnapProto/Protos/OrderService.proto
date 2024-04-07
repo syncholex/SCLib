@@ -1,0 +1,24 @@
+syntax = "proto3";
+package com.snapchat.commerce;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Commerce";
+
+import "com/snapchat/commerce/wire/bitmoji/AddNewBitmojiProductAsset.proto";
+import "com/snapchat/commerce/wire/order/CreateCheckout.proto";
+import "com/snapchat/commerce/wire/order/GetCheckout.proto";
+import "com/snapchat/commerce/wire/order/GetOrderHistory.proto";
+import "com/snapchat/commerce/wire/order/GetSingleOrder.proto";
+import "com/snapchat/commerce/wire/order/PayCheckout.proto";
+import "com/snapchat/commerce/wire/order/UpdateCheckout.proto";
+import "com/snapchat/commerce/wire/order/UploadSingleOrder.proto";
+
+service OrderService{
+    rpc AddNewBitmojiProductAsset(.com.snapchat.commerce.wire.bitmoji.AddNewBitmojiProductAssetRequest) returns (.com.snapchat.commerce.wire.bitmoji.AddNewBitmojiProductAssetResponse);
+    rpc CreateNewCheckout(.com.snapchat.commerce.wire.order.CreateNewCheckoutRequest) returns (.com.snapchat.commerce.wire.order.CreateNewCheckoutResponse);
+    rpc GetCheckout(.com.snapchat.commerce.wire.order.GetCheckoutRequest) returns (.com.snapchat.commerce.wire.order.GetCheckoutResponse);
+    rpc GetOrderHistory(.com.snapchat.commerce.wire.order.GetOrderHistoryRequest) returns (.com.snapchat.commerce.wire.order.GetOrderHistoryResponse);
+    rpc GetSingleOrder(.com.snapchat.commerce.wire.order.GetSingleOrderRequest) returns (.com.snapchat.commerce.wire.order.GetSingleOrderResponse);
+    rpc PayCheckout(.com.snapchat.commerce.wire.order.PayCheckoutRequest) returns (.com.snapchat.commerce.wire.order.PayCheckoutResponse);
+    rpc UpdateCheckout(.com.snapchat.commerce.wire.order.UpdateCheckoutRequest) returns (.com.snapchat.commerce.wire.order.UpdateCheckoutResponse);
+    rpc UploadSingleOrder(.com.snapchat.commerce.wire.order.UploadSingleOrderRequest) returns (.com.snapchat.commerce.wire.order.UploadSingleOrderResponse);
+}

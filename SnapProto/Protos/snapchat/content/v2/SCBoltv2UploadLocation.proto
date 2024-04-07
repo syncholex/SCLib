@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Snapchat.Content.V2";
+
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto";
+import "snapchat/content/v2/SCBoltv2ContentReferenceResult.proto";
+
+message SCBoltv2UploadLocation {
+    string uploadURL = 1;
+    .google.protobuf.Timestamp uploadURLExpiryTime = 2;
+    .google.protobuf.Duration validDurationAfterSuccessfulUpload = 3;
+    .snapchat.content.v2.SCBoltv2ContentReferenceResult contentReference = 4;
+    .snapchat.content.v2.SCBoltv2UploadLocation.SCBoltv2UploadUrlType uploadURLType = 5;
+    repeated .snapchat.content.v2.SCBoltv2UploadLocation.URLHeadersEntry URLHeaders = 6;
+    string multipartUploadURLTemplate = 7;
+    repeated string multipartUploadURLSignaturesArray = 8;
+    string multipartCompletionURL = 9;
+    message URLHeadersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCBoltv2UploadUrlType {
+        SCBoltv2UploadUrlType_Direct = 0;
+        SCBoltv2UploadUrlType_Resumable = 1;
+        SCBoltv2UploadUrlType_Multipart = 2;
+    }
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.map.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMC";
+option csharp_namespace = "SnapProto.Snapchat.Map.Common";
+
+message SCMCLocalizedStringSet {
+    string fallback = 1;
+    repeated .snapchat.map.common.SCMCLocalizedStringSet.SCMCLocalizedStringSet_String stringsArray = 2;
+    message SCMCLocalizedStringSet_String {
+        string locale = 1;
+        string text = 2;
+    }
+}

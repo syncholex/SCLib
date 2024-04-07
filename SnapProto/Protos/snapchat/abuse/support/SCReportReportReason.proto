@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+import "snapchat/abuse/support/SCReportCameosReasonId.proto";
+import "snapchat/abuse/support/SCReportSafetyReasonId.proto";
+import "snapchat/abuse/support/SCReportStoreItemReasonId.proto";
+
+message SCReportReportReasonId {
+    .snapchat.abuse.support.SCReportSafetyReasonId safetyReasonId = 1;
+    .snapchat.abuse.support.SCReportStoreItemReasonId storeItemReasonId = 2;
+    .snapchat.abuse.support.SCReportCameosReasonId cameosReasonId = 3;
+}

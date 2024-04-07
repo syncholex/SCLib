@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.request;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Request";
+
+import "com/snapchat/showcase/wire/context/CommercePageContext.proto";
+import "com/snapchat/showcase/wire/context/DeviceContext.proto";
+
+message GetCommercePageRequest {
+    .com.snapchat.showcase.wire.request.GetCommercePageRequest.CommercePageType pageType = 1;
+    .com.snapchat.showcase.wire.context.CommercePageContext commercePageContext = 2;
+    .com.snapchat.showcase.wire.context.DeviceContext deviceContext = 3;
+    enum CommercePageType {
+        CommercePageType_PageTypeUnset = 0;
+        CommercePageType_ShoppingHub = 1;
+        CommercePageType_RecentlyViewed = 2;
+        CommercePageType_ShoppingPreferences = 3;
+        CommercePageType_Dynamic = 4;
+        CommercePageType_LookBuilder = 5;
+    }
+}

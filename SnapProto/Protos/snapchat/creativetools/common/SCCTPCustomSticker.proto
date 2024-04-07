@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPCustomSticker {
+    string encKey = 1;
+    string encIv = 2;
+    int64 creationTimeSeconds = 3;
+    .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+    .snapchat.core.SCCOREUUID creatorId = 5;
+    uint32 width = 6;
+    uint32 height = 7;
+}

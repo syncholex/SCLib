@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.map.garfield.image;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGI";
+option csharp_namespace = "SnapProto.Snapchat.Map.Garfield.Image";
+
+message SCMGIImageReference {
+    string fullURL = 1;
+    string boltFullURL = 2;
+}

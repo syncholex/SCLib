@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.creativetools.drawing;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Drawing";
+
+import "snapchat/creativetools/drawing/SCCTPBrush.proto";
+
+message SCCTPDrawings {
+    repeated .snapchat.creativetools.drawing.SCCTPBrush brushesArray = 1;
+}

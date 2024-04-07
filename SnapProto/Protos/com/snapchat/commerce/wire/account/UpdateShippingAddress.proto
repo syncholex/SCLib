@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.account;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Account";
+
+import "com/snapchat/commerce/domain/account/ShippingAddress.proto";
+import "com/snapchat/commerce/wire/error/Error.proto";
+import "snapchat/core/SCCOREUuid.proto";
+
+message UpdateShippingAddressRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    .com.snapchat.commerce.domain.account.ShippingAddress shippingAddress = 2;
+}
+
+message UpdateShippingAddressResponse {
+    string requestId = 2;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError error = 1;
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/ads/render/schema/SCAdsCidMetadata.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+import "snapchat/ads/render/schema/SCAdsOrganicContext.proto";
+import "snapchat/ads/render/schema/SCAdsWebview.proto";
+import "snapchat/webview/SCAdsWebviewMetadata.proto";
+
+message SCAdsWebViewAttachment {
+    .snapchat.ads.render.schema.SCAdsWebView webview = 1;
+    bool blockWebviewPreloading = 2;
+    bool allowAutoFill = 3;
+    bool allowApkDownload = 5;
+    .snapchat.ads.render.schema.SCAdsWebViewAttachment.SCAdsWebBrowserType webBrowserType = 7;
+    .snapchat.webview.SCAdsWebViewMetadata webviewMetadata = 8;
+    bool allowClickId = 9;
+    bool enableLightningModeHtmlPrefetch = 10;
+    .google.protobuf.BoolValue enableWebviewAdBackgroundContinueLoad = 11;
+    bool allowDeeplink = 12;
+    .snapchat.ads.render.schema.SCAdsCidMetadata cidMetadata = 13;
+    string displayableURL = 14;
+    .snapchat.ads.render.schema.SCAdsMediaRenderInfo profileIconRenderInfo = 15;
+    int32 webviewLifecycleExtensionMinDwellTimeThresholdMillis = 16;
+    .google.protobuf.Int32Value webviewLifecycleExtensionTtlMillis = 17;
+    .snapchat.ads.render.schema.SCAdsPdpContext pdpContext = 6;
+    enum SCAdsWebBrowserType {
+        SCAdsWebBrowserType_Unset = 0;
+        SCAdsWebBrowserType_Snap = 1;
+        SCAdsWebBrowserType_InAppNative = 2;
+        SCAdsWebBrowserType_External = 3;
+    }
+}

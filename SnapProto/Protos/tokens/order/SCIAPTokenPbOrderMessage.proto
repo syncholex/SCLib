@@ -1,0 +1,38 @@
+syntax = "proto3";
+package tokens.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPbOrder";
+option csharp_namespace = "SnapProto.Tokens.Order";
+
+import "google/protobuf/timestamp.proto";
+
+message SCIAPTokenPbOrderBalance {
+    int64 total = 1;
+}
+
+message SCIAPTokenPbOrderItem {
+    string id_p = 1;
+    string sku = 2;
+    uint32 tokens = 3;
+    string title = 4;
+    string description_p = 5;
+    string assetURL = 6;
+    string vendorName = 7;
+    string appName = 8;
+    .tokens.order.SCIAPTokenPbOrderItem.SCIAPTokenPbOrderItem_Type type = 9;
+    uint32 consumptionBalance = 10;
+    enum SCIAPTokenPbOrderItem_Type {
+        SCIAPTokenPbOrderItem_Type_Unset = 0;
+        SCIAPTokenPbOrderItem_Type_Durable = 1;
+        SCIAPTokenPbOrderItem_Type_Consumable = 2;
+        SCIAPTokenPbOrderItem_Type_Subscribable = 3;
+    }
+}
+
+message SCIAPTokenPbOrderOrderRecord {
+    string id_p = 1;
+    string sku = 2;
+    uint32 tokens = 3;
+    .google.protobuf.Timestamp orderTime = 4;
+    string receipt = 5;
+}

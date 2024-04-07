@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTextColor.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTextShadow.proto";
+
+message SCPBUnlockablesBackgroundStyle {
+    .com.snapchat.proto.unlockables.SCPBUnlockablesTextColor color = 1;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesTextShadow boxShadow = 2;
+    double borderRadius = 3;
+    bool isStretchable = 4;
+}

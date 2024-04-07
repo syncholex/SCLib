@@ -1,0 +1,23 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/cameos/common/SCCameosCameoBoltContentObject.proto";
+import "snapchat/cameos/common/SCCameosLens.proto";
+
+message SDMCameoMetadata {
+    repeated .snapchat.snapdoc.SDMCameoMetadata.SCCameosGender gendersArray = 1;
+    repeated .snapchat.snapdoc.SDMCameoMetadata.TargetLensesEntry targetLenses = 2;
+    .snapchat.cameos.common.SCCameosCameoBoltContentObject asset = 3;
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}

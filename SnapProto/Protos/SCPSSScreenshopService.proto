@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.perception.showcase.screenshop;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPSS";
+option csharp_namespace = "SnapProto.Services.Snapchat.Perception.Showcase.Screenshop";
+
+import "snapchat/perception/showcase/screenshop/SCPSSScreenshop.proto";
+
+service ScreenshopService{
+    rpc ShoppabilityVersion(.snapchat.perception.showcase.screenshop.SCPSSShoppabilityVersionRequest) returns (.snapchat.perception.showcase.screenshop.SCPSSShoppabilityVersionResponse);
+    rpc Shoppable(.snapchat.perception.showcase.screenshop.SCPSSShoppableRequest) returns (.snapchat.perception.showcase.screenshop.SCPSSShoppableResponse);
+    rpc Showcase(.snapchat.perception.showcase.screenshop.SCPSSShowcaseRequest) returns (.snapchat.perception.showcase.screenshop.SCPSSShowcaseResponse);
+}

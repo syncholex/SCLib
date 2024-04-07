@@ -1,0 +1,111 @@
+syntax = "proto3";
+package snapchat.lenses.snappable;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLensSb";
+option csharp_namespace = "SnapProto.Snapchat.Lenses.Snappable";
+
+message SCLensSbEncryptionData {
+    bytes key = 1;
+    repeated .snapchat.lenses.snappable.SCLensSbEncryptionData.IvStoreEntry ivStore = 2;
+    bool isKeyServerEncrypted = 3;
+    bool isKeyE2EEncrypted = 4;
+    .snapchat.lenses.snappable.SCLensSbEncryptionData.SCLensSbEncryptionData_EncryptionScheme encryptionScheme = 5;
+    message IvStoreEntry {
+        string key = 1;
+        bytes value = 2;
+    }
+    enum SCLensSbEncryptionData_EncryptionScheme {
+        SCLensSbEncryptionData_EncryptionScheme_NotApplicable = 0;
+        SCLensSbEncryptionData_EncryptionScheme_Spookey = 1;
+        SCLensSbEncryptionData_EncryptionScheme_Registry = 2;
+        SCLensSbEncryptionData_EncryptionScheme_Fidelius = 3;
+    }
+}
+
+message SCLensSbGetSnappableRequest {
+    string id_p = 1;
+}
+
+message SCLensSbGetSnappableResponse {
+    .snapchat.lenses.snappable.SCLensSbSnappable data_p = 1;
+    repeated .snapchat.lenses.snappable.SCLensSbSnappableMedia mediaArray = 2;
+}
+
+message SCLensSbPlayerData {
+    repeated .snapchat.lenses.snappable.SCLensSbPlayerData.StoreEntry store = 1;
+    bytes serializedStore = 2;
+    message StoreEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCLensSbPutSnappableRequest {
+    .snapchat.lenses.snappable.SCLensSbSnappable snappable = 1;
+    repeated .snapchat.lenses.snappable.SCLensSbSnappableMedia mediaArray = 2;
+}
+
+message SCLensSbPutSnappableResponse {
+    string id_p = 1;
+}
+
+message SCLensSbSessionData {
+    repeated .snapchat.lenses.snappable.SCLensSbSessionData.PlayerDataEntry playerData = 1;
+    message PlayerDataEntry {
+        string key = 1;
+        .snapchat.lenses.snappable.SCLensSbPlayerData value = 2;
+    }
+}
+
+message SCLensSbSnap3DData {
+    bool allowZippedMedia = 1;
+}
+
+message SCLensSbSnappable {
+    string id_p = 1;
+    string sessionId = 2;
+    string playerId = 3;
+    .snapchat.lenses.snappable.SCLensSbSessionData sessionData = 4;
+    int64 createdTime = 5;
+    int64 expireTime = 6;
+    int32 version = 7;
+    .snapchat.lenses.snappable.SCLensSbEncryptionData encryptionData = 8;
+    int32 sessionDepth = 9;
+}
+
+message SCLensSbSnappableEncryptedKey {
+    bytes encryptedKey = 1;
+    string encryptionKeyId = 2;
+    bytes encryptionKeyIv = 3;
+}
+
+message SCLensSbSnappableMedia {
+    string sessionId = 1;
+    string playerId = 2;
+    string URL = 3;
+    string key = 4;
+    int64 createdTime = 5;
+}
+
+message SCLensSbSnappableMessage {
+    .snapchat.lenses.snappable.SCLensSbSnappable snappable = 1;
+    repeated .snapchat.lenses.snappable.SCLensSbSnappableMedia mediaArray = 2;
+    string effectId = 3;
+    repeated string userIdsArray = 4;
+    float focusPointX = 5;
+    float focusPointY = 6;
+    float focusPointWidth = 7;
+    .snapchat.lenses.snappable.SCLensSbSnappableMessage.SCLensSbSnappableMessage_ReplyType replyType = 8;
+    .snapchat.lenses.snappable.SCLensSbSnap3DData snap3DData = 9;
+    .snapchat.lenses.snappable.SCLensSbUsesCameraRoll usesCameraRollData = 10;
+    string assetBatchId = 500;
+    enum SCLensSbSnappableMessage_ReplyType {
+        SCLensSbSnappableMessage_ReplyType_NotApplicable = 0;
+        SCLensSbSnappableMessage_ReplyType_Context = 1;
+        SCLensSbSnappableMessage_ReplyType_Interstitial = 2;
+    }
+}
+
+message SCLensSbUsesCameraRoll {
+    bool usesCameraRoll = 1;
+}

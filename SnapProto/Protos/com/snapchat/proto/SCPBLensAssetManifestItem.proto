@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBLensAssetStorageOption.proto";
+
+message SCPBLensAssetManifestItem {
+    string type = 1;
+    string id_p = 2;
+    string requestTiming = 3;
+    int32 scale = 4;
+    string assetURL = 5;
+    string assetSignature = 6;
+    int32 preloadLimit = 7;
+    string animationGroup = 8;
+    string originalFilename = 9;
+    string contentSignature = 10;
+    repeated .com.snapchat.proto.SCPBLensAssetStorageOption storageOptionsArray = 11;
+}

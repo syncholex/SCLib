@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesGtqFeaturedLensesNamespaceResponse.proto";
+
+message SCPBUnlockablesGtqFeaturedLensesResponse {
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesGtqFeaturedLensesNamespaceResponse responsesArray = 1;
+}

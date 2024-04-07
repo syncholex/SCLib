@@ -1,0 +1,36 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+import "snapchat/cameos/common/SCCameosEncryptedData.proto";
+
+message SCCameosFriendBloopsData {
+    string userId = 1;
+    .snapchat.cameos.common.SCCameosFriendBloopsData.SCCameosGender gender = 2;
+    .snapchat.cameos.common.SCCameosFriendBloopsData.SCCameosFriendBloopsPolicy policy = 3;
+    .snapchat.cameos.common.SCCameosEncryptedData processedImage = 4;
+    .snapchat.cameos.common.SCCameosEncryptedData rawImage = 5;
+    string formatVersion = 6;
+    string sdkVersion = 7;
+    string hairStyle = 8;
+    int64 lastDataUpdateTime = 9;
+    .snapchat.cameos.common.SCCameosFriendBloopsData.SCCameosCameosAdsPolicy adsPolicy = 10;
+    enum SCCameosCameosAdsPolicy {
+        SCCameosCameosAdsPolicy_AdsPolicyUnset = 0;
+        SCCameosCameosAdsPolicy_AdsPolicyNobody = 1;
+        SCCameosCameosAdsPolicy_AdsPolicyOnlyMe = 2;
+        SCCameosCameosAdsPolicy_AdsPolicyFriends = 3;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+    enum SCCameosFriendBloopsPolicy {
+        SCCameosFriendBloopsPolicy_OnlyMePolicy = 0;
+        SCCameosFriendBloopsPolicy_FriendsPolicy = 1;
+        SCCameosFriendBloopsPolicy_EveryonePolicy = 2;
+    }
+}

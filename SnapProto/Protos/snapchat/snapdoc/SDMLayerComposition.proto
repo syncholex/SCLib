@@ -1,0 +1,38 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/grid/SDMTimeframe.proto";
+import "snapchat/snapdoc/SDMCreativeEditTag.proto";
+import "snapchat/snapdoc/SDMPlaybackSpeedMultiplier.proto";
+import "snapchat/snapdoc/SDMTimeInstant.proto";
+
+message SDMLayerComposition {
+    repeated .snapchat.snapdoc.SDMTrack tracksArray = 1;
+    uint32 trackIndexCounter = 4;
+    uint32 trackSegmentIndexCounter = 5;
+}
+
+message SDMTrack {
+    repeated .snapchat.snapdoc.SDMTrackSegment trackSegmentsArray = 1;
+    .snapchat.snapdoc.SDMTrack.SDMTrack_TrackType trackType = 2;
+    uint32 trackIndex = 3;
+    bool isGlobalTrack = 4;
+    enum SDMTrack_TrackType {
+        SDMTrack_TrackType_Unset = 0;
+        SDMTrack_TrackType_AudioVideo = 1;
+        SDMTrack_TrackType_Audio = 2;
+        SDMTrack_TrackType_Video = 3;
+    }
+}
+
+message SDMTrackSegment {
+    repeated uint32 playbackLayersArray = 1;
+    .snapchat.snapdoc.SDMTimeInstant syncTimeMs = 2;
+    uint32 trackSegmentIndex = 3;
+    .snapchat.grid.SDMTimeframe trim = 4;
+    .snapchat.snapdoc.SDMPlaybackSpeedMultiplier playbackSpeedMultiplier = 5;
+    .snapchat.snapdoc.SDMCreativeEditTag creativeEditTag = 6;
+}

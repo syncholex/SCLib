@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.perception.lookalike.query;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Perception.Lookalike.Query";
+
+import "snapchat/perception/lookalike/SCPNLOOKALIEMedia.proto";
+
+message Hit {
+    .snapchat.perception.lookalike.SCPNLOOKALIEMediaReference matchedContent = 1;
+    .snapchat.perception.lookalike.SCPNLOOKALIEMediaReference sourceMedia = 2;
+    float score = 3;
+    repeated .snapchat.perception.lookalike.query.Hit.PropertiesEntry properties = 100;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

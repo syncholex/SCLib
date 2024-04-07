@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuthStatusPersistencePb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Activation.Api";
+
+import "snapchat/activation/api/SCAuthStatusPersistencePbAuthStatusPersistence.proto";
+
+service AuthStatusPersistenceService{
+    rpc IsEligibleForV2(.snapchat.activation.api.SCAuthStatusPersistencePbIsEligibleForV2Request) returns (.snapchat.activation.api.SCAuthStatusPersistencePbIsEligibleForV2Response);
+}

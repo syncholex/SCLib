@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.map.slippy;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMapsSlippy";
+option csharp_namespace = "SnapProto.Services.Snapchat.Map.Slippy";
+
+import "snapchat/map/slippy/SCMapsSlippySlippy.proto";
+
+service Slippy{
+    rpc GetLocationPreferencesReminder(.snapchat.map.slippy.SCMapsSlippyGetLocationPreferencesReminderRequest) returns (.snapchat.map.slippy.SCMapsSlippyGetLocationPreferencesReminderResponse);
+    rpc GetShouldPerformAction(.snapchat.map.slippy.SCMapsSlippyGetShouldPerformActionRequest) returns (.snapchat.map.slippy.SCMapsSlippyGetShouldPerformActionResponse);
+    rpc UpdateReaction(.snapchat.map.slippy.SCMapsSlippyUpdateReactionRequest) returns (.snapchat.map.slippy.SCMapsSlippyUpdateReactionResponse);
+}

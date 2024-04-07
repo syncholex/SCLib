@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSuggestUsernamePb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Activation.Api";
+
+import "snapchat/activation/api/SCSuggestUsernamePbSuggestUsername.proto";
+
+service SuggestUsernameService{
+    rpc CheckUsername(.snapchat.activation.api.SCSuggestUsernamePbCheckUsernameRequest) returns (.snapchat.activation.api.SCSuggestUsernamePbCheckUsernameResponse);
+    rpc SuggestUsername(.snapchat.activation.api.SCSuggestUsernamePbSuggestUsernameRequest) returns (.snapchat.activation.api.SCSuggestUsernamePbSuggestUsernameResponse);
+}

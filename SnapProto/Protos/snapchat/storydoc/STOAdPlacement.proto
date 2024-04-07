@@ -1,0 +1,79 @@
+syntax = "proto3";
+package snapchat.storydoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "STO";
+option csharp_namespace = "SnapProto.Snapchat.Storydoc";
+
+import "google/protobuf/wrappers.proto";
+
+message STOAdPlacement {
+    repeated int32 fixedAdIndexesArray = 1;
+    repeated .snapchat.storydoc.STOAdPlacement.STOAdPlacement_FixedAdSlot adsArray = 2;
+    .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdSetting adSetting = 3;
+    .snapchat.storydoc.STOAdPlacement.STOAdPlacement_TimeBasedAdPlacements timeBasedAdPlacements = 6;
+    .snapchat.storydoc.STOAdPlacement.STOAdPlacement_FixedAdSlots fixedAdSlots = 4;
+    .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdPlacementMetadata adPlacementMetadata = 5;
+    message STOAdPlacement_AdPlacementMetadata {
+        string adUnitId = 1;
+        .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdPlacementMetadata.STOAdPlacement_AdPlacementMetadata_AdInsertionConfig adInsertionConfig = 2;
+        .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdPlacementMetadata.STOAdPlacement_AdPlacementMetadata_AdRequestConfig adRequestConfig = 3;
+        .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdPlacementMetadata.STOAdPlacement_AdPlacementMetadata_TargetingParameters targetingParameters = 4;
+        repeated string adCannotFollowSnapIdsArray = 5;
+        bool enableFullView = 6;
+        message STOAdPlacement_AdPlacementMetadata_AdInsertionConfig {
+            uint32 firstOnStart = 1;
+            uint32 firstOnResume = 2;
+            uint32 interval = 3;
+            uint32 minSnapsAfterAd = 4;
+        }
+        message STOAdPlacement_AdPlacementMetadata_AdRequestConfig {
+            uint32 firstPosition = 1;
+            uint32 timeout = 2;
+            uint32 minimumRemaining = 3;
+        }
+        message STOAdPlacement_AdPlacementMetadata_TargetingParameters {
+            string channelId = 1;
+            string channelType = 2;
+            string channelTypeV2 = 3;
+            string inventoryType = 4;
+            string inventoryFullyQualified = 5;
+            string inventory = 6;
+            string genre = 7;
+        }
+    }
+    message STOAdPlacement_AdPlacementStrategy {
+        string strategy = 1;
+        repeated .snapchat.storydoc.STOAdPlacement.STOAdPlacement_TimeBasedAd timeBasedAdsArray = 2;
+    }
+    message STOAdPlacement_FixedAdSlot {
+        uint32 index = 1;
+        .snapchat.storydoc.STOAdPlacement.STOAdPlacement_TargetingParams targetingParams = 2;
+        .google.protobuf.FloatValue score = 3;
+    }
+    message STOAdPlacement_FixedAdSlots {
+        repeated .snapchat.storydoc.STOAdPlacement.STOAdPlacement_FixedAdSlot adsArray = 2;
+        repeated .snapchat.storydoc.STOAdPlacement.STOAdPlacement_FixedAdSlot optionalAdsArray = 3;
+    }
+    message STOAdPlacement_TargetingParams {
+        string position = 1;
+        string edition = 2;
+        string inventory = 3;
+        string inventoryType = 4;
+        string inventoryFullyQualified = 5;
+        string productType = 6;
+        string channelTypeV2 = 7;
+        string channelType = 8;
+        string publisher = 9;
+    }
+    message STOAdPlacement_TimeBasedAd {
+        float adPlacementTimeSec = 1;
+    }
+    message STOAdPlacement_TimeBasedAdPlacements {
+        repeated .snapchat.storydoc.STOAdPlacement.STOAdPlacement_AdPlacementStrategy adPlacementStrategyArray = 1;
+        string requestId = 2;
+    }
+    enum STOAdPlacement_AdSetting {
+        STOAdPlacement_AdSetting_Skippable = 0;
+        STOAdPlacement_AdSetting_NonSkippable = 1;
+    }
+}

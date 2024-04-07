@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ranking.location;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSLOC";
+option csharp_namespace = "SnapProto.Ranking.Location";
+
+import "ranking/core/SCSCOREGeo.proto";
+
+message SCSLOCGeoFeatures {
+    repeated .ranking.location.SCSLOCGeoFeatures.SCSLOCGeoFeatures_Feature featuresArray = 3;
+    message SCSLOCGeoFeatures_Feature {
+        string name = 1;
+        string address = 2;
+        .ranking.core.SCSCOREGeoPoint center = 4;
+        .ranking.core.SCSCOREGeoBoundingBox bbox = 5;
+        .ranking.core.SCSCOREGeoPolygon polygon = 6;
+        double relevance = 7;
+    }
+}

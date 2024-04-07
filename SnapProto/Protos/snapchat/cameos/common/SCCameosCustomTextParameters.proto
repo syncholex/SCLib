@@ -1,0 +1,25 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+message SCCameosCustomTextParameters {
+    repeated .snapchat.cameos.common.SCCameosCustomTextParameters.SCCameosCustomTextParameters_FontResource fontResourcesArray = 1;
+    bool capitalize = 2;
+    string defaultText = 3;
+    bool defaultTextOnly = 4;
+    bool isUniversal = 5;
+    repeated .snapchat.cameos.common.SCCameosCustomTextParameters.SCCameosCustomTextParameters_TextArea textAreasArray = 6;
+    message SCCameosCustomTextParameters_FontResource {
+        string name = 1;
+        string URL = 2;
+    }
+    message SCCameosCustomTextParameters_TextArea {
+        int32 maximumHeight = 1;
+        int32 maximumLineLength = 2;
+        int32 maximumLines = 3;
+        int32 maximumWidth = 4;
+        int32 splitVersion = 5;
+    }
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+import "snapchat/cameos/common/SCCameosError.proto";
+
+message SCCameosServiceStatusResponse {
+    .snapchat.cameos.common.SCCameosServiceStatusResponse.SCCameosResponseStatus status = 1;
+    .snapchat.cameos.common.SCCameosError error = 2;
+    enum SCCameosResponseStatus {
+        SCCameosResponseStatus_Ok = 0;
+        SCCameosResponseStatus_Error = 1;
+    }
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesTimeComponent.proto";
+
+message SCPBUnlockablesDynamicContextProperties {
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesDynamicContextProperties.DeeplinkPropertiesEntry deeplinkProperties = 1;
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesTimeComponent relativeTimeComponentsArray = 2;
+    message DeeplinkPropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

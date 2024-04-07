@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMAppInstall {
+    string appTitle = 1;
+    .snapchat.snapdoc.SDMAppInstall.SDMAppInstall_AppInfo iosInfo = 2;
+    .snapchat.snapdoc.SDMAppInstall.SDMAppInstall_AppInfo androidInfo = 3;
+    string id_p = 4;
+    message SDMAppInstall_AppInfo {
+        string appId = 1;
+        repeated .snapchat.snapdoc.SDMAppInstall.SDMAppInstall_AppInfo.StoreParamsEntry storeParams = 2;
+        string appIcon = 3;
+        bytes contentObject = 4;
+        message StoreParamsEntry {
+            string key = 1;
+            string value = 2;
+        }
+    }
+}

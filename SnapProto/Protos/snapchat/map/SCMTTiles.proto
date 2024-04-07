@@ -1,0 +1,649 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+import "address/SCMapsLocation.proto";
+import "snapchat/context/SCContextHint.proto";
+import "snapchat/context/SCStories.proto";
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/map/SCMTWorldEffects.proto";
+import "snapchat/map/common/SCMCColor.proto";
+import "snapchat/map/gamedb/SCMTGame.proto";
+import "snapchat/research/SASAudioStitch.proto";
+import "snapchat/streaming/SCMTMedia.proto";
+
+message SCMTDirectRenderInfo {
+    .snapchat.map.SCMTPoint anchorPoint = 1;
+    double heightToWidthRatio = 2;
+    .snapchat.map.SCMTDirectRenderInfo.SCMTDirectRenderInfo_CollisionBehavior friendCollisionBehavior = 3;
+    enum SCMTDirectRenderInfo_CollisionBehavior {
+        SCMTDirectRenderInfo_CollisionBehavior_PartialOrFull = 0;
+        SCMTDirectRenderInfo_CollisionBehavior_FullOnly = 1;
+        SCMTDirectRenderInfo_CollisionBehavior_None = 2;
+    }
+}
+
+message SCMTGameMarkerInfo {
+    int32 pointValue = 1;
+    float unlockableRadiusMeters = 2;
+    .snapchat.map.SCMTGameMarkerInfo.SCMTEggColor eggColor = 3;
+    enum SCMTEggColor {
+        SCMTEggColor_Yellow = 0;
+        SCMTEggColor_Blue = 1;
+        SCMTEggColor_Pink = 2;
+        SCMTEggColor_Green = 3;
+        SCMTEggColor_Purple = 4;
+        SCMTEggColor_Special = 5;
+    }
+}
+
+message SCMTGameTile {
+    repeated .snapchat.map.SCMTPointOfInterest poisArray = 1;
+    repeated .snapchat.map.SCMTGameTile.SCMTGameTile_GameTileInput gameTileInputArray = 2;
+    message SCMTGameTile_GameTileInput {
+        .snapchat.map.gamedb.SCMTGameMarkerEntry gameMarkerEntry = 1;
+        float minZoom = 2;
+    }
+}
+
+message SCMTGameTileSetInfo {
+}
+
+message SCMTGeoBox {
+    .snapchat.map.SCMTGeoPoint geoBottomLeft = 1;
+    .snapchat.map.SCMTGeoPoint geoTopRight = 2;
+}
+
+message SCMTGeoPoint {
+    double lat = 1;
+    double lon = 2;
+}
+
+message SCMTGetLatestMapTilesRequest {
+    repeated .snapchat.map.SCMTTileId tileIdsArray = 1;
+    string flavor = 2;
+}
+
+message SCMTGetLatestMapTilesResponse {
+    repeated .snapchat.map.SCMTTileSetInfo tileSetInfosArray = 1;
+    repeated .snapchat.map.SCMTTile tilesArray = 2;
+    int32 lifetimeSec = 3;
+}
+
+message SCMTGetLatestTileSetRequest {
+    string flavor = 1;
+    int64 epoch = 3;
+}
+
+message SCMTGetLatestTileSetResponse {
+    .snapchat.map.SCMTRenderConfig renderConfig = 3;
+    repeated .snapchat.map.SCMTTileSetInfo tileSetInfosArray = 4;
+    int32 lifetimeSec = 5;
+}
+
+message SCMTGetMapSupplementaryInfoRequest {
+    .snapchat.map.SCMTPoint userLocation = 1;
+    string locale = 2;
+}
+
+message SCMTGetMapSupplementaryInfoResponse {
+    repeated .snapchat.map.SCMTMapAnnouncement announcementsArray = 1;
+}
+
+message SCMTGetMapTilesMetadataRequest {
+    repeated .snapchat.map.SCMTTileId tileIdsArray = 1;
+}
+
+message SCMTGetMapTilesMetadataResponse {
+    repeated .snapchat.map.SCMTTileMetadata metadataArray = 1;
+}
+
+message SCMTGetMapTilesRequest {
+    repeated .snapchat.map.SCMTGetMapTilesRequest.SCMTGetMapTilesRequest_TileCollection tileCollectionsArray = 4;
+    message SCMTGetMapTilesRequest_TileCollection {
+        .snapchat.map.SCMTTileSetId tileSetId = 1;
+        repeated .snapchat.map.SCMTTileId tileIdsArray = 2;
+    }
+}
+
+message SCMTGetMapTilesResponse {
+    repeated .snapchat.map.SCMTTile tilesArray = 1;
+}
+
+message SCMTGetMarkerDataRequest {
+    string poiId = 1;
+    .snapchat.map.SCMTGetMarkerDataRequest.SCMTMarkerDataType markerDataType = 2;
+    enum SCMTMarkerDataType {
+        SCMTMarkerDataType_Unset = 0;
+        SCMTMarkerDataType_Lens = 1;
+    }
+}
+
+message SCMTGetMarkerDataResponse {
+    .snapchat.map.SCMTLensData lensData = 1;
+}
+
+message SCMTGetOnboardingViewStateRequest {
+    .snapchat.map.SCMTPoint location = 1;
+    double zoom = 2;
+    .snapchat.map.SCMTGeoBox viewport = 3;
+    repeated .snapchat.map.SCMTGeoBox reservedBoundingBoxArray = 4;
+}
+
+message SCMTGetOnboardingViewStateResponse {
+    repeated .snapchat.map.SCMTPointOfInterest poisArray = 1;
+    double zoom = 3;
+    .snapchat.map.SCMTPoint center = 4;
+    .snapchat.map.SCMTTileSetId tileSetId = 5;
+}
+
+message SCMTGetSearchCardsRequest {
+    .snapchat.map.SCMTTileSetId tileSetId = 1;
+    .snapchat.map.SCMTPoint userLocation = 2;
+    .snapchat.map.SCMTPoint mapLocation = 3;
+    double zoom = 4;
+    string query = 6;
+    .snapchat.map.SCMTGeoBox viewport = 10;
+    string experimentValue = 11;
+}
+
+message SCMTGetSearchCardsResponse {
+    .snapchat.map.SCMTSearchCards searchCards = 1;
+}
+
+message SCMTHeatTileSetInfo {
+    double heatFromTime = 1;
+    double heatToTime = 2;
+    double lastSnapTime = 3;
+    int32 totalHeatmapPoints = 4;
+    .snapchat.map.SCMTHeatmapGradient heatmapGradient = 5;
+    float heatNormalizationPeak = 6;
+    float fuzzNormalizationPeak = 7;
+    float heatPointBaseRadius = 8;
+}
+
+message SCMTHeatmapFuzzPoint {
+    .snapchat.map.SCMTPoint point = 1;
+    double initialZoomLevel = 2;
+    double weight = 4;
+}
+
+message SCMTHeatmapGradient {
+    repeated .snapchat.map.common.SCMCRGBA colorsArray = 1;
+    repeated float transitionLocationsArray = 2;
+}
+
+message SCMTHeatmapPoint {
+    .snapchat.map.SCMTPoint point = 1;
+    double weight = 4;
+}
+
+message SCMTHeatmapTile {
+    repeated .snapchat.map.SCMTHeatmapPoint pointsArray = 1;
+    repeated .snapchat.map.SCMTHeatmapFuzzPoint fuzzedPointsArray = 2;
+    double maximumFuzzRadius = 4;
+}
+
+message SCMTLensCreator {
+    string lensCreatorName = 1;
+    string profileId = 2;
+    bool isPro = 3;
+}
+
+message SCMTLensData {
+    string lensId = 1;
+    string title = 2;
+    string artist = 3;
+    string address = 4;
+    string description_p = 5;
+    string URL = 6;
+    .snapchat.map.SCMTLensCreator lensCreator = 7;
+    string secondaryLensId = 8;
+    .snapchat.map.SCMTLensCreator secondaryLensCreator = 9;
+    string thumbnailURL = 10;
+}
+
+message SCMTLocationFuzzingInfo {
+    int32 s2CellLevel = 1;
+    int64 s2CellSnaps = 2;
+    double fuzzDistance = 3;
+    double initialZoom = 4;
+}
+
+message SCMTMapAnnouncement {
+    string id_p = 1;
+    .snapchat.geo.SPCGPoint destinationLocation = 2;
+    double destinationZoom = 3;
+    int64 displayDurationMs = 4;
+    string categoryDisplayString = 5;
+    .snapchat.map.common.SCMCRGBA categoryStringColor = 6;
+    string title = 7;
+    string emojiIcon = 8;
+}
+
+message SCMTMapSnap {
+    string id_p = 1;
+    string storyId = 2;
+    double timestamp = 3;
+    double lat = 4;
+    double lng = 5;
+    bool shouldFuzz = 6;
+    double fuzzDistance = 7;
+    double timeLength = 8;
+    bool isInfiniteDuration = 9;
+    int32 mediaType = 10;
+    .snapchat.map.SCMTMediaInfo mediaInfo = 11;
+    string venueId = 12;
+    repeated .snapchat.map.SCMTMapSnap.LocalizedAddressesEntry localizedAddresses = 13;
+    .snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 14;
+    string multisnapId = 15;
+    .snapchat.context.SCAttributionInfo attributionInfo = 16;
+    .snapchat.context.SCContextContextHint contextHint = 17;
+    string multiSnapBundleId = 18;
+    int32 multiSnapSequenceId = 19;
+    .snapchat.research.SASAudioStitch audioStitch = 20;
+    .snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 21;
+    .snapchat.streaming.SCMTPublicMediaInfo publicMediaInfo = 22;
+    string unlockablesSnapInfo = 23;
+    message LocalizedAddressesEntry {
+        string key = 1;
+        .address.SCMapsAddress value = 2;
+    }
+}
+
+message SCMTMarkerTile {
+    repeated .snapchat.map.SCMTPointOfInterest poisArray = 1;
+}
+
+message SCMTMarkerTileSetInfo {
+    .snapchat.map.SCMTPointOfInterestSizeEquation poiSizeEquation = 1;
+}
+
+message SCMTMediaInfo {
+    string mediaKey = 1;
+    string mediaIv = 2;
+    string mediaURL = 3;
+    string mediaId = 4;
+    string thumbnailIv = 6;
+    bool zipped = 8;
+}
+
+message SCMTMockMapMarkers {
+    repeated .snapchat.map.SCMTPointOfInterest mapMarkersArray = 1;
+}
+
+message SCMTPipelineCluster {
+    string id_p = 1;
+    string source = 2;
+    double startTime = 3;
+    double endTime = 4;
+    double score = 5;
+    int32 thumbSize = 6;
+    repeated string snapIdsArray = 99;
+}
+
+message SCMTPipelineHeatmapSnap {
+    string id_p = 1;
+    string userId = 2;
+    double lat = 3;
+    double lng = 4;
+    bool shouldFuzz = 5;
+    .snapchat.map.SCMTLocationFuzzingInfo locationFuzzInfo = 6;
+    double timestamp = 7;
+}
+
+message SCMTPipelinePointOfInterest {
+    .snapchat.map.SCMTPointOfInterest poi = 1;
+    float minAllowedZoom = 2;
+    int32 leadSourceMask = 3;
+    bool hasTitle = 4;
+    bool isPopupStory = 5;
+}
+
+message SCMTPipelineRunCompletionMessage {
+    .snapchat.map.SCMTTileSetId tileSetId = 1;
+}
+
+message SCMTPipelineSnap {
+    string id_p = 1;
+    double lat = 2;
+    double lng = 3;
+    int32 mediaType = 6;
+    string overlayText = 7;
+    string username = 8;
+    bool frontFacing = 9;
+    int32 orientation = 10;
+    double timeLength = 11;
+    string storyId = 12;
+    double timestamp = 13;
+    bool shouldFuzz = 14;
+    string userId = 15;
+    string unlockablesSnapInfo = 16;
+    double openNsfwScore = 31;
+    .snapchat.map.SCMTLocationFuzzingInfo locationFuzzInfo = 32;
+    bool minor = 33;
+    bool chaperonedMinor = 34;
+    bool didPostToMyStory = 37;
+    repeated string tagsArray = 38;
+    bool isLowContrast = 39;
+    repeated double exposureHistogramArray = 40;
+    double biggestHeadRatio = 41;
+    double aspectRatio = 42;
+    int32 videoFramesPerSecond = 43;
+    bool noise = 44;
+    repeated string overlayTextSensitiveWordsArray = 45;
+    int32 headCount = 46;
+    float deviceScore = 47;
+    string lensId = 48;
+    bool isOfficialUser = 49;
+    bool isPopularUser = 50;
+    bool isInfiniteDuration = 51;
+    string venueId = 52;
+    repeated double featureVectorArray = 53;
+    repeated string categoriesArray = 54;
+    string rejectionReason = 55;
+    double qualityScore = 56;
+    double interestingnessScore = 57;
+    bool hasSponsoredUnlockables = 58;
+    int32 abuseMitigationAction = 59;
+    bool isTakenDown = 60;
+    bool isLocationBlacklisted = 61;
+    bool shouldShowAttribution = 62;
+    double captureTimestamp = 63;
+    string multisnapId = 64;
+    string multiSnapBundleId = 65;
+    int32 multiSnapSequenceId = 66;
+    int32 multiSnapSequenceCount = 67;
+    .snapchat.research.SASAudioStitch audioStitch = 68;
+    string filterId = 69;
+    .snapchat.map.SCMTMediaInfo mediaInfo = 99;
+    repeated .snapchat.map.SCMTPipelineSnap.LocalizedAddressesEntry localizedAddresses = 100;
+    .snapchat.streaming.SCMTStreamingMediaInfo streamingMediaInfo = 101;
+    .snapchat.context.SCContextContextHint contextHint = 102;
+    .snapchat.streaming.SCMTOneSnapInfo streamingSnapInfo = 103;
+    string countryCode = 104;
+    float gradientScore = 200;
+    repeated .snapchat.map.SCMTPipelineSnap.MetadataEntry metadata = 300;
+    message LocalizedAddressesEntry {
+        string key = 1;
+        .address.SCMapsAddress value = 2;
+    }
+    message MetadataEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCMTPlacePoi {
+    string name = 1;
+    .snapchat.map.SCMTPoint markerPoint = 2;
+    int32 numSnaps = 3;
+    repeated .snapchat.map.SCMTPoint geoFenceArray = 4;
+    string thumbnailURL = 5;
+    bool geofilterOnly = 6;
+    repeated string geofilterIdsArray = 7;
+}
+
+message SCMTPoiTile {
+    bool hasLocalizedPois = 10;
+    repeated .snapchat.map.SCMTPointOfInterest poisArray = 11;
+}
+
+message SCMTPoiTileSetInfo {
+    .snapchat.map.SCMTPointOfInterestSizeEquation poiSizeEquation = 1;
+}
+
+message SCMTPoint {
+    double lat = 1;
+    double lng = 2;
+}
+
+message SCMTPointOfInterest {
+    .snapchat.map.SCMTPointOfInterest.SCMTPointOfInterest_Type type = 1;
+    string id_p = 2;
+    .snapchat.map.SCMTPoint point = 3;
+    double score = 5;
+    double renderWidthRatio = 8;
+    repeated .snapchat.map.SCMTThumbnail thumbnailsArray = 10;
+    .snapchat.context.SCStoryManifest previewManifest = 11;
+    .snapchat.context.SCStoryManifest fullManifest = 12;
+    .snapchat.context.SCLocalizedStringSet llabel = 14;
+    repeated .snapchat.map.SCMTPointOfInterest.LocalizedAddressesEntry localizedAddresses = 15;
+    float minDisplayZoom = 16;
+    bool isFeatured = 17;
+    string originalLeadId = 18;
+    float thumbnailMinDisplayZoom = 19;
+    string emojiLabel = 20;
+    repeated string localesArray = 21;
+    repeated .snapchat.map.SCMTPointOfInterest localizedVersionsArray = 22;
+    .snapchat.map.SCMTPointOfInterest.SCMTPointOfInterest_ActionType actionType = 23;
+    string unlockableId = 24;
+    int32 audioStitchCount = 25;
+    .snapchat.map.SCMTPointOfInterest.SCMTPointOfInterest_DiscoverInfo discoverInfo = 26;
+    float maxDisplayZoom = 27;
+    .snapchat.map.SCMTDirectRenderInfo directRenderInfo = 28;
+    .snapchat.map.SCMTGameMarkerInfo gameMarkerInfo = 29;
+    string verrazanoId = 30;
+    .snapchat.map.SCMTPointOfInterest.SCMTMarkerDataType markerDataType = 31;
+    float minTapRadius = 32;
+    float minReachableRadius = 33;
+    message LocalizedAddressesEntry {
+        string key = 1;
+        .address.SCMapsAddress value = 2;
+    }
+    message SCMTPointOfInterest_DiscoverInfo {
+        string publisherName = 1;
+        int64 editionId = 2;
+    }
+    enum SCMTPointOfInterest_ActionType {
+        SCMTPointOfInterest_ActionType_TapToPlay = 0;
+        SCMTPointOfInterest_ActionType_Unlockable = 1;
+        SCMTPointOfInterest_ActionType_OpenEdition = 2;
+        SCMTPointOfInterest_ActionType_ShowCards = 3;
+        SCMTPointOfInterest_ActionType_NoAction = 4;
+    }
+    enum SCMTMarkerDataType {
+        SCMTMarkerDataType_Unset = 0;
+        SCMTMarkerDataType_Lens = 1;
+    }
+    enum SCMTPointOfInterest_Type {
+        SCMTPointOfInterest_Type_ActivitySpike = 0;
+        SCMTPointOfInterest_Type_Filler = 1;
+        SCMTPointOfInterest_Type_Attractions = 2;
+        SCMTPointOfInterest_Type_Story = 3;
+        SCMTPointOfInterest_Type_StickerWall = 4;
+        SCMTPointOfInterest_Type_DiscoverEdition = 5;
+        SCMTPointOfInterest_Type_MapMarker = 6;
+        SCMTPointOfInterest_Type_GameMarker = 7;
+    }
+}
+
+message SCMTPointOfInterestSizeEquation {
+    repeated float orderArray = 1;
+    repeated float stretchArray = 2;
+    repeated float coefficientArray = 3;
+    float intercept = 4;
+}
+
+message SCMTRenderConfig {
+    .snapchat.map.SCMTPointOfInterestSizeEquation poiSizeEquation = 1;
+    .snapchat.map.SCMTHeatmapGradient heatmapGradient = 2;
+    float heatNormalizationPeak = 3;
+    float fuzzNormalizationPeak = 4;
+    float heatPointBaseRadius = 5;
+}
+
+message SCMTReverseGeocodedPoint {
+    .snapchat.map.SCMTGeoPoint point = 1;
+    .address.SCMapsAddress address = 2;
+}
+
+message SCMTScheduleMarkerPipelineRunRequest {
+}
+
+message SCMTScheduleMarkerPipelineRunResponse {
+}
+
+message SCMTSchedulePoiPipelineRunRequest {
+}
+
+message SCMTSchedulePoiPipelineRunResponse {
+}
+
+message SCMTSearchCards {
+    repeated .snapchat.map.SCMTSearchCards.SCMTSearchCards_Section sectionsArray = 1;
+    message SCMTSearchCards_PoiRow {
+        string id_p = 1;
+        .snapchat.map.SCMTPoint latlng = 2;
+        double zoom = 3;
+        double timestamp = 4;
+        string titleFmt = 5;
+        string subtitleFmt = 6;
+        .snapchat.map.SCMTGeoBox boundingBox = 7;
+        .snapchat.map.SCMTThumbnail thumb = 20;
+        .snapchat.context.SCStoryManifest manifest = 21;
+        .snapchat.map.SCMTPointOfInterest.SCMTPointOfInterest_DiscoverInfo discoverInfo = 22;
+    }
+    message SCMTSearchCards_Row {
+        .snapchat.map.SCMTSearchCards.SCMTSearchCards_PoiRow poiRow = 1;
+    }
+    message SCMTSearchCards_Section {
+        .snapchat.map.SCMTSearchCards.SCMTSearchCards_Section.SCMTSearchCards_SectionType type = 1;
+        string headline = 2;
+        int32 numToShow = 3;
+        repeated .snapchat.map.SCMTSearchCards.SCMTSearchCards_Row rowsArray = 10;
+        enum SCMTSearchCards_SectionType {
+            SCMTSearchCards_SectionType_Unknown = 0;
+            SCMTSearchCards_SectionType_Friends = 1;
+            SCMTSearchCards_SectionType_HappeningNow = 2;
+            SCMTSearchCards_SectionType_Nearby = 3;
+            SCMTSearchCards_SectionType_Locations = 4;
+            SCMTSearchCards_SectionType_FriendsMap = 5;
+            SCMTSearchCards_SectionType_FriendsAll = 6;
+            SCMTSearchCards_SectionType_Pois = 7;
+            SCMTSearchCards_SectionType_Stories = 8;
+            SCMTSearchCards_SectionType_TopStories = 9;
+            SCMTSearchCards_SectionType_FriendsFinder = 10;
+        }
+    }
+}
+
+message SCMTShareEligiblePointOfInterest {
+    .snapchat.map.SCMTPointOfInterest poi = 1;
+    int64 mostRecentGeneration = 2;
+}
+
+message SCMTSnapInfo {
+    string id_p = 1;
+    double timestamp = 2;
+}
+
+message SCMTSynchronizationCheckInRequest {
+    repeated .snapchat.map.SCMTTileSetId loadingTileSetIdsArray = 1;
+    repeated .snapchat.map.SCMTTileSetId servingTileSetIdsArray = 2;
+    repeated .snapchat.map.SCMTTileSetId latestTileSetIdsArray = 3;
+}
+
+message SCMTSynchronizationCheckInResponse {
+    .snapchat.map.SCMTSynchronizationCheckInResponse.SCMTMapServerStatus status = 1;
+    repeated .snapchat.map.SCMTTileSetId loadedTileSetIdsArray = 2;
+    enum SCMTMapServerStatus {
+        SCMTMapServerStatus_Warming = 0;
+        SCMTMapServerStatus_Serving = 1;
+        SCMTMapServerStatus_Unhealthy = 2;
+    }
+}
+
+message SCMTThumbnail {
+    string id_p = 1;
+    string key = 2;
+    string iv = 3;
+    string URL = 4;
+    string thumbnailData = 5;
+    string snapId = 6;
+    string publicFilename = 10;
+    .snapchat.map.SCMTThumbnail.SCMTThumbnail_DisplayType displayType = 11;
+    .snapchat.streaming.SCMTThumbnailInfo streamingThumbnailInfo = 12;
+    enum SCMTThumbnail_DisplayType {
+        SCMTThumbnail_DisplayType_Circle = 0;
+        SCMTThumbnail_DisplayType_Direct = 1;
+    }
+}
+
+message SCMTTile {
+    .snapchat.map.SCMTTileId id_p = 1;
+    .snapchat.map.SCMTTileSetId tileSetId = 3;
+    .snapchat.map.SCMTHeatmapTile heatmapTile = 20;
+    .snapchat.map.SCMTPoiTile poiTile = 21;
+    .snapchat.map.SCMTGameTile gameTile = 22;
+    .snapchat.map.SCMTMarkerTile markerTile = 23;
+}
+
+message SCMTTileId {
+    int32 x = 3;
+    int32 y = 4;
+    int32 zoom = 5;
+}
+
+message SCMTTileMetadata {
+    .snapchat.map.SCMTTileId tileId = 1;
+    int32 timeZoneOffsetMs = 2;
+    .snapchat.map.SCMTTileMetadata.SCMTTileMetadata_Weather currentWeather = 3;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 4;
+    repeated .snapchat.map.SCMTReverseGeocodedPoint geocodedPointsArray = 5;
+    message SCMTTileMetadata_Weather {
+        .snapchat.map.SCMTTileMetadata.SCMTTileMetadata_Weather.SCMTTileMetadata_Weather_Condition condition = 1;
+        float temperatureF = 2;
+        enum SCMTTileMetadata_Weather_Condition {
+            SCMTTileMetadata_Weather_Condition_Unknown = 0;
+            SCMTTileMetadata_Weather_Condition_ClearNight = 1;
+            SCMTTileMetadata_Weather_Condition_Cloudy = 2;
+            SCMTTileMetadata_Weather_Condition_Hail = 3;
+            SCMTTileMetadata_Weather_Condition_Lightning = 4;
+            SCMTTileMetadata_Weather_Condition_LowVisibility = 5;
+            SCMTTileMetadata_Weather_Condition_PartialCloudy = 6;
+            SCMTTileMetadata_Weather_Condition_PartialCloudyNight = 7;
+            SCMTTileMetadata_Weather_Condition_Rainy = 8;
+            SCMTTileMetadata_Weather_Condition_Snow = 9;
+            SCMTTileMetadata_Weather_Condition_Sunny = 10;
+            SCMTTileMetadata_Weather_Condition_Windy = 11;
+        }
+    }
+}
+
+message SCMTTileSetId {
+    string flavor = 1;
+    int64 epoch = 2;
+    .snapchat.map.SCMTTileSetId.SCMTTileSetType type = 3;
+    enum SCMTTileSetType {
+        SCMTTileSetType_Legacy = 0;
+        SCMTTileSetType_Heat = 1;
+        SCMTTileSetType_Poi = 2;
+        SCMTTileSetType_Game = 3;
+        SCMTTileSetType_Marker = 4;
+    }
+}
+
+message SCMTTileSetInfo {
+    .snapchat.map.SCMTTileSetId id_p = 1;
+    .snapchat.map.SCMTTileSetInfo.SCMTTileSetInfo_State state = 2;
+    double startTime = 3;
+    double lastUpdateTime = 4;
+    .snapchat.map.SCMTRenderConfig renderConfig = 5;
+    .snapchat.map.SCMTHeatTileSetInfo heatTileSetInfo = 20;
+    .snapchat.map.SCMTPoiTileSetInfo poiTileSetInfo = 21;
+    .snapchat.map.SCMTGameTileSetInfo gameTileSetInfo = 22;
+    .snapchat.map.SCMTMarkerTileSetInfo markerTileSetInfo = 23;
+    enum SCMTTileSetInfo_State {
+        SCMTTileSetInfo_State_Started = 0;
+        SCMTTileSetInfo_State_TileGenDone = 1;
+        SCMTTileSetInfo_State_Loading = 2;
+        SCMTTileSetInfo_State_Serving = 10;
+        SCMTTileSetInfo_State_Expired = 11;
+        SCMTTileSetInfo_State_Invalidated = 100;
+        SCMTTileSetInfo_State_Error = 101;
+        SCMTTileSetInfo_State_Deleting = 102;
+    }
+}

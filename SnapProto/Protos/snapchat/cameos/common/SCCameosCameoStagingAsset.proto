@@ -1,0 +1,61 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+import "snapchat/cameos/common/SCCameosLens.proto";
+
+message SCCameosCameoStagingAsset {
+    repeated .snapchat.cameos.common.SCCameosCameoStagingAsset.SCCameosCameoStagingAsset_CameoStagingAssetItem bundleItemsArray = 1;
+    repeated .snapchat.cameos.common.SCCameosCameoStagingAsset.SCCameosGender gendersArray = 2;
+    repeated .snapchat.cameos.common.SCCameosCameoStagingAsset.TargetLensesEntry targetLenses = 5;
+    string s3GeneratedAssetPreviewPath = 3;
+    string generatedAssetPreviewContentURL = 4;
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    message SCCameosCameoStagingAsset_CameoStagingAssetItem {
+        .snapchat.cameos.common.SCCameosCameoStagingAsset.SCCameosCameoStagingAsset_CameoStagingAssetItem.SCCameosCreativeContentType contentType = 1;
+        string s3FilePath = 2;
+        string contentURL = 3;
+        enum SCCameosCreativeContentType {
+            SCCameosCreativeContentType_Unset = 0;
+            SCCameosCreativeContentType_ChatCameoContentType = 1;
+            SCCameosCreativeContentType_ChatConfigContentType = 2;
+            SCCameosCreativeContentType_OnboardingPngContentType = 3;
+            SCCameosCreativeContentType_OnboardingJpgContentType = 4;
+            SCCameosCreativeContentType_OnboardingWebpContentType = 5;
+            SCCameosCreativeContentType_OnboardingVideoContentType = 6;
+            SCCameosCreativeContentType_PlaceholderContentType = 7;
+            SCCameosCreativeContentType_QuicksearchIconTopicContentType = 8;
+            SCCameosCreativeContentType_QuicksearchIconPackContentType = 9;
+            SCCameosCreativeContentType_DiscoverTileCameoContentType = 10;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentType = 11;
+            SCCameosCreativeContentType_DiscoverSnapLowResolutionCameoContentType = 12;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant1 = 13;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant2 = 14;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant3 = 15;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant4 = 16;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant5 = 17;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant6 = 18;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant7 = 19;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant8 = 20;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeHeadTurnsVariant1 = 21;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeHeadTurnsVariant2 = 22;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeHeadTurnsVariant3 = 23;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant9 = 24;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant10 = 25;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant1Experimental = 26;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant4Experimental = 27;
+            SCCameosCreativeContentType_DiscoverSnapCameoContentTypeVariant7Experimental = 28;
+            SCCameosCreativeContentType_LensCameoContentType = 29;
+        }
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.snapchat.commerce;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Commerce";
+
+import "com/snapchat/commerce/wire/product/GetProductInfo.proto";
+import "com/snapchat/commerce/wire/store/GetMyStores.proto";
+import "com/snapchat/commerce/wire/store/GetStoreInfo.proto";
+import "com/snapchat/commerce/wire/store/GetStoreProducts.proto";
+
+service CommerceApiService{
+    rpc GetMyStores(.com.snapchat.commerce.wire.store.GetMyStoresRequest) returns (.com.snapchat.commerce.wire.store.GetMyStoresResponse);
+    rpc GetProductInfo(.com.snapchat.commerce.wire.product.GetProductInfoRequest) returns (.com.snapchat.commerce.wire.product.GetProductInfoResponse);
+    rpc GetStoreInfo(.com.snapchat.commerce.wire.store.GetStoreInfoRequest) returns (.com.snapchat.commerce.wire.store.GetStoreInfoResponse);
+    rpc GetStoreProducts(.com.snapchat.commerce.wire.store.GetStoreProductsRequest) returns (.com.snapchat.commerce.wire.store.GetStoreProductsResponse);
+}

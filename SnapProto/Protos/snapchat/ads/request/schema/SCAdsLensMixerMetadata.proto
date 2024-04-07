@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsLensMixerMetadata {
+    int64 mediaUnlockableId = 1;
+    string brandName = 2;
+    bytes creatorUserId = 3;
+    bool isRegulatedContent = 4;
+    string callToAction = 5;
+    .snapchat.ads.request.schema.SCAdsLensMixerMetadata.SCAdsSCTAttachmentType attachmentType = 6;
+    enum SCAdsSCTAttachmentType {
+        SCAdsSCTAttachmentType_AttachmentUnset = 0;
+        SCAdsSCTAttachmentType_AppInstall = 1;
+        SCAdsSCTAttachmentType_LongFormVideo = 2;
+        SCAdsSCTAttachmentType_WebView = 3;
+        SCAdsSCTAttachmentType_DeepLink = 4;
+    }
+}

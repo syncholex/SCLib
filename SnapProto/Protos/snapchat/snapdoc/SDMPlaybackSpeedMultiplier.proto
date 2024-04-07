@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "google/protobuf/empty.proto";
+
+message SDMPlaybackSpeedMultiplier {
+    float speedMultiplier = 1;
+    .google.protobuf.Empty constant = 2;
+    .google.protobuf.Empty bezierCurve = 3;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesLongFormVideoAttachment {
+    string videoId = 1;
+    int32 videoPlatform = 2;
+    string videoURL = 3;
+}

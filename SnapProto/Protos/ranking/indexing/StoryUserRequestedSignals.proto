@@ -1,0 +1,13 @@
+syntax = "proto3";
+package ranking.indexing;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Indexing";
+
+message ScpBoostInfo {
+    int64 startTimeMs = 1;
+    int64 endTimeMs = 2;
+}
+
+message UserRequestedRankingSignals {
+    .ranking.indexing.ScpBoostInfo scpBoostInfo = 1;
+}

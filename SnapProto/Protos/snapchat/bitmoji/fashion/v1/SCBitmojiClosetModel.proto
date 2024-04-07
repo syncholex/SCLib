@@ -1,0 +1,57 @@
+syntax = "proto3";
+package snapchat.bitmoji.fashion.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Fashion.V1";
+
+import "snapchat/bitmoji/fashion/v1/SCBitmojiFashionModel.proto";
+
+message SCBitmojiCategory {
+    repeated .snapchat.bitmoji.fashion.v1.SCBitmojiClosetCategoryItem itemsArray = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiCategory.SCBitmojiClosetCategoryType closetCategory = 2;
+    int32 categorySizeLimit = 3;
+    bytes nextPageToken = 4;
+    enum SCBitmojiClosetCategoryType {
+        SCBitmojiClosetCategoryType_Unset = 0;
+        SCBitmojiClosetCategoryType_Outfit = 1;
+        SCBitmojiClosetCategoryType_Top = 2;
+        SCBitmojiClosetCategoryType_Bottom = 3;
+        SCBitmojiClosetCategoryType_Outerwear = 4;
+        SCBitmojiClosetCategoryType_OnePiece = 5;
+        SCBitmojiClosetCategoryType_Footwear = 6;
+        SCBitmojiClosetCategoryType_Sock = 7;
+    }
+}
+
+message SCBitmojiClosetCategoryItem {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiClosetCategoryItem.SCBitmojiClosetItemSource source = 8;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiTop top = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiBottom bottom = 2;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiFootwear footwear = 3;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiSock sock = 4;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOuterwear outerwear = 5;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOnePiece onePiece = 6;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOutfit outfit = 7;
+    enum SCBitmojiClosetItemSource {
+        SCBitmojiClosetItemSource_ClosetItemSourceUnset = 0;
+        SCBitmojiClosetItemSource_Drop = 1;
+    }
+}
+
+message SCBitmojiClosetItem {
+    .snapchat.bitmoji.fashion.v1.SCBitmojiTop top = 1;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiBottom bottom = 2;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiFootwear footwear = 3;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiSock sock = 4;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOuterwear outerwear = 5;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOnePiece onePiece = 6;
+    .snapchat.bitmoji.fashion.v1.SCBitmojiOutfit outfit = 7;
+}
+
+message SCBitmojiClosetItems {
+    repeated .snapchat.bitmoji.fashion.v1.SCBitmojiClosetItem itemsArray = 1;
+}
+
+message SCBitmojiRecentOutfits {
+    repeated .snapchat.bitmoji.fashion.v1.SCBitmojiOutfit recentOutfitsArray = 1;
+}

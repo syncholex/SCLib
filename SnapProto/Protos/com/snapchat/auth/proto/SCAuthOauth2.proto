@@ -1,0 +1,197 @@
+syntax = "proto3";
+package com.snapchat.auth.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuth";
+option csharp_namespace = "SnapProto.Com.Snapchat.Auth.Proto";
+
+message SCAuthApprovalRequest {
+    string approvalToken = 1;
+    repeated string scopesApprovedArray = 2;
+}
+
+message SCAuthApprovalResponse {
+    string redirectUri = 1;
+    string code = 2;
+    string state = 3;
+}
+
+message SCAuthApproveRequest {
+    string approvalToken = 1;
+    repeated string scopesApprovedArray = 2;
+}
+
+message SCAuthApproveResponse {
+    string redirectUri = 1;
+    string code = 2;
+    string state = 3;
+}
+
+message SCAuthAuthorizationRequest {
+    string responseType = 1;
+    string clientId = 2;
+    string redirectUri = 3;
+    string scope = 4;
+    string state = 5;
+    string codeChallengeMethod = 6;
+    string codeChallenge = 7;
+}
+
+message SCAuthAuthorizationResponse {
+    string approvalToken = 1;
+    string clientName = 2;
+    string clientDescription = 3;
+    string clientIconURL = 4;
+    repeated .com.snapchat.auth.proto.SCAuthScope scopesRequestedArray = 5;
+    bool consentRequired = 6;
+}
+
+message SCAuthAuthorizeRequest {
+    string responseType = 1;
+    string clientId = 2;
+    string redirectUri = 3;
+    string scope = 4;
+    string state = 5;
+    string codeChallengeMethod = 6;
+    string codeChallenge = 7;
+}
+
+message SCAuthAuthorizeResponse {
+    string approvalToken = 1;
+    string clientName = 2;
+    string clientDescription = 3;
+    string clientIconURL = 4;
+    repeated .com.snapchat.auth.proto.SCAuthScope scopesRequestedArray = 5;
+    bool consentRequired = 6;
+}
+
+message SCAuthCreateClientRequest {
+    string name = 1;
+    string description_p = 2;
+    string iconURL = 3;
+    repeated string redirectUrisArray = 4;
+    repeated string scopesArray = 5;
+    .com.snapchat.auth.proto.SCAuthCreateClientRequest.SCAuthClientType clientType = 6;
+    .com.snapchat.auth.proto.SCAuthCreateClientRequest.SCAuthProductType productType = 7;
+    enum SCAuthClientType {
+        SCAuthClientType_ClientTypeUnset = 0;
+        SCAuthClientType_ClientTypeConfidential = 1;
+        SCAuthClientType_ClientTypePublic = 2;
+    }
+    enum SCAuthProductType {
+        SCAuthProductType_ProductTypeUnset = 0;
+        SCAuthProductType_ProductTypeAdsApi = 1;
+        SCAuthProductType_ProductTypeSnapKit = 2;
+        SCAuthProductType_ProductTypeMini = 3;
+    }
+}
+
+message SCAuthCreateClientResponse {
+    string clientId = 1;
+    string clientSecret = 2;
+}
+
+message SCAuthDeleteClientRequest {
+    repeated string clientIdsArray = 1;
+}
+
+message SCAuthDeleteClientResponse {
+}
+
+message SCAuthDenialRequest {
+    string approvalToken = 1;
+}
+
+message SCAuthDenyRequest {
+    string approvalToken = 1;
+}
+
+message SCAuthDenyResponse {
+}
+
+message SCAuthError {
+    string error = 1;
+    string errorDescription = 2;
+    string state = 3;
+}
+
+message SCAuthGetClientRequest {
+    string clientId = 1;
+}
+
+message SCAuthGetClientResponse {
+    string clientId = 1;
+    string name = 2;
+    string iconURL = 3;
+    repeated .com.snapchat.auth.proto.SCAuthScope scopesArray = 4;
+    string description_p = 5;
+    repeated string redirectUrisArray = 6;
+    .com.snapchat.auth.proto.SCAuthGetClientResponse.SCAuthClientType clientType = 7;
+    enum SCAuthClientType {
+        SCAuthClientType_ClientTypeUnset = 0;
+        SCAuthClientType_ClientTypeConfidential = 1;
+        SCAuthClientType_ClientTypePublic = 2;
+    }
+}
+
+message SCAuthRevocationRequest {
+    string clientId = 1;
+    string token = 2;
+    string clientSecret = 3;
+}
+
+message SCAuthRevokeClientsRequest {
+    string userId = 1;
+    repeated string clientIdsArray = 2;
+}
+
+message SCAuthRevokeRequest {
+    string clientId = 1;
+    string token = 2;
+    string clientSecret = 3;
+}
+
+message SCAuthRevokeResponse {
+}
+
+message SCAuthScope {
+    string name = 1;
+    repeated string descriptionsArray = 2;
+    bool toggleable = 3;
+    string icon = 4;
+}
+
+message SCAuthTokenRequest {
+    string clientId = 1;
+    string clientSecret = 2;
+    string grantType = 3;
+    string code = 4;
+    string redirectUri = 5;
+    string codeVerifier = 6;
+    string refreshToken = 7;
+}
+
+message SCAuthTokenResponse {
+    string accessToken = 1;
+    string tokenType = 2;
+    uint32 expiresIn = 3;
+    string refreshToken = 4;
+    string scope = 5;
+}
+
+message SCAuthUpdateClientRequest {
+    string clientId = 1;
+    repeated string scopesArray = 2;
+    string description_p = 3;
+    string iconURL = 4;
+    repeated string redirectUrisArray = 5;
+    string name = 6;
+    .com.snapchat.auth.proto.SCAuthUpdateClientRequest.SCAuthClientType clientType = 7;
+    enum SCAuthClientType {
+        SCAuthClientType_ClientTypeUnset = 0;
+        SCAuthClientType_ClientTypeConfidential = 1;
+        SCAuthClientType_ClientTypePublic = 2;
+    }
+}
+
+message SCAuthUpdateClientResponse {
+}

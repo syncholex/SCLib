@@ -1,0 +1,10 @@
+syntax = "proto3";
+package com.snapchat.proto.ad;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBAd";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Ad";
+
+message SCPBAdOpportunityRequestIds {
+    string filterOpportunityRequestId = 1;
+    string lensOpportunityRequestId = 2;
+}

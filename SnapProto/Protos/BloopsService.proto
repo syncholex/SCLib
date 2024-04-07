@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.cameos.bloops;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Snapchat.Cameos.Bloops";
+
+import "snapchat/cameos/bloops/SCCameosBloopsService.proto";
+
+service BloopsService{
+    rpc GetMyBloopsData(.snapchat.cameos.bloops.SCCameosGetMyBloopsDataRequest) returns (.snapchat.cameos.bloops.SCCameosGetMyBloopsDataResponse);
+}

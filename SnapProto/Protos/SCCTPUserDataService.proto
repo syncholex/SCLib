@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.creativetools.userdata;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Creativetools.Userdata";
+
+import "snapchat/creativetools/userdata/SCCTPUserdataService.proto";
+
+service UserDataService{
+    rpc CheckItems(.snapchat.creativetools.userdata.SCCTPCheckItemsRequest) returns (.snapchat.creativetools.userdata.SCCTPCheckItemsResponse);
+    rpc ListItems(.snapchat.creativetools.userdata.SCCTPListItemsRequest) returns (.snapchat.creativetools.userdata.SCCTPListItemsResponse);
+    rpc PutItems(.snapchat.creativetools.userdata.SCCTPPutItemsRequest) returns (.snapchat.creativetools.userdata.SCCTPPutItemsResponse);
+    rpc PutItemsByExternalID(.snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDRequest) returns (.snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDResponse);
+    rpc RemoveAllItems(.snapchat.creativetools.userdata.SCCTPRemoveAllItemsRequest) returns (.snapchat.creativetools.userdata.SCCTPRemoveAllItemsResponse);
+    rpc RemoveItems(.snapchat.creativetools.userdata.SCCTPRemoveItemsRequest) returns (.snapchat.creativetools.userdata.SCCTPRemoveItemsResponse);
+    rpc RemoveItemsByExternalID(.snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDRequest) returns (.snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDResponse);
+}

@@ -1,0 +1,133 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+message SCSUPRegisteredInterest {
+    .ranking.pii.user.profile.SCSUPRegisteredInterest.SCSUPRegisteredInterestType_Enum registeredInterestsType = 1;
+    string displayName = 2;
+    enum SCSUPRegisteredInterestType_Enum {
+        SCSUPRegisteredInterestType_Enum_Unknown = 0;
+        SCSUPRegisteredInterestType_Enum_Entertainment = 1;
+        SCSUPRegisteredInterestType_Enum_TvAndMovie = 2;
+        SCSUPRegisteredInterestType_Enum_Gaming = 3;
+        SCSUPRegisteredInterestType_Enum_BeautyAndStyle = 4;
+        SCSUPRegisteredInterestType_Enum_Beauty = 5;
+        SCSUPRegisteredInterestType_Enum_FashionAndStyle = 6;
+        SCSUPRegisteredInterestType_Enum_Music = 7;
+        SCSUPRegisteredInterestType_Enum_MusicPop = 8;
+        SCSUPRegisteredInterestType_Enum_MusicHiphop = 9;
+        SCSUPRegisteredInterestType_Enum_Celebrity = 10;
+        SCSUPRegisteredInterestType_Enum_News = 11;
+        SCSUPRegisteredInterestType_Enum_NewsGeneral = 12;
+        SCSUPRegisteredInterestType_Enum_Business = 13;
+        SCSUPRegisteredInterestType_Enum_ScienceAndTechnology = 14;
+        SCSUPRegisteredInterestType_Enum_Sports = 15;
+        SCSUPRegisteredInterestType_Enum_Fun = 16;
+        SCSUPRegisteredInterestType_Enum_FunGeneral = 17;
+        SCSUPRegisteredInterestType_Enum_Animals = 18;
+        SCSUPRegisteredInterestType_Enum_FoodAndTravel = 19;
+        SCSUPRegisteredInterestType_Enum_Food = 20;
+        SCSUPRegisteredInterestType_Enum_Travel = 21;
+        SCSUPRegisteredInterestType_Enum_Lifestyle = 22;
+        SCSUPRegisteredInterestType_Enum_Dating = 23;
+        SCSUPRegisteredInterestType_Enum_Fitness = 24;
+        SCSUPRegisteredInterestType_Enum_Diy = 25;
+        SCSUPRegisteredInterestType_Enum_Parenting = 26;
+        SCSUPRegisteredInterestType_Enum_Auto = 27;
+        SCSUPRegisteredInterestType_Enum_Comedy = 28;
+    }
+}
+
+message SCSUPRegisteredInterestInfo {
+    .ranking.pii.user.profile.SCSUPRegisteredInterestInfo.SCSUPRegisteredInterestType_Enum registeredInterest = 1;
+    .ranking.pii.user.profile.SCSUPRegisteredInterestInfo.SCSUPRegisteredInterestInfo_State state = 2;
+    int64 updateTimestampMsecs = 3;
+    int64 stateExpireTimestampMsecs = 4;
+    string displayName = 5;
+    enum SCSUPRegisteredInterestType_Enum {
+        SCSUPRegisteredInterestType_Enum_Unknown = 0;
+        SCSUPRegisteredInterestType_Enum_Entertainment = 1;
+        SCSUPRegisteredInterestType_Enum_TvAndMovie = 2;
+        SCSUPRegisteredInterestType_Enum_Gaming = 3;
+        SCSUPRegisteredInterestType_Enum_BeautyAndStyle = 4;
+        SCSUPRegisteredInterestType_Enum_Beauty = 5;
+        SCSUPRegisteredInterestType_Enum_FashionAndStyle = 6;
+        SCSUPRegisteredInterestType_Enum_Music = 7;
+        SCSUPRegisteredInterestType_Enum_MusicPop = 8;
+        SCSUPRegisteredInterestType_Enum_MusicHiphop = 9;
+        SCSUPRegisteredInterestType_Enum_Celebrity = 10;
+        SCSUPRegisteredInterestType_Enum_News = 11;
+        SCSUPRegisteredInterestType_Enum_NewsGeneral = 12;
+        SCSUPRegisteredInterestType_Enum_Business = 13;
+        SCSUPRegisteredInterestType_Enum_ScienceAndTechnology = 14;
+        SCSUPRegisteredInterestType_Enum_Sports = 15;
+        SCSUPRegisteredInterestType_Enum_Fun = 16;
+        SCSUPRegisteredInterestType_Enum_FunGeneral = 17;
+        SCSUPRegisteredInterestType_Enum_Animals = 18;
+        SCSUPRegisteredInterestType_Enum_FoodAndTravel = 19;
+        SCSUPRegisteredInterestType_Enum_Food = 20;
+        SCSUPRegisteredInterestType_Enum_Travel = 21;
+        SCSUPRegisteredInterestType_Enum_Lifestyle = 22;
+        SCSUPRegisteredInterestType_Enum_Dating = 23;
+        SCSUPRegisteredInterestType_Enum_Fitness = 24;
+        SCSUPRegisteredInterestType_Enum_Diy = 25;
+        SCSUPRegisteredInterestType_Enum_Parenting = 26;
+        SCSUPRegisteredInterestType_Enum_Auto = 27;
+        SCSUPRegisteredInterestType_Enum_Comedy = 28;
+    }
+    enum SCSUPRegisteredInterestInfo_State {
+        SCSUPRegisteredInterestInfo_State_Unknown = 0;
+        SCSUPRegisteredInterestInfo_State_Registered = 1;
+        SCSUPRegisteredInterestInfo_State_Unregistered = 2;
+    }
+}
+
+message SCSUPRegisteredInterestType {
+}
+
+message SCSUPRegisteredInterests {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPRegisteredInterests.RegisteredInterestsEntry registeredInterests = 2;
+    message RegisteredInterestsEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.SCSUPRegisteredInterestInfo value = 2;
+    }
+}
+
+message SCSUPScoredRegisteredInterest {
+    .ranking.pii.user.profile.SCSUPScoredRegisteredInterest.SCSUPRegisteredInterestType_Enum registeredInterestsType = 1;
+    float score = 2;
+    enum SCSUPRegisteredInterestType_Enum {
+        SCSUPRegisteredInterestType_Enum_Unknown = 0;
+        SCSUPRegisteredInterestType_Enum_Entertainment = 1;
+        SCSUPRegisteredInterestType_Enum_TvAndMovie = 2;
+        SCSUPRegisteredInterestType_Enum_Gaming = 3;
+        SCSUPRegisteredInterestType_Enum_BeautyAndStyle = 4;
+        SCSUPRegisteredInterestType_Enum_Beauty = 5;
+        SCSUPRegisteredInterestType_Enum_FashionAndStyle = 6;
+        SCSUPRegisteredInterestType_Enum_Music = 7;
+        SCSUPRegisteredInterestType_Enum_MusicPop = 8;
+        SCSUPRegisteredInterestType_Enum_MusicHiphop = 9;
+        SCSUPRegisteredInterestType_Enum_Celebrity = 10;
+        SCSUPRegisteredInterestType_Enum_News = 11;
+        SCSUPRegisteredInterestType_Enum_NewsGeneral = 12;
+        SCSUPRegisteredInterestType_Enum_Business = 13;
+        SCSUPRegisteredInterestType_Enum_ScienceAndTechnology = 14;
+        SCSUPRegisteredInterestType_Enum_Sports = 15;
+        SCSUPRegisteredInterestType_Enum_Fun = 16;
+        SCSUPRegisteredInterestType_Enum_FunGeneral = 17;
+        SCSUPRegisteredInterestType_Enum_Animals = 18;
+        SCSUPRegisteredInterestType_Enum_FoodAndTravel = 19;
+        SCSUPRegisteredInterestType_Enum_Food = 20;
+        SCSUPRegisteredInterestType_Enum_Travel = 21;
+        SCSUPRegisteredInterestType_Enum_Lifestyle = 22;
+        SCSUPRegisteredInterestType_Enum_Dating = 23;
+        SCSUPRegisteredInterestType_Enum_Fitness = 24;
+        SCSUPRegisteredInterestType_Enum_Diy = 25;
+        SCSUPRegisteredInterestType_Enum_Parenting = 26;
+        SCSUPRegisteredInterestType_Enum_Auto = 27;
+        SCSUPRegisteredInterestType_Enum_Comedy = 28;
+    }
+}

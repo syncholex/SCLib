@@ -1,0 +1,23 @@
+syntax = "proto3";
+package impala;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala";
+
+message IMPTermsAndConditions {
+    .impala.IMPTermsAndConditions.IMPTermsAndConditions_Type type = 1;
+    .impala.IMPTermsAndConditions.IMPTermsAndConditions_Status status = 2;
+    string version = 3;
+    bool shouldShow = 4;
+    int64 acknowledgedTimestampMs = 5;
+    enum IMPTermsAndConditions_Status {
+        IMPTermsAndConditions_Status_UnseenUnset = 0;
+        IMPTermsAndConditions_Status_Accepted = 1;
+        IMPTermsAndConditions_Status_Rejected = 2;
+    }
+    enum IMPTermsAndConditions_Type {
+        IMPTermsAndConditions_Type_Unset = 0;
+        IMPTermsAndConditions_Type_Gifting = 1;
+        IMPTermsAndConditions_Type_Monetization = 2;
+    }
+}

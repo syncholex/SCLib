@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.product;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Product";
+
+import "com/snapchat/commerce/domain/product/ProductInfo.proto";
+import "com/snapchat/commerce/wire/error/Error.proto";
+
+message GetProductInfoRequest {
+    bytes productId = 1;
+    uint32 productImageSizeList = 2;
+}
+
+message GetProductInfoResponse {
+    string requestId = 3;
+    .com.snapchat.commerce.domain.product.ProductInfo productInfo = 1;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError error = 2;
+}

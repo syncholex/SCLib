@@ -1,0 +1,25 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMGeneratedCameo {
+    .snapchat.snapdoc.SDMGeneratedCameo.SDMGeneratedCameo_Source source = 1;
+    .snapchat.snapdoc.SDMGeneratedCameo.SDMGeneratedCameo_ContentType contentType = 4;
+    int32 personCount = 5;
+    bool isOneFriendCameo = 6;
+    int64 chatCameoId = 2;
+    int64 stickerCameoId = 3;
+    enum SDMGeneratedCameo_ContentType {
+        SDMGeneratedCameo_ContentType_Lens = 0;
+        SDMGeneratedCameo_ContentType_ChatSticker = 1;
+        SDMGeneratedCameo_ContentType_PreviewSticker = 2;
+        SDMGeneratedCameo_ContentType_CameosStories = 3;
+    }
+    enum SDMGeneratedCameo_Source {
+        SDMGeneratedCameo_Source_Unknown = 0;
+        SDMGeneratedCameo_Source_Chat = 1;
+        SDMGeneratedCameo_Source_Discover = 2;
+    }
+}

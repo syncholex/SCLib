@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery.servlet;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGalleryServlet";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery.Servlet";
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletQuotaUsage.proto";
+
+message SCPBGalleryServletQuota {
+    bool unlimited = 1;
+    .com.snapchat.proto.gallery.servlet.SCPBGalleryServletQuotaUsage snapNumber = 2;
+}

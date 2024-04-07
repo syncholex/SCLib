@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.bitmoji.profile.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Profile.V1";
+
+import "snapchat/bitmoji/profile/v1/SCBitmojiBackgroundURL.proto";
+
+message SCBitmojiRemoveBitmojiBackgroundURLRequest {
+    string userId = 1;
+    .snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL backgroundURL = 2;
+}
+
+message SCBitmojiRemoveBitmojiBackgroundURLResponse {
+}
+
+message SCBitmojiUpdate2dSelfieRequest {
+    uint32 selfieId = 1;
+}
+
+message SCBitmojiUpdate2dSelfieResponse {
+}
+
+message SCBitmojiUpdate3dProfileRequest {
+    uint32 sceneId = 1;
+    string sceneIdStr = 3;
+    uint32 backgroundId = 2;
+    string backgroundIdStr = 4;
+    .snapchat.bitmoji.profile.v1.SCBitmojiBitmojiBackgroundURL backgroundURL = 5;
+}
+
+message SCBitmojiUpdate3dProfileResponse {
+}

@@ -1,0 +1,64 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+message MediaReference {
+    string URL = 2;
+    bytes contentObject = 3;
+    .snapchat.content.VideoDescription videoDescription = 5;
+    int64 mediaListId = 6;
+    .snapchat.content.MediaReference.MediaReference_ClaimBehavior claimBehavior = 7;
+    .snapchat.content.MediaReference.SCCMediaType mediaType = 8;
+    string localContentKey = 9;
+    string localCacheKey = 10;
+    enum MediaReference_ClaimBehavior {
+        MediaReference_ClaimBehavior_CanExtendMediaClaim = 0;
+        MediaReference_ClaimBehavior_DoNotClaim = 1;
+    }
+    enum SCCMediaType {
+        SCCMediaType_Unassigned = 0;
+        SCCMediaType_Overlay = 1;
+        SCCMediaType_Image = 2;
+        SCCMediaType_Video = 3;
+        SCCMediaType_AssetBundle = 4;
+        SCCMediaType_Audio = 5;
+        SCCMediaType_AnimatedImage = 6;
+        SCCMediaType_Font = 7;
+        SCCMediaType_WebViewContent = 8;
+        SCCMediaType_VideoNoAudio = 9;
+        SCCMediaType_Subtitles = 10;
+        SCCMediaType_DataBlob = 11;
+    }
+}
+
+message VideoDescription {
+    .snapchat.content.VideoDescription.VideoDescription_VideoPlaybackType videoPlaybackType = 1;
+    .snapchat.content.VideoDescription.VideoDescription_MediaQualityType mediaQualityType = 2;
+    enum VideoDescription_MediaQualityType {
+        VideoDescription_MediaQualityType_MediaQualityTypeUnknown = 0;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel1 = 100;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel2 = 200;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel21 = 210;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel22 = 220;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel25 = 250;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel27 = 270;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel3 = 300;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel32 = 320;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel35 = 350;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel4 = 400;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel45 = 450;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel5 = 500;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel6 = 600;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel65 = 650;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevel7 = 700;
+        VideoDescription_MediaQualityType_MediaQualityTypeLevelMax = 5000;
+    }
+    enum VideoDescription_VideoPlaybackType {
+        VideoDescription_VideoPlaybackType_UnknownVideoPlaybackType = 0;
+        VideoDescription_VideoPlaybackType_FaststartDisabled = 1;
+        VideoDescription_VideoPlaybackType_FaststartEnabled = 2;
+        VideoDescription_VideoPlaybackType_HTTPStreamingDash = 3;
+        VideoDescription_VideoPlaybackType_HTTPStreamingHls = 4;
+    }
+}

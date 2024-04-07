@@ -1,0 +1,868 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "feed/quality/snavboost/SCSQNSectionStats.proto";
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+
+message SCSUPBadgeEngagement {
+    repeated .ranking.pii.user.profile.SCSUPBadgeEngagement.PublisherEngagementEntry publisherEngagement = 1;
+    repeated .ranking.pii.user.profile.SCSUPBadgeEngagement.TriggerFeedTypeEngagementEntry triggerFeedTypeEngagement = 2;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedEngagement = 3;
+    message PublisherEngagementEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message TriggerFeedTypeEngagementEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+}
+
+message SCSUPCognacEngagement {
+    repeated .ranking.pii.user.profile.SCSUPCognacEngagement.CognacStatsEntry cognacStats = 1;
+    message CognacStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPCognacEngagementStats value = 2;
+    }
+}
+
+message SCSUPCognacEngagementStats {
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromChat = 1;
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromDiscover = 2;
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromNotification = 3;
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromSearch = 4;
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromFeed = 5;
+    .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_WindowedCognacStats windowedCognacStatsFromAllSources = 6;
+    message SCSUPCognacEngagementStats_ActionCounts {
+        float gameOpenTotalTimeInSecs = 1;
+        float gameLoadTimeInSecs = 2;
+        uint32 numGameOpens = 3;
+        float gameImpressionTotalTimeInSecs = 4;
+        uint32 numGameImpressions = 5;
+        float avgGroupSize = 6;
+        uint32 numInvitesSent = 7;
+        uint32 numChatsSent = 8;
+        float maxGameLoadTimeInSecs = 9;
+        float minGameLoadTimeInSecs = 10;
+    }
+    message SCSUPCognacEngagementStats_WindowedCognacStats {
+        .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_ActionCounts actionCountsSinceLastWeek = 1;
+        .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_ActionCounts actionCountsSinceLastMonth = 2;
+        .ranking.pii.user.profile.SCSUPCognacEngagementStats.SCSUPCognacEngagementStats_ActionCounts actionCountsSinceLastThreeMonths = 3;
+    }
+}
+
+message SCSUPCommunityStoryUserEngagement {
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedSpotlightFeedStats = 1;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedTopHashtagStatsEntry windowedTopHashtagStats = 2;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedTopCreatorStatsEntry windowedTopCreatorStats = 3;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedLensIdStatsEntry windowedLensIdStats = 4;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedMusicIdStatsEntry windowedMusicIdStats = 5;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedLanguageStatsEntry windowedLanguageStats = 6;
+    repeated .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement.WindowedTopClusteredHashtagStatsEntry windowedTopClusteredHashtagStats = 7;
+    .ranking.pii.user.profile.SCSUPUserSCCAffinity cupSccV3Affinity = 8;
+    .ranking.pii.user.profile.SCSUPUserSCCAffinity cupSccPlusV1Affinity = 9;
+    .ranking.pii.user.profile.SCSUPSpotlightRealtimeWindowedEngagementStats aggregatedSpotlightFeedStatsRealtime = 10;
+    message WindowedTopHashtagStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedTopCreatorStatsEntry {
+        fixed64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedLensIdStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedMusicIdStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedLanguageStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedTopClusteredHashtagStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+}
+
+message SCSUPContentEngagement {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPDynamicStoryEngagement dynamicStoryEngagementsInPastMonthArray = 2;
+    repeated .ranking.pii.user.profile.SCSUPContentEngagement.DiscoverEngagementsInPastMonthEntry discoverEngagementsInPastMonth = 3;
+    repeated .ranking.pii.user.profile.SCSUPContentTypeScore contentTypePreferenceArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPContentTypeScore contentTypePreferenceNormalizedArray = 5;
+    repeated .ranking.pii.user.profile.SCSUPContentTypeScore storyCorpusStatsArray = 6;
+    int32 lastUpdatedTimestampInSecs = 7;
+    int64 lastUpdatedTimestampInMsecs = 8;
+    .ranking.pii.user.profile.SCSUPPublicUserEngagement publicUserEngagement = 9;
+    .ranking.pii.user.profile.SCSUPPublisherEngagement publisherEngagement = 10;
+    repeated .ranking.pii.user.profile.SCSUPContentEngagement.CategoryEngagementEntry categoryEngagement = 11;
+    .ranking.pii.user.profile.SCSUPLensEngagement lensEngagement = 12;
+    .ranking.pii.user.profile.SCSUPMapStoryUserEngagement mapStoryEngagement = 13;
+    .ranking.pii.user.profile.SCSUPSectionEngagement sectionEngagement = 14;
+    .ranking.pii.user.profile.SCSUPCognacEngagement cognacEngagement = 15;
+    .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement communityStoryEngagement = 16;
+    .ranking.pii.user.profile.SCSUPBadgeEngagement badgeEngagement = 17;
+    .ranking.pii.user.profile.SCSUPUserEmbedding spotlightRetrievalEmbedding = 18;
+    repeated .ranking.pii.user.profile.SCSUPFeedSpecificContentEngagement feedSpecificContentEngagementsArray = 19;
+    message DiscoverEngagementsInPastMonthEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPDiscoverEngagement value = 2;
+    }
+    message CategoryEngagementEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+}
+
+message SCSUPContentQualitySubTag {
+}
+
+message SCSUPContentTypeScore {
+    .ranking.pii.user.profile.SCSUPContentTypeScore.SCFEEDStoryCorpus_Corpus corpus = 1;
+    float score = 2;
+    .ranking.pii.user.profile.SCSUPEngagementStats stats = 3;
+    enum SCFEEDStoryCorpus_Corpus {
+        SCFEEDStoryCorpus_Corpus_Unset = 0;
+        SCFEEDStoryCorpus_Corpus_Topics = 1;
+        SCFEEDStoryCorpus_Corpus_Events = 2;
+        SCFEEDStoryCorpus_Corpus_Places = 3;
+        SCFEEDStoryCorpus_Corpus_Locations = 4;
+        SCFEEDStoryCorpus_Corpus_BreakingNews = 5;
+        SCFEEDStoryCorpus_Corpus_TrendingTopics = 6;
+        SCFEEDStoryCorpus_Corpus_RegionalTopics = 7;
+        SCFEEDStoryCorpus_Corpus_Polygon = 8;
+        SCFEEDStoryCorpus_Corpus_Topshared = 9;
+        SCFEEDStoryCorpus_Corpus_Snapcasts = 10;
+        SCFEEDStoryCorpus_Corpus_Spotted = 11;
+        SCFEEDStoryCorpus_Corpus_ManualStorybuilder = 12;
+        SCFEEDStoryCorpus_Corpus_Solo = 13;
+        SCFEEDStoryCorpus_Corpus_MapsStory = 14;
+        SCFEEDStoryCorpus_Corpus_MapsCallout = 15;
+        SCFEEDStoryCorpus_Corpus_Publisher = 16;
+        SCFEEDStoryCorpus_Corpus_PublicUser = 17;
+        SCFEEDStoryCorpus_Corpus_RecommendedUser = 18;
+        SCFEEDStoryCorpus_Corpus_PromotedStory = 19;
+        SCFEEDStoryCorpus_Corpus_GroupStory = 20;
+        SCFEEDStoryCorpus_Corpus_LiveStream = 21;
+        SCFEEDStoryCorpus_Corpus_Featured = 22;
+        SCFEEDStoryCorpus_Corpus_Cognac = 23;
+        SCFEEDStoryCorpus_Corpus_LensObject = 24;
+        SCFEEDStoryCorpus_Corpus_Selection = 25;
+        SCFEEDStoryCorpus_Corpus_FriendStory = 26;
+        SCFEEDStoryCorpus_Corpus_LensChallenge = 27;
+        SCFEEDStoryCorpus_Corpus_LensChallengeStory = 28;
+        SCFEEDStoryCorpus_Corpus_ChannelPivot = 29;
+        SCFEEDStoryCorpus_Corpus_CustomStory = 30;
+        SCFEEDStoryCorpus_Corpus_OurStory = 31;
+        SCFEEDStoryCorpus_Corpus_LensCategory = 32;
+        SCFEEDStoryCorpus_Corpus_Badge = 33;
+        SCFEEDStoryCorpus_Corpus_TopicRecentSnaps = 34;
+        SCFEEDStoryCorpus_Corpus_SingleSnap = 35;
+        SCFEEDStoryCorpus_Corpus_HeroStory = 36;
+        SCFEEDStoryCorpus_Corpus_PublisherSegment = 37;
+        SCFEEDStoryCorpus_Corpus_LensCreator = 38;
+        SCFEEDStoryCorpus_Corpus_TopicHumanModeratedSnaps = 39;
+        SCFEEDStoryCorpus_Corpus_TopicPopularHumanModeratedSnaps = 40;
+        SCFEEDStoryCorpus_Corpus_TopicPopularAutoModeratedSnaps = 41;
+        SCFEEDStoryCorpus_Corpus_LensCollection = 42;
+        SCFEEDStoryCorpus_Corpus_SavedStory = 43;
+        SCFEEDStoryCorpus_Corpus_AggregatedFriendsStory = 44;
+        SCFEEDStoryCorpus_Corpus_Unused45 = 45;
+        SCFEEDStoryCorpus_Corpus_Unused46 = 46;
+        SCFEEDStoryCorpus_Corpus_Unused47 = 47;
+        SCFEEDStoryCorpus_Corpus_Unused48 = 48;
+        SCFEEDStoryCorpus_Corpus_Unused49 = 49;
+        SCFEEDStoryCorpus_Corpus_Unused50 = 50;
+        SCFEEDStoryCorpus_Corpus_Unused51 = 51;
+        SCFEEDStoryCorpus_Corpus_Unused52 = 52;
+    }
+}
+
+message SCSUPDFUserEmbedding {
+    string modelName = 1;
+    .ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+    .ranking.pii.user.profile.SCSUPEmbeddingMetadata metadata = 3;
+}
+
+message SCSUPDiscoverEngagement {
+    bool isChannelSubscribed = 1;
+    int32 channelViewCount = 2;
+    int32 channelFinishedCount = 3;
+    float channelViewTimeInSecs = 4;
+    uint32 totalHides = 5;
+    uint32 totalUnhides = 6;
+    int64 lastStateUpdateMsecs = 7;
+}
+
+message SCSUPDynamicStoryEngagement {
+    .ranking.pii.user.profile.SCSUPDynamicStoryEngagement.SCCORETopic_TopicType storyType = 1;
+    int32 topicStoryView = 2;
+    int32 topicStoryFinished = 3;
+    float topicTotalStoryViewTimeInSecs = 4;
+    int32 topicStoryShare = 5;
+    enum SCCORETopic_TopicType {
+        SCCORETopic_TopicType_Unknown = 0;
+        SCCORETopic_TopicType_Concert = 1;
+        SCCORETopic_TopicType_Sports = 2;
+        SCCORETopic_TopicType_Party = 3;
+        SCCORETopic_TopicType_Fashion = 4;
+        SCCORETopic_TopicType_Makeup = 5;
+        SCCORETopic_TopicType_Campus = 6;
+        SCCORETopic_TopicType_Comedy = 7;
+        SCCORETopic_TopicType_Fair = 8;
+        SCCORETopic_TopicType_Fitness = 9;
+        SCCORETopic_TopicType_Food = 10;
+        SCCORETopic_TopicType_Nightlife = 11;
+        SCCORETopic_TopicType_Political = 12;
+        SCCORETopic_TopicType_Protest = 13;
+        SCCORETopic_TopicType_Lecture = 14;
+        SCCORETopic_TopicType_Press = 15;
+        SCCORETopic_TopicType_Parade = 16;
+        SCCORETopic_TopicType_Attraction = 17;
+        SCCORETopic_TopicType_StreetPerformance = 18;
+        SCCORETopic_TopicType_Theatre = 19;
+        SCCORETopic_TopicType_Cinema = 20;
+        SCCORETopic_TopicType_AwardsCeremony = 21;
+        SCCORETopic_TopicType_Convention = 22;
+        SCCORETopic_TopicType_OtherPerformance = 23;
+        SCCORETopic_TopicType_Emergency = 24;
+        SCCORETopic_TopicType_Other = 25;
+        SCCORETopic_TopicType_March = 26;
+        SCCORETopic_TopicType_Animal = 27;
+        SCCORETopic_TopicType_Sasquatch = 28;
+        SCCORETopic_TopicType_GovBall = 29;
+        SCCORETopic_TopicType_MusicFestival = 30;
+        SCCORETopic_TopicType_Fireworks = 31;
+        SCCORETopic_TopicType_Barbeque = 32;
+        SCCORETopic_TopicType_MajorHoliday = 33;
+        SCCORETopic_TopicType_Rodeo = 34;
+        SCCORETopic_TopicType_Festival = 35;
+        SCCORETopic_TopicType_Funny = 36;
+        SCCORETopic_TopicType_Religion = 37;
+        SCCORETopic_TopicType_Transportation = 38;
+        SCCORETopic_TopicType_HurricaneHarvey = 39;
+        SCCORETopic_TopicType_MajorEvent = 40;
+        SCCORETopic_TopicType_Ncaaf = 41;
+        SCCORETopic_TopicType_Ncaab = 42;
+        SCCORETopic_TopicType_Ncaa = 43;
+        SCCORETopic_TopicType_Nfl = 44;
+        SCCORETopic_TopicType_Mlb = 45;
+        SCCORETopic_TopicType_Nba = 46;
+        SCCORETopic_TopicType_Nhl = 47;
+        SCCORETopic_TopicType_Soccer = 48;
+        SCCORETopic_TopicType_HurricaneIrma = 49;
+        SCCORETopic_TopicType_Lens = 50;
+        SCCORETopic_TopicType_OutdoorRecreation = 51;
+        SCCORETopic_TopicType_Spectacles = 52;
+        SCCORETopic_TopicType_Pga = 53;
+        SCCORETopic_TopicType_Hurricane = 54;
+        SCCORETopic_TopicType_Travel = 55;
+        SCCORETopic_TopicType_Awards = 56;
+        SCCORETopic_TopicType_Outdoors = 57;
+        SCCORETopic_TopicType_Holiday = 58;
+        SCCORETopic_TopicType_Halloween = 59;
+        SCCORETopic_TopicType_Weather = 60;
+        SCCORETopic_TopicType_Thanksgiving = 61;
+        SCCORETopic_TopicType_Christmas = 62;
+        SCCORETopic_TopicType_Olympics = 63;
+    }
+}
+
+message SCSUPEmbeddingMetadata {
+    string modelName = 1;
+    string modelIncVersion = 2;
+}
+
+message SCSUPEngagementStats {
+    uint64 numImpressions = 1;
+    uint64 numLongImpressions = 2;
+    float impressionTotalTimeSecs = 3;
+    uint64 numRawWatches = 4;
+    uint64 numCompleteWatches = 5;
+    uint64 numScreenshots = 6;
+    float totalWatchTimeSecs = 7;
+    float averageCompletionPercent = 8;
+    uint64 numFavorites = 9;
+    uint64 numUnfavorites = 10;
+    uint64 numHides = 11;
+    uint64 numShares = 12;
+    uint64 numSends = 13;
+    uint64 numUniqueWatches = 14;
+    uint64 numSnapWatches = 15;
+    .ranking.pii.user.profile.SCSUPEngagementStats.SCSUPEngagementStats_PublisherHidesStats publisherHidesStats = 16;
+    uint64 numRequestDedupedImpressions = 17;
+    uint64 numRequestDedupedWatches = 18;
+    uint64 numLongWatches = 19;
+    float numImpressionsWithDecay = 20;
+    float numRawWatchesWithDecay = 21;
+    float numRequestDedupedImpressionsWithDecay = 22;
+    float numRequestDedupedWatchesWithDecay = 23;
+    float impressionTotalTimeSecsWithDecay = 24;
+    float totalWatchTimeSecsWithDecay = 25;
+    float numQualifiedImpressionsWithDecay = 26;
+    float qualifiedImpressionTotalTimeSecsWithDecay = 27;
+    float numRequestDedupedQualifiedImpressionsWithDecay = 28;
+    int32 selectionRank = 29;
+    uint64 numBoosts = 30;
+    uint64 numUnboosts = 31;
+    uint64 numRequestDedupedBoosts = 32;
+    uint64 numWatchesBelow1P5Secs = 33;
+    uint64 numWatchesAbove20Secs = 34;
+    uint64 numReports = 35;
+    uint64 numDismisses = 36;
+    uint64 numOpenProfiles = 37;
+    uint64 numWatchesBelow3Secs = 38;
+    message SCSUPEngagementStats_PublisherHidesStats {
+        uint32 totalHides = 1;
+        uint32 totalUnhides = 2;
+        int64 lastHideStateUpdateMsecs = 3;
+    }
+}
+
+message SCSUPFeedSpecificContentEngagement {
+    string userId = 1;
+    .ranking.pii.user.profile.SCSUPFeedSpecificContentEngagement.FeedType_Enum feedType = 2;
+    repeated .ranking.pii.user.profile.SCSUPContentTypeScore storyCorpusStatsArray = 3;
+    .ranking.pii.user.profile.SCSUPPublicUserEngagement publicUserEngagement = 4;
+    .ranking.pii.user.profile.SCSUPPublisherEngagement publisherEngagement = 5;
+    .ranking.pii.user.profile.SCSUPCommunityStoryUserEngagement communityStoryEngagement = 6;
+    int64 lastUpdatedTimestampInMsecs = 7;
+    .ranking.pii.user.profile.SCSUPLensEngagement lensEngagement = 8;
+    .ranking.pii.user.profile.SCSUPSectionEngagement sectionEngagement = 9;
+    .ranking.pii.user.profile.SCSUPBadgeEngagement badgeEngagement = 10;
+    enum FeedType_Enum {
+        FeedType_Enum_Unknown = 0;
+        FeedType_Enum_All = 1;
+        FeedType_Enum_Subs = 2;
+        FeedType_Enum_ForYou = 3;
+        FeedType_Enum_Upnext = 4;
+        FeedType_Enum_FriendStories = 5;
+        FeedType_Enum_MyStories = 6;
+        FeedType_Enum_OurStories = 7;
+        FeedType_Enum_ProdReserved8 = 8;
+        FeedType_Enum_ProdReserved9 = 9;
+        FeedType_Enum_ProdReserved10 = 10;
+        FeedType_Enum_ProdReserved11 = 11;
+        FeedType_Enum_ProdReserved12 = 12;
+        FeedType_Enum_ProdReserved13 = 13;
+        FeedType_Enum_ProdReserved14 = 14;
+        FeedType_Enum_ExptShows = 201;
+        FeedType_Enum_ExptSolos = 202;
+        FeedType_Enum_ExptCotap = 203;
+        FeedType_Enum_ExptDeepCohort = 204;
+        FeedType_Enum_ExptCkBoost = 205;
+        FeedType_Enum_ExptHorizontalForYou = 206;
+        FeedType_Enum_ExptLensStories = 207;
+        FeedType_Enum_ExptLatentInterests = 208;
+        FeedType_Enum_ExptLensObject = 209;
+        FeedType_Enum_ExptHorizontalForYouLarge = 210;
+        FeedType_Enum_ExptMagazines = 211;
+        FeedType_Enum_ExptSnapstars = 212;
+        FeedType_Enum_ExptSolosFunny = 213;
+        FeedType_Enum_ExptLensChallenges = 214;
+        FeedType_Enum_ExptLensChallengeStories = 215;
+        FeedType_Enum_ExptCreatorSubs = 216;
+        FeedType_Enum_ExptPublisherSubs = 217;
+        FeedType_Enum_ExptLensChallengesLight = 218;
+        FeedType_Enum_ExptShowsKeepWatching = 219;
+        FeedType_Enum_ExptShowsMore = 220;
+        FeedType_Enum_ExptBatch = 221;
+        FeedType_Enum_ExptCognac = 222;
+        FeedType_Enum_ExptLensObjectSubs = 223;
+        FeedType_Enum_ExptFriendStoriesRankOnly = 224;
+        FeedType_Enum_ExptMyShows = 225;
+        FeedType_Enum_ExptTopShows = 226;
+        FeedType_Enum_ExptNews = 228;
+        FeedType_Enum_ExptLensCategories = 229;
+        FeedType_Enum_ExptShowsTrending = 230;
+        FeedType_Enum_ExptShowsPopular = 231;
+        FeedType_Enum_ExptBadge = 232;
+        FeedType_Enum_ExptForYouSingleTile = 233;
+        FeedType_Enum_ExptTopicStories = 234;
+        FeedType_Enum_ExptTopicPageRecentStories = 235;
+        FeedType_Enum_ExptTopicPagePopularStories = 236;
+        FeedType_Enum_ExptLensFavorites = 237;
+        FeedType_Enum_ExptMyBoostedStories = 239;
+        FeedType_Enum_ExptSpotlightAll = 240;
+        FeedType_Enum_ExptLensPremium = 241;
+        FeedType_Enum_ExptLensPremiumPurchased = 242;
+        FeedType_Enum_ExptLensCreators = 243;
+        FeedType_Enum_ExptSpotlightAllPos0 = 244;
+        FeedType_Enum_ExptSpotlightTrendingPage = 245;
+        FeedType_Enum_ExptLensShopping = 246;
+        FeedType_Enum_ExptForYouWithSubs = 247;
+        FeedType_Enum_ExptSpotlightPublicProfilePage = 248;
+        FeedType_Enum_ExptSpotlightChallengeCarousel = 249;
+        FeedType_Enum_SuperFeed = 250;
+        FeedType_Enum_ExptMadeForUs = 251;
+        FeedType_Enum_ExptDiscoverChannels = 252;
+        FeedType_Enum_SubsWithSuggestions = 253;
+        FeedType_Enum_ExptReserved54 = 254;
+        FeedType_Enum_ExptReserved55 = 255;
+        FeedType_Enum_ExptReserved56 = 256;
+        FeedType_Enum_ExptReserved57 = 257;
+        FeedType_Enum_ExptReserved58 = 258;
+        FeedType_Enum_ExptReserved59 = 259;
+        FeedType_Enum_ExptReserved60 = 260;
+        FeedType_Enum_ExptReserved61 = 261;
+        FeedType_Enum_ExptReserved62 = 262;
+        FeedType_Enum_ExptReserved63 = 263;
+        FeedType_Enum_ExptReserved64 = 264;
+        FeedType_Enum_ExptPivot = 1000;
+        FeedType_Enum_ExptForYou1 = 1101;
+        FeedType_Enum_ExptForYou2 = 1102;
+        FeedType_Enum_ExptForYou3 = 1103;
+        FeedType_Enum_ExptForYou4 = 1104;
+        FeedType_Enum_ExptForYou5 = 1105;
+        FeedType_Enum_ExptForYou6 = 1106;
+        FeedType_Enum_ExptForYou7 = 1107;
+        FeedType_Enum_ExptForYou8 = 1108;
+        FeedType_Enum_ExptForYou9 = 1109;
+        FeedType_Enum_ExptForYou10 = 1110;
+        FeedType_Enum_ExptShowsMore1 = 2001;
+        FeedType_Enum_ExptShowsMore2 = 2002;
+        FeedType_Enum_ExptShowsMore3 = 2003;
+        FeedType_Enum_ExptShowsMore4 = 2004;
+        FeedType_Enum_ExptShowsMore5 = 2005;
+        FeedType_Enum_ExptShowsMore6 = 2006;
+        FeedType_Enum_ExptShowsMore7 = 2007;
+        FeedType_Enum_ExptShowsMore8 = 2008;
+        FeedType_Enum_ExptShowsMore9 = 2009;
+        FeedType_Enum_ExptShowsMore10 = 2010;
+        FeedType_Enum_ExptSelectionExistingInterests = 9000;
+        FeedType_Enum_ExptSelectionRegistration = 9001;
+        FeedType_Enum_ExptSelectionDiscoverOnboarding = 9002;
+        FeedType_Enum_ExptSelectionExistingInterestsThumbnail = 9003;
+        FeedType_Enum_ExptCuratedStart = 10000;
+        FeedType_Enum_ExptNewUserUsFemale1317 = 10001;
+        FeedType_Enum_ExptNewUserUsMale1317 = 10002;
+        FeedType_Enum_ExptNewUserUsUnknown1317 = 10003;
+        FeedType_Enum_ExptNewUserUsFemale1824 = 10004;
+        FeedType_Enum_ExptNewUserUsMale1824 = 10005;
+        FeedType_Enum_ExptNewUserUsUnknown1824 = 10006;
+        FeedType_Enum_ExptNewUserUsFemale2534 = 10007;
+        FeedType_Enum_ExptNewUserUsMale2534 = 10008;
+        FeedType_Enum_ExptNewUserUsUnknown2534 = 10009;
+        FeedType_Enum_ExptNewUserUsFemale35Plus = 10010;
+        FeedType_Enum_ExptNewUserUsMale35Plus = 10011;
+        FeedType_Enum_ExptNewUserUsUnknown35Plus = 10012;
+        FeedType_Enum_ExptCuratedEntertainment = 10100;
+        FeedType_Enum_ExptCuratedNews = 10101;
+        FeedType_Enum_ExptCuratedSports = 10102;
+        FeedType_Enum_ExptCuratedFun = 10103;
+        FeedType_Enum_ExptCuratedBeautyStyle = 10104;
+        FeedType_Enum_ExptCuratedCelebrity = 10105;
+        FeedType_Enum_ExptCuratedFoodTravel = 10106;
+        FeedType_Enum_ExptCuratedMusic = 10107;
+        FeedType_Enum_ExptCuratedLiving = 10108;
+        FeedType_Enum_ExptCuratedLolz = 10109;
+        FeedType_Enum_ExptCuratedGuiltyPleasures = 10110;
+        FeedType_Enum_ExptCuratedOddlySatisfying = 10111;
+        FeedType_Enum_ExptCuratedGames = 10112;
+        FeedType_Enum_ExptCuratedSnapStars = 10113;
+        FeedType_Enum_ExptCuratedFinance = 10114;
+        FeedType_Enum_ExptCuratedAnimals = 10115;
+        FeedType_Enum_ExptCuratedLove = 10116;
+        FeedType_Enum_ExptCuratedPopular = 10117;
+        FeedType_Enum_ExptCuratedSwaggedOut = 10118;
+        FeedType_Enum_ExptCuratedMusicEdmDj = 10119;
+        FeedType_Enum_ExptCuratedScienceTech = 10120;
+        FeedType_Enum_ExptCuratedCelebration = 10121;
+        FeedType_Enum_ExptCuratedDraft1 = 10122;
+        FeedType_Enum_ExptCuratedDraft2 = 10123;
+        FeedType_Enum_ExptCuratedDraft3 = 10124;
+        FeedType_Enum_ExptCuratedDraft4 = 10125;
+        FeedType_Enum_ExptCuratedDraft5 = 10126;
+        FeedType_Enum_ExptCuratedDraft6 = 10127;
+        FeedType_Enum_ExptCuratedDraft7 = 10128;
+        FeedType_Enum_ExptCuratedDraft8 = 10129;
+        FeedType_Enum_ExptCuratedDraft9 = 10130;
+        FeedType_Enum_ExptCuratedDraft10 = 10131;
+        FeedType_Enum_ExptCuratedFortnite = 10132;
+        FeedType_Enum_ExptCuratedWorldNews = 10133;
+        FeedType_Enum_ExptCuratedNfl = 10134;
+        FeedType_Enum_ExptCuratedStudentLife = 10135;
+        FeedType_Enum_ExptCuratedScienceAndTechnology = 10136;
+        FeedType_Enum_ExptCuratedTopSnaps = 10137;
+        FeedType_Enum_ExptCuratedShows1 = 10201;
+        FeedType_Enum_ExptCuratedShows2 = 10202;
+        FeedType_Enum_ExptCuratedShows3 = 10203;
+        FeedType_Enum_ExptCuratedShows4 = 10204;
+        FeedType_Enum_ExptCuratedShows5 = 10205;
+        FeedType_Enum_ExptCuratedShows6 = 10206;
+        FeedType_Enum_ExptCuratedShows7 = 10207;
+        FeedType_Enum_ExptCuratedShows8 = 10208;
+        FeedType_Enum_ExptCuratedShows9 = 10209;
+        FeedType_Enum_ExptCuratedShows10 = 10210;
+        FeedType_Enum_ExptCuratedHeroTile1 = 10301;
+        FeedType_Enum_ExptCuratedHeroTile2 = 10302;
+        FeedType_Enum_ExptCuratedHeroTile3 = 10303;
+        FeedType_Enum_ExptCuratedHeroTile4 = 10304;
+        FeedType_Enum_ExptCuratedHeroTile5 = 10305;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage1 = 10401;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage2 = 10402;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage3 = 10403;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage4 = 10404;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage5 = 10405;
+        FeedType_Enum_ExptCuratedPopUp1 = 11001;
+        FeedType_Enum_ExptCuratedPopUp2 = 11002;
+        FeedType_Enum_ExptCuratedPopUp3 = 11003;
+        FeedType_Enum_ExptCuratedPopUp4 = 11004;
+        FeedType_Enum_ExptCuratedPopUp5 = 11005;
+        FeedType_Enum_ExptCuratedPopUp6 = 11006;
+        FeedType_Enum_ExptCuratedPopUp7 = 11007;
+        FeedType_Enum_ExptCuratedPopUp8 = 11008;
+        FeedType_Enum_ExptCuratedPopUp9 = 11009;
+        FeedType_Enum_ExptCuratedPopUp10 = 11010;
+        FeedType_Enum_ExptCuratedShowsPivot = 12001;
+        FeedType_Enum_ExptCuratedTopSnapsPivot = 12002;
+        FeedType_Enum_ExptCuratedSnapStarsPivot = 12003;
+        FeedType_Enum_ExptCuratedFunPivot = 12004;
+        FeedType_Enum_ExptCuratedCognacPivot = 12005;
+        FeedType_Enum_ExptCuratedSportsPivot = 12006;
+        FeedType_Enum_ExptCuratedNewsPivot = 12007;
+        FeedType_Enum_ExptCuratedBeautyStylePivot = 12008;
+        FeedType_Enum_ExptCuratedLolzPivot = 12009;
+        FeedType_Enum_ExptCuratedDraftPivot1 = 12101;
+        FeedType_Enum_ExptCuratedDraftPivot2 = 12102;
+        FeedType_Enum_ExptCuratedDraftPivot3 = 12103;
+        FeedType_Enum_ExptCuratedDraftPivot4 = 12104;
+        FeedType_Enum_ExptCuratedDraftPivot5 = 12105;
+        FeedType_Enum_ExptCuratedDraftPivot6 = 12106;
+        FeedType_Enum_ExptCuratedDraftPivot7 = 12107;
+        FeedType_Enum_ExptCuratedDraftPivot8 = 12108;
+        FeedType_Enum_ExptCuratedDraftPivot9 = 12109;
+        FeedType_Enum_ExptCuratedDraftPivot10 = 12110;
+        FeedType_Enum_ExptCuratedNewUserTutorial = 19999;
+        FeedType_Enum_ExptCuratedEnd = 20000;
+    }
+}
+
+message SCSUPLensEngagement {
+    repeated .ranking.pii.user.profile.SCSUPLensEngagement.LensStatsEntry lensStats = 1;
+    .ranking.pii.user.profile.SCSUPLensEngagementStats aggregatedLensStats = 2;
+    message LensStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPLensEngagementStats value = 2;
+    }
+}
+
+message SCSUPLensEngagementStats {
+    .ranking.pii.user.profile.SCSUPLensEngagementStats.SCSUPLensEngagementStats_ActionCounts recentActions = 1;
+    .ranking.pii.user.profile.SCSUPLensEngagementStats.SCSUPLensEngagementStats_ActionCounts olderActions = 2;
+    message SCSUPLensEngagementStats_ActionCounts {
+        uint32 numSnapsSend = 1;
+        uint32 numStoryPosts = 2;
+        uint32 numSnapRecipients = 3;
+        uint32 numSnapSaves = 4;
+        uint32 numSnapViews = 5;
+        uint32 numStoryViews = 6;
+        uint32 snapViewInSecs = 7;
+        uint32 storyViewInSecs = 8;
+        uint32 numUnlocks = 9;
+        uint32 numShares = 10;
+        uint32 numScans = 11;
+    }
+}
+
+message SCSUPMapStoryUserEngagement {
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedFollowStats = 1;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedNoFollowStats = 2;
+    repeated .ranking.pii.user.profile.SCSUPMapStoryUserEngagement.MapStoryFpStatsEntry mapStoryFpStats = 3;
+    message MapStoryFpStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+}
+
+message SCSUPNormalizedStats {
+    float numRequestDedupedWatches = 1;
+    float numWatchesAbove20Secs = 2;
+    float numRequestDedupedBoosts = 3;
+    float numSends = 4;
+    float numCompleteWatches = 5;
+    float numHides = 6;
+    float numDismisses = 7;
+    float totalWatchTimeSecs = 8;
+    float relativeNumRequestDedupedWatches = 9;
+    float relativeNumWatchesAbove20Secs = 10;
+    float relativeNumRequestDedupedBoosts = 11;
+    float relativeNumSends = 12;
+    float relativeNumCompleteWatches = 13;
+    float relativeNumHides = 14;
+    float relativeNumDismisses = 15;
+    float relativeTotalWatchTimeSecs = 16;
+    float computedPositiveAffinityV1 = 17;
+    float computedPositiveAffinityV2 = 18;
+    float computedNegativeAffinityV1 = 19;
+    float computedNegativeAffinityV2 = 20;
+}
+
+message SCSUPPremiumFeedEngagement {
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedTotalPremiumFeedStats = 1;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedHeroTileStats = 2;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedMyShowsStats = 3;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedKeepWatchingStats = 4;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedMoreShowsStats = 5;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats windowedHappeningNowStats = 6;
+    int32 selectionRank = 7;
+}
+
+message SCSUPPublicUserEngagement {
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedFollowStats = 1;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedNoFollowStats = 2;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.TopPublicUserStatsEntry topPublicUserStats = 3;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.TopPublicUserFpStatsEntry topPublicUserFpStats = 4;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedOfficialStats = 5;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedNonOfficialStats = 6;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.WindowedTopPublicUserFpStatsEntry windowedTopPublicUserFpStats = 7;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.WindowedTopPublicUserSpotlightFeedStatsEntry windowedTopPublicUserSpotlightFeedStats = 8;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedSpotlightFeedStats = 9;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.WindowedLanguageStatsEntry windowedLanguageStats = 10;
+    repeated .ranking.pii.user.profile.SCSUPPublicUserEngagement.TopSavedStoryFpStatsEntry topSavedStoryFpStats = 11;
+    message TopPublicUserStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+    message TopPublicUserFpStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+    message WindowedTopPublicUserFpStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedTopPublicUserSpotlightFeedStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedLanguageStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message TopSavedStoryFpStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+}
+
+message SCSUPPublisherEngagement {
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.PublisherStatsEntry publisherStats = 1;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedShowsStats = 2;
+    .ranking.pii.user.profile.SCSUPEngagementStats aggregatedExclusiveShowsStats = 3;
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.WindowedPublisherStatsEntry windowedPublisherStats = 4;
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.WindowedPremiumFeedStatsEntry windowedPremiumFeedStats = 5;
+    .ranking.pii.user.profile.SCSUPPremiumFeedEngagement aggregatedPremiumFeedStats = 6;
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.WindowedHnCategoryStatsEntry windowedHnCategoryStats = 7;
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.WindowedSpotlightFeedStatsEntry windowedSpotlightFeedStats = 8;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementStats aggregatedSpotlightFeedStats = 9;
+    repeated .ranking.pii.user.profile.SCSUPPublisherEngagement.WindowedLanguageStatsEntry windowedLanguageStats = 10;
+    message PublisherStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPEngagementStats value = 2;
+    }
+    message WindowedPublisherStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedPremiumFeedStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPPremiumFeedEngagement value = 2;
+    }
+    message WindowedHnCategoryStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedSpotlightFeedStatsEntry {
+        int64 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message WindowedLanguageStatsEntry {
+        string key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+}
+
+message SCSUPSectionEngagement {
+    repeated .ranking.pii.user.profile.SCSUPSectionEngagement.SectionStatsEntry sectionStats = 1;
+    .ranking.pii.user.profile.SCSUPSectionEngagement.SCSUPSectionEngagement_EngagementScores engagementScores = 2;
+    repeated .ranking.pii.user.profile.SCSUPSectionEngagement.SectionWindowedEngagementStatsEntry sectionWindowedEngagementStats = 3;
+    message SectionStatsEntry {
+        int32 key = 1;
+        .feed.quality.snavboost.SCSQNSectionStats value = 2;
+    }
+    message SectionWindowedEngagementStatsEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementStats value = 2;
+    }
+    message SCSUPSectionEngagement_EngagementScores {
+        float totalEngagementScore = 1;
+        float totalEngagementScorePercentile = 2;
+        repeated .ranking.pii.user.profile.SCSUPSectionEngagement.SCSUPSectionEngagement_EngagementScores.SectionContentRawScoresEntry sectionContentRawScores = 3;
+        repeated .ranking.pii.user.profile.SCSUPSectionEngagement.SCSUPSectionEngagement_EngagementScores.SectionContentNormalizedScoresEntry sectionContentNormalizedScores = 4;
+        repeated .ranking.pii.user.profile.SCSUPSectionEngagement.SCSUPSectionEngagement_EngagementScores.SectionContentPercentileScoresEntry sectionContentPercentileScores = 5;
+        message SectionContentRawScoresEntry {
+            int32 key = 1;
+            float value = 2;
+        }
+        message SectionContentNormalizedScoresEntry {
+            int32 key = 1;
+            float value = 2;
+        }
+        message SectionContentPercentileScoresEntry {
+            int32 key = 1;
+            float value = 2;
+        }
+    }
+}
+
+message SCSUPSpotlightRealtimeWindowedEngagementStats {
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastFiveMinutes = 9;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastTwentyMinutes = 10;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastOneHour = 11;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastTwoHours = 12;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastFourHours = 13;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastEightHours = 14;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastSixteenHours = 15;
+}
+
+message SCSUPSpotlightUserEmbedding {
+    string modelName = 1;
+    .ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+    .ranking.pii.user.profile.SCSUPEmbeddingMetadata metadata = 3;
+}
+
+message SCSUPUserEmbedding {
+    repeated .ranking.pii.user.profile.SCSUPUserEmbedding.SCSUPUserEmbedding_VersionedEmbeddings versionedEmbeddingsArray = 1;
+    message SCSUPUserEmbedding_VersionedEmbeddings {
+        .ranking.pii.user.profile.SCSUPUserEmbedding.SCSUPUserEmbedding_VersionedEmbeddings.SCSUPUserEmbeddingVersion_Enum version = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding embedding = 2;
+        enum SCSUPUserEmbeddingVersion_Enum {
+            SCSUPUserEmbeddingVersion_Enum_Unset = 0;
+            SCSUPUserEmbeddingVersion_Enum_V1 = 1;
+        }
+    }
+}
+
+message SCSUPUserEmbeddingVersion {
+}
+
+message SCSUPUserSCCAffinity {
+    repeated .ranking.pii.user.profile.SCSUPUserSCCAffinity.SCSUPUserSCCAffinity_VersionedAffinities versionedAffinitiesArray = 1;
+    message SCSUPUserSCCAffinity_VersionedAffinities {
+        .ranking.pii.user.profile.SCSUPUserSCCAffinity.SCSUPUserSCCAffinity_VersionedAffinities.SCSUPUserSCCAffinityVersion_Enum version = 1;
+        .ranking.pii.user.profile.SCSUPUserSCCAffinityPerAnnotation affinities = 2;
+        enum SCSUPUserSCCAffinityVersion_Enum {
+            SCSUPUserSCCAffinityVersion_Enum_Unset = 0;
+            SCSUPUserSCCAffinityVersion_Enum_V1 = 1;
+            SCSUPUserSCCAffinityVersion_Enum_V2 = 2;
+        }
+    }
+}
+
+message SCSUPUserSCCAffinityFeatureType {
+}
+
+message SCSUPUserSCCAffinityFeatureValue {
+    repeated .ranking.pii.user.profile.SCSUPUserSCCAffinityFeatureValue.SCSUPUserSCCAffinityFeatureValue_Value featureValuesArray = 1;
+    message SCSUPUserSCCAffinityFeatureValue_Value {
+        .ranking.pii.user.profile.SCSUPUserSCCAffinityFeatureValue.SCSUPUserSCCAffinityFeatureValue_Value.SCSUPUserSCCAffinityFeatureType_Enum featureName = 1;
+        float value = 2;
+        enum SCSUPUserSCCAffinityFeatureType_Enum {
+            SCSUPUserSCCAffinityFeatureType_Enum_Unset = 0;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumRequestDedupedWatches = 1;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumWatchesAbove20Secs = 2;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumRequestDedupedBoosts = 3;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumSends = 4;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumCompleteWatches = 5;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumHides = 6;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityNumDismisses = 7;
+            SCSUPUserSCCAffinityFeatureType_Enum_RelativeAffinityTotalWatchTimeSecs = 8;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumRequestDedupedWatches = 9;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumWatchesAbove20Secs = 10;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumRequestDedupedBoosts = 11;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumSends = 12;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumCompleteWatches = 13;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumHides = 14;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityNumDismisses = 15;
+            SCSUPUserSCCAffinityFeatureType_Enum_AffinityTotalWatchTimeSecs = 16;
+            SCSUPUserSCCAffinityFeatureType_Enum_ComputedPositiveAffinityV1 = 17;
+            SCSUPUserSCCAffinityFeatureType_Enum_ComputedPositiveAffinityV2 = 18;
+            SCSUPUserSCCAffinityFeatureType_Enum_ComputedNegativeAffinityV1 = 19;
+            SCSUPUserSCCAffinityFeatureType_Enum_ComputedNegativeAffinityV2 = 20;
+        }
+    }
+}
+
+message SCSUPUserSCCAffinityPerAnnotation {
+    repeated .ranking.pii.user.profile.SCSUPUserSCCAffinityPerAnnotation.AnnotationFeaturesEntry annotationFeatures = 1;
+    repeated .ranking.pii.user.profile.SCSUPUserSCCAffinityPerAnnotation.NormAnnotationFeaturesEntry normAnnotationFeatures = 2;
+    message AnnotationFeaturesEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.SCSUPUserSCCAffinityFeatureValue value = 2;
+    }
+    message NormAnnotationFeaturesEntry {
+        int32 key = 1;
+        .ranking.pii.user.profile.SCSUPNormalizedStats value = 2;
+    }
+}
+
+message SCSUPUserSCCAffinityVersion {
+}
+
+message SCSUPWindowedEngagementSignals {
+    uint32 numRequestDedupedImpressions = 1;
+    float impressionTotalTimeSecs = 2;
+    uint32 numRequestDedupedWatches = 3;
+    float totalWatchTimeSecs = 4;
+    uint32 numRawWatches = 5;
+    uint32 numCompleteWatches = 6;
+    uint32 numRequestDedupedBoosts = 7;
+    uint64 numWatchesBelow1P5Secs = 8;
+    uint64 numWatchesAbove20Secs = 9;
+    float normalizedWatchTimeSecs = 10;
+    float normalizedWatchTimeSecsPercentile = 11;
+    uint32 numHides = 12;
+    float testOnlyField = 13;
+    float weightedImpressionTotalTimeSecs = 15;
+    float weightedNumRequestDedupedWatches = 16;
+    float weightedTotalWatchTimeSecs = 17;
+    float weightedNumRawWatches = 18;
+    float weightedNumCompleteWatches = 19;
+    float weightedNumHides = 20;
+    float weightedNumRequestDedupedBoosts = 21;
+    float weightedNumWatchesBelow1P5Secs = 22;
+    float weightedNumWatchesAbove20Secs = 23;
+    float weightedNormalizedWatchTimeSecs = 24;
+    float weightedNormalizedWatchTimeSecsPercentile = 25;
+    float weightedNumRequestDedupedImpressions = 26;
+    float weightedNumReports = 27;
+    float numDismisses = 28;
+    uint32 numSends = 29;
+    uint32 numOpenProfiles = 30;
+    uint32 numFavorites = 31;
+    uint64 numWatchesBelow3Secs = 32;
+}
+
+message SCSUPWindowedEngagementStats {
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastDay = 1;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastThreeDays = 2;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastWeek = 3;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastTwoWeeks = 4;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastFourWeeks = 5;
+    repeated .ranking.pii.user.profile.SCSUPWindowedEngagementStats.DailyWindowedEngagementSignalsEntry dailyWindowedEngagementSignals = 6;
+    int32 selectionRank = 7;
+    .ranking.pii.user.profile.SCSUPWindowedEngagementSignals signalsSinceLastThreeMonths = 8;
+    message DailyWindowedEngagementSignalsEntry {
+        uint32 key = 1;
+        .ranking.pii.user.profile.SCSUPWindowedEngagementSignals value = 2;
+    }
+}

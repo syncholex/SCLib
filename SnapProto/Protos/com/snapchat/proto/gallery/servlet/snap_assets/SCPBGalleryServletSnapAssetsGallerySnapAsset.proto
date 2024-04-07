@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery.servlet.snap_assets;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGalleryServletSnapAssets";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery.Servlet.Snap_assets";
+
+import "com/snapchat/proto/gallery/servlet/snap_assets/SCPBGalleryServletSnapAssetsGallerySnapAssetMetadata.proto";
+
+message SCPBGalleryServletSnapAssetsGallerySnapAsset {
+    string id_p = 1;
+    int32 assetDescriptor = 2;
+    string downloadURL = 3;
+    .com.snapchat.proto.gallery.servlet.snap_assets.SCPBGalleryServletSnapAssetsGallerySnapAssetMetadata assetMetadata = 4;
+}

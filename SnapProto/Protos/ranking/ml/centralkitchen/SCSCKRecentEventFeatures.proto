@@ -1,0 +1,30 @@
+syntax = "proto3";
+package ranking.ml.centralkitchen;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCK";
+option csharp_namespace = "SnapProto.Ranking.Ml.Centralkitchen";
+
+import "ranking/pii/user/profile/SCSUPRecentEvents.proto";
+
+message SCSCKNegativeImpressionEvent {
+    .ranking.pii.user.profile.SCSUPImpressionEvent impressionEvent = 1;
+    bool positionLessThanDepth = 2;
+}
+
+message SCSCKRecentEventFeatures {
+    repeated .ranking.pii.user.profile.SCSUPWatchEvent watchEventsArray = 1;
+    repeated .ranking.ml.centralkitchen.SCSCKNegativeImpressionEvent negativeImpressionEventsArray = 2;
+    repeated .ranking.pii.user.profile.SCSUPFavoriteEvent favoriteEventsArray = 3;
+    repeated .ranking.pii.user.profile.SCSUPUnfavoriteEvent unfavoriteEventsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPSendEvent sendEventsArray = 5;
+    repeated .ranking.pii.user.profile.SCSUPHideEvent hideEventsArray = 6;
+    repeated .ranking.pii.user.profile.SCSUPUnhideEvent unhideEventsArray = 7;
+    repeated .ranking.pii.user.profile.SCSUPBoostEvent boostEventsArray = 8;
+    repeated .ranking.pii.user.profile.SCSUPUnboostEvent unboostEventsArray = 9;
+    repeated .ranking.pii.user.profile.SCSUPReportEvent reportEventsArray = 10;
+    repeated .ranking.pii.user.profile.SCSUPOpenProfileEvent openProfileEventsArray = 11;
+    repeated .ranking.pii.user.profile.SCSUPOpenRepliesEvent openRepliesEventsArray = 12;
+    repeated .ranking.pii.user.profile.SCSUPDismissRepliesEvent dismissRepliesEventsArray = 13;
+    repeated .ranking.pii.user.profile.SCSUPCreateReplyEvent createReplyEventsArray = 14;
+    repeated .ranking.pii.user.profile.SCSUPSendReplyEvent sendReplyEventsArray = 15;
+}

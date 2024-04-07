@@ -1,0 +1,24 @@
+syntax = "proto3";
+package url_preview;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCURLPreview";
+option csharp_namespace = "SnapProto.Url_preview";
+
+import "url_preview/SCURLPreviewURLPreview.proto";
+
+message SCURLPreviewGetPreviewRequest {
+    string URL = 1;
+    bool withInAppDeepLinks = 2;
+    bool parseStickerShareMetadata = 3;
+}
+
+message SCURLPreviewGetPreviewResponse {
+    .url_preview.SCURLPreviewUrlPreview preview = 1;
+    bool success = 2;
+    .url_preview.SCURLPreviewOriginError originError = 3;
+}
+
+message SCURLPreviewOriginError {
+    bool retryable = 1;
+    int32 HTTPResponseCode = 2;
+}

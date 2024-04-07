@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBolt";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+message SCBoltStorageClassPolicy {
+    string storageClass = 1;
+}
+
+message SCBoltStoragePolicy {
+    .snapchat.content.SCBoltStorageClassPolicy storageClassPolicy = 1;
+}

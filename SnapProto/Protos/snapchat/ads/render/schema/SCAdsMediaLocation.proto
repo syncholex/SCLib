@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+message SCAdsMediaLocation {
+    .snapchat.ads.render.schema.SCAdsMediaLocation.SCAdsMediaLocationType mediaLocationType = 1;
+    bytes mediaInfo = 2;
+    enum SCAdsMediaLocationType {
+        SCAdsMediaLocationType_MediaLocationTypeNone = 0;
+        SCAdsMediaLocationType_MediaLocationTypeZip = 1;
+        SCAdsMediaLocationType_MediaLocationTypeDiscover = 2;
+        SCAdsMediaLocationType_MediaLocationTypeURL = 3;
+        SCAdsMediaLocationType_MediaLocationTypeBolt = 4;
+    }
+}

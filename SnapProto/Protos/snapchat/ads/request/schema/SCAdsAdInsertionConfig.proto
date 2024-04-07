@@ -1,0 +1,23 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+
+message SCAdsAdInsertionConfig {
+    .google.protobuf.Int32Value minSnapFromStart = 1;
+    .google.protobuf.FloatValue minTimeFromStartSeconds = 2;
+    .google.protobuf.Int32Value minStoriesFromStart = 3;
+    .google.protobuf.Int32Value minStoriesBeforeEnd = 4;
+    .google.protobuf.Int32Value minStoriesBetweenAds = 5;
+    .google.protobuf.Int32Value minSnapsBetweenAds = 6;
+    .google.protobuf.FloatValue minTimeBetweenAdsSeconds = 7;
+    .google.protobuf.Int32Value minSnapsBeforeEnd = 8;
+    .google.protobuf.FloatValue minTimeBeforeEndSeconds = 9;
+    .google.protobuf.FloatValue minTimeInsertionThresholdSeconds = 10;
+    .google.protobuf.Int32Value globalMinSnapsBetweenAds = 11;
+    .google.protobuf.FloatValue globalMinTimeBetweenAdsSeconds = 12;
+    .google.protobuf.Int32Value maxSnapsNum = 13;
+}

@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGallery";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery";
+
+message SCPBGalleryMediaAttribute {
+    string attribute = 1;
+}

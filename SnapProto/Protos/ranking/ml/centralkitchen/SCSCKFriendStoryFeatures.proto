@@ -1,0 +1,461 @@
+syntax = "proto3";
+package ranking.ml.centralkitchen;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCK";
+option csharp_namespace = "SnapProto.Ranking.Ml.Centralkitchen";
+
+import "ranking/core/SCSCORESnapSource.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/indexing/StoryUserRequestedSignals.proto";
+import "ranking/indexing/jaguar/SCSIDXFriendStory.proto";
+import "ranking/ml/centralkitchen/SCSCKEmbedding.proto";
+import "ranking/pii/user/profile/FriendEngagementFeatures.proto";
+import "ranking/pii/user/profile/FriendMetadataFeatures.proto";
+import "ranking/pii/user/profile/SCSUPBasicAttributes.proto";
+
+message SCSCKFriendLinkFeatures {
+    float friendshipCreationAgeInYears = 1;
+    float lastModifiedAgeInYears = 2;
+    float addedAgeInYears = 3;
+    float reverseAddedAgeInYears = 4;
+    bool isInFriendContacts = 5;
+    .ranking.ml.centralkitchen.SCSCKFriendLinkFeatures.SCSCKAddSourceType addSourceType = 6;
+    enum SCSCKAddSourceType {
+        SCSCKAddSourceType_AddedByUnknown = 0;
+        SCSCKAddSourceType_AddedByPhone = 1;
+        SCSCKAddSourceType_AddedByUsername = 2;
+        SCSCKAddSourceType_AddedByQrCode = 3;
+        SCSCKAddSourceType_AddedByAddedMeBack = 4;
+        SCSCKAddSourceType_AddedByNearby = 5;
+        SCSCKAddSourceType_AddedBySuggested = 6;
+        SCSCKAddSourceType_AddedByOfficialStorySearch = 7;
+        SCSCKAddSourceType_AddedByDeepLink = 8;
+        SCSCKAddSourceType_AddedByInvite = 9;
+        SCSCKAddSourceType_AddedByStoryChrome = 10;
+        SCSCKAddSourceType_AddedBySharedUsername = 11;
+        SCSCKAddSourceType_AddedBySharedStory = 12;
+        SCSCKAddSourceType_AddedByGroupChat = 13;
+        SCSCKAddSourceType_AddedByShazam = 14;
+        SCSCKAddSourceType_AddedByMob = 15;
+        SCSCKAddSourceType_AddedByFeaturedOfficialStory = 16;
+        SCSCKAddSourceType_AddedFromOurStory = 17;
+        SCSCKAddSourceType_AddedByInfluencerRecommendation = 18;
+        SCSCKAddSourceType_AddedByDisplayName = 19;
+        SCSCKAddSourceType_AddedByTest = 20;
+        SCSCKAddSourceType_AddedByMention = 21;
+        SCSCKAddSourceType_AddedBySubscription = 22;
+        SCSCKAddSourceType_AddedByMentionSticker = 23;
+        SCSCKAddSourceType_AddedBySnapcodeSticker = 24;
+        SCSCKAddSourceType_AddedFromSpotlight = 25;
+        SCSCKAddSourceType_AddedFromPublicProfile = 26;
+        SCSCKAddSourceType_AddedFromLens = 27;
+    }
+}
+
+message SCSCKFriendStoryClientEngagementFeatures {
+    int64 lastInteractionTimestampInSec = 1;
+    int32 numPrivateStories = 2;
+    int32 smallestPrivateStorySize = 3;
+    int32 numGroupchats = 4;
+    int32 smallestGroupchatSize = 5;
+    int64 lastImpressionTimestampInSec = 6;
+    int32 lastImpressionTimeInMs = 7;
+    int64 lastWatchTimestampInSec = 8;
+    int32 lastWatchTimeInMs = 9;
+    string userId = 10;
+    float lastInteractionAgeInHour = 11;
+    float lastImpressionAgeInHour = 12;
+    float lastWatchAgeInHour = 13;
+}
+
+message SCSCKFriendStoryClientInteractionFeatures {
+    bool isInteractionFeaturesOnLatestVersion = 1;
+    float latestImpressionAgeInHour = 2;
+    int32 totalImpressionCount = 3;
+    float totalImpressionTimeInHour = 4;
+}
+
+message SCSCKFriendStoryClientRankingSignals {
+    repeated .ranking.ml.centralkitchen.SCSCKFriendStoryClientEngagementFeatures friendStoryClientSignalsArray = 1;
+}
+
+message SCSCKFriendStoryContentFeatures {
+    .ranking.ml.centralkitchen.SCSCKFriendStoryStoryContentFeatures friendStoryStoryContentFeatures = 1;
+    .ranking.ml.centralkitchen.SCSCKFriendStorySnapContentFeatures friendStoryThumbnailContentFeatures = 2;
+}
+
+message SCSCKFriendStoryDerivedEngagementFeatures {
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStorySkips = 1;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStorySnapSkips = 2;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpent = 3;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerStoryView = 4;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStorySnapViews = 5;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryCompletions = 6;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryRepliesPerStoryView = 7;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryRepliesPerStoryCompletions = 8;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryViewsPerInterstitialView = 9;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStorySkipsPerInterstitialView = 10;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryViewPerLongImp = 11;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryCompletionsPerLongImp = 12;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryTapViewPerLongImp = 13;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioTotalChatAckTimePerChatView = 14;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioTotalSnapAckTimePerSnapView = 15;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerSnapView = 16;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryRepliesPerStoryView = 17;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioStoryStoryRepliesPerStoryCompletions = 18;
+}
+
+message SCSCKFriendStoryDerivedPosterEngagementFeatures {
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpent = 1;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpentPerStoryView = 2;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryCompletions = 3;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryRepliesPerStoryView = 4;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryRepliesPerStoryCompletions = 5;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryViewPerLongImp = 6;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryCompletionsPerLongImp = 7;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryTapViewPerLongImp = 8;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapViews = 9;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStorySkips = 10;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapSkips = 11;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryLongImpPerSnapPost = 12;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStorySnapViewsPerSnapPost = 13;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryViewsPerInterstitialView = 14;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStorySkipsPerInterstitialView = 15;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioTotalChatAckTimePerChatView = 16;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioTotalSnapAckTimePerSnapView = 17;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioSnapTimeSpentPerSnapView = 18;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryRepliesPerStoryView = 19;
+    .ranking.pii.user.profile.WindowedFloatMetrics historicalRatioStoryStoryRepliesPerStoryCompletions = 20;
+}
+
+message SCSCKFriendStoryFeatures {
+    .ranking.pii.user.profile.EngagementFeatures friendStoryEngagementFeatures = 1;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedEngagementFeatures = 2;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryMetadataFeatures friendStoryMetadataFeatures = 3;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryClientEngagementFeatures friendStoryClientEngagementFeatures = 4;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterEngagementFeatures friendStoryPosterEngagementFeatures = 5;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryNotificationFeatures friendStoryNotificationFeatures = 6;
+    .ranking.pii.user.profile.FriendMetadataFeatures friendMetadataFeatures = 7;
+    .ranking.ml.centralkitchen.SCSCKFriendLinkFeatures friendLinkFeatures = 8;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterFeatures friendStoryPosterFeatures = 9;
+    .ranking.pii.user.profile.EngagementFeatures friendStoryLongWindowEngagementFeatures = 10;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedLongWindowEngagementFeatures = 11;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryReverseEngagementFeatures friendStoryReverseEngagementFeatures = 12;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures friendStoryDerivedReverseEngagementFeatures = 13;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryClientInteractionFeatures friendStoryClientInteractionFeatures = 14;
+}
+
+message SCSCKFriendStoryMetadataFeatures {
+    int32 numStorySnapsViewedPast24Hours = 1;
+    int32 numStorySnapsScreenshotsPast24Hours = 2;
+    int32 numStorySnapsPast24Hours = 3;
+    int32 numPrivateStorySnapsViewedPast24Hours = 4;
+    int32 numPrivateStorySnapsPast24Hours = 5;
+    bool isStoryCompletelyViewed = 6;
+    bool isPrivateStoryCompletelyViewed = 7;
+    bool isPrivateStory = 8;
+    bool isMergedStory = 9;
+    float latestStoryItemAgeInHour = 10;
+    float oldestUnviewedItemAgeInHour = 11;
+    float newestUnviewedItemAgeInHour = 12;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryContentFeatures friendStoryUnviewedContentFeatures = 13;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryMetadataFeatures.SCSCKFriendStoryMetadataFeatures_StoryType_Enum storyType = 14;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryStoryContentFeatures friendStoryViewedContentFeatures = 15;
+    .ranking.indexing.ScpBoostInfo scpBoostInfo = 16;
+    enum SCSCKFriendStoryMetadataFeatures_StoryType_Enum {
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_Unknown = 0;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_Friend = 1;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_Group = 2;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_CustomMobStory = 3;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_GeofenceMobStory = 4;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_PrivateMobStory = 5;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_SharedMobStory = 6;
+        SCSCKFriendStoryMetadataFeatures_StoryType_Enum_CommunityMobStory = 7;
+    }
+}
+
+message SCSCKFriendStoryNotificationFeatures {
+    bool isOptedIn = 1;
+}
+
+message SCSCKFriendStoryPosterContentFeatures {
+    .ranking.pii.user.profile.WindowedIntMetrics numVideoSnaps = 1;
+    .ranking.pii.user.profile.WindowedIntMetrics numVideoNoSoundSnaps = 2;
+    .ranking.pii.user.profile.WindowedIntMetrics numImageSnaps = 3;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithCaption = 4;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithDrawing = 5;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithFilter = 6;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithLens = 7;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithTag = 8;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithVenue = 9;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithSticker = 10;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithBitmojiSticker = 11;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithCustomSticker = 12;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithEmojiSticker = 13;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithInfoSticker = 14;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithAttachment = 15;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapPosts = 16;
+    .ranking.pii.user.profile.WindowedIntMetrics numDaysWithStorySnapPosts = 17;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsWithMusic = 18;
+}
+
+message SCSCKFriendStoryPosterEngagementFeatures {
+    .ranking.core.SCSCOREUUID posterId = 1;
+    .ranking.indexing.jaguar.SCSIDXFriendStoryPosterEngagementFeatures friendStoryPosterEngagementFeatures = 2;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedPosterEngagementFeatures friendStoryDerivedPosterEngagementFeatures = 3;
+    int32 numStoryPostDays28D = 4;
+    bool isTargetedRarePosterBoost = 5;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterContentFeatures friendStoryPosterContentFeatures = 6;
+    int32 rarePosterBoostSlot = 7;
+}
+
+message SCSCKFriendStoryPosterFeatures {
+    .ranking.core.SCSCOREUUID posterId = 1;
+    .ranking.indexing.jaguar.SCSIDXFriendStoryPosterEngagementFeatures friendStoryPosterEngagementFeatures = 2;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedPosterEngagementFeatures friendStoryDerivedPosterEngagementFeatures = 3;
+    int32 numStoryPostDays28D = 4;
+    bool isTargetedRarePosterBoost = 5;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterContentFeatures friendStoryPosterContentFeatures = 6;
+    int32 rarePosterBoostSlot = 7;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterMetadataFeatures friendStoryPosterMetadataFeatures = 8;
+    repeated .ranking.ml.centralkitchen.SCSCKFriendStoryPosterFeatures.PosterEmbeddingsEntry posterEmbeddings = 9;
+    repeated float posterServingEmbeddingArray = 10;
+    .ranking.pii.user.profile.SCSUPBasicAttributes friendStoryPosterBasicAttributesFeatures = 11;
+    .ranking.pii.user.profile.EngagementFeatures expandedFriendStoryPosterEngagmentFeatures = 12;
+    message PosterEmbeddingsEntry {
+        string key = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding value = 2;
+    }
+}
+
+message SCSCKFriendStoryPosterMetadataFeatures {
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterMetadataFeatures.SCSCOREUserGender inferredGender = 1;
+    int32 age = 2;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryPosterMetadataFeatures.SCSCOREUserBucketedAge inferredBucketedAge = 3;
+    enum SCSCOREUserBucketedAge {
+        SCSCOREUserBucketedAge_AgeUnknown = 0;
+        SCSCOREUserBucketedAge_AgeLessThan13 = 1;
+        SCSCOREUserBucketedAge_Age13To17 = 2;
+        SCSCOREUserBucketedAge_Age18To24 = 3;
+        SCSCOREUserBucketedAge_Age25To34 = 4;
+        SCSCOREUserBucketedAge_Age35To54 = 5;
+        SCSCOREUserBucketedAge_AgeMoreThan54 = 6;
+    }
+    enum SCSCOREUserGender {
+        SCSCOREUserGender_GenderUnknown = 0;
+        SCSCOREUserGender_GenderMale = 1;
+        SCSCOREUserGender_GenderFemale = 2;
+    }
+}
+
+message SCSCKFriendStoryReverseEngagementFeatures {
+    string posterId = 1;
+    string viewerId = 2;
+    .ranking.pii.user.profile.EngagementFeatures engagementFeatures = 3;
+}
+
+message SCSCKFriendStorySnapContentFeatures {
+    .ranking.ml.centralkitchen.SCSCKFriendStorySnapContentFeatures.SCSCOREMediaInfo_MediaType mediaType = 1;
+    float videoDuration = 2;
+    int32 numWordsInCaption = 3;
+    string filterId = 4;
+    bool hasSponsoredGeoFilter = 5;
+    string lensId = 6;
+    bool hasSponsoredLens = 7;
+    bool hasVenue = 8;
+    repeated string stickerIdsArray = 9;
+    bool hasBitmojiSticker = 10;
+    bool hasEmojiSticker = 11;
+    bool hasTopicSticker = 12;
+    bool hasSnapchatSticker = 13;
+    bool hasAttachmentURL = 14;
+    bool isFrontFacing = 15;
+    .ranking.ml.centralkitchen.SCSCKFriendStorySnapContentFeatures.SCSCOREMediaInfo_Orientation orientation = 16;
+    bool isInfiniteDuration = 17;
+    string venueId = 18;
+    .ranking.core.SCSCORESnapSource snapSource = 19;
+    int64 clientEditTimeBeforeSend = 20;
+    bool savedToMemoriesBeforeSend = 21;
+    int32 retakeTrials = 22;
+    int32 lowestZoomLevel = 23;
+    int32 highestZoomLevel = 24;
+    .ranking.ml.centralkitchen.SCSCKFriendStorySnapContentFeatures.SCSCOREConnectionInfo_ConnectionType connectionType = 25;
+    float mediaDuration = 26;
+    int32 numMentions = 27;
+    int32 numCaptionTagMentions = 28;
+    int32 numMentionStickerMentions = 29;
+    int32 numSnapcodeStickerMentions = 30;
+    bool hasMusic = 31;
+    bool hasUnsetMusic = 32;
+    bool hasLicensedMusic = 33;
+    bool hasCustomSoundMusic = 34;
+    bool hasSpotlightOrigMusic = 35;
+    int32 numCtStickers = 36;
+    int32 numCtBitmojiStickers = 37;
+    int32 numCtSnapchatStickers = 38;
+    repeated string lensRawTextTagsArray = 39;
+    string lensPrimaryCategoryId = 40;
+    string lensSecondaryCategoryId = 41;
+    repeated string lensContentTagIdsArray = 42;
+    repeated string lensIntegrityTagIdsArray = 43;
+    enum SCSCOREConnectionInfo_ConnectionType {
+        SCSCOREConnectionInfo_ConnectionType_ConnectionUnknown = 0;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionWifi = 1;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionCell = 2;
+        SCSCOREConnectionInfo_ConnectionType_ConnectionEthernet = 3;
+    }
+    enum SCSCOREMediaInfo_MediaType {
+        SCSCOREMediaInfo_MediaType_Image = 0;
+        SCSCOREMediaInfo_MediaType_Video = 1;
+        SCSCOREMediaInfo_MediaType_VideoNoSound = 2;
+        SCSCOREMediaInfo_MediaType_Friend = 3;
+        SCSCOREMediaInfo_MediaType_Blob = 4;
+        SCSCOREMediaInfo_MediaType_Laguna = 5;
+        SCSCOREMediaInfo_MediaType_LagunaNoSound = 6;
+        SCSCOREMediaInfo_MediaType_Gif = 7;
+        SCSCOREMediaInfo_MediaType_FingerprintHeaderSize = 8;
+        SCSCOREMediaInfo_MediaType_AudioStitch = 9;
+        SCSCOREMediaInfo_MediaType_Psychomantis = 10;
+        SCSCOREMediaInfo_MediaType_Screamingmantis = 11;
+        SCSCOREMediaInfo_MediaType_MalibuSound = 12;
+        SCSCOREMediaInfo_MediaType_MalibuNoSound = 13;
+        SCSCOREMediaInfo_MediaType_LagunahdSound = 14;
+        SCSCOREMediaInfo_MediaType_LagunahdNoSound = 15;
+        SCSCOREMediaInfo_MediaType_Ghostmantis = 16;
+        SCSCOREMediaInfo_MediaType_NewportSound = 17;
+        SCSCOREMediaInfo_MediaType_NewportNoSound = 18;
+        SCSCOREMediaInfo_MediaType_Audio = 19;
+        SCSCOREMediaInfo_MediaType_Bloop = 20;
+        SCSCOREMediaInfo_MediaType_SpectaclesImage = 21;
+        SCSCOREMediaInfo_MediaType_SpectaclesVideo = 22;
+        SCSCOREMediaInfo_MediaType_SpectaclesVideoNoSound = 23;
+        SCSCOREMediaInfo_MediaType_CheeriosImage = 24;
+        SCSCOREMediaInfo_MediaType_CheeriosVideo = 25;
+        SCSCOREMediaInfo_MediaType_CheeriosVideoNoSound = 26;
+    }
+    enum SCSCOREMediaInfo_Orientation {
+        SCSCOREMediaInfo_Orientation_Vertical = 0;
+        SCSCOREMediaInfo_Orientation_UpsideDown = 1;
+        SCSCOREMediaInfo_Orientation_HorizontalLeft = 2;
+        SCSCOREMediaInfo_Orientation_HorizontalRight = 3;
+    }
+}
+
+message SCSCKFriendStoryStoryContentFeatures {
+    int32 numVideoSnaps = 1;
+    int32 numVideoNoSoundSnaps = 2;
+    int32 numImageSnaps = 3;
+    int32 numSnapsWithCaption = 4;
+    int32 numSnapsWithFilter = 5;
+    int32 numSnapsWithSponsoredGeoFilter = 6;
+    int32 numSnapsWithLens = 7;
+    int32 numSnapsWithSponsoredLens = 8;
+    int32 numSnapsWithVenue = 9;
+    int32 numSnapsWithSticker = 10;
+    int32 numSnapsWithBitmojiSticker = 11;
+    int32 numSnapsWithEmojiSticker = 12;
+    int32 numSnapsWithTopicSticker = 13;
+    int32 numSnapsWithSnapchatSticker = 14;
+    int32 numSnapsWithAttachment = 15;
+    int32 numWordsInCaptions = 16;
+    float videoDuration = 17;
+    repeated string filterIdsArray = 18;
+    repeated string lensIdsArray = 19;
+    repeated string stickerIdsArray = 20;
+    int32 numSnapsFrontFacing = 21;
+    int32 numSnapsVertical = 22;
+    int32 numSnapsUpsideDown = 23;
+    int32 numSnapsHorizontalLeft = 24;
+    int32 numSnapsHorizontalRight = 25;
+    int32 numSnapsInfiniteDuration = 26;
+    repeated string venueIdsArray = 27;
+    int32 numSnapsSourceUnknown = 28;
+    int32 numSnapsSourceCameraRoll = 29;
+    int32 numSnapsSourceMemories = 30;
+    int32 numSnapsSourceWeb = 31;
+    int64 totalClientEditTimeBeforeSend = 32;
+    int32 numSnapsSavedToMemoriesBeforeSend = 33;
+    int32 totalRetakeTrials = 34;
+    int32 lowestZoomLevel = 35;
+    int32 highestZoomLevel = 36;
+    int32 numSnapsConnectionTypeWifi = 37;
+    int32 numSnapsConnectionTypeCell = 38;
+    int32 numSnapsConnectionTypeUnknown = 39;
+    int32 numSnapsConnectionTypeEther = 40;
+    float mediaDuration = 41;
+    int32 numMentions = 42;
+    int32 numSnapsWithMentions = 43;
+    int32 numCaptionTagMentions = 44;
+    int32 numSnapsWithCaptionTagMentions = 45;
+    int32 numMentionStickerMentions = 46;
+    int32 numSnapsWithMentionStickerMentions = 47;
+    int32 numSnapcodeStickerMentions = 48;
+    int32 numSnapsWithSnapcodeStickerMentions = 49;
+    int32 numSnapsWithMusic = 50;
+    int32 numSnapsWithUnsetMusic = 51;
+    int32 numSnapsWithLicensedMusic = 52;
+    int32 numSnapsWithCustomSoundMusic = 53;
+    int32 numSnapsWithSpotlightOrigMusic = 54;
+    int32 numCtStickers = 55;
+    int32 numSnapsWithCtStickers = 56;
+    int32 numCtBitmojiStickers = 57;
+    int32 numSnapsWithCtBitmojiStickers = 58;
+    int32 numCtSnapchatStickers = 59;
+    int32 numSnapsWithCtSnapchatStickers = 60;
+    repeated string lensRawTextTagsArray = 61;
+    repeated string lensPrimaryCategoryIdsArray = 62;
+    repeated string lensSecondaryCategoryIdsArray = 63;
+    repeated string lensContentTagIdsArray = 64;
+    repeated string lensIntegrityTagIdsArray = 65;
+}
+
+message SCSCKFriendStoryViewerEngagementFeatures {
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapsSent = 1;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryView = 2;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewed = 3;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpent = 4;
+    .ranking.pii.user.profile.WindowedFloatMetrics ratioSnapTimeSpentPerStoryView = 5;
+    repeated .ranking.ml.centralkitchen.SCSCKFriendStoryViewerEngagementFeatures.ViewerEmbeddingsEntry viewerEmbeddings = 6;
+    repeated float viewerServingEmbeddingArray = 7;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1To1ChatsSent = 8;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1To1SnapsSent = 9;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1ToManyChatsSent = 10;
+    .ranking.pii.user.profile.WindowedFloatMetrics num1ToManySnapsSent = 11;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatSaved = 12;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatScreenshots = 13;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatView = 14;
+    .ranking.pii.user.profile.WindowedIntMetrics numChatsSent = 15;
+    .ranking.pii.user.profile.WindowedIntMetrics numCustomStickersSent = 16;
+    .ranking.pii.user.profile.WindowedIntMetrics numHoursWithStoryStoryView = 17;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapScreenshots = 18;
+    .ranking.pii.user.profile.WindowedIntMetrics numSnapView = 19;
+    .ranking.pii.user.profile.WindowedIntMetrics numStickersSent = 20;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExits = 21;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapCompletions = 22;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplays = 23;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplies = 24;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapSkips = 25;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsScreenshots = 26;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedRaw = 27;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryCompletions = 28;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImp = 29;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaInterstitialTap = 30;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTap = 31;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTapPos0 = 32;
+    .ranking.pii.user.profile.WindowedFloatMetrics snapTimeSpent = 33;
+    .ranking.pii.user.profile.WindowedFloatMetrics storyStoryLongImpTime = 34;
+    .ranking.pii.user.profile.WindowedFloatMetrics totalChatAckTime = 35;
+    .ranking.pii.user.profile.WindowedFloatMetrics totalSnapAckTime = 36;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures derivedViewerEngagementFeatures = 37;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapPosts = 38;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryReplies = 39;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryRepliesPos0 = 40;
+    .ranking.pii.user.profile.WindowedIntMetrics storySnapReplyCharCount = 41;
+    .ranking.pii.user.profile.EngagementFeatures viewerEngagementFeatures = 42;
+    .ranking.pii.user.profile.EngagementFeatures viewerLongWindowEngagementFeatures = 43;
+    .ranking.ml.centralkitchen.SCSCKFriendStoryDerivedEngagementFeatures derivedViewerLongWindowEngagementFeatures = 44;
+    message ViewerEmbeddingsEntry {
+        string key = 1;
+        .ranking.ml.centralkitchen.SCSCKEmbedding value = 2;
+    }
+}

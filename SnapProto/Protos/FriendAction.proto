@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.friending.server;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCFriending";
+option csharp_namespace = "SnapProto.Services.Snapchat.Friending.Server";
+
+import "snapchat/friending/SCFriendingFriendActionServiceRequests.proto";
+
+service FriendAction{
+    rpc AddFriends(.snapchat.friending.SCFriendingFriendsAddRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc BlockFriends(.snapchat.friending.SCFriendingFriendsBlockRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc ChangeDisplayNameForFriends(.snapchat.friending.SCFriendingFriendsDisplayNameChangeRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc IgnoreFriends(.snapchat.friending.SCFriendingFriendsIgnoreRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc InviteFriends(.snapchat.friending.SCFriendingFriendsInviteRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc InviteOrAddFriendsByPhone(.snapchat.friending.SCFriendingFriendsInviteOrAddByPhoneRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc MuteStoryForFriends(.snapchat.friending.SCFriendingFriendsMuteStoryRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc RemoveFriends(.snapchat.friending.SCFriendingFriendsRemoveRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc TransferInvites(.snapchat.friending.SCFriendingFriendsTransferInvitesRequest) returns (.snapchat.friending.SCFriendingFriendsTransferInvitesResponse);
+    rpc UnblockFriends(.snapchat.friending.SCFriendingFriendsUnblockRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+    rpc UnmuteStoryForFriends(.snapchat.friending.SCFriendingFriendsUnmuteStoryRequest) returns (.snapchat.friending.SCFriendingFriendsActionResponse);
+}

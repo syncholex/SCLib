@@ -1,0 +1,29 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUpdateBirthdatePb";
+option csharp_namespace = "SnapProto.Snapchat.Activation.Api";
+
+import "google/type/GTPDate.proto";
+
+message SCUpdateBirthdatePbUpdateBirthdateRequest {
+    .google.type.GTPDate birthdate = 1;
+    int32 minuteOffsetFromUtc = 2;
+    bool hasConfirmedLastBirthdateChange = 3;
+}
+
+message SCUpdateBirthdatePbUpdateBirthdateResponse {
+    .snapchat.activation.api.SCUpdateBirthdatePbUpdateBirthdateResponse.SCUpdateBirthdatePbUpdateBirthdateResponse_Status status = 1;
+    string localizedErrTitle = 2;
+    string localizedErrMessage = 3;
+    enum SCUpdateBirthdatePbUpdateBirthdateResponse_Status {
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_Unset = 0;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_UpdateSuccess = 1;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorTooManyUpdates = 2;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorUnderMinimumAge = 3;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorMinorChangingBirthYear = 4;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorNeedsLastChangeConfirmation = 5;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorOnboardedToPayouts = 6;
+        SCUpdateBirthdatePbUpdateBirthdateResponse_Status_ErrorGeneric = 10;
+    }
+}

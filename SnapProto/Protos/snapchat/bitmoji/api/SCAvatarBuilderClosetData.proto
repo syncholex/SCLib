@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.bitmoji.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAvatarBuilder";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Api";
+
+message SCAvatarBuilderClosetData {
+    repeated .snapchat.bitmoji.api.SCAvatarBuilderClosetData.SCAvatarBuilderClosetData_ClosetItem closetItemsArray = 1;
+    message SCAvatarBuilderClosetData_ClosetItem {
+        repeated .snapchat.bitmoji.api.SCAvatarBuilderClosetData.SCAvatarBuilderClosetData_ClosetItem.OutfitEntry outfit = 1;
+        string image = 2;
+        int64 clothingType = 3;
+        message OutfitEntry {
+            string key = 1;
+            int64 value = 2;
+        }
+    }
+}

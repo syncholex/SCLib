@@ -1,0 +1,62 @@
+syntax = "proto3";
+package snapchat.perception.lookalike.features;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Perception.Lookalike.Features";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/perception/lookalike/SCPNLOOKALIEMedia.proto";
+import "snapchat/perception/lookalike/features/SCPNLOOKALIEFeatures.proto";
+
+message BatchExtractFeaturesRequest {
+    .snapchat.perception.lookalike.features.BatchExtractFeaturesRequest.BatchExtractFeaturesRequest_FeatureType featureRequestType = 1;
+    .snapchat.perception.lookalike.SCPNLOOKALIEMediaList mediaList = 2;
+    repeated .snapchat.perception.lookalike.features.BatchExtractFeaturesRequest.PropertiesEntry properties = 200;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum BatchExtractFeaturesRequest_FeatureType {
+        BatchExtractFeaturesRequest_FeatureType_TypeUnset = 0;
+        BatchExtractFeaturesRequest_FeatureType_RawEmbedding = 1;
+        BatchExtractFeaturesRequest_FeatureType_PcaEmbedding = 2;
+    }
+}
+
+message BatchExtractFeaturesResponse {
+    .snapchat.perception.lookalike.features.SCPNLOOKALIEMediaFeaturesList featuresList = 1;
+    .google.protobuf.Timestamp requestTime = 100;
+    .google.protobuf.Timestamp responseTime = 101;
+    repeated .snapchat.perception.lookalike.features.BatchExtractFeaturesResponse.PropertiesEntry properties = 200;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message ExtractFeaturesRequest {
+    .snapchat.perception.lookalike.features.ExtractFeaturesRequest.ExtractFeaturesRequest_FeatureType featureRequestType = 1;
+    .snapchat.perception.lookalike.SCPNLOOKALIEMedia media = 2;
+    repeated .snapchat.perception.lookalike.features.ExtractFeaturesRequest.PropertiesEntry properties = 200;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum ExtractFeaturesRequest_FeatureType {
+        ExtractFeaturesRequest_FeatureType_TypeUnset = 0;
+        ExtractFeaturesRequest_FeatureType_RawEmbedding = 1;
+        ExtractFeaturesRequest_FeatureType_PcaEmbedding = 2;
+    }
+}
+
+message ExtractFeaturesResponse {
+    .google.protobuf.Timestamp requestTime = 100;
+    .google.protobuf.Timestamp responseTime = 101;
+    repeated .snapchat.perception.lookalike.features.ExtractFeaturesResponse.PropertiesEntry properties = 200;
+    .snapchat.perception.lookalike.features.SCPNLOOKALIEFeatures features = 1;
+    .snapchat.perception.lookalike.features.SCPNLOOKALIEFeatureLists featureLists = 2;
+    .snapchat.perception.lookalike.features.SCPNLOOKALIESequenceExample sequenceExample = 3;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

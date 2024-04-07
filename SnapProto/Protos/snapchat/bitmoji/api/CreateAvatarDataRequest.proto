@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.bitmoji.api;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Api";
+
+import "snapchat/bitmoji/api/AvatarData.proto";
+
+message CreateAvatarDataRequest {
+    int64 touVersion = 1;
+    .snapchat.bitmoji.api.AvatarData avatarData = 2;
+    string avatarBuilderSessionId = 3;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.payments.commerce.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Services.Snapchat.Payments.Commerce.Order";
+
+import "snapchat/payments/commerce/order/SCPaymentsGetOrderHistory.proto";
+import "snapchat/payments/commerce/order/SCPaymentsGetSingleOrder.proto";
+
+service OrderService{
+    rpc GetOrderHistory(.snapchat.payments.commerce.order.SCPaymentsGetOrderHistoryRequest) returns (.snapchat.payments.commerce.order.SCPaymentsGetOrderHistoryResponse);
+    rpc GetSingleOrder(.snapchat.payments.commerce.order.SCPaymentsGetSingleOrderRequest) returns (.snapchat.payments.commerce.order.SCPaymentsGetSingleOrderResponse);
+}

@@ -1,0 +1,28 @@
+syntax = "proto3";
+package ranking.serving.jaguar;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Serving.Jaguar";
+
+message BoostConfig {
+    bool isBoostable = 1;
+}
+
+message BoostMetadata {
+    repeated .ranking.serving.jaguar.MyBoost myBoostsArray = 1;
+    repeated .ranking.serving.jaguar.FriendBoost friendBoostsArray = 2;
+}
+
+message FriendBoost {
+    string userId = 1;
+}
+
+message MyBoost {
+    int64 progressMs = 1;
+    .ranking.serving.jaguar.MyBoost.BoostType_Enum boostType = 2;
+    int64 timestampMsec = 3;
+    string snapId = 4;
+    enum BoostType_Enum {
+        BoostType_Enum_Unknown = 0;
+        BoostType_Enum_BoostOnly = 1;
+    }
+}

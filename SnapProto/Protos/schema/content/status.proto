@@ -1,0 +1,145 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/invites.proto";
+import "schema/common/uuid.proto";
+import "schema/common/retention.proto";
+
+message StatusMessage {
+    .snapchat.messaging.ScreenCaptureStatusMessage screen_capture = 1;
+    .snapchat.messaging.CallingStatusMessage calling_status = 2;
+    .snapchat.messaging.ParticipantChangeStatusMessage participant_change = 3;
+    .snapchat.messaging.NameChangeStatusMessage name_status_change = 4;
+    .snapchat.messaging.MessageEraseStatusMessage message_erase = 5;
+    .snapchat.messaging.GroupChatCreatedStatusMessage group_chat_created = 6;
+    .snapchat.messaging.SaveToCameraRollStatusMessage save_to_camera_roll = 7;
+    .snapchat.messaging.ChangeConversationRetentionPolicyStatusMessage change_conversation_retention_policy = 8;
+    .snapchat.messaging.GameClosedStatusMessage game_closed = 9;
+    .snapchat.messaging.InviteLinkStatusMessage invite_link = 10;
+    .snapchat.messaging.GroupInviteStickerJoinTextPromptStatusMessage group_invite_sticker_join_text_prompt = 11;
+    .snapchat.messaging.CanvasCustomUpdateStatusMessage canvas_update = 12;
+}
+
+message ScreenCaptureStatusMessage {
+    .snapchat.messaging.UUID capturing_user = 1;
+    .snapchat.messaging.ScreenCaptureStatusMessage.CaptureType capture_type = 2;
+    .snapchat.messaging.ScreenCaptureStatusMessage.CaptureSource capture_source = 3;
+    enum CaptureType {
+        SCREEN_SHOT = 0;
+        SCREEN_RECORD = 1;
+    }
+    enum CaptureSource {
+        CONVERSATION = 0;
+        FRIENDSHIP_PROFILE = 1;
+        GROUP_PROFILE = 2;
+    }
+}
+
+message ParticipantChangeStatusMessage {
+    repeated .snapchat.messaging.ParticipantChangeStatusMessage.Entry status_changes = 1;
+    .snapchat.messaging.UUID initiating_user = 2;
+    message Entry {
+        .snapchat.messaging.UUID affected_user = 1;
+        .snapchat.messaging.ParticipantChangeStatusMessage.Entry.StatusChange status_change = 2;
+        .snapchat.messaging.ChangeOrigin change_origin = 3;
+        enum StatusChange {
+            ADDED = 0;
+            CREATED = 1;
+            LEFT = 2;
+            REMOVED = 3;
+        }
+    }
+}
+
+message CallingStatusMessage {
+    .snapchat.messaging.CallingStatusMessage.CallStatus call_status = 1;
+    .snapchat.messaging.CallingStatusMessage.CallType call_type = 2;
+    .snapchat.messaging.UUID user_id = 3;
+    enum CallStatus {
+        STARTED = 0;
+        ENDED = 1;
+        LEFT = 2;
+        JOINED = 3;
+        MISSED = 4;
+    }
+    enum CallType {
+        AUDIO = 0;
+        VIDEO = 1;
+    }
+}
+
+message NameChangeStatusMessage {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    string old_name = 2;
+    string new_name = 3;
+}
+
+message MessageEraseStatusMessage {
+    .snapchat.messaging.UUID user_id = 1;
+    .snapchat.messaging.MessageEraseStatusMessage.MessageType message_type = 2;
+    enum MessageType {
+        UNSET = 0;
+        CHAT = 1;
+        SNAP = 2;
+    }
+}
+
+message GroupChatCreatedStatusMessage {
+    .snapchat.messaging.UUID initiating_user = 1;
+    repeated .snapchat.messaging.UUID participants = 2;
+    string group_chat_name = 3;
+}
+
+message SaveToCameraRollStatusMessage {
+    .snapchat.messaging.UUID user_id = 1;
+    uint64 message_id = 2;
+    repeated .snapchat.messaging.MediaTypeToCount media_type_to_count = 3;
+}
+
+message MediaTypeToCount {
+    .snapchat.messaging.MediaTypeToCount.MediaType media_type = 1;
+    uint64 count = 2;
+    enum MediaType {
+        UNKNOWN = 0;
+        IMAGE = 1;
+        VIDEO = 2;
+    }
+}
+
+message ChangeConversationRetentionPolicyStatusMessage {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.ConversationRetentionPolicy new_retention_policy = 2;
+}
+
+message GameClosedStatusMessage {
+    string app_id = 1;
+    repeated .snapchat.messaging.UUID participants = 2;
+}
+
+message InviteLinkStatusMessage {
+    .snapchat.messaging.UUID initiating_user_id = 1;
+    .snapchat.messaging.InviteLinkStatusMessage.InviteLinkStatus invite_link_status = 2;
+    enum InviteLinkStatus {
+        INVITE_LINK_STATUS_UNSET = 0;
+        INVITE_LINK_STATUS_CREATED = 1;
+        INVITE_LINK_STATUS_DELETED = 2;
+    }
+}
+
+message GroupInviteStickerJoinTextPromptStatusMessage {
+    .snapchat.messaging.UUID invite_group_id = 1;
+    string invite_group_name = 2;
+    .snapchat.messaging.UUID invite_id = 3;
+}
+
+message CanvasCustomUpdateStatusMessage {
+    .snapchat.messaging.UUID app_id = 1;
+    repeated .snapchat.messaging.UUID media_user_ids = 2;
+    string text_content = 3;
+}

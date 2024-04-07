@@ -1,0 +1,181 @@
+syntax = "proto3";
+package snapchat.perception.scan_history.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPSH";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Scan_history.V1";
+
+import "snapchat/perception/common/SCPCNCommon.proto";
+import "snapchat/perception/gtq/SCPGTQGtq.proto";
+import "snapchat/perception/snapcodes/SCSnapcodeSnapcode.proto";
+
+message SCPSHBoltContentObject {
+    bytes contentObject = 1;
+    .snapchat.perception.scan_history.v1.SCPSHEncryptionKeyIv encryptionKeyIv = 2;
+}
+
+message SCPSHCategoriesV1 {
+    repeated .snapchat.perception.scan_history.v1.SCPSHCategoriesV1.SCPSHCategoriesV1_Category categoriesArray = 1;
+    message SCPSHCategoriesV1_Category {
+        string categoryId = 1;
+        string localizedName = 2;
+    }
+}
+
+message SCPSHDeleteAllScansRequestV1 {
+}
+
+message SCPSHDeleteScanHistoryRequest {
+    string id_p = 4;
+    repeated .snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 5;
+    .snapchat.perception.scan_history.v1.SCPSHDeleteScanSessionsRequestV1 deleteScanSessionsRequestV1 = 1;
+    .snapchat.perception.scan_history.v1.SCPSHDeleteScanResultsRequestV1 deleteScanResultsRequestV1 = 2;
+    .snapchat.perception.scan_history.v1.SCPSHDeleteAllScansRequestV1 deleteAllScansRequestV1 = 3;
+}
+
+message SCPSHDeleteScanHistoryResponse {
+}
+
+message SCPSHDeleteScanResultsRequestV1 {
+    repeated bytes resultIdsArray = 1;
+}
+
+message SCPSHDeleteScanSessionsRequestV1 {
+    repeated bytes sessionIdsArray = 1;
+}
+
+message SCPSHDeleteSession {
+    string primaryText = 1;
+    .snapchat.perception.scan_history.v1.SCPSHDeleteScanHistoryRequest deleteScanHistoryRequest = 2;
+}
+
+message SCPSHEncryptionKeyIv {
+    bytes key = 1;
+    bytes iv = 2;
+}
+
+message SCPSHImageDateTimeLocation {
+    string primaryText = 1;
+    string secondaryText = 2;
+    .snapchat.perception.scan_history.v1.SCPSHMediaObjectV1 mediaObjectV1 = 3;
+}
+
+message SCPSHLensesResultV1 {
+    repeated string lensIdsArray = 1;
+    string iconURL = 2;
+    string title = 3;
+    string subtitle = 4;
+    string overlayIconURL = 5;
+}
+
+message SCPSHMediaObjectV1 {
+    .snapchat.perception.scan_history.v1.SCPSHMediaObjectV1.SCPSHMediaType type = 1;
+    .snapchat.perception.scan_history.v1.SCPSHBoltContentObject boltContentObject = 2;
+    enum SCPSHMediaType {
+        SCPSHMediaType_MediaTypeUnset = 0;
+        SCPSHMediaType_MediaTypeImage = 1;
+    }
+}
+
+message SCPSHNoSessionsV1 {
+    string bitmojiTemplateId = 1;
+    string fallbackImageURL = 2;
+    string title = 3;
+    string subtitle = 4;
+    string footerText = 5;
+    string footerURL = 6;
+}
+
+message SCPSHOpenActionSheet {
+    repeated .snapchat.perception.scan_history.v1.SCPSHOpenActionSheet.SCPSHOpenActionSheet_ActionSheetCell actionSheetCellsArray = 3;
+    message SCPSHOpenActionSheet_ActionSheetCell {
+        .snapchat.perception.scan_history.v1.SCPSHImageDateTimeLocation showDateTimeLocation = 1;
+        .snapchat.perception.scan_history.v1.SCPSHResultAction resultAction = 2;
+    }
+}
+
+message SCPSHOpenApp {
+    string link = 1;
+}
+
+message SCPSHOpenHtml {
+    string html = 1;
+}
+
+message SCPSHOpenLink {
+    string URL = 1;
+}
+
+message SCPSHOpenProfileAction {
+    string profileId = 1;
+    bool isPublicProfile = 2;
+}
+
+message SCPSHOpenSnapcode {
+    .snapchat.perception.snapcodes.SCSnapcodeSnapcode snapcode = 1;
+}
+
+message SCPSHReadScanHistoryRequest {
+    string categoryId = 1;
+    bytes pageCursor = 2;
+    .snapchat.perception.gtq.SCPGTQRequest gtqRequest = 3;
+    string id_p = 4;
+    repeated .snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 5;
+}
+
+message SCPSHReadScanHistoryResponse {
+    bytes pageCursor = 1;
+    .snapchat.perception.scan_history.v1.SCPSHSessionsV1 sessionsV1 = 2;
+    .snapchat.perception.scan_history.v1.SCPSHNoSessionsV1 noSessionsV1 = 3;
+}
+
+message SCPSHResultAction {
+    .snapchat.perception.scan_history.v1.SCPSHOpenActionSheet openActionSheet = 1;
+    .snapchat.perception.scan_history.v1.SCPSHOpenLink openLink = 2;
+    .snapchat.perception.scan_history.v1.SCPSHOpenApp openApp = 3;
+    .snapchat.perception.scan_history.v1.SCPSHDeleteSession deleteSession = 4;
+    .snapchat.perception.scan_history.v1.SCPSHOpenHtml openHtml = 5;
+    .snapchat.perception.scan_history.v1.SCPSHOpenSnapcode openSnapcode = 6;
+    .snapchat.perception.scan_history.v1.SCPSHOpenProfileAction openProfileAction = 7;
+}
+
+message SCPSHResultV1 {
+    bytes id_p = 1;
+    .snapchat.perception.scan_history.v1.SCPSHResultAction tapAction = 4;
+    .snapchat.perception.scan_history.v1.SCPSHUtilityResultV1 utilityResultV1 = 2;
+    .snapchat.perception.scan_history.v1.SCPSHLensesResultV1 lensesResultV1 = 3;
+    .snapchat.perception.scan_history.v1.SCPSHSnapcodeResultV1 snapcodeResultV1 = 5;
+}
+
+message SCPSHScanHistoryMetadataRequest {
+    repeated .snapchat.perception.common.SCPCNCOFConfig cofConfigsArray = 1;
+}
+
+message SCPSHScanHistoryMetadataResponse {
+    .snapchat.perception.scan_history.v1.SCPSHCategoriesV1 categoriesV1 = 1;
+}
+
+message SCPSHSessionsV1 {
+    repeated .snapchat.perception.scan_history.v1.SCPSHSessionsV1.SCPSHSessionsV1_Session sessionsArray = 1;
+    message SCPSHSessionsV1_Session {
+        bytes id_p = 1;
+        string primaryText = 2;
+        string secondaryText = 3;
+        .snapchat.perception.scan_history.v1.SCPSHMediaObjectV1 mediaObjectV1 = 4;
+        repeated .snapchat.perception.scan_history.v1.SCPSHResultV1 resultsV1Array = 5;
+        .snapchat.perception.scan_history.v1.SCPSHResultAction tapAction = 6;
+    }
+}
+
+message SCPSHSnapcodeResultV1 {
+    string iconURL = 1;
+    string itemImageURL = 2;
+    string title = 3;
+    string subtitle = 4;
+}
+
+message SCPSHUtilityResultV1 {
+    string iconURL = 1;
+    string itemImageURL = 2;
+    string title = 3;
+    string subtitle = 4;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.storydoc;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Storydoc";
+
+message HappeningNow {
+    bool breakingNews = 3;
+    int64 breakingNewsExpiresAtMs = 4;
+    .snapchat.storydoc.HappeningNowWeather weather = 1;
+    .snapchat.storydoc.HappeningNowHoroscope horoscope = 2;
+}
+
+message HappeningNowHoroscope {
+    .snapchat.storydoc.HappeningNowHoroscope.HappeningNowHoroscope_AstrologicalSign astrologicalSign = 1;
+    enum HappeningNowHoroscope_AstrologicalSign {
+        HappeningNowHoroscope_AstrologicalSign_Unset = 0;
+        HappeningNowHoroscope_AstrologicalSign_Aries = 1;
+        HappeningNowHoroscope_AstrologicalSign_Taurus = 2;
+        HappeningNowHoroscope_AstrologicalSign_Gemini = 3;
+        HappeningNowHoroscope_AstrologicalSign_Cancer = 4;
+        HappeningNowHoroscope_AstrologicalSign_Leo = 5;
+        HappeningNowHoroscope_AstrologicalSign_Virgo = 6;
+        HappeningNowHoroscope_AstrologicalSign_Libra = 7;
+        HappeningNowHoroscope_AstrologicalSign_Scorpio = 8;
+        HappeningNowHoroscope_AstrologicalSign_Sagittarius = 9;
+        HappeningNowHoroscope_AstrologicalSign_Capricorn = 10;
+        HappeningNowHoroscope_AstrologicalSign_Aquarius = 11;
+        HappeningNowHoroscope_AstrologicalSign_Pisces = 12;
+    }
+}
+
+message HappeningNowWeather {
+}

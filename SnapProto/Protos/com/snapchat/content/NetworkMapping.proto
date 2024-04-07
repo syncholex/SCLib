@@ -1,0 +1,32 @@
+syntax = "proto3";
+package com.snapchat.content;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Content";
+option java_package = "com.snapchat.content";
+
+message NetworkMapping {
+    repeated .com.snapchat.content.NetworkMapping.DeliveryNetwork deliveryNetworks = 1;
+    repeated .com.snapchat.content.NetworkMapping.Location locations = 2;
+    repeated .com.snapchat.content.NetworkMapping.DeliveryPath deliveryPaths = 3;
+    uint64 version = 4;
+    message DeliveryNetwork {
+        int64 providerId = 1;
+        int64 cdnId = 2;
+        string hostPattern = 3;
+        repeated string hostPatterns = 4;
+        bool isXt = 5;
+    }
+    message DeliveryPath {
+        int64 providerId = 1;
+        int64 cdnId = 2;
+        int64 locationId = 3;
+    }
+    message Location {
+        int64 locationId = 1;
+        string name = 2;
+        string region = 3;
+        int64 providerId = 4;
+        string pathPattern = 5;
+        repeated string hostParts = 6;
+    }
+}

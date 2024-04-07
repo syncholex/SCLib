@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.aura.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuraPb";
+option csharp_namespace = "SnapProto.Snapchat.Aura.Common";
+
+message SCAuraPbUUID {
+    fixed64 highBits = 1;
+    fixed64 lowBits = 2;
+}

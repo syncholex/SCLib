@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.content;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBolt";
+option csharp_namespace = "SnapProto.Snapchat.Content";
+
+import "snapchat/content/SCBoltContentDescriptor.proto";
+import "snapchat/content/SCMossMediaBundle.proto";
+
+message SCBoltContentObject {
+    bytes contentObjectId = 1;
+    .snapchat.content.SCBoltContentDescriptor contentDescriptor = 2;
+    .snapchat.content.SCMossMediaBundle mediaBundle = 3;
+}

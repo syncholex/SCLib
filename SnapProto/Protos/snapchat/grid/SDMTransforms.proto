@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.grid;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Grid";
+
+message SDMTransforms {
+    repeated sint32 scalesArray = 1;
+    repeated sint32 xCentersArray = 2;
+    repeated sint32 yCentersArray = 3;
+    repeated sint32 rotationsArray = 4;
+    repeated uint32 timestampsArray = 5;
+}

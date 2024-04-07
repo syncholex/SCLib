@@ -1,0 +1,394 @@
+syntax = "proto3";
+package snapchat.perception;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPN";
+option csharp_namespace = "SnapProto.Snapchat.Perception";
+
+import "google/protobuf/any.proto";
+import "snapchat/perception/SCPNGeometry.proto";
+import "snapchat/perception/common/SCPCNCommon.proto";
+import "snapchat/perception/lookalike/features/Service.proto";
+import "snapchat/perception/lookalike/query/Query.proto";
+import "snapchat/research/SnapBrain.proto";
+
+message SCPNAnalyzer {
+    .snapchat.perception.SCPNAnalyzer.SCPNAnalyzer_Type type = 1;
+    int32 maxResults = 2;
+    enum SCPNAnalyzer_Type {
+        SCPNAnalyzer_Type_TypeUnspecified = 0;
+        SCPNAnalyzer_Type_Ifood = 1;
+        SCPNAnalyzer_Type_Dogs = 2;
+        SCPNAnalyzer_Type_Giphylensobject = 3;
+        SCPNAnalyzer_Type_Giphylensscene = 4;
+        SCPNAnalyzer_Type_Googletextdetection = 5;
+        SCPNAnalyzer_Type_Movies = 6;
+        SCPNAnalyzer_Type_Faceexpression = 7;
+        SCPNAnalyzer_Type_Coco = 8;
+        SCPNAnalyzer_Type_Openimagesv4Boxableall = 9;
+        SCPNAnalyzer_Type_Places365All = 10;
+        SCPNAnalyzer_Type_Markerlens = 11;
+        SCPNAnalyzer_Type_Facedetection = 12;
+        SCPNAnalyzer_Type_Gradientcoverage = 13;
+        SCPNAnalyzer_Type_Skydetection = 14;
+        SCPNAnalyzer_Type_Handdetection = 15;
+        SCPNAnalyzer_Type_Lensrecgradientcoverage = 16;
+        SCPNAnalyzer_Type_Handclassification = 17;
+        SCPNAnalyzer_Type_Nsfw = 18;
+        SCPNAnalyzer_Type_SnapEye = 19;
+        SCPNAnalyzer_Type_Tfskysegmentation = 20;
+        SCPNAnalyzer_Type_SnapeyeAudiofp = 21;
+        SCPNAnalyzer_Type_SnapeyeContext = 22;
+        SCPNAnalyzer_Type_SnapeyeEulerAngles = 23;
+        SCPNAnalyzer_Type_SnapeyeFaceFrontalizer = 24;
+        SCPNAnalyzer_Type_SnapeyeInterestingness = 26;
+        SCPNAnalyzer_Type_SnapeyeLogoAnalyzer = 27;
+        SCPNAnalyzer_Type_SnapeyeMediainfo = 28;
+        SCPNAnalyzer_Type_SnapeyeMusic = 29;
+        SCPNAnalyzer_Type_SnapeyeObjectDetection = 30;
+        SCPNAnalyzer_Type_SnapeyeOpenNsfw = 31;
+        SCPNAnalyzer_Type_SnapeyeProduct = 32;
+        SCPNAnalyzer_Type_SnapeyeQuality = 33;
+        SCPNAnalyzer_Type_SnapeyeSnaplang = 34;
+        SCPNAnalyzer_Type_SnapeyeSnapText = 35;
+        SCPNAnalyzer_Type_SnapeyeSoundV1 = 36;
+        SCPNAnalyzer_Type_SnapeyeSoundV2 = 37;
+        SCPNAnalyzer_Type_SnapeyeSpokenKeywords = 38;
+        SCPNAnalyzer_Type_SnapeyeTagLite = 39;
+        SCPNAnalyzer_Type_SnapeyeTagV1 = 40;
+        SCPNAnalyzer_Type_SnapeyeTagV2 = 41;
+        SCPNAnalyzer_Type_Logodetectionmarkerlens = 42;
+        SCPNAnalyzer_Type_Logodetection = 43;
+        SCPNAnalyzer_Type_Spacy = 44;
+        SCPNAnalyzer_Type_Maps = 45;
+        SCPNAnalyzer_Type_Nikejumpman = 46;
+        SCPNAnalyzer_Type_Markerlensv2 = 47;
+        SCPNAnalyzer_Type_Spsmarker = 48;
+        SCPNAnalyzer_Type_Markerlensbruteforce = 49;
+        SCPNAnalyzer_Type_Context = 50;
+        SCPNAnalyzer_Type_FaceFrontalizer = 52;
+        SCPNAnalyzer_Type_Interestingness = 54;
+        SCPNAnalyzer_Type_Logo = 55;
+        SCPNAnalyzer_Type_Mediainfo = 56;
+        SCPNAnalyzer_Type_OpenNsfw = 59;
+        SCPNAnalyzer_Type_Quality = 61;
+        SCPNAnalyzer_Type_Snaplang = 62;
+        SCPNAnalyzer_Type_SnapText = 63;
+        SCPNAnalyzer_Type_SoundV1 = 64;
+        SCPNAnalyzer_Type_SoundV2 = 65;
+        SCPNAnalyzer_Type_TagV1 = 67;
+        SCPNAnalyzer_Type_Currency = 68;
+        SCPNAnalyzer_Type_TagV2 = 69;
+        SCPNAnalyzer_Type_Cannabisclassification = 70;
+        SCPNAnalyzer_Type_Scanconfirmedlogo = 71;
+        SCPNAnalyzer_Type_Lookalikescanlens = 72;
+        SCPNAnalyzer_Type_Faceretrieval = 73;
+        SCPNAnalyzer_Type_Faceretrievalfromembedding = 74;
+        SCPNAnalyzer_Type_Faceretrievalembedding = 75;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2 = 76;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Frompcaembedding = 77;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Rawfeatures = 78;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Pcaembedding = 79;
+        SCPNAnalyzer_Type_Usonlylookalike = 80;
+        SCPNAnalyzer_Type_Usonlylookalikeframes = 81;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Frames = 82;
+        SCPNAnalyzer_Type_Deepfashion2 = 83;
+        SCPNAnalyzer_Type_Blurdetection = 84;
+        SCPNAnalyzer_Type_Deepfashion2Fromembedding = 85;
+        SCPNAnalyzer_Type_Fashionproductlookalike = 86;
+        SCPNAnalyzer_Type_Fashionproductlookalikefromembedding = 87;
+        SCPNAnalyzer_Type_Fashionproductlookalikeann = 88;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Moco = 89;
+        SCPNAnalyzer_Type_Stuffsegmentation = 90;
+        SCPNAnalyzer_Type_Oodclassification = 91;
+        SCPNAnalyzer_Type_Footclassification = 92;
+        SCPNAnalyzer_Type_Fullbodyclassification = 93;
+        SCPNAnalyzer_Type_Snapcodeclassification = 94;
+        SCPNAnalyzer_Type_Markerlensv3 = 95;
+        SCPNAnalyzer_Type_Soundalike = 96;
+        SCPNAnalyzer_Type_Lenssearchlookalike = 97;
+        SCPNAnalyzer_Type_Imagecaptioning = 98;
+        SCPNAnalyzer_Type_Vqa = 99;
+        SCPNAnalyzer_Type_Nytimesbook = 100;
+        SCPNAnalyzer_Type_Celebrityrecognition = 101;
+        SCPNAnalyzer_Type_Carmodel = 102;
+        SCPNAnalyzer_Type_Ourstoryframe = 103;
+        SCPNAnalyzer_Type_Ourstorycontentfinder = 104;
+        SCPNAnalyzer_Type_Ourstoryframefrompcaembedding = 105;
+        SCPNAnalyzer_Type_Lookalikerawfeatures = 106;
+        SCPNAnalyzer_Type_Lookalikepcaembedding = 107;
+        SCPNAnalyzer_Type_Poseestimation = 108;
+        SCPNAnalyzer_Type_Persondetection = 109;
+        SCPNAnalyzer_Type_Cardetection = 110;
+        SCPNAnalyzer_Type_Museumartwork = 111;
+        SCPNAnalyzer_Type_Facedetectionv2 = 112;
+        SCPNAnalyzer_Type_Weapondetection = 113;
+        SCPNAnalyzer_Type_Nsfwv2 = 114;
+        SCPNAnalyzer_Type_Textdetection = 115;
+        SCPNAnalyzer_Type_Clothingdetection = 116;
+        SCPNAnalyzer_Type_Clothingembed = 117;
+        SCPNAnalyzer_Type_Cocodetection = 118;
+        SCPNAnalyzer_Type_Audiosetyamnet521 = 119;
+        SCPNAnalyzer_Type_Audiomarker = 120;
+        SCPNAnalyzer_Type_Unionlogo = 121;
+        SCPNAnalyzer_Type_Cheetos = 122;
+        SCPNAnalyzer_Type_Vivinoclassification = 123;
+        SCPNAnalyzer_Type_Amazonclassification = 124;
+        SCPNAnalyzer_Type_Snapscandecoder = 125;
+        SCPNAnalyzer_Type_Deepscandecoder = 126;
+        SCPNAnalyzer_Type_Spotlightlookalike = 127;
+        SCPNAnalyzer_Type_Perceptronclassificationdemo = 200;
+        SCPNAnalyzer_Type_Perceptrondetectiondemo = 201;
+        SCPNAnalyzer_Type_Perceptronsegmentationdemo = 202;
+        SCPNAnalyzer_Type_Scanfromlensobjects = 203;
+        SCPNAnalyzer_Type_Scanfromlensplaces = 204;
+        SCPNAnalyzer_Type_Scanfromlenscocodetection = 205;
+        SCPNAnalyzer_Type_Foodclassification = 206;
+        SCPNAnalyzer_Type_Clipourstorycontentfinder = 207;
+        SCPNAnalyzer_Type_Clipourstorycontentfinderfromtext = 208;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Frontfacing = 209;
+        SCPNAnalyzer_Type_Ourstorycontentfinderv2Backfacing = 210;
+        SCPNAnalyzer_Type_Tradingcards = 211;
+        SCPNAnalyzer_Type_Comicbooks = 212;
+        SCPNAnalyzer_Type_Looclassification = 213;
+        SCPNAnalyzer_Type_Experimentalmarker = 214;
+        SCPNAnalyzer_Type_Webimagesearch = 215;
+        SCPNAnalyzer_Type_Webimagesearchfromtext = 216;
+        SCPNAnalyzer_Type_Usonlylookalikefromcliptext = 217;
+        SCPNAnalyzer_Type_Alexisraelmarker = 218;
+        SCPNAnalyzer_Type_Productsearch = 219;
+        SCPNAnalyzer_Type_Classagnosticdetection = 220;
+        SCPNAnalyzer_Type_Carmodeltreatment = 221;
+        SCPNAnalyzer_Type_Nftscanner = 222;
+        SCPNAnalyzer_Type_Poseretrieval = 223;
+        SCPNAnalyzer_Type_Websearchfood = 224;
+        SCPNAnalyzer_Type_Movieposter = 225;
+        SCPNAnalyzer_Type_Movieclip = 226;
+        SCPNAnalyzer_Type_Scanocrv1 = 227;
+        SCPNAnalyzer_Type_Movieposterv2 = 228;
+        SCPNAnalyzer_Type_Pasrtranscription = 229;
+        SCPNAnalyzer_Type_Bitmojifashionlookalikefromembedding = 230;
+        SCPNAnalyzer_Type_Textscan = 231;
+        SCPNAnalyzer_Type_Websearchtext = 232;
+        SCPNAnalyzer_Type_Beautyscanner = 233;
+        SCPNAnalyzer_Type_Photomathclassifier = 234;
+        SCPNAnalyzer_Type_Usergeneratedimagecodes = 235;
+        SCPNAnalyzer_Type_Amazonlogo = 236;
+        SCPNAnalyzer_Type_Websearchbarcode = 237;
+        SCPNAnalyzer_Type_Productdetection = 238;
+        SCPNAnalyzer_Type_Realtimeimagecodes = 239;
+        SCPNAnalyzer_Type_Fewshotlogo = 240;
+        SCPNAnalyzer_Type_Shoppability = 241;
+        SCPNAnalyzer_Type_Videoclip = 242;
+        SCPNAnalyzer_Type_Barcodedecoder = 243;
+        SCPNAnalyzer_Type_Blurdetectionv2 = 244;
+        SCPNAnalyzer_Type_Blip = 245;
+        SCPNAnalyzer_Type_Textsummarization = 246;
+        SCPNAnalyzer_Type_Multimodallookalike = 247;
+        SCPNAnalyzer_Type_Blip2 = 248;
+        SCPNAnalyzer_Type_Multimodalscanagent = 249;
+        SCPNAnalyzer_Type_Llama = 250;
+    }
+}
+
+message SCPNAnalyzerRequestMetadata {
+    float validateVideoDurationLimit = 7;
+    string modelVersionLabel = 8;
+    .snapchat.perception.SCPNVisualSearchRequestMetadata visualSearchRequestMetadata = 9;
+    repeated .snapchat.perception.SCPNBoundingPoly normedBboxesArray = 10;
+    .snapchat.perception.SCPNLookalikeRequestMetadata lookalikeRequestMetadata = 11;
+}
+
+message SCPNAnalyzerResponse {
+    repeated .snapchat.perception.SCPNEntityAnnotation annotationsArray = 1;
+    string version = 2;
+    .snapchat.perception.SCPNAnalyzerResponseMetadata metadata = 5;
+    .snapchat.research.SnapBrainResponse.SnapBrainResponse_Results snapEye = 3;
+    .snapchat.perception.SCPNAnalyzerResponse.SCPNAnalyzerResponse_EntityAnnotations entityAnnotations = 4;
+    message SCPNAnalyzerResponse_EntityAnnotations {
+        repeated .snapchat.perception.SCPNEntityAnnotation annotationsArray = 1;
+    }
+}
+
+message SCPNAnalyzerResponseMetadata {
+    .snapchat.perception.SCPNVisualSearchTrace trace = 1;
+}
+
+message SCPNContentBasedRetrievalResult {
+    .snapchat.perception.lookalike.query.Hit lookalikeHit = 1;
+}
+
+message SCPNEntityAnnotation {
+    string id_p = 1;
+    string label = 2;
+    float score = 3;
+    .snapchat.perception.SCPNBoundingPoly boundingPolygon = 4;
+    bytes mask = 5;
+    repeated float featureVectorArray = 6;
+    repeated .snapchat.perception.SCPNPersonKeypoint personKeypointsArray = 7;
+    repeated .snapchat.perception.SCPNEntityAnnotation.AllFeaturesEntry allFeatures = 8;
+    repeated .snapchat.perception.SCPNEntityAnnotation.AttributesEntry attributes = 9;
+    .snapchat.perception.SCPNOurStoryFrameMetadata ourStoryFrameMetadata = 103;
+    .snapchat.perception.SCPNOurStoryContentFinderMetadata ourStoryContentFinderMetadata = 104;
+    .snapchat.perception.SCPNMuseumArtworkMetadata museumArtworkMetadata = 111;
+    .snapchat.perception.SCPNContentBasedRetrievalResult contentBasedRetrievalResult = 300;
+    .snapchat.perception.SCPNFeatureExtractionResult featureExtractionResult = 301;
+    message AllFeaturesEntry {
+        string key = 1;
+        .snapchat.perception.SCPNFeature value = 2;
+    }
+    message AttributesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPNFeature {
+    .snapchat.perception.common.SCPCNBytesList bytesList = 1;
+    .snapchat.perception.common.SCPCNFloatList floatList = 2;
+    .snapchat.perception.common.SCPCNInt64List int64List = 3;
+}
+
+message SCPNFeatureExtractionResult {
+    .snapchat.perception.lookalike.features.ExtractFeaturesResponse lookalikeFeatures = 1;
+}
+
+message SCPNIrisRequest {
+    .snapchat.perception.SCPNMedia media = 1;
+    repeated .snapchat.perception.SCPNAnalyzer analyzersArray = 2;
+    repeated .snapchat.perception.SCPNIrisRequest.RequestMetadataEntry requestMetadata = 3;
+    bool allowPartialResponse = 4;
+    .snapchat.perception.SCPNMediaMap mediaMap = 6;
+    message RequestMetadataEntry {
+        int32 key = 1;
+        .snapchat.perception.SCPNAnalyzerRequestMetadata value = 2;
+    }
+}
+
+message SCPNIrisResponse {
+    repeated .snapchat.perception.SCPNIrisResponse.AnalyzerResponsesEntry analyzerResponses = 1;
+    message AnalyzerResponsesEntry {
+        int32 key = 1;
+        .snapchat.perception.SCPNAnalyzerResponse value = 2;
+    }
+}
+
+message SCPNLookalikeRequestMetadata {
+    string indexVersion = 1;
+}
+
+message SCPNMedia {
+    bytes mediaString = 1;
+    .snapchat.perception.SCPNMedia.SCPNMedia_MediaType mediaType = 2;
+    string text = 3;
+    enum SCPNMedia_MediaType {
+        SCPNMedia_MediaType_Unknown = 0;
+        SCPNMedia_MediaType_ImageJpg = 1;
+        SCPNMedia_MediaType_VideoMp4 = 2;
+        SCPNMedia_MediaType_BinaryNpy = 3;
+        SCPNMedia_MediaType_AudioWav = 4;
+        SCPNMedia_MediaType_URL = 5;
+        SCPNMedia_MediaType_Text = 6;
+    }
+}
+
+message SCPNMediaMap {
+    repeated .snapchat.perception.SCPNMediaMap.MapEntry map = 1;
+    message MapEntry {
+        string key = 1;
+        .snapchat.perception.SCPNMedia value = 2;
+    }
+}
+
+message SCPNMuseumArtworkMetadata {
+    string mediaURL = 1;
+    string museum = 2;
+    string title = 3;
+    string placardText = 4;
+    string sourceURL = 5;
+    repeated .snapchat.perception.SCPNMuseumArtworkMetadata.PropertiesEntry properties = 6;
+    message PropertiesEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCPNOurStoryContentFinderMetadata {
+    string storyMediaURL = 1;
+    string sharedStorySubmissionId = 2;
+    .snapchat.perception.SCPNOurStoryContentFinderMetadata.SCPNOurStoryContentFinderMetadata_StoryMediaType storyMediaType = 3;
+    string frameMediaURL = 4;
+    string frameId = 5;
+    enum SCPNOurStoryContentFinderMetadata_StoryMediaType {
+        SCPNOurStoryContentFinderMetadata_StoryMediaType_TypeUnspecified = 0;
+        SCPNOurStoryContentFinderMetadata_StoryMediaType_Image = 1;
+        SCPNOurStoryContentFinderMetadata_StoryMediaType_Video = 2;
+    }
+}
+
+message SCPNOurStoryFrameMetadata {
+    string mediaURL = 1;
+    string sharedStorySubmissionId = 2;
+    .snapchat.perception.SCPNOurStoryFrameMetadata.SCPNOurStoryFrameMetadata_StoryMediaType storyMediaType = 3;
+    string storyMediaURL = 4;
+    float secondsElapsed = 5;
+    enum SCPNOurStoryFrameMetadata_StoryMediaType {
+        SCPNOurStoryFrameMetadata_StoryMediaType_TypeUnspecified = 0;
+        SCPNOurStoryFrameMetadata_StoryMediaType_Image = 1;
+        SCPNOurStoryFrameMetadata_StoryMediaType_Video = 2;
+    }
+}
+
+message SCPNPersonKeypoint {
+    .snapchat.perception.SCPNPersonKeypoint.SCPNPersonKeypoint_Type type = 1;
+    .snapchat.perception.SCPNCoordinate coordinate = 2;
+    enum SCPNPersonKeypoint_Type {
+        SCPNPersonKeypoint_Type_UnknownKeypoint = 0;
+        SCPNPersonKeypoint_Type_RightAnkle = 1;
+        SCPNPersonKeypoint_Type_RightKnee = 2;
+        SCPNPersonKeypoint_Type_RightHip = 3;
+        SCPNPersonKeypoint_Type_LeftHip = 4;
+        SCPNPersonKeypoint_Type_LeftKnee = 5;
+        SCPNPersonKeypoint_Type_LeftAnkle = 6;
+        SCPNPersonKeypoint_Type_Pelvis = 7;
+        SCPNPersonKeypoint_Type_Thorax = 8;
+        SCPNPersonKeypoint_Type_UpperNeck = 9;
+        SCPNPersonKeypoint_Type_HeadTop = 10;
+        SCPNPersonKeypoint_Type_RightWrist = 11;
+        SCPNPersonKeypoint_Type_RightElbow = 12;
+        SCPNPersonKeypoint_Type_RightShoulder = 13;
+        SCPNPersonKeypoint_Type_LeftShoulder = 14;
+        SCPNPersonKeypoint_Type_LeftElbow = 15;
+        SCPNPersonKeypoint_Type_LeftWrist = 16;
+    }
+}
+
+message SCPNSnapJoinStoryMetadata {
+    string snapId = 1;
+    .google.protobuf.Any snapJoinMsg = 2;
+}
+
+message SCPNStoryAnalyzerResponse {
+    repeated .snapchat.perception.SCPNStoryAnalyzerResponse.AnalyzerResponsesEntry analyzerResponses = 1;
+    .snapchat.perception.SCPNSnapJoinStoryMetadata snapJoinStoryMetadata = 2;
+    message AnalyzerResponsesEntry {
+        int32 key = 1;
+        .snapchat.perception.SCPNAnalyzerResponse value = 2;
+    }
+}
+
+message SCPNVisualSearchRequestMetadata {
+    bool includeTrace = 1;
+}
+
+message SCPNVisualSearchTrace {
+    repeated .snapchat.perception.SCPNVisualSearchTrace.SCPNVisualSearchTrace_VisualSearchTraceOperationLog operationLogsArray = 1;
+    message SCPNVisualSearchTrace_VisualSearchTraceOperationLog {
+        string name = 1;
+        repeated string eventsArray = 2;
+        repeated .snapchat.perception.SCPNVisualSearchTrace.SCPNVisualSearchTrace_VisualSearchTraceOperationLog.PropertiesEntry properties = 3;
+        message PropertiesEntry {
+            string key = 1;
+            string value = 2;
+        }
+    }
+}

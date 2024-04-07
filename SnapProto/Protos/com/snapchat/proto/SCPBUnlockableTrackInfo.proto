@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+message SCPBUnlockableTrackInfo {
+    string adServeRequestId = 1;
+    string rawAdData = 2;
+    bool skipTrack = 3;
+    string encryptedSponsoredUnlockableTargetingInfoData = 4;
+    string adTrackURL = 5;
+    string rankingId = 6;
+    string rankingData = 7;
+    string encryptedUserTrackData = 8;
+    string jsonTrackURL = 9;
+    string protoTrackURL = 10;
+    string batchTrackURL = 11;
+    string skAdNetworkAttribution = 12;
+    bytes adId = 13;
+}

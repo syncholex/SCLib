@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Services.Snapchat.Content.V2";
+
+import "snapchat/content/v2/SCBoltv2GetUploadLocations.proto";
+import "snapchat/content/v2/GetUploadLocationsByKey.proto";
+
+service MediaDeliveryService{
+    rpc getUploadLocations(.snapchat.content.v2.SCBoltv2GetUploadLocationsRequest) returns (.snapchat.content.v2.SCBoltv2GetUploadLocationsResponse);
+    rpc getUploadLocationsByKey(.snapchat.content.v2.GetUploadLocationsByKeyRequest) returns (.snapchat.content.v2.GetUploadLocationsByKeyResponse);
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+import "snapchat/creativetools/common/SCCTPMiniAppMetadata.proto";
+
+message SCCTPSnapSticker {
+    string name = 2;
+    bool isAnimated = 3;
+    .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+    .snapchat.creativetools.common.SCCTPMiniAppMetadata miniAppMetadata = 5;
+    repeated .snapchat.creativetools.common.SCCTPSnapSticker.DisplayNameByLocaleEntry displayNameByLocale = 6;
+    message DisplayNameByLocaleEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

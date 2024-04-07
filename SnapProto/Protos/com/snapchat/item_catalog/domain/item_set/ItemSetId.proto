@@ -1,0 +1,26 @@
+syntax = "proto3";
+package com.snapchat.item_catalog.domain.item_set;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_catalog.Domain.Item_set";
+
+message ItemSetId {
+    string externalId = 1;
+    .com.snapchat.item_catalog.domain.item_set.ItemSetId.ItemSetType type = 2;
+    enum ItemSetType {
+        ItemSetType_ItemSetTypeUnset = 0;
+        ItemSetType_Catalog = 1;
+        ItemSetType_Dpa = 2;
+        ItemSetType_Store = 3;
+        ItemSetType_StoreCategory = 4;
+        ItemSetType_OrganicLens = 5;
+        ItemSetType_SponsoredLens = 6;
+        ItemSetType_OrganicLensDomain = 7;
+        ItemSetType_SponsoredLensDomain = 8;
+        ItemSetType_Feature = 9;
+        ItemSetType_AutogenOrganicLens = 10;
+        ItemSetType_AutogenOrganicLensDomain = 11;
+        ItemSetType_GenericOrganicLens = 12;
+        ItemSetType_GenericOrganicLensDomain = 13;
+        ItemSetType_MerchantProperty = 14;
+    }
+}

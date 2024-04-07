@@ -1,0 +1,135 @@
+syntax = "proto3";
+package snapchat.lenses;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLens";
+option csharp_namespace = "SnapProto.Snapchat.Lenses";
+
+message SCLensGetOAuth2InfoRequest {
+    string apiSpecId = 1;
+}
+
+message SCLensGetOAuth2InfoResponse {
+    string clientId = 1;
+    .snapchat.lenses.SCLensGetOAuth2InfoResponse.SCLensGetOAuth2InfoResponse_GrantType grantType = 2;
+    string authorizationURL = 3;
+    string scope = 4;
+    enum SCLensGetOAuth2InfoResponse_GrantType {
+        SCLensGetOAuth2InfoResponse_GrantType_GrantTypeUnset = 0;
+        SCLensGetOAuth2InfoResponse_GrantType_AuthorizationCode = 1;
+        SCLensGetOAuth2InfoResponse_GrantType_AuthorizationCodeWithPkce = 2;
+        SCLensGetOAuth2InfoResponse_GrantType_Implicit = 3;
+        SCLensGetOAuth2InfoResponse_GrantType_ClientCredentials = 4;
+    }
+}
+
+message SCLensPerformApiCallRequest {
+    string apiSpecSetId = 1;
+    string endpointRefId = 2;
+    repeated .snapchat.lenses.SCLensPerformApiCallRequest.ParametersEntry parameters = 3;
+    bytes body = 4;
+    string lensId = 5;
+    bool isStudioDev = 6;
+    int32 cacheTtlSec = 7;
+    message ParametersEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCLensPerformApiCallResponse {
+    .snapchat.lenses.SCLensPerformApiCallResponse.SCLensResponseCode responseCode = 1;
+    repeated .snapchat.lenses.SCLensPerformApiCallResponse.MetadataEntry metadata = 2;
+    bytes body = 3;
+    bool userLocationUsed = 4;
+    message MetadataEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCLensResponseCode {
+        SCLensResponseCode_ResponseCodeUnset = 0;
+        SCLensResponseCode_Success = 1;
+        SCLensResponseCode_Redirected = 2;
+        SCLensResponseCode_BadRequest = 3;
+        SCLensResponseCode_AccessDenied = 4;
+        SCLensResponseCode_NotFound = 5;
+        SCLensResponseCode_Timeout = 6;
+        SCLensResponseCode_RequestTooLarge = 7;
+        SCLensResponseCode_ServerError = 8;
+        SCLensResponseCode_Cancelled = 9;
+        SCLensResponseCode_ProxyError = 10;
+    }
+}
+
+message SCLensPerformHttpCallRequest {
+    string URL = 1;
+    .snapchat.lenses.SCLensPerformHttpCallRequest.SCLensHttpRequestMethod method = 2;
+    repeated .snapchat.lenses.SCLensPerformHttpCallRequest.HeadersEntry headers = 3;
+    bytes body = 4;
+    string apiSpecId = 5;
+    bool isStudioDev = 6;
+    message HeadersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCLensHttpRequestMethod {
+        SCLensHttpRequestMethod_HTTPMethodUnset = 0;
+        SCLensHttpRequestMethod_HTTPMethodGet = 1;
+        SCLensHttpRequestMethod_HTTPMethodPost = 2;
+        SCLensHttpRequestMethod_HTTPMethodPut = 3;
+        SCLensHttpRequestMethod_HTTPMethodDelete = 4;
+        SCLensHttpRequestMethod_HTTPMethodPatch = 5;
+    }
+}
+
+message SCLensPerformHttpCallResponse {
+    int32 code = 1;
+    repeated .snapchat.lenses.SCLensPerformHttpCallResponse.HeadersEntry headers = 2;
+    bytes body = 3;
+    message HeadersEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message SCLensPerformTokenExchangeRequest {
+    string apiSpecId = 1;
+    string authorizationCode = 2;
+    string codeVerifier = 3;
+}
+
+message SCLensPerformTokenExchangeResponse {
+    .snapchat.lenses.SCLensTokenDetails tokenDetails = 1;
+    .snapchat.lenses.SCLensTokenExchangeError error = 2;
+}
+
+message SCLensRefreshTokenRequest {
+    string apiSpecId = 1;
+    string refreshToken = 2;
+}
+
+message SCLensRefreshTokenResponse {
+    .snapchat.lenses.SCLensTokenDetails tokenDetails = 1;
+    .snapchat.lenses.SCLensTokenExchangeError error = 2;
+}
+
+message SCLensTokenDetails {
+    string accessToken = 1;
+    string tokenType = 2;
+    int64 expiresInSeconds = 3;
+    string refreshToken = 4;
+    string scope = 5;
+}
+
+message SCLensTokenExchangeError {
+    .snapchat.lenses.SCLensTokenExchangeError.SCLensTokenExchangeError_TokenExchangeErrorType error = 1;
+    string errorDescription = 2;
+    enum SCLensTokenExchangeError_TokenExchangeErrorType {
+        SCLensTokenExchangeError_TokenExchangeErrorType_ErrorTypeUnset = 0;
+        SCLensTokenExchangeError_TokenExchangeErrorType_InvalidRequest = 1;
+        SCLensTokenExchangeError_TokenExchangeErrorType_InvalidClient = 2;
+        SCLensTokenExchangeError_TokenExchangeErrorType_InvalidGrant = 3;
+        SCLensTokenExchangeError_TokenExchangeErrorType_UnauthorizedClient = 4;
+        SCLensTokenExchangeError_TokenExchangeErrorType_UnsupportedGrantType = 5;
+        SCLensTokenExchangeError_TokenExchangeErrorType_InvalidScope = 6;
+    }
+}

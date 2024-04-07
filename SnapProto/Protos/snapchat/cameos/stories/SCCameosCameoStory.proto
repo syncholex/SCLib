@@ -1,0 +1,68 @@
+syntax = "proto3";
+package snapchat.cameos.stories;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Stories";
+
+import "snapchat/cameos/common/SCCameosCameoStagingAsset.proto";
+import "snapchat/cameos/common/SCCameosLens.proto";
+
+message SCCameosCameoSnap {
+    bytes cameoAssetsContentObject = 1;
+    repeated .snapchat.cameos.stories.SCCameosCameoSnap.SCCameosGender gendersArray = 2;
+    repeated .snapchat.cameos.stories.SCCameosCameoSnap.TargetLensesEntry targetLenses = 3;
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}
+
+message SCCameosCameoSnapCreationModel {
+    .snapchat.cameos.stories.SCCameosCameoSnap cameoSnap = 1;
+    string generatedCameoPreviewURL = 2;
+}
+
+message SCCameosCameoSnapStaging {
+    .snapchat.cameos.common.SCCameosCameoStagingAsset assetModel = 1;
+}
+
+message SCCameosCameoStoriesContentKey {
+    int64 id_p = 1;
+    int32 revision = 2;
+}
+
+message SCCameosCameoTile {
+    bytes cameoAssetsContentObject = 1;
+    repeated .snapchat.cameos.stories.SCCameosCameoTile.SCCameosGender gendersArray = 2;
+    string onboardingImage = 3;
+    string staticImage = 4;
+    repeated .snapchat.cameos.stories.SCCameosCameoTile.TargetLensesEntry targetLenses = 5;
+    bytes fallbackImage = 6;
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+}
+
+message SCCameosCameoTileCreationModel {
+    .snapchat.cameos.stories.SCCameosCameoTile cameoTile = 1;
+    string generatedCameoPreviewURL = 2;
+}
+
+message SCCameosCameoTileStaging {
+    .snapchat.cameos.common.SCCameosCameoStagingAsset assetModel = 1;
+    string s3OnboardingImagePath = 2;
+    string onboardingImageContentURL = 4;
+    string s3StaticImagePath = 3;
+    string staticImageContentURL = 5;
+}

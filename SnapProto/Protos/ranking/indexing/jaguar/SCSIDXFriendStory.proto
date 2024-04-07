@@ -1,0 +1,27 @@
+syntax = "proto3";
+package ranking.indexing.jaguar;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSIDX";
+option csharp_namespace = "SnapProto.Ranking.Indexing.Jaguar";
+
+import "ranking/pii/user/profile/FriendEngagementFeatures.proto";
+
+message SCSIDXFriendStoryPosterEngagementFeatures {
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryView = 1;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryCompletions = 2;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewed = 3;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplies = 4;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryLongImp = 5;
+    .ranking.pii.user.profile.WindowedFloatMetrics storySnapTimeSpent = 6;
+    .ranking.pii.user.profile.WindowedFloatMetrics storyStoryLongImpTime = 7;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaTap = 8;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStoryViewViaInterstitialTap = 9;
+    .ranking.pii.user.profile.WindowedIntMetrics numHoursWithStoryStoryView = 10;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryStorySkips = 11;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsViewedRaw = 12;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapCompletions = 13;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapsScreenshots = 14;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapReplays = 15;
+    .ranking.pii.user.profile.WindowedIntMetrics numStorySnapSkips = 16;
+    .ranking.pii.user.profile.WindowedIntMetrics numStoryPlaylistExits = 17;
+}

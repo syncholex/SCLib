@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.metadata;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Metadata";
+
+import "com/snapchat/item_catalog/domain/store/settings/OrganicMacrosSettings.proto";
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message ShowcaseStoreMetadata {
+    string name = 1;
+    string id_p = 2;
+    .snapchat.ads.render.schema.SCAdsMediaRenderInfo icon = 3;
+    repeated .com.snapchat.showcase.wire.metadata.ShowcaseStoreMetadata.ShowcaseStoreMetadata_CategoryMetadata categoriesArray = 4;
+    bool nativeCheckoutEnabled = 5;
+    string returnPolicyURL = 6;
+    .com.snapchat.item_catalog.domain.store.settings.OrganicMacrosSettings organicMacroSetting = 7;
+    message ShowcaseStoreMetadata_CategoryMetadata {
+        string id_p = 1;
+        string name = 2;
+    }
+}

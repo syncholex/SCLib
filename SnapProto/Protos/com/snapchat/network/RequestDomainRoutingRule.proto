@@ -1,0 +1,9 @@
+syntax = "proto3";
+package com.snapchat.network;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Network";
+
+message RequestDomainRoutingRule {
+    repeated string endpointsArray = 1;
+    string hostname = 2;
+}

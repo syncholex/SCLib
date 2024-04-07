@@ -1,0 +1,124 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Snapchat.Janus.Api";
+
+import "snapchat/cdp/cof/PartialToken.proto";
+
+message SCJanusAccountDeactivationData {
+    .snapchat.janus.api.SCJanusAccountDeactivationData.SCJanusAccountDeactivationData_ReactivationStatus reactivationStatus = 1;
+    string humanReadableMessage = 2;
+    string reactivationToken = 3;
+    enum SCJanusAccountDeactivationData_ReactivationStatus {
+        SCJanusAccountDeactivationData_ReactivationStatus_Unset = 0;
+        SCJanusAccountDeactivationData_ReactivationStatus_Deactivated = 1;
+        SCJanusAccountDeactivationData_ReactivationStatus_ReactivationInProgress = 2;
+    }
+}
+
+message SCJanusAccountLockedData {
+    string humanReadableMessage = 2;
+    bool isAppealable = 3;
+}
+
+message SCJanusAndroidSafetynetData {
+    bytes nonce = 1;
+}
+
+message SCJanusChannelVerificationData {
+    string channelVerificationFlowToken = 1;
+    .snapchat.janus.api.SCJanusChannelVerificationData.SCJanusChannelVerificationType channelVerificationType = 2;
+    string email = 3;
+    enum SCJanusChannelVerificationType {
+        SCJanusChannelVerificationType_ChannelVerificationTypeUnset = 0;
+        SCJanusChannelVerificationType_ChannelVerificationTypeEmail = 1;
+    }
+}
+
+message SCJanusCofTags {
+    string routeTag = 1;
+    string eTag = 2;
+}
+
+message SCJanusDeviceToken {
+    string id_p = 1;
+}
+
+message SCJanusErrorData {
+    string humanReadableErrorMessage = 1;
+}
+
+message SCJanusFideliusClientInit {
+    repeated bytes hashedPublicKeysArray = 1;
+    .snapchat.janus.api.SCJanusFideliusTentativeDeviceKey tentativeDeviceKey = 2;
+}
+
+message SCJanusFideliusTentativeDeviceKey {
+    bytes publicKey = 1;
+    bytes hashedPublicKey = 2;
+    bytes iwek = 3;
+    uint64 version = 4;
+}
+
+message SCJanusLoginCodeData {
+    uint32 numDigits = 1;
+    bytes sessionToken = 2;
+    string promptText = 3;
+    .snapchat.janus.api.SCJanusLoginCodeData.SCJanusLoginCodeType deliveryMechanism = 4;
+    .snapchat.janus.api.SCJanusErrorData originalAttemptErrorData = 5;
+    .snapchat.janus.api.SCJanusLoginCodeData.SCJanusLoginCodeOptInType optInType = 6;
+    .snapchat.janus.api.SCJanusLoginCodeData.SCJanusLoginCodeSupportedDeliveryMechanisms supportedDeliveryMechanisms = 7;
+    string maskedPhoneNumber = 8;
+    string maskedEmail = 9;
+    enum SCJanusLoginCodeType {
+        SCJanusLoginCodeType_LoginCodeTypeUnset = 0;
+        SCJanusLoginCodeType_LoginCodeTypeSms = 1;
+        SCJanusLoginCodeType_LoginCodeTypeEmail = 2;
+    }
+    enum SCJanusLoginCodeOptInType {
+        SCJanusLoginCodeOptInType_LoginCodeOptInTypeUnset = 0;
+        SCJanusLoginCodeOptInType_LoginCodePromptTextError = 1;
+        SCJanusLoginCodeOptInType_LoginCodeOptInDialog = 2;
+        SCJanusLoginCodeOptInType_LoginCodeOptInDialogMasked = 3;
+    }
+    enum SCJanusLoginCodeSupportedDeliveryMechanisms {
+        SCJanusLoginCodeSupportedDeliveryMechanisms_LoginCodeSupportedDeliveryMechanismsUnset = 0;
+        SCJanusLoginCodeSupportedDeliveryMechanisms_LoginCodeSupportedDeliveryMechanismsSmsEmail = 1;
+        SCJanusLoginCodeSupportedDeliveryMechanisms_LoginCodeSupportedDeliveryMechanismsSms = 2;
+        SCJanusLoginCodeSupportedDeliveryMechanisms_LoginCodeSupportedDeliveryMechanismsEmail = 3;
+    }
+}
+
+message SCJanusLoginHeader {
+    string blizzardClientId = 1;
+    string loginFlowSessionId = 2;
+    string authenticationSessionId = 3;
+    string loginAttemptId = 4;
+    string networkRequestId = 5;
+    string cofDeviceId = 6;
+    .snapchat.cdp.cof.PartialToken cofConfigData = 7;
+    .snapchat.janus.api.SCJanusDeviceToken deviceToken = 10;
+    bytes clientAttestationPayload = 11;
+    string iosDeviceCheckToken = 12;
+    string androidSafetynetAttestation = 13;
+}
+
+message SCJanusODLVData {
+    string odlvToken = 1;
+    bool emailEnabled = 2;
+    bool smsEnabled = 3;
+    string obfuscatedPhone = 4;
+    string obfuscatedEmail = 5;
+}
+
+message SCJanusReactivateAccountData {
+    string humanReadableMessage = 1;
+}
+
+message SCJanusTwoFAData {
+    string twoFaToken = 1;
+    bool smsEnabled = 2;
+    bool otpEnabled = 3;
+    string obfuscatedPhone = 4;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package widgetservice;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Services.Widgetservice";
+
+import "snapchat/messaging/SCMessagingPinMyFriend.proto";
+
+service WidgetService{
+    rpc SendPinMyFriendNotification(.snapchat.messaging.SCMessagingPinMyFriendNotificationRequest) returns (.snapchat.messaging.SCMessagingPinMyFriendNotificationResponse);
+}

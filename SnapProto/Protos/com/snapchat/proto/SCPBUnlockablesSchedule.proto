@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBUnlockablesScheduleInterval.proto";
+
+message SCPBUnlockablesSchedule {
+    string schedulingType = 1;
+    string startDateTime = 2;
+    string endDateTime = 3;
+    string timezone = 4;
+    bool useLocalTimezone = 5;
+    string repetitionFrequency = 6;
+    string repetitionEndDateTime = 7;
+    string weeklyFrequency = 8;
+    repeated .com.snapchat.proto.SCPBUnlockablesScheduleInterval repeatIntervalsArray = 9;
+}

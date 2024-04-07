@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+
+message SCAdsClientToTargetingFields {
+    repeated uint64 installedAppBitArrayArray = 1;
+    .snapchat.ads.request.schema.SCAdsOnDeviceRequest onDeviceRequest = 2;
+}
+
+message SCAdsInitToTargetingFields {
+    .snapchat.ads.request.schema.SCAdsApplication application = 1;
+    .snapchat.ads.request.schema.SCAdsClientToTargetingFields clientFields = 2;
+}
+
+message SCAdsOnDevicePublicKey {
+    bytes publicKey = 1;
+    int64 keyGenerationTsMs = 2;
+    .snapchat.ads.request.schema.SCAdsOnDevicePublicKey.SCAdsOnDevicePublicKey_PublicKeyType publicKeyType = 3;
+    enum SCAdsOnDevicePublicKey_PublicKeyType {
+        SCAdsOnDevicePublicKey_PublicKeyType_PublicKeyTypeUnset = 0;
+        SCAdsOnDevicePublicKey_PublicKeyType_Rsa2048 = 1;
+    }
+}
+
+message SCAdsOnDeviceRequest {
+    .snapchat.ads.request.schema.SCAdsOnDevicePublicKey onDevicePublicKey = 1;
+    int64 latestGenerationNumber = 2;
+    int64 serverLastFetchTsMs = 3;
+}

@@ -1,0 +1,534 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/indexing/Hashtag.proto";
+import "ranking/ml/centralkitchen/ContentSignals.proto";
+
+message SCSUPBoostAndUnboostSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPBoostEvent boostEventsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPUnboostEvent unboostEventsArray = 5;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPBoostEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPBoostEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPCreateReplyEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    int32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPCreateReplyEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPCreateReplySessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPCreateReplyEvent createReplyEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPDismissRepliesEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    int32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPDismissRepliesEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPDismissRepliesSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPDismissRepliesEvent dismissRepliesEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPEventFeedContextFeatures {
+    int32 storyPosition = 1;
+    uint32 feedType = 2;
+    int32 sectionPosition = 3;
+}
+
+message SCSUPEventStoryFeatures {
+    .ranking.pii.user.profile.SCSUPStoryCompositionProperties storyProperties = 5;
+    repeated string snapIdsArray = 6;
+    .ranking.ml.centralkitchen.ContentSignals storyContentSignals = 9;
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures.SCFEEDStoryCorpus_Corpus storyCorpus = 10;
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures.SCSCOREStorySubtype_Enum storySubtype = 11;
+    int64 storyVersion = 12;
+    fixed64 storyBareIdSaltedHash = 13;
+    .ranking.ml.centralkitchen.ContentCluster sccClusterIdV1 = 14;
+    string id_p = 15;
+    repeated .ranking.indexing.Hashtag hashtagsArray = 16;
+    string storyId = 1;
+    fixed64 storyIdSaltedHash = 2;
+    string tileId = 3;
+    fixed64 tileIdSaltedHash = 4;
+    string creatorId = 7;
+    fixed64 creatorIdSaltedHash = 8;
+    enum SCFEEDStoryCorpus_Corpus {
+        SCFEEDStoryCorpus_Corpus_Unset = 0;
+        SCFEEDStoryCorpus_Corpus_Topics = 1;
+        SCFEEDStoryCorpus_Corpus_Events = 2;
+        SCFEEDStoryCorpus_Corpus_Places = 3;
+        SCFEEDStoryCorpus_Corpus_Locations = 4;
+        SCFEEDStoryCorpus_Corpus_BreakingNews = 5;
+        SCFEEDStoryCorpus_Corpus_TrendingTopics = 6;
+        SCFEEDStoryCorpus_Corpus_RegionalTopics = 7;
+        SCFEEDStoryCorpus_Corpus_Polygon = 8;
+        SCFEEDStoryCorpus_Corpus_Topshared = 9;
+        SCFEEDStoryCorpus_Corpus_Snapcasts = 10;
+        SCFEEDStoryCorpus_Corpus_Spotted = 11;
+        SCFEEDStoryCorpus_Corpus_ManualStorybuilder = 12;
+        SCFEEDStoryCorpus_Corpus_Solo = 13;
+        SCFEEDStoryCorpus_Corpus_MapsStory = 14;
+        SCFEEDStoryCorpus_Corpus_MapsCallout = 15;
+        SCFEEDStoryCorpus_Corpus_Publisher = 16;
+        SCFEEDStoryCorpus_Corpus_PublicUser = 17;
+        SCFEEDStoryCorpus_Corpus_RecommendedUser = 18;
+        SCFEEDStoryCorpus_Corpus_PromotedStory = 19;
+        SCFEEDStoryCorpus_Corpus_GroupStory = 20;
+        SCFEEDStoryCorpus_Corpus_LiveStream = 21;
+        SCFEEDStoryCorpus_Corpus_Featured = 22;
+        SCFEEDStoryCorpus_Corpus_Cognac = 23;
+        SCFEEDStoryCorpus_Corpus_LensObject = 24;
+        SCFEEDStoryCorpus_Corpus_Selection = 25;
+        SCFEEDStoryCorpus_Corpus_FriendStory = 26;
+        SCFEEDStoryCorpus_Corpus_LensChallenge = 27;
+        SCFEEDStoryCorpus_Corpus_LensChallengeStory = 28;
+        SCFEEDStoryCorpus_Corpus_ChannelPivot = 29;
+        SCFEEDStoryCorpus_Corpus_CustomStory = 30;
+        SCFEEDStoryCorpus_Corpus_OurStory = 31;
+        SCFEEDStoryCorpus_Corpus_LensCategory = 32;
+        SCFEEDStoryCorpus_Corpus_Badge = 33;
+        SCFEEDStoryCorpus_Corpus_TopicRecentSnaps = 34;
+        SCFEEDStoryCorpus_Corpus_SingleSnap = 35;
+        SCFEEDStoryCorpus_Corpus_HeroStory = 36;
+        SCFEEDStoryCorpus_Corpus_PublisherSegment = 37;
+        SCFEEDStoryCorpus_Corpus_LensCreator = 38;
+        SCFEEDStoryCorpus_Corpus_TopicHumanModeratedSnaps = 39;
+        SCFEEDStoryCorpus_Corpus_TopicPopularHumanModeratedSnaps = 40;
+        SCFEEDStoryCorpus_Corpus_TopicPopularAutoModeratedSnaps = 41;
+        SCFEEDStoryCorpus_Corpus_LensCollection = 42;
+        SCFEEDStoryCorpus_Corpus_SavedStory = 43;
+        SCFEEDStoryCorpus_Corpus_AggregatedFriendsStory = 44;
+        SCFEEDStoryCorpus_Corpus_Unused45 = 45;
+        SCFEEDStoryCorpus_Corpus_Unused46 = 46;
+        SCFEEDStoryCorpus_Corpus_Unused47 = 47;
+        SCFEEDStoryCorpus_Corpus_Unused48 = 48;
+        SCFEEDStoryCorpus_Corpus_Unused49 = 49;
+        SCFEEDStoryCorpus_Corpus_Unused50 = 50;
+        SCFEEDStoryCorpus_Corpus_Unused51 = 51;
+        SCFEEDStoryCorpus_Corpus_Unused52 = 52;
+    }
+    enum SCSCOREStorySubtype_Enum {
+        SCSCOREStorySubtype_Enum_Unknown = 0;
+        SCSCOREStorySubtype_Enum_PublicUserSubscription = 1;
+        SCSCOREStorySubtype_Enum_PublicUserFriendsFollowing = 2;
+        SCSCOREStorySubtype_Enum_PublicUserFollowingSimilarity = 3;
+        SCSCOREStorySubtype_Enum_PublicUserTapSimilarity = 4;
+        SCSCOREStorySubtype_Enum_PublicUserCohorts = 5;
+        SCSCOREStorySubtype_Enum_PublicUserImportant = 6;
+        SCSCOREStorySubtype_Enum_PublicUserOthers = 7;
+        SCSCOREStorySubtype_Enum_PublicUserLocal = 8;
+        SCSCOREStorySubtype_Enum_PublisherShow = 9;
+        SCSCOREStorySubtype_Enum_PublisherOthers = 10;
+        SCSCOREStorySubtype_Enum_PublicUserRandomBucket = 11;
+        SCSCOREStorySubtype_Enum_PublicUserSubSimilarity = 12;
+        SCSCOREStorySubtype_Enum_PublisherOriginal = 13;
+        SCSCOREStorySubtype_Enum_PublisherCurated = 14;
+        SCSCOREStorySubtype_Enum_PublicUserOfficial = 15;
+        SCSCOREStorySubtype_Enum_PublicUserPopular = 16;
+        SCSCOREStorySubtype_Enum_PublisherInternalCurated = 17;
+        SCSCOREStorySubtype_Enum_PublisherHnNews = 18;
+        SCSCOREStorySubtype_Enum_PublisherPartnerCurated = 19;
+        SCSCOREStorySubtype_Enum_PublisherSegment = 20;
+        SCSCOREStorySubtype_Enum_ShowsSegment = 21;
+        SCSCOREStorySubtype_Enum_OriginalSegment = 22;
+        SCSCOREStorySubtype_Enum_SingleSnapExploreNew = 23;
+        SCSCOREStorySubtype_Enum_SingleSnapUnknownStage = 24;
+        SCSCOREStorySubtype_Enum_SingleSnapTier1 = 25;
+        SCSCOREStorySubtype_Enum_SingleSnapTier2 = 26;
+        SCSCOREStorySubtype_Enum_SingleSnapExploit = 27;
+        SCSCOREStorySubtype_Enum_SingleSnapTier3 = 28;
+        SCSCOREStorySubtype_Enum_SingleSnapTier4 = 29;
+        SCSCOREStorySubtype_Enum_SingleSnapExploitFallback = 30;
+        SCSCOREStorySubtype_Enum_SingleSnapExploitStarred = 31;
+        SCSCOREStorySubtype_Enum_SingleSnapExploitPartner = 32;
+        SCSCOREStorySubtype_Enum_SingleSnapTier0 = 33;
+        SCSCOREStorySubtype_Enum_LensObjectTier1 = 34;
+        SCSCOREStorySubtype_Enum_PublisherDynamicEdition = 35;
+        SCSCOREStorySubtype_Enum_SavedStoryOfficial = 36;
+        SCSCOREStorySubtype_Enum_SavedStoryPublic = 37;
+        SCSCOREStorySubtype_Enum_Unused38 = 38;
+        SCSCOREStorySubtype_Enum_Unused39 = 39;
+        SCSCOREStorySubtype_Enum_Unused40 = 40;
+        SCSCOREStorySubtype_Enum_Unused41 = 41;
+        SCSCOREStorySubtype_Enum_Unused42 = 42;
+        SCSCOREStorySubtype_Enum_Unused43 = 43;
+        SCSCOREStorySubtype_Enum_Unused44 = 44;
+        SCSCOREStorySubtype_Enum_Unused45 = 45;
+    }
+}
+
+message SCSUPFavoriteAndUnfavoriteSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPFavoriteEvent favoriteEventsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPUnfavoriteEvent unfavoriteEventsArray = 5;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPFavoriteEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPFavoriteEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPHideActionType {
+}
+
+message SCSUPHideAndUnhideSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPHideEvent hideEventsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPUnhideEvent unhideEventsArray = 5;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPHideEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPHideEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    .ranking.pii.user.profile.SCSUPHideEvent.SCSUPHideActionType_Enum hideType = 5;
+    enum SCSUPHideActionType_Enum {
+        SCSUPHideActionType_Enum_Hide = 0;
+        SCSUPHideActionType_Enum_HideCreator = 1;
+        SCSUPHideActionType_Enum_HideStory = 2;
+    }
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPImpressionEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    uint32 impressionTimeMsecs = 4;
+}
+
+message SCSUPOpenProfileEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+}
+
+message SCSUPOpenProfileSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPOpenProfileEvent openProfileEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPOpenRepliesEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    int32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPOpenRepliesEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPOpenRepliesSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPOpenRepliesEvent openRepliesEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPRecentEvents {
+    repeated .ranking.pii.user.profile.SCSUPWatchAndImpressionSessions watchAndImpressionSessionsArray = 1;
+    repeated .ranking.pii.user.profile.SCSUPFavoriteAndUnfavoriteSessions favoriteAndUnfavoriteSessionsArray = 2;
+    repeated .ranking.pii.user.profile.SCSUPHideAndUnhideSessions hideAndUnhideSessionsArray = 3;
+    repeated .ranking.pii.user.profile.SCSUPSendSessions sendSessionsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPBoostAndUnboostSessions boostAndUnboostSessionsArray = 5;
+    repeated .ranking.pii.user.profile.SCSUPReportSessions reportSessionsArray = 6;
+    repeated .ranking.pii.user.profile.SCSUPOpenProfileSessions openProfileSessionsArray = 7;
+    repeated .ranking.pii.user.profile.SCSUPOpenRepliesSessions openRepliesSessionsArray = 8;
+    repeated .ranking.pii.user.profile.SCSUPDismissRepliesSessions dismissRepliesSessionsArray = 9;
+    repeated .ranking.pii.user.profile.SCSUPCreateReplySessions createReplySessionsArray = 10;
+    repeated .ranking.pii.user.profile.SCSUPSendReplySessions sendReplySessionsArray = 11;
+}
+
+message SCSUPReportActionType {
+}
+
+message SCSUPReportEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPReportEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    .ranking.pii.user.profile.SCSUPReportEvent.SCSUPReportActionType_Enum reportType = 5;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+    enum SCSUPReportActionType_Enum {
+        SCSUPReportActionType_Enum_ReportInappropriate = 0;
+        SCSUPReportActionType_Enum_ReportIrrelevant = 1;
+    }
+}
+
+message SCSUPReportSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPReportEvent reportEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPSendEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPSendEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPSendReplyEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    int32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPSendReplyEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPSendReplySessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPSendReplyEvent sendReplyEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPSendSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPSendEvent sendEventsArray = 4;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPStoryCompositionProperties {
+    uint32 totalNumSnaps = 1;
+    uint32 numImageSnaps = 2;
+    uint32 numVideoSnaps = 3;
+    uint32 numInfiniteImageSnaps = 4;
+    uint32 numLoopingVideoSnaps = 5;
+    uint32 numAttachments = 6;
+    uint32 durationMsecs = 7;
+}
+
+message SCSUPUnboostEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    int32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPUnboostEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPUnfavoriteEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPUnfavoriteEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPUnhideEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    .ranking.pii.user.profile.SCSUPUnhideEvent.SCSLIStoryFeedInteractionContext_Enum interactionContext = 4;
+    enum SCSLIStoryFeedInteractionContext_Enum {
+        SCSLIStoryFeedInteractionContext_Enum_Default = 0;
+        SCSLIStoryFeedInteractionContext_Enum_FeedPage = 1;
+        SCSLIStoryFeedInteractionContext_Enum_ActionMenu = 2;
+        SCSLIStoryFeedInteractionContext_Enum_StoryPlayer = 3;
+        SCSLIStoryFeedInteractionContext_Enum_ContextMenu = 4;
+        SCSLIStoryFeedInteractionContext_Enum_DropDownToast = 5;
+        SCSLIStoryFeedInteractionContext_Enum_PlayButton = 6;
+        SCSLIStoryFeedInteractionContext_Enum_TileHeader = 7;
+    }
+}
+
+message SCSUPUserRecentEvents {
+    string userId = 1;
+    .ranking.pii.user.profile.SCSUPRecentEvents recentEvents = 2;
+}
+
+message SCSUPWatchAndImpressionSessions {
+    uint32 sessionStartTimestamp = 3;
+    repeated .ranking.pii.user.profile.SCSUPWatchEvent watchEventsArray = 4;
+    repeated .ranking.pii.user.profile.SCSUPImpressionEvent impressionEventsArray = 5;
+    string pageSessionId = 1;
+    fixed32 pageSessionIdSaltedHash = 2;
+}
+
+message SCSUPWatchEvent {
+    .ranking.pii.user.profile.SCSUPEventStoryFeatures storyFeatures = 1;
+    .ranking.pii.user.profile.SCSUPEventFeedContextFeatures contextFeatures = 2;
+    uint32 timestamp = 3;
+    uint32 watchTimeMsecs = 4;
+    uint32 numUniqueSnapsWatched = 5;
+    uint32 maxViewedSnapIndex = 6;
+    .ranking.pii.user.profile.SCSUPStoryCompositionProperties watchedStoryProperties = 7;
+    .ranking.pii.user.profile.SCSUPWatchEvent.SCSLIEntryIntent_Type entryIntent = 8;
+    .ranking.pii.user.profile.SCSUPWatchEvent.SCSLIExitIntent_Type exitIntent = 9;
+    float watchTimePercentile = 10;
+    uint32 watchTimeMsecsV2 = 11;
+    enum SCSLIEntryIntent_Type {
+        SCSLIEntryIntent_Type_Unknown = 0;
+        SCSLIEntryIntent_Type_Open = 1;
+        SCSLIEntryIntent_Type_NextGroup = 2;
+        SCSLIEntryIntent_Type_NextItem = 3;
+        SCSLIEntryIntent_Type_PrevGroup = 4;
+        SCSLIEntryIntent_Type_PrevItem = 5;
+        SCSLIEntryIntent_Type_AutoAdvance = 6;
+        SCSLIEntryIntent_Type_BackFromAttachment = 7;
+        SCSLIEntryIntent_Type_BackFromProfile = 8;
+        SCSLIEntryIntent_Type_BackFromSendTo = 9;
+        SCSLIEntryIntent_Type_BackFromContextCards = 10;
+        SCSLIEntryIntent_Type_GenericDismissal = 11;
+        SCSLIEntryIntent_Type_ForegroundApp = 12;
+        SCSLIEntryIntent_Type_OpenByBrowsing = 13;
+        SCSLIEntryIntent_Type_OpenViaInAppNotif = 14;
+        SCSLIEntryIntent_Type_OpenViaSystemNotif = 15;
+        SCSLIEntryIntent_Type_OpenViaInterstitial = 16;
+        SCSLIEntryIntent_Type_NextGroupUnintended = 17;
+        SCSLIEntryIntent_Type_PrevGroupUnintended = 18;
+    }
+    enum SCSLIExitIntent_Type {
+        SCSLIExitIntent_Type_Unknown = 0;
+        SCSLIExitIntent_Type_Dismiss = 1;
+        SCSLIExitIntent_Type_NextGroup = 2;
+        SCSLIExitIntent_Type_NextItem = 3;
+        SCSLIExitIntent_Type_PrevGroup = 4;
+        SCSLIExitIntent_Type_PrevItem = 5;
+        SCSLIExitIntent_Type_AutoAdvance = 6;
+        SCSLIExitIntent_Type_OpenAttachment = 7;
+        SCSLIExitIntent_Type_OpenProfile = 8;
+        SCSLIExitIntent_Type_OpenSendTo = 9;
+        SCSLIExitIntent_Type_ShowContextCards = 10;
+        SCSLIExitIntent_Type_BackgroundApp = 11;
+        SCSLIExitIntent_Type_RespondToInAppNotif = 12;
+        SCSLIExitIntent_Type_RespondToSystemNotif = 13;
+        SCSLIExitIntent_Type_DismissByNavPrev = 14;
+        SCSLIExitIntent_Type_DismissByNavNext = 15;
+        SCSLIExitIntent_Type_GenericStacking = 16;
+    }
+}

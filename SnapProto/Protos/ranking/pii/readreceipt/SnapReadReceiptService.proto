@@ -1,0 +1,414 @@
+syntax = "proto3";
+package ranking.pii.readreceipt;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Readreceipt";
+
+import "impala/IMPWatchedstate.proto";
+import "ranking/core/SCSCORESomaRequestMetadata.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/pii/readreceipt/SnapBadges.proto";
+import "ranking/pii/readreceipt/SnapPremiumReadReceipt.proto";
+import "ranking/pii/readreceipt/SnapReadReceipt.proto";
+
+message BatchSnapStatsByStoryType {
+    .ranking.pii.readreceipt.BatchSnapStatsByStoryType.StoryType_Enum storyType = 1;
+    repeated string snapIdsArray = 2;
+    repeated .ranking.pii.readreceipt.BatchSnapStatsByStoryType.SnapStatsSectionType_Enum sectionTypesArray = 3;
+    enum SnapStatsSectionType_Enum {
+        SnapStatsSectionType_Enum_Unknown = 0;
+        SnapStatsSectionType_Enum_FriendOnly = 1;
+        SnapStatsSectionType_Enum_FollowerOnly = 2;
+        SnapStatsSectionType_Enum_OthersOnly = 3;
+        SnapStatsSectionType_Enum_FollowerOthers = 4;
+        SnapStatsSectionType_Enum_FriendFollowerOthers = 5;
+        SnapStatsSectionType_Enum_None = 6;
+    }
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}
+
+message BatchSnapStatsRequest {
+    string requestId = 1;
+    int64 requestTimestampMs = 2;
+    .ranking.pii.readreceipt.BatchSnapStatsRequest.SCSCORERequestOrigin_Enum origin = 3;
+    .ranking.core.SCSCOREClientInfo clientInfo = 4;
+    repeated string snapIdsArray = 5;
+    repeated .ranking.pii.readreceipt.BatchSnapStatsRequest.SnapStatsSectionType_Enum sectionTypesArray = 6;
+    repeated .ranking.pii.readreceipt.BatchSnapStatsByStoryType batchedSnapsByTypeArray = 7;
+    enum SCSCORERequestOrigin_Enum {
+        SCSCORERequestOrigin_Enum_Unknown = 0;
+        SCSCORERequestOrigin_Enum_SnapchatApp = 1;
+        SCSCORERequestOrigin_Enum_Fsn = 2;
+        SCSCORERequestOrigin_Enum_Impala = 3;
+        SCSCORERequestOrigin_Enum_ContentInsightsPipeline = 4;
+        SCSCORERequestOrigin_Enum_InternalTest = 5;
+        SCSCORERequestOrigin_Enum_InternalAutomation = 6;
+        SCSCORERequestOrigin_Enum_InternalLoadtest = 7;
+        SCSCORERequestOrigin_Enum_Snapkit = 8;
+        SCSCORERequestOrigin_Enum_Mixer = 9;
+        SCSCORERequestOrigin_Enum_InternalPubsub = 10;
+        SCSCORERequestOrigin_Enum_InternalBackfill = 11;
+        SCSCORERequestOrigin_Enum_StoryStudio = 12;
+        SCSCORERequestOrigin_Enum_NotificationIndexer = 13;
+        SCSCORERequestOrigin_Enum_SpamService = 14;
+        SCSCORERequestOrigin_Enum_Orca = 15;
+        SCSCORERequestOrigin_Enum_NotificationSender = 16;
+        SCSCORERequestOrigin_Enum_StoryManagement = 17;
+        SCSCORERequestOrigin_Enum_StoryTeller = 18;
+        SCSCORERequestOrigin_Enum_Gravy = 19;
+        SCSCORERequestOrigin_Enum_Snapweb = 20;
+        SCSCORERequestOrigin_Enum_SnapjoinerV2 = 21;
+        SCSCORERequestOrigin_Enum_ModerationService = 22;
+        SCSCORERequestOrigin_Enum_HighlightService = 23;
+        SCSCORERequestOrigin_Enum_TestPlatform = 24;
+        SCSCORERequestOrigin_Enum_BusinessApi = 25;
+        SCSCORERequestOrigin_Enum_CommunityOrg = 26;
+        SCSCORERequestOrigin_Enum_Music = 27;
+        SCSCORERequestOrigin_Enum_ChangeUserService = 28;
+        SCSCORERequestOrigin_Enum_Charms = 29;
+        SCSCORERequestOrigin_Enum_PieReviewToolBackfill = 30;
+        SCSCORERequestOrigin_Enum_SearchDns = 31;
+        SCSCORERequestOrigin_Enum_Pfe = 32;
+        SCSCORERequestOrigin_Enum_Context = 33;
+        SCSCORERequestOrigin_Enum_MapsContent = 34;
+        SCSCORERequestOrigin_Enum_ReadReceiptIndexer = 35;
+        SCSCORERequestOrigin_Enum_Mcs = 36;
+        SCSCORERequestOrigin_Enum_Cameos = 37;
+        SCSCORERequestOrigin_Enum_Cds = 38;
+        SCSCORERequestOrigin_Enum_Usi = 39;
+        SCSCORERequestOrigin_Enum_SnapjoinerV1 = 40;
+        SCSCORERequestOrigin_Enum_AddFriend = 41;
+        SCSCORERequestOrigin_Enum_ProfileAddFriend = 42;
+        SCSCORERequestOrigin_Enum_ProfileFriendingSubtext = 43;
+        SCSCORERequestOrigin_Enum_StoryIndicatorInRegistration = 44;
+        SCSCORERequestOrigin_Enum_SearchQuickAdd = 45;
+        SCSCORERequestOrigin_Enum_RepliesServer = 46;
+    }
+    enum SnapStatsSectionType_Enum {
+        SnapStatsSectionType_Enum_Unknown = 0;
+        SnapStatsSectionType_Enum_FriendOnly = 1;
+        SnapStatsSectionType_Enum_FollowerOnly = 2;
+        SnapStatsSectionType_Enum_OthersOnly = 3;
+        SnapStatsSectionType_Enum_FollowerOthers = 4;
+        SnapStatsSectionType_Enum_FriendFollowerOthers = 5;
+        SnapStatsSectionType_Enum_None = 6;
+    }
+}
+
+message BatchSnapStatsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.SingleSnapStatsResponse responsesArray = 2;
+    repeated .ranking.pii.readreceipt.BatchSnapStatsResponseByType responsesByTypeArray = 3;
+}
+
+message BatchSnapStatsResponseByType {
+    .ranking.pii.readreceipt.BatchSnapStatsResponseByType.StoryType_Enum storyType = 1;
+    repeated .ranking.pii.readreceipt.SingleSnapStatsResponse responsesArray = 2;
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}
+
+message GetBadgesRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated .ranking.pii.readreceipt.GetBadgesRequest.BadgePlacement_Enum placementsArray = 2;
+    enum BadgePlacement_Enum {
+        BadgePlacement_Enum_Unknown = 0;
+        BadgePlacement_Enum_SpotlightFeed = 1;
+        BadgePlacement_Enum_DiscoverFeed = 2;
+    }
+}
+
+message GetBadgesResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.Badge badgesArray = 2;
+}
+
+message GetPremiumContentStatsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated .ranking.pii.readreceipt.PremiumContentId idsArray = 2;
+}
+
+message GetPremiumContentStatsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.PremiumContentStats contentStatsListArray = 2;
+}
+
+message GetPremiumUserRecentViewHistoryRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    .ranking.core.SCSCOREUUID userId = 2;
+    int32 maxStoryPerPublisher = 3;
+    int64 afterTimestampMs = 4;
+    .ranking.pii.readreceipt.GetPremiumUserRecentViewHistoryRequest.PremiumContentType_Enum contentType = 5;
+    repeated .ranking.pii.readreceipt.GetPremiumUserRecentViewHistoryRequest.PremiumContentType_Enum contentTypeListArray = 6;
+    enum PremiumContentType_Enum {
+        PremiumContentType_Enum_Unknown = 0;
+        PremiumContentType_Enum_EditionPublisher = 1;
+        PremiumContentType_Enum_News = 2;
+        PremiumContentType_Enum_Show = 3;
+    }
+}
+
+message GetPremiumUserRecentViewHistoryResponse {
+    string requestId = 1;
+    .ranking.pii.readreceipt.GetPremiumUserRecentViewHistoryResponse.PremiumContentType_Enum contentType = 2;
+    repeated .ranking.pii.readreceipt.RecentWatchHistoryList historyListArray = 5;
+    .ranking.pii.readreceipt.PublisherRecentWatchHistoryList publisherHistory = 3;
+    .ranking.pii.readreceipt.StoryRecentWatchHistoryList storyHistory = 4;
+    enum PremiumContentType_Enum {
+        PremiumContentType_Enum_Unknown = 0;
+        PremiumContentType_Enum_EditionPublisher = 1;
+        PremiumContentType_Enum_News = 2;
+        PremiumContentType_Enum_Show = 3;
+    }
+}
+
+message GetPremiumUserViewHistoryRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    .ranking.core.SCSCOREUUID userId = 2;
+    repeated .ranking.pii.readreceipt.PremiumContentId idsArray = 3;
+}
+
+message GetPremiumUserViewHistoryResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.PremiumContentWatchHistory readReceiptsArray = 2;
+}
+
+message GetSpotlightBloomFilterViewsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated .ranking.pii.readreceipt.SnapCreationPeriod creationDateShardArray = 2;
+}
+
+message GetSpotlightBloomFilterViewsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.BloomFilter bloomFiltersArray = 2;
+}
+
+message GetSpotlightStatsRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+    repeated string snapIdsArray = 2;
+}
+
+message GetSpotlightStatsResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.SpotlightStats spotlightStatsListArray = 2;
+}
+
+message GetWatchedStateForSeasonWithUserIdRequest {
+    string userId = 1;
+    .impala.IMPGetWatchedStateForSeasonRequest request = 2;
+}
+
+message SectionStats {
+    .ranking.pii.readreceipt.SectionStats.SnapStatsSectionType_Enum sectionType = 1;
+    .ranking.pii.readreceipt.ViewStats sectionStats = 2;
+    repeated .ranking.pii.readreceipt.SnapReport recentViewersArray = 3;
+    enum SnapStatsSectionType_Enum {
+        SnapStatsSectionType_Enum_Unknown = 0;
+        SnapStatsSectionType_Enum_FriendOnly = 1;
+        SnapStatsSectionType_Enum_FollowerOnly = 2;
+        SnapStatsSectionType_Enum_OthersOnly = 3;
+        SnapStatsSectionType_Enum_FollowerOthers = 4;
+        SnapStatsSectionType_Enum_FriendFollowerOthers = 5;
+        SnapStatsSectionType_Enum_None = 6;
+    }
+}
+
+message SingleSnapStatsResponse {
+    string snapId = 1;
+    .ranking.pii.readreceipt.ViewStats globalStats = 2;
+    repeated .ranking.pii.readreceipt.SectionStats sectionStatsArray = 3;
+}
+
+message SnapReport {
+    .ranking.core.SCSCOREUUID viewerUserId = 1;
+    int64 snapViewTimestampMs = 2;
+    .ranking.pii.readreceipt.ReadReceiptState readReceiptState = 3;
+}
+
+message SnapStatsSectionType {
+}
+
+message TeamSnapchatReport {
+    string snapId = 1;
+    int64 viewTimestampMs = 2;
+    int64 serveTimestampMs = 3;
+}
+
+message UserLatestViewOfPosterStoryRequest {
+    string requestId = 1;
+    int64 requestTimestampMs = 2;
+    .ranking.pii.readreceipt.UserLatestViewOfPosterStoryRequest.SCSCORERequestOrigin_Enum origin = 3;
+    .ranking.core.SCSCOREClientInfo clientInfo = 4;
+    .ranking.core.SCSCOREUUID viewerUserId = 5;
+    .ranking.core.SCSCOREUUID snapOwnerId = 6;
+    enum SCSCORERequestOrigin_Enum {
+        SCSCORERequestOrigin_Enum_Unknown = 0;
+        SCSCORERequestOrigin_Enum_SnapchatApp = 1;
+        SCSCORERequestOrigin_Enum_Fsn = 2;
+        SCSCORERequestOrigin_Enum_Impala = 3;
+        SCSCORERequestOrigin_Enum_ContentInsightsPipeline = 4;
+        SCSCORERequestOrigin_Enum_InternalTest = 5;
+        SCSCORERequestOrigin_Enum_InternalAutomation = 6;
+        SCSCORERequestOrigin_Enum_InternalLoadtest = 7;
+        SCSCORERequestOrigin_Enum_Snapkit = 8;
+        SCSCORERequestOrigin_Enum_Mixer = 9;
+        SCSCORERequestOrigin_Enum_InternalPubsub = 10;
+        SCSCORERequestOrigin_Enum_InternalBackfill = 11;
+        SCSCORERequestOrigin_Enum_StoryStudio = 12;
+        SCSCORERequestOrigin_Enum_NotificationIndexer = 13;
+        SCSCORERequestOrigin_Enum_SpamService = 14;
+        SCSCORERequestOrigin_Enum_Orca = 15;
+        SCSCORERequestOrigin_Enum_NotificationSender = 16;
+        SCSCORERequestOrigin_Enum_StoryManagement = 17;
+        SCSCORERequestOrigin_Enum_StoryTeller = 18;
+        SCSCORERequestOrigin_Enum_Gravy = 19;
+        SCSCORERequestOrigin_Enum_Snapweb = 20;
+        SCSCORERequestOrigin_Enum_SnapjoinerV2 = 21;
+        SCSCORERequestOrigin_Enum_ModerationService = 22;
+        SCSCORERequestOrigin_Enum_HighlightService = 23;
+        SCSCORERequestOrigin_Enum_TestPlatform = 24;
+        SCSCORERequestOrigin_Enum_BusinessApi = 25;
+        SCSCORERequestOrigin_Enum_CommunityOrg = 26;
+        SCSCORERequestOrigin_Enum_Music = 27;
+        SCSCORERequestOrigin_Enum_ChangeUserService = 28;
+        SCSCORERequestOrigin_Enum_Charms = 29;
+        SCSCORERequestOrigin_Enum_PieReviewToolBackfill = 30;
+        SCSCORERequestOrigin_Enum_SearchDns = 31;
+        SCSCORERequestOrigin_Enum_Pfe = 32;
+        SCSCORERequestOrigin_Enum_Context = 33;
+        SCSCORERequestOrigin_Enum_MapsContent = 34;
+        SCSCORERequestOrigin_Enum_ReadReceiptIndexer = 35;
+        SCSCORERequestOrigin_Enum_Mcs = 36;
+        SCSCORERequestOrigin_Enum_Cameos = 37;
+        SCSCORERequestOrigin_Enum_Cds = 38;
+        SCSCORERequestOrigin_Enum_Usi = 39;
+        SCSCORERequestOrigin_Enum_SnapjoinerV1 = 40;
+        SCSCORERequestOrigin_Enum_AddFriend = 41;
+        SCSCORERequestOrigin_Enum_ProfileAddFriend = 42;
+        SCSCORERequestOrigin_Enum_ProfileFriendingSubtext = 43;
+        SCSCORERequestOrigin_Enum_StoryIndicatorInRegistration = 44;
+        SCSCORERequestOrigin_Enum_SearchQuickAdd = 45;
+        SCSCORERequestOrigin_Enum_RepliesServer = 46;
+    }
+}
+
+message UserLatestViewOfPosterStoryResponse {
+    string requestId = 1;
+    int64 latestSnapViewTimestampMs = 2;
+}
+
+message UserTeamSnapchatHistoryRequest {
+    .ranking.core.SCSCORERequestMetadata metadata = 1;
+}
+
+message UserTeamSnapchatHistoryResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.TeamSnapchatReport reportsArray = 2;
+}
+
+message UserViewHistoryRequest {
+    string requestId = 1;
+    int64 requestTimestampMs = 2;
+    .ranking.pii.readreceipt.UserViewHistoryRequest.SCSCORERequestOrigin_Enum origin = 3;
+    .ranking.core.SCSCOREClientInfo clientInfo = 4;
+    repeated .ranking.pii.readreceipt.UserViewHistoryRequest.StoryType_Enum storyTypesRequestedArray = 5;
+    enum SCSCORERequestOrigin_Enum {
+        SCSCORERequestOrigin_Enum_Unknown = 0;
+        SCSCORERequestOrigin_Enum_SnapchatApp = 1;
+        SCSCORERequestOrigin_Enum_Fsn = 2;
+        SCSCORERequestOrigin_Enum_Impala = 3;
+        SCSCORERequestOrigin_Enum_ContentInsightsPipeline = 4;
+        SCSCORERequestOrigin_Enum_InternalTest = 5;
+        SCSCORERequestOrigin_Enum_InternalAutomation = 6;
+        SCSCORERequestOrigin_Enum_InternalLoadtest = 7;
+        SCSCORERequestOrigin_Enum_Snapkit = 8;
+        SCSCORERequestOrigin_Enum_Mixer = 9;
+        SCSCORERequestOrigin_Enum_InternalPubsub = 10;
+        SCSCORERequestOrigin_Enum_InternalBackfill = 11;
+        SCSCORERequestOrigin_Enum_StoryStudio = 12;
+        SCSCORERequestOrigin_Enum_NotificationIndexer = 13;
+        SCSCORERequestOrigin_Enum_SpamService = 14;
+        SCSCORERequestOrigin_Enum_Orca = 15;
+        SCSCORERequestOrigin_Enum_NotificationSender = 16;
+        SCSCORERequestOrigin_Enum_StoryManagement = 17;
+        SCSCORERequestOrigin_Enum_StoryTeller = 18;
+        SCSCORERequestOrigin_Enum_Gravy = 19;
+        SCSCORERequestOrigin_Enum_Snapweb = 20;
+        SCSCORERequestOrigin_Enum_SnapjoinerV2 = 21;
+        SCSCORERequestOrigin_Enum_ModerationService = 22;
+        SCSCORERequestOrigin_Enum_HighlightService = 23;
+        SCSCORERequestOrigin_Enum_TestPlatform = 24;
+        SCSCORERequestOrigin_Enum_BusinessApi = 25;
+        SCSCORERequestOrigin_Enum_CommunityOrg = 26;
+        SCSCORERequestOrigin_Enum_Music = 27;
+        SCSCORERequestOrigin_Enum_ChangeUserService = 28;
+        SCSCORERequestOrigin_Enum_Charms = 29;
+        SCSCORERequestOrigin_Enum_PieReviewToolBackfill = 30;
+        SCSCORERequestOrigin_Enum_SearchDns = 31;
+        SCSCORERequestOrigin_Enum_Pfe = 32;
+        SCSCORERequestOrigin_Enum_Context = 33;
+        SCSCORERequestOrigin_Enum_MapsContent = 34;
+        SCSCORERequestOrigin_Enum_ReadReceiptIndexer = 35;
+        SCSCORERequestOrigin_Enum_Mcs = 36;
+        SCSCORERequestOrigin_Enum_Cameos = 37;
+        SCSCORERequestOrigin_Enum_Cds = 38;
+        SCSCORERequestOrigin_Enum_Usi = 39;
+        SCSCORERequestOrigin_Enum_SnapjoinerV1 = 40;
+        SCSCORERequestOrigin_Enum_AddFriend = 41;
+        SCSCORERequestOrigin_Enum_ProfileAddFriend = 42;
+        SCSCORERequestOrigin_Enum_ProfileFriendingSubtext = 43;
+        SCSCORERequestOrigin_Enum_StoryIndicatorInRegistration = 44;
+        SCSCORERequestOrigin_Enum_SearchQuickAdd = 45;
+        SCSCORERequestOrigin_Enum_RepliesServer = 46;
+    }
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}
+
+message UserViewHistoryResponse {
+    string requestId = 1;
+    repeated .ranking.pii.readreceipt.ViewReport viewHistoriesArray = 2;
+}
+
+message ViewReport {
+    string snapId = 1;
+    .ranking.pii.readreceipt.ReadReceiptState readReceiptState = 3;
+    .ranking.core.SCSCOREUUID snapOwnerId = 4;
+    int64 expirationTimestampMs = 5;
+    .ranking.pii.readreceipt.ViewReport.StoryType_Enum storyType = 6;
+    int64 viewTimestampMs = 7;
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}

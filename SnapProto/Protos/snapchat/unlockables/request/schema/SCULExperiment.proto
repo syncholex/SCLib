@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+message SCULExperiment {
+    string studyName = 1;
+    repeated .snapchat.unlockables.request.schema.SCULExperiment.ExperimentSettingsEntry experimentSettings = 2;
+    message ExperimentSettingsEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

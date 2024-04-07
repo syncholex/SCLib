@@ -1,0 +1,113 @@
+syntax = "proto3";
+package ranking.serving.jaguar;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSSM";
+option csharp_namespace = "SnapProto.Ranking.Serving.Jaguar";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSSMActionLoggingExtension {
+    .ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 1;
+    bool explorationStory = 2;
+    bool isFromBoostUpnextRetrieval = 3;
+    bool isFromBoostSameAccount = 4;
+}
+
+message SCSSMCommonLoggingExtension {
+    .ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 1;
+    bool explorationStory = 2;
+}
+
+message SCSSMImpressionLoggingExtension {
+    .ranking.serving.jaguar.SCSSMUpNextLoggingExtension upNext = 1;
+    string variantLoggingKey = 2;
+    .ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 3;
+    bool explorationStory = 4;
+    bool isFromBoostUpnextRetrieval = 5;
+    bool isFromBoostSameAccount = 6;
+}
+
+message SCSSMJaguarClientLogging {
+    string tileLoggingKey = 1;
+    bool isBoostedStory = 2;
+    fixed64 tapStoryKey = 3;
+    bytes impressionLoggingExtension = 4;
+    bytes actionLoggingExtension = 5;
+    bytes viewSessionLoggingExtension = 6;
+    string variantLoggingKey = 7;
+    bytes commonLoggingExtension = 8;
+    .ranking.serving.jaguar.SCSSMJaguarClientLogging.SCSSMJaguarClientLogging_ExplorationSource_Enum explorationSource = 9;
+    string creatorId = 10;
+    enum SCSSMJaguarClientLogging_ExplorationSource_Enum {
+        SCSSMJaguarClientLogging_ExplorationSource_Enum_Unknown = 0;
+        SCSSMJaguarClientLogging_ExplorationSource_Enum_Spotlight = 1;
+        SCSSMJaguarClientLogging_ExplorationSource_Enum_PartnerContent = 2;
+    }
+}
+
+message SCSSMLoggingContext {
+    string language = 1;
+    .ranking.serving.jaguar.SCSSMLoggingContext.SCSCOREUserGender gender = 2;
+    .ranking.serving.jaguar.SCSSMLoggingContext.SCSCOREUserBucketedAge ageBucket = 3;
+    string rankingTreatmentId = 4;
+    string countryCode = 5;
+    string explorationTreatmentId = 6;
+    .ranking.serving.jaguar.SCSSMLoggingContext.SCSSMLoggingContext_ExplorationSource_Enum explorationSource = 7;
+    .ranking.serving.jaguar.SCSSMLoggingContext.SCSCOREExplorationStage_Enum magellanExplorationStage = 8;
+    string region = 9;
+    enum SCSCOREUserBucketedAge {
+        SCSCOREUserBucketedAge_AgeUnknown = 0;
+        SCSCOREUserBucketedAge_AgeLessThan13 = 1;
+        SCSCOREUserBucketedAge_Age13To17 = 2;
+        SCSCOREUserBucketedAge_Age18To24 = 3;
+        SCSCOREUserBucketedAge_Age25To34 = 4;
+        SCSCOREUserBucketedAge_Age35To54 = 5;
+        SCSCOREUserBucketedAge_AgeMoreThan54 = 6;
+    }
+    enum SCSSMLoggingContext_ExplorationSource_Enum {
+        SCSSMLoggingContext_ExplorationSource_Enum_Unknown = 0;
+        SCSSMLoggingContext_ExplorationSource_Enum_Spotlight = 1;
+        SCSSMLoggingContext_ExplorationSource_Enum_PartnerContent = 2;
+    }
+    enum SCSCOREUserGender {
+        SCSCOREUserGender_GenderUnknown = 0;
+        SCSCOREUserGender_GenderMale = 1;
+        SCSCOREUserGender_GenderFemale = 2;
+    }
+    enum SCSCOREExplorationStage_Enum {
+        SCSCOREExplorationStage_Enum_UnknownStage = 0;
+        SCSCOREExplorationStage_Enum_Tier1 = 1;
+        SCSCOREExplorationStage_Enum_Tier2 = 2;
+        SCSCOREExplorationStage_Enum_Tier3 = 3;
+        SCSCOREExplorationStage_Enum_Tier4 = 4;
+        SCSCOREExplorationStage_Enum_Tier0 = 5;
+        SCSCOREExplorationStage_Enum_InExploration = 6;
+        SCSCOREExplorationStage_Enum_ReservedTier6 = 7;
+        SCSCOREExplorationStage_Enum_Throttled = 8;
+        SCSCOREExplorationStage_Enum_NewStory = 9;
+        SCSCOREExplorationStage_Enum_EndExplore = 10;
+        SCSCOREExplorationStage_Enum_Exploit = 11;
+        SCSCOREExplorationStage_Enum_Stopped = 12;
+        SCSCOREExplorationStage_Enum_StoppedFromTier1 = 13;
+        SCSCOREExplorationStage_Enum_StoppedFromTier2 = 14;
+        SCSCOREExplorationStage_Enum_StoppedFromTier3 = 15;
+        SCSCOREExplorationStage_Enum_StoppedFromTier4 = 16;
+        SCSCOREExplorationStage_Enum_StoppedFromTier0 = 17;
+        SCSCOREExplorationStage_Enum_GraduateFromTier0 = 18;
+        SCSCOREExplorationStage_Enum_StoppedInPoolTooLongMagellan = 19;
+        SCSCOREExplorationStage_Enum_StoppedInPoolTooLongDagama = 20;
+        SCSCOREExplorationStage_Enum_Expired = 21;
+        SCSCOREExplorationStage_Enum_MaxStage = 100;
+    }
+}
+
+message SCSSMUpNextLoggingExtension {
+    .ranking.core.SCCORECompositeStoryId recommForStoryId = 1;
+}
+
+message SCSSMViewSessionLoggingExtension {
+    .ranking.serving.jaguar.SCSSMLoggingContext loggingContext = 1;
+    bool explorationStory = 2;
+    bool isFromBoostUpnextRetrieval = 3;
+    bool isFromBoostSameAccount = 4;
+}

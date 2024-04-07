@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.valis;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCVS";
+option csharp_namespace = "SnapProto.Services.Snapchat.Valis";
+
+import "snapchat/valis/SCVSValis.proto";
+
+service Valis{
+    rpc DeleteLastKnownLocation(.snapchat.valis.SCVSDeleteLastKnownLocationRequest) returns (.snapchat.valis.SCVSDeleteLastKnownLocationResponse);
+    rpc GetFriendClusters(.snapchat.valis.SCVSGetFriendClustersRequest) returns (.snapchat.valis.SCVSGetFriendClustersResponse);
+    rpc GetLocality(.snapchat.valis.SCVSGetLocalityRequest) returns (.snapchat.valis.SCVSGetLocalityResponse);
+    rpc GetPreferences(.snapchat.valis.SCVSGetPreferencesRequest) returns (.snapchat.valis.SCVSGetPreferencesResponse);
+    rpc SendClientUpdate(.snapchat.valis.SCVSClientUpdateRequest) returns (.snapchat.valis.SCVSClientUpdateResponse);
+    rpc SendPushNotificationTest(.snapchat.valis.SCVSSendPushNotificationTestRequest) returns (.snapchat.valis.SCVSSendPushNotificationTestResponse);
+    rpc SetPreferences(.snapchat.valis.SCVSSetPreferencesRequest) returns (.snapchat.valis.SCVSSetPreferencesResponse);
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.itemdetailpage;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Itemdetailpage";
+
+import "com/snapchat/showcase/wire/itemdetailpage/ArTryOnWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemRecommendationWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ShopOnStoreWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/SizeRecommendationWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/VariantWidget.proto";
+
+message ItemDetailPageWidget {
+    .com.snapchat.showcase.wire.itemdetailpage.ItemDetailPageWidget.ItemDetailPageWidgetTitle widgetTitle = 1;
+    string fallbackWidgetTitle = 2;
+    .com.snapchat.showcase.wire.itemdetailpage.ItemRecommendationWidget itemRecommendationWidget = 3;
+    .com.snapchat.showcase.wire.itemdetailpage.ShopOnStoreWidget shopOnStoreWidget = 4;
+    .com.snapchat.showcase.wire.itemdetailpage.ARTryOnWidget arTryOnWidget = 5;
+    .com.snapchat.showcase.wire.itemdetailpage.VariantWidget variantWidget = 6;
+    .com.snapchat.showcase.wire.itemdetailpage.SizeRecommendationWidget sizeRecommendationWidget = 7;
+    enum ItemDetailPageWidgetTitle {
+        ItemDetailPageWidgetTitle_WidgetTitleUnset = 0;
+        ItemDetailPageWidgetTitle_SimilarWidgetTitle = 1;
+        ItemDetailPageWidgetTitle_ForYouWidgetTitle = 2;
+        ItemDetailPageWidgetTitle_RelatedItemsWidgetTitle = 3;
+        ItemDetailPageWidgetTitle_MoreFromShopWidgetTitle = 4;
+    }
+}

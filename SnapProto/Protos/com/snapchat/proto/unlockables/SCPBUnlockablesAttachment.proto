@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/rich_story/SCPBRichStoryRichStoryDeepLinkAttachment.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesAppInstallAttachment.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesLongFormVideoAttachment.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesWebViewAttachment.proto";
+
+message SCPBUnlockablesAttachment {
+    string attachmentType = 1;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesLongFormVideoAttachment longFormVideo = 2;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesWebViewAttachment webView = 3;
+    string ctaText = 4;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesAppInstallAttachment appInstall = 5;
+    .com.snapchat.proto.rich_story.SCPBRichStoryRichStoryDeepLinkAttachment deepLink = 6;
+    string localizedCtaText = 7;
+}

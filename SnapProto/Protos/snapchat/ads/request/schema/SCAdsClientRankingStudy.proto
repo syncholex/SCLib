@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsClientRankingStudy {
+    string modelId = 1;
+    float avgTimeViewedWeight = 2;
+    float stdWeight = 3;
+    float constant = 4;
+    float threshold = 5;
+    int32 numSnaps = 6;
+}

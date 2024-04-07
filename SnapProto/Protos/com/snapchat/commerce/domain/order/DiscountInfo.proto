@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Order";
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+
+message DiscountInfo {
+    bool applicable = 1;
+    .com.snapchat.commerce.domain.CurrencyAmount amount = 2;
+    .com.snapchat.commerce.domain.order.DiscountInfo.DiscountInfo_DiscountType discountType = 3;
+    string discountValue = 4;
+    bool automatic = 5;
+    enum DiscountInfo_DiscountType {
+        DiscountInfo_DiscountType_Unset = 0;
+        DiscountInfo_DiscountType_Percentage = 1;
+        DiscountInfo_DiscountType_FixedAmount = 2;
+        DiscountInfo_DiscountType_FreeShipping = 3;
+    }
+}

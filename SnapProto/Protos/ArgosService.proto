@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snap.security;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Snap.Security";
+
+import "snap/security/Argos.proto";
+
+service ArgosService{
+    rpc GetTokens(.snap.security.ArgosGetTokensRequest) returns (.snap.security.ArgosGetTokensResponse);
+}

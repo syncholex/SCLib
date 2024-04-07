@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.creativetools.feed;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Services.Snapchat.Creativetools.Feed";
+
+import "snapchat/creativetools/feed/SCCTPFeedService.proto";
+
+service CreativeToolsFeedsService{
+    rpc FeedRequest(.snapchat.creativetools.feed.SCCTPCTFeedRequest) returns (.snapchat.creativetools.feed.SCCTPCTFeedResponse);
+}

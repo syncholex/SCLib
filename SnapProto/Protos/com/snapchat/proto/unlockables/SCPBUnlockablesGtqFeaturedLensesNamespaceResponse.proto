@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/SCPBGeofilterResponse.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+
+message SCPBUnlockablesGtqFeaturedLensesNamespaceResponse {
+    string namespace_p = 1;
+    repeated .com.snapchat.proto.SCPBGeofilterResponse activeListArray = 2;
+    repeated .com.snapchat.proto.SCPBGeofilterResponse precacheListArray = 3;
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse checksumsListArray = 4;
+    int64 cacheTtlMillis = 5;
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse activeChecksumsListArray = 6;
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse precachedChecksumsListArray = 7;
+    bytes streamToken = 8;
+}

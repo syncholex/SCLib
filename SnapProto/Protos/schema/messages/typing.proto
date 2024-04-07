@@ -1,0 +1,19 @@
+syntax = "proto3";
+package snapchat.messaging;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMessaging";
+option csharp_namespace = "SnapProto.Snapchat.Messaging";
+option java_package = "com.snapchat.messaging";
+option java_multiple_files = true;
+option go_package = "messaging";
+
+import "schema/common/uuid.proto";
+
+message SendTypingNotificationRequest {
+    .snapchat.messaging.UUID sending_user_id = 1;
+    .snapchat.messaging.UUID conversation_id = 2;
+    uint64 most_recent_known_message_id = 3;
+}
+
+message SendTypingNotificationResponse {
+}

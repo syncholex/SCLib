@@ -1,0 +1,12 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+message SCReportStoreItemReasonId {
+    .snapchat.abuse.support.SCReportStoreItemReasonId.SCReportStoreItemReasonId_ReasonId reasonId = 1;
+    enum SCReportStoreItemReasonId_ReasonId {
+        SCReportStoreItemReasonId_ReasonId_ReasonUnset = 0;
+    }
+}

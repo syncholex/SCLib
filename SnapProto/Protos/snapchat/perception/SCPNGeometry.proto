@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.perception;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPN";
+option csharp_namespace = "SnapProto.Snapchat.Perception";
+
+message SCPNBoundingPoly {
+    repeated .snapchat.perception.SCPNVertex verticesArray = 1;
+    repeated .snapchat.perception.SCPNNormalizedVertex normalizedVerticesArray = 2;
+}
+
+message SCPNCoordinate {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message SCPNNormalizedVertex {
+    float x = 1;
+    float y = 2;
+}
+
+message SCPNVertex {
+    int32 x = 1;
+    int32 y = 2;
+}

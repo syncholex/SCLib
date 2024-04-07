@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.cdp.cof;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCof";
+option csharp_namespace = "SnapProto.Services.Snapchat.Cdp.Cof";
+
+import "snapchat/cdp/cof/SCCofCircumstanceService.proto";
+import "snapchat/cdp/cof/SCCofConfigRequest.proto";
+import "snapchat/cdp/cof/SCCofConfigResponse.proto";
+
+service CircumstancesService{
+    rpc getAbConfigValues(.snapchat.cdp.cof.SCCofGetAbConfigValuesRequest) returns (.snapchat.cdp.cof.SCCofGetAbConfigValuesResponse);
+    rpc targetingQuery(.snapchat.cdp.cof.SCCofConfigTargetingRequest) returns (.snapchat.cdp.cof.SCCofConfigTargetingResponse);
+}

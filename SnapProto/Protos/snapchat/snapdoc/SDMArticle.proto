@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/snapdoc/SDMLongformVideo.proto";
+
+message SDMArticle {
+    string editorHtml = 1;
+    repeated .snapchat.snapdoc.SDMLongformVideo videosArray = 2;
+    string id_p = 3;
+    repeated bytes imageContentObjectsArray = 4;
+}

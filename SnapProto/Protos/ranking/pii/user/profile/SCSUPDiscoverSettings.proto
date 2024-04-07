@@ -1,0 +1,19 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPStoryPreferenceSetting {
+    .ranking.core.SCCORECompositeStoryId itemId = 1;
+    bool isSubscribed = 2;
+    bool isHidden = 3;
+    bool isNotificationOptedIn = 4;
+    bool isNotificationOptInEligible = 5;
+}
+
+message SCSUPStoryPreferenceSettings {
+    repeated .ranking.pii.user.profile.SCSUPStoryPreferenceSetting settingsArray = 1;
+}

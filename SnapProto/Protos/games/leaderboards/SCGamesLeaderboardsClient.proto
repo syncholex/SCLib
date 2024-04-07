@@ -1,0 +1,94 @@
+syntax = "proto3";
+package games.leaderboards;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCGamesLeaderboards";
+option csharp_namespace = "SnapProto.Games.Leaderboards";
+
+import "google/protobuf/timestamp.proto";
+
+message SCGamesLeaderboardsBatchGetLeaderboardEntriesRequest {
+    string leaderboardId = 1;
+    repeated string userIdsArray = 2;
+}
+
+message SCGamesLeaderboardsBatchGetLeaderboardEntriesResponse {
+    repeated .games.leaderboards.SCGamesLeaderboardsClientLeaderboardRecord leaderboardEntriesArray = 1;
+}
+
+message SCGamesLeaderboardsClientLeaderboard {
+    string id_p = 1;
+    string name = 2;
+    string logoURL = 3;
+    .games.leaderboards.SCGamesLeaderboardsClientLeaderboard.SCGamesLeaderboardsClientLeaderboard_OrderingType orderingType = 4;
+    .google.protobuf.Timestamp lastUpdateTimestamp = 5;
+    string appId = 6;
+    string scoreIconURL = 7;
+    enum SCGamesLeaderboardsClientLeaderboard_OrderingType {
+        SCGamesLeaderboardsClientLeaderboard_OrderingType_OrderingTypeUnset = 0;
+        SCGamesLeaderboardsClientLeaderboard_OrderingType_Descending = 1;
+        SCGamesLeaderboardsClientLeaderboard_OrderingType_Ascending = 2;
+    }
+}
+
+message SCGamesLeaderboardsClientLeaderboardRecord {
+    string userId = 1;
+    int64 globalExactRank = 2;
+    int32 globalPercentileRank = 3;
+    int64 score = 4;
+    string displayScore = 5;
+}
+
+message SCGamesLeaderboardsClientSubmitScoreRequest {
+    string leaderboardId = 1;
+    int64 score = 2;
+    string appId = 3;
+}
+
+message SCGamesLeaderboardsClientSubmitScoreResponse {
+    int64 score = 1;
+}
+
+message SCGamesLeaderboardsGetClientLeaderboardRequest {
+    string leaderboardId = 1;
+}
+
+message SCGamesLeaderboardsGetClientLeaderboardResponse {
+    .games.leaderboards.SCGamesLeaderboardsClientLeaderboard leaderboard = 1;
+}
+
+message SCGamesLeaderboardsGetScoreVisibilitiesRequest {
+    string appId = 1;
+}
+
+message SCGamesLeaderboardsGetScoreVisibilitiesResponse {
+    repeated .games.leaderboards.SCGamesLeaderboardsScoreVisibility scoreVisibilityArray = 1;
+}
+
+message SCGamesLeaderboardsListFriendLeaderboardEntriesRequest {
+    string leaderboardId = 1;
+    int32 limit = 2;
+}
+
+message SCGamesLeaderboardsListFriendLeaderboardEntriesResponse {
+    repeated .games.leaderboards.SCGamesLeaderboardsClientLeaderboardRecord leaderboardEntriesArray = 1;
+    int32 myFriendRank = 2;
+}
+
+message SCGamesLeaderboardsScoreVisibility {
+    .games.leaderboards.SCGamesLeaderboardsScoreVisibility.SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType scoreVisibilityType = 3;
+    string appId = 1;
+    string leaderboardId = 2;
+    enum SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType {
+        SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType_VisibilityUnset = 0;
+        SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType_Visible = 1;
+        SCGamesLeaderboardsScoreVisibility_ScoreVisibilityType_Invisible = 2;
+    }
+}
+
+message SCGamesLeaderboardsSetScoreVisibilityRequest {
+    .games.leaderboards.SCGamesLeaderboardsScoreVisibility scoreVisibility = 1;
+}
+
+message SCGamesLeaderboardsSetScoreVisibilityResponse {
+    .games.leaderboards.SCGamesLeaderboardsScoreVisibility scoreVisibility = 1;
+}

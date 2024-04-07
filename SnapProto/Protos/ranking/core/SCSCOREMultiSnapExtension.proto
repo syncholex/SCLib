@@ -1,0 +1,11 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message SCSCOREMultiSnapExtension {
+    string multiSnapBundleId = 1;
+    int32 multiSnapSegmentCount = 2;
+    int32 multiSnapSegmentId = 3;
+}

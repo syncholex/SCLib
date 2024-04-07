@@ -1,0 +1,125 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+import "ranking/core/SCSCORECaption.proto";
+import "ranking/core/SCSCOREGeo.proto";
+import "ranking/core/SCSCORESnapClientMetadata.proto";
+import "ranking/core/SCSCORESnapTtl.proto";
+import "ranking/core/SCSCOREUuid.proto";
+import "ranking/indexing/Hashtag.proto";
+import "snapchat/snapdoc/SDMLocation.proto";
+
+message SCSCOREAppStoryDestinationMetadata {
+    .ranking.core.SCSCOREUUID appId = 1;
+    uint64 ttlSecs = 2;
+}
+
+message SCSCOREChallengeMetadata {
+    .ranking.core.SCSCOREUUID id_p = 1;
+}
+
+message SCSCORECustomStoryDestinationMetadata {
+    .ranking.core.SCSCOREUUID groupId = 1;
+    .ranking.core.SCSCORECustomizedTTL customizedTtl = 2;
+}
+
+message SCSCOREExperimentalMetadata {
+    bool isTimelineMode = 1;
+}
+
+message SCSCOREMyStoryDestinationMetadata {
+    .ranking.core.SCSCOREMyStoryDestinationMetadata.SCSCOREMyStoryDestinationMetadata_PrivacyOverride privacyOverride = 1;
+    .ranking.core.SCSCORECustomizedTTL customizedTtl = 2;
+    .ranking.core.SCSCOREMyStoryDestinationMetadata.SCSCOREMyStoryVariant_Enum myStoryVariant = 3;
+    enum SCSCOREMyStoryVariant_Enum {
+        SCSCOREMyStoryVariant_Enum_Unset = 0;
+        SCSCOREMyStoryVariant_Enum_AfterDark = 1;
+    }
+    enum SCSCOREMyStoryDestinationMetadata_PrivacyOverride {
+        SCSCOREMyStoryDestinationMetadata_PrivacyOverride_Unset = 0;
+        SCSCOREMyStoryDestinationMetadata_PrivacyOverride_Friends = 1;
+        SCSCOREMyStoryDestinationMetadata_PrivacyOverride_Custom = 2;
+    }
+}
+
+message SCSCOREOurStoryDestinationMetadata {
+    repeated .ranking.core.SCSCOREOurStoryDestinationMetadata.OurStoryDestination_Enum destinationsArray = 1;
+    bool createHighlightFromSpotlight = 2;
+    repeated .ranking.indexing.Hashtag hashtagsArray = 3;
+    .ranking.core.SCSCORESnapDescription snapDescription = 4;
+    .ranking.core.SCSCOREPlaceTagsMetadata placeTagsMetadata = 5;
+    .ranking.core.SCSCOREChallengeMetadata challenge = 6;
+    .ranking.core.SCSCOREUUID businessId = 7;
+    repeated .ranking.core.SCSCOREOurStoryDestinationMetadata.OurStoryDestination_Enum showAttributionDestinationsArray = 8;
+    enum OurStoryDestination_Enum {
+        OurStoryDestination_Enum_Unknown = 0;
+        OurStoryDestination_Enum_OurStory = 1;
+        OurStoryDestination_Enum_Spotlight = 2;
+    }
+}
+
+message SCSCOREPlaceTagsMetadata {
+    bool placeTagged = 1;
+    uint64 placeItemCount = 2;
+    uint64 placeItemIndex = 3;
+    string placeTagId = 4;
+}
+
+message SCSCORERankingMetadata {
+    bool postedToUserStory = 1;
+    .ranking.core.SCSCORESnapClientMetadata clientMetadata = 2;
+}
+
+message SCSCORESavedStoryDestinationMetadata {
+    .ranking.core.SCSCOREUUID profileId = 1;
+    .ranking.core.SCSCOREUUID savedStoryId = 2;
+}
+
+message SCSCORESnapDescription {
+    string text = 1;
+}
+
+message SCSCORESnapProStoryDestinationMetadata {
+    .ranking.core.SCSCOREUUID businessId = 1;
+    string serviceEndpoint = 2;
+    .ranking.core.SCSCORECustomizedTTL customizedTtl = 3;
+}
+
+message SCSCOREStoryMetadata {
+    string clientId = 1;
+    .ranking.core.SCSCORERankingMetadata rankingMetadata = 3;
+    .ranking.core.SCSCOREExperimentalMetadata experimentalMetadata = 4;
+    .snapchat.snapdoc.SDMLocation location = 5;
+    bytes thumbnailData = 6;
+    .ranking.core.SCSCORECaptionMetadata captionMetadata = 7;
+    string captionText = 8;
+    .ranking.core.SCSCOREGeoAddress geoAddressFromIp = 9;
+    .ranking.core.SCSCOREStoryMetadata.SCSCOREMediaInfo_Orientation orientation = 11;
+    string locale = 12;
+    .ranking.core.SCSCORETimeZone timeZone = 13;
+    int64 goLiveTsMs = 14;
+    string routeTag = 100;
+    enum SCSCOREMediaInfo_Orientation {
+        SCSCOREMediaInfo_Orientation_Vertical = 0;
+        SCSCOREMediaInfo_Orientation_UpsideDown = 1;
+        SCSCOREMediaInfo_Orientation_HorizontalLeft = 2;
+        SCSCOREMediaInfo_Orientation_HorizontalRight = 3;
+    }
+}
+
+message SCSCOREStoryPostDestinationMetadata {
+    bytes messagingDestinationId = 7;
+    .ranking.core.SCSCOREMyStoryDestinationMetadata myStory = 1;
+    .ranking.core.SCSCORECustomStoryDestinationMetadata customStory = 2;
+    .ranking.core.SCSCOREOurStoryDestinationMetadata ourStory = 3;
+    .ranking.core.SCSCORESnapProStoryDestinationMetadata snapProStory = 4;
+    .ranking.core.SCSCOREAppStoryDestinationMetadata appStory = 5;
+    .ranking.core.SCSCORESavedStoryDestinationMetadata savedStory = 6;
+}
+
+message SCSCORETimeZone {
+    string id_p = 1;
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.context2.camera;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTX";
+option csharp_namespace = "SnapProto.Snapchat.Context2.Camera";
+
+message SCCTXDirectorMode {
+}
+
+message SCCTXDualCamera {
+    .snapchat.context2.camera.SCCTXDualCamera.SCCTXDualCamera_LayoutType layoutType = 1;
+    enum SCCTXDualCamera_LayoutType {
+        SCCTXDualCamera_LayoutType_LayoutTypeVerticalAsUnset = 0;
+        SCCTXDualCamera_LayoutType_LayoutTypeHorizontal = 1;
+        SCCTXDualCamera_LayoutType_LayoutTypePictureInPicture = 2;
+        SCCTXDualCamera_LayoutType_LayoutTypeCutout = 3;
+    }
+}
+
+message SCCTXGreenScreen {
+}
+
+message SCCTXSpeedMode {
+    .snapchat.context2.camera.SCCTXSpeedMode.SCCTXSpeedMode_SpeedType speedType = 1;
+    enum SCCTXSpeedMode_SpeedType {
+        SCCTXSpeedMode_SpeedType_SpeedTypeSlowAsUnset = 0;
+        SCCTXSpeedMode_SpeedType_SpeedTypeNormal = 1;
+        SCCTXSpeedMode_SpeedType_SpeedTypeFast = 2;
+    }
+}
+
+message SCCTXTimeline {
+}

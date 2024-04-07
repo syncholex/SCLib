@@ -1,0 +1,46 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+message SCULFilterInfo {
+    int64 unlockableId = 1;
+    bool isUco = 2;
+}
+
+message SCULLensInfo {
+    int64 unlockableId = 1;
+    int64 optionId = 2;
+    .snapchat.unlockables.request.schema.SCULLensInfo.SCULLensSource source = 3;
+    enum SCULLensSource {
+        SCULLensSource_Unknown = 0;
+        SCULLensSource_Camera = 1;
+        SCULLensSource_Videochat = 2;
+        SCULLensSource_Snapcode = 3;
+        SCULLensSource_LoginCamera = 4;
+        SCULLensSource_Preview = 5;
+        SCULLensSource_Memories = 6;
+        SCULLensSource_OnDemand = 7;
+        SCULLensSource_Discover = 8;
+        SCULLensSource_Story = 9;
+    }
+}
+
+message SCULStickerInfo {
+    int64 unlockableId = 1;
+    int64 stickerId = 2;
+}
+
+message SCULUnlockablesSnapInfo {
+    string snapSessionId = 1;
+    repeated .snapchat.unlockables.request.schema.SCULFilterInfo filtersArray = 2;
+    repeated .snapchat.unlockables.request.schema.SCULLensInfo lensesArray = 3;
+    repeated .snapchat.unlockables.request.schema.SCULStickerInfo stickersArray = 4;
+    .snapchat.unlockables.request.schema.SCULUnlockablesSnapInfo.SCULUnlockablesSnapInfo_SnapSource snapSource = 5;
+    enum SCULUnlockablesSnapInfo_SnapSource {
+        SCULUnlockablesSnapInfo_SnapSource_Unknown = 0;
+        SCULUnlockablesSnapInfo_SnapSource_Camera = 1;
+        SCULUnlockablesSnapInfo_SnapSource_Memory = 2;
+    }
+}

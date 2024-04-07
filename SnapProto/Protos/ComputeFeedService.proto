@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.creativetools.captions;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Snap.Creativetools.Captions";
+
+import "snapchat/creativetools/compute/SCCTPComputeService.proto";
+
+service ComputeFeedService{
+    rpc ComputeFeed(.snapchat.creativetools.compute.SCCTPComputeFeedRequest) returns (.snapchat.creativetools.compute.SCCTPComputeFeedResponse);
+}

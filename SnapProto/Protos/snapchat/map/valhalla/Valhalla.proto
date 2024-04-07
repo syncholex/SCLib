@@ -1,0 +1,89 @@
+syntax = "proto3";
+package snapchat.map.valhalla;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Map.Valhalla";
+
+message CodedDescription {
+    string description_p = 1;
+    uint64 code = 2;
+}
+
+message Costing {
+    .snapchat.map.valhalla.Costing.Costing_Options options = 1;
+    message Costing_Options {
+        float walkingSpeed = 17;
+    }
+}
+
+message Directions {
+    repeated .snapchat.map.valhalla.DirectionsRoute routesArray = 1;
+}
+
+message DirectionsLeg {
+    .snapchat.map.valhalla.DirectionsLeg.DirectionsLeg_Summary summary = 5;
+    string shape = 7;
+    message DirectionsLeg_Summary {
+        float length = 1;
+        double time = 2;
+    }
+}
+
+message DirectionsRoute {
+    repeated .snapchat.map.valhalla.DirectionsLeg legsArray = 1;
+}
+
+message GetRouteRequest {
+    .snapchat.map.valhalla.Options options = 1;
+}
+
+message GetRouteResponse {
+    .snapchat.map.valhalla.Directions directions = 3;
+    .snapchat.map.valhalla.Info info = 20;
+}
+
+message Info {
+    repeated .snapchat.map.valhalla.CodedDescription errorsArray = 2;
+}
+
+message LatLng {
+    double lat = 1;
+    double lng = 2;
+}
+
+message Location {
+    .snapchat.map.valhalla.LatLng ll = 1;
+    uint32 heading = 3;
+}
+
+message Options {
+    .snapchat.map.valhalla.Options.Options_Units units = 1;
+    .snapchat.map.valhalla.Options.Options_Format format = 4;
+    .snapchat.map.valhalla.Options.Costing_Type costingType = 12;
+    repeated .snapchat.map.valhalla.Options.CostingsEntry costings = 13;
+    repeated .snapchat.map.valhalla.Location locationsArray = 14;
+    message CostingsEntry {
+        int32 key = 1;
+        .snapchat.map.valhalla.Costing value = 2;
+    }
+    enum Costing_Type {
+        Costing_Type_None = 0;
+        Costing_Type_Bicycle = 1;
+        Costing_Type_Bus = 2;
+        Costing_Type_MotorScooter = 3;
+        Costing_Type_Multimodal = 4;
+        Costing_Type_Pedestrian = 5;
+        Costing_Type_Truck = 7;
+        Costing_Type_Motorcycle = 8;
+        Costing_Type_Taxi = 9;
+        Costing_Type_Automobile = 10;
+        Costing_Type_Bikeshare = 11;
+    }
+    enum Options_Format {
+        Options_Format_Unset = 0;
+        Options_Format_Pbf = 3;
+    }
+    enum Options_Units {
+        Options_Units_Kilometers = 0;
+        Options_Units_Miles = 1;
+    }
+}

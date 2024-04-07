@@ -1,0 +1,42 @@
+syntax = "proto3";
+package snapchat.adindex.dpa.protobuf;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Adindex.Dpa.Protobuf";
+
+message DpaStoryAdMetadata {
+    .snapchat.adindex.dpa.protobuf.DpaStoryAdMetadata.SCAdsRenderType previewCreativeRenderType = 1;
+    .snapchat.adindex.dpa.protobuf.DpaStoryAdMetadata.SCAdsRenderType firstSubCreativeRenderType = 2;
+    .snapchat.adindex.dpa.protobuf.DpaStoryAdMetadata.SCAdsAdType attachmentAdType = 3;
+    enum SCAdsAdType {
+        SCAdsAdType_UnknownAdType = 0;
+        SCAdsAdType_ThreeV = 1;
+        SCAdsAdType_LongformVideo = 2;
+        SCAdsAdType_AppInstall = 3;
+        SCAdsAdType_RemoteWebpage = 4;
+        SCAdsAdType_LocalWebpage = 5;
+        SCAdsAdType_NoFill = 6;
+        SCAdsAdType_Story = 7;
+        SCAdsAdType_Lens = 8;
+        SCAdsAdType_LensSlot = 9;
+        SCAdsAdType_DeepLinkAttachment = 10;
+        SCAdsAdType_Filter = 11;
+        SCAdsAdType_FilterCarousel = 12;
+        SCAdsAdType_LensCarousel = 13;
+        SCAdsAdType_UnlockableView = 14;
+        SCAdsAdType_AdToLens = 15;
+        SCAdsAdType_Collection = 16;
+        SCAdsAdType_LensTile = 17;
+        SCAdsAdType_AdToCall = 18;
+        SCAdsAdType_AdToMessage = 19;
+        SCAdsAdType_AdToPlace = 20;
+        SCAdsAdType_LeadGeneration = 21;
+        SCAdsAdType_Showcase = 22;
+        SCAdsAdType_PromotePublisherStory = 23;
+        SCAdsAdType_Reminder = 24;
+    }
+    enum SCAdsRenderType {
+        SCAdsRenderType_RenderTypeUnset = 0;
+        SCAdsRenderType_Static = 1;
+        SCAdsRenderType_Dynamic = 2;
+    }
+}

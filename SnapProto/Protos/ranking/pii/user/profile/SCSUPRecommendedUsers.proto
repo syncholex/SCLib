@@ -1,0 +1,85 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+message SCSUPRecommendedUsers {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User recommendedUsersArray = 2;
+    message SCSUPRecommendedUsers_User {
+        string userId = 1;
+        float score = 2;
+        bool isOfficial = 3;
+        .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.SCSUPRecommendedUsers_User_RecommendationReason recommendationReason = 4;
+        repeated .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.ScoringInfoEntry scoringInfo = 5;
+        .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.RecommendationReason_Enum recReason = 6;
+        message ScoringInfoEntry {
+            string key = 1;
+            .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.SCSUPRecommendedUsers_User_ScoringInfo value = 2;
+        }
+        message SCSUPRecommendedUsers_User_ScoringInfo {
+            float score = 1;
+            .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.SCSUPRecommendedUsers_User_ScoringInfo.SCSUPRecommendedUsers_User_RecommendationReason recommendationReason = 2;
+            .ranking.pii.user.profile.SCSUPRecommendedUsers.SCSUPRecommendedUsers_User.SCSUPRecommendedUsers_User_ScoringInfo.RecommendationReason_Enum recReason = 3;
+            enum RecommendationReason_Enum {
+                RecommendationReason_Enum_Unknown = 0;
+                RecommendationReason_Enum_PopularFriendFollowing = 1;
+                RecommendationReason_Enum_PopularSimilarity = 2;
+                RecommendationReason_Enum_PopularTapSimilarity = 3;
+                RecommendationReason_Enum_NgclusterTapSimilarity = 4;
+                RecommendationReason_Enum_CotapTapSimilarity = 5;
+                RecommendationReason_Enum_SubSimilarity = 6;
+                RecommendationReason_Enum_LatentInterests = 7;
+                RecommendationReason_Enum_VisualTopicAccountClusterTapSimilarity = 8;
+                RecommendationReason_Enum_VisualTopicCoverClusterTapSimilarity = 9;
+                RecommendationReason_Enum_SimAccTapSimilarity = 10;
+                RecommendationReason_Enum_LwsSimilarity = 11;
+            }
+            enum SCSUPRecommendedUsers_User_RecommendationReason {
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonUnknown = 0;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonPublicDirectFollowing = 1;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularDirectFollowing = 2;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularFriendFollowing = 3;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularSimilarity = 4;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularTapSimilarity = 5;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonImportantUser = 6;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonNgclusterTapSimilarity = 7;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonLatentInterests = 8;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonSubSimilarity = 9;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonCotapTapSimilarity = 10;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonVisualTopicAccountClusterTapSimilarity = 11;
+                SCSUPRecommendedUsers_User_RecommendationReason_ReasonVisualTopicCoverClusterTapSimilarity = 12;
+            }
+        }
+        enum RecommendationReason_Enum {
+            RecommendationReason_Enum_Unknown = 0;
+            RecommendationReason_Enum_PopularFriendFollowing = 1;
+            RecommendationReason_Enum_PopularSimilarity = 2;
+            RecommendationReason_Enum_PopularTapSimilarity = 3;
+            RecommendationReason_Enum_NgclusterTapSimilarity = 4;
+            RecommendationReason_Enum_CotapTapSimilarity = 5;
+            RecommendationReason_Enum_SubSimilarity = 6;
+            RecommendationReason_Enum_LatentInterests = 7;
+            RecommendationReason_Enum_VisualTopicAccountClusterTapSimilarity = 8;
+            RecommendationReason_Enum_VisualTopicCoverClusterTapSimilarity = 9;
+            RecommendationReason_Enum_SimAccTapSimilarity = 10;
+            RecommendationReason_Enum_LwsSimilarity = 11;
+        }
+        enum SCSUPRecommendedUsers_User_RecommendationReason {
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonUnknown = 0;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonPublicDirectFollowing = 1;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularDirectFollowing = 2;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularFriendFollowing = 3;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularSimilarity = 4;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonPopularTapSimilarity = 5;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonImportantUser = 6;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonNgclusterTapSimilarity = 7;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonLatentInterests = 8;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonSubSimilarity = 9;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonCotapTapSimilarity = 10;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonVisualTopicAccountClusterTapSimilarity = 11;
+            SCSUPRecommendedUsers_User_RecommendationReason_ReasonVisualTopicCoverClusterTapSimilarity = 12;
+        }
+    }
+}

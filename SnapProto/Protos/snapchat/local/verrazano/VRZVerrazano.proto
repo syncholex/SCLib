@@ -1,0 +1,1149 @@
+syntax = "proto3";
+package snapchat.local.verrazano;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "VRZ";
+option csharp_namespace = "SnapProto.Snapchat.Local.Verrazano";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/geo/SPCGGeo.proto";
+
+message VRZAddress {
+    string address1 = 1;
+    string address2 = 2;
+    string locality = 3;
+    string region = 4;
+    string postalCode = 5;
+    string country = 6;
+}
+
+message VRZAttributeSource {
+    string attributeId = 1;
+    repeated string attributeDetailArray = 2;
+    .snapchat.local.verrazano.VRZAttributeSource.VRZProvider provider = 3;
+    repeated string providerDetailArray = 4;
+    enum VRZProvider {
+        VRZProvider_ProviderUnknown = 0;
+        VRZProvider_SnapModeration = 1;
+        VRZProvider_SnapPro = 2;
+        VRZProvider_SnapVoltorb = 3;
+        VRZProvider_Foursquare = 4;
+        VRZProvider_Tripadvisor = 5;
+        VRZProvider_Factual = 6;
+        VRZProvider_Yext = 7;
+        VRZProvider_Wof = 8;
+        VRZProvider_Osm = 9;
+        VRZProvider_Maponics = 10;
+        VRZProvider_Michelin = 11;
+        VRZProvider_Goop = 12;
+        VRZProvider_Opentable = 13;
+        VRZProvider_Resy = 14;
+        VRZProvider_Bookatable = 15;
+        VRZProvider_SnapLoi = 16;
+        VRZProvider_SnapLocaya = 17;
+        VRZProvider_SnapFti = 18;
+        VRZProvider_Tilezen = 19;
+        VRZProvider_Nielsen = 20;
+        VRZProvider_Geonames = 21;
+        VRZProvider_SnapGeometryBot = 22;
+        VRZProvider_SnapPipBot = 23;
+        VRZProvider_SnapLandmarkersTeam = 24;
+        VRZProvider_SnapBbg = 25;
+        VRZProvider_SnapPb = 26;
+        VRZProvider_Digitalenvoy = 27;
+        VRZProvider_HereGeocoder = 28;
+        VRZProvider_Postmates = 29;
+        VRZProvider_Grubhub = 30;
+        VRZProvider_Doordash = 31;
+        VRZProvider_Uber = 32;
+        VRZProvider_SnapUgc = 33;
+        VRZProvider_Ticketmaster = 34;
+        VRZProvider_Chownow = 35;
+        VRZProvider_Dacgroup = 36;
+        VRZProvider_Zomato = 37;
+        VRZProvider_Mapmyindia = 38;
+        VRZProvider_SnapPcs = 39;
+        VRZProvider_SnapAutoMod = 40;
+        VRZProvider_SnapLocationAudience = 41;
+        VRZProvider_Infatuation = 42;
+        VRZProvider_SnapBps = 43;
+        VRZProvider_Deliveroo = 44;
+        VRZProvider_AllThePlaces = 45;
+        VRZProvider_JustEat = 46;
+        VRZProvider_Potters = 47;
+        VRZProvider_PottersPoiXyz = 48;
+        VRZProvider_SnapCommunities = 49;
+    }
+}
+
+message VRZBlockedServices {
+    bool map = 1;
+    bool checkin = 2;
+    bool search = 3;
+    bool placeDiscovery = 4;
+    bool mapDataQuality = 5;
+    bool basemapRecommendedUnderage = 6;
+    bool placeStoriesOnMap = 7;
+    bool placeCampusParent = 8;
+    bool placeCampusChild = 9;
+    .snapchat.local.verrazano.VRZBlockedServices.VRZBlockedServices_ComponentBlocklist campus = 10;
+    .snapchat.local.verrazano.VRZBlockedServices.VRZBlockedServices_ComponentBlocklist similarPlaces = 11;
+    message VRZBlockedServices_ComponentBlocklist {
+        bool parentBlocked = 1;
+        bool childBlocked = 2;
+    }
+}
+
+message VRZBrand {
+    string id_p = 1;
+    int64 version = 2;
+    int64 createdAtMs = 3;
+    int64 updatedAtMs = 4;
+    int64 deprecatedAtMs = 5;
+    string name = 6;
+    repeated string parentIdsArray = 7;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 8;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 9;
+}
+
+message VRZCategory {
+    string id_p = 1;
+    int64 version = 2;
+    int64 createdAtMs = 3;
+    int64 updatedAtMs = 4;
+    int64 deprecatedAtMs = 5;
+    string name = 6;
+    repeated string parentIdsArray = 7;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 8;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 9;
+    int32 averageRadiusM = 10;
+    .snapchat.local.verrazano.VRZBlockedServices isBlocked = 11;
+}
+
+message VRZClaimedPlaceCandidate {
+    string placeId = 1;
+    .snapchat.geo.SPCGPoint location = 2;
+}
+
+message VRZClaimedPlacesCandidates {
+    repeated .snapchat.local.verrazano.VRZClaimedPlaceCandidate candidatePlacesArray = 1;
+}
+
+message VRZConcordance {
+    .snapchat.local.verrazano.VRZConcordance.VRZProvider provider = 1;
+    string providerDetail = 2;
+    string prefix = 3;
+    string id_p = 4;
+    enum VRZProvider {
+        VRZProvider_ProviderUnknown = 0;
+        VRZProvider_SnapModeration = 1;
+        VRZProvider_SnapPro = 2;
+        VRZProvider_SnapVoltorb = 3;
+        VRZProvider_Foursquare = 4;
+        VRZProvider_Tripadvisor = 5;
+        VRZProvider_Factual = 6;
+        VRZProvider_Yext = 7;
+        VRZProvider_Wof = 8;
+        VRZProvider_Osm = 9;
+        VRZProvider_Maponics = 10;
+        VRZProvider_Michelin = 11;
+        VRZProvider_Goop = 12;
+        VRZProvider_Opentable = 13;
+        VRZProvider_Resy = 14;
+        VRZProvider_Bookatable = 15;
+        VRZProvider_SnapLoi = 16;
+        VRZProvider_SnapLocaya = 17;
+        VRZProvider_SnapFti = 18;
+        VRZProvider_Tilezen = 19;
+        VRZProvider_Nielsen = 20;
+        VRZProvider_Geonames = 21;
+        VRZProvider_SnapGeometryBot = 22;
+        VRZProvider_SnapPipBot = 23;
+        VRZProvider_SnapLandmarkersTeam = 24;
+        VRZProvider_SnapBbg = 25;
+        VRZProvider_SnapPb = 26;
+        VRZProvider_Digitalenvoy = 27;
+        VRZProvider_HereGeocoder = 28;
+        VRZProvider_Postmates = 29;
+        VRZProvider_Grubhub = 30;
+        VRZProvider_Doordash = 31;
+        VRZProvider_Uber = 32;
+        VRZProvider_SnapUgc = 33;
+        VRZProvider_Ticketmaster = 34;
+        VRZProvider_Chownow = 35;
+        VRZProvider_Dacgroup = 36;
+        VRZProvider_Zomato = 37;
+        VRZProvider_Mapmyindia = 38;
+        VRZProvider_SnapPcs = 39;
+        VRZProvider_SnapAutoMod = 40;
+        VRZProvider_SnapLocationAudience = 41;
+        VRZProvider_Infatuation = 42;
+        VRZProvider_SnapBps = 43;
+        VRZProvider_Deliveroo = 44;
+        VRZProvider_AllThePlaces = 45;
+        VRZProvider_JustEat = 46;
+        VRZProvider_Potters = 47;
+        VRZProvider_PottersPoiXyz = 48;
+        VRZProvider_SnapCommunities = 49;
+    }
+}
+
+message VRZContactInfo {
+    .snapchat.local.verrazano.VRZContactInfo.VRZContactInfo_PhoneNumber phoneNumber = 1;
+    repeated .snapchat.local.verrazano.VRZContactInfo.VRZContactInfo_PhoneNumber alternatePhoneNumbersArray = 2;
+    string emailAddress = 3;
+    string website = 4;
+    string menuURL = 5;
+    message VRZContactInfo_PhoneNumber {
+        string phoneNumber = 1;
+        .snapchat.local.verrazano.VRZContactInfo.VRZContactInfo_PhoneNumber.VRZContactInfo_PhoneNumber_Type type = 2;
+        enum VRZContactInfo_PhoneNumber_Type {
+            VRZContactInfo_PhoneNumber_Type_PhoneTypeUnknown = 0;
+            VRZContactInfo_PhoneNumber_Type_Main = 1;
+            VRZContactInfo_PhoneNumber_Type_Landline = 2;
+            VRZContactInfo_PhoneNumber_Type_Mobile = 3;
+            VRZContactInfo_PhoneNumber_Type_Fax = 4;
+        }
+    }
+}
+
+message VRZLanguageDetails {
+    repeated string spokenArray = 1;
+    repeated string officialArray = 2;
+    string snapPreferred = 3;
+}
+
+message VRZLocalizedLabels {
+    string locale = 1;
+    string preferred = 2;
+    repeated string alternateArray = 3;
+}
+
+message VRZOpeningHours {
+    repeated .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_DayHours dayHoursArray = 1;
+    repeated .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_SpecialHours specialHoursArray = 2;
+    string timeZone = 3;
+    string disclaimerText = 4;
+    message VRZOpeningHours_DayHours {
+        .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_DayHours.VRZOpeningHours_Day day = 1;
+        repeated .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_TimeRange hoursArray = 2;
+        enum VRZOpeningHours_Day {
+            VRZOpeningHours_Day_DayUnknown = 0;
+            VRZOpeningHours_Day_Monday = 1;
+            VRZOpeningHours_Day_Tuesday = 2;
+            VRZOpeningHours_Day_Wednesday = 3;
+            VRZOpeningHours_Day_Thursday = 4;
+            VRZOpeningHours_Day_Friday = 5;
+            VRZOpeningHours_Day_Saturday = 6;
+            VRZOpeningHours_Day_Sunday = 7;
+        }
+    }
+    message VRZOpeningHours_HourMinute {
+        int32 hour = 1;
+        int32 minute = 2;
+    }
+    message VRZOpeningHours_SpecialHours {
+        string description_p = 1;
+        repeated .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_TimeRange hoursArray = 2;
+    }
+    message VRZOpeningHours_TimeRange {
+        .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_HourMinute start = 1;
+        .snapchat.local.verrazano.VRZOpeningHours.VRZOpeningHours_HourMinute end = 2;
+    }
+}
+
+message VRZPlace {
+    string id_p = 1;
+    int64 version = 2;
+    int64 createdAtMs = 3;
+    int64 updatedAtMs = 4;
+    int64 deprecatedAtMs = 5;
+    int64 ceasedAtMs = 6;
+    string placetypeId = 20;
+    repeated string alternatePlacetypeIdsArray = 21;
+    .snapchat.local.verrazano.VRZPlace.VRZPlace_Hierarchy hierarchy = 22;
+    repeated .snapchat.local.verrazano.VRZPlace.VRZPlace_Hierarchy alternateHierarchiesArray = 23;
+    repeated string coterminousWithArray = 24;
+    string brandId = 25;
+    string snapproAccountId = 26;
+    string categoryId = 27;
+    repeated string alternateCategoryIdsArray = 28;
+    .snapchat.local.verrazano.VRZPlaceGeometry geometry = 41;
+    repeated .snapchat.local.verrazano.VRZPlaceGeometry alternateGeometriesArray = 42;
+    string name = 60;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 61;
+    string abbreviation = 62;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateAbbreviationsArray = 63;
+    .snapchat.local.verrazano.VRZContactInfo contactInfo = 64;
+    .snapchat.local.verrazano.VRZOpeningHours openingHours = 65;
+    .snapchat.local.verrazano.VRZAddress address = 66;
+    string countryCode = 67;
+    bool isEnabled = 80;
+    double confidenceScore = 81;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 82;
+    repeated .snapchat.local.verrazano.VRZConcordance alternateConcordancesArray = 83;
+    repeated .snapchat.local.verrazano.VRZPlace.VRZPlace_Tag tagsArray = 84;
+    .snapchat.local.verrazano.VRZPlaceSources sources = 85;
+    repeated string supersededByArray = 90;
+    repeated string supersedesArray = 91;
+    .google.protobuf.DoubleValue popularityScore = 92;
+    .google.protobuf.BoolValue isIncludedInHierarchyLabel = 93;
+    repeated .snapchat.local.verrazano.VRZPlace.VRZPlace_HierarchyLabelStep hierarchyLabelMaskArray = 94;
+    .google.protobuf.Int64Value population = 95;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateLabelsArray = 96;
+    .snapchat.local.verrazano.VRZPopularityDetails popularityDetails = 97;
+    .snapchat.local.verrazano.VRZLanguageDetails languageDetails = 98;
+    .google.protobuf.FloatValue minZoomOverride = 99;
+    .google.protobuf.StringValue tilezenKindOverride = 100;
+    .google.protobuf.StringValue tilezenKind = 101;
+    .google.protobuf.StringValue tilezenKindIconURL = 102;
+    repeated .snapchat.local.verrazano.VRZPlaceAttributeData placeAttributeDataArray = 103;
+    string asProfileId = 104;
+    bytes logoBoltContentObject = 105;
+    message VRZPlace_Hierarchy {
+        repeated .snapchat.local.verrazano.VRZPlace.VRZPlace_HierarchyStep stepsArray = 1;
+    }
+    message VRZPlace_HierarchyLabelStep {
+        .google.protobuf.BoolValue shouldIncludeLabel = 1;
+        string placetypeId = 2;
+    }
+    message VRZPlace_HierarchyStep {
+        string placeId = 1;
+        string placetypeId = 2;
+    }
+    message VRZPlace_Tag {
+        string namespace_p = 1;
+        string label = 2;
+        string value = 3;
+    }
+}
+
+message VRZPlaceAttribute {
+    string id_p = 1;
+    int64 version = 2;
+    int64 createdAtMs = 3;
+    int64 updatedAtMs = 4;
+    int64 deprecatedAtMs = 5;
+    string name = 6;
+    string iconURL = 7;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 8;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 9;
+    .snapchat.local.verrazano.VRZBlockedServices isBlocked = 10;
+    string emojiUnicode = 11;
+}
+
+message VRZPlaceAttributeData {
+    string placeAttributeId = 1;
+    bool isApplicable = 2;
+}
+
+message VRZPlaceAttributeInfo {
+    string id_p = 1;
+    string name = 2;
+    string iconURL = 3;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 4;
+    bool isApplicable = 5;
+    string emojiUnicode = 6;
+    string displayName = 7;
+}
+
+message VRZPlaceCampusInfo {
+    string parentPlaceId = 1;
+    repeated string childrenPlaceIdsArray = 2;
+}
+
+message VRZPlaceGeometry {
+    string id_p = 1;
+    string name = 2;
+    .snapchat.local.verrazano.VRZPlaceGeometry.VRZPlaceGeometry_Purpose purpose = 3;
+    .snapchat.geo.SPCGGeometry geometry = 4;
+    .snapchat.local.verrazano.VRZAttributeSource source = 5;
+    double areaSquareM = 6;
+    double areaSquareDeg = 7;
+    .snapchat.geo.SPCGPoint centroid = 8;
+    .snapchat.geo.SPCGMultiPolygon boundingBox = 9;
+    enum VRZPlaceGeometry_Purpose {
+        VRZPlaceGeometry_Purpose_PurposeUnknown = 0;
+        VRZPlaceGeometry_Purpose_DefaultGeometry = 1;
+        VRZPlaceGeometry_Purpose_PipPoint = 2;
+        VRZPlaceGeometry_Purpose_LabelPoint = 3;
+        VRZPlaceGeometry_Purpose_DisplayBoundingBox = 4;
+        VRZPlaceGeometry_Purpose_NavPoint = 5;
+        VRZPlaceGeometry_Purpose_Fence = 6;
+        VRZPlaceGeometry_Purpose_ServingFence = 7;
+        VRZPlaceGeometry_Purpose_DisplayPolygon = 8;
+        VRZPlaceGeometry_Purpose_LandmarkerServingFence = 9;
+    }
+}
+
+message VRZPlaceRatingsAndReviews {
+    string placeId = 1;
+    int64 updatedAtMs = 2;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_AggregatedRating aggregatedRatingsArray = 3;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Photo photosArray = 4;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Review reviewsArray = 5;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Tippet tippetsArray = 6;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_EditorialDescription editorialDescriptionArray = 7;
+    .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Priceyness priceyness = 8;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_PopularitySnippet popularitySnippetArray = 9;
+    .snapchat.local.verrazano.VRZAttributeSource menuURL = 10;
+    .snapchat.local.verrazano.VRZAttributeSource reservationURL = 11;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_ReviewLandingPage reviewLandingPagesArray = 12;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_OrderDeliveryDetail orderDeliveryDetailsArray = 13;
+    repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_ReservationDetail reservationDetailsArray = 14;
+    .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_MenuDetail menuDetails = 15;
+    message VRZPlaceRatingsAndReviews_AggregatedRating {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_AggregatedRating.VRZProvider provider = 1;
+        float value = 2;
+        float maximum = 3;
+        int64 count = 4;
+        string ratingIconURL = 5;
+        string iconURL = 6;
+        string providerDisplayName = 7;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_EditorialDescription {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_EditorialDescription.VRZProvider provider = 1;
+        string text = 2;
+        string URL = 3;
+        string locale = 4;
+        string iconURL = 5;
+        string providerDisplayName = 6;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_MenuDetail {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_MenuDetail.VRZProvider provider = 1;
+        string URL = 2;
+        string providerDisplayName = 3;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_OrderDeliveryDetail {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_OrderDeliveryDetail.VRZProvider provider = 1;
+        string URL = 2;
+        string iconURL = 3;
+        string providerDisplayName = 4;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_Photo {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Photo.VRZProvider provider = 1;
+        int64 uploadedAtMs = 2;
+        string imageURL = 3;
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Photo.VRZPlaceRatingsAndReviews_Photo_ImageType imageType = 4;
+        string providerDisplayName = 5;
+        enum VRZPlaceRatingsAndReviews_Photo_ImageType {
+            VRZPlaceRatingsAndReviews_Photo_ImageType_ImageTypeUnknown = 0;
+            VRZPlaceRatingsAndReviews_Photo_ImageType_Icon = 1;
+            VRZPlaceRatingsAndReviews_Photo_ImageType_Photo = 2;
+        }
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_PopularitySnippet {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_PopularitySnippet.VRZProvider provider = 1;
+        int64 rank = 2;
+        int64 total = 3;
+        string locality = 4;
+        string displayCategory = 5;
+        string providerDisplayName = 6;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_Priceyness {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Priceyness.VRZProvider provider = 1;
+        float value = 2;
+        float maximum = 3;
+        string currencySymbol = 4;
+        string providerDisplayName = 5;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_ReservationDetail {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_ReservationDetail.VRZProvider provider = 1;
+        string URL = 2;
+        string iconURL = 3;
+        string providerDisplayName = 4;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_Review {
+        string id_p = 1;
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Review.VRZProvider provider = 2;
+        int64 createdAtMs = 3;
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_AggregatedRating aggregatedRating = 4;
+        repeated .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Photo photosArray = 5;
+        string text = 6;
+        string URL = 7;
+        string locale = 8;
+        string iconURL = 9;
+        string providerDisplayName = 10;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_ReviewLandingPage {
+        string externalPlaceId = 1;
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_ReviewLandingPage.VRZProvider provider = 2;
+        string URL = 3;
+        string iconURL = 4;
+        string providerDisplayName = 5;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+    message VRZPlaceRatingsAndReviews_Tippet {
+        .snapchat.local.verrazano.VRZPlaceRatingsAndReviews.VRZPlaceRatingsAndReviews_Tippet.VRZProvider provider = 1;
+        int64 createdAtMs = 2;
+        repeated string tippetArray = 3;
+        string providerDisplayName = 4;
+        enum VRZProvider {
+            VRZProvider_ProviderUnknown = 0;
+            VRZProvider_SnapModeration = 1;
+            VRZProvider_SnapPro = 2;
+            VRZProvider_SnapVoltorb = 3;
+            VRZProvider_Foursquare = 4;
+            VRZProvider_Tripadvisor = 5;
+            VRZProvider_Factual = 6;
+            VRZProvider_Yext = 7;
+            VRZProvider_Wof = 8;
+            VRZProvider_Osm = 9;
+            VRZProvider_Maponics = 10;
+            VRZProvider_Michelin = 11;
+            VRZProvider_Goop = 12;
+            VRZProvider_Opentable = 13;
+            VRZProvider_Resy = 14;
+            VRZProvider_Bookatable = 15;
+            VRZProvider_SnapLoi = 16;
+            VRZProvider_SnapLocaya = 17;
+            VRZProvider_SnapFti = 18;
+            VRZProvider_Tilezen = 19;
+            VRZProvider_Nielsen = 20;
+            VRZProvider_Geonames = 21;
+            VRZProvider_SnapGeometryBot = 22;
+            VRZProvider_SnapPipBot = 23;
+            VRZProvider_SnapLandmarkersTeam = 24;
+            VRZProvider_SnapBbg = 25;
+            VRZProvider_SnapPb = 26;
+            VRZProvider_Digitalenvoy = 27;
+            VRZProvider_HereGeocoder = 28;
+            VRZProvider_Postmates = 29;
+            VRZProvider_Grubhub = 30;
+            VRZProvider_Doordash = 31;
+            VRZProvider_Uber = 32;
+            VRZProvider_SnapUgc = 33;
+            VRZProvider_Ticketmaster = 34;
+            VRZProvider_Chownow = 35;
+            VRZProvider_Dacgroup = 36;
+            VRZProvider_Zomato = 37;
+            VRZProvider_Mapmyindia = 38;
+            VRZProvider_SnapPcs = 39;
+            VRZProvider_SnapAutoMod = 40;
+            VRZProvider_SnapLocationAudience = 41;
+            VRZProvider_Infatuation = 42;
+            VRZProvider_SnapBps = 43;
+            VRZProvider_Deliveroo = 44;
+            VRZProvider_AllThePlaces = 45;
+            VRZProvider_JustEat = 46;
+            VRZProvider_Potters = 47;
+            VRZProvider_PottersPoiXyz = 48;
+            VRZProvider_SnapCommunities = 49;
+        }
+    }
+}
+
+message VRZPlaceSources {
+    repeated .snapchat.local.verrazano.VRZAttributeSource coterminousWithArray = 1;
+    .snapchat.local.verrazano.VRZAttributeSource isEnabled = 2;
+    .snapchat.local.verrazano.VRZAttributeSource ceasedAtMs = 3;
+    .snapchat.local.verrazano.VRZAttributeSource name = 20;
+    repeated .snapchat.local.verrazano.VRZAttributeSource alternateNamesArray = 21;
+    .snapchat.local.verrazano.VRZAttributeSource abbreviation = 22;
+    repeated .snapchat.local.verrazano.VRZAttributeSource alternateAbbreviationsArray = 23;
+    .snapchat.local.verrazano.VRZPlaceSources.VRZPlaceSources_ContactInfoSource contactInfo = 30;
+    repeated .snapchat.local.verrazano.VRZAttributeSource openingHoursArray = 31;
+    .snapchat.local.verrazano.VRZAttributeSource address = 32;
+    .snapchat.local.verrazano.VRZAttributeSource categoryId = 33;
+    .snapchat.local.verrazano.VRZAttributeSource isIncludedInHierarchyLabel = 34;
+    .snapchat.local.verrazano.VRZAttributeSource hierarchyLabelMask = 35;
+    .snapchat.local.verrazano.VRZAttributeSource population = 36;
+    repeated .snapchat.local.verrazano.VRZAttributeSource alternateCategoryIdsArray = 37;
+    .snapchat.local.verrazano.VRZPlaceSources.VRZPlaceSources_AddressSource addressDetails = 38;
+    repeated .snapchat.local.verrazano.VRZAttributeSource placeAttributeDataArray = 39;
+    message VRZPlaceSources_AddressSource {
+        .snapchat.local.verrazano.VRZAttributeSource address1 = 1;
+        .snapchat.local.verrazano.VRZAttributeSource address2 = 2;
+        .snapchat.local.verrazano.VRZAttributeSource locality = 3;
+        .snapchat.local.verrazano.VRZAttributeSource region = 4;
+        .snapchat.local.verrazano.VRZAttributeSource postalCode = 5;
+        .snapchat.local.verrazano.VRZAttributeSource country = 6;
+    }
+    message VRZPlaceSources_ContactInfoSource {
+        .snapchat.local.verrazano.VRZAttributeSource phoneNumber = 1;
+        repeated .snapchat.local.verrazano.VRZAttributeSource alternatePhoneNumbersArray = 2;
+        .snapchat.local.verrazano.VRZAttributeSource emailAddress = 3;
+        .snapchat.local.verrazano.VRZAttributeSource website = 4;
+        .snapchat.local.verrazano.VRZAttributeSource menuURL = 5;
+    }
+}
+
+message VRZPlaceType {
+    string id_p = 1;
+    int64 version = 2;
+    int64 createdAtMs = 3;
+    int64 updatedAtMs = 4;
+    int64 deprecatedAtMs = 5;
+    string name = 6;
+    repeated string parentIdsArray = 7;
+    repeated .snapchat.local.verrazano.VRZConcordance concordancesArray = 8;
+    repeated .snapchat.local.verrazano.VRZLocalizedLabels alternateNamesArray = 9;
+}
+
+message VRZPopularRecentlyDetails {
+    repeated .snapchat.local.verrazano.VRZPopularRecentlyDetails.VRZPopularRecentlyDetails_PopularPlace popularPlacesArray = 1;
+    message VRZPopularRecentlyDetails_PopularPlace {
+        string placeId = 1;
+        .google.protobuf.FloatValue minZoom = 2;
+    }
+}
+
+message VRZPopularityDetails {
+    int64 numCheckins = 1;
+    float numCheckinsPerDay = 2;
+    float absolutePopularity = 3;
+    float relativePopularity = 4;
+    repeated int32 checkinsForWeekByHourArray = 5;
+    repeated .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_WifiConfidence wifiConfidencesArray = 6;
+    repeated .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_PlaceViewsBySource placeViewsBySourceArray = 7;
+    int64 numCheckins7 = 8;
+    int64 numCheckins30 = 9;
+    int64 numCheckins180 = 10;
+    repeated .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource7Array = 11;
+    repeated .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource30Array = 12;
+    repeated .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_PlaceViewsBySource numPlaceViewsBySource180Array = 13;
+    float globalAttractiveness = 14;
+    int64 numFavorites = 15;
+    .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_DistributionDetails distributionDetails = 16;
+    message VRZPopularityDetails_DistributionDetails {
+        float shapeSigma = 1;
+        float shapeWeight = 2;
+        .snapchat.geo.SPCGPoint checkinCentroid = 3;
+    }
+    message VRZPopularityDetails_PlaceViewsBySource {
+        .snapchat.local.verrazano.VRZPopularityDetails.VRZPopularityDetails_PlaceViewsBySource.VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource viewSource = 1;
+        int64 numViews = 2;
+        enum VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource {
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_Unknown = 0;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_Map = 1;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_Search = 2;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_Context = 3;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_AdsManager = 4;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_Chat = 5;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_PlacesPoi = 6;
+            VRZPopularityDetails_PlaceViewsBySource_PlaceProfileViewSource_PlacesTray = 7;
+        }
+    }
+    message VRZPopularityDetails_WifiConfidence {
+        string hashedWifiSsid = 1;
+        float probabilityOfCheckin = 2;
+    }
+}

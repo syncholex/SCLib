@@ -1,0 +1,15 @@
+syntax = "proto3";
+package tokens.entitle;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCIAPTokenPbEntitle";
+option csharp_namespace = "SnapProto.Services.Tokens.Entitle";
+
+import "tokens/entitle/SCIAPTokenPbEntitleEntitle.proto";
+
+service Entitlement{
+    rpc AckConsumeItem(.tokens.entitle.SCIAPTokenPbEntitleAckConsumeItemRequest) returns (.tokens.entitle.SCIAPTokenPbEntitleAckConsumeItemResponse);
+    rpc ClearInventory(.tokens.entitle.SCIAPTokenPbEntitleClearInventoryRequest) returns (.tokens.entitle.SCIAPTokenPbEntitleClearInventoryResponse);
+    rpc ConsumeItem(.tokens.entitle.SCIAPTokenPbEntitleConsumeItemRequest) returns (.tokens.entitle.SCIAPTokenPbEntitleConsumeItemResponse);
+    rpc GetItem(.tokens.entitle.SCIAPTokenPbEntitleGetItemRequest) returns (.tokens.entitle.SCIAPTokenPbEntitleGetItemResponse);
+    rpc GetItems(.tokens.entitle.SCIAPTokenPbEntitleGetItemsRequest) returns (.tokens.entitle.SCIAPTokenPbEntitleGetItemsResponse);
+}

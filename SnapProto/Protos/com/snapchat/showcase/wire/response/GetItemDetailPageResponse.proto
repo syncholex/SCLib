@@ -1,0 +1,28 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.response;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Response";
+
+import "com/snapchat/showcase/wire/common/Link.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/ItemDetailPageWidget.proto";
+import "com/snapchat/showcase/wire/itemdetailpage/NativeCheckoutAction.proto";
+import "com/snapchat/showcase/wire/metadata/ShowcaseItemMetadata.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetItemDetailPageResponse {
+    string requestId = 1;
+    .com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+    .com.snapchat.showcase.wire.response.GetItemDetailPageResponse.GetItemDetailPageResponse_DetailsPage detailsPage = 3;
+    message GetItemDetailPageResponse_CallToAction {
+        .com.snapchat.showcase.wire.common.Weblink webLink = 1;
+        .com.snapchat.showcase.wire.itemdetailpage.NativeCheckoutAction nativeCheckout = 2;
+        .com.snapchat.showcase.wire.common.IosDeeplink ios = 3;
+        .com.snapchat.showcase.wire.common.AndroidDeeplink android = 4;
+    }
+    message GetItemDetailPageResponse_DetailsPage {
+        .com.snapchat.showcase.wire.metadata.ShowcaseItemMetadata item = 1;
+        repeated .com.snapchat.showcase.wire.itemdetailpage.ItemDetailPageWidget widgetsArray = 2;
+        .com.snapchat.showcase.wire.response.GetItemDetailPageResponse.GetItemDetailPageResponse_CallToAction callToAction = 3;
+        string pageTitle = 4;
+    }
+}

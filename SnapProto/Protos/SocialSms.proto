@@ -1,0 +1,14 @@
+syntax = "proto3";
+package socialsms;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Socialsms";
+
+import "socialsms/Socialsms.proto";
+
+service SocialSms{
+    rpc ActivateLink(.socialsms.ActivateLinkRequest) returns (.socialsms.ActivateLinkResponse);
+    rpc CreateSocialLink(.socialsms.CreateSocialLinkRequest) returns (.socialsms.CreateSocialLinkResponse);
+    rpc GetLinkData(.socialsms.GetLinkDataRequest) returns (.socialsms.GetLinkDataResponse);
+    rpc SendSocialSms(.socialsms.SendSocialSmsRequest) returns (.socialsms.SendSocialSmsResponse);
+    rpc TakedownMedia(.socialsms.TakedownMediaRequest) returns (.socialsms.TakedownMediaResponse);
+}

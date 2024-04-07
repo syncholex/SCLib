@@ -1,0 +1,56 @@
+syntax = "proto3";
+package ranking.ml.centralkitchen;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Ml.Centralkitchen";
+
+message ContentCluster {
+    int32 clusterId = 1;
+    float distanceToCentroid = 2;
+    float cosineSimilarityToCentroid = 3;
+}
+
+message ContentSignals {
+    repeated .ranking.ml.centralkitchen.SccScores storyAggregatedScoredSccArray = 1;
+    .ranking.ml.centralkitchen.ContentSignals.ContentSignals_TagGranularity sccTagGranularity = 2;
+    repeated .ranking.ml.centralkitchen.SccScores cupSccScoresArray = 3;
+    repeated .ranking.ml.centralkitchen.Youtube8MScores youtube8MScoresArray = 4;
+    repeated .ranking.ml.centralkitchen.LensScores lensScoresArray = 5;
+    repeated .ranking.ml.centralkitchen.TopicScores topicScoresArray = 6;
+    repeated .ranking.ml.centralkitchen.MusicScores musicScoresArray = 7;
+    .ranking.ml.centralkitchen.ContentSignals.ContentSignals_TagOrigin sccTagOrigin = 8;
+    repeated .ranking.ml.centralkitchen.SccScores cupSccPlusV1ScoresArray = 9;
+    enum ContentSignals_TagGranularity {
+        ContentSignals_TagGranularity_SnapLevel = 0;
+        ContentSignals_TagGranularity_StoryLevel = 1;
+        ContentSignals_TagGranularity_CreatorLevel = 2;
+    }
+    enum ContentSignals_TagOrigin {
+        ContentSignals_TagOrigin_HumanModerated = 0;
+        ContentSignals_TagOrigin_CupGenerated = 1;
+    }
+}
+
+message LensScores {
+    float score = 1;
+    string lensId = 2;
+}
+
+message MusicScores {
+    float score = 1;
+    uint64 musicId = 2;
+}
+
+message SccScores {
+    float tagScore = 1;
+    uint32 sccTag = 2;
+}
+
+message TopicScores {
+    float score = 1;
+    string topicName = 2;
+}
+
+message Youtube8MScores {
+    float score = 1;
+    string tag = 2;
+}

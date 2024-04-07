@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.item_favoriting;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Item_favoriting";
+
+import "com/snapchat/item_favoriting/wire/favorites/AddFavoriteRequest.proto";
+import "com/snapchat/item_favoriting/wire/favorites/RemoveFavoriteRequest.proto";
+
+service ItemFavoritingService{
+    rpc AddFavorite(.com.snapchat.item_favoriting.wire.favorites.AddFavoriteRequest) returns (.com.snapchat.item_favoriting.wire.favorites.AddFavoriteResponse);
+    rpc RemoveFavorite(.com.snapchat.item_favoriting.wire.favorites.RemoveFavoriteRequest) returns (.com.snapchat.item_favoriting.wire.favorites.RemoveFavoriteResponse);
+}

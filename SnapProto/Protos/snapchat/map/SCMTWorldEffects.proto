@@ -1,0 +1,21 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+message SCMTWorldEffectSet {
+    repeated .snapchat.map.SCMTWorldEffectSet.SCMTWorldEffectSet_EffectVariant variantsArray = 1;
+    message SCMTWorldEffectSet_EffectVariant {
+        string effectId = 1;
+        .snapchat.map.SCMTWorldEffectSet.SCMTWorldEffectSet_EffectVariant.SCMTWorldEffectClientVersion requiredClientVersion = 2;
+        double minZoomLevel = 3;
+        double maxZoomLevel = 4;
+        bool playsWhenClusterSelected = 5;
+        bool onlyPlayOncePerMapSession = 6;
+        string effectURL = 7;
+        enum SCMTWorldEffectClientVersion {
+            SCMTWorldEffectClientVersion_EffectsClientZero = 0;
+        }
+    }
+}

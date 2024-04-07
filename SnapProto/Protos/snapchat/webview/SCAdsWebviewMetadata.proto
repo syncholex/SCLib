@@ -1,0 +1,23 @@
+syntax = "proto3";
+package snapchat.webview;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Webview";
+
+import "google/protobuf/wrappers.proto";
+import "snapchat/webview/SCAdsWebviewInhouseCache.proto";
+import "snapchat/webview/SCWebViewResourceInfo.proto";
+
+message SCAdsWebViewMetadata {
+    string id_p = 1;
+    string baseURL = 2;
+    repeated .google.protobuf.StringValue gaScriptsUrlsArray = 3;
+    .google.protobuf.StringValue snapPixelScriptURL = 4;
+    .google.protobuf.StringValue resourcePrefetchHintsURL = 5;
+    repeated .snapchat.webview.SCWebViewResourceInfo renderCriticalResourcesArray = 6;
+    .snapchat.webview.SCAdsWebViewInHouseCache inhouseCache = 7;
+    .google.protobuf.BoolValue hasServerRedirect = 8;
+    .google.protobuf.StringValue serverRedirectResolvedURLMatchPrefix = 9;
+    .google.protobuf.Int64Value expectedServerRedirectCount = 10;
+    string webviewPrefetchHintsURL = 11;
+}

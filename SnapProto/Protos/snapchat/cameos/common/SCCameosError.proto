@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+message SCCameosError {
+    .snapchat.cameos.common.SCCameosError.SCCameosErrorStatus status = 1;
+    string message = 2;
+    enum SCCameosErrorStatus {
+        SCCameosErrorStatus_Unknown = 0;
+        SCCameosErrorStatus_NoContent = 204;
+        SCCameosErrorStatus_BadRequest = 400;
+        SCCameosErrorStatus_Unauthorized = 401;
+        SCCameosErrorStatus_Forbidden = 403;
+        SCCameosErrorStatus_NotFound = 404;
+        SCCameosErrorStatus_NotAcceptable = 406;
+        SCCameosErrorStatus_Conflict = 409;
+        SCCameosErrorStatus_InternalError = 500;
+        SCCameosErrorStatus_Timeout = 504;
+    }
+}

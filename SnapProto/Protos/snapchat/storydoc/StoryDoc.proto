@@ -1,0 +1,52 @@
+syntax = "proto3";
+package snapchat.storydoc;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Storydoc";
+
+message StoryDoc {
+    repeated .snapchat.storydoc.StoryEnvelope envelopeArray = 2;
+    .snapchat.storydoc.StoryDoc.StoryDoc_ID id_p = 3;
+    message StoryDoc_ID {
+        .snapchat.storydoc.StoryDoc.StoryDoc_ID.StoryDoc_ID_Namespace namespace_p = 1;
+        string id_p = 2;
+        enum StoryDoc_ID_Namespace {
+            StoryDoc_ID_Namespace_Unset = 0;
+            StoryDoc_ID_Namespace_DiscoverService = 1;
+            StoryDoc_ID_Namespace_StoryCreationService = 2;
+            StoryDoc_ID_Namespace_StoryCreationServiceCompat = 3;
+            StoryDoc_ID_Namespace_HighlightsService = 4;
+        }
+    }
+}
+
+message StoryEnvelope {
+    bytes componentBytes = 3;
+    bool encrypted = 4;
+    .snapchat.storydoc.StoryEnvelope.STOStoryComponentType componentTypeId = 1;
+    string componentTypeName = 2;
+    enum STOStoryComponentType {
+        STOStoryComponentType_StoryBody = 0;
+        STOStoryComponentType_Vending = 1;
+        STOStoryComponentType_Visibility = 2;
+        STOStoryComponentType_PermittedUserActions = 3;
+        STOStoryComponentType_GroupStoryInfo = 4;
+        STOStoryComponentType_OurStoryInfo = 5;
+        STOStoryComponentType_Provenance = 6;
+        STOStoryComponentType_AdPlacement = 7;
+        STOStoryComponentType_ContentTagging = 8;
+        STOStoryComponentType_Segments = 9;
+        STOStoryComponentType_Episode = 10;
+        STOStoryComponentType_Curation = 11;
+        STOStoryComponentType_Deeplinks = 12;
+        STOStoryComponentType_ProStoryInfo = 13;
+        STOStoryComponentType_Moderation = 14;
+        STOStoryComponentType_VideoTracksInfo = 15;
+        STOStoryComponentType_ShowExtra = 16;
+        STOStoryComponentType_FeedIngestionMetadata = 17;
+        STOStoryComponentType_BibCuration = 18;
+        STOStoryComponentType_HappeningNow = 19;
+        STOStoryComponentType_Localization = 20;
+        STOStoryComponentType_ContentUnderstanding = 21;
+        STOStoryComponentType_DiscoverChannelMetadata = 22;
+    }
+}

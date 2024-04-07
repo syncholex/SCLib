@@ -1,0 +1,22 @@
+syntax = "proto3";
+package snapchat.lens_ranking.context;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCLensRanking";
+option csharp_namespace = "SnapProto.Snapchat.Lens_ranking.Context";
+
+message SCLensRankingPredictedContext {
+    repeated .snapchat.lens_ranking.context.SCLensRankingPredictedContext.SCLensRankingPredictedContext_VisualObjectTag visualTagsArray = 1;
+    message SCLensRankingPredictedContext_VisualObjectTag {
+        .snapchat.lens_ranking.context.SCLensRankingPredictedContext.SCLensRankingPredictedContext_VisualObjectTag.SCLensRankingPredictedContext_VisualObjectLabel label = 1;
+        float score = 2;
+        enum SCLensRankingPredictedContext_VisualObjectLabel {
+            SCLensRankingPredictedContext_VisualObjectLabel_VisualObjectLabelUnset = 0;
+            SCLensRankingPredictedContext_VisualObjectLabel_Person = 1;
+            SCLensRankingPredictedContext_VisualObjectLabel_Dog = 2;
+            SCLensRankingPredictedContext_VisualObjectLabel_Cat = 3;
+            SCLensRankingPredictedContext_VisualObjectLabel_Car = 4;
+            SCLensRankingPredictedContext_VisualObjectLabel_Tree = 5;
+            SCLensRankingPredictedContext_VisualObjectLabel_Food = 6;
+        }
+    }
+}

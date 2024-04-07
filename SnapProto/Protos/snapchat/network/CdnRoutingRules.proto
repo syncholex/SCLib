@@ -1,0 +1,37 @@
+syntax = "proto3";
+package snapchat.network;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Network";
+
+message CdnClientConfig {
+    repeated .snapchat.network.CdnClientConfig.CdnClientConfig_RoutingDefinition routingDefinitionsArray = 1;
+    message CdnClientConfig_CdnInfo {
+        .snapchat.network.CdnClientConfig.CdnClientConfig_CdnInfo.CdnClientConfig_CdnId cdnId = 1;
+        string host = 2;
+        enum CdnClientConfig_CdnId {
+            CdnClientConfig_CdnId_Unset = 0;
+            CdnClientConfig_CdnId_Google = 1;
+            CdnClientConfig_CdnId_Amazon = 2;
+        }
+    }
+    message CdnClientConfig_RoutingDefinition {
+        repeated string URLMatchPatternsArray = 1;
+        repeated .snapchat.network.CdnClientConfig.CdnClientConfig_RoutingRule routingRulesArray = 2;
+        repeated .snapchat.network.CdnClientConfig.CdnClientConfig_CdnInfo routeInfosArray = 3;
+    }
+    message CdnClientConfig_RoutingRule {
+        .snapchat.network.CdnClientConfig.CdnClientConfig_RoutingRule.NetworkConditionEnums_NetworkReachability reachability = 1;
+        .snapchat.network.CdnClientConfig.CdnClientConfig_RoutingRule.CdnClientConfig_CdnId cdnId = 2;
+        enum CdnClientConfig_CdnId {
+            CdnClientConfig_CdnId_Unset = 0;
+            CdnClientConfig_CdnId_Google = 1;
+            CdnClientConfig_CdnId_Amazon = 2;
+        }
+        enum NetworkConditionEnums_NetworkReachability {
+            NetworkConditionEnums_NetworkReachability_Unknown = 0;
+            NetworkConditionEnums_NetworkReachability_Wifi = 1;
+            NetworkConditionEnums_NetworkReachability_Wwan = 2;
+            NetworkConditionEnums_NetworkReachability_NotReachable = 3;
+        }
+    }
+}

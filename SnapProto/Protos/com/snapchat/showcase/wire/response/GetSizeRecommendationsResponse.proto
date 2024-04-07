@@ -1,0 +1,30 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.response;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Response";
+
+import "com/snapchat/showcase/wire/common/Link.proto";
+import "com/snapchat/showcase/wire/response/ErrorInfo.proto";
+
+message GetSizeRecommendationsResponse {
+    string requestId = 1;
+    .com.snapchat.showcase.wire.response.ErrorInfo error = 2;
+    .com.snapchat.showcase.wire.response.SizeRecommendationResponse sizeRecommendationResponse = 3;
+}
+
+message SizeRecommendation {
+    uint64 snapItemId = 1;
+    string size = 2;
+    uint32 score = 3;
+    .com.snapchat.showcase.wire.common.Weblink webLink = 4;
+}
+
+message SizeRecommendationList {
+    repeated .com.snapchat.showcase.wire.response.SizeRecommendation recommendationsArray = 1;
+}
+
+message SizeRecommendationResponse {
+    bytes spsContextRelevantProfileSections = 3;
+    bytes spsContextMissingProfileSections = 1;
+    .com.snapchat.showcase.wire.response.SizeRecommendationList sizeRecommendationsList = 2;
+}

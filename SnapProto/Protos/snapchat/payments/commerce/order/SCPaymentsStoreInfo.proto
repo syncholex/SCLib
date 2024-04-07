@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.payments.commerce.order;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPayments";
+option csharp_namespace = "SnapProto.Snapchat.Payments.Commerce.Order";
+
+message SCPaymentsStoreInfo {
+    string storeId = 1;
+    string storeName = 2;
+    string storeIconURL = 3;
+    bool isThirdPartyStore = 4;
+    string storeEmail = 5;
+    string supportURL = 6;
+    string returnPolicyURL = 7;
+    string termsOfServicePolicyURL = 8;
+    string privacyPolicyURL = 9;
+}

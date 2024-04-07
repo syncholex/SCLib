@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Snapchat.Content.V2";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/content/SCBoltReplicationPolicy.proto";
+import "snapchat/content/SCBoltStoragePolicy.proto";
+
+message SCBoltv2ClaimPolicy {
+    .google.protobuf.Timestamp expiration = 1;
+    .snapchat.content.SCBoltReplicationPolicy replication = 2;
+    uint64 cdnTtlSeconds = 3;
+    .snapchat.content.SCBoltStoragePolicy storagePolicy = 4;
+}

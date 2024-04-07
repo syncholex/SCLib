@@ -1,0 +1,279 @@
+syntax = "proto3";
+package snapchat.valis;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCVS";
+option csharp_namespace = "SnapProto.Snapchat.Valis";
+
+import "actionmoji/Actionmoji.proto";
+import "actionmoji/action/SCMT1Action.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/map/SCMEStatus.proto";
+import "snapchat/map/SCMTWorldEffects.proto";
+import "weather/SCWWeather.proto";
+
+message SCVSBatchFriendClusters {
+    repeated .snapchat.valis.SCVSFriendCluster clustersArray = 1;
+    bool isInitial = 2;
+}
+
+message SCVSBatchValisLocationUpdate {
+    repeated .snapchat.valis.SCVSLocationUpdate locationUpdateArray = 1;
+}
+
+message SCVSClientUpdate {
+    bool ghostMode = 7;
+    .snapchat.valis.SCVSLocationUpdate locationUpdate = 1;
+    .snapchat.valis.SCVSViewportUpdate viewportUpdate = 2;
+    .snapchat.valis.SCVSDeviceData deviceDataUpdate = 3;
+    .snapchat.valis.SCVSClusterFullSync clusterFullSyncUpdate = 4;
+    .snapchat.valis.SCVSClusterStopSync clusterStopSyncUpdate = 5;
+    .snapchat.valis.SCVSUserAction userActionUpdate = 6;
+}
+
+message SCVSClientUpdateRequest {
+    repeated .snapchat.valis.SCVSClientUpdate updatesArray = 1;
+    bool ghostMode = 2;
+    int64 serverRequestTimestamp = 3;
+}
+
+message SCVSClientUpdateResponse {
+    int64 requestAgainAfterMs = 1;
+}
+
+message SCVSClusterFullSync {
+    string locale = 1;
+    string countryCode = 2;
+}
+
+message SCVSClusterMember {
+    .snapchat.core.SCCOREUUID userId = 1;
+    int64 timestamp = 2;
+    repeated .actionmoji.action.SCMT1Type actionTypeArray = 3;
+    .actionmoji.action.SCMT1Sticker typeSticker = 4;
+    float horizontalAccuracyMeters = 5;
+    .snapchat.map.SCMEExplorerFriendStatus friendStatus = 6;
+    bool isLiveLocation = 7;
+    int64 liveSessionExpirationMs = 8;
+    .snapchat.core.SCCOREUUID liveSessionId = 9;
+    bool isLiveSessionIndefinite = 10;
+}
+
+message SCVSClusterStopSync {
+}
+
+message SCVSDeleteLastKnownLocationRequest {
+}
+
+message SCVSDeleteLastKnownLocationResponse {
+    bool success = 1;
+}
+
+message SCVSDeviceData {
+    bool isBackgrounded = 1;
+    float batteryLevel = 2;
+    bool devicePluggedIn = 3;
+    bool headphoneOutput = 4;
+    string wifiSsid = 5;
+    bool isOtherAudioPlaying = 6;
+    .actionmoji.SpectaclesInfo spectaclesInfo = 8;
+    bool isUsingWeb = 9;
+}
+
+message SCVSDuplexServerUpdate {
+    int64 sequenceNumber = 100;
+    string locale = 101;
+    string countryCode = 102;
+    .snapchat.valis.SCVSFriendCluster friendCluster = 1;
+    .snapchat.valis.SCVSHeaderUpdate headerUpdate = 2;
+    .snapchat.valis.SCVSBatchFriendClusters batchFriendClusters = 3;
+}
+
+message SCVSFriendCluster {
+    .snapchat.core.SCCOREUUID id_p = 1;
+    .snapchat.valis.SCVSImage prop = 2;
+    .snapchat.valis.SCVSImage floor = 3;
+    float centerLat = 4;
+    float centerLng = 5;
+    fixed64 centerS2CellId = 6;
+    repeated .snapchat.valis.SCVSClusterMember clusterMemberArray = 7;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 8;
+    bool tombstone = 9;
+    string locality = 10;
+    repeated string localityPiecesArray = 11;
+}
+
+message SCVSGetFriendClustersRequest {
+    bool allFriends = 1;
+    repeated .snapchat.core.SCCOREUUID friendIdsArray = 2;
+    bool requestExplorerStatuses = 3;
+}
+
+message SCVSGetFriendClustersResponse {
+    repeated .snapchat.valis.SCVSFriendCluster friendClustersArray = 1;
+    bool success = 2;
+    int64 requestAgainAfterMs = 3;
+}
+
+message SCVSGetLocalityRequest {
+    fixed64 s2CellId = 1;
+    string language = 2;
+    string countryCode = 3;
+}
+
+message SCVSGetLocalityResponse {
+    string locality = 1;
+    repeated string localityPiecesArray = 2;
+}
+
+message SCVSGetPreferencesRequest {
+}
+
+message SCVSGetPreferencesResponse {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 serverTimestamp = 2;
+}
+
+message SCVSHeaderUpdate {
+    .snapchat.valis.SCVSWeather weather = 1;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 2;
+    .weather.SCWTimeZone timeZone = 3;
+    .snapchat.valis.SCVSLocality locality = 4;
+}
+
+message SCVSImage {
+    string URL = 1;
+}
+
+message SCVSLocality {
+    string localizedLocality = 1;
+}
+
+message SCVSLocationUpdate {
+    float lat = 1;
+    float lng = 2;
+    float altitude = 3;
+    float horizontalAccuracy = 4;
+    float verticalAccuracy = 5;
+    .snapchat.valis.SCVSMotionData motionData = 6;
+    int64 timestamp = 7;
+    bool gpsReset = 8;
+    int64 preferenceVersion = 9;
+    int64 friendListVersion = 10;
+    bool isBackgrounded = 11;
+    bool isBirthday = 12;
+    int64 serverTimestamp = 13;
+}
+
+message SCVSMotionData {
+    .snapchat.valis.SCVSMotionData.SCVSMotionType motionType = 1;
+    int64 motionStartTimestamp = 2;
+    int32 motionTypeConfidence = 3;
+    float heading = 4;
+    float speed = 5;
+    enum SCVSMotionType {
+        SCVSMotionType_MtUnknown = 0;
+        SCVSMotionType_MtStationary = 1;
+        SCVSMotionType_MtWalking = 2;
+        SCVSMotionType_MtRunning = 3;
+        SCVSMotionType_MtBiking = 4;
+        SCVSMotionType_MtDriving = 5;
+    }
+}
+
+message SCVSSendPushNotificationTestRequest {
+    int64 durationMs = 1;
+    int64 frequencyMs = 2;
+    int64 initialDelayMs = 3;
+}
+
+message SCVSSendPushNotificationTestResponse {
+}
+
+message SCVSServerUpdate {
+    int64 sequenceNumber = 1000;
+    .snapchat.valis.SCVSFriendCluster friendCluster = 1;
+    .snapchat.valis.SCVSHeaderUpdate headerUpdate = 2;
+    .snapchat.valis.SCVSBatchFriendClusters batchFriendClusters = 3;
+}
+
+message SCVSServerUpdateResponse {
+    repeated .snapchat.valis.SCVSServerUpdate updatesArray = 1;
+}
+
+message SCVSSetPreferencesRequest {
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 1;
+    int64 ghostModeDuration = 2;
+    .snapchat.core.SCCOREUUID userId = 3;
+}
+
+message SCVSSetPreferencesResponse {
+    int64 version = 1;
+    .snapchat.valis.SCVSShareLocationPreferences preferences = 2;
+    int64 serverTimestamp = 3;
+}
+
+message SCVSShareLocationPreferences {
+    bool ghostMode = 1;
+    int64 ghostModeExpiration = 2;
+    .snapchat.valis.SCVSShareLocationPreferences.SCVSLocationSharingAudience audience = 3;
+    repeated .snapchat.core.SCCOREUUID whitelistFriendIdArray = 4;
+    repeated .snapchat.core.SCCOREUUID blacklistFriendIdArray = 5;
+    bool backgroundSharingEnabled = 6;
+    bool shareUsageData = 7;
+    int64 version = 8;
+    bool isOnboarded = 9;
+    .snapchat.core.SCCOREUUID userId = 10;
+    repeated .snapchat.valis.SCVSShareLocationPreferences.SCVSShareLocationPreferences_LiveSession liveSessionsArray = 11;
+    bool pauseAllLiveSessions = 12;
+    message SCVSShareLocationPreferences_LiveSession {
+        .snapchat.core.SCCOREUUID friendId = 1;
+        int64 durationMs = 2;
+        int64 expirationMs = 3;
+        .snapchat.core.SCCOREUUID sessionId = 4;
+        bool indefinite = 5;
+        int64 startMs = 6;
+    }
+    enum SCVSLocationSharingAudience {
+        SCVSLocationSharingAudience_LsaNone = 0;
+        SCVSLocationSharingAudience_LsaFriends = 1;
+        SCVSLocationSharingAudience_LsaCustom = 2;
+        SCVSLocationSharingAudience_LsaBlacklist = 3;
+    }
+}
+
+message SCVSUserAction {
+    .snapchat.valis.SCVSUserAction.SCVSUserAction_Type type = 1;
+    enum SCVSUserAction_Type {
+        SCVSUserAction_Type_Unknown = 0;
+        SCVSUserAction_Type_AppOpen = 1;
+        SCVSUserAction_Type_AppClose = 2;
+        SCVSUserAction_Type_MapOpen = 3;
+        SCVSUserAction_Type_MapClose = 4;
+    }
+}
+
+message SCVSViewportUpdate {
+    .snapchat.geo.SPCGRect bbox = 1;
+}
+
+message SCVSWeather {
+    .snapchat.valis.SCVSWeather.SCWWeather_Condition condition = 1;
+    float temperatureF = 2;
+    enum SCWWeather_Condition {
+        SCWWeather_Condition_Unknown = 0;
+        SCWWeather_Condition_ClearNight = 1;
+        SCWWeather_Condition_Cloudy = 2;
+        SCWWeather_Condition_Hail = 3;
+        SCWWeather_Condition_Lightning = 4;
+        SCWWeather_Condition_LowVisibility = 5;
+        SCWWeather_Condition_PartialCloudy = 6;
+        SCWWeather_Condition_PartialCloudyNight = 7;
+        SCWWeather_Condition_Rainy = 8;
+        SCWWeather_Condition_Snow = 9;
+        SCWWeather_Condition_Sunny = 10;
+        SCWWeather_Condition_Windy = 11;
+        SCWWeather_Condition_Hot = 12;
+        SCWWeather_Condition_Cold = 13;
+    }
+}

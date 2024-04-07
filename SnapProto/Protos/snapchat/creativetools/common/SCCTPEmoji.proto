@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPEmoji {
+    string unicode = 1;
+    string hex = 2;
+    string escapedString = 3;
+}
+
+message SCCTPEmojiToDraw {
+    repeated string emojisArray = 1;
+}

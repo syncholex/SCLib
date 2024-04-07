@@ -1,0 +1,303 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCME";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+import "actionmoji/action/SCMT1Action.proto";
+import "snapchat/geo/SPCGGeo.proto";
+import "snapchat/map/SCMTLocationSharing.proto";
+import "snapchat/map/SCMTTiles.proto";
+import "snapchat/map/SCMTWorldEffects.proto";
+import "snapchat/map/common/SCMCColor.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+
+message SCMEAddExplorerStatusRequest {
+    .snapchat.map.SCMEExplorerStatusModel statusModel = 1;
+}
+
+message SCMEAddExplorerStatusResponse {
+}
+
+message SCMEDeleteAllExplorerStatusRequest {
+    string userId = 1;
+    int64 timestamp = 2;
+}
+
+message SCMEDeleteAllExplorerStatusResponse {
+}
+
+message SCMEDeleteExplorerStatusRequest {
+    string userId = 1;
+    string statusId = 2;
+    string language = 3;
+    string countryCode = 4;
+    bool isEmployee = 5;
+}
+
+message SCMEDeleteExplorerStatusResponse {
+    repeated .snapchat.map.SCMEMyExplorerStatus statusesArray = 1;
+}
+
+message SCMEDeleteExplorerStatusTypeRequest {
+    string userId = 1;
+    .snapchat.map.SCMEDeleteExplorerStatusTypeRequest.SCMEStatusType statusType = 2;
+    enum SCMEStatusType {
+        SCMEStatusType_StatusUnknown = 0;
+        SCMEStatusType_StatusTravel = 1;
+        SCMEStatusType_StatusFlight = 2;
+        SCMEStatusType_StatusDrive = 3;
+        SCMEStatusType_StatusTrain = 4;
+        SCMEStatusType_StatusNewUser = 5;
+        SCMEStatusType_StatusAppeared = 6;
+        SCMEStatusType_StatusLead = 7;
+        SCMEStatusType_StatusPlace = 8;
+        SCMEStatusType_StatusMoved = 9;
+        SCMEStatusType_StatusFlightPartial = 10;
+        SCMEStatusType_StatusDriveLong = 11;
+        SCMEStatusType_StatusVenue = 12;
+        SCMEStatusType_StatusAirport = 13;
+        SCMEStatusType_StatusMovedSlow = 14;
+        SCMEStatusType_StatusCustom = 15;
+    }
+}
+
+message SCMEDeleteExplorerStatusTypeResponse {
+}
+
+message SCMEExplorerFriendStatus {
+    string status = 1;
+    repeated .snapchat.map.SCMEExplorerFriendStatus.SCMEExplorerFriendStatus_StatusData statusDataArray = 2;
+    double zoom = 3;
+    .snapchat.map.SCMEExplorerFriendStatus.SCMEStatusType statusType = 4;
+    message SCMEExplorerFriendStatus_StatusData {
+        string statusId = 1;
+        int64 statusTimestampMs = 2;
+        string userId = 3;
+        repeated .snapchat.geo.SPCGPoint locationsArray = 4;
+        string stickerId = 5;
+        .snapchat.map.SCMEExplorerFriendStatus.SCMEExplorerFriendStatus_StatusData.SCMEExplorerFriendStatus_StatusData_DisplayStyle displayStyle = 6;
+        .snapchat.map.SCMEExplorerFriendStatus.SCMEExplorerFriendStatus_StatusData.SCMEExplorerFriendStatus_StatusData_AnimationStyle animationStyle = 7;
+        string localityName = 8;
+        .actionmoji.action.SCMT1StickerID sticker = 9;
+        .snapchat.map.SCMTWorldEffectSet worldEffect = 10;
+        string speechText = 11;
+        string placeId = 12;
+        bool isLive = 13;
+        .snapchat.map.SCMEExplorerFriendStatus.SCMEExplorerFriendStatus_StatusData.SCMEExplorerFriendStatus_StatusData_LiveCancellationInfo liveCancellationInfo = 14;
+        bool hideInExplore = 15;
+        message SCMEExplorerFriendStatus_StatusData_LiveCancellationInfo {
+            .snapchat.geo.SPCGPoint centerLocation = 1;
+            double radiusMeters = 2;
+            int64 lifetimeMs = 3;
+        }
+        enum SCMEExplorerFriendStatus_StatusData_AnimationStyle {
+            SCMEExplorerFriendStatus_StatusData_AnimationStyle_AnimationNone = 0;
+            SCMEExplorerFriendStatus_StatusData_AnimationStyle_AnimationSimple = 1;
+            SCMEExplorerFriendStatus_StatusData_AnimationStyle_AnimationStep = 2;
+            SCMEExplorerFriendStatus_StatusData_AnimationStyle_AnimationFlight = 3;
+        }
+        enum SCMEExplorerFriendStatus_StatusData_DisplayStyle {
+            SCMEExplorerFriendStatus_StatusData_DisplayStyle_DisplayNone = 0;
+            SCMEExplorerFriendStatus_StatusData_DisplayStyle_DisplayDottedLine = 1;
+            SCMEExplorerFriendStatus_StatusData_DisplayStyle_DisplaySwooshLine = 2;
+            SCMEExplorerFriendStatus_StatusData_DisplayStyle_DisplayDashedArc = 3;
+        }
+    }
+    enum SCMEStatusType {
+        SCMEStatusType_StatusUnknown = 0;
+        SCMEStatusType_StatusTravel = 1;
+        SCMEStatusType_StatusFlight = 2;
+        SCMEStatusType_StatusDrive = 3;
+        SCMEStatusType_StatusTrain = 4;
+        SCMEStatusType_StatusNewUser = 5;
+        SCMEStatusType_StatusAppeared = 6;
+        SCMEStatusType_StatusLead = 7;
+        SCMEStatusType_StatusPlace = 8;
+        SCMEStatusType_StatusMoved = 9;
+        SCMEStatusType_StatusFlightPartial = 10;
+        SCMEStatusType_StatusDriveLong = 11;
+        SCMEStatusType_StatusVenue = 12;
+        SCMEStatusType_StatusAirport = 13;
+        SCMEStatusType_StatusMovedSlow = 14;
+        SCMEStatusType_StatusCustom = 15;
+    }
+}
+
+message SCMEExplorerMapStatus {
+    string statusId = 1;
+    int64 statusTimestampMs = 2;
+    .snapchat.geo.SPCGPoint location = 3;
+    double zoom = 4;
+    string category = 5;
+    string title = 6;
+    string status = 7;
+    string emoji = 8;
+    string poiId = 9;
+    .snapchat.map.SCMTThumbnail poiThumbnail = 10;
+    bool isOnboarding = 11;
+    .snapchat.map.common.SCMCRGBA categoryColor = 12;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 13;
+    string deeplinkURL = 14;
+    string deeplinkDisplayText = 15;
+    .snapchat.map.common.SCMCRGBA deeplinkColor = 16;
+    string headline = 17;
+    string localityName = 18;
+    string placeId = 19;
+    bool isMapActivityCard = 20;
+    string miniId = 21;
+    string bitmojiStickerId = 22;
+}
+
+message SCMEExplorerStatus {
+    .snapchat.map.SCMEExplorerFriendStatus friendStatus = 1;
+    .snapchat.map.SCMEExplorerMapStatus mapStatus = 2;
+    double score = 4;
+    .snapchat.map.SCMEExplorerStatus.SCMEStatusVersion version = 5;
+    enum SCMEStatusVersion {
+        SCMEStatusVersion_VersionZero = 0;
+        SCMEStatusVersion_VersionOne = 1;
+        SCMEStatusVersion_VersionTwo = 2;
+    }
+}
+
+message SCMEExplorerStatusModel {
+    string statusId = 1;
+    string clusteringId = 2;
+    string userId = 4;
+    .snapchat.map.SCMEExplorerStatusModel.SCMEStatusType statusType = 5;
+    repeated .snapchat.map.SCMEExplorerStatusModel.SCMEExplorerStatusModel_Location locationsArray = 6;
+    repeated string userIdBlacklistArray = 7;
+    int64 score = 8;
+    int64 timestampMs = 9;
+    int64 lifetimeMs = 10;
+    bool isDeleted = 11;
+    string viewerDedupeId = 12;
+    string posterDedupeId = 13;
+    .snapchat.map.common.SCMCLocalizedStringSet text = 14;
+    .actionmoji.action.SCMT1StickerID sticker = 15;
+    bool employeeOnly = 16;
+    string speechText = 17;
+    string placeId = 18;
+    .snapchat.map.SCMESnapMetadata snapMetadata = 19;
+    message SCMEExplorerStatusModel_Location {
+        double lat = 1;
+        double lng = 2;
+        int64 timestampMs = 3;
+        repeated .snapchat.map.SCMTLocality localityArray = 4;
+        .snapchat.map.common.SCMCLocalizedStringSet place = 5;
+        .snapchat.map.common.SCMCLocalizedStringSet event = 6;
+    }
+    enum SCMEStatusType {
+        SCMEStatusType_StatusUnknown = 0;
+        SCMEStatusType_StatusTravel = 1;
+        SCMEStatusType_StatusFlight = 2;
+        SCMEStatusType_StatusDrive = 3;
+        SCMEStatusType_StatusTrain = 4;
+        SCMEStatusType_StatusNewUser = 5;
+        SCMEStatusType_StatusAppeared = 6;
+        SCMEStatusType_StatusLead = 7;
+        SCMEStatusType_StatusPlace = 8;
+        SCMEStatusType_StatusMoved = 9;
+        SCMEStatusType_StatusFlightPartial = 10;
+        SCMEStatusType_StatusDriveLong = 11;
+        SCMEStatusType_StatusVenue = 12;
+        SCMEStatusType_StatusAirport = 13;
+        SCMEStatusType_StatusMovedSlow = 14;
+        SCMEStatusType_StatusCustom = 15;
+    }
+}
+
+message SCMEExplorerStatusQueue {
+    string userId = 1;
+    repeated .snapchat.map.SCMEExplorerStatusModel queueArray = 2;
+    repeated string recentLocalitiesArray = 3;
+    repeated .snapchat.map.SCMEExplorerStatusQueue.RecentlyViewedFriendLocalitiesEntry recentlyViewedFriendLocalities = 4;
+    bool isOnboarded = 5;
+    message RecentlyViewedFriendLocalitiesEntry {
+        string key = 1;
+        int64 value = 2;
+    }
+}
+
+message SCMEGetExploreBadgeTimestampRequest {
+    string userId = 1;
+}
+
+message SCMEGetExploreBadgeTimestampResponse {
+    int64 badgeTimestampMs = 1;
+}
+
+message SCMEGetExploreWebStatusesRequest {
+}
+
+message SCMEGetExploreWebStatusesResponse {
+    repeated .snapchat.map.SCMEExplorerMapStatus statusesArray = 1;
+}
+
+message SCMEGetExplorerStatusesRequest {
+    string userId = 1;
+    string calloutId = 2;
+    repeated .snapchat.map.SCMEGetExplorerStatusesRequest.FriendIdsAndScoresEntry friendIdsAndScores = 3;
+    string language = 4;
+    string countryCode = 5;
+    bool isNewMapUser = 6;
+    repeated string treatmentsArray = 7;
+    bool isEmployee = 8;
+    message FriendIdsAndScoresEntry {
+        string key = 1;
+        double value = 2;
+    }
+}
+
+message SCMEGetExplorerStatusesResponse {
+    repeated .snapchat.map.SCMEExplorerStatus statusesArray = 1;
+    double pollingIntervalSeconds = 2;
+}
+
+message SCMEGetFriendExplorerStatusesRequest {
+    string friendId = 1;
+    string language = 2;
+}
+
+message SCMEGetFriendExplorerStatusesResponse {
+    .snapchat.map.SCMEExplorerStatus statuses = 1;
+}
+
+message SCMEGetMapStatusesRequest {
+    string userId = 1;
+    repeated string friendIdsArray = 2;
+    string language = 3;
+    string countryCode = 4;
+    bool isEmployee = 5;
+}
+
+message SCMEGetMapStatusesResponse {
+    repeated .snapchat.map.SCMEExplorerFriendStatus statusesArray = 1;
+}
+
+message SCMEGetMyExplorerStatusesRequest {
+    string userId = 1;
+    string language = 2;
+    string countryCode = 3;
+    repeated string treatmentsArray = 4;
+    bool isEmployee = 5;
+}
+
+message SCMEGetMyExplorerStatusesResponse {
+    repeated .snapchat.map.SCMEMyExplorerStatus statusesArray = 1;
+    double pollingIntervalSeconds = 2;
+}
+
+message SCMEMyExplorerStatus {
+    .snapchat.map.SCMEExplorerStatus status = 1;
+    int64 viewCount = 2;
+    repeated string viewerIdsArray = 3;
+}
+
+message SCMESnapMetadata {
+    string snapId = 1;
+    string thumbnailURL = 2;
+    string mediaKey = 3;
+    string mediaIv = 4;
+}

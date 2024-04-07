@@ -1,0 +1,97 @@
+syntax = "proto3";
+package snapchat.identity;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCID";
+option csharp_namespace = "SnapProto.Snapchat.Identity";
+
+import "snapchat/identity/SCIDAndroidNotificationPermissions.proto";
+
+message SCIDDeletePermissionSettingsRequest {
+    string userId = 1;
+}
+
+message SCIDDeletePermissionSettingsResponse {
+    bool success = 1;
+}
+
+message SCIDIosNotificationPermissionsRequest {
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting lockScreen = 1;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting carPlay = 2;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting alert = 3;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting badge = 4;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting sound = 5;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest.SCIDIosNotificationPermissionsRequest_UNNotificationSetting criticalAlert = 6;
+    int32 authorizationStatus = 7;
+    enum SCIDIosNotificationPermissionsRequest_UNNotificationSetting {
+        SCIDIosNotificationPermissionsRequest_UNNotificationSetting_NotSupported = 0;
+        SCIDIosNotificationPermissionsRequest_UNNotificationSetting_Disabled = 1;
+        SCIDIosNotificationPermissionsRequest_UNNotificationSetting_Enabled = 2;
+    }
+}
+
+message SCIDPermissionSettingsRequest {
+    bool contactAccessAppEnabled = 1;
+    bool notificationAppEnabled = 2;
+    bool locationAppEnabled = 3;
+    bool cameraRollAppEnabled = 4;
+    bool bluetoothAppEnabled = 5;
+    bool microphoneAppEnabled = 6;
+    bool cameraAppEnabled = 7;
+    bool locationDeviceEnabled = 8;
+    bool bluetoothDeviceEnabled = 9;
+    bool interactiveNotificationAppEnabled = 10;
+    bool userLocationAppEnabled = 11;
+    bool userContactAppEnabled = 12;
+    .snapchat.identity.SCIDAndroidNotificationPermissionsRequest androidNotificationPermissionsRequest = 13;
+    int32 reportSource = 14;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest iosNotificationPermissionsRequest = 15;
+}
+
+message SCIDPermissionSettingsResponse {
+    bool success = 1;
+}
+
+message SCIDReadPermissionSettingsRequest {
+    string userId = 1;
+}
+
+message SCIDReadPermissionSettingsResponse {
+    string userId = 1;
+    bool contactAccessAppEnabled = 2;
+    bool notificationAppEnabled = 3;
+    bool locationAppEnabled = 4;
+    bool cameraRollAppEnabled = 5;
+    bool bluetoothAppEnabled = 6;
+    bool microphoneAppEnabled = 7;
+    bool cameraAppEnabled = 8;
+    bool locationDeviceEnabled = 9;
+    bool bluetoothDeviceEnabled = 10;
+    bool userLocationAppEnabled = 12;
+    bool userContactAppEnabled = 13;
+    bool interactiveNotificationAppEnabled = 11;
+}
+
+message SCIDUpdatePermissionSettingsRequest {
+    bool contactAccessAppEnabled = 1;
+    bool notificationAppEnabled = 2;
+    bool locationAppEnabled = 3;
+    bool cameraRollAppEnabled = 4;
+    bool bluetoothAppEnabled = 5;
+    bool microphoneAppEnabled = 6;
+    bool cameraAppEnabled = 7;
+    bool locationDeviceEnabled = 8;
+    bool bluetoothDeviceEnabled = 9;
+    bool interactiveNotificationAppEnabled = 10;
+    bool userLocationAppEnabled = 11;
+    bool userContactAppEnabled = 12;
+    .snapchat.identity.SCIDAndroidNotificationPermissionsRequest androidNotificationPermissionsRequest = 13;
+    int32 reportSource = 14;
+    .snapchat.identity.SCIDIosNotificationPermissionsRequest iosNotificationPermissionsRequest = 15;
+    string userId = 16;
+    string deviceType = 17;
+    string appVersion = 18;
+}
+
+message SCIDUpdatePermissionSettingsResponse {
+    bool success = 1;
+}

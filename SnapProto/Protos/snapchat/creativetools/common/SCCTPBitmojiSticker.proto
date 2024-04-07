@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPBitmojiSticker {
+    string comicId = 1;
+    .snapchat.creativetools.common.SCCTPBitmojiSticker.SCCTPBitmojiSticker_Type type = 2;
+    bool isAnimated = 3;
+    string altText = 4;
+    bool isCustomoji = 5;
+    enum SCCTPBitmojiSticker_Type {
+        SCCTPBitmojiSticker_Type_Solomoji = 0;
+        SCCTPBitmojiSticker_Type_Friendmoji = 1;
+    }
+}

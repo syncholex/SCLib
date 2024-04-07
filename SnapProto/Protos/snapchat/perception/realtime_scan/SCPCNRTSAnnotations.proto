@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.perception.realtime_scan;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPCNRTS";
+option csharp_namespace = "SnapProto.Snapchat.Perception.Realtime_scan";
+
+message SCPCNRTSAnnotation {
+    string label = 1;
+    float score = 2;
+}
+
+message SCPCNRTSAnnotations {
+    repeated .snapchat.perception.realtime_scan.SCPCNRTSAnnotation annotationsArray = 1;
+}

@@ -1,0 +1,98 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Snapchat.Content.V2";
+
+import "snapchat/content/SCBoltStoragePolicy.proto";
+import "snapchat/content/v2/SCBoltv2Claim.proto";
+import "snapchat/content/v2/SCBoltv2UploadLocation.proto";
+
+message SCBoltv2GetUploadLocationsRequest {
+    .snapchat.content.v2.SCBoltv2UserContext userContext = 1;
+    uint32 batchSize = 2;
+    .snapchat.content.v2.SCBoltv2GetUploadLocationsRequest.SCBoltv2StorageProvider storageProvider = 3;
+    .snapchat.content.v2.SCBoltv2GetUploadLocationsRequest.SCBoltv2ContentReferenceResultOption contentReferenceResultOption = 4;
+    repeated string suffixExtensionsArray = 5;
+    .snapchat.content.v2.SCBoltv2GetUploadLocationsRequest.SCBoltv2StorageRegion storageRegion = 6;
+    repeated .snapchat.content.v2.SCBoltv2GetUploadLocationsRequest.SCBoltv2UploadUrlType uploadURLTypesArray = 7;
+    .snapchat.content.v2.SCBoltv2Claim claim = 8;
+    repeated .snapchat.content.v2.SCBoltv2GetUploadLocationsRequest.URLHeadersEntry URLHeaders = 9;
+    bool skipCdnForUploadURL = 10;
+    bytes uploadCofConfig = 11;
+    .snapchat.content.SCBoltStoragePolicy storagePolicy = 12;
+    uint32 uploadURLExpirationHours = 13;
+    message URLHeadersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum SCBoltv2ContentReferenceResultOption {
+        SCBoltv2ContentReferenceResultOption_ContentURLOnly = 0;
+        SCBoltv2ContentReferenceResultOption_ContentObjectOnly = 1;
+        SCBoltv2ContentReferenceResultOption_ContentURLAndObject = 2;
+    }
+    enum SCBoltv2StorageProvider {
+        SCBoltv2StorageProvider_Undefined = 0;
+        SCBoltv2StorageProvider_Gcs = 1;
+        SCBoltv2StorageProvider_S3 = 2;
+    }
+    enum SCBoltv2StorageRegion {
+        SCBoltv2StorageRegion_Unknown = 0;
+        SCBoltv2StorageRegion_S3UsWest2 = 1;
+        SCBoltv2StorageRegion_S3UsWest1 = 2;
+        SCBoltv2StorageRegion_S3UsEast2 = 3;
+        SCBoltv2StorageRegion_S3UsEast1 = 4;
+        SCBoltv2StorageRegion_S3SaEast1 = 5;
+        SCBoltv2StorageRegion_S3EuWest3 = 6;
+        SCBoltv2StorageRegion_S3EuWest2 = 7;
+        SCBoltv2StorageRegion_S3EuWest1 = 8;
+        SCBoltv2StorageRegion_S3EuCentral1 = 9;
+        SCBoltv2StorageRegion_S3CaCentral1 = 12;
+        SCBoltv2StorageRegion_S3ApSoutheast2 = 13;
+        SCBoltv2StorageRegion_S3ApSoutheast1 = 14;
+        SCBoltv2StorageRegion_S3ApSouth1 = 15;
+        SCBoltv2StorageRegion_S3ApNortheast2 = 17;
+        SCBoltv2StorageRegion_S3ApNortheast1 = 18;
+        SCBoltv2StorageRegion_GcsUs4 = 95;
+        SCBoltv2StorageRegion_GcsEu4 = 96;
+        SCBoltv2StorageRegion_GcsUs = 97;
+        SCBoltv2StorageRegion_GcsEu = 98;
+        SCBoltv2StorageRegion_GcsAs = 99;
+        SCBoltv2StorageRegion_GcsAsEast1 = 114;
+        SCBoltv2StorageRegion_GcsAsNortheast1 = 115;
+        SCBoltv2StorageRegion_GcsAsSouth1 = 116;
+        SCBoltv2StorageRegion_GcsAsSoutheast1 = 117;
+        SCBoltv2StorageRegion_GcsAuSoutheast1 = 118;
+        SCBoltv2StorageRegion_GcsEuWest1 = 119;
+        SCBoltv2StorageRegion_GcsEuWest2 = 120;
+        SCBoltv2StorageRegion_GcsEuWest3 = 121;
+        SCBoltv2StorageRegion_GcsSaEast1 = 123;
+        SCBoltv2StorageRegion_GcsUsCentral1 = 124;
+        SCBoltv2StorageRegion_GcsUsEast1 = 125;
+        SCBoltv2StorageRegion_GcsUsEast4 = 126;
+        SCBoltv2StorageRegion_GcsUsWest1 = 127;
+    }
+    enum SCBoltv2UploadUrlType {
+        SCBoltv2UploadUrlType_Direct = 0;
+        SCBoltv2UploadUrlType_Resumable = 1;
+        SCBoltv2UploadUrlType_Multipart = 2;
+    }
+}
+
+message SCBoltv2GetUploadLocationsResponse {
+    repeated .snapchat.content.v2.SCBoltv2UploadLocation uploadLocationsArray = 1;
+}
+
+message SCBoltv2UploadCofConfig {
+    uint32 numUploadUrls = 1;
+    int64 storageRegionId = 2;
+    uint32 uploadURLExpirationHours = 3;
+}
+
+message SCBoltv2UserContext {
+    string userCountry = 1;
+    string userIp = 2;
+    string userId = 3;
+    string userRegion = 4;
+    string appVersion = 10;
+}

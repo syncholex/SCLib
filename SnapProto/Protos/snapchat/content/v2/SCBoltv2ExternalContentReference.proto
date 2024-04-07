@@ -1,0 +1,53 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Snapchat.Content.V2";
+
+message SCBoltv2ExternalContentReference {
+    .snapchat.content.v2.SCBoltv2ExternalContentReference.SCBoltv2StorageProvider storageProvider = 1;
+    .snapchat.content.v2.SCBoltv2ExternalContentReference.SCBoltv2StorageRegion storageRegion = 2;
+    string bucketName = 3;
+    string objectPath = 4;
+    enum SCBoltv2StorageProvider {
+        SCBoltv2StorageProvider_Undefined = 0;
+        SCBoltv2StorageProvider_Gcs = 1;
+        SCBoltv2StorageProvider_S3 = 2;
+    }
+    enum SCBoltv2StorageRegion {
+        SCBoltv2StorageRegion_Unknown = 0;
+        SCBoltv2StorageRegion_S3UsWest2 = 1;
+        SCBoltv2StorageRegion_S3UsWest1 = 2;
+        SCBoltv2StorageRegion_S3UsEast2 = 3;
+        SCBoltv2StorageRegion_S3UsEast1 = 4;
+        SCBoltv2StorageRegion_S3SaEast1 = 5;
+        SCBoltv2StorageRegion_S3EuWest3 = 6;
+        SCBoltv2StorageRegion_S3EuWest2 = 7;
+        SCBoltv2StorageRegion_S3EuWest1 = 8;
+        SCBoltv2StorageRegion_S3EuCentral1 = 9;
+        SCBoltv2StorageRegion_S3CaCentral1 = 12;
+        SCBoltv2StorageRegion_S3ApSoutheast2 = 13;
+        SCBoltv2StorageRegion_S3ApSoutheast1 = 14;
+        SCBoltv2StorageRegion_S3ApSouth1 = 15;
+        SCBoltv2StorageRegion_S3ApNortheast2 = 17;
+        SCBoltv2StorageRegion_S3ApNortheast1 = 18;
+        SCBoltv2StorageRegion_GcsUs4 = 95;
+        SCBoltv2StorageRegion_GcsEu4 = 96;
+        SCBoltv2StorageRegion_GcsUs = 97;
+        SCBoltv2StorageRegion_GcsEu = 98;
+        SCBoltv2StorageRegion_GcsAs = 99;
+        SCBoltv2StorageRegion_GcsAsEast1 = 114;
+        SCBoltv2StorageRegion_GcsAsNortheast1 = 115;
+        SCBoltv2StorageRegion_GcsAsSouth1 = 116;
+        SCBoltv2StorageRegion_GcsAsSoutheast1 = 117;
+        SCBoltv2StorageRegion_GcsAuSoutheast1 = 118;
+        SCBoltv2StorageRegion_GcsEuWest1 = 119;
+        SCBoltv2StorageRegion_GcsEuWest2 = 120;
+        SCBoltv2StorageRegion_GcsEuWest3 = 121;
+        SCBoltv2StorageRegion_GcsSaEast1 = 123;
+        SCBoltv2StorageRegion_GcsUsCentral1 = 124;
+        SCBoltv2StorageRegion_GcsUsEast1 = 125;
+        SCBoltv2StorageRegion_GcsUsEast4 = 126;
+        SCBoltv2StorageRegion_GcsUsWest1 = 127;
+    }
+}

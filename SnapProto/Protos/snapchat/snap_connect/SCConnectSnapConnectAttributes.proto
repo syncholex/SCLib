@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.snap_connect;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCConnect";
+option csharp_namespace = "SnapProto.Snapchat.Snap_connect";
+
+message SCConnectSnapConnectAttributes {
+    string sourceAppDisplayName = 1;
+    string sourceAppOauthClientId = 2;
+}

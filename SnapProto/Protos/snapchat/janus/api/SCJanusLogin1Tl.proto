@@ -1,0 +1,77 @@
+syntax = "proto3";
+package snapchat.janus.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCJanus";
+option csharp_namespace = "SnapProto.Snapchat.Janus.Api";
+
+import "snapchat/janus/api/SCJanusLoginBootstrap.proto";
+import "snapchat/janus/api/SCJanusLoginCommon.proto";
+
+message SCJanusLoginWith1TLv1Request {
+    string username = 1;
+    string oneTapLoginToken = 2;
+    .snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 4;
+    .snapchat.janus.api.SCJanusCofTags cofTags = 5;
+    .snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}
+
+message SCJanusLoginWith1TLv1Response {
+    .snapchat.janus.api.SCJanusLoginWith1TLv1Response.SCJanusLoginWith1TLv1Response_StatusCode statusCode = 1;
+    .snapchat.janus.api.SCJanusBootstrapData bootstrapData = 2;
+    .snapchat.janus.api.SCJanusTwoFAData twoFaData = 3;
+    .snapchat.janus.api.SCJanusODLVData odlvData = 4;
+    .snapchat.janus.api.SCJanusAccountDeactivationData accountDeactivationData = 5;
+    .snapchat.janus.api.SCJanusAccountLockedData accountLockedData = 6;
+    .snapchat.janus.api.SCJanusAndroidSafetynetData androidSafetynetData = 7;
+    .snapchat.janus.api.SCJanusChannelVerificationData channelVerificationData = 8;
+    .snapchat.janus.api.SCJanusErrorData errorData = 10;
+    enum SCJanusLoginWith1TLv1Response_StatusCode {
+        SCJanusLoginWith1TLv1Response_StatusCode_Unset = 0;
+        SCJanusLoginWith1TLv1Response_StatusCode_LoginSuccess = 1;
+        SCJanusLoginWith1TLv1Response_StatusCode_TwoFaRequired = 2;
+        SCJanusLoginWith1TLv1Response_StatusCode_OdlvRequired = 3;
+        SCJanusLoginWith1TLv1Response_StatusCode_AccountDeactivated = 4;
+        SCJanusLoginWith1TLv1Response_StatusCode_AccountLocked = 5;
+        SCJanusLoginWith1TLv1Response_StatusCode_AndroidSafetynetRequested = 6;
+        SCJanusLoginWith1TLv1Response_StatusCode_ChannelVerificationRequired = 7;
+        SCJanusLoginWith1TLv1Response_StatusCode_ErrGenericFailure = 10;
+        SCJanusLoginWith1TLv1Response_StatusCode_ErrThrottled = 11;
+        SCJanusLoginWith1TLv1Response_StatusCode_ErrInvalidToken = 12;
+        SCJanusLoginWith1TLv1Response_StatusCode_ErrAppVersionUpgrade = 13;
+        SCJanusLoginWith1TLv1Response_StatusCode_ErrBlocked = 14;
+    }
+}
+
+message SCJanusLoginWith1TLv3Request {
+    string oneTapLoginToken = 1;
+    .snapchat.janus.api.SCJanusFideliusClientInit fideliusClientInit = 3;
+    .snapchat.janus.api.SCJanusCofTags cofTags = 4;
+    .snapchat.janus.api.SCJanusLoginHeader loginHeader = 15;
+}
+
+message SCJanusLoginWith1TLv3Response {
+    .snapchat.janus.api.SCJanusLoginWith1TLv3Response.SCJanusLoginWith1TLv3Response_StatusCode statusCode = 1;
+    .snapchat.janus.api.SCJanusBootstrapData bootstrapData = 2;
+    .snapchat.janus.api.SCJanusTwoFAData twoFaData = 3;
+    .snapchat.janus.api.SCJanusODLVData odlvData = 4;
+    .snapchat.janus.api.SCJanusAccountDeactivationData accountDeactivationData = 5;
+    .snapchat.janus.api.SCJanusAccountLockedData accountLockedData = 6;
+    .snapchat.janus.api.SCJanusAndroidSafetynetData androidSafetynetData = 7;
+    .snapchat.janus.api.SCJanusChannelVerificationData channelVerificationData = 9;
+    .snapchat.janus.api.SCJanusErrorData errorData = 10;
+    enum SCJanusLoginWith1TLv3Response_StatusCode {
+        SCJanusLoginWith1TLv3Response_StatusCode_Unset = 0;
+        SCJanusLoginWith1TLv3Response_StatusCode_LoginSuccess = 1;
+        SCJanusLoginWith1TLv3Response_StatusCode_TwoFaRequired = 2;
+        SCJanusLoginWith1TLv3Response_StatusCode_OdlvRequired = 3;
+        SCJanusLoginWith1TLv3Response_StatusCode_AccountDeactivated = 4;
+        SCJanusLoginWith1TLv3Response_StatusCode_AccountLocked = 5;
+        SCJanusLoginWith1TLv3Response_StatusCode_AndroidSafetynetRequested = 6;
+        SCJanusLoginWith1TLv3Response_StatusCode_ChannelVerificationRequired = 7;
+        SCJanusLoginWith1TLv3Response_StatusCode_ErrGenericFailure = 10;
+        SCJanusLoginWith1TLv3Response_StatusCode_ErrThrottled = 11;
+        SCJanusLoginWith1TLv3Response_StatusCode_ErrInvalidToken = 12;
+        SCJanusLoginWith1TLv3Response_StatusCode_ErrAppVersionUpgrade = 13;
+        SCJanusLoginWith1TLv3Response_StatusCode_ErrBlocked = 14;
+    }
+}

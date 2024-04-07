@@ -1,0 +1,15 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+option java_package = "com.snap.ranking.core.proto";
+option go_package = "proto";
+
+import "ranking/core/proto/story_corpus.proto";
+
+message CompositeStoryId {
+    .ranking.core.StoryCorpus.Corpus corpus = 1;
+    string id = 2;
+    int64 version = 3;
+}

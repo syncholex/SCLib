@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesUnlockableNoFillAdResponse {
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableNoFillAdResponse.CarouselIndexMapEntry carouselIndexMap = 1;
+    bytes serveItemId = 2;
+    bytes encryptedAdData = 3;
+    message CarouselIndexMapEntry {
+        string key = 1;
+        int32 value = 2;
+    }
+}

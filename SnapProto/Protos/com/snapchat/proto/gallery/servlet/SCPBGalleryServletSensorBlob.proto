@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery.servlet;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGalleryServlet";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery.Servlet";
+
+message SCPBGalleryServletSensorBlob {
+    string data_p = 1;
+    int32 sensorMajorVersion = 2;
+    int32 sensorMinorVersion = 3;
+}

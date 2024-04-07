@@ -1,0 +1,17 @@
+syntax = "proto3";
+package stories.groupstories;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCStory";
+option csharp_namespace = "SnapProto.Stories.Groupstories";
+
+import "stories/groupstories/SCStoryLocation.proto";
+
+message SCStoryGeofencedGroupStoryExtraData {
+    .stories.groupstories.SCStoryLocation center = 1;
+    double radius = 2;
+    .stories.groupstories.SCStoryGeofencedGroupStoryExtraData.SCStoryGroupStoryPrivacyType privacyType = 3;
+    enum SCStoryGroupStoryPrivacyType {
+        SCStoryGroupStoryPrivacyType_Friends = 0;
+        SCStoryGroupStoryPrivacyType_FriendsOfFriends = 1;
+    }
+}

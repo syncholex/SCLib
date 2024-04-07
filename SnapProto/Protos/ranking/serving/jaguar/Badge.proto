@@ -1,0 +1,71 @@
+syntax = "proto3";
+package ranking.serving.jaguar;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Serving.Jaguar";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message BadgeCard {
+    .ranking.serving.jaguar.BadgeMetadata badgeMetadata = 1;
+    .ranking.serving.jaguar.BadgeHeadline headline = 2;
+    string thumbnailURL = 3;
+    string bodyText = 4;
+    int32 numberOfUpdates = 5;
+    string primaryColor = 6;
+    string ringColor = 7;
+}
+
+message BadgeHeadline {
+    string prefixText = 1;
+    string highlightText = 2;
+    .ranking.serving.jaguar.BadgeHeadline.BadgeHeadline_HighlightTextColor_Enum highlightTextColor = 3;
+    string suffixText = 4;
+    .ranking.serving.jaguar.BadgeHeadline.BadgeHeadline_BackgroundType_Enum backgroundType = 5;
+    enum BadgeHeadline_BackgroundType_Enum {
+        BadgeHeadline_BackgroundType_Enum_Default = 0;
+        BadgeHeadline_BackgroundType_Enum_Pill = 1;
+    }
+    enum BadgeHeadline_HighlightTextColor_Enum {
+        BadgeHeadline_HighlightTextColor_Enum_Default = 0;
+        BadgeHeadline_HighlightTextColor_Enum_Yellow = 1;
+        BadgeHeadline_HighlightTextColor_Enum_Red = 2;
+    }
+}
+
+message BadgeMetadata {
+    string badgeId = 1;
+    .ranking.serving.jaguar.BadgeMetadata.BadgeType_Enum badgeType = 2;
+    .ranking.serving.jaguar.BadgeMetadata.BadgeTapDestinationType_Enum destinationType = 3;
+    int32 feedType = 4;
+    repeated .ranking.core.SCCORECompositeStoryId storyIdsArray = 5;
+    .ranking.serving.jaguar.BadgeMetadata.SchedulingType_Enum schedulingType = 6;
+    enum BadgeType_Enum {
+        BadgeType_Enum_Unknown = 0;
+        BadgeType_Enum_NewStoriesInSection = 1;
+        BadgeType_Enum_NewPublishing = 2;
+        BadgeType_Enum_Trending = 3;
+        BadgeType_Enum_ContinueWatching = 4;
+        BadgeType_Enum_NewEpisodeBadge = 5;
+        BadgeType_Enum_HnNews = 6;
+    }
+    enum BadgeTapDestinationType_Enum {
+        BadgeTapDestinationType_Enum_Unknown = 0;
+        BadgeTapDestinationType_Enum_Section = 1;
+        BadgeTapDestinationType_Enum_Story = 2;
+    }
+    enum SchedulingType_Enum {
+        SchedulingType_Enum_Unknown = 0;
+        SchedulingType_Enum_ShowsRegular = 1;
+        SchedulingType_Enum_HnRegaulr = 2;
+        SchedulingType_Enum_HnHighPriority = 3;
+    }
+}
+
+message BadgeTapDestinationType {
+}
+
+message BadgeType {
+}
+
+message SchedulingType {
+}

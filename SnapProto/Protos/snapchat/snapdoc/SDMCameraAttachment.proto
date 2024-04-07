@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/snapdoc/SDMLensCarousel.proto";
+
+message SDMCameraAttachment {
+    .snapchat.snapdoc.SDMLensCarousel carousel = 1;
+    .snapchat.snapdoc.SDMCameraAttachment.SDMCameraAttachment_SendToBehavior sendToBehavior = 2;
+    string id_p = 3;
+    enum SDMCameraAttachment_SendToBehavior {
+        SDMCameraAttachment_SendToBehavior_DefaultSendTo = 0;
+        SDMCameraAttachment_SendToBehavior_OurStory = 1;
+        SDMCameraAttachment_SendToBehavior_Spotlight = 2;
+    }
+}

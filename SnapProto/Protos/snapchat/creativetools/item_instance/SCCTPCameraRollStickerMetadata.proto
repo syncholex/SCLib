@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance";
+
+message SCCTPCameraRollStickerMetadata {
+    .snapchat.creativetools.item_instance.SCCTPCameraRollStickerMetadata.SCCTPCameraRollStickerMetadata_Shape shape = 1;
+    enum SCCTPCameraRollStickerMetadata_Shape {
+        SCCTPCameraRollStickerMetadata_Shape_ShapeUnspecified = 0;
+        SCCTPCameraRollStickerMetadata_Shape_RoundedRect = 1;
+        SCCTPCameraRollStickerMetadata_Shape_Circle = 2;
+        SCCTPCameraRollStickerMetadata_Shape_Square = 3;
+        SCCTPCameraRollStickerMetadata_Shape_OriginalAspectRatio = 4;
+        SCCTPCameraRollStickerMetadata_Shape_ForcedPortrait = 5;
+        SCCTPCameraRollStickerMetadata_Shape_ForcedLandscape = 6;
+    }
+}

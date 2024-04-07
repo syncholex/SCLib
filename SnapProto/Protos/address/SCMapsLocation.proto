@@ -1,0 +1,100 @@
+syntax = "proto3";
+package address;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMaps";
+option csharp_namespace = "SnapProto.Address";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCMapsAddress {
+    string adminArea1 = 1;
+    string adminArea2 = 2;
+    string adminArea3 = 3;
+    string adminArea4 = 4;
+    string adminArea5 = 5;
+    string locality = 6;
+    string sublocality = 7;
+    string colloquialArea = 8;
+    string neighborhood = 9;
+    string premise = 10;
+    string subpremise = 11;
+    string pointOfInterest = 12;
+    string country = 13;
+    string countryCode = 14;
+    string postalCode = 15;
+    string mediaMarketId = 16;
+    string congressionalDistrictId = 17;
+    string macroArea = 18;
+}
+
+message SCMapsAddressIds {
+    .snapchat.core.SCCOREUUID adminArea1 = 1;
+    .snapchat.core.SCCOREUUID adminArea2 = 2;
+    .snapchat.core.SCCOREUUID adminArea3 = 3;
+    .snapchat.core.SCCOREUUID adminArea4 = 4;
+    .snapchat.core.SCCOREUUID adminArea5 = 5;
+    .snapchat.core.SCCOREUUID locality = 6;
+    .snapchat.core.SCCOREUUID sublocality = 7;
+    .snapchat.core.SCCOREUUID neighborhood = 9;
+    .snapchat.core.SCCOREUUID country = 13;
+    string countryCode = 14;
+    .snapchat.core.SCCOREUUID postalCode = 15;
+    .snapchat.core.SCCOREUUID macroArea = 18;
+    .snapchat.core.SCCOREUUID premise = 19;
+}
+
+message SCMapsAddressResult {
+    bool addressFound = 1;
+    .address.SCMapsAddress address = 2;
+    .address.SCMapsAddressIds uuids = 3;
+}
+
+message SCMapsLatLng {
+    double lat = 1;
+    double lng = 2;
+}
+
+message SCMapsLocationAddressRequest {
+    repeated .address.SCMapsLatLng locationsArray = 1;
+    bool idsOnly = 2;
+    .address.SCMapsRequestOptions options = 1000;
+}
+
+message SCMapsLocationAddressResponse {
+    repeated .address.SCMapsAddress addressesArray = 1;
+    repeated .address.SCMapsAddressResult resultsArray = 2;
+}
+
+message SCMapsLocationAddressWithLocalizationsBatchRequest {
+    repeated .address.SCMapsLatLng locationsArray = 1;
+    repeated string localesArray = 2;
+    bool includeIds = 3;
+    .address.SCMapsRequestOptions options = 1000;
+}
+
+message SCMapsLocationAddressWithLocalizationsBatchResponse {
+    repeated .address.SCMapsLocationAddressWithLocalizationsResponse responsesArray = 1;
+}
+
+message SCMapsLocationAddressWithLocalizationsRequest {
+    .address.SCMapsLatLng location = 1;
+    repeated string localesArray = 2;
+    bool includeIds = 3;
+    .address.SCMapsRequestOptions options = 1000;
+}
+
+message SCMapsLocationAddressWithLocalizationsResponse {
+    repeated .address.SCMapsLocationAddressWithLocalizationsResponse.AddressesEntry addresses = 1;
+    .address.SCMapsAddress ids = 2;
+    .address.SCMapsAddressIds uuids = 3;
+    message AddressesEntry {
+        string key = 1;
+        .address.SCMapsAddress value = 2;
+    }
+}
+
+message SCMapsRequestOptions {
+    uint32 snapZoom = 2;
+    uint32 requestedFields = 3;
+    bool includeUuids = 4;
+}

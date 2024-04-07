@@ -1,0 +1,119 @@
+syntax = "proto3";
+package snapchat.cdp.cof;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Cdp.Cof";
+
+import "google/protobuf/timestamp.proto";
+
+message BenchmarkRequest {
+    repeated .snapchat.cdp.cof.BenchmarkRequest.BenchmarkName benchmarkNamesArray = 1;
+    .google.protobuf.Timestamp expirationTimestamp = 2;
+    enum BenchmarkName {
+        BenchmarkName_UnknownBenchmark = 0;
+        BenchmarkName_CpuGflops = 1;
+        BenchmarkName_GpuGflops = 2;
+        BenchmarkName_GpuGflopsVector = 3;
+        BenchmarkName_GpuSystemCapabilities = 4;
+        BenchmarkName_GpuVertexThroughput = 5;
+        BenchmarkName_GpuSimpleGeometryThroughput = 6;
+        BenchmarkName_GpuGaussianBlur = 7;
+        BenchmarkName_CpuMemoryThroughput = 8;
+        BenchmarkName_GpuFillRate = 9;
+        BenchmarkName_MemTotalMemory = 10;
+        BenchmarkName_CpuNumProcessors = 11;
+        BenchmarkName_DeviceInformationChipset = 12;
+        BenchmarkName_DeviceInformationBuildHardware = 13;
+        BenchmarkName_DeviceInformationBuildBrand = 14;
+        BenchmarkName_DeviceInformationBuildManufacturer = 15;
+        BenchmarkName_DeviceInformationBuildModel = 16;
+        BenchmarkName_DeviceInformationScreenProperties = 17;
+        BenchmarkName_DeviceInformationCodecCapabilites = 18;
+        BenchmarkName_CpuPrimeKotlin = 19;
+        BenchmarkName_CpuPrimeNative = 20;
+        BenchmarkName_CpuSqrtKotlin = 21;
+        BenchmarkName_CpuSqrtNative = 22;
+        BenchmarkName_CpuIntMathKotlin = 23;
+        BenchmarkName_CpuIntMathNative = 24;
+        BenchmarkName_DeviceInformationGlVersion = 25;
+        BenchmarkName_DeviceInformationGlslVersion = 26;
+        BenchmarkName_DeviceInformationOpenclExists = 27;
+        BenchmarkName_DeviceInformationIsHostUnifiedMemory = 28;
+        BenchmarkName_DeviceInformationOpenclVersion = 29;
+        BenchmarkName_DeviceInformationTimingResolutionNs = 30;
+        BenchmarkName_DeviceInformationAddressSize = 31;
+        BenchmarkName_DeviceInformationGpuMaxClockFrequencyMhz = 32;
+        BenchmarkName_DeviceInformationComputeUnits = 33;
+        BenchmarkName_DeviceInformationMaxWorkgroupSize = 34;
+        BenchmarkName_DeviceInformationLocalMemoryIsLocal = 35;
+        BenchmarkName_DeviceInformationLocalMemorySize = 36;
+        BenchmarkName_DeviceInformationGlobalMemoryCacheSize = 37;
+        BenchmarkName_DeviceInformationGlobalMemoryCachelineSize = 38;
+        BenchmarkName_DeviceInformationGlHasFenceSyncObject = 39;
+        BenchmarkName_DeviceInformationHexagonNnLibraryVersion = 40;
+        BenchmarkName_GpuGflopsV2 = 41;
+        BenchmarkName_GpuGflopsVectorV2 = 42;
+        BenchmarkName_DeviceInformationGpuModel = 43;
+        BenchmarkName_DeviceInformationCodecCapabilitesV2 = 44;
+        BenchmarkName_DeviceInformationMediaPerformanceClass = 45;
+    }
+}
+
+message BenchmarkResult {
+    .snapchat.cdp.cof.BenchmarkResult.BenchmarkName name = 1;
+    .snapchat.cdp.cof.BenchmarkValue value = 2;
+    enum BenchmarkName {
+        BenchmarkName_UnknownBenchmark = 0;
+        BenchmarkName_CpuGflops = 1;
+        BenchmarkName_GpuGflops = 2;
+        BenchmarkName_GpuGflopsVector = 3;
+        BenchmarkName_GpuSystemCapabilities = 4;
+        BenchmarkName_GpuVertexThroughput = 5;
+        BenchmarkName_GpuSimpleGeometryThroughput = 6;
+        BenchmarkName_GpuGaussianBlur = 7;
+        BenchmarkName_CpuMemoryThroughput = 8;
+        BenchmarkName_GpuFillRate = 9;
+        BenchmarkName_MemTotalMemory = 10;
+        BenchmarkName_CpuNumProcessors = 11;
+        BenchmarkName_DeviceInformationChipset = 12;
+        BenchmarkName_DeviceInformationBuildHardware = 13;
+        BenchmarkName_DeviceInformationBuildBrand = 14;
+        BenchmarkName_DeviceInformationBuildManufacturer = 15;
+        BenchmarkName_DeviceInformationBuildModel = 16;
+        BenchmarkName_DeviceInformationScreenProperties = 17;
+        BenchmarkName_DeviceInformationCodecCapabilites = 18;
+        BenchmarkName_CpuPrimeKotlin = 19;
+        BenchmarkName_CpuPrimeNative = 20;
+        BenchmarkName_CpuSqrtKotlin = 21;
+        BenchmarkName_CpuSqrtNative = 22;
+        BenchmarkName_CpuIntMathKotlin = 23;
+        BenchmarkName_CpuIntMathNative = 24;
+        BenchmarkName_DeviceInformationGlVersion = 25;
+        BenchmarkName_DeviceInformationGlslVersion = 26;
+        BenchmarkName_DeviceInformationOpenclExists = 27;
+        BenchmarkName_DeviceInformationIsHostUnifiedMemory = 28;
+        BenchmarkName_DeviceInformationOpenclVersion = 29;
+        BenchmarkName_DeviceInformationTimingResolutionNs = 30;
+        BenchmarkName_DeviceInformationAddressSize = 31;
+        BenchmarkName_DeviceInformationGpuMaxClockFrequencyMhz = 32;
+        BenchmarkName_DeviceInformationComputeUnits = 33;
+        BenchmarkName_DeviceInformationMaxWorkgroupSize = 34;
+        BenchmarkName_DeviceInformationLocalMemoryIsLocal = 35;
+        BenchmarkName_DeviceInformationLocalMemorySize = 36;
+        BenchmarkName_DeviceInformationGlobalMemoryCacheSize = 37;
+        BenchmarkName_DeviceInformationGlobalMemoryCachelineSize = 38;
+        BenchmarkName_DeviceInformationGlHasFenceSyncObject = 39;
+        BenchmarkName_DeviceInformationHexagonNnLibraryVersion = 40;
+        BenchmarkName_GpuGflopsV2 = 41;
+        BenchmarkName_GpuGflopsVectorV2 = 42;
+        BenchmarkName_DeviceInformationGpuModel = 43;
+        BenchmarkName_DeviceInformationCodecCapabilitesV2 = 44;
+        BenchmarkName_DeviceInformationMediaPerformanceClass = 45;
+    }
+}
+
+message BenchmarkValue {
+    int32 intValue = 1;
+    int64 longValue = 2;
+    bool boolValue = 3;
+    float floatValue = 4;
+}

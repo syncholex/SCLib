@@ -1,0 +1,1959 @@
+syntax = "proto3";
+package impala;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala";
+
+import "google/protobuf/wrappers.proto";
+import "impala/IMPBusiness.proto";
+import "impala/IMPTerms.proto";
+import "impala/adsapi/IMPAdsAdsapi.proto";
+import "impala/portfolio/IMPPortfolio.proto";
+import "impala/profile/IMPContentIdentifier.proto";
+import "impala/stories/common/IMPStories.proto";
+import "serengeti/SGTIService.proto";
+import "snapchat/discover/PublisherPartial.proto";
+
+message IMPAcceptRoleInviteRequest {
+    string businessId = 1;
+    string roleType = 2;
+}
+
+message IMPAcceptRoleInviteResponse {
+    bool failedRoleTypeMismatch = 1;
+}
+
+message IMPAccountServiceError {
+    .impala.IMPAccountServiceError.IMPAccountServiceErrorCode errorCode = 1;
+    string errorMessage = 2;
+    enum IMPAccountServiceErrorCode {
+        IMPAccountServiceErrorCode_GenericError = 0;
+        IMPAccountServiceErrorCode_ProfileNotFound = 1;
+        IMPAccountServiceErrorCode_ProfileDeletedError = 2;
+        IMPAccountServiceErrorCode_BadRequest = 3;
+        IMPAccountServiceErrorCode_ProfileAgeRestrictedError = 100;
+        IMPAccountServiceErrorCode_ProfileInternalOnlyError = 101;
+        IMPAccountServiceErrorCode_ProfileHostUserEmailOrPhoneNotVerified = 102;
+    }
+}
+
+message IMPAddContentShareRecordRequest {
+    .impala.IMPContentShareRecord record = 1;
+}
+
+message IMPAddContentShareRecordResponse {
+}
+
+message IMPAddOrgRoleByRoleTypeRequest {
+    string profileId = 1;
+    .impala.IMPRoleSpecification role = 2;
+    string organizationId = 3;
+}
+
+message IMPAddOrgRoleByRoleTypeResponse {
+}
+
+message IMPAddUsersToSnapProABTestGroupRequest {
+    repeated string userIdsArray = 1;
+}
+
+message IMPAddUsersToSnapProABTestGroupResponse {
+}
+
+message IMPAddress {
+    string streetAddress = 1;
+    string city = 2;
+    string zipCode = 3;
+    string country = 4;
+    string administrativeDistrict = 5;
+}
+
+message IMPAgeGateSettings {
+    int32 globalAgeMin = 1;
+    repeated .impala.IMPAgeGateSettings.CountryAgeMinMapEntry countryAgeMinMap = 2;
+    message CountryAgeMinMapEntry {
+        string key = 1;
+        int32 value = 2;
+    }
+}
+
+message IMPAudienceGateSettings {
+    .impala.IMPAgeGateSettings ageGateSettings = 1;
+}
+
+message IMPAuthorizeActionsRequest {
+    string userId = 1;
+    string businessId = 2;
+    repeated string actionsArray = 3;
+}
+
+message IMPAuthorizeActionsResponse {
+    bool authorized = 1;
+}
+
+message IMPAuthorizeGlobalActionsRequest {
+    string userId = 1;
+    repeated string actionsArray = 2;
+}
+
+message IMPAuthorizeGlobalActionsResponse {
+    bool authorized = 1;
+}
+
+message IMPBackfillPublisherHostUserRequest {
+    string pageId = 1;
+    int32 limit = 2;
+    bool isDryRun = 3;
+}
+
+message IMPBackfillPublisherHostUserResponse {
+    string nextPage = 1;
+}
+
+message IMPBackfillPublisherProfileTypeRequest {
+    string pageId = 1;
+    int32 limit = 2;
+    bool isDryRun = 3;
+}
+
+message IMPBackfillPublisherProfileTypeResponse {
+    string nextPage = 1;
+}
+
+message IMPBatchBusinessSubscribeRequest {
+    string businessId = 1;
+    repeated string userIdsArray = 2;
+}
+
+message IMPBatchBusinessSubscribeResponse {
+}
+
+message IMPBatchDeleteRolesByRoleTypeRequest {
+    repeated .impala.IMPDeleteRoleByRoleTypeRequest rolesArray = 1;
+}
+
+message IMPBatchDeleteRolesByRoleTypeResponse {
+}
+
+message IMPBatchGetBusinessRequest {
+    repeated string businessProfileIdsArray = 1;
+    repeated string publisherIdsArray = 2;
+    .impala.IMPGetBusinessOptions getBusinessOptions = 3;
+}
+
+message IMPBatchGetBusinessResponse {
+    repeated .impala.IMPBusiness businessesArray = 1;
+}
+
+message IMPBatchGrantRolesRequest {
+    repeated .impala.IMPGrantRoleToUserRequest rolesArray = 1;
+}
+
+message IMPBatchGrantRolesResponse {
+}
+
+message IMPBoltMediaWithMLSMediaId {
+    .impala.IMPBusiness.IMPBusiness_BoltMedia boltMedia = 1;
+    string mlsMediaId = 2;
+}
+
+message IMPBusinessAccount {
+    string id_p = 1;
+    repeated string organizationIdsArray = 2000;
+}
+
+message IMPBusinessLogo {
+    string discoverFeedLogoURL = 1;
+    string megaProfileLogoURL = 2;
+    string manageProfileLogoURL = 3;
+    string originalLogoURL = 4;
+    bool isDefault = 100;
+}
+
+message IMPBusinessProfile {
+    string id_p = 1;
+    string title = 2;
+    string description_p = 3;
+    string logoURL = 4;
+    string phoneNumber = 5;
+    string address = 6;
+    string emailAddress = 7;
+    string profileDeeplinkURL = 8;
+    .serengeti.SGTILink profileLink = 9;
+    string websiteURL = 10;
+    string hostAccountUsername = 11;
+    int64 lastUpdateSequence = 12;
+    .impala.IMPAddress businessAddress = 13;
+    string category = 14;
+    string displayAddress = 15;
+    .serengeti.SGTILink managementLink = 16;
+    .serengeti.SGTILink settingsLink = 17;
+    .impala.IMPBusinessLogo businessLogo = 18;
+    string hostAccountVerifiedEmoji = 19;
+    string subtitle = 20;
+    string hostAccountUserId = 21;
+    repeated .impala.IMPContentIdentifier contentsArray = 22;
+    int64 initiallyDisplayedContentIndex = 23;
+    string subcategory = 24;
+    .impala.IMPShowDisplayInfo showInfo = 25;
+    .impala.IMPPublisherDisplayInfo publisherInfo = 26;
+    .impala.IMPDeeplinks deeplinks = 27;
+    bool isOfficialAccount = 28;
+    string hostAccountVerifiedEmojiSafe = 29;
+    string hostAccountVerifiedEmojiWithoutModifiers = 30;
+    string bitmojiAvatarId = 31;
+    repeated .impala.profile.IMPContentIdentifierV2 contentIdentifiersArray = 32;
+    .impala.IMPCommerceStoreInfo commerceStoreInfo = 33;
+    bool hasLenses = 34;
+    string heroImageURL = 35;
+    bool isLensCreator = 36;
+    bool hasHighlights = 37;
+    bool isBrandProfile = 38;
+    int64 createdTimestamp = 39;
+    .impala.IMPBusinessProfile.IMPBusinessProfile_InternalProfileCategory internalCategory = 40;
+    int64 subscriberCount = 41;
+    .impala.IMPBusinessProfile.IMPBusinessProfile_ModerationStatus moderationStatus = 42;
+    .impala.IMPBusinessProfile.IMPBusinessProfile_ProfileTier tier = 43;
+    string hostAccountMutableUsername = 44;
+    string mutableSubtitle = 45;
+    .impala.IMPBusinessProfile.IMPBusinessCategoryV3 categoryEnum = 47;
+    .impala.IMPBusinessProfile.IMPBusinessSubcategoryV3 subcategoryEnum = 48;
+    int32 heroImageHeight = 49;
+    int32 heroImageWidth = 50;
+    int32 heroImageVerticalPosition = 51;
+    string originalHeroImageURL = 52;
+    bool isSnapchatPlusSubscriber = 53;
+    string placeCollectionId = 54;
+    .impala.IMPBusinessProfile.IMPDeactivateReason deactivateReason = 56;
+    bool isPlaceholderProfile = 57;
+    string privateEmail = 100;
+    string privatePhoneNumber = 101;
+    bool isTestProfile = 200;
+    string organizationId = 300;
+    string accountId = 301;
+    enum IMPBusinessCategoryV3 {
+        IMPBusinessCategoryV3_CategoryV3Unknown = 0;
+        IMPBusinessCategoryV3_CategoryV3BusinessGroup = 1;
+        IMPBusinessCategoryV3_CategoryV3People = 2;
+        IMPBusinessCategoryV3_CategoryV3ProductBrand = 3;
+    }
+    enum IMPDeactivateReason {
+        IMPDeactivateReason_None = 0;
+        IMPDeactivateReason_TooYoungForPublicProfile = 1;
+    }
+    enum IMPBusinessProfile_InternalProfileCategory {
+        IMPBusinessProfile_InternalProfileCategory_Unknown = 0;
+        IMPBusinessProfile_InternalProfileCategory_Person = 1;
+        IMPBusinessProfile_InternalProfileCategory_Business = 2;
+        IMPBusinessProfile_InternalProfileCategory_Standard = 3;
+        IMPBusinessProfile_InternalProfileCategory_Publisher = 4;
+    }
+    enum IMPBusinessProfile_ModerationStatus {
+        IMPBusinessProfile_ModerationStatus_Normal = 0;
+        IMPBusinessProfile_ModerationStatus_Deactivated = 1;
+        IMPBusinessProfile_ModerationStatus_Frozen = 2;
+    }
+    enum IMPBusinessSubcategoryV3 {
+        IMPBusinessSubcategoryV3_SubcategoryV3Unknown = 0;
+        IMPBusinessSubcategoryV3_SubcategoryV3CharityCause = 100;
+        IMPBusinessSubcategoryV3_SubcategoryV3CollegeUniversity = 101;
+        IMPBusinessSubcategoryV3_SubcategoryV3CommunityOrg = 102;
+        IMPBusinessSubcategoryV3_SubcategoryV3CompanyEnterprise = 103;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOrg = 104;
+        IMPBusinessSubcategoryV3_SubcategoryV3InternetCompany = 105;
+        IMPBusinessSubcategoryV3_SubcategoryV3MediaNewsCompany = 106;
+        IMPBusinessSubcategoryV3_SubcategoryV3NonprofitOrg = 107;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalOrg = 108;
+        IMPBusinessSubcategoryV3_SubcategoryV3ReligiousOrg = 109;
+        IMPBusinessSubcategoryV3_SubcategoryV3RestaurantChain = 110;
+        IMPBusinessSubcategoryV3_SubcategoryV3RetailCompany = 111;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsLeague = 112;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsTeam = 113;
+        IMPBusinessSubcategoryV3_SubcategoryV3Business = 114;
+        IMPBusinessSubcategoryV3_SubcategoryV3Group = 115;
+        IMPBusinessSubcategoryV3_SubcategoryV3Actor = 200;
+        IMPBusinessSubcategoryV3_SubcategoryV3Artist = 201;
+        IMPBusinessSubcategoryV3_SubcategoryV3Athlete = 202;
+        IMPBusinessSubcategoryV3_SubcategoryV3Coach = 203;
+        IMPBusinessSubcategoryV3_SubcategoryV3Comedian = 204;
+        IMPBusinessSubcategoryV3_SubcategoryV3Dancer = 205;
+        IMPBusinessSubcategoryV3_SubcategoryV3Entrepreneur = 206;
+        IMPBusinessSubcategoryV3_SubcategoryV3FashionModel = 207;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmDirector = 208;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTvPersonality = 209;
+        IMPBusinessSubcategoryV3_SubcategoryV3FitnessPro = 210;
+        IMPBusinessSubcategoryV3_SubcategoryV3FoodPro = 211;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOfficial = 212;
+        IMPBusinessSubcategoryV3_SubcategoryV3Journalist = 213;
+        IMPBusinessSubcategoryV3_SubcategoryV3LifestyleInfluencer = 214;
+        IMPBusinessSubcategoryV3_SubcategoryV3MotivationalSpeaker = 215;
+        IMPBusinessSubcategoryV3_SubcategoryV3MovieCharacter = 216;
+        IMPBusinessSubcategoryV3_SubcategoryV3MusicianBand = 217;
+        IMPBusinessSubcategoryV3_SubcategoryV3NewsPersonality = 218;
+        IMPBusinessSubcategoryV3_SubcategoryV3Photographer = 219;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalCandidate = 220;
+        IMPBusinessSubcategoryV3_SubcategoryV3Politician = 221;
+        IMPBusinessSubcategoryV3_SubcategoryV3Producer = 222;
+        IMPBusinessSubcategoryV3_SubcategoryV3ProfessionalGamer = 223;
+        IMPBusinessSubcategoryV3_SubcategoryV3PublicFigure = 224;
+        IMPBusinessSubcategoryV3_SubcategoryV3Scientist = 225;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsPersonality = 226;
+        IMPBusinessSubcategoryV3_SubcategoryV3Traveler = 227;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGameCreator = 228;
+        IMPBusinessSubcategoryV3_SubcategoryV3VloggerBlogger = 229;
+        IMPBusinessSubcategoryV3_SubcategoryV3Writer = 230;
+        IMPBusinessSubcategoryV3_SubcategoryV3Creator = 231;
+        IMPBusinessSubcategoryV3_SubcategoryV3Person = 232;
+        IMPBusinessSubcategoryV3_SubcategoryV3LensCreator = 233;
+        IMPBusinessSubcategoryV3_SubcategoryV3ApparelFashion = 300;
+        IMPBusinessSubcategoryV3_SubcategoryV3Brand = 301;
+        IMPBusinessSubcategoryV3_SubcategoryV3Product = 302;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTv = 303;
+        IMPBusinessSubcategoryV3_SubcategoryV3HealthBeauty = 304;
+        IMPBusinessSubcategoryV3_SubcategoryV3Publisher = 305;
+        IMPBusinessSubcategoryV3_SubcategoryV3Service = 306;
+        IMPBusinessSubcategoryV3_SubcategoryV3Show = 307;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGame = 308;
+    }
+    enum IMPBusinessProfile_ProfileTier {
+        IMPBusinessProfile_ProfileTier_TierUnknown = 0;
+        IMPBusinessProfile_ProfileTier_TierStandard = 1;
+        IMPBusinessProfile_ProfileTier_TierPublic = 2;
+        IMPBusinessProfile_ProfileTier_TierPublicOfficial = 3;
+    }
+}
+
+message IMPBusinessProfileAndUserData {
+    .impala.IMPBusinessProfile businessProfile = 1;
+    bool isSubscribed = 2;
+    repeated string allowedActionsArray = 3;
+    repeated .impala.IMPPendingRoleInvite pendingRoleInvitesArray = 4;
+    .impala.IMPBusinessProfileUserData userData = 5;
+    .impala.stories.common.IMPBusinessStory story = 6;
+    .impala.IMPBusinessProfileFeatures businessProfileFeatures = 7;
+    .impala.IMPBusinessProfileSettings businessProfileSettings = 8;
+}
+
+message IMPBusinessProfileFeatures {
+    bool canEditTitle = 1;
+    bool canEditHighlights = 2;
+    bool canEditWebsite = 3;
+    bool canEditEmail = 4;
+    bool canAccessStoryReplies = 5;
+    bool canQuoteStoryReplies = 6;
+    bool canAccessGifting = 7;
+    bool canAccessActivityFeed = 8;
+    bool canUploadHeroImage = 9;
+}
+
+message IMPBusinessProfileSettings {
+    bool showStoryReplies = 1;
+    bool showSubscriberCount = 2;
+    bool showGifting = 3;
+    .impala.IMPTermsAndConditions giftingTerms = 4;
+    .impala.IMPMonetizationSettings monetizationSettings = 5;
+    .impala.IMPAudienceGateSettings audienceGateSettings = 6;
+}
+
+message IMPBusinessProfileUserData {
+    bool isSubscribed = 1;
+    repeated string allowedActionsArray = 2;
+    repeated .impala.IMPPendingRoleInvite pendingRoleInvitesArray = 3;
+    repeated .impala.IMPRole rolesArray = 4;
+    bool isHost = 5;
+    .impala.IMPBusinessUserSettings userSettings = 6;
+    .google.protobuf.StringValue badgeDisplay = 7;
+    .impala.IMPBusinessProfileUserData.IMPAudienceGateStatus audienceGateStatus = 8;
+    string audienceGateReason = 9;
+    enum IMPAudienceGateStatus {
+        IMPAudienceGateStatus_Unrestricted = 0;
+        IMPAudienceGateStatus_AgeGated = 1;
+    }
+}
+
+message IMPBusinessUserLink {
+    string userId = 1;
+    string businessId = 2;
+}
+
+message IMPBusinessUserSettings {
+    bool showStoryAttribution = 1;
+    .impala.IMPBusinessUserSettings.IMPBusinessUserSettings_NotificationSettings notificationSettings = 2;
+    int64 newestReadNotificationTimestamp = 3;
+    int32 profileManagementViewCount = 4;
+    int64 lastUserInteractedMs = 5;
+    message IMPBusinessUserSettings_NotificationSettings {
+        bool suppressStoryContributionPushNotifications = 1;
+    }
+}
+
+message IMPCheckProfileLinkedToPoliticalAdAccountRequest {
+    repeated string profileIdsArray = 1;
+    bool reloadPoliticalAdsProfiles = 2;
+}
+
+message IMPCheckProfileLinkedToPoliticalAdAccountResponse {
+    repeated .impala.IMPCheckProfileLinkedToPoliticalAdAccountResponse.ProfileIsLinkedResultsEntry profileIsLinkedResults = 1;
+    message ProfileIsLinkedResultsEntry {
+        string key = 1;
+        bool value = 2;
+    }
+}
+
+message IMPCheckUserEligibilityForPublicProfileCreationRequest {
+    repeated .impala.IMPCheckUserEligibilityForPublicProfileCreationRequest.IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo usersArray = 1;
+    message IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo {
+        string userId = 1;
+        .impala.IMPCheckUserEligibilityForPublicProfileCreationRequest.IMPCheckUserEligibilityForPublicProfileCreationRequest_UserEligibilityCheckInfo.IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType type = 2;
+        enum IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType {
+            IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType_FullCheck = 0;
+            IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType_AgeOnly = 1;
+            IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType_Promotion = 2;
+            IMPCheckUserEligibilityForPublicProfileCreationRequest_EligibilityCheckType_StandardTier = 3;
+        }
+    }
+}
+
+message IMPCheckUserEligibilityForPublicProfileCreationResponse {
+    repeated .impala.IMPCheckUserEligibilityForPublicProfileCreationResponse.IMPCheckUserEligibilityForPublicProfileCreationResponse_UserEligibilityCheckResult resultsArray = 1;
+    message IMPCheckUserEligibilityForPublicProfileCreationResponse_UserEligibilityCheckResult {
+        string userId = 1;
+        .impala.IMPCheckUserEligibilityForPublicProfileCreationResponse.IMPCheckUserEligibilityForPublicProfileCreationResponse_UserEligibilityCheckResult.IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult eligibilityResult = 2;
+        repeated string ineligibilityReasonsArray = 3;
+        enum IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult {
+            IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult_Unknown = 0;
+            IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult_Eligible = 1;
+            IMPCheckUserEligibilityForPublicProfileCreationResponse_EligibilityResult_Ineligible = 2;
+        }
+    }
+}
+
+message IMPClearProfileRequest {
+    string profileId = 1;
+}
+
+message IMPClearProfileResponse {
+}
+
+message IMPCollaboratorInviteCheckRequest {
+    string inviterUserId = 1;
+    string inviteeUserId = 2;
+}
+
+message IMPCollaboratorInviteCheckResponse {
+    bool areBidirectionalFriends = 1;
+    bool atLeastOneBlocked = 2;
+}
+
+message IMPCommerceStoreInfo {
+    string storeId = 1;
+    .impala.IMPCommerceStoreInfo.IMPStoreType storeType = 2;
+    string businessStoreId = 3;
+    .impala.IMPCommerceStoreInfo.IMPStoreVisibilityStatus storeVisibilityStatus = 4;
+    enum IMPStoreType {
+        IMPStoreType_LegacyShopifyStore = 0;
+        IMPStoreType_BusinessStore = 1;
+    }
+    enum IMPStoreVisibilityStatus {
+        IMPStoreVisibilityStatus_StoreVisibilityUnknown = 0;
+        IMPStoreVisibilityStatus_Visible = 1;
+        IMPStoreVisibilityStatus_Hidden = 2;
+    }
+}
+
+message IMPContentIdentifier {
+    .impala.IMPContentIdentifier.IMPContentType contentType = 1;
+    string contentId = 2;
+    enum IMPContentType {
+        IMPContentType_Moments = 0;
+        IMPContentType_Shows = 1;
+        IMPContentType_Discover = 2;
+    }
+}
+
+message IMPContentIdentifiersUpdate {
+    repeated .impala.IMPContentIdentifier contentIdsArray = 1;
+}
+
+message IMPContentShareRecord {
+    string grantingPublisherProfileId = 1;
+    string receivingPublisherProfileId = 2;
+}
+
+message IMPConvertUserInfo {
+}
+
+message IMPConvertUserRequest {
+    string userId = 1;
+    string businessAccountId = 2;
+    string converterUserId = 3;
+}
+
+message IMPConvertUserResponse {
+}
+
+message IMPCreateAccountRequest {
+    string callingUserId = 1;
+    string callingUserDisplayName = 2;
+    string callingUserEmail = 3;
+    string callingUserPhone = 4;
+    string lastModifiedByUserId = 5;
+    string businessCategory = 100;
+    string businessDisplayName = 101;
+    string businessEmail = 102;
+    string businessStreetAddress = 103;
+    string businessPhoneNumber = 104;
+    string businessWebsite = 105;
+    bytes businessLogo = 106;
+    string businessDescription = 107;
+    .impala.IMPAddress businessAddress = 108;
+    string businessSubcategory = 109;
+    bool isLensCreator = 110;
+    bool isOfficial = 112;
+    bool isBrandProfile = 113;
+    bool canEditHighlights = 114;
+    bool isPopular = 115;
+    bool canAccessStoryReplies = 116;
+    .impala.IMPCreateAccountRequest.IMPBusinessCategoryV3 businessCategoryEnum = 117;
+    .impala.IMPCreateAccountRequest.IMPBusinessSubcategoryV3 businessSubcategoryEnum = 118;
+    string existingOrganizationId = 200;
+    string organizationDisplayName = 201;
+    bool canAccessGifting = 202;
+    bytes heroImage = 203;
+    int32 heroImageVerticalPosition = 204;
+    bytes originalHeroImage = 205;
+    bool isStandard = 206;
+    bool createPublicProfile = 302;
+    bool isTestProfile = 400;
+    bool autoDelete = 401;
+    repeated .impala.IMPRoleSpecification initialRolesArray = 500;
+    .impala.IMPCreateUserInfo createUserInfo = 300;
+    .impala.IMPConvertUserInfo convertUserInfo = 301;
+    enum IMPBusinessCategoryV3 {
+        IMPBusinessCategoryV3_CategoryV3Unknown = 0;
+        IMPBusinessCategoryV3_CategoryV3BusinessGroup = 1;
+        IMPBusinessCategoryV3_CategoryV3People = 2;
+        IMPBusinessCategoryV3_CategoryV3ProductBrand = 3;
+    }
+    enum IMPBusinessSubcategoryV3 {
+        IMPBusinessSubcategoryV3_SubcategoryV3Unknown = 0;
+        IMPBusinessSubcategoryV3_SubcategoryV3CharityCause = 100;
+        IMPBusinessSubcategoryV3_SubcategoryV3CollegeUniversity = 101;
+        IMPBusinessSubcategoryV3_SubcategoryV3CommunityOrg = 102;
+        IMPBusinessSubcategoryV3_SubcategoryV3CompanyEnterprise = 103;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOrg = 104;
+        IMPBusinessSubcategoryV3_SubcategoryV3InternetCompany = 105;
+        IMPBusinessSubcategoryV3_SubcategoryV3MediaNewsCompany = 106;
+        IMPBusinessSubcategoryV3_SubcategoryV3NonprofitOrg = 107;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalOrg = 108;
+        IMPBusinessSubcategoryV3_SubcategoryV3ReligiousOrg = 109;
+        IMPBusinessSubcategoryV3_SubcategoryV3RestaurantChain = 110;
+        IMPBusinessSubcategoryV3_SubcategoryV3RetailCompany = 111;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsLeague = 112;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsTeam = 113;
+        IMPBusinessSubcategoryV3_SubcategoryV3Business = 114;
+        IMPBusinessSubcategoryV3_SubcategoryV3Group = 115;
+        IMPBusinessSubcategoryV3_SubcategoryV3Actor = 200;
+        IMPBusinessSubcategoryV3_SubcategoryV3Artist = 201;
+        IMPBusinessSubcategoryV3_SubcategoryV3Athlete = 202;
+        IMPBusinessSubcategoryV3_SubcategoryV3Coach = 203;
+        IMPBusinessSubcategoryV3_SubcategoryV3Comedian = 204;
+        IMPBusinessSubcategoryV3_SubcategoryV3Dancer = 205;
+        IMPBusinessSubcategoryV3_SubcategoryV3Entrepreneur = 206;
+        IMPBusinessSubcategoryV3_SubcategoryV3FashionModel = 207;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmDirector = 208;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTvPersonality = 209;
+        IMPBusinessSubcategoryV3_SubcategoryV3FitnessPro = 210;
+        IMPBusinessSubcategoryV3_SubcategoryV3FoodPro = 211;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOfficial = 212;
+        IMPBusinessSubcategoryV3_SubcategoryV3Journalist = 213;
+        IMPBusinessSubcategoryV3_SubcategoryV3LifestyleInfluencer = 214;
+        IMPBusinessSubcategoryV3_SubcategoryV3MotivationalSpeaker = 215;
+        IMPBusinessSubcategoryV3_SubcategoryV3MovieCharacter = 216;
+        IMPBusinessSubcategoryV3_SubcategoryV3MusicianBand = 217;
+        IMPBusinessSubcategoryV3_SubcategoryV3NewsPersonality = 218;
+        IMPBusinessSubcategoryV3_SubcategoryV3Photographer = 219;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalCandidate = 220;
+        IMPBusinessSubcategoryV3_SubcategoryV3Politician = 221;
+        IMPBusinessSubcategoryV3_SubcategoryV3Producer = 222;
+        IMPBusinessSubcategoryV3_SubcategoryV3ProfessionalGamer = 223;
+        IMPBusinessSubcategoryV3_SubcategoryV3PublicFigure = 224;
+        IMPBusinessSubcategoryV3_SubcategoryV3Scientist = 225;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsPersonality = 226;
+        IMPBusinessSubcategoryV3_SubcategoryV3Traveler = 227;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGameCreator = 228;
+        IMPBusinessSubcategoryV3_SubcategoryV3VloggerBlogger = 229;
+        IMPBusinessSubcategoryV3_SubcategoryV3Writer = 230;
+        IMPBusinessSubcategoryV3_SubcategoryV3Creator = 231;
+        IMPBusinessSubcategoryV3_SubcategoryV3Person = 232;
+        IMPBusinessSubcategoryV3_SubcategoryV3LensCreator = 233;
+        IMPBusinessSubcategoryV3_SubcategoryV3ApparelFashion = 300;
+        IMPBusinessSubcategoryV3_SubcategoryV3Brand = 301;
+        IMPBusinessSubcategoryV3_SubcategoryV3Product = 302;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTv = 303;
+        IMPBusinessSubcategoryV3_SubcategoryV3HealthBeauty = 304;
+        IMPBusinessSubcategoryV3_SubcategoryV3Publisher = 305;
+        IMPBusinessSubcategoryV3_SubcategoryV3Service = 306;
+        IMPBusinessSubcategoryV3_SubcategoryV3Show = 307;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGame = 308;
+    }
+}
+
+message IMPCreateAccountResponse {
+    string id_p = 1;
+}
+
+message IMPCreatePublisherAccountRequest {
+    .impala.IMPCreateAccountRequest createAccountRequest = 1;
+    bytes publisherMetadata = 2;
+    string publisherIconURL = 3;
+    int64 publisherId = 4;
+    string squareFilledIconMediaId = 5;
+}
+
+message IMPCreatePublisherAccountResponse {
+    .impala.IMPCreateAccountResponse createAccountResponse = 1;
+}
+
+message IMPCreateUserInfo {
+    string desiredUsername = 1;
+}
+
+message IMPDeactivateBusinessRequest {
+    string businessId = 1;
+    .impala.IMPDeactivateBusinessRequest.IMPDeactivateReason reason = 2;
+    enum IMPDeactivateReason {
+        IMPDeactivateReason_None = 0;
+        IMPDeactivateReason_TooYoungForPublicProfile = 1;
+    }
+}
+
+message IMPDeactivateBusinessResponse {
+}
+
+message IMPDeeplinks {
+    string snapcodeWebURL = 1;
+}
+
+message IMPDeleteOrgRoleByRoleTypeRequest {
+    string profileId = 1;
+    string userId = 2;
+    string roleType = 3;
+    string email = 4;
+}
+
+message IMPDeleteOrgRoleByRoleTypeResponse {
+}
+
+message IMPDeleteProfileRequest {
+    string id_p = 1;
+}
+
+message IMPDeleteProfileResponse {
+}
+
+message IMPDeleteRoleByRoleTypeRequest {
+    string profileId = 1;
+    string userId = 2;
+    string roleType = 3;
+}
+
+message IMPDeleteRoleByRoleTypeResponse {
+}
+
+message IMPDeleteRoleInviteRequest {
+    string businessId = 1;
+    string inviteeUserId = 2;
+}
+
+message IMPDeleteRoleInviteResponse {
+}
+
+message IMPDeleteRoleRequest {
+    string businessId = 1;
+    string userId = 2;
+    string roleId = 3;
+}
+
+message IMPDeleteRoleResponse {
+}
+
+message IMPDeleteStoryMediaRequest {
+    repeated string mediaIdsArray = 1;
+}
+
+message IMPDeleteStoryMediaResponse {
+}
+
+message IMPExportSnapProUserIdsRequest {
+}
+
+message IMPGetBusinessAccountRequest {
+    string id_p = 1;
+}
+
+message IMPGetBusinessAccountResponse {
+    .impala.IMPBusinessAccount account = 1;
+}
+
+message IMPGetBusinessOptions {
+    bool includeDeactivatedProfile = 1;
+}
+
+message IMPGetBusinessProfileRequest {
+    string id_p = 1;
+    string publisherId = 2;
+    bool includeGatedProfiles = 3;
+}
+
+message IMPGetBusinessProfileResponse {
+    .impala.IMPBusinessProfileAndUserData profile = 1;
+}
+
+message IMPGetBusinessProfilesRequest {
+    repeated string profileIdsArray = 1;
+    repeated string publisherIdsArray = 2;
+    bool includeGatedProfiles = 3;
+    bool includeAudienceGateSettings = 4;
+}
+
+message IMPGetBusinessProfilesResponse {
+    repeated .impala.IMPGetBusinessProfilesResponse.ProfilesByProfileIdEntry profilesByProfileId = 1;
+    repeated .impala.IMPGetBusinessProfilesResponse.ProfilesByPublisherIdEntry profilesByPublisherId = 2;
+    message ProfilesByProfileIdEntry {
+        string key = 1;
+        .impala.IMPBusinessProfileAndUserData value = 2;
+    }
+    message ProfilesByPublisherIdEntry {
+        string key = 1;
+        .impala.IMPBusinessProfileAndUserData value = 2;
+    }
+}
+
+message IMPGetBusinessRequest {
+    string businessProfileId = 1;
+    string publisherId = 2;
+    .impala.IMPGetBusinessOptions getBusinessOptions = 3;
+}
+
+message IMPGetBusinessResponse {
+    .impala.IMPBusiness business = 1;
+}
+
+message IMPGetBusinessUserLinksByBusinessRequest {
+    repeated string businessIdArray = 1;
+}
+
+message IMPGetBusinessUserLinksByBusinessResponse {
+    repeated .impala.IMPGetBusinessUserLinksByBusinessResponse.LinksEntry links = 1;
+    message LinksEntry {
+        string key = 1;
+        .impala.IMPBusinessUserLink value = 2;
+    }
+}
+
+message IMPGetBusinessUserLinksRequest {
+    repeated string userIdArray = 1;
+}
+
+message IMPGetBusinessUserLinksResponse {
+    repeated .impala.IMPGetBusinessUserLinksResponse.LinksEntry links = 1;
+    message LinksEntry {
+        string key = 1;
+        .impala.IMPBusinessUserLink value = 2;
+    }
+}
+
+message IMPGetContentShareRecordsForPublisherRequest {
+    string grantingPublisherProfileId = 1;
+}
+
+message IMPGetContentShareRecordsForPublisherResponse {
+    repeated .impala.IMPContentShareRecord recordsArray = 1;
+}
+
+message IMPGetFollowersInRangeRequest {
+    string userId = 1;
+    int32 start = 2;
+    int32 end = 3;
+}
+
+message IMPGetFollowersInRangeResponse {
+    repeated .impala.IMPUserFollower followersArray = 1;
+}
+
+message IMPGetGhostIdsRequest {
+    repeated string userIdsArray = 1;
+}
+
+message IMPGetGhostIdsResponse {
+    repeated .impala.IMPGetGhostIdsResponse.GhostIdsEntry ghostIds = 1;
+    message GhostIdsEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message IMPGetInventoryItemsByProfileIdRequest {
+    string organizationId = 1;
+    string businessProfileId = 2;
+}
+
+message IMPGetInventoryItemsByProfileIdResponse {
+    repeated .impala.adsapi.IMPAdsAdsInventoryItemSubResponse inventoryItemsArray = 1;
+}
+
+message IMPGetManagedProfileCalloutsRequest {
+    repeated string idArray = 1;
+}
+
+message IMPGetManagedProfileCalloutsResponse {
+    repeated .impala.IMPManagedProfileCallouts calloutsArray = 1;
+}
+
+message IMPGetOfficialUserCollaboratorsRequest {
+    string userId = 1;
+}
+
+message IMPGetOfficialUserCollaboratorsResponse {
+    repeated .impala.IMPOfficialUserCollaborator usersArray = 1;
+}
+
+message IMPGetPublisherOrganizationListRequest {
+    string pageId = 1;
+}
+
+message IMPGetPublisherOrganizationListResponse {
+    repeated .impala.IMPPublisherOrganization publisherOrganizationsArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPGetPublisherOrganizationsRequest {
+    repeated string organizationIdsArray = 1;
+}
+
+message IMPGetPublisherOrganizationsResponse {
+    repeated .impala.IMPPublisherOrganization publisherOrganizationsArray = 1;
+}
+
+message IMPGetSubscriberCountBatchRequest {
+    repeated .impala.IMPGetSubscriberCountRequest requestsArray = 1;
+}
+
+message IMPGetSubscriberCountBatchResponse {
+    repeated .impala.IMPGetSubscriberCountResponse responsesArray = 1;
+}
+
+message IMPGetSubscriberCountRequest {
+    string profileId = 1;
+    int64 when = 2;
+    .impala.IMPGetSubscriberCountRequest.IMPGetSubscriberCountRequest_CountSourceType sourceType = 3;
+    enum IMPGetSubscriberCountRequest_CountSourceType {
+        IMPGetSubscriberCountRequest_CountSourceType_SnapPro = 0;
+        IMPGetSubscriberCountRequest_CountSourceType_Atlas = 1;
+    }
+}
+
+message IMPGetSubscriberCountResponse {
+    string profileId = 1;
+    int64 when = 2;
+    int64 count = 3;
+}
+
+message IMPGetSubscriberInfoRequest {
+    repeated string userIdsArray = 1;
+}
+
+message IMPGetSubscriberInfoResponse {
+    repeated .impala.IMPSubscriberInfo subscriberInfosArray = 1;
+}
+
+message IMPGetSubscriptionStatusesRequest {
+    repeated string businessProfileIdsArray = 1;
+    repeated .impala.IMPSubscriptionQueryId identifiersArray = 2;
+}
+
+message IMPGetSubscriptionStatusesResponse {
+    repeated .impala.IMPGetSubscriptionStatusesResponse.SubscriptionStatusesEntry subscriptionStatuses = 1;
+    message SubscriptionStatusesEntry {
+        string key = 1;
+        bool value = 2;
+    }
+}
+
+message IMPGetUserEmployeeStatusRequest {
+    string userId = 1;
+}
+
+message IMPGetUserEmployeeStatusResponse {
+    bool isEmployee = 1;
+}
+
+message IMPGetUserSettingsRequest {
+}
+
+message IMPGetUserSettingsResponse {
+    .impala.IMPUserSettings settings = 1;
+}
+
+message IMPGrantRoleToUserRequest {
+    string businessId = 1;
+    string receivingUserId = 2;
+    string roleType = 6;
+    .impala.IMPRoleSpecification role = 7;
+}
+
+message IMPGrantRoleToUserResponse {
+}
+
+message IMPHasPendingRoleInvitesRequest {
+}
+
+message IMPHasPendingRoleInvitesResponse {
+    bool hasPendingInvites = 1;
+}
+
+message IMPHostAccountInfo {
+    string userId = 1;
+    string username = 2;
+    string verifiedUserEmoji = 3;
+    string displayName = 4;
+    bool isVerified = 5;
+    repeated .impala.IMPOfficialUserCollaborator collaboratorsArray = 6;
+    string bitmojiAvatarId = 7;
+    int64 userFollowerCount = 8;
+    repeated string blockedUserIdsArray = 9;
+}
+
+message IMPImpalaHostAccountInfoRequest {
+    string userId = 1;
+    string username = 2;
+    repeated string userIdsArray = 3;
+    repeated string usernamesArray = 4;
+}
+
+message IMPImpalaHostAccountInfoResponse {
+    string username = 1;
+    string verifiedUserEmoji = 2;
+    string displayName = 3;
+    bool isVerified = 4;
+    repeated .impala.IMPOfficialUserCollaborator collaboratorsArray = 5;
+    string bitmojiAvatarId = 6;
+    int64 userFollowerCount = 7;
+    string userId = 8;
+    repeated string blockedUserIdsArray = 9;
+    repeated .impala.IMPHostAccountInfo infosArray = 10;
+}
+
+message IMPIncrementFriendLinkVersionForHostUserRequest {
+    string userId = 1;
+    string businessId = 2;
+}
+
+message IMPIncrementFriendLinkVersionForHostUserResponse {
+}
+
+message IMPIncrementSubscriberCountRequest {
+    string profileId = 1;
+    int64 delta = 2;
+    int64 windowTimestamp = 3;
+}
+
+message IMPIncrementSubscriberCountResponse {
+}
+
+message IMPInternalBusinessId {
+    string profileId = 1;
+    string hostAccountUserId = 2;
+    string businessAccountId = 3;
+    int64 publisherId = 4;
+}
+
+message IMPInternalBusinessProfile {
+    .impala.IMPBusinessProfile profile = 1;
+    .impala.IMPInternalBusinessProfileMetadata internalMetadata = 2;
+    .impala.portfolio.IMPPortfolios portfolios = 3;
+}
+
+message IMPInternalBusinessProfileMetadata {
+    int64 subscriberShardCount = 1;
+    bytes publisherMetadata = 2;
+    string publisherIconURL = 3;
+    string squareFilledIconMediaId = 4;
+    string inventoryItemId = 5;
+    .impala.IMPBoltMediaWithMLSMediaId squareFilledIconMedia = 6;
+    .impala.IMPBoltMediaWithMLSMediaId heroImageMedia = 7;
+}
+
+message IMPInternalCreatePublisherRequest {
+    .snapchat.discover.PartialPublisherMetadata partialPublisherMetadata = 1;
+    string hostUserId = 2;
+    string existingOrganizationId = 3;
+    string organizationDisplayName = 4;
+    string lastModifiedByUserId = 5;
+}
+
+message IMPInternalCreatePublisherResponse {
+    .impala.IMPCreateAccountResponse createAccountResponse = 1;
+}
+
+message IMPInternalCreatePublisherWithoutUserRequest {
+    .snapchat.discover.PartialPublisherMetadata partialPublisherMetadata = 1;
+    string existingOrganizationId = 2;
+    string organizationDisplayName = 3;
+    string lastModifiedByUserId = 4;
+}
+
+message IMPInternalCreatePublisherWithoutUserResponse {
+    .impala.IMPCreateAccountResponse createAccountResponse = 1;
+}
+
+message IMPInternalGetActiveBusinessProfilesRequest {
+    repeated string idsArray = 1;
+}
+
+message IMPInternalGetActiveBusinessProfilesResponse {
+    repeated .impala.IMPBusinessProfile profilesArray = 1;
+}
+
+message IMPInternalGetBusinessProfileOptions {
+    bool includeProfilesWithRejectedModerationResults = 1;
+    bool includeDeactivatedProfiles = 2;
+}
+
+message IMPInternalGetBusinessProfileRequest {
+    string id_p = 1;
+    .impala.IMPInternalBusinessId internalId = 2;
+    bool includePortfolios = 3;
+    bool includeProfilesWithSoftDeletedHostUser = 4;
+    .impala.IMPInternalGetBusinessProfileOptions options = 5;
+}
+
+message IMPInternalGetBusinessProfileResponse {
+    .impala.IMPBusinessProfile profile = 1;
+    .impala.IMPInternalBusinessProfileMetadata internalMetadata = 2;
+    .impala.IMPInternalBusinessProfile internalProfile = 3;
+}
+
+message IMPInternalGetBusinessProfilesRequest {
+    repeated string idsArray = 1;
+    repeated .impala.IMPInternalBusinessId internalIdsArray = 2;
+    bool includePortfolios = 3;
+    bool includeProfilesWithSoftDeletedHostUser = 4;
+}
+
+message IMPInternalGetBusinessProfilesResponse {
+    repeated .impala.IMPInternalBusinessProfile internalProfilesArray = 1;
+}
+
+message IMPInternalGetBusinessUserSettingsRequest {
+    string businessId = 1;
+    string userId = 2;
+}
+
+message IMPInternalGetBusinessUserSettingsResponse {
+    .impala.IMPBusinessUserSettings userSettings = 1;
+}
+
+message IMPInternalGetPublisherBusinessListRequest {
+    string pageId = 1;
+    bool includeDisabled = 2;
+}
+
+message IMPInternalGetPublisherBusinessListResponse {
+    repeated .impala.IMPBusiness businessesArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPInternalGetPublisherProfileListRequest {
+    string pageId = 1;
+    bool includeDisabled = 2;
+    bool includeProfilesWithSoftDeletedHostUser = 3;
+}
+
+message IMPInternalGetPublisherProfileListResponse {
+    repeated .impala.IMPInternalBusinessProfile profilesArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPInternalListManagedBusinessProfilesRequest {
+    string pageId = 1;
+    string userId = 2;
+    bool suppressSubscriptionQuery = 3;
+    bool loadStories = 4;
+    bool includePublishers = 5;
+    bool includeUserSettings = 6;
+    bool includeRejectedProfiles = 7;
+}
+
+message IMPInternalListRolesForBusinessRequest {
+    string userId = 1;
+    .impala.IMPListRolesForBusinessRequest request = 2;
+}
+
+message IMPInternalListRolesForBusinessResponse {
+    .impala.IMPListRolesForBusinessResponse response = 1;
+}
+
+message IMPInternalQueryAvailableResourcesRequest {
+    string snapUserId = 1;
+    .impala.IMPInternalQueryAvailableResourcesRequest.IMPResourceType resourceType = 2;
+    enum IMPResourceType {
+        IMPResourceType_Store = 0;
+        IMPResourceType_Profile = 1;
+    }
+}
+
+message IMPInternalQueryAvailableResourcesResponse {
+    repeated string resourceIdsArray = 1;
+}
+
+message IMPInternalShareStoreToProfileRequest {
+    string storeId = 1;
+    repeated string profileIdsArray = 2;
+    string principalName = 3;
+    .impala.IMPInternalShareStoreToProfileRequest.IMPStoreVisibilityStatus storeVisibilityStatus = 4;
+    enum IMPStoreVisibilityStatus {
+        IMPStoreVisibilityStatus_StoreVisibilityUnknown = 0;
+        IMPStoreVisibilityStatus_Visible = 1;
+        IMPStoreVisibilityStatus_Hidden = 2;
+    }
+}
+
+message IMPInternalShareStoreToProfileResponse {
+}
+
+message IMPInternalUnshareStoreToProfileRequest {
+    string storeId = 1;
+    repeated string profileIdsArray = 2;
+    string principalName = 3;
+}
+
+message IMPInternalUnshareStoreToProfileResponse {
+}
+
+message IMPInternalUpdateAttachmentToolV2Request {
+    repeated string snapUserIdsArray = 1;
+}
+
+message IMPInternalUpdateAttachmentToolV2Response {
+}
+
+message IMPInternalUpdateBusinessProfileRequest {
+    string id_p = 1;
+    .impala.IMPUpdateInt subscriberCount = 2;
+    .impala.IMPUpdateInt subscriberShardCount = 3;
+    .impala.IMPUpdateBytes publisherMetadata = 4;
+    .impala.IMPUpdateBusinessProfileRequest updateBusinessProfile = 5;
+    .impala.IMPContentIdentifiersUpdate contentIdentifiersUpdate = 6;
+    .impala.IMPUpdateInt initiallyDisplayedContentIndex = 7;
+    .impala.IMPShowDisplayInfo showDisplayInfo = 8;
+    .impala.IMPUpdateString publisherIconURL = 9;
+    .impala.IMPDeeplinks deeplinks = 10;
+    .impala.IMPUpdateString verifiedUserEmoji = 11;
+    .impala.IMPUpdateBool isOfficial = 12;
+    .impala.profile.IMPContentIdentifiersUpdateV2 contentsUpdate = 13;
+    .impala.IMPCommerceStoreInfo commerceStoreInfo = 15;
+    .impala.IMPUpdateBool canEditHighlights = 16;
+    .impala.IMPUpdateBool isLensCreator = 17;
+    .impala.IMPUpdateBool isBrandProfile = 18;
+    int64 publisherId = 19;
+    .impala.IMPUpdateString squareFilledIconMediaId = 20;
+    .impala.IMPUpdateInternalProfileCategory internalCategory = 21;
+    .impala.IMPUpdateProfileTier tier = 22;
+    .impala.IMPUpdateString organizationId = 23;
+    .snapchat.discover.PartialPublisherMetadata partialPublisherMetadata = 24;
+    .impala.IMPUpdateString lastModifiedByUserId = 25;
+    .impala.IMPUpdateBool canAccessStoryReplies = 26;
+    .impala.IMPUpdateBool canAccessGifting = 27;
+    .impala.IMPTermsAndConditions giftingTerms = 28;
+    int64 expectedVersion = 100;
+    bool skipStoreSubscriptionCount = 101;
+}
+
+message IMPInternalUpdateBusinessProfileResponse {
+    .impala.IMPInternalBusinessProfile profile = 1;
+}
+
+message IMPInternalValidateShareStoreToProfileRequest {
+    string storeOrganizationId = 1;
+    repeated string profileIdsArray = 2;
+    string principalName = 3;
+}
+
+message IMPInternalValidateShareStoreToProfileResponse {
+}
+
+message IMPInternalValidateUnshareStoreToProfileRequest {
+    string storeId = 1;
+    repeated string profileIdsArray = 2;
+    string principalName = 3;
+    .impala.IMPInternalValidateUnshareStoreToProfileRequest.IMPStoreVisibilityStatus storeVisibilityStatus = 4;
+    enum IMPStoreVisibilityStatus {
+        IMPStoreVisibilityStatus_StoreVisibilityUnknown = 0;
+        IMPStoreVisibilityStatus_Visible = 1;
+        IMPStoreVisibilityStatus_Hidden = 2;
+    }
+}
+
+message IMPInternalValidateUnshareStoreToProfileResponse {
+}
+
+message IMPInvalidateSnapCacheItemRequest {
+    string tableName = 1;
+    string cachePrefix = 2;
+    string key = 3;
+}
+
+message IMPInvalidateSnapCacheItemResponse {
+}
+
+message IMPInviteUserToRoleRequest {
+    string businessId = 1;
+    string receivingUserId = 2;
+    string invitingUserId = 5;
+    string roleType = 6;
+    string receivingUserName = 7;
+}
+
+message IMPInviteUserToRoleResponse {
+    bool autoApproved = 1;
+    bool roleAlreadyExists = 2;
+}
+
+message IMPListAllUsersWithProfileRolesRequest {
+    string pageId = 1;
+    int64 segment = 2;
+    int64 totalSegments = 3;
+}
+
+message IMPListAllUsersWithProfileRolesResponse {
+    repeated string userIdsArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPListAuthorizedActionsForBusinessRequest {
+    string userId = 1;
+    string businessId = 2;
+}
+
+message IMPListAuthorizedActionsForBusinessResponse {
+    repeated string authorizedActionsArray = 1;
+}
+
+message IMPListGlobalAuthorizedActionsRequest {
+    string userId = 1;
+}
+
+message IMPListGlobalAuthorizedActionsResponse {
+    repeated string authorizedActionsArray = 1;
+}
+
+message IMPListGlobalRolesRequest {
+    string pageId = 1;
+}
+
+message IMPListGlobalRolesResponse {
+    repeated .impala.IMPRole rolesArray = 1;
+    string nextPageId = 2;
+}
+
+message IMPListManagedBusinessProfilesRequest {
+    string pageId = 2;
+}
+
+message IMPListManagedBusinessProfilesResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.IMPBusinessProfileAndUserData profilesArray = 3;
+    .impala.IMPUserSettings userSettings = 4;
+    bool isPopular = 5;
+    bool profileCreationEligible = 6;
+    bool alwaysShowSpotlightSendToProfile = 7;
+    bool publicProfileCreationEligible = 8;
+}
+
+message IMPListPendingRoleInvitesForBusinessRequest {
+    string businessId = 1;
+    string pageId = 2;
+}
+
+message IMPListPendingRoleInvitesForBusinessResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.IMPPendingRoleInvite invitesArray = 3;
+}
+
+message IMPListPendingRoleInvitesForUserRequest {
+    string pageId = 1;
+}
+
+message IMPListPendingRoleInvitesForUserResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.IMPBusinessProfileAndUserData pendingProfilesArray = 3;
+}
+
+message IMPListRolesForBusinessRequest {
+    string businessId = 1;
+    string pageId = 2;
+    bool ignoreDisplayInfo = 3;
+}
+
+message IMPListRolesForBusinessResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.IMPRole rolesArray = 3;
+    repeated .impala.IMPRole orgRolesArray = 4;
+}
+
+message IMPListRolesForUserRequest {
+    string pageId = 1;
+    bool includePublishers = 2;
+}
+
+message IMPListRolesForUserResponse {
+    string nextPageId = 1;
+    repeated .impala.IMPRolesForUserForBusiness rolesForBusinessesArray = 2;
+}
+
+message IMPListSubscribedBusinessProfilesRequest {
+    string pageId = 1;
+}
+
+message IMPListSubscribedBusinessProfilesResponse {
+    string pageId = 1;
+    string nextPageId = 2;
+    repeated .impala.IMPBusinessProfileAndUserData profilesArray = 3;
+}
+
+message IMPManagedProfileCallouts {
+    int32 manageRolesNuxHintViewCount = 1;
+    .google.protobuf.Int32Value subscribersTodayCount = 2;
+    .google.protobuf.Int32Value viewsTodayCount = 3;
+    .google.protobuf.Int32Value snapsPostedWeekCount = 4;
+}
+
+message IMPMigrateFollowersInRange {
+    string businessId = 1;
+    .impala.IMPGetFollowersInRangeRequest rangeRequest = 2;
+    string userId = 3;
+}
+
+message IMPMonetizationSetting {
+    .impala.IMPMonetizationSetting.IMPConfiguredStatus configuredStatus = 1;
+    .impala.IMPTermsAndConditions monetizationTerms = 2;
+    .impala.IMPMonetizationSetting.IMPMonetizationPayoutType payoutType = 3;
+    .impala.IMPMonetizationSetting.IMPAccessAdsStatus accessAdsStats = 4;
+    .impala.IMPMonetizationSetting.IMPProfileMonetizedStatus profileMonetizedStatus = 5;
+    .impala.IMPMonetizationSetting.IMPPayoutStatus payoutStatus = 6;
+    .impala.IMPMonetizationSetting.IMPReviewStatus reviewStatus = 7;
+    enum IMPAccessAdsStatus {
+        IMPAccessAdsStatus_AccessAdsStatusUnknown = 0;
+        IMPAccessAdsStatus_AccessAdsStatusEnabled = 1;
+        IMPAccessAdsStatus_AccessAdsStatusDisabled = 2;
+    }
+    enum IMPConfiguredStatus {
+        IMPConfiguredStatus_ConfiguredStatusUnknow = 0;
+        IMPConfiguredStatus_ConfiguredStatusActive = 1;
+        IMPConfiguredStatus_ConfiguredStatusDisabled = 2;
+    }
+    enum IMPPayoutStatus {
+        IMPPayoutStatus_PayoutStatusUnset = 0;
+        IMPPayoutStatus_PayoutStatusUnverified = 1;
+        IMPPayoutStatus_PayoutStatusPending = 2;
+        IMPPayoutStatus_PayoutStatusVerified = 3;
+        IMPPayoutStatus_PayoutStatusRejected = 4;
+        IMPPayoutStatus_PayoutStatusBanned = 5;
+    }
+    enum IMPMonetizationPayoutType {
+        IMPMonetizationPayoutType_MonetizationPayoutTypeUnknown = 0;
+        IMPMonetizationPayoutType_MonetizationPayoutTypeRevenueShare = 1;
+        IMPMonetizationPayoutType_MonetizationPayoutTypeFixed = 2;
+    }
+    enum IMPProfileMonetizedStatus {
+        IMPProfileMonetizedStatus_ProfileMonetizedStatusUnknown = 0;
+        IMPProfileMonetizedStatus_ProfileMonetizedStatusApproved = 1;
+        IMPProfileMonetizedStatus_ProfileMonetizedStatusRejected = 2;
+    }
+    enum IMPReviewStatus {
+        IMPReviewStatus_Unset = 0;
+        IMPReviewStatus_Pending = 1;
+        IMPReviewStatus_Approved = 2;
+        IMPReviewStatus_RestrictedDistribution = 3;
+        IMPReviewStatus_Rejected = 4;
+    }
+}
+
+message IMPMonetizationSettings {
+    .impala.IMPMonetizationSetting publicStoriesMonetizationSettings = 1;
+}
+
+message IMPMoveBusinessProfileRequest {
+    int64 publisherId = 1;
+    string businessProfileId = 2;
+    string existingOrganizationId = 3;
+    string newOrganizationName = 4;
+}
+
+message IMPMoveBusinessProfileResponse {
+    string previousOrganizationId = 1;
+    string previousBusinessAccountId = 2;
+    string organizationId = 3;
+    string businessAccountId = 4;
+}
+
+message IMPOfficialUserCollaborator {
+    .impala.IMPUserDisplayInfo displayInfo = 1;
+    int32 permissionBitmask = 2;
+}
+
+message IMPPendingRoleInvite {
+    string businessId = 1;
+    string invitingUserId = 2;
+    string invitingUsername = 3;
+    string invitingDisplayName = 4;
+    string roleType = 5;
+    .impala.IMPPendingRoleInvite.IMPPendingRoleInvite_Status status = 6;
+    string invitedUserId = 7;
+    string invitedUsername = 8;
+    string invitedUserDisplayName = 9;
+    enum IMPPendingRoleInvite_Status {
+        IMPPendingRoleInvite_Status_Unknown = 0;
+        IMPPendingRoleInvite_Status_Pending = 1;
+        IMPPendingRoleInvite_Status_Accepted = 2;
+    }
+}
+
+message IMPPublisherDisplayInfo {
+    string backgroundImageURL = 1;
+    string horizontalLogoURL = 2;
+    bool horizontalLogoHidden = 3;
+    string primaryColor = 4;
+    .impala.IMPPublisherDisplayInfo.IMPPublisherLogoPlacement logoPlacement = 5;
+    string publisherId = 6;
+    string backgroundImageBitmojiTemplateId = 7;
+    bool isBreakingNewsEnabled = 8;
+    bool isNewProfile = 9;
+    int64 subscriberCount = 10;
+    bool hideSubscriberCountBanner = 11;
+    string publisherNameId = 12;
+    enum IMPPublisherLogoPlacement {
+        IMPPublisherLogoPlacement_LogoBottom = 0;
+        IMPPublisherLogoPlacement_LogoOff = 1;
+    }
+}
+
+message IMPPublisherOrganization {
+    string profileId = 1;
+    string organizationId = 2;
+    string organizationDisplayName = 3;
+}
+
+message IMPPushNotificationData {
+    string businessId = 1;
+    .serengeti.SGTILink serengetiLink = 2;
+    int64 timestampMs = 3;
+}
+
+message IMPRemoveContentShareRecordRequest {
+    string grantingPublisherProfileId = 1;
+    string receivingPublisherProfileId = 2;
+}
+
+message IMPRemoveContentShareRecordResponse {
+}
+
+message IMPRemoveSelfFromBusinessRequest {
+    string businessId = 1;
+}
+
+message IMPRemoveSelfFromBusinessResponse {
+}
+
+message IMPReportBusinessProfileRequest {
+    string businessId = 1;
+    string reason = 2;
+}
+
+message IMPReportBusinessProfileResponse {
+}
+
+message IMPRole {
+    string roleId = 1;
+    string userId = 2;
+    string roleType = 3;
+    string userDisplayName = 4;
+    string userUsername = 5;
+    string email = 6;
+    string userDisplayNameOverride = 7;
+    string virtualSourceProfileId = 8;
+    int64 createdAt = 9;
+}
+
+message IMPRoleSpecification {
+    string receivingUserId = 2;
+    string roleType = 6;
+    string displayNameOverride = 7;
+    string email = 8;
+}
+
+message IMPRolesForUserForBusiness {
+    string profileId = 1;
+    repeated .impala.IMPRole rolesArray = 2;
+    repeated .impala.IMPRole orgRolesArray = 3;
+}
+
+message IMPSearchBusinessProfileResult {
+    .impala.IMPBusinessProfileAndUserData profile = 1;
+    .impala.stories.common.IMPBusinessStory story = 2;
+}
+
+message IMPSearchBusinessProfilesRequest {
+    string businessName = 1;
+    int32 limit = 2;
+}
+
+message IMPSearchBusinessProfilesResponse {
+    repeated .impala.IMPBusinessProfileAndUserData businessProfilesArray = 1;
+    repeated .impala.IMPSearchBusinessProfileResult resultsArray = 2;
+}
+
+message IMPSearchPublisherProfilesRequest {
+    string searchTerm = 1;
+}
+
+message IMPSearchPublisherProfilesResponse {
+    repeated .impala.IMPSearchPublisherProfilesResponse.IMPSearchPublisherProfilesResponse_SearchRecord searchRecordsArray = 1;
+    message IMPSearchPublisherProfilesResponse_SearchRecord {
+        string businessId = 1;
+        int64 publisherId = 2;
+        string businessName = 3;
+    }
+}
+
+message IMPSendPushNotificationRequest {
+    .impala.IMPSendPushNotificationRequest.IMPPushNotificationType type = 1;
+    string recipientUserId = 2;
+    string senderUserId = 3;
+    .impala.IMPPushNotificationData clientData = 4;
+    string businessTitle = 5;
+    string roleType = 6;
+    string milestoneMessageType = 7;
+    string inviterUserId = 8;
+    enum IMPPushNotificationType {
+        IMPPushNotificationType_ImpalaPushNotificationTypeUnknown = 0;
+        IMPPushNotificationType_ImpalaPushNotificationTypePendingInvite = 1;
+        IMPPushNotificationType_ImpalaPushNotificationTypeAddedAsMember = 2;
+        IMPPushNotificationType_ImpalaPushNotificationTypeInviteAccepted = 3;
+        IMPPushNotificationType_ImpalaPushNotificationTypeStoryContribution = 4;
+        IMPPushNotificationType_ImpalaPushNotificationTypeProfileUpdated = 5;
+        IMPPushNotificationType_ImpalaPushNotificationTypeRoleUpdated = 6;
+        IMPPushNotificationType_ImpalaPushNotificationTypeStoryMilestone = 7;
+        IMPPushNotificationType_ImpalaPushNotificationTypeStoryDeleted = 8;
+        IMPPushNotificationType_ImpalaPushNotificationTypeRoleRemoved = 9;
+    }
+}
+
+message IMPSendPushNotificationResponse {
+    bool success = 1;
+}
+
+message IMPSetBusinessProfileRequest {
+    .impala.IMPBusinessProfile profile = 1;
+    bytes logo = 2;
+}
+
+message IMPSetBusinessProfileResponse {
+}
+
+message IMPSetProfileFrozenStatusRequest {
+    string profileId = 1;
+    bool setFrozen = 2;
+}
+
+message IMPSetProfileFrozenStatusResponse {
+}
+
+message IMPSetStoryPrivacyToFriendsRequest {
+    string userId = 1;
+}
+
+message IMPSetStoryPrivacyToFriendsResponse {
+    bool wasUpdated = 1;
+    string previousSetting = 2;
+}
+
+message IMPSetTestProfileFieldRequest {
+    string id_p = 1;
+    bool isTestProfile = 2;
+}
+
+message IMPSetTestProfileFieldResponse {
+}
+
+message IMPSharedBusinessProfile {
+    .impala.IMPBusinessProfile businessProfile = 1;
+}
+
+message IMPSharedBusinessProfileSnap {
+    .impala.IMPBusinessProfile businessProfile = 1;
+    string snapId = 2;
+    bool isUserQuoted = 3;
+}
+
+message IMPShowDisplayInfo {
+    string showImageURL = 1;
+}
+
+message IMPSubscriberInfo {
+    string userId = 1;
+    string username = 2;
+    string displayName = 3;
+    string bitmojiAvatarId = 4;
+    string bitmojiSelfieId = 5;
+}
+
+message IMPSubscriptionQueryId {
+    string businessProfileId = 1;
+    string publisherNameId = 2;
+}
+
+message IMPUnifyBusinessProfileAccountIdsRequest {
+    string businessProfileId = 1;
+}
+
+message IMPUnifyBusinessProfileAccountIdsResponse {
+    string businessProfileId = 1;
+    string oldBusinessAccountId = 2;
+    string newBusinessAccountId = 3;
+}
+
+message IMPUnverifyOfficialAccountRequest {
+    string userId = 1;
+}
+
+message IMPUnverifyOfficialAccountResponse {
+}
+
+message IMPUpdateAccessAdsStatus {
+    .impala.IMPUpdateAccessAdsStatus.IMPAccessAdsStatus val = 1;
+    enum IMPAccessAdsStatus {
+        IMPAccessAdsStatus_AccessAdsStatusUnknown = 0;
+        IMPAccessAdsStatus_AccessAdsStatusEnabled = 1;
+        IMPAccessAdsStatus_AccessAdsStatusDisabled = 2;
+    }
+}
+
+message IMPUpdateAgeGateSettings {
+    .impala.IMPUpdateInt globalAgeMin = 1;
+    repeated .impala.IMPUpdateAgeGateSettings.CountryAgeMinMapEntry countryAgeMinMap = 2;
+    message CountryAgeMinMapEntry {
+        string key = 1;
+        .impala.IMPUpdateInt value = 2;
+    }
+}
+
+message IMPUpdateAudienceGateSettings {
+    .impala.IMPUpdateAgeGateSettings ageGateSettings = 1;
+}
+
+message IMPUpdateBool {
+    bool val = 1;
+}
+
+message IMPUpdateBusinessProfileRequest {
+    string id_p = 1;
+    .impala.IMPUpdateString title = 2;
+    .impala.IMPUpdateString description_p = 3;
+    .impala.IMPUpdateString phoneNumber = 4;
+    .impala.IMPUpdateString address = 5;
+    .impala.IMPUpdateString emailAddress = 6;
+    .impala.IMPUpdateBytes logo = 7;
+    .impala.IMPUpdateString websiteURL = 8;
+    .impala.IMPAddress addressInfo = 9;
+    .impala.IMPUpdateString category = 10;
+    .impala.IMPUpdateString subcategory = 11;
+    .impala.IMPUpdateBytes heroImage = 12;
+    .impala.IMPUpdateCateory categoryEnum = 13;
+    .impala.IMPUpdateSubCateory subcategoryEnum = 14;
+    .impala.IMPUpdateInt heroImageVerticalPosition = 15;
+    .impala.IMPUpdateBytes originalHeroImage = 16;
+    .impala.IMPUpdateString placeCollectionId = 17;
+    string profileHostUserId = 18;
+    bool isUpsert = 19;
+    .impala.IMPUpdateString privateEmail = 100;
+    .impala.IMPUpdateString privatePhoneNumber = 101;
+    .impala.IMPUpdateBool isTestProfile = 200;
+}
+
+message IMPUpdateBusinessProfileResponse {
+    .impala.IMPBusinessProfile profile = 1;
+}
+
+message IMPUpdateBusinessProfileSettingsRequest {
+    string profileId = 1;
+    .google.protobuf.BoolValue showStoryReplies = 2;
+    .google.protobuf.BoolValue showSubscriberCount = 3;
+    .google.protobuf.BoolValue showGifting = 4;
+    repeated .impala.IMPTermsAndConditions termsArray = 5;
+    .impala.IMPUpdateMonetizationSettings monetizationSettings = 6;
+    .impala.IMPUpdateAudienceGateSettings audienceGateSettings = 7;
+}
+
+message IMPUpdateBusinessProfileSettingsResponse {
+}
+
+message IMPUpdateBusinessSubscribeStatusRequest {
+    string businessId = 1;
+    bool subscribing = 2;
+}
+
+message IMPUpdateBusinessSubscribeStatusResponse {
+}
+
+message IMPUpdateBusinessUserSettingsRequest {
+    string businessId = 1;
+    .google.protobuf.BoolValue showStoryAttribution = 2;
+    .impala.IMPBusinessUserSettings.IMPBusinessUserSettings_NotificationSettings notificationSettings = 3;
+    .google.protobuf.Int64Value newestReadNotificationTimestamp = 4;
+    .google.protobuf.Int32Value profileManagementViewCount = 5;
+    .google.protobuf.Int64Value lastUserInteractedMs = 6;
+}
+
+message IMPUpdateBusinessUserSettingsResponse {
+}
+
+message IMPUpdateBytes {
+    bytes val = 1;
+}
+
+message IMPUpdateCateory {
+    .impala.IMPUpdateCateory.IMPBusinessCategoryV3 val = 1;
+    enum IMPBusinessCategoryV3 {
+        IMPBusinessCategoryV3_CategoryV3Unknown = 0;
+        IMPBusinessCategoryV3_CategoryV3BusinessGroup = 1;
+        IMPBusinessCategoryV3_CategoryV3People = 2;
+        IMPBusinessCategoryV3_CategoryV3ProductBrand = 3;
+    }
+}
+
+message IMPUpdateConfiguredStatus {
+    .impala.IMPUpdateConfiguredStatus.IMPConfiguredStatus val = 1;
+    enum IMPConfiguredStatus {
+        IMPConfiguredStatus_ConfiguredStatusUnknow = 0;
+        IMPConfiguredStatus_ConfiguredStatusActive = 1;
+        IMPConfiguredStatus_ConfiguredStatusDisabled = 2;
+    }
+}
+
+message IMPUpdateInt {
+    int64 val = 1;
+}
+
+message IMPUpdateInternalProfileCategory {
+    .impala.IMPUpdateInternalProfileCategory.IMPBusinessProfile_InternalProfileCategory val = 1;
+    enum IMPBusinessProfile_InternalProfileCategory {
+        IMPBusinessProfile_InternalProfileCategory_Unknown = 0;
+        IMPBusinessProfile_InternalProfileCategory_Person = 1;
+        IMPBusinessProfile_InternalProfileCategory_Business = 2;
+        IMPBusinessProfile_InternalProfileCategory_Standard = 3;
+        IMPBusinessProfile_InternalProfileCategory_Publisher = 4;
+    }
+}
+
+message IMPUpdateMonetizationPayoutType {
+    .impala.IMPUpdateMonetizationPayoutType.IMPMonetizationPayoutType val = 1;
+    enum IMPMonetizationPayoutType {
+        IMPMonetizationPayoutType_MonetizationPayoutTypeUnknown = 0;
+        IMPMonetizationPayoutType_MonetizationPayoutTypeRevenueShare = 1;
+        IMPMonetizationPayoutType_MonetizationPayoutTypeFixed = 2;
+    }
+}
+
+message IMPUpdateMonetizationSetting {
+    .impala.IMPUpdateConfiguredStatus configuredStatus = 1;
+    .impala.IMPTermsAndConditions monetizationTerms = 2;
+    .impala.IMPUpdateMonetizationPayoutType payoutType = 3;
+    .impala.IMPUpdateAccessAdsStatus accessAdsStatus = 4;
+}
+
+message IMPUpdateMonetizationSettings {
+    .impala.IMPUpdateMonetizationSetting publicStoriesMonetizationSettings = 1;
+}
+
+message IMPUpdateOfficialPersonalFriendmojiRequest {
+    string userId = 1;
+    .impala.IMPUpdateString emoji = 2;
+    .impala.IMPUpdateOfficialPersonalFriendmojiRequest.IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType badgeDisplayType = 3;
+    .impala.IMPUpdateString publicTierEmoji = 4;
+    enum IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType {
+        IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType_Person = 0;
+        IMPUpdateOfficialPersonalFriendmojiRequest_BadgeType_Brand = 1;
+    }
+}
+
+message IMPUpdateOfficialPersonalFriendmojiResponse {
+}
+
+message IMPUpdateProfileTier {
+    .impala.IMPUpdateProfileTier.IMPBusinessProfile_ProfileTier val = 1;
+    enum IMPBusinessProfile_ProfileTier {
+        IMPBusinessProfile_ProfileTier_TierUnknown = 0;
+        IMPBusinessProfile_ProfileTier_TierStandard = 1;
+        IMPBusinessProfile_ProfileTier_TierPublic = 2;
+        IMPBusinessProfile_ProfileTier_TierPublicOfficial = 3;
+    }
+}
+
+message IMPUpdateRoleRequest {
+    string businessId = 1;
+    string userId = 2;
+    string roleId = 3;
+    string newRoleType = 4;
+}
+
+message IMPUpdateRoleResponse {
+}
+
+message IMPUpdateString {
+    string val = 1;
+}
+
+message IMPUpdateSubCateory {
+    .impala.IMPUpdateSubCateory.IMPBusinessSubcategoryV3 val = 1;
+    enum IMPBusinessSubcategoryV3 {
+        IMPBusinessSubcategoryV3_SubcategoryV3Unknown = 0;
+        IMPBusinessSubcategoryV3_SubcategoryV3CharityCause = 100;
+        IMPBusinessSubcategoryV3_SubcategoryV3CollegeUniversity = 101;
+        IMPBusinessSubcategoryV3_SubcategoryV3CommunityOrg = 102;
+        IMPBusinessSubcategoryV3_SubcategoryV3CompanyEnterprise = 103;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOrg = 104;
+        IMPBusinessSubcategoryV3_SubcategoryV3InternetCompany = 105;
+        IMPBusinessSubcategoryV3_SubcategoryV3MediaNewsCompany = 106;
+        IMPBusinessSubcategoryV3_SubcategoryV3NonprofitOrg = 107;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalOrg = 108;
+        IMPBusinessSubcategoryV3_SubcategoryV3ReligiousOrg = 109;
+        IMPBusinessSubcategoryV3_SubcategoryV3RestaurantChain = 110;
+        IMPBusinessSubcategoryV3_SubcategoryV3RetailCompany = 111;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsLeague = 112;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsTeam = 113;
+        IMPBusinessSubcategoryV3_SubcategoryV3Business = 114;
+        IMPBusinessSubcategoryV3_SubcategoryV3Group = 115;
+        IMPBusinessSubcategoryV3_SubcategoryV3Actor = 200;
+        IMPBusinessSubcategoryV3_SubcategoryV3Artist = 201;
+        IMPBusinessSubcategoryV3_SubcategoryV3Athlete = 202;
+        IMPBusinessSubcategoryV3_SubcategoryV3Coach = 203;
+        IMPBusinessSubcategoryV3_SubcategoryV3Comedian = 204;
+        IMPBusinessSubcategoryV3_SubcategoryV3Dancer = 205;
+        IMPBusinessSubcategoryV3_SubcategoryV3Entrepreneur = 206;
+        IMPBusinessSubcategoryV3_SubcategoryV3FashionModel = 207;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmDirector = 208;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTvPersonality = 209;
+        IMPBusinessSubcategoryV3_SubcategoryV3FitnessPro = 210;
+        IMPBusinessSubcategoryV3_SubcategoryV3FoodPro = 211;
+        IMPBusinessSubcategoryV3_SubcategoryV3GovernmentOfficial = 212;
+        IMPBusinessSubcategoryV3_SubcategoryV3Journalist = 213;
+        IMPBusinessSubcategoryV3_SubcategoryV3LifestyleInfluencer = 214;
+        IMPBusinessSubcategoryV3_SubcategoryV3MotivationalSpeaker = 215;
+        IMPBusinessSubcategoryV3_SubcategoryV3MovieCharacter = 216;
+        IMPBusinessSubcategoryV3_SubcategoryV3MusicianBand = 217;
+        IMPBusinessSubcategoryV3_SubcategoryV3NewsPersonality = 218;
+        IMPBusinessSubcategoryV3_SubcategoryV3Photographer = 219;
+        IMPBusinessSubcategoryV3_SubcategoryV3PoliticalCandidate = 220;
+        IMPBusinessSubcategoryV3_SubcategoryV3Politician = 221;
+        IMPBusinessSubcategoryV3_SubcategoryV3Producer = 222;
+        IMPBusinessSubcategoryV3_SubcategoryV3ProfessionalGamer = 223;
+        IMPBusinessSubcategoryV3_SubcategoryV3PublicFigure = 224;
+        IMPBusinessSubcategoryV3_SubcategoryV3Scientist = 225;
+        IMPBusinessSubcategoryV3_SubcategoryV3SportsPersonality = 226;
+        IMPBusinessSubcategoryV3_SubcategoryV3Traveler = 227;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGameCreator = 228;
+        IMPBusinessSubcategoryV3_SubcategoryV3VloggerBlogger = 229;
+        IMPBusinessSubcategoryV3_SubcategoryV3Writer = 230;
+        IMPBusinessSubcategoryV3_SubcategoryV3Creator = 231;
+        IMPBusinessSubcategoryV3_SubcategoryV3Person = 232;
+        IMPBusinessSubcategoryV3_SubcategoryV3LensCreator = 233;
+        IMPBusinessSubcategoryV3_SubcategoryV3ApparelFashion = 300;
+        IMPBusinessSubcategoryV3_SubcategoryV3Brand = 301;
+        IMPBusinessSubcategoryV3_SubcategoryV3Product = 302;
+        IMPBusinessSubcategoryV3_SubcategoryV3FilmTv = 303;
+        IMPBusinessSubcategoryV3_SubcategoryV3HealthBeauty = 304;
+        IMPBusinessSubcategoryV3_SubcategoryV3Publisher = 305;
+        IMPBusinessSubcategoryV3_SubcategoryV3Service = 306;
+        IMPBusinessSubcategoryV3_SubcategoryV3Show = 307;
+        IMPBusinessSubcategoryV3_SubcategoryV3VideoGame = 308;
+    }
+}
+
+message IMPUpdateSubscriberDisplayNamesRequest {
+    string businessId = 1;
+    string hostAccountId = 2;
+    int64 shard = 3;
+    string displayName = 4;
+    bool allBusinesses = 5;
+    bool allShards = 6;
+}
+
+message IMPUpdateUserSettingsRequest {
+    .impala.IMPUserSettings settings = 1;
+}
+
+message IMPUpdateUserSettingsResponse {
+}
+
+message IMPUserDisplayInfo {
+    string userId = 1;
+    string username = 2;
+    string displayName = 3;
+    string bitmojiAvatarId = 4;
+    string bitmojiSelfieId = 5;
+    string mutableUsername = 6;
+    string bitmojiSceneId = 7;
+    string bitmojiBackgroundId = 8;
+}
+
+message IMPUserDisplayInfoDidChangeRequest {
+    string userId = 1;
+    string displayName = 2;
+    string username = 3;
+}
+
+message IMPUserDisplayInfoDidChangeResponse {
+}
+
+message IMPUserDisplayInfoRequest {
+    repeated string userIdsArray = 1;
+    string callingUserId = 2;
+}
+
+message IMPUserDisplayInfoResponse {
+    repeated .impala.IMPUserDisplayInfo displayInfosArray = 1;
+}
+
+message IMPUserFollower {
+    string userId = 1;
+    .impala.IMPUserFollower.IMPUserFollower_FollowerStatus status = 2;
+    string datastoreId = 3;
+    int64 creationTimestamp = 4;
+    enum IMPUserFollower_FollowerStatus {
+        IMPUserFollower_FollowerStatus_Follower = 0;
+        IMPUserFollower_FollowerStatus_Friend = 1;
+    }
+}
+
+message IMPUserSettings {
+    .google.protobuf.Int32Value manageRolesNuxHintViewCount = 1;
+    .google.protobuf.BoolValue unifiedProfileNuxSeen = 2;
+    .google.protobuf.BoolValue highlightsNuxSeen = 3;
+}
+
+message IMPWhitelistUsersRequest {
+    repeated string userIdsArray = 1;
+    bool includeStat = 2;
+}
+
+message IMPWhitelistUsersResponse {
+    int64 whitelistedUserCountBefore = 1;
+    int64 whitelistedUserCountAfter = 2;
+}

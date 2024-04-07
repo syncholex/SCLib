@@ -1,0 +1,33 @@
+syntax = "proto3";
+package snapchat.aura.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAuraPb";
+option csharp_namespace = "SnapProto.Snapchat.Aura.Core";
+
+message SCAuraPbAstrologyProfile {
+    repeated .snapchat.aura.core.SCAuraPbAstrologySnapADT snapsArray = 2;
+}
+
+message SCAuraPbAstrologySnapADT {
+    .snapchat.aura.core.SCAuraPbPersonalitySnapContainer personalitySnap = 1;
+    .snapchat.aura.core.SCAuraPbCompatibilitySnapContainer compatibilitySnap = 2;
+    .snapchat.aura.core.SCAuraPbSummarySnapContainer summarySnap = 3;
+}
+
+message SCAuraPbCompatibilitySnapContainer {
+    bytes serializedSnapData = 1;
+    string chromeTitle = 2;
+    string chromeSubtitle = 3;
+}
+
+message SCAuraPbPersonalitySnapContainer {
+    bytes serializedSnapData = 1;
+    string chromeTitle = 2;
+    string chromeSubtitle = 3;
+}
+
+message SCAuraPbSummarySnapContainer {
+    bytes serializedSnapData = 1;
+    string chromeTitle = 2;
+    string chromeSubtitle = 3;
+}

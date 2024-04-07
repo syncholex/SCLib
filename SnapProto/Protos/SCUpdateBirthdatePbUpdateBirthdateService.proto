@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.activation.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUpdateBirthdatePb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Activation.Api";
+
+import "snapchat/activation/api/SCUpdateBirthdatePbUpdateBirthdate.proto";
+
+service UpdateBirthdateService{
+    rpc UpdateBirthdate(.snapchat.activation.api.SCUpdateBirthdatePbUpdateBirthdateRequest) returns (.snapchat.activation.api.SCUpdateBirthdatePbUpdateBirthdateResponse);
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+import "snapchat/ads/request/schema/SCAdsAdRequest.proto";
+import "snapchat/unlockables/request/schema/SCULGeoCircle.proto";
+import "snapchat/unlockables/request/schema/SCULRequestInfo.proto";
+import "snapchat/unlockables/request/schema/SCULSyncInfo.proto";
+import "snapchat/unlockables/request/schema/SCULUserInfo.proto";
+
+message SCULGtqServeRequest {
+    bytes encryptedUnlockablesDirectPayload = 1;
+    .snapchat.unlockables.request.schema.SCULGeoCircle currentLocationWithAccuracy = 2;
+    .snapchat.ads.request.schema.SCAdsAdRequest adRequest = 3;
+    .snapchat.unlockables.request.schema.SCULRequestInfo requestInfo = 4;
+    .snapchat.unlockables.request.schema.SCULSyncInfo syncInfo = 5;
+    .snapchat.unlockables.request.schema.SCULUserInfo userInfo = 6;
+    bool skipVenues = 7;
+    repeated .snapchat.unlockables.request.schema.SCULGtqServeRequest.ChecksumMapEntry checksumMap = 8;
+    bool skipUco = 9;
+    bool skipSponsoredLens = 10;
+    bool skipGeoLens = 11;
+    bool skipTargetingLens = 12;
+    message ChecksumMapEntry {
+        int64 key = 1;
+        bytes value = 2;
+    }
+}

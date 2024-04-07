@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Order";
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+
+message ShippingOption {
+    string handle = 1;
+    .com.snapchat.commerce.domain.CurrencyAmount price = 2;
+    string title = 3;
+    string totalTax = 4;
+    string totalPrice = 5;
+    string subtotalPrice = 6;
+}

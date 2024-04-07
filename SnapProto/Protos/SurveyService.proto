@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.measurement.surveys.inclusionpanel;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Services.Com.Snapchat.Measurement.Surveys.Inclusionpanel";
+
+import "com/snapchat/measurement/surveys/inclusionpanel/SurveyService.proto";
+
+service SurveyService{
+    rpc GetSurveyData(.com.snapchat.measurement.surveys.inclusionpanel.GetSurveyDataRequest) returns (.com.snapchat.measurement.surveys.inclusionpanel.GetSurveyDataResponse);
+    rpc UpdateSurveyData(.com.snapchat.measurement.surveys.inclusionpanel.UpdateSurveyDataRequest) returns (.com.snapchat.measurement.surveys.inclusionpanel.UpdateSurveyDataResponse);
+}

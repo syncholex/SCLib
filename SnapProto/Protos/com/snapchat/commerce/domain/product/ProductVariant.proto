@@ -1,0 +1,25 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.product;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Product";
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+import "com/snapchat/commerce/domain/ImageMap.proto";
+
+message ProductVariant {
+    bytes id_p = 1;
+    repeated string imageUrlsArray = 2;
+    .com.snapchat.commerce.domain.CurrencyAmount price = 3;
+    bool requiresShipping = 4;
+    bool taxable = 5;
+    string title = 6;
+    repeated .com.snapchat.commerce.domain.product.ProductVariant.ProductVariant_VariantCategoryPair variantCategoriesArray = 7;
+    bool available = 8;
+    repeated .com.snapchat.commerce.domain.ImageMap imageListArray = 9;
+    .com.snapchat.commerce.domain.CurrencyAmount strikethroughPrice = 10;
+    bytes pixelItemId = 11;
+    message ProductVariant_VariantCategoryPair {
+        bytes variantCategoryId = 1;
+        string variantCategoryValue = 2;
+    }
+}

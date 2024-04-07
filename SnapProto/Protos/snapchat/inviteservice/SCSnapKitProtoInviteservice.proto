@@ -1,0 +1,64 @@
+syntax = "proto3";
+package snapchat.inviteservice;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapKitProto";
+option csharp_namespace = "SnapProto.Snapchat.Inviteservice";
+
+import "snapkit/common/SCSnapKitProtoUuid.proto";
+
+message SCSnapKitProtoAppMeta {
+    string appName = 1;
+    string packageName = 2;
+    string appStoreListingURL = 3;
+    string appIconURL = 4;
+}
+
+message SCSnapKitProtoBeginGameInviteRequest {
+}
+
+message SCSnapKitProtoBeginGameInviteResponse {
+    .snapkit.common.SCSnapKitProtoUUID inviteUuid = 1;
+}
+
+message SCSnapKitProtoBeginProfileShareRequest {
+    string gameUserName = 1;
+}
+
+message SCSnapKitProtoBeginProfileShareResponse {
+    .snapkit.common.SCSnapKitProtoUUID id_p = 1;
+}
+
+message SCSnapKitProtoFetchAppMetaRequest {
+    string oauthClientId = 1;
+}
+
+message SCSnapKitProtoFetchAppMetaResponse {
+    .snapchat.inviteservice.SCSnapKitProtoAppMeta data_p = 1;
+}
+
+message SCSnapKitProtoProfileRequest {
+    .snapkit.common.SCSnapKitProtoUUID inviteUuid = 1;
+}
+
+message SCSnapKitProtoProfileResponse {
+    string externalUserId = 1;
+}
+
+message SCSnapKitProtoValidateInviteRequest {
+    .snapkit.common.SCSnapKitProtoUUID inviteUuid = 1;
+    string inviteUri = 2;
+}
+
+message SCSnapKitProtoValidateInviteResponse {
+    .snapchat.inviteservice.SCSnapKitProtoAppMeta data_p = 1;
+}
+
+message SCSnapKitProtoValidateProfileRequest {
+    .snapkit.common.SCSnapKitProtoUUID id_p = 1;
+    string shareUri = 2;
+}
+
+message SCSnapKitProtoValidateProfileResponse {
+    .snapchat.inviteservice.SCSnapKitProtoAppMeta data_p = 1;
+    string gameUserName = 5;
+}

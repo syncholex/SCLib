@@ -1,0 +1,29 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery.servlet;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGalleryServlet";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery.Servlet";
+
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletDefunctMedia.proto";
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletGalleryEntry.proto";
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletGalleryUserSetting.proto";
+import "com/snapchat/proto/gallery/servlet/SCPBGalleryServletQuota.proto";
+
+message SCPBGalleryServletGallerySyncResponse {
+    int32 serviceStatusCode = 1;
+    string userString = 2;
+    int64 backoffTime = 3;
+    string debugInfo = 4;
+    .com.snapchat.proto.gallery.servlet.SCPBGalleryServletQuota quota = 5;
+    int32 totalEntryCount = 6;
+    int64 lastSeqnum = 501;
+    int64 highestSeqnum = 502;
+    repeated .com.snapchat.proto.gallery.servlet.SCPBGalleryServletGalleryEntry entriesArray = 503;
+    bool hasMore = 504;
+    .com.snapchat.proto.gallery.servlet.SCPBGalleryServletGalleryUserSetting userSettings = 505;
+    repeated .com.snapchat.proto.gallery.servlet.SCPBGalleryServletDefunctMedia defunctMediasArray = 506;
+    int64 batchLowSeqnum = 507;
+    int64 batchHighSeqnum = 508;
+    int64 lowestSeqnum = 509;
+    string syncToken = 510;
+}

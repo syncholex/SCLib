@@ -1,0 +1,26 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBTextShadowParameters.proto";
+
+message SCPBGeofilterDisplayParameters {
+    int32 size = 1;
+    string color = 2;
+    string font = 3;
+    string staticText = 4;
+    string align = 5;
+    float textAlpha = 6;
+    .com.snapchat.proto.SCPBTextShadowParameters textShadow = 7;
+    bool autoResizeEnabled = 8;
+    string fallbackText = 9;
+    int32 maxFontSize = 10;
+    string dynamicText = 11;
+    string targetDatetime = 12;
+    string targetDatetimeDirection = 13;
+    string capitalization = 14;
+    string calculatedDynamicText = 15;
+    string fallbackMethod = 16;
+}

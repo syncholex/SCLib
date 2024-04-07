@@ -1,0 +1,21 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBStrRect.proto";
+
+message SCPBSponsoredSlugPosAndText {
+    .com.snapchat.proto.SCPBStrRect viewRect = 1;
+    string alignment = 2;
+    string position = 3;
+    string hmargin = 4;
+    string vmargin = 5;
+    string text = 6;
+    string sponsoredText = 7;
+    string sponsoredChannelText = 8;
+    int32 timeBeforeFadeout = 9;
+    string longformText = 10;
+    int32 longformTimeBeforeFadeout = 11;
+}

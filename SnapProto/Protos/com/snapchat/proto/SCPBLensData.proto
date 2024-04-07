@@ -1,0 +1,58 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBConnectedLensInfo.proto";
+import "com/snapchat/proto/SCPBLensAssetManifestItem.proto";
+import "com/snapchat/proto/SCPBLensResource.proto";
+import "com/snapchat/proto/SCPBLensSnappablePlayButtonGradientColor.proto";
+import "com/snapchat/proto/SCPBRemoteApiInfo.proto";
+
+message SCPBLensData {
+    string code = 1;
+    string configPath = 2;
+    string iconLink = 3;
+    string lensLink = 4;
+    string hintId = 5;
+    repeated .com.snapchat.proto.SCPBLensData.HintTranslationsEntry hintTranslations = 6;
+    string signature = 7;
+    int64 demoStartDate = 8;
+    string bitmojiComicId = 9;
+    repeated .com.snapchat.proto.SCPBLensAssetManifestItem assetManifestArray = 10;
+    bool hideUntilAssetsDownloaded = 11;
+    bool isThirdParty = 12;
+    bool isStudioPreview = 13;
+    string lensCreatorUsername = 14;
+    string lensAttributionName = 15;
+    string activationCamera = 16;
+    bool isDisabledForVideoChat = 17;
+    string unlockCompanionBackReferenceId = 18;
+    string name = 19;
+    string filterImageLink = 20;
+    repeated string lensDescriptorsArray = 21;
+    string snappableReplyType = 22;
+    string lensCreatorUserId = 23;
+    string lensCreatorAvatarId = 24;
+    string snappableTaglineKey = 25;
+    .com.snapchat.proto.SCPBLensSnappablePlayButtonGradientColor snappablePlayButtonGradient = 26;
+    bool isLeftCarousel = 27;
+    int64 clientCacheTtl = 28;
+    string lensCreatorSelfieId = 29;
+    repeated .com.snapchat.proto.SCPBLensResource lensResourcesArray = 30;
+    string snapProProfileId = 31;
+    bool isCreatorDeactivated = 32;
+    bool isOfficialLensCreator = 33;
+    bool isCommunity = 34;
+    string lensThumbnailPreviewImageURL = 35;
+    string apiLevel = 36;
+    int64 lensCollectionId = 37;
+    .com.snapchat.proto.SCPBConnectedLensInfo connectedLensInfo = 38;
+    bytes shoppingLensMetadata = 39;
+    .com.snapchat.proto.SCPBRemoteApiInfo remoteApiInfo = 40;
+    message HintTranslationsEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

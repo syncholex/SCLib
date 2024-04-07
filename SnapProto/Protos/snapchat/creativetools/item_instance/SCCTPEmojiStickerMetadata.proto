@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance";
+
+message SCCTPEmojiStickerMetadata {
+    .snapchat.creativetools.item_instance.SCCTPEmojiStickerMetadata.SCCTPEmojiStickerMetadata_SkinTone skinTone = 1;
+    enum SCCTPEmojiStickerMetadata_SkinTone {
+        SCCTPEmojiStickerMetadata_SkinTone_SkintoneUnspecified = 0;
+        SCCTPEmojiStickerMetadata_SkinTone_Default = 1;
+        SCCTPEmojiStickerMetadata_SkinTone_Light = 2;
+        SCCTPEmojiStickerMetadata_SkinTone_MediumLight = 3;
+        SCCTPEmojiStickerMetadata_SkinTone_Medium = 4;
+        SCCTPEmojiStickerMetadata_SkinTone_MediumDark = 5;
+        SCCTPEmojiStickerMetadata_SkinTone_Dark = 6;
+    }
+}

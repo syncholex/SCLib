@@ -1,0 +1,28 @@
+syntax = "proto3";
+package snapchat.ads.render.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Render.Schema";
+
+import "snapchat/ads/render/schema/SCAdsMediaRenderInfo.proto";
+
+message SCAdsDeeplink {
+    string uri = 1;
+    string appTitle = 2;
+    string iosAppId = 3;
+    string androidPackageId = 4;
+    string deepLinkWebFallbackURL = 5;
+    .snapchat.ads.render.schema.SCAdsDeeplink.SCAdsDeeplinkFallBackType deepLinkFallbackType = 6;
+    .snapchat.ads.render.schema.SCAdsMediaRenderInfo iconRenderInfo = 7;
+    string iosUri = 8;
+    string iosAppTitle = 9;
+    string androidUri = 10;
+    string androidAppTitle = 11;
+    string productPageId = 13;
+    enum SCAdsDeeplinkFallBackType {
+        SCAdsDeeplinkFallBackType_DeelinkFallbackNone = 0;
+        SCAdsDeeplinkFallBackType_DeelinkFallbackWebview = 1;
+        SCAdsDeeplinkFallBackType_DeelinkFallbackAppIsntall = 2;
+        SCAdsDeeplinkFallBackType_DeelinkFallbackDefaultBrowser = 3;
+    }
+}

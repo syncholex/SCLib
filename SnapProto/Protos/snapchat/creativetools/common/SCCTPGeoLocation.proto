@@ -1,0 +1,16 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPGeoLocation {
+    double latitude = 1;
+    double longitude = 2;
+    double horizontalAccuracyMeters = 3;
+    uint64 timestampMsecs = 4;
+}
+
+message SCCTPTimeZone {
+    int32 offsetMinutes = 1;
+}

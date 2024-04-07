@@ -1,0 +1,41 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/snapdoc/SDMAppDeepLink.proto";
+import "snapchat/snapdoc/SDMAppInstall.proto";
+import "snapchat/snapdoc/SDMCameraAttachment.proto";
+import "snapchat/snapdoc/SDMCommerce.proto";
+import "snapchat/snapdoc/SDMContext.proto";
+import "snapchat/snapdoc/SDMDynamicAttachmentRenderingInfo.proto";
+import "snapchat/snapdoc/SDMGameAttachment.proto";
+import "snapchat/snapdoc/SDMLongformVideo.proto";
+import "snapchat/snapdoc/SDMNotificationSettings.proto";
+import "snapchat/snapdoc/SDMPlaceMetadata.proto";
+import "snapchat/snapdoc/SDMQuestionStickerReplyQuote.proto";
+import "snapchat/snapdoc/SDMSnapProStoryReplyQuote.proto";
+import "snapchat/snapdoc/SDMSubscription.proto";
+import "snapchat/snapdoc/SDMWebPage.proto";
+
+message SDMAttachments {
+    repeated .snapchat.snapdoc.SDMAttachments.SDMAttachments_Attachment attachmentsArray = 4;
+    string customCallToAction = 5;
+    .snapchat.snapdoc.SDMDynamicAttachmentRenderingInfo dynamicAttachmentRenderingInfo = 6;
+    message SDMAttachments_Attachment {
+        .snapchat.snapdoc.SDMContext context = 1;
+        .snapchat.snapdoc.SDMGameAttachment gameAttachment = 2;
+        .snapchat.snapdoc.SDMWebPage webPage = 3;
+        .snapchat.snapdoc.SDMCameraAttachment cameraAttachment = 4;
+        .snapchat.snapdoc.SDMAppDeepLink appDeepLink = 5;
+        .snapchat.snapdoc.SDMAppInstall appInstall = 6;
+        .snapchat.snapdoc.SDMCommerce commerce = 7;
+        .snapchat.snapdoc.SDMLongformVideo longformVideo = 8;
+        .snapchat.snapdoc.SDMNotificationSettings notificationSettings = 9;
+        .snapchat.snapdoc.SDMSubscription subscription = 10;
+        .snapchat.snapdoc.SDMSnapProStoryReplyQuote snapProStoryReplyQuote = 11;
+        .snapchat.snapdoc.SDMPlaceMetadata placeMetadata = 12;
+        .snapchat.snapdoc.SDMQuestionStickerReplyQuote questionStickerReplyQuote = 13;
+    }
+}

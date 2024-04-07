@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+message SCAdsWebviewPrefetchStudy {
+    string experimentId = 1;
+    int64 studyVersion = 2;
+    float percentileThreshold = 3;
+    bool predictivePrefetchEnabled = 4;
+    string modelId = 5;
+}

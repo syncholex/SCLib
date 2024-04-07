@@ -1,0 +1,27 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain.order;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain.Order";
+
+import "com/snapchat/commerce/domain/CurrencyAmount.proto";
+
+message ItemInfo {
+    bytes productId = 1;
+    string productTitle = 2;
+    string variantId = 3;
+    .com.snapchat.commerce.domain.order.ItemInfo.ProductType productType = 4;
+    uint32 quantity = 5;
+    .com.snapchat.commerce.domain.CurrencyAmount unitPrice = 6;
+    .com.snapchat.commerce.domain.CurrencyAmount totalCost = 7;
+    .com.snapchat.commerce.domain.CurrencyAmount strikethroughUnitPrice = 8;
+    .com.snapchat.commerce.domain.CurrencyAmount strikethroughLinePrice = 9;
+    bool requiresShipping = 10;
+    bool taxable = 11;
+    string variantTitle = 12;
+    enum ProductType {
+        ProductType_Unset = 0;
+        ProductType_Bitmoji = 1;
+        ProductType_Regular = 2;
+        ProductType_MemoriesPrint = 3;
+    }
+}

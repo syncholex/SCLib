@@ -1,0 +1,67 @@
+syntax = "proto3";
+package com.snapchat.commerce.wire.error;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Wire.Error";
+
+message CommerceApiServiceError {
+    string debugMessage = 1;
+    .com.snapchat.commerce.wire.error.CommerceApiServiceError.ErrorCode errorCode = 2;
+    enum ErrorCode {
+        ErrorCode_ErrorCodeUnset = 0;
+        ErrorCode_BadRequest = 1;
+        ErrorCode_NotFound = 2;
+        ErrorCode_PermissionDenied = 3;
+        ErrorCode_InternalError = 4;
+        ErrorCode_InvalidUserId = 5;
+        ErrorCode_InvalidStoreId = 6;
+        ErrorCode_InvalidProductId = 7;
+        ErrorCode_InvalidCategoryId = 8;
+        ErrorCode_StoreNotFound = 9;
+        ErrorCode_ProductNotFound = 10;
+        ErrorCode_ProductCategoryNotFound = 11;
+        ErrorCode_ProductVariantNotFound = 12;
+        ErrorCode_AccountNotFound = 13;
+        ErrorCode_AddressNotFound = 14;
+        ErrorCode_InvalidEmail = 15;
+        ErrorCode_InvalidPhoneNumber = 16;
+        ErrorCode_InvalidAddressId = 17;
+        ErrorCode_InvalidFirstName = 18;
+        ErrorCode_InvalidLastName = 19;
+        ErrorCode_InvalidStreet1 = 20;
+        ErrorCode_InvalidStreet2 = 21;
+        ErrorCode_InvalidState = 22;
+        ErrorCode_InvalidCity = 23;
+        ErrorCode_InvalidZip = 24;
+        ErrorCode_InvalidCountryCode = 25;
+        ErrorCode_EmptyAddress = 26;
+        ErrorCode_InvalidBitmojiProductAssetId = 27;
+        ErrorCode_InvalidBitmojiProductAsset = 28;
+        ErrorCode_EmptyContentURL = 29;
+        ErrorCode_InvalidVariantId = 30;
+        ErrorCode_EmptyComicId = 31;
+        ErrorCode_EmptyAvatarIds = 32;
+        ErrorCode_BitmojiAssetMismatch = 33;
+        ErrorCode_BitmojiImageNotFound = 34;
+        ErrorCode_BitmojiProductAssetNotFound = 35;
+        ErrorCode_InvalidOrder = 36;
+        ErrorCode_InvalidOrderQueryOption = 37;
+        ErrorCode_InvalidOrderId = 38;
+        ErrorCode_InvalidCheckoutId = 39;
+        ErrorCode_InvalidPayCheckoutRequest = 40;
+        ErrorCode_EmptyPaymentRequestId = 41;
+        ErrorCode_EmptyPaymentMethod = 42;
+        ErrorCode_TooManyPaymentMethods = 43;
+        ErrorCode_OrderNotFound = 44;
+        ErrorCode_WebviewUnsupported = 45;
+        ErrorCode_LifetimePerProductLimitExceeded = 46;
+        ErrorCode_PerProductLimitExceeded = 47;
+        ErrorCode_PerVariantLimitExceeded = 48;
+        ErrorCode_TotalPriceLimitExceeded = 49;
+        ErrorCode_CheckoutLocked = 50;
+        ErrorCode_CheckoutNotFound = 51;
+        ErrorCode_ShopifyInvalidInput = 52;
+        ErrorCode_ShopifyPlatformError = 53;
+        ErrorCode_ShopifyProxyError = 54;
+        ErrorCode_ProductVariantOutOfStock = 55;
+    }
+}

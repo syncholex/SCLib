@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+message SCPBUnlockablesUnlockableContext {
+    repeated string triggerContextsArray = 1;
+    repeated string friendContextsArray = 2;
+    repeated string cameraContextsArray = 3;
+    repeated string mediaTypeContextsArray = 4;
+    repeated int64 actionmojiContextsArray = 5;
+    repeated string visualContextsArray = 6;
+    repeated string lensApplicableContextsArray = 7;
+}

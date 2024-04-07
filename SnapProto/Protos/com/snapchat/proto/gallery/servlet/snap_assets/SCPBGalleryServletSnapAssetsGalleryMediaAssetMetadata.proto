@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.snapchat.proto.gallery.servlet.snap_assets;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBGalleryServletSnapAssets";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Gallery.Servlet.Snap_assets";
+
+import "com/snapchat/proto/gallery/SCPBGalleryMediaAttribute.proto";
+
+message SCPBGalleryServletSnapAssetsGalleryMediaAssetMetadata {
+    int32 mediaType = 1;
+    int64 captureTime = 2;
+    string mediaFormat = 3;
+    repeated .com.snapchat.proto.gallery.SCPBGalleryMediaAttribute mediaAttributesArray = 4;
+}

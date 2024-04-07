@@ -1,0 +1,20 @@
+syntax = "proto3";
+package com.snapchat.item_catalog.domain.store.settings;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_catalog.Domain.Store.Settings";
+
+message OrganicMacrosSettings {
+    .com.snapchat.item_catalog.domain.store.settings.OrganicMacrosSettings.OrganicMacrosSettings_OptInStatus sourceIdOptInStatus = 1;
+    .com.snapchat.item_catalog.domain.store.settings.OrganicMacrosSettings.OrganicMacrosSettings_OptInStatus referrerSourceOptInStatus = 2;
+    repeated .com.snapchat.item_catalog.domain.store.settings.OrganicMacrosSettings.CustomParametersEntry customParameters = 3;
+    .com.snapchat.item_catalog.domain.store.settings.OrganicMacrosSettings.OrganicMacrosSettings_OptInStatus siteSourceNameOptInStatus = 4;
+    message CustomParametersEntry {
+        string key = 1;
+        string value = 2;
+    }
+    enum OrganicMacrosSettings_OptInStatus {
+        OrganicMacrosSettings_OptInStatus_Unset = 0;
+        OrganicMacrosSettings_OptInStatus_Enabled = 1;
+        OrganicMacrosSettings_OptInStatus_Disabled = 2;
+    }
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+message SCCTPLens {
+    int64 lensId = 1;
+    bool hasUiElements = 2;
+    .snapchat.creativetools.common.SCCTPLens.SCCTPLens_LensType lensType = 3;
+    enum SCCTPLens_LensType {
+        SCCTPLens_LensType_UnknownTypeUnset = 0;
+        SCCTPLens_LensType_Retouch = 1;
+        SCCTPLens_LensType_Enhance = 2;
+        SCCTPLens_LensType_MagicEraser = 3;
+    }
+}

@@ -1,0 +1,37 @@
+syntax = "proto3";
+package impala.stories;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "IMP";
+option csharp_namespace = "SnapProto.Impala.Stories";
+
+message IMPBusinessSnapInsights {
+    string businessId = 1;
+    string snapId = 2;
+    .impala.stories.IMPBusinessSnapInsights.IMPBusinessSnapInsights_GlobalStats globalStats = 3;
+    repeated .impala.stories.IMPBusinessSnapInsights.IMPBusinessSnapInsights_SectionStats sectionStatsArray = 4;
+    message IMPBusinessSnapInsights_GlobalStats {
+        int64 viewCount = 1;
+        int64 screenshotCount = 2;
+    }
+    message IMPBusinessSnapInsights_SectionStats {
+        .impala.stories.IMPBusinessSnapInsights.IMPBusinessSnapInsights_SectionStats.IMPBusinessSnapInsights_SectionStats_Type type = 1;
+        int64 viewCount = 2;
+        int64 screenshotCount = 3;
+        repeated .impala.stories.IMPBusinessSnapInsights.IMPBusinessSnapInsights_SectionStats.IMPBusinessSnapInsights_SectionStats_Viewer recentViewersArray = 4;
+        message IMPBusinessSnapInsights_SectionStats_Viewer {
+            string userId = 1;
+            int64 viewTimestamp = 4;
+            string bitmojiAvatarId = 5;
+            string bitmojiSelfieId = 6;
+            bool isVerified = 7;
+            string username = 2;
+            string displayName = 3;
+        }
+        enum IMPBusinessSnapInsights_SectionStats_Type {
+            IMPBusinessSnapInsights_SectionStats_Type_Unknown = 0;
+            IMPBusinessSnapInsights_SectionStats_Type_Friend = 1;
+            IMPBusinessSnapInsights_SectionStats_Type_Subscriber = 2;
+            IMPBusinessSnapInsights_SectionStats_Type_Other = 3;
+        }
+    }
+}

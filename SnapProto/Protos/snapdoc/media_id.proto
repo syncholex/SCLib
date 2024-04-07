@@ -1,0 +1,11 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+option java_package = "snapchat.snapdoc";
+option java_multiple_files = true;
+
+message MediaId {
+    int64 media_list_id = 1;
+}

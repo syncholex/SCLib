@@ -1,0 +1,55 @@
+syntax = "proto3";
+package snapchat.storydoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "STO";
+option csharp_namespace = "SnapProto.Snapchat.Storydoc";
+
+import "snapchat/geo/SPCGGeo.proto";
+
+message STOContentAccessList {
+    bool isWhitelist = 1;
+    repeated string listArray = 2;
+}
+
+message STOContentAccessLists {
+    .snapchat.storydoc.STOContentAccessList feedWhitelist = 1;
+    .snapchat.storydoc.STOContentAccessList searchWhitelist = 2;
+    .snapchat.storydoc.STOContentAccessList snapcodeWhitelist = 3;
+    .snapchat.storydoc.STOContentAccessList shareWhitelist = 4;
+}
+
+message STOVisibility {
+    bool isAvailable = 1;
+    int64 startTime = 2;
+    repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence geoViewabilityArray = 3;
+    int64 endTime = 4;
+    .snapchat.storydoc.STOVisibility.STOVisibility_ContentAgeGateLevel ageGate = 6;
+    repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence broadcastGeoViewabilityArray = 7;
+    repeated string languageWhitelistArray = 8;
+    .snapchat.storydoc.STOVisibility.STOVisibility_ContentGeoAccess geoContentAccessWhitelist = 9;
+    .snapchat.storydoc.STOVisibility.STOVisibility_ClientsAllowed clientsAllowed = 10;
+    .snapchat.storydoc.STOContentAccessLists geoContentAccessList = 11;
+    repeated string geofenceIdsArray = 12;
+    bool isEmployeeOnly = 13;
+    bool isTest = 14;
+    message STOVisibility_ContentGeoAccess {
+        repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence discoverFeedWhitelistArray = 1;
+        repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence searchWhitelistArray = 2;
+        repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence snapcodeWhitelistArray = 3;
+        repeated .snapchat.storydoc.STOVisibility.STOVisibility_Geofence shareWhitelistArray = 4;
+    }
+    message STOVisibility_Geofence {
+        string countryCode = 3;
+        string geofenceId = 4;
+        .snapchat.geo.SPCGMultiPolygon fence = 5;
+    }
+    enum STOVisibility_ContentAgeGateLevel {
+        STOVisibility_ContentAgeGateLevel_Unrestricted = 0;
+        STOVisibility_ContentAgeGateLevel_ExplicitContent = 1;
+    }
+    enum STOVisibility_ClientsAllowed {
+        STOVisibility_ClientsAllowed_SnapchatAppOnly = 0;
+        STOVisibility_ClientsAllowed_WebOnly = 1;
+        STOVisibility_ClientsAllowed_AllClients = 2;
+    }
+}

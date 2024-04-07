@@ -1,0 +1,12 @@
+syntax = "proto3";
+package com.snapchat.commerce.domain;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Commerce.Domain";
+
+message ImageMap {
+    repeated .com.snapchat.commerce.domain.ImageMap.ImageMapEntry imageMap = 1;
+    message ImageMapEntry {
+        string key = 1;
+        string value = 2;
+    }
+}

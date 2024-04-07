@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMTiming {
+    uint32 timestampSec = 1;
+    uint32 secondaryTimestampSec = 2;
+    uint32 pendingDeliveryTimestampSec = 3;
+    uint64 sendStartTimestampMs = 4;
+    uint64 locationTimestampMs = 5;
+    uint64 mediaCaptureTimestampMs = 6;
+    uint64 snapCreateTimestampMs = 7;
+}

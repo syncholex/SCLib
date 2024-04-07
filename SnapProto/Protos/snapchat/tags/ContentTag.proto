@@ -1,0 +1,23 @@
+syntax = "proto3";
+package snapchat.tags;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Tags";
+
+message ContentTag {
+    .snapchat.tags.ContentTag.ContentTag_ContentTagType type = 1;
+    string value = 2;
+    .snapchat.tags.ContentTag.ContentTag_ContentTagProducer producedBy = 3;
+    enum ContentTag_ContentTagProducer {
+        ContentTag_ContentTagProducer_Unset = 0;
+        ContentTag_ContentTagProducer_ExternalPartner = 1;
+        ContentTag_ContentTagProducer_InternalCurator = 2;
+        ContentTag_ContentTagProducer_Automatic = 4;
+    }
+    enum ContentTag_ContentTagType {
+        ContentTag_ContentTagType_Unknown = 0;
+        ContentTag_ContentTagType_SnapchatContentCategory = 1;
+        ContentTag_ContentTagType_Manual = 2;
+        ContentTag_ContentTagType_Wiki = 3;
+        ContentTag_ContentTagType_SpotlightExtendedScc = 4;
+    }
+}

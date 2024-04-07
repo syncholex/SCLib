@@ -1,0 +1,19 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+message SCReportCameosReasonId {
+    .snapchat.abuse.support.SCReportCameosReasonId.SCReportCameosReasonId_ReasonId reasonId = 1;
+    enum SCReportCameosReasonId_ReasonId {
+        SCReportCameosReasonId_ReasonId_ReasonUnset = 0;
+        SCReportCameosReasonId_ReasonId_WhyMyselfInCameo = 1;
+        SCReportCameosReasonId_ReasonId_GenderMismatch = 2;
+        SCReportCameosReasonId_ReasonId_UnknownFriend = 3;
+        SCReportCameosReasonId_ReasonId_DontLikeWantToSee = 4;
+        SCReportCameosReasonId_ReasonId_Inappropriate = 5;
+        SCReportCameosReasonId_ReasonId_TechnicalIssue = 6;
+        SCReportCameosReasonId_ReasonId_Other = 7;
+    }
+}

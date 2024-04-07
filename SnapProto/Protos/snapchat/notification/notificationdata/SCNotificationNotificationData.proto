@@ -1,0 +1,480 @@
+syntax = "proto3";
+package snapchat.notification.notificationdata;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCNotification";
+option csharp_namespace = "SnapProto.Snapchat.Notification.Notificationdata";
+
+import "snapchat/notification/SCPushNotificationUuid.proto";
+
+message SCNotificationClearDeviceTokenRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    .snapchat.notification.notificationdata.SCNotificationClearDeviceTokenRequest.SCNotificationTokenDeletionReason reason = 3;
+    .snapchat.notification.notificationdata.SCNotificationClearDeviceTokenRequest.SCNotificationDeviceType deviceType = 4;
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+    enum SCNotificationTokenDeletionReason {
+        SCNotificationTokenDeletionReason_Unknown = 0;
+        SCNotificationTokenDeletionReason_UserLogin = 1;
+        SCNotificationTokenDeletionReason_UserLogout = 2;
+        SCNotificationTokenDeletionReason_UserUninstall = 3;
+        SCNotificationTokenDeletionReason_PurgeEvent = 4;
+        SCNotificationTokenDeletionReason_TokenInvalid = 5;
+        SCNotificationTokenDeletionReason_SessionExpired = 6;
+    }
+}
+
+message SCNotificationClearDeviceTokenResponse {
+    .snapchat.notification.notificationdata.SCNotificationClearDeviceTokenResponse.SCNotificationStatusCode statusCode = 1;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationDeleteUserResponse {
+    .snapchat.notification.notificationdata.SCNotificationDeleteUserResponse.SCNotificationStatusCode statusCode = 1;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationDeviceToken {
+    string token = 1;
+    .snapchat.notification.notificationdata.SCNotificationDeviceToken.SCNotificationDeviceToken_DeviceTokenType tokenType = 2;
+    int64 updateTimestamp = 3;
+    .snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 4;
+    enum SCNotificationDeviceToken_DeviceTokenType {
+        SCNotificationDeviceToken_DeviceTokenType_Unknown = 0;
+        SCNotificationDeviceToken_DeviceTokenType_Apns = 1;
+        SCNotificationDeviceToken_DeviceTokenType_Fcm = 2;
+        SCNotificationDeviceToken_DeviceTokenType_Hms = 3;
+        SCNotificationDeviceToken_DeviceTokenType_Voip = 4;
+        SCNotificationDeviceToken_DeviceTokenType_Web = 5;
+        SCNotificationDeviceToken_DeviceTokenType_Location = 6;
+    }
+}
+
+message SCNotificationDeviceTokenUpdateRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    string deviceToken = 2;
+    string deviceVoipToken = 3;
+    .snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateRequest.SCNotificationDeviceType deviceType = 4;
+    .snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateRequest.SCNotificationReleaseType releaseType = 5;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData pushNotificationEncryptionData = 6;
+    .snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateRequest.SCPushNotificationAppId appId = 7;
+    enum SCPushNotificationAppId {
+        SCPushNotificationAppId_Snapchat = 0;
+        SCPushNotificationAppId_Bitmoji = 1;
+        SCPushNotificationAppId_Web = 2;
+        SCPushNotificationAppId_SnapchatFeatureApp = 3;
+    }
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+    enum SCNotificationReleaseType {
+        SCNotificationReleaseType_UnknownRelease = 0;
+        SCNotificationReleaseType_Production = 1;
+        SCNotificationReleaseType_Master = 2;
+        SCNotificationReleaseType_Alpha = 3;
+        SCNotificationReleaseType_Beta = 4;
+        SCNotificationReleaseType_Debug = 5;
+        SCNotificationReleaseType_Prototyping = 6;
+    }
+}
+
+message SCNotificationDeviceTokenUpdateResponse {
+    .snapchat.notification.notificationdata.SCNotificationDeviceTokenUpdateResponse.SCNotificationStatusCode statusCode = 1;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationDeviceVersionInfo {
+    .snapchat.notification.notificationdata.SCNotificationVersion appVersion = 1;
+    .snapchat.notification.notificationdata.SCNotificationVersion osVersion = 2;
+}
+
+message SCNotificationGetNotificationSettingRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    .snapchat.notification.notificationdata.SCNotificationGetNotificationSettingRequest.SCNotificationPushNotificationDataProperty settingChoice = 2;
+    enum SCNotificationPushNotificationDataProperty {
+        SCNotificationPushNotificationDataProperty_EnabledSetting = 0;
+        SCNotificationPushNotificationDataProperty_SoundSetting = 1;
+        SCNotificationPushNotificationDataProperty_RingSoundSetting = 2;
+        SCNotificationPushNotificationDataProperty_PrivacySetting = 3;
+        SCNotificationPushNotificationDataProperty_DeviceToken = 4;
+        SCNotificationPushNotificationDataProperty_DeviceVoipToken = 5;
+        SCNotificationPushNotificationDataProperty_BitmojiSetting = 6;
+        SCNotificationPushNotificationDataProperty_WebPushSetting = 7;
+        SCNotificationPushNotificationDataProperty_LocationToken = 8;
+    }
+}
+
+message SCNotificationGetNotificationSettingResponse {
+    .snapchat.notification.notificationdata.SCNotificationGetNotificationSettingResponse.SCNotificationStatusCode statusCode = 3;
+    .snapchat.notification.notificationdata.SCNotificationGetNotificationSettingResponse.SCNotificationNotificationSetting notificationSetting = 1;
+    .snapchat.notification.notificationdata.SCNotificationGetNotificationSettingResponse.SCNotificationNotificationPrivacySetting privacySetting = 2;
+    enum SCNotificationNotificationSetting {
+        SCNotificationNotificationSetting_UnknownSetting = 0;
+        SCNotificationNotificationSetting_SettingTrue = 1;
+        SCNotificationNotificationSetting_SettingFalse = 2;
+    }
+    enum SCNotificationNotificationPrivacySetting {
+        SCNotificationNotificationPrivacySetting_UnknownPrivacy = 0;
+        SCNotificationNotificationPrivacySetting_Everyone = 1;
+        SCNotificationNotificationPrivacySetting_Friends = 2;
+    }
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationGetSessionDataResponse {
+    .snapchat.notification.notificationdata.SCNotificationGetSessionDataResponse.SCNotificationStatusCode statusCode = 1;
+    repeated .snapchat.notification.notificationdata.SCNotificationSessionData sessionDataArray = 2;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationGetTokenStateRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+}
+
+message SCNotificationGetTokenStateResponse {
+    .snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse.SCNotificationGetTokenStateResponse_TokenState deviceTokenState = 1;
+    .snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse.SCNotificationTokenDeletionReason tokenDeletionReason = 2;
+    .snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse.SCNotificationDeviceType deviceType = 3;
+    .snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse.SCNotificationReleaseType releaseType = 4;
+    .snapchat.notification.notificationdata.SCNotificationGetTokenStateResponse.SCNotificationStatusCode statusCode = 5;
+    enum SCNotificationGetTokenStateResponse_TokenState {
+        SCNotificationGetTokenStateResponse_TokenState_Unknown = 0;
+        SCNotificationGetTokenStateResponse_TokenState_Registered = 1;
+        SCNotificationGetTokenStateResponse_TokenState_NoToken = 2;
+        SCNotificationGetTokenStateResponse_TokenState_SoftDeleted = 3;
+        SCNotificationGetTokenStateResponse_TokenState_NoUser = 4;
+    }
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+    enum SCNotificationReleaseType {
+        SCNotificationReleaseType_UnknownRelease = 0;
+        SCNotificationReleaseType_Production = 1;
+        SCNotificationReleaseType_Master = 2;
+        SCNotificationReleaseType_Alpha = 3;
+        SCNotificationReleaseType_Beta = 4;
+        SCNotificationReleaseType_Debug = 5;
+        SCNotificationReleaseType_Prototyping = 6;
+    }
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+    enum SCNotificationTokenDeletionReason {
+        SCNotificationTokenDeletionReason_Unknown = 0;
+        SCNotificationTokenDeletionReason_UserLogin = 1;
+        SCNotificationTokenDeletionReason_UserLogout = 2;
+        SCNotificationTokenDeletionReason_UserUninstall = 3;
+        SCNotificationTokenDeletionReason_PurgeEvent = 4;
+        SCNotificationTokenDeletionReason_TokenInvalid = 5;
+        SCNotificationTokenDeletionReason_SessionExpired = 6;
+    }
+}
+
+message SCNotificationNotificationSettingUpdateRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationSetting sound = 2;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationSetting ringingSound = 3;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationSetting enabled = 4;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationPrivacySetting privacy = 5;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationSetting bitmoji = 6;
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateRequest.SCNotificationNotificationSetting webPushEnabled = 7;
+    enum SCNotificationNotificationSetting {
+        SCNotificationNotificationSetting_UnknownSetting = 0;
+        SCNotificationNotificationSetting_SettingTrue = 1;
+        SCNotificationNotificationSetting_SettingFalse = 2;
+    }
+    enum SCNotificationNotificationPrivacySetting {
+        SCNotificationNotificationPrivacySetting_UnknownPrivacy = 0;
+        SCNotificationNotificationPrivacySetting_Everyone = 1;
+        SCNotificationNotificationPrivacySetting_Friends = 2;
+    }
+}
+
+message SCNotificationNotificationSettingUpdateResponse {
+    .snapchat.notification.notificationdata.SCNotificationNotificationSettingUpdateResponse.SCNotificationStatusCode statusCode = 1;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationPNDGetResponse {
+    .snapchat.notification.notificationdata.SCNotificationPNDGetResponse.SCNotificationStatusCode statusCode = 1;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData pushNotificationData = 2;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationPushNotificationData {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    string deviceToken = 2;
+    string deviceVoipToken = 3;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationDeviceType deviceType = 4;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationReleaseType releaseType = 5;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationSetting sound = 6;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationSetting ringingSound = 7;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationSetting enabled = 8;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationPrivacySetting privacy = 9;
+    string snsArn = 10;
+    string snsVoipArn = 11;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData pushNotificationEncryptionData = 12;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCPushNotificationAppId appId = 13;
+    .snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 14;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationSetting bitmoji = 15;
+    .snapchat.notification.notificationdata.SCNotificationTokens tokens = 16;
+    repeated .snapchat.notification.notificationdata.SCNotificationSessionData webSessionsArray = 17;
+    .snapchat.notification.notificationdata.SCNotificationDeviceVersionInfo deviceVersionInfo = 18;
+    bool hasWebSessions = 19;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationData.SCNotificationNotificationSetting webPushEnabled = 20;
+    string locationToken = 21;
+    string authSessionId = 22;
+    enum SCPushNotificationAppId {
+        SCPushNotificationAppId_Snapchat = 0;
+        SCPushNotificationAppId_Bitmoji = 1;
+        SCPushNotificationAppId_Web = 2;
+        SCPushNotificationAppId_SnapchatFeatureApp = 3;
+    }
+    enum SCNotificationNotificationSetting {
+        SCNotificationNotificationSetting_UnknownSetting = 0;
+        SCNotificationNotificationSetting_SettingTrue = 1;
+        SCNotificationNotificationSetting_SettingFalse = 2;
+    }
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+    enum SCNotificationNotificationPrivacySetting {
+        SCNotificationNotificationPrivacySetting_UnknownPrivacy = 0;
+        SCNotificationNotificationPrivacySetting_Everyone = 1;
+        SCNotificationNotificationPrivacySetting_Friends = 2;
+    }
+    enum SCNotificationReleaseType {
+        SCNotificationReleaseType_UnknownRelease = 0;
+        SCNotificationReleaseType_Production = 1;
+        SCNotificationReleaseType_Master = 2;
+        SCNotificationReleaseType_Alpha = 3;
+        SCNotificationReleaseType_Beta = 4;
+        SCNotificationReleaseType_Debug = 5;
+        SCNotificationReleaseType_Prototyping = 6;
+    }
+}
+
+message SCNotificationPushNotificationEncryptionData {
+    string encryptionSecret = 1;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData.SCNotificationEncryptionType encryptionType = 2;
+    enum SCNotificationEncryptionType {
+        SCNotificationEncryptionType_UnknownEncryptionType = 0;
+        SCNotificationEncryptionType_NoEncryption = 1;
+        SCNotificationEncryptionType_EncryptionV1 = 2;
+    }
+}
+
+message SCNotificationRegisterDeviceRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    .snapchat.notification.notificationdata.SCNotificationDeviceToken deviceToken = 2;
+    .snapchat.notification.notificationdata.SCNotificationRegisterDeviceRequest.SCNotificationDeviceType deviceType = 3;
+    .snapchat.notification.notificationdata.SCNotificationRegisterDeviceRequest.SCNotificationReleaseType releaseType = 4;
+    .snapchat.notification.notificationdata.SCNotificationPushNotificationEncryptionData encryptionData = 5;
+    .snapchat.notification.notificationdata.SCNotificationRegisterDeviceRequest.SCPushNotificationAppId appId = 6;
+    enum SCPushNotificationAppId {
+        SCPushNotificationAppId_Snapchat = 0;
+        SCPushNotificationAppId_Bitmoji = 1;
+        SCPushNotificationAppId_Web = 2;
+        SCPushNotificationAppId_SnapchatFeatureApp = 3;
+    }
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+    enum SCNotificationReleaseType {
+        SCNotificationReleaseType_UnknownRelease = 0;
+        SCNotificationReleaseType_Production = 1;
+        SCNotificationReleaseType_Master = 2;
+        SCNotificationReleaseType_Alpha = 3;
+        SCNotificationReleaseType_Beta = 4;
+        SCNotificationReleaseType_Debug = 5;
+        SCNotificationReleaseType_Prototyping = 6;
+    }
+}
+
+message SCNotificationRegisterDeviceResponse {
+    .snapchat.notification.notificationdata.SCNotificationRegisterDeviceResponse.SCNotificationStatusCode statusCode = 1;
+    bool isRetryable = 2;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationSessionData {
+    string sessionId = 1;
+    .snapchat.notification.notificationdata.SCNotificationSessionData.SCNotificationDeviceType type = 2;
+    .snapchat.notification.notificationdata.SCNotificationTokenData tokenData = 3;
+    enum SCNotificationDeviceType {
+        SCNotificationDeviceType_None = 0;
+        SCNotificationDeviceType_Ios = 1;
+        SCNotificationDeviceType_Android = 2;
+        SCNotificationDeviceType_TestIos = 3;
+        SCNotificationDeviceType_TestAndroid = 4;
+        SCNotificationDeviceType_AndroidHms = 5;
+        SCNotificationDeviceType_IosBitmoji = 6;
+        SCNotificationDeviceType_AndroidBitmoji = 7;
+        SCNotificationDeviceType_DesktopWeb = 8;
+        SCNotificationDeviceType_IosFeatureApp = 9;
+    }
+}
+
+message SCNotificationSnsArnUpdateRequest {
+    .snapchat.notification.SCPushNotificationUUID userId = 1;
+    string arn = 2;
+    string voipArn = 3;
+}
+
+message SCNotificationSnsArnUpdateResponse {
+    .snapchat.notification.notificationdata.SCNotificationSnsArnUpdateResponse.SCNotificationStatusCode statusCode = 1;
+    enum SCNotificationStatusCode {
+        SCNotificationStatusCode_UnknownStatus = 0;
+        SCNotificationStatusCode_Ok = 1;
+        SCNotificationStatusCode_InvalidRequest = 2;
+        SCNotificationStatusCode_PersistenceError = 3;
+        SCNotificationStatusCode_NotAuthorized = 4;
+        SCNotificationStatusCode_NoneExistingUser = 5;
+        SCNotificationStatusCode_InternalFailure = 9;
+    }
+}
+
+message SCNotificationTokenData {
+    string token = 1;
+    string voipToken = 2;
+    .snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo tokenDeletionInfo = 3;
+    int64 creationTime = 4;
+}
+
+message SCNotificationTokenDeletionInfo {
+    int64 deletionTime = 1;
+    .snapchat.notification.notificationdata.SCNotificationTokenDeletionInfo.SCNotificationTokenDeletionReason reason = 2;
+    enum SCNotificationTokenDeletionReason {
+        SCNotificationTokenDeletionReason_Unknown = 0;
+        SCNotificationTokenDeletionReason_UserLogin = 1;
+        SCNotificationTokenDeletionReason_UserLogout = 2;
+        SCNotificationTokenDeletionReason_UserUninstall = 3;
+        SCNotificationTokenDeletionReason_PurgeEvent = 4;
+        SCNotificationTokenDeletionReason_TokenInvalid = 5;
+        SCNotificationTokenDeletionReason_SessionExpired = 6;
+    }
+}
+
+message SCNotificationTokens {
+    repeated .snapchat.notification.notificationdata.SCNotificationDeviceToken tokensArray = 1;
+}
+
+message SCNotificationVersion {
+    uint32 major = 1;
+    uint32 minor = 2;
+}

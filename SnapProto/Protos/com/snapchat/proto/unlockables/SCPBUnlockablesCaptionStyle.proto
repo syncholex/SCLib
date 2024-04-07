@@ -1,0 +1,19 @@
+syntax = "proto3";
+package com.snapchat.proto.unlockables;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlockables";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlockables";
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesBackgroundStyle.proto";
+import "com/snapchat/proto/unlockables/SCPBUnlockablesFontStyle.proto";
+
+message SCPBUnlockablesCaptionStyle {
+    string styleId = 1;
+    string displayName = 2;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesFontStyle fontStyle = 3;
+    .com.snapchat.proto.unlockables.SCPBUnlockablesBackgroundStyle backgroundStyle = 4;
+    bool colorChangeable = 5;
+    string baseColor = 6;
+    bool isWifiOnly = 7;
+    string type = 8;
+}

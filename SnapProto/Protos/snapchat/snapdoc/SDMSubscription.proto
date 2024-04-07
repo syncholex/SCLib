@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "google/protobuf/empty.proto";
+
+message SDMSubscription {
+    string id_p = 3;
+    .google.protobuf.Empty selfSubscribe = 1;
+    .snapchat.snapdoc.SDMSubscription.SDMSubscription_CustomSubscribe customSubscribe = 2;
+    message SDMSubscription_CustomSubscribe {
+        string displayName = 1;
+        string primaryColor = 4;
+        string secondaryColor = 5;
+        .snapchat.snapdoc.SDMSubscription.SDMSubscription_CustomSubscribe.SDMSubscription_CustomSubscribe_Publisher publisher = 2;
+        .snapchat.snapdoc.SDMSubscription.SDMSubscription_CustomSubscribe.SDMSubscription_CustomSubscribe_PublicUser publicUser = 3;
+        message SDMSubscription_CustomSubscribe_PublicUser {
+            string userId = 2;
+        }
+        message SDMSubscription_CustomSubscribe_Publisher {
+            string publisherId = 1;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.forma.endymion;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCForma";
+option csharp_namespace = "SnapProto.Services.Snapchat.Forma.Endymion";
+
+import "snapchat/forma/endymion/SCFormaTryonpoll.proto";
+
+service TryonPoll{
+    rpc CreatePoll(.snapchat.forma.endymion.SCFormaCreatePollRequest) returns (.snapchat.forma.endymion.SCFormaCreatePollResponse);
+    rpc GetLeaderboard(.snapchat.forma.endymion.SCFormaGetLeaderboardRequest) returns (.snapchat.forma.endymion.SCFormaGetLeaderboardResponse);
+    rpc GetPollMetadata(.snapchat.forma.endymion.SCFormaGetPollMetadataRequest) returns (.snapchat.forma.endymion.SCFormaGetPollMetadataResponse);
+}

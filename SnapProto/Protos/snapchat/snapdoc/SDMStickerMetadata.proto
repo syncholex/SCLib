@@ -1,0 +1,31 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+message SDMStickerMetadata {
+    string stickerId = 1;
+    float width = 2;
+    float height = 3;
+    float centerX = 4;
+    float centerY = 5;
+    .snapchat.snapdoc.SDMStickerMetadata.SDMStickerMetadata_StickerType type = 6;
+    enum SDMStickerMetadata_StickerType {
+        SDMStickerMetadata_StickerType_StickerTypeUnknown = 0;
+        SDMStickerMetadata_StickerType_StickerTypeSnapchat = 1;
+        SDMStickerMetadata_StickerType_StickerTypeBitmoji = 2;
+        SDMStickerMetadata_StickerType_StickerTypeGeosticker = 3;
+        SDMStickerMetadata_StickerType_StickerTypeEmoji = 4;
+        SDMStickerMetadata_StickerType_StickerTypeCustomSticker = 5;
+        SDMStickerMetadata_StickerType_StickerTypeBitmojiLens = 6;
+        SDMStickerMetadata_StickerType_StickerTypeUnlockableSticker = 7;
+        SDMStickerMetadata_StickerType_StickerTypeGiphy = 8;
+        SDMStickerMetadata_StickerType_StickerTypeSnapConnect = 10;
+        SDMStickerMetadata_StickerType_StickerTypeGameSnippet = 11;
+        SDMStickerMetadata_StickerType_StickerTypeTopic = 12;
+        SDMStickerMetadata_StickerType_StickerTypeCameo = 13;
+        SDMStickerMetadata_StickerType_StickerTypeGfycat = 14;
+        SDMStickerMetadata_StickerType_StickerTypeShopping = 15;
+    }
+}

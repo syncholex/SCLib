@@ -1,0 +1,262 @@
+syntax = "proto3";
+package actionmoji;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Actionmoji";
+
+import "actionmoji/action/SCMT1Action.proto";
+import "actionmoji/weatherdata/SCMT1Weather.proto";
+import "address/SCMapsLocation.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/local/pelorus/SCMTPelorus.proto";
+import "snapchat/map/SCMTLocationSharing.proto";
+
+message ActionType {
+    int32 id_p = 1;
+    string name = 2;
+    string description_p = 3;
+}
+
+message ActionmojiTypesRequest {
+}
+
+message ActionmojiTypesResponse {
+    repeated .actionmoji.ActionType typesArray = 1;
+}
+
+message AnchorData {
+    int64 timestamp = 1;
+    float lat = 2;
+    float lng = 3;
+}
+
+message BatchCalculateActionStickerForUserRequest {
+    string actionmojiId = 1;
+    string username = 2;
+    repeated .actionmoji.CalculateActionStickerRequest requestsArray = 3;
+}
+
+message BatchCalculateActionStickerForUserResponse {
+    repeated .actionmoji.CalculateActionStickerResponse responsesArray = 1;
+}
+
+message BatchCalculateActionStickerRequest {
+    repeated .actionmoji.CalculateActionStickerRequest requestsArray = 1;
+}
+
+message BatchCalculateActionStickerResponse {
+    repeated .actionmoji.CalculateActionStickerResponse responsesArray = 1;
+}
+
+message CalculateActionStickerRequest {
+    int64 requestTimestamp = 2;
+    .snapchat.map.SCMTUserLocationRequest request = 11;
+    string actionmojiId = 13;
+    int64 birthday = 14;
+    bool hasBirthday = 15;
+    .snapchat.map.SCMTLocationUpdate lastSavedLocation = 17;
+    repeated string bleBeaconIdArray = 18;
+    .snapchat.map.SCMTBatchUserLocationRequest batchRequest = 19;
+    bool isEmployee = 20;
+    .address.SCMapsAddress lastSavedLocationAddress = 21;
+    .snapchat.map.SCMTKalmanData locationKalmanData = 22;
+    bool isBirthday = 24;
+    repeated .actionmoji.CalculateActionStickerRequest.FreeformDataEntry freeformData = 25;
+    .actionmoji.weatherdata.SCMT1Weather weather = 27;
+    string countryCode = 28;
+    uint32 age = 29;
+    .actionmoji.SpectaclesInfo spectaclesInfo = 30;
+    message FreeformDataEntry {
+        string key = 1;
+        string value = 2;
+    }
+}
+
+message CalculateActionStickerResponse {
+    repeated .actionmoji.action.SCMT1Type actionTypeArray = 2;
+    .actionmoji.action.SCMT1Sticker typeSticker = 3;
+    string gitVersion = 4;
+}
+
+message CampusData {
+    string id_p = 1;
+    string name = 2;
+    float confidence = 3;
+}
+
+message ClearLocationHistoryRequest {
+}
+
+message ClearLocationHistoryResponse {
+}
+
+message GetLocationHistoryMetaDataRequest {
+    string userId = 1;
+    bool includeHomeAndWork = 2;
+    bool includeWeeklyTopLocations = 3;
+    bool includeDailyTopLocations = 4;
+    bool includeVisitations = 5;
+}
+
+message GetLocationHistoryMetaDataResponse {
+    .actionmoji.LocationHistoryMetaData userData = 1;
+}
+
+message GetUserSpoofingInfoRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+    float lat = 2;
+    float lng = 3;
+    int64 timestampMs = 4;
+    float radiusKm = 5;
+    int32 recencyHrs = 6;
+    int64 startTimeMs = 7;
+    int32 minVisitDurationHrs = 8;
+    int32 minTransitionTimeHrs = 9;
+    bool rejectNoHistory = 10;
+}
+
+message GetUserSpoofingInfoResponse {
+    float spoofConfidence = 1;
+    repeated .actionmoji.GetUserSpoofingInfoResponse.SpoofingReason reasonsArray = 2;
+    enum SpoofingReason {
+        SpoofingReason_Unset = 0;
+        SpoofingReason_EmptyHistory = 1;
+        SpoofingReason_NeverVisited = 2;
+        SpoofingReason_VisitedAfterCutoff = 3;
+        SpoofingReason_MovedTooFast = 4;
+        SpoofingReason_DurationTooShort = 5;
+        SpoofingReason_FirstVisitAtZeroTime = 6;
+        SpoofingReason_VisitTooRecent = 7;
+    }
+}
+
+message KalmanData {
+    float lat = 1;
+    float lng = 2;
+    float speed = 3;
+    float heading = 4;
+    float horizontalAccuracy = 5;
+    int32 numberOfPoints = 6;
+    float speedAccuracy = 7;
+}
+
+message LocationHistoryEntry {
+    int64 timestamp = 1;
+    .snapchat.map.SCMTUserLocationRequest request = 2;
+    .actionmoji.LoggedAction action = 3;
+    .actionmoji.KalmanData kalmanData = 4;
+    .snapchat.map.SCMTLocationUpdate lastSavedLocation = 5;
+    .snapchat.map.SCMTKalmanData locationKalmanData = 6;
+}
+
+message LocationHistoryMetaData {
+    int64 homeS2CellId = 1;
+    int64 workS2CellId = 2;
+    repeated .actionmoji.TopLocationSummary dailyTopLocationsArray = 3;
+    repeated .actionmoji.TopLocationSummary topLocationsPer6DayArray = 4;
+    repeated string visitedLocalitiesArray = 5;
+    repeated .actionmoji.PreciseLocation visitedLocationsArray = 6;
+    repeated .actionmoji.LocationHistoryMetaData.LocationHistoryMetaData_Visitation visitationsArray = 7;
+    message LocationHistoryMetaData_Visitation {
+        string locality = 1;
+        repeated .actionmoji.PreciseLocation locationsArray = 2;
+    }
+}
+
+message LocationHistoryRow {
+    string rowKey = 1;
+    .actionmoji.LocationHistoryEntry locationHistoryEntry = 2;
+}
+
+message LoggedAction {
+    repeated string messageArray = 2;
+    repeated .actionmoji.action.SCMT1Type actionTypeArray = 3;
+    .actionmoji.action.SCMT1Sticker typeSticker = 4;
+    repeated .actionmoji.action.SCMT1Action actionArray = 5;
+}
+
+message PermanentLocations {
+    .actionmoji.S2CellData home = 1;
+    .actionmoji.S2CellData work = 2;
+    float homeConfidence = 3;
+    float workConfidence = 4;
+    int64 firstLocationShare = 5;
+    .actionmoji.CampusData campus = 6;
+}
+
+message PreciseLocation {
+    int64 timestamp = 1;
+    double lat = 2;
+    double lng = 3;
+    float horizontalAccuracyMeters = 4;
+}
+
+message S2CellData {
+    string s2CellId = 1;
+    float lat = 2;
+    float lng = 3;
+    int64 timestamp = 4;
+}
+
+message S2CellTiming {
+    string s2CellId = 1;
+    int64 enterTimestamp = 2;
+    int64 latestTimestamp = 3;
+}
+
+message SpectaclesInfo {
+    int64 lastContentTakenTimestampMs = 1;
+    .actionmoji.SpectaclesInfo.SpectaclesInfo_Color color = 2;
+    bool isConnected = 3;
+    enum SpectaclesInfo_Color {
+        SpectaclesInfo_Color_Unset = 0;
+        SpectaclesInfo_Color_Black = 1;
+        SpectaclesInfo_Color_Coral = 2;
+        SpectaclesInfo_Color_Teal = 3;
+        SpectaclesInfo_Color_Onyx = 4;
+        SpectaclesInfo_Color_Ruby = 5;
+        SpectaclesInfo_Color_Sapphire = 6;
+        SpectaclesInfo_Color_Veronica = 7;
+        SpectaclesInfo_Color_Nico = 8;
+    }
+}
+
+message TopLocation {
+    int64 s2CellId = 1;
+    float score = 2;
+    .actionmoji.TopLocation.SectionOfDay sectionOfDay = 3;
+    bool hasWifi = 4;
+    int32 differentDays = 5;
+    enum SectionOfDay {
+        SectionOfDay_None = 0;
+        SectionOfDay_Night = 1;
+        SectionOfDay_Day = 2;
+        SectionOfDay_Evening = 3;
+    }
+}
+
+message TopLocationSummary {
+    int64 startOfPeriod = 1;
+    repeated int64 s2CellIdArray = 2;
+}
+
+message TopLocations {
+    repeated .actionmoji.TopLocation locationsArray = 1;
+}
+
+message UserData {
+    .actionmoji.AnchorData anchorData = 1;
+    .snapchat.map.SCMTUserLocationRequest lastLocationRequest = 3;
+    int64 lastLocationRequestTimestamp = 4;
+    int64 lastForegroundUpdateTimestamp = 5;
+    .snapchat.map.SCMTLocationUpdate lastSavedLocation = 9;
+    repeated .actionmoji.action.SCMT1Action actionArray = 12;
+    .snapchat.local.pelorus.SCMTPositionResponse cachedPelorusResponse = 13;
+    int64 cachedPelorusResponseTimestampMs = 14;
+    .snapchat.local.pelorus.SCMTPositionResponse cachedPelorusVzResponse = 15;
+    int64 cachedPelorusVzResponseTimestampMs = 16;
+}
+
+message UserPermanentLocations {
+    string user = 1;
+    .actionmoji.PermanentLocations permanentLocations = 2;
+}

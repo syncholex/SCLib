@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+message SCULRequestInfo {
+    string countryCodeTwoLetter = 1;
+    .snapchat.unlockables.request.schema.SCULRequestInfo.SCULRequestInfo_ScreenInfo screenInfo = 2;
+    string timeZoneId = 3;
+    string acceptLanguage = 4;
+    .snapchat.unlockables.request.schema.SCULRequestInfo.SCULCameraType cameraType = 5;
+    message SCULRequestInfo_ScreenInfo {
+        float screenWidthIn = 1;
+        float screenHeightIn = 2;
+        int32 screenWidthPx = 3;
+        int32 screenHeightPx = 4;
+    }
+    enum SCULCameraType {
+        SCULCameraType_CameraTypeMainUnset = 0;
+        SCULCameraType_CameraTypeReply = 1;
+        SCULCameraType_CameraTypeChatFeedPsa = 2;
+        SCULCameraType_CameraTypeSmartCta = 3;
+        SCULCameraType_CameraGrowthNotification = 4;
+    }
+}

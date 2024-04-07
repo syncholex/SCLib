@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.bitmoji.avatar;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "BM";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Avatar";
+
+message BMCompactAvatarId {
+    uint64 id_p = 1;
+    uint32 version = 2;
+    .snapchat.bitmoji.avatar.BMCompactAvatarId.BMAvatarStyle style = 3;
+    enum BMAvatarStyle {
+        BMAvatarStyle_StyleUnset = 0;
+        BMAvatarStyle_Bitstrips = 1;
+        BMAvatarStyle_BitmojiClassic = 4;
+        BMAvatarStyle_BitmojiDeluxe = 5;
+    }
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+package com.snapchat.showcase.wire.context;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Showcase.Wire.Context";
+
+import "com/snapchat/item_catalog/domain/item_set/ItemSetId.proto";
+
+message AssetInfo {
+    .com.snapchat.showcase.wire.context.AssetInfo.AssetType assetType = 1;
+    enum AssetType {
+        AssetType_AssetTypeUnset = 0;
+        AssetType_Makeup = 1;
+        AssetType_Glasses = 2;
+        AssetType_Shoes = 3;
+        AssetType_Surface = 4;
+        AssetType_TwoD = 5;
+        AssetType_Wrist = 6;
+        AssetType_SurfaceVertical = 7;
+        AssetType_SurfaceCeiling = 8;
+        AssetType_UnsetLocalAsset = 9;
+    }
+}
+
+message ShopkitContext {
+    string lensItemSetId = 1;
+    string domainItemSetId = 2;
+    uint64 snapItemId = 3;
+    .com.snapchat.showcase.wire.context.AssetInfo assetInfo = 4;
+    .com.snapchat.item_catalog.domain.item_set.ItemSetId lensItemSetIdEntity = 5;
+    .com.snapchat.item_catalog.domain.item_set.ItemSetId domainItemSetIdEntity = 6;
+}

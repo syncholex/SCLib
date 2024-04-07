@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCCTPCaptionStyleMetadata {
+    string text = 1;
+    int32 editingFontSize = 2;
+    repeated .snapchat.core.SCCOREUUID placeIdsArray = 3;
+}

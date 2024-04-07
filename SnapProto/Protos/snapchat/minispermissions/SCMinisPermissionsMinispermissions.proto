@@ -1,0 +1,66 @@
+syntax = "proto3";
+package snapchat.minispermissions;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMinisPermissions";
+option csharp_namespace = "SnapProto.Snapchat.Minispermissions";
+
+message SCMinisPermissionsGetPermissionsRequest {
+    string appId = 1;
+    repeated string userIdsArray = 2;
+    repeated .snapchat.minispermissions.SCMinisPermissionsGetPermissionsRequest.SCMinisPermissionsPermissionScope scopesArray = 3;
+    enum SCMinisPermissionsPermissionScope {
+        SCMinisPermissionsPermissionScope_ScopeUnset = 0;
+        SCMinisPermissionsPermissionScope_ActivityVisibility = 1;
+    }
+}
+
+message SCMinisPermissionsGetPermissionsResponse {
+    repeated .snapchat.minispermissions.SCMinisPermissionsUserPermissions userPermissionsArray = 1;
+}
+
+message SCMinisPermissionsGetUserPermissionsRequest {
+    string appId = 1;
+    repeated .snapchat.minispermissions.SCMinisPermissionsGetUserPermissionsRequest.SCMinisPermissionsPermissionScope scopesArray = 2;
+    enum SCMinisPermissionsPermissionScope {
+        SCMinisPermissionsPermissionScope_ScopeUnset = 0;
+        SCMinisPermissionsPermissionScope_ActivityVisibility = 1;
+    }
+}
+
+message SCMinisPermissionsGetUserPermissionsResponse {
+    repeated .snapchat.minispermissions.SCMinisPermissionsPermission permissionsArray = 1;
+}
+
+message SCMinisPermissionsPermission {
+    .snapchat.minispermissions.SCMinisPermissionsPermission.SCMinisPermissionsPermissionValue value = 1;
+    .snapchat.minispermissions.SCMinisPermissionsPermission.SCMinisPermissionsPermissionScope scope = 2;
+    enum SCMinisPermissionsPermissionScope {
+        SCMinisPermissionsPermissionScope_ScopeUnset = 0;
+        SCMinisPermissionsPermissionScope_ActivityVisibility = 1;
+    }
+    enum SCMinisPermissionsPermissionValue {
+        SCMinisPermissionsPermissionValue_Unset = 0;
+        SCMinisPermissionsPermissionValue_Allow = 1;
+        SCMinisPermissionsPermissionValue_Deny = 2;
+    }
+}
+
+message SCMinisPermissionsRemoveAllUserPermissionsRequest {
+    string appId = 1;
+}
+
+message SCMinisPermissionsRemoveAllUserPermissionsResponse {
+}
+
+message SCMinisPermissionsSetUserPermissionRequest {
+    string appId = 1;
+    repeated .snapchat.minispermissions.SCMinisPermissionsPermission permissionArray = 2;
+}
+
+message SCMinisPermissionsSetUserPermissionResponse {
+}
+
+message SCMinisPermissionsUserPermissions {
+    string userId = 1;
+    repeated .snapchat.minispermissions.SCMinisPermissionsPermission permissionsArray = 2;
+}

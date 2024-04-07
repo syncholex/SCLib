@@ -1,0 +1,57 @@
+syntax = "proto3";
+package snapchat.map.garfield.tiles;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGT";
+option csharp_namespace = "SnapProto.Snapchat.Map.Garfield.Tiles";
+
+import "google/protobuf/struct.proto";
+
+message SCMGTCoordinate {
+    uint32 x = 1;
+    uint32 y = 2;
+    uint32 z = 3;
+}
+
+message SCMGTFeature {
+    .google.protobuf.Struct properties = 2;
+    .snapchat.map.garfield.tiles.SCMGTFeature.SCMGTFeature_GeomType type = 3;
+    repeated uint32 geometryArray = 4;
+    float minZoom = 7;
+    bytes extension = 15;
+    string stringId = 5;
+    uint64 uintId = 6;
+    enum SCMGTFeature_GeomType {
+        SCMGTFeature_GeomType_Unknown = 0;
+        SCMGTFeature_GeomType_Point = 1;
+        SCMGTFeature_GeomType_Linestring = 2;
+        SCMGTFeature_GeomType_Polygon = 3;
+    }
+}
+
+message SCMGTFeaturesResponse {
+    repeated .snapchat.map.garfield.tiles.SCMGTFeature featuresArray = 1;
+    uint64 cacheChecksum = 2;
+}
+
+message SCMGTGetTileRequest {
+    .snapchat.map.garfield.tiles.SCMGTCoordinate coordinate = 1;
+    repeated .snapchat.map.garfield.tiles.SCMGTLayerRequest layersArray = 2;
+}
+
+message SCMGTGetTileResponse {
+    repeated .snapchat.map.garfield.tiles.SCMGTLayerResponse layersArray = 1;
+}
+
+message SCMGTLayerRequest {
+    uint64 id_p = 1;
+    uint64 version = 2;
+    uint64 cacheChecksum = 3;
+    string flavor = 4;
+}
+
+message SCMGTLayerResponse {
+    uint64 id_p = 3;
+    uint64 tilesetVersion = 4;
+    bool cached = 1;
+    .snapchat.map.garfield.tiles.SCMGTFeaturesResponse features = 2;
+}

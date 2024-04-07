@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.ar.common.template;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Com.Snapchat.Ar.Common.Template";
+
+import "com/snapchat/ar/common/template/RemoteAsset.proto";
+
+message RenderingMetadata {
+    string json = 1;
+    repeated .com.snapchat.ar.common.template.RemoteAsset remoteAssetsArray = 2;
+}

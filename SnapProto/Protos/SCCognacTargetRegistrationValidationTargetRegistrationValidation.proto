@@ -1,0 +1,12 @@
+syntax = "proto3";
+package targetregistration;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCognacTargetRegistrationValidation";
+option csharp_namespace = "SnapProto.Services.Targetregistration";
+
+import "targetregistration/SCCognacTargetRegistrationValidationValidation.proto";
+
+service TargetRegistrationValidation{
+    rpc ValidateExternalLink(.targetregistration.SCCognacTargetRegistrationValidationValidateExternalLinkRequest) returns (.targetregistration.SCCognacTargetRegistrationValidationValidateExternalLinkResponse);
+    rpc ValidateShareInfo(.targetregistration.SCCognacTargetRegistrationValidationValidateShareInfoRequest) returns (.targetregistration.SCCognacTargetRegistrationValidationValidateShareInfoResponse);
+}

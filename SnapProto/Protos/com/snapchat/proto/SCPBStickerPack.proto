@@ -1,0 +1,31 @@
+syntax = "proto3";
+package com.snapchat.proto;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPB";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto";
+
+import "com/snapchat/proto/SCPBGeofence.proto";
+import "com/snapchat/proto/SCPBStickerPackContextualMetadata.proto";
+
+message SCPBStickerPack {
+    string packId = 1;
+    string categoryId = 2;
+    string iconURL = 3;
+    int32 iconVersion = 4;
+    string URL = 5;
+    int32 version = 6;
+    bool active = 7;
+    string type = 8;
+    repeated string capabilitiesArray = 9;
+    repeated string targetArray = 10;
+    string superCategory = 11;
+    .com.snapchat.proto.SCPBGeofence geofence = 12;
+    string unlockablePreviewImgURL = 13;
+    string title = 14;
+    int64 unlockExpirationTimeInSec = 15;
+    .com.snapchat.proto.SCPBStickerPackContextualMetadata contextualPackMetadata = 16;
+    string unlockableId = 17;
+    bool isExpandable = 18;
+    string metadataURL = 19;
+    int64 expirationTtlInSec = 20;
+}

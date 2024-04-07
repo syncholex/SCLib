@@ -1,0 +1,443 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+import "actionmoji/action/SCMT1Action.proto";
+import "address/SCMapsLocation.proto";
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/map/SCMTWorldEffects.proto";
+
+message SCMTActionSticker {
+    string actionStickerId = 1;
+    string actionId = 2;
+    int64 actionStickerValidUntil = 3;
+    int64 actionStickerLockedUntil = 4;
+    double actionConfidence = 5;
+    int64 actionStickerEffectiveTime = 6;
+    string actionSubtype = 7;
+    bool allowedInCluster = 8;
+    string clusterableStickerId = 9;
+    string nonClusterableStickerId = 10;
+    string clusterableFacingLeftStickerId = 11;
+    string clusterableFacingRightStickerId = 12;
+    bool nonClusterableStickerIdSupportsShadow = 15;
+    bool devOnly = 16;
+    bool employeeOnly = 17;
+    .snapchat.map.SCMTActionSticker.SCMTClusteringPolicy clusteringPolicy = 18;
+    float actionLat = 19;
+    float actionLng = 20;
+    float actionRadiusMeters = 21;
+    bool isSpaceConstrained = 22;
+    enum SCMTClusteringPolicy {
+        SCMTClusteringPolicy_DefaultClustering = 0;
+        SCMTClusteringPolicy_SameActionOnly = 1;
+        SCMTClusteringPolicy_DifferentActionOnly = 2;
+        SCMTClusteringPolicy_Never = 3;
+    }
+}
+
+message SCMTBatchUserLocationRequest {
+    repeated .snapchat.map.SCMTLocationUpdate locationUpdateArray = 1;
+    .snapchat.map.SCMTDeviceData deviceData = 2;
+    repeated string bleBeaconIdArray = 3;
+    int64 sequenceNumber = 4;
+    bool ghostMode = 5;
+    .snapchat.map.SCMTKalmanData locationKalmanData = 6;
+    bool isEmployee = 7;
+    bool hasBirthday = 8;
+    int64 birthday = 9;
+    bool isBirthday = 10;
+    string username = 11;
+    .snapchat.map.SCMTSpectaclesInfo spectaclesInfo = 12;
+    .snapchat.map.SCMTBatchUserLocationRequest.SCMTRetention retention = 15;
+    .snapchat.map.SCMTGDPRSettings gdprSettings = 16;
+    string cognacAppId = 17;
+    int64 serverRequestTimestamp = 18;
+    enum SCMTRetention {
+        SCMTRetention_UnknownPolicy = 0;
+        SCMTRetention_DefaultPolicy = 1;
+        SCMTRetention_GdprU16Policy = 2;
+        SCMTRetention_GdprPolicy = 3;
+    }
+}
+
+message SCMTBatchUserLocationResponse {
+    .snapchat.map.SCMTBatchUserLocationResponse.SCMTErrorCode errorCode = 1;
+    int64 assignedSequenceNumber = 4;
+    .snapchat.map.SCMTFriendLocation currentLocation = 5;
+    .actionmoji.action.SCMT1Action action = 6;
+    double nextRequestAfterSecs = 10;
+    enum SCMTErrorCode {
+        SCMTErrorCode_Ok = 0;
+        SCMTErrorCode_UnknownError = 1;
+        SCMTErrorCode_ConcurrencyError = 2;
+        SCMTErrorCode_VersionMismatch = 3;
+        SCMTErrorCode_GhostModeUpdate = 4;
+    }
+}
+
+message SCMTDeleteShareLocationPreferencesRequest {
+}
+
+message SCMTDeleteShareLocationPreferencesResponse {
+    .snapchat.map.SCMTDeleteShareLocationPreferencesResponse.SCMTErrorCode errorCode = 1;
+    enum SCMTErrorCode {
+        SCMTErrorCode_Ok = 0;
+        SCMTErrorCode_UnknownError = 1;
+        SCMTErrorCode_ConcurrencyError = 2;
+        SCMTErrorCode_VersionMismatch = 3;
+        SCMTErrorCode_GhostModeUpdate = 4;
+    }
+}
+
+message SCMTDeviceData {
+    bool isBackgrounded = 1;
+    float batteryLevel = 2;
+    bool devicePluggedIn = 3;
+    bool headphoneOutput = 4;
+    string wifiSsid = 5;
+    bool isOtherAudioPlaying = 6;
+}
+
+message SCMTFriendCluster {
+    .snapchat.map.SCMTImage prop = 1;
+    .snapchat.map.SCMTImage floor = 2;
+    float centerLat = 3;
+    float centerLng = 4;
+    repeated .snapchat.map.SCMTFriendLocation friendLocationArray = 5;
+    .snapchat.map.SCMTWorldEffectSet worldEffect = 6;
+    string clusterId = 7;
+}
+
+message SCMTFriendClusterIds {
+    repeated string friendClusterIdsArray = 1;
+}
+
+message SCMTFriendClustersRequest {
+    string language = 1;
+    float lat = 2;
+    float lng = 3;
+    repeated string bleBeaconIdArray = 4;
+    string countryCode = 5;
+    string diffBaseId = 6;
+}
+
+message SCMTFriendClustersResponse {
+    repeated .snapchat.map.SCMTFriendCluster friendClusterArray = 1;
+    int32 s2CellLevel = 2;
+    int64 s2CellApproximateLength = 3;
+    .snapchat.map.SCMTFriendClustersResponse.SCMTErrorCode errorCode = 4;
+    repeated .snapchat.map.SCMTMapPoint pointArray = 5;
+    string previousDiffBaseId = 6;
+    string diffBaseId = 7;
+    repeated string removedFriendClusterIdsArray = 8;
+    double nextRequestAfterSecs = 10;
+    enum SCMTErrorCode {
+        SCMTErrorCode_Ok = 0;
+        SCMTErrorCode_UnknownError = 1;
+        SCMTErrorCode_ConcurrencyError = 2;
+        SCMTErrorCode_VersionMismatch = 3;
+        SCMTErrorCode_GhostModeUpdate = 4;
+    }
+}
+
+message SCMTFriendLocation {
+    string userId = 1;
+    float lat = 2;
+    float lng = 3;
+    .snapchat.map.SCMTFriendLocation.SCMTLocationSharingMode sharingMode = 4;
+    int64 timestamp = 5;
+    int64 s2CellId = 6;
+    string actionStickerId = 7;
+    string locality = 8;
+    bool tombstone = 9;
+    string nonClusterableStickerId = 12;
+    string clusterableFacingLeftStickerId = 13;
+    string clusterableFacingRightStickerId = 14;
+    bool nonClusterableStickerIdSupportsShadow = 15;
+    .actionmoji.action.SCMT1Action action = 17;
+    repeated .actionmoji.action.SCMT1Type actionTypeArray = 18;
+    .actionmoji.action.SCMT1Sticker typeSticker = 19;
+    float horizontalAccuracyMeters = 20;
+    .snapchat.map.SCMTFriendLocationVenue venue = 21;
+    .snapchat.map.SCMTFriendStatus friendStatus = 22;
+    string subsubtitle = 23;
+    repeated string localityPiecesArray = 24;
+    bool isLiveLocation = 25;
+    int64 liveSessionExpirationMs = 26;
+    .snapchat.core.SCCOREUUID liveSessionId = 27;
+    bool isLiveSessionIndefinite = 28;
+    enum SCMTLocationSharingMode {
+        SCMTLocationSharingMode_Ghost = 0;
+        SCMTLocationSharingMode_City = 1;
+        SCMTLocationSharingMode_Precise = 2;
+    }
+}
+
+message SCMTFriendLocationVenue {
+    string venueId = 1;
+    string name = 2;
+}
+
+message SCMTFriendLocationsRequest {
+    float lat = 1;
+    float lng = 2;
+    string continuationId = 3;
+    int32 requestedChunkSize = 4;
+    string language = 5;
+    repeated .snapchat.map.SCMTLastKnownLocation lastKnownLocationArray = 6;
+}
+
+message SCMTFriendLocationsResponse {
+    repeated .snapchat.map.SCMTFriendLocation friendLocationArray = 1;
+    int64 s2CellId = 2;
+    string continuationId = 3;
+}
+
+message SCMTFriendStatus {
+    string statusId = 1;
+    string speechText = 2;
+}
+
+message SCMTGDPRSettings {
+    int32 age = 1;
+    .snapchat.map.SCMTGDPRSettings.SCMTGDPRSettings_GhostMode_Type ghostMode = 2;
+    .snapchat.map.SCMTGDPRSettings.SCMTGDPRSettings_OnboardedMap_Type onboardedMap = 3;
+    string registrationCountryCode = 4;
+    string currentCountryCode = 5;
+    enum SCMTGDPRSettings_GhostMode_Type {
+        SCMTGDPRSettings_GhostMode_Type_Unknown = 0;
+        SCMTGDPRSettings_GhostMode_Type_Yes = 1;
+        SCMTGDPRSettings_GhostMode_Type_No = 2;
+    }
+    enum SCMTGDPRSettings_OnboardedMap_Type {
+        SCMTGDPRSettings_OnboardedMap_Type_Unknown = 0;
+        SCMTGDPRSettings_OnboardedMap_Type_Yes = 1;
+        SCMTGDPRSettings_OnboardedMap_Type_No = 2;
+    }
+}
+
+message SCMTGetShareLocationPreferencesRequest {
+}
+
+message SCMTGetShareLocationPreferencesResponse {
+    .snapchat.map.SCMTShareLocationPreferences preferences = 1;
+    bool onboarded = 2;
+    .snapchat.map.SCMTGetShareLocationPreferencesResponse.SCMTErrorCode errorCode = 3;
+    int64 ghostModeRemainingDurationMillis = 4;
+    bool isBlacklistRolledBack = 5;
+    enum SCMTErrorCode {
+        SCMTErrorCode_Ok = 0;
+        SCMTErrorCode_UnknownError = 1;
+        SCMTErrorCode_ConcurrencyError = 2;
+        SCMTErrorCode_VersionMismatch = 3;
+        SCMTErrorCode_GhostModeUpdate = 4;
+    }
+}
+
+message SCMTImage {
+    string oldAndroidHash = 1;
+    string URL = 2;
+}
+
+message SCMTInternalGetPassportPreferencesRequest {
+    string userId = 1;
+}
+
+message SCMTInternalGetPassportPreferencesResponse {
+    .snapchat.map.SCMTPassportPreferences passportPreferences = 1;
+}
+
+message SCMTInternalGetShareLocationPreferencesRequest {
+    string userId = 1;
+}
+
+message SCMTInternalGetShareLocationPreferencesResponse {
+    .snapchat.map.SCMTShareLocationPreferences preferences = 1;
+}
+
+message SCMTKalmanData {
+    float lat = 1;
+    float lng = 2;
+    float speed = 3;
+    float heading = 4;
+    float horizontalAccuracy = 5;
+    int32 numberOfPoints = 6;
+    float speedAccuracy = 7;
+    repeated .snapchat.map.SCMTLocationUpdate locationUpdatesArray = 8;
+    int32 algorithmVersion = 9;
+}
+
+message SCMTLastKnownLocation {
+    string userId = 1;
+    int64 timestamp = 2;
+}
+
+message SCMTLocality {
+    string language = 1;
+    string locality = 2;
+    .address.SCMapsAddress address = 3;
+}
+
+message SCMTLocationUpdate {
+    float lat = 1;
+    float lng = 2;
+    float altitude = 3;
+    float horizontalAccuracy = 4;
+    float verticalAccuracy = 5;
+    .snapchat.map.SCMTMotionData motionData = 6;
+    int64 timestamp = 7;
+    bool gpsReset = 8;
+}
+
+message SCMTMapPoint {
+    float lat = 1;
+    float lng = 2;
+    string name = 3;
+    string locality = 4;
+    .actionmoji.action.SCMT1Sticker typeSticker = 5;
+}
+
+message SCMTMotionData {
+    .snapchat.map.SCMTMotionData.SCMTMotionType motion = 1;
+    int64 motionStartTimestamp = 2;
+    int32 motionTypeConfidence = 3;
+    float heading = 4;
+    float speed = 5;
+    enum SCMTMotionType {
+        SCMTMotionType_Unknown = 0;
+        SCMTMotionType_Stationary = 1;
+        SCMTMotionType_Walking = 2;
+        SCMTMotionType_Running = 3;
+        SCMTMotionType_Biking = 4;
+        SCMTMotionType_Driving = 5;
+    }
+}
+
+message SCMTPassportPreferences {
+    .snapchat.map.SCMTPassportPreferences.SCMTPassportOnOffStatus onOffStatus = 1;
+    enum SCMTPassportOnOffStatus {
+        SCMTPassportOnOffStatus_UnknownOnOffStatus = 0;
+        SCMTPassportOnOffStatus_On = 1;
+        SCMTPassportOnOffStatus_Off = 2;
+    }
+}
+
+message SCMTPerFriendSharingMode {
+    string userId = 1;
+    .snapchat.map.SCMTPerFriendSharingMode.SCMTLocationSharingMode sharingMode = 2;
+    enum SCMTLocationSharingMode {
+        SCMTLocationSharingMode_Ghost = 0;
+        SCMTLocationSharingMode_City = 1;
+        SCMTLocationSharingMode_Precise = 2;
+    }
+}
+
+message SCMTPrivacySensitiveLocationData {
+    float lat = 1;
+    float lng = 2;
+    float altitude = 9;
+    float horizontalAccuracy = 10;
+    float verticalAccuracy = 11;
+    .snapchat.map.SCMTMotionData motionData = 12;
+    repeated .snapchat.map.SCMTLocality localityArray = 14;
+    bool backgroundUpdate = 20;
+    int64 lastForegroundUpdateTimestamp = 22;
+    repeated .snapchat.map.SCMTLocationUpdate locationUpdateArray = 23;
+    bytes kalmanState = 24;
+    float kalmanLat = 25;
+    float kalmanLng = 26;
+    int64 kalmanTimestamp = 27;
+    repeated .actionmoji.action.SCMT1Type actionTypeArray = 28;
+    .actionmoji.action.SCMT1Sticker typeSticker = 29;
+    repeated string bleBeaconIdArray = 30;
+}
+
+message SCMTSetShareLocationPreferencesRequest {
+    .snapchat.map.SCMTShareLocationPreferences preferences = 1;
+    int64 locationUpdateSequenceNumber = 2;
+    int64 ghostModeDurationMillis = 3;
+    bool optOutMapOnboarding = 4;
+}
+
+message SCMTSetShareLocationPreferencesResponse {
+    .snapchat.map.SCMTSetShareLocationPreferencesResponse.SCMTErrorCode errorCode = 1;
+    enum SCMTErrorCode {
+        SCMTErrorCode_Ok = 0;
+        SCMTErrorCode_UnknownError = 1;
+        SCMTErrorCode_ConcurrencyError = 2;
+        SCMTErrorCode_VersionMismatch = 3;
+        SCMTErrorCode_GhostModeUpdate = 4;
+    }
+}
+
+message SCMTShareLocationPreferences {
+    bool ghostMode = 1;
+    .snapchat.map.SCMTShareLocationPreferences.SCMTLocationSharingMode sharingMode = 2;
+    .snapchat.map.SCMTShareLocationPreferences.SCMTLocationSharingAudience audience = 3;
+    repeated .snapchat.map.SCMTPerFriendSharingMode perFriendModeArray = 4;
+    bool backgroundSharingEnabled = 5;
+    bool shareUsageData = 6;
+    int32 version = 7;
+    repeated .snapchat.map.SCMTPerFriendSharingMode blacklistPerFriendModeArray = 8;
+    .snapchat.map.SCMTPassportPreferences passportPreferences = 9;
+    int64 lastModifiedTime = 10;
+    enum SCMTLocationSharingAudience {
+        SCMTLocationSharingAudience_BestFriends = 0;
+        SCMTLocationSharingAudience_Friends = 1;
+        SCMTLocationSharingAudience_Everyone = 2;
+        SCMTLocationSharingAudience_Custom = 3;
+        SCMTLocationSharingAudience_Blacklist = 4;
+        SCMTLocationSharingAudience_None = 5;
+    }
+    enum SCMTLocationSharingMode {
+        SCMTLocationSharingMode_Ghost = 0;
+        SCMTLocationSharingMode_City = 1;
+        SCMTLocationSharingMode_Precise = 2;
+    }
+}
+
+message SCMTSpectaclesInfo {
+    int64 lastContentTakenTimestamp = 1;
+    .snapchat.map.SCMTSpectaclesInfo.SCMTSpectaclesColor lastContentDeviceColor = 2;
+    bool isDeviceConnected = 3;
+    enum SCMTSpectaclesColor {
+        SCMTSpectaclesColor_Black = 0;
+        SCMTSpectaclesColor_Coral = 1;
+        SCMTSpectaclesColor_Teal = 2;
+        SCMTSpectaclesColor_Onyx = 3;
+        SCMTSpectaclesColor_Ruby = 4;
+        SCMTSpectaclesColor_Sapphire = 5;
+        SCMTSpectaclesColor_Veronica = 6;
+        SCMTSpectaclesColor_Nico = 7;
+    }
+}
+
+message SCMTUserLocationRequest {
+    float lat = 1;
+    float lng = 2;
+    float altitude = 9;
+    float horizontalAccuracy = 10;
+    float verticalAccuracy = 11;
+    .snapchat.map.SCMTMotionData motionData = 12;
+    int64 locationUpdatedTimestamp = 16;
+    repeated string logMessageArray = 17;
+    .snapchat.map.SCMTDeviceData deviceData = 18;
+}
+
+message SCMTUserLocationResponse {
+    int64 timestamp = 1;
+    double nextRequestAfterSecs = 10;
+}
+
+message SCMTValisGetShareLocationPreferencesRequest {
+    string userId = 1;
+}
+
+message SCMTValisSetShareLocationPreferencesRequest {
+    string userId = 1;
+    .snapchat.map.SCMTShareLocationPreferences preferences = 2;
+    int64 ghostModeDurationMillis = 3;
+}

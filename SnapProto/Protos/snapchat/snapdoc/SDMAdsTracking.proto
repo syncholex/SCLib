@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/ads/request/schema/SCAdsAdResponse.proto";
+
+message SDMAdsTracking {
+    .snapchat.ads.request.schema.SCAdsSKAdNetworkAttribution skAdNetworkAttribution = 1;
+    string iosAppId = 2;
+    string adId = 3;
+}

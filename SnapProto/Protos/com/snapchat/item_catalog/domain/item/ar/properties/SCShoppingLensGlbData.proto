@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.item_catalog.domain.item.ar.properties;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCShoppingLens";
+option csharp_namespace = "SnapProto.Com.Snapchat.Item_catalog.Domain.Item.Ar.Properties";
+
+message SCShoppingLensGlbData {
+    string URL = 1;
+    string checksum = 2;
+    bool trueSize = 3;
+}

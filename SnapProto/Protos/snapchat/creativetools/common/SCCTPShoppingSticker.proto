@@ -1,0 +1,15 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPShoppingSticker {
+    uint64 snapItemId = 1;
+    .snapchat.core.SCCOREUUID storeId = 2;
+    string stickerTitle = 3;
+    .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 4;
+}

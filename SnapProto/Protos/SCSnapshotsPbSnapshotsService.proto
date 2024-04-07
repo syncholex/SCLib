@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.snapshots.api;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSnapshotsPb";
+option csharp_namespace = "SnapProto.Services.Snapchat.Snapshots.Api";
+
+import "snapchat/snapshots/api/SCSnapshotsPbDelete.proto";
+import "snapchat/snapshots/api/SCSnapshotsPbSet.proto";
+
+service SnapshotsService{
+    rpc DeleteSnapshot(.snapchat.snapshots.api.SCSnapshotsPbDeleteSnapshotRequest) returns (.snapchat.snapshots.api.SCSnapshotsPbDeleteSnapshotResponse);
+    rpc SetSnapshot(.snapchat.snapshots.api.SCSnapshotsPbSetSnapshotRequest) returns (.snapchat.snapshots.api.SCSnapshotsPbSetSnapshotResponse);
+}

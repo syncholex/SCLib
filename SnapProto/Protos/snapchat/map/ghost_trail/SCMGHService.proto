@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.map.ghost_trail;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMGH";
+option csharp_namespace = "SnapProto.Snapchat.Map.Ghost_trail";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCMGHClearOwnGhostTrailRequest {
+}
+
+message SCMGHClearOwnGhostTrailResponse {
+}
+
+message SCMGHGetGhostTrailRequest {
+    .snapchat.core.SCCOREUUID userId = 1;
+}
+
+message SCMGHGetGhostTrailResponse {
+    repeated .snapchat.map.ghost_trail.SCMGHLocation locationsArray = 1;
+}
+
+message SCMGHLocation {
+    float lat = 1;
+    float lng = 2;
+}

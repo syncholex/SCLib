@@ -1,0 +1,42 @@
+syntax = "proto3";
+package snapchat.content.v2;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBoltv2";
+option csharp_namespace = "SnapProto.Snapchat.Content.V2";
+
+import "snapchat/core/SCCORESnapStatusCode.proto";
+
+message SCBoltv2ContentReferenceResult {
+    .snapchat.content.v2.SCBoltv2ContentReferenceResult.SCCORECode statusCode = 1;
+    string contentURL = 2;
+    bytes contentObject = 3;
+    .snapchat.core.SCCORECodeProperties statusCodeProperties = 4;
+    enum SCCORECode {
+        SCCORECode_Ok = 0;
+        SCCORECode_Cancelled = 1;
+        SCCORECode_Unknown = 2;
+        SCCORECode_InvalidArgument = 3;
+        SCCORECode_DeadlineExceeded = 4;
+        SCCORECode_NotFound = 5;
+        SCCORECode_AlreadyExists = 6;
+        SCCORECode_PermissionDenied = 7;
+        SCCORECode_ResourceExhausted = 8;
+        SCCORECode_FailedPrecondition = 9;
+        SCCORECode_Aborted = 10;
+        SCCORECode_OutOfRange = 11;
+        SCCORECode_Unimplemented = 12;
+        SCCORECode_Internal = 13;
+        SCCORECode_Unavailable = 14;
+        SCCORECode_DataLoss = 15;
+        SCCORECode_Unauthenticated = 16;
+        SCCORECode_NotModified = 100;
+        SCCORECode_DecryptionFailed = 101;
+        SCCORECode_InvalidMedia = 102;
+        SCCORECode_InProgress = 200;
+        SCCORECode_ContentTooLarge = 201;
+        SCCORECode_URLProtocolNotSupported = 202;
+        SCCORECode_URLContentTypeNotWhitelisted = 203;
+        SCCORECode_URLDownloadFailure = 204;
+        SCCORECode_CloudStorageFailure = 205;
+    }
+}

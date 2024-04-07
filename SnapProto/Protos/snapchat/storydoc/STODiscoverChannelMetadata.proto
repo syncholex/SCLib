@@ -1,0 +1,17 @@
+syntax = "proto3";
+package snapchat.storydoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "STO";
+option csharp_namespace = "SnapProto.Snapchat.Storydoc";
+
+import "snapchat/category/HNCategory.proto";
+import "snapchat/tags/ContentTag.proto";
+
+message STODiscoverChannelFilter {
+    repeated .snapchat.category.HNCategoryID categoryIdsArray = 1;
+    repeated .snapchat.tags.ContentTag sccTagsArray = 2;
+}
+
+message STODiscoverChannelMetadata {
+    repeated .snapchat.storydoc.STODiscoverChannelFilter discoverChannelFilterSetArray = 1;
+}

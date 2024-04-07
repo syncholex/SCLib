@@ -1,0 +1,44 @@
+syntax = "proto3";
+package ranking.pii.user.profile;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSUP";
+option csharp_namespace = "SnapProto.Ranking.Pii.User.Profile";
+
+import "ranking/core/SCCORECompositeStoryId.proto";
+
+message SCSUPDynamicChannel {
+    float confidence = 4;
+    .ranking.pii.user.profile.SCSUPThemeEntity themeEntity = 1;
+    .ranking.pii.user.profile.SCSUPThemeTopic themeTopic = 2;
+    .ranking.pii.user.profile.SCSUPThemeStory themeStory = 3;
+}
+
+message SCSUPDynamicChannelSet {
+    string userId = 1;
+    repeated .ranking.pii.user.profile.SCSUPDynamicChannel dynamicChannelsArray = 2;
+}
+
+message SCSUPThemeEntity {
+    string canonicalName = 1;
+    repeated .ranking.pii.user.profile.SCSUPThemeEntity.SCSUPThemeEntityType_Enum typesArray = 2;
+    enum SCSUPThemeEntityType_Enum {
+        SCSUPThemeEntityType_Enum_Unknown = 0;
+        SCSUPThemeEntityType_Enum_Person = 1;
+        SCSUPThemeEntityType_Enum_Organization = 2;
+        SCSUPThemeEntityType_Enum_Location = 3;
+        SCSUPThemeEntityType_Enum_Product = 4;
+        SCSUPThemeEntityType_Enum_Event = 5;
+    }
+}
+
+message SCSUPThemeEntityType {
+}
+
+message SCSUPThemeStory {
+    string canonicalName = 1;
+    .ranking.core.SCCORECompositeStoryId storyId = 2;
+}
+
+message SCSUPThemeTopic {
+    string canonicalName = 1;
+}

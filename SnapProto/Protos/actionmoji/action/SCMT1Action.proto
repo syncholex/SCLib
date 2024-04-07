@@ -1,0 +1,423 @@
+syntax = "proto3";
+package actionmoji.action;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT1";
+option csharp_namespace = "SnapProto.Actionmoji.Action";
+
+import "snapchat/core/SCCOREUuid.proto";
+import "snapchat/map/common/SCMCLocalizedStringSet.proto";
+
+message SCMT1Action {
+    .actionmoji.action.SCMT1Action.SCMT1ActionID actionId = 1;
+    string subtype = 2;
+    .actionmoji.action.SCMT1ActionTiming timing = 3;
+    .actionmoji.action.SCMT1StickerID stickerId = 4;
+    double confidence = 5;
+    bool isReversed = 6;
+    .actionmoji.action.SCMT1Constrain constrain = 7;
+    .actionmoji.action.SCMT1Action.SCMT1ClusteringPolicy clusteringPolicy = 8;
+    bool shouldSelectForLogging = 9;
+    string clusterId = 10;
+    string place = 11;
+    string event = 12;
+    .snapchat.map.common.SCMCLocalizedStringSet placeName = 13;
+    .snapchat.map.common.SCMCLocalizedStringSet eventName = 14;
+    .actionmoji.action.SCMT1ActionTypeID typeId = 15;
+    int32 priority = 16;
+    string venueId = 17;
+    repeated .actionmoji.action.SCMT1StickerDynamicElement dynamicElementsArray = 18;
+    enum SCMT1ActionID {
+        SCMT1ActionID_Unknown = 0;
+        SCMT1ActionID_Walking = 1;
+        SCMT1ActionID_Running = 2;
+        SCMT1ActionID_Biking = 3;
+        SCMT1ActionID_Driving = 4;
+        SCMT1ActionID_Train = 5;
+        SCMT1ActionID_Flying = 6;
+        SCMT1ActionID_Sleeping = 7;
+        SCMT1ActionID_Restaurant = 8;
+        SCMT1ActionID_Cafe = 9;
+        SCMT1ActionID_Bar = 10;
+        SCMT1ActionID_Event = 11;
+        SCMT1ActionID_Headphone = 12;
+        SCMT1ActionID_Work = 13;
+        SCMT1ActionID_Boat = 14;
+        SCMT1ActionID_WakeUp = 15;
+        SCMT1ActionID_Beach = 16;
+        SCMT1ActionID_Airport = 17;
+        SCMT1ActionID_Runway = 18;
+        SCMT1ActionID_Tennis = 19;
+        SCMT1ActionID_Shopping = 20;
+        SCMT1ActionID_GolfCourse = 21;
+        SCMT1ActionID_Birthday = 22;
+        SCMT1ActionID_NationalPark = 23;
+        SCMT1ActionID_Lead = 24;
+        SCMT1ActionID_Beacon = 25;
+        SCMT1ActionID_Misc = 26;
+        SCMT1ActionID_PhysicalProp = 27;
+        SCMT1ActionID_Campus = 28;
+        SCMT1ActionID_Trigger = 29;
+        SCMT1ActionID_Scooter = 30;
+        SCMT1ActionID_MovieTheater = 31;
+        SCMT1ActionID_Directive = 32;
+        SCMT1ActionID_Skiing = 33;
+        SCMT1ActionID_ChairLift = 34;
+        SCMT1ActionID_School = 35;
+        SCMT1ActionID_Gym = 36;
+        SCMT1ActionID_Spectacles = 37;
+    }
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+}
+
+message SCMT1ActionDefinition {
+    .actionmoji.action.SCMT1ActionDefinition.SCMT1ActionID actionId = 1;
+    repeated .actionmoji.action.SCMT1NonClusterableStickerDefinition nonClusterableStickerArray = 2;
+    repeated .actionmoji.action.SCMT1ClusterableStickerDefinition clusterableStickerArray = 3;
+    int64 duration = 4;
+    int64 lockDuration = 5;
+    .actionmoji.action.SCMT1ActionDefinition.SCMT1ClusteringPolicy clusteringPolicy = 6;
+    float spaceConstrainRadius = 7;
+    bool employeeOnly = 8;
+    bool devOnly = 9;
+    string description_p = 10;
+    string subtype = 11;
+    .actionmoji.action.SCMT1ActionTiming timing = 12;
+    .actionmoji.action.SCMT1ActionTypeID typeId = 15;
+    enum SCMT1ActionID {
+        SCMT1ActionID_Unknown = 0;
+        SCMT1ActionID_Walking = 1;
+        SCMT1ActionID_Running = 2;
+        SCMT1ActionID_Biking = 3;
+        SCMT1ActionID_Driving = 4;
+        SCMT1ActionID_Train = 5;
+        SCMT1ActionID_Flying = 6;
+        SCMT1ActionID_Sleeping = 7;
+        SCMT1ActionID_Restaurant = 8;
+        SCMT1ActionID_Cafe = 9;
+        SCMT1ActionID_Bar = 10;
+        SCMT1ActionID_Event = 11;
+        SCMT1ActionID_Headphone = 12;
+        SCMT1ActionID_Work = 13;
+        SCMT1ActionID_Boat = 14;
+        SCMT1ActionID_WakeUp = 15;
+        SCMT1ActionID_Beach = 16;
+        SCMT1ActionID_Airport = 17;
+        SCMT1ActionID_Runway = 18;
+        SCMT1ActionID_Tennis = 19;
+        SCMT1ActionID_Shopping = 20;
+        SCMT1ActionID_GolfCourse = 21;
+        SCMT1ActionID_Birthday = 22;
+        SCMT1ActionID_NationalPark = 23;
+        SCMT1ActionID_Lead = 24;
+        SCMT1ActionID_Beacon = 25;
+        SCMT1ActionID_Misc = 26;
+        SCMT1ActionID_PhysicalProp = 27;
+        SCMT1ActionID_Campus = 28;
+        SCMT1ActionID_Trigger = 29;
+        SCMT1ActionID_Scooter = 30;
+        SCMT1ActionID_MovieTheater = 31;
+        SCMT1ActionID_Directive = 32;
+        SCMT1ActionID_Skiing = 33;
+        SCMT1ActionID_ChairLift = 34;
+        SCMT1ActionID_School = 35;
+        SCMT1ActionID_Gym = 36;
+        SCMT1ActionID_Spectacles = 37;
+    }
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+}
+
+message SCMT1ActionTiming {
+    int64 effective = 1;
+    int64 expiration = 2;
+    int64 lock = 3;
+}
+
+message SCMT1ActionTypeID {
+    int64 id_p = 1;
+    string name = 2;
+}
+
+message SCMT1ActionsDefinition {
+    repeated .actionmoji.action.SCMT1ActionDefinition actionDefinitionArray = 1;
+}
+
+message SCMT1Asset {
+    int32 id_p = 1;
+    .actionmoji.action.SCMT1Asset.SCMT1Asset_Type type = 2;
+    string name = 3;
+    .actionmoji.action.SCMT1Asset.SCMT1Asset_Status status = 4;
+    string leftId = 5;
+    string rightId = 6;
+    bool hasShadow = 7;
+    string URL = 8;
+    bool isMotion = 9;
+    bool isClusterable = 10;
+    bool isNonClusterable = 11;
+    bool isUnsafeToAutoAssign = 12;
+    enum SCMT1Asset_Status {
+        SCMT1Asset_Status_Enabled = 0;
+    }
+    enum SCMT1Asset_Type {
+        SCMT1Asset_Type_NonClusterable = 0;
+        SCMT1Asset_Type_NonClusterablePair = 1;
+        SCMT1Asset_Type_Clusterable = 2;
+        SCMT1Asset_Type_Prop = 3;
+        SCMT1Asset_Type_Floor = 4;
+        SCMT1Asset_Type_Person = 5;
+    }
+}
+
+message SCMT1AssetIdWithProbability {
+    int32 assetId = 1;
+    double probability = 2;
+}
+
+message SCMT1AssetWithProbability {
+    .actionmoji.action.SCMT1Asset asset = 1;
+    double probability = 2;
+}
+
+message SCMT1ClusterableStickerDefinition {
+    string leftId = 1;
+    string rightId = 2;
+    string description_p = 3;
+    double probability = 4;
+}
+
+message SCMT1Constrain {
+    bool isSpaceConstrained = 1;
+    float lat = 2;
+    float lng = 3;
+    float radius = 4;
+    bool employeeOnly = 5;
+    bool devOnly = 6;
+}
+
+message SCMT1GameElement {
+    int32 score = 1;
+}
+
+message SCMT1LocalTime {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+    int32 hour = 4;
+    int32 minute = 5;
+    int32 second = 6;
+    int32 millisecond = 7;
+}
+
+message SCMT1MotionActionDefinition {
+    .actionmoji.action.SCMT1MotionActionDefinition.SCMT1ActionID actionId = 1;
+    repeated .actionmoji.action.SCMT1StickerPair stickerPairArray = 2;
+    repeated .actionmoji.action.SCMT1ClusterableStickerDefinition clusterableStickerArray = 3;
+    int64 duration = 4;
+    int64 lockDuration = 5;
+    .actionmoji.action.SCMT1MotionActionDefinition.SCMT1ClusteringPolicy clusteringPolicy = 6;
+    float spaceConstrainRadius = 7;
+    bool employeeOnly = 8;
+    bool devOnly = 9;
+    string description_p = 10;
+    string subtype = 11;
+    .actionmoji.action.SCMT1ActionTiming timing = 12;
+    .actionmoji.action.SCMT1ActionTypeID typeId = 15;
+    enum SCMT1ActionID {
+        SCMT1ActionID_Unknown = 0;
+        SCMT1ActionID_Walking = 1;
+        SCMT1ActionID_Running = 2;
+        SCMT1ActionID_Biking = 3;
+        SCMT1ActionID_Driving = 4;
+        SCMT1ActionID_Train = 5;
+        SCMT1ActionID_Flying = 6;
+        SCMT1ActionID_Sleeping = 7;
+        SCMT1ActionID_Restaurant = 8;
+        SCMT1ActionID_Cafe = 9;
+        SCMT1ActionID_Bar = 10;
+        SCMT1ActionID_Event = 11;
+        SCMT1ActionID_Headphone = 12;
+        SCMT1ActionID_Work = 13;
+        SCMT1ActionID_Boat = 14;
+        SCMT1ActionID_WakeUp = 15;
+        SCMT1ActionID_Beach = 16;
+        SCMT1ActionID_Airport = 17;
+        SCMT1ActionID_Runway = 18;
+        SCMT1ActionID_Tennis = 19;
+        SCMT1ActionID_Shopping = 20;
+        SCMT1ActionID_GolfCourse = 21;
+        SCMT1ActionID_Birthday = 22;
+        SCMT1ActionID_NationalPark = 23;
+        SCMT1ActionID_Lead = 24;
+        SCMT1ActionID_Beacon = 25;
+        SCMT1ActionID_Misc = 26;
+        SCMT1ActionID_PhysicalProp = 27;
+        SCMT1ActionID_Campus = 28;
+        SCMT1ActionID_Trigger = 29;
+        SCMT1ActionID_Scooter = 30;
+        SCMT1ActionID_MovieTheater = 31;
+        SCMT1ActionID_Directive = 32;
+        SCMT1ActionID_Skiing = 33;
+        SCMT1ActionID_ChairLift = 34;
+        SCMT1ActionID_School = 35;
+        SCMT1ActionID_Gym = 36;
+        SCMT1ActionID_Spectacles = 37;
+    }
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+}
+
+message SCMT1MotionActionsDefinition {
+    repeated .actionmoji.action.SCMT1MotionActionDefinition actionDefinitionArray = 1;
+}
+
+message SCMT1NonClusterableStickerDefinition {
+    string stickerId = 1;
+    string description_p = 2;
+    bool shadow = 3;
+    double probability = 4;
+}
+
+message SCMT1Poi {
+    .snapchat.map.common.SCMCLocalizedStringSet name = 1;
+    double lat = 2;
+    double lng = 3;
+    string type = 4;
+}
+
+message SCMT1PoiCollection {
+    repeated .actionmoji.action.SCMT1Poi poisArray = 1;
+}
+
+message SCMT1ResolvedTypeDef {
+    .actionmoji.action.SCMT1TypeDef typeDef = 1;
+    repeated .actionmoji.action.SCMT1AssetWithProbability assetProbabilitiesArray = 2;
+}
+
+message SCMT1Sticker {
+    .actionmoji.action.SCMT1StickerID stickerId = 1;
+    .actionmoji.action.SCMT1ActionTiming timing = 2;
+    .actionmoji.action.SCMT1Constrain constrain = 3;
+    .actionmoji.action.SCMT1Sticker.SCMT1ClusteringPolicy clusteringPolicy = 4;
+    int64 actionId = 5;
+    string clusterId = 6;
+    repeated .actionmoji.action.SCMT1StickerDynamicElement dynamicElementsArray = 7;
+    double transparency = 8;
+    .snapchat.core.SCCOREUUID vzVenueId = 9;
+    repeated .actionmoji.action.SCMT1ActionTypeID typeIdArray = 15;
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+}
+
+message SCMT1StickerDynamicElement {
+    int32 originX = 1;
+    int32 originY = 2;
+    int32 bottomRightX = 4;
+    int32 bottomRightY = 5;
+    bool drawOnNonClusteredSticker = 6;
+    .actionmoji.action.SCMT1GameElement gameContent = 3;
+}
+
+message SCMT1StickerID {
+    string nonClusterableId = 1;
+    string clusterableLeftId = 2;
+    string clusterableRightId = 3;
+    bool shadow = 4;
+}
+
+message SCMT1StickerPair {
+    string headingEastStickerId = 1;
+    string headingWestStickerId = 2;
+    bool shadow = 3;
+}
+
+message SCMT1Type {
+    int64 id_p = 1;
+    string name = 2;
+    .actionmoji.action.SCMT1ActionTiming timing = 3;
+    .actionmoji.action.SCMT1Constrain constrain = 4;
+    string place = 5;
+    string event = 6;
+    .snapchat.map.common.SCMCLocalizedStringSet placeName = 7;
+    .snapchat.map.common.SCMCLocalizedStringSet eventName = 8;
+    string venueId = 9;
+}
+
+message SCMT1TypeDef {
+    int32 id_p = 1;
+    string name = 2;
+    string description_p = 3;
+    .actionmoji.action.SCMT1TypeDef.SCMT1TypeDef_Status status = 4;
+    .actionmoji.action.SCMT1TypeDef.SCMT1TypeDef_Permissions permissions = 5;
+    int64 validDuration = 6;
+    int64 lockDuration = 7;
+    .actionmoji.action.SCMT1TypeDef.SCMT1ClusteringPolicy clusteringPolicy = 8;
+    .actionmoji.action.SCMT1LocalTime startTime = 9;
+    .actionmoji.action.SCMT1LocalTime endTime = 10;
+    bool isEnabled = 11;
+    bool isDarkTest = 12;
+    int32 propPriority = 13;
+    .actionmoji.action.SCMT1TypeDef.SCMT1TypeDef_PropCondition propCondition = 14;
+    string effectId = 15;
+    int32 effectPriority = 16;
+    string effectURL = 17;
+    repeated string tagsArray = 18;
+    repeated string categoryIdsArray = 19;
+    bool effectClusterOnly = 20;
+    repeated int32 assetIdsArray = 99;
+    repeated .actionmoji.action.SCMT1AssetIdWithProbability assetIdProbabilitiesArray = 100;
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+    enum SCMT1TypeDef_Permissions {
+        SCMT1TypeDef_Permissions_Default = 0;
+        SCMT1TypeDef_Permissions_ReadOnly = 1;
+    }
+    enum SCMT1TypeDef_PropCondition {
+        SCMT1TypeDef_PropCondition_Majority = 0;
+        SCMT1TypeDef_PropCondition_Presence = 1;
+    }
+    enum SCMT1TypeDef_Status {
+        SCMT1TypeDef_Status_Disabled = 0;
+        SCMT1TypeDef_Status_Enabled = 1;
+        SCMT1TypeDef_Status_EmployeeOnly = 2;
+        SCMT1TypeDef_Status_DevOnly = 3;
+    }
+}
+
+message SCMT1TypeDefinition {
+    int32 id_p = 1;
+    repeated .actionmoji.action.SCMT1NonClusterableStickerDefinition nonClusterableStickerArray = 2;
+    repeated .actionmoji.action.SCMT1ClusterableStickerDefinition clusterableStickerArray = 3;
+    string name = 4;
+    string description_p = 5;
+    int64 duration = 6;
+    int64 lockDuration = 7;
+    float spaceConstrainRadius = 8;
+    .actionmoji.action.SCMT1TypeDefinition.SCMT1ClusteringPolicy clusteringPolicy = 9;
+    enum SCMT1ClusteringPolicy {
+        SCMT1ClusteringPolicy_DefaultClustering = 0;
+        SCMT1ClusteringPolicy_SameActionOnly = 1;
+        SCMT1ClusteringPolicy_DifferentActionOnly = 2;
+        SCMT1ClusteringPolicy_Never = 3;
+    }
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snapchat.proto.unlock;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCPBUnlock";
+option csharp_namespace = "SnapProto.Com.Snapchat.Proto.Unlock";
+
+import "com/snapchat/proto/unlockables/SCPBUnlockablesUnlockableChecksumResponse.proto";
+
+message SCPBUnlockOrderedUnlocks {
+    repeated .com.snapchat.proto.unlockables.SCPBUnlockablesUnlockableChecksumResponse unlocksArray = 1;
+}

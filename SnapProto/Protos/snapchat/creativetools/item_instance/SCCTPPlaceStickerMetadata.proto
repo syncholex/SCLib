@@ -1,0 +1,18 @@
+syntax = "proto3";
+package snapchat.creativetools.item_instance;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Item_instance";
+
+import "snapchat/core/SCCOREUuid.proto";
+
+message SCCTPPlaceStickerMetadata {
+    .snapchat.core.SCCOREUUID placeId = 1;
+    .snapchat.creativetools.item_instance.SCCTPPlaceStickerMetadata.SCCTPPlaceStickerMetadata_Type type = 2;
+    enum SCCTPPlaceStickerMetadata_Type {
+        SCCTPPlaceStickerMetadata_Type_TypeUnspecified = 0;
+        SCCTPPlaceStickerMetadata_Type_Light = 1;
+        SCCTPPlaceStickerMetadata_Type_Dark = 2;
+        SCCTPPlaceStickerMetadata_Type_Rainbow = 3;
+    }
+}

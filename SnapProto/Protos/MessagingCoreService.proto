@@ -1,0 +1,23 @@
+syntax = "proto3";
+package messagingcoreservice;
+option optimize_for = SPEED;
+option csharp_namespace = "SnapProto.Services.Messagingcoreservice";
+
+import "schema/feed/feed.proto";
+import "schema/messages/conversations.proto";
+import "schema/messages/delta.proto";
+import "schema/messages/messages.proto";
+import "schema/messages/query.proto";
+import "schema/messages/typing.proto";
+
+service MessagingCoreService{
+    rpc BatchDeltaSync(.snapchat.messaging.BatchDeltaSyncRequest) returns (.snapchat.messaging.BatchDeltaSyncResponse);
+    rpc CreateContentMessage(.snapchat.messaging.CreateContentMessageRequest) returns (.snapchat.messaging.CreateContentMessageResponse);
+    rpc DeltaSync(.snapchat.messaging.DeltaSyncRequest) returns (.snapchat.messaging.DeltaSyncResponse);
+    rpc QueryConversations(.snapchat.messaging.QueryConversationsRequest) returns (.snapchat.messaging.QueryConversationsResponse);
+    rpc QueryMessages(.snapchat.messaging.QueryMessagesRequest) returns (.snapchat.messaging.QueryMessagesResponse);
+    rpc SendTypingNotification(.snapchat.messaging.SendTypingNotificationRequest) returns (.snapchat.messaging.SendTypingNotificationResponse);
+    rpc SyncConversations(.snapchat.messaging.SyncConversationsRequest) returns (.snapchat.messaging.SyncConversationsResponse);
+    rpc UpdateContentMessage(.snapchat.messaging.UpdateContentMessageRequest) returns (.snapchat.messaging.UpdateContentMessageResponse);
+    rpc UpdateConversation(.snapchat.messaging.ConversationUpdateRequest) returns (.snapchat.messaging.ConversationUpdateResponse);
+}

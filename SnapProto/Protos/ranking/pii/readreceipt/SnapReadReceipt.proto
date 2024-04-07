@@ -1,0 +1,323 @@
+syntax = "proto3";
+package ranking.pii.readreceipt;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Pii.Readreceipt";
+
+import "ranking/core/SCSCOREUuid.proto";
+
+message BloomFilter {
+    bytes bloomFilter = 1;
+    int64 entityCount = 2;
+    int64 conflictCount = 3;
+    .ranking.pii.readreceipt.SnapCreationPeriod creationDateTimePeriod = 4;
+    int64 intendedCapacity = 5;
+}
+
+message FriendLinkState {
+}
+
+message ReadReceiptState {
+    bool wasSaved = 1;
+    bool wasScreenshotted = 2;
+    bool wasScreenrecorded = 3;
+    bool wasRewatched = 4;
+}
+
+message SnapCreationPeriod {
+    int64 startTimeMs = 1;
+    int64 endTimeMs = 2;
+}
+
+message SnapReadReceipt {
+    string snapId = 1;
+    .ranking.core.SCSCOREUUID snapOwnerId = 2;
+    .ranking.core.SCSCOREUUID viewerUserId = 3;
+    .ranking.pii.readreceipt.SnapReadReceipt.FriendLinkState_Enum friendLinkState = 4;
+    int64 snapExpirationTimeMs = 5;
+    int64 viewTimeMs = 6;
+    .ranking.pii.readreceipt.ReadReceiptState readReceiptState = 7;
+    .ranking.pii.readreceipt.SnapReadReceipt.StoryType_Enum storyType = 8;
+    int64 shareCount = 9;
+    .ranking.pii.readreceipt.SnapReadReceipt.FeedType_Enum feedType = 10;
+    enum FeedType_Enum {
+        FeedType_Enum_Unknown = 0;
+        FeedType_Enum_All = 1;
+        FeedType_Enum_Subs = 2;
+        FeedType_Enum_ForYou = 3;
+        FeedType_Enum_Upnext = 4;
+        FeedType_Enum_FriendStories = 5;
+        FeedType_Enum_MyStories = 6;
+        FeedType_Enum_OurStories = 7;
+        FeedType_Enum_ProdReserved8 = 8;
+        FeedType_Enum_ProdReserved9 = 9;
+        FeedType_Enum_ProdReserved10 = 10;
+        FeedType_Enum_ProdReserved11 = 11;
+        FeedType_Enum_ProdReserved12 = 12;
+        FeedType_Enum_ProdReserved13 = 13;
+        FeedType_Enum_ProdReserved14 = 14;
+        FeedType_Enum_ExptShows = 201;
+        FeedType_Enum_ExptSolos = 202;
+        FeedType_Enum_ExptCotap = 203;
+        FeedType_Enum_ExptDeepCohort = 204;
+        FeedType_Enum_ExptCkBoost = 205;
+        FeedType_Enum_ExptHorizontalForYou = 206;
+        FeedType_Enum_ExptLensStories = 207;
+        FeedType_Enum_ExptLatentInterests = 208;
+        FeedType_Enum_ExptLensObject = 209;
+        FeedType_Enum_ExptHorizontalForYouLarge = 210;
+        FeedType_Enum_ExptMagazines = 211;
+        FeedType_Enum_ExptSnapstars = 212;
+        FeedType_Enum_ExptSolosFunny = 213;
+        FeedType_Enum_ExptLensChallenges = 214;
+        FeedType_Enum_ExptLensChallengeStories = 215;
+        FeedType_Enum_ExptCreatorSubs = 216;
+        FeedType_Enum_ExptPublisherSubs = 217;
+        FeedType_Enum_ExptLensChallengesLight = 218;
+        FeedType_Enum_ExptShowsKeepWatching = 219;
+        FeedType_Enum_ExptShowsMore = 220;
+        FeedType_Enum_ExptBatch = 221;
+        FeedType_Enum_ExptCognac = 222;
+        FeedType_Enum_ExptLensObjectSubs = 223;
+        FeedType_Enum_ExptFriendStoriesRankOnly = 224;
+        FeedType_Enum_ExptMyShows = 225;
+        FeedType_Enum_ExptTopShows = 226;
+        FeedType_Enum_ExptNews = 228;
+        FeedType_Enum_ExptLensCategories = 229;
+        FeedType_Enum_ExptShowsTrending = 230;
+        FeedType_Enum_ExptShowsPopular = 231;
+        FeedType_Enum_ExptBadge = 232;
+        FeedType_Enum_ExptForYouSingleTile = 233;
+        FeedType_Enum_ExptTopicStories = 234;
+        FeedType_Enum_ExptTopicPageRecentStories = 235;
+        FeedType_Enum_ExptTopicPagePopularStories = 236;
+        FeedType_Enum_ExptLensFavorites = 237;
+        FeedType_Enum_ExptMyBoostedStories = 239;
+        FeedType_Enum_ExptSpotlightAll = 240;
+        FeedType_Enum_ExptLensPremium = 241;
+        FeedType_Enum_ExptLensPremiumPurchased = 242;
+        FeedType_Enum_ExptLensCreators = 243;
+        FeedType_Enum_ExptSpotlightAllPos0 = 244;
+        FeedType_Enum_ExptSpotlightTrendingPage = 245;
+        FeedType_Enum_ExptLensShopping = 246;
+        FeedType_Enum_ExptForYouWithSubs = 247;
+        FeedType_Enum_ExptSpotlightPublicProfilePage = 248;
+        FeedType_Enum_ExptSpotlightChallengeCarousel = 249;
+        FeedType_Enum_SuperFeed = 250;
+        FeedType_Enum_ExptMadeForUs = 251;
+        FeedType_Enum_ExptDiscoverChannels = 252;
+        FeedType_Enum_SubsWithSuggestions = 253;
+        FeedType_Enum_ExptReserved54 = 254;
+        FeedType_Enum_ExptReserved55 = 255;
+        FeedType_Enum_ExptReserved56 = 256;
+        FeedType_Enum_ExptReserved57 = 257;
+        FeedType_Enum_ExptReserved58 = 258;
+        FeedType_Enum_ExptReserved59 = 259;
+        FeedType_Enum_ExptReserved60 = 260;
+        FeedType_Enum_ExptReserved61 = 261;
+        FeedType_Enum_ExptReserved62 = 262;
+        FeedType_Enum_ExptReserved63 = 263;
+        FeedType_Enum_ExptReserved64 = 264;
+        FeedType_Enum_ExptPivot = 1000;
+        FeedType_Enum_ExptForYou1 = 1101;
+        FeedType_Enum_ExptForYou2 = 1102;
+        FeedType_Enum_ExptForYou3 = 1103;
+        FeedType_Enum_ExptForYou4 = 1104;
+        FeedType_Enum_ExptForYou5 = 1105;
+        FeedType_Enum_ExptForYou6 = 1106;
+        FeedType_Enum_ExptForYou7 = 1107;
+        FeedType_Enum_ExptForYou8 = 1108;
+        FeedType_Enum_ExptForYou9 = 1109;
+        FeedType_Enum_ExptForYou10 = 1110;
+        FeedType_Enum_ExptShowsMore1 = 2001;
+        FeedType_Enum_ExptShowsMore2 = 2002;
+        FeedType_Enum_ExptShowsMore3 = 2003;
+        FeedType_Enum_ExptShowsMore4 = 2004;
+        FeedType_Enum_ExptShowsMore5 = 2005;
+        FeedType_Enum_ExptShowsMore6 = 2006;
+        FeedType_Enum_ExptShowsMore7 = 2007;
+        FeedType_Enum_ExptShowsMore8 = 2008;
+        FeedType_Enum_ExptShowsMore9 = 2009;
+        FeedType_Enum_ExptShowsMore10 = 2010;
+        FeedType_Enum_ExptSelectionExistingInterests = 9000;
+        FeedType_Enum_ExptSelectionRegistration = 9001;
+        FeedType_Enum_ExptSelectionDiscoverOnboarding = 9002;
+        FeedType_Enum_ExptSelectionExistingInterestsThumbnail = 9003;
+        FeedType_Enum_ExptCuratedStart = 10000;
+        FeedType_Enum_ExptNewUserUsFemale1317 = 10001;
+        FeedType_Enum_ExptNewUserUsMale1317 = 10002;
+        FeedType_Enum_ExptNewUserUsUnknown1317 = 10003;
+        FeedType_Enum_ExptNewUserUsFemale1824 = 10004;
+        FeedType_Enum_ExptNewUserUsMale1824 = 10005;
+        FeedType_Enum_ExptNewUserUsUnknown1824 = 10006;
+        FeedType_Enum_ExptNewUserUsFemale2534 = 10007;
+        FeedType_Enum_ExptNewUserUsMale2534 = 10008;
+        FeedType_Enum_ExptNewUserUsUnknown2534 = 10009;
+        FeedType_Enum_ExptNewUserUsFemale35Plus = 10010;
+        FeedType_Enum_ExptNewUserUsMale35Plus = 10011;
+        FeedType_Enum_ExptNewUserUsUnknown35Plus = 10012;
+        FeedType_Enum_ExptCuratedEntertainment = 10100;
+        FeedType_Enum_ExptCuratedNews = 10101;
+        FeedType_Enum_ExptCuratedSports = 10102;
+        FeedType_Enum_ExptCuratedFun = 10103;
+        FeedType_Enum_ExptCuratedBeautyStyle = 10104;
+        FeedType_Enum_ExptCuratedCelebrity = 10105;
+        FeedType_Enum_ExptCuratedFoodTravel = 10106;
+        FeedType_Enum_ExptCuratedMusic = 10107;
+        FeedType_Enum_ExptCuratedLiving = 10108;
+        FeedType_Enum_ExptCuratedLolz = 10109;
+        FeedType_Enum_ExptCuratedGuiltyPleasures = 10110;
+        FeedType_Enum_ExptCuratedOddlySatisfying = 10111;
+        FeedType_Enum_ExptCuratedGames = 10112;
+        FeedType_Enum_ExptCuratedSnapStars = 10113;
+        FeedType_Enum_ExptCuratedFinance = 10114;
+        FeedType_Enum_ExptCuratedAnimals = 10115;
+        FeedType_Enum_ExptCuratedLove = 10116;
+        FeedType_Enum_ExptCuratedPopular = 10117;
+        FeedType_Enum_ExptCuratedSwaggedOut = 10118;
+        FeedType_Enum_ExptCuratedMusicEdmDj = 10119;
+        FeedType_Enum_ExptCuratedScienceTech = 10120;
+        FeedType_Enum_ExptCuratedCelebration = 10121;
+        FeedType_Enum_ExptCuratedDraft1 = 10122;
+        FeedType_Enum_ExptCuratedDraft2 = 10123;
+        FeedType_Enum_ExptCuratedDraft3 = 10124;
+        FeedType_Enum_ExptCuratedDraft4 = 10125;
+        FeedType_Enum_ExptCuratedDraft5 = 10126;
+        FeedType_Enum_ExptCuratedDraft6 = 10127;
+        FeedType_Enum_ExptCuratedDraft7 = 10128;
+        FeedType_Enum_ExptCuratedDraft8 = 10129;
+        FeedType_Enum_ExptCuratedDraft9 = 10130;
+        FeedType_Enum_ExptCuratedDraft10 = 10131;
+        FeedType_Enum_ExptCuratedFortnite = 10132;
+        FeedType_Enum_ExptCuratedWorldNews = 10133;
+        FeedType_Enum_ExptCuratedNfl = 10134;
+        FeedType_Enum_ExptCuratedStudentLife = 10135;
+        FeedType_Enum_ExptCuratedScienceAndTechnology = 10136;
+        FeedType_Enum_ExptCuratedTopSnaps = 10137;
+        FeedType_Enum_ExptCuratedShows1 = 10201;
+        FeedType_Enum_ExptCuratedShows2 = 10202;
+        FeedType_Enum_ExptCuratedShows3 = 10203;
+        FeedType_Enum_ExptCuratedShows4 = 10204;
+        FeedType_Enum_ExptCuratedShows5 = 10205;
+        FeedType_Enum_ExptCuratedShows6 = 10206;
+        FeedType_Enum_ExptCuratedShows7 = 10207;
+        FeedType_Enum_ExptCuratedShows8 = 10208;
+        FeedType_Enum_ExptCuratedShows9 = 10209;
+        FeedType_Enum_ExptCuratedShows10 = 10210;
+        FeedType_Enum_ExptCuratedHeroTile1 = 10301;
+        FeedType_Enum_ExptCuratedHeroTile2 = 10302;
+        FeedType_Enum_ExptCuratedHeroTile3 = 10303;
+        FeedType_Enum_ExptCuratedHeroTile4 = 10304;
+        FeedType_Enum_ExptCuratedHeroTile5 = 10305;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage1 = 10401;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage2 = 10402;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage3 = 10403;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage4 = 10404;
+        FeedType_Enum_ExptCuratedHeroTileFeedActionPage5 = 10405;
+        FeedType_Enum_ExptCuratedPopUp1 = 11001;
+        FeedType_Enum_ExptCuratedPopUp2 = 11002;
+        FeedType_Enum_ExptCuratedPopUp3 = 11003;
+        FeedType_Enum_ExptCuratedPopUp4 = 11004;
+        FeedType_Enum_ExptCuratedPopUp5 = 11005;
+        FeedType_Enum_ExptCuratedPopUp6 = 11006;
+        FeedType_Enum_ExptCuratedPopUp7 = 11007;
+        FeedType_Enum_ExptCuratedPopUp8 = 11008;
+        FeedType_Enum_ExptCuratedPopUp9 = 11009;
+        FeedType_Enum_ExptCuratedPopUp10 = 11010;
+        FeedType_Enum_ExptCuratedShowsPivot = 12001;
+        FeedType_Enum_ExptCuratedTopSnapsPivot = 12002;
+        FeedType_Enum_ExptCuratedSnapStarsPivot = 12003;
+        FeedType_Enum_ExptCuratedFunPivot = 12004;
+        FeedType_Enum_ExptCuratedCognacPivot = 12005;
+        FeedType_Enum_ExptCuratedSportsPivot = 12006;
+        FeedType_Enum_ExptCuratedNewsPivot = 12007;
+        FeedType_Enum_ExptCuratedBeautyStylePivot = 12008;
+        FeedType_Enum_ExptCuratedLolzPivot = 12009;
+        FeedType_Enum_ExptCuratedDraftPivot1 = 12101;
+        FeedType_Enum_ExptCuratedDraftPivot2 = 12102;
+        FeedType_Enum_ExptCuratedDraftPivot3 = 12103;
+        FeedType_Enum_ExptCuratedDraftPivot4 = 12104;
+        FeedType_Enum_ExptCuratedDraftPivot5 = 12105;
+        FeedType_Enum_ExptCuratedDraftPivot6 = 12106;
+        FeedType_Enum_ExptCuratedDraftPivot7 = 12107;
+        FeedType_Enum_ExptCuratedDraftPivot8 = 12108;
+        FeedType_Enum_ExptCuratedDraftPivot9 = 12109;
+        FeedType_Enum_ExptCuratedDraftPivot10 = 12110;
+        FeedType_Enum_ExptCuratedNewUserTutorial = 19999;
+        FeedType_Enum_ExptCuratedEnd = 20000;
+    }
+    enum FriendLinkState_Enum {
+        FriendLinkState_Enum_Unknown = 0;
+        FriendLinkState_Enum_Friend = 1;
+        FriendLinkState_Enum_Follower = 2;
+        FriendLinkState_Enum_Other = 3;
+    }
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}
+
+message SnapReadReceiptBatch {
+    repeated .ranking.pii.readreceipt.SnapReadReceipt snapReadReceiptsArray = 1;
+}
+
+message SpotlightStats {
+    string snapId = 1;
+    int64 boostCount = 2;
+    int64 shareCount = 3;
+    int64 viewCount = 4;
+    int64 subCount = 5;
+    int64 pendingReplyCount = 6;
+    int64 liveReplyCount = 7;
+    int64 newPendingReplyCount = 8;
+}
+
+message StoryType {
+}
+
+message TeamSnapchatHistory {
+    int64 serveTimeMs = 1;
+}
+
+message TeamSnapchatServeReceipt {
+    string snapId = 1;
+    int64 campaignEndTimeMs = 2;
+    int64 serveTimeMs = 3;
+}
+
+message ViewState {
+    int64 viewTimeMs = 1;
+    int64 screenshotTimeMs = 2;
+    .ranking.core.SCSCOREUUID snapOwnerId = 3;
+    .ranking.pii.readreceipt.ViewState.StoryType_Enum storyType = 4;
+    int64 rewatchTimeMs = 5;
+    enum StoryType_Enum {
+        StoryType_Enum_Unknown = 0;
+        StoryType_Enum_User = 1;
+        StoryType_Enum_Group = 2;
+        StoryType_Enum_Snappro = 3;
+        StoryType_Enum_App = 4;
+        StoryType_Enum_Our = 5;
+        StoryType_Enum_TeamSnapchat = 6;
+        StoryType_Enum_PublisherFriend = 7;
+    }
+}
+
+message ViewStats {
+    int64 viewCount = 1;
+    int64 screenshotCount = 2;
+    int64 boostCount = 3;
+    int64 shareCount = 4;
+    int64 subCount = 5;
+    int64 pendingReplyCount = 6;
+    int64 liveReplyCount = 7;
+    int64 newPendingReplyCount = 8;
+    int64 rewatchCount = 9;
+    int64 remixCount = 10;
+}

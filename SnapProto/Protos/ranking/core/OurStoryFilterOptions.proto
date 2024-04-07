@@ -1,0 +1,26 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Core";
+
+message OurStoryFilterOptions {
+    .ranking.core.OurStoryFilterOptions.OurStoryDestination_Enum filterDestination = 1;
+    repeated .ranking.core.OurStoryFilterOptions.SCSCORESnapSource_Source filterSourcesArray = 2;
+    bool returnFirstSnapOnly = 3;
+    bool excludeCameoSnaps = 4;
+    enum OurStoryDestination_Enum {
+        OurStoryDestination_Enum_Unknown = 0;
+        OurStoryDestination_Enum_OurStory = 1;
+        OurStoryDestination_Enum_Spotlight = 2;
+    }
+    enum SCSCORESnapSource_Source {
+        SCSCORESnapSource_Source_SourceUnknown = 0;
+        SCSCORESnapSource_Source_SourceCameraRoll = 1;
+        SCSCORESnapSource_Source_SourceMemories = 2;
+        SCSCORESnapSource_Source_SourceWeb = 3;
+        SCSCORESnapSource_Source_SourceUserGenerator = 4;
+        SCSCORESnapSource_Source_SourceOurStory = 5;
+        SCSCORESnapSource_Source_SourceSnapproStory = 6;
+        SCSCORESnapSource_Source_SourceStoryStudio = 7;
+    }
+}

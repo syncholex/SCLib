@@ -1,0 +1,62 @@
+syntax = "proto3";
+package ranking.core;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSCORE";
+option csharp_namespace = "SnapProto.Ranking.Core";
+option java_package = "com.snap.ranking.core.proto";
+option go_package = "proto";
+
+import "ranking/core/proto/our_story_destination.proto";
+import "ranking/core/proto/uuid.proto";
+
+message StoryPostDestinationMetadata {
+    .ranking.core.MyStoryDestinationMetadata my_story = 1;
+    .ranking.core.CustomStoryDestinationMetadata custom_story = 2;
+    .ranking.core.OurStoryDestinationMetadata our_story = 3;
+    .ranking.core.SnapProStoryDestinationMetadata snap_pro_story = 4;
+    .ranking.core.AppStoryDestinationMetadata app_story = 5;
+}
+
+message MyStoryDestinationMetadata {
+    .ranking.core.MyStoryDestinationMetadata.PrivacyOverride privacy_override = 1;
+    enum PrivacyOverride {
+        UNSET = 0;
+        FRIENDS = 1;
+        CUSTOM = 2;
+    }
+}
+
+message CustomStoryDestinationMetadata {
+    .ranking.core.UUID group_id = 1;
+}
+
+message OurStoryDestinationMetadata {
+    repeated .ranking.core.OurStoryDestination destinations = 1;
+}
+
+message SnapProStoryDestinationMetadata {
+    .ranking.core.UUID business_id = 1;
+    string service_endpoint = 2;
+}
+
+message AppStoryDestinationMetadata {
+    .ranking.core.UUID app_id = 1;
+    uint64 ttl_secs = 2;
+}
+
+message StoryMetadata {
+    string client_generated_token = 1;
+    string source_app_oauth_client_id = 2;
+    string source_app_display_name = 3;
+    string f4 = 4;
+    .ranking.core.StoryMetadata.Unknown5 f5 = 5;
+    bytes f6 = 6;
+    string f12 = 12;
+    message Unknown5 {
+        fixed64 f1 = 1;
+        fixed64 f2 = 2;
+        fixed64 f3 = 3;
+        fixed64 f4 = 4;
+        fixed64 f5 = 5;
+    }
+}

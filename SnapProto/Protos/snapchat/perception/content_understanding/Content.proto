@@ -1,0 +1,65 @@
+syntax = "proto3";
+package snapchat.perception.content_understanding;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Snapchat.Perception.Content_understanding";
+
+message Discover {
+    string publisherDisplayName = 1;
+    string publisherBusinessProfileId = 2;
+    string publisherIconURL = 3;
+    string editionTitle = 4;
+    string editionThumbnailURL = 5;
+    string deeplinkURL = 6;
+}
+
+message Imagecode {
+    .snapchat.perception.content_understanding.Imagecode.ImagecodeType type = 1;
+    string id_p = 2;
+    enum ImagecodeType {
+        ImagecodeType_TypeUnset = 0;
+        ImagecodeType_MoviePoster = 1;
+        ImagecodeType_MovieTrailerFrame = 2;
+        ImagecodeType_BrandLogo = 3;
+        ImagecodeType_UserGenerated = 4;
+    }
+}
+
+message Lens {
+    string id_p = 1;
+}
+
+message SnapProProfile {
+    string userId = 1;
+    string profileImageURL = 2;
+    string username = 3;
+    string displayName = 4;
+    string bio = 5;
+}
+
+message TaggedContent {
+    string tagLabel = 100;
+    double score = 101;
+    .snapchat.perception.content_understanding.Lens lens = 1;
+    .snapchat.perception.content_understanding.SnapProProfile snapProProfile = 2;
+    .snapchat.perception.content_understanding.WebResult webResult = 3;
+    .snapchat.perception.content_understanding.Discover discover = 4;
+    .snapchat.perception.content_understanding.Imagecode imagecode = 5;
+    .snapchat.perception.content_understanding.URL URL = 6;
+}
+
+message TaggedContents {
+    repeated .snapchat.perception.content_understanding.TaggedContent contentsArray = 1;
+}
+
+message URL {
+    string URL = 1;
+}
+
+message WebResult {
+    string pageURL = 1;
+    string previewImageURL = 2;
+    string title = 3;
+    string siteName = 4;
+    string domainName = 5;
+    string siteIconURL = 6;
+}

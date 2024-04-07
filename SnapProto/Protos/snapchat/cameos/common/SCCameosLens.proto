@@ -1,0 +1,14 @@
+syntax = "proto3";
+package snapchat.cameos.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCameos";
+option csharp_namespace = "SnapProto.Snapchat.Cameos.Common";
+
+message SCCameosLens {
+    string id_p = 1;
+    bytes contentObject = 2;
+}
+
+message SCCameosListOfLenses {
+    repeated .snapchat.cameos.common.SCCameosLens lensesArray = 1;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package snapchat.unlockables.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCUL";
+option csharp_namespace = "SnapProto.Snapchat.Unlockables.Request.Schema";
+
+message SCULGeoCoordinate {
+    double lat = 1;
+    double lng = 2;
+}

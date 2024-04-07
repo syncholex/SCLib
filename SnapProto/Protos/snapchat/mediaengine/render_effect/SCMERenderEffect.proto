@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.mediaengine.render_effect;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCME";
+option csharp_namespace = "SnapProto.Snapchat.Mediaengine.Render_effect";
+
+message SCMEAudioTrackVolume {
+    double volume = 1;
+}
+
+message SCMERenderEffect {
+    .snapchat.mediaengine.render_effect.SCMEAudioTrackVolume audioTrackVolume = 1;
+}

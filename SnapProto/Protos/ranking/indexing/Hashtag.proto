@@ -1,0 +1,25 @@
+syntax = "proto3";
+package ranking.indexing;
+option optimize_for = CODE_SIZE;
+option csharp_namespace = "SnapProto.Ranking.Indexing";
+
+import "ranking/core/SCSCOREUuid.proto";
+
+message Hashtag {
+    .ranking.core.SCSCOREUUID id_p = 1;
+    string title = 2;
+    bool isServerSuggested = 3;
+    .ranking.indexing.Hashtag.Hashtag_Source_Enum source = 4;
+    enum Hashtag_Source_Enum {
+        Hashtag_Source_Enum_Unset = 0;
+        Hashtag_Source_Enum_Caption = 1;
+        Hashtag_Source_Enum_Sticker = 2;
+        Hashtag_Source_Enum_SendTo = 3;
+        Hashtag_Source_Enum_TopicPage = 4;
+        Hashtag_Source_Enum_Unused5 = 5;
+        Hashtag_Source_Enum_Unused6 = 6;
+        Hashtag_Source_Enum_Unused7 = 7;
+        Hashtag_Source_Enum_Unused8 = 8;
+        Hashtag_Source_Enum_Unused9 = 9;
+    }
+}

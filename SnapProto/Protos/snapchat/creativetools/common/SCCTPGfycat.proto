@@ -1,0 +1,51 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPGfycat {
+    string gfycatId = 1;
+    string title = 2;
+    string description_p = 3;
+    repeated .snapchat.creativetools.common.SCCTPGfycat.SCCTPGfycat_MediaAsset mediaAssetsArray = 4;
+    repeated string tagsArray = 5;
+    .snapchat.creativetools.common.SCCTPGfycat.SCCTPGfycat_ContentType contentType = 6;
+    bool hasAudio = 7;
+    uint64 viewCount = 8;
+    uint64 likes = 9;
+    bool published = 10;
+    bool userNsfw = 11;
+    repeated string categoriesArray = 12;
+    uint64 frameCount = 13;
+    float frameRate = 14;
+    string avgColor = 15;
+    string slugs = 16;
+    string creatorGfycatUsername = 17;
+    message SCCTPGfycat_MediaAsset {
+        .snapchat.creativetools.common.SCCTPGfycat.SCCTPGfycat_MediaAsset.SCCTPGfycat_FileFormat format = 1;
+        .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 2;
+        uint32 width = 3;
+        uint32 height = 4;
+        uint64 size = 5;
+        enum SCCTPGfycat_FileFormat {
+            SCCTPGfycat_FileFormat_FormatUnset = 0;
+            SCCTPGfycat_FileFormat_Jpg = 1;
+            SCCTPGfycat_FileFormat_Png = 2;
+            SCCTPGfycat_FileFormat_Max1MbGif = 3;
+            SCCTPGfycat_FileFormat_Max5MbGif = 4;
+            SCCTPGfycat_FileFormat_Webp = 5;
+            SCCTPGfycat_FileFormat_MobileMp4 = 6;
+            SCCTPGfycat_FileFormat_Mp4 = 7;
+            SCCTPGfycat_FileFormat_GifFormat = 8;
+            SCCTPGfycat_FileFormat_Poster = 9;
+        }
+    }
+    enum SCCTPGfycat_ContentType {
+        SCCTPGfycat_ContentType_ContentUnset = 0;
+        SCCTPGfycat_ContentType_Sticker = 1;
+        SCCTPGfycat_ContentType_Gif = 2;
+    }
+}

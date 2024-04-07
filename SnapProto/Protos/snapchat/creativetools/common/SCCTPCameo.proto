@@ -1,0 +1,37 @@
+syntax = "proto3";
+package snapchat.creativetools.common;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Common";
+
+import "snapchat/cameos/common/SCCameosApiVersion.proto";
+import "snapchat/cameos/common/SCCameosCustomTextParameters.proto";
+import "snapchat/cameos/common/SCCameosLens.proto";
+import "snapchat/creativetools/common/SCCTPMediaContent.proto";
+
+message SCCTPCameo {
+    int64 cameoId = 1;
+    repeated .snapchat.creativetools.common.SCCTPCameo.SCCameosGender gendersArray = 2;
+    .snapchat.creativetools.common.SCCTPMediaContent mediaContent = 3;
+    .snapchat.cameos.common.SCCameosApiVersion minimumApiVersion = 4;
+    int64 cloneGroupId = 5;
+    .snapchat.cameos.common.SCCameosCustomTextParameters customTextParameters = 6;
+    string cameoExternalId = 7;
+    .snapchat.creativetools.common.SCCTPCameo.SCCameosCameoStickerType stickerType = 8;
+    repeated .snapchat.creativetools.common.SCCTPCameo.TargetLensesEntry targetLenses = 9;
+    message TargetLensesEntry {
+        int32 key = 1;
+        .snapchat.cameos.common.SCCameosListOfLenses value = 2;
+    }
+    enum SCCameosGender {
+        SCCameosGender_GenderUnknown = 0;
+        SCCameosGender_Male = 1;
+        SCCameosGender_Female = 2;
+    }
+    enum SCCameosCameoStickerType {
+        SCCameosCameoStickerType_TypeUnset = 0;
+        SCCameosCameoStickerType_Regular = 1;
+        SCCameosCameoStickerType_Info = 2;
+        SCCameosCameoStickerType_Custom = 3;
+    }
+}

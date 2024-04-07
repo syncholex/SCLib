@@ -1,0 +1,148 @@
+syntax = "proto3";
+package snapchat.bitmoji.fashion.v1;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCBitmoji";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Fashion.V1";
+
+message SCBitmojiBottom {
+    int32 bottom = 1;
+    int32 bottomTone1 = 2;
+    int32 bottomTone2 = 3;
+    int32 bottomTone3 = 4;
+    int32 bottomTone4 = 5;
+    int32 bottomTone5 = 6;
+    int32 bottomTone6 = 7;
+    int32 bottomTone7 = 8;
+    int32 bottomTone8 = 9;
+    int32 bottomTone9 = 10;
+    int32 bottomTone10 = 11;
+}
+
+message SCBitmojiFootwear {
+    int32 footwear = 1;
+    int32 footwearTone1 = 2;
+    int32 footwearTone2 = 3;
+    int32 footwearTone3 = 4;
+    int32 footwearTone4 = 5;
+    int32 footwearTone5 = 6;
+    int32 footwearTone6 = 7;
+    int32 footwearTone7 = 8;
+    int32 footwearTone8 = 9;
+    int32 footwearTone9 = 10;
+    int32 footwearTone10 = 11;
+}
+
+message SCBitmojiOnePiece {
+    int32 top = 1;
+    int32 topTone1 = 2;
+    int32 topTone2 = 3;
+    int32 topTone3 = 4;
+    int32 topTone4 = 5;
+    int32 topTone5 = 6;
+    int32 topTone6 = 7;
+    int32 topTone7 = 8;
+    int32 topTone8 = 9;
+    int32 topTone9 = 10;
+    int32 topTone10 = 11;
+    int32 bottom = 12;
+    int32 bottomTone1 = 13;
+    int32 bottomTone2 = 14;
+    int32 bottomTone3 = 15;
+    int32 bottomTone4 = 16;
+    int32 bottomTone5 = 17;
+    int32 bottomTone6 = 18;
+    int32 bottomTone7 = 19;
+    int32 bottomTone8 = 20;
+    int32 bottomTone9 = 21;
+    int32 bottomTone10 = 22;
+}
+
+message SCBitmojiOuterwear {
+    int32 outerwear = 1;
+    int32 outerwearTone1 = 2;
+    int32 outerwearTone2 = 3;
+    int32 outerwearTone3 = 4;
+    int32 outerwearTone4 = 5;
+    int32 outerwearTone5 = 6;
+    int32 outerwearTone6 = 7;
+    int32 outerwearTone7 = 8;
+    int32 outerwearTone8 = 9;
+    int32 outerwearTone9 = 10;
+    int32 outerwearTone10 = 11;
+}
+
+message SCBitmojiOutfit {
+    int32 outfitId = 1;
+    int32 top = 2;
+    int32 bottom = 3;
+    int32 footwear = 4;
+    int32 sock = 5;
+    int32 outerwear = 6;
+    int32 isTucked = 7;
+    int32 topTone1 = 8;
+    int32 topTone2 = 9;
+    int32 topTone3 = 10;
+    int32 topTone4 = 11;
+    int32 topTone5 = 12;
+    int32 topTone6 = 13;
+    int32 topTone7 = 14;
+    int32 topTone8 = 15;
+    int32 topTone9 = 16;
+    int32 topTone10 = 17;
+    int32 bottomTone1 = 18;
+    int32 bottomTone2 = 19;
+    int32 bottomTone3 = 20;
+    int32 bottomTone4 = 21;
+    int32 bottomTone5 = 22;
+    int32 bottomTone6 = 23;
+    int32 bottomTone7 = 24;
+    int32 bottomTone8 = 25;
+    int32 bottomTone9 = 26;
+    int32 bottomTone10 = 27;
+    int32 footwearTone1 = 28;
+    int32 footwearTone2 = 29;
+    int32 footwearTone3 = 30;
+    int32 footwearTone4 = 31;
+    int32 footwearTone5 = 32;
+    int32 footwearTone6 = 33;
+    int32 footwearTone7 = 34;
+    int32 footwearTone8 = 35;
+    int32 footwearTone9 = 36;
+    int32 footwearTone10 = 37;
+    int32 sockTone1 = 38;
+    int32 sockTone2 = 39;
+    int32 sockTone3 = 40;
+    int32 sockTone4 = 41;
+    int32 outerwearTone1 = 42;
+    int32 outerwearTone2 = 43;
+    int32 outerwearTone3 = 44;
+    int32 outerwearTone4 = 45;
+    int32 outerwearTone5 = 46;
+    int32 outerwearTone6 = 47;
+    int32 outerwearTone7 = 48;
+    int32 outerwearTone8 = 49;
+    int32 outerwearTone9 = 50;
+    int32 outerwearTone10 = 51;
+}
+
+message SCBitmojiSock {
+    int32 sock = 1;
+    int32 sockTone1 = 2;
+    int32 sockTone2 = 3;
+    int32 sockTone3 = 4;
+    int32 sockTone4 = 5;
+}
+
+message SCBitmojiTop {
+    int32 top = 1;
+    int32 topTone1 = 2;
+    int32 topTone2 = 3;
+    int32 topTone3 = 4;
+    int32 topTone4 = 5;
+    int32 topTone5 = 6;
+    int32 topTone6 = 7;
+    int32 topTone7 = 8;
+    int32 topTone8 = 9;
+    int32 topTone9 = 10;
+    int32 topTone10 = 11;
+}

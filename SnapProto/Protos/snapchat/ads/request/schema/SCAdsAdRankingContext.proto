@@ -1,0 +1,129 @@
+syntax = "proto3";
+package snapchat.ads.request.schema;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCAds";
+option csharp_namespace = "SnapProto.Snapchat.Ads.Request.Schema";
+
+import "google/protobuf/wrappers.proto";
+
+message SCAdsAdRankingContext {
+    repeated .snapchat.ads.request.schema.SCAdsViewSessionContext viewSessionArray = 1;
+    .snapchat.ads.request.schema.SCAdsAdRankingContext.SCAdsOperaType operaType = 2;
+    .google.protobuf.Int64Value timeSinceForegroundMillis = 3;
+    repeated bytes adOrganicSignalsArray = 4;
+    .google.protobuf.Int64Value fourthTabTotalTimeSpentMillis = 5;
+    .google.protobuf.Int64Value fourthTabSessionTimeSpentMillis = 6;
+    .google.protobuf.Int64Value fourthTabFriendStoriesTotalViewTimeMillis = 7;
+    .google.protobuf.Int64Value fourthTabNonFriendStoriesTotalViewTimeMillis = 8;
+    .google.protobuf.Int64Value fourthTabFriendStoriesSessionViewTimeMillis = 9;
+    .google.protobuf.Int64Value fourthTabNonFriendStoriesSessionViewTimeMillis = 10;
+    enum SCAdsOperaType {
+        SCAdsOperaType_HorizontalUnset = 0;
+        SCAdsOperaType_Vertical = 1;
+        SCAdsOperaType_ArtificialOperaType = 2;
+    }
+}
+
+message SCAdsViewSessionContext {
+    int64 startTimestampMillis = 1;
+    .snapchat.ads.request.schema.SCAdsViewSessionContext.SCAdsViewSource viewSource = 2;
+    .google.protobuf.Int64Value timeSinceSessionStartMillis = 3;
+    .google.protobuf.Int64Value totalAdSnapViewTimeMillis = 4;
+    .google.protobuf.Int32Value totalSnapViewCount = 5;
+    .google.protobuf.Int32Value totalAdSnapViewCount = 6;
+    .google.protobuf.Int32Value totalAdSwipeUpCount = 7;
+    .google.protobuf.Int32Value totalSwipeUpCount = 8;
+    .google.protobuf.Int64Value totalAdLongformViewTimeMillis = 9;
+    .google.protobuf.Int64Value totalLongformViewTimeMillis = 10;
+    .google.protobuf.Int32Value totalStoriesViewCount = 11;
+    .google.protobuf.Int32Value availableStoriesCount = 12;
+    .snapchat.ads.request.schema.SCAdsViewSessionContext.SCAdsExitEvent exitEvent = 13;
+    .google.protobuf.BoolValue isLastSnapAd = 14;
+    repeated .snapchat.ads.request.schema.SCAdsViewedAdContext viewedAdArray = 15;
+    enum SCAdsExitEvent {
+        SCAdsExitEvent_UnknownExitEvent = 0;
+        SCAdsExitEvent_AutoAdvance = 1;
+        SCAdsExitEvent_TapLeft = 2;
+        SCAdsExitEvent_TapRight = 3;
+        SCAdsExitEvent_SwipeLeft = 4;
+        SCAdsExitEvent_SwipeRight = 5;
+        SCAdsExitEvent_SwipeDown = 6;
+        SCAdsExitEvent_SwipeUp = 7;
+        SCAdsExitEvent_Background = 8;
+        SCAdsExitEvent_BackPressed = 9;
+        SCAdsExitEvent_LongPressed = 10;
+        SCAdsExitEvent_Other = 11;
+        SCAdsExitEvent_TapSearch = 12;
+        SCAdsExitEvent_TapUserProfile = 13;
+        SCAdsExitEvent_TapBrandProfile = 14;
+        SCAdsExitEvent_TapTrending = 15;
+        SCAdsExitEvent_TapShare = 16;
+        SCAdsExitEvent_TapHome = 17;
+    }
+    enum SCAdsViewSource {
+        SCAdsViewSource_UnknownViewSourceUnset = 0;
+        SCAdsViewSource_ViewSourceDiscover = 1;
+        SCAdsViewSource_LiveStories = 2;
+        SCAdsViewSource_Playlist = 3;
+        SCAdsViewSource_RecentUpdate = 4;
+        SCAdsViewSource_OfficialStories = 5;
+        SCAdsViewSource_GeneratedStories = 6;
+        SCAdsViewSource_Feed = 7;
+        SCAdsViewSource_ChatHeader = 8;
+        SCAdsViewSource_PromotedStories = 9;
+        SCAdsViewSource_DiscoverFeedFriends = 10;
+        SCAdsViewSource_Cognac = 11;
+        SCAdsViewSource_ViewSourceContentInterstitial = 12;
+        SCAdsViewSource_DfCategorical = 13;
+        SCAdsViewSource_DfForYou = 14;
+        SCAdsViewSource_DfSubscriptions = 15;
+        SCAdsViewSource_PremiumFeed = 16;
+        SCAdsViewSource_PfContinueWatching = 17;
+        SCAdsViewSource_PfHappeningNow = 18;
+        SCAdsViewSource_PfHeroTile = 19;
+        SCAdsViewSource_PfMoreShows = 20;
+        SCAdsViewSource_PfSubscriptions = 21;
+        SCAdsViewSource_ProfilePublisherEditions = 22;
+        SCAdsViewSource_ProfileShowSeason = 23;
+        SCAdsViewSource_ProfileUpNext = 24;
+        SCAdsViewSource_SearchDiscover = 25;
+        SCAdsViewSource_SearchDiscoverArchived = 26;
+        SCAdsViewSource_SearchSf = 27;
+        SCAdsViewSource_DfSingleTileForYou = 28;
+        SCAdsViewSource_DfSpotlightAll = 29;
+        SCAdsViewSource_SpotlightFeed = 30;
+        SCAdsViewSource_Chat = 31;
+        SCAdsViewSource_MiniProfile = 32;
+        SCAdsViewSource_FeedDirectSnap = 33;
+        SCAdsViewSource_FeedStorySnap = 34;
+        SCAdsViewSource_SuperFeed = 35;
+        SCAdsViewSource_Deeplink = 36;
+    }
+}
+
+message SCAdsViewedAdContext {
+    .snapchat.ads.request.schema.SCAdsViewedAdContext.SCAdsExitEvent adExitEvent = 1;
+    .google.protobuf.Int32Value adLoadingSpinnerTimeMillis = 2;
+    .google.protobuf.Int32Value adViewTimeMillis = 3;
+    .google.protobuf.BoolValue adSwipeUp = 4;
+    enum SCAdsExitEvent {
+        SCAdsExitEvent_UnknownExitEvent = 0;
+        SCAdsExitEvent_AutoAdvance = 1;
+        SCAdsExitEvent_TapLeft = 2;
+        SCAdsExitEvent_TapRight = 3;
+        SCAdsExitEvent_SwipeLeft = 4;
+        SCAdsExitEvent_SwipeRight = 5;
+        SCAdsExitEvent_SwipeDown = 6;
+        SCAdsExitEvent_SwipeUp = 7;
+        SCAdsExitEvent_Background = 8;
+        SCAdsExitEvent_BackPressed = 9;
+        SCAdsExitEvent_LongPressed = 10;
+        SCAdsExitEvent_Other = 11;
+        SCAdsExitEvent_TapSearch = 12;
+        SCAdsExitEvent_TapUserProfile = 13;
+        SCAdsExitEvent_TapBrandProfile = 14;
+        SCAdsExitEvent_TapTrending = 15;
+        SCAdsExitEvent_TapShare = 16;
+        SCAdsExitEvent_TapHome = 17;
+    }
+}

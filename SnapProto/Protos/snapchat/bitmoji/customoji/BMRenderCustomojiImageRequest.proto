@@ -1,0 +1,13 @@
+syntax = "proto3";
+package snapchat.bitmoji.customoji;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "BM";
+option csharp_namespace = "SnapProto.Snapchat.Bitmoji.Customoji";
+
+message BMRenderCustomojiImageRequest {
+    string text = 1;
+    int32 customojiId = 2;
+    string locale = 3;
+    string avatarId = 4;
+    int32 scale = 5;
+}

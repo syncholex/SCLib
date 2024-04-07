@@ -1,0 +1,26 @@
+syntax = "proto3";
+package snapchat.map;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCMT";
+option csharp_namespace = "SnapProto.Snapchat.Map";
+
+message SCMTCanRequestLocationRequest {
+    string friendId = 1;
+}
+
+message SCMTCanRequestLocationResponse {
+    bool canRequestLocation = 1;
+    bool hideRequestButton = 2;
+}
+
+message SCMTLocationRequestFeedbackRequest {
+    string friendId = 1;
+    .snapchat.map.SCMTLocationRequestFeedbackRequest.SCMTLocationRequestFeedback feedback = 2;
+    enum SCMTLocationRequestFeedback {
+        SCMTLocationRequestFeedback_Ignored = 0;
+        SCMTLocationRequestFeedback_Accepted = 1;
+    }
+}
+
+message SCMTLocationRequestFeedbackResponse {
+}

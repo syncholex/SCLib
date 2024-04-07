@@ -1,0 +1,225 @@
+syntax = "proto3";
+package snapchat.creativetools.userdata;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCCTP";
+option csharp_namespace = "SnapProto.Snapchat.Creativetools.Userdata";
+
+import "google/protobuf/timestamp.proto";
+import "snapchat/creativetools/common/SCCTPCtItem.proto";
+import "snapchat/creativetools/common/SCCTPCtReqParams.proto";
+import "snapchat/creativetools/common/SCCTPPagination.proto";
+
+message SCCTPCheckItemsRequest {
+    repeated .snapchat.creativetools.userdata.SCCTPCheckItemsRequest.SCCTPCheckItemsRequest_Item itemsArray = 1;
+    repeated .snapchat.creativetools.userdata.SCCTPUserDataItem userdataItemsArray = 2;
+    message SCCTPCheckItemsRequest_Item {
+        .snapchat.creativetools.userdata.SCCTPCheckItemsRequest.SCCTPCheckItemsRequest_Item.SCCTPUserdataCategory category = 1;
+        .snapchat.creativetools.common.SCCTPCTItemExternalID externalId = 2;
+        .snapchat.creativetools.common.SCCTPExternalKey externalKey = 3;
+        enum SCCTPUserdataCategory {
+            SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+            SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+            SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+            SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+            SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+            SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+        }
+    }
+}
+
+message SCCTPCheckItemsResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPCheckItemsResponse.SCCTPCheckItemsResponse_Item itemsArray = 1;
+    message SCCTPCheckItemsResponse_Item {
+        bool exists = 1;
+    }
+}
+
+message SCCTPListItemsRequest {
+    .snapchat.creativetools.userdata.SCCTPListItemsRequest.SCCTPUserdataCategory category = 1;
+    .snapchat.creativetools.common.SCCTPPagination pagination = 3;
+    repeated .snapchat.creativetools.userdata.SCCTPListItemsRequest.SCCTPCTItem_Type typesArray = 4;
+    bool includeBackfill = 5;
+    .snapchat.creativetools.common.SCCTPCTRequestParams requestParams = 6;
+    .google.protobuf.Timestamp minTimestampFilter = 7;
+    enum SCCTPUserdataCategory {
+        SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+        SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+        SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+        SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+        SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+        SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+    }
+    enum SCCTPCTItem_Type {
+        SCCTPCTItem_Type_Unset = 0;
+        SCCTPCTItem_Type_SnapSticker = 1;
+        SCCTPCTItem_Type_BitmojiSticker = 2;
+        SCCTPCTItem_Type_CustomSticker = 3;
+        SCCTPCTItem_Type_Emoji = 4;
+        SCCTPCTItem_Type_Giphy = 5;
+        SCCTPCTItem_Type_MusicSticker = 19;
+        SCCTPCTItem_Type_Cameo = 20;
+        SCCTPCTItem_Type_Memories = 21;
+        SCCTPCTItem_Type_StickerPack = 22;
+        SCCTPCTItem_Type_TargetedItem = 23;
+        SCCTPCTItem_Type_InfoSticker = 25;
+        SCCTPCTItem_Type_CaptionStyle = 26;
+        SCCTPCTItem_Type_MusicTrack = 27;
+        SCCTPCTItem_Type_ChatCameo = 28;
+        SCCTPCTItem_Type_ServerCameo = 29;
+        SCCTPCTItem_Type_Gfycat = 30;
+        SCCTPCTItem_Type_CustomStickerPack = 31;
+        SCCTPCTItem_Type_ChatReaction = 32;
+        SCCTPCTItem_Type_Filter = 33;
+        SCCTPCTItem_Type_ShoppingSticker = 34;
+        SCCTPCTItem_Type_MusicArtist = 35;
+        SCCTPCTItem_Type_Drawing = 36;
+        SCCTPCTItem_Type_Lottie = 37;
+        SCCTPCTItem_Type_AutoCaptions = 38;
+        SCCTPCTItem_Type_ProxyItem = 39;
+        SCCTPCTItem_Type_CameraRollSticker = 40;
+        SCCTPCTItem_Type_Lens = 41;
+    }
+}
+
+message SCCTPListItemsResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPListItemsResponse.SCCTPListItemsResponse_Item itemsArray = 1;
+    .snapchat.creativetools.common.SCCTPPageToken pageToken = 3;
+    message SCCTPListItemsResponse_Item {
+        .snapchat.creativetools.common.SCCTPCTItem ctitem = 1;
+        .google.protobuf.Timestamp lastUpdated = 2;
+    }
+}
+
+message SCCTPPutItemsByExternalIDRequest {
+    repeated .snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDRequest.SCCTPPutItemsByExternalIDRequest_Item itemsArray = 1;
+    bool includeCtitems = 2;
+    message SCCTPPutItemsByExternalIDRequest_Item {
+        .snapchat.creativetools.common.SCCTPCTItemExternalID externalId = 1;
+        .snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDRequest.SCCTPPutItemsByExternalIDRequest_Item.SCCTPUserdataCategory category = 2;
+        .snapchat.creativetools.common.SCCTPExternalKey externalKey = 3;
+        .google.protobuf.Timestamp lastUpdatedOverwrite = 4;
+        uint32 useCountOverwrite = 5;
+        enum SCCTPUserdataCategory {
+            SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+            SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+            SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+            SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+            SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+            SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+        }
+    }
+}
+
+message SCCTPPutItemsByExternalIDResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDResponse.SCCTPPutItemsByExternalIDResponse_Result resultsArray = 1;
+    message SCCTPPutItemsByExternalIDResponse_Result {
+        bool success = 1;
+        .snapchat.creativetools.common.SCCTPCTItem item = 2;
+        .snapchat.creativetools.userdata.SCCTPPutItemsByExternalIDResponse.SCCTPPutItemsByExternalIDResponse_Result.SCCTPErrorCode errorCode = 3;
+        enum SCCTPErrorCode {
+            SCCTPErrorCode_NoErrorUnset = 0;
+            SCCTPErrorCode_Other = 1;
+            SCCTPErrorCode_ItemBlocked = 2;
+        }
+    }
+}
+
+message SCCTPPutItemsRequest {
+    repeated .snapchat.creativetools.userdata.SCCTPUserDataItem itemsArray = 1;
+    bool includeCtitems = 2;
+}
+
+message SCCTPPutItemsResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPUserDataCTItemResult resultsArray = 1;
+}
+
+message SCCTPRemoveAllItemsRequest {
+    .snapchat.creativetools.userdata.SCCTPRemoveAllItemsRequest.SCCTPUserdataCategory category = 1;
+    enum SCCTPUserdataCategory {
+        SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+        SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+        SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+        SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+        SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+        SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+    }
+}
+
+message SCCTPRemoveAllItemsResponse {
+    bool success = 1;
+}
+
+message SCCTPRemoveItemsByExternalIDRequest {
+    repeated .snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDRequest.SCCTPRemoveItemsByExternalIDRequest_Item itemsArray = 1;
+    message SCCTPRemoveItemsByExternalIDRequest_Item {
+        .snapchat.creativetools.common.SCCTPCTItemExternalID externalId = 1;
+        .snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDRequest.SCCTPRemoveItemsByExternalIDRequest_Item.SCCTPUserdataCategory category = 2;
+        .snapchat.creativetools.common.SCCTPExternalKey externalKey = 3;
+        enum SCCTPUserdataCategory {
+            SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+            SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+            SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+            SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+            SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+            SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+        }
+    }
+}
+
+message SCCTPRemoveItemsByExternalIDResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDResponse.SCCTPRemoveItemsByExternalIDResponse_Result resultsArray = 1;
+    message SCCTPRemoveItemsByExternalIDResponse_Result {
+        bool success = 1;
+        uint64 ctId = 2;
+        bytes ctpId = 3;
+        .snapchat.creativetools.userdata.SCCTPRemoveItemsByExternalIDResponse.SCCTPRemoveItemsByExternalIDResponse_Result.SCCTPErrorCode errorCode = 4;
+        enum SCCTPErrorCode {
+            SCCTPErrorCode_NoErrorUnset = 0;
+            SCCTPErrorCode_Other = 1;
+            SCCTPErrorCode_ItemBlocked = 2;
+        }
+    }
+}
+
+message SCCTPRemoveItemsRequest {
+    repeated .snapchat.creativetools.userdata.SCCTPUserDataItem itemsArray = 1;
+}
+
+message SCCTPRemoveItemsResponse {
+    repeated .snapchat.creativetools.userdata.SCCTPUserDataCTPIDResult resultsArray = 1;
+}
+
+message SCCTPUserDataCTItemResult {
+    .snapchat.creativetools.common.SCCTPCTItem item = 1;
+    .snapchat.creativetools.userdata.SCCTPUserDataCTItemResult.SCCTPErrorCode errorCode = 2;
+    enum SCCTPErrorCode {
+        SCCTPErrorCode_NoErrorUnset = 0;
+        SCCTPErrorCode_Other = 1;
+        SCCTPErrorCode_ItemBlocked = 2;
+    }
+}
+
+message SCCTPUserDataCTPIDResult {
+    bytes id_p = 1;
+    .snapchat.creativetools.userdata.SCCTPUserDataCTPIDResult.SCCTPErrorCode errorCode = 2;
+    enum SCCTPErrorCode {
+        SCCTPErrorCode_NoErrorUnset = 0;
+        SCCTPErrorCode_Other = 1;
+        SCCTPErrorCode_ItemBlocked = 2;
+    }
+}
+
+message SCCTPUserDataItem {
+    bytes id_p = 1;
+    .snapchat.creativetools.userdata.SCCTPUserDataItem.SCCTPUserdataCategory category = 2;
+    .google.protobuf.Timestamp lastUpdatedOverwrite = 3;
+    uint32 useCountOverwrite = 4;
+    enum SCCTPUserdataCategory {
+        SCCTPUserdataCategory_UserdataCategoryUnset = 0;
+        SCCTPUserdataCategory_UserdataCategoryFavorites = 1;
+        SCCTPUserdataCategory_UserdataCategoryMusicFavorites = 2;
+        SCCTPUserdataCategory_UserdataCategoryPreviewRecents = 3;
+        SCCTPUserdataCategory_UserdataCategoryChatRecents = 4;
+        SCCTPUserdataCategory_UserdataCategoryMusicRecents = 5;
+    }
+}

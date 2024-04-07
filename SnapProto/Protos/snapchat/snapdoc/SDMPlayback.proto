@@ -1,0 +1,27 @@
+syntax = "proto3";
+package snapchat.snapdoc;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SDM";
+option csharp_namespace = "SnapProto.Snapchat.Snapdoc";
+
+import "snapchat/snapdoc/SDMMedia.proto";
+import "snapchat/snapdoc/SDMMediaEffects.proto";
+import "snapchat/snapdoc/SDMPlaybackCharacteristics.proto";
+import "snapchat/snapdoc/SDMPlaybackLayer.proto";
+import "snapchat/snapdoc/SDMSubtitles.proto";
+
+message SDMPlayback {
+    repeated .snapchat.snapdoc.SDMPlaybackLayer playbackLayersArray = 1;
+    .snapchat.snapdoc.SDMPlaybackCharacteristics playbackCharacteristics = 2;
+    .snapchat.snapdoc.SDMSubtitles subtitles = 3;
+    .snapchat.snapdoc.SDMMediaMetadata firstFrame = 4;
+    .snapchat.snapdoc.SDMMediaEffects mediaEffects = 5;
+    uint32 playbackLayerIndexCounter = 6;
+    .snapchat.snapdoc.SDMPlayback.SDMCaptureMode captureMode = 7;
+    enum SDMCaptureMode {
+        SDMCaptureMode_Unset = 0;
+        SDMCaptureMode_Timeline = 1;
+        SDMCaptureMode_DirectorMode = 2;
+        SDMCaptureMode_DefaultMode = 3;
+    }
+}

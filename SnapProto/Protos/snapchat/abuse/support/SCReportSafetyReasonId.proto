@@ -1,0 +1,45 @@
+syntax = "proto3";
+package snapchat.abuse.support;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCReport";
+option csharp_namespace = "SnapProto.Snapchat.Abuse.Support";
+
+message SCReportSafetyReasonId {
+    .snapchat.abuse.support.SCReportSafetyReasonId.SCReportSafetyReasonId_ReasonId reasonId = 1;
+    enum SCReportSafetyReasonId_ReasonId {
+        SCReportSafetyReasonId_ReasonId_ReasonUnset = 0;
+        SCReportSafetyReasonId_ReasonId_DontLikeWantToSee = 1;
+        SCReportSafetyReasonId_ReasonId_ImpersonationFirstPerson = 2;
+        SCReportSafetyReasonId_ReasonId_ImpersonationGeneral = 3;
+        SCReportSafetyReasonId_ReasonId_SpamFirstPerson = 4;
+        SCReportSafetyReasonId_ReasonId_SpamGeneral = 5;
+        SCReportSafetyReasonId_ReasonId_HateSpeechGeneral = 7;
+        SCReportSafetyReasonId_ReasonId_ViolentDisturbingGeneral = 9;
+        SCReportSafetyReasonId_ReasonId_ThreatThreateningFirstPerson = 10;
+        SCReportSafetyReasonId_ReasonId_ThreatThreateningGeneral = 11;
+        SCReportSafetyReasonId_ReasonId_InappropriateFirstPerson = 12;
+        SCReportSafetyReasonId_ReasonId_InappropriateGeneral = 13;
+        SCReportSafetyReasonId_ReasonId_InappropriateLens = 14;
+        SCReportSafetyReasonId_ReasonId_InappropriateAttachment = 15;
+        SCReportSafetyReasonId_ReasonId_BullyingHarassmentFirstPerson = 16;
+        SCReportSafetyReasonId_ReasonId_BullyingHarassmentGeneral = 17;
+        SCReportSafetyReasonId_ReasonId_PrivacyInvasionFirstPerson = 18;
+        SCReportSafetyReasonId_ReasonId_SelfHarmSuicide = 20;
+        SCReportSafetyReasonId_ReasonId_TerrorismExtremism = 21;
+        SCReportSafetyReasonId_ReasonId_FraudulentInformation = 22;
+        SCReportSafetyReasonId_ReasonId_DrugSaleUse = 23;
+        SCReportSafetyReasonId_ReasonId_WeaponSaleUse = 24;
+        SCReportSafetyReasonId_ReasonId_InappropriatePromotion = 25;
+        SCReportSafetyReasonId_ReasonId_UnderThirteen = 26;
+        SCReportSafetyReasonId_ReasonId_FraudulentInformationPolitics = 27;
+        SCReportSafetyReasonId_ReasonId_FraudulentInformationHealth = 28;
+        SCReportSafetyReasonId_ReasonId_FraudulentInformationSocialIssues = 29;
+        SCReportSafetyReasonId_ReasonId_InappropriateChild = 30;
+        SCReportSafetyReasonId_ReasonId_SelfHarmSuicidePromote = 31;
+        SCReportSafetyReasonId_ReasonId_CounterfeitGoods = 32;
+        SCReportSafetyReasonId_ReasonId_BullyingHarassmentSexual = 34;
+        SCReportSafetyReasonId_ReasonId_SpamFriendRequest = 35;
+        SCReportSafetyReasonId_ReasonId_SpamCreepy = 36;
+        SCReportSafetyReasonId_ReasonId_ThreatSextortion = 37;
+    }
+}

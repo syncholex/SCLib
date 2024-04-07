@@ -1,0 +1,11 @@
+syntax = "proto3";
+package com.snap.spectacles.ota;
+option optimize_for = CODE_SIZE;
+option objc_class_prefix = "SCSpectaclesOtaPb";
+option csharp_namespace = "SnapProto.Services.Com.Snap.Spectacles.Ota";
+
+import "com/snap/spectacles/ota/SCSpectaclesOtaPbSpectaclesOta.proto";
+
+service SpectaclesOtaService{
+    rpc GetVersionSet(.com.snap.spectacles.ota.SCSpectaclesOtaPbGetVersionSetRequest) returns (.com.snap.spectacles.ota.SCSpectaclesOtaPbGetVersionSetResponse);
+}
